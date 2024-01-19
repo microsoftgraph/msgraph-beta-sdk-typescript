@@ -1,0 +1,39 @@
+{
+  "name": "@microsoft/msgraph-beta-sdk-javascript",
+  "version": "1.0.0-preview.10",
+  "description": "Microsoft Graph Beta JavaScript client library",
+  "keywords": [
+    "microsoft",
+    "graph",
+    "msgraph",
+    "beta"
+  ],
+  "author": "Vincent Biret <vibiret@microsoft.com>",
+  "homepage": "https://github.com/microsoftgraph/msgraph-beta-sdk-typescript#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoftgraph/msgraph-beta-sdk-typescript.git"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "clean": "rimraf -g **/*.d.ts && rimraf -g **/*.d.ts.map && rimraf -g **/*.js.map && rimraf -g **/*.js"
+  },
+  "bugs": {
+    "url": "https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/issues"
+  },
+  "dependencies": {
+    "guid-typescript": "^1.0.9",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
