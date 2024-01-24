@@ -1037,7 +1037,7 @@ export type DeploymentStateValue = (typeof DeploymentStateValueObject)[keyof typ
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoApplicableContent(applicableContent: ApplicableContent | undefined = {} as ApplicableContent) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoApplicableContent(applicableContent: Partial<ApplicableContent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applicableContent.backingStoreEnabled = true; },
         "catalogEntry": n => { applicableContent.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
@@ -1049,7 +1049,7 @@ export function deserializeIntoApplicableContent(applicableContent: ApplicableCo
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoApplicableContentDeviceMatch(applicableContentDeviceMatch: ApplicableContentDeviceMatch | undefined = {} as ApplicableContentDeviceMatch) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoApplicableContentDeviceMatch(applicableContentDeviceMatch: Partial<ApplicableContentDeviceMatch> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applicableContentDeviceMatch.backingStoreEnabled = true; },
         "deviceId": n => { applicableContentDeviceMatch.deviceId = n.getStringValue(); },
@@ -1061,7 +1061,7 @@ export function deserializeIntoApplicableContentDeviceMatch(applicableContentDev
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAzureADDevice(azureADDevice: AzureADDevice | undefined = {} as AzureADDevice) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAzureADDevice(azureADDevice: Partial<AzureADDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoUpdatableAsset(azureADDevice),
         "enrollments": n => { azureADDevice.enrollments = n.getCollectionOfObjectValues<UpdatableAssetEnrollment>(createUpdatableAssetEnrollmentFromDiscriminatorValue); },
@@ -1072,7 +1072,7 @@ export function deserializeIntoAzureADDevice(azureADDevice: AzureADDevice | unde
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAzureADDeviceRegistrationError(azureADDeviceRegistrationError: AzureADDeviceRegistrationError | undefined = {} as AzureADDeviceRegistrationError) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAzureADDeviceRegistrationError(azureADDeviceRegistrationError: Partial<AzureADDeviceRegistrationError> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoUpdatableAssetError(azureADDeviceRegistrationError),
         "reason": n => { azureADDeviceRegistrationError.reason = n.getEnumValue<AzureADDeviceRegistrationErrorReason>(AzureADDeviceRegistrationErrorReasonObject); },
@@ -1082,7 +1082,7 @@ export function deserializeIntoAzureADDeviceRegistrationError(azureADDeviceRegis
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoBuildVersionDetails(buildVersionDetails: BuildVersionDetails | undefined = {} as BuildVersionDetails) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoBuildVersionDetails(buildVersionDetails: Partial<BuildVersionDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { buildVersionDetails.backingStoreEnabled = true; },
         "buildNumber": n => { buildVersionDetails.buildNumber = n.getNumberValue(); },
@@ -1096,7 +1096,7 @@ export function deserializeIntoBuildVersionDetails(buildVersionDetails: BuildVer
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoCatalog(catalog: Catalog | undefined = {} as Catalog) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoCatalog(catalog: Partial<Catalog> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(catalog),
         "entries": n => { catalog.entries = n.getCollectionOfObjectValues<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
@@ -1106,7 +1106,7 @@ export function deserializeIntoCatalog(catalog: Catalog | undefined = {} as Cata
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoCatalogContent(catalogContent: CatalogContent | undefined = {} as CatalogContent) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoCatalogContent(catalogContent: Partial<CatalogContent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDeployableContent(catalogContent),
         "catalogEntry": n => { catalogContent.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
@@ -1116,7 +1116,7 @@ export function deserializeIntoCatalogContent(catalogContent: CatalogContent | u
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoCatalogEntry(catalogEntry: CatalogEntry | undefined = {} as CatalogEntry) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoCatalogEntry(catalogEntry: Partial<CatalogEntry> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(catalogEntry),
         "deployableUntilDateTime": n => { catalogEntry.deployableUntilDateTime = n.getDateValue(); },
@@ -1128,7 +1128,7 @@ export function deserializeIntoCatalogEntry(catalogEntry: CatalogEntry | undefin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoCatalogEntryCollectionResponse(catalogEntryCollectionResponse: CatalogEntryCollectionResponse | undefined = {} as CatalogEntryCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoCatalogEntryCollectionResponse(catalogEntryCollectionResponse: Partial<CatalogEntryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(catalogEntryCollectionResponse),
         "value": n => { catalogEntryCollectionResponse.value = n.getCollectionOfObjectValues<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
@@ -1138,7 +1138,7 @@ export function deserializeIntoCatalogEntryCollectionResponse(catalogEntryCollec
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoComplianceChange(complianceChange: ComplianceChange | undefined = {} as ComplianceChange) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoComplianceChange(complianceChange: Partial<ComplianceChange> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(complianceChange),
         "createdDateTime": n => { complianceChange.createdDateTime = n.getDateValue(); },
@@ -1151,7 +1151,7 @@ export function deserializeIntoComplianceChange(complianceChange: ComplianceChan
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoComplianceChangeCollectionResponse(complianceChangeCollectionResponse: ComplianceChangeCollectionResponse | undefined = {} as ComplianceChangeCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoComplianceChangeCollectionResponse(complianceChangeCollectionResponse: Partial<ComplianceChangeCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(complianceChangeCollectionResponse),
         "value": n => { complianceChangeCollectionResponse.value = n.getCollectionOfObjectValues<ComplianceChange>(createComplianceChangeFromDiscriminatorValue); },
@@ -1161,7 +1161,7 @@ export function deserializeIntoComplianceChangeCollectionResponse(complianceChan
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoComplianceChangeRule(complianceChangeRule: ComplianceChangeRule | undefined = {} as ComplianceChangeRule) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoComplianceChangeRule(complianceChangeRule: Partial<ComplianceChangeRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { complianceChangeRule.backingStoreEnabled = true; },
         "createdDateTime": n => { complianceChangeRule.createdDateTime = n.getDateValue(); },
@@ -1174,7 +1174,7 @@ export function deserializeIntoComplianceChangeRule(complianceChangeRule: Compli
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoContentApplicabilitySettings(contentApplicabilitySettings: ContentApplicabilitySettings | undefined = {} as ContentApplicabilitySettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoContentApplicabilitySettings(contentApplicabilitySettings: Partial<ContentApplicabilitySettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { contentApplicabilitySettings.backingStoreEnabled = true; },
         "@odata.type": n => { contentApplicabilitySettings.odataType = n.getStringValue(); },
@@ -1186,7 +1186,7 @@ export function deserializeIntoContentApplicabilitySettings(contentApplicability
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoContentApproval(contentApproval: ContentApproval | undefined = {} as ContentApproval) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoContentApproval(contentApproval: Partial<ContentApproval> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoComplianceChange(contentApproval),
         "content": n => { contentApproval.content = n.getObjectValue<DeployableContent>(createDeployableContentFromDiscriminatorValue); },
@@ -1198,7 +1198,7 @@ export function deserializeIntoContentApproval(contentApproval: ContentApproval 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoContentApprovalRule(contentApprovalRule: ContentApprovalRule | undefined = {} as ContentApprovalRule) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoContentApprovalRule(contentApprovalRule: Partial<ContentApprovalRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoComplianceChangeRule(contentApprovalRule),
         "contentFilter": n => { contentApprovalRule.contentFilter = n.getObjectValue<ContentFilter>(createContentFilterFromDiscriminatorValue); },
@@ -1209,7 +1209,7 @@ export function deserializeIntoContentApprovalRule(contentApprovalRule: ContentA
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoContentFilter(contentFilter: ContentFilter | undefined = {} as ContentFilter) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoContentFilter(contentFilter: Partial<ContentFilter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { contentFilter.backingStoreEnabled = true; },
         "@odata.type": n => { contentFilter.odataType = n.getStringValue(); },
@@ -1219,7 +1219,7 @@ export function deserializeIntoContentFilter(contentFilter: ContentFilter | unde
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoCveInformation(cveInformation: CveInformation | undefined = {} as CveInformation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoCveInformation(cveInformation: Partial<CveInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cveInformation.backingStoreEnabled = true; },
         "number": n => { cveInformation.number = n.getStringValue(); },
@@ -1231,7 +1231,7 @@ export function deserializeIntoCveInformation(cveInformation: CveInformation | u
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDateDrivenRolloutSettings(dateDrivenRolloutSettings: DateDrivenRolloutSettings | undefined = {} as DateDrivenRolloutSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDateDrivenRolloutSettings(dateDrivenRolloutSettings: Partial<DateDrivenRolloutSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoGradualRolloutSettings(dateDrivenRolloutSettings),
         "endDateTime": n => { dateDrivenRolloutSettings.endDateTime = n.getDateValue(); },
@@ -1241,7 +1241,7 @@ export function deserializeIntoDateDrivenRolloutSettings(dateDrivenRolloutSettin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeployableContent(deployableContent: DeployableContent | undefined = {} as DeployableContent) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeployableContent(deployableContent: Partial<DeployableContent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deployableContent.backingStoreEnabled = true; },
         "@odata.type": n => { deployableContent.odataType = n.getStringValue(); },
@@ -1251,7 +1251,7 @@ export function deserializeIntoDeployableContent(deployableContent: DeployableCo
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeployment(deployment: Deployment | undefined = {} as Deployment) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeployment(deployment: Partial<Deployment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deployment),
         "audience": n => { deployment.audience = n.getObjectValue<DeploymentAudience>(createDeploymentAudienceFromDiscriminatorValue); },
@@ -1266,7 +1266,7 @@ export function deserializeIntoDeployment(deployment: Deployment | undefined = {
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeploymentAudience(deploymentAudience: DeploymentAudience | undefined = {} as DeploymentAudience) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeploymentAudience(deploymentAudience: Partial<DeploymentAudience> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deploymentAudience),
         "applicableContent": n => { deploymentAudience.applicableContent = n.getCollectionOfObjectValues<ApplicableContent>(createApplicableContentFromDiscriminatorValue); },
@@ -1278,7 +1278,7 @@ export function deserializeIntoDeploymentAudience(deploymentAudience: Deployment
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeploymentAudienceCollectionResponse(deploymentAudienceCollectionResponse: DeploymentAudienceCollectionResponse | undefined = {} as DeploymentAudienceCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeploymentAudienceCollectionResponse(deploymentAudienceCollectionResponse: Partial<DeploymentAudienceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deploymentAudienceCollectionResponse),
         "value": n => { deploymentAudienceCollectionResponse.value = n.getCollectionOfObjectValues<DeploymentAudience>(createDeploymentAudienceFromDiscriminatorValue); },
@@ -1288,7 +1288,7 @@ export function deserializeIntoDeploymentAudienceCollectionResponse(deploymentAu
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeploymentCollectionResponse(deploymentCollectionResponse: DeploymentCollectionResponse | undefined = {} as DeploymentCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeploymentCollectionResponse(deploymentCollectionResponse: Partial<DeploymentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deploymentCollectionResponse),
         "value": n => { deploymentCollectionResponse.value = n.getCollectionOfObjectValues<Deployment>(createDeploymentFromDiscriminatorValue); },
@@ -1298,7 +1298,7 @@ export function deserializeIntoDeploymentCollectionResponse(deploymentCollection
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeploymentSettings(deploymentSettings: DeploymentSettings | undefined = {} as DeploymentSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeploymentSettings(deploymentSettings: Partial<DeploymentSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deploymentSettings.backingStoreEnabled = true; },
         "contentApplicability": n => { deploymentSettings.contentApplicability = n.getObjectValue<ContentApplicabilitySettings>(createContentApplicabilitySettingsFromDiscriminatorValue); },
@@ -1313,7 +1313,7 @@ export function deserializeIntoDeploymentSettings(deploymentSettings: Deployment
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeploymentState(deploymentState: DeploymentState | undefined = {} as DeploymentState) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeploymentState(deploymentState: Partial<DeploymentState> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deploymentState.backingStoreEnabled = true; },
         "effectiveValue": n => { deploymentState.effectiveValue = n.getEnumValue<DeploymentStateValue>(DeploymentStateValueObject); },
@@ -1326,7 +1326,7 @@ export function deserializeIntoDeploymentState(deploymentState: DeploymentState 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDeploymentStateReason(deploymentStateReason: DeploymentStateReason | undefined = {} as DeploymentStateReason) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDeploymentStateReason(deploymentStateReason: Partial<DeploymentStateReason> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deploymentStateReason.backingStoreEnabled = true; },
         "@odata.type": n => { deploymentStateReason.odataType = n.getStringValue(); },
@@ -1337,7 +1337,7 @@ export function deserializeIntoDeploymentStateReason(deploymentStateReason: Depl
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDriverUpdateCatalogEntry(driverUpdateCatalogEntry: DriverUpdateCatalogEntry | undefined = {} as DriverUpdateCatalogEntry) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDriverUpdateCatalogEntry(driverUpdateCatalogEntry: Partial<DriverUpdateCatalogEntry> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSoftwareUpdateCatalogEntry(driverUpdateCatalogEntry),
         "description": n => { driverUpdateCatalogEntry.description = n.getStringValue(); },
@@ -1353,7 +1353,7 @@ export function deserializeIntoDriverUpdateCatalogEntry(driverUpdateCatalogEntry
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDriverUpdateFilter(driverUpdateFilter: DriverUpdateFilter | undefined = {} as DriverUpdateFilter) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDriverUpdateFilter(driverUpdateFilter: Partial<DriverUpdateFilter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWindowsUpdateFilter(driverUpdateFilter),
     }
@@ -1362,7 +1362,7 @@ export function deserializeIntoDriverUpdateFilter(driverUpdateFilter: DriverUpda
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDurationDrivenRolloutSettings(durationDrivenRolloutSettings: DurationDrivenRolloutSettings | undefined = {} as DurationDrivenRolloutSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDurationDrivenRolloutSettings(durationDrivenRolloutSettings: Partial<DurationDrivenRolloutSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoGradualRolloutSettings(durationDrivenRolloutSettings),
         "durationUntilDeploymentEnd": n => { durationDrivenRolloutSettings.durationUntilDeploymentEnd = n.getDurationValue(); },
@@ -1372,7 +1372,7 @@ export function deserializeIntoDurationDrivenRolloutSettings(durationDrivenRollo
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExpediteSettings(expediteSettings: ExpediteSettings | undefined = {} as ExpediteSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExpediteSettings(expediteSettings: Partial<ExpediteSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { expediteSettings.backingStoreEnabled = true; },
         "isExpedited": n => { expediteSettings.isExpedited = n.getBooleanValue(); },
@@ -1384,7 +1384,7 @@ export function deserializeIntoExpediteSettings(expediteSettings: ExpediteSettin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoFeatureUpdateCatalogEntry(featureUpdateCatalogEntry: FeatureUpdateCatalogEntry | undefined = {} as FeatureUpdateCatalogEntry) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoFeatureUpdateCatalogEntry(featureUpdateCatalogEntry: Partial<FeatureUpdateCatalogEntry> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSoftwareUpdateCatalogEntry(featureUpdateCatalogEntry),
         "buildNumber": n => { featureUpdateCatalogEntry.buildNumber = n.getStringValue(); },
@@ -1395,7 +1395,7 @@ export function deserializeIntoFeatureUpdateCatalogEntry(featureUpdateCatalogEnt
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoGradualRolloutSettings(gradualRolloutSettings: GradualRolloutSettings | undefined = {} as GradualRolloutSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoGradualRolloutSettings(gradualRolloutSettings: Partial<GradualRolloutSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { gradualRolloutSettings.backingStoreEnabled = true; },
         "durationBetweenOffers": n => { gradualRolloutSettings.durationBetweenOffers = n.getDurationValue(); },
@@ -1406,7 +1406,7 @@ export function deserializeIntoGradualRolloutSettings(gradualRolloutSettings: Gr
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoKnowledgeBaseArticle(knowledgeBaseArticle: KnowledgeBaseArticle | undefined = {} as KnowledgeBaseArticle) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoKnowledgeBaseArticle(knowledgeBaseArticle: Partial<KnowledgeBaseArticle> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(knowledgeBaseArticle),
         "url": n => { knowledgeBaseArticle.url = n.getStringValue(); },
@@ -1416,7 +1416,7 @@ export function deserializeIntoKnowledgeBaseArticle(knowledgeBaseArticle: Knowle
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoMonitoringRule(monitoringRule: MonitoringRule | undefined = {} as MonitoringRule) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoMonitoringRule(monitoringRule: Partial<MonitoringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "action": n => { monitoringRule.action = n.getEnumValue<MonitoringAction>(MonitoringActionObject); },
         "backingStoreEnabled": n => { monitoringRule.backingStoreEnabled = true; },
@@ -1429,7 +1429,7 @@ export function deserializeIntoMonitoringRule(monitoringRule: MonitoringRule | u
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoMonitoringSettings(monitoringSettings: MonitoringSettings | undefined = {} as MonitoringSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoMonitoringSettings(monitoringSettings: Partial<MonitoringSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { monitoringSettings.backingStoreEnabled = true; },
         "monitoringRules": n => { monitoringSettings.monitoringRules = n.getCollectionOfObjectValues<MonitoringRule>(createMonitoringRuleFromDiscriminatorValue); },
@@ -1440,7 +1440,7 @@ export function deserializeIntoMonitoringSettings(monitoringSettings: Monitoring
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoOperationalInsightsConnection(operationalInsightsConnection: OperationalInsightsConnection | undefined = {} as OperationalInsightsConnection) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoOperationalInsightsConnection(operationalInsightsConnection: Partial<OperationalInsightsConnection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoResourceConnection(operationalInsightsConnection),
         "azureResourceGroupName": n => { operationalInsightsConnection.azureResourceGroupName = n.getStringValue(); },
@@ -1452,7 +1452,7 @@ export function deserializeIntoOperationalInsightsConnection(operationalInsights
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoProductRevision(productRevision: ProductRevision | undefined = {} as ProductRevision) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoProductRevision(productRevision: Partial<ProductRevision> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(productRevision),
         "displayName": n => { productRevision.displayName = n.getStringValue(); },
@@ -1467,7 +1467,7 @@ export function deserializeIntoProductRevision(productRevision: ProductRevision 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoQualityUpdateCatalogEntry(qualityUpdateCatalogEntry: QualityUpdateCatalogEntry | undefined = {} as QualityUpdateCatalogEntry) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoQualityUpdateCatalogEntry(qualityUpdateCatalogEntry: Partial<QualityUpdateCatalogEntry> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSoftwareUpdateCatalogEntry(qualityUpdateCatalogEntry),
         "catalogName": n => { qualityUpdateCatalogEntry.catalogName = n.getStringValue(); },
@@ -1483,7 +1483,7 @@ export function deserializeIntoQualityUpdateCatalogEntry(qualityUpdateCatalogEnt
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoQualityUpdateCveSeverityInformation(qualityUpdateCveSeverityInformation: QualityUpdateCveSeverityInformation | undefined = {} as QualityUpdateCveSeverityInformation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoQualityUpdateCveSeverityInformation(qualityUpdateCveSeverityInformation: Partial<QualityUpdateCveSeverityInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { qualityUpdateCveSeverityInformation.backingStoreEnabled = true; },
         "exploitedCves": n => { qualityUpdateCveSeverityInformation.exploitedCves = n.getCollectionOfObjectValues<CveInformation>(createCveInformationFromDiscriminatorValue); },
@@ -1496,7 +1496,7 @@ export function deserializeIntoQualityUpdateCveSeverityInformation(qualityUpdate
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoRateDrivenRolloutSettings(rateDrivenRolloutSettings: RateDrivenRolloutSettings | undefined = {} as RateDrivenRolloutSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoRateDrivenRolloutSettings(rateDrivenRolloutSettings: Partial<RateDrivenRolloutSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoGradualRolloutSettings(rateDrivenRolloutSettings),
         "devicesPerOffer": n => { rateDrivenRolloutSettings.devicesPerOffer = n.getNumberValue(); },
@@ -1506,7 +1506,7 @@ export function deserializeIntoRateDrivenRolloutSettings(rateDrivenRolloutSettin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoResourceConnection(resourceConnection: ResourceConnection | undefined = {} as ResourceConnection) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoResourceConnection(resourceConnection: Partial<ResourceConnection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(resourceConnection),
         "state": n => { resourceConnection.state = n.getEnumValue<ResourceConnectionState>(ResourceConnectionStateObject); },
@@ -1516,7 +1516,7 @@ export function deserializeIntoResourceConnection(resourceConnection: ResourceCo
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoResourceConnectionCollectionResponse(resourceConnectionCollectionResponse: ResourceConnectionCollectionResponse | undefined = {} as ResourceConnectionCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoResourceConnectionCollectionResponse(resourceConnectionCollectionResponse: Partial<ResourceConnectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(resourceConnectionCollectionResponse),
         "value": n => { resourceConnectionCollectionResponse.value = n.getCollectionOfObjectValues<ResourceConnection>(createResourceConnectionFromDiscriminatorValue); },
@@ -1526,7 +1526,7 @@ export function deserializeIntoResourceConnectionCollectionResponse(resourceConn
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSafeguardProfile(safeguardProfile: SafeguardProfile | undefined = {} as SafeguardProfile) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSafeguardProfile(safeguardProfile: Partial<SafeguardProfile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { safeguardProfile.backingStoreEnabled = true; },
         "category": n => { safeguardProfile.category = n.getEnumValue<SafeguardCategory>(SafeguardCategoryObject); },
@@ -1537,7 +1537,7 @@ export function deserializeIntoSafeguardProfile(safeguardProfile: SafeguardProfi
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSafeguardSettings(safeguardSettings: SafeguardSettings | undefined = {} as SafeguardSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSafeguardSettings(safeguardSettings: Partial<SafeguardSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { safeguardSettings.backingStoreEnabled = true; },
         "disabledSafeguardProfiles": n => { safeguardSettings.disabledSafeguardProfiles = n.getCollectionOfObjectValues<SafeguardProfile>(createSafeguardProfileFromDiscriminatorValue); },
@@ -1548,7 +1548,7 @@ export function deserializeIntoSafeguardSettings(safeguardSettings: SafeguardSet
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoScheduleSettings(scheduleSettings: ScheduleSettings | undefined = {} as ScheduleSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoScheduleSettings(scheduleSettings: Partial<ScheduleSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { scheduleSettings.backingStoreEnabled = true; },
         "gradualRollout": n => { scheduleSettings.gradualRollout = n.getObjectValue<GradualRolloutSettings>(createGradualRolloutSettingsFromDiscriminatorValue); },
@@ -1560,7 +1560,7 @@ export function deserializeIntoScheduleSettings(scheduleSettings: ScheduleSettin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSoftwareUpdateCatalogEntry(softwareUpdateCatalogEntry: SoftwareUpdateCatalogEntry | undefined = {} as SoftwareUpdateCatalogEntry) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSoftwareUpdateCatalogEntry(softwareUpdateCatalogEntry: Partial<SoftwareUpdateCatalogEntry> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCatalogEntry(softwareUpdateCatalogEntry),
     }
@@ -1569,7 +1569,7 @@ export function deserializeIntoSoftwareUpdateCatalogEntry(softwareUpdateCatalogE
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSoftwareUpdateFilter(softwareUpdateFilter: SoftwareUpdateFilter | undefined = {} as SoftwareUpdateFilter) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSoftwareUpdateFilter(softwareUpdateFilter: Partial<SoftwareUpdateFilter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoContentFilter(softwareUpdateFilter),
     }
@@ -1578,7 +1578,7 @@ export function deserializeIntoSoftwareUpdateFilter(softwareUpdateFilter: Softwa
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdatableAsset(updatableAsset: UpdatableAsset | undefined = {} as UpdatableAsset) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdatableAsset(updatableAsset: Partial<UpdatableAsset> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(updatableAsset),
     }
@@ -1587,7 +1587,7 @@ export function deserializeIntoUpdatableAsset(updatableAsset: UpdatableAsset | u
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdatableAssetCollectionResponse(updatableAssetCollectionResponse: UpdatableAssetCollectionResponse | undefined = {} as UpdatableAssetCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdatableAssetCollectionResponse(updatableAssetCollectionResponse: Partial<UpdatableAssetCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(updatableAssetCollectionResponse),
         "value": n => { updatableAssetCollectionResponse.value = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
@@ -1597,7 +1597,7 @@ export function deserializeIntoUpdatableAssetCollectionResponse(updatableAssetCo
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdatableAssetEnrollment(updatableAssetEnrollment: UpdatableAssetEnrollment | undefined = {} as UpdatableAssetEnrollment) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdatableAssetEnrollment(updatableAssetEnrollment: Partial<UpdatableAssetEnrollment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updatableAssetEnrollment.backingStoreEnabled = true; },
         "@odata.type": n => { updatableAssetEnrollment.odataType = n.getStringValue(); },
@@ -1607,7 +1607,7 @@ export function deserializeIntoUpdatableAssetEnrollment(updatableAssetEnrollment
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdatableAssetError(updatableAssetError: UpdatableAssetError | undefined = {} as UpdatableAssetError) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdatableAssetError(updatableAssetError: Partial<UpdatableAssetError> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updatableAssetError.backingStoreEnabled = true; },
         "@odata.type": n => { updatableAssetError.odataType = n.getStringValue(); },
@@ -1617,7 +1617,7 @@ export function deserializeIntoUpdatableAssetError(updatableAssetError: Updatabl
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdatableAssetGroup(updatableAssetGroup: UpdatableAssetGroup | undefined = {} as UpdatableAssetGroup) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdatableAssetGroup(updatableAssetGroup: Partial<UpdatableAssetGroup> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoUpdatableAsset(updatableAssetGroup),
         "members": n => { updatableAssetGroup.members = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
@@ -1627,7 +1627,7 @@ export function deserializeIntoUpdatableAssetGroup(updatableAssetGroup: Updatabl
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdateManagementEnrollment(updateManagementEnrollment: UpdateManagementEnrollment | undefined = {} as UpdateManagementEnrollment) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdateManagementEnrollment(updateManagementEnrollment: Partial<UpdateManagementEnrollment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoUpdatableAssetEnrollment(updateManagementEnrollment),
         "updateCategory": n => { updateManagementEnrollment.updateCategory = n.getEnumValue<UpdateCategory>(UpdateCategoryObject); },
@@ -1637,7 +1637,7 @@ export function deserializeIntoUpdateManagementEnrollment(updateManagementEnroll
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdatePolicy(updatePolicy: UpdatePolicy | undefined = {} as UpdatePolicy) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdatePolicy(updatePolicy: Partial<UpdatePolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(updatePolicy),
         "audience": n => { updatePolicy.audience = n.getObjectValue<DeploymentAudience>(createDeploymentAudienceFromDiscriminatorValue); },
@@ -1651,7 +1651,7 @@ export function deserializeIntoUpdatePolicy(updatePolicy: UpdatePolicy | undefin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUpdatePolicyCollectionResponse(updatePolicyCollectionResponse: UpdatePolicyCollectionResponse | undefined = {} as UpdatePolicyCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUpdatePolicyCollectionResponse(updatePolicyCollectionResponse: Partial<UpdatePolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(updatePolicyCollectionResponse),
         "value": n => { updatePolicyCollectionResponse.value = n.getCollectionOfObjectValues<UpdatePolicy>(createUpdatePolicyFromDiscriminatorValue); },
@@ -1661,7 +1661,7 @@ export function deserializeIntoUpdatePolicyCollectionResponse(updatePolicyCollec
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUserExperienceSettings(userExperienceSettings: UserExperienceSettings | undefined = {} as UserExperienceSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUserExperienceSettings(userExperienceSettings: Partial<UserExperienceSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { userExperienceSettings.backingStoreEnabled = true; },
         "daysUntilForcedReboot": n => { userExperienceSettings.daysUntilForcedReboot = n.getNumberValue(); },
@@ -1673,7 +1673,7 @@ export function deserializeIntoUserExperienceSettings(userExperienceSettings: Us
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoWindowsUpdateFilter(windowsUpdateFilter: WindowsUpdateFilter | undefined = {} as WindowsUpdateFilter) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoWindowsUpdateFilter(windowsUpdateFilter: Partial<WindowsUpdateFilter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSoftwareUpdateFilter(windowsUpdateFilter),
     }
@@ -1999,7 +1999,7 @@ export interface ScheduleSettings extends AdditionalDataHolder, BackedModel, Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeApplicableContent(writer: SerializationWriter, applicableContent: ApplicableContent | undefined = {} as ApplicableContent) : void {
+export function serializeApplicableContent(writer: SerializationWriter, applicableContent: Partial<ApplicableContent> | undefined = {}) : void {
     writer.writeObjectValue<CatalogEntry>("catalogEntry", applicableContent.catalogEntry, serializeCatalogEntry);
     writer.writeCollectionOfObjectValues<ApplicableContentDeviceMatch>("matchedDevices", applicableContent.matchedDevices, serializeApplicableContentDeviceMatch);
     writer.writeStringValue("@odata.type", applicableContent.odataType);
@@ -2009,7 +2009,7 @@ export function serializeApplicableContent(writer: SerializationWriter, applicab
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeApplicableContentDeviceMatch(writer: SerializationWriter, applicableContentDeviceMatch: ApplicableContentDeviceMatch | undefined = {} as ApplicableContentDeviceMatch) : void {
+export function serializeApplicableContentDeviceMatch(writer: SerializationWriter, applicableContentDeviceMatch: Partial<ApplicableContentDeviceMatch> | undefined = {}) : void {
     writer.writeStringValue("deviceId", applicableContentDeviceMatch.deviceId);
     writer.writeStringValue("@odata.type", applicableContentDeviceMatch.odataType);
     writer.writeCollectionOfPrimitiveValues<string>("recommendedBy", applicableContentDeviceMatch.recommendedBy);
@@ -2019,7 +2019,7 @@ export function serializeApplicableContentDeviceMatch(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAzureADDevice(writer: SerializationWriter, azureADDevice: AzureADDevice | undefined = {} as AzureADDevice) : void {
+export function serializeAzureADDevice(writer: SerializationWriter, azureADDevice: Partial<AzureADDevice> | undefined = {}) : void {
     serializeUpdatableAsset(writer, azureADDevice)
     writer.writeCollectionOfObjectValues<UpdatableAssetEnrollment>("enrollments", azureADDevice.enrollments, serializeUpdatableAssetEnrollment);
     writer.writeCollectionOfObjectValues<UpdatableAssetError>("errors", azureADDevice.errors, serializeUpdatableAssetError);
@@ -2028,7 +2028,7 @@ export function serializeAzureADDevice(writer: SerializationWriter, azureADDevic
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAzureADDeviceRegistrationError(writer: SerializationWriter, azureADDeviceRegistrationError: AzureADDeviceRegistrationError | undefined = {} as AzureADDeviceRegistrationError) : void {
+export function serializeAzureADDeviceRegistrationError(writer: SerializationWriter, azureADDeviceRegistrationError: Partial<AzureADDeviceRegistrationError> | undefined = {}) : void {
     serializeUpdatableAssetError(writer, azureADDeviceRegistrationError)
     writer.writeEnumValue<AzureADDeviceRegistrationErrorReason>("reason", azureADDeviceRegistrationError.reason);
 }
@@ -2036,7 +2036,7 @@ export function serializeAzureADDeviceRegistrationError(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBuildVersionDetails(writer: SerializationWriter, buildVersionDetails: BuildVersionDetails | undefined = {} as BuildVersionDetails) : void {
+export function serializeBuildVersionDetails(writer: SerializationWriter, buildVersionDetails: Partial<BuildVersionDetails> | undefined = {}) : void {
     writer.writeNumberValue("buildNumber", buildVersionDetails.buildNumber);
     writer.writeNumberValue("majorVersion", buildVersionDetails.majorVersion);
     writer.writeNumberValue("minorVersion", buildVersionDetails.minorVersion);
@@ -2048,7 +2048,7 @@ export function serializeBuildVersionDetails(writer: SerializationWriter, buildV
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCatalog(writer: SerializationWriter, catalog: Catalog | undefined = {} as Catalog) : void {
+export function serializeCatalog(writer: SerializationWriter, catalog: Partial<Catalog> | undefined = {}) : void {
     serializeEntity(writer, catalog)
     writer.writeCollectionOfObjectValues<CatalogEntry>("entries", catalog.entries, serializeCatalogEntry);
 }
@@ -2056,7 +2056,7 @@ export function serializeCatalog(writer: SerializationWriter, catalog: Catalog |
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCatalogContent(writer: SerializationWriter, catalogContent: CatalogContent | undefined = {} as CatalogContent) : void {
+export function serializeCatalogContent(writer: SerializationWriter, catalogContent: Partial<CatalogContent> | undefined = {}) : void {
     serializeDeployableContent(writer, catalogContent)
     writer.writeObjectValue<CatalogEntry>("catalogEntry", catalogContent.catalogEntry, serializeCatalogEntry);
 }
@@ -2064,7 +2064,7 @@ export function serializeCatalogContent(writer: SerializationWriter, catalogCont
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCatalogEntry(writer: SerializationWriter, catalogEntry: CatalogEntry | undefined = {} as CatalogEntry) : void {
+export function serializeCatalogEntry(writer: SerializationWriter, catalogEntry: Partial<CatalogEntry> | undefined = {}) : void {
     serializeEntity(writer, catalogEntry)
     writer.writeDateValue("deployableUntilDateTime", catalogEntry.deployableUntilDateTime);
     writer.writeStringValue("displayName", catalogEntry.displayName);
@@ -2074,7 +2074,7 @@ export function serializeCatalogEntry(writer: SerializationWriter, catalogEntry:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCatalogEntryCollectionResponse(writer: SerializationWriter, catalogEntryCollectionResponse: CatalogEntryCollectionResponse | undefined = {} as CatalogEntryCollectionResponse) : void {
+export function serializeCatalogEntryCollectionResponse(writer: SerializationWriter, catalogEntryCollectionResponse: Partial<CatalogEntryCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, catalogEntryCollectionResponse)
     writer.writeCollectionOfObjectValues<CatalogEntry>("value", catalogEntryCollectionResponse.value, serializeCatalogEntry);
 }
@@ -2082,7 +2082,7 @@ export function serializeCatalogEntryCollectionResponse(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeComplianceChange(writer: SerializationWriter, complianceChange: ComplianceChange | undefined = {} as ComplianceChange) : void {
+export function serializeComplianceChange(writer: SerializationWriter, complianceChange: Partial<ComplianceChange> | undefined = {}) : void {
     serializeEntity(writer, complianceChange)
     writer.writeDateValue("createdDateTime", complianceChange.createdDateTime);
     writer.writeBooleanValue("isRevoked", complianceChange.isRevoked);
@@ -2093,7 +2093,7 @@ export function serializeComplianceChange(writer: SerializationWriter, complianc
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeComplianceChangeCollectionResponse(writer: SerializationWriter, complianceChangeCollectionResponse: ComplianceChangeCollectionResponse | undefined = {} as ComplianceChangeCollectionResponse) : void {
+export function serializeComplianceChangeCollectionResponse(writer: SerializationWriter, complianceChangeCollectionResponse: Partial<ComplianceChangeCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, complianceChangeCollectionResponse)
     writer.writeCollectionOfObjectValues<ComplianceChange>("value", complianceChangeCollectionResponse.value, serializeComplianceChange);
 }
@@ -2101,7 +2101,7 @@ export function serializeComplianceChangeCollectionResponse(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeComplianceChangeRule(writer: SerializationWriter, complianceChangeRule: ComplianceChangeRule | undefined = {} as ComplianceChangeRule) : void {
+export function serializeComplianceChangeRule(writer: SerializationWriter, complianceChangeRule: Partial<ComplianceChangeRule> | undefined = {}) : void {
     writer.writeDateValue("createdDateTime", complianceChangeRule.createdDateTime);
     writer.writeDateValue("lastEvaluatedDateTime", complianceChangeRule.lastEvaluatedDateTime);
     writer.writeDateValue("lastModifiedDateTime", complianceChangeRule.lastModifiedDateTime);
@@ -2112,7 +2112,7 @@ export function serializeComplianceChangeRule(writer: SerializationWriter, compl
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeContentApplicabilitySettings(writer: SerializationWriter, contentApplicabilitySettings: ContentApplicabilitySettings | undefined = {} as ContentApplicabilitySettings) : void {
+export function serializeContentApplicabilitySettings(writer: SerializationWriter, contentApplicabilitySettings: Partial<ContentApplicabilitySettings> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", contentApplicabilitySettings.odataType);
     writer.writeCollectionOfPrimitiveValues<string>("offerWhileRecommendedBy", contentApplicabilitySettings.offerWhileRecommendedBy);
     writer.writeObjectValue<SafeguardSettings>("safeguard", contentApplicabilitySettings.safeguard, serializeSafeguardSettings);
@@ -2122,7 +2122,7 @@ export function serializeContentApplicabilitySettings(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeContentApproval(writer: SerializationWriter, contentApproval: ContentApproval | undefined = {} as ContentApproval) : void {
+export function serializeContentApproval(writer: SerializationWriter, contentApproval: Partial<ContentApproval> | undefined = {}) : void {
     serializeComplianceChange(writer, contentApproval)
     writer.writeObjectValue<DeployableContent>("content", contentApproval.content, serializeDeployableContent);
     writer.writeCollectionOfObjectValues<Deployment>("deployments", contentApproval.deployments, serializeDeployment);
@@ -2132,7 +2132,7 @@ export function serializeContentApproval(writer: SerializationWriter, contentApp
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeContentApprovalRule(writer: SerializationWriter, contentApprovalRule: ContentApprovalRule | undefined = {} as ContentApprovalRule) : void {
+export function serializeContentApprovalRule(writer: SerializationWriter, contentApprovalRule: Partial<ContentApprovalRule> | undefined = {}) : void {
     serializeComplianceChangeRule(writer, contentApprovalRule)
     writer.writeObjectValue<ContentFilter>("contentFilter", contentApprovalRule.contentFilter, serializeContentFilter);
     writer.writeDurationValue("durationBeforeDeploymentStart", contentApprovalRule.durationBeforeDeploymentStart);
@@ -2141,7 +2141,7 @@ export function serializeContentApprovalRule(writer: SerializationWriter, conten
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeContentFilter(writer: SerializationWriter, contentFilter: ContentFilter | undefined = {} as ContentFilter) : void {
+export function serializeContentFilter(writer: SerializationWriter, contentFilter: Partial<ContentFilter> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", contentFilter.odataType);
     writer.writeAdditionalData(contentFilter.additionalData);
 }
@@ -2149,7 +2149,7 @@ export function serializeContentFilter(writer: SerializationWriter, contentFilte
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCveInformation(writer: SerializationWriter, cveInformation: CveInformation | undefined = {} as CveInformation) : void {
+export function serializeCveInformation(writer: SerializationWriter, cveInformation: Partial<CveInformation> | undefined = {}) : void {
     writer.writeStringValue("number", cveInformation.number);
     writer.writeStringValue("@odata.type", cveInformation.odataType);
     writer.writeStringValue("url", cveInformation.url);
@@ -2159,7 +2159,7 @@ export function serializeCveInformation(writer: SerializationWriter, cveInformat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDateDrivenRolloutSettings(writer: SerializationWriter, dateDrivenRolloutSettings: DateDrivenRolloutSettings | undefined = {} as DateDrivenRolloutSettings) : void {
+export function serializeDateDrivenRolloutSettings(writer: SerializationWriter, dateDrivenRolloutSettings: Partial<DateDrivenRolloutSettings> | undefined = {}) : void {
     serializeGradualRolloutSettings(writer, dateDrivenRolloutSettings)
     writer.writeDateValue("endDateTime", dateDrivenRolloutSettings.endDateTime);
 }
@@ -2167,7 +2167,7 @@ export function serializeDateDrivenRolloutSettings(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeployableContent(writer: SerializationWriter, deployableContent: DeployableContent | undefined = {} as DeployableContent) : void {
+export function serializeDeployableContent(writer: SerializationWriter, deployableContent: Partial<DeployableContent> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", deployableContent.odataType);
     writer.writeAdditionalData(deployableContent.additionalData);
 }
@@ -2175,7 +2175,7 @@ export function serializeDeployableContent(writer: SerializationWriter, deployab
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeployment(writer: SerializationWriter, deployment: Deployment | undefined = {} as Deployment) : void {
+export function serializeDeployment(writer: SerializationWriter, deployment: Partial<Deployment> | undefined = {}) : void {
     serializeEntity(writer, deployment)
     writer.writeObjectValue<DeploymentAudience>("audience", deployment.audience, serializeDeploymentAudience);
     writer.writeObjectValue<DeployableContent>("content", deployment.content, serializeDeployableContent);
@@ -2188,7 +2188,7 @@ export function serializeDeployment(writer: SerializationWriter, deployment: Dep
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeploymentAudience(writer: SerializationWriter, deploymentAudience: DeploymentAudience | undefined = {} as DeploymentAudience) : void {
+export function serializeDeploymentAudience(writer: SerializationWriter, deploymentAudience: Partial<DeploymentAudience> | undefined = {}) : void {
     serializeEntity(writer, deploymentAudience)
     writer.writeCollectionOfObjectValues<ApplicableContent>("applicableContent", deploymentAudience.applicableContent, serializeApplicableContent);
     writer.writeCollectionOfObjectValues<UpdatableAsset>("exclusions", deploymentAudience.exclusions, serializeUpdatableAsset);
@@ -2198,7 +2198,7 @@ export function serializeDeploymentAudience(writer: SerializationWriter, deploym
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeploymentAudienceCollectionResponse(writer: SerializationWriter, deploymentAudienceCollectionResponse: DeploymentAudienceCollectionResponse | undefined = {} as DeploymentAudienceCollectionResponse) : void {
+export function serializeDeploymentAudienceCollectionResponse(writer: SerializationWriter, deploymentAudienceCollectionResponse: Partial<DeploymentAudienceCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, deploymentAudienceCollectionResponse)
     writer.writeCollectionOfObjectValues<DeploymentAudience>("value", deploymentAudienceCollectionResponse.value, serializeDeploymentAudience);
 }
@@ -2206,7 +2206,7 @@ export function serializeDeploymentAudienceCollectionResponse(writer: Serializat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeploymentCollectionResponse(writer: SerializationWriter, deploymentCollectionResponse: DeploymentCollectionResponse | undefined = {} as DeploymentCollectionResponse) : void {
+export function serializeDeploymentCollectionResponse(writer: SerializationWriter, deploymentCollectionResponse: Partial<DeploymentCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, deploymentCollectionResponse)
     writer.writeCollectionOfObjectValues<Deployment>("value", deploymentCollectionResponse.value, serializeDeployment);
 }
@@ -2214,7 +2214,7 @@ export function serializeDeploymentCollectionResponse(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeploymentSettings(writer: SerializationWriter, deploymentSettings: DeploymentSettings | undefined = {} as DeploymentSettings) : void {
+export function serializeDeploymentSettings(writer: SerializationWriter, deploymentSettings: Partial<DeploymentSettings> | undefined = {}) : void {
     writer.writeObjectValue<ContentApplicabilitySettings>("contentApplicability", deploymentSettings.contentApplicability, serializeContentApplicabilitySettings);
     writer.writeObjectValue<ExpediteSettings>("expedite", deploymentSettings.expedite, serializeExpediteSettings);
     writer.writeObjectValue<MonitoringSettings>("monitoring", deploymentSettings.monitoring, serializeMonitoringSettings);
@@ -2227,7 +2227,7 @@ export function serializeDeploymentSettings(writer: SerializationWriter, deploym
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeploymentState(writer: SerializationWriter, deploymentState: DeploymentState | undefined = {} as DeploymentState) : void {
+export function serializeDeploymentState(writer: SerializationWriter, deploymentState: Partial<DeploymentState> | undefined = {}) : void {
     writer.writeEnumValue<DeploymentStateValue>("effectiveValue", deploymentState.effectiveValue);
     writer.writeStringValue("@odata.type", deploymentState.odataType);
     writer.writeCollectionOfObjectValues<DeploymentStateReason>("reasons", deploymentState.reasons, serializeDeploymentStateReason);
@@ -2238,7 +2238,7 @@ export function serializeDeploymentState(writer: SerializationWriter, deployment
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeploymentStateReason(writer: SerializationWriter, deploymentStateReason: DeploymentStateReason | undefined = {} as DeploymentStateReason) : void {
+export function serializeDeploymentStateReason(writer: SerializationWriter, deploymentStateReason: Partial<DeploymentStateReason> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", deploymentStateReason.odataType);
     writer.writeEnumValue<DeploymentStateReasonValue>("value", deploymentStateReason.value);
     writer.writeAdditionalData(deploymentStateReason.additionalData);
@@ -2247,7 +2247,7 @@ export function serializeDeploymentStateReason(writer: SerializationWriter, depl
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDriverUpdateCatalogEntry(writer: SerializationWriter, driverUpdateCatalogEntry: DriverUpdateCatalogEntry | undefined = {} as DriverUpdateCatalogEntry) : void {
+export function serializeDriverUpdateCatalogEntry(writer: SerializationWriter, driverUpdateCatalogEntry: Partial<DriverUpdateCatalogEntry> | undefined = {}) : void {
     serializeSoftwareUpdateCatalogEntry(writer, driverUpdateCatalogEntry)
     writer.writeStringValue("description", driverUpdateCatalogEntry.description);
     writer.writeStringValue("driverClass", driverUpdateCatalogEntry.driverClass);
@@ -2261,14 +2261,14 @@ export function serializeDriverUpdateCatalogEntry(writer: SerializationWriter, d
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDriverUpdateFilter(writer: SerializationWriter, driverUpdateFilter: DriverUpdateFilter | undefined = {} as DriverUpdateFilter) : void {
+export function serializeDriverUpdateFilter(writer: SerializationWriter, driverUpdateFilter: Partial<DriverUpdateFilter> | undefined = {}) : void {
     serializeWindowsUpdateFilter(writer, driverUpdateFilter)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDurationDrivenRolloutSettings(writer: SerializationWriter, durationDrivenRolloutSettings: DurationDrivenRolloutSettings | undefined = {} as DurationDrivenRolloutSettings) : void {
+export function serializeDurationDrivenRolloutSettings(writer: SerializationWriter, durationDrivenRolloutSettings: Partial<DurationDrivenRolloutSettings> | undefined = {}) : void {
     serializeGradualRolloutSettings(writer, durationDrivenRolloutSettings)
     writer.writeDurationValue("durationUntilDeploymentEnd", durationDrivenRolloutSettings.durationUntilDeploymentEnd);
 }
@@ -2276,7 +2276,7 @@ export function serializeDurationDrivenRolloutSettings(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExpediteSettings(writer: SerializationWriter, expediteSettings: ExpediteSettings | undefined = {} as ExpediteSettings) : void {
+export function serializeExpediteSettings(writer: SerializationWriter, expediteSettings: Partial<ExpediteSettings> | undefined = {}) : void {
     writer.writeBooleanValue("isExpedited", expediteSettings.isExpedited);
     writer.writeBooleanValue("isReadinessTest", expediteSettings.isReadinessTest);
     writer.writeStringValue("@odata.type", expediteSettings.odataType);
@@ -2286,7 +2286,7 @@ export function serializeExpediteSettings(writer: SerializationWriter, expediteS
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFeatureUpdateCatalogEntry(writer: SerializationWriter, featureUpdateCatalogEntry: FeatureUpdateCatalogEntry | undefined = {} as FeatureUpdateCatalogEntry) : void {
+export function serializeFeatureUpdateCatalogEntry(writer: SerializationWriter, featureUpdateCatalogEntry: Partial<FeatureUpdateCatalogEntry> | undefined = {}) : void {
     serializeSoftwareUpdateCatalogEntry(writer, featureUpdateCatalogEntry)
     writer.writeStringValue("buildNumber", featureUpdateCatalogEntry.buildNumber);
     writer.writeStringValue("version", featureUpdateCatalogEntry.version);
@@ -2295,7 +2295,7 @@ export function serializeFeatureUpdateCatalogEntry(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGradualRolloutSettings(writer: SerializationWriter, gradualRolloutSettings: GradualRolloutSettings | undefined = {} as GradualRolloutSettings) : void {
+export function serializeGradualRolloutSettings(writer: SerializationWriter, gradualRolloutSettings: Partial<GradualRolloutSettings> | undefined = {}) : void {
     writer.writeDurationValue("durationBetweenOffers", gradualRolloutSettings.durationBetweenOffers);
     writer.writeStringValue("@odata.type", gradualRolloutSettings.odataType);
     writer.writeAdditionalData(gradualRolloutSettings.additionalData);
@@ -2304,7 +2304,7 @@ export function serializeGradualRolloutSettings(writer: SerializationWriter, gra
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeKnowledgeBaseArticle(writer: SerializationWriter, knowledgeBaseArticle: KnowledgeBaseArticle | undefined = {} as KnowledgeBaseArticle) : void {
+export function serializeKnowledgeBaseArticle(writer: SerializationWriter, knowledgeBaseArticle: Partial<KnowledgeBaseArticle> | undefined = {}) : void {
     serializeEntity(writer, knowledgeBaseArticle)
     writer.writeStringValue("url", knowledgeBaseArticle.url);
 }
@@ -2312,7 +2312,7 @@ export function serializeKnowledgeBaseArticle(writer: SerializationWriter, knowl
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMonitoringRule(writer: SerializationWriter, monitoringRule: MonitoringRule | undefined = {} as MonitoringRule) : void {
+export function serializeMonitoringRule(writer: SerializationWriter, monitoringRule: Partial<MonitoringRule> | undefined = {}) : void {
     writer.writeEnumValue<MonitoringAction>("action", monitoringRule.action);
     writer.writeStringValue("@odata.type", monitoringRule.odataType);
     writer.writeEnumValue<MonitoringSignal>("signal", monitoringRule.signal);
@@ -2323,7 +2323,7 @@ export function serializeMonitoringRule(writer: SerializationWriter, monitoringR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMonitoringSettings(writer: SerializationWriter, monitoringSettings: MonitoringSettings | undefined = {} as MonitoringSettings) : void {
+export function serializeMonitoringSettings(writer: SerializationWriter, monitoringSettings: Partial<MonitoringSettings> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<MonitoringRule>("monitoringRules", monitoringSettings.monitoringRules, serializeMonitoringRule);
     writer.writeStringValue("@odata.type", monitoringSettings.odataType);
     writer.writeAdditionalData(monitoringSettings.additionalData);
@@ -2332,7 +2332,7 @@ export function serializeMonitoringSettings(writer: SerializationWriter, monitor
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeOperationalInsightsConnection(writer: SerializationWriter, operationalInsightsConnection: OperationalInsightsConnection | undefined = {} as OperationalInsightsConnection) : void {
+export function serializeOperationalInsightsConnection(writer: SerializationWriter, operationalInsightsConnection: Partial<OperationalInsightsConnection> | undefined = {}) : void {
     serializeResourceConnection(writer, operationalInsightsConnection)
     writer.writeStringValue("azureResourceGroupName", operationalInsightsConnection.azureResourceGroupName);
     writer.writeStringValue("azureSubscriptionId", operationalInsightsConnection.azureSubscriptionId);
@@ -2342,7 +2342,7 @@ export function serializeOperationalInsightsConnection(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeProductRevision(writer: SerializationWriter, productRevision: ProductRevision | undefined = {} as ProductRevision) : void {
+export function serializeProductRevision(writer: SerializationWriter, productRevision: Partial<ProductRevision> | undefined = {}) : void {
     serializeEntity(writer, productRevision)
     writer.writeStringValue("displayName", productRevision.displayName);
     writer.writeObjectValue<KnowledgeBaseArticle>("knowledgeBaseArticle", productRevision.knowledgeBaseArticle, serializeKnowledgeBaseArticle);
@@ -2355,7 +2355,7 @@ export function serializeProductRevision(writer: SerializationWriter, productRev
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeQualityUpdateCatalogEntry(writer: SerializationWriter, qualityUpdateCatalogEntry: QualityUpdateCatalogEntry | undefined = {} as QualityUpdateCatalogEntry) : void {
+export function serializeQualityUpdateCatalogEntry(writer: SerializationWriter, qualityUpdateCatalogEntry: Partial<QualityUpdateCatalogEntry> | undefined = {}) : void {
     serializeSoftwareUpdateCatalogEntry(writer, qualityUpdateCatalogEntry)
     writer.writeStringValue("catalogName", qualityUpdateCatalogEntry.catalogName);
     writer.writeObjectValue<QualityUpdateCveSeverityInformation>("cveSeverityInformation", qualityUpdateCatalogEntry.cveSeverityInformation, serializeQualityUpdateCveSeverityInformation);
@@ -2369,7 +2369,7 @@ export function serializeQualityUpdateCatalogEntry(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeQualityUpdateCveSeverityInformation(writer: SerializationWriter, qualityUpdateCveSeverityInformation: QualityUpdateCveSeverityInformation | undefined = {} as QualityUpdateCveSeverityInformation) : void {
+export function serializeQualityUpdateCveSeverityInformation(writer: SerializationWriter, qualityUpdateCveSeverityInformation: Partial<QualityUpdateCveSeverityInformation> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<CveInformation>("exploitedCves", qualityUpdateCveSeverityInformation.exploitedCves, serializeCveInformation);
     writer.writeNumberValue("maxBaseScore", qualityUpdateCveSeverityInformation.maxBaseScore);
     writer.writeEnumValue<CveSeverityLevel>("maxSeverity", qualityUpdateCveSeverityInformation.maxSeverity);
@@ -2380,7 +2380,7 @@ export function serializeQualityUpdateCveSeverityInformation(writer: Serializati
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRateDrivenRolloutSettings(writer: SerializationWriter, rateDrivenRolloutSettings: RateDrivenRolloutSettings | undefined = {} as RateDrivenRolloutSettings) : void {
+export function serializeRateDrivenRolloutSettings(writer: SerializationWriter, rateDrivenRolloutSettings: Partial<RateDrivenRolloutSettings> | undefined = {}) : void {
     serializeGradualRolloutSettings(writer, rateDrivenRolloutSettings)
     writer.writeNumberValue("devicesPerOffer", rateDrivenRolloutSettings.devicesPerOffer);
 }
@@ -2388,7 +2388,7 @@ export function serializeRateDrivenRolloutSettings(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeResourceConnection(writer: SerializationWriter, resourceConnection: ResourceConnection | undefined = {} as ResourceConnection) : void {
+export function serializeResourceConnection(writer: SerializationWriter, resourceConnection: Partial<ResourceConnection> | undefined = {}) : void {
     serializeEntity(writer, resourceConnection)
     writer.writeEnumValue<ResourceConnectionState>("state", resourceConnection.state);
 }
@@ -2396,7 +2396,7 @@ export function serializeResourceConnection(writer: SerializationWriter, resourc
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeResourceConnectionCollectionResponse(writer: SerializationWriter, resourceConnectionCollectionResponse: ResourceConnectionCollectionResponse | undefined = {} as ResourceConnectionCollectionResponse) : void {
+export function serializeResourceConnectionCollectionResponse(writer: SerializationWriter, resourceConnectionCollectionResponse: Partial<ResourceConnectionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, resourceConnectionCollectionResponse)
     writer.writeCollectionOfObjectValues<ResourceConnection>("value", resourceConnectionCollectionResponse.value, serializeResourceConnection);
 }
@@ -2404,7 +2404,7 @@ export function serializeResourceConnectionCollectionResponse(writer: Serializat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSafeguardProfile(writer: SerializationWriter, safeguardProfile: SafeguardProfile | undefined = {} as SafeguardProfile) : void {
+export function serializeSafeguardProfile(writer: SerializationWriter, safeguardProfile: Partial<SafeguardProfile> | undefined = {}) : void {
     writer.writeEnumValue<SafeguardCategory>("category", safeguardProfile.category);
     writer.writeStringValue("@odata.type", safeguardProfile.odataType);
     writer.writeAdditionalData(safeguardProfile.additionalData);
@@ -2413,7 +2413,7 @@ export function serializeSafeguardProfile(writer: SerializationWriter, safeguard
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSafeguardSettings(writer: SerializationWriter, safeguardSettings: SafeguardSettings | undefined = {} as SafeguardSettings) : void {
+export function serializeSafeguardSettings(writer: SerializationWriter, safeguardSettings: Partial<SafeguardSettings> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<SafeguardProfile>("disabledSafeguardProfiles", safeguardSettings.disabledSafeguardProfiles, serializeSafeguardProfile);
     writer.writeStringValue("@odata.type", safeguardSettings.odataType);
     writer.writeAdditionalData(safeguardSettings.additionalData);
@@ -2422,7 +2422,7 @@ export function serializeSafeguardSettings(writer: SerializationWriter, safeguar
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeScheduleSettings(writer: SerializationWriter, scheduleSettings: ScheduleSettings | undefined = {} as ScheduleSettings) : void {
+export function serializeScheduleSettings(writer: SerializationWriter, scheduleSettings: Partial<ScheduleSettings> | undefined = {}) : void {
     writer.writeObjectValue<GradualRolloutSettings>("gradualRollout", scheduleSettings.gradualRollout, serializeGradualRolloutSettings);
     writer.writeStringValue("@odata.type", scheduleSettings.odataType);
     writer.writeDateValue("startDateTime", scheduleSettings.startDateTime);
@@ -2432,28 +2432,28 @@ export function serializeScheduleSettings(writer: SerializationWriter, scheduleS
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSoftwareUpdateCatalogEntry(writer: SerializationWriter, softwareUpdateCatalogEntry: SoftwareUpdateCatalogEntry | undefined = {} as SoftwareUpdateCatalogEntry) : void {
+export function serializeSoftwareUpdateCatalogEntry(writer: SerializationWriter, softwareUpdateCatalogEntry: Partial<SoftwareUpdateCatalogEntry> | undefined = {}) : void {
     serializeCatalogEntry(writer, softwareUpdateCatalogEntry)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSoftwareUpdateFilter(writer: SerializationWriter, softwareUpdateFilter: SoftwareUpdateFilter | undefined = {} as SoftwareUpdateFilter) : void {
+export function serializeSoftwareUpdateFilter(writer: SerializationWriter, softwareUpdateFilter: Partial<SoftwareUpdateFilter> | undefined = {}) : void {
     serializeContentFilter(writer, softwareUpdateFilter)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatableAsset(writer: SerializationWriter, updatableAsset: UpdatableAsset | undefined = {} as UpdatableAsset) : void {
+export function serializeUpdatableAsset(writer: SerializationWriter, updatableAsset: Partial<UpdatableAsset> | undefined = {}) : void {
     serializeEntity(writer, updatableAsset)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatableAssetCollectionResponse(writer: SerializationWriter, updatableAssetCollectionResponse: UpdatableAssetCollectionResponse | undefined = {} as UpdatableAssetCollectionResponse) : void {
+export function serializeUpdatableAssetCollectionResponse(writer: SerializationWriter, updatableAssetCollectionResponse: Partial<UpdatableAssetCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, updatableAssetCollectionResponse)
     writer.writeCollectionOfObjectValues<UpdatableAsset>("value", updatableAssetCollectionResponse.value, serializeUpdatableAsset);
 }
@@ -2461,7 +2461,7 @@ export function serializeUpdatableAssetCollectionResponse(writer: SerializationW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatableAssetEnrollment(writer: SerializationWriter, updatableAssetEnrollment: UpdatableAssetEnrollment | undefined = {} as UpdatableAssetEnrollment) : void {
+export function serializeUpdatableAssetEnrollment(writer: SerializationWriter, updatableAssetEnrollment: Partial<UpdatableAssetEnrollment> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", updatableAssetEnrollment.odataType);
     writer.writeAdditionalData(updatableAssetEnrollment.additionalData);
 }
@@ -2469,7 +2469,7 @@ export function serializeUpdatableAssetEnrollment(writer: SerializationWriter, u
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatableAssetError(writer: SerializationWriter, updatableAssetError: UpdatableAssetError | undefined = {} as UpdatableAssetError) : void {
+export function serializeUpdatableAssetError(writer: SerializationWriter, updatableAssetError: Partial<UpdatableAssetError> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", updatableAssetError.odataType);
     writer.writeAdditionalData(updatableAssetError.additionalData);
 }
@@ -2477,7 +2477,7 @@ export function serializeUpdatableAssetError(writer: SerializationWriter, updata
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatableAssetGroup(writer: SerializationWriter, updatableAssetGroup: UpdatableAssetGroup | undefined = {} as UpdatableAssetGroup) : void {
+export function serializeUpdatableAssetGroup(writer: SerializationWriter, updatableAssetGroup: Partial<UpdatableAssetGroup> | undefined = {}) : void {
     serializeUpdatableAsset(writer, updatableAssetGroup)
     writer.writeCollectionOfObjectValues<UpdatableAsset>("members", updatableAssetGroup.members, serializeUpdatableAsset);
 }
@@ -2485,7 +2485,7 @@ export function serializeUpdatableAssetGroup(writer: SerializationWriter, updata
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateManagementEnrollment(writer: SerializationWriter, updateManagementEnrollment: UpdateManagementEnrollment | undefined = {} as UpdateManagementEnrollment) : void {
+export function serializeUpdateManagementEnrollment(writer: SerializationWriter, updateManagementEnrollment: Partial<UpdateManagementEnrollment> | undefined = {}) : void {
     serializeUpdatableAssetEnrollment(writer, updateManagementEnrollment)
     writer.writeEnumValue<UpdateCategory>("updateCategory", updateManagementEnrollment.updateCategory);
 }
@@ -2493,7 +2493,7 @@ export function serializeUpdateManagementEnrollment(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatePolicy(writer: SerializationWriter, updatePolicy: UpdatePolicy | undefined = {} as UpdatePolicy) : void {
+export function serializeUpdatePolicy(writer: SerializationWriter, updatePolicy: Partial<UpdatePolicy> | undefined = {}) : void {
     serializeEntity(writer, updatePolicy)
     writer.writeObjectValue<DeploymentAudience>("audience", updatePolicy.audience, serializeDeploymentAudience);
     writer.writeCollectionOfObjectValues<ComplianceChangeRule>("complianceChangeRules", updatePolicy.complianceChangeRules, serializeComplianceChangeRule);
@@ -2505,7 +2505,7 @@ export function serializeUpdatePolicy(writer: SerializationWriter, updatePolicy:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatePolicyCollectionResponse(writer: SerializationWriter, updatePolicyCollectionResponse: UpdatePolicyCollectionResponse | undefined = {} as UpdatePolicyCollectionResponse) : void {
+export function serializeUpdatePolicyCollectionResponse(writer: SerializationWriter, updatePolicyCollectionResponse: Partial<UpdatePolicyCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, updatePolicyCollectionResponse)
     writer.writeCollectionOfObjectValues<UpdatePolicy>("value", updatePolicyCollectionResponse.value, serializeUpdatePolicy);
 }
@@ -2513,7 +2513,7 @@ export function serializeUpdatePolicyCollectionResponse(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUserExperienceSettings(writer: SerializationWriter, userExperienceSettings: UserExperienceSettings | undefined = {} as UserExperienceSettings) : void {
+export function serializeUserExperienceSettings(writer: SerializationWriter, userExperienceSettings: Partial<UserExperienceSettings> | undefined = {}) : void {
     writer.writeNumberValue("daysUntilForcedReboot", userExperienceSettings.daysUntilForcedReboot);
     writer.writeStringValue("@odata.type", userExperienceSettings.odataType);
     writer.writeBooleanValue("offerAsOptional", userExperienceSettings.offerAsOptional);
@@ -2523,7 +2523,7 @@ export function serializeUserExperienceSettings(writer: SerializationWriter, use
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWindowsUpdateFilter(writer: SerializationWriter, windowsUpdateFilter: WindowsUpdateFilter | undefined = {} as WindowsUpdateFilter) : void {
+export function serializeWindowsUpdateFilter(writer: SerializationWriter, windowsUpdateFilter: Partial<WindowsUpdateFilter> | undefined = {}) : void {
     serializeSoftwareUpdateFilter(writer, windowsUpdateFilter)
 }
 export interface SoftwareUpdateCatalogEntry extends CatalogEntry, Parsable {

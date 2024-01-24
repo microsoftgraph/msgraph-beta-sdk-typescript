@@ -452,7 +452,7 @@ export function createYearTimePeriodDefinitionFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAggregatedInboundStatistics(aggregatedInboundStatistics: AggregatedInboundStatistics | undefined = {} as AggregatedInboundStatistics) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAggregatedInboundStatistics(aggregatedInboundStatistics: Partial<AggregatedInboundStatistics> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { aggregatedInboundStatistics.backingStoreEnabled = true; },
         "errors": n => { aggregatedInboundStatistics.errors = n.getNumberValue(); },
@@ -470,7 +470,7 @@ export function deserializeIntoAggregatedInboundStatistics(aggregatedInboundStat
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAzureDataLakeConnector(azureDataLakeConnector: AzureDataLakeConnector | undefined = {} as AzureDataLakeConnector) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAzureDataLakeConnector(azureDataLakeConnector: Partial<AzureDataLakeConnector> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoFileDataConnector(azureDataLakeConnector),
     }
@@ -479,7 +479,7 @@ export function deserializeIntoAzureDataLakeConnector(azureDataLakeConnector: Az
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoFileDataConnector(fileDataConnector: FileDataConnector | undefined = {} as FileDataConnector) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoFileDataConnector(fileDataConnector: Partial<FileDataConnector> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoIndustryDataConnector(fileDataConnector),
     }
@@ -488,7 +488,7 @@ export function deserializeIntoFileDataConnector(fileDataConnector: FileDataConn
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoFileValidateOperation(fileValidateOperation: FileValidateOperation | undefined = {} as FileValidateOperation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoFileValidateOperation(fileValidateOperation: Partial<FileValidateOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoValidateOperation(fileValidateOperation),
         "validatedFiles": n => { fileValidateOperation.validatedFiles = n.getCollectionOfPrimitiveValues<string>(); },
@@ -498,7 +498,7 @@ export function deserializeIntoFileValidateOperation(fileValidateOperation: File
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIdentifierTypeReferenceValue(identifierTypeReferenceValue: IdentifierTypeReferenceValue | undefined = {} as IdentifierTypeReferenceValue) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIdentifierTypeReferenceValue(identifierTypeReferenceValue: Partial<IdentifierTypeReferenceValue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoReferenceValue(identifierTypeReferenceValue),
     }
@@ -507,7 +507,7 @@ export function deserializeIntoIdentifierTypeReferenceValue(identifierTypeRefere
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoInboundActivityResults(inboundActivityResults: InboundActivityResults | undefined = {} as InboundActivityResults) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoInboundActivityResults(inboundActivityResults: Partial<InboundActivityResults> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoIndustryDataActivityStatistics(inboundActivityResults),
         "errors": n => { inboundActivityResults.errors = n.getNumberValue(); },
@@ -524,7 +524,7 @@ export function deserializeIntoInboundActivityResults(inboundActivityResults: In
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoInboundFileFlow(inboundFileFlow: InboundFileFlow | undefined = {} as InboundFileFlow) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoInboundFileFlow(inboundFileFlow: Partial<InboundFileFlow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoInboundFlow(inboundFileFlow),
     }
@@ -533,7 +533,7 @@ export function deserializeIntoInboundFileFlow(inboundFileFlow: InboundFileFlow 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoInboundFlow(inboundFlow: InboundFlow | undefined = {} as InboundFlow) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoInboundFlow(inboundFlow: Partial<InboundFlow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoIndustryDataActivity(inboundFlow),
         "dataConnector": n => { inboundFlow.dataConnector = n.getObjectValue<IndustryDataConnector>(createIndustryDataConnectorFromDiscriminatorValue); },
@@ -547,7 +547,7 @@ export function deserializeIntoInboundFlow(inboundFlow: InboundFlow | undefined 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoInboundFlowActivity(inboundFlowActivity: InboundFlowActivity | undefined = {} as InboundFlowActivity) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoInboundFlowActivity(inboundFlowActivity: Partial<InboundFlowActivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoIndustryDataRunActivity(inboundFlowActivity),
     }
@@ -556,7 +556,7 @@ export function deserializeIntoInboundFlowActivity(inboundFlowActivity: InboundF
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoInboundFlowCollectionResponse(inboundFlowCollectionResponse: InboundFlowCollectionResponse | undefined = {} as InboundFlowCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoInboundFlowCollectionResponse(inboundFlowCollectionResponse: Partial<InboundFlowCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(inboundFlowCollectionResponse),
         "value": n => { inboundFlowCollectionResponse.value = n.getCollectionOfObjectValues<InboundFlow>(createInboundFlowFromDiscriminatorValue); },
@@ -566,7 +566,7 @@ export function deserializeIntoInboundFlowCollectionResponse(inboundFlowCollecti
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataActivity(industryDataActivity: IndustryDataActivity | undefined = {} as IndustryDataActivity) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataActivity(industryDataActivity: Partial<IndustryDataActivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(industryDataActivity),
         "displayName": n => { industryDataActivity.displayName = n.getStringValue(); },
@@ -577,7 +577,7 @@ export function deserializeIntoIndustryDataActivity(industryDataActivity: Indust
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataActivityStatistics(industryDataActivityStatistics: IndustryDataActivityStatistics | undefined = {} as IndustryDataActivityStatistics) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataActivityStatistics(industryDataActivityStatistics: Partial<IndustryDataActivityStatistics> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "activityId": n => { industryDataActivityStatistics.activityId = n.getStringValue(); },
         "backingStoreEnabled": n => { industryDataActivityStatistics.backingStoreEnabled = true; },
@@ -590,7 +590,7 @@ export function deserializeIntoIndustryDataActivityStatistics(industryDataActivi
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataConnector(industryDataConnector: IndustryDataConnector | undefined = {} as IndustryDataConnector) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataConnector(industryDataConnector: Partial<IndustryDataConnector> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(industryDataConnector),
         "displayName": n => { industryDataConnector.displayName = n.getStringValue(); },
@@ -601,7 +601,7 @@ export function deserializeIntoIndustryDataConnector(industryDataConnector: Indu
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataConnectorCollectionResponse(industryDataConnectorCollectionResponse: IndustryDataConnectorCollectionResponse | undefined = {} as IndustryDataConnectorCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataConnectorCollectionResponse(industryDataConnectorCollectionResponse: Partial<IndustryDataConnectorCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(industryDataConnectorCollectionResponse),
         "value": n => { industryDataConnectorCollectionResponse.value = n.getCollectionOfObjectValues<IndustryDataConnector>(createIndustryDataConnectorFromDiscriminatorValue); },
@@ -611,7 +611,7 @@ export function deserializeIntoIndustryDataConnectorCollectionResponse(industryD
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRoot(industryDataRoot: IndustryDataRoot | undefined = {} as IndustryDataRoot) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRoot(industryDataRoot: Partial<IndustryDataRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(industryDataRoot),
         "dataConnectors": n => { industryDataRoot.dataConnectors = n.getCollectionOfObjectValues<IndustryDataConnector>(createIndustryDataConnectorFromDiscriminatorValue); },
@@ -628,7 +628,7 @@ export function deserializeIntoIndustryDataRoot(industryDataRoot: IndustryDataRo
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRun(industryDataRun: IndustryDataRun | undefined = {} as IndustryDataRun) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRun(industryDataRun: Partial<IndustryDataRun> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(industryDataRun),
         "activities": n => { industryDataRun.activities = n.getCollectionOfObjectValues<IndustryDataRunActivity>(createIndustryDataRunActivityFromDiscriminatorValue); },
@@ -643,7 +643,7 @@ export function deserializeIntoIndustryDataRun(industryDataRun: IndustryDataRun 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRunActivity(industryDataRunActivity: IndustryDataRunActivity | undefined = {} as IndustryDataRunActivity) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRunActivity(industryDataRunActivity: Partial<IndustryDataRunActivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(industryDataRunActivity),
         "activity": n => { industryDataRunActivity.activity = n.getObjectValue<IndustryDataActivity>(createIndustryDataActivityFromDiscriminatorValue); },
@@ -656,7 +656,7 @@ export function deserializeIntoIndustryDataRunActivity(industryDataRunActivity: 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRunActivityCollectionResponse(industryDataRunActivityCollectionResponse: IndustryDataRunActivityCollectionResponse | undefined = {} as IndustryDataRunActivityCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRunActivityCollectionResponse(industryDataRunActivityCollectionResponse: Partial<IndustryDataRunActivityCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(industryDataRunActivityCollectionResponse),
         "value": n => { industryDataRunActivityCollectionResponse.value = n.getCollectionOfObjectValues<IndustryDataRunActivity>(createIndustryDataRunActivityFromDiscriminatorValue); },
@@ -666,7 +666,7 @@ export function deserializeIntoIndustryDataRunActivityCollectionResponse(industr
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRunCollectionResponse(industryDataRunCollectionResponse: IndustryDataRunCollectionResponse | undefined = {} as IndustryDataRunCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRunCollectionResponse(industryDataRunCollectionResponse: Partial<IndustryDataRunCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(industryDataRunCollectionResponse),
         "value": n => { industryDataRunCollectionResponse.value = n.getCollectionOfObjectValues<IndustryDataRun>(createIndustryDataRunFromDiscriminatorValue); },
@@ -676,7 +676,7 @@ export function deserializeIntoIndustryDataRunCollectionResponse(industryDataRun
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRunEntityCountMetric(industryDataRunEntityCountMetric: IndustryDataRunEntityCountMetric | undefined = {} as IndustryDataRunEntityCountMetric) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRunEntityCountMetric(industryDataRunEntityCountMetric: Partial<IndustryDataRunEntityCountMetric> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "active": n => { industryDataRunEntityCountMetric.active = n.getNumberValue(); },
         "backingStoreEnabled": n => { industryDataRunEntityCountMetric.backingStoreEnabled = true; },
@@ -689,7 +689,7 @@ export function deserializeIntoIndustryDataRunEntityCountMetric(industryDataRunE
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRunRoleCountMetric(industryDataRunRoleCountMetric: IndustryDataRunRoleCountMetric | undefined = {} as IndustryDataRunRoleCountMetric) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRunRoleCountMetric(industryDataRunRoleCountMetric: Partial<IndustryDataRunRoleCountMetric> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { industryDataRunRoleCountMetric.backingStoreEnabled = true; },
         "count": n => { industryDataRunRoleCountMetric.count = n.getNumberValue(); },
@@ -701,7 +701,7 @@ export function deserializeIntoIndustryDataRunRoleCountMetric(industryDataRunRol
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIndustryDataRunStatistics(industryDataRunStatistics: IndustryDataRunStatistics | undefined = {} as IndustryDataRunStatistics) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIndustryDataRunStatistics(industryDataRunStatistics: Partial<IndustryDataRunStatistics> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "activityStatistics": n => { industryDataRunStatistics.activityStatistics = n.getCollectionOfObjectValues<IndustryDataActivityStatistics>(createIndustryDataActivityStatisticsFromDiscriminatorValue); },
         "backingStoreEnabled": n => { industryDataRunStatistics.backingStoreEnabled = true; },
@@ -715,7 +715,7 @@ export function deserializeIntoIndustryDataRunStatistics(industryDataRunStatisti
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoOutboundFlowActivity(outboundFlowActivity: OutboundFlowActivity | undefined = {} as OutboundFlowActivity) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoOutboundFlowActivity(outboundFlowActivity: Partial<OutboundFlowActivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoIndustryDataRunActivity(outboundFlowActivity),
     }
@@ -724,7 +724,7 @@ export function deserializeIntoOutboundFlowActivity(outboundFlowActivity: Outbou
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoReferenceDefinition(referenceDefinition: ReferenceDefinition | undefined = {} as ReferenceDefinition) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoReferenceDefinition(referenceDefinition: Partial<ReferenceDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(referenceDefinition),
         "code": n => { referenceDefinition.code = n.getStringValue(); },
@@ -740,7 +740,7 @@ export function deserializeIntoReferenceDefinition(referenceDefinition: Referenc
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoReferenceDefinitionCollectionResponse(referenceDefinitionCollectionResponse: ReferenceDefinitionCollectionResponse | undefined = {} as ReferenceDefinitionCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoReferenceDefinitionCollectionResponse(referenceDefinitionCollectionResponse: Partial<ReferenceDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(referenceDefinitionCollectionResponse),
         "value": n => { referenceDefinitionCollectionResponse.value = n.getCollectionOfObjectValues<ReferenceDefinition>(createReferenceDefinitionFromDiscriminatorValue); },
@@ -750,7 +750,7 @@ export function deserializeIntoReferenceDefinitionCollectionResponse(referenceDe
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoReferenceValue(referenceValue: ReferenceValue | undefined = {} as ReferenceValue) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoReferenceValue(referenceValue: Partial<ReferenceValue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { referenceValue.backingStoreEnabled = true; },
         "code": n => { referenceValue.code = n.getStringValue(); },
@@ -762,7 +762,7 @@ export function deserializeIntoReferenceValue(referenceValue: ReferenceValue | u
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoRoleGroup(roleGroup: RoleGroup | undefined = {} as RoleGroup) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoRoleGroup(roleGroup: Partial<RoleGroup> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(roleGroup),
         "displayName": n => { roleGroup.displayName = n.getStringValue(); },
@@ -773,7 +773,7 @@ export function deserializeIntoRoleGroup(roleGroup: RoleGroup | undefined = {} a
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoRoleGroupCollectionResponse(roleGroupCollectionResponse: RoleGroupCollectionResponse | undefined = {} as RoleGroupCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoRoleGroupCollectionResponse(roleGroupCollectionResponse: Partial<RoleGroupCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(roleGroupCollectionResponse),
         "value": n => { roleGroupCollectionResponse.value = n.getCollectionOfObjectValues<RoleGroup>(createRoleGroupFromDiscriminatorValue); },
@@ -783,7 +783,7 @@ export function deserializeIntoRoleGroupCollectionResponse(roleGroupCollectionRe
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoRoleReferenceValue(roleReferenceValue: RoleReferenceValue | undefined = {} as RoleReferenceValue) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoRoleReferenceValue(roleReferenceValue: Partial<RoleReferenceValue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoReferenceValue(roleReferenceValue),
     }
@@ -792,7 +792,7 @@ export function deserializeIntoRoleReferenceValue(roleReferenceValue: RoleRefere
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSourceSystemDefinition(sourceSystemDefinition: SourceSystemDefinition | undefined = {} as SourceSystemDefinition) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSourceSystemDefinition(sourceSystemDefinition: Partial<SourceSystemDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(sourceSystemDefinition),
         "displayName": n => { sourceSystemDefinition.displayName = n.getStringValue(); },
@@ -804,7 +804,7 @@ export function deserializeIntoSourceSystemDefinition(sourceSystemDefinition: So
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSourceSystemDefinitionCollectionResponse(sourceSystemDefinitionCollectionResponse: SourceSystemDefinitionCollectionResponse | undefined = {} as SourceSystemDefinitionCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSourceSystemDefinitionCollectionResponse(sourceSystemDefinitionCollectionResponse: Partial<SourceSystemDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(sourceSystemDefinitionCollectionResponse),
         "value": n => { sourceSystemDefinitionCollectionResponse.value = n.getCollectionOfObjectValues<SourceSystemDefinition>(createSourceSystemDefinitionFromDiscriminatorValue); },
@@ -814,7 +814,7 @@ export function deserializeIntoSourceSystemDefinitionCollectionResponse(sourceSy
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUserMatchingSetting(userMatchingSetting: UserMatchingSetting | undefined = {} as UserMatchingSetting) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUserMatchingSetting(userMatchingSetting: Partial<UserMatchingSetting> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { userMatchingSetting.backingStoreEnabled = true; },
         "matchTarget": n => { userMatchingSetting.matchTarget = n.getObjectValue<UserMatchTargetReferenceValue>(createUserMatchTargetReferenceValueFromDiscriminatorValue); },
@@ -828,7 +828,7 @@ export function deserializeIntoUserMatchingSetting(userMatchingSetting: UserMatc
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUserMatchTargetReferenceValue(userMatchTargetReferenceValue: UserMatchTargetReferenceValue | undefined = {} as UserMatchTargetReferenceValue) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUserMatchTargetReferenceValue(userMatchTargetReferenceValue: Partial<UserMatchTargetReferenceValue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoReferenceValue(userMatchTargetReferenceValue),
     }
@@ -837,7 +837,7 @@ export function deserializeIntoUserMatchTargetReferenceValue(userMatchTargetRefe
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoValidateOperation(validateOperation: ValidateOperation | undefined = {} as ValidateOperation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoValidateOperation(validateOperation: Partial<ValidateOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoLongRunningOperation(validateOperation),
         "errors": n => { validateOperation.errors = n.getCollectionOfObjectValues<PublicError>(createPublicErrorFromDiscriminatorValue); },
@@ -848,7 +848,7 @@ export function deserializeIntoValidateOperation(validateOperation: ValidateOper
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoYearReferenceValue(yearReferenceValue: YearReferenceValue | undefined = {} as YearReferenceValue) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoYearReferenceValue(yearReferenceValue: Partial<YearReferenceValue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoReferenceValue(yearReferenceValue),
     }
@@ -857,7 +857,7 @@ export function deserializeIntoYearReferenceValue(yearReferenceValue: YearRefere
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoYearTimePeriodDefinition(yearTimePeriodDefinition: YearTimePeriodDefinition | undefined = {} as YearTimePeriodDefinition) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoYearTimePeriodDefinition(yearTimePeriodDefinition: Partial<YearTimePeriodDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(yearTimePeriodDefinition),
         "displayName": n => { yearTimePeriodDefinition.displayName = n.getStringValue(); },
@@ -870,7 +870,7 @@ export function deserializeIntoYearTimePeriodDefinition(yearTimePeriodDefinition
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoYearTimePeriodDefinitionCollectionResponse(yearTimePeriodDefinitionCollectionResponse: YearTimePeriodDefinitionCollectionResponse | undefined = {} as YearTimePeriodDefinitionCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoYearTimePeriodDefinitionCollectionResponse(yearTimePeriodDefinitionCollectionResponse: Partial<YearTimePeriodDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(yearTimePeriodDefinitionCollectionResponse),
         "value": n => { yearTimePeriodDefinitionCollectionResponse.value = n.getCollectionOfObjectValues<YearTimePeriodDefinition>(createYearTimePeriodDefinitionFromDiscriminatorValue); },
@@ -1258,7 +1258,7 @@ export interface RoleReferenceValue extends Parsable, ReferenceValue {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAggregatedInboundStatistics(writer: SerializationWriter, aggregatedInboundStatistics: AggregatedInboundStatistics | undefined = {} as AggregatedInboundStatistics) : void {
+export function serializeAggregatedInboundStatistics(writer: SerializationWriter, aggregatedInboundStatistics: Partial<AggregatedInboundStatistics> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", aggregatedInboundStatistics.odataType);
     writer.writeAdditionalData(aggregatedInboundStatistics.additionalData);
 }
@@ -1266,49 +1266,49 @@ export function serializeAggregatedInboundStatistics(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAzureDataLakeConnector(writer: SerializationWriter, azureDataLakeConnector: AzureDataLakeConnector | undefined = {} as AzureDataLakeConnector) : void {
+export function serializeAzureDataLakeConnector(writer: SerializationWriter, azureDataLakeConnector: Partial<AzureDataLakeConnector> | undefined = {}) : void {
     serializeFileDataConnector(writer, azureDataLakeConnector)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFileDataConnector(writer: SerializationWriter, fileDataConnector: FileDataConnector | undefined = {} as FileDataConnector) : void {
+export function serializeFileDataConnector(writer: SerializationWriter, fileDataConnector: Partial<FileDataConnector> | undefined = {}) : void {
     serializeIndustryDataConnector(writer, fileDataConnector)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFileValidateOperation(writer: SerializationWriter, fileValidateOperation: FileValidateOperation | undefined = {} as FileValidateOperation) : void {
+export function serializeFileValidateOperation(writer: SerializationWriter, fileValidateOperation: Partial<FileValidateOperation> | undefined = {}) : void {
     serializeValidateOperation(writer, fileValidateOperation)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIdentifierTypeReferenceValue(writer: SerializationWriter, identifierTypeReferenceValue: IdentifierTypeReferenceValue | undefined = {} as IdentifierTypeReferenceValue) : void {
+export function serializeIdentifierTypeReferenceValue(writer: SerializationWriter, identifierTypeReferenceValue: Partial<IdentifierTypeReferenceValue> | undefined = {}) : void {
     serializeReferenceValue(writer, identifierTypeReferenceValue)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInboundActivityResults(writer: SerializationWriter, inboundActivityResults: InboundActivityResults | undefined = {} as InboundActivityResults) : void {
+export function serializeInboundActivityResults(writer: SerializationWriter, inboundActivityResults: Partial<InboundActivityResults> | undefined = {}) : void {
     serializeIndustryDataActivityStatistics(writer, inboundActivityResults)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInboundFileFlow(writer: SerializationWriter, inboundFileFlow: InboundFileFlow | undefined = {} as InboundFileFlow) : void {
+export function serializeInboundFileFlow(writer: SerializationWriter, inboundFileFlow: Partial<InboundFileFlow> | undefined = {}) : void {
     serializeInboundFlow(writer, inboundFileFlow)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInboundFlow(writer: SerializationWriter, inboundFlow: InboundFlow | undefined = {} as InboundFlow) : void {
+export function serializeInboundFlow(writer: SerializationWriter, inboundFlow: Partial<InboundFlow> | undefined = {}) : void {
     serializeIndustryDataActivity(writer, inboundFlow)
     writer.writeObjectValue<IndustryDataConnector>("dataConnector", inboundFlow.dataConnector, serializeIndustryDataConnector);
     writer.writeEnumValue<InboundDomain>("dataDomain", inboundFlow.dataDomain);
@@ -1320,14 +1320,14 @@ export function serializeInboundFlow(writer: SerializationWriter, inboundFlow: I
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInboundFlowActivity(writer: SerializationWriter, inboundFlowActivity: InboundFlowActivity | undefined = {} as InboundFlowActivity) : void {
+export function serializeInboundFlowActivity(writer: SerializationWriter, inboundFlowActivity: Partial<InboundFlowActivity> | undefined = {}) : void {
     serializeIndustryDataRunActivity(writer, inboundFlowActivity)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInboundFlowCollectionResponse(writer: SerializationWriter, inboundFlowCollectionResponse: InboundFlowCollectionResponse | undefined = {} as InboundFlowCollectionResponse) : void {
+export function serializeInboundFlowCollectionResponse(writer: SerializationWriter, inboundFlowCollectionResponse: Partial<InboundFlowCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, inboundFlowCollectionResponse)
     writer.writeCollectionOfObjectValues<InboundFlow>("value", inboundFlowCollectionResponse.value, serializeInboundFlow);
 }
@@ -1335,7 +1335,7 @@ export function serializeInboundFlowCollectionResponse(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataActivity(writer: SerializationWriter, industryDataActivity: IndustryDataActivity | undefined = {} as IndustryDataActivity) : void {
+export function serializeIndustryDataActivity(writer: SerializationWriter, industryDataActivity: Partial<IndustryDataActivity> | undefined = {}) : void {
     serializeEntity(writer, industryDataActivity)
     writer.writeStringValue("displayName", industryDataActivity.displayName);
     writer.writeEnumValue<ReadinessStatus>("readinessStatus", industryDataActivity.readinessStatus);
@@ -1344,7 +1344,7 @@ export function serializeIndustryDataActivity(writer: SerializationWriter, indus
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataActivityStatistics(writer: SerializationWriter, industryDataActivityStatistics: IndustryDataActivityStatistics | undefined = {} as IndustryDataActivityStatistics) : void {
+export function serializeIndustryDataActivityStatistics(writer: SerializationWriter, industryDataActivityStatistics: Partial<IndustryDataActivityStatistics> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", industryDataActivityStatistics.odataType);
     writer.writeEnumValue<IndustryDataActivityStatus>("status", industryDataActivityStatistics.status);
     writer.writeAdditionalData(industryDataActivityStatistics.additionalData);
@@ -1353,7 +1353,7 @@ export function serializeIndustryDataActivityStatistics(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataConnector(writer: SerializationWriter, industryDataConnector: IndustryDataConnector | undefined = {} as IndustryDataConnector) : void {
+export function serializeIndustryDataConnector(writer: SerializationWriter, industryDataConnector: Partial<IndustryDataConnector> | undefined = {}) : void {
     serializeEntity(writer, industryDataConnector)
     writer.writeStringValue("displayName", industryDataConnector.displayName);
     writer.writeObjectValue<SourceSystemDefinition>("sourceSystem", industryDataConnector.sourceSystem, serializeSourceSystemDefinition);
@@ -1362,7 +1362,7 @@ export function serializeIndustryDataConnector(writer: SerializationWriter, indu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataConnectorCollectionResponse(writer: SerializationWriter, industryDataConnectorCollectionResponse: IndustryDataConnectorCollectionResponse | undefined = {} as IndustryDataConnectorCollectionResponse) : void {
+export function serializeIndustryDataConnectorCollectionResponse(writer: SerializationWriter, industryDataConnectorCollectionResponse: Partial<IndustryDataConnectorCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, industryDataConnectorCollectionResponse)
     writer.writeCollectionOfObjectValues<IndustryDataConnector>("value", industryDataConnectorCollectionResponse.value, serializeIndustryDataConnector);
 }
@@ -1370,7 +1370,7 @@ export function serializeIndustryDataConnectorCollectionResponse(writer: Seriali
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRoot(writer: SerializationWriter, industryDataRoot: IndustryDataRoot | undefined = {} as IndustryDataRoot) : void {
+export function serializeIndustryDataRoot(writer: SerializationWriter, industryDataRoot: Partial<IndustryDataRoot> | undefined = {}) : void {
     serializeEntity(writer, industryDataRoot)
     writer.writeCollectionOfObjectValues<IndustryDataConnector>("dataConnectors", industryDataRoot.dataConnectors, serializeIndustryDataConnector);
     writer.writeCollectionOfObjectValues<InboundFlow>("inboundFlows", industryDataRoot.inboundFlows, serializeInboundFlow);
@@ -1385,7 +1385,7 @@ export function serializeIndustryDataRoot(writer: SerializationWriter, industryD
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRun(writer: SerializationWriter, industryDataRun: IndustryDataRun | undefined = {} as IndustryDataRun) : void {
+export function serializeIndustryDataRun(writer: SerializationWriter, industryDataRun: Partial<IndustryDataRun> | undefined = {}) : void {
     serializeEntity(writer, industryDataRun)
     writer.writeCollectionOfObjectValues<IndustryDataRunActivity>("activities", industryDataRun.activities, serializeIndustryDataRunActivity);
     writer.writeEnumValue<IndustryDataRunStatus>("status", industryDataRun.status);
@@ -1394,7 +1394,7 @@ export function serializeIndustryDataRun(writer: SerializationWriter, industryDa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRunActivity(writer: SerializationWriter, industryDataRunActivity: IndustryDataRunActivity | undefined = {} as IndustryDataRunActivity) : void {
+export function serializeIndustryDataRunActivity(writer: SerializationWriter, industryDataRunActivity: Partial<IndustryDataRunActivity> | undefined = {}) : void {
     serializeEntity(writer, industryDataRunActivity)
     writer.writeObjectValue<IndustryDataActivity>("activity", industryDataRunActivity.activity, serializeIndustryDataActivity);
     writer.writeEnumValue<IndustryDataActivityStatus>("status", industryDataRunActivity.status);
@@ -1403,7 +1403,7 @@ export function serializeIndustryDataRunActivity(writer: SerializationWriter, in
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRunActivityCollectionResponse(writer: SerializationWriter, industryDataRunActivityCollectionResponse: IndustryDataRunActivityCollectionResponse | undefined = {} as IndustryDataRunActivityCollectionResponse) : void {
+export function serializeIndustryDataRunActivityCollectionResponse(writer: SerializationWriter, industryDataRunActivityCollectionResponse: Partial<IndustryDataRunActivityCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, industryDataRunActivityCollectionResponse)
     writer.writeCollectionOfObjectValues<IndustryDataRunActivity>("value", industryDataRunActivityCollectionResponse.value, serializeIndustryDataRunActivity);
 }
@@ -1411,7 +1411,7 @@ export function serializeIndustryDataRunActivityCollectionResponse(writer: Seria
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRunCollectionResponse(writer: SerializationWriter, industryDataRunCollectionResponse: IndustryDataRunCollectionResponse | undefined = {} as IndustryDataRunCollectionResponse) : void {
+export function serializeIndustryDataRunCollectionResponse(writer: SerializationWriter, industryDataRunCollectionResponse: Partial<IndustryDataRunCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, industryDataRunCollectionResponse)
     writer.writeCollectionOfObjectValues<IndustryDataRun>("value", industryDataRunCollectionResponse.value, serializeIndustryDataRun);
 }
@@ -1419,7 +1419,7 @@ export function serializeIndustryDataRunCollectionResponse(writer: Serialization
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRunEntityCountMetric(writer: SerializationWriter, industryDataRunEntityCountMetric: IndustryDataRunEntityCountMetric | undefined = {} as IndustryDataRunEntityCountMetric) : void {
+export function serializeIndustryDataRunEntityCountMetric(writer: SerializationWriter, industryDataRunEntityCountMetric: Partial<IndustryDataRunEntityCountMetric> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", industryDataRunEntityCountMetric.odataType);
     writer.writeAdditionalData(industryDataRunEntityCountMetric.additionalData);
 }
@@ -1427,7 +1427,7 @@ export function serializeIndustryDataRunEntityCountMetric(writer: SerializationW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRunRoleCountMetric(writer: SerializationWriter, industryDataRunRoleCountMetric: IndustryDataRunRoleCountMetric | undefined = {} as IndustryDataRunRoleCountMetric) : void {
+export function serializeIndustryDataRunRoleCountMetric(writer: SerializationWriter, industryDataRunRoleCountMetric: Partial<IndustryDataRunRoleCountMetric> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", industryDataRunRoleCountMetric.odataType);
     writer.writeAdditionalData(industryDataRunRoleCountMetric.additionalData);
 }
@@ -1435,7 +1435,7 @@ export function serializeIndustryDataRunRoleCountMetric(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIndustryDataRunStatistics(writer: SerializationWriter, industryDataRunStatistics: IndustryDataRunStatistics | undefined = {} as IndustryDataRunStatistics) : void {
+export function serializeIndustryDataRunStatistics(writer: SerializationWriter, industryDataRunStatistics: Partial<IndustryDataRunStatistics> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", industryDataRunStatistics.odataType);
     writer.writeEnumValue<IndustryDataRunStatus>("status", industryDataRunStatistics.status);
     writer.writeAdditionalData(industryDataRunStatistics.additionalData);
@@ -1444,14 +1444,14 @@ export function serializeIndustryDataRunStatistics(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeOutboundFlowActivity(writer: SerializationWriter, outboundFlowActivity: OutboundFlowActivity | undefined = {} as OutboundFlowActivity) : void {
+export function serializeOutboundFlowActivity(writer: SerializationWriter, outboundFlowActivity: Partial<OutboundFlowActivity> | undefined = {}) : void {
     serializeIndustryDataRunActivity(writer, outboundFlowActivity)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReferenceDefinition(writer: SerializationWriter, referenceDefinition: ReferenceDefinition | undefined = {} as ReferenceDefinition) : void {
+export function serializeReferenceDefinition(writer: SerializationWriter, referenceDefinition: Partial<ReferenceDefinition> | undefined = {}) : void {
     serializeEntity(writer, referenceDefinition)
     writer.writeStringValue("code", referenceDefinition.code);
     writer.writeBooleanValue("isDisabled", referenceDefinition.isDisabled);
@@ -1462,7 +1462,7 @@ export function serializeReferenceDefinition(writer: SerializationWriter, refere
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReferenceDefinitionCollectionResponse(writer: SerializationWriter, referenceDefinitionCollectionResponse: ReferenceDefinitionCollectionResponse | undefined = {} as ReferenceDefinitionCollectionResponse) : void {
+export function serializeReferenceDefinitionCollectionResponse(writer: SerializationWriter, referenceDefinitionCollectionResponse: Partial<ReferenceDefinitionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, referenceDefinitionCollectionResponse)
     writer.writeCollectionOfObjectValues<ReferenceDefinition>("value", referenceDefinitionCollectionResponse.value, serializeReferenceDefinition);
 }
@@ -1470,7 +1470,7 @@ export function serializeReferenceDefinitionCollectionResponse(writer: Serializa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReferenceValue(writer: SerializationWriter, referenceValue: ReferenceValue | undefined = {} as ReferenceValue) : void {
+export function serializeReferenceValue(writer: SerializationWriter, referenceValue: Partial<ReferenceValue> | undefined = {}) : void {
     writer.writeStringValue("code", referenceValue.code);
     writer.writeStringValue("@odata.type", referenceValue.odataType);
     writer.writeObjectValue<ReferenceDefinition>("value", referenceValue.value, serializeReferenceDefinition);
@@ -1480,7 +1480,7 @@ export function serializeReferenceValue(writer: SerializationWriter, referenceVa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRoleGroup(writer: SerializationWriter, roleGroup: RoleGroup | undefined = {} as RoleGroup) : void {
+export function serializeRoleGroup(writer: SerializationWriter, roleGroup: Partial<RoleGroup> | undefined = {}) : void {
     serializeEntity(writer, roleGroup)
     writer.writeStringValue("displayName", roleGroup.displayName);
     writer.writeCollectionOfObjectValues<RoleReferenceValue>("roles", roleGroup.roles, serializeRoleReferenceValue);
@@ -1489,7 +1489,7 @@ export function serializeRoleGroup(writer: SerializationWriter, roleGroup: RoleG
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRoleGroupCollectionResponse(writer: SerializationWriter, roleGroupCollectionResponse: RoleGroupCollectionResponse | undefined = {} as RoleGroupCollectionResponse) : void {
+export function serializeRoleGroupCollectionResponse(writer: SerializationWriter, roleGroupCollectionResponse: Partial<RoleGroupCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, roleGroupCollectionResponse)
     writer.writeCollectionOfObjectValues<RoleGroup>("value", roleGroupCollectionResponse.value, serializeRoleGroup);
 }
@@ -1497,14 +1497,14 @@ export function serializeRoleGroupCollectionResponse(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRoleReferenceValue(writer: SerializationWriter, roleReferenceValue: RoleReferenceValue | undefined = {} as RoleReferenceValue) : void {
+export function serializeRoleReferenceValue(writer: SerializationWriter, roleReferenceValue: Partial<RoleReferenceValue> | undefined = {}) : void {
     serializeReferenceValue(writer, roleReferenceValue)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSourceSystemDefinition(writer: SerializationWriter, sourceSystemDefinition: SourceSystemDefinition | undefined = {} as SourceSystemDefinition) : void {
+export function serializeSourceSystemDefinition(writer: SerializationWriter, sourceSystemDefinition: Partial<SourceSystemDefinition> | undefined = {}) : void {
     serializeEntity(writer, sourceSystemDefinition)
     writer.writeStringValue("displayName", sourceSystemDefinition.displayName);
     writer.writeCollectionOfObjectValues<UserMatchingSetting>("userMatchingSettings", sourceSystemDefinition.userMatchingSettings, serializeUserMatchingSetting);
@@ -1514,7 +1514,7 @@ export function serializeSourceSystemDefinition(writer: SerializationWriter, sou
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSourceSystemDefinitionCollectionResponse(writer: SerializationWriter, sourceSystemDefinitionCollectionResponse: SourceSystemDefinitionCollectionResponse | undefined = {} as SourceSystemDefinitionCollectionResponse) : void {
+export function serializeSourceSystemDefinitionCollectionResponse(writer: SerializationWriter, sourceSystemDefinitionCollectionResponse: Partial<SourceSystemDefinitionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, sourceSystemDefinitionCollectionResponse)
     writer.writeCollectionOfObjectValues<SourceSystemDefinition>("value", sourceSystemDefinitionCollectionResponse.value, serializeSourceSystemDefinition);
 }
@@ -1522,7 +1522,7 @@ export function serializeSourceSystemDefinitionCollectionResponse(writer: Serial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUserMatchingSetting(writer: SerializationWriter, userMatchingSetting: UserMatchingSetting | undefined = {} as UserMatchingSetting) : void {
+export function serializeUserMatchingSetting(writer: SerializationWriter, userMatchingSetting: Partial<UserMatchingSetting> | undefined = {}) : void {
     writer.writeObjectValue<UserMatchTargetReferenceValue>("matchTarget", userMatchingSetting.matchTarget, serializeUserMatchTargetReferenceValue);
     writer.writeStringValue("@odata.type", userMatchingSetting.odataType);
     writer.writeNumberValue("priorityOrder", userMatchingSetting.priorityOrder);
@@ -1534,28 +1534,28 @@ export function serializeUserMatchingSetting(writer: SerializationWriter, userMa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUserMatchTargetReferenceValue(writer: SerializationWriter, userMatchTargetReferenceValue: UserMatchTargetReferenceValue | undefined = {} as UserMatchTargetReferenceValue) : void {
+export function serializeUserMatchTargetReferenceValue(writer: SerializationWriter, userMatchTargetReferenceValue: Partial<UserMatchTargetReferenceValue> | undefined = {}) : void {
     serializeReferenceValue(writer, userMatchTargetReferenceValue)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeValidateOperation(writer: SerializationWriter, validateOperation: ValidateOperation | undefined = {} as ValidateOperation) : void {
+export function serializeValidateOperation(writer: SerializationWriter, validateOperation: Partial<ValidateOperation> | undefined = {}) : void {
     serializeLongRunningOperation(writer, validateOperation)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeYearReferenceValue(writer: SerializationWriter, yearReferenceValue: YearReferenceValue | undefined = {} as YearReferenceValue) : void {
+export function serializeYearReferenceValue(writer: SerializationWriter, yearReferenceValue: Partial<YearReferenceValue> | undefined = {}) : void {
     serializeReferenceValue(writer, yearReferenceValue)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeYearTimePeriodDefinition(writer: SerializationWriter, yearTimePeriodDefinition: YearTimePeriodDefinition | undefined = {} as YearTimePeriodDefinition) : void {
+export function serializeYearTimePeriodDefinition(writer: SerializationWriter, yearTimePeriodDefinition: Partial<YearTimePeriodDefinition> | undefined = {}) : void {
     serializeEntity(writer, yearTimePeriodDefinition)
     writer.writeStringValue("displayName", yearTimePeriodDefinition.displayName);
     writer.writeDateOnlyValue("endDate", yearTimePeriodDefinition.endDate);
@@ -1566,7 +1566,7 @@ export function serializeYearTimePeriodDefinition(writer: SerializationWriter, y
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeYearTimePeriodDefinitionCollectionResponse(writer: SerializationWriter, yearTimePeriodDefinitionCollectionResponse: YearTimePeriodDefinitionCollectionResponse | undefined = {} as YearTimePeriodDefinitionCollectionResponse) : void {
+export function serializeYearTimePeriodDefinitionCollectionResponse(writer: SerializationWriter, yearTimePeriodDefinitionCollectionResponse: Partial<YearTimePeriodDefinitionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, yearTimePeriodDefinitionCollectionResponse)
     writer.writeCollectionOfObjectValues<YearTimePeriodDefinition>("value", yearTimePeriodDefinitionCollectionResponse.value, serializeYearTimePeriodDefinition);
 }

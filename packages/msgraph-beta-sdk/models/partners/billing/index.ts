@@ -169,7 +169,7 @@ export function createUnbilledUsageFromDiscriminatorValue(parseNode: ParseNode |
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAzureUsage(azureUsage: AzureUsage | undefined = {} as AzureUsage) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAzureUsage(azureUsage: Partial<AzureUsage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(azureUsage),
         "billed": n => { azureUsage.billed = n.getObjectValue<BilledUsage>(createBilledUsageFromDiscriminatorValue); },
@@ -180,7 +180,7 @@ export function deserializeIntoAzureUsage(azureUsage: AzureUsage | undefined = {
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoBilledUsage(billedUsage: BilledUsage | undefined = {} as BilledUsage) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoBilledUsage(billedUsage: Partial<BilledUsage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(billedUsage),
     }
@@ -189,7 +189,7 @@ export function deserializeIntoBilledUsage(billedUsage: BilledUsage | undefined 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoBilling(billing: Billing | undefined = {} as Billing) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoBilling(billing: Partial<Billing> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(billing),
         "manifests": n => { billing.manifests = n.getCollectionOfObjectValues<Manifest>(createManifestFromDiscriminatorValue); },
@@ -201,7 +201,7 @@ export function deserializeIntoBilling(billing: Billing | undefined = {} as Bill
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoBlob(blob: Blob | undefined = {} as Blob) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoBlob(blob: Partial<Blob> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { blob.backingStoreEnabled = true; },
         "name": n => { blob.name = n.getStringValue(); },
@@ -213,7 +213,7 @@ export function deserializeIntoBlob(blob: Blob | undefined = {} as Blob) : Recor
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExportSuccessOperation(exportSuccessOperation: ExportSuccessOperation | undefined = {} as ExportSuccessOperation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExportSuccessOperation(exportSuccessOperation: Partial<ExportSuccessOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoOperation(exportSuccessOperation),
         "resourceLocation": n => { exportSuccessOperation.resourceLocation = n.getObjectValue<Manifest>(createManifestFromDiscriminatorValue); },
@@ -223,7 +223,7 @@ export function deserializeIntoExportSuccessOperation(exportSuccessOperation: Ex
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoFailedOperation(failedOperation: FailedOperation | undefined = {} as FailedOperation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoFailedOperation(failedOperation: Partial<FailedOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoOperation(failedOperation),
         "error": n => { failedOperation.errorEscaped = n.getObjectValue<PublicError>(createPublicErrorFromDiscriminatorValue); },
@@ -233,7 +233,7 @@ export function deserializeIntoFailedOperation(failedOperation: FailedOperation 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoManifest(manifest: Manifest | undefined = {} as Manifest) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoManifest(manifest: Partial<Manifest> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(manifest),
         "blobCount": n => { manifest.blobCount = n.getNumberValue(); },
@@ -252,7 +252,7 @@ export function deserializeIntoManifest(manifest: Manifest | undefined = {} as M
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoManifestCollectionResponse(manifestCollectionResponse: ManifestCollectionResponse | undefined = {} as ManifestCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoManifestCollectionResponse(manifestCollectionResponse: Partial<ManifestCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(manifestCollectionResponse),
         "value": n => { manifestCollectionResponse.value = n.getCollectionOfObjectValues<Manifest>(createManifestFromDiscriminatorValue); },
@@ -262,7 +262,7 @@ export function deserializeIntoManifestCollectionResponse(manifestCollectionResp
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoOperation(operation: Operation | undefined = {} as Operation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoOperation(operation: Partial<Operation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(operation),
         "createdDateTime": n => { operation.createdDateTime = n.getDateValue(); },
@@ -274,7 +274,7 @@ export function deserializeIntoOperation(operation: Operation | undefined = {} a
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoOperationCollectionResponse(operationCollectionResponse: OperationCollectionResponse | undefined = {} as OperationCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoOperationCollectionResponse(operationCollectionResponse: Partial<OperationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(operationCollectionResponse),
         "value": n => { operationCollectionResponse.value = n.getCollectionOfObjectValues<Operation>(createOperationFromDiscriminatorValue); },
@@ -284,7 +284,7 @@ export function deserializeIntoOperationCollectionResponse(operationCollectionRe
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoRunningOperation(runningOperation: RunningOperation | undefined = {} as RunningOperation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoRunningOperation(runningOperation: Partial<RunningOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoOperation(runningOperation),
     }
@@ -293,7 +293,7 @@ export function deserializeIntoRunningOperation(runningOperation: RunningOperati
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUnbilledUsage(unbilledUsage: UnbilledUsage | undefined = {} as UnbilledUsage) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUnbilledUsage(unbilledUsage: Partial<UnbilledUsage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(unbilledUsage),
     }
@@ -384,7 +384,7 @@ export interface RunningOperation extends Operation, Parsable {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAzureUsage(writer: SerializationWriter, azureUsage: AzureUsage | undefined = {} as AzureUsage) : void {
+export function serializeAzureUsage(writer: SerializationWriter, azureUsage: Partial<AzureUsage> | undefined = {}) : void {
     serializeEntity(writer, azureUsage)
     writer.writeObjectValue<BilledUsage>("billed", azureUsage.billed, serializeBilledUsage);
     writer.writeObjectValue<UnbilledUsage>("unbilled", azureUsage.unbilled, serializeUnbilledUsage);
@@ -393,14 +393,14 @@ export function serializeAzureUsage(writer: SerializationWriter, azureUsage: Azu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBilledUsage(writer: SerializationWriter, billedUsage: BilledUsage | undefined = {} as BilledUsage) : void {
+export function serializeBilledUsage(writer: SerializationWriter, billedUsage: Partial<BilledUsage> | undefined = {}) : void {
     serializeEntity(writer, billedUsage)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBilling(writer: SerializationWriter, billing: Billing | undefined = {} as Billing) : void {
+export function serializeBilling(writer: SerializationWriter, billing: Partial<Billing> | undefined = {}) : void {
     serializeEntity(writer, billing)
     writer.writeCollectionOfObjectValues<Manifest>("manifests", billing.manifests, serializeManifest);
     writer.writeCollectionOfObjectValues<Operation>("operations", billing.operations, serializeOperation);
@@ -410,7 +410,7 @@ export function serializeBilling(writer: SerializationWriter, billing: Billing |
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBlob(writer: SerializationWriter, blob: Blob | undefined = {} as Blob) : void {
+export function serializeBlob(writer: SerializationWriter, blob: Partial<Blob> | undefined = {}) : void {
     writer.writeStringValue("name", blob.name);
     writer.writeStringValue("@odata.type", blob.odataType);
     writer.writeStringValue("partitionValue", blob.partitionValue);
@@ -420,7 +420,7 @@ export function serializeBlob(writer: SerializationWriter, blob: Blob | undefine
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExportSuccessOperation(writer: SerializationWriter, exportSuccessOperation: ExportSuccessOperation | undefined = {} as ExportSuccessOperation) : void {
+export function serializeExportSuccessOperation(writer: SerializationWriter, exportSuccessOperation: Partial<ExportSuccessOperation> | undefined = {}) : void {
     serializeOperation(writer, exportSuccessOperation)
     writer.writeObjectValue<Manifest>("resourceLocation", exportSuccessOperation.resourceLocation, serializeManifest);
 }
@@ -428,7 +428,7 @@ export function serializeExportSuccessOperation(writer: SerializationWriter, exp
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFailedOperation(writer: SerializationWriter, failedOperation: FailedOperation | undefined = {} as FailedOperation) : void {
+export function serializeFailedOperation(writer: SerializationWriter, failedOperation: Partial<FailedOperation> | undefined = {}) : void {
     serializeOperation(writer, failedOperation)
     writer.writeObjectValue<PublicError>("error", failedOperation.errorEscaped, serializePublicError);
 }
@@ -436,7 +436,7 @@ export function serializeFailedOperation(writer: SerializationWriter, failedOper
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManifest(writer: SerializationWriter, manifest: Manifest | undefined = {} as Manifest) : void {
+export function serializeManifest(writer: SerializationWriter, manifest: Partial<Manifest> | undefined = {}) : void {
     serializeEntity(writer, manifest)
     writer.writeNumberValue("blobCount", manifest.blobCount);
     writer.writeCollectionOfObjectValues<Blob>("blobs", manifest.blobs, serializeBlob);
@@ -453,7 +453,7 @@ export function serializeManifest(writer: SerializationWriter, manifest: Manifes
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManifestCollectionResponse(writer: SerializationWriter, manifestCollectionResponse: ManifestCollectionResponse | undefined = {} as ManifestCollectionResponse) : void {
+export function serializeManifestCollectionResponse(writer: SerializationWriter, manifestCollectionResponse: Partial<ManifestCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, manifestCollectionResponse)
     writer.writeCollectionOfObjectValues<Manifest>("value", manifestCollectionResponse.value, serializeManifest);
 }
@@ -461,7 +461,7 @@ export function serializeManifestCollectionResponse(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeOperation(writer: SerializationWriter, operation: Operation | undefined = {} as Operation) : void {
+export function serializeOperation(writer: SerializationWriter, operation: Partial<Operation> | undefined = {}) : void {
     serializeEntity(writer, operation)
     writer.writeDateValue("createdDateTime", operation.createdDateTime);
     writer.writeDateValue("lastActionDateTime", operation.lastActionDateTime);
@@ -471,7 +471,7 @@ export function serializeOperation(writer: SerializationWriter, operation: Opera
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeOperationCollectionResponse(writer: SerializationWriter, operationCollectionResponse: OperationCollectionResponse | undefined = {} as OperationCollectionResponse) : void {
+export function serializeOperationCollectionResponse(writer: SerializationWriter, operationCollectionResponse: Partial<OperationCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, operationCollectionResponse)
     writer.writeCollectionOfObjectValues<Operation>("value", operationCollectionResponse.value, serializeOperation);
 }
@@ -479,14 +479,14 @@ export function serializeOperationCollectionResponse(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRunningOperation(writer: SerializationWriter, runningOperation: RunningOperation | undefined = {} as RunningOperation) : void {
+export function serializeRunningOperation(writer: SerializationWriter, runningOperation: Partial<RunningOperation> | undefined = {}) : void {
     serializeOperation(writer, runningOperation)
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUnbilledUsage(writer: SerializationWriter, unbilledUsage: UnbilledUsage | undefined = {} as UnbilledUsage) : void {
+export function serializeUnbilledUsage(writer: SerializationWriter, unbilledUsage: Partial<UnbilledUsage> | undefined = {}) : void {
     serializeEntity(writer, unbilledUsage)
 }
 export interface UnbilledUsage extends Entity, Parsable {

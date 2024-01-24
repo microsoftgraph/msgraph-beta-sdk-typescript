@@ -382,7 +382,7 @@ export function createUrlToItemResolverBaseFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAcl(acl: Acl | undefined = {} as Acl) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAcl(acl: Partial<Acl> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "accessType": n => { acl.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
         "backingStoreEnabled": n => { acl.backingStoreEnabled = true; },
@@ -396,7 +396,7 @@ export function deserializeIntoAcl(acl: Acl | undefined = {} as Acl) : Record<st
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoActivitySettings(activitySettings: ActivitySettings | undefined = {} as ActivitySettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoActivitySettings(activitySettings: Partial<ActivitySettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { activitySettings.backingStoreEnabled = true; },
         "@odata.type": n => { activitySettings.odataType = n.getStringValue(); },
@@ -407,7 +407,7 @@ export function deserializeIntoActivitySettings(activitySettings: ActivitySettin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoComplianceSettings(complianceSettings: ComplianceSettings | undefined = {} as ComplianceSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoComplianceSettings(complianceSettings: Partial<ComplianceSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { complianceSettings.backingStoreEnabled = true; },
         "eDiscoveryResultTemplates": n => { complianceSettings.eDiscoveryResultTemplates = n.getCollectionOfObjectValues<DisplayTemplate>(createDisplayTemplateFromDiscriminatorValue); },
@@ -418,7 +418,7 @@ export function deserializeIntoComplianceSettings(complianceSettings: Compliance
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoConfiguration(configuration: Configuration | undefined = {} as Configuration) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoConfiguration(configuration: Partial<Configuration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "authorizedAppIds": n => { configuration.authorizedAppIds = n.getCollectionOfPrimitiveValues<string>(); },
         "backingStoreEnabled": n => { configuration.backingStoreEnabled = true; },
@@ -429,7 +429,7 @@ export function deserializeIntoConfiguration(configuration: Configuration | unde
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoConnectionOperation(connectionOperation: ConnectionOperation | undefined = {} as ConnectionOperation) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoConnectionOperation(connectionOperation: Partial<ConnectionOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectionOperation),
         "error": n => { connectionOperation.errorEscaped = n.getObjectValue<PublicError>(createPublicErrorFromDiscriminatorValue); },
@@ -440,7 +440,7 @@ export function deserializeIntoConnectionOperation(connectionOperation: Connecti
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoConnectionOperationCollectionResponse(connectionOperationCollectionResponse: ConnectionOperationCollectionResponse | undefined = {} as ConnectionOperationCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoConnectionOperationCollectionResponse(connectionOperationCollectionResponse: Partial<ConnectionOperationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(connectionOperationCollectionResponse),
         "value": n => { connectionOperationCollectionResponse.value = n.getCollectionOfObjectValues<ConnectionOperation>(createConnectionOperationFromDiscriminatorValue); },
@@ -450,7 +450,7 @@ export function deserializeIntoConnectionOperationCollectionResponse(connectionO
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoConnectionQuota(connectionQuota: ConnectionQuota | undefined = {} as ConnectionQuota) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoConnectionQuota(connectionQuota: Partial<ConnectionQuota> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectionQuota),
         "itemsRemaining": n => { connectionQuota.itemsRemaining = n.getNumberValue(); },
@@ -460,7 +460,7 @@ export function deserializeIntoConnectionQuota(connectionQuota: ConnectionQuota 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoDisplayTemplate(displayTemplate: DisplayTemplate | undefined = {} as DisplayTemplate) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoDisplayTemplate(displayTemplate: Partial<DisplayTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { displayTemplate.backingStoreEnabled = true; },
         "id": n => { displayTemplate.id = n.getStringValue(); },
@@ -474,7 +474,7 @@ export function deserializeIntoDisplayTemplate(displayTemplate: DisplayTemplate 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternal(external: External | undefined = {} as External) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternal(external: Partial<External> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "authorizationSystems": n => { external.authorizationSystems = n.getCollectionOfObjectValues<AuthorizationSystem>(createAuthorizationSystemFromDiscriminatorValue); },
         "backingStoreEnabled": n => { external.backingStoreEnabled = true; },
@@ -487,7 +487,7 @@ export function deserializeIntoExternal(external: External | undefined = {} as E
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalActivity(externalActivity: ExternalActivity | undefined = {} as ExternalActivity) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalActivity(externalActivity: Partial<ExternalActivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(externalActivity),
         "performedBy": n => { externalActivity.performedBy = n.getObjectValue<Identity>(createIdentityFromDiscriminatorValue); },
@@ -499,7 +499,7 @@ export function deserializeIntoExternalActivity(externalActivity: ExternalActivi
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalActivityCollectionResponse(externalActivityCollectionResponse: ExternalActivityCollectionResponse | undefined = {} as ExternalActivityCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalActivityCollectionResponse(externalActivityCollectionResponse: Partial<ExternalActivityCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(externalActivityCollectionResponse),
         "value": n => { externalActivityCollectionResponse.value = n.getCollectionOfObjectValues<ExternalActivity>(createExternalActivityFromDiscriminatorValue); },
@@ -509,7 +509,7 @@ export function deserializeIntoExternalActivityCollectionResponse(externalActivi
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalActivityResult(externalActivityResult: ExternalActivityResult | undefined = {} as ExternalActivityResult) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalActivityResult(externalActivityResult: Partial<ExternalActivityResult> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoExternalActivity(externalActivityResult),
         "error": n => { externalActivityResult.errorEscaped = n.getObjectValue<PublicError>(createPublicErrorFromDiscriminatorValue); },
@@ -519,7 +519,7 @@ export function deserializeIntoExternalActivityResult(externalActivityResult: Ex
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalConnection(externalConnection: ExternalConnection | undefined = {} as ExternalConnection) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalConnection(externalConnection: Partial<ExternalConnection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(externalConnection),
         "activitySettings": n => { externalConnection.activitySettings = n.getObjectValue<ActivitySettings>(createActivitySettingsFromDiscriminatorValue); },
@@ -543,7 +543,7 @@ export function deserializeIntoExternalConnection(externalConnection: ExternalCo
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalConnectionCollectionResponse(externalConnectionCollectionResponse: ExternalConnectionCollectionResponse | undefined = {} as ExternalConnectionCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalConnectionCollectionResponse(externalConnectionCollectionResponse: Partial<ExternalConnectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(externalConnectionCollectionResponse),
         "value": n => { externalConnectionCollectionResponse.value = n.getCollectionOfObjectValues<ExternalConnection>(createExternalConnectionFromDiscriminatorValue); },
@@ -553,7 +553,7 @@ export function deserializeIntoExternalConnectionCollectionResponse(externalConn
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalGroup(externalGroup: ExternalGroup | undefined = {} as ExternalGroup) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalGroup(externalGroup: Partial<ExternalGroup> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(externalGroup),
         "description": n => { externalGroup.description = n.getStringValue(); },
@@ -565,7 +565,7 @@ export function deserializeIntoExternalGroup(externalGroup: ExternalGroup | unde
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalGroupCollectionResponse(externalGroupCollectionResponse: ExternalGroupCollectionResponse | undefined = {} as ExternalGroupCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalGroupCollectionResponse(externalGroupCollectionResponse: Partial<ExternalGroupCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(externalGroupCollectionResponse),
         "value": n => { externalGroupCollectionResponse.value = n.getCollectionOfObjectValues<ExternalGroup>(createExternalGroupFromDiscriminatorValue); },
@@ -575,7 +575,7 @@ export function deserializeIntoExternalGroupCollectionResponse(externalGroupColl
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalItem(externalItem: ExternalItem | undefined = {} as ExternalItem) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalItem(externalItem: Partial<ExternalItem> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(externalItem),
         "acl": n => { externalItem.acl = n.getCollectionOfObjectValues<Acl>(createAclFromDiscriminatorValue); },
@@ -588,7 +588,7 @@ export function deserializeIntoExternalItem(externalItem: ExternalItem | undefin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalItemCollectionResponse(externalItemCollectionResponse: ExternalItemCollectionResponse | undefined = {} as ExternalItemCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalItemCollectionResponse(externalItemCollectionResponse: Partial<ExternalItemCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(externalItemCollectionResponse),
         "value": n => { externalItemCollectionResponse.value = n.getCollectionOfObjectValues<ExternalItem>(createExternalItemFromDiscriminatorValue); },
@@ -598,7 +598,7 @@ export function deserializeIntoExternalItemCollectionResponse(externalItemCollec
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoExternalItemContent(externalItemContent: ExternalItemContent | undefined = {} as ExternalItemContent) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoExternalItemContent(externalItemContent: Partial<ExternalItemContent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { externalItemContent.backingStoreEnabled = true; },
         "@odata.type": n => { externalItemContent.odataType = n.getStringValue(); },
@@ -610,7 +610,7 @@ export function deserializeIntoExternalItemContent(externalItemContent: External
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIdentity(identity: Identity | undefined = {} as Identity) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIdentity(identity: Partial<Identity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(identity),
         "type": n => { identity.type = n.getEnumValue<IdentityType>(IdentityTypeObject); },
@@ -620,7 +620,7 @@ export function deserializeIntoIdentity(identity: Identity | undefined = {} as I
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIdentityCollectionResponse(identityCollectionResponse: IdentityCollectionResponse | undefined = {} as IdentityCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIdentityCollectionResponse(identityCollectionResponse: Partial<IdentityCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(identityCollectionResponse),
         "value": n => { identityCollectionResponse.value = n.getCollectionOfObjectValues<Identity>(createIdentityFromDiscriminatorValue); },
@@ -630,7 +630,7 @@ export function deserializeIntoIdentityCollectionResponse(identityCollectionResp
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoItemIdResolver(itemIdResolver: ItemIdResolver | undefined = {} as ItemIdResolver) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoItemIdResolver(itemIdResolver: Partial<ItemIdResolver> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoUrlToItemResolverBase(itemIdResolver),
         "itemId": n => { itemIdResolver.itemId = n.getStringValue(); },
@@ -641,7 +641,7 @@ export function deserializeIntoItemIdResolver(itemIdResolver: ItemIdResolver | u
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoProperties(properties: Properties | undefined = {} as Properties) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoProperties(properties: Partial<Properties> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { properties.backingStoreEnabled = true; },
         "@odata.type": n => { properties.odataType = n.getStringValue(); },
@@ -651,7 +651,7 @@ export function deserializeIntoProperties(properties: Properties | undefined = {
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoProperty(property: Property | undefined = {} as Property) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoProperty(property: Partial<Property> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "aliases": n => { property.aliases = n.getCollectionOfPrimitiveValues<string>(); },
         "backingStoreEnabled": n => { property.backingStoreEnabled = true; },
@@ -671,7 +671,7 @@ export function deserializeIntoProperty(property: Property | undefined = {} as P
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoPropertyRule(propertyRule: PropertyRule | undefined = {} as PropertyRule) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoPropertyRule(propertyRule: Partial<PropertyRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { propertyRule.backingStoreEnabled = true; },
         "@odata.type": n => { propertyRule.odataType = n.getStringValue(); },
@@ -685,7 +685,7 @@ export function deserializeIntoPropertyRule(propertyRule: PropertyRule | undefin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoRankingHint(rankingHint: RankingHint | undefined = {} as RankingHint) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoRankingHint(rankingHint: Partial<RankingHint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { rankingHint.backingStoreEnabled = true; },
         "importanceScore": n => { rankingHint.importanceScore = n.getEnumValue<ImportanceScore>(ImportanceScoreObject); },
@@ -696,7 +696,7 @@ export function deserializeIntoRankingHint(rankingHint: RankingHint | undefined 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSchema(schema: Schema | undefined = {} as Schema) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSchema(schema: Partial<Schema> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(schema),
         "baseType": n => { schema.baseType = n.getStringValue(); },
@@ -707,7 +707,7 @@ export function deserializeIntoSchema(schema: Schema | undefined = {} as Schema)
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSearchSettings(searchSettings: SearchSettings | undefined = {} as SearchSettings) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSearchSettings(searchSettings: Partial<SearchSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { searchSettings.backingStoreEnabled = true; },
         "@odata.type": n => { searchSettings.odataType = n.getStringValue(); },
@@ -718,7 +718,7 @@ export function deserializeIntoSearchSettings(searchSettings: SearchSettings | u
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUrlMatchInfo(urlMatchInfo: UrlMatchInfo | undefined = {} as UrlMatchInfo) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUrlMatchInfo(urlMatchInfo: Partial<UrlMatchInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { urlMatchInfo.backingStoreEnabled = true; },
         "baseUrls": n => { urlMatchInfo.baseUrls = n.getCollectionOfPrimitiveValues<string>(); },
@@ -730,7 +730,7 @@ export function deserializeIntoUrlMatchInfo(urlMatchInfo: UrlMatchInfo | undefin
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoUrlToItemResolverBase(urlToItemResolverBase: UrlToItemResolverBase | undefined = {} as UrlToItemResolverBase) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoUrlToItemResolverBase(urlToItemResolverBase: Partial<UrlToItemResolverBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { urlToItemResolverBase.backingStoreEnabled = true; },
         "@odata.type": n => { urlToItemResolverBase.odataType = n.getStringValue(); },
@@ -1131,7 +1131,7 @@ export interface SearchSettings extends AdditionalDataHolder, BackedModel, Parsa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAcl(writer: SerializationWriter, acl: Acl | undefined = {} as Acl) : void {
+export function serializeAcl(writer: SerializationWriter, acl: Partial<Acl> | undefined = {}) : void {
     writer.writeEnumValue<AccessType>("accessType", acl.accessType);
     writer.writeEnumValue<IdentitySourceType>("identitySource", acl.identitySource);
     writer.writeStringValue("@odata.type", acl.odataType);
@@ -1143,7 +1143,7 @@ export function serializeAcl(writer: SerializationWriter, acl: Acl | undefined =
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeActivitySettings(writer: SerializationWriter, activitySettings: ActivitySettings | undefined = {} as ActivitySettings) : void {
+export function serializeActivitySettings(writer: SerializationWriter, activitySettings: Partial<ActivitySettings> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", activitySettings.odataType);
     writer.writeCollectionOfObjectValues<UrlToItemResolverBase>("urlToItemResolvers", activitySettings.urlToItemResolvers, serializeUrlToItemResolverBase);
     writer.writeAdditionalData(activitySettings.additionalData);
@@ -1152,7 +1152,7 @@ export function serializeActivitySettings(writer: SerializationWriter, activityS
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeComplianceSettings(writer: SerializationWriter, complianceSettings: ComplianceSettings | undefined = {} as ComplianceSettings) : void {
+export function serializeComplianceSettings(writer: SerializationWriter, complianceSettings: Partial<ComplianceSettings> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<DisplayTemplate>("eDiscoveryResultTemplates", complianceSettings.eDiscoveryResultTemplates, serializeDisplayTemplate);
     writer.writeStringValue("@odata.type", complianceSettings.odataType);
     writer.writeAdditionalData(complianceSettings.additionalData);
@@ -1161,7 +1161,7 @@ export function serializeComplianceSettings(writer: SerializationWriter, complia
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConfiguration(writer: SerializationWriter, configuration: Configuration | undefined = {} as Configuration) : void {
+export function serializeConfiguration(writer: SerializationWriter, configuration: Partial<Configuration> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("authorizedAppIds", configuration.authorizedAppIds);
     writer.writeStringValue("@odata.type", configuration.odataType);
     writer.writeAdditionalData(configuration.additionalData);
@@ -1170,7 +1170,7 @@ export function serializeConfiguration(writer: SerializationWriter, configuratio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectionOperation(writer: SerializationWriter, connectionOperation: ConnectionOperation | undefined = {} as ConnectionOperation) : void {
+export function serializeConnectionOperation(writer: SerializationWriter, connectionOperation: Partial<ConnectionOperation> | undefined = {}) : void {
     serializeEntity(writer, connectionOperation)
     writer.writeObjectValue<PublicError>("error", connectionOperation.errorEscaped, serializePublicError);
     writer.writeEnumValue<ConnectionOperationStatus>("status", connectionOperation.status);
@@ -1179,7 +1179,7 @@ export function serializeConnectionOperation(writer: SerializationWriter, connec
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectionOperationCollectionResponse(writer: SerializationWriter, connectionOperationCollectionResponse: ConnectionOperationCollectionResponse | undefined = {} as ConnectionOperationCollectionResponse) : void {
+export function serializeConnectionOperationCollectionResponse(writer: SerializationWriter, connectionOperationCollectionResponse: Partial<ConnectionOperationCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, connectionOperationCollectionResponse)
     writer.writeCollectionOfObjectValues<ConnectionOperation>("value", connectionOperationCollectionResponse.value, serializeConnectionOperation);
 }
@@ -1187,7 +1187,7 @@ export function serializeConnectionOperationCollectionResponse(writer: Serializa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectionQuota(writer: SerializationWriter, connectionQuota: ConnectionQuota | undefined = {} as ConnectionQuota) : void {
+export function serializeConnectionQuota(writer: SerializationWriter, connectionQuota: Partial<ConnectionQuota> | undefined = {}) : void {
     serializeEntity(writer, connectionQuota)
     writer.writeNumberValue("itemsRemaining", connectionQuota.itemsRemaining);
 }
@@ -1195,7 +1195,7 @@ export function serializeConnectionQuota(writer: SerializationWriter, connection
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDisplayTemplate(writer: SerializationWriter, displayTemplate: DisplayTemplate | undefined = {} as DisplayTemplate) : void {
+export function serializeDisplayTemplate(writer: SerializationWriter, displayTemplate: Partial<DisplayTemplate> | undefined = {}) : void {
     writer.writeStringValue("id", displayTemplate.id);
     writer.writeObjectValue<Json>("layout", displayTemplate.layout, serializeJson);
     writer.writeStringValue("@odata.type", displayTemplate.odataType);
@@ -1207,7 +1207,7 @@ export function serializeDisplayTemplate(writer: SerializationWriter, displayTem
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternal(writer: SerializationWriter, external: External | undefined = {} as External) : void {
+export function serializeExternal(writer: SerializationWriter, external: Partial<External> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<AuthorizationSystem>("authorizationSystems", external.authorizationSystems, serializeAuthorizationSystem);
     writer.writeCollectionOfObjectValues<ExternalConnection>("connections", external.connections, serializeExternalConnection);
     writer.writeObjectValue<IndustryDataRoot>("industryData", external.industryData, serializeIndustryDataRoot);
@@ -1218,7 +1218,7 @@ export function serializeExternal(writer: SerializationWriter, external: Externa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalActivity(writer: SerializationWriter, externalActivity: ExternalActivity | undefined = {} as ExternalActivity) : void {
+export function serializeExternalActivity(writer: SerializationWriter, externalActivity: Partial<ExternalActivity> | undefined = {}) : void {
     serializeEntity(writer, externalActivity)
     writer.writeObjectValue<Identity>("performedBy", externalActivity.performedBy, serializeIdentity);
     writer.writeDateValue("startDateTime", externalActivity.startDateTime);
@@ -1228,7 +1228,7 @@ export function serializeExternalActivity(writer: SerializationWriter, externalA
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalActivityCollectionResponse(writer: SerializationWriter, externalActivityCollectionResponse: ExternalActivityCollectionResponse | undefined = {} as ExternalActivityCollectionResponse) : void {
+export function serializeExternalActivityCollectionResponse(writer: SerializationWriter, externalActivityCollectionResponse: Partial<ExternalActivityCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, externalActivityCollectionResponse)
     writer.writeCollectionOfObjectValues<ExternalActivity>("value", externalActivityCollectionResponse.value, serializeExternalActivity);
 }
@@ -1236,7 +1236,7 @@ export function serializeExternalActivityCollectionResponse(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalActivityResult(writer: SerializationWriter, externalActivityResult: ExternalActivityResult | undefined = {} as ExternalActivityResult) : void {
+export function serializeExternalActivityResult(writer: SerializationWriter, externalActivityResult: Partial<ExternalActivityResult> | undefined = {}) : void {
     serializeExternalActivity(writer, externalActivityResult)
     writer.writeObjectValue<PublicError>("error", externalActivityResult.errorEscaped, serializePublicError);
 }
@@ -1244,7 +1244,7 @@ export function serializeExternalActivityResult(writer: SerializationWriter, ext
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalConnection(writer: SerializationWriter, externalConnection: ExternalConnection | undefined = {} as ExternalConnection) : void {
+export function serializeExternalConnection(writer: SerializationWriter, externalConnection: Partial<ExternalConnection> | undefined = {}) : void {
     serializeEntity(writer, externalConnection)
     writer.writeObjectValue<ActivitySettings>("activitySettings", externalConnection.activitySettings, serializeActivitySettings);
     writer.writeObjectValue<ComplianceSettings>("complianceSettings", externalConnection.complianceSettings, serializeComplianceSettings);
@@ -1265,7 +1265,7 @@ export function serializeExternalConnection(writer: SerializationWriter, externa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalConnectionCollectionResponse(writer: SerializationWriter, externalConnectionCollectionResponse: ExternalConnectionCollectionResponse | undefined = {} as ExternalConnectionCollectionResponse) : void {
+export function serializeExternalConnectionCollectionResponse(writer: SerializationWriter, externalConnectionCollectionResponse: Partial<ExternalConnectionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, externalConnectionCollectionResponse)
     writer.writeCollectionOfObjectValues<ExternalConnection>("value", externalConnectionCollectionResponse.value, serializeExternalConnection);
 }
@@ -1273,7 +1273,7 @@ export function serializeExternalConnectionCollectionResponse(writer: Serializat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalGroup(writer: SerializationWriter, externalGroup: ExternalGroup | undefined = {} as ExternalGroup) : void {
+export function serializeExternalGroup(writer: SerializationWriter, externalGroup: Partial<ExternalGroup> | undefined = {}) : void {
     serializeEntity(writer, externalGroup)
     writer.writeStringValue("description", externalGroup.description);
     writer.writeStringValue("displayName", externalGroup.displayName);
@@ -1283,7 +1283,7 @@ export function serializeExternalGroup(writer: SerializationWriter, externalGrou
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalGroupCollectionResponse(writer: SerializationWriter, externalGroupCollectionResponse: ExternalGroupCollectionResponse | undefined = {} as ExternalGroupCollectionResponse) : void {
+export function serializeExternalGroupCollectionResponse(writer: SerializationWriter, externalGroupCollectionResponse: Partial<ExternalGroupCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, externalGroupCollectionResponse)
     writer.writeCollectionOfObjectValues<ExternalGroup>("value", externalGroupCollectionResponse.value, serializeExternalGroup);
 }
@@ -1291,7 +1291,7 @@ export function serializeExternalGroupCollectionResponse(writer: SerializationWr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalItem(writer: SerializationWriter, externalItem: ExternalItem | undefined = {} as ExternalItem) : void {
+export function serializeExternalItem(writer: SerializationWriter, externalItem: Partial<ExternalItem> | undefined = {}) : void {
     serializeEntity(writer, externalItem)
     writer.writeCollectionOfObjectValues<Acl>("acl", externalItem.acl, serializeAcl);
     writer.writeCollectionOfObjectValues<ExternalActivity>("activities", externalItem.activities, serializeExternalActivity);
@@ -1302,7 +1302,7 @@ export function serializeExternalItem(writer: SerializationWriter, externalItem:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalItemCollectionResponse(writer: SerializationWriter, externalItemCollectionResponse: ExternalItemCollectionResponse | undefined = {} as ExternalItemCollectionResponse) : void {
+export function serializeExternalItemCollectionResponse(writer: SerializationWriter, externalItemCollectionResponse: Partial<ExternalItemCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, externalItemCollectionResponse)
     writer.writeCollectionOfObjectValues<ExternalItem>("value", externalItemCollectionResponse.value, serializeExternalItem);
 }
@@ -1310,7 +1310,7 @@ export function serializeExternalItemCollectionResponse(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExternalItemContent(writer: SerializationWriter, externalItemContent: ExternalItemContent | undefined = {} as ExternalItemContent) : void {
+export function serializeExternalItemContent(writer: SerializationWriter, externalItemContent: Partial<ExternalItemContent> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", externalItemContent.odataType);
     writer.writeEnumValue<ExternalItemContentType>("type", externalItemContent.type);
     writer.writeStringValue("value", externalItemContent.value);
@@ -1320,7 +1320,7 @@ export function serializeExternalItemContent(writer: SerializationWriter, extern
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIdentity(writer: SerializationWriter, identity: Identity | undefined = {} as Identity) : void {
+export function serializeIdentity(writer: SerializationWriter, identity: Partial<Identity> | undefined = {}) : void {
     serializeEntity(writer, identity)
     writer.writeEnumValue<IdentityType>("type", identity.type);
 }
@@ -1328,7 +1328,7 @@ export function serializeIdentity(writer: SerializationWriter, identity: Identit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIdentityCollectionResponse(writer: SerializationWriter, identityCollectionResponse: IdentityCollectionResponse | undefined = {} as IdentityCollectionResponse) : void {
+export function serializeIdentityCollectionResponse(writer: SerializationWriter, identityCollectionResponse: Partial<IdentityCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, identityCollectionResponse)
     writer.writeCollectionOfObjectValues<Identity>("value", identityCollectionResponse.value, serializeIdentity);
 }
@@ -1336,7 +1336,7 @@ export function serializeIdentityCollectionResponse(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeItemIdResolver(writer: SerializationWriter, itemIdResolver: ItemIdResolver | undefined = {} as ItemIdResolver) : void {
+export function serializeItemIdResolver(writer: SerializationWriter, itemIdResolver: Partial<ItemIdResolver> | undefined = {}) : void {
     serializeUrlToItemResolverBase(writer, itemIdResolver)
     writer.writeStringValue("itemId", itemIdResolver.itemId);
     writer.writeObjectValue<UrlMatchInfo>("urlMatchInfo", itemIdResolver.urlMatchInfo, serializeUrlMatchInfo);
@@ -1345,7 +1345,7 @@ export function serializeItemIdResolver(writer: SerializationWriter, itemIdResol
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeProperties(writer: SerializationWriter, properties: Properties | undefined = {} as Properties) : void {
+export function serializeProperties(writer: SerializationWriter, properties: Partial<Properties> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", properties.odataType);
     writer.writeAdditionalData(properties.additionalData);
 }
@@ -1353,7 +1353,7 @@ export function serializeProperties(writer: SerializationWriter, properties: Pro
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeProperty(writer: SerializationWriter, property: Property | undefined = {} as Property) : void {
+export function serializeProperty(writer: SerializationWriter, property: Partial<Property> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("aliases", property.aliases);
     writer.writeBooleanValue("isExactMatchRequired", property.isExactMatchRequired);
     writer.writeBooleanValue("isQueryable", property.isQueryable);
@@ -1372,7 +1372,7 @@ export function serializeProperty(writer: SerializationWriter, property: Propert
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePropertyRule(writer: SerializationWriter, propertyRule: PropertyRule | undefined = {} as PropertyRule) : void {
+export function serializePropertyRule(writer: SerializationWriter, propertyRule: Partial<PropertyRule> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", propertyRule.odataType);
     writer.writeEnumValue<RuleOperation>("operation", propertyRule.operation);
     writer.writeStringValue("property", propertyRule.property);
@@ -1384,7 +1384,7 @@ export function serializePropertyRule(writer: SerializationWriter, propertyRule:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRankingHint(writer: SerializationWriter, rankingHint: RankingHint | undefined = {} as RankingHint) : void {
+export function serializeRankingHint(writer: SerializationWriter, rankingHint: Partial<RankingHint> | undefined = {}) : void {
     writer.writeEnumValue<ImportanceScore>("importanceScore", rankingHint.importanceScore);
     writer.writeStringValue("@odata.type", rankingHint.odataType);
     writer.writeAdditionalData(rankingHint.additionalData);
@@ -1393,7 +1393,7 @@ export function serializeRankingHint(writer: SerializationWriter, rankingHint: R
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSchema(writer: SerializationWriter, schema: Schema | undefined = {} as Schema) : void {
+export function serializeSchema(writer: SerializationWriter, schema: Partial<Schema> | undefined = {}) : void {
     serializeEntity(writer, schema)
     writer.writeStringValue("baseType", schema.baseType);
     writer.writeCollectionOfObjectValues<Property>("properties", schema.properties, serializeProperty);
@@ -1402,7 +1402,7 @@ export function serializeSchema(writer: SerializationWriter, schema: Schema | un
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSearchSettings(writer: SerializationWriter, searchSettings: SearchSettings | undefined = {} as SearchSettings) : void {
+export function serializeSearchSettings(writer: SerializationWriter, searchSettings: Partial<SearchSettings> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", searchSettings.odataType);
     writer.writeCollectionOfObjectValues<DisplayTemplate>("searchResultTemplates", searchSettings.searchResultTemplates, serializeDisplayTemplate);
     writer.writeAdditionalData(searchSettings.additionalData);
@@ -1411,7 +1411,7 @@ export function serializeSearchSettings(writer: SerializationWriter, searchSetti
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUrlMatchInfo(writer: SerializationWriter, urlMatchInfo: UrlMatchInfo | undefined = {} as UrlMatchInfo) : void {
+export function serializeUrlMatchInfo(writer: SerializationWriter, urlMatchInfo: Partial<UrlMatchInfo> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("baseUrls", urlMatchInfo.baseUrls);
     writer.writeStringValue("@odata.type", urlMatchInfo.odataType);
     writer.writeStringValue("urlPattern", urlMatchInfo.urlPattern);
@@ -1421,7 +1421,7 @@ export function serializeUrlMatchInfo(writer: SerializationWriter, urlMatchInfo:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUrlToItemResolverBase(writer: SerializationWriter, urlToItemResolverBase: UrlToItemResolverBase | undefined = {} as UrlToItemResolverBase) : void {
+export function serializeUrlToItemResolverBase(writer: SerializationWriter, urlToItemResolverBase: Partial<UrlToItemResolverBase> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", urlToItemResolverBase.odataType);
     writer.writeNumberValue("priority", urlToItemResolverBase.priority);
     writer.writeAdditionalData(urlToItemResolverBase.additionalData);

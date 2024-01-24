@@ -240,7 +240,7 @@ export function createSearchAnswerFromDiscriminatorValue(parseNode: ParseNode | 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAcronym(acronym: Acronym | undefined = {} as Acronym) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAcronym(acronym: Partial<Acronym> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSearchAnswer(acronym),
         "standsFor": n => { acronym.standsFor = n.getStringValue(); },
@@ -251,7 +251,7 @@ export function deserializeIntoAcronym(acronym: Acronym | undefined = {} as Acro
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAcronymCollectionResponse(acronymCollectionResponse: AcronymCollectionResponse | undefined = {} as AcronymCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAcronymCollectionResponse(acronymCollectionResponse: Partial<AcronymCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(acronymCollectionResponse),
         "value": n => { acronymCollectionResponse.value = n.getCollectionOfObjectValues<Acronym>(createAcronymFromDiscriminatorValue); },
@@ -261,7 +261,7 @@ export function deserializeIntoAcronymCollectionResponse(acronymCollectionRespon
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAnswerKeyword(answerKeyword: AnswerKeyword | undefined = {} as AnswerKeyword) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAnswerKeyword(answerKeyword: Partial<AnswerKeyword> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { answerKeyword.backingStoreEnabled = true; },
         "keywords": n => { answerKeyword.keywords = n.getCollectionOfPrimitiveValues<string>(); },
@@ -274,7 +274,7 @@ export function deserializeIntoAnswerKeyword(answerKeyword: AnswerKeyword | unde
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoAnswerVariant(answerVariant: AnswerVariant | undefined = {} as AnswerVariant) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoAnswerVariant(answerVariant: Partial<AnswerVariant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { answerVariant.backingStoreEnabled = true; },
         "description": n => { answerVariant.description = n.getStringValue(); },
@@ -289,7 +289,7 @@ export function deserializeIntoAnswerVariant(answerVariant: AnswerVariant | unde
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoBookmark(bookmark: Bookmark | undefined = {} as Bookmark) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoBookmark(bookmark: Partial<Bookmark> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSearchAnswer(bookmark),
         "availabilityEndDateTime": n => { bookmark.availabilityEndDateTime = n.getDateValue(); },
@@ -309,7 +309,7 @@ export function deserializeIntoBookmark(bookmark: Bookmark | undefined = {} as B
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoBookmarkCollectionResponse(bookmarkCollectionResponse: BookmarkCollectionResponse | undefined = {} as BookmarkCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoBookmarkCollectionResponse(bookmarkCollectionResponse: Partial<BookmarkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(bookmarkCollectionResponse),
         "value": n => { bookmarkCollectionResponse.value = n.getCollectionOfObjectValues<Bookmark>(createBookmarkFromDiscriminatorValue); },
@@ -319,7 +319,7 @@ export function deserializeIntoBookmarkCollectionResponse(bookmarkCollectionResp
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIdentity(identity: Identity | undefined = {} as Identity) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIdentity(identity: Partial<Identity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { identity.backingStoreEnabled = true; },
         "displayName": n => { identity.displayName = n.getStringValue(); },
@@ -331,7 +331,7 @@ export function deserializeIntoIdentity(identity: Identity | undefined = {} as I
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoIdentitySet(identitySet: IdentitySet | undefined = {} as IdentitySet) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoIdentitySet(identitySet: Partial<IdentitySet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "application": n => { identitySet.application = n.getObjectValue<Identity>(createIdentityFromDiscriminatorValue); },
         "backingStoreEnabled": n => { identitySet.backingStoreEnabled = true; },
@@ -344,7 +344,7 @@ export function deserializeIntoIdentitySet(identitySet: IdentitySet | undefined 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoQna(qna: Qna | undefined = {} as Qna) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoQna(qna: Partial<Qna> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSearchAnswer(qna),
         "availabilityEndDateTime": n => { qna.availabilityEndDateTime = n.getDateValue(); },
@@ -362,7 +362,7 @@ export function deserializeIntoQna(qna: Qna | undefined = {} as Qna) : Record<st
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoQnaCollectionResponse(qnaCollectionResponse: QnaCollectionResponse | undefined = {} as QnaCollectionResponse) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoQnaCollectionResponse(qnaCollectionResponse: Partial<QnaCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(qnaCollectionResponse),
         "value": n => { qnaCollectionResponse.value = n.getCollectionOfObjectValues<Qna>(createQnaFromDiscriminatorValue); },
@@ -372,7 +372,7 @@ export function deserializeIntoQnaCollectionResponse(qnaCollectionResponse: QnaC
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoSearchAnswer(searchAnswer: SearchAnswer | undefined = {} as SearchAnswer) : Record<string, (node: ParseNode) => void> {
+export function deserializeIntoSearchAnswer(searchAnswer: Partial<SearchAnswer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(searchAnswer),
         "description": n => { searchAnswer.description = n.getStringValue(); },
@@ -500,7 +500,7 @@ export interface SearchAnswer extends Entity, Parsable {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAcronym(writer: SerializationWriter, acronym: Acronym | undefined = {} as Acronym) : void {
+export function serializeAcronym(writer: SerializationWriter, acronym: Partial<Acronym> | undefined = {}) : void {
     serializeSearchAnswer(writer, acronym)
     writer.writeStringValue("standsFor", acronym.standsFor);
     writer.writeEnumValue<AnswerState>("state", acronym.state);
@@ -509,7 +509,7 @@ export function serializeAcronym(writer: SerializationWriter, acronym: Acronym |
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAcronymCollectionResponse(writer: SerializationWriter, acronymCollectionResponse: AcronymCollectionResponse | undefined = {} as AcronymCollectionResponse) : void {
+export function serializeAcronymCollectionResponse(writer: SerializationWriter, acronymCollectionResponse: Partial<AcronymCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, acronymCollectionResponse)
     writer.writeCollectionOfObjectValues<Acronym>("value", acronymCollectionResponse.value, serializeAcronym);
 }
@@ -517,7 +517,7 @@ export function serializeAcronymCollectionResponse(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAnswerKeyword(writer: SerializationWriter, answerKeyword: AnswerKeyword | undefined = {} as AnswerKeyword) : void {
+export function serializeAnswerKeyword(writer: SerializationWriter, answerKeyword: Partial<AnswerKeyword> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("keywords", answerKeyword.keywords);
     writer.writeBooleanValue("matchSimilarKeywords", answerKeyword.matchSimilarKeywords);
     writer.writeStringValue("@odata.type", answerKeyword.odataType);
@@ -528,7 +528,7 @@ export function serializeAnswerKeyword(writer: SerializationWriter, answerKeywor
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAnswerVariant(writer: SerializationWriter, answerVariant: AnswerVariant | undefined = {} as AnswerVariant) : void {
+export function serializeAnswerVariant(writer: SerializationWriter, answerVariant: Partial<AnswerVariant> | undefined = {}) : void {
     writer.writeStringValue("description", answerVariant.description);
     writer.writeStringValue("displayName", answerVariant.displayName);
     writer.writeStringValue("languageTag", answerVariant.languageTag);
@@ -541,7 +541,7 @@ export function serializeAnswerVariant(writer: SerializationWriter, answerVarian
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBookmark(writer: SerializationWriter, bookmark: Bookmark | undefined = {} as Bookmark) : void {
+export function serializeBookmark(writer: SerializationWriter, bookmark: Partial<Bookmark> | undefined = {}) : void {
     serializeSearchAnswer(writer, bookmark)
     writer.writeDateValue("availabilityEndDateTime", bookmark.availabilityEndDateTime);
     writer.writeDateValue("availabilityStartDateTime", bookmark.availabilityStartDateTime);
@@ -560,7 +560,7 @@ export function serializeBookmark(writer: SerializationWriter, bookmark: Bookmar
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBookmarkCollectionResponse(writer: SerializationWriter, bookmarkCollectionResponse: BookmarkCollectionResponse | undefined = {} as BookmarkCollectionResponse) : void {
+export function serializeBookmarkCollectionResponse(writer: SerializationWriter, bookmarkCollectionResponse: Partial<BookmarkCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, bookmarkCollectionResponse)
     writer.writeCollectionOfObjectValues<Bookmark>("value", bookmarkCollectionResponse.value, serializeBookmark);
 }
@@ -568,7 +568,7 @@ export function serializeBookmarkCollectionResponse(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIdentity(writer: SerializationWriter, identity: Identity | undefined = {} as Identity) : void {
+export function serializeIdentity(writer: SerializationWriter, identity: Partial<Identity> | undefined = {}) : void {
     writer.writeStringValue("displayName", identity.displayName);
     writer.writeStringValue("id", identity.id);
     writer.writeStringValue("@odata.type", identity.odataType);
@@ -578,7 +578,7 @@ export function serializeIdentity(writer: SerializationWriter, identity: Identit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIdentitySet(writer: SerializationWriter, identitySet: IdentitySet | undefined = {} as IdentitySet) : void {
+export function serializeIdentitySet(writer: SerializationWriter, identitySet: Partial<IdentitySet> | undefined = {}) : void {
     writer.writeObjectValue<Identity>("application", identitySet.application, serializeIdentity);
     writer.writeObjectValue<Identity>("device", identitySet.device, serializeIdentity);
     writer.writeStringValue("@odata.type", identitySet.odataType);
@@ -589,7 +589,7 @@ export function serializeIdentitySet(writer: SerializationWriter, identitySet: I
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeQna(writer: SerializationWriter, qna: Qna | undefined = {} as Qna) : void {
+export function serializeQna(writer: SerializationWriter, qna: Partial<Qna> | undefined = {}) : void {
     serializeSearchAnswer(writer, qna)
     writer.writeDateValue("availabilityEndDateTime", qna.availabilityEndDateTime);
     writer.writeDateValue("availabilityStartDateTime", qna.availabilityStartDateTime);
@@ -606,7 +606,7 @@ export function serializeQna(writer: SerializationWriter, qna: Qna | undefined =
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeQnaCollectionResponse(writer: SerializationWriter, qnaCollectionResponse: QnaCollectionResponse | undefined = {} as QnaCollectionResponse) : void {
+export function serializeQnaCollectionResponse(writer: SerializationWriter, qnaCollectionResponse: Partial<QnaCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, qnaCollectionResponse)
     writer.writeCollectionOfObjectValues<Qna>("value", qnaCollectionResponse.value, serializeQna);
 }
@@ -614,7 +614,7 @@ export function serializeQnaCollectionResponse(writer: SerializationWriter, qnaC
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSearchAnswer(writer: SerializationWriter, searchAnswer: SearchAnswer | undefined = {} as SearchAnswer) : void {
+export function serializeSearchAnswer(writer: SerializationWriter, searchAnswer: Partial<SearchAnswer> | undefined = {}) : void {
     serializeEntity(writer, searchAnswer)
     writer.writeStringValue("description", searchAnswer.description);
     writer.writeStringValue("displayName", searchAnswer.displayName);
