@@ -10,13 +10,13 @@ import { TextParseNodeFactory, TextSerializationWriterFactory } from '@microsoft
 /**
  * The main entry point of the SDK, exposes the configuration and the fluent API.
  */
-export interface GraphServiceClient extends BaseRequestBuilder<GraphServiceClient> {
+export interface GraphBetaServiceClient extends BaseRequestBuilder<GraphBetaServiceClient> {
 }
 /**
- * Instantiates a new GraphServiceClient and sets the default values.
+ * Instantiates a new GraphBetaServiceClient and sets the default values.
  * @param requestAdapter The request adapter to use to execute the requests.
  */
-export function createGraphServiceClient(requestAdapter: RequestAdapter) {
+export function createGraphBetaServiceClient(requestAdapter: RequestAdapter) {
     registerDefaultSerializer(JsonSerializationWriterFactory);
     registerDefaultSerializer(TextSerializationWriterFactory);
     registerDefaultSerializer(FormSerializationWriterFactory);
@@ -30,32 +30,32 @@ export function createGraphServiceClient(requestAdapter: RequestAdapter) {
     const pathParameters: Record<string, unknown> = {
         "baseurl": requestAdapter.baseUrl,
     };
-    return apiClientProxifier<GraphServiceClient>(requestAdapter, pathParameters, GraphServiceClientUriTemplate, GraphServiceClientNavigationMetadata, GraphServiceClientRequestsMetadata);
+    return apiClientProxifier<GraphBetaServiceClient>(requestAdapter, pathParameters, GraphBetaServiceClientUriTemplate, GraphBetaServiceClientNavigationMetadata, GraphBetaServiceClientRequestsMetadata);
 }
-type NavigationMetadataType = Partial<Record<Exclude<keyof GraphServiceClient, KeysToExcludeForNavigationMetadata>, NavigationMetadata>>;
+type NavigationMetadataType = Partial<Record<Exclude<keyof GraphBetaServiceClient, KeysToExcludeForNavigationMetadata>, NavigationMetadata>>;
 /**
  * Metadata for all the navigation properties in the request builder.
  */
-let GraphServiceClientNavigationMetadata: NavigationMetadataType = {
+let GraphBetaServiceClientNavigationMetadata: NavigationMetadataType = {
 };
 /**
  * Metadata for all the requests in the request builder.
  */
-let GraphServiceClientRequestsMetadata: RequestsMetadata = {
+let GraphBetaServiceClientRequestsMetadata: RequestsMetadata = {
 }
-export function extendGraphServiceClient(clientNavigationMetadata?: NavigationMetadataType, clientRequestsMetadata?: RequestsMetadata) {
-	GraphServiceClientNavigationMetadata = {
-		...GraphServiceClientNavigationMetadata,
+export function extendGraphBetaServiceClient(clientNavigationMetadata?: NavigationMetadataType, clientRequestsMetadata?: RequestsMetadata) {
+	GraphBetaServiceClientNavigationMetadata = {
+		...GraphBetaServiceClientNavigationMetadata,
 		...clientNavigationMetadata,
 	};
-	GraphServiceClientRequestsMetadata = {
-		...GraphServiceClientRequestsMetadata,
+	GraphBetaServiceClientRequestsMetadata = {
+		...GraphBetaServiceClientRequestsMetadata,
 		...clientRequestsMetadata,
 	};
 }
 /**
  * Uri template for the request builder.
  */
-export const GraphServiceClientUriTemplate = "{+baseurl}";
+export const GraphBetaServiceClientUriTemplate = "{+baseurl}";
 /* tslint:enable */
 /* eslint-enable */
