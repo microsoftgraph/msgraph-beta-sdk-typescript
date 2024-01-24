@@ -138,7 +138,7 @@ export interface BookmarkCollectionResponse extends BaseCollectionPaginationCoun
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a acronymCollectionResponse
  */
-export function createAcronymCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAcronymCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAcronymCollectionResponse;
 }
 /**
@@ -146,7 +146,7 @@ export function createAcronymCollectionResponseFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a acronym
  */
-export function createAcronymFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAcronymFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAcronym;
 }
 /**
@@ -154,7 +154,7 @@ export function createAcronymFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a answerKeyword
  */
-export function createAnswerKeywordFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAnswerKeywordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAnswerKeyword;
 }
 /**
@@ -162,7 +162,7 @@ export function createAnswerKeywordFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a answerVariant
  */
-export function createAnswerVariantFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAnswerVariantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAnswerVariant;
 }
 /**
@@ -170,7 +170,7 @@ export function createAnswerVariantFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a bookmarkCollectionResponse
  */
-export function createBookmarkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createBookmarkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBookmarkCollectionResponse;
 }
 /**
@@ -178,7 +178,7 @@ export function createBookmarkCollectionResponseFromDiscriminatorValue(parseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a bookmark
  */
-export function createBookmarkFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createBookmarkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBookmark;
 }
 /**
@@ -186,7 +186,7 @@ export function createBookmarkFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a identity
  */
-export function createIdentityFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createIdentityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIdentity;
 }
 /**
@@ -194,7 +194,7 @@ export function createIdentityFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a identitySet
  */
-export function createIdentitySetFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createIdentitySetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIdentitySet;
 }
 /**
@@ -202,7 +202,7 @@ export function createIdentitySetFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a qnaCollectionResponse
  */
-export function createQnaCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createQnaCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQnaCollectionResponse;
 }
 /**
@@ -210,7 +210,7 @@ export function createQnaCollectionResponseFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a qna
  */
-export function createQnaFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createQnaFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQna;
 }
 /**
@@ -218,7 +218,7 @@ export function createQnaFromDiscriminatorValue(parseNode: ParseNode | undefined
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a searchAnswer
  */
-export function createSearchAnswerFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createSearchAnswerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {

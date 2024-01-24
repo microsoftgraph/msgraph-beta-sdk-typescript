@@ -127,7 +127,7 @@ export type ConditionCategory = (typeof ConditionCategoryObject)[keyof typeof Co
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a alertImpact
  */
-export function createAlertImpactFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAlertImpactFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertImpact;
 }
 /**
@@ -135,7 +135,7 @@ export function createAlertImpactFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a alertRecordCollectionResponse
  */
-export function createAlertRecordCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAlertRecordCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRecordCollectionResponse;
 }
 /**
@@ -143,7 +143,7 @@ export function createAlertRecordCollectionResponseFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a alertRecord
  */
-export function createAlertRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAlertRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRecord;
 }
 /**
@@ -151,7 +151,7 @@ export function createAlertRecordFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a alertRuleCollectionResponse
  */
-export function createAlertRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAlertRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRuleCollectionResponse;
 }
 /**
@@ -159,7 +159,7 @@ export function createAlertRuleCollectionResponseFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a alertRule
  */
-export function createAlertRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAlertRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRule;
 }
 /**
@@ -167,7 +167,7 @@ export function createAlertRuleFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a monitoring
  */
-export function createMonitoringFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createMonitoringFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMonitoring;
 }
 /**
@@ -175,7 +175,7 @@ export function createMonitoringFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a notificationChannel
  */
-export function createNotificationChannelFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createNotificationChannelFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationChannel;
 }
 /**
@@ -183,7 +183,7 @@ export function createNotificationChannelFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a notificationReceiver
  */
-export function createNotificationReceiverFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createNotificationReceiverFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationReceiver;
 }
 /**
@@ -191,7 +191,7 @@ export function createNotificationReceiverFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a portalNotification
  */
-export function createPortalNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPortalNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPortalNotification;
 }
 /**
@@ -199,7 +199,7 @@ export function createPortalNotificationFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ruleCondition
  */
-export function createRuleConditionFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRuleConditionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRuleCondition;
 }
 /**
@@ -207,7 +207,7 @@ export function createRuleConditionFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ruleThreshold
  */
-export function createRuleThresholdFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRuleThresholdFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRuleThreshold;
 }
 /**

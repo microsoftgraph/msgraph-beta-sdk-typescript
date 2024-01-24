@@ -199,7 +199,7 @@ export type ConnectivityState = (typeof ConnectivityStateObject)[keyof typeof Co
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a associatedBranch
  */
-export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssociatedBranch;
 }
 /**
@@ -207,7 +207,7 @@ export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a association
  */
-export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -226,7 +226,7 @@ export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a bgpConfiguration
  */
-export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBgpConfiguration;
 }
 /**
@@ -234,7 +234,7 @@ export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a branchConnectivityConfiguration
  */
-export function createBranchConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createBranchConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchConnectivityConfiguration;
 }
 /**
@@ -242,7 +242,7 @@ export function createBranchConnectivityConfigurationFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a branchSiteCollectionResponse
  */
-export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSiteCollectionResponse;
 }
 /**
@@ -250,7 +250,7 @@ export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a branchSite
  */
-export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSite;
 }
 /**
@@ -258,7 +258,7 @@ export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a conditionalAccessPolicyCollectionResponse
  */
-export function createConditionalAccessPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createConditionalAccessPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCollectionResponse;
 }
 /**
@@ -266,7 +266,7 @@ export function createConditionalAccessPolicyCollectionResponseFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a conditionalAccessPolicy
  */
-export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicy;
 }
 /**
@@ -274,7 +274,7 @@ export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a conditionalAccessSettings
  */
-export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessSettings;
 }
 /**
@@ -282,7 +282,7 @@ export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a connectivityConfigurationLinkCollectionResponse
  */
-export function createConnectivityConfigurationLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createConnectivityConfigurationLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivityConfigurationLinkCollectionResponse;
 }
 /**
@@ -290,7 +290,7 @@ export function createConnectivityConfigurationLinkCollectionResponseFromDiscrim
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a connectivityConfigurationLink
  */
-export function createConnectivityConfigurationLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createConnectivityConfigurationLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivityConfigurationLink;
 }
 /**
@@ -298,7 +298,7 @@ export function createConnectivityConfigurationLinkFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a connectivity
  */
-export function createConnectivityFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createConnectivityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivity;
 }
 /**
@@ -306,7 +306,7 @@ export function createConnectivityFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a crossTenantAccess
  */
-export function createCrossTenantAccessFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createCrossTenantAccessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantAccess;
 }
 /**
@@ -314,7 +314,7 @@ export function createCrossTenantAccessFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a crossTenantAccessSettings
  */
-export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantAccessSettings;
 }
 /**
@@ -322,7 +322,7 @@ export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a crossTenantSummary
  */
-export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantSummary;
 }
 /**
@@ -330,7 +330,7 @@ export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a destination
  */
-export function createDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDestination;
 }
 /**
@@ -338,7 +338,7 @@ export function createDestinationFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a destinationSummary
  */
-export function createDestinationSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createDestinationSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDestinationSummary;
 }
 /**
@@ -346,7 +346,7 @@ export function createDestinationSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a device
  */
-export function createDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDevice;
 }
 /**
@@ -354,7 +354,7 @@ export function createDeviceFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a deviceLinkCollectionResponse
  */
-export function createDeviceLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createDeviceLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceLinkCollectionResponse;
 }
 /**
@@ -362,7 +362,7 @@ export function createDeviceLinkCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a deviceLink
  */
-export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceLink;
 }
 /**
@@ -370,7 +370,7 @@ export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a deviceUsageSummary
  */
-export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceUsageSummary;
 }
 /**
@@ -378,7 +378,7 @@ export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a enrichedAuditLogs
  */
-export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnrichedAuditLogs;
 }
 /**
@@ -386,7 +386,7 @@ export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a enrichedAuditLogsSettings
  */
-export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnrichedAuditLogsSettings;
 }
 /**
@@ -394,7 +394,7 @@ export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a entitiesSummary
  */
-export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEntitiesSummary;
 }
 /**
@@ -402,7 +402,7 @@ export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a filteringPolicyCollectionResponse
  */
-export function createFilteringPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFilteringPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicyCollectionResponse;
 }
 /**
@@ -410,7 +410,7 @@ export function createFilteringPolicyCollectionResponseFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a filteringPolicy
  */
-export function createFilteringPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFilteringPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicy;
 }
 /**
@@ -418,7 +418,7 @@ export function createFilteringPolicyFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a filteringPolicyLink
  */
-export function createFilteringPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFilteringPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicyLink;
 }
 /**
@@ -426,7 +426,7 @@ export function createFilteringPolicyLinkFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a filteringProfileCollectionResponse
  */
-export function createFilteringProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFilteringProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringProfileCollectionResponse;
 }
 /**
@@ -434,7 +434,7 @@ export function createFilteringProfileCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a filteringProfile
  */
-export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringProfile;
 }
 /**
@@ -442,7 +442,7 @@ export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a filteringRule
  */
-export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -463,7 +463,7 @@ export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a forwardingOptions
  */
-export function createForwardingOptionsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createForwardingOptionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingOptions;
 }
 /**
@@ -471,7 +471,7 @@ export function createForwardingOptionsFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a forwardingPolicyCollectionResponse
  */
-export function createForwardingPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createForwardingPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicyCollectionResponse;
 }
 /**
@@ -479,7 +479,7 @@ export function createForwardingPolicyCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a forwardingPolicy
  */
-export function createForwardingPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createForwardingPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicy;
 }
 /**
@@ -487,7 +487,7 @@ export function createForwardingPolicyFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a forwardingPolicyLink
  */
-export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicyLink;
 }
 /**
@@ -495,7 +495,7 @@ export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a forwardingProfileCollectionResponse
  */
-export function createForwardingProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createForwardingProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingProfileCollectionResponse;
 }
 /**
@@ -503,7 +503,7 @@ export function createForwardingProfileCollectionResponseFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a forwardingProfile
  */
-export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingProfile;
 }
 /**
@@ -511,7 +511,7 @@ export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a forwardingRule
  */
-export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -534,7 +534,7 @@ export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a fqdnFilteringRule
  */
-export function createFqdnFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFqdnFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFqdnFilteringRule;
 }
 /**
@@ -542,7 +542,7 @@ export function createFqdnFilteringRuleFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a fqdn
  */
-export function createFqdnFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createFqdnFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFqdn;
 }
 /**
@@ -550,7 +550,7 @@ export function createFqdnFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a headers
  */
-export function createHeadersFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createHeadersFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHeaders;
 }
 /**
@@ -558,7 +558,7 @@ export function createHeadersFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a internetAccessForwardingRule
  */
-export function createInternetAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createInternetAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInternetAccessForwardingRule;
 }
 /**
@@ -566,7 +566,7 @@ export function createInternetAccessForwardingRuleFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ipAddress
  */
-export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpAddress;
 }
 /**
@@ -574,7 +574,7 @@ export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ipRange
  */
-export function createIpRangeFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createIpRangeFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpRange;
 }
 /**
@@ -582,7 +582,7 @@ export function createIpRangeFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ipSubnet
  */
-export function createIpSubnetFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createIpSubnetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpSubnet;
 }
 /**
@@ -590,7 +590,7 @@ export function createIpSubnetFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a localConnectivityConfiguration
  */
-export function createLocalConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createLocalConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLocalConnectivityConfiguration;
 }
 /**
@@ -598,7 +598,7 @@ export function createLocalConnectivityConfigurationFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a logs
  */
-export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLogs;
 }
 /**
@@ -606,7 +606,7 @@ export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a m365ForwardingRule
  */
-export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoM365ForwardingRule;
 }
 /**
@@ -614,7 +614,7 @@ export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a networkAccessRoot
  */
-export function createNetworkAccessRootFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createNetworkAccessRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessRoot;
 }
 /**
@@ -622,7 +622,7 @@ export function createNetworkAccessRootFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a networkAccessTrafficCollectionResponse
  */
-export function createNetworkAccessTrafficCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createNetworkAccessTrafficCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessTrafficCollectionResponse;
 }
 /**
@@ -630,7 +630,7 @@ export function createNetworkAccessTrafficCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a networkAccessTraffic
  */
-export function createNetworkAccessTrafficFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createNetworkAccessTrafficFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessTraffic;
 }
 /**
@@ -638,7 +638,7 @@ export function createNetworkAccessTrafficFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a peerConnectivityConfiguration
  */
-export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPeerConnectivityConfiguration;
 }
 /**
@@ -646,7 +646,7 @@ export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a policy
  */
-export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -667,7 +667,7 @@ export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a policyLinkCollectionResponse
  */
-export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyLinkCollectionResponse;
 }
 /**
@@ -675,7 +675,7 @@ export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a policyLink
  */
-export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -696,7 +696,7 @@ export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a policyRuleCollectionResponse
  */
-export function createPolicyRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPolicyRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyRuleCollectionResponse;
 }
 /**
@@ -704,7 +704,7 @@ export function createPolicyRuleCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a policyRuleDelta
  */
-export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyRuleDelta;
 }
 /**
@@ -712,7 +712,7 @@ export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a policyRule
  */
-export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -743,7 +743,7 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a privateAccessForwardingRule
  */
-export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPrivateAccessForwardingRule;
 }
 /**
@@ -751,7 +751,7 @@ export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a profile
  */
-export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -772,7 +772,7 @@ export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a redundancyConfiguration
  */
-export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRedundancyConfiguration;
 }
 /**
@@ -780,7 +780,7 @@ export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a remoteNetworkCollectionResponse
  */
-export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkCollectionResponse;
 }
 /**
@@ -788,7 +788,7 @@ export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a remoteNetworkConnectivityConfiguration
  */
-export function createRemoteNetworkConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRemoteNetworkConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkConnectivityConfiguration;
 }
 /**
@@ -796,7 +796,7 @@ export function createRemoteNetworkConnectivityConfigurationFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a remoteNetwork
  */
-export function createRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetwork;
 }
 /**
@@ -804,7 +804,7 @@ export function createRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a remoteNetworkHealthEventCollectionResponse
  */
-export function createRemoteNetworkHealthEventCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRemoteNetworkHealthEventCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkHealthEventCollectionResponse;
 }
 /**
@@ -812,7 +812,7 @@ export function createRemoteNetworkHealthEventCollectionResponseFromDiscriminato
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a remoteNetworkHealthEvent
  */
-export function createRemoteNetworkHealthEventFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRemoteNetworkHealthEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkHealthEvent;
 }
 /**
@@ -820,7 +820,7 @@ export function createRemoteNetworkHealthEventFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a reports
  */
-export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReports;
 }
 /**
@@ -828,7 +828,7 @@ export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ruleDestination
  */
-export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -857,7 +857,7 @@ export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a settings
  */
-export function createSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSettings;
 }
 /**
@@ -865,7 +865,7 @@ export function createSettingsFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a tenantStatus
  */
-export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantStatus;
 }
 /**
@@ -873,7 +873,7 @@ export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a trafficDistributionPoint
  */
-export function createTrafficDistributionPointFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createTrafficDistributionPointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTrafficDistributionPoint;
 }
 /**
@@ -881,7 +881,7 @@ export function createTrafficDistributionPointFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a transactionSummary
  */
-export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTransactionSummary;
 }
 /**
@@ -889,7 +889,7 @@ export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a tunnelConfiguration
  */
-export function createTunnelConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createTunnelConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
     if (mappingValueNode) {
@@ -910,7 +910,7 @@ export function createTunnelConfigurationFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a tunnelConfigurationIKEv2Custom
  */
-export function createTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTunnelConfigurationIKEv2Custom;
 }
 /**
@@ -918,7 +918,7 @@ export function createTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a tunnelConfigurationIKEv2Default
  */
-export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTunnelConfigurationIKEv2Default;
 }
 /**
@@ -926,7 +926,7 @@ export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a url
  */
-export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUrl;
 }
 /**
@@ -934,7 +934,7 @@ export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a user
  */
-export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUser;
 }
 /**
@@ -942,7 +942,7 @@ export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a webCategoriesSummary
  */
-export function createWebCategoriesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createWebCategoriesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategoriesSummary;
 }
 /**
@@ -950,7 +950,7 @@ export function createWebCategoriesSummaryFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a webCategoryFilteringRule
  */
-export function createWebCategoryFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createWebCategoryFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategoryFilteringRule;
 }
 /**
@@ -958,7 +958,7 @@ export function createWebCategoryFilteringRuleFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a webCategory
  */
-export function createWebCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createWebCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategory;
 }
 export interface CrossTenantAccess extends AdditionalDataHolder, BackedModel, Parsable {

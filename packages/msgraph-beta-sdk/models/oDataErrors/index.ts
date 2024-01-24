@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type ApiError, type BackedModel, type Backin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ErrorDetails
  */
-export function createErrorDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createErrorDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoErrorDetails;
 }
 /**
@@ -16,7 +16,7 @@ export function createErrorDetailsFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a InnerError
  */
-export function createInnerErrorFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createInnerErrorFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInnerError;
 }
 /**
@@ -24,7 +24,7 @@ export function createInnerErrorFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a MainError
  */
-export function createMainErrorFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createMainErrorFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMainError;
 }
 /**
@@ -32,7 +32,7 @@ export function createMainErrorFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a ODataError
  */
-export function createODataErrorFromDiscriminatorValue(parseNode: ParseNode | undefined) {
+export function createODataErrorFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoODataError;
 }
 /**
