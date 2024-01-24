@@ -4,7 +4,7 @@ import type { AppCatalogsRequestBuilder } from "./appCatalogs";
 import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
-  interface GraphServiceClient {
+  interface GraphBetaServiceClient {
     /**
      * Provides operations to manage the appCatalogs singleton.
      */
