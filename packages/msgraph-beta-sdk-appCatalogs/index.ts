@@ -1,4 +1,4 @@
-import { extendBetaGraphServiceClient } from "@microsoft/msgraph-beta-sdk";
+import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { AppCatalogsRequestBuilder } from "./appCatalogs";
 import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
@@ -11,5 +11,5 @@ declare module "@microsoft/msgraph-beta-sdk" {
     get appCatalogs(): AppCatalogsRequestBuilder;
   }
 }
-extendBetaGraphServiceClient(AppCatalogsServiceClientNavigationMetadata);
+extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
 export * from "./appCatalogsServiceClient";
