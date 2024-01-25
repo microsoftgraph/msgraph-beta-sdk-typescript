@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { DirectorySettingTemplatesRequestBuilder } from "./directorySettingTemplates";
+import { DirectorySettingTemplatesServiceClientNavigationMetadata } from "./directorySettingTemplatesServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the directorySettingTemplates singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get directorySettingTemplates(): DirectorySettingTemplatesRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(DirectorySettingTemplatesServiceClientNavigationMetadata);
+export * from "./directorySettingTemplatesServiceClient";

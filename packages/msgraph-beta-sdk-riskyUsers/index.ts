@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { RiskyUsersRequestBuilder } from "./riskyUsers";
+import { RiskyUsersServiceClientNavigationMetadata } from "./riskyUsersServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the riskyUsers singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get riskyUsers(): RiskyUsersRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(RiskyUsersServiceClientNavigationMetadata);
+export * from "./riskyUsersServiceClient";

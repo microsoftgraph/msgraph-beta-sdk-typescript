@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { TermStoreRequestBuilder } from "./termStore";
+import { TermStoreServiceClientNavigationMetadata } from "./termStoreServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the termStore singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get termStore(): TermStoreRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(TermStoreServiceClientNavigationMetadata);
+export * from "./termStoreServiceClient";

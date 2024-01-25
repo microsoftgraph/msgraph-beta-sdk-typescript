@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { Oauth2PermissionGrantsRequestBuilder } from "./oauth2PermissionGrants";
+import { Oauth2PermissionGrantsServiceClientNavigationMetadata } from "./oauth2PermissionGrantsServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the oauth2PermissionGrants singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get oauth2PermissionGrants(): Oauth2PermissionGrantsRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(Oauth2PermissionGrantsServiceClientNavigationMetadata);
+export * from "./oauth2PermissionGrantsServiceClient";

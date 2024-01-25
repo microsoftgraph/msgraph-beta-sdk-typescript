@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { PrivilegedSignupStatusRequestBuilder } from "./privilegedSignupStatus";
+import { PrivilegedSignupStatusServiceClientNavigationMetadata } from "./privilegedSignupStatusServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the privilegedSignupStatus singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get privilegedSignupStatus(): PrivilegedSignupStatusRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(PrivilegedSignupStatusServiceClientNavigationMetadata);
+export * from "./privilegedSignupStatusServiceClient";

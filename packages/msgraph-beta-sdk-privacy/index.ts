@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { PrivacyRequestBuilder } from "./privacy";
+import { PrivacyServiceClientNavigationMetadata } from "./privacyServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the privacy singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get privacy(): PrivacyRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(PrivacyServiceClientNavigationMetadata);
+export * from "./privacyServiceClient";

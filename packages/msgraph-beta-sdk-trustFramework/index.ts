@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { TrustFrameworkRequestBuilder } from "./trustFramework";
+import { TrustFrameworkServiceClientNavigationMetadata } from "./trustFrameworkServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the trustFramework singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get trustFramework(): TrustFrameworkRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(TrustFrameworkServiceClientNavigationMetadata);
+export * from "./trustFrameworkServiceClient";

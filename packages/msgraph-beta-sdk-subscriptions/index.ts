@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { SubscriptionsRequestBuilder } from "./subscriptions";
+import { SubscriptionsServiceClientNavigationMetadata } from "./subscriptionsServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the subscriptions singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get subscriptions(): SubscriptionsRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(SubscriptionsServiceClientNavigationMetadata);
+export * from "./subscriptionsServiceClient";

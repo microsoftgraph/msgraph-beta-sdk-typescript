@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { PrivilegedRolesRequestBuilder } from "./privilegedRoles";
+import { PrivilegedRolesServiceClientNavigationMetadata } from "./privilegedRolesServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the privilegedRoles singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get privilegedRoles(): PrivilegedRolesRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(PrivilegedRolesServiceClientNavigationMetadata);
+export * from "./privilegedRolesServiceClient";

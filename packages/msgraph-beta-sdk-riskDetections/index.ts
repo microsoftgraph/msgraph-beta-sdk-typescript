@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { RiskDetectionsRequestBuilder } from "./riskDetections";
+import { RiskDetectionsServiceClientNavigationMetadata } from "./riskDetectionsServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the riskDetections singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get riskDetections(): RiskDetectionsRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(RiskDetectionsServiceClientNavigationMetadata);
+export * from "./riskDetectionsServiceClient";

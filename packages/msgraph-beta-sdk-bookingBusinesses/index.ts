@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { BookingBusinessesRequestBuilder } from "./bookingBusinesses";
+import { BookingBusinessesServiceClientNavigationMetadata } from "./bookingBusinessesServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the bookingBusinesses singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get bookingBusinesses(): BookingBusinessesRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(BookingBusinessesServiceClientNavigationMetadata);
+export * from "./bookingBusinessesServiceClient";

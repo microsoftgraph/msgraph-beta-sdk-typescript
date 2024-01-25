@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { DomainDnsRecordsRequestBuilder } from "./domainDnsRecords";
+import { DomainDnsRecordsServiceClientNavigationMetadata } from "./domainDnsRecordsServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the domainDnsRecords singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get domainDnsRecords(): DomainDnsRecordsRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(DomainDnsRecordsServiceClientNavigationMetadata);
+export * from "./domainDnsRecordsServiceClient";

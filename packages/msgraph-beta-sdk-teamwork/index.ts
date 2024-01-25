@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { TeamworkRequestBuilder } from "./teamwork";
+import { TeamworkServiceClientNavigationMetadata } from "./teamworkServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the teamwork singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get teamwork(): TeamworkRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(TeamworkServiceClientNavigationMetadata);
+export * from "./teamworkServiceClient";

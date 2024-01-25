@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { MobilityManagementPoliciesRequestBuilder } from "./mobilityManagementPolicies";
+import { MobilityManagementPoliciesServiceClientNavigationMetadata } from "./mobilityManagementPoliciesServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the mobilityManagementPolicies singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get mobilityManagementPolicies(): MobilityManagementPoliciesRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(MobilityManagementPoliciesServiceClientNavigationMetadata);
+export * from "./mobilityManagementPoliciesServiceClient";

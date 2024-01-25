@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { TeamsTemplatesRequestBuilder } from "./teamsTemplates";
+import { TeamsTemplatesServiceClientNavigationMetadata } from "./teamsTemplatesServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the teamsTemplates singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get teamsTemplates(): TeamsTemplatesRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(TeamsTemplatesServiceClientNavigationMetadata);
+export * from "./teamsTemplatesServiceClient";

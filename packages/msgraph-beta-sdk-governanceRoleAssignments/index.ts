@@ -1,15 +1,15 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { GovernanceRoleAssignmentsRequestBuilder } from "./governanceRoleAssignments";
+import { GovernanceRoleAssignmentsServiceClientNavigationMetadata } from "./governanceRoleAssignmentsServiceClient";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
     /**
-     * Provides operations to manage the appCatalogs singleton.
+     * Provides operations to manage the governanceRoleAssignments singleton.
      */
-    get appCatalogs(): AppCatalogsRequestBuilder;
+    get governanceRoleAssignments(): GovernanceRoleAssignmentsRequestBuilder;
   }
 }
-extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+extendGraphBetaServiceClient(GovernanceRoleAssignmentsServiceClientNavigationMetadata);
+export * from "./governanceRoleAssignmentsServiceClient";
