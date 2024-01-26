@@ -29,6 +29,7 @@ export function createGraphBetaServiceClient(requestAdapter: RequestAdapter) {
     }
     const pathParameters: Record<string, unknown> = {
         "baseurl": requestAdapter.baseUrl,
+        "user%2Did": "TokenToReplace",
     };
     return apiClientProxifier<GraphBetaServiceClient>(requestAdapter, pathParameters, GraphBetaServiceClientUriTemplate, GraphBetaServiceClientNavigationMetadata, GraphBetaServiceClientRequestsMetadata);
 }
