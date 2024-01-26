@@ -2,8 +2,10 @@ import "@microsoft/msgraph-beta-sdk-users";
 
 import { ClientSecretCredential } from "@azure/identity";
 import { AzureIdentityAuthenticationProvider } from "@microsoft/kiota-authentication-azure";
-import { FetchRequestAdapter } from "@microsoft/kiota-http-fetchlibrary";
-import { createGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
+import {
+  createGraphBetaServiceClient,
+  GraphBetaRequestAdapter,
+} from "@microsoft/msgraph-beta-sdk";
 
 const tenantId = process.env.TENANT_ID;
 if (!tenantId) {
@@ -25,5 +27,5 @@ const tokenCredential = new ClientSecretCredential(
 );
 
 const authProvider = new AzureIdentityAuthenticationProvider(tokenCredential);
-const requestAdapter = new FetchRequestAdapter(authProvider);
+const requestAdapter = new GraphBetaRequestAdapter(authProvider);
 export const graphServiceClient = createGraphBetaServiceClient(requestAdapter);
