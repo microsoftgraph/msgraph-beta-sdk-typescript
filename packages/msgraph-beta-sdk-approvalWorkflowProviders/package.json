@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-approvalworkflowproviders",
-  "version": "1.0.0-preview.10",
+  "version": "1.0.0-preview.11",
   "description": "ApprovalWorkflowProviders fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
