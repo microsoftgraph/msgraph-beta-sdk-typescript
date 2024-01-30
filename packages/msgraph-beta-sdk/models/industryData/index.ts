@@ -1661,7 +1661,7 @@ export interface YearTimePeriodDefinitionCollectionResponse extends BaseCollecti
 export const InboundDomainObject = {
     EducationRostering: "educationRostering",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IndustryDataActivityStatusObject = {
     InProgress: "inProgress",
     Skipped: "skipped",
@@ -1670,7 +1670,7 @@ export const IndustryDataActivityStatusObject = {
     CompletedWithErrors: "completedWithErrors",
     CompletedWithWarnings: "completedWithWarnings",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IndustryDataRunStatusObject = {
     Running: "running",
     Failed: "failed",
@@ -1678,7 +1678,7 @@ export const IndustryDataRunStatusObject = {
     CompletedWithErrors: "completedWithErrors",
     CompletedWithWarnings: "completedWithWarnings",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ReadinessStatusObject = {
     NotReady: "notReady",
     Ready: "ready",
@@ -1686,6 +1686,6 @@ export const ReadinessStatusObject = {
     Disabled: "disabled",
     Expired: "expired",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

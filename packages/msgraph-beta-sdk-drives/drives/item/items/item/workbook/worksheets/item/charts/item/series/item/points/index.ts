@@ -23,10 +23,10 @@ export interface PointsRequestBuilder extends BaseRequestBuilder<PointsRequestBu
      */
      byWorkbookChartPointId(workbookChartPointId: string) : WorkbookChartPointItemRequestBuilder;
     /**
-     * Retrieve a list of chartpoint objects.
+     * Retrieve a list of chartpoints objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of WorkbookChartPointCollectionResponse
-     * @see {@link https://learn.microsoft.com/graph/api/chartpoint-list?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/chartseries-list-points?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PointsRequestBuilderGetQueryParameters> | undefined) : Promise<WorkbookChartPointCollectionResponse | undefined>;
     /**
@@ -44,7 +44,7 @@ export interface PointsRequestBuilder extends BaseRequestBuilder<PointsRequestBu
      */
      post(body: WorkbookChartPoint, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WorkbookChartPoint | undefined>;
     /**
-     * Retrieve a list of chartpoint objects.
+     * Retrieve a list of chartpoints objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -58,7 +58,7 @@ export interface PointsRequestBuilder extends BaseRequestBuilder<PointsRequestBu
      toPostRequestInformation(body: WorkbookChartPoint, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of chartpoint objects.
+ * Retrieve a list of chartpoints objects.
  */
 export interface PointsRequestBuilderGetQueryParameters {
     /**

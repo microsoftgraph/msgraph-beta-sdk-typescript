@@ -14,30 +14,15 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      * @deprecated The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
      * @see {@link https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-1.0|Find more info here}
      */
-     delete(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : Promise<void>;
+     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      * @deprecated The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
      */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : RequestInformation;
+     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
-/**
- * Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
- */
-export interface RefRequestBuilderDeleteQueryParameters {
-    /**
-     * Delete Uri
-     */
-    id?: string;
-}
-/**
- * Mapper for query parameters from symbol name to serialization name represented as a constant.
- */
-const RefRequestBuilderDeleteQueryParametersMapper: Record<string, string> = {
-    "id": "%40id",
-};
 /**
  * Metadata for all the requests in the request builder.
  */
@@ -49,12 +34,11 @@ export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
             _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
-        queryParametersMapper: RefRequestBuilderDeleteQueryParametersMapper,
     },
 };
 /**
  * Uri template for the request builder.
  */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/{identityProvider%2Did}/$ref{?%40id*}";
+export const RefRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/{identityProvider%2Did}/$ref";
 /* tslint:enable */
 /* eslint-enable */

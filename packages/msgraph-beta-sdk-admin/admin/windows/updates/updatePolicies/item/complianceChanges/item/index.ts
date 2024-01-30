@@ -15,9 +15,9 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
     get updatePolicy(): UpdatePolicyRequestBuilder;
     /**
-     * Delete a complianceChange object.
+     * Delete a contentApproval object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -36,7 +36,7 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      patch(body: ComplianceChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComplianceChange | undefined>;
     /**
-     * Delete a complianceChange object.
+     * Delete a contentApproval object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */

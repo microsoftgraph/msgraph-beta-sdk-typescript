@@ -31,7 +31,7 @@ export interface TablesRequestBuilder extends BaseRequestBuilder<TablesRequestBu
      * Retrieve a list of table objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of WorkbookTableCollectionResponse
-     * @see {@link https://learn.microsoft.com/graph/api/workbook-list-tables?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/table-list?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TablesRequestBuilderGetQueryParameters> | undefined) : Promise<WorkbookTableCollectionResponse | undefined>;
     /**

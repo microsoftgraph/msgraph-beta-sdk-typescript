@@ -6227,7 +6227,7 @@ export const AlertSeverityObject = {
     Medium: "medium",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertStatusObject = {
     Unknown: "unknown",
     NewAlert: "newAlert",
@@ -6235,14 +6235,14 @@ export const AlertStatusObject = {
     Resolved: "resolved",
     Dismissed: "dismissed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DelegatedPrivilegeStatusObject = {
     None: "none",
     DelegatedAdminPrivileges: "delegatedAdminPrivileges",
     UnknownFutureValue: "unknownFutureValue",
     GranularDelegatedAdminPrivileges: "granularDelegatedAdminPrivileges",
     DelegatedAndGranularDelegetedAdminPrivileges: "delegatedAndGranularDelegetedAdminPrivileges",
-}  as const;
+} as const;
 export const ManagementActionStatusObject = {
     ToAddress: "toAddress",
     Completed: "completed",
@@ -6254,14 +6254,14 @@ export const ManagementActionStatusObject = {
     ResolvedThroughAlternateMitigation: "resolvedThroughAlternateMitigation",
     RiskAccepted: "riskAccepted",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementCategoryObject = {
     Custom: "custom",
     Devices: "devices",
     Identity: "identity",
     Data: "data",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementParameterValueTypeObject = {
     String: "string",
     Integer: "integer",
@@ -6272,14 +6272,14 @@ export const ManagementParameterValueTypeObject = {
     BooleanCollection: "booleanCollection",
     GuidCollection: "guidCollection",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementProviderObject = {
     Microsoft: "microsoft",
     Community: "community",
     IndirectProvider: "indirectProvider",
     Self: "self",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementTemplateDeploymentStatusObject = {
     Unknown: "unknown",
     InProgress: "inProgress",
@@ -6287,14 +6287,14 @@ export const ManagementTemplateDeploymentStatusObject = {
     Failed: "failed",
     Ineligible: "ineligible",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NotificationDestinationObject = {
     None: "none",
     Api: "api",
     Email: "email",
     Sms: "sms",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantOnboardingEligibilityReasonObject = {
     None: "none",
     ContractType: "contractType",
@@ -6302,19 +6302,19 @@ export const TenantOnboardingEligibilityReasonObject = {
     UsersCount: "usersCount",
     License: "license",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantOnboardingStatusObject = {
     Ineligible: "ineligible",
     InProcess: "inProcess",
     Active: "active",
     Inactive: "inactive",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadActionCategoryObject = {
     Automated: "automated",
     Manual: "manual",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadActionStatusObject = {
     ToAddress: "toAddress",
     Completed: "completed",
@@ -6322,11 +6322,11 @@ export const WorkloadActionStatusObject = {
     TimeOut: "timeOut",
     InProgress: "inProgress",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadOnboardingStatusObject = {
     NotOnboarded: "notOnboarded",
     Onboarded: "onboarded",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

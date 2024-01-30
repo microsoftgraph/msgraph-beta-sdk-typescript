@@ -1470,7 +1470,7 @@ export const AccessTypeObject = {
     Grant: "grant",
     Deny: "deny",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AclTypeObject = {
     User: "user",
     Group: "group",
@@ -1478,56 +1478,56 @@ export const AclTypeObject = {
     EveryoneExceptGuests: "everyoneExceptGuests",
     ExternalGroup: "externalGroup",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ConnectionOperationStatusObject = {
     Unspecified: "unspecified",
     Inprogress: "inprogress",
     Completed: "completed",
     Failed: "failed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ConnectionStateObject = {
     Draft: "draft",
     Ready: "ready",
     Obsolete: "obsolete",
     LimitExceeded: "limitExceeded",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ContentExperienceTypeObject = {
     Search: "search",
     Compliance: "compliance",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExternalActivityTypeObject = {
     Viewed: "viewed",
     Modified: "modified",
     Created: "created",
     Commented: "commented",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExternalItemContentTypeObject = {
     Text: "text",
     Html: "html",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IdentitySourceTypeObject = {
     AzureActiveDirectory: "azureActiveDirectory",
     External: "external",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IdentityTypeObject = {
     User: "user",
     Group: "group",
     ExternalGroup: "externalGroup",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ImportanceScoreObject = {
     Low: "low",
     Medium: "medium",
     High: "high",
     VeryHigh: "veryHigh",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const LabelObject = {
     Title: "title",
     Url: "url",
@@ -1542,7 +1542,7 @@ export const LabelObject = {
     ContainerName: "containerName",
     ContainerUrl: "containerUrl",
     IconUrl: "iconUrl",
-}  as const;
+} as const;
 export const PropertyTypeObject = {
     String: "string",
     Int64: "int64",
@@ -1554,7 +1554,7 @@ export const PropertyTypeObject = {
     DoubleCollection: "doubleCollection",
     DateTimeCollection: "dateTimeCollection",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RuleOperationObject = {
     Equals: "equals",
     NotEquals: "notEquals",
@@ -1564,6 +1564,6 @@ export const RuleOperationObject = {
     GreaterThan: "greaterThan",
     StartsWith: "startsWith",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

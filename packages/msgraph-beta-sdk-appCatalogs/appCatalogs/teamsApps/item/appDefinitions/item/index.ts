@@ -5,6 +5,7 @@ import { createTeamsAppDefinitionFromDiscriminatorValue, serializeTeamsAppDefini
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { BotRequestBuilderRequestsMetadata, BotRequestBuilderUriTemplate, type BotRequestBuilder } from './bot/';
 import { ColorIconRequestBuilderNavigationMetadata, ColorIconRequestBuilderRequestsMetadata, ColorIconRequestBuilderUriTemplate, type ColorIconRequestBuilder } from './colorIcon/';
+import { DashboardCardsRequestBuilderNavigationMetadata, DashboardCardsRequestBuilderRequestsMetadata, DashboardCardsRequestBuilderUriTemplate, type DashboardCardsRequestBuilder } from './dashboardCards/';
 import { OutlineIconRequestBuilderNavigationMetadata, OutlineIconRequestBuilderRequestsMetadata, OutlineIconRequestBuilderUriTemplate, type OutlineIconRequestBuilder } from './outlineIcon/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -20,6 +21,10 @@ export interface TeamsAppDefinitionItemRequestBuilder extends BaseRequestBuilder
      * Provides operations to manage the colorIcon property of the microsoft.graph.teamsAppDefinition entity.
      */
     get colorIcon(): ColorIconRequestBuilder;
+    /**
+     * Provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
+     */
+    get dashboardCards(): DashboardCardsRequestBuilder;
     /**
      * Provides operations to manage the outlineIcon property of the microsoft.graph.teamsAppDefinition entity.
      */
@@ -95,6 +100,11 @@ export const TeamsAppDefinitionItemRequestBuilderNavigationMetadata: Record<Excl
         uriTemplate: ColorIconRequestBuilderUriTemplate,
         requestsMetadata: ColorIconRequestBuilderRequestsMetadata,
         navigationMetadata: ColorIconRequestBuilderNavigationMetadata,
+    },
+    dashboardCards: {
+        uriTemplate: DashboardCardsRequestBuilderUriTemplate,
+        requestsMetadata: DashboardCardsRequestBuilderRequestsMetadata,
+        navigationMetadata: DashboardCardsRequestBuilderNavigationMetadata,
     },
     outlineIcon: {
         uriTemplate: OutlineIconRequestBuilderUriTemplate,

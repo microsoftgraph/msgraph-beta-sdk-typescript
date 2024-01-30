@@ -26,10 +26,10 @@ export interface InboundFlowItemRequestBuilder extends BaseRequestBuilder<Inboun
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an inboundFlow object.
+     * Read the properties and relationships of an inboundFileFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of InboundFlow
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InboundFlowItemRequestBuilderGetQueryParameters> | undefined) : Promise<InboundFlow | undefined>;
     /**
@@ -47,7 +47,7 @@ export interface InboundFlowItemRequestBuilder extends BaseRequestBuilder<Inboun
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an inboundFlow object.
+     * Read the properties and relationships of an inboundFileFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -61,7 +61,7 @@ export interface InboundFlowItemRequestBuilder extends BaseRequestBuilder<Inboun
      toPatchRequestInformation(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an inboundFlow object.
+ * Read the properties and relationships of an inboundFileFlow object.
  */
 export interface InboundFlowItemRequestBuilderGetQueryParameters {
     /**

@@ -22,28 +22,28 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      */
      byInboundFlowId(inboundFlowId: string) : InboundFlowItemRequestBuilder;
     /**
-     * Get a list of the inboundFileFlow objects and their properties.
+     * Get a list of the inboundFlow objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of InboundFlowCollectionResponse
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters> | undefined) : Promise<InboundFlowCollectionResponse | undefined>;
     /**
-     * Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
+     * Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of InboundFlow
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0|Find more info here}
      */
      post(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InboundFlow | undefined>;
     /**
-     * Get a list of the inboundFileFlow objects and their properties.
+     * Get a list of the inboundFlow objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
+     * Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
@@ -51,7 +51,7 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      toPostRequestInformation(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the inboundFileFlow objects and their properties.
+ * Get a list of the inboundFlow objects and their properties.
  */
 export interface InboundFlowsRequestBuilderGetQueryParameters {
     /**

@@ -22,7 +22,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      byAuditLogRecordId(auditLogRecordId: string) : AuditLogRecordItemRequestBuilder;
     /**
-     * Get records from security
+     * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of AuditLogRecordCollectionResponse
      */
@@ -35,7 +35,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      post(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogRecord | undefined>;
     /**
-     * Get records from security
+     * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -49,7 +49,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      toPostRequestInformation(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get records from security
+ * An individual audit log record.
  */
 export interface RecordsRequestBuilderGetQueryParameters {
     /**

@@ -495,11 +495,11 @@ export const AttributeSetObject = {
     Full: "full",
     Basic: "basic",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const BillingPeriodObject = {
     Current: "current",
     Last: "last",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

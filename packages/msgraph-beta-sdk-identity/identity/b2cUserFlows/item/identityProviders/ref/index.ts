@@ -10,6 +10,13 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder> {
     /**
+     * Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @deprecated The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
+     * @see {@link https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-1.0|Find more info here}
+     */
+     delete(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : Promise<void>;
+    /**
      * Get the identity providers in a b2cIdentityUserFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of StringCollectionResponse
@@ -26,6 +33,13 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      */
      post(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
+     * Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @returns a RequestInformation
+     * @deprecated The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
+     */
+     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : RequestInformation;
+    /**
      * Get the identity providers in a b2cIdentityUserFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
@@ -40,6 +54,15 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      * @deprecated The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
      */
      toPostRequestInformation(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
+}
+/**
+ * Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+ */
+export interface RefRequestBuilderDeleteQueryParameters {
+    /**
+     * The delete Uri
+     */
+    id?: string;
 }
 /**
  * Get the identity providers in a b2cIdentityUserFlow object.
@@ -73,6 +96,12 @@ export interface RefRequestBuilderGetQueryParameters {
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
+const RefRequestBuilderDeleteQueryParametersMapper: Record<string, string> = {
+    "id": "%40id",
+};
+/**
+ * Mapper for query parameters from symbol name to serialization name represented as a constant.
+ */
 const RefRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
     "filter": "%24filter",
@@ -85,6 +114,15 @@ const RefRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the requests in the request builder.
  */
 export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
+    delete: {
+        responseBodyContentType: "application/json",
+        errorMappings: {
+            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+        },
+        adapterMethodName: "sendNoResponseContentAsync",
+        queryParametersMapper: RefRequestBuilderDeleteQueryParametersMapper,
+    },
     get: {
         responseBodyContentType: "application/json",
         errorMappings: {
@@ -110,6 +148,6 @@ export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
+export const RefRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}";
 /* tslint:enable */
 /* eslint-enable */

@@ -2419,13 +2419,13 @@ export const AudioCodecObject = {
     Siren: "siren",
     XmsRta: "xmsRta",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const CallTypeObject = {
     Unknown: "unknown",
     GroupCall: "groupCall",
     PeerToPeer: "peerToPeer",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ClientPlatformObject = {
     Unknown: "unknown",
     Windows: "windows",
@@ -2438,17 +2438,17 @@ export const ClientPlatformObject = {
     SurfaceHub: "surfaceHub",
     HoloLens: "holoLens",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const FailureStageObject = {
     Unknown: "unknown",
     CallSetup: "callSetup",
     Midcall: "midcall",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const MediaStreamDirectionObject = {
     CallerToCallee: "callerToCallee",
     CalleeToCaller: "calleeToCaller",
-}  as const;
+} as const;
 export const ModalityObject = {
     Audio: "audio",
     Video: "video",
@@ -2456,7 +2456,7 @@ export const ModalityObject = {
     Data: "data",
     ScreenSharing: "screenSharing",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NetworkConnectionTypeObject = {
     Unknown: "unknown",
     Wired: "wired",
@@ -2464,13 +2464,13 @@ export const NetworkConnectionTypeObject = {
     Mobile: "mobile",
     Tunnel: "tunnel",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NetworkTransportProtocolObject = {
     Unknown: "unknown",
     Udp: "udp",
     Tcp: "tcp",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ProductFamilyObject = {
     Unknown: "unknown",
     Teams: "teams",
@@ -2478,16 +2478,16 @@ export const ProductFamilyObject = {
     Lync: "lync",
     UnknownFutureValue: "unknownFutureValue",
     AzureCommunicationServices: "azureCommunicationServices",
-}  as const;
+} as const;
 export const PstnCallDurationSourceObject = {
     Microsoft: "microsoft",
     Operator: "operator",
-}  as const;
+} as const;
 export const PstnUserBlockModeObject = {
     Blocked: "blocked",
     Unblocked: "unblocked",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ServiceRoleObject = {
     Unknown: "unknown",
     CustomBot: "customBot",
@@ -2511,7 +2511,7 @@ export const ServiceRoleObject = {
     ResponseGroupService: "responseGroupService",
     Voicemail: "voicemail",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UserFeedbackRatingObject = {
     NotRated: "notRated",
     Bad: "bad",
@@ -2520,7 +2520,7 @@ export const UserFeedbackRatingObject = {
     Good: "good",
     Excellent: "excellent",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const VideoCodecObject = {
     Unknown: "unknown",
     Invalid: "invalid",
@@ -2534,14 +2534,14 @@ export const VideoCodecObject = {
     RtVideo: "rtVideo",
     Xrtvc1: "xrtvc1",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WifiBandObject = {
     Unknown: "unknown",
     Frequency24GHz: "frequency24GHz",
     Frequency50GHz: "frequency50GHz",
     Frequency60GHz: "frequency60GHz",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WifiRadioTypeObject = {
     Unknown: "unknown",
     Wifi80211a: "wifi80211a",
@@ -2551,6 +2551,6 @@ export const WifiRadioTypeObject = {
     Wifi80211ac: "wifi80211ac",
     Wifi80211ax: "wifi80211ax",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

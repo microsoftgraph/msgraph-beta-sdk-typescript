@@ -33,11 +33,11 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
-     * Update the properties of an azureDataLakeConnector object.
+     * Update the properties of an industryDataConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of IndustryDataConnector
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
@@ -53,7 +53,7 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an azureDataLakeConnector object.
+     * Update the properties of an industryDataConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation

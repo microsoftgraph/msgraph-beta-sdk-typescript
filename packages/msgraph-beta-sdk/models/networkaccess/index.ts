@@ -4,6 +4,70 @@
 import { deserializeIntoBaseCollectionPaginationCountResponse, deserializeIntoEntity, serializeBaseCollectionPaginationCountResponse, serializeEntity, type BaseCollectionPaginationCountResponse, type Entity } from '../';
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
+export type AccessType = (typeof AccessTypeObject)[keyof typeof AccessTypeObject];
+export interface Alert extends Entity, Parsable {
+    /**
+     * The actions property
+     */
+    actions?: AlertAction[];
+    /**
+     * The alertType property
+     */
+    alertType?: AlertType;
+    /**
+     * The creationDateTime property
+     */
+    creationDateTime?: Date;
+    /**
+     * The description property
+     */
+    description?: string;
+    /**
+     * The firstImpactedDateTime property
+     */
+    firstImpactedDateTime?: Date;
+}
+export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The actionLink property
+     */
+    actionLink?: string;
+    /**
+     * The actionText property
+     */
+    actionText?: string;
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
+export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
+export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * The appId property
+     */
+    appId?: string;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
 export interface AssociatedBranch extends Association, Parsable {
     /**
      * Identifier for the branch.
@@ -159,6 +223,7 @@ export interface ConditionalAccessSettings extends Entity, Parsable {
      */
     signalingStatus?: Status;
 }
+export type ConnectionStatus = (typeof ConnectionStatusObject)[keyof typeof ConnectionStatusObject];
 export interface Connectivity extends Entity, Parsable {
     /**
      * Branches represent locations for connectivity.
@@ -194,6 +259,30 @@ export interface ConnectivityConfigurationLinkCollectionResponse extends BaseCol
     value?: ConnectivityConfigurationLink[];
 }
 export type ConnectivityState = (typeof ConnectivityStateObject)[keyof typeof ConnectivityStateObject];
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a alertAction
+ */
+export function createAlertActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAlertAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a alert
+ */
+export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAlert;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a applicationSnapshot
+ */
+export function createApplicationSnapshotFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicationSnapshot;
+}
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -741,6 +830,14 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a privateAccessDetails
+ */
+export function createPrivateAccessDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivateAccessDetails;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a privateAccessForwardingRule
  */
 export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -1046,6 +1143,43 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
      * The number of unique users that performed cross-tenant access.
      */
     userCount?: number;
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(alert),
+        "actions": n => { alert.actions = n.getCollectionOfObjectValues<AlertAction>(createAlertActionFromDiscriminatorValue); },
+        "alertType": n => { alert.alertType = n.getEnumValue<AlertType>(AlertTypeObject); },
+        "creationDateTime": n => { alert.creationDateTime = n.getDateValue(); },
+        "description": n => { alert.description = n.getStringValue(); },
+        "firstImpactedDateTime": n => { alert.firstImpactedDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "actionLink": n => { alertAction.actionLink = n.getStringValue(); },
+        "actionText": n => { alertAction.actionText = n.getStringValue(); },
+        "backingStoreEnabled": n => { alertAction.backingStoreEnabled = true; },
+        "@odata.type": n => { alertAction.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoApplicationSnapshot(applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "appId": n => { applicationSnapshot.appId = n.getStringValue(); },
+        "backingStoreEnabled": n => { applicationSnapshot.backingStoreEnabled = true; },
+        "@odata.type": n => { applicationSnapshot.odataType = n.getStringValue(); },
+    }
 }
 /**
  * The deserialization information for the current model
@@ -1634,6 +1768,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
     return {
         "action": n => { networkAccessTraffic.action = n.getEnumValue<FilteringPolicyAction>(FilteringPolicyActionObject); },
         "agentVersion": n => { networkAccessTraffic.agentVersion = n.getStringValue(); },
+        "applicationSnapshot": n => { networkAccessTraffic.applicationSnapshot = n.getObjectValue<ApplicationSnapshot>(createApplicationSnapshotFromDiscriminatorValue); },
         "backingStoreEnabled": n => { networkAccessTraffic.backingStoreEnabled = true; },
         "connectionId": n => { networkAccessTraffic.connectionId = n.getStringValue(); },
         "createdDateTime": n => { networkAccessTraffic.createdDateTime = n.getDateValue(); },
@@ -1655,6 +1790,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
         "policyName": n => { networkAccessTraffic.policyName = n.getStringValue(); },
         "policyRuleId": n => { networkAccessTraffic.policyRuleId = n.getStringValue(); },
         "policyRuleName": n => { networkAccessTraffic.policyRuleName = n.getStringValue(); },
+        "privateAccessDetails": n => { networkAccessTraffic.privateAccessDetails = n.getObjectValue<PrivateAccessDetails>(createPrivateAccessDetailsFromDiscriminatorValue); },
         "receivedBytes": n => { networkAccessTraffic.receivedBytes = n.getNumberValue(); },
         "resourceTenantId": n => { networkAccessTraffic.resourceTenantId = n.getStringValue(); },
         "sentBytes": n => { networkAccessTraffic.sentBytes = n.getNumberValue(); },
@@ -1757,6 +1893,22 @@ export function deserializeIntoPolicyRuleDelta(policyRuleDelta: Partial<PolicyRu
         "backingStoreEnabled": n => { policyRuleDelta.backingStoreEnabled = true; },
         "@odata.type": n => { policyRuleDelta.odataType = n.getStringValue(); },
         "ruleId": n => { policyRuleDelta.ruleId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoPrivateAccessDetails(privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "accessType": n => { privateAccessDetails.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
+        "backingStoreEnabled": n => { privateAccessDetails.backingStoreEnabled = true; },
+        "connectionStatus": n => { privateAccessDetails.connectionStatus = n.getEnumValue<ConnectionStatus>(ConnectionStatusObject); },
+        "connectorId": n => { privateAccessDetails.connectorId = n.getStringValue(); },
+        "connectorIp": n => { privateAccessDetails.connectorIp = n.getStringValue(); },
+        "connectorName": n => { privateAccessDetails.connectorName = n.getStringValue(); },
+        "@odata.type": n => { privateAccessDetails.odataType = n.getStringValue(); },
+        "processingRegion": n => { privateAccessDetails.processingRegion = n.getStringValue(); },
     }
 }
 /**
@@ -2571,6 +2723,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     agentVersion?: string;
     /**
+     * The applicationSnapshot property
+     */
+    applicationSnapshot?: ApplicationSnapshot;
+    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean;
@@ -2654,6 +2810,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      * The policyRuleName property
      */
     policyRuleName?: string;
+    /**
+     * The privateAccessDetails property
+     */
+    privateAccessDetails?: PrivateAccessDetails;
     /**
      * Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
      */
@@ -2810,6 +2970,44 @@ export interface PolicyRuleDelta extends AdditionalDataHolder, BackedModel, Pars
      * The identifier of the policy rule to update.
      */
     ruleId?: string;
+}
+export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The accessType property
+     */
+    accessType?: AccessType;
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The connectionStatus property
+     */
+    connectionStatus?: ConnectionStatus;
+    /**
+     * The connectorId property
+     */
+    connectorId?: string;
+    /**
+     * The connectorIp property
+     */
+    connectorIp?: string;
+    /**
+     * The connectorName property
+     */
+    connectorName?: string;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * The processingRegion property
+     */
+    processingRegion?: string;
 }
 export interface PrivateAccessForwardingRule extends ForwardingRule, Parsable {
 }
@@ -2997,6 +3195,37 @@ export interface RuleDestination extends AdditionalDataHolder, BackedModel, Pars
      * The OdataType property
      */
     odataType?: string;
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined = {}) : void {
+    serializeEntity(writer, alert)
+    writer.writeCollectionOfObjectValues<AlertAction>("actions", alert.actions, serializeAlertAction);
+    writer.writeEnumValue<AlertType>("alertType", alert.alertType);
+    writer.writeDateValue("creationDateTime", alert.creationDateTime);
+    writer.writeStringValue("description", alert.description);
+    writer.writeDateValue("firstImpactedDateTime", alert.firstImpactedDateTime);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeAlertAction(writer: SerializationWriter, alertAction: Partial<AlertAction> | undefined = {}) : void {
+    writer.writeStringValue("actionLink", alertAction.actionLink);
+    writer.writeStringValue("actionText", alertAction.actionText);
+    writer.writeStringValue("@odata.type", alertAction.odataType);
+    writer.writeAdditionalData(alertAction.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeApplicationSnapshot(writer: SerializationWriter, applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : void {
+    writer.writeStringValue("appId", applicationSnapshot.appId);
+    writer.writeStringValue("@odata.type", applicationSnapshot.odataType);
+    writer.writeAdditionalData(applicationSnapshot.additionalData);
 }
 /**
  * Serializes information the current object
@@ -3488,6 +3717,7 @@ export function serializeNetworkAccessRoot(writer: SerializationWriter, networkA
 export function serializeNetworkAccessTraffic(writer: SerializationWriter, networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined = {}) : void {
     writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
     writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
+    writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
     writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
     writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
     writer.writeStringValue("destinationFQDN", networkAccessTraffic.destinationFQDN);
@@ -3508,6 +3738,7 @@ export function serializeNetworkAccessTraffic(writer: SerializationWriter, netwo
     writer.writeStringValue("policyName", networkAccessTraffic.policyName);
     writer.writeStringValue("policyRuleId", networkAccessTraffic.policyRuleId);
     writer.writeStringValue("policyRuleName", networkAccessTraffic.policyRuleName);
+    writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", networkAccessTraffic.privateAccessDetails, serializePrivateAccessDetails);
     writer.writeNumberValue("receivedBytes", networkAccessTraffic.receivedBytes);
     writer.writeStringValue("resourceTenantId", networkAccessTraffic.resourceTenantId);
     writer.writeNumberValue("sentBytes", networkAccessTraffic.sentBytes);
@@ -3595,6 +3826,20 @@ export function serializePolicyRuleDelta(writer: SerializationWriter, policyRule
     writer.writeStringValue("@odata.type", policyRuleDelta.odataType);
     writer.writeStringValue("ruleId", policyRuleDelta.ruleId);
     writer.writeAdditionalData(policyRuleDelta.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializePrivateAccessDetails(writer: SerializationWriter, privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : void {
+    writer.writeEnumValue<AccessType>("accessType", privateAccessDetails.accessType);
+    writer.writeEnumValue<ConnectionStatus>("connectionStatus", privateAccessDetails.connectionStatus);
+    writer.writeStringValue("connectorId", privateAccessDetails.connectorId);
+    writer.writeStringValue("connectorIp", privateAccessDetails.connectorIp);
+    writer.writeStringValue("connectorName", privateAccessDetails.connectorName);
+    writer.writeStringValue("@odata.type", privateAccessDetails.odataType);
+    writer.writeStringValue("processingRegion", privateAccessDetails.processingRegion);
+    writer.writeAdditionalData(privateAccessDetails.additionalData);
 }
 /**
  * Serializes information the current object
@@ -4059,25 +4304,45 @@ export interface WebCategory extends Parsable, RuleDestination {
 }
 export interface WebCategoryFilteringRule extends FilteringRule, Parsable {
 }
+export const AccessTypeObject = {
+    QuickAccess: "quickAccess",
+    PrivateAccess: "privateAccess",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const AlertTypeObject = {
+    UnhealthyRemoteNetworks: "unhealthyRemoteNetworks",
+    UnhealthyConnectors: "unhealthyConnectors",
+    DeviceTokenInconsistency: "deviceTokenInconsistency",
+    CrossTenantAnomaly: "crossTenantAnomaly",
+    SuspiciousProcess: "suspiciousProcess",
+    ThreatIntelligenceTransactions: "threatIntelligenceTransactions",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const BandwidthCapacityInMbpsObject = {
     Mbps250: "mbps250",
     Mbps500: "mbps500",
     Mbps750: "mbps750",
     Mbps1000: "mbps1000",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
+export const ConnectionStatusObject = {
+    Open: "open",
+    Active: "active",
+    Closed: "closed",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const ConnectivityStateObject = {
     Pending: "pending",
     Connected: "connected",
     Inactive: "inactive",
     ErrorEscaped: "error",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceCategoryObject = {
     Client: "client",
     Branch: "branch",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceVendorObject = {
     BarracudaNetworks: "barracudaNetworks",
     CheckPoint: "checkPoint",
@@ -4095,7 +4360,7 @@ export const DeviceVendorObject = {
     Versa: "versa",
     Other: "other",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DhGroupObject = {
     DhGroup14: "dhGroup14",
     DhGroup24: "dhGroup24",
@@ -4103,23 +4368,23 @@ export const DhGroupObject = {
     Ecp256: "ecp256",
     Ecp384: "ecp384",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const FilteringPolicyActionObject = {
     Block: "block",
     Allow: "allow",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ForwardingCategoryObject = {
     DefaultEscaped: "default",
     Optimized: "optimized",
     Allow: "allow",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ForwardingRuleActionObject = {
     Bypass: "bypass",
     Forward: "forward",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IkeEncryptionObject = {
     Aes128: "aes128",
     Aes192: "aes192",
@@ -4127,28 +4392,28 @@ export const IkeEncryptionObject = {
     GcmAes128: "gcmAes128",
     GcmAes256: "gcmAes256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IkeIntegrityObject = {
     Sha256: "sha256",
     Sha384: "sha384",
     GcmAes128: "gcmAes128",
     GcmAes256: "gcmAes256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IpSecEncryptionObject = {
     None: "none",
     GcmAes128: "gcmAes128",
     GcmAes192: "gcmAes192",
     GcmAes256: "gcmAes256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IpSecIntegrityObject = {
     GcmAes128: "gcmAes128",
     GcmAes192: "gcmAes192",
     GcmAes256: "gcmAes256",
     Sha256: "sha256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NetworkDestinationTypeObject = {
     Url: "url",
     Fqdn: "fqdn",
@@ -4157,7 +4422,7 @@ export const NetworkDestinationTypeObject = {
     IpSubnet: "ipSubnet",
     WebCategory: "webCategory",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NetworkingProtocolObject = {
     Ip: "ip",
     Icmp: "icmp",
@@ -4182,7 +4447,7 @@ export const NetworkingProtocolObject = {
     Spx: "spx",
     SpxII: "spxII",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const OnboardingStatusObject = {
     Offboarded: "offboarded",
     OffboardingInProgress: "offboardingInProgress",
@@ -4191,7 +4456,7 @@ export const OnboardingStatusObject = {
     OnboardingErrorOccurred: "onboardingErrorOccurred",
     OffboardingErrorOccurred: "offboardingErrorOccurred",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const PfsGroupObject = {
     None: "none",
     Pfs1: "pfs1",
@@ -4203,12 +4468,12 @@ export const PfsGroupObject = {
     Ecp256: "ecp256",
     Ecp384: "ecp384",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RedundancyTierObject = {
     NoRedundancy: "noRedundancy",
     ZoneRedundancy: "zoneRedundancy",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RegionObject = {
     EastUS: "eastUS",
     EastUS2: "eastUS2",
@@ -4242,7 +4507,7 @@ export const RegionObject = {
     JapanEast: "japanEast",
     JapanWest: "japanWest",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RemoteNetworkStatusObject = {
     TunnelDisconnected: "tunnelDisconnected",
     TunnelConnected: "tunnelConnected",
@@ -4250,34 +4515,34 @@ export const RemoteNetworkStatusObject = {
     BgpConnected: "bgpConnected",
     RemoteNetworkAlive: "remoteNetworkAlive",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const StatusObject = {
     Enabled: "enabled",
     Disabled: "disabled",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TrafficForwardingTypeObject = {
     M365: "m365",
     Internet: "internet",
     Private: "private",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TrafficTypeObject = {
     Internet: "internet",
     Private: "private",
     Microsoft365: "microsoft365",
     All: "all",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UsageStatusObject = {
     FrequentlyUsed: "frequentlyUsed",
     RarelyUsed: "rarelyUsed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UserTypeObject = {
     Member: "member",
     Guest: "guest",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */
