@@ -156,6 +156,6 @@ export const RoleInfoRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RoleInfoRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest%2Did}/roleInfo{?%24select,%24expand}";
+export const RoleInfoRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest%2Did}/roleInfo{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

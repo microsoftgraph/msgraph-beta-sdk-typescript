@@ -105,6 +105,6 @@ export const UserSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const UserSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24select,%24expand}";
+export const UserSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

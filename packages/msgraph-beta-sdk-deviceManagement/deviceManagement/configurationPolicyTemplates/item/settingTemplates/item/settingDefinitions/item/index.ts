@@ -105,6 +105,6 @@ export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderReq
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates/{deviceManagementConfigurationSettingTemplate%2Did}/settingDefinitions/{deviceManagementConfigurationSettingDefinition%2Did}{?%24select,%24expand}";
+export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates/{deviceManagementConfigurationSettingTemplate%2Did}/settingDefinitions/{deviceManagementConfigurationSettingDefinition%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

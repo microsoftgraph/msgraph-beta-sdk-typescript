@@ -105,6 +105,6 @@ export const CustomSecurityAttributeAuditItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const CustomSecurityAttributeAuditItemRequestBuilderUriTemplate = "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}{?%24select,%24expand}";
+export const CustomSecurityAttributeAuditItemRequestBuilderUriTemplate = "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

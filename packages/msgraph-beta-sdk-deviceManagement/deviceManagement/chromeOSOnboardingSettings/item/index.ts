@@ -105,6 +105,6 @@ export const ChromeOSOnboardingSettingsItemRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/chromeOSOnboardingSettings/{chromeOSOnboardingSettings%2Did}{?%24select,%24expand}";
+export const ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/chromeOSOnboardingSettings/{chromeOSOnboardingSettings%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

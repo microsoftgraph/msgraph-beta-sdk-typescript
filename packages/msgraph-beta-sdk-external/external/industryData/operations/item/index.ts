@@ -106,6 +106,6 @@ export const LongRunningOperationItemRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const LongRunningOperationItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/operations/{longRunningOperation%2Did}{?%24select,%24expand}";
+export const LongRunningOperationItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/operations/{longRunningOperation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

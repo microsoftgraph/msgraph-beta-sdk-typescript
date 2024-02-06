@@ -108,6 +108,6 @@ export const CustomAppScopeItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const CustomAppScopeItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/exchange/customAppScopes/{customAppScope%2Did}{?%24select,%24expand}";
+export const CustomAppScopeItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/exchange/customAppScopes/{customAppScope%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

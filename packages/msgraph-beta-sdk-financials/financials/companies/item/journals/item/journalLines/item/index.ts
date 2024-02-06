@@ -119,6 +119,6 @@ export const JournalLineItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const JournalLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines/{journalLine%2Did}{?%24select,%24expand}";
+export const JournalLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines/{journalLine%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

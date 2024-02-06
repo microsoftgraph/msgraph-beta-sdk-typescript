@@ -60,6 +60,6 @@ export const ActiveUsersBreakdownMetricItemRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const ActiveUsersBreakdownMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24select,%24expand}";
+export const ActiveUsersBreakdownMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

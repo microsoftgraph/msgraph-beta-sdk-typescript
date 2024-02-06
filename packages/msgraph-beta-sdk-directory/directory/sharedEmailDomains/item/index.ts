@@ -105,6 +105,6 @@ export const SharedEmailDomainItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const SharedEmailDomainItemRequestBuilderUriTemplate = "{+baseurl}/directory/sharedEmailDomains/{sharedEmailDomain%2Did}{?%24select,%24expand}";
+export const SharedEmailDomainItemRequestBuilderUriTemplate = "{+baseurl}/directory/sharedEmailDomains/{sharedEmailDomain%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

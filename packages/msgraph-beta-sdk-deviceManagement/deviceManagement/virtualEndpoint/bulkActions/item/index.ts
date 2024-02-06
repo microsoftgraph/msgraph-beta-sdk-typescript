@@ -105,6 +105,6 @@ export const CloudPcBulkActionItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const CloudPcBulkActionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkAction%2Did}{?%24select,%24expand}";
+export const CloudPcBulkActionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkAction%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

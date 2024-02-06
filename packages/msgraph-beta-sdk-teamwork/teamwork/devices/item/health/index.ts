@@ -106,6 +106,6 @@ export const HealthRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const HealthRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/health{?%24select,%24expand}";
+export const HealthRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/health{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

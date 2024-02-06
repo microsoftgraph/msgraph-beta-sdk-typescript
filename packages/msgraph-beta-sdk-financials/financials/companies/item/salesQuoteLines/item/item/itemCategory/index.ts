@@ -105,6 +105,6 @@ export const ItemCategoryRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ItemCategoryRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/item/itemCategory{?%24select,%24expand}";
+export const ItemCategoryRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/item/itemCategory{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

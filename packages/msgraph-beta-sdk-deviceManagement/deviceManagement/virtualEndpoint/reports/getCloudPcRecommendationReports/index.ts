@@ -77,14 +77,15 @@ export interface GetCloudPcRecommendationReportsPostRequestBody extends Addition
  */
 export interface GetCloudPcRecommendationReportsRequestBuilder extends BaseRequestBuilder<GetCloudPcRecommendationReportsRequestBuilder> {
     /**
-     * Invoke action getCloudPcRecommendationReports
+     * Get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of ArrayBuffer
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-1.0|Find more info here}
      */
      post(body: GetCloudPcRecommendationReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
-     * Invoke action getCloudPcRecommendationReports
+     * Get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation

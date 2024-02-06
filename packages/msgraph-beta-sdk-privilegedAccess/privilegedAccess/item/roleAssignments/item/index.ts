@@ -147,6 +147,6 @@ export const GovernanceRoleAssignmentItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const GovernanceRoleAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleAssignments/{governanceRoleAssignment%2Did}{?%24select,%24expand}";
+export const GovernanceRoleAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleAssignments/{governanceRoleAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -56,6 +56,10 @@ export interface GetCredentialUserRegistrationCountRequestBuilderGetQueryParamet
      */
     count?: boolean;
     /**
+     * Expand related entities
+     */
+    expand?: string[];
+    /**
      * Filter items by property values
      */
     filter?: string;
@@ -93,6 +97,7 @@ export function serializeGetCredentialUserRegistrationCountGetResponse(writer: S
  */
 const GetCredentialUserRegistrationCountRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
+    "expand": "%24expand",
     "filter": "%24filter",
     "orderby": "%24orderby",
     "search": "%24search",
@@ -118,6 +123,6 @@ export const GetCredentialUserRegistrationCountRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const GetCredentialUserRegistrationCountRequestBuilderUriTemplate = "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+export const GetCredentialUserRegistrationCountRequestBuilderUriTemplate = "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

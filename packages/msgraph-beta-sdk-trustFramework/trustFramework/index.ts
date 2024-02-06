@@ -111,6 +111,6 @@ export const TrustFrameworkRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TrustFrameworkRequestBuilderUriTemplate = "{+baseurl}/trustFramework{?%24select,%24expand}";
+export const TrustFrameworkRequestBuilderUriTemplate = "{+baseurl}/trustFramework{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

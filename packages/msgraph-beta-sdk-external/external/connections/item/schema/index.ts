@@ -17,11 +17,11 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      */
      get(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : Promise<Schema | undefined>;
     /**
-     * Create the schema for a Microsoft Search connection.
+     * Update the properties of a schema for an externalConnection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of Schema
-     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: Schema, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Schema | undefined>;
     /**
@@ -31,7 +31,7 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create the schema for a Microsoft Search connection.
+     * Update the properties of a schema for an externalConnection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
@@ -88,6 +88,6 @@ export const SchemaRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const SchemaRequestBuilderUriTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/schema{?%24select,%24expand}";
+export const SchemaRequestBuilderUriTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/schema{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

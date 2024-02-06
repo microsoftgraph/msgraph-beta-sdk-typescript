@@ -74,6 +74,6 @@ export const ConnectorGroupRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ConnectorGroupRequestBuilderUriTemplate = "{+baseurl}/applications/{application%2Did}/connectorGroup{?%24select,%24expand}";
+export const ConnectorGroupRequestBuilderUriTemplate = "{+baseurl}/applications/{application%2Did}/connectorGroup{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

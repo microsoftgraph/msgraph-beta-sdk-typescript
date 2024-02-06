@@ -10,23 +10,11 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DirectoryObjectItemRequestBuilder extends BaseRequestBuilder<DirectoryObjectItemRequestBuilder> {
     /**
-     * Remove a user's sponsor.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0|Find more info here}
-     */
-     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
-    /**
      * The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of DirectoryObject
      */
      get(requestConfiguration?: RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObject | undefined>;
-    /**
-     * Remove a user's sponsor.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
-     */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -58,14 +46,6 @@ const DirectoryObjectItemRequestBuilderGetQueryParametersMapper: Record<string, 
  * Metadata for all the requests in the request builder.
  */
 export const DirectoryObjectItemRequestBuilderRequestsMetadata: RequestsMetadata = {
-    delete: {
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "sendNoResponseContentAsync",
-    },
     get: {
         responseBodyContentType: "application/json",
         errorMappings: {
@@ -80,6 +60,6 @@ export const DirectoryObjectItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const DirectoryObjectItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/sponsors/{directoryObject%2Did}{?%24select,%24expand}";
+export const DirectoryObjectItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/sponsors/{directoryObject%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

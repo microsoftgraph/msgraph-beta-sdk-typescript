@@ -60,6 +60,6 @@ export const AcceptedVersionRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AcceptedVersionRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/acceptedVersion{?%24select,%24expand}";
+export const AcceptedVersionRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/acceptedVersion{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -107,6 +107,6 @@ export const CompareWithTemplateIdRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const CompareWithTemplateIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}";
+export const CompareWithTemplateIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/compare(templateId='{templateId}'){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

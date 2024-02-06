@@ -107,6 +107,6 @@ export const DetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DetailsRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/tasks/{businessScenarioTask%2Did}/details{?%24select,%24expand}";
+export const DetailsRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/tasks/{businessScenarioTask%2Did}/details{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -119,6 +119,6 @@ export const TenantReferenceTenantItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const TenantReferenceTenantItemRequestBuilderUriTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}{?%24select,%24expand}";
+export const TenantReferenceTenantItemRequestBuilderUriTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

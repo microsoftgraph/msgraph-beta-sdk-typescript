@@ -107,6 +107,6 @@ export const GetSubscriptionsRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const GetSubscriptionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getSubscriptions(){?%24top,%24skip,%24search,%24filter,%24count}";
+export const GetSubscriptionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getSubscriptions(){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

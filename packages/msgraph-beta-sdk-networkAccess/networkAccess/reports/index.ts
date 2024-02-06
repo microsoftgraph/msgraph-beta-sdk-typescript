@@ -10,8 +10,9 @@ import { MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDat
 import { MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime/';
 import { MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder } from './microsoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy/';
 import { MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime/';
-import { MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTime/';
+import { MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTime/';
 import { MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime/';
+import { MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder } from './microsoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy/';
 import { MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTime/';
 import { MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate, type MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -84,12 +85,12 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
      microsoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime(activityPivotDateTime: Date | undefined, endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder;
     /**
-     * Provides operations to call the trafficDistribution method.
+     * Provides operations to call the getDiscoveredApplicationSegmentReport method.
      * @param endDateTime Usage: endDateTime={endDateTime}
      * @param startDateTime Usage: startDateTime={startDateTime}
-     * @returns a microsoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilder
+     * @returns a microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilder
      */
-     microsoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilder;
+     microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Provides operations to call the transactionSummaries method.
      * @param endDateTime Usage: endDateTime={endDateTime}
@@ -97,6 +98,14 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @returns a microsoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder
      */
      microsoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder;
+    /**
+     * Provides operations to call the usageProfiling method.
+     * @param aggregatedBy Usage: aggregatedBy='{aggregatedBy}'
+     * @param endDateTime Usage: endDateTime={endDateTime}
+     * @param startDateTime Usage: startDateTime={startDateTime}
+     * @returns a microsoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder
+     */
+     microsoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy(aggregatedBy: string | undefined, endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder;
     /**
      * Provides operations to call the userReport method.
      * @param endDateTime Usage: endDateTime={endDateTime}
@@ -190,13 +199,17 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
         uriTemplate: MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilderUriTemplate,
         requestsMetadata: MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilderRequestsMetadata,
     },
-    microsoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTime: {
-        uriTemplate: MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate,
-        requestsMetadata: MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+    microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTime: {
+        uriTemplate: MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate,
+        requestsMetadata: MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
     },
     microsoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime: {
         uriTemplate: MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate,
         requestsMetadata: MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy: {
+        uriTemplate: MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderUriTemplate,
+        requestsMetadata: MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderRequestsMetadata,
     },
     microsoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTime: {
         uriTemplate: MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate,
@@ -245,6 +258,6 @@ export const ReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ReportsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports{?%24select,%24expand}";
+export const ReportsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

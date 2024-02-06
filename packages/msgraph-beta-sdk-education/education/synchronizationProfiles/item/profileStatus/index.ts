@@ -106,6 +106,6 @@ export const ProfileStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ProfileStatusRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/profileStatus{?%24select,%24expand}";
+export const ProfileStatusRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/profileStatus{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -111,6 +111,6 @@ export const AuthenticationMethodModeDetailItemRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const AuthenticationMethodModeDetailItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/{authenticationMethodModeDetail%2Did}{?%24select,%24expand}";
+export const AuthenticationMethodModeDetailItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/{authenticationMethodModeDetail%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

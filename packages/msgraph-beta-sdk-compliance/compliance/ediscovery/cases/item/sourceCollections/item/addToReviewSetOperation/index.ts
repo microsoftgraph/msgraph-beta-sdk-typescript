@@ -63,6 +63,6 @@ export const AddToReviewSetOperationRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const AddToReviewSetOperationRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/addToReviewSetOperation{?%24select,%24expand}";
+export const AddToReviewSetOperationRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/addToReviewSetOperation{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

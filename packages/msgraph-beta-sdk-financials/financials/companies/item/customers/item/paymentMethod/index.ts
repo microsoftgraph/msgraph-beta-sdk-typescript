@@ -105,6 +105,6 @@ export const PaymentMethodRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const PaymentMethodRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}/paymentMethod{?%24select,%24expand}";
+export const PaymentMethodRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}/paymentMethod{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

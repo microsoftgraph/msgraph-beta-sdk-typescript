@@ -122,6 +122,6 @@ export const PlanConfigurationRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const PlanConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration{?%24select,%24expand}";
+export const PlanConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -26,10 +26,10 @@ export interface RegistrationRequestBuilder extends BaseRequestBuilder<Registrat
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the externalMeetingRegistration details associated with an onlineMeeting.
+     * Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of MeetingRegistration
-     * @see {@link https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RegistrationRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingRegistration | undefined>;
     /**
@@ -47,7 +47,7 @@ export interface RegistrationRequestBuilder extends BaseRequestBuilder<Registrat
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the externalMeetingRegistration details associated with an onlineMeeting.
+     * Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -61,7 +61,7 @@ export interface RegistrationRequestBuilder extends BaseRequestBuilder<Registrat
      toPatchRequestInformation(body: MeetingRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the externalMeetingRegistration details associated with an onlineMeeting.
+ * Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
  */
 export interface RegistrationRequestBuilderGetQueryParameters {
     /**
@@ -133,6 +133,6 @@ export const RegistrationRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RegistrationRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/registration{?%24select,%24expand}";
+export const RegistrationRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/registration{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

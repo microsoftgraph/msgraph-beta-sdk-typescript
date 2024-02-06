@@ -120,6 +120,6 @@ export const ManagementActionItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const ManagementActionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions/{managementAction%2Did}{?%24select,%24expand}";
+export const ManagementActionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions/{managementAction%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

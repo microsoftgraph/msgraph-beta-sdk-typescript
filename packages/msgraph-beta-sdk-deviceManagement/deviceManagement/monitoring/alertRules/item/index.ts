@@ -107,6 +107,6 @@ export const AlertRuleItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AlertRuleItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/monitoring/alertRules/{alertRule%2Did}{?%24select,%24expand}";
+export const AlertRuleItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/monitoring/alertRules/{alertRule%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

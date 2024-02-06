@@ -176,6 +176,6 @@ export const AccessReviewItemRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const AccessReviewItemRequestBuilderUriTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}{?%24select,%24expand}";
+export const AccessReviewItemRequestBuilderUriTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const ComanagementEligibleDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagementEligibleDevices/{comanagementEligibleDevice%2Did}{?%24select,%24expand}";
+export const ComanagementEligibleDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagementEligibleDevices/{comanagementEligibleDevice%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

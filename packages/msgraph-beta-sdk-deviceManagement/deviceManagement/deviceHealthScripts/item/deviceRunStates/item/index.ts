@@ -119,6 +119,6 @@ export const DeviceHealthScriptDeviceStateItemRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const DeviceHealthScriptDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/deviceRunStates/{deviceHealthScriptDeviceState%2Did}{?%24select,%24expand}";
+export const DeviceHealthScriptDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/deviceRunStates/{deviceHealthScriptDeviceState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

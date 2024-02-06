@@ -130,6 +130,6 @@ export const ConnectivityRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ConnectivityRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity{?%24select,%24expand}";
+export const ConnectivityRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

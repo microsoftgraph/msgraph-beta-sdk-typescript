@@ -95,6 +95,6 @@ export const GraphWindowsStoreAppRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const GraphWindowsStoreAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp{?%24select,%24expand}";
+export const GraphWindowsStoreAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

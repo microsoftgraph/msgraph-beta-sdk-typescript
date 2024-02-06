@@ -119,6 +119,6 @@ export const Microsoft365AppsRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const Microsoft365AppsRequestBuilderUriTemplate = "{+baseurl}/admin/microsoft365Apps{?%24select,%24expand}";
+export const Microsoft365AppsRequestBuilderUriTemplate = "{+baseurl}/admin/microsoft365Apps{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

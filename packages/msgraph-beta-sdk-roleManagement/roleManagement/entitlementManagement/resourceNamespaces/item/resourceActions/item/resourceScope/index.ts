@@ -105,6 +105,6 @@ export const ResourceScopeRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ResourceScopeRequestBuilderUriTemplate = "{+baseurl}/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}/resourceScope{?%24select,%24expand}";
+export const ResourceScopeRequestBuilderUriTemplate = "{+baseurl}/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}/resourceScope{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

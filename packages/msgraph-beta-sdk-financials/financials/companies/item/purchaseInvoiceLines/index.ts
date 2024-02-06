@@ -117,6 +117,6 @@ export const PurchaseInvoiceLinesRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const PurchaseInvoiceLinesRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoiceLines{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+export const PurchaseInvoiceLinesRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoiceLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

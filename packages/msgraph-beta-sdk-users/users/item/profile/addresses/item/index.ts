@@ -108,6 +108,6 @@ export const ItemAddressItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ItemAddressItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/addresses/{itemAddress%2Did}{?%24select,%24expand}";
+export const ItemAddressItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/addresses/{itemAddress%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

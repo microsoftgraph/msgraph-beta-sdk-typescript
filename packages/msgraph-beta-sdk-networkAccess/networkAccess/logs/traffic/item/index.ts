@@ -105,6 +105,6 @@ export const NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}{?%24select,%24expand}";
+export const NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

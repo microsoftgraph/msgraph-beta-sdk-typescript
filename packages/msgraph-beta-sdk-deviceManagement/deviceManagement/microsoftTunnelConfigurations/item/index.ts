@@ -105,6 +105,6 @@ export const MicrosoftTunnelConfigurationItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const MicrosoftTunnelConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelConfigurations/{microsoftTunnelConfiguration%2Did}{?%24select,%24expand}";
+export const MicrosoftTunnelConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelConfigurations/{microsoftTunnelConfiguration%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -57,6 +57,10 @@ export interface FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQ
      */
     count?: boolean;
     /**
+     * Expand related entities
+     */
+    expand?: string[];
+    /**
      * Filter items by property values
      */
     filter?: string;
@@ -94,6 +98,7 @@ export function serializeFindByMethodModeWithAuthenticationMethodModesGetRespons
  */
 const FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
+    "expand": "%24expand",
     "filter": "%24filter",
     "orderby": "%24orderby",
     "search": "%24search",
@@ -119,6 +124,6 @@ export const FindByMethodModeWithAuthenticationMethodModesRequestBuilderRequests
 /**
  * Uri template for the request builder.
  */
-export const FindByMethodModeWithAuthenticationMethodModesRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/policies/findByMethodMode(authenticationMethodModes={authenticationMethodModes}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+export const FindByMethodModeWithAuthenticationMethodModesRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/policies/findByMethodMode(authenticationMethodModes={authenticationMethodModes}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

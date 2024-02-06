@@ -105,6 +105,6 @@ export const DeviceConfigurationUserStatusItemRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const DeviceConfigurationUserStatusItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/userStatuses/{deviceConfigurationUserStatus%2Did}{?%24select,%24expand}";
+export const DeviceConfigurationUserStatusItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/userStatuses/{deviceConfigurationUserStatus%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

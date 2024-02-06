@@ -60,6 +60,6 @@ export const TemplateStepVersionRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const TemplateStepVersionRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}/deployments/{managementTemplateStepDeployment%2Did}/templateStepVersion{?%24select,%24expand}";
+export const TemplateStepVersionRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}/deployments/{managementTemplateStepDeployment%2Did}/templateStepVersion{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

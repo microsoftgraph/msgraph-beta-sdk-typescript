@@ -22,7 +22,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      byAuditLogRecordId(auditLogRecordId: string) : AuditLogRecordItemRequestBuilder;
     /**
-     * Get records from security
+     * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of AuditLogRecordCollectionResponse
      */
@@ -35,7 +35,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      post(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogRecord | undefined>;
     /**
-     * Get records from security
+     * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -49,7 +49,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      toPostRequestInformation(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get records from security
+ * An individual audit log record.
  */
 export interface RecordsRequestBuilderGetQueryParameters {
     /**
@@ -142,6 +142,6 @@ export const RecordsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RecordsRequestBuilderUriTemplate = "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}/records{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+export const RecordsRequestBuilderUriTemplate = "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}/records{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

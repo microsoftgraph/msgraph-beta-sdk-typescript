@@ -170,6 +170,6 @@ export const ServiceActivityRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ServiceActivityRequestBuilderUriTemplate = "{+baseurl}/reports/serviceActivity{?%24select,%24expand}";
+export const ServiceActivityRequestBuilderUriTemplate = "{+baseurl}/reports/serviceActivity{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -120,6 +120,6 @@ export const DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementAutopilotEventItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}{?%24select,%24expand}";
+export const DeviceManagementAutopilotEventItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

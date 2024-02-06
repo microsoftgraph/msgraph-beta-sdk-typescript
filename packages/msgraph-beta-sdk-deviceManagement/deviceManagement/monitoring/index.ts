@@ -130,6 +130,6 @@ export const MonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const MonitoringRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/monitoring{?%24select,%24expand}";
+export const MonitoringRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/monitoring{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

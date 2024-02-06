@@ -106,6 +106,6 @@ export const ConfigurationRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ConfigurationRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/configuration{?%24select,%24expand}";
+export const ConfigurationRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/configuration{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

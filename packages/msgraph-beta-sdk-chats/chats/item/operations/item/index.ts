@@ -106,6 +106,6 @@ export const TeamsAsyncOperationItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const TeamsAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/chats/{chat%2Did}/operations/{teamsAsyncOperation%2Did}{?%24select,%24expand}";
+export const TeamsAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/chats/{chat%2Did}/operations/{teamsAsyncOperation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

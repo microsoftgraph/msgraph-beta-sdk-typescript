@@ -120,6 +120,6 @@ export const ApprovalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ApprovalItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/directory/roleAssignmentApprovals/{approval%2Did}{?%24select,%24expand}";
+export const ApprovalItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/directory/roleAssignmentApprovals/{approval%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

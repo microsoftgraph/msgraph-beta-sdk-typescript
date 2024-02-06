@@ -105,6 +105,6 @@ export const CloudPcUserSettingAssignmentItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const CloudPcUserSettingAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting%2Did}/assignments/{cloudPcUserSettingAssignment%2Did}{?%24select,%24expand}";
+export const CloudPcUserSettingAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting%2Did}/assignments/{cloudPcUserSettingAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

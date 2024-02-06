@@ -106,6 +106,6 @@ export const TeamworkDeviceOperationItemRequestBuilderRequestsMetadata: Requests
 /**
  * Uri template for the request builder.
  */
-export const TeamworkDeviceOperationItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}{?%24select,%24expand}";
+export const TeamworkDeviceOperationItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -120,6 +120,6 @@ export const CollaborationRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CollaborationRequestBuilderUriTemplate = "{+baseurl}/security/collaboration{?%24select,%24expand}";
+export const CollaborationRequestBuilderUriTemplate = "{+baseurl}/security/collaboration{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

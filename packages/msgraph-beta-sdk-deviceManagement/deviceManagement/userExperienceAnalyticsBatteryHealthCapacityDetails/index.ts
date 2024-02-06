@@ -105,6 +105,6 @@ export const UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderRe
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthCapacityDetails{?%24select,%24expand}";
+export const UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthCapacityDetails{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

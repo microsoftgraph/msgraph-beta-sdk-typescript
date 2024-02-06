@@ -60,6 +60,6 @@ export const LinkedEligibleRoleAssignmentRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const LinkedEligibleRoleAssignmentRequestBuilderUriTemplate = "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24select,%24expand}";
+export const LinkedEligibleRoleAssignmentRequestBuilderUriTemplate = "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

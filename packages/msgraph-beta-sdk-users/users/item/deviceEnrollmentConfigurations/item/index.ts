@@ -138,6 +138,6 @@ export const DeviceEnrollmentConfigurationItemRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const DeviceEnrollmentConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}{?%24select,%24expand}";
+export const DeviceEnrollmentConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

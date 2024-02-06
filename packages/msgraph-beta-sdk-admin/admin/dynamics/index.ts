@@ -107,6 +107,6 @@ export const DynamicsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DynamicsRequestBuilderUriTemplate = "{+baseurl}/admin/dynamics{?%24select,%24expand}";
+export const DynamicsRequestBuilderUriTemplate = "{+baseurl}/admin/dynamics{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

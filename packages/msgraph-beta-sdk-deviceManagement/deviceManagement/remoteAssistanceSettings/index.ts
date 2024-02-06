@@ -105,6 +105,6 @@ export const RemoteAssistanceSettingsRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const RemoteAssistanceSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/remoteAssistanceSettings{?%24select,%24expand}";
+export const RemoteAssistanceSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/remoteAssistanceSettings{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

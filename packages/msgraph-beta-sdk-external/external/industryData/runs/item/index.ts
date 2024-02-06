@@ -85,6 +85,6 @@ export const IndustryDataRunItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const IndustryDataRunItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}{?%24select,%24expand}";
+export const IndustryDataRunItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -129,6 +129,6 @@ export const GroupPolicyDefinitionValueItemRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const GroupPolicyDefinitionValueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}{?%24select,%24expand}";
+export const GroupPolicyDefinitionValueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

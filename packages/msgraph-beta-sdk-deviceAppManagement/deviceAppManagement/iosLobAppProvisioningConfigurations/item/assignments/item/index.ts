@@ -105,6 +105,6 @@ export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderReque
 /**
  * Uri template for the request builder.
  */
-export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/assignments/{iosLobAppProvisioningConfigurationAssignment%2Did}{?%24select,%24expand}";
+export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/assignments/{iosLobAppProvisioningConfigurationAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

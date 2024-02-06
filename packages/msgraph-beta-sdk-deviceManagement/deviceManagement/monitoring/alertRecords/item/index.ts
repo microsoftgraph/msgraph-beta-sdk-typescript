@@ -120,6 +120,6 @@ export const AlertRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AlertRecordItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/monitoring/alertRecords/{alertRecord%2Did}{?%24select,%24expand}";
+export const AlertRecordItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/monitoring/alertRecords/{alertRecord%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

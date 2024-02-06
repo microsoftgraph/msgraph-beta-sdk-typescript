@@ -105,6 +105,6 @@ export const DirectoryRoleAccessReviewPolicyRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const DirectoryRoleAccessReviewPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/directoryRoleAccessReviewPolicy{?%24select,%24expand}";
+export const DirectoryRoleAccessReviewPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/directoryRoleAccessReviewPolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

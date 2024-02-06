@@ -105,6 +105,6 @@ export const DomainSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const DomainSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/domainSecurityProfiles/{domainSecurityProfile%2Did}{?%24select,%24expand}";
+export const DomainSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/domainSecurityProfiles/{domainSecurityProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

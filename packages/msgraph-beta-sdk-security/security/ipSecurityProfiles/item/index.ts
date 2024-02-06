@@ -105,6 +105,6 @@ export const IpSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const IpSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/ipSecurityProfiles/{ipSecurityProfile%2Did}{?%24select,%24expand}";
+export const IpSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/ipSecurityProfiles/{ipSecurityProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

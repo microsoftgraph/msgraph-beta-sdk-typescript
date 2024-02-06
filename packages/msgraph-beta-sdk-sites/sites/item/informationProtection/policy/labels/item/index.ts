@@ -112,6 +112,6 @@ export const InformationProtectionLabelItemRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const InformationProtectionLabelItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/policy/labels/{informationProtectionLabel%2Did}{?%24select,%24expand}";
+export const InformationProtectionLabelItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/policy/labels/{informationProtectionLabel%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

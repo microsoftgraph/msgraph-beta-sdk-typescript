@@ -107,6 +107,6 @@ export const SubCategoryTemplateItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const SubCategoryTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}{?%24select,%24expand}";
+export const SubCategoryTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

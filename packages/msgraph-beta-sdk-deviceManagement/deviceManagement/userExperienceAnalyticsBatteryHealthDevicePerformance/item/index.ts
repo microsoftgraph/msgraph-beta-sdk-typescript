@@ -105,6 +105,6 @@ export const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBui
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance/{userExperienceAnalyticsBatteryHealthDevicePerformance%2Did}{?%24select,%24expand}";
+export const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance/{userExperienceAnalyticsBatteryHealthDevicePerformance%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

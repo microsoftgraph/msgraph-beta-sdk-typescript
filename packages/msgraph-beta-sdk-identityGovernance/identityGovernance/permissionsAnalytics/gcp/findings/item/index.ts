@@ -105,6 +105,6 @@ export const FindingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const FindingItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/gcp/findings/{finding%2Did}{?%24select,%24expand}";
+export const FindingItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/gcp/findings/{finding%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const PolicySetAssignmentItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const PolicySetAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24select,%24expand}";
+export const PolicySetAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

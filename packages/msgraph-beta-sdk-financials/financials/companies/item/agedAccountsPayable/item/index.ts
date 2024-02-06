@@ -60,6 +60,6 @@ export const AgedAccountsPayableItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const AgedAccountsPayableItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/agedAccountsPayable/{agedAccountsPayable%2Did}{?%24select,%24expand}";
+export const AgedAccountsPayableItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/agedAccountsPayable/{agedAccountsPayable%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

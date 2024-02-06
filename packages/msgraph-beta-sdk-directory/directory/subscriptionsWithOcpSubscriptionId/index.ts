@@ -106,6 +106,6 @@ export const SubscriptionsWithOcpSubscriptionIdRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const SubscriptionsWithOcpSubscriptionIdRequestBuilderUriTemplate = "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24select,%24expand}";
+export const SubscriptionsWithOcpSubscriptionIdRequestBuilderUriTemplate = "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

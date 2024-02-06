@@ -131,6 +131,6 @@ export const PlannerRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const PlannerRequestBuilderUriTemplate = "{+baseurl}/planner{?%24select,%24expand}";
+export const PlannerRequestBuilderUriTemplate = "{+baseurl}/planner{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

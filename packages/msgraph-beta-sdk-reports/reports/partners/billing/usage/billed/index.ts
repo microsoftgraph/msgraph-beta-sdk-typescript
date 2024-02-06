@@ -119,6 +119,6 @@ export const BilledRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const BilledRequestBuilderUriTemplate = "{+baseurl}/reports/partners/billing/usage/billed{?%24select,%24expand}";
+export const BilledRequestBuilderUriTemplate = "{+baseurl}/reports/partners/billing/usage/billed{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

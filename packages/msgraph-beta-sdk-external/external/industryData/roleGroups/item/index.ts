@@ -106,6 +106,6 @@ export const RoleGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RoleGroupItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/roleGroups/{roleGroup%2Did}{?%24select,%24expand}";
+export const RoleGroupItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/roleGroups/{roleGroup%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -119,6 +119,6 @@ export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const GoalsExportJobItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/goals/exportJobs/{goalsExportJob%2Did}{?%24select,%24expand}";
+export const GoalsExportJobItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/goals/exportJobs/{goalsExportJob%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

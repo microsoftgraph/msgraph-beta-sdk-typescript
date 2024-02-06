@@ -119,6 +119,6 @@ export const RequestorRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RequestorRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceRequests/{accessPackageResourceRequest%2Did}/requestor{?%24select,%24expand}";
+export const RequestorRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceRequests/{accessPackageResourceRequest%2Did}/requestor{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

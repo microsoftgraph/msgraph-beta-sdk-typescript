@@ -129,6 +129,6 @@ export const InboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const InboundSharedUserProfileUserItemRequestBuilderUriTemplate = "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24select,%24expand}";
+export const InboundSharedUserProfileUserItemRequestBuilderUriTemplate = "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -110,6 +110,6 @@ export const SalesOrderLineItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const SalesOrderLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}{?%24select,%24expand}";
+export const SalesOrderLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

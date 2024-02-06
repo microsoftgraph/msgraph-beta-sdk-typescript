@@ -74,6 +74,6 @@ export const GeneralLedgerEntryItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const GeneralLedgerEntryItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/generalLedgerEntries/{generalLedgerEntry%2Did}{?%24select,%24expand}";
+export const GeneralLedgerEntryItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/generalLedgerEntries/{generalLedgerEntry%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

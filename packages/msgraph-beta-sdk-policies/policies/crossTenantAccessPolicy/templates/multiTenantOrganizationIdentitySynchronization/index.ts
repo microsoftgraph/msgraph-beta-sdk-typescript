@@ -121,6 +121,6 @@ export const MultiTenantOrganizationIdentitySynchronizationRequestBuilderRequest
 /**
  * Uri template for the request builder.
  */
-export const MultiTenantOrganizationIdentitySynchronizationRequestBuilderUriTemplate = "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization{?%24select,%24expand}";
+export const MultiTenantOrganizationIdentitySynchronizationRequestBuilderUriTemplate = "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

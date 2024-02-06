@@ -105,6 +105,6 @@ export const ProvisioningObjectSummaryItemRequestBuilderRequestsMetadata: Reques
 /**
  * Uri template for the request builder.
  */
-export const ProvisioningObjectSummaryItemRequestBuilderUriTemplate = "{+baseurl}/auditLogs/directoryProvisioning/{provisioningObjectSummary%2Did}{?%24select,%24expand}";
+export const ProvisioningObjectSummaryItemRequestBuilderUriTemplate = "{+baseurl}/auditLogs/directoryProvisioning/{provisioningObjectSummary%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

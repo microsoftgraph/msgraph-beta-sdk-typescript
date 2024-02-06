@@ -133,6 +133,6 @@ export const UserFlowLanguageConfigurationItemRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const UserFlowLanguageConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}{?%24select,%24expand}";
+export const UserFlowLanguageConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

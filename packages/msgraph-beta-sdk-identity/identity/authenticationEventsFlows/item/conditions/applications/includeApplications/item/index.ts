@@ -105,6 +105,6 @@ export const AuthenticationConditionApplicationAppItemRequestBuilderRequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const AuthenticationConditionApplicationAppItemRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions/applications/includeApplications/{authenticationConditionApplication%2DappId}{?%24select,%24expand}";
+export const AuthenticationConditionApplicationAppItemRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions/applications/includeApplications/{authenticationConditionApplication%2DappId}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

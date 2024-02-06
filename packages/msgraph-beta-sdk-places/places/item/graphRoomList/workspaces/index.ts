@@ -142,6 +142,6 @@ export const WorkspacesRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const WorkspacesRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did}/graph.roomList/workspaces{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+export const WorkspacesRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did}/graph.roomList/workspaces{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

@@ -110,6 +110,6 @@ export const SalesCreditMemoLineItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const SalesCreditMemoLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}{?%24select,%24expand}";
+export const SalesCreditMemoLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

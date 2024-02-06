@@ -106,6 +106,6 @@ export const ConditionalAccessPolicyCoverageItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const ConditionalAccessPolicyCoverageItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/conditionalAccessPolicyCoverages/{conditionalAccessPolicyCoverage%2Did}{?%24select,%24expand}";
+export const ConditionalAccessPolicyCoverageItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/conditionalAccessPolicyCoverages/{conditionalAccessPolicyCoverage%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

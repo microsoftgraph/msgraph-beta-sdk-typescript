@@ -107,6 +107,6 @@ export const B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/b2cAuthenticationMethodsPolicy{?%24select,%24expand}";
+export const B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/b2cAuthenticationMethodsPolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

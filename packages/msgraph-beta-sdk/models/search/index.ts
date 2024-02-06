@@ -627,6 +627,6 @@ export const AnswerStateObject = {
     Draft: "draft",
     Excluded: "excluded",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

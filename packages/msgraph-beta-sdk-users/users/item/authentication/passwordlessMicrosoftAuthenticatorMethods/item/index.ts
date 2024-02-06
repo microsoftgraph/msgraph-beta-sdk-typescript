@@ -95,6 +95,6 @@ export const PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBu
 /**
  * Uri template for the request builder.
  */
-export const PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod%2Did}{?%24select,%24expand}";
+export const PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

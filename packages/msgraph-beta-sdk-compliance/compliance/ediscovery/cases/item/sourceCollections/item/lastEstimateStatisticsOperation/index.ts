@@ -63,6 +63,6 @@ export const LastEstimateStatisticsOperationRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const LastEstimateStatisticsOperationRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/lastEstimateStatisticsOperation{?%24select,%24expand}";
+export const LastEstimateStatisticsOperationRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/lastEstimateStatisticsOperation{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

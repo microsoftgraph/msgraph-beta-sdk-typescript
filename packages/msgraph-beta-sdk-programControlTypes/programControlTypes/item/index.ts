@@ -105,6 +105,6 @@ export const ProgramControlTypeItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const ProgramControlTypeItemRequestBuilderUriTemplate = "{+baseurl}/programControlTypes/{programControlType%2Did}{?%24select,%24expand}";
+export const ProgramControlTypeItemRequestBuilderUriTemplate = "{+baseurl}/programControlTypes/{programControlType%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

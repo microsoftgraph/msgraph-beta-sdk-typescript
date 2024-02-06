@@ -60,6 +60,6 @@ export const DefinitionValueRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DefinitionValueRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}/presentationValues/{groupPolicyPresentationValue%2Did}/definitionValue{?%24select,%24expand}";
+export const DefinitionValueRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}/presentationValues/{groupPolicyPresentationValue%2Did}/definitionValue{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

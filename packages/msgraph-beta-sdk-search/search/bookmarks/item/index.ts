@@ -108,6 +108,6 @@ export const BookmarkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const BookmarkItemRequestBuilderUriTemplate = "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24select,%24expand}";
+export const BookmarkItemRequestBuilderUriTemplate = "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

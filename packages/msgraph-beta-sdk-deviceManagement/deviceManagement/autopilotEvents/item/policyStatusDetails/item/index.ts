@@ -105,6 +105,6 @@ export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderReques
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}/policyStatusDetails/{deviceManagementAutopilotPolicyStatusDetail%2Did}{?%24select,%24expand}";
+export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}/policyStatusDetails/{deviceManagementAutopilotPolicyStatusDetail%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

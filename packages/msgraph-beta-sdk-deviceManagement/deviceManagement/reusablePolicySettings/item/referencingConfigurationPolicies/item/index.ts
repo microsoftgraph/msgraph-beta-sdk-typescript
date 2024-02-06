@@ -166,6 +166,6 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderRequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementConfigurationPolicyItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}{?%24select,%24expand}";
+export const DeviceManagementConfigurationPolicyItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

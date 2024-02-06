@@ -106,6 +106,6 @@ export const EngagementAsyncOperationItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const EngagementAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/engagementAsyncOperations/{engagementAsyncOperation%2Did}{?%24select,%24expand}";
+export const EngagementAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/engagementAsyncOperations/{engagementAsyncOperation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

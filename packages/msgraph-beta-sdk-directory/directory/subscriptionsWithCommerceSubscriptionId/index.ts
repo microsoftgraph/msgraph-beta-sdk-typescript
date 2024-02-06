@@ -106,6 +106,6 @@ export const SubscriptionsWithCommerceSubscriptionIdRequestBuilderRequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const SubscriptionsWithCommerceSubscriptionIdRequestBuilderUriTemplate = "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24select,%24expand}";
+export const SubscriptionsWithCommerceSubscriptionIdRequestBuilderUriTemplate = "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

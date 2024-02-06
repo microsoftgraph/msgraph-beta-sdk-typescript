@@ -138,6 +138,6 @@ export const MicrosoftTunnelSiteItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const MicrosoftTunnelSiteItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}{?%24select,%24expand}";
+export const MicrosoftTunnelSiteItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

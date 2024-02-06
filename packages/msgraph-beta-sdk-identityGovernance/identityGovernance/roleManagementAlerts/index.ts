@@ -150,6 +150,6 @@ export const RoleManagementAlertsRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const RoleManagementAlertsRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts{?%24select,%24expand}";
+export const RoleManagementAlertsRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

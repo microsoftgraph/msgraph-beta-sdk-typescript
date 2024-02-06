@@ -105,6 +105,6 @@ export const ServiceNowConnectionItemRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const ServiceNowConnectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24select,%24expand}";
+export const ServiceNowConnectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

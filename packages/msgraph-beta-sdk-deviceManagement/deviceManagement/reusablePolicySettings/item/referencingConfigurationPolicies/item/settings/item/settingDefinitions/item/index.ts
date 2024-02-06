@@ -60,6 +60,6 @@ export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderReq
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}/settings/{deviceManagementConfigurationSetting%2Did}/settingDefinitions/{deviceManagementConfigurationSettingDefinition%2Did}{?%24select,%24expand}";
+export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}/settings/{deviceManagementConfigurationSetting%2Did}/settingDefinitions/{deviceManagementConfigurationSettingDefinition%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

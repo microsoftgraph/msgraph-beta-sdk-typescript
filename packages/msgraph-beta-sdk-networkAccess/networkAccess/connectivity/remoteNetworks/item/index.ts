@@ -140,6 +140,6 @@ export const RemoteNetworkItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const RemoteNetworkItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}{?%24select,%24expand}";
+export const RemoteNetworkItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

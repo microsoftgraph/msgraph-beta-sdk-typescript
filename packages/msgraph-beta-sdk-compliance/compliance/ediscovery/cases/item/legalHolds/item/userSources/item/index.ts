@@ -111,6 +111,6 @@ export const UserSourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UserSourceItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds/{legalHold%2Did}/userSources/{userSource%2Did}{?%24select,%24expand}";
+export const UserSourceItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds/{legalHold%2Did}/userSources/{userSource%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

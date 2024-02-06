@@ -138,6 +138,6 @@ export const AuthenticationStrengthsRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const AuthenticationStrengthsRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths{?%24select,%24expand}";
+export const AuthenticationStrengthsRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

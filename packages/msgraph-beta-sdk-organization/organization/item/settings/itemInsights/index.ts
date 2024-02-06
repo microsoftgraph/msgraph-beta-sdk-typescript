@@ -12,12 +12,14 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
     /**
      * Delete navigation property itemInsights for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of InsightsSettings
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      * @see {@link https://learn.microsoft.com/graph/api/organizationsettings-list-iteminsights?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemInsightsRequestBuilderGetQueryParameters> | undefined) : Promise<InsightsSettings | undefined>;
@@ -26,6 +28,7 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of InsightsSettings
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      * @see {@link https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: InsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InsightsSettings | undefined>;
@@ -33,12 +36,14 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
      * Delete navigation property itemInsights for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemInsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -46,6 +51,7 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      toPatchRequestInformation(body: InsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -107,6 +113,6 @@ export const ItemInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/itemInsights{?%24select,%24expand}";
+export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/itemInsights{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

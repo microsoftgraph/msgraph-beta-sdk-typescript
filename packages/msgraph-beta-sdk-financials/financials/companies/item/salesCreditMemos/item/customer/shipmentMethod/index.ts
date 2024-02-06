@@ -105,6 +105,6 @@ export const ShipmentMethodRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ShipmentMethodRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemos/{salesCreditMemo%2Did}/customer/shipmentMethod{?%24select,%24expand}";
+export const ShipmentMethodRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemos/{salesCreditMemo%2Did}/customer/shipmentMethod{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

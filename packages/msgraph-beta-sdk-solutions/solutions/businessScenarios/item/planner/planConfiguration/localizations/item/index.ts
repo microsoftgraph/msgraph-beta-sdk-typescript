@@ -108,6 +108,6 @@ export const PlannerPlanConfigurationLocalizationItemRequestBuilderRequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization%2Did}{?%24select,%24expand}";
+export const PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

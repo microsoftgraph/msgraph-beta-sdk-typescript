@@ -8,6 +8,8 @@ import { CreateSnapshotRequestBuilderRequestsMetadata, CreateSnapshotRequestBuil
 import { EndGracePeriodRequestBuilderRequestsMetadata, EndGracePeriodRequestBuilderUriTemplate, type EndGracePeriodRequestBuilder } from './endGracePeriod/';
 import { GetCloudPcConnectivityHistoryRequestBuilderRequestsMetadata, GetCloudPcConnectivityHistoryRequestBuilderUriTemplate, type GetCloudPcConnectivityHistoryRequestBuilder } from './getCloudPcConnectivityHistory/';
 import { GetCloudPcLaunchInfoRequestBuilderRequestsMetadata, GetCloudPcLaunchInfoRequestBuilderUriTemplate, type GetCloudPcLaunchInfoRequestBuilder } from './getCloudPcLaunchInfo/';
+import { GetFrontlineCloudPcAccessStateRequestBuilderRequestsMetadata, GetFrontlineCloudPcAccessStateRequestBuilderUriTemplate, type GetFrontlineCloudPcAccessStateRequestBuilder } from './getFrontlineCloudPcAccessState/';
+import { GetShiftWorkCloudPcAccessStateRequestBuilderRequestsMetadata, GetShiftWorkCloudPcAccessStateRequestBuilderUriTemplate, type GetShiftWorkCloudPcAccessStateRequestBuilder } from './getShiftWorkCloudPcAccessState/';
 import { GetSupportedCloudPcRemoteActionsRequestBuilderRequestsMetadata, GetSupportedCloudPcRemoteActionsRequestBuilderUriTemplate, type GetSupportedCloudPcRemoteActionsRequestBuilder } from './getSupportedCloudPcRemoteActions/';
 import { PowerOffRequestBuilderRequestsMetadata, PowerOffRequestBuilderUriTemplate, type PowerOffRequestBuilder } from './powerOff/';
 import { PowerOnRequestBuilderRequestsMetadata, PowerOnRequestBuilderUriTemplate, type PowerOnRequestBuilder } from './powerOn/';
@@ -46,6 +48,14 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * Provides operations to call the getCloudPcLaunchInfo method.
      */
     get getCloudPcLaunchInfo(): GetCloudPcLaunchInfoRequestBuilder;
+    /**
+     * Provides operations to call the getFrontlineCloudPcAccessState method.
+     */
+    get getFrontlineCloudPcAccessState(): GetFrontlineCloudPcAccessStateRequestBuilder;
+    /**
+     * Provides operations to call the getShiftWorkCloudPcAccessState method.
+     */
+    get getShiftWorkCloudPcAccessState(): GetShiftWorkCloudPcAccessStateRequestBuilder;
     /**
      * Provides operations to call the getSupportedCloudPcRemoteActions method.
      */
@@ -177,6 +187,14 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
         uriTemplate: GetCloudPcLaunchInfoRequestBuilderUriTemplate,
         requestsMetadata: GetCloudPcLaunchInfoRequestBuilderRequestsMetadata,
     },
+    getFrontlineCloudPcAccessState: {
+        uriTemplate: GetFrontlineCloudPcAccessStateRequestBuilderUriTemplate,
+        requestsMetadata: GetFrontlineCloudPcAccessStateRequestBuilderRequestsMetadata,
+    },
+    getShiftWorkCloudPcAccessState: {
+        uriTemplate: GetShiftWorkCloudPcAccessStateRequestBuilderUriTemplate,
+        requestsMetadata: GetShiftWorkCloudPcAccessStateRequestBuilderRequestsMetadata,
+    },
     getSupportedCloudPcRemoteActions: {
         uriTemplate: GetSupportedCloudPcRemoteActionsRequestBuilderUriTemplate,
         requestsMetadata: GetSupportedCloudPcRemoteActionsRequestBuilderRequestsMetadata,
@@ -264,6 +282,6 @@ export const CloudPCItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CloudPCItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}{?%24select,%24expand}";
+export const CloudPCItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const RiskDetectionItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const RiskDetectionItemRequestBuilderUriTemplate = "{+baseurl}/riskDetections/{riskDetection%2Did}{?%24select,%24expand}";
+export const RiskDetectionItemRequestBuilderUriTemplate = "{+baseurl}/riskDetections/{riskDetection%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const EmbeddedSIMDeviceStateItemRequestBuilderRequestsMetadata: RequestsM
 /**
  * Uri template for the request builder.
  */
-export const EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/deviceStates/{embeddedSIMDeviceState%2Did}{?%24select,%24expand}";
+export const EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/deviceStates/{embeddedSIMDeviceState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

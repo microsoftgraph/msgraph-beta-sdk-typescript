@@ -60,6 +60,6 @@ export const AccessPackageAssignmentItemRequestBuilderRequestsMetadata: Requests
 /**
  * Uri template for the request builder.
  */
-export const AccessPackageAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole%2Did}/accessPackageAssignments/{accessPackageAssignment%2Did}{?%24select,%24expand}";
+export const AccessPackageAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole%2Did}/accessPackageAssignments/{accessPackageAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

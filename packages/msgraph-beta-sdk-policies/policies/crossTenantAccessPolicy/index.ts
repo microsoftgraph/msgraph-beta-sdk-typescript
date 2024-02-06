@@ -142,6 +142,6 @@ export const CrossTenantAccessPolicyRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const CrossTenantAccessPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/crossTenantAccessPolicy{?%24select,%24expand}";
+export const CrossTenantAccessPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/crossTenantAccessPolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

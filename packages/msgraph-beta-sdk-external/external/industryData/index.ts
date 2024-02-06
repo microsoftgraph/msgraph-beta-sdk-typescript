@@ -145,6 +145,6 @@ export const IndustryDataRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const IndustryDataRequestBuilderUriTemplate = "{+baseurl}/external/industryData{?%24select,%24expand}";
+export const IndustryDataRequestBuilderUriTemplate = "{+baseurl}/external/industryData{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const CloudPcServicePlanItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const CloudPcServicePlanItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/servicePlans/{cloudPcServicePlan%2Did}{?%24select,%24expand}";
+export const CloudPcServicePlanItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/servicePlans/{cloudPcServicePlan%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

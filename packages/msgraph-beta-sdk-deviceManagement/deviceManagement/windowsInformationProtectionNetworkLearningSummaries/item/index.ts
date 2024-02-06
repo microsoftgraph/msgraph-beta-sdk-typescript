@@ -105,6 +105,6 @@ export const WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilde
 /**
  * Uri template for the request builder.
  */
-export const WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/{windowsInformationProtectionNetworkLearningSummary%2Did}{?%24select,%24expand}";
+export const WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/{windowsInformationProtectionNetworkLearningSummary%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

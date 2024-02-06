@@ -60,6 +60,6 @@ export const TemplateDefinitionRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const TemplateDefinitionRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/templateDefinition{?%24select,%24expand}";
+export const TemplateDefinitionRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/templateDefinition{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

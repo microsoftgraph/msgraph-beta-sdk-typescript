@@ -105,6 +105,6 @@ export const IntuneBrandingProfileAssignmentItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile%2Did}/assignments/{intuneBrandingProfileAssignment%2Did}{?%24select,%24expand}";
+export const IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile%2Did}/assignments/{intuneBrandingProfileAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

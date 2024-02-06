@@ -141,6 +141,6 @@ export const RetentionLabelItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const RetentionLabelItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}{?%24select,%24expand}";
+export const RetentionLabelItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

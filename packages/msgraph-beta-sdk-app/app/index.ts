@@ -123,6 +123,6 @@ export const AppRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AppRequestBuilderUriTemplate = "{+baseurl}/app{?%24select,%24expand}";
+export const AppRequestBuilderUriTemplate = "{+baseurl}/app{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

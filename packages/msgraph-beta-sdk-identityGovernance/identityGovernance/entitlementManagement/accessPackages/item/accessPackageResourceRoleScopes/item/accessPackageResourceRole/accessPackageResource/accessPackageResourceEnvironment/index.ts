@@ -60,6 +60,6 @@ export const AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const AccessPackageResourceEnvironmentRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope%2Did}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment{?%24select,%24expand}";
+export const AccessPackageResourceEnvironmentRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope%2Did}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

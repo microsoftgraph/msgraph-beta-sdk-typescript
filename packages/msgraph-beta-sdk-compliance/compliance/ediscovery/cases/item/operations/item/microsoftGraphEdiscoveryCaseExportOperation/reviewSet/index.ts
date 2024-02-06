@@ -62,6 +62,6 @@ export const ReviewSetRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ReviewSetRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations/{caseOperation%2Did}/microsoft.graph.ediscovery.caseExportOperation/reviewSet{?%24select,%24expand}";
+export const ReviewSetRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations/{caseOperation%2Did}/microsoft.graph.ediscovery.caseExportOperation/reviewSet{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

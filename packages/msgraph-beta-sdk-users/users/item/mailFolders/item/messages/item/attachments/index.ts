@@ -27,10 +27,10 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      */
      byAttachmentId(attachmentId: string) : AttachmentItemRequestBuilder;
     /**
-     * Retrieve a list of attachment objects attached to a message.
+     * Retrieve a list of attachment objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of AttachmentCollectionResponse
-     * @see {@link https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters> | undefined) : Promise<AttachmentCollectionResponse | undefined>;
     /**
@@ -42,7 +42,7 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      */
      post(body: Attachment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Attachment | undefined>;
     /**
-     * Retrieve a list of attachment objects attached to a message.
+     * Retrieve a list of attachment objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -56,7 +56,7 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      toPostRequestInformation(body: Attachment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of attachment objects attached to a message.
+ * Retrieve a list of attachment objects.
  */
 export interface AttachmentsRequestBuilderGetQueryParameters {
     /**
@@ -138,6 +138,6 @@ export const AttachmentsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AttachmentsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/attachments{?%24filter,%24count,%24orderby,%24select,%24expand}";
+export const AttachmentsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/attachments{?%24count,%24expand,%24filter,%24orderby,%24select}";
 /* tslint:enable */
 /* eslint-enable */

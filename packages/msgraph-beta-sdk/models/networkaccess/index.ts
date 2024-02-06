@@ -4,6 +4,70 @@
 import { deserializeIntoBaseCollectionPaginationCountResponse, deserializeIntoEntity, serializeBaseCollectionPaginationCountResponse, serializeEntity, type BaseCollectionPaginationCountResponse, type Entity } from '../';
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
+export type AccessType = (typeof AccessTypeObject)[keyof typeof AccessTypeObject];
+export interface Alert extends Entity, Parsable {
+    /**
+     * The actions property
+     */
+    actions?: AlertAction[];
+    /**
+     * The alertType property
+     */
+    alertType?: AlertType;
+    /**
+     * The creationDateTime property
+     */
+    creationDateTime?: Date;
+    /**
+     * The description property
+     */
+    description?: string;
+    /**
+     * The firstImpactedDateTime property
+     */
+    firstImpactedDateTime?: Date;
+}
+export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The actionLink property
+     */
+    actionLink?: string;
+    /**
+     * The actionText property
+     */
+    actionText?: string;
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
+export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
+export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * The appId property
+     */
+    appId?: string;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
 export interface AssociatedBranch extends Association, Parsable {
     /**
      * Identifier for the branch.
@@ -159,6 +223,7 @@ export interface ConditionalAccessSettings extends Entity, Parsable {
      */
     signalingStatus?: Status;
 }
+export type ConnectionStatus = (typeof ConnectionStatusObject)[keyof typeof ConnectionStatusObject];
 export interface Connectivity extends Entity, Parsable {
     /**
      * Branches represent locations for connectivity.
@@ -194,6 +259,30 @@ export interface ConnectivityConfigurationLinkCollectionResponse extends BaseCol
     value?: ConnectivityConfigurationLink[];
 }
 export type ConnectivityState = (typeof ConnectivityStateObject)[keyof typeof ConnectivityStateObject];
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a alertAction
+ */
+export function createAlertActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAlertAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a alert
+ */
+export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAlert;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a applicationSnapshot
+ */
+export function createApplicationSnapshotFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicationSnapshot;
+}
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -372,6 +461,14 @@ export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | un
  */
 export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceUsageSummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a discoveredApplicationSegmentReport
+ */
+export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDiscoveredApplicationSegmentReport;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -741,6 +838,14 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a privateAccessDetails
+ */
+export function createPrivateAccessDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivateAccessDetails;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a privateAccessForwardingRule
  */
 export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -871,14 +976,6 @@ export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a trafficDistributionPoint
- */
-export function createTrafficDistributionPointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoTrafficDistributionPoint;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a transactionSummary
  */
 export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -928,6 +1025,14 @@ export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(pars
  */
 export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUrl;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a usageProfilingPoint
+ */
+export function createUsageProfilingPointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUsageProfilingPoint;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1046,6 +1151,43 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
      * The number of unique users that performed cross-tenant access.
      */
     userCount?: number;
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(alert),
+        "actions": n => { alert.actions = n.getCollectionOfObjectValues<AlertAction>(createAlertActionFromDiscriminatorValue); },
+        "alertType": n => { alert.alertType = n.getEnumValue<AlertType>(AlertTypeObject); },
+        "creationDateTime": n => { alert.creationDateTime = n.getDateValue(); },
+        "description": n => { alert.description = n.getStringValue(); },
+        "firstImpactedDateTime": n => { alert.firstImpactedDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "actionLink": n => { alertAction.actionLink = n.getStringValue(); },
+        "actionText": n => { alertAction.actionText = n.getStringValue(); },
+        "backingStoreEnabled": n => { alertAction.backingStoreEnabled = true; },
+        "@odata.type": n => { alertAction.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoApplicationSnapshot(applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "appId": n => { applicationSnapshot.appId = n.getStringValue(); },
+        "backingStoreEnabled": n => { applicationSnapshot.backingStoreEnabled = true; },
+        "@odata.type": n => { applicationSnapshot.odataType = n.getStringValue(); },
+    }
 }
 /**
  * The deserialization information for the current model
@@ -1241,12 +1383,16 @@ export function deserializeIntoDestination(destination: Partial<Destination> | u
     return {
         "backingStoreEnabled": n => { destination.backingStoreEnabled = true; },
         "deviceCount": n => { destination.deviceCount = n.getNumberValue(); },
+        "firstAccessDateTime": n => { destination.firstAccessDateTime = n.getDateValue(); },
         "fqdn": n => { destination.fqdn = n.getStringValue(); },
         "ip": n => { destination.ip = n.getStringValue(); },
         "lastAccessDateTime": n => { destination.lastAccessDateTime = n.getDateValue(); },
         "networkingProtocol": n => { destination.networkingProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
         "@odata.type": n => { destination.odataType = n.getStringValue(); },
         "port": n => { destination.port = n.getNumberValue(); },
+        "threatCount": n => { destination.threatCount = n.getNumberValue(); },
+        "totalBytesReceived": n => { destination.totalBytesReceived = n.getNumberValue(); },
+        "totalBytesSent": n => { destination.totalBytesSent = n.getNumberValue(); },
         "trafficType": n => { destination.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
         "transactionCount": n => { destination.transactionCount = n.getNumberValue(); },
         "userCount": n => { destination.userCount = n.getNumberValue(); },
@@ -1319,6 +1465,29 @@ export function deserializeIntoDeviceUsageSummary(deviceUsageSummary: Partial<De
         "inactiveDeviceCount": n => { deviceUsageSummary.inactiveDeviceCount = n.getNumberValue(); },
         "@odata.type": n => { deviceUsageSummary.odataType = n.getStringValue(); },
         "totalDeviceCount": n => { deviceUsageSummary.totalDeviceCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "accessType": n => { discoveredApplicationSegmentReport.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
+        "backingStoreEnabled": n => { discoveredApplicationSegmentReport.backingStoreEnabled = true; },
+        "deviceCount": n => { discoveredApplicationSegmentReport.deviceCount = n.getNumberValue(); },
+        "discoveredApplicationSegmentId": n => { discoveredApplicationSegmentReport.discoveredApplicationSegmentId = n.getStringValue(); },
+        "firstAccessDateTime": n => { discoveredApplicationSegmentReport.firstAccessDateTime = n.getDateValue(); },
+        "fqdn": n => { discoveredApplicationSegmentReport.fqdn = n.getStringValue(); },
+        "ip": n => { discoveredApplicationSegmentReport.ip = n.getStringValue(); },
+        "lastAccessDateTime": n => { discoveredApplicationSegmentReport.lastAccessDateTime = n.getDateValue(); },
+        "@odata.type": n => { discoveredApplicationSegmentReport.odataType = n.getStringValue(); },
+        "port": n => { discoveredApplicationSegmentReport.port = n.getNumberValue(); },
+        "totalBytesReceived": n => { discoveredApplicationSegmentReport.totalBytesReceived = n.getNumberValue(); },
+        "totalBytesSent": n => { discoveredApplicationSegmentReport.totalBytesSent = n.getNumberValue(); },
+        "transactionCount": n => { discoveredApplicationSegmentReport.transactionCount = n.getNumberValue(); },
+        "transportProtocol": n => { discoveredApplicationSegmentReport.transportProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
+        "userCount": n => { discoveredApplicationSegmentReport.userCount = n.getNumberValue(); },
     }
 }
 /**
@@ -1634,12 +1803,14 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
     return {
         "action": n => { networkAccessTraffic.action = n.getEnumValue<FilteringPolicyAction>(FilteringPolicyActionObject); },
         "agentVersion": n => { networkAccessTraffic.agentVersion = n.getStringValue(); },
+        "applicationSnapshot": n => { networkAccessTraffic.applicationSnapshot = n.getObjectValue<ApplicationSnapshot>(createApplicationSnapshotFromDiscriminatorValue); },
         "backingStoreEnabled": n => { networkAccessTraffic.backingStoreEnabled = true; },
         "connectionId": n => { networkAccessTraffic.connectionId = n.getStringValue(); },
         "createdDateTime": n => { networkAccessTraffic.createdDateTime = n.getDateValue(); },
         "destinationFQDN": n => { networkAccessTraffic.destinationFQDN = n.getStringValue(); },
         "destinationIp": n => { networkAccessTraffic.destinationIp = n.getStringValue(); },
         "destinationPort": n => { networkAccessTraffic.destinationPort = n.getNumberValue(); },
+        "destinationUrl": n => { networkAccessTraffic.destinationUrl = n.getStringValue(); },
         "destinationWebCategory": n => { networkAccessTraffic.destinationWebCategory = n.getObjectValue<WebCategory>(createWebCategoryFromDiscriminatorValue); },
         "deviceCategory": n => { networkAccessTraffic.deviceCategory = n.getEnumValue<DeviceCategory>(DeviceCategoryObject); },
         "deviceId": n => { networkAccessTraffic.deviceId = n.getStringValue(); },
@@ -1655,6 +1826,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
         "policyName": n => { networkAccessTraffic.policyName = n.getStringValue(); },
         "policyRuleId": n => { networkAccessTraffic.policyRuleId = n.getStringValue(); },
         "policyRuleName": n => { networkAccessTraffic.policyRuleName = n.getStringValue(); },
+        "privateAccessDetails": n => { networkAccessTraffic.privateAccessDetails = n.getObjectValue<PrivateAccessDetails>(createPrivateAccessDetailsFromDiscriminatorValue); },
         "receivedBytes": n => { networkAccessTraffic.receivedBytes = n.getNumberValue(); },
         "resourceTenantId": n => { networkAccessTraffic.resourceTenantId = n.getStringValue(); },
         "sentBytes": n => { networkAccessTraffic.sentBytes = n.getNumberValue(); },
@@ -1662,6 +1834,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
         "sourceIp": n => { networkAccessTraffic.sourceIp = n.getStringValue(); },
         "sourcePort": n => { networkAccessTraffic.sourcePort = n.getNumberValue(); },
         "tenantId": n => { networkAccessTraffic.tenantId = n.getStringValue(); },
+        "threatType": n => { networkAccessTraffic.threatType = n.getStringValue(); },
         "trafficType": n => { networkAccessTraffic.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
         "transactionId": n => { networkAccessTraffic.transactionId = n.getStringValue(); },
         "transportProtocol": n => { networkAccessTraffic.transportProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
@@ -1757,6 +1930,22 @@ export function deserializeIntoPolicyRuleDelta(policyRuleDelta: Partial<PolicyRu
         "backingStoreEnabled": n => { policyRuleDelta.backingStoreEnabled = true; },
         "@odata.type": n => { policyRuleDelta.odataType = n.getStringValue(); },
         "ruleId": n => { policyRuleDelta.ruleId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoPrivateAccessDetails(privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "accessType": n => { privateAccessDetails.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
+        "backingStoreEnabled": n => { privateAccessDetails.backingStoreEnabled = true; },
+        "connectionStatus": n => { privateAccessDetails.connectionStatus = n.getEnumValue<ConnectionStatus>(ConnectionStatusObject); },
+        "connectorId": n => { privateAccessDetails.connectorId = n.getStringValue(); },
+        "connectorIp": n => { privateAccessDetails.connectorIp = n.getStringValue(); },
+        "connectorName": n => { privateAccessDetails.connectorName = n.getStringValue(); },
+        "@odata.type": n => { privateAccessDetails.odataType = n.getStringValue(); },
+        "processingRegion": n => { privateAccessDetails.processingRegion = n.getStringValue(); },
     }
 }
 /**
@@ -1912,21 +2101,6 @@ export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> 
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
-export function deserializeIntoTrafficDistributionPoint(trafficDistributionPoint: Partial<TrafficDistributionPoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { trafficDistributionPoint.backingStoreEnabled = true; },
-        "internetAccessTrafficCount": n => { trafficDistributionPoint.internetAccessTrafficCount = n.getNumberValue(); },
-        "microsoft365AccessTrafficCount": n => { trafficDistributionPoint.microsoft365AccessTrafficCount = n.getNumberValue(); },
-        "@odata.type": n => { trafficDistributionPoint.odataType = n.getStringValue(); },
-        "privateAccessTrafficCount": n => { trafficDistributionPoint.privateAccessTrafficCount = n.getNumberValue(); },
-        "timeStampDateTime": n => { trafficDistributionPoint.timeStampDateTime = n.getDateValue(); },
-        "totalTrafficCount": n => { trafficDistributionPoint.totalTrafficCount = n.getNumberValue(); },
-    }
-}
-/**
- * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
- */
 export function deserializeIntoTransactionSummary(transactionSummary: Partial<TransactionSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { transactionSummary.backingStoreEnabled = true; },
@@ -1986,6 +2160,21 @@ export function deserializeIntoUrl(url: Partial<Url> | undefined = {}) : Record<
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
+export function deserializeIntoUsageProfilingPoint(usageProfilingPoint: Partial<UsageProfilingPoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { usageProfilingPoint.backingStoreEnabled = true; },
+        "internetAccessTrafficCount": n => { usageProfilingPoint.internetAccessTrafficCount = n.getNumberValue(); },
+        "microsoft365AccessTrafficCount": n => { usageProfilingPoint.microsoft365AccessTrafficCount = n.getNumberValue(); },
+        "@odata.type": n => { usageProfilingPoint.odataType = n.getStringValue(); },
+        "privateAccessTrafficCount": n => { usageProfilingPoint.privateAccessTrafficCount = n.getNumberValue(); },
+        "timeStampDateTime": n => { usageProfilingPoint.timeStampDateTime = n.getDateValue(); },
+        "totalTrafficCount": n => { usageProfilingPoint.totalTrafficCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
 export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { user.backingStoreEnabled = true; },
@@ -2004,6 +2193,7 @@ export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Reco
  */
 export function deserializeIntoWebCategoriesSummary(webCategoriesSummary: Partial<WebCategoriesSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
+        "action": n => { webCategoriesSummary.action = n.getEnumValue<FilteringPolicyAction>(FilteringPolicyActionObject); },
         "backingStoreEnabled": n => { webCategoriesSummary.backingStoreEnabled = true; },
         "deviceCount": n => { webCategoriesSummary.deviceCount = n.getNumberValue(); },
         "@odata.type": n => { webCategoriesSummary.odataType = n.getStringValue(); },
@@ -2047,6 +2237,10 @@ export interface Destination extends AdditionalDataHolder, BackedModel, Parsable
      */
     deviceCount?: number;
     /**
+     * The firstAccessDateTime property
+     */
+    firstAccessDateTime?: Date;
+    /**
      * The fully qualified domain name (FQDN) of the destination.
      */
     fqdn?: string;
@@ -2070,6 +2264,18 @@ export interface Destination extends AdditionalDataHolder, BackedModel, Parsable
      * The numeric identifier that is associated with a specific endpoint in a network.
      */
     port?: number;
+    /**
+     * The threatCount property
+     */
+    threatCount?: number;
+    /**
+     * The totalBytesReceived property
+     */
+    totalBytesReceived?: number;
+    /**
+     * The totalBytesSent property
+     */
+    totalBytesSent?: number;
     /**
      * The trafficType property
      */
@@ -2216,6 +2422,72 @@ export interface DeviceUsageSummary extends AdditionalDataHolder, BackedModel, P
 }
 export type DeviceVendor = (typeof DeviceVendorObject)[keyof typeof DeviceVendorObject];
 export type DhGroup = (typeof DhGroupObject)[keyof typeof DhGroupObject];
+export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The accessType property
+     */
+    accessType?: AccessType;
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The deviceCount property
+     */
+    deviceCount?: number;
+    /**
+     * The discoveredApplicationSegmentId property
+     */
+    discoveredApplicationSegmentId?: string;
+    /**
+     * The firstAccessDateTime property
+     */
+    firstAccessDateTime?: Date;
+    /**
+     * The fqdn property
+     */
+    fqdn?: string;
+    /**
+     * The ip property
+     */
+    ip?: string;
+    /**
+     * The lastAccessDateTime property
+     */
+    lastAccessDateTime?: Date;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * The port property
+     */
+    port?: number;
+    /**
+     * The totalBytesReceived property
+     */
+    totalBytesReceived?: number;
+    /**
+     * The totalBytesSent property
+     */
+    totalBytesSent?: number;
+    /**
+     * The transactionCount property
+     */
+    transactionCount?: number;
+    /**
+     * The transportProtocol property
+     */
+    transportProtocol?: NetworkingProtocol;
+    /**
+     * The userCount property
+     */
+    userCount?: number;
+}
 export interface EnrichedAuditLogs extends Entity, Parsable {
     /**
      * Exchange Online enriched audit logs settings.
@@ -2571,6 +2843,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     agentVersion?: string;
     /**
+     * The applicationSnapshot property
+     */
+    applicationSnapshot?: ApplicationSnapshot;
+    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean;
@@ -2594,6 +2870,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      * Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
      */
     destinationPort?: number;
+    /**
+     * The destinationUrl property
+     */
+    destinationUrl?: string;
     /**
      * The destinationWebCategory property
      */
@@ -2655,6 +2935,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     policyRuleName?: string;
     /**
+     * The privateAccessDetails property
+     */
+    privateAccessDetails?: PrivateAccessDetails;
+    /**
      * Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
      */
     receivedBytes?: number;
@@ -2682,6 +2966,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      * Represents a unique identifier assigned to a tenant within a network infrastructure. Supports $filter (eq) and $orderby.
      */
     tenantId?: string;
+    /**
+     * The threatType property
+     */
+    threatType?: string;
     /**
      * The trafficType property
      */
@@ -2810,6 +3098,44 @@ export interface PolicyRuleDelta extends AdditionalDataHolder, BackedModel, Pars
      * The identifier of the policy rule to update.
      */
     ruleId?: string;
+}
+export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The accessType property
+     */
+    accessType?: AccessType;
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The connectionStatus property
+     */
+    connectionStatus?: ConnectionStatus;
+    /**
+     * The connectorId property
+     */
+    connectorId?: string;
+    /**
+     * The connectorIp property
+     */
+    connectorIp?: string;
+    /**
+     * The connectorName property
+     */
+    connectorName?: string;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * The processingRegion property
+     */
+    processingRegion?: string;
 }
 export interface PrivateAccessForwardingRule extends ForwardingRule, Parsable {
 }
@@ -3002,6 +3328,37 @@ export interface RuleDestination extends AdditionalDataHolder, BackedModel, Pars
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined = {}) : void {
+    serializeEntity(writer, alert)
+    writer.writeCollectionOfObjectValues<AlertAction>("actions", alert.actions, serializeAlertAction);
+    writer.writeEnumValue<AlertType>("alertType", alert.alertType);
+    writer.writeDateValue("creationDateTime", alert.creationDateTime);
+    writer.writeStringValue("description", alert.description);
+    writer.writeDateValue("firstImpactedDateTime", alert.firstImpactedDateTime);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeAlertAction(writer: SerializationWriter, alertAction: Partial<AlertAction> | undefined = {}) : void {
+    writer.writeStringValue("actionLink", alertAction.actionLink);
+    writer.writeStringValue("actionText", alertAction.actionText);
+    writer.writeStringValue("@odata.type", alertAction.odataType);
+    writer.writeAdditionalData(alertAction.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeApplicationSnapshot(writer: SerializationWriter, applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : void {
+    writer.writeStringValue("appId", applicationSnapshot.appId);
+    writer.writeStringValue("@odata.type", applicationSnapshot.odataType);
+    writer.writeAdditionalData(applicationSnapshot.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeAssociatedBranch(writer: SerializationWriter, associatedBranch: Partial<AssociatedBranch> | undefined = {}) : void {
     serializeAssociation(writer, associatedBranch)
     writer.writeStringValue("branchId", associatedBranch.branchId);
@@ -3160,12 +3517,16 @@ export function serializeCrossTenantSummary(writer: SerializationWriter, crossTe
  */
 export function serializeDestination(writer: SerializationWriter, destination: Partial<Destination> | undefined = {}) : void {
     writer.writeNumberValue("deviceCount", destination.deviceCount);
+    writer.writeDateValue("firstAccessDateTime", destination.firstAccessDateTime);
     writer.writeStringValue("fqdn", destination.fqdn);
     writer.writeStringValue("ip", destination.ip);
     writer.writeDateValue("lastAccessDateTime", destination.lastAccessDateTime);
     writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", destination.networkingProtocol);
     writer.writeStringValue("@odata.type", destination.odataType);
     writer.writeNumberValue("port", destination.port);
+    writer.writeNumberValue("threatCount", destination.threatCount);
+    writer.writeNumberValue("totalBytesReceived", destination.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", destination.totalBytesSent);
     writer.writeEnumValue<TrafficType>("trafficType", destination.trafficType);
     writer.writeNumberValue("transactionCount", destination.transactionCount);
     writer.writeNumberValue("userCount", destination.userCount);
@@ -3229,6 +3590,27 @@ export function serializeDeviceUsageSummary(writer: SerializationWriter, deviceU
     writer.writeStringValue("@odata.type", deviceUsageSummary.odataType);
     writer.writeNumberValue("totalDeviceCount", deviceUsageSummary.totalDeviceCount);
     writer.writeAdditionalData(deviceUsageSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeDiscoveredApplicationSegmentReport(writer: SerializationWriter, discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined = {}) : void {
+    writer.writeEnumValue<AccessType>("accessType", discoveredApplicationSegmentReport.accessType);
+    writer.writeNumberValue("deviceCount", discoveredApplicationSegmentReport.deviceCount);
+    writer.writeStringValue("discoveredApplicationSegmentId", discoveredApplicationSegmentReport.discoveredApplicationSegmentId);
+    writer.writeDateValue("firstAccessDateTime", discoveredApplicationSegmentReport.firstAccessDateTime);
+    writer.writeStringValue("fqdn", discoveredApplicationSegmentReport.fqdn);
+    writer.writeStringValue("ip", discoveredApplicationSegmentReport.ip);
+    writer.writeDateValue("lastAccessDateTime", discoveredApplicationSegmentReport.lastAccessDateTime);
+    writer.writeStringValue("@odata.type", discoveredApplicationSegmentReport.odataType);
+    writer.writeNumberValue("port", discoveredApplicationSegmentReport.port);
+    writer.writeNumberValue("totalBytesReceived", discoveredApplicationSegmentReport.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", discoveredApplicationSegmentReport.totalBytesSent);
+    writer.writeNumberValue("transactionCount", discoveredApplicationSegmentReport.transactionCount);
+    writer.writeEnumValue<NetworkingProtocol>("transportProtocol", discoveredApplicationSegmentReport.transportProtocol);
+    writer.writeNumberValue("userCount", discoveredApplicationSegmentReport.userCount);
+    writer.writeAdditionalData(discoveredApplicationSegmentReport.additionalData);
 }
 /**
  * Serializes information the current object
@@ -3488,11 +3870,13 @@ export function serializeNetworkAccessRoot(writer: SerializationWriter, networkA
 export function serializeNetworkAccessTraffic(writer: SerializationWriter, networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined = {}) : void {
     writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
     writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
+    writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
     writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
     writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
     writer.writeStringValue("destinationFQDN", networkAccessTraffic.destinationFQDN);
     writer.writeStringValue("destinationIp", networkAccessTraffic.destinationIp);
     writer.writeNumberValue("destinationPort", networkAccessTraffic.destinationPort);
+    writer.writeStringValue("destinationUrl", networkAccessTraffic.destinationUrl);
     writer.writeObjectValue<WebCategory>("destinationWebCategory", networkAccessTraffic.destinationWebCategory, serializeWebCategory);
     writer.writeEnumValue<DeviceCategory>("deviceCategory", networkAccessTraffic.deviceCategory);
     writer.writeStringValue("deviceId", networkAccessTraffic.deviceId);
@@ -3508,6 +3892,7 @@ export function serializeNetworkAccessTraffic(writer: SerializationWriter, netwo
     writer.writeStringValue("policyName", networkAccessTraffic.policyName);
     writer.writeStringValue("policyRuleId", networkAccessTraffic.policyRuleId);
     writer.writeStringValue("policyRuleName", networkAccessTraffic.policyRuleName);
+    writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", networkAccessTraffic.privateAccessDetails, serializePrivateAccessDetails);
     writer.writeNumberValue("receivedBytes", networkAccessTraffic.receivedBytes);
     writer.writeStringValue("resourceTenantId", networkAccessTraffic.resourceTenantId);
     writer.writeNumberValue("sentBytes", networkAccessTraffic.sentBytes);
@@ -3515,6 +3900,7 @@ export function serializeNetworkAccessTraffic(writer: SerializationWriter, netwo
     writer.writeStringValue("sourceIp", networkAccessTraffic.sourceIp);
     writer.writeNumberValue("sourcePort", networkAccessTraffic.sourcePort);
     writer.writeStringValue("tenantId", networkAccessTraffic.tenantId);
+    writer.writeStringValue("threatType", networkAccessTraffic.threatType);
     writer.writeEnumValue<TrafficType>("trafficType", networkAccessTraffic.trafficType);
     writer.writeStringValue("transactionId", networkAccessTraffic.transactionId);
     writer.writeEnumValue<NetworkingProtocol>("transportProtocol", networkAccessTraffic.transportProtocol);
@@ -3595,6 +3981,20 @@ export function serializePolicyRuleDelta(writer: SerializationWriter, policyRule
     writer.writeStringValue("@odata.type", policyRuleDelta.odataType);
     writer.writeStringValue("ruleId", policyRuleDelta.ruleId);
     writer.writeAdditionalData(policyRuleDelta.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializePrivateAccessDetails(writer: SerializationWriter, privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : void {
+    writer.writeEnumValue<AccessType>("accessType", privateAccessDetails.accessType);
+    writer.writeEnumValue<ConnectionStatus>("connectionStatus", privateAccessDetails.connectionStatus);
+    writer.writeStringValue("connectorId", privateAccessDetails.connectorId);
+    writer.writeStringValue("connectorIp", privateAccessDetails.connectorIp);
+    writer.writeStringValue("connectorName", privateAccessDetails.connectorName);
+    writer.writeStringValue("@odata.type", privateAccessDetails.odataType);
+    writer.writeStringValue("processingRegion", privateAccessDetails.processingRegion);
+    writer.writeAdditionalData(privateAccessDetails.additionalData);
 }
 /**
  * Serializes information the current object
@@ -3725,19 +4125,6 @@ export function serializeTenantStatus(writer: SerializationWriter, tenantStatus:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTrafficDistributionPoint(writer: SerializationWriter, trafficDistributionPoint: Partial<TrafficDistributionPoint> | undefined = {}) : void {
-    writer.writeNumberValue("internetAccessTrafficCount", trafficDistributionPoint.internetAccessTrafficCount);
-    writer.writeNumberValue("microsoft365AccessTrafficCount", trafficDistributionPoint.microsoft365AccessTrafficCount);
-    writer.writeStringValue("@odata.type", trafficDistributionPoint.odataType);
-    writer.writeNumberValue("privateAccessTrafficCount", trafficDistributionPoint.privateAccessTrafficCount);
-    writer.writeDateValue("timeStampDateTime", trafficDistributionPoint.timeStampDateTime);
-    writer.writeNumberValue("totalTrafficCount", trafficDistributionPoint.totalTrafficCount);
-    writer.writeAdditionalData(trafficDistributionPoint.additionalData);
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
 export function serializeTransactionSummary(writer: SerializationWriter, transactionSummary: Partial<TransactionSummary> | undefined = {}) : void {
     writer.writeNumberValue("blockedCount", transactionSummary.blockedCount);
     writer.writeStringValue("@odata.type", transactionSummary.odataType);
@@ -3787,6 +4174,19 @@ export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | un
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeUsageProfilingPoint(writer: SerializationWriter, usageProfilingPoint: Partial<UsageProfilingPoint> | undefined = {}) : void {
+    writer.writeNumberValue("internetAccessTrafficCount", usageProfilingPoint.internetAccessTrafficCount);
+    writer.writeNumberValue("microsoft365AccessTrafficCount", usageProfilingPoint.microsoft365AccessTrafficCount);
+    writer.writeStringValue("@odata.type", usageProfilingPoint.odataType);
+    writer.writeNumberValue("privateAccessTrafficCount", usageProfilingPoint.privateAccessTrafficCount);
+    writer.writeDateValue("timeStampDateTime", usageProfilingPoint.timeStampDateTime);
+    writer.writeNumberValue("totalTrafficCount", usageProfilingPoint.totalTrafficCount);
+    writer.writeAdditionalData(usageProfilingPoint.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeUser(writer: SerializationWriter, user: Partial<User> | undefined = {}) : void {
     writer.writeStringValue("displayName", user.displayName);
     writer.writeDateValue("lastAccessDateTime", user.lastAccessDateTime);
@@ -3802,6 +4202,7 @@ export function serializeUser(writer: SerializationWriter, user: Partial<User> |
  * @param writer Serialization writer to use to serialize this model
  */
 export function serializeWebCategoriesSummary(writer: SerializationWriter, webCategoriesSummary: Partial<WebCategoriesSummary> | undefined = {}) : void {
+    writer.writeEnumValue<FilteringPolicyAction>("action", webCategoriesSummary.action);
     writer.writeNumberValue("deviceCount", webCategoriesSummary.deviceCount);
     writer.writeStringValue("@odata.type", webCategoriesSummary.odataType);
     writer.writeNumberValue("transactionCount", webCategoriesSummary.transactionCount);
@@ -3854,40 +4255,6 @@ export interface TenantStatus extends Entity, Parsable {
      * The onboardingStatus property
      */
     onboardingStatus?: OnboardingStatus;
-}
-export interface TrafficDistributionPoint extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean;
-    /**
-     * The internetAccessTrafficCount property
-     */
-    internetAccessTrafficCount?: number;
-    /**
-     * The microsoft365AccessTrafficCount property
-     */
-    microsoft365AccessTrafficCount?: number;
-    /**
-     * The OdataType property
-     */
-    odataType?: string;
-    /**
-     * The privateAccessTrafficCount property
-     */
-    privateAccessTrafficCount?: number;
-    /**
-     * The timeStampDateTime property
-     */
-    timeStampDateTime?: Date;
-    /**
-     * The totalTrafficCount property
-     */
-    totalTrafficCount?: number;
 }
 export type TrafficForwardingType = (typeof TrafficForwardingTypeObject)[keyof typeof TrafficForwardingTypeObject];
 export type TrafficType = (typeof TrafficTypeObject)[keyof typeof TrafficTypeObject];
@@ -3973,6 +4340,40 @@ export interface Url extends Parsable, RuleDestination {
      */
     value?: string;
 }
+export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The internetAccessTrafficCount property
+     */
+    internetAccessTrafficCount?: number;
+    /**
+     * The microsoft365AccessTrafficCount property
+     */
+    microsoft365AccessTrafficCount?: number;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * The privateAccessTrafficCount property
+     */
+    privateAccessTrafficCount?: number;
+    /**
+     * The timeStampDateTime property
+     */
+    timeStampDateTime?: Date;
+    /**
+     * The totalTrafficCount property
+     */
+    totalTrafficCount?: number;
+}
 export type UsageStatus = (typeof UsageStatusObject)[keyof typeof UsageStatusObject];
 export interface User extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4014,6 +4415,10 @@ export interface User extends AdditionalDataHolder, BackedModel, Parsable {
 }
 export type UserType = (typeof UserTypeObject)[keyof typeof UserTypeObject];
 export interface WebCategoriesSummary extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The action property
+     */
+    action?: FilteringPolicyAction;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -4059,25 +4464,45 @@ export interface WebCategory extends Parsable, RuleDestination {
 }
 export interface WebCategoryFilteringRule extends FilteringRule, Parsable {
 }
+export const AccessTypeObject = {
+    QuickAccess: "quickAccess",
+    PrivateAccess: "privateAccess",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const AlertTypeObject = {
+    UnhealthyRemoteNetworks: "unhealthyRemoteNetworks",
+    UnhealthyConnectors: "unhealthyConnectors",
+    DeviceTokenInconsistency: "deviceTokenInconsistency",
+    CrossTenantAnomaly: "crossTenantAnomaly",
+    SuspiciousProcess: "suspiciousProcess",
+    ThreatIntelligenceTransactions: "threatIntelligenceTransactions",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const BandwidthCapacityInMbpsObject = {
     Mbps250: "mbps250",
     Mbps500: "mbps500",
     Mbps750: "mbps750",
     Mbps1000: "mbps1000",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
+export const ConnectionStatusObject = {
+    Open: "open",
+    Active: "active",
+    Closed: "closed",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const ConnectivityStateObject = {
     Pending: "pending",
     Connected: "connected",
     Inactive: "inactive",
     ErrorEscaped: "error",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceCategoryObject = {
     Client: "client",
     Branch: "branch",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceVendorObject = {
     BarracudaNetworks: "barracudaNetworks",
     CheckPoint: "checkPoint",
@@ -4095,7 +4520,7 @@ export const DeviceVendorObject = {
     Versa: "versa",
     Other: "other",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DhGroupObject = {
     DhGroup14: "dhGroup14",
     DhGroup24: "dhGroup24",
@@ -4103,23 +4528,23 @@ export const DhGroupObject = {
     Ecp256: "ecp256",
     Ecp384: "ecp384",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const FilteringPolicyActionObject = {
     Block: "block",
     Allow: "allow",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ForwardingCategoryObject = {
     DefaultEscaped: "default",
     Optimized: "optimized",
     Allow: "allow",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ForwardingRuleActionObject = {
     Bypass: "bypass",
     Forward: "forward",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IkeEncryptionObject = {
     Aes128: "aes128",
     Aes192: "aes192",
@@ -4127,28 +4552,28 @@ export const IkeEncryptionObject = {
     GcmAes128: "gcmAes128",
     GcmAes256: "gcmAes256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IkeIntegrityObject = {
     Sha256: "sha256",
     Sha384: "sha384",
     GcmAes128: "gcmAes128",
     GcmAes256: "gcmAes256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IpSecEncryptionObject = {
     None: "none",
     GcmAes128: "gcmAes128",
     GcmAes192: "gcmAes192",
     GcmAes256: "gcmAes256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IpSecIntegrityObject = {
     GcmAes128: "gcmAes128",
     GcmAes192: "gcmAes192",
     GcmAes256: "gcmAes256",
     Sha256: "sha256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NetworkDestinationTypeObject = {
     Url: "url",
     Fqdn: "fqdn",
@@ -4157,7 +4582,7 @@ export const NetworkDestinationTypeObject = {
     IpSubnet: "ipSubnet",
     WebCategory: "webCategory",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NetworkingProtocolObject = {
     Ip: "ip",
     Icmp: "icmp",
@@ -4182,7 +4607,7 @@ export const NetworkingProtocolObject = {
     Spx: "spx",
     SpxII: "spxII",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const OnboardingStatusObject = {
     Offboarded: "offboarded",
     OffboardingInProgress: "offboardingInProgress",
@@ -4191,7 +4616,7 @@ export const OnboardingStatusObject = {
     OnboardingErrorOccurred: "onboardingErrorOccurred",
     OffboardingErrorOccurred: "offboardingErrorOccurred",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const PfsGroupObject = {
     None: "none",
     Pfs1: "pfs1",
@@ -4203,12 +4628,12 @@ export const PfsGroupObject = {
     Ecp256: "ecp256",
     Ecp384: "ecp384",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RedundancyTierObject = {
     NoRedundancy: "noRedundancy",
     ZoneRedundancy: "zoneRedundancy",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RegionObject = {
     EastUS: "eastUS",
     EastUS2: "eastUS2",
@@ -4242,7 +4667,7 @@ export const RegionObject = {
     JapanEast: "japanEast",
     JapanWest: "japanWest",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RemoteNetworkStatusObject = {
     TunnelDisconnected: "tunnelDisconnected",
     TunnelConnected: "tunnelConnected",
@@ -4250,34 +4675,34 @@ export const RemoteNetworkStatusObject = {
     BgpConnected: "bgpConnected",
     RemoteNetworkAlive: "remoteNetworkAlive",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const StatusObject = {
     Enabled: "enabled",
     Disabled: "disabled",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TrafficForwardingTypeObject = {
     M365: "m365",
     Internet: "internet",
     Private: "private",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TrafficTypeObject = {
     Internet: "internet",
     Private: "private",
     Microsoft365: "microsoft365",
     All: "all",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UsageStatusObject = {
     FrequentlyUsed: "frequentlyUsed",
     RarelyUsed: "rarelyUsed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UserTypeObject = {
     Member: "member",
     Guest: "guest",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

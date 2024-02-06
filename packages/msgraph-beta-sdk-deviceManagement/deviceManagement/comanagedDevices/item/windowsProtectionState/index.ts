@@ -120,6 +120,6 @@ export const WindowsProtectionStateRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const WindowsProtectionStateRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/windowsProtectionState{?%24select,%24expand}";
+export const WindowsProtectionStateRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/windowsProtectionState{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const RoleScopeTagAutoAssignmentItemRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}/assignments/{roleScopeTagAutoAssignment%2Did}{?%24select,%24expand}";
+export const RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}/assignments/{roleScopeTagAutoAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

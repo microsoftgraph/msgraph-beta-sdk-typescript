@@ -119,6 +119,6 @@ export const DeviceComplianceScriptDeviceStateItemRequestBuilderRequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const DeviceComplianceScriptDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/deviceRunStates/{deviceComplianceScriptDeviceState%2Did}{?%24select,%24expand}";
+export const DeviceComplianceScriptDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/deviceRunStates/{deviceComplianceScriptDeviceState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

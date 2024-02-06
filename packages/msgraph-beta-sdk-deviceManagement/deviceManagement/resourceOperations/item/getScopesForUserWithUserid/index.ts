@@ -107,6 +107,6 @@ export const GetScopesForUserWithUseridRequestBuilderRequestsMetadata: RequestsM
 /**
  * Uri template for the request builder.
  */
-export const GetScopesForUserWithUseridRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24top,%24skip,%24search,%24filter,%24count}";
+export const GetScopesForUserWithUseridRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

@@ -136,6 +136,6 @@ export const PrintTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const PrintTaskItemRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}{?%24select,%24expand}";
+export const PrintTaskItemRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

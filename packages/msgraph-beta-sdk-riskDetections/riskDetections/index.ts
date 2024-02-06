@@ -17,10 +17,10 @@ export interface RiskDetectionsRequestBuilder extends BaseRequestBuilder<RiskDet
      */
      byRiskDetectionId(riskDetectionId: string) : RiskDetectionItemRequestBuilder;
     /**
-     * Retrieve the properties of a riskDetection object.
+     * Retrieve the properties of a collection of riskDetection objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of RiskDetectionCollectionResponse
-     * @see {@link https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters> | undefined) : Promise<RiskDetectionCollectionResponse | undefined>;
     /**
@@ -31,7 +31,7 @@ export interface RiskDetectionsRequestBuilder extends BaseRequestBuilder<RiskDet
      */
      post(body: RiskDetection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RiskDetection | undefined>;
     /**
-     * Retrieve the properties of a riskDetection object.
+     * Retrieve the properties of a collection of riskDetection objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -45,7 +45,7 @@ export interface RiskDetectionsRequestBuilder extends BaseRequestBuilder<RiskDet
      toPostRequestInformation(body: RiskDetection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties of a riskDetection object.
+ * Retrieve the properties of a collection of riskDetection objects.
  */
 export interface RiskDetectionsRequestBuilderGetQueryParameters {
     /**
@@ -124,6 +124,6 @@ export const RiskDetectionsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RiskDetectionsRequestBuilderUriTemplate = "{+baseurl}/riskDetections{?%24top,%24search,%24filter,%24orderby,%24select,%24expand}";
+export const RiskDetectionsRequestBuilderUriTemplate = "{+baseurl}/riskDetections{?%24expand,%24filter,%24orderby,%24search,%24select,%24top}";
 /* tslint:enable */
 /* eslint-enable */

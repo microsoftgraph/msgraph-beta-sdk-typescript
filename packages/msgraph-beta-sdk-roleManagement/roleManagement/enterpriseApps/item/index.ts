@@ -238,6 +238,6 @@ export const RbacApplicationItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const RbacApplicationItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}{?%24select,%24expand}";
+export const RbacApplicationItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

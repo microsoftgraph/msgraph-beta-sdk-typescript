@@ -60,6 +60,6 @@ export const ManagedDeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ManagedDeviceRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/deviceRunStates/{deviceComplianceScriptDeviceState%2Did}/managedDevice{?%24select,%24expand}";
+export const ManagedDeviceRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/deviceRunStates/{deviceComplianceScriptDeviceState%2Did}/managedDevice{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

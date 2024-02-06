@@ -60,6 +60,6 @@ export const DataConnectorRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DataConnectorRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24select,%24expand}";
+export const DataConnectorRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

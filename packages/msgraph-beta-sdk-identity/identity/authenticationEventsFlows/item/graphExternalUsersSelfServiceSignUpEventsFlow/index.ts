@@ -95,6 +95,6 @@ export const GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderRequests
 /**
  * Uri template for the request builder.
  */
-export const GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow{?%24select,%24expand}";
+export const GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

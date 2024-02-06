@@ -129,6 +129,6 @@ export const TenantItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TenantItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants/{tenant%2Did}{?%24select,%24expand}";
+export const TenantItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants/{tenant%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -130,6 +130,6 @@ export const ServicePrincipalCreationPolicyItemRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const ServicePrincipalCreationPolicyItemRequestBuilderUriTemplate = "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}{?%24select,%24expand}";
+export const ServicePrincipalCreationPolicyItemRequestBuilderUriTemplate = "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

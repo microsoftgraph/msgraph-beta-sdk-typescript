@@ -105,6 +105,6 @@ export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderRequestsMe
 /**
  * Uri template for the request builder.
  */
-export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/assignments/{embeddedSIMActivationCodePoolAssignment%2Did}{?%24select,%24expand}";
+export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/assignments/{embeddedSIMActivationCodePoolAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

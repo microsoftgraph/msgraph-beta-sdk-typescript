@@ -148,6 +148,6 @@ export const GroupPolicyCategoryItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const GroupPolicyCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}{?%24select,%24expand}";
+export const GroupPolicyCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

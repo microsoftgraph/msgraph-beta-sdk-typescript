@@ -128,6 +128,6 @@ export const AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderRequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile%2Did}{?%24select,%24expand}";
+export const AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

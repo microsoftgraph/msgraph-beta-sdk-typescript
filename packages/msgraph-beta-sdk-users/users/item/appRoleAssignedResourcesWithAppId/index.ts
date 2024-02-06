@@ -60,6 +60,6 @@ export const AppRoleAssignedResourcesWithAppIdRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const AppRoleAssignedResourcesWithAppIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24select,%24expand}";
+export const AppRoleAssignedResourcesWithAppIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

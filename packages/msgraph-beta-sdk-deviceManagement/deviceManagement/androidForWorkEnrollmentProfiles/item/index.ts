@@ -128,6 +128,6 @@ export const AndroidForWorkEnrollmentProfileItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const AndroidForWorkEnrollmentProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidForWorkEnrollmentProfiles/{androidForWorkEnrollmentProfile%2Did}{?%24select,%24expand}";
+export const AndroidForWorkEnrollmentProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidForWorkEnrollmentProfiles/{androidForWorkEnrollmentProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

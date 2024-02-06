@@ -137,6 +137,6 @@ export const OperationApprovalRequestItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const OperationApprovalRequestItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}{?%24select,%24expand}";
+export const OperationApprovalRequestItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

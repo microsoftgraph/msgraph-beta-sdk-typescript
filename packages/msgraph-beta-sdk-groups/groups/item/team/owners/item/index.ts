@@ -84,6 +84,6 @@ export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UserItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/team/owners/{user%2Did}{?%24select,%24expand}";
+export const UserItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/team/owners/{user%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

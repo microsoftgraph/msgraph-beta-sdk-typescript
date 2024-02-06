@@ -105,6 +105,6 @@ export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderRequests
 /**
  * Uri template for the request builder.
  */
-export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries/{managementTemplateCollectionTenantSummary%2Did}{?%24select,%24expand}";
+export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries/{managementTemplateCollectionTenantSummary%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const PlannerDeltaItemRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const PlannerDeltaItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/all/{plannerDelta%2Did}{?%24select,%24expand}";
+export const PlannerDeltaItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/all/{plannerDelta%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

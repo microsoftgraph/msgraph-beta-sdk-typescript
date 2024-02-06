@@ -176,6 +176,6 @@ export const EducationSynchronizationProfileItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const EducationSynchronizationProfileItemRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24select,%24expand}";
+export const EducationSynchronizationProfileItemRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const DeviceManagementIntentUserStateItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementIntentUserStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStates/{deviceManagementIntentUserState%2Did}{?%24select,%24expand}";
+export const DeviceManagementIntentUserStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStates/{deviceManagementIntentUserState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

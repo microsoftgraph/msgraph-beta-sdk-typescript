@@ -105,6 +105,6 @@ export const MobileAppIntentAndStateItemRequestBuilderRequestsMetadata: Requests
 /**
  * Uri template for the request builder.
  */
-export const MobileAppIntentAndStateItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mobileAppIntentAndStates/{mobileAppIntentAndState%2Did}{?%24select,%24expand}";
+export const MobileAppIntentAndStateItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mobileAppIntentAndStates/{mobileAppIntentAndState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

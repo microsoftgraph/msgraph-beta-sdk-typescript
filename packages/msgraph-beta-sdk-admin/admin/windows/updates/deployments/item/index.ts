@@ -123,6 +123,6 @@ export const DeploymentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DeploymentItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}{?%24select,%24expand}";
+export const DeploymentItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

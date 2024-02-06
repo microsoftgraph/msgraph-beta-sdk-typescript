@@ -105,6 +105,6 @@ export const SubjectRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const SubjectRequestBuilderUriTemplate = "{+baseurl}/governanceRoleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}/subject{?%24select,%24expand}";
+export const SubjectRequestBuilderUriTemplate = "{+baseurl}/governanceRoleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}/subject{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

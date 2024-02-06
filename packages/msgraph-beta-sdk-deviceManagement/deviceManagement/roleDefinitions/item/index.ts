@@ -120,6 +120,6 @@ export const RoleDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const RoleDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}{?%24select,%24expand}";
+export const RoleDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

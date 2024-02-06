@@ -105,6 +105,6 @@ export const SensitiveTypeItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const SensitiveTypeItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/sensitiveTypes/{sensitiveType%2Did}{?%24select,%24expand}";
+export const SensitiveTypeItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/sensitiveTypes/{sensitiveType%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

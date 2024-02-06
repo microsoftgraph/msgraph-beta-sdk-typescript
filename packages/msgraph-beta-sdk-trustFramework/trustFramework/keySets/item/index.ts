@@ -158,6 +158,6 @@ export const TrustFrameworkKeySetItemRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const TrustFrameworkKeySetItemRequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24select,%24expand}";
+export const TrustFrameworkKeySetItemRequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

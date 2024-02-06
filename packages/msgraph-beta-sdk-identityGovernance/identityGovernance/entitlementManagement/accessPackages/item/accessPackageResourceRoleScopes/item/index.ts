@@ -130,6 +130,6 @@ export const AccessPackageResourceRoleScopeItemRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const AccessPackageResourceRoleScopeItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope%2Did}{?%24select,%24expand}";
+export const AccessPackageResourceRoleScopeItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

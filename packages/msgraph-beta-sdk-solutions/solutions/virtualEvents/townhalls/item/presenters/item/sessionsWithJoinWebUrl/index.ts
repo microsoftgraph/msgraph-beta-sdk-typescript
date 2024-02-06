@@ -60,6 +60,6 @@ export const SessionsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const SessionsWithJoinWebUrlRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24select,%24expand}";
+export const SessionsWithJoinWebUrlRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

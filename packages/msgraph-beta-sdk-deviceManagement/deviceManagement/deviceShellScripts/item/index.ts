@@ -168,6 +168,6 @@ export const DeviceShellScriptItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const DeviceShellScriptItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}{?%24select,%24expand}";
+export const DeviceShellScriptItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

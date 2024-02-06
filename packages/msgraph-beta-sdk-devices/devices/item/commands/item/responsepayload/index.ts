@@ -60,6 +60,6 @@ export const ResponsepayloadRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ResponsepayloadRequestBuilderUriTemplate = "{+baseurl}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24select,%24expand}";
+export const ResponsepayloadRequestBuilderUriTemplate = "{+baseurl}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

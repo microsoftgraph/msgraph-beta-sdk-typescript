@@ -60,6 +60,6 @@ export const ConnectedOrganizationRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const ConnectedOrganizationRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole%2Did}/accessPackageSubject/connectedOrganization{?%24select,%24expand}";
+export const ConnectedOrganizationRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole%2Did}/accessPackageSubject/connectedOrganization{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

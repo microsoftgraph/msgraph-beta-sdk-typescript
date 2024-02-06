@@ -121,6 +121,6 @@ export const CloudPcDeviceImageItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const CloudPcDeviceImageItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage%2Did}{?%24select,%24expand}";
+export const CloudPcDeviceImageItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

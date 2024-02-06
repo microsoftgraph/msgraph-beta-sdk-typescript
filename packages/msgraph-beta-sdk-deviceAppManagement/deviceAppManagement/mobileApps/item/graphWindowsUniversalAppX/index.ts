@@ -115,6 +115,6 @@ export const GraphWindowsUniversalAppXRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const GraphWindowsUniversalAppXRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsUniversalAppX{?%24select,%24expand}";
+export const GraphWindowsUniversalAppXRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsUniversalAppX{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

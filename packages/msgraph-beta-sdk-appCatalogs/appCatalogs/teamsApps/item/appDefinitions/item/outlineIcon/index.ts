@@ -121,6 +121,6 @@ export const OutlineIconRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const OutlineIconRequestBuilderUriTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/outlineIcon{?%24select,%24expand}";
+export const OutlineIconRequestBuilderUriTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/outlineIcon{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

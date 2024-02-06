@@ -105,6 +105,6 @@ export const CloudPcSupportedRegionItemRequestBuilderRequestsMetadata: RequestsM
 /**
  * Uri template for the request builder.
  */
-export const CloudPcSupportedRegionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/supportedRegions/{cloudPcSupportedRegion%2Did}{?%24select,%24expand}";
+export const CloudPcSupportedRegionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/supportedRegions/{cloudPcSupportedRegion%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -130,6 +130,6 @@ export const CanvasLayoutRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CanvasLayoutRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout{?%24select,%24expand}";
+export const CanvasLayoutRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

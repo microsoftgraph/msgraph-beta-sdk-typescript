@@ -105,6 +105,6 @@ export const ManagedDeviceMobileAppConfigurationStateItemRequestBuilderRequestsM
 /**
  * Uri template for the request builder.
  */
-export const ManagedDeviceMobileAppConfigurationStateItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/managedDeviceMobileAppConfigurationStates/{managedDeviceMobileAppConfigurationState%2Did}{?%24select,%24expand}";
+export const ManagedDeviceMobileAppConfigurationStateItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/managedDeviceMobileAppConfigurationStates/{managedDeviceMobileAppConfigurationState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

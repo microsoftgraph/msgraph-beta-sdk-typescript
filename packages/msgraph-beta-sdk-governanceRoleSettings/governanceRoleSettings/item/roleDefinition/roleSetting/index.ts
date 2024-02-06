@@ -60,6 +60,6 @@ export const RoleSettingRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RoleSettingRequestBuilderUriTemplate = "{+baseurl}/governanceRoleSettings/{governanceRoleSetting%2Did}/roleDefinition/roleSetting{?%24select,%24expand}";
+export const RoleSettingRequestBuilderUriTemplate = "{+baseurl}/governanceRoleSettings/{governanceRoleSetting%2Did}/roleDefinition/roleSetting{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -302,6 +302,6 @@ export const ProfileRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ProfileRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile{?%24select,%24expand}";
+export const ProfileRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

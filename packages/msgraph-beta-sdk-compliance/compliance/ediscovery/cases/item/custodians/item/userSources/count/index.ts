@@ -61,6 +61,6 @@ export const CountRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CountRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/userSources/$count{?%24search,%24filter}";
+export const CountRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/userSources/$count{?%24filter,%24search}";
 /* tslint:enable */
 /* eslint-enable */

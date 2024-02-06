@@ -107,6 +107,6 @@ export const GetSourceImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const GetSourceImagesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/getSourceImages(){?%24top,%24skip,%24search,%24filter,%24count}";
+export const GetSourceImagesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/getSourceImages(){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

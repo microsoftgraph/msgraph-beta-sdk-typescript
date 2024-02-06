@@ -105,6 +105,6 @@ export const CurrencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CurrencyItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/currencies/{currency%2Did}{?%24select,%24expand}";
+export const CurrencyItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/currencies/{currency%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -348,6 +348,6 @@ export const DeviceAppManagementRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const DeviceAppManagementRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement{?%24select,%24expand}";
+export const DeviceAppManagementRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

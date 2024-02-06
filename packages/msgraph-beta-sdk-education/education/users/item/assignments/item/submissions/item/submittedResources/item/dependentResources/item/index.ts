@@ -105,6 +105,6 @@ export const EducationSubmissionResourceItemRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const EducationSubmissionResourceItemRequestBuilderUriTemplate = "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/submittedResources/{educationSubmissionResource%2Did}/dependentResources/{educationSubmissionResource%2Did1}{?%24select,%24expand}";
+export const EducationSubmissionResourceItemRequestBuilderUriTemplate = "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/submittedResources/{educationSubmissionResource%2Did}/dependentResources/{educationSubmissionResource%2Did1}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

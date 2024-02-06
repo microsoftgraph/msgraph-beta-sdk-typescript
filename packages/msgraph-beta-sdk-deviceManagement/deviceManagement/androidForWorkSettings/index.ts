@@ -146,6 +146,6 @@ export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const AndroidForWorkSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidForWorkSettings{?%24select,%24expand}";
+export const AndroidForWorkSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidForWorkSettings{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

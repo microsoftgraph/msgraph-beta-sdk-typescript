@@ -2237,11 +2237,13 @@ export function deserializeIntoManagementTemplateStep(managementTemplateStep: Pa
         "createdDateTime": n => { managementTemplateStep.createdDateTime = n.getDateValue(); },
         "description": n => { managementTemplateStep.description = n.getStringValue(); },
         "displayName": n => { managementTemplateStep.displayName = n.getStringValue(); },
+        "informationLinks": n => { managementTemplateStep.informationLinks = n.getCollectionOfObjectValues<ActionUrl>(createActionUrlFromDiscriminatorValue); },
         "lastActionByUserId": n => { managementTemplateStep.lastActionByUserId = n.getStringValue(); },
         "lastActionDateTime": n => { managementTemplateStep.lastActionDateTime = n.getDateValue(); },
         "managementTemplate": n => { managementTemplateStep.managementTemplate = n.getObjectValue<ManagementTemplate>(createManagementTemplateFromDiscriminatorValue); },
         "portalLink": n => { managementTemplateStep.portalLink = n.getObjectValue<ActionUrl>(createActionUrlFromDiscriminatorValue); },
         "priority": n => { managementTemplateStep.priority = n.getNumberValue(); },
+        "userImpact": n => { managementTemplateStep.userImpact = n.getStringValue(); },
         "versions": n => { managementTemplateStep.versions = n.getCollectionOfObjectValues<ManagementTemplateStepVersion>(createManagementTemplateStepVersionFromDiscriminatorValue); },
     }
 }
@@ -3997,6 +3999,10 @@ export interface ManagementTemplateStep extends Entity, Parsable {
      */
     displayName?: string;
     /**
+     * The informationLinks property
+     */
+    informationLinks?: ActionUrl[];
+    /**
      * The lastActionByUserId property
      */
     lastActionByUserId?: string;
@@ -4016,6 +4022,10 @@ export interface ManagementTemplateStep extends Entity, Parsable {
      * The priority property
      */
     priority?: number;
+    /**
+     * The userImpact property
+     */
+    userImpact?: string;
     /**
      * The versions property
      */
@@ -5109,11 +5119,13 @@ export function serializeManagementTemplateStep(writer: SerializationWriter, man
     writer.writeDateValue("createdDateTime", managementTemplateStep.createdDateTime);
     writer.writeStringValue("description", managementTemplateStep.description);
     writer.writeStringValue("displayName", managementTemplateStep.displayName);
+    writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplateStep.informationLinks, serializeActionUrl);
     writer.writeStringValue("lastActionByUserId", managementTemplateStep.lastActionByUserId);
     writer.writeDateValue("lastActionDateTime", managementTemplateStep.lastActionDateTime);
     writer.writeObjectValue<ManagementTemplate>("managementTemplate", managementTemplateStep.managementTemplate, serializeManagementTemplate);
     writer.writeObjectValue<ActionUrl>("portalLink", managementTemplateStep.portalLink, serializeActionUrl);
     writer.writeNumberValue("priority", managementTemplateStep.priority);
+    writer.writeStringValue("userImpact", managementTemplateStep.userImpact);
     writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", managementTemplateStep.versions, serializeManagementTemplateStepVersion);
 }
 /**
@@ -6227,7 +6239,7 @@ export const AlertSeverityObject = {
     Medium: "medium",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertStatusObject = {
     Unknown: "unknown",
     NewAlert: "newAlert",
@@ -6235,14 +6247,14 @@ export const AlertStatusObject = {
     Resolved: "resolved",
     Dismissed: "dismissed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DelegatedPrivilegeStatusObject = {
     None: "none",
     DelegatedAdminPrivileges: "delegatedAdminPrivileges",
     UnknownFutureValue: "unknownFutureValue",
     GranularDelegatedAdminPrivileges: "granularDelegatedAdminPrivileges",
     DelegatedAndGranularDelegetedAdminPrivileges: "delegatedAndGranularDelegetedAdminPrivileges",
-}  as const;
+} as const;
 export const ManagementActionStatusObject = {
     ToAddress: "toAddress",
     Completed: "completed",
@@ -6254,14 +6266,14 @@ export const ManagementActionStatusObject = {
     ResolvedThroughAlternateMitigation: "resolvedThroughAlternateMitigation",
     RiskAccepted: "riskAccepted",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementCategoryObject = {
     Custom: "custom",
     Devices: "devices",
     Identity: "identity",
     Data: "data",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementParameterValueTypeObject = {
     String: "string",
     Integer: "integer",
@@ -6272,14 +6284,14 @@ export const ManagementParameterValueTypeObject = {
     BooleanCollection: "booleanCollection",
     GuidCollection: "guidCollection",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementProviderObject = {
     Microsoft: "microsoft",
     Community: "community",
     IndirectProvider: "indirectProvider",
     Self: "self",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementTemplateDeploymentStatusObject = {
     Unknown: "unknown",
     InProgress: "inProgress",
@@ -6287,14 +6299,14 @@ export const ManagementTemplateDeploymentStatusObject = {
     Failed: "failed",
     Ineligible: "ineligible",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NotificationDestinationObject = {
     None: "none",
     Api: "api",
     Email: "email",
     Sms: "sms",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantOnboardingEligibilityReasonObject = {
     None: "none",
     ContractType: "contractType",
@@ -6302,19 +6314,19 @@ export const TenantOnboardingEligibilityReasonObject = {
     UsersCount: "usersCount",
     License: "license",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantOnboardingStatusObject = {
     Ineligible: "ineligible",
     InProcess: "inProcess",
     Active: "active",
     Inactive: "inactive",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadActionCategoryObject = {
     Automated: "automated",
     Manual: "manual",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadActionStatusObject = {
     ToAddress: "toAddress",
     Completed: "completed",
@@ -6322,11 +6334,11 @@ export const WorkloadActionStatusObject = {
     TimeOut: "timeOut",
     InProgress: "inProgress",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadOnboardingStatusObject = {
     NotOnboarded: "notOnboarded",
     Onboarded: "onboarded",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

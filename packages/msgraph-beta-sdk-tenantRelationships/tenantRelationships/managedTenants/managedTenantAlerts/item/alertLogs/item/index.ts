@@ -60,6 +60,6 @@ export const ManagedTenantAlertLogItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const ManagedTenantAlertLogItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/alertLogs/{managedTenantAlertLog%2Did}{?%24select,%24expand}";
+export const ManagedTenantAlertLogItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/alertLogs/{managedTenantAlertLog%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

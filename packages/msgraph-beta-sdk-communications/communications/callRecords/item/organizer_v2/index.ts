@@ -105,6 +105,6 @@ export const Organizer_v2RequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const Organizer_v2RequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/organizer_v2{?%24select,%24expand}";
+export const Organizer_v2RequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/organizer_v2{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

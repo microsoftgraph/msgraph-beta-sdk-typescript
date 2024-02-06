@@ -105,6 +105,6 @@ export const SummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const SummaryRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/summary{?%24select,%24expand}";
+export const SummaryRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/summary{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

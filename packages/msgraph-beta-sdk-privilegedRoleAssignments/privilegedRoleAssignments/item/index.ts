@@ -138,6 +138,6 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const PrivilegedRoleAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}{?%24select,%24expand}";
+export const PrivilegedRoleAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

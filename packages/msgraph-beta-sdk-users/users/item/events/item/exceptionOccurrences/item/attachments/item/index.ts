@@ -81,6 +81,6 @@ export const AttachmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AttachmentItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/attachments/{attachment%2Did}{?%24select,%24expand}";
+export const AttachmentItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/attachments/{attachment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

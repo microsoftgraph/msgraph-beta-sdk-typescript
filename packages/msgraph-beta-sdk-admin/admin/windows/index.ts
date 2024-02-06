@@ -120,6 +120,6 @@ export const WindowsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const WindowsRequestBuilderUriTemplate = "{+baseurl}/admin/windows{?%24select,%24expand}";
+export const WindowsRequestBuilderUriTemplate = "{+baseurl}/admin/windows{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -129,6 +129,6 @@ export const PermissionsManagementRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const PermissionsManagementRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsManagement{?%24select,%24expand}";
+export const PermissionsManagementRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsManagement{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

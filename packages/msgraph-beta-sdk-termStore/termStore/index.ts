@@ -113,6 +113,6 @@ export const TermStoreRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TermStoreRequestBuilderUriTemplate = "{+baseurl}/termStore{?%24select,%24expand}";
+export const TermStoreRequestBuilderUriTemplate = "{+baseurl}/termStore{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

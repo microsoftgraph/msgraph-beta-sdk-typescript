@@ -55,6 +55,10 @@ export interface GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGet
      */
     count?: boolean;
     /**
+     * Expand related entities
+     */
+    expand?: string[];
+    /**
      * Filter items by property values
      */
     filter?: string;
@@ -92,6 +96,7 @@ export function serializeGetOffice365GroupsActivityFileCountsWithPeriodGetRespon
  */
 const GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
+    "expand": "%24expand",
     "filter": "%24filter",
     "orderby": "%24orderby",
     "search": "%24search",
@@ -117,6 +122,6 @@ export const GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderRequest
 /**
  * Uri template for the request builder.
  */
-export const GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365GroupsActivityFileCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+export const GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365GroupsActivityFileCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

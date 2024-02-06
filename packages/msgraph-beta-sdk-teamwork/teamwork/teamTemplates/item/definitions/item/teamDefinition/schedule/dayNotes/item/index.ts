@@ -106,6 +106,6 @@ export const DayNoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DayNoteItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/dayNotes/{dayNote%2Did}{?%24select,%24expand}";
+export const DayNoteItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/dayNotes/{dayNote%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

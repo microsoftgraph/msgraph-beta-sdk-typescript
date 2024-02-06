@@ -60,6 +60,6 @@ export const UpdatePolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UpdatePolicyRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}/updatePolicy{?%24select,%24expand}";
+export const UpdatePolicyRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}/updatePolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

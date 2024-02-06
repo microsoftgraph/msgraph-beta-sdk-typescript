@@ -105,6 +105,6 @@ export const DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderRe
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase%2Did}/assignments/{deviceManagementResourceAccessProfileAssignment%2Did}{?%24select,%24expand}";
+export const DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase%2Did}/assignments/{deviceManagementResourceAccessProfileAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

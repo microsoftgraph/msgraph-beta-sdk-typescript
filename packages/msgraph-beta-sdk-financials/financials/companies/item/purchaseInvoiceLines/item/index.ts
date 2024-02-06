@@ -110,6 +110,6 @@ export const PurchaseInvoiceLineItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const PurchaseInvoiceLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}{?%24select,%24expand}";
+export const PurchaseInvoiceLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

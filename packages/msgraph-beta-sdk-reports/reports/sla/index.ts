@@ -119,6 +119,6 @@ export const SlaRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const SlaRequestBuilderUriTemplate = "{+baseurl}/reports/sla{?%24select,%24expand}";
+export const SlaRequestBuilderUriTemplate = "{+baseurl}/reports/sla{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

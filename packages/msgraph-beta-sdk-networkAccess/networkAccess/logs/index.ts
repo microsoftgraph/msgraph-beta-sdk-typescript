@@ -130,6 +130,6 @@ export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const LogsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs{?%24select,%24expand}";
+export const LogsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

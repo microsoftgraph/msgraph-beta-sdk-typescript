@@ -119,6 +119,6 @@ export const ExchangeOnPremisesPolicyRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const ExchangeOnPremisesPolicyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/exchangeOnPremisesPolicy{?%24select,%24expand}";
+export const ExchangeOnPremisesPolicyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/exchangeOnPremisesPolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

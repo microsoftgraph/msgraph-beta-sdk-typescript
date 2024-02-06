@@ -105,6 +105,6 @@ export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderRequestsMe
 /**
  * Uri template for the request builder.
  */
-export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/assignmentFilterEvaluationStatusDetails/{assignmentFilterEvaluationStatusDetails%2Did}{?%24select,%24expand}";
+export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/assignmentFilterEvaluationStatusDetails/{assignmentFilterEvaluationStatusDetails%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

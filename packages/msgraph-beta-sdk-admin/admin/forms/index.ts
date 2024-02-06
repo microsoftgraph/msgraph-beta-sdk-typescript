@@ -107,6 +107,6 @@ export const FormsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const FormsRequestBuilderUriTemplate = "{+baseurl}/admin/forms{?%24select,%24expand}";
+export const FormsRequestBuilderUriTemplate = "{+baseurl}/admin/forms{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

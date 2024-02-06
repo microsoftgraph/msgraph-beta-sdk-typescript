@@ -157,6 +157,6 @@ export const RecommendationItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const RecommendationItemRequestBuilderUriTemplate = "{+baseurl}/directory/recommendations/{recommendation%2Did}{?%24select,%24expand}";
+export const RecommendationItemRequestBuilderUriTemplate = "{+baseurl}/directory/recommendations/{recommendation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

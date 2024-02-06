@@ -107,6 +107,6 @@ export const GetCloudPcConnectivityHistoryRequestBuilderRequestsMetadata: Reques
 /**
  * Uri template for the request builder.
  */
-export const GetCloudPcConnectivityHistoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/getCloudPcConnectivityHistory(){?%24top,%24skip,%24search,%24filter,%24count}";
+export const GetCloudPcConnectivityHistoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/getCloudPcConnectivityHistory(){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

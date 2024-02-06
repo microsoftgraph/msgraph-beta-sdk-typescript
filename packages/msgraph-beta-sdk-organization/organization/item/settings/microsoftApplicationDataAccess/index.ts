@@ -107,6 +107,6 @@ export const MicrosoftApplicationDataAccessRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const MicrosoftApplicationDataAccessRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/microsoftApplicationDataAccess{?%24select,%24expand}";
+export const MicrosoftApplicationDataAccessRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/microsoftApplicationDataAccess{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

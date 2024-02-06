@@ -107,6 +107,6 @@ export const ContinuousAccessEvaluationPolicyRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const ContinuousAccessEvaluationPolicyRequestBuilderUriTemplate = "{+baseurl}/identity/continuousAccessEvaluationPolicy{?%24select,%24expand}";
+export const ContinuousAccessEvaluationPolicyRequestBuilderUriTemplate = "{+baseurl}/identity/continuousAccessEvaluationPolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

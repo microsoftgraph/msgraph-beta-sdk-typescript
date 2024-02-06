@@ -106,6 +106,6 @@ export const ReferenceDefinitionItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const ReferenceDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/referenceDefinitions/{referenceDefinition%2Did}{?%24select,%24expand}";
+export const ReferenceDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/referenceDefinitions/{referenceDefinition%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

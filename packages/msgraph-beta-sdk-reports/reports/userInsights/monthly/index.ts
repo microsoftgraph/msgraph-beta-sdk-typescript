@@ -200,6 +200,6 @@ export const MonthlyRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const MonthlyRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly{?%24select,%24expand}";
+export const MonthlyRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

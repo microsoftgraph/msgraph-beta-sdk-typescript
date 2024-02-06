@@ -106,6 +106,6 @@ export const EmailThreatSubmissionPolicyItemRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate = "{+baseurl}/threatSubmission/emailThreatSubmissionPolicies/{emailThreatSubmissionPolicy%2Did}{?%24select,%24expand}";
+export const EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate = "{+baseurl}/threatSubmission/emailThreatSubmissionPolicies/{emailThreatSubmissionPolicy%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

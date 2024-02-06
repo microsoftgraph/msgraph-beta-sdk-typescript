@@ -107,6 +107,6 @@ export const ExternalIdentitiesPolicyRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const ExternalIdentitiesPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/externalIdentitiesPolicy{?%24select,%24expand}";
+export const ExternalIdentitiesPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/externalIdentitiesPolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

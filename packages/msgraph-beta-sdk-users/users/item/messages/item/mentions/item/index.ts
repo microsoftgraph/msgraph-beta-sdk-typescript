@@ -80,6 +80,6 @@ export const MentionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const MentionItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}";
+export const MentionItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/mentions/{mention%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const DataCollectionInfoRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const DataCollectionInfoRequestBuilderUriTemplate = "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}/dataCollectionInfo{?%24select,%24expand}";
+export const DataCollectionInfoRequestBuilderUriTemplate = "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}/dataCollectionInfo{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

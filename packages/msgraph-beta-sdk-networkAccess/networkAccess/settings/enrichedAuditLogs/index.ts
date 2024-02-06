@@ -106,6 +106,6 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const EnrichedAuditLogsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/enrichedAuditLogs{?%24select,%24expand}";
+export const EnrichedAuditLogsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/enrichedAuditLogs{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

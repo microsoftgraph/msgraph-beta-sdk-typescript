@@ -60,6 +60,6 @@ export const AccountRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AccountRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/account{?%24select,%24expand}";
+export const AccountRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/account{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

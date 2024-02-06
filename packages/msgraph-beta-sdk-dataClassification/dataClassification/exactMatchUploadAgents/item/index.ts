@@ -105,6 +105,6 @@ export const ExactMatchUploadAgentItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const ExactMatchUploadAgentItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/exactMatchUploadAgents/{exactMatchUploadAgent%2Did}{?%24select,%24expand}";
+export const ExactMatchUploadAgentItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/exactMatchUploadAgents/{exactMatchUploadAgent%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const DeploySummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DeploySummaryRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/deploySummary{?%24select,%24expand}";
+export const DeploySummaryRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/deploySummary{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

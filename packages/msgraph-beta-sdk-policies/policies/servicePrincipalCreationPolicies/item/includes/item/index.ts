@@ -105,6 +105,6 @@ export const ServicePrincipalCreationConditionSetItemRequestBuilderRequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate = "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}/includes/{servicePrincipalCreationConditionSet%2Did}{?%24select,%24expand}";
+export const ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate = "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}/includes/{servicePrincipalCreationConditionSet%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

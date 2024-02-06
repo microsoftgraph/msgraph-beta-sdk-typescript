@@ -129,6 +129,6 @@ export const WindowsFeatureUpdateProfileItemRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const WindowsFeatureUpdateProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}{?%24select,%24expand}";
+export const WindowsFeatureUpdateProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

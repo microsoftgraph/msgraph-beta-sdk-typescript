@@ -105,6 +105,6 @@ export const InformationProtectionRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const InformationProtectionRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/informationProtection{?%24select,%24expand}";
+export const InformationProtectionRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/informationProtection{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

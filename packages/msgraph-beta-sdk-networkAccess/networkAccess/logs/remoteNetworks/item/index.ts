@@ -105,6 +105,6 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const RemoteNetworkHealthEventItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24select,%24expand}";
+export const RemoteNetworkHealthEventItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -121,6 +121,6 @@ export const FilteringPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const FilteringPolicyItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}{?%24select,%24expand}";
+export const FilteringPolicyItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

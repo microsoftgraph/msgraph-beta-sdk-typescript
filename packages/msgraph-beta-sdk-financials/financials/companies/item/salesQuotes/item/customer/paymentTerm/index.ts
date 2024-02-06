@@ -105,6 +105,6 @@ export const PaymentTermRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const PaymentTermRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/customer/paymentTerm{?%24select,%24expand}";
+export const PaymentTermRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/customer/paymentTerm{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

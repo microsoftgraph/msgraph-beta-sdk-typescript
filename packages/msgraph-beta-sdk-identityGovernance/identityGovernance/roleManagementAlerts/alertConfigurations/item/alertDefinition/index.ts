@@ -60,6 +60,6 @@ export const AlertDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AlertDefinitionRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration%2Did}/alertDefinition{?%24select,%24expand}";
+export const AlertDefinitionRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration%2Did}/alertDefinition{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -156,6 +156,6 @@ export const CustomerRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CustomerRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/customer{?%24select,%24expand}";
+export const CustomerRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/customer{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

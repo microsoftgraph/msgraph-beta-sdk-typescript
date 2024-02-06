@@ -106,6 +106,6 @@ export const CloudPcConnectionItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const CloudPcConnectionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnection%2Did}{?%24select,%24expand}";
+export const CloudPcConnectionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnection%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

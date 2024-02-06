@@ -128,6 +128,6 @@ export const TenantAttachRBACRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const TenantAttachRBACRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/tenantAttachRBAC{?%24select,%24expand}";
+export const TenantAttachRBACRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/tenantAttachRBAC{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

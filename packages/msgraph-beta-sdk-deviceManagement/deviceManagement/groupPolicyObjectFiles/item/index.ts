@@ -105,6 +105,6 @@ export const GroupPolicyObjectFileItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const GroupPolicyObjectFileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyObjectFiles/{groupPolicyObjectFile%2Did}{?%24select,%24expand}";
+export const GroupPolicyObjectFileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyObjectFiles/{groupPolicyObjectFile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

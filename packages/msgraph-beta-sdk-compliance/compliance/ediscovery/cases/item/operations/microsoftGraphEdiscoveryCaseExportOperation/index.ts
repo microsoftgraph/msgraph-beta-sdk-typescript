@@ -107,6 +107,6 @@ export const MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderRequestsMe
 /**
  * Uri template for the request builder.
  */
-export const MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations/microsoft.graph.ediscovery.caseExportOperation{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+export const MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations/microsoft.graph.ediscovery.caseExportOperation{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

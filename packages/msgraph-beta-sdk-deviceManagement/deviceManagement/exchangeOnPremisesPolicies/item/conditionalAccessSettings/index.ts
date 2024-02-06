@@ -105,6 +105,6 @@ export const ConditionalAccessSettingsRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const ConditionalAccessSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}/conditionalAccessSettings{?%24select,%24expand}";
+export const ConditionalAccessSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}/conditionalAccessSettings{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

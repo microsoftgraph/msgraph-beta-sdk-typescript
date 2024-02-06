@@ -15,7 +15,7 @@ export interface AuditLogRecordItemRequestBuilder extends BaseRequestBuilder<Aud
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get records from security
+     * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of AuditLogRecord
      */
@@ -34,7 +34,7 @@ export interface AuditLogRecordItemRequestBuilder extends BaseRequestBuilder<Aud
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get records from security
+     * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -48,7 +48,7 @@ export interface AuditLogRecordItemRequestBuilder extends BaseRequestBuilder<Aud
      toPatchRequestInformation(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get records from security
+ * An individual audit log record.
  */
 export interface AuditLogRecordItemRequestBuilderGetQueryParameters {
     /**
@@ -105,6 +105,6 @@ export const AuditLogRecordItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const AuditLogRecordItemRequestBuilderUriTemplate = "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}/records/{auditLogRecord%2Did}{?%24select,%24expand}";
+export const AuditLogRecordItemRequestBuilderUriTemplate = "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}/records/{auditLogRecord%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

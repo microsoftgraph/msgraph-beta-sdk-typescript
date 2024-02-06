@@ -108,6 +108,6 @@ export const BookingCustomerItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const BookingCustomerItemRequestBuilderUriTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customers/{bookingCustomer%2Did}{?%24select,%24expand}";
+export const BookingCustomerItemRequestBuilderUriTemplate = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customers/{bookingCustomer%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -110,6 +110,6 @@ export const SalesInvoiceLineItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const SalesInvoiceLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}{?%24select,%24expand}";
+export const SalesInvoiceLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

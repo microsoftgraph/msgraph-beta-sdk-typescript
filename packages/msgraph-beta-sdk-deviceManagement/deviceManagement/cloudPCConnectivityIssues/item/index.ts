@@ -105,6 +105,6 @@ export const CloudPCConnectivityIssueItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const CloudPCConnectivityIssueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/cloudPCConnectivityIssues/{cloudPCConnectivityIssue%2Did}{?%24select,%24expand}";
+export const CloudPCConnectivityIssueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/cloudPCConnectivityIssues/{cloudPCConnectivityIssue%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const MessageEventItemRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const MessageEventItemRequestBuilderUriTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24select,%24expand}";
+export const MessageEventItemRequestBuilderUriTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

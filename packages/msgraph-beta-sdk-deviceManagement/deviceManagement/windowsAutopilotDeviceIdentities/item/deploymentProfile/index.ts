@@ -60,6 +60,6 @@ export const DeploymentProfileRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const DeploymentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/deploymentProfile{?%24select,%24expand}";
+export const DeploymentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/deploymentProfile{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

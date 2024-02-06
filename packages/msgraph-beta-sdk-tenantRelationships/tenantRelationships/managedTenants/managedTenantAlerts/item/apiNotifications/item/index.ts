@@ -60,6 +60,6 @@ export const ManagedTenantApiNotificationItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const ManagedTenantApiNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/apiNotifications/{managedTenantApiNotification%2Did}{?%24select,%24expand}";
+export const ManagedTenantApiNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/apiNotifications/{managedTenantApiNotification%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

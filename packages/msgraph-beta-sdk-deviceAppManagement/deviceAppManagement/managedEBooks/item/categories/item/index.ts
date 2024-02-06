@@ -60,6 +60,6 @@ export const ManagedEBookCategoryItemRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const ManagedEBookCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24select,%24expand}";
+export const ManagedEBookCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

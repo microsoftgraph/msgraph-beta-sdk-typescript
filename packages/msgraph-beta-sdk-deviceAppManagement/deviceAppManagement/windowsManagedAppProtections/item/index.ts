@@ -148,6 +148,6 @@ export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const WindowsManagedAppProtectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}{?%24select,%24expand}";
+export const WindowsManagedAppProtectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -106,6 +106,6 @@ export const SecureScoreControlProfileItemRequestBuilderRequestsMetadata: Reques
 /**
  * Uri template for the request builder.
  */
-export const SecureScoreControlProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/secureScoreControlProfiles/{secureScoreControlProfile%2Did}{?%24select,%24expand}";
+export const SecureScoreControlProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/secureScoreControlProfiles/{secureScoreControlProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

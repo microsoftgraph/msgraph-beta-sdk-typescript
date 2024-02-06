@@ -107,6 +107,6 @@ export const GetManagedDevicesWithFailedOrPendingAppsRequestBuilderRequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const GetManagedDevicesWithFailedOrPendingAppsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/getManagedDevicesWithFailedOrPendingApps(){?%24top,%24skip,%24search,%24filter,%24count}";
+export const GetManagedDevicesWithFailedOrPendingAppsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/getManagedDevicesWithFailedOrPendingApps(){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

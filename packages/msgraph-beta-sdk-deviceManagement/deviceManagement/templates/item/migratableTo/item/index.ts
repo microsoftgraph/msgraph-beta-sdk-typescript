@@ -150,6 +150,6 @@ export const DeviceManagementTemplateItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementTemplateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/{deviceManagementTemplate%2Did1}{?%24select,%24expand}";
+export const DeviceManagementTemplateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/{deviceManagementTemplate%2Did1}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

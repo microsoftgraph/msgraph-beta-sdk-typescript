@@ -60,6 +60,6 @@ export const DimensionValueItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const DimensionValueItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensions/{dimension%2Did}/dimensionValues/{dimensionValue%2Did}{?%24select,%24expand}";
+export const DimensionValueItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensions/{dimension%2Did}/dimensionValues/{dimensionValue%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

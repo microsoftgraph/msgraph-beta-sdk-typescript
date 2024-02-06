@@ -36,10 +36,10 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an updatableAssetGroup object.
+     * Read the properties and relationships of an updatableAsset object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of UpdatableAsset
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UpdatableAssetItemRequestBuilderGetQueryParameters> | undefined) : Promise<UpdatableAsset | undefined>;
     /**
@@ -56,7 +56,7 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an updatableAssetGroup object.
+     * Read the properties and relationships of an updatableAsset object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -70,7 +70,7 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      toPatchRequestInformation(body: UpdatableAsset, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an updatableAssetGroup object.
+ * Read the properties and relationships of an updatableAsset object.
  */
 export interface UpdatableAssetItemRequestBuilderGetQueryParameters {
     /**
@@ -148,6 +148,6 @@ export const UpdatableAssetItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const UpdatableAssetItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatableAssets/{updatableAsset%2Did}{?%24select,%24expand}";
+export const UpdatableAssetItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatableAssets/{updatableAsset%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

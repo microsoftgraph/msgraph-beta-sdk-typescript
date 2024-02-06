@@ -105,6 +105,6 @@ export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRe
 /**
  * Uri template for the request builder.
  */
-export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/assignments/{windowsDefenderApplicationControlSupplementalPolicyAssignment%2Did}{?%24select,%24expand}";
+export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/assignments/{windowsDefenderApplicationControlSupplementalPolicyAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

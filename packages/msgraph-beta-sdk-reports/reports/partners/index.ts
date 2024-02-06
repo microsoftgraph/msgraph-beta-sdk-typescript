@@ -120,6 +120,6 @@ export const PartnersRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const PartnersRequestBuilderUriTemplate = "{+baseurl}/reports/partners{?%24select,%24expand}";
+export const PartnersRequestBuilderUriTemplate = "{+baseurl}/reports/partners{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

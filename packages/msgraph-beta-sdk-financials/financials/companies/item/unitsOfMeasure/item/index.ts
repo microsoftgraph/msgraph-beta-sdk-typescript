@@ -105,6 +105,6 @@ export const UnitOfMeasureItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const UnitOfMeasureItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24select,%24expand}";
+export const UnitOfMeasureItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -106,6 +106,6 @@ export const LabelPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const LabelPolicySettingsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/security/informationProtection/labelPolicySettings{?%24select,%24expand}";
+export const LabelPolicySettingsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/security/informationProtection/labelPolicySettings{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

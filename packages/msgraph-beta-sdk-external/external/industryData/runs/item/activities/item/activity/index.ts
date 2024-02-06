@@ -60,6 +60,6 @@ export const ActivityRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ActivityRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}/activities/{industryDataRunActivity%2Did}/activity{?%24select,%24expand}";
+export const ActivityRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}/activities/{industryDataRunActivity%2Did}/activity{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

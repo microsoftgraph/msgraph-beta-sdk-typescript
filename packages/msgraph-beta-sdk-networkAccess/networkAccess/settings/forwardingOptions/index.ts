@@ -107,6 +107,6 @@ export const ForwardingOptionsRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const ForwardingOptionsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/forwardingOptions{?%24select,%24expand}";
+export const ForwardingOptionsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/forwardingOptions{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

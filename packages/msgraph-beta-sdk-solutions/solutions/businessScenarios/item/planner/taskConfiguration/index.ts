@@ -107,6 +107,6 @@ export const TaskConfigurationRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const TaskConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/taskConfiguration{?%24select,%24expand}";
+export const TaskConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/taskConfiguration{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

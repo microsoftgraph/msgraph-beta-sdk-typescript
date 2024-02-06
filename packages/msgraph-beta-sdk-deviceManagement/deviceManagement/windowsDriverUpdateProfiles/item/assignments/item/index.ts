@@ -105,6 +105,6 @@ export const WindowsDriverUpdateProfileAssignmentItemRequestBuilderRequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const WindowsDriverUpdateProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/assignments/{windowsDriverUpdateProfileAssignment%2Did}{?%24select,%24expand}";
+export const WindowsDriverUpdateProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/assignments/{windowsDriverUpdateProfileAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

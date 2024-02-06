@@ -106,6 +106,6 @@ export const ApplicationSignInDetailedSummaryItemRequestBuilderRequestsMetadata:
 /**
  * Uri template for the request builder.
  */
-export const ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate = "{+baseurl}/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary%2Did}{?%24select,%24expand}";
+export const ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate = "{+baseurl}/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

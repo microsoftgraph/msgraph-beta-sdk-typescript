@@ -105,6 +105,6 @@ export const UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderRequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyDevice/{userExperienceAnalyticsAnomalyDevice%2Did}{?%24select,%24expand}";
+export const UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyDevice/{userExperienceAnalyticsAnomalyDevice%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

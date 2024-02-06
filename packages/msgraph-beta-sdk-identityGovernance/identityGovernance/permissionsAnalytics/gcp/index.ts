@@ -130,6 +130,6 @@ export const GcpRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const GcpRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/gcp{?%24select,%24expand}";
+export const GcpRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/gcp{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

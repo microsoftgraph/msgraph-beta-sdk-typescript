@@ -108,6 +108,6 @@ export const YearTimePeriodDefinitionItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const YearTimePeriodDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/years/{yearTimePeriodDefinition%2Did}{?%24select,%24expand}";
+export const YearTimePeriodDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/years/{yearTimePeriodDefinition%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

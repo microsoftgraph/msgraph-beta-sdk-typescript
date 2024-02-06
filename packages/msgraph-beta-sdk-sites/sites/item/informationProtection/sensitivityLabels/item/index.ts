@@ -120,6 +120,6 @@ export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const SensitivityLabelItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}{?%24select,%24expand}";
+export const SensitivityLabelItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

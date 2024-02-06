@@ -108,6 +108,6 @@ export const WebAccountItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const WebAccountItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/webAccounts/{webAccount%2Did}{?%24select,%24expand}";
+export const WebAccountItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/webAccounts/{webAccount%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

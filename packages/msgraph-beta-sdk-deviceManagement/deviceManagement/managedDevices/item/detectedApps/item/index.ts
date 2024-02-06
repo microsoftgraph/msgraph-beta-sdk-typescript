@@ -60,6 +60,6 @@ export const DetectedAppItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DetectedAppItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24select,%24expand}";
+export const DetectedAppItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

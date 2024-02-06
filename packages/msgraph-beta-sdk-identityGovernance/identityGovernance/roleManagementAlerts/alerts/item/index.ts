@@ -147,6 +147,6 @@ export const UnifiedRoleManagementAlertItemRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const UnifiedRoleManagementAlertItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}{?%24select,%24expand}";
+export const UnifiedRoleManagementAlertItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

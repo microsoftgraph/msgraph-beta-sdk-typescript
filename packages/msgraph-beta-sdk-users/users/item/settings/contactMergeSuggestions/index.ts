@@ -107,6 +107,6 @@ export const ContactMergeSuggestionsRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const ContactMergeSuggestionsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24select,%24expand}";
+export const ContactMergeSuggestionsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

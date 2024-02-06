@@ -105,6 +105,6 @@ export const MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderRequest
 /**
  * Uri template for the request builder.
  */
-export const MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/groupAssignments/{mobileAppProvisioningConfigGroupAssignment%2Did}{?%24select,%24expand}";
+export const MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/groupAssignments/{mobileAppProvisioningConfigGroupAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

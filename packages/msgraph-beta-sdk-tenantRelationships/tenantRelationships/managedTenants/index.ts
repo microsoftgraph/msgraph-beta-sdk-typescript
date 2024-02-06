@@ -480,6 +480,6 @@ export const ManagedTenantsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ManagedTenantsRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants{?%24select,%24expand}";
+export const ManagedTenantsRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

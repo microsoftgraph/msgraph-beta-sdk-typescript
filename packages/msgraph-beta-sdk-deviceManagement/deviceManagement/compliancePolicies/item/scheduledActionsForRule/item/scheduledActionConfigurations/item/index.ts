@@ -105,6 +105,6 @@ export const DeviceManagementComplianceActionItemItemRequestBuilderRequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementComplianceActionItemItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/scheduledActionsForRule/{deviceManagementComplianceScheduledActionForRule%2Did}/scheduledActionConfigurations/{deviceManagementComplianceActionItem%2Did}{?%24select,%24expand}";
+export const DeviceManagementComplianceActionItemItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/scheduledActionsForRule/{deviceManagementComplianceScheduledActionForRule%2Did}/scheduledActionConfigurations/{deviceManagementComplianceActionItem%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

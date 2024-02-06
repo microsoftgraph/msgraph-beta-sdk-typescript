@@ -105,6 +105,6 @@ export const UploadAgentRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UploadAgentRequestBuilderUriTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/uploadAgent{?%24select,%24expand}";
+export const UploadAgentRequestBuilderUriTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/uploadAgent{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

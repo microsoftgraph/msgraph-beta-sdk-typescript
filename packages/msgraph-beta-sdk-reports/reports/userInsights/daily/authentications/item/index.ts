@@ -60,6 +60,6 @@ export const AuthenticationsMetricItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const AuthenticationsMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/authentications/{authenticationsMetric%2Did}{?%24select,%24expand}";
+export const AuthenticationsMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/authentications/{authenticationsMetric%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

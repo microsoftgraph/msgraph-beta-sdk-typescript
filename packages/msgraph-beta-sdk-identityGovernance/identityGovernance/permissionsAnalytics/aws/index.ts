@@ -130,6 +130,6 @@ export const AwsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AwsRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/aws{?%24select,%24expand}";
+export const AwsRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/aws{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

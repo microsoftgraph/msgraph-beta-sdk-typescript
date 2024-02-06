@@ -112,6 +112,6 @@ export const MultiTenantOrganizationRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const MultiTenantOrganizationRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization{?%24select,%24expand}";
+export const MultiTenantOrganizationRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

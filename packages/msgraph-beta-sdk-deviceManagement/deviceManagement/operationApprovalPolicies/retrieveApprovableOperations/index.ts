@@ -107,6 +107,6 @@ export const RetrieveApprovableOperationsRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const RetrieveApprovableOperationsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveApprovableOperations(){?%24top,%24skip,%24search,%24filter,%24count}";
+export const RetrieveApprovableOperationsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveApprovableOperations(){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

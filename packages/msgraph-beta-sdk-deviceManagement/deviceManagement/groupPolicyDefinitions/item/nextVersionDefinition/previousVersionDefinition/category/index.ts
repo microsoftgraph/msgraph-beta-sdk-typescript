@@ -60,6 +60,6 @@ export const CategoryRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CategoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/nextVersionDefinition/previousVersionDefinition/category{?%24select,%24expand}";
+export const CategoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/nextVersionDefinition/previousVersionDefinition/category{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

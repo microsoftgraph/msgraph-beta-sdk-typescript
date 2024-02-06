@@ -106,6 +106,6 @@ export const AzureADAuthenticationRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const AzureADAuthenticationRequestBuilderUriTemplate = "{+baseurl}/reports/sla/azureADAuthentication{?%24select,%24expand}";
+export const AzureADAuthenticationRequestBuilderUriTemplate = "{+baseurl}/reports/sla/azureADAuthentication{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

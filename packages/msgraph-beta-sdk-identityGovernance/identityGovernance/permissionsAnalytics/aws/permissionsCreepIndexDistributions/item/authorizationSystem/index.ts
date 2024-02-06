@@ -60,6 +60,6 @@ export const AuthorizationSystemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const AuthorizationSystemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/aws/permissionsCreepIndexDistributions/{permissionsCreepIndexDistribution%2Did}/authorizationSystem{?%24select,%24expand}";
+export const AuthorizationSystemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/aws/permissionsCreepIndexDistributions/{permissionsCreepIndexDistribution%2Did}/authorizationSystem{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

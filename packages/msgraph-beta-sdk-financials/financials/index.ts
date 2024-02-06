@@ -101,6 +101,6 @@ export const FinancialsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const FinancialsRequestBuilderUriTemplate = "{+baseurl}/financials{?%24select,%24expand}";
+export const FinancialsRequestBuilderUriTemplate = "{+baseurl}/financials{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

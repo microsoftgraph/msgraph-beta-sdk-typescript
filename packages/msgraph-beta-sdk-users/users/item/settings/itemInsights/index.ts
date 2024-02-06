@@ -107,6 +107,6 @@ export const ItemInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/itemInsights{?%24select,%24expand}";
+export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/itemInsights{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

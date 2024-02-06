@@ -107,6 +107,6 @@ export const CloudPcExternalPartnerSettingItemRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const CloudPcExternalPartnerSettingItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSetting%2Did}{?%24select,%24expand}";
+export const CloudPcExternalPartnerSettingItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSetting%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const RemoteActionAuditItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const RemoteActionAuditItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/remoteActionAudits/{remoteActionAudit%2Did}{?%24select,%24expand}";
+export const RemoteActionAuditItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/remoteActionAudits/{remoteActionAudit%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

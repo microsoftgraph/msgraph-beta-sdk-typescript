@@ -188,6 +188,6 @@ export const AdministrativeUnitItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const AdministrativeUnitItemRequestBuilderUriTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24select,%24expand}";
+export const AdministrativeUnitItemRequestBuilderUriTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -658,7 +658,7 @@ export const AggregationTypeObject = {
     AffectedCloudPcCount: "affectedCloudPcCount",
     AffectedCloudPcPercentage: "affectedCloudPcPercentage",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertRuleTemplateObject = {
     CloudPcProvisionScenario: "cloudPcProvisionScenario",
     CloudPcImageUploadScenario: "cloudPcImageUploadScenario",
@@ -667,12 +667,12 @@ export const AlertRuleTemplateObject = {
     CloudPcInGracePeriodScenario: "cloudPcInGracePeriodScenario",
     CloudPcFrontlineInsufficientLicensesScenario: "cloudPcFrontlineInsufficientLicensesScenario",
     CloudPcInaccessibleScenario: "cloudPcInaccessibleScenario",
-}  as const;
+} as const;
 export const AlertStatusTypeObject = {
     Active: "active",
     Resolved: "resolved",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ConditionCategoryObject = {
     ProvisionFailures: "provisionFailures",
     ImageUploadFailures: "imageUploadFailures",
@@ -683,14 +683,14 @@ export const ConditionCategoryObject = {
     CloudPcHostHealthCheckFailures: "cloudPcHostHealthCheckFailures",
     CloudPcZoneOutage: "cloudPcZoneOutage",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NotificationChannelTypeObject = {
     Portal: "portal",
     Email: "email",
     PhoneCall: "phoneCall",
     Sms: "sms",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const OperatorTypeObject = {
     GreaterOrEqual: "greaterOrEqual",
     Equal: "equal",
@@ -699,18 +699,18 @@ export const OperatorTypeObject = {
     LessOrEqual: "lessOrEqual",
     NotEqual: "notEqual",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RelationshipTypeObject = {
     And: "and",
     Or: "or",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RuleSeverityTypeObject = {
     Unknown: "unknown",
     Informational: "informational",
     Warning: "warning",
     Critical: "critical",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

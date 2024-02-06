@@ -130,6 +130,6 @@ export const AzureRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AzureRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/azure{?%24select,%24expand}";
+export const AzureRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/azure{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

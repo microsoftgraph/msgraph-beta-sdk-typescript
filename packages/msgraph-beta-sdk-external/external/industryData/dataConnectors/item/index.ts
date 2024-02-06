@@ -20,9 +20,9 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
     get sourceSystem(): SourceSystemRequestBuilder;
     /**
-     * Delete an industryDataConnector object.
+     * Delete an azureDataLakeConnector object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,7 +41,7 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
      patch(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
-     * Delete an industryDataConnector object.
+     * Delete an azureDataLakeConnector object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -131,6 +131,6 @@ export const IndustryDataConnectorItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const IndustryDataConnectorItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24select,%24expand}";
+export const IndustryDataConnectorItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

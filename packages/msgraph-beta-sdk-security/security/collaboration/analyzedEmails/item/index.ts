@@ -105,6 +105,6 @@ export const AnalyzedEmailItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const AnalyzedEmailItemRequestBuilderUriTemplate = "{+baseurl}/security/collaboration/analyzedEmails/{analyzedEmail%2Did}{?%24select,%24expand}";
+export const AnalyzedEmailItemRequestBuilderUriTemplate = "{+baseurl}/security/collaboration/analyzedEmails/{analyzedEmail%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const AppleEnrollmentProfileAssignmentItemRequestBuilderRequestsMetadata:
 /**
  * Uri template for the request builder.
  */
-export const AppleEnrollmentProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile%2Did}/assignments/{appleEnrollmentProfileAssignment%2Did}{?%24select,%24expand}";
+export const AppleEnrollmentProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile%2Did}/assignments/{appleEnrollmentProfileAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

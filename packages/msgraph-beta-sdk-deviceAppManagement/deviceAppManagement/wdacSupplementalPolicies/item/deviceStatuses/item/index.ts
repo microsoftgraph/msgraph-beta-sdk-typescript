@@ -119,6 +119,6 @@ export const WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
 /**
  * Uri template for the request builder.
  */
-export const WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus%2Did}{?%24select,%24expand}";
+export const WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

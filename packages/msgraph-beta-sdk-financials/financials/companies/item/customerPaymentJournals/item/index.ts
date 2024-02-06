@@ -129,6 +129,6 @@ export const CustomerPaymentJournalItemRequestBuilderRequestsMetadata: RequestsM
 /**
  * Uri template for the request builder.
  */
-export const CustomerPaymentJournalItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/customerPaymentJournals/{customerPaymentJournal%2Did}{?%24select,%24expand}";
+export const CustomerPaymentJournalItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/customerPaymentJournals/{customerPaymentJournal%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const PolicyRuleItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const PolicyRuleItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}{?%24select,%24expand}";
+export const PolicyRuleItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const GroupPolicyOperationItemRequestBuilderRequestsMetadata: RequestsMet
 /**
  * Uri template for the request builder.
  */
-export const GroupPolicyOperationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyUploadedDefinitionFiles/{groupPolicyUploadedDefinitionFile%2Did}/groupPolicyOperations/{groupPolicyOperation%2Did}{?%24select,%24expand}";
+export const GroupPolicyOperationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyUploadedDefinitionFiles/{groupPolicyUploadedDefinitionFile%2Did}/groupPolicyOperations/{groupPolicyOperation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -95,6 +95,6 @@ export const GraphAndroidForWorkAppRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const GraphAndroidForWorkAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.androidForWorkApp{?%24select,%24expand}";
+export const GraphAndroidForWorkAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.androidForWorkApp{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

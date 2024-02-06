@@ -120,6 +120,6 @@ export const CertificateAuthoritiesRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const CertificateAuthoritiesRequestBuilderUriTemplate = "{+baseurl}/directory/certificateAuthorities{?%24select,%24expand}";
+export const CertificateAuthoritiesRequestBuilderUriTemplate = "{+baseurl}/directory/certificateAuthorities{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

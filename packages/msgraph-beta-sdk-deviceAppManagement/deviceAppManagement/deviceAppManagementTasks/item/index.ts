@@ -119,6 +119,6 @@ export const DeviceAppManagementTaskItemRequestBuilderRequestsMetadata: Requests
 /**
  * Uri template for the request builder.
  */
-export const DeviceAppManagementTaskItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/deviceAppManagementTasks/{deviceAppManagementTask%2Did}{?%24select,%24expand}";
+export const DeviceAppManagementTaskItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/deviceAppManagementTasks/{deviceAppManagementTask%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

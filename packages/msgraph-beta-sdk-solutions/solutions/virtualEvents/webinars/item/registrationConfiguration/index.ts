@@ -60,6 +60,6 @@ export const RegistrationConfigurationRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const RegistrationConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrationConfiguration{?%24select,%24expand}";
+export const RegistrationConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrationConfiguration{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -128,6 +128,6 @@ export const ConnectivityConfigurationRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const ConnectivityConfigurationRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/connectivityConfiguration{?%24select,%24expand}";
+export const ConnectivityConfigurationRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/connectivityConfiguration{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

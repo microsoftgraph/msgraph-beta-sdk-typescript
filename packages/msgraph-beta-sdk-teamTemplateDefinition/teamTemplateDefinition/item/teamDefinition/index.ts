@@ -304,6 +304,6 @@ export const TeamDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TeamDefinitionRequestBuilderUriTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition{?%24select,%24expand}";
+export const TeamDefinitionRequestBuilderUriTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

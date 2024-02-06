@@ -107,6 +107,6 @@ export const GetCustomizedSettingsRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const GetCustomizedSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/getCustomizedSettings(){?%24top,%24skip,%24search,%24filter,%24count}";
+export const GetCustomizedSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/getCustomizedSettings(){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

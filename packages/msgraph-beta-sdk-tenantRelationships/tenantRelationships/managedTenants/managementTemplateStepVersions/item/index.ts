@@ -138,6 +138,6 @@ export const ManagementTemplateStepVersionItemRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const ManagementTemplateStepVersionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}{?%24select,%24expand}";
+export const ManagementTemplateStepVersionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

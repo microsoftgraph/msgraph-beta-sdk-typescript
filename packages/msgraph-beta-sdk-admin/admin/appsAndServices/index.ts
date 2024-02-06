@@ -107,6 +107,6 @@ export const AppsAndServicesRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const AppsAndServicesRequestBuilderUriTemplate = "{+baseurl}/admin/appsAndServices{?%24select,%24expand}";
+export const AppsAndServicesRequestBuilderUriTemplate = "{+baseurl}/admin/appsAndServices{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

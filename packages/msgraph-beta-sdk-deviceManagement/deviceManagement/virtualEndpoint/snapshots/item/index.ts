@@ -106,6 +106,6 @@ export const CloudPcSnapshotItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const CloudPcSnapshotItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/{cloudPcSnapshot%2Did}{?%24select,%24expand}";
+export const CloudPcSnapshotItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/{cloudPcSnapshot%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

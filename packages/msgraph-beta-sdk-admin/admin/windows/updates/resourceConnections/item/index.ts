@@ -16,10 +16,10 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an operationalInsightsConnection object.
+     * Read the properties and relationships of a resourceConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of ResourceConnection
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ResourceConnectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ResourceConnection | undefined>;
     /**
@@ -36,7 +36,7 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an operationalInsightsConnection object.
+     * Read the properties and relationships of a resourceConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -50,7 +50,7 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
      toPatchRequestInformation(body: ResourceConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an operationalInsightsConnection object.
+ * Read the properties and relationships of a resourceConnection object.
  */
 export interface ResourceConnectionItemRequestBuilderGetQueryParameters {
     /**
@@ -107,6 +107,6 @@ export const ResourceConnectionItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const ResourceConnectionItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24select,%24expand}";
+export const ResourceConnectionItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

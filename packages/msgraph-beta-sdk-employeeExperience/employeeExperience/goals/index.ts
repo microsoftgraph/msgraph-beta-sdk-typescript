@@ -120,6 +120,6 @@ export const GoalsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const GoalsRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/goals{?%24select,%24expand}";
+export const GoalsRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/goals{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

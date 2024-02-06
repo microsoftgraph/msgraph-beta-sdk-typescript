@@ -60,6 +60,6 @@ export const DefaultMacOsEnrollmentProfileRequestBuilderRequestsMetadata: Reques
 /**
  * Uri template for the request builder.
  */
-export const DefaultMacOsEnrollmentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/defaultMacOsEnrollmentProfile{?%24select,%24expand}";
+export const DefaultMacOsEnrollmentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/defaultMacOsEnrollmentProfile{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

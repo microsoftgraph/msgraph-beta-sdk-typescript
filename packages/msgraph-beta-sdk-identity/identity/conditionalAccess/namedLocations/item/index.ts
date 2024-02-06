@@ -10,9 +10,9 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface NamedLocationItemRequestBuilder extends BaseRequestBuilder<NamedLocationItemRequestBuilder> {
     /**
-     * Delete an ipNamedLocation object.
+     * Delete a namedLocation object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +31,7 @@ export interface NamedLocationItemRequestBuilder extends BaseRequestBuilder<Name
      */
      patch(body: NamedLocation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<NamedLocation | undefined>;
     /**
-     * Delete an ipNamedLocation object.
+     * Delete a namedLocation object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -108,6 +108,6 @@ export const NamedLocationItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const NamedLocationItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/namedLocations/{namedLocation%2Did}{?%24select,%24expand}";
+export const NamedLocationItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/namedLocations/{namedLocation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

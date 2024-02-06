@@ -108,6 +108,6 @@ export const EducationalActivityItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const EducationalActivityItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/educationalActivities/{educationalActivity%2Did}{?%24select,%24expand}";
+export const EducationalActivityItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/educationalActivities/{educationalActivity%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -148,6 +148,6 @@ export const PreviousVersionDefinitionRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const PreviousVersionDefinitionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/previousVersionDefinition{?%24select,%24expand}";
+export const PreviousVersionDefinitionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/previousVersionDefinition{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

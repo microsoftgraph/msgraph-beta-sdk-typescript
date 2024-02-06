@@ -130,6 +130,6 @@ export const UsageRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UsageRequestBuilderUriTemplate = "{+baseurl}/reports/partners/billing/usage{?%24select,%24expand}";
+export const UsageRequestBuilderUriTemplate = "{+baseurl}/reports/partners/billing/usage{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

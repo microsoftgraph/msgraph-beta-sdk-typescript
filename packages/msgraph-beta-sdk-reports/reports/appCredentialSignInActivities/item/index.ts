@@ -106,6 +106,6 @@ export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const AppCredentialSignInActivityItemRequestBuilderUriTemplate = "{+baseurl}/reports/appCredentialSignInActivities/{appCredentialSignInActivity%2Did}{?%24select,%24expand}";
+export const AppCredentialSignInActivityItemRequestBuilderUriTemplate = "{+baseurl}/reports/appCredentialSignInActivities/{appCredentialSignInActivity%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

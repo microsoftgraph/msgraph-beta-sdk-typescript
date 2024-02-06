@@ -143,6 +143,6 @@ export const BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderRequestsMe
 /**
  * Uri template for the request builder.
  */
-export const BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderUriTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlowsWithRequestsAwaitingMyDecision{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+export const BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderUriTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlowsWithRequestsAwaitingMyDecision{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

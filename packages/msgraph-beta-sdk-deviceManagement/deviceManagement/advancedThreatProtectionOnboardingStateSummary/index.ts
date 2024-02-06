@@ -120,6 +120,6 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequest
 /**
  * Uri template for the request builder.
  */
-export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/advancedThreatProtectionOnboardingStateSummary{?%24select,%24expand}";
+export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/advancedThreatProtectionOnboardingStateSummary{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

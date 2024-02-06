@@ -86,6 +86,6 @@ export const SignInPreferencesRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const SignInPreferencesRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/authentication/signInPreferences{?%24select,%24expand}";
+export const SignInPreferencesRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/authentication/signInPreferences{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

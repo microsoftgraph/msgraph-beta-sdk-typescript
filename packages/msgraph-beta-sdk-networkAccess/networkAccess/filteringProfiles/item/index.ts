@@ -131,6 +131,6 @@ export const FilteringProfileItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const FilteringProfileItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}{?%24select,%24expand}";
+export const FilteringProfileItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

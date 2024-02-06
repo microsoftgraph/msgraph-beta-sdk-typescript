@@ -105,6 +105,6 @@ export const IosVppAppAssignedLicenseItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const IosVppAppAssignedLicenseItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses/{iosVppAppAssignedLicense%2Did}{?%24select,%24expand}";
+export const IosVppAppAssignedLicenseItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses/{iosVppAppAssignedLicense%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

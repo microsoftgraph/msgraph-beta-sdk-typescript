@@ -105,6 +105,6 @@ export const WindowsFeatureUpdateProfileAssignmentItemRequestBuilderRequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const WindowsFeatureUpdateProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}/assignments/{windowsFeatureUpdateProfileAssignment%2Did}{?%24select,%24expand}";
+export const WindowsFeatureUpdateProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}/assignments/{windowsFeatureUpdateProfileAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -130,6 +130,6 @@ export const UserInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UserInsightsRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights{?%24select,%24expand}";
+export const UserInsightsRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

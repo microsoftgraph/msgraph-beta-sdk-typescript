@@ -105,6 +105,6 @@ export const UserExperienceAnalyticsImpactingProcessItemRequestBuilderRequestsMe
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsImpactingProcessItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsImpactingProcess/{userExperienceAnalyticsImpactingProcess%2Did}{?%24select,%24expand}";
+export const UserExperienceAnalyticsImpactingProcessItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsImpactingProcess/{userExperienceAnalyticsImpactingProcess%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -139,6 +139,6 @@ export const WindowsAutopilotDeploymentProfileItemRequestBuilderRequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const WindowsAutopilotDeploymentProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}{?%24select,%24expand}";
+export const WindowsAutopilotDeploymentProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

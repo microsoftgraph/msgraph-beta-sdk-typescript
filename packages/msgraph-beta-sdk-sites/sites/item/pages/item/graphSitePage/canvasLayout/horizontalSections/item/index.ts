@@ -120,6 +120,6 @@ export const HorizontalSectionItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const HorizontalSectionItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/horizontalSections/{horizontalSection%2Did}{?%24select,%24expand}";
+export const HorizontalSectionItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/horizontalSections/{horizontalSection%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

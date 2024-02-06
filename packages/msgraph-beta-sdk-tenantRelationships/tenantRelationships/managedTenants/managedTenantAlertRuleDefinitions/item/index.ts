@@ -120,6 +120,6 @@ export const ManagedTenantAlertRuleDefinitionItemRequestBuilderRequestsMetadata:
 /**
  * Uri template for the request builder.
  */
-export const ManagedTenantAlertRuleDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition%2Did}{?%24select,%24expand}";
+export const ManagedTenantAlertRuleDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -120,6 +120,6 @@ export const AuthorizationPolicyItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const AuthorizationPolicyItemRequestBuilderUriTemplate = "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}{?%24select,%24expand}";
+export const AuthorizationPolicyItemRequestBuilderUriTemplate = "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

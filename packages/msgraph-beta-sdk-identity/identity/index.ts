@@ -8,7 +8,7 @@ import { AuthenticationEventListenersRequestBuilderNavigationMetadata, Authentic
 import { AuthenticationEventsFlowsRequestBuilderNavigationMetadata, AuthenticationEventsFlowsRequestBuilderRequestsMetadata, AuthenticationEventsFlowsRequestBuilderUriTemplate, type AuthenticationEventsFlowsRequestBuilder } from './authenticationEventsFlows/';
 import { B2cUserFlowsRequestBuilderNavigationMetadata, B2cUserFlowsRequestBuilderRequestsMetadata, B2cUserFlowsRequestBuilderUriTemplate, type B2cUserFlowsRequestBuilder } from './b2cUserFlows/';
 import { B2xUserFlowsRequestBuilderNavigationMetadata, B2xUserFlowsRequestBuilderRequestsMetadata, B2xUserFlowsRequestBuilderUriTemplate, type B2xUserFlowsRequestBuilder } from './b2xUserFlows/';
-import { ConditionalAccessRequestBuilderNavigationMetadata, ConditionalAccessRequestBuilderRequestsMetadata, ConditionalAccessRequestBuilderUriTemplate, type ConditionalAccessRequestBuilder } from './conditionalAccess/';
+import { ConditionalAccessRequestBuilderNavigationMetadata, ConditionalAccessRequestBuilderUriTemplate, type ConditionalAccessRequestBuilder } from './conditionalAccess/';
 import { ContinuousAccessEvaluationPolicyRequestBuilderRequestsMetadata, ContinuousAccessEvaluationPolicyRequestBuilderUriTemplate, type ContinuousAccessEvaluationPolicyRequestBuilder } from './continuousAccessEvaluationPolicy/';
 import { CustomAuthenticationExtensionsRequestBuilderNavigationMetadata, CustomAuthenticationExtensionsRequestBuilderRequestsMetadata, CustomAuthenticationExtensionsRequestBuilderUriTemplate, type CustomAuthenticationExtensionsRequestBuilder } from './customAuthenticationExtensions/';
 import { IdentityProvidersRequestBuilderNavigationMetadata, IdentityProvidersRequestBuilderRequestsMetadata, IdentityProvidersRequestBuilderUriTemplate, type IdentityProvidersRequestBuilder } from './identityProviders/';
@@ -41,7 +41,7 @@ export interface IdentityRequestBuilder extends BaseRequestBuilder<IdentityReque
      */
     get b2xUserFlows(): B2xUserFlowsRequestBuilder;
     /**
-     * Provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
+     * The conditionalAccess property
      */
     get conditionalAccess(): ConditionalAccessRequestBuilder;
     /**
@@ -142,7 +142,6 @@ export const IdentityRequestBuilderNavigationMetadata: Record<Exclude<keyof Iden
     },
     conditionalAccess: {
         uriTemplate: ConditionalAccessRequestBuilderUriTemplate,
-        requestsMetadata: ConditionalAccessRequestBuilderRequestsMetadata,
         navigationMetadata: ConditionalAccessRequestBuilderNavigationMetadata,
     },
     continuousAccessEvaluationPolicy: {
@@ -200,6 +199,6 @@ export const IdentityRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const IdentityRequestBuilderUriTemplate = "{+baseurl}/identity{?%24select,%24expand}";
+export const IdentityRequestBuilderUriTemplate = "{+baseurl}/identity{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

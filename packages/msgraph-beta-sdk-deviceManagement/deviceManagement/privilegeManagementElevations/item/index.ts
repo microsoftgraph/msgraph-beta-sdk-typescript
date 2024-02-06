@@ -105,6 +105,6 @@ export const PrivilegeManagementElevationItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const PrivilegeManagementElevationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24select,%24expand}";
+export const PrivilegeManagementElevationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

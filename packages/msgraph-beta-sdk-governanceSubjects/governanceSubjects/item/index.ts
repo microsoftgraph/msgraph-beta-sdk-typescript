@@ -105,6 +105,6 @@ export const GovernanceSubjectItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const GovernanceSubjectItemRequestBuilderUriTemplate = "{+baseurl}/governanceSubjects/{governanceSubject%2Did}{?%24select,%24expand}";
+export const GovernanceSubjectItemRequestBuilderUriTemplate = "{+baseurl}/governanceSubjects/{governanceSubject%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

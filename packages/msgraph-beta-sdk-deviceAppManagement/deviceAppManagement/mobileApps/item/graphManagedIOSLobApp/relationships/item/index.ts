@@ -105,6 +105,6 @@ export const MobileAppRelationshipItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const MobileAppRelationshipItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp/relationships/{mobileAppRelationship%2Did}{?%24select,%24expand}";
+export const MobileAppRelationshipItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp/relationships/{mobileAppRelationship%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

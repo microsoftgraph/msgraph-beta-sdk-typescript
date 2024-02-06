@@ -105,6 +105,6 @@ export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const CountryRegionItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/countriesRegions/{countryRegion%2Did}{?%24select,%24expand}";
+export const CountryRegionItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/countriesRegions/{countryRegion%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

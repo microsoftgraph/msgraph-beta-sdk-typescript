@@ -107,6 +107,6 @@ export const PlannerRosterMemberItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const PlannerRosterMemberItemRequestBuilderUriTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}/members/{plannerRosterMember%2Did}{?%24select,%24expand}";
+export const PlannerRosterMemberItemRequestBuilderUriTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}/members/{plannerRosterMember%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

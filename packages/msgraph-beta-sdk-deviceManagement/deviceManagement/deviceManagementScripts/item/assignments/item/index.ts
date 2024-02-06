@@ -105,6 +105,6 @@ export const DeviceManagementScriptAssignmentItemRequestBuilderRequestsMetadata:
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementScriptAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}/assignments/{deviceManagementScriptAssignment%2Did}{?%24select,%24expand}";
+export const DeviceManagementScriptAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}/assignments/{deviceManagementScriptAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

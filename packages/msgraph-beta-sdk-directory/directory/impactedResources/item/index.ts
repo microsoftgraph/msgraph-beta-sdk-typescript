@@ -146,6 +146,6 @@ export const ImpactedResourceItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const ImpactedResourceItemRequestBuilderUriTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}{?%24select,%24expand}";
+export const ImpactedResourceItemRequestBuilderUriTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

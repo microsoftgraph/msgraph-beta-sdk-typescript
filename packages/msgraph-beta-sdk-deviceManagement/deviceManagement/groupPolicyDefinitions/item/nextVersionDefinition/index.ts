@@ -148,6 +148,6 @@ export const NextVersionDefinitionRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const NextVersionDefinitionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/nextVersionDefinition{?%24select,%24expand}";
+export const NextVersionDefinitionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/nextVersionDefinition{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

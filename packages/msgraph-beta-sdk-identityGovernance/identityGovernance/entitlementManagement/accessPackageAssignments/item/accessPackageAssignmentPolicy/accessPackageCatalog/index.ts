@@ -62,6 +62,6 @@ export const AccessPackageCatalogRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const AccessPackageCatalogRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentPolicy/accessPackageCatalog{?%24select,%24expand}";
+export const AccessPackageCatalogRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentPolicy/accessPackageCatalog{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -107,6 +107,6 @@ export const FindRoomsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const FindRoomsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/findRooms(){?%24top,%24skip,%24search,%24filter,%24count}";
+export const FindRoomsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/findRooms(){?%24count,%24filter,%24search,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

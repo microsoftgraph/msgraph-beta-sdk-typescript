@@ -223,6 +223,6 @@ export const OnlineMeetingItemRequestBuilderRequestsMetadata: RequestsMetadata =
 /**
  * Uri template for the request builder.
  */
-export const OnlineMeetingItemRequestBuilderUriTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}";
+export const OnlineMeetingItemRequestBuilderUriTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

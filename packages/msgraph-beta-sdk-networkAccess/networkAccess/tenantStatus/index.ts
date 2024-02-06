@@ -106,6 +106,6 @@ export const TenantStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TenantStatusRequestBuilderUriTemplate = "{+baseurl}/networkAccess/tenantStatus{?%24select,%24expand}";
+export const TenantStatusRequestBuilderUriTemplate = "{+baseurl}/networkAccess/tenantStatus{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

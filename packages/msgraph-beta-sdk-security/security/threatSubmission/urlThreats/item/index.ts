@@ -106,6 +106,6 @@ export const UrlThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const UrlThreatSubmissionItemRequestBuilderUriTemplate = "{+baseurl}/security/threatSubmission/urlThreats/{urlThreatSubmission%2Did}{?%24select,%24expand}";
+export const UrlThreatSubmissionItemRequestBuilderUriTemplate = "{+baseurl}/security/threatSubmission/urlThreats/{urlThreatSubmission%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

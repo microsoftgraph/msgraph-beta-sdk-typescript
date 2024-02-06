@@ -107,6 +107,6 @@ export const OrganizationSettingsRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const OrganizationSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/organizationSettings{?%24select,%24expand}";
+export const OrganizationSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/organizationSettings{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

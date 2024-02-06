@@ -105,6 +105,6 @@ export const ManagedDeviceEncryptionStateItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const ManagedDeviceEncryptionStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDeviceEncryptionStates/{managedDeviceEncryptionState%2Did}{?%24select,%24expand}";
+export const ManagedDeviceEncryptionStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDeviceEncryptionStates/{managedDeviceEncryptionState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -60,6 +60,6 @@ export const MfaCompletionMetricItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const MfaCompletionMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/mfaCompletions/{mfaCompletionMetric%2Did}{?%24select,%24expand}";
+export const MfaCompletionMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/mfaCompletions/{mfaCompletionMetric%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

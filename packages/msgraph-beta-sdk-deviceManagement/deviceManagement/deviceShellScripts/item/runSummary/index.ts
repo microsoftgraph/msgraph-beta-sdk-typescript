@@ -60,6 +60,6 @@ export const RunSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RunSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}/runSummary{?%24select,%24expand}";
+export const RunSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}/runSummary{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

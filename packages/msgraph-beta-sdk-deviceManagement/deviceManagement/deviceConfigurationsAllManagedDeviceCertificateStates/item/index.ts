@@ -105,6 +105,6 @@ export const ManagedAllDeviceCertificateStateItemRequestBuilderRequestsMetadata:
 /**
  * Uri template for the request builder.
  */
-export const ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationsAllManagedDeviceCertificateStates/{managedAllDeviceCertificateState%2Did}{?%24select,%24expand}";
+export const ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationsAllManagedDeviceCertificateStates/{managedAllDeviceCertificateState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

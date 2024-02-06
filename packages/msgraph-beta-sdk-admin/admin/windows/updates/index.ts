@@ -170,6 +170,6 @@ export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UpdatesRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates{?%24select,%24expand}";
+export const UpdatesRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

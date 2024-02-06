@@ -105,6 +105,6 @@ export const GroupPolicySettingMappingItemRequestBuilderRequestsMetadata: Reques
 /**
  * Uri template for the request builder.
  */
-export const GroupPolicySettingMappingItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/groupPolicySettingMappings/{groupPolicySettingMapping%2Did}{?%24select,%24expand}";
+export const GroupPolicySettingMappingItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/groupPolicySettingMappings/{groupPolicySettingMapping%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

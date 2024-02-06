@@ -105,6 +105,6 @@ export const UserExperienceAnalyticsAnomalyItemRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsAnomalyItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomaly/{userExperienceAnalyticsAnomaly%2Did}{?%24select,%24expand}";
+export const UserExperienceAnalyticsAnomalyItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomaly/{userExperienceAnalyticsAnomaly%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

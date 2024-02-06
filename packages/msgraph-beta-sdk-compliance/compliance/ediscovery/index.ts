@@ -127,6 +127,6 @@ export const EdiscoveryRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const EdiscoveryRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery{?%24select,%24expand}";
+export const EdiscoveryRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

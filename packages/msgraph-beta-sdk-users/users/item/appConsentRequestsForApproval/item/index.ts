@@ -120,6 +120,6 @@ export const AppConsentRequestItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const AppConsentRequestItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}{?%24select,%24expand}";
+export const AppConsentRequestItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

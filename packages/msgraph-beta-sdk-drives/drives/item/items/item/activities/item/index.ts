@@ -60,6 +60,6 @@ export const ItemActivityOLDItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const ItemActivityOLDItemRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/activities/{itemActivityOLD%2Did}{?%24select,%24expand}";
+export const ItemActivityOLDItemRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/activities/{itemActivityOLD%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

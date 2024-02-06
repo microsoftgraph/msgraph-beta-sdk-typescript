@@ -28,11 +28,11 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      get(requestConfiguration?: RequestConfiguration<ComplianceChangeItemRequestBuilderGetQueryParameters> | undefined) : Promise<ComplianceChange | undefined>;
     /**
-     * Update the properties of a contentApproval object.
+     * Update the properties of a complianceChange object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of ComplianceChange
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ComplianceChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComplianceChange | undefined>;
     /**
@@ -48,7 +48,7 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ComplianceChangeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a contentApproval object.
+     * Update the properties of a complianceChange object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
@@ -122,6 +122,6 @@ export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const ComplianceChangeItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24select,%24expand}";
+export const ComplianceChangeItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const DeviceManagementSettingInstanceItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementSettingInstanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/settings/{deviceManagementSettingInstance%2Did}{?%24select,%24expand}";
+export const DeviceManagementSettingInstanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/settings/{deviceManagementSettingInstance%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -128,6 +128,6 @@ export const GovernanceRoleDefinitionItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const GovernanceRoleDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}{?%24select,%24expand}";
+export const GovernanceRoleDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -14,30 +14,15 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      * @see {@link https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0|Find more info here}
      */
-     delete(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : Promise<void>;
+     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Revoke the specified user's access to submit print jobs to the associated printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : RequestInformation;
+     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
-/**
- * Revoke the specified user's access to submit print jobs to the associated printerShare.
- */
-export interface RefRequestBuilderDeleteQueryParameters {
-    /**
-     * Delete Uri
-     */
-    id?: string;
-}
-/**
- * Mapper for query parameters from symbol name to serialization name represented as a constant.
- */
-const RefRequestBuilderDeleteQueryParametersMapper: Record<string, string> = {
-    "id": "%40id",
-};
 /**
  * Metadata for all the requests in the request builder.
  */
@@ -49,12 +34,11 @@ export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
             _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
-        queryParametersMapper: RefRequestBuilderDeleteQueryParametersMapper,
     },
 };
 /**
  * Uri template for the request builder.
  */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedUsers/{user%2Did}/$ref{?%40id*}";
+export const RefRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedUsers/{user%2Did}/$ref";
 /* tslint:enable */
 /* eslint-enable */

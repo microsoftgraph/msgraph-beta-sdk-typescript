@@ -153,6 +153,6 @@ export const B2cIdentityUserFlowItemRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const B2cIdentityUserFlowItemRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}{?%24select,%24expand}";
+export const B2cIdentityUserFlowItemRequestBuilderUriTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

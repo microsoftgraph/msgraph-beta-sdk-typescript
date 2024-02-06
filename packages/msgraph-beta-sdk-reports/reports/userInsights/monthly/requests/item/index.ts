@@ -60,6 +60,6 @@ export const UserRequestsMetricItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const UserRequestsMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/requests/{userRequestsMetric%2Did}{?%24select,%24expand}";
+export const UserRequestsMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/requests/{userRequestsMetric%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

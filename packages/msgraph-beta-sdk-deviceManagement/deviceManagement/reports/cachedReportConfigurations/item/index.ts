@@ -105,6 +105,6 @@ export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequests
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementCachedReportConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration%2Did}{?%24select,%24expand}";
+export const DeviceManagementCachedReportConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

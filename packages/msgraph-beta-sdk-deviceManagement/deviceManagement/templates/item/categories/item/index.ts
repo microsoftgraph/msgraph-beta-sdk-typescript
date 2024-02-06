@@ -130,6 +130,6 @@ export const DeviceManagementTemplateSettingCategoryItemRequestBuilderRequestsMe
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementTemplateSettingCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/categories/{deviceManagementTemplateSettingCategory%2Did}{?%24select,%24expand}";
+export const DeviceManagementTemplateSettingCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/categories/{deviceManagementTemplateSettingCategory%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

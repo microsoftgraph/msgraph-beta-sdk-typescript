@@ -128,6 +128,6 @@ export const GroupPolicyPresentationValueItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const GroupPolicyPresentationValueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}/presentationValues/{groupPolicyPresentationValue%2Did}{?%24select,%24expand}";
+export const GroupPolicyPresentationValueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}/presentationValues/{groupPolicyPresentationValue%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const ParticipantItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ParticipantItemRequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2/{participant%2Did}{?%24select,%24expand}";
+export const ParticipantItemRequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2/{participant%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

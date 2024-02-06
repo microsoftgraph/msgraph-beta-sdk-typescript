@@ -130,6 +130,6 @@ export const TemplatesRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TemplatesRequestBuilderUriTemplate = "{+baseurl}/policies/crossTenantAccessPolicy/templates{?%24select,%24expand}";
+export const TemplatesRequestBuilderUriTemplate = "{+baseurl}/policies/crossTenantAccessPolicy/templates{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

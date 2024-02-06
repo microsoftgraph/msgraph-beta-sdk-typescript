@@ -609,11 +609,11 @@ export type TermGroupScope = (typeof TermGroupScopeObject)[keyof typeof TermGrou
 export const RelationTypeObject = {
     Pin: "pin",
     Reuse: "reuse",
-}  as const;
+} as const;
 export const TermGroupScopeObject = {
     Global: "global",
     System: "system",
     SiteCollection: "siteCollection",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

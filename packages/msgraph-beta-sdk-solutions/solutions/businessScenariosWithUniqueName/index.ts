@@ -108,6 +108,6 @@ export const BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const BusinessScenariosWithUniqueNameRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24select,%24expand}";
+export const BusinessScenariosWithUniqueNameRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

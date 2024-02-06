@@ -105,6 +105,6 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBu
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyCorrelationGroupOverview/{userExperienceAnalyticsAnomalyCorrelationGroupOverview%2Did}{?%24select,%24expand}";
+export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyCorrelationGroupOverview/{userExperienceAnalyticsAnomalyCorrelationGroupOverview%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

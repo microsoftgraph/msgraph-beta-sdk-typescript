@@ -200,6 +200,6 @@ export const DailyRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DailyRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily{?%24select,%24expand}";
+export const DailyRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

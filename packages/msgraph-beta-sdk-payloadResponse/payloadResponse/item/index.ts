@@ -105,6 +105,6 @@ export const PayloadResponseItemRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const PayloadResponseItemRequestBuilderUriTemplate = "{+baseurl}/payloadResponse/{payloadResponse%2Did}{?%24select,%24expand}";
+export const PayloadResponseItemRequestBuilderUriTemplate = "{+baseurl}/payloadResponse/{payloadResponse%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

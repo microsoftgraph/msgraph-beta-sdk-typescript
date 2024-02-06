@@ -105,6 +105,6 @@ export const GraphMacOSPkgAppRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const GraphMacOSPkgAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp{?%24select,%24expand}";
+export const GraphMacOSPkgAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

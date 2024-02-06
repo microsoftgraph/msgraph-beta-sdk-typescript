@@ -105,6 +105,6 @@ export const ProgramRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ProgramRequestBuilderUriTemplate = "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}/program{?%24select,%24expand}";
+export const ProgramRequestBuilderUriTemplate = "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}/program{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

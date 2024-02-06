@@ -74,6 +74,6 @@ export const VirtualEventPresenterItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const VirtualEventPresenterItemRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/presenters/{virtualEventPresenter%2Did}{?%24select,%24expand}";
+export const VirtualEventPresenterItemRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/presenters/{virtualEventPresenter%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

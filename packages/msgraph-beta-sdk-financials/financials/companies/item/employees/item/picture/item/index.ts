@@ -119,6 +119,6 @@ export const PictureItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const PictureItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/employees/{employee%2Did}/picture/{picture%2Did}{?%24select,%24expand}";
+export const PictureItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/employees/{employee%2Did}/picture/{picture%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

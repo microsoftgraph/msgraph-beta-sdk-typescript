@@ -309,19 +309,19 @@ export interface AlertTemplate extends AdditionalDataHolder, BackedModel, Parsab
      */
     backingStoreEnabled?: boolean;
     /**
-     * The category property
+     * Category assigned to the alert triggered by the custom detection rule.
      */
     category?: string;
     /**
-     * The description property
+     * Description of the alert triggered by the custom detection rule.
      */
     description?: string;
     /**
-     * The impactedAssets property
+     * Which asset or assets were impacted based on the alert triggered by the custom detection rule.
      */
     impactedAssets?: ImpactedAsset[];
     /**
-     * The mitreTechniques property
+     * MITRE technique assigned to the alert triggered by the custom detection rule.
      */
     mitreTechniques?: string[];
     /**
@@ -329,7 +329,7 @@ export interface AlertTemplate extends AdditionalDataHolder, BackedModel, Parsab
      */
     odataType?: string;
     /**
-     * The recommendedActions property
+     * Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
      */
     recommendedActions?: string;
     /**
@@ -337,13 +337,13 @@ export interface AlertTemplate extends AdditionalDataHolder, BackedModel, Parsab
      */
     severity?: AlertSeverity;
     /**
-     * The title property
+     * Name of the alert triggered by the custom detection rule.
      */
     title?: string;
 }
 export interface AllowFileResponseAction extends Parsable, ResponseAction {
     /**
-     * The deviceGroupNames property
+     * Device groups to which the actions set in the custom detection rule are applied. More information
      */
     deviceGroupNames?: string[];
     /**
@@ -871,39 +871,39 @@ export interface AuditData extends AdditionalDataHolder, BackedModel, Parsable {
 }
 export interface AuditLogQuery extends Entity, Parsable {
     /**
-     * The administrativeUnitIdFilters property
+     * The administrative units tagged to an audit log record.
      */
     administrativeUnitIdFilters?: string[];
     /**
-     * The displayName property
+     * The display name of the saved audit log query.
      */
     displayName?: string;
     /**
-     * The filterEndDateTime property
+     * The end date of the date range in the query.
      */
     filterEndDateTime?: Date;
     /**
-     * The filterStartDateTime property
+     * The start date of the date range in the query.
      */
     filterStartDateTime?: Date;
     /**
-     * The ipAddressFilters property
+     * The IP address of the device that was used when the activity was logged.
      */
     ipAddressFilters?: string[];
     /**
-     * The keywordFilter property
+     * Free text field to search non-indexed properties of the audit log.
      */
     keywordFilter?: string;
     /**
-     * The objectIdFilters property
+     * For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.
      */
     objectIdFilters?: string[];
     /**
-     * The operationFilters property
+     * The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.
      */
     operationFilters?: string[];
     /**
-     * The records property
+     * An individual audit log record.
      */
     records?: AuditLogRecord[];
     /**
@@ -915,11 +915,11 @@ export interface AuditLogQuery extends Entity, Parsable {
      */
     serviceFilters?: string[];
     /**
-     * The status property
+     * Describes the current status of the query. The possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.
      */
     status?: AuditLogQueryStatus;
     /**
-     * The userPrincipalNameFilters property
+     * The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.
      */
     userPrincipalNameFilters?: string[];
 }
@@ -932,51 +932,51 @@ export interface AuditLogQueryCollectionResponse extends BaseCollectionPaginatio
 export type AuditLogQueryStatus = (typeof AuditLogQueryStatusObject)[keyof typeof AuditLogQueryStatusObject];
 export interface AuditLogRecord extends Entity, Parsable {
     /**
-     * The administrativeUnits property
+     * The administrative units tagged to an audit log record.
      */
     administrativeUnits?: string[];
     /**
-     * The auditData property
+     * A JSON object that contains the actual audit log data.
      */
     auditData?: AuditData;
     /**
-     * The auditLogRecordType property
+     * The type of operation indicated by the record. The possible values are: exchangeAdmin, exchangeItem, exchangeItemGroup, sharePoint, syntheticProbe, sharePointFileOperation, oneDrive, azureActiveDirectory, azureActiveDirectoryAccountLogon, dataCenterSecurityCmdlet, complianceDLPSharePoint, sway, complianceDLPExchange, sharePointSharingOperation, azureActiveDirectoryStsLogon, skypeForBusinessPSTNUsage, skypeForBusinessUsersBlocked, securityComplianceCenterEOPCmdlet, exchangeAggregatedOperation, powerBIAudit, crm, yammer, skypeForBusinessCmdlets, discovery, microsoftTeams, threatIntelligence, mailSubmission, microsoftFlow, aeD, microsoftStream, complianceDLPSharePointClassification, threatFinder, project, sharePointListOperation, sharePointCommentOperation, dataGovernance, kaizala, securityComplianceAlerts, threatIntelligenceUrl, securityComplianceInsights, mipLabel, workplaceAnalytics, powerAppsApp, powerAppsPlan, threatIntelligenceAtpContent, labelContentExplorer, teamsHealthcare, exchangeItemAggregated, hygieneEvent, dataInsightsRestApiAudit, informationBarrierPolicyApplication, sharePointListItemOperation, sharePointContentTypeOperation, sharePointFieldOperation, microsoftTeamsAdmin, hrSignal, microsoftTeamsDevice, microsoftTeamsAnalytics, informationWorkerProtection, campaign, dlpEndpoint, airInvestigation, quarantine, microsoftForms, applicationAudit, complianceSupervisionExchange, customerKeyServiceEncryption, officeNative, mipAutoLabelSharePointItem, mipAutoLabelSharePointPolicyLocation, microsoftTeamsShifts, secureScore, mipAutoLabelExchangeItem, cortanaBriefing, search, wdatpAlerts, powerPlatformAdminDlp, powerPlatformAdminEnvironment, mdatpAudit, sensitivityLabelPolicyMatch, sensitivityLabelAction, sensitivityLabeledFileAction, attackSim, airManualInvestigation, securityComplianceRBAC, userTraining, airAdminActionInvestigation, mstic, physicalBadgingSignal, teamsEasyApprovals, aipDiscover, aipSensitivityLabelAction, aipProtectionAction, aipFileDeleted, aipHeartBeat, mcasAlerts, onPremisesFileShareScannerDlp, onPremisesSharePointScannerDlp, exchangeSearch, sharePointSearch, privacyDataMinimization, labelAnalyticsAggregate, myAnalyticsSettings, securityComplianceUserChange, complianceDLPExchangeClassification, complianceDLPEndpoint, mipExactDataMatch, msdeResponseActions, msdeGeneralSettings, msdeIndicatorsSettings, ms365DCustomDetection, msdeRolesSettings, mapgAlerts, mapgPolicy, mapgRemediation, privacyRemediationAction, privacyDigestEmail, mipAutoLabelSimulationProgress, mipAutoLabelSimulationCompletion, mipAutoLabelProgressFeedback, dlpSensitiveInformationType, mipAutoLabelSimulationStatistics, largeContentMetadata, microsoft365Group, cdpMlInferencingResult, filteringMailMetadata, cdpClassificationMailItem, cdpClassificationDocument, officeScriptsRunAction, filteringPostMailDeliveryAction, cdpUnifiedFeedback, tenantAllowBlockList, consumptionResource, healthcareSignal, dlpImportResult, cdpCompliancePolicyExecution, multiStageDisposition, privacyDataMatch, filteringDocMetadata, filteringEmailFeatures, powerBIDlp, filteringUrlInfo, filteringAttachmentInfo, coreReportingSettings, complianceConnector, powerPlatformLockboxResourceAccessRequest, powerPlatformLockboxResourceCommand, cdpPredictiveCodingLabel, cdpCompliancePolicyUserFeedback, webpageActivityEndpoint, omePortal, cmImprovementActionChange, filteringUrlClick, mipLabelAnalyticsAuditRecord, filteringEntityEvent, filteringRuleHits, filteringMailSubmission, labelExplorer, microsoftManagedServicePlatform, powerPlatformServiceActivity, scorePlatformGenericAuditRecord, filteringTimeTravelDocMetadata, alert, alertStatus, alertIncident, incidentStatus, case, caseInvestigation, recordsManagement, privacyRemediation, dataShareOperation, cdpDlpSensitive, ehrConnector, filteringMailGradingResult, publicFolder, privacyTenantAuditHistoryRecord, aipScannerDiscoverEvent, eduDataLakeDownloadOperation, m365ComplianceConnector, microsoftGraphDataConnectOperation, microsoftPurview, filteringEmailContentFeatures, powerPagesSite, powerAppsResource, plannerPlan, plannerCopyPlan, plannerTask, plannerRoster, plannerPlanList, plannerTaskList, plannerTenantSettings, projectForTheWebProject, projectForTheWebTask, projectForTheWebRoadmap, projectForTheWebRoadmapItem, projectForTheWebProjectSettings, projectForTheWebRoadmapSettings, quarantineMetadata, microsoftTodoAudit, timeTravelFilteringDocMetadata, teamsQuarantineMetadata, sharePointAppPermissionOperation, microsoftTeamsSensitivityLabelAction, filteringTeamsMetadata, filteringTeamsUrlInfo, filteringTeamsPostDeliveryAction, mdcAssessments, mdcRegulatoryComplianceStandards, mdcRegulatoryComplianceControls, mdcRegulatoryComplianceAssessments, mdcSecurityConnectors, mdaDataSecuritySignal, vivaGoals, filteringRuntimeInfo, attackSimAdmin, microsoftGraphDataConnectConsent, filteringAtpDetonationInfo, privacyPortal, managedTenants, unifiedSimulationMatchedItem, unifiedSimulationSummary, updateQuarantineMetadata, ms365DSuppressionRule, purviewDataMapOperation, filteringUrlPostClickAction, irmUserDefinedDetectionSignal, teamsUpdates, plannerRosterSensitivityLabel, ms365DIncident, filteringDelistingMetadata, complianceDLPSharePointClassificationExtended, microsoftDefenderForIdentityAudit, supervisoryReviewDayXInsight, defenderExpertsforXDRAdmin, cdpEdgeBlockedMessage, hostedRpa, cdpContentExplorerAggregateRecord, cdpHygieneAttachmentInfo, cdpHygieneSummary, cdpPostMailDeliveryAction, cdpEmailFeatures, cdpHygieneUrlInfo, cdpUrlClick, cdpPackageManagerHygieneEvent, filteringDocScan, timeTravelFilteringDocScan, mapgOnboard, unknownFutureValue.
      */
     auditLogRecordType?: AuditLogRecordType;
     /**
-     * The clientIp property
+     * The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
      */
     clientIp?: string;
     /**
-     * The createdDateTime property
+     * The date and time in UTC when the user performed the activity.
      */
     createdDateTime?: Date;
     /**
-     * The objectId property
+     * For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.
      */
     objectId?: string;
     /**
-     * The operation property
+     * The name of the user or admin activity.
      */
     operation?: string;
     /**
-     * The organizationId property
+     * The GUID for your organization.
      */
     organizationId?: string;
     /**
-     * The service property
+     * The Microsoft 365 service where the activity occurred.
      */
     service?: string;
     /**
-     * The userId property
+     * The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the 'user' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.
      */
     userId?: string;
     /**
-     * The userPrincipalName property
+     * UPN of the user who performed the action.
      */
     userPrincipalName?: string;
     /**
-     * The userType property
+     * The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.
      */
     userType?: AuditLogUserType;
 }
@@ -1081,7 +1081,7 @@ export interface BlobEvidence extends AlertEvidence, Parsable {
 }
 export interface BlockFileResponseAction extends Parsable, ResponseAction {
     /**
-     * The deviceGroupNames property
+     * Device groups to which the actions set in the custom detection rule are applied. More information
      */
     deviceGroupNames?: string[];
     /**
@@ -1441,8 +1441,12 @@ export function createAlertEvidenceFromDiscriminatorValue(parseNode: ParseNode |
                     return deserializeIntoContainerRegistryEvidence;
                 case "#microsoft.graph.security.deviceEvidence":
                     return deserializeIntoDeviceEvidence;
+                case "#microsoft.graph.security.dnsEvidence":
+                    return deserializeIntoDnsEvidence;
                 case "#microsoft.graph.security.fileEvidence":
                     return deserializeIntoFileEvidence;
+                case "#microsoft.graph.security.fileHashEvidence":
+                    return deserializeIntoFileHashEvidence;
                 case "#microsoft.graph.security.gitHubOrganizationEvidence":
                     return deserializeIntoGitHubOrganizationEvidence;
                 case "#microsoft.graph.security.gitHubRepoEvidence":
@@ -2208,6 +2212,14 @@ export function createDispositionReviewStageFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a dnsEvidence
+ */
+export function createDnsEvidenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDnsEvidence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns a downgradeJustification
  */
 export function createDowngradeJustificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -2564,6 +2576,14 @@ export function createFileFromDiscriminatorValue(parseNode: ParseNode | undefine
         }
     }
     return deserializeIntoFile;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns a fileHashEvidence
+ */
+export function createFileHashEvidenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFileHashEvidence;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -5427,6 +5447,19 @@ export function deserializeIntoDispositionReviewStageCollectionResponse(disposit
  * The deserialization information for the current model
  * @returns a Record<string, (node: ParseNode) => void>
  */
+export function deserializeIntoDnsEvidence(dnsEvidence: Partial<DnsEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAlertEvidence(dnsEvidence),
+        "dnsServerIp": n => { dnsEvidence.dnsServerIp = n.getObjectValue<IpEvidence>(createIpEvidenceFromDiscriminatorValue); },
+        "domainName": n => { dnsEvidence.domainName = n.getStringValue(); },
+        "hostIpAddress": n => { dnsEvidence.hostIpAddress = n.getObjectValue<IpEvidence>(createIpEvidenceFromDiscriminatorValue); },
+        "ipAddresses": n => { dnsEvidence.ipAddresses = n.getCollectionOfObjectValues<IpEvidence>(createIpEvidenceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
 export function deserializeIntoDowngradeJustification(downgradeJustification: Partial<DowngradeJustification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { downgradeJustification.backingStoreEnabled = true; },
@@ -5958,6 +5991,17 @@ export function deserializeIntoFileHash(fileHash: Partial<FileHash> | undefined 
         "backingStoreEnabled": n => { fileHash.backingStoreEnabled = true; },
         "@odata.type": n => { fileHash.odataType = n.getStringValue(); },
         "value": n => { fileHash.value = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns a Record<string, (node: ParseNode) => void>
+ */
+export function deserializeIntoFileHashEvidence(fileHashEvidence: Partial<FileHashEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAlertEvidence(fileHashEvidence),
+        "algorithm": n => { fileHashEvidence.algorithm = n.getEnumValue<FileHashAlgorithm>(FileHashAlgorithmObject); },
+        "value": n => { fileHashEvidence.value = n.getStringValue(); },
     }
 }
 /**
@@ -8218,33 +8262,33 @@ export interface DetectionAction extends AdditionalDataHolder, BackedModel, Pars
      */
     odataType?: string;
     /**
-     * The organizationalScope property
+     * Groups to which the custom detection rule applies.
      */
     organizationalScope?: OrganizationalScope;
     /**
-     * The responseActions property
+     * Actions taken on impacted assets as set in the custom detection rule.
      */
     responseActions?: ResponseAction[];
 }
 export interface DetectionRule extends Parsable, ProtectionRule {
     /**
-     * The detectionAction property
+     * Complex type representing the actions taken when a detection is made by this rule.
      */
     detectionAction?: DetectionAction;
     /**
-     * The detectorId property
+     * The ID of the detector that triggered the alert. Also see the 'detectorId' field in microsoft.graph.security.alert.
      */
     detectorId?: string;
     /**
-     * The lastRunDetails property
+     * Complex type holding details about the last run of this rule.
      */
     lastRunDetails?: RunDetails;
     /**
-     * The queryCondition property
+     * Complex type holding data about the advanced hunting query of this rule.
      */
     queryCondition?: QueryCondition;
     /**
-     * The schedule property
+     * Complex type holding data about the triggering schedule of this rule.
      */
     schedule?: RuleSchedule;
 }
@@ -8442,6 +8486,24 @@ export interface DispositionReviewStageCollectionResponse extends BaseCollection
      * The value property
      */
     value?: DispositionReviewStage[];
+}
+export interface DnsEvidence extends AlertEvidence, Parsable {
+    /**
+     * The dnsServerIp property
+     */
+    dnsServerIp?: IpEvidence;
+    /**
+     * The domainName property
+     */
+    domainName?: string;
+    /**
+     * The hostIpAddress property
+     */
+    hostIpAddress?: IpEvidence;
+    /**
+     * The ipAddresses property
+     */
+    ipAddresses?: IpEvidence[];
 }
 export interface DowngradeJustification extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -9198,6 +9260,16 @@ export interface FileHash extends AdditionalDataHolder, BackedModel, Parsable {
     value?: string;
 }
 export type FileHashAlgorithm = (typeof FileHashAlgorithmObject)[keyof typeof FileHashAlgorithmObject];
+export interface FileHashEvidence extends AlertEvidence, Parsable {
+    /**
+     * The algorithm property
+     */
+    algorithm?: FileHashAlgorithm;
+    /**
+     * The value property
+     */
+    value?: string;
+}
 export interface FilePlanDescriptor extends Entity, Parsable {
     /**
      * Represents the file plan descriptor of type authority applied to a particular retention label.
@@ -10818,7 +10890,7 @@ export interface OrganizationalScope extends AdditionalDataHolder, BackedModel, 
      */
     odataType?: string;
     /**
-     * The scopeNames property
+     * List of groups to which the custom detection rule applies.
      */
     scopeNames?: string[];
     /**
@@ -10943,27 +11015,27 @@ export interface ProtectDoNotForwardAction extends InformationProtectionAction, 
 }
 export interface ProtectionRule extends Entity, Parsable {
     /**
-     * The createdBy property
+     * Name of the user or application that created the rule.
      */
     createdBy?: string;
     /**
-     * The createdDateTime property
+     * Timestamp of rule creation.
      */
     createdDateTime?: Date;
     /**
-     * The displayName property
+     * Name of the rule.
      */
     displayName?: string;
     /**
-     * The isEnabled property
+     * Whether rule is turned on for the tenant.
      */
     isEnabled?: boolean;
     /**
-     * The lastModifiedBy property
+     * Name of the user or application who last updated the rule.
      */
     lastModifiedBy?: string;
     /**
-     * The lastModifiedDateTime property
+     * Timestamp of when the rule was last updated.
      */
     lastModifiedDateTime?: Date;
 }
@@ -10980,7 +11052,7 @@ export interface QueryCondition extends AdditionalDataHolder, BackedModel, Parsa
      */
     backingStoreEnabled?: boolean;
     /**
-     * The lastModifiedDateTime property
+     * Timestamp of when the query in the custom detection rule was last updated.
      */
     lastModifiedDateTime?: Date;
     /**
@@ -10988,7 +11060,7 @@ export interface QueryCondition extends AdditionalDataHolder, BackedModel, Parsa
      */
     odataType?: string;
     /**
-     * The queryText property
+     * Contents of the query.
      */
     queryText?: string;
 }
@@ -11356,7 +11428,7 @@ export interface RuleSchedule extends AdditionalDataHolder, BackedModel, Parsabl
      */
     backingStoreEnabled?: boolean;
     /**
-     * The nextRunDateTime property
+     * Timestamp of the custom detection rule's next scheduled run.
      */
     nextRunDateTime?: Date;
     /**
@@ -11364,7 +11436,7 @@ export interface RuleSchedule extends AdditionalDataHolder, BackedModel, Parsabl
      */
     odataType?: string;
     /**
-     * The period property
+     * How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
      */
     period?: string;
 }
@@ -11384,15 +11456,15 @@ export interface RunDetails extends AdditionalDataHolder, BackedModel, Parsable 
      */
     backingStoreEnabled?: boolean;
     /**
-     * The errorCode property
+     * Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
      */
     errorCode?: HuntingRuleErrorCode;
     /**
-     * The failureReason property
+     * Reason for failure when the custom detection last ran and failed. See the table below.
      */
     failureReason?: string;
     /**
-     * The lastRunDateTime property
+     * Timestamp when the custom detection was last run.
      */
     lastRunDateTime?: Date;
     /**
@@ -11400,7 +11472,7 @@ export interface RunDetails extends AdditionalDataHolder, BackedModel, Parsable 
      */
     odataType?: string;
     /**
-     * The status property
+     * Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
      */
     status?: HuntingRuleRunStatus;
 }
@@ -12441,6 +12513,17 @@ export function serializeDispositionReviewStageCollectionResponse(writer: Serial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeDnsEvidence(writer: SerializationWriter, dnsEvidence: Partial<DnsEvidence> | undefined = {}) : void {
+    serializeAlertEvidence(writer, dnsEvidence)
+    writer.writeObjectValue<IpEvidence>("dnsServerIp", dnsEvidence.dnsServerIp, serializeIpEvidence);
+    writer.writeStringValue("domainName", dnsEvidence.domainName);
+    writer.writeObjectValue<IpEvidence>("hostIpAddress", dnsEvidence.hostIpAddress, serializeIpEvidence);
+    writer.writeCollectionOfObjectValues<IpEvidence>("ipAddresses", dnsEvidence.ipAddresses, serializeIpEvidence);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeDowngradeJustification(writer: SerializationWriter, downgradeJustification: Partial<DowngradeJustification> | undefined = {}) : void {
     writer.writeBooleanValue("isDowngradeJustified", downgradeJustification.isDowngradeJustified);
     writer.writeStringValue("justificationMessage", downgradeJustification.justificationMessage);
@@ -12887,6 +12970,15 @@ export function serializeFileHash(writer: SerializationWriter, fileHash: Partial
     writer.writeStringValue("@odata.type", fileHash.odataType);
     writer.writeStringValue("value", fileHash.value);
     writer.writeAdditionalData(fileHash.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeFileHashEvidence(writer: SerializationWriter, fileHashEvidence: Partial<FileHashEvidence> | undefined = {}) : void {
+    serializeAlertEvidence(writer, fileHashEvidence)
+    writer.writeEnumValue<FileHashAlgorithm>("algorithm", fileHashEvidence.algorithm);
+    writer.writeStringValue("value", fileHashEvidence.value);
 }
 /**
  * Serializes information the current object
@@ -15774,18 +15866,18 @@ export const ActionAfterRetentionPeriodObject = {
     StartDispositionReview: "startDispositionReview",
     Relabel: "relabel",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ActionSourceObject = {
     Manual: "manual",
     Automatic: "automatic",
     Recommended: "recommended",
     DefaultEscaped: "default",
-}  as const;
+} as const;
 export const AdditionalDataOptionsObject = {
     AllVersions: "allVersions",
     LinkedFiles: "linkedFiles",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AdditionalOptionsObject = {
     None: "none",
     TeamsAndYammerConversations: "teamsAndYammerConversations",
@@ -15794,14 +15886,14 @@ export const AdditionalOptionsObject = {
     SubfolderContents: "subfolderContents",
     ListAttachments: "listAttachments",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertClassificationObject = {
     Unknown: "unknown",
     FalsePositive: "falsePositive",
     TruePositive: "truePositive",
     InformationalExpectedActivity: "informationalExpectedActivity",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertDeterminationObject = {
     Unknown: "unknown",
     Apt: "apt",
@@ -15819,7 +15911,7 @@ export const AlertDeterminationObject = {
     ConfirmedActivity: "confirmedActivity",
     LineOfBusinessApplication: "lineOfBusinessApplication",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertSeverityObject = {
     Unknown: "unknown",
     Informational: "informational",
@@ -15827,26 +15919,26 @@ export const AlertSeverityObject = {
     Medium: "medium",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertStatusObject = {
     Unknown: "unknown",
     NewEscaped: "new",
     InProgress: "inProgress",
     Resolved: "resolved",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AntispamDirectionalityObject = {
     Unknown: "unknown",
     Inbound: "inbound",
     Outbound: "outbound",
     IntraOrg: "intraOrg",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AssignmentMethodObject = {
     Standard: "standard",
     Privileged: "privileged",
     Auto: "auto",
-}  as const;
+} as const;
 export const AuditLogQueryStatusObject = {
     NotStarted: "notStarted",
     Running: "running",
@@ -15854,7 +15946,7 @@ export const AuditLogQueryStatusObject = {
     Failed: "failed",
     Cancelled: "cancelled",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AuditLogRecordTypeObject = {
     ExchangeAdmin: "ExchangeAdmin",
     ExchangeItem: "ExchangeItem",
@@ -16109,7 +16201,7 @@ export const AuditLogRecordTypeObject = {
     M365DAAD: "M365DAAD",
     CdpColdCrawlStatus: "CdpColdCrawlStatus",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AuditLogUserTypeObject = {
     Regular: "Regular",
     Reserved: "Reserved",
@@ -16123,14 +16215,14 @@ export const AuditLogUserTypeObject = {
     PartnerTechnician: "PartnerTechnician",
     Guest: "Guest",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const BehaviorDuringRetentionPeriodObject = {
     DoNotRetain: "doNotRetain",
     Retain: "retain",
     RetainAsRecord: "retainAsRecord",
     RetainAsRegulatoryRecord: "retainAsRegulatoryRecord",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const CaseActionObject = {
     ContentExport: "contentExport",
     ApplyTags: "applyTags",
@@ -16143,7 +16235,7 @@ export const CaseActionObject = {
     PurgeData: "purgeData",
     ExportReport: "exportReport",
     ExportResult: "exportResult",
-}  as const;
+} as const;
 export const CaseOperationStatusObject = {
     NotStarted: "notStarted",
     SubmissionFailed: "submissionFailed",
@@ -16152,7 +16244,7 @@ export const CaseOperationStatusObject = {
     PartiallySucceeded: "partiallySucceeded",
     Failed: "failed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const CaseStatusObject = {
     Unknown: "unknown",
     Active: "active",
@@ -16161,39 +16253,39 @@ export const CaseStatusObject = {
     Closed: "closed",
     ClosedWithError: "closedWithError",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ChildSelectabilityObject = {
     One: "One",
     Many: "Many",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ContainerPortProtocolObject = {
     Udp: "udp",
     Tcp: "tcp",
     Sctp: "sctp",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ContentAlignmentObject = {
     Left: "left",
     Right: "right",
     Center: "center",
-}  as const;
+} as const;
 export const ContentFormatObject = {
     Text: "text",
     Html: "html",
     Markdown: "markdown",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ContentStateObject = {
     Rest: "rest",
     Motion: "motion",
     Use: "use",
-}  as const;
+} as const;
 export const DataSourceContainerStatusObject = {
     Active: "active",
     Released: "released",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DataSourceHoldStatusObject = {
     NotApplied: "notApplied",
     Applied: "applied",
@@ -16201,7 +16293,7 @@ export const DataSourceHoldStatusObject = {
     Removing: "removing",
     Partial: "partial",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DataSourceScopesObject = {
     None: "none",
     AllTenantMailboxes: "allTenantMailboxes",
@@ -16209,12 +16301,12 @@ export const DataSourceScopesObject = {
     AllCaseCustodians: "allCaseCustodians",
     AllCaseNoncustodialDataSources: "allCaseNoncustodialDataSources",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DefaultRecordBehaviorObject = {
     StartLocked: "startLocked",
     StartUnlocked: "startUnlocked",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DefenderAvStatusObject = {
     NotReporting: "notReporting",
     Disabled: "disabled",
@@ -16223,7 +16315,7 @@ export const DefenderAvStatusObject = {
     Unknown: "unknown",
     NotSupported: "notSupported",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeliveryActionObject = {
     Unknown: "unknown",
     DeliveredToJunk: "deliveredToJunk",
@@ -16231,7 +16323,7 @@ export const DeliveryActionObject = {
     Blocked: "blocked",
     Replaced: "replaced",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeliveryLocationObject = {
     Unknown: "unknown",
     Inbox_folder: "inbox_folder",
@@ -16243,7 +16335,7 @@ export const DeliveryLocationObject = {
     Dropped: "dropped",
     Others: "others",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DetectionSourceObject = {
     Unknown: "unknown",
     MicrosoftDefenderForEndpoint: "microsoftDefenderForEndpoint",
@@ -16280,13 +16372,13 @@ export const DetectionSourceObject = {
     MicrosoftDefenderThreatIntelligenceAnalytics: "microsoftDefenderThreatIntelligenceAnalytics",
     BuiltInMl: "builtInMl",
     MicrosoftSentinel: "microsoftSentinel",
-}  as const;
+} as const;
 export const DetectionStatusObject = {
     Detected: "detected",
     Blocked: "blocked",
     Prevented: "prevented",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceAssetIdentifierObject = {
     DeviceId: "deviceId",
     DeviceName: "deviceName",
@@ -16294,7 +16386,7 @@ export const DeviceAssetIdentifierObject = {
     TargetDeviceName: "targetDeviceName",
     DestinationDeviceName: "destinationDeviceName",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceHealthStatusObject = {
     Active: "active",
     Inactive: "inactive",
@@ -16303,11 +16395,11 @@ export const DeviceHealthStatusObject = {
     NoSensorDataImpairedCommunication: "noSensorDataImpairedCommunication",
     Unknown: "unknown",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceIdEntityIdentifierObject = {
     DeviceId: "deviceId",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeviceRiskScoreObject = {
     None: "none",
     Informational: "informational",
@@ -16315,33 +16407,33 @@ export const DeviceRiskScoreObject = {
     Medium: "medium",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DisableUserEntityIdentifierObject = {
     AccountSid: "accountSid",
     InitiatingProcessAccountSid: "initiatingProcessAccountSid",
     RequestAccountSid: "requestAccountSid",
     OnPremSid: "onPremSid",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const EmailEntityIdentifierObject = {
     NetworkMessageId: "networkMessageId",
     RecipientEmailAddress: "recipientEmailAddress",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const EventPropagationStatusObject = {
     None: "none",
     InProcessing: "inProcessing",
     Failed: "failed",
     Success: "success",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const EventStatusTypeObject = {
     Pending: "pending",
     ErrorEscaped: "error",
     Success: "success",
     NotAvaliable: "notAvaliable",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const EvidenceRemediationStatusObject = {
     None: "none",
     Remediated: "remediated",
@@ -16349,7 +16441,7 @@ export const EvidenceRemediationStatusObject = {
     Blocked: "blocked",
     NotFound: "notFound",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const EvidenceRoleObject = {
     Unknown: "unknown",
     Contextual: "contextual",
@@ -16367,36 +16459,36 @@ export const EvidenceRoleObject = {
     Suspicious: "suspicious",
     PolicyViolator: "policyViolator",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const EvidenceVerdictObject = {
     Unknown: "unknown",
     Suspicious: "suspicious",
     Malicious: "malicious",
     NoThreatsFound: "noThreatsFound",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExportCriteriaObject = {
     SearchHits: "searchHits",
     PartiallyIndexed: "partiallyIndexed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExportFileStructureObject = {
     None: "none",
     Directory: "directory",
     Pst: "pst",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExportFormatObject = {
     Pst: "pst",
     Msg: "msg",
     Eml: "eml",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExportLocationObject = {
     ResponsiveLocations: "responsiveLocations",
     NonresponsiveLocations: "nonresponsiveLocations",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExportOptionsObject = {
     OriginalFiles: "originalFiles",
     Text: "text",
@@ -16404,14 +16496,14 @@ export const ExportOptionsObject = {
     FileInfo: "fileInfo",
     Tags: "tags",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const FileEntityIdentifierObject = {
     Sha1: "sha1",
     InitiatingProcessSHA1: "initiatingProcessSHA1",
     Sha256: "sha256",
     InitiatingProcessSHA256: "initiatingProcessSHA256",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const FileHashAlgorithmObject = {
     Unknown: "unknown",
     Md5: "md5",
@@ -16419,7 +16511,7 @@ export const FileHashAlgorithmObject = {
     Sha256: "sha256",
     Sha256ac: "sha256ac",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const FileProcessingStatusObject = {
     Success: "success",
     InternalError: "internalError",
@@ -16440,46 +16532,46 @@ export const FileProcessingStatusObject = {
     OcrProcessingTimeout: "ocrProcessingTimeout",
     OcrFileSizeExceedsLimit: "ocrFileSizeExceedsLimit",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ForceUserPasswordResetEntityIdentifierObject = {
     AccountSid: "accountSid",
     InitiatingProcessAccountSid: "initiatingProcessAccountSid",
     RequestAccountSid: "requestAccountSid",
     OnPremSid: "onPremSid",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const GoogleCloudLocationTypeObject = {
     Unknown: "unknown",
     Regional: "regional",
     Zonal: "zonal",
     Global: "global",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const HostPortProtocolObject = {
     Tcp: "tcp",
     Udp: "udp",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const HostPortStatusObject = {
     Open: "open",
     Filtered: "filtered",
     Closed: "closed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const HostReputationClassificationObject = {
     Unknown: "unknown",
     Neutral: "neutral",
     Suspicious: "suspicious",
     Malicious: "malicious",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const HostReputationRuleSeverityObject = {
     Unknown: "unknown",
     Low: "low",
     Medium: "medium",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const HuntingRuleErrorCodeObject = {
     QueryExecutionFailed: "queryExecutionFailed",
     QueryExecutionThrottling: "queryExecutionThrottling",
@@ -16491,14 +16583,14 @@ export const HuntingRuleErrorCodeObject = {
     PartialRowsFailed: "partialRowsFailed",
     UnknownFutureValue: "unknownFutureValue",
     NoImpactedEntity: "noImpactedEntity",
-}  as const;
+} as const;
 export const HuntingRuleRunStatusObject = {
     Running: "running",
     Completed: "completed",
     Failed: "failed",
     PartiallyFailed: "partiallyFailed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IncidentStatusObject = {
     Active: "active",
     Resolved: "resolved",
@@ -16506,30 +16598,30 @@ export const IncidentStatusObject = {
     Redirected: "redirected",
     UnknownFutureValue: "unknownFutureValue",
     AwaitingAction: "awaitingAction",
-}  as const;
+} as const;
 export const IndicatorSourceObject = {
     Microsoft: "microsoft",
     Osint: "osint",
     Public: "public",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IntelligenceProfileKindObject = {
     Actor: "actor",
     Tool: "tool",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IoTDeviceImportanceTypeObject = {
     Unknown: "unknown",
     Low: "low",
     Normal: "normal",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const IsolationTypeObject = {
     Full: "full",
     Selective: "selective",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const KubernetesPlatformObject = {
     Unknown: "unknown",
     Aks: "aks",
@@ -16537,7 +16629,7 @@ export const KubernetesPlatformObject = {
     Gke: "gke",
     Arc: "arc",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const KubernetesServiceTypeObject = {
     Unknown: "unknown",
     ClusterIP: "clusterIP",
@@ -16545,7 +16637,7 @@ export const KubernetesServiceTypeObject = {
     NodePort: "nodePort",
     LoadBalancer: "loadBalancer",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const LongRunningOperationStatusObject = {
     NotStarted: "notStarted",
     Running: "running",
@@ -16553,7 +16645,7 @@ export const LongRunningOperationStatusObject = {
     Failed: "failed",
     Skipped: "skipped",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const MailboxAssetIdentifierObject = {
     AccountUpn: "accountUpn",
     FileOwnerUpn: "fileOwnerUpn",
@@ -16565,47 +16657,47 @@ export const MailboxAssetIdentifierObject = {
     RecipientEmailAddress: "recipientEmailAddress",
     SenderMailFromAddress: "senderMailFromAddress",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const MarkUserAsCompromisedEntityIdentifierObject = {
     AccountObjectId: "accountObjectId",
     InitiatingProcessAccountObjectId: "initiatingProcessAccountObjectId",
     ServicePrincipalId: "servicePrincipalId",
     RecipientObjectId: "recipientObjectId",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const OnboardingStatusObject = {
     InsufficientInfo: "insufficientInfo",
     Onboarded: "onboarded",
     CanBeOnboarded: "canBeOnboarded",
     Unsupported: "unsupported",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const PolicyStatusObject = {
     Pending: "pending",
     ErrorEscaped: "error",
     Success: "success",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ProtocolTypeObject = {
     Tcp: "tcp",
     Udp: "udp",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const PurgeAreasObject = {
     Mailboxes: "mailboxes",
     TeamsMessages: "teamsMessages",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const PurgeTypeObject = {
     Recoverable: "recoverable",
     PermanentlyDeleted: "permanentlyDeleted",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const QueryTypeObject = {
     Files: "files",
     Messages: "messages",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RemediationActionObject = {
     MoveToJunk: "moveToJunk",
     MoveToInbox: "moveToInbox",
@@ -16613,31 +16705,31 @@ export const RemediationActionObject = {
     SoftDelete: "softDelete",
     MoveToDeletedItems: "moveToDeletedItems",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RemediationSeverityObject = {
     Low: "low",
     Medium: "medium",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RetentionTriggerObject = {
     DateLabeled: "dateLabeled",
     DateCreated: "dateCreated",
     DateModified: "dateModified",
     DateOfEvent: "dateOfEvent",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ScopeTypeObject = {
     DeviceGroup: "deviceGroup",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ServicePrincipalTypeObject = {
     Unknown: "unknown",
     Application: "application",
     ManagedIdentity: "managedIdentity",
     Legacy: "legacy",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ServiceSourceObject = {
     Unknown: "unknown",
     MicrosoftDefenderForEndpoint: "microsoftDefenderForEndpoint",
@@ -16651,37 +16743,37 @@ export const ServiceSourceObject = {
     UnknownFutureValue: "unknownFutureValue",
     MicrosoftDefenderForCloud: "microsoftDefenderForCloud",
     MicrosoftSentinel: "microsoftSentinel",
-}  as const;
+} as const;
 export const SourceTypeObject = {
     Mailbox: "mailbox",
     Site: "site",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const StopAndQuarantineFileEntityIdentifierObject = {
     DeviceId: "deviceId",
     Sha1: "sha1",
     InitiatingProcessSHA1: "initiatingProcessSHA1",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const SubmissionCategoryObject = {
     NotJunk: "notJunk",
     Spam: "spam",
     Phishing: "phishing",
     Malware: "malware",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const SubmissionClientSourceObject = {
     Microsoft: "microsoft",
     Other: "other",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const SubmissionContentTypeObject = {
     Email: "email",
     Url: "url",
     File: "file",
     App: "app",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const SubmissionResultCategoryObject = {
     NotJunk: "notJunk",
     Spam: "spam",
@@ -16693,7 +16785,7 @@ export const SubmissionResultCategoryObject = {
     Unknown: "unknown",
     NoResultAvailable: "noResultAvailable",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const SubmissionResultDetailObject = {
     None: "none",
     UnderInvestigation: "underInvestigation",
@@ -16749,24 +16841,24 @@ export const SubmissionResultDetailObject = {
     BadReclassifiedAsBad: "badReclassifiedAsBad",
     BadReclassifiedAsCannotMakeDecision: "badReclassifiedAsCannotMakeDecision",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const SubmissionSourceObject = {
     User: "user",
     Administrator: "administrator",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantAllowBlockListActionObject = {
     Allow: "allow",
     Block: "block",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantAllowBlockListEntryTypeObject = {
     Url: "url",
     FileHash: "fileHash",
     Sender: "sender",
     Recipient: "recipient",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ThreatTypeObject = {
     Unknown: "unknown",
     Spam: "spam",
@@ -16774,7 +16866,7 @@ export const ThreatTypeObject = {
     Phishing: "phishing",
     None: "none",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UserAssetIdentifierObject = {
     AccountObjectId: "accountObjectId",
     AccountSid: "accountSid",
@@ -16795,7 +16887,7 @@ export const UserAssetIdentifierObject = {
     ServicePrincipalName: "servicePrincipalName",
     TargetAccountUpn: "targetAccountUpn",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UserMailboxSettingObject = {
     None: "none",
     JunkMailDeletion: "junkMailDeletion",
@@ -16816,12 +16908,12 @@ export const UserMailboxSettingObject = {
     SenderAuthenticationSucceeded: "senderAuthenticationSucceeded",
     IsJunkMailRuleEnabled: "isJunkMailRuleEnabled",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const VmCloudProviderObject = {
     Unknown: "unknown",
     Azure: "azure",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const VulnerabilitySeverityObject = {
     None: "none",
     Low: "low",
@@ -16829,10 +16921,10 @@ export const VulnerabilitySeverityObject = {
     High: "high",
     Critical: "critical",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WatermarkLayoutObject = {
     Horizontal: "horizontal",
     Diagonal: "diagonal",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

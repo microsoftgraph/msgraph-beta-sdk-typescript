@@ -1981,7 +1981,7 @@ export const AdditionalDataOptionsObject = {
     AllVersions: "allVersions",
     LinkedFiles: "linkedFiles",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const CaseActionObject = {
     ContentExport: "contentExport",
     ApplyTags: "applyTags",
@@ -1992,7 +1992,7 @@ export const CaseActionObject = {
     HoldUpdate: "holdUpdate",
     UnknownFutureValue: "unknownFutureValue",
     PurgeData: "purgeData",
-}  as const;
+} as const;
 export const CaseOperationStatusObject = {
     NotStarted: "notStarted",
     SubmissionFailed: "submissionFailed",
@@ -2000,7 +2000,7 @@ export const CaseOperationStatusObject = {
     Succeeded: "succeeded",
     PartiallySucceeded: "partiallySucceeded",
     Failed: "failed",
-}  as const;
+} as const;
 export const CaseStatusObject = {
     Unknown: "unknown",
     Active: "active",
@@ -2008,16 +2008,16 @@ export const CaseStatusObject = {
     Closing: "closing",
     Closed: "closed",
     ClosedWithError: "closedWithError",
-}  as const;
+} as const;
 export const ChildSelectabilityObject = {
     One: "One",
     Many: "Many",
-}  as const;
+} as const;
 export const DataSourceContainerStatusObject = {
     Active: "Active",
     Released: "Released",
     UnknownFutureValue: "UnknownFutureValue",
-}  as const;
+} as const;
 export const DataSourceHoldStatusObject = {
     NotApplied: "notApplied",
     Applied: "applied",
@@ -2025,7 +2025,7 @@ export const DataSourceHoldStatusObject = {
     Removing: "removing",
     Partial: "partial",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DataSourceScopesObject = {
     None: "none",
     AllTenantMailboxes: "allTenantMailboxes",
@@ -2033,13 +2033,13 @@ export const DataSourceScopesObject = {
     AllCaseCustodians: "allCaseCustodians",
     AllCaseNoncustodialDataSources: "allCaseNoncustodialDataSources",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExportFileStructureObject = {
     None: "none",
     Directory: "directory",
     Pst: "pst",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ExportOptionsObject = {
     OriginalFiles: "originalFiles",
     Text: "text",
@@ -2047,16 +2047,16 @@ export const ExportOptionsObject = {
     FileInfo: "fileInfo",
     Tags: "tags",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const LegalHoldStatusObject = {
     Pending: "Pending",
     ErrorEscaped: "Error",
     Success: "Success",
     UnknownFutureValue: "UnknownFutureValue",
-}  as const;
+} as const;
 export const SourceTypeObject = {
     Mailbox: "mailbox",
     Site: "site",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

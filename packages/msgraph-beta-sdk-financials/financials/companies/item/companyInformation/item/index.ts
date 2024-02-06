@@ -100,6 +100,6 @@ export const CompanyInformationItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const CompanyInformationItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/companyInformation/{companyInformation%2Did}{?%24select,%24expand}";
+export const CompanyInformationItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/companyInformation/{companyInformation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -119,6 +119,6 @@ export const UserExperienceAnalyticsDeviceScopeRequestBuilderRequestsMetadata: R
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsDeviceScopeRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceScope{?%24select,%24expand}";
+export const UserExperienceAnalyticsDeviceScopeRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceScope{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

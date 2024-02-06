@@ -107,6 +107,6 @@ export const DepartmentTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const DepartmentTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}{?%24select,%24expand}";
+export const DepartmentTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

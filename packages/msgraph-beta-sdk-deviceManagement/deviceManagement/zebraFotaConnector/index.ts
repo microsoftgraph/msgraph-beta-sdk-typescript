@@ -146,6 +146,6 @@ export const ZebraFotaConnectorRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const ZebraFotaConnectorRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector{?%24select,%24expand}";
+export const ZebraFotaConnectorRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

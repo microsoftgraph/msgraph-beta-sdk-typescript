@@ -120,6 +120,6 @@ export const DeletedChatItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const DeletedChatItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/deletedChats/{deletedChat%2Did}{?%24select,%24expand}";
+export const DeletedChatItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/deletedChats/{deletedChat%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

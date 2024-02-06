@@ -107,6 +107,6 @@ export const AssignedToTaskBoardFormatRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const AssignedToTaskBoardFormatRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/tasks/{businessScenarioTask%2Did}/assignedToTaskBoardFormat{?%24select,%24expand}";
+export const AssignedToTaskBoardFormatRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/tasks/{businessScenarioTask%2Did}/assignedToTaskBoardFormat{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

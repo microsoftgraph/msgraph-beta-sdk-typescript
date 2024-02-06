@@ -121,6 +121,6 @@ export const MeetingAttendanceReportRequestBuilderRequestsMetadata: RequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const MeetingAttendanceReportRequestBuilderUriTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport{?%24select,%24expand}";
+export const MeetingAttendanceReportRequestBuilderUriTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

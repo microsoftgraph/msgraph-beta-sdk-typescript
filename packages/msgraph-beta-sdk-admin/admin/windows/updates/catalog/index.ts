@@ -120,6 +120,6 @@ export const CatalogRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CatalogRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/catalog{?%24select,%24expand}";
+export const CatalogRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/catalog{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

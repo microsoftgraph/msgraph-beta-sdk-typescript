@@ -106,6 +106,6 @@ export const PermissionsRequestChangeItemRequestBuilderRequestsMetadata: Request
 /**
  * Uri template for the request builder.
  */
-export const PermissionsRequestChangeItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsManagement/permissionsRequestChanges/{permissionsRequestChange%2Did}{?%24select,%24expand}";
+export const PermissionsRequestChangeItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsManagement/permissionsRequestChanges/{permissionsRequestChange%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

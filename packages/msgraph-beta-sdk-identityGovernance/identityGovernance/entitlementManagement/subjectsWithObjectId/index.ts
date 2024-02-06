@@ -105,6 +105,6 @@ export const SubjectsWithObjectIdRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const SubjectsWithObjectIdRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/subjects(objectId='{objectId}'){?%24select,%24expand}";
+export const SubjectsWithObjectIdRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/subjects(objectId='{objectId}'){?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

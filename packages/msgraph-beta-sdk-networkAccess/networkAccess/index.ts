@@ -189,6 +189,6 @@ export const NetworkAccessRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const NetworkAccessRequestBuilderUriTemplate = "{+baseurl}/networkAccess{?%24select,%24expand}";
+export const NetworkAccessRequestBuilderUriTemplate = "{+baseurl}/networkAccess{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

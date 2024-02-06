@@ -119,6 +119,6 @@ export const UnbilledRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const UnbilledRequestBuilderUriTemplate = "{+baseurl}/reports/partners/billing/usage/unbilled{?%24select,%24expand}";
+export const UnbilledRequestBuilderUriTemplate = "{+baseurl}/reports/partners/billing/usage/unbilled{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

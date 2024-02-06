@@ -107,6 +107,6 @@ export const InstallationOptionsRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const InstallationOptionsRequestBuilderUriTemplate = "{+baseurl}/admin/microsoft365Apps/installationOptions{?%24select,%24expand}";
+export const InstallationOptionsRequestBuilderUriTemplate = "{+baseurl}/admin/microsoft365Apps/installationOptions{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

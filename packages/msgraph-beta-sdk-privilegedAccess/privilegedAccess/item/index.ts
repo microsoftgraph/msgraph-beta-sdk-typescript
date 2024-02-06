@@ -160,6 +160,6 @@ export const PrivilegedAccessItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const PrivilegedAccessItemRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}{?%24select,%24expand}";
+export const PrivilegedAccessItemRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

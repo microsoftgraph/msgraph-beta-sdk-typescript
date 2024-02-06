@@ -105,6 +105,6 @@ export const UserPFXCertificateItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const UserPFXCertificateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userPfxCertificates/{userPFXCertificate%2Did}{?%24select,%24expand}";
+export const UserPFXCertificateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userPfxCertificates/{userPFXCertificate%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

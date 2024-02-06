@@ -147,6 +147,6 @@ export const VendorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const VendorItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/vendors/{vendor%2Did}{?%24select,%24expand}";
+export const VendorItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/vendors/{vendor%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

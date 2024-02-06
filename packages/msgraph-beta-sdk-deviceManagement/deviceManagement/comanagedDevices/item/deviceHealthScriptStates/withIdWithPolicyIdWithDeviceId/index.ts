@@ -105,6 +105,6 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
 /**
  * Uri template for the request builder.
  */
-export const WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24select,%24expand}";
+export const WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

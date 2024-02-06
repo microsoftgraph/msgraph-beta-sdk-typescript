@@ -105,6 +105,6 @@ export const WindowsQualityUpdateProfileAssignmentItemRequestBuilderRequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const WindowsQualityUpdateProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile%2Did}/assignments/{windowsQualityUpdateProfileAssignment%2Did}{?%24select,%24expand}";
+export const WindowsQualityUpdateProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile%2Did}/assignments/{windowsQualityUpdateProfileAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

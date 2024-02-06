@@ -105,6 +105,6 @@ export const ActivityStatisticsItemRequestBuilderRequestsMetadata: RequestsMetad
 /**
  * Uri template for the request builder.
  */
-export const ActivityStatisticsItemRequestBuilderUriTemplate = "{+baseurl}/activitystatistics/{activityStatistics%2Did}{?%24select,%24expand}";
+export const ActivityStatisticsItemRequestBuilderUriTemplate = "{+baseurl}/activitystatistics/{activityStatistics%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

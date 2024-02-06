@@ -106,6 +106,6 @@ export const TenantGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TenantGroupItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantGroups/{tenantGroup%2Did}{?%24select,%24expand}";
+export const TenantGroupItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantGroups/{tenantGroup%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

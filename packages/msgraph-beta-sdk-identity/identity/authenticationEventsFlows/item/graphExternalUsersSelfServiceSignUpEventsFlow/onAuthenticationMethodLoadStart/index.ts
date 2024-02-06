@@ -75,6 +75,6 @@ export const OnAuthenticationMethodLoadStartRequestBuilderRequestsMetadata: Requ
 /**
  * Uri template for the request builder.
  */
-export const OnAuthenticationMethodLoadStartRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart{?%24select,%24expand}";
+export const OnAuthenticationMethodLoadStartRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

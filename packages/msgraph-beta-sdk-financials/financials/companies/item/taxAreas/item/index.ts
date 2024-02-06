@@ -105,6 +105,6 @@ export const TaxAreaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TaxAreaItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/taxAreas/{taxArea%2Did}{?%24select,%24expand}";
+export const TaxAreaItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/taxAreas/{taxArea%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

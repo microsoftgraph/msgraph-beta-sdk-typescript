@@ -105,6 +105,6 @@ export const PartnerInformationRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const PartnerInformationRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/partnerInformation{?%24select,%24expand}";
+export const PartnerInformationRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/partnerInformation{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

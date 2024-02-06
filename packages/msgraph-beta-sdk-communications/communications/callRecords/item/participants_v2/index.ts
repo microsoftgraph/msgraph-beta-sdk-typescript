@@ -22,10 +22,10 @@ export interface Participants_v2RequestBuilder extends BaseRequestBuilder<Partic
      */
      byParticipantId(participantId: string) : ParticipantItemRequestBuilder;
     /**
-     * Get the list of participants associated with a callRecord.
+     * Get the list of participant objects associated with a callRecord.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of ParticipantCollectionResponse
-     * @see {@link https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants_v2?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<Participants_v2RequestBuilderGetQueryParameters> | undefined) : Promise<ParticipantCollectionResponse | undefined>;
     /**
@@ -36,7 +36,7 @@ export interface Participants_v2RequestBuilder extends BaseRequestBuilder<Partic
      */
      post(body: Participant, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Participant | undefined>;
     /**
-     * Get the list of participants associated with a callRecord.
+     * Get the list of participant objects associated with a callRecord.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -50,7 +50,7 @@ export interface Participants_v2RequestBuilder extends BaseRequestBuilder<Partic
      toPostRequestInformation(body: Participant, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the list of participants associated with a callRecord.
+ * Get the list of participant objects associated with a callRecord.
  */
 export interface Participants_v2RequestBuilderGetQueryParameters {
     /**
@@ -143,6 +143,6 @@ export const Participants_v2RequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const Participants_v2RequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+export const Participants_v2RequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

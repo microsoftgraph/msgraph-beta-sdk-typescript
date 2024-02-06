@@ -122,6 +122,6 @@ export const CategoryTemplateItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const CategoryTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}{?%24select,%24expand}";
+export const CategoryTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

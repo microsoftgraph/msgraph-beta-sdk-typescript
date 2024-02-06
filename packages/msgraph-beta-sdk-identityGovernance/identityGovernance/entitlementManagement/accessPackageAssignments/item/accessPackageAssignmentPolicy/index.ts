@@ -158,6 +158,6 @@ export const AccessPackageAssignmentPolicyRequestBuilderRequestsMetadata: Reques
 /**
  * Uri template for the request builder.
  */
-export const AccessPackageAssignmentPolicyRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentPolicy{?%24select,%24expand}";
+export const AccessPackageAssignmentPolicyRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentPolicy{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

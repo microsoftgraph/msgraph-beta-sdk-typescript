@@ -107,6 +107,6 @@ export const FilePlanReferenceTemplateItemRequestBuilderRequestsMetadata: Reques
 /**
  * Uri template for the request builder.
  */
-export const FilePlanReferenceTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/filePlanReferences/{filePlanReferenceTemplate%2Did}{?%24select,%24expand}";
+export const FilePlanReferenceTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/filePlanReferences/{filePlanReferenceTemplate%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

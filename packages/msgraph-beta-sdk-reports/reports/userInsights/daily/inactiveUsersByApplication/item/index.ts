@@ -60,6 +60,6 @@ export const DailyInactiveUsersByApplicationMetricItemRequestBuilderRequestsMeta
 /**
  * Uri template for the request builder.
  */
-export const DailyInactiveUsersByApplicationMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/inactiveUsersByApplication/{dailyInactiveUsersByApplicationMetric%2Did}{?%24select,%24expand}";
+export const DailyInactiveUsersByApplicationMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/inactiveUsersByApplication/{dailyInactiveUsersByApplicationMetric%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -60,6 +60,6 @@ export const ActiveUsersMetricItemRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const ActiveUsersMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/activeUsers/{activeUsersMetric%2Did}{?%24select,%24expand}";
+export const ActiveUsersMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/activeUsers/{activeUsersMetric%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

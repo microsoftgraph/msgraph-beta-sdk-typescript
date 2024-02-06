@@ -59,6 +59,6 @@ export const CountRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CountRequestBuilderUriTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/myDecisions/$count{?%24search,%24filter}";
+export const CountRequestBuilderUriTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/myDecisions/$count{?%24filter,%24search}";
 /* tslint:enable */
 /* eslint-enable */

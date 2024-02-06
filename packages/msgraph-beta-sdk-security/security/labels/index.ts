@@ -170,6 +170,6 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const LabelsRequestBuilderUriTemplate = "{+baseurl}/security/labels{?%24select,%24expand}";
+export const LabelsRequestBuilderUriTemplate = "{+baseurl}/security/labels{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

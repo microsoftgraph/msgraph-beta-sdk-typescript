@@ -14,6 +14,7 @@ import { AccessPackageResourceRequestsRequestBuilderNavigationMetadata, AccessPa
 import { AccessPackageResourceRoleScopesRequestBuilderNavigationMetadata, AccessPackageResourceRoleScopesRequestBuilderRequestsMetadata, AccessPackageResourceRoleScopesRequestBuilderUriTemplate, type AccessPackageResourceRoleScopesRequestBuilder } from './accessPackageResourceRoleScopes/';
 import { AccessPackageResourcesRequestBuilderNavigationMetadata, AccessPackageResourcesRequestBuilderRequestsMetadata, AccessPackageResourcesRequestBuilderUriTemplate, type AccessPackageResourcesRequestBuilder } from './accessPackageResources/';
 import { AccessPackagesRequestBuilderNavigationMetadata, AccessPackagesRequestBuilderRequestsMetadata, AccessPackagesRequestBuilderUriTemplate, type AccessPackagesRequestBuilder } from './accessPackages/';
+import { AssignmentRequestsRequestBuilderNavigationMetadata, AssignmentRequestsRequestBuilderRequestsMetadata, AssignmentRequestsRequestBuilderUriTemplate, type AssignmentRequestsRequestBuilder } from './assignmentRequests/';
 import { ConnectedOrganizationsRequestBuilderNavigationMetadata, ConnectedOrganizationsRequestBuilderRequestsMetadata, ConnectedOrganizationsRequestBuilderUriTemplate, type ConnectedOrganizationsRequestBuilder } from './connectedOrganizations/';
 import { SettingsRequestBuilderRequestsMetadata, SettingsRequestBuilderUriTemplate, type SettingsRequestBuilder } from './settings/';
 import { SubjectsRequestBuilderNavigationMetadata, SubjectsRequestBuilderRequestsMetadata, SubjectsRequestBuilderUriTemplate, type SubjectsRequestBuilder } from './subjects/';
@@ -68,6 +69,10 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
      */
     get accessPackages(): AccessPackagesRequestBuilder;
+    /**
+     * Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+     */
+    get assignmentRequests(): AssignmentRequestsRequestBuilder;
     /**
      * Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
      */
@@ -207,6 +212,11 @@ export const EntitlementManagementRequestBuilderNavigationMetadata: Record<Exclu
         requestsMetadata: AccessPackagesRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackagesRequestBuilderNavigationMetadata,
     },
+    assignmentRequests: {
+        uriTemplate: AssignmentRequestsRequestBuilderUriTemplate,
+        requestsMetadata: AssignmentRequestsRequestBuilderRequestsMetadata,
+        navigationMetadata: AssignmentRequestsRequestBuilderNavigationMetadata,
+    },
     connectedOrganizations: {
         uriTemplate: ConnectedOrganizationsRequestBuilderUriTemplate,
         requestsMetadata: ConnectedOrganizationsRequestBuilderRequestsMetadata,
@@ -260,6 +270,6 @@ export const EntitlementManagementRequestBuilderRequestsMetadata: RequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const EntitlementManagementRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement{?%24select,%24expand}";
+export const EntitlementManagementRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

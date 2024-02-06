@@ -1657,6 +1657,6 @@ export const ReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ReportsRequestBuilderUriTemplate = "{+baseurl}/reports{?%24select,%24expand}";
+export const ReportsRequestBuilderUriTemplate = "{+baseurl}/reports{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

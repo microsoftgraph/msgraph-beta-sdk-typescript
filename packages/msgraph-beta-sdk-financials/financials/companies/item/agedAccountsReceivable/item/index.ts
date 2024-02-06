@@ -60,6 +60,6 @@ export const AgedAccountsReceivableItemRequestBuilderRequestsMetadata: RequestsM
 /**
  * Uri template for the request builder.
  */
-export const AgedAccountsReceivableItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/agedAccountsReceivable/{agedAccountsReceivable%2Did}{?%24select,%24expand}";
+export const AgedAccountsReceivableItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/agedAccountsReceivable/{agedAccountsReceivable%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -105,6 +105,6 @@ export const DevicesWithDeviceIdRequestBuilderRequestsMetadata: RequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const DevicesWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}'){?%24select,%24expand}";
+export const DevicesWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}'){?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

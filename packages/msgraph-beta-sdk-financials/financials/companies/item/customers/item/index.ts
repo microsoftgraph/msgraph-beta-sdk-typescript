@@ -156,6 +156,6 @@ export const CustomerItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CustomerItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}{?%24select,%24expand}";
+export const CustomerItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

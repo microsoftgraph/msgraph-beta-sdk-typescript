@@ -105,6 +105,6 @@ export const AppPerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const AppPerformanceItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/appPerformances/{appPerformance%2Did}{?%24select,%24expand}";
+export const AppPerformanceItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/appPerformances/{appPerformance%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

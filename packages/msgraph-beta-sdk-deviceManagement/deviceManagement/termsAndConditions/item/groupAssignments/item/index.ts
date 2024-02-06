@@ -119,6 +119,6 @@ export const TermsAndConditionsGroupAssignmentItemRequestBuilderRequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const TermsAndConditionsGroupAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/termsAndConditions/{termsAndConditions%2Did}/groupAssignments/{termsAndConditionsGroupAssignment%2Did}{?%24select,%24expand}";
+export const TermsAndConditionsGroupAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/termsAndConditions/{termsAndConditions%2Did}/groupAssignments/{termsAndConditionsGroupAssignment%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

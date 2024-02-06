@@ -105,6 +105,6 @@ export const EnterpriseCodeSigningCertificateItemRequestBuilderRequestsMetadata:
 /**
  * Uri template for the request builder.
  */
-export const EnterpriseCodeSigningCertificateItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/enterpriseCodeSigningCertificates/{enterpriseCodeSigningCertificate%2Did}{?%24select,%24expand}";
+export const EnterpriseCodeSigningCertificateItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/enterpriseCodeSigningCertificates/{enterpriseCodeSigningCertificate%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

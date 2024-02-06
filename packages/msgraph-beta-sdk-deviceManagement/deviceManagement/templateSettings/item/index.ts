@@ -120,6 +120,6 @@ export const DeviceManagementConfigurationSettingTemplateItemRequestBuilderReque
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementConfigurationSettingTemplateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templateSettings/{deviceManagementConfigurationSettingTemplate%2Did}{?%24select,%24expand}";
+export const DeviceManagementConfigurationSettingTemplateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templateSettings/{deviceManagementConfigurationSettingTemplate%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

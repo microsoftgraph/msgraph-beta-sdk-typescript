@@ -1730,7 +1730,7 @@ export interface ExpediteSettings extends AdditionalDataHolder, BackedModel, Par
      */
     isExpedited?: boolean;
     /**
-     * The isReadinessTest property
+     * True indicates that the deployment is an expedite readiness test.
      */
     isReadinessTest?: boolean;
     /**
@@ -2625,7 +2625,7 @@ export interface UserExperienceSettings extends AdditionalDataHolder, BackedMode
      */
     odataType?: string;
     /**
-     * The offerAsOptional property
+     * Specifies whether the update is offered as Optional rather than Required.
      */
     offerAsOptional?: boolean;
 }
@@ -2637,13 +2637,13 @@ export const AzureADDeviceRegistrationErrorReasonObject = {
     MissingTrustType: "missingTrustType",
     InvalidAzureADJoin: "invalidAzureADJoin",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const CveSeverityLevelObject = {
     Critical: "critical",
     Important: "important",
     Moderate: "moderate",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DeploymentStateReasonValueObject = {
     ScheduledByOfferWindow: "scheduledByOfferWindow",
     OfferingByRequest: "offeringByRequest",
@@ -2651,7 +2651,7 @@ export const DeploymentStateReasonValueObject = {
     PausedByMonitoring: "pausedByMonitoring",
     UnknownFutureValue: "unknownFutureValue",
     FaultedByContentOutdated: "faultedByContentOutdated",
-}  as const;
+} as const;
 export const DeploymentStateValueObject = {
     Scheduled: "scheduled",
     Offering: "offering",
@@ -2659,50 +2659,50 @@ export const DeploymentStateValueObject = {
     Faulted: "faulted",
     Archived: "archived",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const MonitoringActionObject = {
     AlertError: "alertError",
     OfferFallback: "offerFallback",
     PauseDeployment: "pauseDeployment",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const MonitoringSignalObject = {
     Rollback: "rollback",
     Ineligible: "ineligible",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const QualityUpdateCadenceObject = {
     Monthly: "monthly",
     OutOfBand: "outOfBand",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const QualityUpdateClassificationObject = {
     All: "all",
     Security: "security",
     NonSecurity: "nonSecurity",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RequestedDeploymentStateValueObject = {
     None: "none",
     Paused: "paused",
     Archived: "archived",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ResourceConnectionStateObject = {
     Connected: "connected",
     NotAuthorized: "notAuthorized",
     NotFound: "notFound",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const SafeguardCategoryObject = {
     LikelyIssues: "likelyIssues",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const UpdateCategoryObject = {
     Feature: "feature",
     Quality: "quality",
     UnknownFutureValue: "unknownFutureValue",
     Driver: "driver",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

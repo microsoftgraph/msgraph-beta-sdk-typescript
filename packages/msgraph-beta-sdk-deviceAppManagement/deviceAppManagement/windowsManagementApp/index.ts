@@ -60,6 +60,6 @@ export const WindowsManagementAppRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const WindowsManagementAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsManagementApp{?%24select,%24expand}";
+export const WindowsManagementAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsManagementApp{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

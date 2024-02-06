@@ -106,6 +106,6 @@ export const EmailThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const EmailThreatSubmissionItemRequestBuilderUriTemplate = "{+baseurl}/threatSubmission/emailThreats/{emailThreatSubmission%2Did}{?%24select,%24expand}";
+export const EmailThreatSubmissionItemRequestBuilderUriTemplate = "{+baseurl}/threatSubmission/emailThreats/{emailThreatSubmission%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -137,6 +137,6 @@ export const RelationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const RelationItemRequestBuilderUriTemplate = "{+baseurl}/termStore/sets/{set%2Did}/relations/{relation%2Did}{?%24select,%24expand}";
+export const RelationItemRequestBuilderUriTemplate = "{+baseurl}/termStore/sets/{set%2Did}/relations/{relation%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

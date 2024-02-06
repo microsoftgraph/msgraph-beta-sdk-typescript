@@ -95,6 +95,6 @@ export const GraphWinGetAppRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const GraphWinGetAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24select,%24expand}";
+export const GraphWinGetAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

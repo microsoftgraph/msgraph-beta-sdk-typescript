@@ -105,6 +105,6 @@ export const UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderReq
 /**
  * Uri template for the request builder.
  */
-export const UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice%2Did}{?%24select,%24expand}";
+export const UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

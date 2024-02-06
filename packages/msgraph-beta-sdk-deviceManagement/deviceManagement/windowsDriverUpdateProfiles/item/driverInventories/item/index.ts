@@ -105,6 +105,6 @@ export const WindowsDriverUpdateInventoryItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/driverInventories/{windowsDriverUpdateInventory%2Did}{?%24select,%24expand}";
+export const WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/driverInventories/{windowsDriverUpdateInventory%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

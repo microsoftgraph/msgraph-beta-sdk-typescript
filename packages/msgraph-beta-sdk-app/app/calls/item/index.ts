@@ -294,6 +294,6 @@ export const CallItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CallItemRequestBuilderUriTemplate = "{+baseurl}/app/calls/{call%2Did}{?%24select,%24expand}";
+export const CallItemRequestBuilderUriTemplate = "{+baseurl}/app/calls/{call%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

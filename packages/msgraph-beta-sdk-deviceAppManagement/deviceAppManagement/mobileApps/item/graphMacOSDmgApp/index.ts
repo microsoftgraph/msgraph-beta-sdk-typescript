@@ -105,6 +105,6 @@ export const GraphMacOSDmgAppRequestBuilderRequestsMetadata: RequestsMetadata = 
 /**
  * Uri template for the request builder.
  */
-export const GraphMacOSDmgAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSDmgApp{?%24select,%24expand}";
+export const GraphMacOSDmgAppRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSDmgApp{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

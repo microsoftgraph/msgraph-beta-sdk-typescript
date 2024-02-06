@@ -1908,19 +1908,19 @@ export const CustomTaskExtensionOperationStatusObject = {
     Completed: "completed",
     Failed: "failed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const LifecycleTaskCategoryObject = {
     Joiner: "joiner",
     Leaver: "leaver",
     UnknownFutureValue: "unknownFutureValue",
     Mover: "mover",
-}  as const;
+} as const;
 export const LifecycleWorkflowCategoryObject = {
     Joiner: "joiner",
     Leaver: "leaver",
     UnknownFutureValue: "unknownFutureValue",
     Mover: "mover",
-}  as const;
+} as const;
 export const LifecycleWorkflowProcessingStatusObject = {
     Queued: "queued",
     InProgress: "inProgress",
@@ -1929,24 +1929,24 @@ export const LifecycleWorkflowProcessingStatusObject = {
     Canceled: "canceled",
     Failed: "failed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ValueTypeObject = {
     EnumEscaped: "enum",
     String: "string",
     Int: "int",
     Bool: "bool",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkflowExecutionTypeObject = {
     Scheduled: "scheduled",
     OnDemand: "onDemand",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkflowTriggerTimeBasedAttributeObject = {
     EmployeeHireDate: "employeeHireDate",
     EmployeeLeaveDateTime: "employeeLeaveDateTime",
     UnknownFutureValue: "unknownFutureValue",
     CreatedDateTime: "createdDateTime",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

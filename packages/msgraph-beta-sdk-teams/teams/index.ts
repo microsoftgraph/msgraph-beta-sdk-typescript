@@ -7,6 +7,8 @@ import { AllMessagesRequestBuilderRequestsMetadata, AllMessagesRequestBuilderUri
 import { CountRequestBuilderRequestsMetadata, CountRequestBuilderUriTemplate, type CountRequestBuilder } from './count/';
 import { GetAllMessagesRequestBuilderRequestsMetadata, GetAllMessagesRequestBuilderUriTemplate, type GetAllMessagesRequestBuilder } from './getAllMessages/';
 import { GetOpenShiftsRequestBuilderRequestsMetadata, GetOpenShiftsRequestBuilderUriTemplate, type GetOpenShiftsRequestBuilder } from './getOpenShifts/';
+import { GetShiftsRequestBuilderRequestsMetadata, GetShiftsRequestBuilderUriTemplate, type GetShiftsRequestBuilder } from './getShifts/';
+import { GetTimesOffRequestBuilderRequestsMetadata, GetTimesOffRequestBuilderUriTemplate, type GetTimesOffRequestBuilder } from './getTimesOff/';
 import { TeamItemRequestBuilderNavigationMetadata, TeamItemRequestBuilderRequestsMetadata, TeamItemRequestBuilderUriTemplate, type TeamItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -30,6 +32,14 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      * Provides operations to call the getOpenShifts method.
      */
     get getOpenShifts(): GetOpenShiftsRequestBuilder;
+    /**
+     * Provides operations to call the getShifts method.
+     */
+    get getShifts(): GetShiftsRequestBuilder;
+    /**
+     * Provides operations to call the getTimesOff method.
+     */
+    get getTimesOff(): GetTimesOffRequestBuilder;
     /**
      * Provides operations to manage the collection of team entities.
      * @param teamId The unique identifier of team
@@ -141,6 +151,14 @@ export const TeamsRequestBuilderNavigationMetadata: Record<Exclude<keyof TeamsRe
         uriTemplate: GetOpenShiftsRequestBuilderUriTemplate,
         requestsMetadata: GetOpenShiftsRequestBuilderRequestsMetadata,
     },
+    getShifts: {
+        uriTemplate: GetShiftsRequestBuilderUriTemplate,
+        requestsMetadata: GetShiftsRequestBuilderRequestsMetadata,
+    },
+    getTimesOff: {
+        uriTemplate: GetTimesOffRequestBuilderUriTemplate,
+        requestsMetadata: GetTimesOffRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.
@@ -172,6 +190,6 @@ export const TeamsRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const TeamsRequestBuilderUriTemplate = "{+baseurl}/teams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+export const TeamsRequestBuilderUriTemplate = "{+baseurl}/teams{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

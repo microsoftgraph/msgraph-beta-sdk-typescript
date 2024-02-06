@@ -129,6 +129,6 @@ export const GovernanceRoleSettingItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const GovernanceRoleSettingItemRequestBuilderUriTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}/roleSettings/{governanceRoleSetting%2Did}{?%24select,%24expand}";
+export const GovernanceRoleSettingItemRequestBuilderUriTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}/roleSettings/{governanceRoleSetting%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

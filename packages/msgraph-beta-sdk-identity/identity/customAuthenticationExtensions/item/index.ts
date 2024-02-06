@@ -21,10 +21,10 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a customAuthenticationExtension object.
+     * Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of CustomAuthenticationExtension
-     * @see {@link https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomAuthenticationExtension | undefined>;
     /**
@@ -41,7 +41,7 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a customAuthenticationExtension object.
+     * Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */
@@ -55,7 +55,7 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      toPatchRequestInformation(body: CustomAuthenticationExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a customAuthenticationExtension object.
+ * Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
  */
 export interface CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters {
     /**
@@ -121,6 +121,6 @@ export const CustomAuthenticationExtensionItemRequestBuilderRequestsMetadata: Re
 /**
  * Uri template for the request builder.
  */
-export const CustomAuthenticationExtensionItemRequestBuilderUriTemplate = "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24select,%24expand}";
+export const CustomAuthenticationExtensionItemRequestBuilderUriTemplate = "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

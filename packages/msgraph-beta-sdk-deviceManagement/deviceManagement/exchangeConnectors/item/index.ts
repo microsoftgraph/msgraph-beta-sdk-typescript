@@ -119,6 +119,6 @@ export const DeviceManagementExchangeConnectorItemRequestBuilderRequestsMetadata
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementExchangeConnectorItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector%2Did}{?%24select,%24expand}";
+export const DeviceManagementExchangeConnectorItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

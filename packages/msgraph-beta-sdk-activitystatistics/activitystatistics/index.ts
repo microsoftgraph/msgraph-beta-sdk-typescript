@@ -137,6 +137,6 @@ export const ActivitystatisticsRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const ActivitystatisticsRequestBuilderUriTemplate = "{+baseurl}/activitystatistics{?%24top,%24skip,%24search,%24filter,%24count,%24select,%24expand}";
+export const ActivitystatisticsRequestBuilderUriTemplate = "{+baseurl}/activitystatistics{?%24count,%24expand,%24filter,%24search,%24select,%24skip,%24top}";
 /* tslint:enable */
 /* eslint-enable */

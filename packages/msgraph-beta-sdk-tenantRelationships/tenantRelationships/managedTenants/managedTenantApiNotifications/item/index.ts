@@ -119,6 +119,6 @@ export const ManagedTenantApiNotificationItemRequestBuilderRequestsMetadata: Req
 /**
  * Uri template for the request builder.
  */
-export const ManagedTenantApiNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantApiNotifications/{managedTenantApiNotification%2Did}{?%24select,%24expand}";
+export const ManagedTenantApiNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantApiNotifications/{managedTenantApiNotification%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

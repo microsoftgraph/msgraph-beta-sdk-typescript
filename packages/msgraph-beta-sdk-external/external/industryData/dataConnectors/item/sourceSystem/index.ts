@@ -60,6 +60,6 @@ export const SourceSystemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const SourceSystemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24select,%24expand}";
+export const SourceSystemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

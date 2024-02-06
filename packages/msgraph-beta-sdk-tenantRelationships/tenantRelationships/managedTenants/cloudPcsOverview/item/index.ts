@@ -106,6 +106,6 @@ export const CloudPcOverviewTenantItemRequestBuilderRequestsMetadata: RequestsMe
 /**
  * Uri template for the request builder.
  */
-export const CloudPcOverviewTenantItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverview%2DtenantId}{?%24select,%24expand}";
+export const CloudPcOverviewTenantItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverview%2DtenantId}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

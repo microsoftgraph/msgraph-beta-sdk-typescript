@@ -34,13 +34,14 @@ export interface GetPasswordSingleSignOnCredentialsPostResponse extends BaseColl
  */
 export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRequestBuilder<GetPasswordSingleSignOnCredentialsRequestBuilder> {
     /**
-     * Invoke action getPasswordSingleSignOnCredentials
+     * Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a Promise of GetPasswordSingleSignOnCredentialsPostResponse
+     * @see {@link https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetPasswordSingleSignOnCredentialsPostResponse | undefined>;
     /**
-     * Invoke action getPasswordSingleSignOnCredentials
+     * Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns a RequestInformation
      */

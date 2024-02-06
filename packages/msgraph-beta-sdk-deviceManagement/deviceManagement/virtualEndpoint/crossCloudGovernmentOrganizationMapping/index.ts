@@ -106,6 +106,6 @@ export const CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetada
 /**
  * Uri template for the request builder.
  */
-export const CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping{?%24select,%24expand}";
+export const CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

@@ -120,6 +120,6 @@ export const MessageRecipientItemRequestBuilderRequestsMetadata: RequestsMetadat
 /**
  * Uri template for the request builder.
  */
-export const MessageRecipientItemRequestBuilderUriTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}{?%24select,%24expand}";
+export const MessageRecipientItemRequestBuilderUriTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

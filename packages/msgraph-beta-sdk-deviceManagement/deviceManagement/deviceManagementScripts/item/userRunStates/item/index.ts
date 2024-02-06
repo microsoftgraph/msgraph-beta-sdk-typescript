@@ -120,6 +120,6 @@ export const DeviceManagementScriptUserStateItemRequestBuilderRequestsMetadata: 
 /**
  * Uri template for the request builder.
  */
-export const DeviceManagementScriptUserStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}/userRunStates/{deviceManagementScriptUserState%2Did}{?%24select,%24expand}";
+export const DeviceManagementScriptUserStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}/userRunStates/{deviceManagementScriptUserState%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

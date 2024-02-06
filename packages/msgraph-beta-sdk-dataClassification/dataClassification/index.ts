@@ -199,6 +199,6 @@ export const DataClassificationRequestBuilderRequestsMetadata: RequestsMetadata 
 /**
  * Uri template for the request builder.
  */
-export const DataClassificationRequestBuilderUriTemplate = "{+baseurl}/dataClassification{?%24select,%24expand}";
+export const DataClassificationRequestBuilderUriTemplate = "{+baseurl}/dataClassification{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

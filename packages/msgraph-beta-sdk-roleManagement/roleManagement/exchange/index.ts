@@ -160,6 +160,6 @@ export const ExchangeRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const ExchangeRequestBuilderUriTemplate = "{+baseurl}/roleManagement/exchange{?%24select,%24expand}";
+export const ExchangeRequestBuilderUriTemplate = "{+baseurl}/roleManagement/exchange{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */

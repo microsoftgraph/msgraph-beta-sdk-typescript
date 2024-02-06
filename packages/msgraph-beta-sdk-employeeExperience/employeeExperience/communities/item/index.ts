@@ -131,6 +131,6 @@ export const CommunityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
 /**
  * Uri template for the request builder.
  */
-export const CommunityItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/communities/{community%2Did}{?%24select,%24expand}";
+export const CommunityItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/communities/{community%2Did}{?%24expand,%24select}";
 /* tslint:enable */
 /* eslint-enable */
