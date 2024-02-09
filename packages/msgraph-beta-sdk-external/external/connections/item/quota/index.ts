@@ -12,12 +12,14 @@ export interface QuotaRequestBuilder extends BaseRequestBuilder<QuotaRequestBuil
     /**
      * Delete navigation property quota for external
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties and relationships of a connectionQuota object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConnectionQuota
+     * @returns {Promise<ConnectionQuota>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<QuotaRequestBuilderGetQueryParameters> | undefined) : Promise<ConnectionQuota | undefined>;
@@ -25,26 +27,27 @@ export interface QuotaRequestBuilder extends BaseRequestBuilder<QuotaRequestBuil
      * Update the navigation property quota in external
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConnectionQuota
+     * @returns {Promise<ConnectionQuota>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ConnectionQuota, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConnectionQuota | undefined>;
     /**
      * Delete navigation property quota for external
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of a connectionQuota object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<QuotaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property quota in external
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ConnectionQuota, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface QuotaRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const QuotaRequestBuilderUriTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/quota{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const QuotaRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const QuotaRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const QuotaRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: QuotaRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: QuotaRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConnectionQuotaFromDiscriminatorValue,
         queryParametersMapper: QuotaRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: QuotaRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConnectionQuotaFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const QuotaRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const QuotaRequestBuilderUriTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/quota{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

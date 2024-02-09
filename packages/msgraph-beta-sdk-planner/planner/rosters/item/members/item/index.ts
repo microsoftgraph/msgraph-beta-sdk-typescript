@@ -12,13 +12,15 @@ export interface PlannerRosterMemberItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete a plannerRosterMember object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannerrostermember-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a plannerRosterMember object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerRosterMember
+     * @returns {Promise<PlannerRosterMember>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannerrostermember-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PlannerRosterMemberItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerRosterMember | undefined>;
@@ -26,26 +28,27 @@ export interface PlannerRosterMemberItemRequestBuilder extends BaseRequestBuilde
      * Update the navigation property members in planner
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerRosterMember
+     * @returns {Promise<PlannerRosterMember>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PlannerRosterMember, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerRosterMember | undefined>;
     /**
      * Delete a plannerRosterMember object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a plannerRosterMember object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerRosterMemberItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property members in planner
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PlannerRosterMember, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface PlannerRosterMemberItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PlannerRosterMemberItemRequestBuilderUriTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}/members/{plannerRosterMember%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PlannerRosterMemberItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const PlannerRosterMemberItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const PlannerRosterMemberItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PlannerRosterMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PlannerRosterMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerRosterMemberFromDiscriminatorValue,
         queryParametersMapper: PlannerRosterMemberItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PlannerRosterMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerRosterMemberFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const PlannerRosterMemberItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PlannerRosterMemberItemRequestBuilderUriTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}/members/{plannerRosterMember%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

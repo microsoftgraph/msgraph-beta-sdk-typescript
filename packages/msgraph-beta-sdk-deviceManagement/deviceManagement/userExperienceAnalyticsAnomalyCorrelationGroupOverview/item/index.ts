@@ -12,38 +12,41 @@ export interface UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemReque
     /**
      * Delete navigation property userExperienceAnalyticsAnomalyCorrelationGroupOverview for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsAnomalyCorrelationGroupOverview
+     * @returns {Promise<UserExperienceAnalyticsAnomalyCorrelationGroupOverview>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserExperienceAnalyticsAnomalyCorrelationGroupOverview | undefined>;
     /**
      * Update the navigation property userExperienceAnalyticsAnomalyCorrelationGroupOverview in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsAnomalyCorrelationGroupOverview
+     * @returns {Promise<UserExperienceAnalyticsAnomalyCorrelationGroupOverview>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UserExperienceAnalyticsAnomalyCorrelationGroupOverview, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserExperienceAnalyticsAnomalyCorrelationGroupOverview | undefined>;
     /**
      * Delete navigation property userExperienceAnalyticsAnomalyCorrelationGroupOverview for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property userExperienceAnalyticsAnomalyCorrelationGroupOverview in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UserExperienceAnalyticsAnomalyCorrelationGroupOverview, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemReque
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyCorrelationGroupOverview/{userExperienceAnalyticsAnomalyCorrelationGroupOverview%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGe
  */
 export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBu
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyCorrelationGroupOverview/{userExperienceAnalyticsAnomalyCorrelationGroupOverview%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

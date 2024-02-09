@@ -12,13 +12,15 @@ export interface MultiTenantOrganizationMemberItemRequestBuilder extends BaseReq
     /**
      * Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/multitenantorganization-delete-tenants?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get a tenant and its properties in the multi-tenant organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MultiTenantOrganizationMember
+     * @returns {Promise<MultiTenantOrganizationMember>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/multitenantorganizationmember-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters> | undefined) : Promise<MultiTenantOrganizationMember | undefined>;
@@ -26,26 +28,27 @@ export interface MultiTenantOrganizationMemberItemRequestBuilder extends BaseReq
      * Update the navigation property tenants in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MultiTenantOrganizationMember
+     * @returns {Promise<MultiTenantOrganizationMember>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: MultiTenantOrganizationMember, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MultiTenantOrganizationMember | undefined>;
     /**
      * Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get a tenant and its properties in the multi-tenant organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property tenants in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MultiTenantOrganizationMember, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface MultiTenantOrganizationMemberItemRequestBuilderGetQueryParamete
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MultiTenantOrganizationMemberItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MultiTenantOrganizationMemberItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const MultiTenantOrganizationMemberItemRequestBuilderGetQueryParametersMapper: R
  */
 export const MultiTenantOrganizationMemberItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: MultiTenantOrganizationMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: MultiTenantOrganizationMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMultiTenantOrganizationMemberFromDiscriminatorValue,
         queryParametersMapper: MultiTenantOrganizationMemberItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: MultiTenantOrganizationMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMultiTenantOrganizationMemberFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const MultiTenantOrganizationMemberItemRequestBuilderRequestsMetadata: Re
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MultiTenantOrganizationMemberItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

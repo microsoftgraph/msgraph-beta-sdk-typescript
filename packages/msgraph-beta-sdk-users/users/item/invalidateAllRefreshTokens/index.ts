@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a invalidateAllRefreshTokensPostResponse
+ * @returns {InvalidateAllRefreshTokensPostResponse}
  */
 export function createInvalidateAllRefreshTokensPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInvalidateAllRefreshTokensPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoInvalidateAllRefreshTokensPostResponse(invalidateAllRefreshTokensPostResponse: Partial<InvalidateAllRefreshTokensPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -43,14 +43,15 @@ export interface InvalidateAllRefreshTokensRequestBuilder extends BaseRequestBui
     /**
      * Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization's data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InvalidateAllRefreshTokensPostResponse
+     * @returns {Promise<InvalidateAllRefreshTokensPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InvalidateAllRefreshTokensPostResponse | undefined>;
     /**
      * Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization's data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,22 +64,22 @@ export function serializeInvalidateAllRefreshTokensPostResponse(writer: Serializ
     writer.writeAdditionalData(invalidateAllRefreshTokensPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const InvalidateAllRefreshTokensRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/invalidateAllRefreshTokens";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const InvalidateAllRefreshTokensRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: InvalidateAllRefreshTokensRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInvalidateAllRefreshTokensPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const InvalidateAllRefreshTokensRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/invalidateAllRefreshTokens";
 /* tslint:enable */
 /* eslint-enable */

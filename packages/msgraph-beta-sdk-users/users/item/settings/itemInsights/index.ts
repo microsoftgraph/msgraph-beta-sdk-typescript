@@ -12,12 +12,14 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
     /**
      * Delete navigation property itemInsights for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the user-customizable privacy settings for itemInsights and meeting hours insights.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserInsightsSettings
+     * @returns {Promise<UserInsightsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemInsightsRequestBuilderGetQueryParameters> | undefined) : Promise<UserInsightsSettings | undefined>;
@@ -25,27 +27,28 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
      * Update the privacy settings for itemInsights and meeting hours insights of a user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserInsightsSettings
+     * @returns {Promise<UserInsightsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: UserInsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserInsightsSettings | undefined>;
     /**
      * Delete navigation property itemInsights for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the user-customizable privacy settings for itemInsights and meeting hours insights.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemInsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the privacy settings for itemInsights and meeting hours insights of a user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UserInsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface ItemInsightsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/itemInsights{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ItemInsightsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const ItemInsightsRequestBuilderGetQueryParametersMapper: Record<string, string>
  */
 export const ItemInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ItemInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ItemInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserInsightsSettingsFromDiscriminatorValue,
         queryParametersMapper: ItemInsightsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ItemInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserInsightsSettingsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const ItemInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/itemInsights{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

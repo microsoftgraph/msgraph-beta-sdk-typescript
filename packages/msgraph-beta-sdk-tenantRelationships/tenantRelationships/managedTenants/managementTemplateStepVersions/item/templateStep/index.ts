@@ -12,13 +12,14 @@ export interface TemplateStepRequestBuilder extends BaseRequestBuilder<TemplateS
     /**
      * Get templateStep from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementTemplateStep
+     * @returns {Promise<ManagementTemplateStep>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<TemplateStepRequestBuilderGetQueryParameters> | undefined) : Promise<ManagementTemplateStep | undefined>;
     /**
      * Get templateStep from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TemplateStepRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface TemplateStepRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TemplateStepRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}/templateStep{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TemplateStepRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const TemplateStepRequestBuilderGetQueryParametersMapper: Record<string, string>
  */
 export const TemplateStepRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: TemplateStepRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementTemplateStepFromDiscriminatorValue,
         queryParametersMapper: TemplateStepRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TemplateStepRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}/templateStep{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a queryByPlatformTypePostRequestBody
+ * @returns {QueryByPlatformTypePostRequestBody}
  */
 export function createQueryByPlatformTypePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQueryByPlatformTypePostRequestBody;
@@ -16,14 +16,14 @@ export function createQueryByPlatformTypePostRequestBodyFromDiscriminatorValue(p
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a queryByPlatformTypePostResponse
+ * @returns {QueryByPlatformTypePostResponse}
  */
 export function createQueryByPlatformTypePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQueryByPlatformTypePostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoQueryByPlatformTypePostRequestBody(queryByPlatformTypePostRequestBody: Partial<QueryByPlatformTypePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoQueryByPlatformTypePostRequestBody(queryByPlatfor
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoQueryByPlatformTypePostResponse(queryByPlatformTypePostResponse: Partial<QueryByPlatformTypePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -69,14 +69,15 @@ export interface QueryByPlatformTypeRequestBuilder extends BaseRequestBuilder<Qu
      * Invoke action queryByPlatformType
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of QueryByPlatformTypePostResponse
+     * @returns {Promise<QueryByPlatformTypePostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: QueryByPlatformTypePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<QueryByPlatformTypePostResponse | undefined>;
     /**
      * Invoke action queryByPlatformType
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: QueryByPlatformTypePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -97,14 +98,18 @@ export function serializeQueryByPlatformTypePostResponse(writer: SerializationWr
     writer.writeCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>("value", queryByPlatformTypePostResponse.value, serializeDeviceManagementResourceAccessProfileBase);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const QueryByPlatformTypeRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/resourceAccessProfiles/queryByPlatformType";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const QueryByPlatformTypeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: QueryByPlatformTypeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createQueryByPlatformTypePostResponseFromDiscriminatorValue,
@@ -113,9 +118,5 @@ export const QueryByPlatformTypeRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const QueryByPlatformTypeRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/resourceAccessProfiles/queryByPlatformType";
 /* tslint:enable */
 /* eslint-enable */

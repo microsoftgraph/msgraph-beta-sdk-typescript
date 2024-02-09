@@ -12,34 +12,35 @@ export interface ReactivateRequestBuilder extends BaseRequestBuilder<ReactivateR
     /**
      * Reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Recommendation
+     * @returns {Promise<Recommendation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/recommendation-reactivate?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Recommendation | undefined>;
     /**
      * Reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const ReactivateRequestBuilderUriTemplate = "{+baseurl}/directory/recommendations/{recommendation%2Did}/reactivate";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const ReactivateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ReactivateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRecommendationFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ReactivateRequestBuilderUriTemplate = "{+baseurl}/directory/recommendations/{recommendation%2Did}/reactivate";
 /* tslint:enable */
 /* eslint-enable */

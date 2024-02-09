@@ -12,27 +12,29 @@ export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesR
     /**
      * The recent activities that took place within this list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemActivityOLDCollectionResponse
+     * @returns {Promise<ItemActivityOLDCollectionResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ActivitiesRequestBuilderGetQueryParameters> | undefined) : Promise<ItemActivityOLDCollectionResponse | undefined>;
     /**
      * Create new navigation property to activities for groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemActivityOLD
+     * @returns {Promise<ItemActivityOLD>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ItemActivityOLD, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemActivityOLD | undefined>;
     /**
      * The recent activities that took place within this list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActivitiesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Create new navigation property to activities for groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ItemActivityOLD, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -74,6 +76,10 @@ export interface ActivitiesRequestBuilderGetQueryParameters {
     top?: number;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ActivitiesRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/activities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ActivitiesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -91,20 +97,20 @@ const ActivitiesRequestBuilderGetQueryParametersMapper: Record<string, string> =
  */
 export const ActivitiesRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ActivitiesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemActivityOLDCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ActivitiesRequestBuilderGetQueryParametersMapper,
     },
     post: {
+        uriTemplate: ActivitiesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemActivityOLDFromDiscriminatorValue,
@@ -113,9 +119,5 @@ export const ActivitiesRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ActivitiesRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

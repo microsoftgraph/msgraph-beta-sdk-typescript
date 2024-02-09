@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a decryptBufferPostRequestBody
+ * @returns {DecryptBufferPostRequestBody}
  */
 export function createDecryptBufferPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDecryptBufferPostRequestBody;
@@ -39,7 +39,8 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
      * Invoke action decryptBuffer
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BufferDecryptionResult
+     * @returns {Promise<BufferDecryptionResult>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      post(body: DecryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BufferDecryptionResult | undefined>;
@@ -47,14 +48,14 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
      * Invoke action decryptBuffer
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toPostRequestInformation(body: DecryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -73,14 +74,18 @@ export function serializeDecryptBufferPostRequestBody(writer: SerializationWrite
     writer.writeAdditionalData(decryptBufferPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DecryptBufferRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/decryptBuffer";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const DecryptBufferRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: DecryptBufferRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBufferDecryptionResultFromDiscriminatorValue,
@@ -89,9 +94,5 @@ export const DecryptBufferRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DecryptBufferRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/decryptBuffer";
 /* tslint:enable */
 /* eslint-enable */

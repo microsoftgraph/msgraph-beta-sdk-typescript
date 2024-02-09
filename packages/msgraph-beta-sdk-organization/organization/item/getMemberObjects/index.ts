@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getMemberObjectsPostRequestBody
+ * @returns {GetMemberObjectsPostRequestBody}
  */
 export function createGetMemberObjectsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetMemberObjectsPostRequestBody;
@@ -16,14 +16,14 @@ export function createGetMemberObjectsPostRequestBodyFromDiscriminatorValue(pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getMemberObjectsPostResponse
+ * @returns {GetMemberObjectsPostResponse}
  */
 export function createGetMemberObjectsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetMemberObjectsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetMemberObjectsPostRequestBody(getMemberObjectsPostRequestBody: Partial<GetMemberObjectsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoGetMemberObjectsPostRequestBody(getMemberObjectsP
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetMemberObjectsPostResponse(getMemberObjectsPostResponse: Partial<GetMemberObjectsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -69,14 +69,15 @@ export interface GetMemberObjectsRequestBuilder extends BaseRequestBuilder<GetMe
      * Invoke action getMemberObjects
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetMemberObjectsPostResponse
+     * @returns {Promise<GetMemberObjectsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: GetMemberObjectsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetMemberObjectsPostResponse | undefined>;
     /**
      * Invoke action getMemberObjects
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetMemberObjectsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -97,14 +98,18 @@ export function serializeGetMemberObjectsPostResponse(writer: SerializationWrite
     writer.writeCollectionOfPrimitiveValues<string>("value", getMemberObjectsPostResponse.value);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetMemberObjectsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/getMemberObjects";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetMemberObjectsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetMemberObjectsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetMemberObjectsPostResponseFromDiscriminatorValue,
@@ -113,9 +118,5 @@ export const GetMemberObjectsRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetMemberObjectsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/getMemberObjects";
 /* tslint:enable */
 /* eslint-enable */

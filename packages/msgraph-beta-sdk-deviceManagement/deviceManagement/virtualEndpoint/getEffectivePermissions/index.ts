@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getEffectivePermissionsGetResponse
+ * @returns {GetEffectivePermissionsGetResponse}
  */
 export function createGetEffectivePermissionsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEffectivePermissionsGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetEffectivePermissionsGetResponse(getEffectivePermissionsGetResponse: Partial<GetEffectivePermissionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetEffectivePermissionsRequestBuilder extends BaseRequestBuilde
     /**
      * Invoke function getEffectivePermissions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetEffectivePermissionsGetResponse
+     * @returns {Promise<GetEffectivePermissionsGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetEffectivePermissionsRequestBuilderGetQueryParameters> | undefined) : Promise<GetEffectivePermissionsGetResponse | undefined>;
     /**
      * Invoke function getEffectivePermissions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetEffectivePermissionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeGetEffectivePermissionsGetResponse(writer: Serializatio
     writer.writeCollectionOfPrimitiveValues<string>("value", getEffectivePermissionsGetResponse.value);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetEffectivePermissionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/getEffectivePermissions(){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetEffectivePermissionsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const GetEffectivePermissionsRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const GetEffectivePermissionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetEffectivePermissionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetEffectivePermissionsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetEffectivePermissionsRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetEffectivePermissionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/getEffectivePermissions(){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

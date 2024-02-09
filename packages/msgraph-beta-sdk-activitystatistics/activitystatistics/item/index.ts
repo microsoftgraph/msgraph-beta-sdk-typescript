@@ -12,38 +12,41 @@ export interface ActivityStatisticsItemRequestBuilder extends BaseRequestBuilder
     /**
      * Delete entity from activitystatistics
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get entity from activitystatistics by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ActivityStatistics
+     * @returns {Promise<ActivityStatistics>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ActivityStatisticsItemRequestBuilderGetQueryParameters> | undefined) : Promise<ActivityStatistics | undefined>;
     /**
      * Update entity in activitystatistics
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ActivityStatistics
+     * @returns {Promise<ActivityStatistics>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ActivityStatistics, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ActivityStatistics | undefined>;
     /**
      * Delete entity from activitystatistics
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get entity from activitystatistics by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActivityStatisticsItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update entity in activitystatistics
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ActivityStatistics, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ActivityStatisticsItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ActivityStatisticsItemRequestBuilderUriTemplate = "{+baseurl}/activitystatistics/{activityStatistics%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ActivityStatisticsItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ActivityStatisticsItemRequestBuilderGetQueryParametersMapper: Record<strin
  */
 export const ActivityStatisticsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ActivityStatisticsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ActivityStatisticsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createActivityStatisticsFromDiscriminatorValue,
         queryParametersMapper: ActivityStatisticsItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ActivityStatisticsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createActivityStatisticsFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ActivityStatisticsItemRequestBuilderRequestsMetadata: RequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ActivityStatisticsItemRequestBuilderUriTemplate = "{+baseurl}/activitystatistics/{activityStatistics%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

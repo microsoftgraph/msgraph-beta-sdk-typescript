@@ -12,38 +12,41 @@ export interface DeviceManagementDomainJoinConnectorItemRequestBuilder extends B
     /**
      * Delete navigation property domainJoinConnectors for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A list of connector objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementDomainJoinConnector
+     * @returns {Promise<DeviceManagementDomainJoinConnector>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementDomainJoinConnector | undefined>;
     /**
      * Update the navigation property domainJoinConnectors in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementDomainJoinConnector
+     * @returns {Promise<DeviceManagementDomainJoinConnector>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceManagementDomainJoinConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementDomainJoinConnector | undefined>;
     /**
      * Delete navigation property domainJoinConnectors for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A list of connector objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property domainJoinConnectors in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceManagementDomainJoinConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryPa
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceManagementDomainJoinConnectorItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/domainJoinConnectors/{deviceManagementDomainJoinConnector%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParametersMap
  */
 export const DeviceManagementDomainJoinConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceManagementDomainJoinConnectorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceManagementDomainJoinConnectorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementDomainJoinConnectorFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceManagementDomainJoinConnectorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementDomainJoinConnectorFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceManagementDomainJoinConnectorItemRequestBuilderRequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceManagementDomainJoinConnectorItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/domainJoinConnectors/{deviceManagementDomainJoinConnector%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

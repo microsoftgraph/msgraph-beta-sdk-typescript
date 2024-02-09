@@ -12,38 +12,41 @@ export interface PaymentMethodItemRequestBuilder extends BaseRequestBuilder<Paym
     /**
      * Delete navigation property paymentMethods for financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get paymentMethods from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PaymentMethod
+     * @returns {Promise<PaymentMethod>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PaymentMethodItemRequestBuilderGetQueryParameters> | undefined) : Promise<PaymentMethod | undefined>;
     /**
      * Update the navigation property paymentMethods in financials
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PaymentMethod
+     * @returns {Promise<PaymentMethod>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PaymentMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PaymentMethod | undefined>;
     /**
      * Delete navigation property paymentMethods for financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get paymentMethods from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PaymentMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property paymentMethods in financials
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PaymentMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PaymentMethodItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PaymentMethodItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/paymentMethods/{paymentMethod%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PaymentMethodItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PaymentMethodItemRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const PaymentMethodItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PaymentMethodItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PaymentMethodItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPaymentMethodFromDiscriminatorValue,
         queryParametersMapper: PaymentMethodItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PaymentMethodItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPaymentMethodFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PaymentMethodItemRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PaymentMethodItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/paymentMethods/{paymentMethod%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

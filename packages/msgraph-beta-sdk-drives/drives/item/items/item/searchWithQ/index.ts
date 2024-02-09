@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a searchWithQGetResponse
+ * @returns {SearchWithQGetResponse}
  */
 export function createSearchWithQGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSearchWithQGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoSearchWithQGetResponse(searchWithQGetResponse: Partial<SearchWithQGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface SearchWithQRequestBuilder extends BaseRequestBuilder<SearchWith
     /**
      * Invoke function search
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SearchWithQGetResponse
+     * @returns {Promise<SearchWithQGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SearchWithQRequestBuilderGetQueryParameters> | undefined) : Promise<SearchWithQGetResponse | undefined>;
     /**
      * Invoke function search
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SearchWithQRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -54,6 +55,10 @@ export interface SearchWithQRequestBuilderGetQueryParameters {
      * Include count of items
      */
     count?: boolean;
+    /**
+     * Expand related entities
+     */
+    expand?: string[];
     /**
      * Filter items by property values
      */
@@ -88,10 +93,15 @@ export function serializeSearchWithQGetResponse(writer: SerializationWriter, sea
     writer.writeCollectionOfObjectValues<DriveItem>("value", searchWithQGetResponse.value, serializeDriveItem);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SearchWithQRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/search(q='{q}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SearchWithQRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
+    "expand": "%24expand",
     "filter": "%24filter",
     "orderby": "%24orderby",
     "search": "%24search",
@@ -104,19 +114,15 @@ const SearchWithQRequestBuilderGetQueryParametersMapper: Record<string, string> 
  */
 export const SearchWithQRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: SearchWithQRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSearchWithQGetResponseFromDiscriminatorValue,
         queryParametersMapper: SearchWithQRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SearchWithQRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/search(q='{q}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
 /* tslint:enable */
 /* eslint-enable */

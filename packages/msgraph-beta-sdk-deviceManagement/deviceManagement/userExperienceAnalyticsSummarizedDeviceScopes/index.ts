@@ -12,33 +12,34 @@ export interface UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder ext
     /**
      * Invoke function userExperienceAnalyticsSummarizedDeviceScopes
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsDeviceScopeSummary
+     * @returns {Promise<UserExperienceAnalyticsDeviceScopeSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserExperienceAnalyticsDeviceScopeSummary | undefined>;
     /**
      * Invoke function userExperienceAnalyticsSummarizedDeviceScopes
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsSummarizedDeviceScopes()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsDeviceScopeSummaryFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsSummarizedDeviceScopes()";
 /* tslint:enable */
 /* eslint-enable */

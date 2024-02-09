@@ -12,13 +12,14 @@ export interface CategoryTemplateRequestBuilder extends BaseRequestBuilder<Categ
     /**
      * Specifies a group of similar types of content in a particular department.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CategoryTemplate
+     * @returns {Promise<CategoryTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CategoryTemplateRequestBuilderGetQueryParameters> | undefined) : Promise<CategoryTemplate | undefined>;
     /**
      * Specifies a group of similar types of content in a particular department.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CategoryTemplateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface CategoryTemplateRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CategoryTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/categoryTemplate{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CategoryTemplateRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const CategoryTemplateRequestBuilderGetQueryParametersMapper: Record<string, str
  */
 export const CategoryTemplateRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: CategoryTemplateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCategoryTemplateFromDiscriminatorValue,
         queryParametersMapper: CategoryTemplateRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CategoryTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/categoryTemplate{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

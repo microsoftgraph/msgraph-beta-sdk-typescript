@@ -12,38 +12,41 @@ export interface DeviceManagementTemplateInsightsDefinitionItemRequestBuilder ex
     /**
      * Delete navigation property templateInsights for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * List of setting insights in a template
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementTemplateInsightsDefinition
+     * @returns {Promise<DeviceManagementTemplateInsightsDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceManagementTemplateInsightsDefinitionItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementTemplateInsightsDefinition | undefined>;
     /**
      * Update the navigation property templateInsights in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementTemplateInsightsDefinition
+     * @returns {Promise<DeviceManagementTemplateInsightsDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceManagementTemplateInsightsDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementTemplateInsightsDefinition | undefined>;
     /**
      * Delete navigation property templateInsights for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * List of setting insights in a template
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceManagementTemplateInsightsDefinitionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property templateInsights in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceManagementTemplateInsightsDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceManagementTemplateInsightsDefinitionItemRequestBuilderGet
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceManagementTemplateInsightsDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templateInsights/{deviceManagementTemplateInsightsDefinition%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceManagementTemplateInsightsDefinitionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceManagementTemplateInsightsDefinitionItemRequestBuilderGetQueryParame
  */
 export const DeviceManagementTemplateInsightsDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceManagementTemplateInsightsDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceManagementTemplateInsightsDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementTemplateInsightsDefinitionFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementTemplateInsightsDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceManagementTemplateInsightsDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementTemplateInsightsDefinitionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceManagementTemplateInsightsDefinitionItemRequestBuilderRequest
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceManagementTemplateInsightsDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templateInsights/{deviceManagementTemplateInsightsDefinition%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

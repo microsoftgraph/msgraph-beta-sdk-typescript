@@ -12,38 +12,41 @@ export interface AssignmentFilterEvaluationStatusDetailsItemRequestBuilder exten
     /**
      * Delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Managed device mobile app configuration states for this device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AssignmentFilterEvaluationStatusDetails
+     * @returns {Promise<AssignmentFilterEvaluationStatusDetails>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameters> | undefined) : Promise<AssignmentFilterEvaluationStatusDetails | undefined>;
     /**
      * Update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AssignmentFilterEvaluationStatusDetails
+     * @returns {Promise<AssignmentFilterEvaluationStatusDetails>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: AssignmentFilterEvaluationStatusDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AssignmentFilterEvaluationStatusDetails | undefined>;
     /**
      * Delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Managed device mobile app configuration states for this device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AssignmentFilterEvaluationStatusDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQue
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/assignmentFilterEvaluationStatusDetails/{assignmentFilterEvaluationStatusDetails%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameter
  */
 export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue,
         queryParametersMapper: AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderRequestsMe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/assignmentFilterEvaluationStatusDetails/{assignmentFilterEvaluationStatusDetails%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

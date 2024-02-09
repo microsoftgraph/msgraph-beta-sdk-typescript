@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a createLinkPostRequestBody
+ * @returns {CreateLinkPostRequestBody}
  */
 export function createCreateLinkPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateLinkPostRequestBody;
@@ -63,7 +63,8 @@ export interface CreateLinkRequestBuilder extends BaseRequestBuilder<CreateLinkR
      * Create a sharing link for a listItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.If a sharing link of the specified type already exists for the app, this action will return the existing sharing link. listItem resources inherit sharing permissions from the list the item resides in.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Permission
+     * @returns {Promise<Permission>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0|Find more info here}
      */
      post(body: CreateLinkPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Permission | undefined>;
@@ -71,13 +72,13 @@ export interface CreateLinkRequestBuilder extends BaseRequestBuilder<CreateLinkR
      * Create a sharing link for a listItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.If a sharing link of the specified type already exists for the app, this action will return the existing sharing link. listItem resources inherit sharing permissions from the list the item resides in.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: CreateLinkPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCreateLinkPostRequestBody(createLinkPostRequestBody: Partial<CreateLinkPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -108,14 +109,18 @@ export function serializeCreateLinkPostRequestBody(writer: SerializationWriter, 
     writer.writeAdditionalData(createLinkPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CreateLinkRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/createLink";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const CreateLinkRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CreateLinkRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPermissionFromDiscriminatorValue,
@@ -124,9 +129,5 @@ export const CreateLinkRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CreateLinkRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/createLink";
 /* tslint:enable */
 /* eslint-enable */

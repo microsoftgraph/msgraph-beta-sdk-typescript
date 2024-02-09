@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getDeviceStatusByCompliancePolicySettingReportPostRequestBody
+ * @returns {GetDeviceStatusByCompliancePolicySettingReportPostRequestBody}
  */
 export function createGetDeviceStatusByCompliancePolicySettingReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDeviceStatusByCompliancePolicySettingReportPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetDeviceStatusByCompliancePolicySettingReportPostRequestBody(getDeviceStatusByCompliancePolicySettingReportPostRequestBody: Partial<GetDeviceStatusByCompliancePolicySettingReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -79,14 +79,15 @@ export interface GetDeviceStatusByCompliancePolicySettingReportRequestBuilder ex
      * Invoke action getDeviceStatusByCompliancePolicySettingReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: GetDeviceStatusByCompliancePolicySettingReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Invoke action getDeviceStatusByCompliancePolicySettingReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetDeviceStatusByCompliancePolicySettingReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -106,14 +107,18 @@ export function serializeGetDeviceStatusByCompliancePolicySettingReportPostReque
     writer.writeAdditionalData(getDeviceStatusByCompliancePolicySettingReportPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetDeviceStatusByCompliancePolicySettingReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/getDeviceStatusByCompliancePolicySettingReport";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetDeviceStatusByCompliancePolicySettingReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetDeviceStatusByCompliancePolicySettingReportRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -122,9 +127,5 @@ export const GetDeviceStatusByCompliancePolicySettingReportRequestBuilderRequest
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetDeviceStatusByCompliancePolicySettingReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/getDeviceStatusByCompliancePolicySettingReport";
 /* tslint:enable */
 /* eslint-enable */

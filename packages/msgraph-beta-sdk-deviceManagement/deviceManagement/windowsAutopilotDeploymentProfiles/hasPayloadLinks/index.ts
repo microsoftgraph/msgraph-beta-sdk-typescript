@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a hasPayloadLinksPostRequestBody
+ * @returns {HasPayloadLinksPostRequestBody}
  */
 export function createHasPayloadLinksPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHasPayloadLinksPostRequestBody;
@@ -16,14 +16,14 @@ export function createHasPayloadLinksPostRequestBodyFromDiscriminatorValue(parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a hasPayloadLinksPostResponse
+ * @returns {HasPayloadLinksPostResponse}
  */
 export function createHasPayloadLinksPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHasPayloadLinksPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoHasPayloadLinksPostRequestBody(hasPayloadLinksPostRequestBody: Partial<HasPayloadLinksPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoHasPayloadLinksPostRequestBody(hasPayloadLinksPos
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoHasPayloadLinksPostResponse(hasPayloadLinksPostResponse: Partial<HasPayloadLinksPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -69,14 +69,15 @@ export interface HasPayloadLinksRequestBuilder extends BaseRequestBuilder<HasPay
      * Invoke action hasPayloadLinks
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of HasPayloadLinksPostResponse
+     * @returns {Promise<HasPayloadLinksPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: HasPayloadLinksPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HasPayloadLinksPostResponse | undefined>;
     /**
      * Invoke action hasPayloadLinks
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: HasPayloadLinksPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -97,14 +98,18 @@ export function serializeHasPayloadLinksPostResponse(writer: SerializationWriter
     writer.writeCollectionOfObjectValues<HasPayloadLinkResultItem>("value", hasPayloadLinksPostResponse.value, serializeHasPayloadLinkResultItem);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const HasPayloadLinksRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/hasPayloadLinks";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const HasPayloadLinksRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: HasPayloadLinksRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createHasPayloadLinksPostResponseFromDiscriminatorValue,
@@ -113,9 +118,5 @@ export const HasPayloadLinksRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const HasPayloadLinksRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/hasPayloadLinks";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface DataConnectorRequestBuilder extends BaseRequestBuilder<DataConn
     /**
      * The data connector in the context of which this flow pulls in data from a source system.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IndustryDataConnector
+     * @returns {Promise<IndustryDataConnector>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DataConnectorRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
      * The data connector in the context of which this flow pulls in data from a source system.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DataConnectorRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DataConnectorRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DataConnectorRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DataConnectorRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DataConnectorRequestBuilderGetQueryParametersMapper: Record<string, string
  */
 export const DataConnectorRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DataConnectorRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIndustryDataConnectorFromDiscriminatorValue,
         queryParametersMapper: DataConnectorRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DataConnectorRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

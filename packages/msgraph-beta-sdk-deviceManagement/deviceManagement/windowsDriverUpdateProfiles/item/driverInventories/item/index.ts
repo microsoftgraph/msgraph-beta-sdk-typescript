@@ -12,38 +12,41 @@ export interface WindowsDriverUpdateInventoryItemRequestBuilder extends BaseRequ
     /**
      * Delete navigation property driverInventories for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Driver inventories for this profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsDriverUpdateInventory
+     * @returns {Promise<WindowsDriverUpdateInventory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsDriverUpdateInventory | undefined>;
     /**
      * Update the navigation property driverInventories in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsDriverUpdateInventory
+     * @returns {Promise<WindowsDriverUpdateInventory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: WindowsDriverUpdateInventory, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsDriverUpdateInventory | undefined>;
     /**
      * Delete navigation property driverInventories for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Driver inventories for this profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property driverInventories in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: WindowsDriverUpdateInventory, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/driverInventories/{windowsDriverUpdateInventory%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const WindowsDriverUpdateInventoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsDriverUpdateInventoryFromDiscriminatorValue,
         queryParametersMapper: WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsDriverUpdateInventoryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const WindowsDriverUpdateInventoryItemRequestBuilderRequestsMetadata: Req
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/driverInventories/{windowsDriverUpdateInventory%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

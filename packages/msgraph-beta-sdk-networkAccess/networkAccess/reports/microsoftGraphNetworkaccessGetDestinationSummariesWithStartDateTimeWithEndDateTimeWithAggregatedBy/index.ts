@@ -9,14 +9,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse
+ * @returns {GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse}
  */
 export function createGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse(getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse: Partial<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -37,13 +37,14 @@ export interface MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDate
     /**
      * Invoke function getDestinationSummaries
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse
+     * @returns {Promise<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters> | undefined) : Promise<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse | undefined>;
     /**
      * Invoke function getDestinationSummaries
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -81,6 +82,10 @@ export function serializeGetDestinationSummariesWithStartDateTimeWithEndDateTime
     writer.writeCollectionOfObjectValues<DestinationSummary>("value", getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse.value, serializeDestinationSummary);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.getDestinationSummaries(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy='{aggregatedBy}'){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -95,19 +100,15 @@ const MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEnd
  */
 export const MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.getDestinationSummaries(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy='{aggregatedBy}'){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

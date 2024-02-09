@@ -12,38 +12,41 @@ export interface MobileAppIntentAndStateItemRequestBuilder extends BaseRequestBu
     /**
      * Delete navigation property mobileAppIntentAndStates for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The list of troubleshooting events for this user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MobileAppIntentAndState
+     * @returns {Promise<MobileAppIntentAndState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MobileAppIntentAndStateItemRequestBuilderGetQueryParameters> | undefined) : Promise<MobileAppIntentAndState | undefined>;
     /**
      * Update the navigation property mobileAppIntentAndStates in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MobileAppIntentAndState
+     * @returns {Promise<MobileAppIntentAndState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: MobileAppIntentAndState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MobileAppIntentAndState | undefined>;
     /**
      * Delete navigation property mobileAppIntentAndStates for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of troubleshooting events for this user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MobileAppIntentAndStateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property mobileAppIntentAndStates in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MobileAppIntentAndState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface MobileAppIntentAndStateItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MobileAppIntentAndStateItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mobileAppIntentAndStates/{mobileAppIntentAndState%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MobileAppIntentAndStateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const MobileAppIntentAndStateItemRequestBuilderGetQueryParametersMapper: Record<
  */
 export const MobileAppIntentAndStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: MobileAppIntentAndStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: MobileAppIntentAndStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMobileAppIntentAndStateFromDiscriminatorValue,
         queryParametersMapper: MobileAppIntentAndStateItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: MobileAppIntentAndStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMobileAppIntentAndStateFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const MobileAppIntentAndStateItemRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MobileAppIntentAndStateItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mobileAppIntentAndStates/{mobileAppIntentAndState%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

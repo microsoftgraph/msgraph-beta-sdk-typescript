@@ -12,38 +12,41 @@ export interface GroupPolicySettingMappingItemRequestBuilder extends BaseRequest
     /**
      * Delete navigation property groupPolicySettingMappings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A list of group policy settings to MDM/Intune mappings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GroupPolicySettingMapping
+     * @returns {Promise<GroupPolicySettingMapping>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GroupPolicySettingMappingItemRequestBuilderGetQueryParameters> | undefined) : Promise<GroupPolicySettingMapping | undefined>;
     /**
      * Update the navigation property groupPolicySettingMappings in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GroupPolicySettingMapping
+     * @returns {Promise<GroupPolicySettingMapping>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: GroupPolicySettingMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GroupPolicySettingMapping | undefined>;
     /**
      * Delete navigation property groupPolicySettingMappings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A list of group policy settings to MDM/Intune mappings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GroupPolicySettingMappingItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property groupPolicySettingMappings in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: GroupPolicySettingMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface GroupPolicySettingMappingItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GroupPolicySettingMappingItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/groupPolicySettingMappings/{groupPolicySettingMapping%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GroupPolicySettingMappingItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const GroupPolicySettingMappingItemRequestBuilderGetQueryParametersMapper: Recor
  */
 export const GroupPolicySettingMappingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: GroupPolicySettingMappingItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: GroupPolicySettingMappingItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGroupPolicySettingMappingFromDiscriminatorValue,
         queryParametersMapper: GroupPolicySettingMappingItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: GroupPolicySettingMappingItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGroupPolicySettingMappingFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const GroupPolicySettingMappingItemRequestBuilderRequestsMetadata: Reques
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GroupPolicySettingMappingItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/groupPolicySettingMappings/{groupPolicySettingMapping%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

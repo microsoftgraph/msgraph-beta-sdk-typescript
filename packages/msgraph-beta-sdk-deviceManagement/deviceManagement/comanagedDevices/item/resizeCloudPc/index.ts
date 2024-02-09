@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a resizeCloudPcPostRequestBody
+ * @returns {ResizeCloudPcPostRequestBody}
  */
 export function createResizeCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoResizeCloudPcPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoResizeCloudPcPostRequestBody(resizeCloudPcPostRequestBody: Partial<ResizeCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -44,6 +44,7 @@ export interface ResizeCloudPcRequestBuilder extends BaseRequestBuilder<ResizeCl
      * Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0|Find more info here}
      */
@@ -52,7 +53,7 @@ export interface ResizeCloudPcRequestBuilder extends BaseRequestBuilder<ResizeCl
      * Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc
      */
      toPostRequestInformation(body: ResizeCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -66,14 +67,18 @@ export function serializeResizeCloudPcPostRequestBody(writer: SerializationWrite
     writer.writeAdditionalData(resizeCloudPcPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ResizeCloudPcRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/resizeCloudPc";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ResizeCloudPcRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ResizeCloudPcRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -81,9 +86,5 @@ export const ResizeCloudPcRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ResizeCloudPcRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/resizeCloudPc";
 /* tslint:enable */
 /* eslint-enable */

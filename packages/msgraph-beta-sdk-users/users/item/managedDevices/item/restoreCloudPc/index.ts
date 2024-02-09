@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a restoreCloudPcPostRequestBody
+ * @returns {RestoreCloudPcPostRequestBody}
  */
 export function createRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRestoreCloudPcPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRestoreCloudPcPostRequestBody(restoreCloudPcPostRequestBody: Partial<RestoreCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -44,6 +44,7 @@ export interface RestoreCloudPcRequestBuilder extends BaseRequestBuilder<Restore
      * Restore a Cloud PC device to a previous state with an Intune managed device ID.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0|Find more info here}
      */
@@ -52,7 +53,7 @@ export interface RestoreCloudPcRequestBuilder extends BaseRequestBuilder<Restore
      * Restore a Cloud PC device to a previous state with an Intune managed device ID.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
      */
      toPostRequestInformation(body: RestoreCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -66,14 +67,18 @@ export function serializeRestoreCloudPcPostRequestBody(writer: SerializationWrit
     writer.writeAdditionalData(restoreCloudPcPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RestoreCloudPcRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/restoreCloudPc";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const RestoreCloudPcRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RestoreCloudPcRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -81,9 +86,5 @@ export const RestoreCloudPcRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RestoreCloudPcRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/restoreCloudPc";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface DevicesWithDeviceIdRequestBuilder extends BaseRequestBuilder<De
     /**
      * Delete navigation property devices for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get devices from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Device
+     * @returns {Promise<Device>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DevicesWithDeviceIdRequestBuilderGetQueryParameters> | undefined) : Promise<Device | undefined>;
     /**
      * Update the navigation property devices in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Device
+     * @returns {Promise<Device>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Device | undefined>;
     /**
      * Delete navigation property devices for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get devices from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DevicesWithDeviceIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property devices in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DevicesWithDeviceIdRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DevicesWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}'){?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DevicesWithDeviceIdRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DevicesWithDeviceIdRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const DevicesWithDeviceIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DevicesWithDeviceIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DevicesWithDeviceIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceFromDiscriminatorValue,
         queryParametersMapper: DevicesWithDeviceIdRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DevicesWithDeviceIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DevicesWithDeviceIdRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DevicesWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}'){?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

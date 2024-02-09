@@ -12,38 +12,41 @@ export interface PrivilegeManagementElevationItemRequestBuilder extends BaseRequ
     /**
      * Delete navigation property privilegeManagementElevations for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The endpoint privilege management elevation event entity contains elevation details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegeManagementElevation
+     * @returns {Promise<PrivilegeManagementElevation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PrivilegeManagementElevationItemRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegeManagementElevation | undefined>;
     /**
      * Update the navigation property privilegeManagementElevations in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegeManagementElevation
+     * @returns {Promise<PrivilegeManagementElevation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PrivilegeManagementElevation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegeManagementElevation | undefined>;
     /**
      * Delete navigation property privilegeManagementElevations for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The endpoint privilege management elevation event entity contains elevation details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrivilegeManagementElevationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property privilegeManagementElevations in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PrivilegeManagementElevation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PrivilegeManagementElevationItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PrivilegeManagementElevationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PrivilegeManagementElevationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PrivilegeManagementElevationItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const PrivilegeManagementElevationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PrivilegeManagementElevationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PrivilegeManagementElevationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegeManagementElevationFromDiscriminatorValue,
         queryParametersMapper: PrivilegeManagementElevationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PrivilegeManagementElevationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegeManagementElevationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PrivilegeManagementElevationItemRequestBuilderRequestsMetadata: Req
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PrivilegeManagementElevationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

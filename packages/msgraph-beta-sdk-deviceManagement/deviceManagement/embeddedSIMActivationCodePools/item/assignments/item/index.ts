@@ -12,38 +12,41 @@ export interface EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder exten
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Navigational property to a list of targets to which this pool is assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EmbeddedSIMActivationCodePoolAssignment
+     * @returns {Promise<EmbeddedSIMActivationCodePoolAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<EmbeddedSIMActivationCodePoolAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EmbeddedSIMActivationCodePoolAssignment
+     * @returns {Promise<EmbeddedSIMActivationCodePoolAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: EmbeddedSIMActivationCodePoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EmbeddedSIMActivationCodePoolAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Navigational property to a list of targets to which this pool is assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: EmbeddedSIMActivationCodePoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQue
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/assignments/{embeddedSIMActivationCodePoolAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParameter
  */
 export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue,
         queryParametersMapper: EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderRequestsMe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/assignments/{embeddedSIMActivationCodePoolAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a uploadSecretPostRequestBody
+ * @returns {UploadSecretPostRequestBody}
  */
 export function createUploadSecretPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadSecretPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUploadSecretPostRequestBody(uploadSecretPostRequestBody: Partial<UploadSecretPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -71,7 +71,8 @@ export interface UploadSecretRequestBuilder extends BaseRequestBuilder<UploadSec
      * Upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Microsoft Entra ID, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TrustFrameworkKey
+     * @returns {Promise<TrustFrameworkKey>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadsecret?view=graph-rest-1.0|Find more info here}
      */
      post(body: UploadSecretPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TrustFrameworkKey | undefined>;
@@ -79,19 +80,23 @@ export interface UploadSecretRequestBuilder extends BaseRequestBuilder<UploadSec
      * Upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Microsoft Entra ID, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: UploadSecretPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UploadSecretRequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}/uploadSecret";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UploadSecretRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: UploadSecretRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTrustFrameworkKeyFromDiscriminatorValue,
@@ -100,9 +105,5 @@ export const UploadSecretRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UploadSecretRequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}/uploadSecret";
 /* tslint:enable */
 /* eslint-enable */

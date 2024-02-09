@@ -12,6 +12,7 @@ export interface AuthenticationCombinationConfigurationItemRequestBuilder extend
     /**
      * Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      * @see {@link https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-delete-combinationconfigurations?view=graph-rest-1.0|Find more info here}
      */
@@ -19,7 +20,8 @@ export interface AuthenticationCombinationConfigurationItemRequestBuilder extend
     /**
      * Read the properties and relationships of an authenticationCombinationConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationCombinationConfiguration
+     * @returns {Promise<AuthenticationCombinationConfiguration>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      * @see {@link https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-get?view=graph-rest-1.0|Find more info here}
      */
@@ -28,7 +30,8 @@ export interface AuthenticationCombinationConfigurationItemRequestBuilder extend
      * Update the properties of an authenticationCombinationConfiguration object. The properties can be for one of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationCombinationConfiguration
+     * @returns {Promise<AuthenticationCombinationConfiguration>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      * @see {@link https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0|Find more info here}
      */
@@ -36,14 +39,14 @@ export interface AuthenticationCombinationConfigurationItemRequestBuilder extend
     /**
      * Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an authenticationCombinationConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuthenticationCombinationConfigurationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -51,7 +54,7 @@ export interface AuthenticationCombinationConfigurationItemRequestBuilder extend
      * Update the properties of an authenticationCombinationConfiguration object. The properties can be for one of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      toPatchRequestInformation(body: AuthenticationCombinationConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -70,6 +73,10 @@ export interface AuthenticationCombinationConfigurationItemRequestBuilderGetQuer
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AuthenticationCombinationConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy%2Did}/combinationConfigurations/{authenticationCombinationConfiguration%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AuthenticationCombinationConfigurationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -81,28 +88,28 @@ const AuthenticationCombinationConfigurationItemRequestBuilderGetQueryParameters
  */
 export const AuthenticationCombinationConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AuthenticationCombinationConfigurationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AuthenticationCombinationConfigurationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationCombinationConfigurationFromDiscriminatorValue,
         queryParametersMapper: AuthenticationCombinationConfigurationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AuthenticationCombinationConfigurationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationCombinationConfigurationFromDiscriminatorValue,
@@ -111,9 +118,5 @@ export const AuthenticationCombinationConfigurationItemRequestBuilderRequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AuthenticationCombinationConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy%2Did}/combinationConfigurations/{authenticationCombinationConfiguration%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

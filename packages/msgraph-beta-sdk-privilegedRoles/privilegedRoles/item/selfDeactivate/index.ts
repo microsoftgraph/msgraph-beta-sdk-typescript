@@ -12,33 +12,34 @@ export interface SelfDeactivateRequestBuilder extends BaseRequestBuilder<SelfDea
     /**
      * Invoke action selfDeactivate
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedRoleAssignment
+     * @returns {Promise<PrivilegedRoleAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedRoleAssignment | undefined>;
     /**
      * Invoke action selfDeactivate
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const SelfDeactivateRequestBuilderUriTemplate = "{+baseurl}/privilegedRoles/{privilegedRole%2Did}/selfDeactivate";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const SelfDeactivateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: SelfDeactivateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedRoleAssignmentFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SelfDeactivateRequestBuilderUriTemplate = "{+baseurl}/privilegedRoles/{privilegedRole%2Did}/selfDeactivate";
 /* tslint:enable */
 /* eslint-enable */

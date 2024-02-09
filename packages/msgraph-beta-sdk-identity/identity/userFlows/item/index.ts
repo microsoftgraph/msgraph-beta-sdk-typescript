@@ -12,6 +12,7 @@ export interface IdentityUserFlowItemRequestBuilder extends BaseRequestBuilder<I
     /**
      * Delete an existing userFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
      * @see {@link https://learn.microsoft.com/graph/api/identityuserflow-delete?view=graph-rest-1.0|Find more info here}
      */
@@ -19,7 +20,8 @@ export interface IdentityUserFlowItemRequestBuilder extends BaseRequestBuilder<I
     /**
      * Retrieve the properties and associations for an userFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IdentityUserFlow
+     * @returns {Promise<IdentityUserFlow>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
      * @see {@link https://learn.microsoft.com/graph/api/identityuserflow-get?view=graph-rest-1.0|Find more info here}
      */
@@ -28,21 +30,22 @@ export interface IdentityUserFlowItemRequestBuilder extends BaseRequestBuilder<I
      * Update the navigation property userFlows in identity
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IdentityUserFlow
+     * @returns {Promise<IdentityUserFlow>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
      */
      patch(body: IdentityUserFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IdentityUserFlow | undefined>;
     /**
      * Delete an existing userFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and associations for an userFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IdentityUserFlowItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -50,7 +53,7 @@ export interface IdentityUserFlowItemRequestBuilder extends BaseRequestBuilder<I
      * Update the navigation property userFlows in identity
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
      */
      toPatchRequestInformation(body: IdentityUserFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -69,6 +72,10 @@ export interface IdentityUserFlowItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const IdentityUserFlowItemRequestBuilderUriTemplate = "{+baseurl}/identity/userFlows/{identityUserFlow%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const IdentityUserFlowItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -80,28 +87,28 @@ const IdentityUserFlowItemRequestBuilderGetQueryParametersMapper: Record<string,
  */
 export const IdentityUserFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: IdentityUserFlowItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: IdentityUserFlowItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIdentityUserFlowFromDiscriminatorValue,
         queryParametersMapper: IdentityUserFlowItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: IdentityUserFlowItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIdentityUserFlowFromDiscriminatorValue,
@@ -110,9 +117,5 @@ export const IdentityUserFlowItemRequestBuilderRequestsMetadata: RequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const IdentityUserFlowItemRequestBuilderUriTemplate = "{+baseurl}/identity/userFlows/{identityUserFlow%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

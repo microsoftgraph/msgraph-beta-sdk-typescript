@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a updateAlertsPostRequestBody
+ * @returns {UpdateAlertsPostRequestBody}
  */
 export function createUpdateAlertsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAlertsPostRequestBody;
@@ -16,14 +16,14 @@ export function createUpdateAlertsPostRequestBodyFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a updateAlertsPostResponse
+ * @returns {UpdateAlertsPostResponse}
  */
 export function createUpdateAlertsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAlertsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUpdateAlertsPostRequestBody(updateAlertsPostRequestBody: Partial<UpdateAlertsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoUpdateAlertsPostRequestBody(updateAlertsPostReque
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUpdateAlertsPostResponse(updateAlertsPostResponse: Partial<UpdateAlertsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -85,7 +85,8 @@ export interface UpdateAlertsRequestBuilder extends BaseRequestBuilder<UpdateAle
      * Update multiple alerts in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UpdateAlertsPostResponse
+     * @returns {Promise<UpdateAlertsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0|Find more info here}
      */
      post(body: UpdateAlertsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UpdateAlertsPostResponse | undefined>;
@@ -93,19 +94,23 @@ export interface UpdateAlertsRequestBuilder extends BaseRequestBuilder<UpdateAle
      * Update multiple alerts in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: UpdateAlertsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UpdateAlertsRequestBuilderUriTemplate = "{+baseurl}/security/alerts/updateAlerts";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UpdateAlertsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: UpdateAlertsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUpdateAlertsPostResponseFromDiscriminatorValue,
@@ -114,9 +119,5 @@ export const UpdateAlertsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UpdateAlertsRequestBuilderUriTemplate = "{+baseurl}/security/alerts/updateAlerts";
 /* tslint:enable */
 /* eslint-enable */

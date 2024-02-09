@@ -12,13 +12,15 @@ export interface PrintUsageByPrinterItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete navigation property monthlyPrintUsageSummariesByPrinter for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get monthlyPrintUsageSummariesByPrinter from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrintUsageByPrinter
+     * @returns {Promise<PrintUsageByPrinter>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      get(requestConfiguration?: RequestConfiguration<PrintUsageByPrinterItemRequestBuilderGetQueryParameters> | undefined) : Promise<PrintUsageByPrinter | undefined>;
@@ -26,21 +28,22 @@ export interface PrintUsageByPrinterItemRequestBuilder extends BaseRequestBuilde
      * Update the navigation property monthlyPrintUsageSummariesByPrinter in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrintUsageByPrinter
+     * @returns {Promise<PrintUsageByPrinter>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      patch(body: PrintUsageByPrinter, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrintUsageByPrinter | undefined>;
     /**
      * Delete navigation property monthlyPrintUsageSummariesByPrinter for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get monthlyPrintUsageSummariesByPrinter from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrintUsageByPrinterItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface PrintUsageByPrinterItemRequestBuilder extends BaseRequestBuilde
      * Update the navigation property monthlyPrintUsageSummariesByPrinter in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toPatchRequestInformation(body: PrintUsageByPrinter, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface PrintUsageByPrinterItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PrintUsageByPrinterItemRequestBuilderUriTemplate = "{+baseurl}/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PrintUsageByPrinterItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const PrintUsageByPrinterItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const PrintUsageByPrinterItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PrintUsageByPrinterItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PrintUsageByPrinterItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrintUsageByPrinterFromDiscriminatorValue,
         queryParametersMapper: PrintUsageByPrinterItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PrintUsageByPrinterItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrintUsageByPrinterFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const PrintUsageByPrinterItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PrintUsageByPrinterItemRequestBuilderUriTemplate = "{+baseurl}/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

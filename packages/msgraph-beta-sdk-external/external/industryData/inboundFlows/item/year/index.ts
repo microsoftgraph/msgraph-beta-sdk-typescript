@@ -12,13 +12,14 @@ export interface YearRequestBuilder extends BaseRequestBuilder<YearRequestBuilde
     /**
      * The year that the data brought in via this flow applies to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of YearTimePeriodDefinition
+     * @returns {Promise<YearTimePeriodDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<YearRequestBuilderGetQueryParameters> | undefined) : Promise<YearTimePeriodDefinition | undefined>;
     /**
      * The year that the data brought in via this flow applies to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<YearRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface YearRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const YearRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const YearRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const YearRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const YearRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: YearRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createYearTimePeriodDefinitionFromDiscriminatorValue,
         queryParametersMapper: YearRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const YearRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

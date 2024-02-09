@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a rejectPostRequestBody
+ * @returns {RejectPostRequestBody}
  */
 export function createRejectPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRejectPostRequestBody;
@@ -16,14 +16,14 @@ export function createRejectPostRequestBodyFromDiscriminatorValue(parseNode: Par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a rejectPostResponse
+ * @returns {RejectPostResponse}
  */
 export function createRejectPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRejectPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRejectPostRequestBody(rejectPostRequestBody: Partial<RejectPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -34,7 +34,7 @@ export function deserializeIntoRejectPostRequestBody(rejectPostRequestBody: Part
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRejectPostResponse(rejectPostResponse: Partial<RejectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -82,14 +82,15 @@ export interface RejectRequestBuilder extends BaseRequestBuilder<RejectRequestBu
      * Rejects the requested instance of an operationApprovalRequest.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RejectPostResponse
+     * @returns {Promise<RejectPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: RejectPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RejectPostResponse | undefined>;
     /**
      * Rejects the requested instance of an operationApprovalRequest.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: RejectPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -111,14 +112,18 @@ export function serializeRejectPostResponse(writer: SerializationWriter, rejectP
     writer.writeAdditionalData(rejectPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RejectRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}/reject";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const RejectRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RejectRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRejectPostResponseFromDiscriminatorValue,
@@ -127,9 +132,5 @@ export const RejectRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RejectRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}/reject";
 /* tslint:enable */
 /* eslint-enable */

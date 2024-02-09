@@ -11,32 +11,33 @@ export interface RunDiagnosticsRequestBuilder extends BaseRequestBuilder<RunDiag
     /**
      * Run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/teamworkdevice-rundiagnostics?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const RunDiagnosticsRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/runDiagnostics";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const RunDiagnosticsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RunDiagnosticsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RunDiagnosticsRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/runDiagnostics";
 /* tslint:enable */
 /* eslint-enable */

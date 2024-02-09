@@ -40,21 +40,22 @@ export interface AddGroupRequestBuilder extends BaseRequestBuilder<AddGroupReque
      * Invoke action addGroup
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AddGroupPostResponse
+     * @returns {Promise<AddGroupPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: AddGroupPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AddGroupPostResponse | undefined>;
     /**
      * Invoke action addGroup
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: AddGroupPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a addGroupPostRequestBody
+ * @returns {AddGroupPostRequestBody}
  */
 export function createAddGroupPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddGroupPostRequestBody;
@@ -62,14 +63,14 @@ export function createAddGroupPostRequestBodyFromDiscriminatorValue(parseNode: P
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a addGroupPostResponse
+ * @returns {AddGroupPostResponse}
  */
 export function createAddGroupPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddGroupPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAddGroupPostRequestBody(addGroupPostRequestBody: Partial<AddGroupPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -79,7 +80,7 @@ export function deserializeIntoAddGroupPostRequestBody(addGroupPostRequestBody: 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAddGroupPostResponse(addGroupPostResponse: Partial<AddGroupPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -104,14 +105,18 @@ export function serializeAddGroupPostResponse(writer: SerializationWriter, addGr
     writer.writeAdditionalData(addGroupPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AddGroupRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/addGroup";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const AddGroupRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: AddGroupRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAddGroupPostResponseFromDiscriminatorValue,
@@ -120,9 +125,5 @@ export const AddGroupRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AddGroupRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/addGroup";
 /* tslint:enable */
 /* eslint-enable */

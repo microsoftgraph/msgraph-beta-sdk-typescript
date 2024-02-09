@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getInaccessibleCloudPcReportsPostRequestBody
+ * @returns {GetInaccessibleCloudPcReportsPostRequestBody}
  */
 export function createGetInaccessibleCloudPcReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetInaccessibleCloudPcReportsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetInaccessibleCloudPcReportsPostRequestBody(getInaccessibleCloudPcReportsPostRequestBody: Partial<GetInaccessibleCloudPcReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -80,7 +80,8 @@ export interface GetInaccessibleCloudPcReportsRequestBuilder extends BaseRequest
      * Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-getinaccessiblecloudpcreports?view=graph-rest-1.0|Find more info here}
      */
      post(body: GetInaccessibleCloudPcReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
@@ -88,7 +89,7 @@ export interface GetInaccessibleCloudPcReportsRequestBuilder extends BaseRequest
      * Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetInaccessibleCloudPcReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -108,14 +109,18 @@ export function serializeGetInaccessibleCloudPcReportsPostRequestBody(writer: Se
     writer.writeAdditionalData(getInaccessibleCloudPcReportsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetInaccessibleCloudPcReportsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getInaccessibleCloudPcReports";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetInaccessibleCloudPcReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetInaccessibleCloudPcReportsRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -124,9 +129,5 @@ export const GetInaccessibleCloudPcReportsRequestBuilderRequestsMetadata: Reques
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetInaccessibleCloudPcReportsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getInaccessibleCloudPcReports";
 /* tslint:enable */
 /* eslint-enable */

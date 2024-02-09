@@ -12,38 +12,41 @@ export interface SharedEmailDomainInvitationItemRequestBuilder extends BaseReque
     /**
      * Delete navigation property sharedEmailDomainInvitations for domains
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get sharedEmailDomainInvitations from domains
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SharedEmailDomainInvitation
+     * @returns {Promise<SharedEmailDomainInvitation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SharedEmailDomainInvitationItemRequestBuilderGetQueryParameters> | undefined) : Promise<SharedEmailDomainInvitation | undefined>;
     /**
      * Update the navigation property sharedEmailDomainInvitations in domains
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SharedEmailDomainInvitation
+     * @returns {Promise<SharedEmailDomainInvitation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SharedEmailDomainInvitation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharedEmailDomainInvitation | undefined>;
     /**
      * Delete navigation property sharedEmailDomainInvitations for domains
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get sharedEmailDomainInvitations from domains
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SharedEmailDomainInvitationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property sharedEmailDomainInvitations in domains
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SharedEmailDomainInvitation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface SharedEmailDomainInvitationItemRequestBuilderGetQueryParameters
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SharedEmailDomainInvitationItemRequestBuilderUriTemplate = "{+baseurl}/domains/{domain%2Did}/sharedEmailDomainInvitations/{sharedEmailDomainInvitation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SharedEmailDomainInvitationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const SharedEmailDomainInvitationItemRequestBuilderGetQueryParametersMapper: Rec
  */
 export const SharedEmailDomainInvitationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SharedEmailDomainInvitationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SharedEmailDomainInvitationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSharedEmailDomainInvitationFromDiscriminatorValue,
         queryParametersMapper: SharedEmailDomainInvitationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SharedEmailDomainInvitationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSharedEmailDomainInvitationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const SharedEmailDomainInvitationItemRequestBuilderRequestsMetadata: Requ
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SharedEmailDomainInvitationItemRequestBuilderUriTemplate = "{+baseurl}/domains/{domain%2Did}/sharedEmailDomainInvitations/{sharedEmailDomainInvitation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

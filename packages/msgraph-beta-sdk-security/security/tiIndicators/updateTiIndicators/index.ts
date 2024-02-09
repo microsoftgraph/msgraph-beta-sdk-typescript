@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a updateTiIndicatorsPostRequestBody
+ * @returns {UpdateTiIndicatorsPostRequestBody}
  */
 export function createUpdateTiIndicatorsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateTiIndicatorsPostRequestBody;
@@ -16,14 +16,14 @@ export function createUpdateTiIndicatorsPostRequestBodyFromDiscriminatorValue(pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a updateTiIndicatorsPostResponse
+ * @returns {UpdateTiIndicatorsPostResponse}
  */
 export function createUpdateTiIndicatorsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateTiIndicatorsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUpdateTiIndicatorsPostRequestBody(updateTiIndicatorsPostRequestBody: Partial<UpdateTiIndicatorsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoUpdateTiIndicatorsPostRequestBody(updateTiIndicat
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUpdateTiIndicatorsPostResponse(updateTiIndicatorsPostResponse: Partial<UpdateTiIndicatorsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -85,7 +85,8 @@ export interface UpdateTiIndicatorsRequestBuilder extends BaseRequestBuilder<Upd
      * Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UpdateTiIndicatorsPostResponse
+     * @returns {Promise<UpdateTiIndicatorsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0|Find more info here}
      */
      post(body: UpdateTiIndicatorsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UpdateTiIndicatorsPostResponse | undefined>;
@@ -93,19 +94,23 @@ export interface UpdateTiIndicatorsRequestBuilder extends BaseRequestBuilder<Upd
      * Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: UpdateTiIndicatorsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UpdateTiIndicatorsRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators/updateTiIndicators";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UpdateTiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: UpdateTiIndicatorsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUpdateTiIndicatorsPostResponseFromDiscriminatorValue,
@@ -114,9 +119,5 @@ export const UpdateTiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UpdateTiIndicatorsRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators/updateTiIndicators";
 /* tslint:enable */
 /* eslint-enable */

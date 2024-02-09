@@ -12,12 +12,16 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
     /**
      * Delete navigation property itemInsights for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InsightsSettings
+     * @returns {Promise<InsightsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      * @see {@link https://learn.microsoft.com/graph/api/organizationsettings-list-iteminsights?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemInsightsRequestBuilderGetQueryParameters> | undefined) : Promise<InsightsSettings | undefined>;
@@ -25,27 +29,32 @@ export interface ItemInsightsRequestBuilder extends BaseRequestBuilder<ItemInsig
      * Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InsightsSettings
+     * @returns {Promise<InsightsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      * @see {@link https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: InsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InsightsSettings | undefined>;
     /**
      * Delete navigation property itemInsights for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemInsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
+     * @deprecated The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings
      */
      toPatchRequestInformation(body: InsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +72,10 @@ export interface ItemInsightsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/itemInsights{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ItemInsightsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +87,28 @@ const ItemInsightsRequestBuilderGetQueryParametersMapper: Record<string, string>
  */
 export const ItemInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ItemInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ItemInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInsightsSettingsFromDiscriminatorValue,
         queryParametersMapper: ItemInsightsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ItemInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInsightsSettingsFromDiscriminatorValue,
@@ -104,9 +117,5 @@ export const ItemInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ItemInsightsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/itemInsights{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

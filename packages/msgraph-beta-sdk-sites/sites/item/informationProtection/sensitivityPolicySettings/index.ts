@@ -12,38 +12,41 @@ export interface SensitivityPolicySettingsRequestBuilder extends BaseRequestBuil
     /**
      * Delete navigation property sensitivityPolicySettings for sites
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get sensitivityPolicySettings from sites
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SensitivityPolicySettings
+     * @returns {Promise<SensitivityPolicySettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SensitivityPolicySettingsRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityPolicySettings | undefined>;
     /**
      * Update the navigation property sensitivityPolicySettings in sites
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SensitivityPolicySettings
+     * @returns {Promise<SensitivityPolicySettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SensitivityPolicySettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityPolicySettings | undefined>;
     /**
      * Delete navigation property sensitivityPolicySettings for sites
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get sensitivityPolicySettings from sites
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SensitivityPolicySettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property sensitivityPolicySettings in sites
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SensitivityPolicySettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface SensitivityPolicySettingsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SensitivityPolicySettingsRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityPolicySettings{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SensitivityPolicySettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const SensitivityPolicySettingsRequestBuilderGetQueryParametersMapper: Record<st
  */
 export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SensitivityPolicySettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SensitivityPolicySettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSensitivityPolicySettingsFromDiscriminatorValue,
         queryParametersMapper: SensitivityPolicySettingsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SensitivityPolicySettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSensitivityPolicySettingsFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SensitivityPolicySettingsRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityPolicySettings{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface ProgramControlTypeItemRequestBuilder extends BaseRequestBuilder
     /**
      * Delete entity from programControlTypes
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get entity from programControlTypes by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ProgramControlType
+     * @returns {Promise<ProgramControlType>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ProgramControlTypeItemRequestBuilderGetQueryParameters> | undefined) : Promise<ProgramControlType | undefined>;
     /**
      * Update entity in programControlTypes
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ProgramControlType
+     * @returns {Promise<ProgramControlType>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ProgramControlType, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProgramControlType | undefined>;
     /**
      * Delete entity from programControlTypes
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get entity from programControlTypes by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProgramControlTypeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update entity in programControlTypes
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ProgramControlType, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ProgramControlTypeItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ProgramControlTypeItemRequestBuilderUriTemplate = "{+baseurl}/programControlTypes/{programControlType%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ProgramControlTypeItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ProgramControlTypeItemRequestBuilderGetQueryParametersMapper: Record<strin
  */
 export const ProgramControlTypeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ProgramControlTypeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ProgramControlTypeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createProgramControlTypeFromDiscriminatorValue,
         queryParametersMapper: ProgramControlTypeItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ProgramControlTypeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createProgramControlTypeFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ProgramControlTypeItemRequestBuilderRequestsMetadata: RequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ProgramControlTypeItemRequestBuilderUriTemplate = "{+baseurl}/programControlTypes/{programControlType%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

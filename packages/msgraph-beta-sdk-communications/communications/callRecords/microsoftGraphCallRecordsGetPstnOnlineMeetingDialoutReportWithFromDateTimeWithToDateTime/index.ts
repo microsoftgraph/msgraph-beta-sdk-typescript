@@ -9,14 +9,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse
+ * @returns {GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse}
  */
 export function createGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse(getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse: Partial<GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -37,13 +37,14 @@ export interface MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithF
     /**
      * Invoke function getPstnOnlineMeetingDialoutReport
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse
+     * @returns {Promise<GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse | undefined>;
     /**
      * Invoke function getPstnOnlineMeetingDialoutReport
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -81,6 +82,10 @@ export function serializeGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithTo
     writer.writeCollectionOfObjectValues<PstnOnlineMeetingDialoutReport>("value", getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse.value, serializePstnOnlineMeetingDialoutReport);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -95,19 +100,15 @@ const MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTime
  */
 export const MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

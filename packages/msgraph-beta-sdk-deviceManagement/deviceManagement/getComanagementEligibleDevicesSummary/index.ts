@@ -12,33 +12,34 @@ export interface GetComanagementEligibleDevicesSummaryRequestBuilder extends Bas
     /**
      * Invoke function getComanagementEligibleDevicesSummary
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ComanagementEligibleDevicesSummary
+     * @returns {Promise<ComanagementEligibleDevicesSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComanagementEligibleDevicesSummary | undefined>;
     /**
      * Invoke function getComanagementEligibleDevicesSummary
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const GetComanagementEligibleDevicesSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/getComanagementEligibleDevicesSummary()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const GetComanagementEligibleDevicesSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetComanagementEligibleDevicesSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createComanagementEligibleDevicesSummaryFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetComanagementEligibleDevicesSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/getComanagementEligibleDevicesSummary()";
 /* tslint:enable */
 /* eslint-enable */

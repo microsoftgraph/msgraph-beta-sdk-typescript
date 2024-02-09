@@ -12,38 +12,41 @@ export interface CartToClassAssociationItemRequestBuilder extends BaseRequestBui
     /**
      * Delete navigation property cartToClassAssociations for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The Cart To Class Associations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CartToClassAssociation
+     * @returns {Promise<CartToClassAssociation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CartToClassAssociationItemRequestBuilderGetQueryParameters> | undefined) : Promise<CartToClassAssociation | undefined>;
     /**
      * Update the navigation property cartToClassAssociations in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CartToClassAssociation
+     * @returns {Promise<CartToClassAssociation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CartToClassAssociation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CartToClassAssociation | undefined>;
     /**
      * Delete navigation property cartToClassAssociations for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The Cart To Class Associations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CartToClassAssociationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property cartToClassAssociations in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CartToClassAssociation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface CartToClassAssociationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CartToClassAssociationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/cartToClassAssociations/{cartToClassAssociation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CartToClassAssociationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const CartToClassAssociationItemRequestBuilderGetQueryParametersMapper: Record<s
  */
 export const CartToClassAssociationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CartToClassAssociationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CartToClassAssociationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCartToClassAssociationFromDiscriminatorValue,
         queryParametersMapper: CartToClassAssociationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CartToClassAssociationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCartToClassAssociationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const CartToClassAssociationItemRequestBuilderRequestsMetadata: RequestsM
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CartToClassAssociationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/cartToClassAssociations/{cartToClassAssociation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

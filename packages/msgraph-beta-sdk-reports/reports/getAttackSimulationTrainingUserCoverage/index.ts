@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getAttackSimulationTrainingUserCoverageGetResponse
+ * @returns {GetAttackSimulationTrainingUserCoverageGetResponse}
  */
 export function createGetAttackSimulationTrainingUserCoverageGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAttackSimulationTrainingUserCoverageGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetAttackSimulationTrainingUserCoverageGetResponse(getAttackSimulationTrainingUserCoverageGetResponse: Partial<GetAttackSimulationTrainingUserCoverageGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,14 +36,15 @@ export interface GetAttackSimulationTrainingUserCoverageRequestBuilder extends B
     /**
      * Invoke function getAttackSimulationTrainingUserCoverage
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetAttackSimulationTrainingUserCoverageGetResponse
+     * @returns {Promise<GetAttackSimulationTrainingUserCoverageGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
      */
      get(requestConfiguration?: RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters> | undefined) : Promise<GetAttackSimulationTrainingUserCoverageGetResponse | undefined>;
     /**
      * Invoke function getAttackSimulationTrainingUserCoverage
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -82,6 +83,10 @@ export function serializeGetAttackSimulationTrainingUserCoverageGetResponse(writ
     writer.writeCollectionOfObjectValues<AttackSimulationTrainingUserCoverage>("value", getAttackSimulationTrainingUserCoverageGetResponse.value, serializeAttackSimulationTrainingUserCoverage);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetAttackSimulationTrainingUserCoverageRequestBuilderUriTemplate = "{+baseurl}/reports/getAttackSimulationTrainingUserCoverage(){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -96,19 +101,15 @@ const GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParametersMap
  */
 export const GetAttackSimulationTrainingUserCoverageRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetAttackSimulationTrainingUserCoverageRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetAttackSimulationTrainingUserCoverageGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetAttackSimulationTrainingUserCoverageRequestBuilderUriTemplate = "{+baseurl}/reports/getAttackSimulationTrainingUserCoverage(){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

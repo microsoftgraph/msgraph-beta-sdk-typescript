@@ -12,38 +12,41 @@ export interface WindowsDefenderApplicationControlSupplementalPolicyAssignmentIt
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The associated group assignments for the Windows Defender Application Control Supplemental Policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsDefenderApplicationControlSupplementalPolicyAssignment
+     * @returns {Promise<WindowsDefenderApplicationControlSupplementalPolicyAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsDefenderApplicationControlSupplementalPolicyAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsDefenderApplicationControlSupplementalPolicyAssignment
+     * @returns {Promise<WindowsDefenderApplicationControlSupplementalPolicyAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: WindowsDefenderApplicationControlSupplementalPolicyAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsDefenderApplicationControlSupplementalPolicyAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The associated group assignments for the Windows Defender Application Control Supplemental Policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: WindowsDefenderApplicationControlSupplementalPolicyAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface WindowsDefenderApplicationControlSupplementalPolicyAssignmentIt
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/assignments/{windowsDefenderApplicationControlSupplementalPolicyAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBu
  */
 export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsDefenderApplicationControlSupplementalPolicyAssignmentFromDiscriminatorValue,
         queryParametersMapper: WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsDefenderApplicationControlSupplementalPolicyAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/assignments/{windowsDefenderApplicationControlSupplementalPolicyAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

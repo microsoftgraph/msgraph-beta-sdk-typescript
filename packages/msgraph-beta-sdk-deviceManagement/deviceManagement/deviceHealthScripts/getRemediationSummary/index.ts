@@ -12,33 +12,34 @@ export interface GetRemediationSummaryRequestBuilder extends BaseRequestBuilder<
     /**
      * Invoke function getRemediationSummary
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceHealthScriptRemediationSummary
+     * @returns {Promise<DeviceHealthScriptRemediationSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceHealthScriptRemediationSummary | undefined>;
     /**
      * Invoke function getRemediationSummary
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const GetRemediationSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/getRemediationSummary()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const GetRemediationSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetRemediationSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceHealthScriptRemediationSummaryFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetRemediationSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/getRemediationSummary()";
 /* tslint:enable */
 /* eslint-enable */

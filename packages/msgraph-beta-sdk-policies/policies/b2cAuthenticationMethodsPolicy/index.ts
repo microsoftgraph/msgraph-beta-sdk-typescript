@@ -12,12 +12,14 @@ export interface B2cAuthenticationMethodsPolicyRequestBuilder extends BaseReques
     /**
      * Delete navigation property b2cAuthenticationMethodsPolicy for policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties of a b2cAuthenticationMethodsPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of B2cAuthenticationMethodsPolicy
+     * @returns {Promise<B2cAuthenticationMethodsPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<B2cAuthenticationMethodsPolicy | undefined>;
@@ -25,27 +27,28 @@ export interface B2cAuthenticationMethodsPolicyRequestBuilder extends BaseReques
      * Update the properties of a b2cAuthenticationMethodsPolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of B2cAuthenticationMethodsPolicy
+     * @returns {Promise<B2cAuthenticationMethodsPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: B2cAuthenticationMethodsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<B2cAuthenticationMethodsPolicy | undefined>;
     /**
      * Delete navigation property b2cAuthenticationMethodsPolicy for policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties of a b2cAuthenticationMethodsPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a b2cAuthenticationMethodsPolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: B2cAuthenticationMethodsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/b2cAuthenticationMethodsPolicy{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParametersMapper: Reco
  */
 export const B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createB2cAuthenticationMethodsPolicyFromDiscriminatorValue,
         queryParametersMapper: B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createB2cAuthenticationMethodsPolicyFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/b2cAuthenticationMethodsPolicy{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

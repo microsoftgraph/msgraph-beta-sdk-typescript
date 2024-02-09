@@ -12,38 +12,41 @@ export interface CustomSecurityAttributeAuditItemRequestBuilder extends BaseRequ
     /**
      * Delete navigation property customSecurityAttributeAudits for auditLogs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Represents a custom security attribute audit log.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CustomSecurityAttributeAudit
+     * @returns {Promise<CustomSecurityAttributeAudit>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CustomSecurityAttributeAuditItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomSecurityAttributeAudit | undefined>;
     /**
      * Update the navigation property customSecurityAttributeAudits in auditLogs
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CustomSecurityAttributeAudit
+     * @returns {Promise<CustomSecurityAttributeAudit>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CustomSecurityAttributeAudit, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomSecurityAttributeAudit | undefined>;
     /**
      * Delete navigation property customSecurityAttributeAudits for auditLogs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents a custom security attribute audit log.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomSecurityAttributeAuditItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property customSecurityAttributeAudits in auditLogs
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CustomSecurityAttributeAudit, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface CustomSecurityAttributeAuditItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CustomSecurityAttributeAuditItemRequestBuilderUriTemplate = "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CustomSecurityAttributeAuditItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const CustomSecurityAttributeAuditItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const CustomSecurityAttributeAuditItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CustomSecurityAttributeAuditItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CustomSecurityAttributeAuditItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCustomSecurityAttributeAuditFromDiscriminatorValue,
         queryParametersMapper: CustomSecurityAttributeAuditItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CustomSecurityAttributeAuditItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCustomSecurityAttributeAuditFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const CustomSecurityAttributeAuditItemRequestBuilderRequestsMetadata: Req
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CustomSecurityAttributeAuditItemRequestBuilderUriTemplate = "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

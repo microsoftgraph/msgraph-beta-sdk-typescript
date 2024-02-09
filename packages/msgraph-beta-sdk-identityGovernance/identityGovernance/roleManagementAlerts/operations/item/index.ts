@@ -12,38 +12,41 @@ export interface LongRunningOperationItemRequestBuilder extends BaseRequestBuild
     /**
      * Delete navigation property operations for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Represents operations on resources that take a long time to complete and can run in the background until completion.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of LongRunningOperation
+     * @returns {Promise<LongRunningOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<LongRunningOperationItemRequestBuilderGetQueryParameters> | undefined) : Promise<LongRunningOperation | undefined>;
     /**
      * Update the navigation property operations in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of LongRunningOperation
+     * @returns {Promise<LongRunningOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: LongRunningOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LongRunningOperation | undefined>;
     /**
      * Delete navigation property operations for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents operations on resources that take a long time to complete and can run in the background until completion.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LongRunningOperationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property operations in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: LongRunningOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface LongRunningOperationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const LongRunningOperationItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/operations/{longRunningOperation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const LongRunningOperationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const LongRunningOperationItemRequestBuilderGetQueryParametersMapper: Record<str
  */
 export const LongRunningOperationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: LongRunningOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: LongRunningOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createLongRunningOperationFromDiscriminatorValue,
         queryParametersMapper: LongRunningOperationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: LongRunningOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createLongRunningOperationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const LongRunningOperationItemRequestBuilderRequestsMetadata: RequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const LongRunningOperationItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/operations/{longRunningOperation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

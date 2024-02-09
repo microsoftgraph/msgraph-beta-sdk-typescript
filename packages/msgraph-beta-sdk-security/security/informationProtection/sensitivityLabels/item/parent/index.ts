@@ -12,38 +12,41 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
     /**
      * Delete navigation property parent for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The parent label associated with a child label. Null if the label has no parent.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SensitivityLabel
+     * @returns {Promise<SensitivityLabel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ParentRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
      * Update the navigation property parent in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SensitivityLabel
+     * @returns {Promise<SensitivityLabel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
      * Delete navigation property parent for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The parent label associated with a child label. Null if the label has no parent.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ParentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property parent in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ParentRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ParentRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ParentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ParentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const ParentRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ParentRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ParentRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
         queryParametersMapper: ParentRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ParentRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ParentRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ParentRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

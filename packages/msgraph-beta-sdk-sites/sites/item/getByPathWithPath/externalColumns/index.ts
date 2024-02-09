@@ -12,13 +12,14 @@ export interface ExternalColumnsRequestBuilder extends BaseRequestBuilder<Extern
     /**
      * The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ColumnDefinitionCollectionResponse
+     * @returns {Promise<ColumnDefinitionCollectionResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ExternalColumnsRequestBuilderGetQueryParameters> | undefined) : Promise<ColumnDefinitionCollectionResponse | undefined>;
     /**
      * The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExternalColumnsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -60,6 +61,10 @@ export interface ExternalColumnsRequestBuilderGetQueryParameters {
     top?: number;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ExternalColumnsRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/externalColumns{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ExternalColumnsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -77,19 +82,15 @@ const ExternalColumnsRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const ExternalColumnsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ExternalColumnsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createColumnDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ExternalColumnsRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ExternalColumnsRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/externalColumns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,6 +12,7 @@ export interface DeviceLinkItemRequestBuilder extends BaseRequestBuilder<DeviceL
     /**
      * Removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete-devicelinks?view=graph-rest-1.0|Find more info here}
      */
@@ -19,7 +20,8 @@ export interface DeviceLinkItemRequestBuilder extends BaseRequestBuilder<DeviceL
     /**
      * Retrieve the device link associated with a specific branch.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceLink
+     * @returns {Promise<DeviceLink>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0|Find more info here}
      */
@@ -28,7 +30,8 @@ export interface DeviceLinkItemRequestBuilder extends BaseRequestBuilder<DeviceL
      * Update the device link associated with a specific branch.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceLink
+     * @returns {Promise<DeviceLink>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-devicelink-update?view=graph-rest-1.0|Find more info here}
      */
@@ -36,14 +39,14 @@ export interface DeviceLinkItemRequestBuilder extends BaseRequestBuilder<DeviceL
     /**
      * Removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the device link associated with a specific branch.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceLinkItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -51,7 +54,7 @@ export interface DeviceLinkItemRequestBuilder extends BaseRequestBuilder<DeviceL
      * Update the device link associated with a specific branch.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toPatchRequestInformation(body: DeviceLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -70,6 +73,10 @@ export interface DeviceLinkItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceLinkItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks/{deviceLink%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceLinkItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -81,28 +88,28 @@ const DeviceLinkItemRequestBuilderGetQueryParametersMapper: Record<string, strin
  */
 export const DeviceLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceLinkItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceLinkItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceLinkFromDiscriminatorValue,
         queryParametersMapper: DeviceLinkItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceLinkItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceLinkFromDiscriminatorValue,
@@ -111,9 +118,5 @@ export const DeviceLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceLinkItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks/{deviceLink%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

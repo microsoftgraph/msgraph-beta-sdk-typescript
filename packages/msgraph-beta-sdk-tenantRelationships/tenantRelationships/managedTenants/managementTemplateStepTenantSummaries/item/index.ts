@@ -12,38 +12,41 @@ export interface ManagementTemplateStepTenantSummaryItemRequestBuilder extends B
     /**
      * Delete navigation property managementTemplateStepTenantSummaries for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get managementTemplateStepTenantSummaries from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementTemplateStepTenantSummary
+     * @returns {Promise<ManagementTemplateStepTenantSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagementTemplateStepTenantSummaryItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagementTemplateStepTenantSummary | undefined>;
     /**
      * Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementTemplateStepTenantSummary
+     * @returns {Promise<ManagementTemplateStepTenantSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ManagementTemplateStepTenantSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagementTemplateStepTenantSummary | undefined>;
     /**
      * Delete navigation property managementTemplateStepTenantSummaries for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get managementTemplateStepTenantSummaries from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagementTemplateStepTenantSummaryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ManagementTemplateStepTenantSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ManagementTemplateStepTenantSummaryItemRequestBuilderGetQueryPa
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagementTemplateStepTenantSummaryItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepTenantSummaries/{managementTemplateStepTenantSummary%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagementTemplateStepTenantSummaryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ManagementTemplateStepTenantSummaryItemRequestBuilderGetQueryParametersMap
  */
 export const ManagementTemplateStepTenantSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ManagementTemplateStepTenantSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ManagementTemplateStepTenantSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementTemplateStepTenantSummaryFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateStepTenantSummaryItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ManagementTemplateStepTenantSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementTemplateStepTenantSummaryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ManagementTemplateStepTenantSummaryItemRequestBuilderRequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagementTemplateStepTenantSummaryItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepTenantSummaries/{managementTemplateStepTenantSummary%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

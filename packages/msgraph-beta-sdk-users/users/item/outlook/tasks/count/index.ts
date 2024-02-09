@@ -11,14 +11,15 @@ export interface CountRequestBuilder extends BaseRequestBuilder<CountRequestBuil
     /**
      * Get the number of the resource
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Integer
+     * @returns {Promise<number>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      get(requestConfiguration?: RequestConfiguration<CountRequestBuilderGetQueryParameters> | undefined) : Promise<number | undefined>;
     /**
      * Get the number of the resource
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CountRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -33,6 +34,10 @@ export interface CountRequestBuilderGetQueryParameters {
     filter?: string;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CountRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/tasks/$count{?%24filter}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CountRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -43,19 +48,15 @@ const CountRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const CountRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: CountRequestBuilderUriTemplate,
         responseBodyContentType: "text/plain;q=0.9",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "number",
         queryParametersMapper: CountRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CountRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/tasks/$count{?%24filter}";
 /* tslint:enable */
 /* eslint-enable */

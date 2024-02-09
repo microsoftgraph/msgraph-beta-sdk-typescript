@@ -12,13 +12,14 @@ export interface LinkedEligibleRoleAssignmentRequestBuilder extends BaseRequestB
     /**
      * Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GovernanceRoleAssignment
+     * @returns {Promise<GovernanceRoleAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceRoleAssignment | undefined>;
     /**
      * Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const LinkedEligibleRoleAssignmentRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const LinkedEligibleRoleAssignmentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const LinkedEligibleRoleAssignmentRequestBuilderGetQueryParametersMapper: Record
  */
 export const LinkedEligibleRoleAssignmentRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: LinkedEligibleRoleAssignmentRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGovernanceRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: LinkedEligibleRoleAssignmentRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const LinkedEligibleRoleAssignmentRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

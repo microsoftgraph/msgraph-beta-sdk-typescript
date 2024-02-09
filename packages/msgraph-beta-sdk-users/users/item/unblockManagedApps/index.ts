@@ -11,31 +11,32 @@ export interface UnblockManagedAppsRequestBuilder extends BaseRequestBuilder<Unb
     /**
      * Unblocks the managed app user from app check-in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Unblocks the managed app user from app check-in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UnblockManagedAppsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/unblockManagedApps";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UnblockManagedAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: UnblockManagedAppsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UnblockManagedAppsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/unblockManagedApps";
 /* tslint:enable */
 /* eslint-enable */

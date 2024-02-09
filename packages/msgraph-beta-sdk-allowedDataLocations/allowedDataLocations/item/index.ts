@@ -12,38 +12,41 @@ export interface AllowedDataLocationItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete entity from allowedDataLocations
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get entity from allowedDataLocations by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AllowedDataLocation
+     * @returns {Promise<AllowedDataLocation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AllowedDataLocationItemRequestBuilderGetQueryParameters> | undefined) : Promise<AllowedDataLocation | undefined>;
     /**
      * Update entity in allowedDataLocations
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AllowedDataLocation
+     * @returns {Promise<AllowedDataLocation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: AllowedDataLocation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AllowedDataLocation | undefined>;
     /**
      * Delete entity from allowedDataLocations
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get entity from allowedDataLocations by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AllowedDataLocationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update entity in allowedDataLocations
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AllowedDataLocation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface AllowedDataLocationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AllowedDataLocationItemRequestBuilderUriTemplate = "{+baseurl}/allowedDataLocations/{allowedDataLocation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AllowedDataLocationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const AllowedDataLocationItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const AllowedDataLocationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AllowedDataLocationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AllowedDataLocationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAllowedDataLocationFromDiscriminatorValue,
         queryParametersMapper: AllowedDataLocationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AllowedDataLocationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAllowedDataLocationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const AllowedDataLocationItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AllowedDataLocationItemRequestBuilderUriTemplate = "{+baseurl}/allowedDataLocations/{allowedDataLocation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

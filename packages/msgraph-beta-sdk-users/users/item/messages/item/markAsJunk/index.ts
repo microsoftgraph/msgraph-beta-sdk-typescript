@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a markAsJunkPostRequestBody
+ * @returns {MarkAsJunkPostRequestBody}
  */
 export function createMarkAsJunkPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMarkAsJunkPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoMarkAsJunkPostRequestBody(markAsJunkPostRequestBody: Partial<MarkAsJunkPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -45,7 +45,8 @@ export interface MarkAsJunkRequestBuilder extends BaseRequestBuilder<MarkAsJunkR
      * Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Message
+     * @returns {Promise<Message>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/message-markasjunk?view=graph-rest-1.0|Find more info here}
      */
      post(body: MarkAsJunkPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Message | undefined>;
@@ -53,7 +54,7 @@ export interface MarkAsJunkRequestBuilder extends BaseRequestBuilder<MarkAsJunkR
      * Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: MarkAsJunkPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -66,14 +67,18 @@ export function serializeMarkAsJunkPostRequestBody(writer: SerializationWriter, 
     writer.writeAdditionalData(markAsJunkPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MarkAsJunkRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/markAsJunk";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MarkAsJunkRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MarkAsJunkRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMessageFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const MarkAsJunkRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MarkAsJunkRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/markAsJunk";
 /* tslint:enable */
 /* eslint-enable */

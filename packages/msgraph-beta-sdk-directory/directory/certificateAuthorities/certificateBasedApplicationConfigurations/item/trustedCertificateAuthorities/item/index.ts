@@ -12,38 +12,41 @@ export interface CertificateAuthorityAsEntityItemRequestBuilder extends BaseRequ
     /**
      * Delete navigation property trustedCertificateAuthorities for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Collection of trusted certificate authorities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CertificateAuthorityAsEntity
+     * @returns {Promise<CertificateAuthorityAsEntity>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CertificateAuthorityAsEntityItemRequestBuilderGetQueryParameters> | undefined) : Promise<CertificateAuthorityAsEntity | undefined>;
     /**
      * Update the navigation property trustedCertificateAuthorities in directory
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CertificateAuthorityAsEntity
+     * @returns {Promise<CertificateAuthorityAsEntity>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CertificateAuthorityAsEntity, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CertificateAuthorityAsEntity | undefined>;
     /**
      * Delete navigation property trustedCertificateAuthorities for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Collection of trusted certificate authorities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CertificateAuthorityAsEntityItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property trustedCertificateAuthorities in directory
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CertificateAuthorityAsEntity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface CertificateAuthorityAsEntityItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CertificateAuthorityAsEntityItemRequestBuilderUriTemplate = "{+baseurl}/directory/certificateAuthorities/certificateBasedApplicationConfigurations/{certificateBasedApplicationConfiguration%2Did}/trustedCertificateAuthorities/{certificateAuthorityAsEntity%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CertificateAuthorityAsEntityItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const CertificateAuthorityAsEntityItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const CertificateAuthorityAsEntityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CertificateAuthorityAsEntityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CertificateAuthorityAsEntityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCertificateAuthorityAsEntityFromDiscriminatorValue,
         queryParametersMapper: CertificateAuthorityAsEntityItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CertificateAuthorityAsEntityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCertificateAuthorityAsEntityFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const CertificateAuthorityAsEntityItemRequestBuilderRequestsMetadata: Req
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CertificateAuthorityAsEntityItemRequestBuilderUriTemplate = "{+baseurl}/directory/certificateAuthorities/certificateBasedApplicationConfigurations/{certificateBasedApplicationConfiguration%2Did}/trustedCertificateAuthorities/{certificateAuthorityAsEntity%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

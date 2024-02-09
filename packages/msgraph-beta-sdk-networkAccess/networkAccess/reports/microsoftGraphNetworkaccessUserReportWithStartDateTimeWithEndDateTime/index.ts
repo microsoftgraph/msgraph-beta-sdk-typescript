@@ -9,14 +9,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a userReportWithStartDateTimeWithEndDateTimeGetResponse
+ * @returns {UserReportWithStartDateTimeWithEndDateTimeGetResponse}
  */
 export function createUserReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUserReportWithStartDateTimeWithEndDateTimeGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUserReportWithStartDateTimeWithEndDateTimeGetResponse(userReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<UserReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -31,13 +31,14 @@ export interface MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDa
     /**
      * Invoke function userReport
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserReportWithStartDateTimeWithEndDateTimeGetResponse
+     * @returns {Promise<UserReportWithStartDateTimeWithEndDateTimeGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<UserReportWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
     /**
      * Invoke function userReport
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -81,6 +82,10 @@ export interface UserReportWithStartDateTimeWithEndDateTimeGetResponse extends B
     value?: User[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.userReport(startDateTime={startDateTime},endDateTime={endDateTime}){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -95,19 +100,15 @@ const MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeReque
  */
 export const MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.userReport(startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

@@ -31,7 +31,8 @@ export interface BulkSetCloudPcReviewStatusRequestBuilder extends BaseRequestBui
      * Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcBulkRemoteActionResult
+     * @returns {Promise<CloudPcBulkRemoteActionResult>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0|Find more info here}
      */
      post(body: BulkSetCloudPcReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcBulkRemoteActionResult | undefined>;
@@ -39,21 +40,21 @@ export interface BulkSetCloudPcReviewStatusRequestBuilder extends BaseRequestBui
      * Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: BulkSetCloudPcReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a bulkSetCloudPcReviewStatusPostRequestBody
+ * @returns {BulkSetCloudPcReviewStatusPostRequestBody}
  */
 export function createBulkSetCloudPcReviewStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkSetCloudPcReviewStatusPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoBulkSetCloudPcReviewStatusPostRequestBody(bulkSetCloudPcReviewStatusPostRequestBody: Partial<BulkSetCloudPcReviewStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -72,14 +73,18 @@ export function serializeBulkSetCloudPcReviewStatusPostRequestBody(writer: Seria
     writer.writeAdditionalData(bulkSetCloudPcReviewStatusPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const BulkSetCloudPcReviewStatusRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/bulkSetCloudPcReviewStatus";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const BulkSetCloudPcReviewStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: BulkSetCloudPcReviewStatusRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcBulkRemoteActionResultFromDiscriminatorValue,
@@ -88,9 +93,5 @@ export const BulkSetCloudPcReviewStatusRequestBuilderRequestsMetadata: RequestsM
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const BulkSetCloudPcReviewStatusRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/bulkSetCloudPcReviewStatus";
 /* tslint:enable */
 /* eslint-enable */

@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getPlatformSupportedPropertiesWithPlatformGetResponse
+ * @returns {GetPlatformSupportedPropertiesWithPlatformGetResponse}
  */
 export function createGetPlatformSupportedPropertiesWithPlatformGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPlatformSupportedPropertiesWithPlatformGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetPlatformSupportedPropertiesWithPlatformGetResponse(getPlatformSupportedPropertiesWithPlatformGetResponse: Partial<GetPlatformSupportedPropertiesWithPlatformGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetPlatformSupportedPropertiesWithPlatformRequestBuilder extend
     /**
      * Invoke function getPlatformSupportedProperties
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetPlatformSupportedPropertiesWithPlatformGetResponse
+     * @returns {Promise<GetPlatformSupportedPropertiesWithPlatformGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetQueryParameters> | undefined) : Promise<GetPlatformSupportedPropertiesWithPlatformGetResponse | undefined>;
     /**
      * Invoke function getPlatformSupportedProperties
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeGetPlatformSupportedPropertiesWithPlatformGetResponse(w
     writer.writeCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", getPlatformSupportedPropertiesWithPlatformGetResponse.value, serializeAssignmentFilterSupportedProperty);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetPlatformSupportedPropertiesWithPlatformRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/assignmentFilters/getPlatformSupportedProperties(platform='{platform}'){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetQueryParameters
  */
 export const GetPlatformSupportedPropertiesWithPlatformRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetPlatformSupportedPropertiesWithPlatformRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetPlatformSupportedPropertiesWithPlatformGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetPlatformSupportedPropertiesWithPlatformRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/assignmentFilters/getPlatformSupportedProperties(platform='{platform}'){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

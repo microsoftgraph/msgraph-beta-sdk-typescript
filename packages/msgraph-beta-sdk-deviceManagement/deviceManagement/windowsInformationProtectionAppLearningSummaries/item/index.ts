@@ -12,38 +12,41 @@ export interface WindowsInformationProtectionAppLearningSummaryItemRequestBuilde
     /**
      * Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The windows information protection app learning summaries.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsInformationProtectionAppLearningSummary
+     * @returns {Promise<WindowsInformationProtectionAppLearningSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsInformationProtectionAppLearningSummary | undefined>;
     /**
      * Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsInformationProtectionAppLearningSummary
+     * @returns {Promise<WindowsInformationProtectionAppLearningSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: WindowsInformationProtectionAppLearningSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsInformationProtectionAppLearningSummary | undefined>;
     /**
      * Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The windows information protection app learning summaries.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: WindowsInformationProtectionAppLearningSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface WindowsInformationProtectionAppLearningSummaryItemRequestBuilde
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsInformationProtectionAppLearningSummaries/{windowsInformationProtectionAppLearningSummary%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetQueryPa
  */
 export const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: WindowsInformationProtectionAppLearningSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: WindowsInformationProtectionAppLearningSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: WindowsInformationProtectionAppLearningSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderReq
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsInformationProtectionAppLearningSummaries/{windowsInformationProtectionAppLearningSummary%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

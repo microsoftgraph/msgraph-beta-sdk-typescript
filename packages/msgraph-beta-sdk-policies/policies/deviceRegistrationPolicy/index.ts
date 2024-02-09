@@ -12,7 +12,8 @@ export interface DeviceRegistrationPolicyRequestBuilder extends BaseRequestBuild
     /**
      * Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceRegistrationPolicy
+     * @returns {Promise<DeviceRegistrationPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/deviceregistrationpolicy-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceRegistrationPolicy | undefined>;
@@ -20,21 +21,22 @@ export interface DeviceRegistrationPolicyRequestBuilder extends BaseRequestBuild
      * Update the properties of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceRegistrationPolicy
+     * @returns {Promise<DeviceRegistrationPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/deviceregistrationpolicy-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: DeviceRegistrationPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceRegistrationPolicy | undefined>;
     /**
      * Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceRegistrationPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -48,6 +50,10 @@ export interface DeviceRegistrationPolicyRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceRegistrationPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/deviceRegistrationPolicy{?%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceRegistrationPolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -58,20 +64,20 @@ const DeviceRegistrationPolicyRequestBuilderGetQueryParametersMapper: Record<str
  */
 export const DeviceRegistrationPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DeviceRegistrationPolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceRegistrationPolicyFromDiscriminatorValue,
         queryParametersMapper: DeviceRegistrationPolicyRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceRegistrationPolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceRegistrationPolicyFromDiscriminatorValue,
@@ -80,9 +86,5 @@ export const DeviceRegistrationPolicyRequestBuilderRequestsMetadata: RequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceRegistrationPolicyRequestBuilderUriTemplate = "{+baseurl}/policies/deviceRegistrationPolicy{?%24select}";
 /* tslint:enable */
 /* eslint-enable */

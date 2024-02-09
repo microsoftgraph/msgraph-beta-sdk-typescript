@@ -12,38 +12,41 @@ export interface DeviceLocalCredentialInfoItemRequestBuilder extends BaseRequest
     /**
      * Delete entity from deviceLocalCredentials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get entity from deviceLocalCredentials by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceLocalCredentialInfo
+     * @returns {Promise<DeviceLocalCredentialInfo>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceLocalCredentialInfo | undefined>;
     /**
      * Update entity in deviceLocalCredentials
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceLocalCredentialInfo
+     * @returns {Promise<DeviceLocalCredentialInfo>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceLocalCredentialInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceLocalCredentialInfo | undefined>;
     /**
      * Delete entity from deviceLocalCredentials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get entity from deviceLocalCredentials by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update entity in deviceLocalCredentials
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceLocalCredentialInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -57,6 +60,10 @@ export interface DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceLocalCredentialInfoItemRequestBuilderUriTemplate = "{+baseurl}/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}{?%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceLocalCredentialInfoItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -67,28 +74,28 @@ const DeviceLocalCredentialInfoItemRequestBuilderGetQueryParametersMapper: Recor
  */
 export const DeviceLocalCredentialInfoItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceLocalCredentialInfoItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceLocalCredentialInfoItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceLocalCredentialInfoFromDiscriminatorValue,
         queryParametersMapper: DeviceLocalCredentialInfoItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceLocalCredentialInfoItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceLocalCredentialInfoFromDiscriminatorValue,
@@ -97,9 +104,5 @@ export const DeviceLocalCredentialInfoItemRequestBuilderRequestsMetadata: Reques
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceLocalCredentialInfoItemRequestBuilderUriTemplate = "{+baseurl}/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}{?%24select}";
 /* tslint:enable */
 /* eslint-enable */

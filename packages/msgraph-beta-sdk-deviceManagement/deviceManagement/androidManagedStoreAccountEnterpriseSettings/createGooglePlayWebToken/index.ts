@@ -7,7 +7,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a createGooglePlayWebTokenPostRequestBody
+ * @returns {CreateGooglePlayWebTokenPostRequestBody}
  */
 export function createCreateGooglePlayWebTokenPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateGooglePlayWebTokenPostRequestBody;
@@ -15,7 +15,7 @@ export function createCreateGooglePlayWebTokenPostRequestBodyFromDiscriminatorVa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a createGooglePlayWebTokenPostResponse
+ * @returns {CreateGooglePlayWebTokenPostResponse}
  */
 export function createCreateGooglePlayWebTokenPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateGooglePlayWebTokenPostResponse;
@@ -56,20 +56,21 @@ export interface CreateGooglePlayWebTokenRequestBuilder extends BaseRequestBuild
      * Generates a web token that is used in an embeddable component.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CreateGooglePlayWebTokenPostResponse
+     * @returns {Promise<CreateGooglePlayWebTokenPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: CreateGooglePlayWebTokenPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CreateGooglePlayWebTokenPostResponse | undefined>;
     /**
      * Generates a web token that is used in an embeddable component.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: CreateGooglePlayWebTokenPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCreateGooglePlayWebTokenPostRequestBody(createGooglePlayWebTokenPostRequestBody: Partial<CreateGooglePlayWebTokenPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -79,7 +80,7 @@ export function deserializeIntoCreateGooglePlayWebTokenPostRequestBody(createGoo
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCreateGooglePlayWebTokenPostResponse(createGooglePlayWebTokenPostResponse: Partial<CreateGooglePlayWebTokenPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -104,14 +105,18 @@ export function serializeCreateGooglePlayWebTokenPostResponse(writer: Serializat
     writer.writeAdditionalData(createGooglePlayWebTokenPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CreateGooglePlayWebTokenRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/createGooglePlayWebToken";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const CreateGooglePlayWebTokenRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CreateGooglePlayWebTokenRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCreateGooglePlayWebTokenPostResponseFromDiscriminatorValue,
@@ -120,9 +125,5 @@ export const CreateGooglePlayWebTokenRequestBuilderRequestsMetadata: RequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CreateGooglePlayWebTokenRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/createGooglePlayWebToken";
 /* tslint:enable */
 /* eslint-enable */

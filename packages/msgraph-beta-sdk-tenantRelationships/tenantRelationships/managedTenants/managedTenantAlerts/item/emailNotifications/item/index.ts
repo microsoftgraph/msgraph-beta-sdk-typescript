@@ -12,13 +12,14 @@ export interface ManagedTenantEmailNotificationItemRequestBuilder extends BaseRe
     /**
      * Get emailNotifications from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedTenantEmailNotification
+     * @returns {Promise<ManagedTenantEmailNotification>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedTenantEmailNotificationItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedTenantEmailNotification | undefined>;
     /**
      * Get emailNotifications from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedTenantEmailNotificationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagedTenantEmailNotificationItemRequestBuilderGetQueryParamet
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedTenantEmailNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/emailNotifications/{managedTenantEmailNotification%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedTenantEmailNotificationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagedTenantEmailNotificationItemRequestBuilderGetQueryParametersMapper: 
  */
 export const ManagedTenantEmailNotificationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagedTenantEmailNotificationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedTenantEmailNotificationFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantEmailNotificationItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedTenantEmailNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/emailNotifications/{managedTenantEmailNotification%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

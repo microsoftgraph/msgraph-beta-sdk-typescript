@@ -12,13 +12,14 @@ export interface UserCountMetricItemRequestBuilder extends BaseRequestBuilder<Us
     /**
      * Insights for total users on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserCountMetric
+     * @returns {Promise<UserCountMetric>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserCountMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserCountMetric | undefined>;
     /**
      * Insights for total users on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserCountMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface UserCountMetricItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserCountMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/userCount/{userCountMetric%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserCountMetricItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const UserCountMetricItemRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const UserCountMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: UserCountMetricItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserCountMetricFromDiscriminatorValue,
         queryParametersMapper: UserCountMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserCountMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/userCount/{userCountMetric%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

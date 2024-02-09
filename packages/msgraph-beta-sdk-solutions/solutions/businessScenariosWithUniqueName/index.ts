@@ -12,13 +12,15 @@ export interface BusinessScenariosWithUniqueNameRequestBuilder extends BaseReque
     /**
      * Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a businessScenario object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BusinessScenario
+     * @returns {Promise<BusinessScenario>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters> | undefined) : Promise<BusinessScenario | undefined>;
@@ -26,27 +28,28 @@ export interface BusinessScenariosWithUniqueNameRequestBuilder extends BaseReque
      * Update the properties of a businessScenario object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BusinessScenario
+     * @returns {Promise<BusinessScenario>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: BusinessScenario, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenario | undefined>;
     /**
      * Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a businessScenario object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a businessScenario object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: BusinessScenario, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const BusinessScenariosWithUniqueNameRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const BusinessScenariosWithUniqueNameRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const BusinessScenariosWithUniqueNameRequestBuilderGetQueryParametersMapper: Rec
  */
 export const BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: BusinessScenariosWithUniqueNameRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: BusinessScenariosWithUniqueNameRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBusinessScenarioFromDiscriminatorValue,
         queryParametersMapper: BusinessScenariosWithUniqueNameRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: BusinessScenariosWithUniqueNameRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBusinessScenarioFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata: Requ
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const BusinessScenariosWithUniqueNameRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

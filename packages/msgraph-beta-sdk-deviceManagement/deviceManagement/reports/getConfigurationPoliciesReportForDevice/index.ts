@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getConfigurationPoliciesReportForDevicePostRequestBody
+ * @returns {GetConfigurationPoliciesReportForDevicePostRequestBody}
  */
 export function createGetConfigurationPoliciesReportForDevicePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetConfigurationPoliciesReportForDevicePostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetConfigurationPoliciesReportForDevicePostRequestBody(getConfigurationPoliciesReportForDevicePostRequestBody: Partial<GetConfigurationPoliciesReportForDevicePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -84,14 +84,15 @@ export interface GetConfigurationPoliciesReportForDeviceRequestBuilder extends B
      * Invoke action getConfigurationPoliciesReportForDevice
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: GetConfigurationPoliciesReportForDevicePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Invoke action getConfigurationPoliciesReportForDevice
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetConfigurationPoliciesReportForDevicePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -112,14 +113,18 @@ export function serializeGetConfigurationPoliciesReportForDevicePostRequestBody(
     writer.writeAdditionalData(getConfigurationPoliciesReportForDevicePostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetConfigurationPoliciesReportForDeviceRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/getConfigurationPoliciesReportForDevice";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetConfigurationPoliciesReportForDeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetConfigurationPoliciesReportForDeviceRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -128,9 +133,5 @@ export const GetConfigurationPoliciesReportForDeviceRequestBuilderRequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetConfigurationPoliciesReportForDeviceRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/getConfigurationPoliciesReportForDevice";
 /* tslint:enable */
 /* eslint-enable */

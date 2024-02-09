@@ -12,12 +12,14 @@ export interface TeamworkDeviceOperationItemRequestBuilder extends BaseRequestBu
     /**
      * Delete navigation property operations for teamwork
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the details of an async, long-running operation on a Microsoft Teams-enabled device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TeamworkDeviceOperation
+     * @returns {Promise<TeamworkDeviceOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/teamworkdeviceoperation-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TeamworkDeviceOperationItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkDeviceOperation | undefined>;
@@ -25,26 +27,27 @@ export interface TeamworkDeviceOperationItemRequestBuilder extends BaseRequestBu
      * Update the navigation property operations in teamwork
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TeamworkDeviceOperation
+     * @returns {Promise<TeamworkDeviceOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: TeamworkDeviceOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkDeviceOperation | undefined>;
     /**
      * Delete navigation property operations for teamwork
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the details of an async, long-running operation on a Microsoft Teams-enabled device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamworkDeviceOperationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property operations in teamwork
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: TeamworkDeviceOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface TeamworkDeviceOperationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TeamworkDeviceOperationItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TeamworkDeviceOperationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const TeamworkDeviceOperationItemRequestBuilderGetQueryParametersMapper: Record<
  */
 export const TeamworkDeviceOperationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: TeamworkDeviceOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: TeamworkDeviceOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTeamworkDeviceOperationFromDiscriminatorValue,
         queryParametersMapper: TeamworkDeviceOperationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: TeamworkDeviceOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTeamworkDeviceOperationFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const TeamworkDeviceOperationItemRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TeamworkDeviceOperationItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface ShipmentMethodItemRequestBuilder extends BaseRequestBuilder<Shi
     /**
      * Delete navigation property shipmentMethods for financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get shipmentMethods from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ShipmentMethod
+     * @returns {Promise<ShipmentMethod>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ShipmentMethodItemRequestBuilderGetQueryParameters> | undefined) : Promise<ShipmentMethod | undefined>;
     /**
      * Update the navigation property shipmentMethods in financials
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ShipmentMethod
+     * @returns {Promise<ShipmentMethod>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ShipmentMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ShipmentMethod | undefined>;
     /**
      * Delete navigation property shipmentMethods for financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get shipmentMethods from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ShipmentMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property shipmentMethods in financials
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ShipmentMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ShipmentMethodItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ShipmentMethodItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/shipmentMethods/{shipmentMethod%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ShipmentMethodItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ShipmentMethodItemRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const ShipmentMethodItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ShipmentMethodItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ShipmentMethodItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createShipmentMethodFromDiscriminatorValue,
         queryParametersMapper: ShipmentMethodItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ShipmentMethodItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createShipmentMethodFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ShipmentMethodItemRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ShipmentMethodItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/shipmentMethods/{shipmentMethod%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

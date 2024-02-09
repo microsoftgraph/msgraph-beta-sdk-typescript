@@ -125,7 +125,7 @@ export type ConditionCategory = (typeof ConditionCategoryObject)[keyof typeof Co
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertImpact
+ * @returns {AlertImpact}
  */
 export function createAlertImpactFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertImpact;
@@ -133,7 +133,7 @@ export function createAlertImpactFromDiscriminatorValue(parseNode: ParseNode | u
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertRecordCollectionResponse
+ * @returns {AlertRecordCollectionResponse}
  */
 export function createAlertRecordCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRecordCollectionResponse;
@@ -141,7 +141,7 @@ export function createAlertRecordCollectionResponseFromDiscriminatorValue(parseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertRecord
+ * @returns {AlertRecord}
  */
 export function createAlertRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRecord;
@@ -149,7 +149,7 @@ export function createAlertRecordFromDiscriminatorValue(parseNode: ParseNode | u
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertRuleCollectionResponse
+ * @returns {AlertRuleCollectionResponse}
  */
 export function createAlertRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRuleCollectionResponse;
@@ -157,7 +157,7 @@ export function createAlertRuleCollectionResponseFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertRule
+ * @returns {AlertRule}
  */
 export function createAlertRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRule;
@@ -165,7 +165,7 @@ export function createAlertRuleFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a monitoring
+ * @returns {Monitoring}
  */
 export function createMonitoringFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMonitoring;
@@ -173,7 +173,7 @@ export function createMonitoringFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a notificationChannel
+ * @returns {NotificationChannel}
  */
 export function createNotificationChannelFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationChannel;
@@ -181,7 +181,7 @@ export function createNotificationChannelFromDiscriminatorValue(parseNode: Parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a notificationReceiver
+ * @returns {NotificationReceiver}
  */
 export function createNotificationReceiverFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationReceiver;
@@ -189,7 +189,7 @@ export function createNotificationReceiverFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a portalNotification
+ * @returns {PortalNotification}
  */
 export function createPortalNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPortalNotification;
@@ -197,7 +197,7 @@ export function createPortalNotificationFromDiscriminatorValue(parseNode: ParseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a ruleCondition
+ * @returns {RuleCondition}
  */
 export function createRuleConditionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRuleCondition;
@@ -205,14 +205,14 @@ export function createRuleConditionFromDiscriminatorValue(parseNode: ParseNode |
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a ruleThreshold
+ * @returns {RuleThreshold}
  */
 export function createRuleThresholdFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRuleThreshold;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertImpact(alertImpact: Partial<AlertImpact> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -225,7 +225,7 @@ export function deserializeIntoAlertImpact(alertImpact: Partial<AlertImpact> | u
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertRecord(alertRecord: Partial<AlertRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -243,7 +243,7 @@ export function deserializeIntoAlertRecord(alertRecord: Partial<AlertRecord> | u
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertRecordCollectionResponse(alertRecordCollectionResponse: Partial<AlertRecordCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -253,7 +253,7 @@ export function deserializeIntoAlertRecordCollectionResponse(alertRecordCollecti
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertRule(alertRule: Partial<AlertRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -271,7 +271,7 @@ export function deserializeIntoAlertRule(alertRule: Partial<AlertRule> | undefin
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertRuleCollectionResponse(alertRuleCollectionResponse: Partial<AlertRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -281,7 +281,7 @@ export function deserializeIntoAlertRuleCollectionResponse(alertRuleCollectionRe
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoMonitoring(monitoring: Partial<Monitoring> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -292,7 +292,7 @@ export function deserializeIntoMonitoring(monitoring: Partial<Monitoring> | unde
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoNotificationChannel(notificationChannel: Partial<NotificationChannel> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -304,7 +304,7 @@ export function deserializeIntoNotificationChannel(notificationChannel: Partial<
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoNotificationReceiver(notificationReceiver: Partial<NotificationReceiver> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -316,7 +316,7 @@ export function deserializeIntoNotificationReceiver(notificationReceiver: Partia
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoPortalNotification(portalNotification: Partial<PortalNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -334,7 +334,7 @@ export function deserializeIntoPortalNotification(portalNotification: Partial<Po
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRuleCondition(ruleCondition: Partial<RuleCondition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -349,7 +349,7 @@ export function deserializeIntoRuleCondition(ruleCondition: Partial<RuleConditio
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRuleThreshold(ruleThreshold: Partial<RuleThreshold> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -658,7 +658,7 @@ export const AggregationTypeObject = {
     AffectedCloudPcCount: "affectedCloudPcCount",
     AffectedCloudPcPercentage: "affectedCloudPcPercentage",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertRuleTemplateObject = {
     CloudPcProvisionScenario: "cloudPcProvisionScenario",
     CloudPcImageUploadScenario: "cloudPcImageUploadScenario",
@@ -667,12 +667,12 @@ export const AlertRuleTemplateObject = {
     CloudPcInGracePeriodScenario: "cloudPcInGracePeriodScenario",
     CloudPcFrontlineInsufficientLicensesScenario: "cloudPcFrontlineInsufficientLicensesScenario",
     CloudPcInaccessibleScenario: "cloudPcInaccessibleScenario",
-}  as const;
+} as const;
 export const AlertStatusTypeObject = {
     Active: "active",
     Resolved: "resolved",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ConditionCategoryObject = {
     ProvisionFailures: "provisionFailures",
     ImageUploadFailures: "imageUploadFailures",
@@ -683,14 +683,14 @@ export const ConditionCategoryObject = {
     CloudPcHostHealthCheckFailures: "cloudPcHostHealthCheckFailures",
     CloudPcZoneOutage: "cloudPcZoneOutage",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NotificationChannelTypeObject = {
     Portal: "portal",
     Email: "email",
     PhoneCall: "phoneCall",
     Sms: "sms",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const OperatorTypeObject = {
     GreaterOrEqual: "greaterOrEqual",
     Equal: "equal",
@@ -699,18 +699,18 @@ export const OperatorTypeObject = {
     LessOrEqual: "lessOrEqual",
     NotEqual: "notEqual",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RelationshipTypeObject = {
     And: "and",
     Or: "or",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const RuleSeverityTypeObject = {
     Unknown: "unknown",
     Informational: "informational",
     Warning: "warning",
     Critical: "critical",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

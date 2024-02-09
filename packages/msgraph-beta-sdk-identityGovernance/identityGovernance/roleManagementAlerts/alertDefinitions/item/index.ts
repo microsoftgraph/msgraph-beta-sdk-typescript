@@ -12,38 +12,41 @@ export interface UnifiedRoleManagementAlertDefinitionItemRequestBuilder extends 
     /**
      * Delete navigation property alertDefinitions for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Defines an alert, its impact, and measures to mitigate or prevent it.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UnifiedRoleManagementAlertDefinition
+     * @returns {Promise<UnifiedRoleManagementAlertDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UnifiedRoleManagementAlertDefinitionItemRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRoleManagementAlertDefinition | undefined>;
     /**
      * Update the navigation property alertDefinitions in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UnifiedRoleManagementAlertDefinition
+     * @returns {Promise<UnifiedRoleManagementAlertDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UnifiedRoleManagementAlertDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRoleManagementAlertDefinition | undefined>;
     /**
      * Delete navigation property alertDefinitions for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Defines an alert, its impact, and measures to mitigate or prevent it.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UnifiedRoleManagementAlertDefinitionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property alertDefinitions in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UnifiedRoleManagementAlertDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UnifiedRoleManagementAlertDefinitionItemRequestBuilderGetQueryP
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UnifiedRoleManagementAlertDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alertDefinitions/{unifiedRoleManagementAlertDefinition%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UnifiedRoleManagementAlertDefinitionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UnifiedRoleManagementAlertDefinitionItemRequestBuilderGetQueryParametersMa
  */
 export const UnifiedRoleManagementAlertDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UnifiedRoleManagementAlertDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UnifiedRoleManagementAlertDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue,
         queryParametersMapper: UnifiedRoleManagementAlertDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UnifiedRoleManagementAlertDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UnifiedRoleManagementAlertDefinitionItemRequestBuilderRequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UnifiedRoleManagementAlertDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alertDefinitions/{unifiedRoleManagementAlertDefinition%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

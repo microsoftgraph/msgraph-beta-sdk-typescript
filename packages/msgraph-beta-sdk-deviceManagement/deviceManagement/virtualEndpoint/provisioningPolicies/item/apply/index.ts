@@ -27,6 +27,7 @@ export interface ApplyRequestBuilder extends BaseRequestBuilder<ApplyRequestBuil
      * Invoke action apply
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      post(body: ApplyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -34,7 +35,7 @@ export interface ApplyRequestBuilder extends BaseRequestBuilder<ApplyRequestBuil
      * Invoke action apply
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toPostRequestInformation(body: ApplyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -42,14 +43,14 @@ export interface ApplyRequestBuilder extends BaseRequestBuilder<ApplyRequestBuil
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a applyPostRequestBody
+ * @returns {ApplyPostRequestBody}
  */
 export function createApplyPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplyPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -66,14 +67,18 @@ export function serializeApplyPostRequestBody(writer: SerializationWriter, apply
     writer.writeAdditionalData(applyPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ApplyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/apply";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ApplyRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ApplyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -81,9 +86,5 @@ export const ApplyRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ApplyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/apply";
 /* tslint:enable */
 /* eslint-enable */

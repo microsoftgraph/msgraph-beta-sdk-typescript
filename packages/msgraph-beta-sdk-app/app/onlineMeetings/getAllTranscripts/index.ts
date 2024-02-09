@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getAllTranscriptsGetResponse
+ * @returns {GetAllTranscriptsGetResponse}
  */
 export function createGetAllTranscriptsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAllTranscriptsGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetAllTranscriptsGetResponse(getAllTranscriptsGetResponse: Partial<GetAllTranscriptsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetAllTranscriptsRequestBuilder extends BaseRequestBuilder<GetA
     /**
      * Invoke function getAllTranscripts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetAllTranscriptsGetResponse
+     * @returns {Promise<GetAllTranscriptsGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetAllTranscriptsRequestBuilderGetQueryParameters> | undefined) : Promise<GetAllTranscriptsGetResponse | undefined>;
     /**
      * Invoke function getAllTranscripts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetAllTranscriptsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -54,6 +55,10 @@ export interface GetAllTranscriptsRequestBuilderGetQueryParameters {
      * Include count of items
      */
     count?: boolean;
+    /**
+     * Expand related entities
+     */
+    expand?: string[];
     /**
      * Filter items by property values
      */
@@ -88,10 +93,15 @@ export function serializeGetAllTranscriptsGetResponse(writer: SerializationWrite
     writer.writeCollectionOfObjectValues<CallTranscript>("value", getAllTranscriptsGetResponse.value, serializeCallTranscript);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetAllTranscriptsRequestBuilderUriTemplate = "{+baseurl}/app/onlineMeetings/getAllTranscripts(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetAllTranscriptsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
+    "expand": "%24expand",
     "filter": "%24filter",
     "orderby": "%24orderby",
     "search": "%24search",
@@ -104,19 +114,15 @@ const GetAllTranscriptsRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const GetAllTranscriptsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetAllTranscriptsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetAllTranscriptsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetAllTranscriptsRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetAllTranscriptsRequestBuilderUriTemplate = "{+baseurl}/app/onlineMeetings/getAllTranscripts(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
 /* tslint:enable */
 /* eslint-enable */

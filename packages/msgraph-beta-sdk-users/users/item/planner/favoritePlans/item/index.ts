@@ -12,13 +12,14 @@ export interface PlannerPlanItemRequestBuilder extends BaseRequestBuilder<Planne
     /**
      * Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerPlan
+     * @returns {Promise<PlannerPlan>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PlannerPlanItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlan | undefined>;
     /**
      * Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerPlanItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface PlannerPlanItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PlannerPlanItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/favoritePlans/{plannerPlan%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PlannerPlanItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const PlannerPlanItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const PlannerPlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: PlannerPlanItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerPlanFromDiscriminatorValue,
         queryParametersMapper: PlannerPlanItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PlannerPlanItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/favoritePlans/{plannerPlan%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

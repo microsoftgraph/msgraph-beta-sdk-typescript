@@ -12,38 +12,41 @@ export interface ManagedTenantTicketingEndpointItemRequestBuilder extends BaseRe
     /**
      * Delete navigation property managedTenantTicketingEndpoints for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get managedTenantTicketingEndpoints from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedTenantTicketingEndpoint
+     * @returns {Promise<ManagedTenantTicketingEndpoint>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedTenantTicketingEndpointItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedTenantTicketingEndpoint | undefined>;
     /**
      * Update the navigation property managedTenantTicketingEndpoints in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedTenantTicketingEndpoint
+     * @returns {Promise<ManagedTenantTicketingEndpoint>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ManagedTenantTicketingEndpoint, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedTenantTicketingEndpoint | undefined>;
     /**
      * Delete navigation property managedTenantTicketingEndpoints for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get managedTenantTicketingEndpoints from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedTenantTicketingEndpointItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property managedTenantTicketingEndpoints in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ManagedTenantTicketingEndpoint, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ManagedTenantTicketingEndpointItemRequestBuilderGetQueryParamet
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedTenantTicketingEndpointItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantTicketingEndpoints/{managedTenantTicketingEndpoint%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedTenantTicketingEndpointItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ManagedTenantTicketingEndpointItemRequestBuilderGetQueryParametersMapper: 
  */
 export const ManagedTenantTicketingEndpointItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ManagedTenantTicketingEndpointItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ManagedTenantTicketingEndpointItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedTenantTicketingEndpointFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantTicketingEndpointItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ManagedTenantTicketingEndpointItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedTenantTicketingEndpointFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ManagedTenantTicketingEndpointItemRequestBuilderRequestsMetadata: R
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedTenantTicketingEndpointItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantTicketingEndpoints/{managedTenantTicketingEndpoint%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface DetectedAppItemRequestBuilder extends BaseRequestBuilder<Detect
     /**
      * All applications currently installed on the device
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DetectedApp
+     * @returns {Promise<DetectedApp>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters> | undefined) : Promise<DetectedApp | undefined>;
     /**
      * All applications currently installed on the device
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DetectedAppItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DetectedAppItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DetectedAppItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DetectedAppItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const DetectedAppItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DetectedAppItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDetectedAppFromDiscriminatorValue,
         queryParametersMapper: DetectedAppItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DetectedAppItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

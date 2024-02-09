@@ -12,33 +12,34 @@ export interface GetCloudPcLaunchInfoRequestBuilder extends BaseRequestBuilder<G
     /**
      * Invoke function getCloudPcLaunchInfo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcLaunchInfo
+     * @returns {Promise<CloudPcLaunchInfo>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcLaunchInfo | undefined>;
     /**
      * Invoke function getCloudPcLaunchInfo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const GetCloudPcLaunchInfoRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/getCloudPcLaunchInfo()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const GetCloudPcLaunchInfoRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetCloudPcLaunchInfoRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcLaunchInfoFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetCloudPcLaunchInfoRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/getCloudPcLaunchInfo()";
 /* tslint:enable */
 /* eslint-enable */

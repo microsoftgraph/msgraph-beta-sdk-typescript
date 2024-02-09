@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getPlanPostRequestBody
+ * @returns {GetPlanPostRequestBody}
  */
 export function createGetPlanPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPlanPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetPlanPostRequestBody(getPlanPostRequestBody: Partial<GetPlanPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -45,7 +45,8 @@ export interface GetPlanRequestBuilder extends BaseRequestBuilder<GetPlanRequest
      * Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BusinessScenarioPlanReference
+     * @returns {Promise<BusinessScenarioPlanReference>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0|Find more info here}
      */
      post(body: GetPlanPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenarioPlanReference | undefined>;
@@ -53,7 +54,7 @@ export interface GetPlanRequestBuilder extends BaseRequestBuilder<GetPlanRequest
      * Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetPlanPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -66,14 +67,18 @@ export function serializeGetPlanPostRequestBody(writer: SerializationWriter, get
     writer.writeAdditionalData(getPlanPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetPlanRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/getPlan";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetPlanRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetPlanRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBusinessScenarioPlanReferenceFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const GetPlanRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetPlanRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/getPlan";
 /* tslint:enable */
 /* eslint-enable */

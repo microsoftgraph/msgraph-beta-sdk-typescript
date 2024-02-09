@@ -12,13 +12,14 @@ export interface DimensionValueItemRequestBuilder extends BaseRequestBuilder<Dim
     /**
      * Get dimensionValues from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DimensionValue
+     * @returns {Promise<DimensionValue>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters> | undefined) : Promise<DimensionValue | undefined>;
     /**
      * Get dimensionValues from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DimensionValueItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DimensionValueItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensionValues/{dimensionValue%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DimensionValueItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DimensionValueItemRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const DimensionValueItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DimensionValueItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDimensionValueFromDiscriminatorValue,
         queryParametersMapper: DimensionValueItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DimensionValueItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensionValues/{dimensionValue%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

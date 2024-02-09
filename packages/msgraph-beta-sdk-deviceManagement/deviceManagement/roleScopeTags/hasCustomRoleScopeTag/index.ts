@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a hasCustomRoleScopeTagGetResponse
+ * @returns {HasCustomRoleScopeTagGetResponse}
  */
 export function createHasCustomRoleScopeTagGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHasCustomRoleScopeTagGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoHasCustomRoleScopeTagGetResponse(hasCustomRoleScopeTagGetResponse: Partial<HasCustomRoleScopeTagGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -43,13 +43,14 @@ export interface HasCustomRoleScopeTagRequestBuilder extends BaseRequestBuilder<
     /**
      * Invoke function hasCustomRoleScopeTag
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of HasCustomRoleScopeTagGetResponse
+     * @returns {Promise<HasCustomRoleScopeTagGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HasCustomRoleScopeTagGetResponse | undefined>;
     /**
      * Invoke function hasCustomRoleScopeTag
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,22 +63,22 @@ export function serializeHasCustomRoleScopeTagGetResponse(writer: SerializationW
     writer.writeAdditionalData(hasCustomRoleScopeTagGetResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const HasCustomRoleScopeTagRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleScopeTags/hasCustomRoleScopeTag()";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const HasCustomRoleScopeTagRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: HasCustomRoleScopeTagRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createHasCustomRoleScopeTagGetResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const HasCustomRoleScopeTagRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleScopeTags/hasCustomRoleScopeTag()";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface WindowsInformationProtectionDeviceRegistrationItemRequestBuilde
     /**
      * Zero or more WIP device registrations that belong to the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsInformationProtectionDeviceRegistration
+     * @returns {Promise<WindowsInformationProtectionDeviceRegistration>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsInformationProtectionDeviceRegistration | undefined>;
     /**
      * Zero or more WIP device registrations that belong to the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface WindowsInformationProtectionDeviceRegistrationItemRequestBuilde
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryPa
  */
 export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: WindowsInformationProtectionDeviceRegistrationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

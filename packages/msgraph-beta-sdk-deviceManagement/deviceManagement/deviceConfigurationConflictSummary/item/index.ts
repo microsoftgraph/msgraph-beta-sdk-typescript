@@ -12,38 +12,41 @@ export interface DeviceConfigurationConflictSummaryItemRequestBuilder extends Ba
     /**
      * Delete navigation property deviceConfigurationConflictSummary for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Summary of policies in conflict state for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceConfigurationConflictSummary
+     * @returns {Promise<DeviceConfigurationConflictSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceConfigurationConflictSummary | undefined>;
     /**
      * Update the navigation property deviceConfigurationConflictSummary in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceConfigurationConflictSummary
+     * @returns {Promise<DeviceConfigurationConflictSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceConfigurationConflictSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceConfigurationConflictSummary | undefined>;
     /**
      * Delete navigation property deviceConfigurationConflictSummary for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Summary of policies in conflict state for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceConfigurationConflictSummary in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceConfigurationConflictSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryPar
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceConfigurationConflictSummaryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationConflictSummary/{deviceConfigurationConflictSummary%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryParametersMapp
  */
 export const DeviceConfigurationConflictSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceConfigurationConflictSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceConfigurationConflictSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceConfigurationConflictSummaryFromDiscriminatorValue,
         queryParametersMapper: DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceConfigurationConflictSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceConfigurationConflictSummaryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceConfigurationConflictSummaryItemRequestBuilderRequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceConfigurationConflictSummaryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationConflictSummary/{deviceConfigurationConflictSummary%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

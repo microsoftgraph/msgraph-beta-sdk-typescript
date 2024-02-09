@@ -12,13 +12,14 @@ export interface DefaultMacOsEnrollmentProfileRequestBuilder extends BaseRequest
     /**
      * Default MacOs Enrollment Profile
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DepMacOSEnrollmentProfile
+     * @returns {Promise<DepMacOSEnrollmentProfile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters> | undefined) : Promise<DepMacOSEnrollmentProfile | undefined>;
     /**
      * Default MacOs Enrollment Profile
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DefaultMacOsEnrollmentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/defaultMacOsEnrollmentProfile{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParametersMapper: Recor
  */
 export const DefaultMacOsEnrollmentProfileRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DefaultMacOsEnrollmentProfileRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDepMacOSEnrollmentProfileFromDiscriminatorValue,
         queryParametersMapper: DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DefaultMacOsEnrollmentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/defaultMacOsEnrollmentProfile{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

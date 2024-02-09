@@ -12,13 +12,14 @@ export interface ActiveUsersBreakdownMetricItemRequestBuilder extends BaseReques
     /**
      * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ActiveUsersBreakdownMetric
+     * @returns {Promise<ActiveUsersBreakdownMetric>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<ActiveUsersBreakdownMetric | undefined>;
     /**
      * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ActiveUsersBreakdownMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParametersMapper: Reco
  */
 export const ActiveUsersBreakdownMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ActiveUsersBreakdownMetricItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createActiveUsersBreakdownMetricFromDiscriminatorValue,
         queryParametersMapper: ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ActiveUsersBreakdownMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

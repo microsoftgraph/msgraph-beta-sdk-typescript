@@ -12,33 +12,34 @@ export interface RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder extend
     /**
      * Invoke function retrieveLatestUpgradeDefaultBaselinePolicy
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementConfigurationPolicy
+     * @returns {Promise<DeviceManagementConfigurationPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementConfigurationPolicy | undefined>;
     /**
      * Invoke function retrieveLatestUpgradeDefaultBaselinePolicy
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}/retrieveLatestUpgradeDefaultBaselinePolicy()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy%2Did}/retrieveLatestUpgradeDefaultBaselinePolicy()";
 /* tslint:enable */
 /* eslint-enable */

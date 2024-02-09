@@ -437,7 +437,7 @@ export interface ConditionalAccessPolicyCoverageCollectionResponse extends BaseC
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a aggregatedPolicyComplianceCollectionResponse
+ * @returns {AggregatedPolicyComplianceCollectionResponse}
  */
 export function createAggregatedPolicyComplianceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAggregatedPolicyComplianceCollectionResponse;
@@ -445,7 +445,7 @@ export function createAggregatedPolicyComplianceCollectionResponseFromDiscrimina
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a aggregatedPolicyCompliance
+ * @returns {AggregatedPolicyCompliance}
  */
 export function createAggregatedPolicyComplianceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAggregatedPolicyCompliance;
@@ -453,7 +453,7 @@ export function createAggregatedPolicyComplianceFromDiscriminatorValue(parseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertData
+ * @returns {AlertData}
  */
 export function createAlertDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertData;
@@ -461,7 +461,7 @@ export function createAlertDataFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertDataReferenceString
+ * @returns {AlertDataReferenceString}
  */
 export function createAlertDataReferenceStringFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertDataReferenceString;
@@ -469,7 +469,7 @@ export function createAlertDataReferenceStringFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertLogContent
+ * @returns {AlertLogContent}
  */
 export function createAlertLogContentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertLogContent;
@@ -477,7 +477,7 @@ export function createAlertLogContentFromDiscriminatorValue(parseNode: ParseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a alertRuleDefinitionTemplate
+ * @returns {AlertRuleDefinitionTemplate}
  */
 export function createAlertRuleDefinitionTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRuleDefinitionTemplate;
@@ -485,7 +485,7 @@ export function createAlertRuleDefinitionTemplateFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a appPerformanceCollectionResponse
+ * @returns {AppPerformanceCollectionResponse}
  */
 export function createAppPerformanceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAppPerformanceCollectionResponse;
@@ -493,7 +493,7 @@ export function createAppPerformanceCollectionResponseFromDiscriminatorValue(par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a appPerformance
+ * @returns {AppPerformance}
  */
 export function createAppPerformanceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAppPerformance;
@@ -501,7 +501,7 @@ export function createAppPerformanceFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a auditEventCollectionResponse
+ * @returns {AuditEventCollectionResponse}
  */
 export function createAuditEventCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuditEventCollectionResponse;
@@ -509,7 +509,7 @@ export function createAuditEventCollectionResponseFromDiscriminatorValue(parseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a auditEvent
+ * @returns {AuditEvent}
  */
 export function createAuditEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuditEvent;
@@ -517,7 +517,7 @@ export function createAuditEventFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cloudPcConnectionCollectionResponse
+ * @returns {CloudPcConnectionCollectionResponse}
  */
 export function createCloudPcConnectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcConnectionCollectionResponse;
@@ -525,7 +525,7 @@ export function createCloudPcConnectionCollectionResponseFromDiscriminatorValue(
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cloudPcConnection
+ * @returns {CloudPcConnection}
  */
 export function createCloudPcConnectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcConnection;
@@ -533,7 +533,7 @@ export function createCloudPcConnectionFromDiscriminatorValue(parseNode: ParseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cloudPcDeviceCollectionResponse
+ * @returns {CloudPcDeviceCollectionResponse}
  */
 export function createCloudPcDeviceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcDeviceCollectionResponse;
@@ -541,7 +541,7 @@ export function createCloudPcDeviceCollectionResponseFromDiscriminatorValue(pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cloudPcDevice
+ * @returns {CloudPcDevice}
  */
 export function createCloudPcDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcDevice;
@@ -549,7 +549,7 @@ export function createCloudPcDeviceFromDiscriminatorValue(parseNode: ParseNode |
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cloudPcOverviewCollectionResponse
+ * @returns {CloudPcOverviewCollectionResponse}
  */
 export function createCloudPcOverviewCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcOverviewCollectionResponse;
@@ -557,7 +557,7 @@ export function createCloudPcOverviewCollectionResponseFromDiscriminatorValue(pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cloudPcOverview
+ * @returns {CloudPcOverview}
  */
 export function createCloudPcOverviewFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcOverview;
@@ -565,7 +565,7 @@ export function createCloudPcOverviewFromDiscriminatorValue(parseNode: ParseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a conditionalAccessPolicyCoverageCollectionResponse
+ * @returns {ConditionalAccessPolicyCoverageCollectionResponse}
  */
 export function createConditionalAccessPolicyCoverageCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCoverageCollectionResponse;
@@ -573,7 +573,7 @@ export function createConditionalAccessPolicyCoverageCollectionResponseFromDiscr
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a conditionalAccessPolicyCoverage
+ * @returns {ConditionalAccessPolicyCoverage}
  */
 export function createConditionalAccessPolicyCoverageFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCoverage;
@@ -581,7 +581,7 @@ export function createConditionalAccessPolicyCoverageFromDiscriminatorValue(pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a credentialUserRegistrationsSummaryCollectionResponse
+ * @returns {CredentialUserRegistrationsSummaryCollectionResponse}
  */
 export function createCredentialUserRegistrationsSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCredentialUserRegistrationsSummaryCollectionResponse;
@@ -589,7 +589,7 @@ export function createCredentialUserRegistrationsSummaryCollectionResponseFromDi
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a credentialUserRegistrationsSummary
+ * @returns {CredentialUserRegistrationsSummary}
  */
 export function createCredentialUserRegistrationsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCredentialUserRegistrationsSummary;
@@ -597,7 +597,7 @@ export function createCredentialUserRegistrationsSummaryFromDiscriminatorValue(p
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deviceAppPerformanceCollectionResponse
+ * @returns {DeviceAppPerformanceCollectionResponse}
  */
 export function createDeviceAppPerformanceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceAppPerformanceCollectionResponse;
@@ -605,7 +605,7 @@ export function createDeviceAppPerformanceCollectionResponseFromDiscriminatorVal
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deviceAppPerformance
+ * @returns {DeviceAppPerformance}
  */
 export function createDeviceAppPerformanceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceAppPerformance;
@@ -613,7 +613,7 @@ export function createDeviceAppPerformanceFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deviceCompliancePolicySettingStateSummaryCollectionResponse
+ * @returns {DeviceCompliancePolicySettingStateSummaryCollectionResponse}
  */
 export function createDeviceCompliancePolicySettingStateSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceCompliancePolicySettingStateSummaryCollectionResponse;
@@ -621,7 +621,7 @@ export function createDeviceCompliancePolicySettingStateSummaryCollectionRespons
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deviceCompliancePolicySettingStateSummary
+ * @returns {DeviceCompliancePolicySettingStateSummary}
  */
 export function createDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceCompliancePolicySettingStateSummary;
@@ -629,7 +629,7 @@ export function createDeviceCompliancePolicySettingStateSummaryFromDiscriminator
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deviceHealthStatusCollectionResponse
+ * @returns {DeviceHealthStatusCollectionResponse}
  */
 export function createDeviceHealthStatusCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceHealthStatusCollectionResponse;
@@ -637,7 +637,7 @@ export function createDeviceHealthStatusCollectionResponseFromDiscriminatorValue
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deviceHealthStatus
+ * @returns {DeviceHealthStatus}
  */
 export function createDeviceHealthStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceHealthStatus;
@@ -645,7 +645,7 @@ export function createDeviceHealthStatusFromDiscriminatorValue(parseNode: ParseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a email
+ * @returns {Email}
  */
 export function createEmailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEmail;
@@ -653,7 +653,7 @@ export function createEmailFromDiscriminatorValue(parseNode: ParseNode | undefin
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a graphAPIErrorDetails
+ * @returns {GraphAPIErrorDetails}
  */
 export function createGraphAPIErrorDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGraphAPIErrorDetails;
@@ -661,7 +661,7 @@ export function createGraphAPIErrorDetailsFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedDeviceComplianceCollectionResponse
+ * @returns {ManagedDeviceComplianceCollectionResponse}
  */
 export function createManagedDeviceComplianceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceCollectionResponse;
@@ -669,7 +669,7 @@ export function createManagedDeviceComplianceCollectionResponseFromDiscriminator
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedDeviceCompliance
+ * @returns {ManagedDeviceCompliance}
  */
 export function createManagedDeviceComplianceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceCompliance;
@@ -677,7 +677,7 @@ export function createManagedDeviceComplianceFromDiscriminatorValue(parseNode: P
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedDeviceComplianceTrendCollectionResponse
+ * @returns {ManagedDeviceComplianceTrendCollectionResponse}
  */
 export function createManagedDeviceComplianceTrendCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceTrendCollectionResponse;
@@ -685,7 +685,7 @@ export function createManagedDeviceComplianceTrendCollectionResponseFromDiscrimi
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedDeviceComplianceTrend
+ * @returns {ManagedDeviceComplianceTrend}
  */
 export function createManagedDeviceComplianceTrendFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceTrend;
@@ -693,7 +693,7 @@ export function createManagedDeviceComplianceTrendFromDiscriminatorValue(parseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlertCollectionResponse
+ * @returns {ManagedTenantAlertCollectionResponse}
  */
 export function createManagedTenantAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertCollectionResponse;
@@ -701,7 +701,7 @@ export function createManagedTenantAlertCollectionResponseFromDiscriminatorValue
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlert
+ * @returns {ManagedTenantAlert}
  */
 export function createManagedTenantAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlert;
@@ -709,7 +709,7 @@ export function createManagedTenantAlertFromDiscriminatorValue(parseNode: ParseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlertLogCollectionResponse
+ * @returns {ManagedTenantAlertLogCollectionResponse}
  */
 export function createManagedTenantAlertLogCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertLogCollectionResponse;
@@ -717,7 +717,7 @@ export function createManagedTenantAlertLogCollectionResponseFromDiscriminatorVa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlertLog
+ * @returns {ManagedTenantAlertLog}
  */
 export function createManagedTenantAlertLogFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertLog;
@@ -725,7 +725,7 @@ export function createManagedTenantAlertLogFromDiscriminatorValue(parseNode: Par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlertRuleCollectionResponse
+ * @returns {ManagedTenantAlertRuleCollectionResponse}
  */
 export function createManagedTenantAlertRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleCollectionResponse;
@@ -733,7 +733,7 @@ export function createManagedTenantAlertRuleCollectionResponseFromDiscriminatorV
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlertRuleDefinitionCollectionResponse
+ * @returns {ManagedTenantAlertRuleDefinitionCollectionResponse}
  */
 export function createManagedTenantAlertRuleDefinitionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleDefinitionCollectionResponse;
@@ -741,7 +741,7 @@ export function createManagedTenantAlertRuleDefinitionCollectionResponseFromDisc
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlertRuleDefinition
+ * @returns {ManagedTenantAlertRuleDefinition}
  */
 export function createManagedTenantAlertRuleDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleDefinition;
@@ -749,7 +749,7 @@ export function createManagedTenantAlertRuleDefinitionFromDiscriminatorValue(par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantAlertRule
+ * @returns {ManagedTenantAlertRule}
  */
 export function createManagedTenantAlertRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRule;
@@ -757,7 +757,7 @@ export function createManagedTenantAlertRuleFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantApiNotificationCollectionResponse
+ * @returns {ManagedTenantApiNotificationCollectionResponse}
  */
 export function createManagedTenantApiNotificationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantApiNotificationCollectionResponse;
@@ -765,7 +765,7 @@ export function createManagedTenantApiNotificationCollectionResponseFromDiscrimi
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantApiNotification
+ * @returns {ManagedTenantApiNotification}
  */
 export function createManagedTenantApiNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantApiNotification;
@@ -773,7 +773,7 @@ export function createManagedTenantApiNotificationFromDiscriminatorValue(parseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantEmailNotificationCollectionResponse
+ * @returns {ManagedTenantEmailNotificationCollectionResponse}
  */
 export function createManagedTenantEmailNotificationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantEmailNotificationCollectionResponse;
@@ -781,7 +781,7 @@ export function createManagedTenantEmailNotificationCollectionResponseFromDiscri
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantEmailNotification
+ * @returns {ManagedTenantEmailNotification}
  */
 export function createManagedTenantEmailNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantEmailNotification;
@@ -789,7 +789,7 @@ export function createManagedTenantEmailNotificationFromDiscriminatorValue(parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenant
+ * @returns {ManagedTenant}
  */
 export function createManagedTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenant;
@@ -797,7 +797,7 @@ export function createManagedTenantFromDiscriminatorValue(parseNode: ParseNode |
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantTicketingEndpointCollectionResponse
+ * @returns {ManagedTenantTicketingEndpointCollectionResponse}
  */
 export function createManagedTenantTicketingEndpointCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantTicketingEndpointCollectionResponse;
@@ -805,7 +805,7 @@ export function createManagedTenantTicketingEndpointCollectionResponseFromDiscri
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managedTenantTicketingEndpoint
+ * @returns {ManagedTenantTicketingEndpoint}
  */
 export function createManagedTenantTicketingEndpointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantTicketingEndpoint;
@@ -813,7 +813,7 @@ export function createManagedTenantTicketingEndpointFromDiscriminatorValue(parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementActionCollectionResponse
+ * @returns {ManagementActionCollectionResponse}
  */
 export function createManagementActionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionCollectionResponse;
@@ -821,7 +821,7 @@ export function createManagementActionCollectionResponseFromDiscriminatorValue(p
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementActionDeploymentStatus
+ * @returns {ManagementActionDeploymentStatus}
  */
 export function createManagementActionDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionDeploymentStatus;
@@ -829,7 +829,7 @@ export function createManagementActionDeploymentStatusFromDiscriminatorValue(par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementAction
+ * @returns {ManagementAction}
  */
 export function createManagementActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementAction;
@@ -837,7 +837,7 @@ export function createManagementActionFromDiscriminatorValue(parseNode: ParseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementActionInfo
+ * @returns {ManagementActionInfo}
  */
 export function createManagementActionInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionInfo;
@@ -845,7 +845,7 @@ export function createManagementActionInfoFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementActionTenantDeploymentStatusCollectionResponse
+ * @returns {ManagementActionTenantDeploymentStatusCollectionResponse}
  */
 export function createManagementActionTenantDeploymentStatusCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionTenantDeploymentStatusCollectionResponse;
@@ -853,7 +853,7 @@ export function createManagementActionTenantDeploymentStatusCollectionResponseFr
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementActionTenantDeploymentStatus
+ * @returns {ManagementActionTenantDeploymentStatus}
  */
 export function createManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionTenantDeploymentStatus;
@@ -861,7 +861,7 @@ export function createManagementActionTenantDeploymentStatusFromDiscriminatorVal
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementIntentCollectionResponse
+ * @returns {ManagementIntentCollectionResponse}
  */
 export function createManagementIntentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntentCollectionResponse;
@@ -869,7 +869,7 @@ export function createManagementIntentCollectionResponseFromDiscriminatorValue(p
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementIntent
+ * @returns {ManagementIntent}
  */
 export function createManagementIntentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntent;
@@ -877,7 +877,7 @@ export function createManagementIntentFromDiscriminatorValue(parseNode: ParseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementIntentInfo
+ * @returns {ManagementIntentInfo}
  */
 export function createManagementIntentInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntentInfo;
@@ -885,7 +885,7 @@ export function createManagementIntentInfoFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateCollectionCollectionResponse
+ * @returns {ManagementTemplateCollectionCollectionResponse}
  */
 export function createManagementTemplateCollectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionCollectionResponse;
@@ -893,7 +893,7 @@ export function createManagementTemplateCollectionCollectionResponseFromDiscrimi
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateCollection
+ * @returns {ManagementTemplateCollection}
  */
 export function createManagementTemplateCollectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollection;
@@ -901,7 +901,7 @@ export function createManagementTemplateCollectionFromDiscriminatorValue(parseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateCollectionResponse
+ * @returns {ManagementTemplateCollectionResponse}
  */
 export function createManagementTemplateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionResponse;
@@ -909,7 +909,7 @@ export function createManagementTemplateCollectionResponseFromDiscriminatorValue
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateCollectionTenantSummaryCollectionResponse
+ * @returns {ManagementTemplateCollectionTenantSummaryCollectionResponse}
  */
 export function createManagementTemplateCollectionTenantSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionTenantSummaryCollectionResponse;
@@ -917,7 +917,7 @@ export function createManagementTemplateCollectionTenantSummaryCollectionRespons
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateCollectionTenantSummary
+ * @returns {ManagementTemplateCollectionTenantSummary}
  */
 export function createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionTenantSummary;
@@ -925,7 +925,7 @@ export function createManagementTemplateCollectionTenantSummaryFromDiscriminator
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateDetailedInfo
+ * @returns {ManagementTemplateDetailedInfo}
  */
 export function createManagementTemplateDetailedInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateDetailedInfo;
@@ -933,7 +933,7 @@ export function createManagementTemplateDetailedInfoFromDiscriminatorValue(parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplate
+ * @returns {ManagementTemplate}
  */
 export function createManagementTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplate;
@@ -941,7 +941,7 @@ export function createManagementTemplateFromDiscriminatorValue(parseNode: ParseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStepCollectionResponse
+ * @returns {ManagementTemplateStepCollectionResponse}
  */
 export function createManagementTemplateStepCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepCollectionResponse;
@@ -949,7 +949,7 @@ export function createManagementTemplateStepCollectionResponseFromDiscriminatorV
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStepDeploymentCollectionResponse
+ * @returns {ManagementTemplateStepDeploymentCollectionResponse}
  */
 export function createManagementTemplateStepDeploymentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepDeploymentCollectionResponse;
@@ -957,7 +957,7 @@ export function createManagementTemplateStepDeploymentCollectionResponseFromDisc
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStepDeployment
+ * @returns {ManagementTemplateStepDeployment}
  */
 export function createManagementTemplateStepDeploymentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepDeployment;
@@ -965,7 +965,7 @@ export function createManagementTemplateStepDeploymentFromDiscriminatorValue(par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStep
+ * @returns {ManagementTemplateStep}
  */
 export function createManagementTemplateStepFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStep;
@@ -973,7 +973,7 @@ export function createManagementTemplateStepFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStepTenantSummaryCollectionResponse
+ * @returns {ManagementTemplateStepTenantSummaryCollectionResponse}
  */
 export function createManagementTemplateStepTenantSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepTenantSummaryCollectionResponse;
@@ -981,7 +981,7 @@ export function createManagementTemplateStepTenantSummaryCollectionResponseFromD
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStepTenantSummary
+ * @returns {ManagementTemplateStepTenantSummary}
  */
 export function createManagementTemplateStepTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepTenantSummary;
@@ -989,7 +989,7 @@ export function createManagementTemplateStepTenantSummaryFromDiscriminatorValue(
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStepVersionCollectionResponse
+ * @returns {ManagementTemplateStepVersionCollectionResponse}
  */
 export function createManagementTemplateStepVersionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepVersionCollectionResponse;
@@ -997,7 +997,7 @@ export function createManagementTemplateStepVersionCollectionResponseFromDiscrim
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a managementTemplateStepVersion
+ * @returns {ManagementTemplateStepVersion}
  */
 export function createManagementTemplateStepVersionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepVersion;
@@ -1005,7 +1005,7 @@ export function createManagementTemplateStepVersionFromDiscriminatorValue(parseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a myRoleCollectionResponse
+ * @returns {MyRoleCollectionResponse}
  */
 export function createMyRoleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyRoleCollectionResponse;
@@ -1013,7 +1013,7 @@ export function createMyRoleCollectionResponseFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a myRole
+ * @returns {MyRole}
  */
 export function createMyRoleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyRole;
@@ -1021,7 +1021,7 @@ export function createMyRoleFromDiscriminatorValue(parseNode: ParseNode | undefi
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a notificationTarget
+ * @returns {NotificationTarget}
  */
 export function createNotificationTargetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationTarget;
@@ -1029,7 +1029,7 @@ export function createNotificationTargetFromDiscriminatorValue(parseNode: ParseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a roleAssignment
+ * @returns {RoleAssignment}
  */
 export function createRoleAssignmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRoleAssignment;
@@ -1037,7 +1037,7 @@ export function createRoleAssignmentFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a roleDefinition
+ * @returns {RoleDefinition}
  */
 export function createRoleDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRoleDefinition;
@@ -1045,7 +1045,7 @@ export function createRoleDefinitionFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a setting
+ * @returns {Setting}
  */
 export function createSettingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetting;
@@ -1053,7 +1053,7 @@ export function createSettingFromDiscriminatorValue(parseNode: ParseNode | undef
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a templateParameter
+ * @returns {TemplateParameter}
  */
 export function createTemplateParameterFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTemplateParameter;
@@ -1061,7 +1061,7 @@ export function createTemplateParameterFromDiscriminatorValue(parseNode: ParseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantCollectionResponse
+ * @returns {TenantCollectionResponse}
  */
 export function createTenantCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCollectionResponse;
@@ -1069,7 +1069,7 @@ export function createTenantCollectionResponseFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantContactInformation
+ * @returns {TenantContactInformation}
  */
 export function createTenantContactInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantContactInformation;
@@ -1077,7 +1077,7 @@ export function createTenantContactInformationFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantContract
+ * @returns {TenantContract}
  */
 export function createTenantContractFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantContract;
@@ -1085,7 +1085,7 @@ export function createTenantContractFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantCustomizedInformationCollectionResponse
+ * @returns {TenantCustomizedInformationCollectionResponse}
  */
 export function createTenantCustomizedInformationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCustomizedInformationCollectionResponse;
@@ -1093,7 +1093,7 @@ export function createTenantCustomizedInformationCollectionResponseFromDiscrimin
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantCustomizedInformation
+ * @returns {TenantCustomizedInformation}
  */
 export function createTenantCustomizedInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCustomizedInformation;
@@ -1101,7 +1101,7 @@ export function createTenantCustomizedInformationFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantDetailedInformationCollectionResponse
+ * @returns {TenantDetailedInformationCollectionResponse}
  */
 export function createTenantDetailedInformationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantDetailedInformationCollectionResponse;
@@ -1109,7 +1109,7 @@ export function createTenantDetailedInformationCollectionResponseFromDiscriminat
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantDetailedInformation
+ * @returns {TenantDetailedInformation}
  */
 export function createTenantDetailedInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantDetailedInformation;
@@ -1117,7 +1117,7 @@ export function createTenantDetailedInformationFromDiscriminatorValue(parseNode:
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenant
+ * @returns {Tenant}
  */
 export function createTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenant;
@@ -1125,7 +1125,7 @@ export function createTenantFromDiscriminatorValue(parseNode: ParseNode | undefi
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantGroupCollectionResponse
+ * @returns {TenantGroupCollectionResponse}
  */
 export function createTenantGroupCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantGroupCollectionResponse;
@@ -1133,7 +1133,7 @@ export function createTenantGroupCollectionResponseFromDiscriminatorValue(parseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantGroup
+ * @returns {TenantGroup}
  */
 export function createTenantGroupFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantGroup;
@@ -1141,7 +1141,7 @@ export function createTenantGroupFromDiscriminatorValue(parseNode: ParseNode | u
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantInfo
+ * @returns {TenantInfo}
  */
 export function createTenantInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantInfo;
@@ -1149,7 +1149,7 @@ export function createTenantInfoFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantStatusInformation
+ * @returns {TenantStatusInformation}
  */
 export function createTenantStatusInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantStatusInformation;
@@ -1157,7 +1157,7 @@ export function createTenantStatusInformationFromDiscriminatorValue(parseNode: P
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantTagCollectionResponse
+ * @returns {TenantTagCollectionResponse}
  */
 export function createTenantTagCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantTagCollectionResponse;
@@ -1165,7 +1165,7 @@ export function createTenantTagCollectionResponseFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantTag
+ * @returns {TenantTag}
  */
 export function createTenantTagFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantTag;
@@ -1173,7 +1173,7 @@ export function createTenantTagFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a windowsDeviceMalwareStateCollectionResponse
+ * @returns {WindowsDeviceMalwareStateCollectionResponse}
  */
 export function createWindowsDeviceMalwareStateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsDeviceMalwareStateCollectionResponse;
@@ -1181,7 +1181,7 @@ export function createWindowsDeviceMalwareStateCollectionResponseFromDiscriminat
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a windowsDeviceMalwareState
+ * @returns {WindowsDeviceMalwareState}
  */
 export function createWindowsDeviceMalwareStateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsDeviceMalwareState;
@@ -1189,7 +1189,7 @@ export function createWindowsDeviceMalwareStateFromDiscriminatorValue(parseNode:
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a windowsProtectionStateCollectionResponse
+ * @returns {WindowsProtectionStateCollectionResponse}
  */
 export function createWindowsProtectionStateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsProtectionStateCollectionResponse;
@@ -1197,7 +1197,7 @@ export function createWindowsProtectionStateCollectionResponseFromDiscriminatorV
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a windowsProtectionState
+ * @returns {WindowsProtectionState}
  */
 export function createWindowsProtectionStateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsProtectionState;
@@ -1205,7 +1205,7 @@ export function createWindowsProtectionStateFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a workloadActionDeploymentStatus
+ * @returns {WorkloadActionDeploymentStatus}
  */
 export function createWorkloadActionDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadActionDeploymentStatus;
@@ -1213,7 +1213,7 @@ export function createWorkloadActionDeploymentStatusFromDiscriminatorValue(parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a workloadAction
+ * @returns {WorkloadAction}
  */
 export function createWorkloadActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadAction;
@@ -1221,7 +1221,7 @@ export function createWorkloadActionFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a workloadStatus
+ * @returns {WorkloadStatus}
  */
 export function createWorkloadStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadStatus;
@@ -1285,7 +1285,7 @@ export interface CredentialUserRegistrationsSummaryCollectionResponse extends Ba
 export type DelegatedPrivilegeStatus = (typeof DelegatedPrivilegeStatusObject)[keyof typeof DelegatedPrivilegeStatusObject];
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAggregatedPolicyCompliance(aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1305,7 +1305,7 @@ export function deserializeIntoAggregatedPolicyCompliance(aggregatedPolicyCompli
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAggregatedPolicyComplianceCollectionResponse(aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1315,7 +1315,7 @@ export function deserializeIntoAggregatedPolicyComplianceCollectionResponse(aggr
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertData(alertData: Partial<AlertData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1326,7 +1326,7 @@ export function deserializeIntoAlertData(alertData: Partial<AlertData> | undefin
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertDataReferenceString(alertDataReferenceString: Partial<AlertDataReferenceString> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1337,7 +1337,7 @@ export function deserializeIntoAlertDataReferenceString(alertDataReferenceString
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLogContent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1348,7 +1348,7 @@ export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLog
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1359,7 +1359,7 @@ export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTe
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAppPerformance(appPerformance: Partial<AppPerformance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1378,7 +1378,7 @@ export function deserializeIntoAppPerformance(appPerformance: Partial<AppPerform
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAppPerformanceCollectionResponse(appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1388,7 +1388,7 @@ export function deserializeIntoAppPerformanceCollectionResponse(appPerformanceCo
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAuditEvent(auditEvent: Partial<AuditEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1410,7 +1410,7 @@ export function deserializeIntoAuditEvent(auditEvent: Partial<AuditEvent> | unde
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAuditEventCollectionResponse(auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1420,7 +1420,7 @@ export function deserializeIntoAuditEventCollectionResponse(auditEventCollection
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCloudPcConnection(cloudPcConnection: Partial<CloudPcConnection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1434,7 +1434,7 @@ export function deserializeIntoCloudPcConnection(cloudPcConnection: Partial<Clou
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCloudPcConnectionCollectionResponse(cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1444,7 +1444,7 @@ export function deserializeIntoCloudPcConnectionCollectionResponse(cloudPcConnec
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCloudPcDevice(cloudPcDevice: Partial<CloudPcDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1465,7 +1465,7 @@ export function deserializeIntoCloudPcDevice(cloudPcDevice: Partial<CloudPcDevic
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCloudPcDeviceCollectionResponse(cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1475,7 +1475,7 @@ export function deserializeIntoCloudPcDeviceCollectionResponse(cloudPcDeviceColl
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCloudPcOverview(cloudPcOverview: Partial<CloudPcOverview> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1504,7 +1504,7 @@ export function deserializeIntoCloudPcOverview(cloudPcOverview: Partial<CloudPcO
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCloudPcOverviewCollectionResponse(cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1514,7 +1514,7 @@ export function deserializeIntoCloudPcOverviewCollectionResponse(cloudPcOverview
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoConditionalAccessPolicyCoverage(conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1527,7 +1527,7 @@ export function deserializeIntoConditionalAccessPolicyCoverage(conditionalAccess
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoConditionalAccessPolicyCoverageCollectionResponse(conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1537,7 +1537,7 @@ export function deserializeIntoConditionalAccessPolicyCoverageCollectionResponse
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCredentialUserRegistrationsSummary(credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1558,7 +1558,7 @@ export function deserializeIntoCredentialUserRegistrationsSummary(credentialUser
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCredentialUserRegistrationsSummaryCollectionResponse(credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1568,7 +1568,7 @@ export function deserializeIntoCredentialUserRegistrationsSummaryCollectionRespo
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeviceAppPerformance(deviceAppPerformance: Partial<DeviceAppPerformance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1593,7 +1593,7 @@ export function deserializeIntoDeviceAppPerformance(deviceAppPerformance: Partia
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeviceAppPerformanceCollectionResponse(deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1603,7 +1603,7 @@ export function deserializeIntoDeviceAppPerformanceCollectionResponse(deviceAppP
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeviceCompliancePolicySettingStateSummary(deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1625,7 +1625,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummary(deviceC
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeviceCompliancePolicySettingStateSummaryCollectionResponse(deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1635,7 +1635,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummaryCollecti
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeviceHealthStatus(deviceHealthStatus: Partial<DeviceHealthStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1659,7 +1659,7 @@ export function deserializeIntoDeviceHealthStatus(deviceHealthStatus: Partial<De
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeviceHealthStatusCollectionResponse(deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1669,7 +1669,7 @@ export function deserializeIntoDeviceHealthStatusCollectionResponse(deviceHealth
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoEmail(email: Partial<Email> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1680,7 +1680,7 @@ export function deserializeIntoEmail(email: Partial<Email> | undefined = {}) : R
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGraphAPIErrorDetails(graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1692,7 +1692,7 @@ export function deserializeIntoGraphAPIErrorDetails(graphAPIErrorDetails: Partia
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedDeviceCompliance(managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1715,7 +1715,7 @@ export function deserializeIntoManagedDeviceCompliance(managedDeviceCompliance: 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedDeviceComplianceCollectionResponse(managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1725,7 +1725,7 @@ export function deserializeIntoManagedDeviceComplianceCollectionResponse(managed
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedDeviceComplianceTrend(managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1743,7 +1743,7 @@ export function deserializeIntoManagedDeviceComplianceTrend(managedDeviceComplia
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedDeviceComplianceTrendCollectionResponse(managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1753,7 +1753,7 @@ export function deserializeIntoManagedDeviceComplianceTrendCollectionResponse(ma
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenant(managedTenant: Partial<ManagedTenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1799,7 +1799,7 @@ export function deserializeIntoManagedTenant(managedTenant: Partial<ManagedTenan
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlert(managedTenantAlert: Partial<ManagedTenantAlert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1827,7 +1827,7 @@ export function deserializeIntoManagedTenantAlert(managedTenantAlert: Partial<Ma
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlertCollectionResponse(managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1837,7 +1837,7 @@ export function deserializeIntoManagedTenantAlertCollectionResponse(managedTenan
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlertLog(managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1852,7 +1852,7 @@ export function deserializeIntoManagedTenantAlertLog(managedTenantAlertLog: Part
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlertLogCollectionResponse(managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1862,7 +1862,7 @@ export function deserializeIntoManagedTenantAlertLogCollectionResponse(managedTe
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlertRule(managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1886,7 +1886,7 @@ export function deserializeIntoManagedTenantAlertRule(managedTenantAlertRule: Pa
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1896,7 +1896,7 @@ export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedT
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1912,7 +1912,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAle
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantAlertRuleDefinitionCollectionResponse(managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1922,7 +1922,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinitionCollectionRespons
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantApiNotification(managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1940,7 +1940,7 @@ export function deserializeIntoManagedTenantApiNotification(managedTenantApiNoti
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantApiNotificationCollectionResponse(managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1950,7 +1950,7 @@ export function deserializeIntoManagedTenantApiNotificationCollectionResponse(ma
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantEmailNotification(managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1967,7 +1967,7 @@ export function deserializeIntoManagedTenantEmailNotification(managedTenantEmail
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantEmailNotificationCollectionResponse(managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1977,7 +1977,7 @@ export function deserializeIntoManagedTenantEmailNotificationCollectionResponse(
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantTicketingEndpoint(managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -1993,7 +1993,7 @@ export function deserializeIntoManagedTenantTicketingEndpoint(managedTenantTicke
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagedTenantTicketingEndpointCollectionResponse(managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2003,7 +2003,7 @@ export function deserializeIntoManagedTenantTicketingEndpointCollectionResponse(
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementAction(managementAction: Partial<ManagementAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2018,7 +2018,7 @@ export function deserializeIntoManagementAction(managementAction: Partial<Manage
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementActionCollectionResponse(managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2028,7 +2028,7 @@ export function deserializeIntoManagementActionCollectionResponse(managementActi
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementActionDeploymentStatus(managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2043,7 +2043,7 @@ export function deserializeIntoManagementActionDeploymentStatus(managementAction
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementActionInfo(managementActionInfo: Partial<ManagementActionInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2056,7 +2056,7 @@ export function deserializeIntoManagementActionInfo(managementActionInfo: Partia
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementActionTenantDeploymentStatus(managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2068,7 +2068,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatus(management
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementActionTenantDeploymentStatusCollectionResponse(managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2078,7 +2078,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatusCollectionR
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementIntent(managementIntent: Partial<ManagementIntent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2090,7 +2090,7 @@ export function deserializeIntoManagementIntent(managementIntent: Partial<Manage
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementIntentCollectionResponse(managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2100,7 +2100,7 @@ export function deserializeIntoManagementIntentCollectionResponse(managementInte
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementIntentInfo(managementIntentInfo: Partial<ManagementIntentInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2113,7 +2113,7 @@ export function deserializeIntoManagementIntentInfo(managementIntentInfo: Partia
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplate(managementTemplate: Partial<ManagementTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2138,7 +2138,7 @@ export function deserializeIntoManagementTemplate(managementTemplate: Partial<Ma
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateCollection(managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2154,7 +2154,7 @@ export function deserializeIntoManagementTemplateCollection(managementTemplateCo
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateCollectionCollectionResponse(managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2164,7 +2164,7 @@ export function deserializeIntoManagementTemplateCollectionCollectionResponse(ma
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateCollectionResponse(managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2174,7 +2174,7 @@ export function deserializeIntoManagementTemplateCollectionResponse(managementTe
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateCollectionTenantSummary(managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2202,7 +2202,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummary(managem
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateCollectionTenantSummaryCollectionResponse(managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2212,7 +2212,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummaryCollecti
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateDetailedInfo(managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2226,7 +2226,7 @@ export function deserializeIntoManagementTemplateDetailedInfo(managementTemplate
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStep(managementTemplateStep: Partial<ManagementTemplateStep> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2237,17 +2237,19 @@ export function deserializeIntoManagementTemplateStep(managementTemplateStep: Pa
         "createdDateTime": n => { managementTemplateStep.createdDateTime = n.getDateValue(); },
         "description": n => { managementTemplateStep.description = n.getStringValue(); },
         "displayName": n => { managementTemplateStep.displayName = n.getStringValue(); },
+        "informationLinks": n => { managementTemplateStep.informationLinks = n.getCollectionOfObjectValues<ActionUrl>(createActionUrlFromDiscriminatorValue); },
         "lastActionByUserId": n => { managementTemplateStep.lastActionByUserId = n.getStringValue(); },
         "lastActionDateTime": n => { managementTemplateStep.lastActionDateTime = n.getDateValue(); },
         "managementTemplate": n => { managementTemplateStep.managementTemplate = n.getObjectValue<ManagementTemplate>(createManagementTemplateFromDiscriminatorValue); },
         "portalLink": n => { managementTemplateStep.portalLink = n.getObjectValue<ActionUrl>(createActionUrlFromDiscriminatorValue); },
         "priority": n => { managementTemplateStep.priority = n.getNumberValue(); },
+        "userImpact": n => { managementTemplateStep.userImpact = n.getStringValue(); },
         "versions": n => { managementTemplateStep.versions = n.getCollectionOfObjectValues<ManagementTemplateStepVersion>(createManagementTemplateStepVersionFromDiscriminatorValue); },
     }
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStepCollectionResponse(managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2257,7 +2259,7 @@ export function deserializeIntoManagementTemplateStepCollectionResponse(manageme
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStepDeployment(managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2274,7 +2276,7 @@ export function deserializeIntoManagementTemplateStepDeployment(managementTempla
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStepDeploymentCollectionResponse(managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2284,7 +2286,7 @@ export function deserializeIntoManagementTemplateStepDeploymentCollectionRespons
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStepTenantSummary(managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2308,7 +2310,7 @@ export function deserializeIntoManagementTemplateStepTenantSummary(managementTem
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResponse(managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2318,7 +2320,7 @@ export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResp
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStepVersion(managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2338,7 +2340,7 @@ export function deserializeIntoManagementTemplateStepVersion(managementTemplateS
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoManagementTemplateStepVersionCollectionResponse(managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2348,7 +2350,7 @@ export function deserializeIntoManagementTemplateStepVersionCollectionResponse(m
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoMyRole(myRole: Partial<MyRole> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2360,7 +2362,7 @@ export function deserializeIntoMyRole(myRole: Partial<MyRole> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoMyRoleCollectionResponse(myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2370,7 +2372,7 @@ export function deserializeIntoMyRoleCollectionResponse(myRoleCollectionResponse
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoNotificationTarget(notificationTarget: Partial<NotificationTarget> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2381,7 +2383,7 @@ export function deserializeIntoNotificationTarget(notificationTarget: Partial<No
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRoleAssignment(roleAssignment: Partial<RoleAssignment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2393,7 +2395,7 @@ export function deserializeIntoRoleAssignment(roleAssignment: Partial<RoleAssign
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRoleDefinition(roleDefinition: Partial<RoleDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2406,7 +2408,7 @@ export function deserializeIntoRoleDefinition(roleDefinition: Partial<RoleDefini
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoSetting(setting: Partial<Setting> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2421,7 +2423,7 @@ export function deserializeIntoSetting(setting: Partial<Setting> | undefined = {
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTemplateParameter(templateParameter: Partial<TemplateParameter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2436,7 +2438,7 @@ export function deserializeIntoTemplateParameter(templateParameter: Partial<Temp
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenant(tenant: Partial<Tenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2451,7 +2453,7 @@ export function deserializeIntoTenant(tenant: Partial<Tenant> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantCollectionResponse(tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2461,7 +2463,7 @@ export function deserializeIntoTenantCollectionResponse(tenantCollectionResponse
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantContactInformation(tenantContactInformation: Partial<TenantContactInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2476,7 +2478,7 @@ export function deserializeIntoTenantContactInformation(tenantContactInformation
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantContract(tenantContract: Partial<TenantContract> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2489,7 +2491,7 @@ export function deserializeIntoTenantContract(tenantContract: Partial<TenantCont
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2502,7 +2504,7 @@ export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInfor
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantCustomizedInformationCollectionResponse(tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2512,7 +2514,7 @@ export function deserializeIntoTenantCustomizedInformationCollectionResponse(ten
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantDetailedInformation(tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2531,7 +2533,7 @@ export function deserializeIntoTenantDetailedInformation(tenantDetailedInformati
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantDetailedInformationCollectionResponse(tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2541,7 +2543,7 @@ export function deserializeIntoTenantDetailedInformationCollectionResponse(tenan
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2555,7 +2557,7 @@ export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | u
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantGroupCollectionResponse(tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2565,7 +2567,7 @@ export function deserializeIntoTenantGroupCollectionResponse(tenantGroupCollecti
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantInfo(tenantInfo: Partial<TenantInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2576,7 +2578,7 @@ export function deserializeIntoTenantInfo(tenantInfo: Partial<TenantInfo> | unde
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantStatusInformation(tenantStatusInformation: Partial<TenantStatusInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2595,7 +2597,7 @@ export function deserializeIntoTenantStatusInformation(tenantStatusInformation: 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantTag(tenantTag: Partial<TenantTag> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2612,7 +2614,7 @@ export function deserializeIntoTenantTag(tenantTag: Partial<TenantTag> | undefin
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantTagCollectionResponse(tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2622,7 +2624,7 @@ export function deserializeIntoTenantTagCollectionResponse(tenantTagCollectionRe
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoWindowsDeviceMalwareState(windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2647,7 +2649,7 @@ export function deserializeIntoWindowsDeviceMalwareState(windowsDeviceMalwareSta
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoWindowsDeviceMalwareStateCollectionResponse(windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2657,7 +2659,7 @@ export function deserializeIntoWindowsDeviceMalwareStateCollectionResponse(windo
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoWindowsProtectionState(windowsProtectionState: Partial<WindowsProtectionState> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2691,7 +2693,7 @@ export function deserializeIntoWindowsProtectionState(windowsProtectionState: Pa
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoWindowsProtectionStateCollectionResponse(windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2701,7 +2703,7 @@ export function deserializeIntoWindowsProtectionStateCollectionResponse(windowsP
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2718,7 +2720,7 @@ export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAc
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -2736,7 +2738,7 @@ export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDepl
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoWorkloadStatus(workloadStatus: Partial<WorkloadStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -3997,6 +3999,10 @@ export interface ManagementTemplateStep extends Entity, Parsable {
      */
     displayName?: string;
     /**
+     * The informationLinks property
+     */
+    informationLinks?: ActionUrl[];
+    /**
      * The lastActionByUserId property
      */
     lastActionByUserId?: string;
@@ -4016,6 +4022,10 @@ export interface ManagementTemplateStep extends Entity, Parsable {
      * The priority property
      */
     priority?: number;
+    /**
+     * The userImpact property
+     */
+    userImpact?: string;
     /**
      * The versions property
      */
@@ -5109,11 +5119,13 @@ export function serializeManagementTemplateStep(writer: SerializationWriter, man
     writer.writeDateValue("createdDateTime", managementTemplateStep.createdDateTime);
     writer.writeStringValue("description", managementTemplateStep.description);
     writer.writeStringValue("displayName", managementTemplateStep.displayName);
+    writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplateStep.informationLinks, serializeActionUrl);
     writer.writeStringValue("lastActionByUserId", managementTemplateStep.lastActionByUserId);
     writer.writeDateValue("lastActionDateTime", managementTemplateStep.lastActionDateTime);
     writer.writeObjectValue<ManagementTemplate>("managementTemplate", managementTemplateStep.managementTemplate, serializeManagementTemplate);
     writer.writeObjectValue<ActionUrl>("portalLink", managementTemplateStep.portalLink, serializeActionUrl);
     writer.writeNumberValue("priority", managementTemplateStep.priority);
+    writer.writeStringValue("userImpact", managementTemplateStep.userImpact);
     writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", managementTemplateStep.versions, serializeManagementTemplateStepVersion);
 }
 /**
@@ -6227,7 +6239,7 @@ export const AlertSeverityObject = {
     Medium: "medium",
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const AlertStatusObject = {
     Unknown: "unknown",
     NewAlert: "newAlert",
@@ -6235,14 +6247,14 @@ export const AlertStatusObject = {
     Resolved: "resolved",
     Dismissed: "dismissed",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const DelegatedPrivilegeStatusObject = {
     None: "none",
     DelegatedAdminPrivileges: "delegatedAdminPrivileges",
     UnknownFutureValue: "unknownFutureValue",
     GranularDelegatedAdminPrivileges: "granularDelegatedAdminPrivileges",
     DelegatedAndGranularDelegetedAdminPrivileges: "delegatedAndGranularDelegetedAdminPrivileges",
-}  as const;
+} as const;
 export const ManagementActionStatusObject = {
     ToAddress: "toAddress",
     Completed: "completed",
@@ -6254,14 +6266,14 @@ export const ManagementActionStatusObject = {
     ResolvedThroughAlternateMitigation: "resolvedThroughAlternateMitigation",
     RiskAccepted: "riskAccepted",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementCategoryObject = {
     Custom: "custom",
     Devices: "devices",
     Identity: "identity",
     Data: "data",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementParameterValueTypeObject = {
     String: "string",
     Integer: "integer",
@@ -6272,14 +6284,14 @@ export const ManagementParameterValueTypeObject = {
     BooleanCollection: "booleanCollection",
     GuidCollection: "guidCollection",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementProviderObject = {
     Microsoft: "microsoft",
     Community: "community",
     IndirectProvider: "indirectProvider",
     Self: "self",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const ManagementTemplateDeploymentStatusObject = {
     Unknown: "unknown",
     InProgress: "inProgress",
@@ -6287,14 +6299,14 @@ export const ManagementTemplateDeploymentStatusObject = {
     Failed: "failed",
     Ineligible: "ineligible",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const NotificationDestinationObject = {
     None: "none",
     Api: "api",
     Email: "email",
     Sms: "sms",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantOnboardingEligibilityReasonObject = {
     None: "none",
     ContractType: "contractType",
@@ -6302,19 +6314,19 @@ export const TenantOnboardingEligibilityReasonObject = {
     UsersCount: "usersCount",
     License: "license",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const TenantOnboardingStatusObject = {
     Ineligible: "ineligible",
     InProcess: "inProcess",
     Active: "active",
     Inactive: "inactive",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadActionCategoryObject = {
     Automated: "automated",
     Manual: "manual",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadActionStatusObject = {
     ToAddress: "toAddress",
     Completed: "completed",
@@ -6322,11 +6334,11 @@ export const WorkloadActionStatusObject = {
     TimeOut: "timeOut",
     InProgress: "inProgress",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 export const WorkloadOnboardingStatusObject = {
     NotOnboarded: "notOnboarded",
     Onboarded: "onboarded",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

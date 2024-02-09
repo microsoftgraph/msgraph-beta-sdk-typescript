@@ -12,38 +12,41 @@ export interface MicrosoftTunnelConfigurationRequestBuilder extends BaseRequestB
     /**
      * Delete navigation property microsoftTunnelConfiguration for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MicrosoftTunnelConfiguration
+     * @returns {Promise<MicrosoftTunnelConfiguration>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters> | undefined) : Promise<MicrosoftTunnelConfiguration | undefined>;
     /**
      * Update the navigation property microsoftTunnelConfiguration in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MicrosoftTunnelConfiguration
+     * @returns {Promise<MicrosoftTunnelConfiguration>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: MicrosoftTunnelConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MicrosoftTunnelConfiguration | undefined>;
     /**
      * Delete navigation property microsoftTunnelConfiguration for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property microsoftTunnelConfiguration in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MicrosoftTunnelConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftTunnelConfigurationRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelConfiguration{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftTunnelConfigurationRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const MicrosoftTunnelConfigurationRequestBuilderGetQueryParametersMapper: Record
  */
 export const MicrosoftTunnelConfigurationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: MicrosoftTunnelConfigurationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: MicrosoftTunnelConfigurationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMicrosoftTunnelConfigurationFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelConfigurationRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: MicrosoftTunnelConfigurationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMicrosoftTunnelConfigurationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const MicrosoftTunnelConfigurationRequestBuilderRequestsMetadata: Request
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftTunnelConfigurationRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelConfiguration{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getFileVaultKeyGetResponse
+ * @returns {GetFileVaultKeyGetResponse}
  */
 export function createGetFileVaultKeyGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetFileVaultKeyGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetFileVaultKeyGetResponse(getFileVaultKeyGetResponse: Partial<GetFileVaultKeyGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -43,13 +43,14 @@ export interface GetFileVaultKeyRequestBuilder extends BaseRequestBuilder<GetFil
     /**
      * Invoke function getFileVaultKey
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetFileVaultKeyGetResponse
+     * @returns {Promise<GetFileVaultKeyGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetFileVaultKeyGetResponse | undefined>;
     /**
      * Invoke function getFileVaultKey
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,22 +63,22 @@ export function serializeGetFileVaultKeyGetResponse(writer: SerializationWriter,
     writer.writeAdditionalData(getFileVaultKeyGetResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetFileVaultKeyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/getFileVaultKey()";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetFileVaultKeyRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetFileVaultKeyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetFileVaultKeyGetResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetFileVaultKeyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/getFileVaultKey()";
 /* tslint:enable */
 /* eslint-enable */

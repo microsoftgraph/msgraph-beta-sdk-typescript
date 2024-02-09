@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a findRoomsWithRoomListGetResponse
+ * @returns {FindRoomsWithRoomListGetResponse}
  */
 export function createFindRoomsWithRoomListGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFindRoomsWithRoomListGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoFindRoomsWithRoomListGetResponse(findRoomsWithRoomListGetResponse: Partial<FindRoomsWithRoomListGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface FindRoomsWithRoomListRequestBuilder extends BaseRequestBuilder<
     /**
      * Invoke function findRooms
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FindRoomsWithRoomListGetResponse
+     * @returns {Promise<FindRoomsWithRoomListGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<FindRoomsWithRoomListRequestBuilderGetQueryParameters> | undefined) : Promise<FindRoomsWithRoomListGetResponse | undefined>;
     /**
      * Invoke function findRooms
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FindRoomsWithRoomListRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeFindRoomsWithRoomListGetResponse(writer: SerializationW
     writer.writeCollectionOfObjectValues<EmailAddress>("value", findRoomsWithRoomListGetResponse.value, serializeEmailAddress);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const FindRoomsWithRoomListRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/findRooms(RoomList='{RoomList}'){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const FindRoomsWithRoomListRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const FindRoomsWithRoomListRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const FindRoomsWithRoomListRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: FindRoomsWithRoomListRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFindRoomsWithRoomListGetResponseFromDiscriminatorValue,
         queryParametersMapper: FindRoomsWithRoomListRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const FindRoomsWithRoomListRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

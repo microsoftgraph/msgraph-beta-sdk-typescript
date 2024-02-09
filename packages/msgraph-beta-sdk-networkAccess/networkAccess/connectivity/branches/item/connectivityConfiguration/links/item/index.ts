@@ -12,13 +12,15 @@ export interface ConnectivityConfigurationLinkItemRequestBuilder extends BaseReq
     /**
      * Delete navigation property links for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * List of connectivity configurations for deviceLink objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConnectivityConfigurationLink
+     * @returns {Promise<ConnectivityConfigurationLink>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      get(requestConfiguration?: RequestConfiguration<ConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters> | undefined) : Promise<ConnectivityConfigurationLink | undefined>;
@@ -26,21 +28,22 @@ export interface ConnectivityConfigurationLinkItemRequestBuilder extends BaseReq
      * Update the navigation property links in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConnectivityConfigurationLink
+     * @returns {Promise<ConnectivityConfigurationLink>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      patch(body: ConnectivityConfigurationLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConnectivityConfigurationLink | undefined>;
     /**
      * Delete navigation property links for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * List of connectivity configurations for deviceLink objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface ConnectivityConfigurationLinkItemRequestBuilder extends BaseReq
      * Update the navigation property links in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toPatchRequestInformation(body: ConnectivityConfigurationLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface ConnectivityConfigurationLinkItemRequestBuilderGetQueryParamete
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ConnectivityConfigurationLinkItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/connectivityConfiguration/links/{connectivityConfigurationLink%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ConnectivityConfigurationLinkItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const ConnectivityConfigurationLinkItemRequestBuilderGetQueryParametersMapper: R
  */
 export const ConnectivityConfigurationLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ConnectivityConfigurationLinkItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ConnectivityConfigurationLinkItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConnectivityConfigurationLinkFromDiscriminatorValue,
         queryParametersMapper: ConnectivityConfigurationLinkItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ConnectivityConfigurationLinkItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConnectivityConfigurationLinkFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const ConnectivityConfigurationLinkItemRequestBuilderRequestsMetadata: Re
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ConnectivityConfigurationLinkItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/connectivityConfiguration/links/{connectivityConfigurationLink%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

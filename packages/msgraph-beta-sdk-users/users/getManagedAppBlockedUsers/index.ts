@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getManagedAppBlockedUsersGetResponse
+ * @returns {GetManagedAppBlockedUsersGetResponse}
  */
 export function createGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetManagedAppBlockedUsersGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetManagedAppBlockedUsersGetResponse(getManagedAppBlockedUsersGetResponse: Partial<GetManagedAppBlockedUsersGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetManagedAppBlockedUsersRequestBuilder extends BaseRequestBuil
     /**
      * Invoke function getManagedAppBlockedUsers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetManagedAppBlockedUsersGetResponse
+     * @returns {Promise<GetManagedAppBlockedUsersGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetManagedAppBlockedUsersRequestBuilderGetQueryParameters> | undefined) : Promise<GetManagedAppBlockedUsersGetResponse | undefined>;
     /**
      * Invoke function getManagedAppBlockedUsers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetManagedAppBlockedUsersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeGetManagedAppBlockedUsersGetResponse(writer: Serializat
     writer.writeCollectionOfPrimitiveValues<string>("value", getManagedAppBlockedUsersGetResponse.value);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetManagedAppBlockedUsersRequestBuilderUriTemplate = "{+baseurl}/users/getManagedAppBlockedUsers(){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetManagedAppBlockedUsersRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const GetManagedAppBlockedUsersRequestBuilderGetQueryParametersMapper: Record<st
  */
 export const GetManagedAppBlockedUsersRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetManagedAppBlockedUsersRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetManagedAppBlockedUsersRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetManagedAppBlockedUsersRequestBuilderUriTemplate = "{+baseurl}/users/getManagedAppBlockedUsers(){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

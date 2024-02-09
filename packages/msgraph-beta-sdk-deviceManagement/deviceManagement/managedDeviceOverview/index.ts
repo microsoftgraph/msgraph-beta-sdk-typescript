@@ -12,13 +12,14 @@ export interface ManagedDeviceOverviewRequestBuilder extends BaseRequestBuilder<
     /**
      * Device overview
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedDeviceOverview
+     * @returns {Promise<ManagedDeviceOverview>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedDeviceOverviewRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedDeviceOverview | undefined>;
     /**
      * Device overview
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedDeviceOverviewRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagedDeviceOverviewRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedDeviceOverviewRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDeviceOverview{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedDeviceOverviewRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagedDeviceOverviewRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const ManagedDeviceOverviewRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagedDeviceOverviewRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedDeviceOverviewFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceOverviewRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedDeviceOverviewRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDeviceOverview{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface PrivilegedSignupStatusItemRequestBuilder extends BaseRequestBui
     /**
      * Delete entity from privilegedSignupStatus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get entity from privilegedSignupStatus by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedSignupStatus
+     * @returns {Promise<PrivilegedSignupStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PrivilegedSignupStatusItemRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedSignupStatus | undefined>;
     /**
      * Update entity in privilegedSignupStatus
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedSignupStatus
+     * @returns {Promise<PrivilegedSignupStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PrivilegedSignupStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedSignupStatus | undefined>;
     /**
      * Delete entity from privilegedSignupStatus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get entity from privilegedSignupStatus by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrivilegedSignupStatusItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update entity in privilegedSignupStatus
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PrivilegedSignupStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PrivilegedSignupStatusItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PrivilegedSignupStatusItemRequestBuilderUriTemplate = "{+baseurl}/privilegedSignupStatus/{privilegedSignupStatus%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PrivilegedSignupStatusItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PrivilegedSignupStatusItemRequestBuilderGetQueryParametersMapper: Record<s
  */
 export const PrivilegedSignupStatusItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PrivilegedSignupStatusItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PrivilegedSignupStatusItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedSignupStatusFromDiscriminatorValue,
         queryParametersMapper: PrivilegedSignupStatusItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PrivilegedSignupStatusItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedSignupStatusFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PrivilegedSignupStatusItemRequestBuilderRequestsMetadata: RequestsM
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PrivilegedSignupStatusItemRequestBuilderUriTemplate = "{+baseurl}/privilegedSignupStatus/{privilegedSignupStatus%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

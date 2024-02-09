@@ -12,12 +12,14 @@ export interface EngagementAsyncOperationItemRequestBuilder extends BaseRequestB
     /**
      * Delete navigation property engagementAsyncOperations for employeeExperience
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get an engagementAsyncOperation to track a long-running operation request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EngagementAsyncOperation
+     * @returns {Promise<EngagementAsyncOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/engagementasyncoperation-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<EngagementAsyncOperationItemRequestBuilderGetQueryParameters> | undefined) : Promise<EngagementAsyncOperation | undefined>;
@@ -25,26 +27,27 @@ export interface EngagementAsyncOperationItemRequestBuilder extends BaseRequestB
      * Update the navigation property engagementAsyncOperations in employeeExperience
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EngagementAsyncOperation
+     * @returns {Promise<EngagementAsyncOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: EngagementAsyncOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EngagementAsyncOperation | undefined>;
     /**
      * Delete navigation property engagementAsyncOperations for employeeExperience
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get an engagementAsyncOperation to track a long-running operation request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EngagementAsyncOperationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property engagementAsyncOperations in employeeExperience
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: EngagementAsyncOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface EngagementAsyncOperationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EngagementAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/engagementAsyncOperations/{engagementAsyncOperation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const EngagementAsyncOperationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const EngagementAsyncOperationItemRequestBuilderGetQueryParametersMapper: Record
  */
 export const EngagementAsyncOperationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: EngagementAsyncOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: EngagementAsyncOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEngagementAsyncOperationFromDiscriminatorValue,
         queryParametersMapper: EngagementAsyncOperationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: EngagementAsyncOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEngagementAsyncOperationFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const EngagementAsyncOperationItemRequestBuilderRequestsMetadata: Request
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EngagementAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/engagementAsyncOperations/{engagementAsyncOperation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

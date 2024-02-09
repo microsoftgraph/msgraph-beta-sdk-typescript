@@ -12,38 +12,41 @@ export interface CloudPCConnectivityIssueItemRequestBuilder extends BaseRequestB
     /**
      * Delete navigation property cloudPCConnectivityIssues for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The list of CloudPC Connectivity Issue.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPCConnectivityIssue
+     * @returns {Promise<CloudPCConnectivityIssue>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CloudPCConnectivityIssueItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPCConnectivityIssue | undefined>;
     /**
      * Update the navigation property cloudPCConnectivityIssues in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPCConnectivityIssue
+     * @returns {Promise<CloudPCConnectivityIssue>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CloudPCConnectivityIssue, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPCConnectivityIssue | undefined>;
     /**
      * Delete navigation property cloudPCConnectivityIssues for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of CloudPC Connectivity Issue.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPCConnectivityIssueItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property cloudPCConnectivityIssues in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CloudPCConnectivityIssue, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface CloudPCConnectivityIssueItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CloudPCConnectivityIssueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/cloudPCConnectivityIssues/{cloudPCConnectivityIssue%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CloudPCConnectivityIssueItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const CloudPCConnectivityIssueItemRequestBuilderGetQueryParametersMapper: Record
  */
 export const CloudPCConnectivityIssueItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CloudPCConnectivityIssueItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CloudPCConnectivityIssueItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPCConnectivityIssueFromDiscriminatorValue,
         queryParametersMapper: CloudPCConnectivityIssueItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CloudPCConnectivityIssueItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPCConnectivityIssueFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const CloudPCConnectivityIssueItemRequestBuilderRequestsMetadata: Request
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CloudPCConnectivityIssueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/cloudPCConnectivityIssues/{cloudPCConnectivityIssue%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */
