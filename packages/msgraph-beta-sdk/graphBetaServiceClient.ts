@@ -31,7 +31,7 @@ export function createGraphBetaServiceClient(requestAdapter: RequestAdapter) {
         "baseurl": requestAdapter.baseUrl,
         "user%2Did": "TokenToReplace",
     };
-    return apiClientProxifier<GraphBetaServiceClient>(requestAdapter, pathParameters, GraphBetaServiceClientUriTemplate, GraphBetaServiceClientNavigationMetadata, GraphBetaServiceClientRequestsMetadata);
+    return apiClientProxifier<GraphBetaServiceClient>(requestAdapter, pathParameters, GraphBetaServiceClientNavigationMetadata, GraphBetaServiceClientRequestsMetadata);
 }
 type NavigationMetadataType = Partial<Record<Exclude<keyof GraphBetaServiceClient, KeysToExcludeForNavigationMetadata>, NavigationMetadata>>;
 /**
