@@ -12,33 +12,34 @@ export interface MicrosoftGraphIndustryDataGetStatisticsRequestBuilder extends B
     /**
      * Invoke function getStatistics
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IndustryDataRunStatistics
+     * @returns {Promise<IndustryDataRunStatistics>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IndustryDataRunStatistics | undefined>;
     /**
      * Invoke function getStatistics
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphIndustryDataGetStatisticsRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/microsoft.graph.industryData.getStatistics()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphIndustryDataGetStatisticsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: MicrosoftGraphIndustryDataGetStatisticsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIndustryDataRunStatisticsFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphIndustryDataGetStatisticsRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/microsoft.graph.industryData.getStatistics()";
 /* tslint:enable */
 /* eslint-enable */

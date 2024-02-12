@@ -12,38 +12,41 @@ export interface RemoteAssistanceSettingsRequestBuilder extends BaseRequestBuild
     /**
      * Delete navigation property remoteAssistanceSettings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The remote assistance settings singleton
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RemoteAssistanceSettings
+     * @returns {Promise<RemoteAssistanceSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RemoteAssistanceSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<RemoteAssistanceSettings | undefined>;
     /**
      * Update the navigation property remoteAssistanceSettings in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RemoteAssistanceSettings
+     * @returns {Promise<RemoteAssistanceSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: RemoteAssistanceSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RemoteAssistanceSettings | undefined>;
     /**
      * Delete navigation property remoteAssistanceSettings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The remote assistance settings singleton
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RemoteAssistanceSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property remoteAssistanceSettings in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: RemoteAssistanceSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface RemoteAssistanceSettingsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RemoteAssistanceSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/remoteAssistanceSettings{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RemoteAssistanceSettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const RemoteAssistanceSettingsRequestBuilderGetQueryParametersMapper: Record<str
  */
 export const RemoteAssistanceSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RemoteAssistanceSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: RemoteAssistanceSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRemoteAssistanceSettingsFromDiscriminatorValue,
         queryParametersMapper: RemoteAssistanceSettingsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: RemoteAssistanceSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRemoteAssistanceSettingsFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const RemoteAssistanceSettingsRequestBuilderRequestsMetadata: RequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RemoteAssistanceSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/remoteAssistanceSettings{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

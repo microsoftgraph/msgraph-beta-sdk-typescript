@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a importAppleDeviceIdentityListPostRequestBody
+ * @returns {ImportAppleDeviceIdentityListPostRequestBody}
  */
 export function createImportAppleDeviceIdentityListPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportAppleDeviceIdentityListPostRequestBody;
@@ -16,14 +16,14 @@ export function createImportAppleDeviceIdentityListPostRequestBodyFromDiscrimina
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a importAppleDeviceIdentityListPostResponse
+ * @returns {ImportAppleDeviceIdentityListPostResponse}
  */
 export function createImportAppleDeviceIdentityListPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportAppleDeviceIdentityListPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoImportAppleDeviceIdentityListPostRequestBody(importAppleDeviceIdentityListPostRequestBody: Partial<ImportAppleDeviceIdentityListPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -34,7 +34,7 @@ export function deserializeIntoImportAppleDeviceIdentityListPostRequestBody(impo
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoImportAppleDeviceIdentityListPostResponse(importAppleDeviceIdentityListPostResponse: Partial<ImportAppleDeviceIdentityListPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -74,14 +74,15 @@ export interface ImportAppleDeviceIdentityListRequestBuilder extends BaseRequest
      * Invoke action importAppleDeviceIdentityList
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ImportAppleDeviceIdentityListPostResponse
+     * @returns {Promise<ImportAppleDeviceIdentityListPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ImportAppleDeviceIdentityListPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ImportAppleDeviceIdentityListPostResponse | undefined>;
     /**
      * Invoke action importAppleDeviceIdentityList
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ImportAppleDeviceIdentityListPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -103,14 +104,18 @@ export function serializeImportAppleDeviceIdentityListPostResponse(writer: Seria
     writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>("value", importAppleDeviceIdentityListPostResponse.value, serializeImportedAppleDeviceIdentityResult);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ImportAppleDeviceIdentityListRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/importedAppleDeviceIdentities/importAppleDeviceIdentityList";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ImportAppleDeviceIdentityListRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ImportAppleDeviceIdentityListRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createImportAppleDeviceIdentityListPostResponseFromDiscriminatorValue,
@@ -119,9 +124,5 @@ export const ImportAppleDeviceIdentityListRequestBuilderRequestsMetadata: Reques
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ImportAppleDeviceIdentityListRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/importedAppleDeviceIdentities/importAppleDeviceIdentityList";
 /* tslint:enable */
 /* eslint-enable */

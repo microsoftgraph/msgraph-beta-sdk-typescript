@@ -12,13 +12,15 @@ export interface CloudPcSharedUseServicePlanItemRequestBuilder extends BaseReque
     /**
      * Delete navigation property sharedUseServicePlans for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a cloudPcSharedUseServicePlan object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcSharedUseServicePlan
+     * @returns {Promise<CloudPcSharedUseServicePlan>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-1.0|Find more info here}
      */
@@ -27,21 +29,22 @@ export interface CloudPcSharedUseServicePlanItemRequestBuilder extends BaseReque
      * Update the navigation property sharedUseServicePlans in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcSharedUseServicePlan
+     * @returns {Promise<CloudPcSharedUseServicePlan>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
      */
      patch(body: CloudPcSharedUseServicePlan, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcSharedUseServicePlan | undefined>;
     /**
      * Delete navigation property sharedUseServicePlans for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a cloudPcSharedUseServicePlan object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -49,7 +52,7 @@ export interface CloudPcSharedUseServicePlanItemRequestBuilder extends BaseReque
      * Update the navigation property sharedUseServicePlans in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
      */
      toPatchRequestInformation(body: CloudPcSharedUseServicePlan, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -68,6 +71,10 @@ export interface CloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CloudPcSharedUseServicePlanItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/sharedUseServicePlans/{cloudPcSharedUseServicePlan%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CloudPcSharedUseServicePlanItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -79,28 +86,28 @@ const CloudPcSharedUseServicePlanItemRequestBuilderGetQueryParametersMapper: Rec
  */
 export const CloudPcSharedUseServicePlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CloudPcSharedUseServicePlanItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CloudPcSharedUseServicePlanItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcSharedUseServicePlanFromDiscriminatorValue,
         queryParametersMapper: CloudPcSharedUseServicePlanItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CloudPcSharedUseServicePlanItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcSharedUseServicePlanFromDiscriminatorValue,
@@ -109,9 +116,5 @@ export const CloudPcSharedUseServicePlanItemRequestBuilderRequestsMetadata: Requ
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CloudPcSharedUseServicePlanItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/sharedUseServicePlans/{cloudPcSharedUseServicePlan%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

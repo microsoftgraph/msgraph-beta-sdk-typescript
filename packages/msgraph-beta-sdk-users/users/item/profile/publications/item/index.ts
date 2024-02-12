@@ -12,13 +12,15 @@ export interface ItemPublicationItemRequestBuilder extends BaseRequestBuilder<It
     /**
      * Deletes an itemPublication object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of an itemPublication object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemPublication
+     * @returns {Promise<ItemPublication>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemPublicationItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemPublication | undefined>;
@@ -26,27 +28,28 @@ export interface ItemPublicationItemRequestBuilder extends BaseRequestBuilder<It
      * Update the properties of an itemPublication object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemPublication
+     * @returns {Promise<ItemPublication>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ItemPublication, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemPublication | undefined>;
     /**
      * Deletes an itemPublication object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an itemPublication object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemPublicationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of an itemPublication object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ItemPublication, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface ItemPublicationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ItemPublicationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/publications/{itemPublication%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ItemPublicationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const ItemPublicationItemRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const ItemPublicationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ItemPublicationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ItemPublicationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemPublicationFromDiscriminatorValue,
         queryParametersMapper: ItemPublicationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ItemPublicationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemPublicationFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const ItemPublicationItemRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ItemPublicationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/publications/{itemPublication%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

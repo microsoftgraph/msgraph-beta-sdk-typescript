@@ -12,38 +12,41 @@ export interface IntuneBrandingProfileAssignmentItemRequestBuilder extends BaseR
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The list of group assignments for the branding profile
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IntuneBrandingProfileAssignment
+     * @returns {Promise<IntuneBrandingProfileAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<IntuneBrandingProfileAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IntuneBrandingProfileAssignment
+     * @returns {Promise<IntuneBrandingProfileAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: IntuneBrandingProfileAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IntuneBrandingProfileAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of group assignments for the branding profile
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: IntuneBrandingProfileAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParame
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile%2Did}/assignments/{intuneBrandingProfileAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParametersMapper:
  */
 export const IntuneBrandingProfileAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIntuneBrandingProfileAssignmentFromDiscriminatorValue,
         queryParametersMapper: IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIntuneBrandingProfileAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const IntuneBrandingProfileAssignmentItemRequestBuilderRequestsMetadata: 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intuneBrandingProfiles/{intuneBrandingProfile%2Did}/assignments/{intuneBrandingProfileAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

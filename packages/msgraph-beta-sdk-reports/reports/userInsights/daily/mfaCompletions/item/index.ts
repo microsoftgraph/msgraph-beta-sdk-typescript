@@ -12,13 +12,14 @@ export interface MfaCompletionMetricItemRequestBuilder extends BaseRequestBuilde
     /**
      * Insights for MFA usage on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MfaCompletionMetric
+     * @returns {Promise<MfaCompletionMetric>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MfaCompletionMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<MfaCompletionMetric | undefined>;
     /**
      * Insights for MFA usage on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MfaCompletionMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface MfaCompletionMetricItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MfaCompletionMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/mfaCompletions/{mfaCompletionMetric%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MfaCompletionMetricItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const MfaCompletionMetricItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const MfaCompletionMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: MfaCompletionMetricItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMfaCompletionMetricFromDiscriminatorValue,
         queryParametersMapper: MfaCompletionMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MfaCompletionMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/mfaCompletions/{mfaCompletionMetric%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

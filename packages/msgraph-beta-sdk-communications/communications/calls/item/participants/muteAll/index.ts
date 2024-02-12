@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a muteAllPostRequestBody
+ * @returns {MuteAllPostRequestBody}
  */
 export function createMuteAllPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMuteAllPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoMuteAllPostRequestBody(muteAllPostRequestBody: Partial<MuteAllPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -50,7 +50,8 @@ export interface MuteAllRequestBuilder extends BaseRequestBuilder<MuteAllRequest
      * Mute all participants in the call.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MuteParticipantsOperation
+     * @returns {Promise<MuteParticipantsOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0|Find more info here}
      */
      post(body: MuteAllPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MuteParticipantsOperation | undefined>;
@@ -58,7 +59,7 @@ export interface MuteAllRequestBuilder extends BaseRequestBuilder<MuteAllRequest
      * Mute all participants in the call.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: MuteAllPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -72,14 +73,18 @@ export function serializeMuteAllPostRequestBody(writer: SerializationWriter, mut
     writer.writeAdditionalData(muteAllPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MuteAllRequestBuilderUriTemplate = "{+baseurl}/communications/calls/{call%2Did}/participants/muteAll";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MuteAllRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MuteAllRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMuteParticipantsOperationFromDiscriminatorValue,
@@ -88,9 +93,5 @@ export const MuteAllRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MuteAllRequestBuilderUriTemplate = "{+baseurl}/communications/calls/{call%2Did}/participants/muteAll";
 /* tslint:enable */
 /* eslint-enable */

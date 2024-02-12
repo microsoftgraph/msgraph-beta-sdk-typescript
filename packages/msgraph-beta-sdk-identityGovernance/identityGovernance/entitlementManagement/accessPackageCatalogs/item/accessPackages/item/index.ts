@@ -12,14 +12,15 @@ export interface AccessPackageItemRequestBuilder extends BaseRequestBuilder<Acce
     /**
      * The access packages in this catalog. Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AccessPackage
+     * @returns {Promise<AccessPackage>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackage | undefined>;
     /**
      * The access packages in this catalog. Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface AccessPackageItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AccessPackageItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackages/{accessPackage%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AccessPackageItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const AccessPackageItemRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const AccessPackageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: AccessPackageItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAccessPackageFromDiscriminatorValue,
         queryParametersMapper: AccessPackageItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AccessPackageItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackages/{accessPackage%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

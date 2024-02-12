@@ -10,9 +10,17 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder> {
     /**
+     * Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0|Find more info here}
+     */
+     delete(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : Promise<void>;
+    /**
      * The owners of the group who can be users or service principals. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of StringCollectionResponse
+     * @returns {Promise<StringCollectionResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RefRequestBuilderGetQueryParameters> | undefined) : Promise<StringCollectionResponse | undefined>;
@@ -20,22 +28,38 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      * Add a user or service principal to a Microsoft 365 or security group's owners. The owners are a set of users or service principals who are allowed to modify the group object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/group-post-owners?view=graph-rest-1.0|Find more info here}
      */
      post(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
+     * Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @returns {RequestInformation}
+     */
+     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : RequestInformation;
+    /**
      * The owners of the group who can be users or service principals. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Add a user or service principal to a Microsoft 365 or security group's owners. The owners are a set of users or service principals who are allowed to modify the group object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
+}
+/**
+ * Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+ */
+export interface RefRequestBuilderDeleteQueryParameters {
+    /**
+     * The delete Uri
+     */
+    id?: string;
 }
 /**
  * The owners of the group who can be users or service principals. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
@@ -67,6 +91,16 @@ export interface RefRequestBuilderGetQueryParameters {
     top?: number;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RefRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/owners/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}";
+/**
+ * Mapper for query parameters from symbol name to serialization name represented as a constant.
+ */
+const RefRequestBuilderDeleteQueryParametersMapper: Record<string, string> = {
+    "id": "%40id",
+};
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RefRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -81,21 +115,30 @@ const RefRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the requests in the request builder.
  */
 export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
-    get: {
+    delete: {
+        uriTemplate: RefRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+        },
+        adapterMethodName: "sendNoResponseContentAsync",
+        queryParametersMapper: RefRequestBuilderDeleteQueryParametersMapper,
+    },
+    get: {
+        uriTemplate: RefRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
+        errorMappings: {
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createStringCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RefRequestBuilderGetQueryParametersMapper,
     },
     post: {
+        uriTemplate: RefRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -103,9 +146,5 @@ export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/owners/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
 /* tslint:enable */
 /* eslint-enable */

@@ -10,27 +10,16 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface GradingCategoryRequestBuilder extends BaseRequestBuilder<GradingCategoryRequestBuilder> {
     /**
-     * Remove a gradingCategory from an educationAssignment. Only teachers can perform this operation.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/educationassignment-delete-gradingcategory?view=graph-rest-1.0|Find more info here}
-     */
-     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
-    /**
      * When set, enables users to weight assignments differently when computing a class average grade.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EducationGradingCategory
+     * @returns {Promise<EducationGradingCategory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GradingCategoryRequestBuilderGetQueryParameters> | undefined) : Promise<EducationGradingCategory | undefined>;
     /**
-     * Remove a gradingCategory from an educationAssignment. Only teachers can perform this operation.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
-     */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
-    /**
      * When set, enables users to weight assignments differently when computing a class average grade.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GradingCategoryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -48,6 +37,10 @@ export interface GradingCategoryRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GradingCategoryRequestBuilderUriTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/gradingCategory{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GradingCategoryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -58,28 +51,16 @@ const GradingCategoryRequestBuilderGetQueryParametersMapper: Record<string, stri
  * Metadata for all the requests in the request builder.
  */
 export const GradingCategoryRequestBuilderRequestsMetadata: RequestsMetadata = {
-    delete: {
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "sendNoResponseContentAsync",
-    },
     get: {
+        uriTemplate: GradingCategoryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEducationGradingCategoryFromDiscriminatorValue,
         queryParametersMapper: GradingCategoryRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GradingCategoryRequestBuilderUriTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/gradingCategory{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

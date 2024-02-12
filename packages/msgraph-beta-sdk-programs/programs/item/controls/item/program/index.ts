@@ -12,38 +12,41 @@ export interface ProgramRequestBuilder extends BaseRequestBuilder<ProgramRequest
     /**
      * Delete navigation property program for programs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The program this control is part of.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Program
+     * @returns {Promise<Program>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ProgramRequestBuilderGetQueryParameters> | undefined) : Promise<Program | undefined>;
     /**
      * Update the navigation property program in programs
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Program
+     * @returns {Promise<Program>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: Program, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Program | undefined>;
     /**
      * Delete navigation property program for programs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The program this control is part of.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProgramRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property program in programs
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: Program, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ProgramRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ProgramRequestBuilderUriTemplate = "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}/program{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ProgramRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ProgramRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const ProgramRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ProgramRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ProgramRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createProgramFromDiscriminatorValue,
         queryParametersMapper: ProgramRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ProgramRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createProgramFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ProgramRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ProgramRequestBuilderUriTemplate = "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}/program{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

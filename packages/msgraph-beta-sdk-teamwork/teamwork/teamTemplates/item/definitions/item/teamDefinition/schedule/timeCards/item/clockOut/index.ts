@@ -31,7 +31,8 @@ export interface ClockOutRequestBuilder extends BaseRequestBuilder<ClockOutReque
      * Clock out to end an open timeCard.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TimeCard
+     * @returns {Promise<TimeCard>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/timecard-clockout?view=graph-rest-1.0|Find more info here}
      */
      post(body: ClockOutPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TimeCard | undefined>;
@@ -39,21 +40,21 @@ export interface ClockOutRequestBuilder extends BaseRequestBuilder<ClockOutReque
      * Clock out to end an open timeCard.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ClockOutPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a clockOutPostRequestBody
+ * @returns {ClockOutPostRequestBody}
  */
 export function createClockOutPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoClockOutPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoClockOutPostRequestBody(clockOutPostRequestBody: Partial<ClockOutPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -72,14 +73,18 @@ export function serializeClockOutPostRequestBody(writer: SerializationWriter, cl
     writer.writeAdditionalData(clockOutPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ClockOutRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards/{timeCard%2Did}/clockOut";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ClockOutRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ClockOutRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTimeCardFromDiscriminatorValue,
@@ -88,9 +93,5 @@ export const ClockOutRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ClockOutRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards/{timeCard%2Did}/clockOut";
 /* tslint:enable */
 /* eslint-enable */

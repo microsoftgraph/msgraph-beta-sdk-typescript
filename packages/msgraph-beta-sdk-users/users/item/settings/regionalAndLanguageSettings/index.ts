@@ -12,12 +12,14 @@ export interface RegionalAndLanguageSettingsRequestBuilder extends BaseRequestBu
     /**
      * Delete navigation property regionalAndLanguageSettings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties of a user's regionalAndLanguageSettings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RegionalAndLanguageSettings
+     * @returns {Promise<RegionalAndLanguageSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RegionalAndLanguageSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<RegionalAndLanguageSettings | undefined>;
@@ -25,27 +27,28 @@ export interface RegionalAndLanguageSettingsRequestBuilder extends BaseRequestBu
      * Update some or all of the properties of a regionalAndLanguageSettings object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RegionalAndLanguageSettings
+     * @returns {Promise<RegionalAndLanguageSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: RegionalAndLanguageSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RegionalAndLanguageSettings | undefined>;
     /**
      * Delete navigation property regionalAndLanguageSettings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties of a user's regionalAndLanguageSettings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RegionalAndLanguageSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update some or all of the properties of a regionalAndLanguageSettings object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: RegionalAndLanguageSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface RegionalAndLanguageSettingsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RegionalAndLanguageSettingsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/regionalAndLanguageSettings{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RegionalAndLanguageSettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const RegionalAndLanguageSettingsRequestBuilderGetQueryParametersMapper: Record<
  */
 export const RegionalAndLanguageSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RegionalAndLanguageSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: RegionalAndLanguageSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRegionalAndLanguageSettingsFromDiscriminatorValue,
         queryParametersMapper: RegionalAndLanguageSettingsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: RegionalAndLanguageSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRegionalAndLanguageSettingsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const RegionalAndLanguageSettingsRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RegionalAndLanguageSettingsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/regionalAndLanguageSettings{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

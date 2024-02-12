@@ -12,13 +12,14 @@ export interface PlannerTaskItemRequestBuilder extends BaseRequestBuilder<Planne
     /**
      * Get myDayTasks from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerTask
+     * @returns {Promise<PlannerTask>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerTask | undefined>;
     /**
      * Get myDayTasks from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface PlannerTaskItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PlannerTaskItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/myDayTasks/{plannerTask%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PlannerTaskItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const PlannerTaskItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const PlannerTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: PlannerTaskItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerTaskFromDiscriminatorValue,
         queryParametersMapper: PlannerTaskItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PlannerTaskItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/myDayTasks/{plannerTask%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

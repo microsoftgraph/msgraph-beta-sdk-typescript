@@ -12,38 +12,41 @@ export interface MessageEventItemRequestBuilder extends BaseRequestBuilder<Messa
     /**
      * Delete navigation property events for messageTraces
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get events from messageTraces
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MessageEvent
+     * @returns {Promise<MessageEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MessageEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<MessageEvent | undefined>;
     /**
      * Update the navigation property events in messageTraces
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MessageEvent
+     * @returns {Promise<MessageEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: MessageEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MessageEvent | undefined>;
     /**
      * Delete navigation property events for messageTraces
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get events from messageTraces
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MessageEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property events in messageTraces
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MessageEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface MessageEventItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MessageEventItemRequestBuilderUriTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MessageEventItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const MessageEventItemRequestBuilderGetQueryParametersMapper: Record<string, str
  */
 export const MessageEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: MessageEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: MessageEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMessageEventFromDiscriminatorValue,
         queryParametersMapper: MessageEventItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: MessageEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMessageEventFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const MessageEventItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MessageEventItemRequestBuilderUriTemplate = "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

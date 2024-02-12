@@ -11,48 +11,54 @@ export interface PictureRequestBuilder extends BaseRequestBuilder<PictureRequest
     /**
      * Get picture for the navigation property companyInformation from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Update picture for the navigation property companyInformation in financials
      * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      put(body: ArrayBuffer | undefined, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Get picture for the navigation property companyInformation from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Update picture for the navigation property companyInformation in financials
      * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPutRequestInformation(body: ArrayBuffer | undefined, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const PictureRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/companyInformation/{companyInformation%2Did}/picture";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: PictureRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
     },
     put: {
+        uriTemplate: PictureRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -60,9 +66,5 @@ export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setStreamContent",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PictureRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/companyInformation/{companyInformation%2Did}/picture";
 /* tslint:enable */
 /* eslint-enable */

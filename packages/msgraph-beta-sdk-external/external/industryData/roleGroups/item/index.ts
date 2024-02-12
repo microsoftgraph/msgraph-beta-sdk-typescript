@@ -12,12 +12,14 @@ export interface RoleGroupItemRequestBuilder extends BaseRequestBuilder<RoleGrou
     /**
      * Delete navigation property roleGroups for external
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a roleGroup object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RoleGroup
+     * @returns {Promise<RoleGroup>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RoleGroupItemRequestBuilderGetQueryParameters> | undefined) : Promise<RoleGroup | undefined>;
@@ -25,26 +27,27 @@ export interface RoleGroupItemRequestBuilder extends BaseRequestBuilder<RoleGrou
      * Update the navigation property roleGroups in external
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RoleGroup
+     * @returns {Promise<RoleGroup>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: RoleGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RoleGroup | undefined>;
     /**
      * Delete navigation property roleGroups for external
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a roleGroup object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleGroupItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property roleGroups in external
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: RoleGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface RoleGroupItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RoleGroupItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/roleGroups/{roleGroup%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RoleGroupItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const RoleGroupItemRequestBuilderGetQueryParametersMapper: Record<string, string
  */
 export const RoleGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RoleGroupItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: RoleGroupItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRoleGroupFromDiscriminatorValue,
         queryParametersMapper: RoleGroupItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: RoleGroupItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRoleGroupFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const RoleGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RoleGroupItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/roleGroups/{roleGroup%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface WorkbookDocumentTaskChangeItemRequestBuilder extends BaseReques
     /**
      * Delete navigation property changes for drives
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A collection of task change histories.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WorkbookDocumentTaskChange
+     * @returns {Promise<WorkbookDocumentTaskChange>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParameters> | undefined) : Promise<WorkbookDocumentTaskChange | undefined>;
     /**
      * Update the navigation property changes in drives
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WorkbookDocumentTaskChange
+     * @returns {Promise<WorkbookDocumentTaskChange>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: WorkbookDocumentTaskChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WorkbookDocumentTaskChange | undefined>;
     /**
      * Delete navigation property changes for drives
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of task change histories.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property changes in drives
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: WorkbookDocumentTaskChange, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const WorkbookDocumentTaskChangeItemRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/comments/{workbookComment%2Did}/replies/{workbookCommentReply%2Did}/task/changes/{workbookDocumentTaskChange%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParametersMapper: Reco
  */
 export const WorkbookDocumentTaskChangeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: WorkbookDocumentTaskChangeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: WorkbookDocumentTaskChangeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWorkbookDocumentTaskChangeFromDiscriminatorValue,
         queryParametersMapper: WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: WorkbookDocumentTaskChangeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWorkbookDocumentTaskChangeFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const WorkbookDocumentTaskChangeItemRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const WorkbookDocumentTaskChangeItemRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/comments/{workbookComment%2Did}/replies/{workbookCommentReply%2Did}/task/changes/{workbookDocumentTaskChange%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,12 +12,14 @@ export interface MicrosoftApplicationDataAccessRequestBuilder extends BaseReques
     /**
      * Delete navigation property microsoftApplicationDataAccess for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MicrosoftApplicationDataAccessSettings
+     * @returns {Promise<MicrosoftApplicationDataAccessSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/organizationsettings-list-microsoftapplicationdataaccess?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftApplicationDataAccessRequestBuilderGetQueryParameters> | undefined) : Promise<MicrosoftApplicationDataAccessSettings | undefined>;
@@ -25,27 +27,28 @@ export interface MicrosoftApplicationDataAccessRequestBuilder extends BaseReques
      * Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MicrosoftApplicationDataAccessSettings
+     * @returns {Promise<MicrosoftApplicationDataAccessSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/microsoftapplicationdataaccesssettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: MicrosoftApplicationDataAccessSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MicrosoftApplicationDataAccessSettings | undefined>;
     /**
      * Delete navigation property microsoftApplicationDataAccess for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftApplicationDataAccessRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MicrosoftApplicationDataAccessSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface MicrosoftApplicationDataAccessRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftApplicationDataAccessRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/microsoftApplicationDataAccess{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftApplicationDataAccessRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const MicrosoftApplicationDataAccessRequestBuilderGetQueryParametersMapper: Reco
  */
 export const MicrosoftApplicationDataAccessRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: MicrosoftApplicationDataAccessRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: MicrosoftApplicationDataAccessRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue,
         queryParametersMapper: MicrosoftApplicationDataAccessRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: MicrosoftApplicationDataAccessRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const MicrosoftApplicationDataAccessRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftApplicationDataAccessRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/microsoftApplicationDataAccess{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

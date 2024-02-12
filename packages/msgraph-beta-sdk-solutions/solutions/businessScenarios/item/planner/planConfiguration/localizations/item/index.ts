@@ -12,13 +12,15 @@ export interface PlannerPlanConfigurationLocalizationItemRequestBuilder extends 
     /**
      * Delete a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerPlanConfigurationLocalization
+     * @returns {Promise<PlannerPlanConfigurationLocalization>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanConfigurationLocalization | undefined>;
@@ -26,27 +28,28 @@ export interface PlannerPlanConfigurationLocalizationItemRequestBuilder extends 
      * Update the properties of a plannerPlanConfigurationLocalization object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerPlanConfigurationLocalization
+     * @returns {Promise<PlannerPlanConfigurationLocalization>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: PlannerPlanConfigurationLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerPlanConfigurationLocalization | undefined>;
     /**
      * Delete a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a plannerPlanConfigurationLocalization object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PlannerPlanConfigurationLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryP
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParametersMa
  */
 export const PlannerPlanConfigurationLocalizationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerPlanConfigurationLocalizationFromDiscriminatorValue,
         queryParametersMapper: PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerPlanConfigurationLocalizationFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const PlannerPlanConfigurationLocalizationItemRequestBuilderRequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

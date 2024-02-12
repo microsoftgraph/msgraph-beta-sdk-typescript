@@ -12,13 +12,14 @@ export interface DepartmentTemplateRequestBuilder extends BaseRequestBuilder<Dep
     /**
      * Specifies the  department or business unit of an organization to which a label belongs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DepartmentTemplate
+     * @returns {Promise<DepartmentTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DepartmentTemplateRequestBuilderGetQueryParameters> | undefined) : Promise<DepartmentTemplate | undefined>;
     /**
      * Specifies the  department or business unit of an organization to which a label belongs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DepartmentTemplateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DepartmentTemplateRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DepartmentTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/departmentTemplate{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DepartmentTemplateRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DepartmentTemplateRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const DepartmentTemplateRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DepartmentTemplateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDepartmentTemplateFromDiscriminatorValue,
         queryParametersMapper: DepartmentTemplateRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DepartmentTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/departmentTemplate{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

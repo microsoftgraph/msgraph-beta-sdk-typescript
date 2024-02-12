@@ -33,21 +33,22 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
      * Invoke action assign
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AssignPostResponse
+     * @returns {Promise<AssignPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: AssignPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AssignPostResponse | undefined>;
     /**
      * Invoke action assign
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: AssignPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a assignPostRequestBody
+ * @returns {AssignPostRequestBody}
  */
 export function createAssignPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignPostRequestBody;
@@ -55,14 +56,14 @@ export function createAssignPostRequestBodyFromDiscriminatorValue(parseNode: Par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a assignPostResponse
+ * @returns {AssignPostResponse}
  */
 export function createAssignPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAssignPostRequestBody(assignPostRequestBody: Partial<AssignPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -72,7 +73,7 @@ export function deserializeIntoAssignPostRequestBody(assignPostRequestBody: Part
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAssignPostResponse(assignPostResponse: Partial<AssignPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -97,14 +98,18 @@ export function serializeAssignPostResponse(writer: SerializationWriter, assignP
     writer.writeCollectionOfObjectValues<DeviceCompliancePolicyAssignment>("value", assignPostResponse.value, serializeDeviceCompliancePolicyAssignment);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AssignRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/assign";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const AssignRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: AssignRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAssignPostResponseFromDiscriminatorValue,
@@ -113,9 +118,5 @@ export const AssignRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AssignRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/assign";
 /* tslint:enable */
 /* eslint-enable */

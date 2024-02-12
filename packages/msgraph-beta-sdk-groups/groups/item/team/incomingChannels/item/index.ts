@@ -10,27 +10,16 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ChannelItemRequestBuilder extends BaseRequestBuilder<ChannelItemRequestBuilder> {
     /**
-     * Remove an incoming channel (a channel shared with a team) from a team.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/team-delete-incomingchannels?view=graph-rest-1.0|Find more info here}
-     */
-     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
-    /**
      * List of channels shared with the team.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Channel
+     * @returns {Promise<Channel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters> | undefined) : Promise<Channel | undefined>;
     /**
-     * Remove an incoming channel (a channel shared with a team) from a team.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
-     */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
-    /**
      * List of channels shared with the team.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -48,6 +37,10 @@ export interface ChannelItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ChannelItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/team/incomingChannels/{channel%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ChannelItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -58,28 +51,16 @@ const ChannelItemRequestBuilderGetQueryParametersMapper: Record<string, string> 
  * Metadata for all the requests in the request builder.
  */
 export const ChannelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
-    delete: {
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "sendNoResponseContentAsync",
-    },
     get: {
+        uriTemplate: ChannelItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createChannelFromDiscriminatorValue,
         queryParametersMapper: ChannelItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ChannelItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/team/incomingChannels/{channel%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

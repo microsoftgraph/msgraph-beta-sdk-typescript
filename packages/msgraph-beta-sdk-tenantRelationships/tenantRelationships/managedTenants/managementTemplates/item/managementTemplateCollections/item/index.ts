@@ -12,13 +12,14 @@ export interface ManagementTemplateCollectionItemRequestBuilder extends BaseRequ
     /**
      * Get managementTemplateCollections from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementTemplateCollection
+     * @returns {Promise<ManagementTemplateCollection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagementTemplateCollectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagementTemplateCollection | undefined>;
     /**
      * Get managementTemplateCollections from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagementTemplateCollectionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagementTemplateCollectionItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagementTemplateCollectionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplates/{managementTemplate%2Did}/managementTemplateCollections/{managementTemplateCollection%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagementTemplateCollectionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagementTemplateCollectionItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const ManagementTemplateCollectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagementTemplateCollectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementTemplateCollectionFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateCollectionItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagementTemplateCollectionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplates/{managementTemplate%2Did}/managementTemplateCollections/{managementTemplateCollection%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

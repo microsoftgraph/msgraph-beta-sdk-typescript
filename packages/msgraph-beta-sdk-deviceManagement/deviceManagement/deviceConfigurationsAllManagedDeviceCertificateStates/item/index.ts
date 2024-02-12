@@ -12,38 +12,41 @@ export interface ManagedAllDeviceCertificateStateItemRequestBuilder extends Base
     /**
      * Delete navigation property deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Summary of all certificates for all devices.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedAllDeviceCertificateState
+     * @returns {Promise<ManagedAllDeviceCertificateState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedAllDeviceCertificateState | undefined>;
     /**
      * Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedAllDeviceCertificateState
+     * @returns {Promise<ManagedAllDeviceCertificateState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ManagedAllDeviceCertificateState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedAllDeviceCertificateState | undefined>;
     /**
      * Delete navigation property deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Summary of all certificates for all devices.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ManagedAllDeviceCertificateState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParam
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationsAllManagedDeviceCertificateStates/{managedAllDeviceCertificateState%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParametersMapper
  */
 export const ManagedAllDeviceCertificateStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedAllDeviceCertificateStateFromDiscriminatorValue,
         queryParametersMapper: ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedAllDeviceCertificateStateFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ManagedAllDeviceCertificateStateItemRequestBuilderRequestsMetadata:
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationsAllManagedDeviceCertificateStates/{managedAllDeviceCertificateState%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface CitationTemplateRequestBuilder extends BaseRequestBuilder<Citat
     /**
      * The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CitationTemplate
+     * @returns {Promise<CitationTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CitationTemplateRequestBuilderGetQueryParameters> | undefined) : Promise<CitationTemplate | undefined>;
     /**
      * The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CitationTemplateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface CitationTemplateRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CitationTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/citationTemplate{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CitationTemplateRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const CitationTemplateRequestBuilderGetQueryParametersMapper: Record<string, str
  */
 export const CitationTemplateRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: CitationTemplateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCitationTemplateFromDiscriminatorValue,
         queryParametersMapper: CitationTemplateRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CitationTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/citationTemplate{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

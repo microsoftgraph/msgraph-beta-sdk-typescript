@@ -12,13 +12,14 @@ export interface CategoryRequestBuilder extends BaseRequestBuilder<CategoryReque
     /**
      * The group policy category associated with the definition.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GroupPolicyCategory
+     * @returns {Promise<GroupPolicyCategory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CategoryRequestBuilderGetQueryParameters> | undefined) : Promise<GroupPolicyCategory | undefined>;
     /**
      * The group policy category associated with the definition.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CategoryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface CategoryRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CategoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/nextVersionDefinition/previousVersionDefinition/category{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CategoryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const CategoryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const CategoryRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: CategoryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGroupPolicyCategoryFromDiscriminatorValue,
         queryParametersMapper: CategoryRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CategoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/nextVersionDefinition/previousVersionDefinition/category{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

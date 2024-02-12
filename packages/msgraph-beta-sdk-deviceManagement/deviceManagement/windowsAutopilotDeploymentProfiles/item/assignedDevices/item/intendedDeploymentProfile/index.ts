@@ -12,13 +12,14 @@ export interface IntendedDeploymentProfileRequestBuilder extends BaseRequestBuil
     /**
      * Deployment profile intended to be assigned to the Windows autopilot device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsAutopilotDeploymentProfile
+     * @returns {Promise<WindowsAutopilotDeploymentProfile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IntendedDeploymentProfileRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsAutopilotDeploymentProfile | undefined>;
     /**
      * Deployment profile intended to be assigned to the Windows autopilot device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IntendedDeploymentProfileRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface IntendedDeploymentProfileRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const IntendedDeploymentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignedDevices/{windowsAutopilotDeviceIdentity%2Did}/intendedDeploymentProfile{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const IntendedDeploymentProfileRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const IntendedDeploymentProfileRequestBuilderGetQueryParametersMapper: Record<st
  */
 export const IntendedDeploymentProfileRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: IntendedDeploymentProfileRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsAutopilotDeploymentProfileFromDiscriminatorValue,
         queryParametersMapper: IntendedDeploymentProfileRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const IntendedDeploymentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignedDevices/{windowsAutopilotDeviceIdentity%2Did}/intendedDeploymentProfile{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

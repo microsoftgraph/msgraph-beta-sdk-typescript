@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a executeActionPostRequestBody
+ * @returns {ExecuteActionPostRequestBody}
  */
 export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExecuteActionPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoExecuteActionPostRequestBody(executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -55,14 +55,15 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
      * Invoke action executeAction
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BulkDriverActionResult
+     * @returns {Promise<BulkDriverActionResult>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ExecuteActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BulkDriverActionResult | undefined>;
     /**
      * Invoke action executeAction
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ExecuteActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -77,14 +78,18 @@ export function serializeExecuteActionPostRequestBody(writer: SerializationWrite
     writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ExecuteActionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/executeAction";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ExecuteActionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ExecuteActionRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBulkDriverActionResultFromDiscriminatorValue,
@@ -93,9 +98,5 @@ export const ExecuteActionRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ExecuteActionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/executeAction";
 /* tslint:enable */
 /* eslint-enable */

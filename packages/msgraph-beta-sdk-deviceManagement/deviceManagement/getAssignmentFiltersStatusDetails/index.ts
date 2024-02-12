@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getAssignmentFiltersStatusDetailsPostRequestBody
+ * @returns {GetAssignmentFiltersStatusDetailsPostRequestBody}
  */
 export function createGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody(getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -70,14 +70,15 @@ export interface GetAssignmentFiltersStatusDetailsRequestBuilder extends BaseReq
      * Invoke action getAssignmentFiltersStatusDetails
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AssignmentFilterStatusDetails
+     * @returns {Promise<AssignmentFilterStatusDetails>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: GetAssignmentFiltersStatusDetailsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AssignmentFilterStatusDetails | undefined>;
     /**
      * Invoke action getAssignmentFiltersStatusDetails
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetAssignmentFiltersStatusDetailsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -95,14 +96,18 @@ export function serializeGetAssignmentFiltersStatusDetailsPostRequestBody(writer
     writer.writeAdditionalData(getAssignmentFiltersStatusDetailsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetAssignmentFiltersStatusDetailsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/getAssignmentFiltersStatusDetails";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetAssignmentFiltersStatusDetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetAssignmentFiltersStatusDetailsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAssignmentFilterStatusDetailsFromDiscriminatorValue,
@@ -111,9 +116,5 @@ export const GetAssignmentFiltersStatusDetailsRequestBuilderRequestsMetadata: Re
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetAssignmentFiltersStatusDetailsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/getAssignmentFiltersStatusDetails";
 /* tslint:enable */
 /* eslint-enable */

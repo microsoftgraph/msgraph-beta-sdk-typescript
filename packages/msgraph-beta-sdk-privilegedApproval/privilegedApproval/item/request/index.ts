@@ -12,13 +12,14 @@ export interface RequestRequestBuilder extends BaseRequestBuilder<RequestRequest
     /**
      * Get request from privilegedApproval
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedRoleAssignmentRequest
+     * @returns {Promise<PrivilegedRoleAssignmentRequest>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RequestRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedRoleAssignmentRequest | undefined>;
     /**
      * Get request from privilegedApproval
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RequestRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface RequestRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RequestRequestBuilderUriTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RequestRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const RequestRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const RequestRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: RequestRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedRoleAssignmentRequestFromDiscriminatorValue,
         queryParametersMapper: RequestRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RequestRequestBuilderUriTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

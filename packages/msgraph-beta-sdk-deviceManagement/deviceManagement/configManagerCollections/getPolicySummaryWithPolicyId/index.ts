@@ -12,33 +12,34 @@ export interface GetPolicySummaryWithPolicyIdRequestBuilder extends BaseRequestB
     /**
      * Invoke function getPolicySummary
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConfigManagerPolicySummary
+     * @returns {Promise<ConfigManagerPolicySummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConfigManagerPolicySummary | undefined>;
     /**
      * Invoke function getPolicySummary
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const GetPolicySummaryWithPolicyIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const GetPolicySummaryWithPolicyIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetPolicySummaryWithPolicyIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConfigManagerPolicySummaryFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetPolicySummaryWithPolicyIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')";
 /* tslint:enable */
 /* eslint-enable */

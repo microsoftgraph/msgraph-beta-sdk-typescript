@@ -12,38 +12,41 @@ export interface DeviceStateSummaryRequestBuilder extends BaseRequestBuilder<Dev
     /**
      * Delete navigation property deviceStateSummary for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementIntentDeviceStateSummary
+     * @returns {Promise<DeviceManagementIntentDeviceStateSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceStateSummaryRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementIntentDeviceStateSummary | undefined>;
     /**
      * Update the navigation property deviceStateSummary in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementIntentDeviceStateSummary
+     * @returns {Promise<DeviceManagementIntentDeviceStateSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceManagementIntentDeviceStateSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementIntentDeviceStateSummary | undefined>;
     /**
      * Delete navigation property deviceStateSummary for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceStateSummaryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceStateSummary in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceManagementIntentDeviceStateSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceStateSummaryRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceStateSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/deviceStateSummary{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceStateSummaryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceStateSummaryRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const DeviceStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceStateSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceStateSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue,
         queryParametersMapper: DeviceStateSummaryRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceStateSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceStateSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/deviceStateSummary{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,15 @@ export interface PersonAnnualEventItemRequestBuilder extends BaseRequestBuilder<
     /**
      * Delete a personAnniversary object from the user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personanniversary-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties and relationships of a personAnniversary object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PersonAnnualEvent
+     * @returns {Promise<PersonAnnualEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personanniversary-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PersonAnnualEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<PersonAnnualEvent | undefined>;
@@ -26,27 +28,28 @@ export interface PersonAnnualEventItemRequestBuilder extends BaseRequestBuilder<
      * Update the properties of a personAnniversary object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PersonAnnualEvent
+     * @returns {Promise<PersonAnnualEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personanniversary-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: PersonAnnualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonAnnualEvent | undefined>;
     /**
      * Delete a personAnniversary object from the user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of a personAnniversary object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PersonAnnualEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a personAnniversary object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PersonAnnualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface PersonAnnualEventItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PersonAnnualEventItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/anniversaries/{personAnnualEvent%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PersonAnnualEventItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const PersonAnnualEventItemRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const PersonAnnualEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PersonAnnualEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PersonAnnualEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPersonAnnualEventFromDiscriminatorValue,
         queryParametersMapper: PersonAnnualEventItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PersonAnnualEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPersonAnnualEventFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const PersonAnnualEventItemRequestBuilderRequestsMetadata: RequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PersonAnnualEventItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/anniversaries/{personAnnualEvent%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

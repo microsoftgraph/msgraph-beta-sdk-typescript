@@ -11,7 +11,8 @@ export interface RecordingRequestBuilder extends BaseRequestBuilder<RecordingReq
     /**
      * Get recording for the navigation property onlineMeetings from communications
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
@@ -19,41 +20,46 @@ export interface RecordingRequestBuilder extends BaseRequestBuilder<RecordingReq
      * Update recording for the navigation property onlineMeetings in communications
      * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      put(body: ArrayBuffer | undefined, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Get recording for the navigation property onlineMeetings from communications
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Update recording for the navigation property onlineMeetings in communications
      * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPutRequestInformation(body: ArrayBuffer | undefined, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const RecordingRequestBuilderUriTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/recording";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const RecordingRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: RecordingRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
     },
     put: {
+        uriTemplate: RecordingRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -61,9 +67,5 @@ export const RecordingRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setStreamContent",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RecordingRequestBuilderUriTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/recording";
 /* tslint:enable */
 /* eslint-enable */

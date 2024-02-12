@@ -27,6 +27,7 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
      * Assign cloudPcProvisioningPolicy to user groups.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0|Find more info here}
      */
@@ -35,7 +36,7 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
      * Assign cloudPcProvisioningPolicy to user groups.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toPostRequestInformation(body: AssignPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -43,14 +44,14 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a assignPostRequestBody
+ * @returns {AssignPostRequestBody}
  */
 export function createAssignPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAssignPostRequestBody(assignPostRequestBody: Partial<AssignPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -67,14 +68,18 @@ export function serializeAssignPostRequestBody(writer: SerializationWriter, assi
     writer.writeAdditionalData(assignPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AssignRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assign";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const AssignRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: AssignRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -82,9 +87,5 @@ export const AssignRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AssignRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assign";
 /* tslint:enable */
 /* eslint-enable */

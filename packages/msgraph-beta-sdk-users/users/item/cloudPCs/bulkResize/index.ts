@@ -37,7 +37,8 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
      * Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BulkResizePostResponse
+     * @returns {Promise<BulkResizePostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-1.0|Find more info here}
      */
@@ -46,7 +47,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
      * Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
      */
      toPostRequestInformation(body: BulkResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -54,7 +55,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a bulkResizePostRequestBody
+ * @returns {BulkResizePostRequestBody}
  */
 export function createBulkResizePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkResizePostRequestBody;
@@ -62,14 +63,14 @@ export function createBulkResizePostRequestBodyFromDiscriminatorValue(parseNode:
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a bulkResizePostResponse
+ * @returns {BulkResizePostResponse}
  */
 export function createBulkResizePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkResizePostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoBulkResizePostRequestBody(bulkResizePostRequestBody: Partial<BulkResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -80,7 +81,7 @@ export function deserializeIntoBulkResizePostRequestBody(bulkResizePostRequestBo
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoBulkResizePostResponse(bulkResizePostResponse: Partial<BulkResizePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -106,14 +107,18 @@ export function serializeBulkResizePostResponse(writer: SerializationWriter, bul
     writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", bulkResizePostResponse.value, serializeCloudPcRemoteActionResult);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const BulkResizeRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/bulkResize";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const BulkResizeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: BulkResizeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBulkResizePostResponseFromDiscriminatorValue,
@@ -122,9 +127,5 @@ export const BulkResizeRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const BulkResizeRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/bulkResize";
 /* tslint:enable */
 /* eslint-enable */

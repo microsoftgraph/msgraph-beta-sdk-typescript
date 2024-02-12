@@ -12,40 +12,43 @@ export interface AuthenticationEventListenerItemRequestBuilder extends BaseReque
     /**
      * Deletes an authenticationEventListener object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get authenticationEventListeners from identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationEventListener
+     * @returns {Promise<AuthenticationEventListener>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AuthenticationEventListenerItemRequestBuilderGetQueryParameters> | undefined) : Promise<AuthenticationEventListener | undefined>;
     /**
      * Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationEventListener
+     * @returns {Promise<AuthenticationEventListener>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: AuthenticationEventListener, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuthenticationEventListener | undefined>;
     /**
      * Deletes an authenticationEventListener object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get authenticationEventListeners from identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuthenticationEventListenerItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AuthenticationEventListener, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface AuthenticationEventListenerItemRequestBuilderGetQueryParameters
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AuthenticationEventListenerItemRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventListeners/{authenticationEventListener%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AuthenticationEventListenerItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const AuthenticationEventListenerItemRequestBuilderGetQueryParametersMapper: Rec
  */
 export const AuthenticationEventListenerItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AuthenticationEventListenerItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AuthenticationEventListenerItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationEventListenerFromDiscriminatorValue,
         queryParametersMapper: AuthenticationEventListenerItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AuthenticationEventListenerItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationEventListenerFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const AuthenticationEventListenerItemRequestBuilderRequestsMetadata: Requ
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AuthenticationEventListenerItemRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventListeners/{authenticationEventListener%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

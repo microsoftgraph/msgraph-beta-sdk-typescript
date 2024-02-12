@@ -12,13 +12,14 @@ export interface ManagementTemplateStepVersionItemRequestBuilder extends BaseReq
     /**
      * Get versions from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementTemplateStepVersion
+     * @returns {Promise<ManagementTemplateStepVersion>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagementTemplateStepVersionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagementTemplateStepVersion | undefined>;
     /**
      * Get versions from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagementTemplateStepVersionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagementTemplateStepVersionItemRequestBuilderGetQueryParamete
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagementTemplateStepVersionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/versions/{managementTemplateStepVersion%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagementTemplateStepVersionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagementTemplateStepVersionItemRequestBuilderGetQueryParametersMapper: R
  */
 export const ManagementTemplateStepVersionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagementTemplateStepVersionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementTemplateStepVersionFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateStepVersionItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagementTemplateStepVersionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/versions/{managementTemplateStepVersion%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

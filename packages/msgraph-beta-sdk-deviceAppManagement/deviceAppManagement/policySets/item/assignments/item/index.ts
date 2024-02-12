@@ -12,38 +12,41 @@ export interface PolicySetAssignmentItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Assignments of the PolicySet.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PolicySetAssignment
+     * @returns {Promise<PolicySetAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PolicySetAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<PolicySetAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PolicySetAssignment
+     * @returns {Promise<PolicySetAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PolicySetAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PolicySetAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Assignments of the PolicySet.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicySetAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PolicySetAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PolicySetAssignmentItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PolicySetAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PolicySetAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PolicySetAssignmentItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const PolicySetAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PolicySetAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PolicySetAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPolicySetAssignmentFromDiscriminatorValue,
         queryParametersMapper: PolicySetAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PolicySetAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPolicySetAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PolicySetAssignmentItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PolicySetAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

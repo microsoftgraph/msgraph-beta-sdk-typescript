@@ -12,13 +12,15 @@ export interface ItemAddressItemRequestBuilder extends BaseRequestBuilder<ItemAd
     /**
      * Deletes an itemAddress object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of an itemAddress object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemAddress
+     * @returns {Promise<ItemAddress>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itemaddress-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemAddressItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemAddress | undefined>;
@@ -26,27 +28,28 @@ export interface ItemAddressItemRequestBuilder extends BaseRequestBuilder<ItemAd
      * Update the properties of an itemAddress object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemAddress
+     * @returns {Promise<ItemAddress>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ItemAddress, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemAddress | undefined>;
     /**
      * Deletes an itemAddress object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an itemAddress object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemAddressItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of an itemAddress object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ItemAddress, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface ItemAddressItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ItemAddressItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/addresses/{itemAddress%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ItemAddressItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const ItemAddressItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const ItemAddressItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ItemAddressItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ItemAddressItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemAddressFromDiscriminatorValue,
         queryParametersMapper: ItemAddressItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ItemAddressItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemAddressFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const ItemAddressItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ItemAddressItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/addresses/{itemAddress%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

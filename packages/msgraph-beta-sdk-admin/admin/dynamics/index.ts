@@ -12,12 +12,14 @@ export interface DynamicsRequestBuilder extends BaseRequestBuilder<DynamicsReque
     /**
      * Delete navigation property dynamics for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a adminDynamics object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AdminDynamics
+     * @returns {Promise<AdminDynamics>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/admindynamics-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DynamicsRequestBuilderGetQueryParameters> | undefined) : Promise<AdminDynamics | undefined>;
@@ -25,27 +27,28 @@ export interface DynamicsRequestBuilder extends BaseRequestBuilder<DynamicsReque
      * Update the properties of a adminDynamics object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AdminDynamics
+     * @returns {Promise<AdminDynamics>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/admindynamics-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: AdminDynamics, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AdminDynamics | undefined>;
     /**
      * Delete navigation property dynamics for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a adminDynamics object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DynamicsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a adminDynamics object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AdminDynamics, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface DynamicsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DynamicsRequestBuilderUriTemplate = "{+baseurl}/admin/dynamics{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DynamicsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const DynamicsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const DynamicsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DynamicsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DynamicsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAdminDynamicsFromDiscriminatorValue,
         queryParametersMapper: DynamicsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DynamicsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAdminDynamicsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const DynamicsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DynamicsRequestBuilderUriTemplate = "{+baseurl}/admin/dynamics{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

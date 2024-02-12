@@ -12,14 +12,15 @@ export interface ConnectedOrganizationRequestBuilder extends BaseRequestBuilder<
     /**
      * The connected organization of the subject. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConnectedOrganization
+     * @returns {Promise<ConnectedOrganization>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      get(requestConfiguration?: RequestConfiguration<ConnectedOrganizationRequestBuilderGetQueryParameters> | undefined) : Promise<ConnectedOrganization | undefined>;
     /**
      * The connected organization of the subject. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConnectedOrganizationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface ConnectedOrganizationRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ConnectedOrganizationRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest%2Did}/requestor/connectedOrganization{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ConnectedOrganizationRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const ConnectedOrganizationRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const ConnectedOrganizationRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ConnectedOrganizationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConnectedOrganizationFromDiscriminatorValue,
         queryParametersMapper: ConnectedOrganizationRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ConnectedOrganizationRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest%2Did}/requestor/connectedOrganization{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

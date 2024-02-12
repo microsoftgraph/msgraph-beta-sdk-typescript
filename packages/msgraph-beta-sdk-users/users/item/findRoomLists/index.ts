@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a findRoomListsGetResponse
+ * @returns {FindRoomListsGetResponse}
  */
 export function createFindRoomListsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFindRoomListsGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoFindRoomListsGetResponse(findRoomListsGetResponse: Partial<FindRoomListsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,14 +36,15 @@ export interface FindRoomListsRequestBuilder extends BaseRequestBuilder<FindRoom
     /**
      * Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FindRoomListsGetResponse
+     * @returns {Promise<FindRoomListsGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters> | undefined) : Promise<FindRoomListsGetResponse | undefined>;
     /**
      * Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -81,6 +82,10 @@ export function serializeFindRoomListsGetResponse(writer: SerializationWriter, f
     writer.writeCollectionOfObjectValues<EmailAddress>("value", findRoomListsGetResponse.value, serializeEmailAddress);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const FindRoomListsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/findRoomLists(){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const FindRoomListsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -95,19 +100,15 @@ const FindRoomListsRequestBuilderGetQueryParametersMapper: Record<string, string
  */
 export const FindRoomListsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: FindRoomListsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFindRoomListsGetResponseFromDiscriminatorValue,
         queryParametersMapper: FindRoomListsRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const FindRoomListsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/findRoomLists(){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getUserOwnedObjectsPostRequestBody
+ * @returns {GetUserOwnedObjectsPostRequestBody}
  */
 export function createGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetUserOwnedObjectsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetUserOwnedObjectsPostRequestBody(getUserOwnedObjectsPostRequestBody: Partial<GetUserOwnedObjectsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -50,7 +50,8 @@ export interface GetUserOwnedObjectsRequestBuilder extends BaseRequestBuilder<Ge
      * Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DirectoryObject
+     * @returns {Promise<DirectoryObject>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0|Find more info here}
      */
      post(body: GetUserOwnedObjectsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DirectoryObject | undefined>;
@@ -58,7 +59,7 @@ export interface GetUserOwnedObjectsRequestBuilder extends BaseRequestBuilder<Ge
      * Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetUserOwnedObjectsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -72,14 +73,18 @@ export function serializeGetUserOwnedObjectsPostRequestBody(writer: Serializatio
     writer.writeAdditionalData(getUserOwnedObjectsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetUserOwnedObjectsRequestBuilderUriTemplate = "{+baseurl}/administrativeUnits/getUserOwnedObjects";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetUserOwnedObjectsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetUserOwnedObjectsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDirectoryObjectFromDiscriminatorValue,
@@ -88,9 +93,5 @@ export const GetUserOwnedObjectsRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetUserOwnedObjectsRequestBuilderUriTemplate = "{+baseurl}/administrativeUnits/getUserOwnedObjects";
 /* tslint:enable */
 /* eslint-enable */

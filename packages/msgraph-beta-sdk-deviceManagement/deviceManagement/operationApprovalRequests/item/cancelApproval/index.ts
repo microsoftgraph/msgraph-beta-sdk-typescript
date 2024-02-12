@@ -45,21 +45,22 @@ export interface CancelApprovalRequestBuilder extends BaseRequestBuilder<CancelA
      * Cancels an already approved instance of an operationApprovalRequest.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CancelApprovalPostResponse
+     * @returns {Promise<CancelApprovalPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: CancelApprovalPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CancelApprovalPostResponse | undefined>;
     /**
      * Cancels an already approved instance of an operationApprovalRequest.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: CancelApprovalPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cancelApprovalPostRequestBody
+ * @returns {CancelApprovalPostRequestBody}
  */
 export function createCancelApprovalPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCancelApprovalPostRequestBody;
@@ -67,14 +68,14 @@ export function createCancelApprovalPostRequestBodyFromDiscriminatorValue(parseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a cancelApprovalPostResponse
+ * @returns {CancelApprovalPostResponse}
  */
 export function createCancelApprovalPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCancelApprovalPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCancelApprovalPostRequestBody(cancelApprovalPostRequestBody: Partial<CancelApprovalPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -85,7 +86,7 @@ export function deserializeIntoCancelApprovalPostRequestBody(cancelApprovalPostR
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCancelApprovalPostResponse(cancelApprovalPostResponse: Partial<CancelApprovalPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -111,14 +112,18 @@ export function serializeCancelApprovalPostResponse(writer: SerializationWriter,
     writer.writeAdditionalData(cancelApprovalPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CancelApprovalRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}/cancelApproval";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const CancelApprovalRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CancelApprovalRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCancelApprovalPostResponseFromDiscriminatorValue,
@@ -127,9 +132,5 @@ export const CancelApprovalRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CancelApprovalRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}/cancelApproval";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,15 @@ export interface LanguageProficiencyItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete a languageProficiency object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties and relationships of a languageProficiency object within a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of LanguageProficiency
+     * @returns {Promise<LanguageProficiency>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<LanguageProficiencyItemRequestBuilderGetQueryParameters> | undefined) : Promise<LanguageProficiency | undefined>;
@@ -26,27 +28,28 @@ export interface LanguageProficiencyItemRequestBuilder extends BaseRequestBuilde
      * Update the properties of a languageProficiency object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of LanguageProficiency
+     * @returns {Promise<LanguageProficiency>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: LanguageProficiency, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LanguageProficiency | undefined>;
     /**
      * Delete a languageProficiency object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of a languageProficiency object within a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LanguageProficiencyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a languageProficiency object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: LanguageProficiency, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface LanguageProficiencyItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const LanguageProficiencyItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const LanguageProficiencyItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const LanguageProficiencyItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const LanguageProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: LanguageProficiencyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: LanguageProficiencyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createLanguageProficiencyFromDiscriminatorValue,
         queryParametersMapper: LanguageProficiencyItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: LanguageProficiencyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createLanguageProficiencyFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const LanguageProficiencyItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const LanguageProficiencyItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

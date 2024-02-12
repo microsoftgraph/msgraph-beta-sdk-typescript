@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a exportPostRequestBody
+ * @returns {ExportPostRequestBody}
  */
 export function createExportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExportPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoExportPostRequestBody(exportPostRequestBody: Partial<ExportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -70,6 +70,7 @@ export interface MicrosoftGraphEdiscoveryExportRequestBuilder extends BaseReques
      * Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewset-export?view=graph-rest-1.0|Find more info here}
      */
@@ -78,7 +79,7 @@ export interface MicrosoftGraphEdiscoveryExportRequestBuilder extends BaseReques
      * Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toPostRequestInformation(body: ExportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -97,14 +98,18 @@ export function serializeExportPostRequestBody(writer: SerializationWriter, expo
     writer.writeAdditionalData(exportPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphEdiscoveryExportRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/reviewSets/{reviewSet%2Did}/microsoft.graph.ediscovery.export";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphEdiscoveryExportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphEdiscoveryExportRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -112,9 +117,5 @@ export const MicrosoftGraphEdiscoveryExportRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphEdiscoveryExportRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/reviewSets/{reviewSet%2Did}/microsoft.graph.ediscovery.export";
 /* tslint:enable */
 /* eslint-enable */

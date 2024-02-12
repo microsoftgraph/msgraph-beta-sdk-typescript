@@ -11,31 +11,32 @@ export interface StopApplyDecisionsRequestBuilder extends BaseRequestBuilder<Sto
     /**
      * Invoke action stopApplyDecisions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action stopApplyDecisions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const StopApplyDecisionsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stopApplyDecisions";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const StopApplyDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: StopApplyDecisionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const StopApplyDecisionsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stopApplyDecisions";
 /* tslint:enable */
 /* eslint-enable */

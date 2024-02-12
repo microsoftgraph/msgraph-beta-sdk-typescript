@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a removeHoldPostRequestBody
+ * @returns {RemoveHoldPostRequestBody}
  */
 export function createRemoveHoldPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoveHoldPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRemoveHoldPostRequestBody(removeHoldPostRequestBody: Partial<RemoveHoldPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -30,6 +30,7 @@ export interface MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder extends BaseRe
      * Invoke action removeHold
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      post(body: RemoveHoldPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -37,7 +38,7 @@ export interface MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder extends BaseRe
      * Invoke action removeHold
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toPostRequestInformation(body: RemoveHoldPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -65,14 +66,18 @@ export function serializeRemoveHoldPostRequestBody(writer: SerializationWriter, 
     writer.writeAdditionalData(removeHoldPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/noncustodialDataSources/microsoft.graph.ediscovery.removeHold";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -80,9 +85,5 @@ export const MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderRequestsMetadata: R
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/noncustodialDataSources/microsoft.graph.ediscovery.removeHold";
 /* tslint:enable */
 /* eslint-enable */

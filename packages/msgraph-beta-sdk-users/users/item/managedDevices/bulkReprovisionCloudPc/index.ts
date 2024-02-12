@@ -27,7 +27,8 @@ export interface BulkReprovisionCloudPcRequestBuilder extends BaseRequestBuilder
      * Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcBulkRemoteActionResult
+     * @returns {Promise<CloudPcBulkRemoteActionResult>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0|Find more info here}
      */
@@ -36,7 +37,7 @@ export interface BulkReprovisionCloudPcRequestBuilder extends BaseRequestBuilder
      * Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc
      */
      toPostRequestInformation(body: BulkReprovisionCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -44,14 +45,14 @@ export interface BulkReprovisionCloudPcRequestBuilder extends BaseRequestBuilder
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a bulkReprovisionCloudPcPostRequestBody
+ * @returns {BulkReprovisionCloudPcPostRequestBody}
  */
 export function createBulkReprovisionCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkReprovisionCloudPcPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoBulkReprovisionCloudPcPostRequestBody(bulkReprovisionCloudPcPostRequestBody: Partial<BulkReprovisionCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -68,14 +69,18 @@ export function serializeBulkReprovisionCloudPcPostRequestBody(writer: Serializa
     writer.writeAdditionalData(bulkReprovisionCloudPcPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const BulkReprovisionCloudPcRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/bulkReprovisionCloudPc";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const BulkReprovisionCloudPcRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: BulkReprovisionCloudPcRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcBulkRemoteActionResultFromDiscriminatorValue,
@@ -84,9 +89,5 @@ export const BulkReprovisionCloudPcRequestBuilderRequestsMetadata: RequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const BulkReprovisionCloudPcRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/bulkReprovisionCloudPc";
 /* tslint:enable */
 /* eslint-enable */

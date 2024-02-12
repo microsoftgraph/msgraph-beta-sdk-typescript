@@ -12,13 +12,15 @@ export interface NotificationItemRequestBuilder extends BaseRequestBuilder<Notif
     /**
      * Delete navigation property notifications for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get notifications from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Notification
+     * @returns {Promise<Notification>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
      */
      get(requestConfiguration?: RequestConfiguration<NotificationItemRequestBuilderGetQueryParameters> | undefined) : Promise<Notification | undefined>;
@@ -26,21 +28,22 @@ export interface NotificationItemRequestBuilder extends BaseRequestBuilder<Notif
      * Update the navigation property notifications in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Notification
+     * @returns {Promise<Notification>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
      */
      patch(body: Notification, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Notification | undefined>;
     /**
      * Delete navigation property notifications for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get notifications from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NotificationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface NotificationItemRequestBuilder extends BaseRequestBuilder<Notif
      * Update the navigation property notifications in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
      */
      toPatchRequestInformation(body: Notification, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface NotificationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const NotificationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/notifications/{notification%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const NotificationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const NotificationItemRequestBuilderGetQueryParametersMapper: Record<string, str
  */
 export const NotificationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: NotificationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: NotificationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createNotificationFromDiscriminatorValue,
         queryParametersMapper: NotificationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: NotificationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createNotificationFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const NotificationItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const NotificationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/notifications/{notification%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

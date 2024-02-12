@@ -12,12 +12,14 @@ export interface TenantGroupItemRequestBuilder extends BaseRequestBuilder<Tenant
     /**
      * Delete navigation property tenantGroups for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a tenantGroup object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TenantGroup
+     * @returns {Promise<TenantGroup>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/managedtenants-tenantgroup-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TenantGroupItemRequestBuilderGetQueryParameters> | undefined) : Promise<TenantGroup | undefined>;
@@ -25,26 +27,27 @@ export interface TenantGroupItemRequestBuilder extends BaseRequestBuilder<Tenant
      * Update the navigation property tenantGroups in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TenantGroup
+     * @returns {Promise<TenantGroup>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: TenantGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TenantGroup | undefined>;
     /**
      * Delete navigation property tenantGroups for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a tenantGroup object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TenantGroupItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property tenantGroups in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: TenantGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface TenantGroupItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TenantGroupItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantGroups/{tenantGroup%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TenantGroupItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const TenantGroupItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const TenantGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: TenantGroupItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: TenantGroupItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTenantGroupFromDiscriminatorValue,
         queryParametersMapper: TenantGroupItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: TenantGroupItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTenantGroupFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const TenantGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TenantGroupItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantGroups/{tenantGroup%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

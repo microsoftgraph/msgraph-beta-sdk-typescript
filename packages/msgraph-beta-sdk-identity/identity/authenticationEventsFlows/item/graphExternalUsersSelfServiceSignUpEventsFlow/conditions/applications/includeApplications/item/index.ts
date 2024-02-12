@@ -12,38 +12,41 @@ export interface AuthenticationConditionApplicationAppItemRequestBuilder extends
     /**
      * Delete navigation property includeApplications for identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get includeApplications from identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationConditionApplication
+     * @returns {Promise<AuthenticationConditionApplication>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters> | undefined) : Promise<AuthenticationConditionApplication | undefined>;
     /**
      * Update the navigation property includeApplications in identity
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationConditionApplication
+     * @returns {Promise<AuthenticationConditionApplication>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: AuthenticationConditionApplication, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuthenticationConditionApplication | undefined>;
     /**
      * Delete navigation property includeApplications for identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get includeApplications from identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property includeApplications in identity
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AuthenticationConditionApplication, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface AuthenticationConditionApplicationAppItemRequestBuilderGetQuery
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AuthenticationConditionApplicationAppItemRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/{authenticationConditionApplication%2DappId}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParametersM
  */
 export const AuthenticationConditionApplicationAppItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AuthenticationConditionApplicationAppItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AuthenticationConditionApplicationAppItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationConditionApplicationFromDiscriminatorValue,
         queryParametersMapper: AuthenticationConditionApplicationAppItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AuthenticationConditionApplicationAppItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationConditionApplicationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const AuthenticationConditionApplicationAppItemRequestBuilderRequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AuthenticationConditionApplicationAppItemRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/{authenticationConditionApplication%2DappId}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

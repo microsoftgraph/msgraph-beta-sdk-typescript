@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a submitTiIndicatorsPostRequestBody
+ * @returns {SubmitTiIndicatorsPostRequestBody}
  */
 export function createSubmitTiIndicatorsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSubmitTiIndicatorsPostRequestBody;
@@ -16,14 +16,14 @@ export function createSubmitTiIndicatorsPostRequestBodyFromDiscriminatorValue(pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a submitTiIndicatorsPostResponse
+ * @returns {SubmitTiIndicatorsPostResponse}
  */
 export function createSubmitTiIndicatorsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSubmitTiIndicatorsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoSubmitTiIndicatorsPostRequestBody(submitTiIndicatorsPostRequestBody: Partial<SubmitTiIndicatorsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoSubmitTiIndicatorsPostRequestBody(submitTiIndicat
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoSubmitTiIndicatorsPostResponse(submitTiIndicatorsPostResponse: Partial<SubmitTiIndicatorsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -85,7 +85,8 @@ export interface SubmitTiIndicatorsRequestBuilder extends BaseRequestBuilder<Sub
      * Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SubmitTiIndicatorsPostResponse
+     * @returns {Promise<SubmitTiIndicatorsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0|Find more info here}
      */
      post(body: SubmitTiIndicatorsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SubmitTiIndicatorsPostResponse | undefined>;
@@ -93,19 +94,23 @@ export interface SubmitTiIndicatorsRequestBuilder extends BaseRequestBuilder<Sub
      * Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: SubmitTiIndicatorsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const SubmitTiIndicatorsRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators/submitTiIndicators";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const SubmitTiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: SubmitTiIndicatorsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSubmitTiIndicatorsPostResponseFromDiscriminatorValue,
@@ -114,9 +119,5 @@ export const SubmitTiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SubmitTiIndicatorsRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators/submitTiIndicators";
 /* tslint:enable */
 /* eslint-enable */

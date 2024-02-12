@@ -12,13 +12,15 @@ export interface MeetingRegistrationQuestionItemRequestBuilder extends BaseReque
     /**
      * Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MeetingRegistrationQuestion
+     * @returns {Promise<MeetingRegistrationQuestion>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingRegistrationQuestion | undefined>;
@@ -26,27 +28,28 @@ export interface MeetingRegistrationQuestionItemRequestBuilder extends BaseReque
      * Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MeetingRegistrationQuestion
+     * @returns {Promise<MeetingRegistrationQuestion>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: MeetingRegistrationQuestion, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MeetingRegistrationQuestion | undefined>;
     /**
      * Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MeetingRegistrationQuestion, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MeetingRegistrationQuestionItemRequestBuilderUriTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions/{meetingRegistrationQuestion%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MeetingRegistrationQuestionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const MeetingRegistrationQuestionItemRequestBuilderGetQueryParametersMapper: Rec
  */
 export const MeetingRegistrationQuestionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: MeetingRegistrationQuestionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: MeetingRegistrationQuestionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMeetingRegistrationQuestionFromDiscriminatorValue,
         queryParametersMapper: MeetingRegistrationQuestionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: MeetingRegistrationQuestionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMeetingRegistrationQuestionFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const MeetingRegistrationQuestionItemRequestBuilderRequestsMetadata: Requ
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MeetingRegistrationQuestionItemRequestBuilderUriTemplate = "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions/{meetingRegistrationQuestion%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

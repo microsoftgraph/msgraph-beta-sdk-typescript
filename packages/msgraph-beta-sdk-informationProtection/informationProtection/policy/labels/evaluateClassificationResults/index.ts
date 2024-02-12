@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a evaluateClassificationResultsPostRequestBody
+ * @returns {EvaluateClassificationResultsPostRequestBody}
  */
 export function createEvaluateClassificationResultsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateClassificationResultsPostRequestBody;
@@ -16,14 +16,14 @@ export function createEvaluateClassificationResultsPostRequestBodyFromDiscrimina
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a evaluateClassificationResultsPostResponse
+ * @returns {EvaluateClassificationResultsPostResponse}
  */
 export function createEvaluateClassificationResultsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateClassificationResultsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoEvaluateClassificationResultsPostRequestBody(evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -34,7 +34,7 @@ export function deserializeIntoEvaluateClassificationResultsPostRequestBody(eval
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoEvaluateClassificationResultsPostResponse(evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -74,7 +74,8 @@ export interface EvaluateClassificationResultsRequestBuilder extends BaseRequest
      * Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EvaluateClassificationResultsPostResponse
+     * @returns {Promise<EvaluateClassificationResultsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      * @see {@link https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-1.0|Find more info here}
      */
@@ -83,7 +84,7 @@ export interface EvaluateClassificationResultsRequestBuilder extends BaseRequest
      * Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toPostRequestInformation(body: EvaluateClassificationResultsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -106,14 +107,18 @@ export function serializeEvaluateClassificationResultsPostResponse(writer: Seria
     writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateClassificationResultsPostResponse.value, serializeInformationProtectionAction);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EvaluateClassificationResultsRequestBuilderUriTemplate = "{+baseurl}/informationProtection/policy/labels/evaluateClassificationResults";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const EvaluateClassificationResultsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: EvaluateClassificationResultsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEvaluateClassificationResultsPostResponseFromDiscriminatorValue,
@@ -122,9 +127,5 @@ export const EvaluateClassificationResultsRequestBuilderRequestsMetadata: Reques
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EvaluateClassificationResultsRequestBuilderUriTemplate = "{+baseurl}/informationProtection/policy/labels/evaluateClassificationResults";
 /* tslint:enable */
 /* eslint-enable */

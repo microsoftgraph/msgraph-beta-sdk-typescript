@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getTargetedUsersAndDevicesPostRequestBody
+ * @returns {GetTargetedUsersAndDevicesPostRequestBody}
  */
 export function createGetTargetedUsersAndDevicesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetTargetedUsersAndDevicesPostRequestBody;
@@ -16,14 +16,14 @@ export function createGetTargetedUsersAndDevicesPostRequestBodyFromDiscriminator
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getTargetedUsersAndDevicesPostResponse
+ * @returns {GetTargetedUsersAndDevicesPostResponse}
  */
 export function createGetTargetedUsersAndDevicesPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetTargetedUsersAndDevicesPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetTargetedUsersAndDevicesPostRequestBody(getTargetedUsersAndDevicesPostRequestBody: Partial<GetTargetedUsersAndDevicesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoGetTargetedUsersAndDevicesPostRequestBody(getTarg
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetTargetedUsersAndDevicesPostResponse(getTargetedUsersAndDevicesPostResponse: Partial<GetTargetedUsersAndDevicesPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -69,14 +69,15 @@ export interface GetTargetedUsersAndDevicesRequestBuilder extends BaseRequestBui
      * Invoke action getTargetedUsersAndDevices
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetTargetedUsersAndDevicesPostResponse
+     * @returns {Promise<GetTargetedUsersAndDevicesPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: GetTargetedUsersAndDevicesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetTargetedUsersAndDevicesPostResponse | undefined>;
     /**
      * Invoke action getTargetedUsersAndDevices
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetTargetedUsersAndDevicesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -97,14 +98,18 @@ export function serializeGetTargetedUsersAndDevicesPostResponse(writer: Serializ
     writer.writeCollectionOfObjectValues<DeviceConfigurationTargetedUserAndDevice>("value", getTargetedUsersAndDevicesPostResponse.value, serializeDeviceConfigurationTargetedUserAndDevice);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetTargetedUsersAndDevicesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/getTargetedUsersAndDevices";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetTargetedUsersAndDevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetTargetedUsersAndDevicesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetTargetedUsersAndDevicesPostResponseFromDiscriminatorValue,
@@ -113,9 +118,5 @@ export const GetTargetedUsersAndDevicesRequestBuilderRequestsMetadata: RequestsM
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetTargetedUsersAndDevicesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/getTargetedUsersAndDevices";
 /* tslint:enable */
 /* eslint-enable */

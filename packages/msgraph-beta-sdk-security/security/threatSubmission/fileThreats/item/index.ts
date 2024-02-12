@@ -12,12 +12,14 @@ export interface FileThreatSubmissionItemRequestBuilder extends BaseRequestBuild
     /**
      * Delete navigation property fileThreats for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a fileThreatSubmission object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FileThreatSubmission
+     * @returns {Promise<FileThreatSubmission>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-filethreatsubmission-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FileThreatSubmissionItemRequestBuilderGetQueryParameters> | undefined) : Promise<FileThreatSubmission | undefined>;
@@ -25,26 +27,27 @@ export interface FileThreatSubmissionItemRequestBuilder extends BaseRequestBuild
      * Update the navigation property fileThreats in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FileThreatSubmission
+     * @returns {Promise<FileThreatSubmission>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: FileThreatSubmission, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FileThreatSubmission | undefined>;
     /**
      * Delete navigation property fileThreats for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a fileThreatSubmission object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FileThreatSubmissionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property fileThreats in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: FileThreatSubmission, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface FileThreatSubmissionItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const FileThreatSubmissionItemRequestBuilderUriTemplate = "{+baseurl}/security/threatSubmission/fileThreats/{fileThreatSubmission%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const FileThreatSubmissionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const FileThreatSubmissionItemRequestBuilderGetQueryParametersMapper: Record<str
  */
 export const FileThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: FileThreatSubmissionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: FileThreatSubmissionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFileThreatSubmissionFromDiscriminatorValue,
         queryParametersMapper: FileThreatSubmissionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: FileThreatSubmissionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFileThreatSubmissionFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const FileThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const FileThreatSubmissionItemRequestBuilderUriTemplate = "{+baseurl}/security/threatSubmission/fileThreats/{fileThreatSubmission%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

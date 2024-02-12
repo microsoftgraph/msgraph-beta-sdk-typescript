@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a generateApplePushNotificationCertificateSigningRequestPostResponse
+ * @returns {GenerateApplePushNotificationCertificateSigningRequestPostResponse}
  */
 export function createGenerateApplePushNotificationCertificateSigningRequestPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGenerateApplePushNotificationCertificateSigningRequestPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGenerateApplePushNotificationCertificateSigningRequestPostResponse(generateApplePushNotificationCertificateSigningRequestPostResponse: Partial<GenerateApplePushNotificationCertificateSigningRequestPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -43,13 +43,14 @@ export interface GenerateApplePushNotificationCertificateSigningRequestRequestBu
     /**
      * Download Apple push notification certificate signing request
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GenerateApplePushNotificationCertificateSigningRequestPostResponse
+     * @returns {Promise<GenerateApplePushNotificationCertificateSigningRequestPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GenerateApplePushNotificationCertificateSigningRequestPostResponse | undefined>;
     /**
      * Download Apple push notification certificate signing request
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,22 +63,22 @@ export function serializeGenerateApplePushNotificationCertificateSigningRequestP
     writer.writeAdditionalData(generateApplePushNotificationCertificateSigningRequestPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GenerateApplePushNotificationCertificateSigningRequestRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/applePushNotificationCertificate/generateApplePushNotificationCertificateSigningRequest";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GenerateApplePushNotificationCertificateSigningRequestRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GenerateApplePushNotificationCertificateSigningRequestRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGenerateApplePushNotificationCertificateSigningRequestPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GenerateApplePushNotificationCertificateSigningRequestRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/applePushNotificationCertificate/generateApplePushNotificationCertificateSigningRequest";
 /* tslint:enable */
 /* eslint-enable */

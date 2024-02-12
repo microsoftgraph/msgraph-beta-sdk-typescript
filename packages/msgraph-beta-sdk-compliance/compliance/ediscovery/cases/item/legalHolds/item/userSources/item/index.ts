@@ -12,13 +12,15 @@ export interface UserSourceItemRequestBuilder extends BaseRequestBuilder<UserSou
     /**
      * Delete navigation property userSources for compliance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserSource
+     * @returns {Promise<UserSource>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      get(requestConfiguration?: RequestConfiguration<UserSourceItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserSource | undefined>;
@@ -26,21 +28,22 @@ export interface UserSourceItemRequestBuilder extends BaseRequestBuilder<UserSou
      * Update the navigation property userSources in compliance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserSource
+     * @returns {Promise<UserSource>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      patch(body: UserSource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserSource | undefined>;
     /**
      * Delete navigation property userSources for compliance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserSourceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface UserSourceItemRequestBuilder extends BaseRequestBuilder<UserSou
      * Update the navigation property userSources in compliance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toPatchRequestInformation(body: UserSource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface UserSourceItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserSourceItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds/{legalHold%2Did}/userSources/{userSource%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserSourceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const UserSourceItemRequestBuilderGetQueryParametersMapper: Record<string, strin
  */
 export const UserSourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UserSourceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UserSourceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserSourceFromDiscriminatorValue,
         queryParametersMapper: UserSourceItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UserSourceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserSourceFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const UserSourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserSourceItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds/{legalHold%2Did}/userSources/{userSource%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

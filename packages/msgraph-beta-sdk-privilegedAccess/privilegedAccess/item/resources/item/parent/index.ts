@@ -12,13 +12,14 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
     /**
      * Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GovernanceResource
+     * @returns {Promise<GovernanceResource>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ParentRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceResource | undefined>;
     /**
      * Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ParentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ParentRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ParentRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/parent{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ParentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ParentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const ParentRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ParentRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGovernanceResourceFromDiscriminatorValue,
         queryParametersMapper: ParentRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ParentRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/parent{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

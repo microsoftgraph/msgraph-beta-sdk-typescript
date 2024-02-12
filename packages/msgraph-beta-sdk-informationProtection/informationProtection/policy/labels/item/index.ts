@@ -12,13 +12,15 @@ export interface InformationProtectionLabelItemRequestBuilder extends BaseReques
     /**
      * Delete navigation property labels for informationProtection
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties and relationships of an informationProtectionLabel object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InformationProtectionLabel
+     * @returns {Promise<InformationProtectionLabel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      * @see {@link https://learn.microsoft.com/graph/api/informationprotectionlabel-get?view=graph-rest-1.0|Find more info here}
      */
@@ -27,21 +29,22 @@ export interface InformationProtectionLabelItemRequestBuilder extends BaseReques
      * Update the navigation property labels in informationProtection
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InformationProtectionLabel
+     * @returns {Promise<InformationProtectionLabel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      patch(body: InformationProtectionLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InformationProtectionLabel | undefined>;
     /**
      * Delete navigation property labels for informationProtection
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of an informationProtectionLabel object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InformationProtectionLabelItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -49,7 +52,7 @@ export interface InformationProtectionLabelItemRequestBuilder extends BaseReques
      * Update the navigation property labels in informationProtection
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toPatchRequestInformation(body: InformationProtectionLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -68,6 +71,10 @@ export interface InformationProtectionLabelItemRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const InformationProtectionLabelItemRequestBuilderUriTemplate = "{+baseurl}/informationProtection/policy/labels/{informationProtectionLabel%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const InformationProtectionLabelItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -79,28 +86,28 @@ const InformationProtectionLabelItemRequestBuilderGetQueryParametersMapper: Reco
  */
 export const InformationProtectionLabelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: InformationProtectionLabelItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: InformationProtectionLabelItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInformationProtectionLabelFromDiscriminatorValue,
         queryParametersMapper: InformationProtectionLabelItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: InformationProtectionLabelItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInformationProtectionLabelFromDiscriminatorValue,
@@ -109,9 +116,5 @@ export const InformationProtectionLabelItemRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const InformationProtectionLabelItemRequestBuilderUriTemplate = "{+baseurl}/informationProtection/policy/labels/{informationProtectionLabel%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

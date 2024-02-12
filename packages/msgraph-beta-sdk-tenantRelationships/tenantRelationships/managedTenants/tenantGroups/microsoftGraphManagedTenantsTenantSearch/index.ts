@@ -9,7 +9,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantSearchPostRequestBody
+ * @returns {TenantSearchPostRequestBody}
  */
 export function createTenantSearchPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantSearchPostRequestBody;
@@ -17,14 +17,14 @@ export function createTenantSearchPostRequestBodyFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a tenantSearchPostResponse
+ * @returns {TenantSearchPostResponse}
  */
 export function createTenantSearchPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantSearchPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantSearchPostRequestBody(tenantSearchPostRequestBody: Partial<TenantSearchPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -34,7 +34,7 @@ export function deserializeIntoTenantSearchPostRequestBody(tenantSearchPostReque
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoTenantSearchPostResponse(tenantSearchPostResponse: Partial<TenantSearchPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -50,14 +50,15 @@ export interface MicrosoftGraphManagedTenantsTenantSearchRequestBuilder extends 
      * Invoke action tenantSearch
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TenantSearchPostResponse
+     * @returns {Promise<TenantSearchPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: TenantSearchPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TenantSearchPostResponse | undefined>;
     /**
      * Invoke action tenantSearch
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: TenantSearchPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -98,14 +99,18 @@ export interface TenantSearchPostResponse extends BaseCollectionPaginationCountR
     value?: TenantGroup[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphManagedTenantsTenantSearchRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantGroups/microsoft.graph.managedTenants.tenantSearch";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphManagedTenantsTenantSearchRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphManagedTenantsTenantSearchRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTenantSearchPostResponseFromDiscriminatorValue,
@@ -114,9 +119,5 @@ export const MicrosoftGraphManagedTenantsTenantSearchRequestBuilderRequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphManagedTenantsTenantSearchRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantGroups/microsoft.graph.managedTenants.tenantSearch";
 /* tslint:enable */
 /* eslint-enable */

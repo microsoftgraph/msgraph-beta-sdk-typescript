@@ -12,7 +12,8 @@ export interface PagesRequestBuilder extends BaseRequestBuilder<PagesRequestBuil
     /**
      * Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BaseSitePageCollectionResponse
+     * @returns {Promise<BaseSitePageCollectionResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PagesRequestBuilderGetQueryParameters> | undefined) : Promise<BaseSitePageCollectionResponse | undefined>;
@@ -20,21 +21,22 @@ export interface PagesRequestBuilder extends BaseRequestBuilder<PagesRequestBuil
      * Create a new [sitePage][] in the site pages [list][] in a [site][].
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BaseSitePage
+     * @returns {Promise<BaseSitePage>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0|Find more info here}
      */
      post(body: BaseSitePage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BaseSitePage | undefined>;
     /**
      * Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Create a new [sitePage][] in the site pages [list][] in a [site][].
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: BaseSitePage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -76,6 +78,10 @@ export interface PagesRequestBuilderGetQueryParameters {
     top?: number;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PagesRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/pages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PagesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -93,20 +99,20 @@ const PagesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const PagesRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: PagesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBaseSitePageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PagesRequestBuilderGetQueryParametersMapper,
     },
     post: {
+        uriTemplate: PagesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBaseSitePageFromDiscriminatorValue,
@@ -115,9 +121,5 @@ export const PagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PagesRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/pages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

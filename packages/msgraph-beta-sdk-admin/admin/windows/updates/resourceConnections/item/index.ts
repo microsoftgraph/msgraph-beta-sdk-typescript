@@ -12,45 +12,48 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
     /**
      * Delete an operationalInsightsConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an operationalInsightsConnection object.
+     * Read the properties and relationships of a resourceConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ResourceConnection
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0|Find more info here}
+     * @returns {Promise<ResourceConnection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ResourceConnectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ResourceConnection | undefined>;
     /**
      * Update the navigation property resourceConnections in admin
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ResourceConnection
+     * @returns {Promise<ResourceConnection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ResourceConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ResourceConnection | undefined>;
     /**
      * Delete an operationalInsightsConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an operationalInsightsConnection object.
+     * Read the properties and relationships of a resourceConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ResourceConnectionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property resourceConnections in admin
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ResourceConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an operationalInsightsConnection object.
+ * Read the properties and relationships of a resourceConnection object.
  */
 export interface ResourceConnectionItemRequestBuilderGetQueryParameters {
     /**
@@ -63,6 +66,10 @@ export interface ResourceConnectionItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ResourceConnectionItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ResourceConnectionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const ResourceConnectionItemRequestBuilderGetQueryParametersMapper: Record<strin
  */
 export const ResourceConnectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ResourceConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ResourceConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createResourceConnectionFromDiscriminatorValue,
         queryParametersMapper: ResourceConnectionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ResourceConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createResourceConnectionFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const ResourceConnectionItemRequestBuilderRequestsMetadata: RequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ResourceConnectionItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

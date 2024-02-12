@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deleteTiIndicatorsPostRequestBody
+ * @returns {DeleteTiIndicatorsPostRequestBody}
  */
 export function createDeleteTiIndicatorsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeleteTiIndicatorsPostRequestBody;
@@ -16,7 +16,7 @@ export function createDeleteTiIndicatorsPostRequestBodyFromDiscriminatorValue(pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deleteTiIndicatorsPostResponse
+ * @returns {DeleteTiIndicatorsPostResponse}
  */
 export function createDeleteTiIndicatorsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeleteTiIndicatorsPostResponse;
@@ -49,7 +49,8 @@ export interface DeleteTiIndicatorsRequestBuilder extends BaseRequestBuilder<Del
      * Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeleteTiIndicatorsPostResponse
+     * @returns {Promise<DeleteTiIndicatorsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-1.0|Find more info here}
      */
      post(body: DeleteTiIndicatorsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeleteTiIndicatorsPostResponse | undefined>;
@@ -57,13 +58,13 @@ export interface DeleteTiIndicatorsRequestBuilder extends BaseRequestBuilder<Del
      * Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: DeleteTiIndicatorsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeleteTiIndicatorsPostRequestBody(deleteTiIndicatorsPostRequestBody: Partial<DeleteTiIndicatorsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -73,7 +74,7 @@ export function deserializeIntoDeleteTiIndicatorsPostRequestBody(deleteTiIndicat
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeleteTiIndicatorsPostResponse(deleteTiIndicatorsPostResponse: Partial<DeleteTiIndicatorsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -98,14 +99,18 @@ export function serializeDeleteTiIndicatorsPostResponse(writer: SerializationWri
     writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsPostResponse.value, serializeResultInfo);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeleteTiIndicatorsRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators/deleteTiIndicators";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const DeleteTiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: DeleteTiIndicatorsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeleteTiIndicatorsPostResponseFromDiscriminatorValue,
@@ -114,9 +119,5 @@ export const DeleteTiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeleteTiIndicatorsRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators/deleteTiIndicators";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder 
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The associated group assignments for IosLobAppProvisioningConfiguration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IosLobAppProvisioningConfigurationAssignment
+     * @returns {Promise<IosLobAppProvisioningConfigurationAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<IosLobAppProvisioningConfigurationAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IosLobAppProvisioningConfigurationAssignment
+     * @returns {Promise<IosLobAppProvisioningConfigurationAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: IosLobAppProvisioningConfigurationAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IosLobAppProvisioningConfigurationAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The associated group assignments for IosLobAppProvisioningConfiguration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: IosLobAppProvisioningConfigurationAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderG
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/assignments/{iosLobAppProvisioningConfigurationAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryPara
  */
 export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIosLobAppProvisioningConfigurationAssignmentFromDiscriminatorValue,
         queryParametersMapper: IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIosLobAppProvisioningConfigurationAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderReque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}/assignments/{iosLobAppProvisioningConfigurationAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

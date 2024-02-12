@@ -33,21 +33,22 @@ export interface CompleteSetupRequestBuilder extends BaseRequestBuilder<Complete
      * Invoke action completeSetup
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CompleteSetupPostResponse
+     * @returns {Promise<CompleteSetupPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: CompleteSetupPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CompleteSetupPostResponse | undefined>;
     /**
      * Invoke action completeSetup
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: CompleteSetupPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a completeSetupPostRequestBody
+ * @returns {CompleteSetupPostRequestBody}
  */
 export function createCompleteSetupPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCompleteSetupPostRequestBody;
@@ -55,14 +56,14 @@ export function createCompleteSetupPostRequestBodyFromDiscriminatorValue(parseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a completeSetupPostResponse
+ * @returns {CompleteSetupPostResponse}
  */
 export function createCompleteSetupPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCompleteSetupPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCompleteSetupPostRequestBody(completeSetupPostRequestBody: Partial<CompleteSetupPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -72,7 +73,7 @@ export function deserializeIntoCompleteSetupPostRequestBody(completeSetupPostReq
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCompleteSetupPostResponse(completeSetupPostResponse: Partial<CompleteSetupPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -97,14 +98,18 @@ export function serializeCompleteSetupPostResponse(writer: SerializationWriter, 
     writer.writeCollectionOfObjectValues<RoleSuccessStatistics>("value", completeSetupPostResponse.value, serializeRoleSuccessStatistics);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CompleteSetupRequestBuilderUriTemplate = "{+baseurl}/privilegedSignupStatus/completeSetup";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const CompleteSetupRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CompleteSetupRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCompleteSetupPostResponseFromDiscriminatorValue,
@@ -113,9 +118,5 @@ export const CompleteSetupRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CompleteSetupRequestBuilderUriTemplate = "{+baseurl}/privilegedSignupStatus/completeSetup";
 /* tslint:enable */
 /* eslint-enable */

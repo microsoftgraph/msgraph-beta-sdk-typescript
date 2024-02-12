@@ -12,38 +12,41 @@ export interface UserStateSummaryRequestBuilder extends BaseRequestBuilder<UserS
     /**
      * Delete navigation property userStateSummary for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementIntentUserStateSummary
+     * @returns {Promise<DeviceManagementIntentUserStateSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserStateSummaryRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementIntentUserStateSummary | undefined>;
     /**
      * Update the navigation property userStateSummary in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementIntentUserStateSummary
+     * @returns {Promise<DeviceManagementIntentUserStateSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceManagementIntentUserStateSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementIntentUserStateSummary | undefined>;
     /**
      * Delete navigation property userStateSummary for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserStateSummaryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property userStateSummary in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceManagementIntentUserStateSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UserStateSummaryRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserStateSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStateSummary{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserStateSummaryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UserStateSummaryRequestBuilderGetQueryParametersMapper: Record<string, str
  */
 export const UserStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UserStateSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UserStateSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementIntentUserStateSummaryFromDiscriminatorValue,
         queryParametersMapper: UserStateSummaryRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UserStateSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementIntentUserStateSummaryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UserStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserStateSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStateSummary{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

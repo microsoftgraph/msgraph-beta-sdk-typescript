@@ -12,13 +12,14 @@ export interface SourceSystemRequestBuilder extends BaseRequestBuilder<SourceSys
     /**
      * The sourceSystemDefinition this connector is connected to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SourceSystemDefinition
+     * @returns {Promise<SourceSystemDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters> | undefined) : Promise<SourceSystemDefinition | undefined>;
     /**
      * The sourceSystemDefinition this connector is connected to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface SourceSystemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SourceSystemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SourceSystemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const SourceSystemRequestBuilderGetQueryParametersMapper: Record<string, string>
  */
 export const SourceSystemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: SourceSystemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSourceSystemDefinitionFromDiscriminatorValue,
         queryParametersMapper: SourceSystemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SourceSystemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

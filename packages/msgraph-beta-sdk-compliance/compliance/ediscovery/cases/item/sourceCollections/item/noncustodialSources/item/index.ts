@@ -12,14 +12,15 @@ export interface NoncustodialDataSourceItemRequestBuilder extends BaseRequestBui
     /**
      * noncustodialDataSource sources that are included in the sourceCollection
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of NoncustodialDataSource
+     * @returns {Promise<NoncustodialDataSource>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      get(requestConfiguration?: RequestConfiguration<NoncustodialDataSourceItemRequestBuilderGetQueryParameters> | undefined) : Promise<NoncustodialDataSource | undefined>;
     /**
      * noncustodialDataSource sources that are included in the sourceCollection
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NoncustodialDataSourceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface NoncustodialDataSourceItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const NoncustodialDataSourceItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/noncustodialSources/{noncustodialDataSource%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const NoncustodialDataSourceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const NoncustodialDataSourceItemRequestBuilderGetQueryParametersMapper: Record<s
  */
 export const NoncustodialDataSourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: NoncustodialDataSourceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createNoncustodialDataSourceFromDiscriminatorValue,
         queryParametersMapper: NoncustodialDataSourceItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const NoncustodialDataSourceItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/noncustodialSources/{noncustodialDataSource%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

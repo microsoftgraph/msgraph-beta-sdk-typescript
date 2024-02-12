@@ -12,34 +12,35 @@ export interface MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestB
     /**
      * Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multitenant management platform using the offboardTenant action. By invoking this action the platform attempts to onboard the managed tenant for management.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Tenant
+     * @returns {Promise<Tenant>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/managedtenants-tenant-resettenantonboardingstatus?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Tenant | undefined>;
     /**
      * Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multitenant management platform using the offboardTenant action. By invoking this action the platform attempts to onboard the managed tenant for management.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants/{tenant%2Did}/microsoft.graph.managedTenants.resetTenantOnboardingStatus";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTenantFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants/{tenant%2Did}/microsoft.graph.managedTenants.resetTenantOnboardingStatus";
 /* tslint:enable */
 /* eslint-enable */

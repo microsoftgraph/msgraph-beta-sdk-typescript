@@ -12,13 +12,14 @@ export interface ItemActivityOLDItemRequestBuilder extends BaseRequestBuilder<It
     /**
      * The list of recent activities that took place on this item.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemActivityOLD
+     * @returns {Promise<ItemActivityOLD>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ItemActivityOLDItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemActivityOLD | undefined>;
     /**
      * The list of recent activities that took place on this item.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemActivityOLDItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ItemActivityOLDItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ItemActivityOLDItemRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/activities/{itemActivityOLD%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ItemActivityOLDItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ItemActivityOLDItemRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const ItemActivityOLDItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ItemActivityOLDItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemActivityOLDFromDiscriminatorValue,
         queryParametersMapper: ItemActivityOLDItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ItemActivityOLDItemRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/activities/{itemActivityOLD%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

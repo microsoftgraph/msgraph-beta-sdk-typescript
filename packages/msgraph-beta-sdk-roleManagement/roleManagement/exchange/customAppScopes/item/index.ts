@@ -12,13 +12,15 @@ export interface CustomAppScopeItemRequestBuilder extends BaseRequestBuilder<Cus
     /**
      * Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CustomAppScope
+     * @returns {Promise<CustomAppScope>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomAppScopeItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomAppScope | undefined>;
@@ -26,27 +28,28 @@ export interface CustomAppScopeItemRequestBuilder extends BaseRequestBuilder<Cus
      * Update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CustomAppScope
+     * @returns {Promise<CustomAppScope>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: CustomAppScope, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomAppScope | undefined>;
     /**
      * Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomAppScopeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CustomAppScope, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface CustomAppScopeItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CustomAppScopeItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/exchange/customAppScopes/{customAppScope%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CustomAppScopeItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const CustomAppScopeItemRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const CustomAppScopeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CustomAppScopeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CustomAppScopeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCustomAppScopeFromDiscriminatorValue,
         queryParametersMapper: CustomAppScopeItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CustomAppScopeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCustomAppScopeFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const CustomAppScopeItemRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CustomAppScopeItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/exchange/customAppScopes/{customAppScope%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

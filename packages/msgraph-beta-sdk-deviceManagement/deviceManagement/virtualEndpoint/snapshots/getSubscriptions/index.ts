@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getSubscriptionsGetResponse
+ * @returns {GetSubscriptionsGetResponse}
  */
 export function createGetSubscriptionsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSubscriptionsGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetSubscriptionsGetResponse(getSubscriptionsGetResponse: Partial<GetSubscriptionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetSubscriptionsRequestBuilder extends BaseRequestBuilder<GetSu
     /**
      * Invoke function getSubscriptions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetSubscriptionsGetResponse
+     * @returns {Promise<GetSubscriptionsGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetSubscriptionsRequestBuilderGetQueryParameters> | undefined) : Promise<GetSubscriptionsGetResponse | undefined>;
     /**
      * Invoke function getSubscriptions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetSubscriptionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeGetSubscriptionsGetResponse(writer: SerializationWriter
     writer.writeCollectionOfObjectValues<CloudPcSubscription>("value", getSubscriptionsGetResponse.value, serializeCloudPcSubscription);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetSubscriptionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getSubscriptions(){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetSubscriptionsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const GetSubscriptionsRequestBuilderGetQueryParametersMapper: Record<string, str
  */
 export const GetSubscriptionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetSubscriptionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetSubscriptionsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetSubscriptionsRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetSubscriptionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getSubscriptions(){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

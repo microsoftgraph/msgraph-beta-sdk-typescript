@@ -12,38 +12,41 @@ export interface RoleScopeTagAutoAssignmentItemRequestBuilder extends BaseReques
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The list of assignments for this Role Scope Tag.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RoleScopeTagAutoAssignment
+     * @returns {Promise<RoleScopeTagAutoAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<RoleScopeTagAutoAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RoleScopeTagAutoAssignment
+     * @returns {Promise<RoleScopeTagAutoAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: RoleScopeTagAutoAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RoleScopeTagAutoAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of assignments for this Role Scope Tag.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: RoleScopeTagAutoAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}/assignments/{roleScopeTagAutoAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParametersMapper: Reco
  */
 export const RoleScopeTagAutoAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRoleScopeTagAutoAssignmentFromDiscriminatorValue,
         queryParametersMapper: RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRoleScopeTagAutoAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const RoleScopeTagAutoAssignmentItemRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}/assignments/{roleScopeTagAutoAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

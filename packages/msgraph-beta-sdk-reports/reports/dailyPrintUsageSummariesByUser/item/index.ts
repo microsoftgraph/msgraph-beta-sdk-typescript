@@ -12,13 +12,15 @@ export interface PrintUsageByUserItemRequestBuilder extends BaseRequestBuilder<P
     /**
      * Delete navigation property dailyPrintUsageSummariesByUser for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get dailyPrintUsageSummariesByUser from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrintUsageByUser
+     * @returns {Promise<PrintUsageByUser>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      get(requestConfiguration?: RequestConfiguration<PrintUsageByUserItemRequestBuilderGetQueryParameters> | undefined) : Promise<PrintUsageByUser | undefined>;
@@ -26,21 +28,22 @@ export interface PrintUsageByUserItemRequestBuilder extends BaseRequestBuilder<P
      * Update the navigation property dailyPrintUsageSummariesByUser in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrintUsageByUser
+     * @returns {Promise<PrintUsageByUser>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      patch(body: PrintUsageByUser, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrintUsageByUser | undefined>;
     /**
      * Delete navigation property dailyPrintUsageSummariesByUser for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get dailyPrintUsageSummariesByUser from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrintUsageByUserItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface PrintUsageByUserItemRequestBuilder extends BaseRequestBuilder<P
      * Update the navigation property dailyPrintUsageSummariesByUser in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toPatchRequestInformation(body: PrintUsageByUser, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface PrintUsageByUserItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PrintUsageByUserItemRequestBuilderUriTemplate = "{+baseurl}/reports/dailyPrintUsageSummariesByUser/{printUsageByUser%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PrintUsageByUserItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const PrintUsageByUserItemRequestBuilderGetQueryParametersMapper: Record<string,
  */
 export const PrintUsageByUserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PrintUsageByUserItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PrintUsageByUserItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrintUsageByUserFromDiscriminatorValue,
         queryParametersMapper: PrintUsageByUserItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PrintUsageByUserItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrintUsageByUserFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const PrintUsageByUserItemRequestBuilderRequestsMetadata: RequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PrintUsageByUserItemRequestBuilderUriTemplate = "{+baseurl}/reports/dailyPrintUsageSummariesByUser/{printUsageByUser%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

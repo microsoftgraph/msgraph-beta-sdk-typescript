@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a revokeLicensesPostRequestBody
+ * @returns {RevokeLicensesPostRequestBody}
  */
 export function createRevokeLicensesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRevokeLicensesPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRevokeLicensesPostRequestBody(revokeLicensesPostRequestBody: Partial<RevokeLicensesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -49,13 +49,14 @@ export interface RevokeLicensesRequestBuilder extends BaseRequestBuilder<RevokeL
      * Revoke licenses associated with a specific appleVolumePurchaseProgramToken
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: RevokeLicensesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Revoke licenses associated with a specific appleVolumePurchaseProgramToken
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: RevokeLicensesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -69,14 +70,18 @@ export function serializeRevokeLicensesPostRequestBody(writer: SerializationWrit
     writer.writeAdditionalData(revokeLicensesPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RevokeLicensesRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/revokeLicenses";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const RevokeLicensesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RevokeLicensesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -84,9 +89,5 @@ export const RevokeLicensesRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RevokeLicensesRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/revokeLicenses";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface AgedAccountsPayableItemRequestBuilder extends BaseRequestBuilde
     /**
      * Get agedAccountsPayable from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AgedAccountsPayable
+     * @returns {Promise<AgedAccountsPayable>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AgedAccountsPayableItemRequestBuilderGetQueryParameters> | undefined) : Promise<AgedAccountsPayable | undefined>;
     /**
      * Get agedAccountsPayable from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AgedAccountsPayableItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface AgedAccountsPayableItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AgedAccountsPayableItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/agedAccountsPayable/{agedAccountsPayable%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AgedAccountsPayableItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const AgedAccountsPayableItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const AgedAccountsPayableItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: AgedAccountsPayableItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAgedAccountsPayableFromDiscriminatorValue,
         queryParametersMapper: AgedAccountsPayableItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AgedAccountsPayableItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/agedAccountsPayable/{agedAccountsPayable%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

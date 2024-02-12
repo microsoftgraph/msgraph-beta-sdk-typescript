@@ -45,21 +45,22 @@ export interface ApproveRequestBuilder extends BaseRequestBuilder<ApproveRequest
      * Approves the requested instance of an operationApprovalRequest.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ApprovePostResponse
+     * @returns {Promise<ApprovePostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ApprovePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovePostResponse | undefined>;
     /**
      * Approves the requested instance of an operationApprovalRequest.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ApprovePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a approvePostRequestBody
+ * @returns {ApprovePostRequestBody}
  */
 export function createApprovePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApprovePostRequestBody;
@@ -67,14 +68,14 @@ export function createApprovePostRequestBodyFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a approvePostResponse
+ * @returns {ApprovePostResponse}
  */
 export function createApprovePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApprovePostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -85,7 +86,7 @@ export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Pa
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoApprovePostResponse(approvePostResponse: Partial<ApprovePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -111,14 +112,18 @@ export function serializeApprovePostResponse(writer: SerializationWriter, approv
     writer.writeAdditionalData(approvePostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ApproveRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}/approve";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ApproveRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ApproveRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createApprovePostResponseFromDiscriminatorValue,
@@ -127,9 +132,5 @@ export const ApproveRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ApproveRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}/approve";
 /* tslint:enable */
 /* eslint-enable */

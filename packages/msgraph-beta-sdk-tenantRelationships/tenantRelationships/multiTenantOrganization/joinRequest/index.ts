@@ -12,7 +12,8 @@ export interface JoinRequestRequestBuilder extends BaseRequestBuilder<JoinReques
     /**
      * Get the status of a tenant joining a multi-tenant organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MultiTenantOrganizationJoinRequestRecord
+     * @returns {Promise<MultiTenantOrganizationJoinRequestRecord>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters> | undefined) : Promise<MultiTenantOrganizationJoinRequestRecord | undefined>;
@@ -20,21 +21,22 @@ export interface JoinRequestRequestBuilder extends BaseRequestBuilder<JoinReques
      * Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MultiTenantOrganizationJoinRequestRecord
+     * @returns {Promise<MultiTenantOrganizationJoinRequestRecord>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: MultiTenantOrganizationJoinRequestRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MultiTenantOrganizationJoinRequestRecord | undefined>;
     /**
      * Get the status of a tenant joining a multi-tenant organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MultiTenantOrganizationJoinRequestRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -52,6 +54,10 @@ export interface JoinRequestRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const JoinRequestRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const JoinRequestRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -63,20 +69,20 @@ const JoinRequestRequestBuilderGetQueryParametersMapper: Record<string, string> 
  */
 export const JoinRequestRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: JoinRequestRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMultiTenantOrganizationJoinRequestRecordFromDiscriminatorValue,
         queryParametersMapper: JoinRequestRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: JoinRequestRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMultiTenantOrganizationJoinRequestRecordFromDiscriminatorValue,
@@ -85,9 +91,5 @@ export const JoinRequestRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const JoinRequestRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,34 +12,35 @@ export interface ActivateRequestBuilder extends BaseRequestBuilder<ActivateReque
     /**
      * Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EducationAssignment
+     * @returns {Promise<EducationAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationAssignment | undefined>;
     /**
      * Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const ActivateRequestBuilderUriTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/activate";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const ActivateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ActivateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEducationAssignmentFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ActivateRequestBuilderUriTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/activate";
 /* tslint:enable */
 /* eslint-enable */

@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getStorageAccountsWithSubscriptionIdGetResponse
+ * @returns {GetStorageAccountsWithSubscriptionIdGetResponse}
  */
 export function createGetStorageAccountsWithSubscriptionIdGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetStorageAccountsWithSubscriptionIdGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetStorageAccountsWithSubscriptionIdGetResponse(getStorageAccountsWithSubscriptionIdGetResponse: Partial<GetStorageAccountsWithSubscriptionIdGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetStorageAccountsWithSubscriptionIdRequestBuilder extends Base
     /**
      * Invoke function getStorageAccounts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetStorageAccountsWithSubscriptionIdGetResponse
+     * @returns {Promise<GetStorageAccountsWithSubscriptionIdGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters> | undefined) : Promise<GetStorageAccountsWithSubscriptionIdGetResponse | undefined>;
     /**
      * Invoke function getStorageAccounts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeGetStorageAccountsWithSubscriptionIdGetResponse(writer:
     writer.writeCollectionOfObjectValues<CloudPcForensicStorageAccount>("value", getStorageAccountsWithSubscriptionIdGetResponse.value, serializeCloudPcForensicStorageAccount);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetStorageAccountsWithSubscriptionIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}'){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParametersMapper
  */
 export const GetStorageAccountsWithSubscriptionIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetStorageAccountsWithSubscriptionIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetStorageAccountsWithSubscriptionIdGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetStorageAccountsWithSubscriptionIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}'){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

@@ -11,6 +11,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
     /**
      * Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      * @see {@link https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0|Find more info here}
      */
@@ -18,27 +19,27 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
     /**
      * Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CancelRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/cancel";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const CancelRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CancelRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CancelRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/cancel";
 /* tslint:enable */
 /* eslint-enable */

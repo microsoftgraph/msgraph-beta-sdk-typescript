@@ -12,38 +12,41 @@ export interface UnsupportedGroupPolicyExtensionItemRequestBuilder extends BaseR
     /**
      * Delete navigation property unsupportedGroupPolicyExtensions for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A list of unsupported group policy extensions inside the Group Policy Object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UnsupportedGroupPolicyExtension
+     * @returns {Promise<UnsupportedGroupPolicyExtension>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParameters> | undefined) : Promise<UnsupportedGroupPolicyExtension | undefined>;
     /**
      * Update the navigation property unsupportedGroupPolicyExtensions in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UnsupportedGroupPolicyExtension
+     * @returns {Promise<UnsupportedGroupPolicyExtension>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UnsupportedGroupPolicyExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnsupportedGroupPolicyExtension | undefined>;
     /**
      * Delete navigation property unsupportedGroupPolicyExtensions for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A list of unsupported group policy extensions inside the Group Policy Object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property unsupportedGroupPolicyExtensions in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UnsupportedGroupPolicyExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParame
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UnsupportedGroupPolicyExtensionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/unsupportedGroupPolicyExtensions/{unsupportedGroupPolicyExtension%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParametersMapper:
  */
 export const UnsupportedGroupPolicyExtensionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UnsupportedGroupPolicyExtensionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UnsupportedGroupPolicyExtensionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUnsupportedGroupPolicyExtensionFromDiscriminatorValue,
         queryParametersMapper: UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UnsupportedGroupPolicyExtensionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUnsupportedGroupPolicyExtensionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UnsupportedGroupPolicyExtensionItemRequestBuilderRequestsMetadata: 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UnsupportedGroupPolicyExtensionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/unsupportedGroupPolicyExtensions/{unsupportedGroupPolicyExtension%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,12 +12,14 @@ export interface ConditionalAccessRequestBuilder extends BaseRequestBuilder<Cond
     /**
      * Delete navigation property conditionalAccess for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConditionalAccessSettings
+     * @returns {Promise<ConditionalAccessSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConditionalAccessRequestBuilderGetQueryParameters> | undefined) : Promise<ConditionalAccessSettings | undefined>;
@@ -25,27 +27,28 @@ export interface ConditionalAccessRequestBuilder extends BaseRequestBuilder<Cond
      * Update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConditionalAccessSettings
+     * @returns {Promise<ConditionalAccessSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ConditionalAccessSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConditionalAccessSettings | undefined>;
     /**
      * Delete navigation property conditionalAccess for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConditionalAccessRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ConditionalAccessSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface ConditionalAccessRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ConditionalAccessRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/conditionalAccess{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ConditionalAccessRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const ConditionalAccessRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const ConditionalAccessRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ConditionalAccessRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ConditionalAccessRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConditionalAccessSettingsFromDiscriminatorValue,
         queryParametersMapper: ConditionalAccessRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ConditionalAccessRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConditionalAccessSettingsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const ConditionalAccessRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ConditionalAccessRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/conditionalAccess{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

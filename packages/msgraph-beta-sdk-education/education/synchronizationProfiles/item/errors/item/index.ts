@@ -12,38 +12,41 @@ export interface EducationSynchronizationErrorItemRequestBuilder extends BaseReq
     /**
      * Delete navigation property errors for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * All errors associated with this synchronization profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EducationSynchronizationError
+     * @returns {Promise<EducationSynchronizationError>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<EducationSynchronizationErrorItemRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationError | undefined>;
     /**
      * Update the navigation property errors in education
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EducationSynchronizationError
+     * @returns {Promise<EducationSynchronizationError>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationError | undefined>;
     /**
      * Delete navigation property errors for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * All errors associated with this synchronization profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EducationSynchronizationErrorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property errors in education
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface EducationSynchronizationErrorItemRequestBuilderGetQueryParamete
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EducationSynchronizationErrorItemRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/errors/{educationSynchronizationError%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const EducationSynchronizationErrorItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const EducationSynchronizationErrorItemRequestBuilderGetQueryParametersMapper: R
  */
 export const EducationSynchronizationErrorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: EducationSynchronizationErrorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: EducationSynchronizationErrorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEducationSynchronizationErrorFromDiscriminatorValue,
         queryParametersMapper: EducationSynchronizationErrorItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: EducationSynchronizationErrorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEducationSynchronizationErrorFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const EducationSynchronizationErrorItemRequestBuilderRequestsMetadata: Re
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EducationSynchronizationErrorItemRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/errors/{educationSynchronizationError%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

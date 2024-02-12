@@ -12,38 +12,41 @@ export interface ChromeOSOnboardingSettingsItemRequestBuilder extends BaseReques
     /**
      * Delete navigation property chromeOSOnboardingSettings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Collection of ChromeOSOnboardingSettings settings associated with account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ChromeOSOnboardingSettings
+     * @returns {Promise<ChromeOSOnboardingSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParameters> | undefined) : Promise<ChromeOSOnboardingSettings | undefined>;
     /**
      * Update the navigation property chromeOSOnboardingSettings in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ChromeOSOnboardingSettings
+     * @returns {Promise<ChromeOSOnboardingSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ChromeOSOnboardingSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChromeOSOnboardingSettings | undefined>;
     /**
      * Delete navigation property chromeOSOnboardingSettings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Collection of ChromeOSOnboardingSettings settings associated with account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property chromeOSOnboardingSettings in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ChromeOSOnboardingSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/chromeOSOnboardingSettings/{chromeOSOnboardingSettings%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParametersMapper: Reco
  */
 export const ChromeOSOnboardingSettingsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createChromeOSOnboardingSettingsFromDiscriminatorValue,
         queryParametersMapper: ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createChromeOSOnboardingSettingsFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ChromeOSOnboardingSettingsItemRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/chromeOSOnboardingSettings/{chromeOSOnboardingSettings%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

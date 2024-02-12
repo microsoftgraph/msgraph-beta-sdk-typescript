@@ -12,13 +12,14 @@ export interface EdiscoveryReviewTagItemRequestBuilder extends BaseRequestBuilde
     /**
      * Tags associated with the file.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EdiscoveryReviewTag
+     * @returns {Promise<EdiscoveryReviewTag>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<EdiscoveryReviewTagItemRequestBuilderGetQueryParameters> | undefined) : Promise<EdiscoveryReviewTag | undefined>;
     /**
      * Tags associated with the file.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EdiscoveryReviewTagItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface EdiscoveryReviewTagItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EdiscoveryReviewTagItemRequestBuilderUriTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/files/{ediscoveryFile%2Did}/tags/{ediscoveryReviewTag%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const EdiscoveryReviewTagItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const EdiscoveryReviewTagItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const EdiscoveryReviewTagItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: EdiscoveryReviewTagItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEdiscoveryReviewTagFromDiscriminatorValue,
         queryParametersMapper: EdiscoveryReviewTagItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EdiscoveryReviewTagItemRequestBuilderUriTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/files/{ediscoveryFile%2Did}/tags/{ediscoveryReviewTag%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

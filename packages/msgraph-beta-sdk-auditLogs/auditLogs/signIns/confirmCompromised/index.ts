@@ -26,6 +26,7 @@ export interface ConfirmCompromisedRequestBuilder extends BaseRequestBuilder<Con
      * Allow admins to mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0|Find more info here}
      */
      post(body: ConfirmCompromisedPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -33,21 +34,21 @@ export interface ConfirmCompromisedRequestBuilder extends BaseRequestBuilder<Con
      * Allow admins to mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ConfirmCompromisedPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a confirmCompromisedPostRequestBody
+ * @returns {ConfirmCompromisedPostRequestBody}
  */
 export function createConfirmCompromisedPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConfirmCompromisedPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoConfirmCompromisedPostRequestBody(confirmCompromisedPostRequestBody: Partial<ConfirmCompromisedPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -64,14 +65,18 @@ export function serializeConfirmCompromisedPostRequestBody(writer: Serialization
     writer.writeAdditionalData(confirmCompromisedPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ConfirmCompromisedRequestBuilderUriTemplate = "{+baseurl}/auditLogs/signIns/confirmCompromised";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ConfirmCompromisedRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ConfirmCompromisedRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -79,9 +84,5 @@ export const ConfirmCompromisedRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ConfirmCompromisedRequestBuilderUriTemplate = "{+baseurl}/auditLogs/signIns/confirmCompromised";
 /* tslint:enable */
 /* eslint-enable */

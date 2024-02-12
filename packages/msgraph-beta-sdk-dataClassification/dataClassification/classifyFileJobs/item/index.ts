@@ -12,38 +12,41 @@ export interface JobResponseBaseItemRequestBuilder extends BaseRequestBuilder<Jo
     /**
      * Delete navigation property classifyFileJobs for dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get classifyFileJobs from dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of JobResponseBase
+     * @returns {Promise<JobResponseBase>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<JobResponseBaseItemRequestBuilderGetQueryParameters> | undefined) : Promise<JobResponseBase | undefined>;
     /**
      * Update the navigation property classifyFileJobs in dataClassification
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of JobResponseBase
+     * @returns {Promise<JobResponseBase>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: JobResponseBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<JobResponseBase | undefined>;
     /**
      * Delete navigation property classifyFileJobs for dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get classifyFileJobs from dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<JobResponseBaseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property classifyFileJobs in dataClassification
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: JobResponseBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface JobResponseBaseItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const JobResponseBaseItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/classifyFileJobs/{jobResponseBase%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const JobResponseBaseItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const JobResponseBaseItemRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const JobResponseBaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: JobResponseBaseItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: JobResponseBaseItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createJobResponseBaseFromDiscriminatorValue,
         queryParametersMapper: JobResponseBaseItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: JobResponseBaseItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createJobResponseBaseFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const JobResponseBaseItemRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const JobResponseBaseItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/classifyFileJobs/{jobResponseBase%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

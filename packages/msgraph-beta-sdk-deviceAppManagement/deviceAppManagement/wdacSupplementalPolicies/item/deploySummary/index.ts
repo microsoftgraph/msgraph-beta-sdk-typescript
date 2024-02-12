@@ -12,38 +12,41 @@ export interface DeploySummaryRequestBuilder extends BaseRequestBuilder<DeploySu
     /**
      * Delete navigation property deploySummary for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * WindowsDefenderApplicationControl supplemental policy deployment summary.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary
+     * @returns {Promise<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeploySummaryRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary | undefined>;
     /**
      * Update the navigation property deploySummary in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary
+     * @returns {Promise<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary | undefined>;
     /**
      * Delete navigation property deploySummary for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * WindowsDefenderApplicationControl supplemental policy deployment summary.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeploySummaryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deploySummary in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeploySummaryRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeploySummaryRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/deploySummary{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeploySummaryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeploySummaryRequestBuilderGetQueryParametersMapper: Record<string, string
  */
 export const DeploySummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeploySummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeploySummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue,
         queryParametersMapper: DeploySummaryRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeploySummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeploySummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeploySummaryRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy%2Did}/deploySummary{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

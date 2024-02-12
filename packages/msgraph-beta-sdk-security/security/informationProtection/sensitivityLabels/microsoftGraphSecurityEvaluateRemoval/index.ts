@@ -9,7 +9,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a evaluateRemovalPostRequestBody
+ * @returns {EvaluateRemovalPostRequestBody}
  */
 export function createEvaluateRemovalPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateRemovalPostRequestBody;
@@ -17,14 +17,14 @@ export function createEvaluateRemovalPostRequestBodyFromDiscriminatorValue(parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a evaluateRemovalPostResponse
+ * @returns {EvaluateRemovalPostResponse}
  */
 export function createEvaluateRemovalPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateRemovalPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoEvaluateRemovalPostRequestBody(evaluateRemovalPostRequestBody: Partial<EvaluateRemovalPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -35,7 +35,7 @@ export function deserializeIntoEvaluateRemovalPostRequestBody(evaluateRemovalPos
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoEvaluateRemovalPostResponse(evaluateRemovalPostResponse: Partial<EvaluateRemovalPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -75,7 +75,8 @@ export interface MicrosoftGraphSecurityEvaluateRemovalRequestBuilder extends Bas
      * Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EvaluateRemovalPostResponse
+     * @returns {Promise<EvaluateRemovalPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-sensitivitylabel-evaluateremoval?view=graph-rest-1.0|Find more info here}
      */
      post(body: EvaluateRemovalPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EvaluateRemovalPostResponse | undefined>;
@@ -83,7 +84,7 @@ export interface MicrosoftGraphSecurityEvaluateRemovalRequestBuilder extends Bas
      * Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: EvaluateRemovalPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -105,14 +106,18 @@ export function serializeEvaluateRemovalPostResponse(writer: SerializationWriter
     writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateRemovalPostResponse.value, serializeInformationProtectionAction);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphSecurityEvaluateRemovalRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateRemoval";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphSecurityEvaluateRemovalRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphSecurityEvaluateRemovalRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEvaluateRemovalPostResponseFromDiscriminatorValue,
@@ -121,9 +126,5 @@ export const MicrosoftGraphSecurityEvaluateRemovalRequestBuilderRequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphSecurityEvaluateRemovalRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateRemoval";
 /* tslint:enable */
 /* eslint-enable */

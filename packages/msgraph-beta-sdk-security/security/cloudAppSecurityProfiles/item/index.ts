@@ -12,38 +12,41 @@ export interface CloudAppSecurityProfileItemRequestBuilder extends BaseRequestBu
     /**
      * Delete navigation property cloudAppSecurityProfiles for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get cloudAppSecurityProfiles from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudAppSecurityProfile
+     * @returns {Promise<CloudAppSecurityProfile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CloudAppSecurityProfileItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudAppSecurityProfile | undefined>;
     /**
      * Update the navigation property cloudAppSecurityProfiles in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudAppSecurityProfile
+     * @returns {Promise<CloudAppSecurityProfile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CloudAppSecurityProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudAppSecurityProfile | undefined>;
     /**
      * Delete navigation property cloudAppSecurityProfiles for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get cloudAppSecurityProfiles from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudAppSecurityProfileItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property cloudAppSecurityProfiles in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CloudAppSecurityProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface CloudAppSecurityProfileItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CloudAppSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CloudAppSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const CloudAppSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<
  */
 export const CloudAppSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CloudAppSecurityProfileItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CloudAppSecurityProfileItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudAppSecurityProfileFromDiscriminatorValue,
         queryParametersMapper: CloudAppSecurityProfileItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CloudAppSecurityProfileItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudAppSecurityProfileFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const CloudAppSecurityProfileItemRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CloudAppSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

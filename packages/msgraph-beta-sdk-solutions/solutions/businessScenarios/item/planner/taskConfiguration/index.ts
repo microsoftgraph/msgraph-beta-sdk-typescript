@@ -12,12 +12,14 @@ export interface TaskConfigurationRequestBuilder extends BaseRequestBuilder<Task
     /**
      * Delete navigation property taskConfiguration for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a plannerTaskConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerTaskConfiguration
+     * @returns {Promise<PlannerTaskConfiguration>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerTaskConfiguration | undefined>;
@@ -25,27 +27,28 @@ export interface TaskConfigurationRequestBuilder extends BaseRequestBuilder<Task
      * Update the properties of a plannerTaskConfiguration object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerTaskConfiguration
+     * @returns {Promise<PlannerTaskConfiguration>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: PlannerTaskConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerTaskConfiguration | undefined>;
     /**
      * Delete navigation property taskConfiguration for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a plannerTaskConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a plannerTaskConfiguration object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PlannerTaskConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface TaskConfigurationRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TaskConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/taskConfiguration{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TaskConfigurationRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const TaskConfigurationRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const TaskConfigurationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: TaskConfigurationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: TaskConfigurationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerTaskConfigurationFromDiscriminatorValue,
         queryParametersMapper: TaskConfigurationRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: TaskConfigurationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerTaskConfigurationFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const TaskConfigurationRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TaskConfigurationRequestBuilderUriTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/taskConfiguration{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

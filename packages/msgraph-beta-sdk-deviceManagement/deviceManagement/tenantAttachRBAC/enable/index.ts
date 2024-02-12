@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a enablePostRequestBody
+ * @returns {EnablePostRequestBody}
  */
 export function createEnablePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnablePostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoEnablePostRequestBody(enablePostRequestBody: Partial<EnablePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -44,13 +44,14 @@ export interface EnableRequestBuilder extends BaseRequestBuilder<EnableRequestBu
      * Invoke action enable
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: EnablePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action enable
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: EnablePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,14 +64,18 @@ export function serializeEnablePostRequestBody(writer: SerializationWriter, enab
     writer.writeAdditionalData(enablePostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EnableRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/tenantAttachRBAC/enable";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const EnableRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: EnableRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -78,9 +83,5 @@ export const EnableRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EnableRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/tenantAttachRBAC/enable";
 /* tslint:enable */
 /* eslint-enable */

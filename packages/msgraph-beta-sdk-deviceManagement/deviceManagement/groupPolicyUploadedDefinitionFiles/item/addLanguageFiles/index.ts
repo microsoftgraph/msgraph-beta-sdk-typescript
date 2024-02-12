@@ -27,27 +27,28 @@ export interface AddLanguageFilesRequestBuilder extends BaseRequestBuilder<AddLa
      * Invoke action addLanguageFiles
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: AddLanguageFilesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action addLanguageFiles
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: AddLanguageFilesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a addLanguageFilesPostRequestBody
+ * @returns {AddLanguageFilesPostRequestBody}
  */
 export function createAddLanguageFilesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddLanguageFilesPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAddLanguageFilesPostRequestBody(addLanguageFilesPostRequestBody: Partial<AddLanguageFilesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -64,14 +65,18 @@ export function serializeAddLanguageFilesPostRequestBody(writer: SerializationWr
     writer.writeAdditionalData(addLanguageFilesPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AddLanguageFilesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyUploadedDefinitionFiles/{groupPolicyUploadedDefinitionFile%2Did}/addLanguageFiles";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const AddLanguageFilesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: AddLanguageFilesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -79,9 +84,5 @@ export const AddLanguageFilesRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AddLanguageFilesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyUploadedDefinitionFiles/{groupPolicyUploadedDefinitionFile%2Did}/addLanguageFiles";
 /* tslint:enable */
 /* eslint-enable */

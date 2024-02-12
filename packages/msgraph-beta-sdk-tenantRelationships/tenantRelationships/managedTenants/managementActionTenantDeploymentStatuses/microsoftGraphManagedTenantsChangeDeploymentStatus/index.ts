@@ -42,14 +42,14 @@ export interface ChangeDeploymentStatusPostRequestBody extends AdditionalDataHol
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a changeDeploymentStatusPostRequestBody
+ * @returns {ChangeDeploymentStatusPostRequestBody}
  */
 export function createChangeDeploymentStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangeDeploymentStatusPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoChangeDeploymentStatusPostRequestBody(changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -70,14 +70,15 @@ export interface MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilde
      * Invoke action changeDeploymentStatus
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementActionDeploymentStatus
+     * @returns {Promise<ManagementActionDeploymentStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ChangeDeploymentStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagementActionDeploymentStatus | undefined>;
     /**
      * Invoke action changeDeploymentStatus
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ChangeDeploymentStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -95,14 +96,18 @@ export function serializeChangeDeploymentStatusPostRequestBody(writer: Serializa
     writer.writeAdditionalData(changeDeploymentStatusPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses/microsoft.graph.managedTenants.changeDeploymentStatus";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementActionDeploymentStatusFromDiscriminatorValue,
@@ -111,9 +116,5 @@ export const MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderReq
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses/microsoft.graph.managedTenants.changeDeploymentStatus";
 /* tslint:enable */
 /* eslint-enable */

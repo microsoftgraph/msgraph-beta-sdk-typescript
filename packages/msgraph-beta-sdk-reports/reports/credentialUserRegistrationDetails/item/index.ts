@@ -12,13 +12,15 @@ export interface CredentialUserRegistrationDetailsItemRequestBuilder extends Bas
     /**
      * Delete navigation property credentialUserRegistrationDetails for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CredentialUserRegistrationDetails
+     * @returns {Promise<CredentialUserRegistrationDetails>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
      */
      get(requestConfiguration?: RequestConfiguration<CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParameters> | undefined) : Promise<CredentialUserRegistrationDetails | undefined>;
@@ -26,21 +28,22 @@ export interface CredentialUserRegistrationDetailsItemRequestBuilder extends Bas
      * Update the navigation property credentialUserRegistrationDetails in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CredentialUserRegistrationDetails
+     * @returns {Promise<CredentialUserRegistrationDetails>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
      */
      patch(body: CredentialUserRegistrationDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CredentialUserRegistrationDetails | undefined>;
     /**
      * Delete navigation property credentialUserRegistrationDetails for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface CredentialUserRegistrationDetailsItemRequestBuilder extends Bas
      * Update the navigation property credentialUserRegistrationDetails in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
      */
      toPatchRequestInformation(body: CredentialUserRegistrationDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface CredentialUserRegistrationDetailsItemRequestBuilderGetQueryPara
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CredentialUserRegistrationDetailsItemRequestBuilderUriTemplate = "{+baseurl}/reports/credentialUserRegistrationDetails/{credentialUserRegistrationDetails%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParametersMappe
  */
 export const CredentialUserRegistrationDetailsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CredentialUserRegistrationDetailsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CredentialUserRegistrationDetailsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCredentialUserRegistrationDetailsFromDiscriminatorValue,
         queryParametersMapper: CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CredentialUserRegistrationDetailsItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCredentialUserRegistrationDetailsFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const CredentialUserRegistrationDetailsItemRequestBuilderRequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CredentialUserRegistrationDetailsItemRequestBuilderUriTemplate = "{+baseurl}/reports/credentialUserRegistrationDetails/{credentialUserRegistrationDetails%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

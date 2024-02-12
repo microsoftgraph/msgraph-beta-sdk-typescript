@@ -12,13 +12,14 @@ export interface DeviceManagementConfigurationSettingDefinitionItemRequestBuilde
     /**
      * List of related Setting Definitions. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementConfigurationSettingDefinition
+     * @returns {Promise<DeviceManagementConfigurationSettingDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementConfigurationSettingDefinition | undefined>;
     /**
      * List of related Setting Definitions. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DeviceManagementConfigurationSettingDefinitionItemRequestBuilde
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy%2Did}/settings/{deviceManagementConfigurationSetting%2Did}/settingDefinitions/{deviceManagementConfigurationSettingDefinition%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetQueryPa
  */
 export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DeviceManagementConfigurationSettingDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceManagementConfigurationSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy%2Did}/settings/{deviceManagementConfigurationSetting%2Did}/settingDefinitions/{deviceManagementConfigurationSettingDefinition%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

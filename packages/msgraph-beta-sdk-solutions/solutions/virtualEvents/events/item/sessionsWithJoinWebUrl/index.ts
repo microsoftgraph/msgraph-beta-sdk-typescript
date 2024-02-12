@@ -12,38 +12,41 @@ export interface SessionsWithJoinWebUrlRequestBuilder extends BaseRequestBuilder
     /**
      * Delete navigation property sessions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Sessions for the virtual event.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of VirtualEventSession
+     * @returns {Promise<VirtualEventSession>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventSession | undefined>;
     /**
      * Update the navigation property sessions in solutions
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of VirtualEventSession
+     * @returns {Promise<VirtualEventSession>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: VirtualEventSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventSession | undefined>;
     /**
      * Delete navigation property sessions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Sessions for the virtual event.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property sessions in solutions
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: VirtualEventSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface SessionsWithJoinWebUrlRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SessionsWithJoinWebUrlRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SessionsWithJoinWebUrlRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const SessionsWithJoinWebUrlRequestBuilderGetQueryParametersMapper: Record<strin
  */
 export const SessionsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SessionsWithJoinWebUrlRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SessionsWithJoinWebUrlRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createVirtualEventSessionFromDiscriminatorValue,
         queryParametersMapper: SessionsWithJoinWebUrlRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SessionsWithJoinWebUrlRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createVirtualEventSessionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const SessionsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SessionsWithJoinWebUrlRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

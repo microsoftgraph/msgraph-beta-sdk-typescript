@@ -12,38 +12,41 @@ export interface PrivilegedOperationEventItemRequestBuilder extends BaseRequestB
     /**
      * Delete entity from privilegedOperationEvents
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get entity from privilegedOperationEvents by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedOperationEvent
+     * @returns {Promise<PrivilegedOperationEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PrivilegedOperationEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedOperationEvent | undefined>;
     /**
      * Update entity in privilegedOperationEvents
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedOperationEvent
+     * @returns {Promise<PrivilegedOperationEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PrivilegedOperationEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedOperationEvent | undefined>;
     /**
      * Delete entity from privilegedOperationEvents
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get entity from privilegedOperationEvents by key
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrivilegedOperationEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update entity in privilegedOperationEvents
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PrivilegedOperationEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PrivilegedOperationEventItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PrivilegedOperationEventItemRequestBuilderUriTemplate = "{+baseurl}/privilegedOperationEvents/{privilegedOperationEvent%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PrivilegedOperationEventItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PrivilegedOperationEventItemRequestBuilderGetQueryParametersMapper: Record
  */
 export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PrivilegedOperationEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PrivilegedOperationEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedOperationEventFromDiscriminatorValue,
         queryParametersMapper: PrivilegedOperationEventItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PrivilegedOperationEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedOperationEventFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: Request
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PrivilegedOperationEventItemRequestBuilderUriTemplate = "{+baseurl}/privilegedOperationEvents/{privilegedOperationEvent%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

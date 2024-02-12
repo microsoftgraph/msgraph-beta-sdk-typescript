@@ -12,38 +12,41 @@ export interface NdesConnectorItemRequestBuilder extends BaseRequestBuilder<Ndes
     /**
      * Delete navigation property ndesConnectors for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The collection of Ndes connectors for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of NdesConnector
+     * @returns {Promise<NdesConnector>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<NdesConnectorItemRequestBuilderGetQueryParameters> | undefined) : Promise<NdesConnector | undefined>;
     /**
      * Update the navigation property ndesConnectors in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of NdesConnector
+     * @returns {Promise<NdesConnector>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: NdesConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<NdesConnector | undefined>;
     /**
      * Delete navigation property ndesConnectors for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The collection of Ndes connectors for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NdesConnectorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property ndesConnectors in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: NdesConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface NdesConnectorItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const NdesConnectorItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/ndesConnectors/{ndesConnector%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const NdesConnectorItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const NdesConnectorItemRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const NdesConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: NdesConnectorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: NdesConnectorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createNdesConnectorFromDiscriminatorValue,
         queryParametersMapper: NdesConnectorItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: NdesConnectorItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createNdesConnectorFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const NdesConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const NdesConnectorItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/ndesConnectors/{ndesConnector%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

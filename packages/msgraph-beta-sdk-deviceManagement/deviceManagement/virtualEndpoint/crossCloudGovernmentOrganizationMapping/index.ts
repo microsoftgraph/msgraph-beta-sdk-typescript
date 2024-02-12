@@ -12,12 +12,14 @@ export interface CrossCloudGovernmentOrganizationMappingRequestBuilder extends B
     /**
      * Delete navigation property crossCloudGovernmentOrganizationMapping for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcCrossCloudGovernmentOrganizationMapping
+     * @returns {Promise<CloudPcCrossCloudGovernmentOrganizationMapping>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcCrossCloudGovernmentOrganizationMapping | undefined>;
@@ -25,26 +27,27 @@ export interface CrossCloudGovernmentOrganizationMappingRequestBuilder extends B
      * Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcCrossCloudGovernmentOrganizationMapping
+     * @returns {Promise<CloudPcCrossCloudGovernmentOrganizationMapping>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CloudPcCrossCloudGovernmentOrganizationMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcCrossCloudGovernmentOrganizationMapping | undefined>;
     /**
      * Delete navigation property crossCloudGovernmentOrganizationMapping for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CloudPcCrossCloudGovernmentOrganizationMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryPa
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParametersMap
  */
 export const CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcCrossCloudGovernmentOrganizationMappingFromDiscriminatorValue,
         queryParametersMapper: CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcCrossCloudGovernmentOrganizationMappingFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

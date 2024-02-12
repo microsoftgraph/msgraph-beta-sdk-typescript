@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getSharedUseLicenseUsageReportPostRequestBody
+ * @returns {GetSharedUseLicenseUsageReportPostRequestBody}
  */
 export function createGetSharedUseLicenseUsageReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSharedUseLicenseUsageReportPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetSharedUseLicenseUsageReportPostRequestBody(getSharedUseLicenseUsageReportPostRequestBody: Partial<GetSharedUseLicenseUsageReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -80,7 +80,8 @@ export interface GetSharedUseLicenseUsageReportRequestBuilder extends BaseReques
      * Get a usage report on shared-use licenses, such as servicePlanId, licenseCount, and claimedLicenseCount, for real-time, 7 days, or 28 days trend.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The getSharedUseLicenseUsageReport API is deprecated and will stop returning on Oct 17, 2023. Please use getFrontlineReport instead. as of 2023-05/getSharedUseLicenseUsageReport
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0|Find more info here}
      */
@@ -89,7 +90,7 @@ export interface GetSharedUseLicenseUsageReportRequestBuilder extends BaseReques
      * Get a usage report on shared-use licenses, such as servicePlanId, licenseCount, and claimedLicenseCount, for real-time, 7 days, or 28 days trend.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The getSharedUseLicenseUsageReport API is deprecated and will stop returning on Oct 17, 2023. Please use getFrontlineReport instead. as of 2023-05/getSharedUseLicenseUsageReport
      */
      toPostRequestInformation(body: GetSharedUseLicenseUsageReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -110,14 +111,18 @@ export function serializeGetSharedUseLicenseUsageReportPostRequestBody(writer: S
     writer.writeAdditionalData(getSharedUseLicenseUsageReportPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetSharedUseLicenseUsageReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getSharedUseLicenseUsageReport";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetSharedUseLicenseUsageReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetSharedUseLicenseUsageReportRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -126,9 +131,5 @@ export const GetSharedUseLicenseUsageReportRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetSharedUseLicenseUsageReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getSharedUseLicenseUsageReport";
 /* tslint:enable */
 /* eslint-enable */

@@ -7,7 +7,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a requestSignupUrlPostRequestBody
+ * @returns {RequestSignupUrlPostRequestBody}
  */
 export function createRequestSignupUrlPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRequestSignupUrlPostRequestBody;
@@ -15,14 +15,14 @@ export function createRequestSignupUrlPostRequestBodyFromDiscriminatorValue(pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a requestSignupUrlPostResponse
+ * @returns {RequestSignupUrlPostResponse}
  */
 export function createRequestSignupUrlPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRequestSignupUrlPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRequestSignupUrlPostRequestBody(requestSignupUrlPostRequestBody: Partial<RequestSignupUrlPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -32,7 +32,7 @@ export function deserializeIntoRequestSignupUrlPostRequestBody(requestSignupUrlP
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRequestSignupUrlPostResponse(requestSignupUrlPostResponse: Partial<RequestSignupUrlPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -76,14 +76,15 @@ export interface RequestSignupUrlRequestBuilder extends BaseRequestBuilder<Reque
      * Invoke action requestSignupUrl
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RequestSignupUrlPostResponse
+     * @returns {Promise<RequestSignupUrlPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: RequestSignupUrlPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RequestSignupUrlPostResponse | undefined>;
     /**
      * Invoke action requestSignupUrl
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: RequestSignupUrlPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -104,14 +105,18 @@ export function serializeRequestSignupUrlPostResponse(writer: SerializationWrite
     writer.writeAdditionalData(requestSignupUrlPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RequestSignupUrlRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/requestSignupUrl";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const RequestSignupUrlRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RequestSignupUrlRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRequestSignupUrlPostResponseFromDiscriminatorValue,
@@ -120,9 +125,5 @@ export const RequestSignupUrlRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RequestSignupUrlRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/requestSignupUrl";
 /* tslint:enable */
 /* eslint-enable */

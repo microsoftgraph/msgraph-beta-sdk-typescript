@@ -12,12 +12,14 @@ export interface CompanySubscriptionItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete navigation property subscriptions for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get a specific commercial subscription that an organization has acquired.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CompanySubscription
+     * @returns {Promise<CompanySubscription>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CompanySubscriptionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CompanySubscription | undefined>;
@@ -25,26 +27,27 @@ export interface CompanySubscriptionItemRequestBuilder extends BaseRequestBuilde
      * Update the navigation property subscriptions in directory
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CompanySubscription
+     * @returns {Promise<CompanySubscription>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CompanySubscription, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CompanySubscription | undefined>;
     /**
      * Delete navigation property subscriptions for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get a specific commercial subscription that an organization has acquired.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CompanySubscriptionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property subscriptions in directory
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CompanySubscription, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface CompanySubscriptionItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CompanySubscriptionItemRequestBuilderUriTemplate = "{+baseurl}/directory/subscriptions/{companySubscription%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CompanySubscriptionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const CompanySubscriptionItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const CompanySubscriptionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CompanySubscriptionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CompanySubscriptionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCompanySubscriptionFromDiscriminatorValue,
         queryParametersMapper: CompanySubscriptionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CompanySubscriptionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCompanySubscriptionFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const CompanySubscriptionItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CompanySubscriptionItemRequestBuilderUriTemplate = "{+baseurl}/directory/subscriptions/{companySubscription%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -25,27 +25,28 @@ export interface ConnectRequestBuilder extends BaseRequestBuilder<ConnectRequest
     /**
      * Invoke action connect
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ConnectPostResponse
+     * @returns {Promise<ConnectPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConnectPostResponse | undefined>;
     /**
      * Invoke action connect
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a connectPostResponse
+ * @returns {ConnectPostResponse}
  */
 export function createConnectPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoConnectPostResponse(connectPostResponse: Partial<ConnectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -62,22 +63,22 @@ export function serializeConnectPostResponse(writer: SerializationWriter, connec
     writer.writeAdditionalData(connectPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ConnectRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector/connect";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ConnectRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ConnectRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createConnectPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ConnectRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector/connect";
 /* tslint:enable */
 /* eslint-enable */

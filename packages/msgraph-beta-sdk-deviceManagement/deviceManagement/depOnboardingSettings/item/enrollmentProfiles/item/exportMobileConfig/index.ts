@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a exportMobileConfigGetResponse
+ * @returns {ExportMobileConfigGetResponse}
  */
 export function createExportMobileConfigGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExportMobileConfigGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoExportMobileConfigGetResponse(exportMobileConfigGetResponse: Partial<ExportMobileConfigGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -43,13 +43,14 @@ export interface ExportMobileConfigRequestBuilder extends BaseRequestBuilder<Exp
     /**
      * Exports the mobile configuration
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ExportMobileConfigGetResponse
+     * @returns {Promise<ExportMobileConfigGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExportMobileConfigGetResponse | undefined>;
     /**
      * Exports the mobile configuration
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,22 +63,22 @@ export function serializeExportMobileConfigGetResponse(writer: SerializationWrit
     writer.writeAdditionalData(exportMobileConfigGetResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ExportMobileConfigRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}/exportMobileConfig()";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ExportMobileConfigRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ExportMobileConfigRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createExportMobileConfigGetResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ExportMobileConfigRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}/exportMobileConfig()";
 /* tslint:enable */
 /* eslint-enable */

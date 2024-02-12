@@ -12,13 +12,14 @@ export interface ManagementTemplateRequestBuilder extends BaseRequestBuilder<Man
     /**
      * Get managementTemplate from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementTemplate
+     * @returns {Promise<ManagementTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagementTemplateRequestBuilderGetQueryParameters> | undefined) : Promise<ManagementTemplate | undefined>;
     /**
      * Get managementTemplate from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagementTemplateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagementTemplateRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagementTemplateRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/managementTemplate{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagementTemplateRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagementTemplateRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const ManagementTemplateRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagementTemplateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementTemplateFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagementTemplateRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/managementTemplate{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */
