@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-networkaccess",
-  "version": "1.0.0-preview.11",
+  "version": "1.0.0-preview.12",
   "description": "NetworkAccess fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",

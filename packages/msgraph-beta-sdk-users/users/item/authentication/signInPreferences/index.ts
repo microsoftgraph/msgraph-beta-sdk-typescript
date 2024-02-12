@@ -12,27 +12,29 @@ export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<Sign
     /**
      * The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SignInPreferences
+     * @returns {Promise<SignInPreferences>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SignInPreferencesRequestBuilderGetQueryParameters> | undefined) : Promise<SignInPreferences | undefined>;
     /**
      * Update property signInPreferences value.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SignInPreferences
+     * @returns {Promise<SignInPreferences>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SignInPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SignInPreferences | undefined>;
     /**
      * The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SignInPreferencesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update property signInPreferences value.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SignInPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -50,6 +52,10 @@ export interface SignInPreferencesRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SignInPreferencesRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/authentication/signInPreferences{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SignInPreferencesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -61,20 +67,20 @@ const SignInPreferencesRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const SignInPreferencesRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: SignInPreferencesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSignInPreferencesFromDiscriminatorValue,
         queryParametersMapper: SignInPreferencesRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SignInPreferencesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSignInPreferencesFromDiscriminatorValue,
@@ -83,9 +89,5 @@ export const SignInPreferencesRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SignInPreferencesRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/authentication/signInPreferences{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

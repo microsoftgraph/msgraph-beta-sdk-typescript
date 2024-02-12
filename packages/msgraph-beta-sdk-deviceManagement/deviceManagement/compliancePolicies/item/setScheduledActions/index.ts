@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a setScheduledActionsPostRequestBody
+ * @returns {SetScheduledActionsPostRequestBody}
  */
 export function createSetScheduledActionsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetScheduledActionsPostRequestBody;
@@ -16,14 +16,14 @@ export function createSetScheduledActionsPostRequestBodyFromDiscriminatorValue(p
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a setScheduledActionsPostResponse
+ * @returns {SetScheduledActionsPostResponse}
  */
 export function createSetScheduledActionsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetScheduledActionsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoSetScheduledActionsPostRequestBody(setScheduledActionsPostRequestBody: Partial<SetScheduledActionsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -33,7 +33,7 @@ export function deserializeIntoSetScheduledActionsPostRequestBody(setScheduledAc
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoSetScheduledActionsPostResponse(setScheduledActionsPostResponse: Partial<SetScheduledActionsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -85,26 +85,31 @@ export interface SetScheduledActionsRequestBuilder extends BaseRequestBuilder<Se
      * Invoke action setScheduledActions
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SetScheduledActionsPostResponse
+     * @returns {Promise<SetScheduledActionsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: SetScheduledActionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SetScheduledActionsPostResponse | undefined>;
     /**
      * Invoke action setScheduledActions
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: SetScheduledActionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const SetScheduledActionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/setScheduledActions";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const SetScheduledActionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: SetScheduledActionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSetScheduledActionsPostResponseFromDiscriminatorValue,
@@ -113,9 +118,5 @@ export const SetScheduledActionsRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SetScheduledActionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/setScheduledActions";
 /* tslint:enable */
 /* eslint-enable */

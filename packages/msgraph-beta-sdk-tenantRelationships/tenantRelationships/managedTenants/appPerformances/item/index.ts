@@ -12,38 +12,41 @@ export interface AppPerformanceItemRequestBuilder extends BaseRequestBuilder<App
     /**
      * Delete navigation property appPerformances for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get appPerformances from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AppPerformance
+     * @returns {Promise<AppPerformance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AppPerformanceItemRequestBuilderGetQueryParameters> | undefined) : Promise<AppPerformance | undefined>;
     /**
      * Update the navigation property appPerformances in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AppPerformance
+     * @returns {Promise<AppPerformance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: AppPerformance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AppPerformance | undefined>;
     /**
      * Delete navigation property appPerformances for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get appPerformances from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppPerformanceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property appPerformances in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AppPerformance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface AppPerformanceItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AppPerformanceItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/appPerformances/{appPerformance%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AppPerformanceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const AppPerformanceItemRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const AppPerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AppPerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AppPerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAppPerformanceFromDiscriminatorValue,
         queryParametersMapper: AppPerformanceItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AppPerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAppPerformanceFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const AppPerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AppPerformanceItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/appPerformances/{appPerformance%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

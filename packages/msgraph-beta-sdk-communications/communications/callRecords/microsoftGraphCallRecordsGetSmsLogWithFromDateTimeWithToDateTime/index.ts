@@ -9,14 +9,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getSmsLogWithFromDateTimeWithToDateTimeGetResponse
+ * @returns {GetSmsLogWithFromDateTimeWithToDateTimeGetResponse}
  */
 export function createGetSmsLogWithFromDateTimeWithToDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSmsLogWithFromDateTimeWithToDateTimeGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(getSmsLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -37,13 +37,14 @@ export interface MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTim
     /**
      * Invoke function getSmsLog
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetSmsLogWithFromDateTimeWithToDateTimeGetResponse
+     * @returns {Promise<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse | undefined>;
     /**
      * Invoke function getSmsLog
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -81,6 +82,10 @@ export function serializeGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(writ
     writer.writeCollectionOfObjectValues<SmsLogRow>("value", getSmsLogWithFromDateTimeWithToDateTimeGetResponse.value, serializeSmsLogRow);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getSmsLog(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -95,19 +100,15 @@ const MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBui
  */
 export const MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetSmsLogWithFromDateTimeWithToDateTimeGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getSmsLog(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

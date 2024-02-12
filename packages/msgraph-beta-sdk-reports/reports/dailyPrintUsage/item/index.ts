@@ -12,38 +12,41 @@ export interface PrintUsageItemRequestBuilder extends BaseRequestBuilder<PrintUs
     /**
      * Delete navigation property dailyPrintUsage for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get dailyPrintUsage from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrintUsage
+     * @returns {Promise<PrintUsage>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PrintUsageItemRequestBuilderGetQueryParameters> | undefined) : Promise<PrintUsage | undefined>;
     /**
      * Update the navigation property dailyPrintUsage in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrintUsage
+     * @returns {Promise<PrintUsage>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PrintUsage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrintUsage | undefined>;
     /**
      * Delete navigation property dailyPrintUsage for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get dailyPrintUsage from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrintUsageItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property dailyPrintUsage in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PrintUsage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PrintUsageItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PrintUsageItemRequestBuilderUriTemplate = "{+baseurl}/reports/dailyPrintUsage/{printUsage%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PrintUsageItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PrintUsageItemRequestBuilderGetQueryParametersMapper: Record<string, strin
  */
 export const PrintUsageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PrintUsageItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PrintUsageItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrintUsageFromDiscriminatorValue,
         queryParametersMapper: PrintUsageItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PrintUsageItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrintUsageFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PrintUsageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PrintUsageItemRequestBuilderUriTemplate = "{+baseurl}/reports/dailyPrintUsage/{printUsage%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

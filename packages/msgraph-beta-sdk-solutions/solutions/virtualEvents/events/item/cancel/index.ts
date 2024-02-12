@@ -5,37 +5,38 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
- * Provides operations to call the publish method.
+ * Provides operations to call the cancel method.
  */
-export interface PublishRequestBuilder extends BaseRequestBuilder<PublishRequestBuilder> {
+export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBuilder> {
     /**
-     * Invoke action publish
+     * Invoke action cancel
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action publish
+     * Invoke action cancel
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CancelRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/cancel";
+/**
  * Metadata for all the requests in the request builder.
  */
-export const PublishRequestBuilderRequestsMetadata: RequestsMetadata = {
+export const CancelRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CancelRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PublishRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/events/publish";
 /* tslint:enable */
 /* eslint-enable */

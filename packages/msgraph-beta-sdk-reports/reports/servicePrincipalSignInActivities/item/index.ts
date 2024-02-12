@@ -12,12 +12,14 @@ export interface ServicePrincipalSignInActivityItemRequestBuilder extends BaseRe
     /**
      * Delete navigation property servicePrincipalSignInActivities for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ServicePrincipalSignInActivity
+     * @returns {Promise<ServicePrincipalSignInActivity>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipalsigninactivity-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ServicePrincipalSignInActivityItemRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipalSignInActivity | undefined>;
@@ -25,26 +27,27 @@ export interface ServicePrincipalSignInActivityItemRequestBuilder extends BaseRe
      * Update the navigation property servicePrincipalSignInActivities in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ServicePrincipalSignInActivity
+     * @returns {Promise<ServicePrincipalSignInActivity>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ServicePrincipalSignInActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServicePrincipalSignInActivity | undefined>;
     /**
      * Delete navigation property servicePrincipalSignInActivities for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicePrincipalSignInActivityItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property servicePrincipalSignInActivities in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ServicePrincipalSignInActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface ServicePrincipalSignInActivityItemRequestBuilderGetQueryParamet
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ServicePrincipalSignInActivityItemRequestBuilderUriTemplate = "{+baseurl}/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ServicePrincipalSignInActivityItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const ServicePrincipalSignInActivityItemRequestBuilderGetQueryParametersMapper: 
  */
 export const ServicePrincipalSignInActivityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ServicePrincipalSignInActivityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ServicePrincipalSignInActivityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createServicePrincipalSignInActivityFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalSignInActivityItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ServicePrincipalSignInActivityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createServicePrincipalSignInActivityFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const ServicePrincipalSignInActivityItemRequestBuilderRequestsMetadata: R
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ServicePrincipalSignInActivityItemRequestBuilderUriTemplate = "{+baseurl}/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

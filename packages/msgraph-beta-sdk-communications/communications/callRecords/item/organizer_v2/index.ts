@@ -12,38 +12,41 @@ export interface Organizer_v2RequestBuilder extends BaseRequestBuilder<Organizer
     /**
      * Delete navigation property organizer_v2 for communications
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Organizer
+     * @returns {Promise<Organizer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<Organizer_v2RequestBuilderGetQueryParameters> | undefined) : Promise<Organizer | undefined>;
     /**
      * Update the navigation property organizer_v2 in communications
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Organizer
+     * @returns {Promise<Organizer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: Organizer, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Organizer | undefined>;
     /**
      * Delete navigation property organizer_v2 for communications
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<Organizer_v2RequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property organizer_v2 in communications
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: Organizer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface Organizer_v2RequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const Organizer_v2RequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/organizer_v2{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const Organizer_v2RequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const Organizer_v2RequestBuilderGetQueryParametersMapper: Record<string, string>
  */
 export const Organizer_v2RequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: Organizer_v2RequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: Organizer_v2RequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createOrganizerFromDiscriminatorValue,
         queryParametersMapper: Organizer_v2RequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: Organizer_v2RequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createOrganizerFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const Organizer_v2RequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const Organizer_v2RequestBuilderUriTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/organizer_v2{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

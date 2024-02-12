@@ -12,12 +12,14 @@ export interface ManagedDeviceComplianceItemRequestBuilder extends BaseRequestBu
     /**
      * Delete navigation property managedDeviceCompliances for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a managedDeviceCompliance object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedDeviceCompliance
+     * @returns {Promise<ManagedDeviceCompliance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/managedtenants-manageddevicecompliance-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ManagedDeviceComplianceItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedDeviceCompliance | undefined>;
@@ -25,26 +27,27 @@ export interface ManagedDeviceComplianceItemRequestBuilder extends BaseRequestBu
      * Update the navigation property managedDeviceCompliances in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedDeviceCompliance
+     * @returns {Promise<ManagedDeviceCompliance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ManagedDeviceCompliance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedDeviceCompliance | undefined>;
     /**
      * Delete navigation property managedDeviceCompliances for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a managedDeviceCompliance object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedDeviceComplianceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property managedDeviceCompliances in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ManagedDeviceCompliance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface ManagedDeviceComplianceItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedDeviceComplianceItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedDeviceCompliances/{managedDeviceCompliance%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedDeviceComplianceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const ManagedDeviceComplianceItemRequestBuilderGetQueryParametersMapper: Record<
  */
 export const ManagedDeviceComplianceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ManagedDeviceComplianceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ManagedDeviceComplianceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedDeviceComplianceFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceComplianceItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ManagedDeviceComplianceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedDeviceComplianceFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const ManagedDeviceComplianceItemRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedDeviceComplianceItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedDeviceCompliances/{managedDeviceCompliance%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

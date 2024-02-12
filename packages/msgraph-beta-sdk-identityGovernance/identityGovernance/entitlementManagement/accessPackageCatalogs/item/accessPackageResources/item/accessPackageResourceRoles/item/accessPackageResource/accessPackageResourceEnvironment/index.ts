@@ -12,14 +12,15 @@ export interface AccessPackageResourceEnvironmentRequestBuilder extends BaseRequ
     /**
      * Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment's originId. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AccessPackageResourceEnvironment
+     * @returns {Promise<AccessPackageResourceEnvironment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageResourceEnvironment | undefined>;
     /**
      * Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment's originId. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface AccessPackageResourceEnvironmentRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AccessPackageResourceEnvironmentRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageResources/{accessPackageResource%2Did}/accessPackageResourceRoles/{accessPackageResourceRole%2Did}/accessPackageResource/accessPackageResourceEnvironment{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AccessPackageResourceEnvironmentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const AccessPackageResourceEnvironmentRequestBuilderGetQueryParametersMapper: Re
  */
 export const AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: AccessPackageResourceEnvironmentRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAccessPackageResourceEnvironmentFromDiscriminatorValue,
         queryParametersMapper: AccessPackageResourceEnvironmentRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AccessPackageResourceEnvironmentRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageResources/{accessPackageResource%2Did}/accessPackageResourceRoles/{accessPackageResourceRole%2Did}/accessPackageResource/accessPackageResourceEnvironment{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

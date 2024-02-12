@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a disconnectPostResponse
+ * @returns {DisconnectPostResponse}
  */
 export function createDisconnectPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDisconnectPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDisconnectPostResponse(disconnectPostResponse: Partial<DisconnectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -43,13 +43,14 @@ export interface DisconnectRequestBuilder extends BaseRequestBuilder<DisconnectR
     /**
      * Invoke action disconnect
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DisconnectPostResponse
+     * @returns {Promise<DisconnectPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DisconnectPostResponse | undefined>;
     /**
      * Invoke action disconnect
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,22 +63,22 @@ export function serializeDisconnectPostResponse(writer: SerializationWriter, dis
     writer.writeAdditionalData(disconnectPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DisconnectRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector/disconnect";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const DisconnectRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: DisconnectRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDisconnectPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DisconnectRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector/disconnect";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface NetworkAccessTrafficTransactionItemRequestBuilder extends BaseR
     /**
      * Delete navigation property traffic for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A network access traffic log entry that contains comprehensive information about network traffic events.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of NetworkAccessTraffic
+     * @returns {Promise<NetworkAccessTraffic>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParameters> | undefined) : Promise<NetworkAccessTraffic | undefined>;
     /**
      * Update the navigation property traffic in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of NetworkAccessTraffic
+     * @returns {Promise<NetworkAccessTraffic>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: NetworkAccessTraffic, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<NetworkAccessTraffic | undefined>;
     /**
      * Delete navigation property traffic for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A network access traffic log entry that contains comprehensive information about network traffic events.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property traffic in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: NetworkAccessTraffic, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParame
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParametersMapper:
  */
 export const NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createNetworkAccessTrafficFromDiscriminatorValue,
         queryParametersMapper: NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createNetworkAccessTrafficFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata: 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

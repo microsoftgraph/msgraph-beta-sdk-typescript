@@ -26,14 +26,14 @@ export interface ApplyTagsPostRequestBody extends AdditionalDataHolder, BackedMo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a applyTagsPostRequestBody
+ * @returns {ApplyTagsPostRequestBody}
  */
 export function createApplyTagsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplyTagsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoApplyTagsPostRequestBody(applyTagsPostRequestBody: Partial<ApplyTagsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -50,6 +50,7 @@ export interface MicrosoftGraphEdiscoveryApplyTagsRequestBuilder extends BaseReq
      * Apply tags to documents that match the specified reviewSetQuery.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-applytags?view=graph-rest-1.0|Find more info here}
      */
@@ -58,7 +59,7 @@ export interface MicrosoftGraphEdiscoveryApplyTagsRequestBuilder extends BaseReq
      * Apply tags to documents that match the specified reviewSetQuery.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toPostRequestInformation(body: ApplyTagsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -73,14 +74,18 @@ export function serializeApplyTagsPostRequestBody(writer: SerializationWriter, a
     writer.writeAdditionalData(applyTagsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphEdiscoveryApplyTagsRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/reviewSets/{reviewSet%2Did}/queries/{reviewSetQuery%2Did}/microsoft.graph.ediscovery.applyTags";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphEdiscoveryApplyTagsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphEdiscoveryApplyTagsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -88,9 +93,5 @@ export const MicrosoftGraphEdiscoveryApplyTagsRequestBuilderRequestsMetadata: Re
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphEdiscoveryApplyTagsRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/reviewSets/{reviewSet%2Did}/queries/{reviewSetQuery%2Did}/microsoft.graph.ediscovery.applyTags";
 /* tslint:enable */
 /* eslint-enable */

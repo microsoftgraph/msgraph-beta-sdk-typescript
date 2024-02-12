@@ -12,38 +12,41 @@ export interface PlannerDeltaItemRequestBuilder extends BaseRequestBuilder<Plann
     /**
      * Delete navigation property all for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get all from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerDelta
+     * @returns {Promise<PlannerDelta>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PlannerDeltaItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerDelta | undefined>;
     /**
      * Update the navigation property all in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerDelta
+     * @returns {Promise<PlannerDelta>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PlannerDelta, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerDelta | undefined>;
     /**
      * Delete navigation property all for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get all from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerDeltaItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property all in users
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PlannerDelta, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PlannerDeltaItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PlannerDeltaItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/all/{plannerDelta%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PlannerDeltaItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PlannerDeltaItemRequestBuilderGetQueryParametersMapper: Record<string, str
  */
 export const PlannerDeltaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PlannerDeltaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PlannerDeltaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerDeltaFromDiscriminatorValue,
         queryParametersMapper: PlannerDeltaItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PlannerDeltaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerDeltaFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PlannerDeltaItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PlannerDeltaItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/all/{plannerDelta%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

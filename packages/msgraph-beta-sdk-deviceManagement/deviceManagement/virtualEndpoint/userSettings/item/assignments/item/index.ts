@@ -12,38 +12,41 @@ export interface CloudPcUserSettingAssignmentItemRequestBuilder extends BaseRequ
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcUserSettingAssignment
+     * @returns {Promise<CloudPcUserSettingAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcUserSettingAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcUserSettingAssignment
+     * @returns {Promise<CloudPcUserSettingAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CloudPcUserSettingAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcUserSettingAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CloudPcUserSettingAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CloudPcUserSettingAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting%2Did}/assignments/{cloudPcUserSettingAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const CloudPcUserSettingAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CloudPcUserSettingAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CloudPcUserSettingAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcUserSettingAssignmentFromDiscriminatorValue,
         queryParametersMapper: CloudPcUserSettingAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CloudPcUserSettingAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcUserSettingAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const CloudPcUserSettingAssignmentItemRequestBuilderRequestsMetadata: Req
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CloudPcUserSettingAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting%2Did}/assignments/{cloudPcUserSettingAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface ZebraFotaArtifactItemRequestBuilder extends BaseRequestBuilder<
     /**
      * Delete navigation property zebraFotaArtifacts for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The Collection of ZebraFotaArtifacts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ZebraFotaArtifact
+     * @returns {Promise<ZebraFotaArtifact>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ZebraFotaArtifactItemRequestBuilderGetQueryParameters> | undefined) : Promise<ZebraFotaArtifact | undefined>;
     /**
      * Update the navigation property zebraFotaArtifacts in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ZebraFotaArtifact
+     * @returns {Promise<ZebraFotaArtifact>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ZebraFotaArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ZebraFotaArtifact | undefined>;
     /**
      * Delete navigation property zebraFotaArtifacts for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The Collection of ZebraFotaArtifacts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ZebraFotaArtifactItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property zebraFotaArtifacts in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ZebraFotaArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ZebraFotaArtifactItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ZebraFotaArtifactItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaArtifacts/{zebraFotaArtifact%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ZebraFotaArtifactItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ZebraFotaArtifactItemRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const ZebraFotaArtifactItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ZebraFotaArtifactItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ZebraFotaArtifactItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createZebraFotaArtifactFromDiscriminatorValue,
         queryParametersMapper: ZebraFotaArtifactItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ZebraFotaArtifactItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createZebraFotaArtifactFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ZebraFotaArtifactItemRequestBuilderRequestsMetadata: RequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ZebraFotaArtifactItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaArtifacts/{zebraFotaArtifact%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

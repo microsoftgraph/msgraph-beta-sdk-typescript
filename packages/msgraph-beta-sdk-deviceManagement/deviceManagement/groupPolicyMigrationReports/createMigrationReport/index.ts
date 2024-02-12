@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a createMigrationReportPostRequestBody
+ * @returns {CreateMigrationReportPostRequestBody}
  */
 export function createCreateMigrationReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateMigrationReportPostRequestBody;
@@ -16,7 +16,7 @@ export function createCreateMigrationReportPostRequestBodyFromDiscriminatorValue
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a createMigrationReportPostResponse
+ * @returns {CreateMigrationReportPostResponse}
  */
 export function createCreateMigrationReportPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateMigrationReportPostResponse;
@@ -57,20 +57,21 @@ export interface CreateMigrationReportRequestBuilder extends BaseRequestBuilder<
      * Invoke action createMigrationReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CreateMigrationReportPostResponse
+     * @returns {Promise<CreateMigrationReportPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: CreateMigrationReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CreateMigrationReportPostResponse | undefined>;
     /**
      * Invoke action createMigrationReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: CreateMigrationReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCreateMigrationReportPostRequestBody(createMigrationReportPostRequestBody: Partial<CreateMigrationReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -80,7 +81,7 @@ export function deserializeIntoCreateMigrationReportPostRequestBody(createMigrat
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCreateMigrationReportPostResponse(createMigrationReportPostResponse: Partial<CreateMigrationReportPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -105,14 +106,18 @@ export function serializeCreateMigrationReportPostResponse(writer: Serialization
     writer.writeAdditionalData(createMigrationReportPostResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CreateMigrationReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/createMigrationReport";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const CreateMigrationReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CreateMigrationReportRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCreateMigrationReportPostResponseFromDiscriminatorValue,
@@ -121,9 +126,5 @@ export const CreateMigrationReportRequestBuilderRequestsMetadata: RequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CreateMigrationReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/createMigrationReport";
 /* tslint:enable */
 /* eslint-enable */

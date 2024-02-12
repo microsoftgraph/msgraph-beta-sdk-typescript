@@ -11,32 +11,33 @@ export interface StartRequestBuilder extends BaseRequestBuilder<StartRequestBuil
     /**
      * Start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const StartRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/start";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const StartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: StartRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const StartRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/start";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder ext
     /**
      * Delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Android Enterprise app configuration schema entities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AndroidManagedStoreAppConfigurationSchema
+     * @returns {Promise<AndroidManagedStoreAppConfigurationSchema>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParameters> | undefined) : Promise<AndroidManagedStoreAppConfigurationSchema | undefined>;
     /**
      * Update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AndroidManagedStoreAppConfigurationSchema
+     * @returns {Promise<AndroidManagedStoreAppConfigurationSchema>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: AndroidManagedStoreAppConfigurationSchema, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AndroidManagedStoreAppConfigurationSchema | undefined>;
     /**
      * Delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Android Enterprise app configuration schema entities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AndroidManagedStoreAppConfigurationSchema, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQ
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAppConfigurationSchemas/{androidManagedStoreAppConfigurationSchema%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParamet
  */
 export const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAndroidManagedStoreAppConfigurationSchemaFromDiscriminatorValue,
         queryParametersMapper: AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAndroidManagedStoreAppConfigurationSchemaFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderRequests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAppConfigurationSchemas/{androidManagedStoreAppConfigurationSchema%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

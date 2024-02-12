@@ -10,27 +10,16 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface AppManagementPolicyItemRequestBuilder extends BaseRequestBuilder<AppManagementPolicyItemRequestBuilder> {
     /**
-     * Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0|Find more info here}
-     */
-     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
-    /**
      * The appManagementPolicy applied to this service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AppManagementPolicy
+     * @returns {Promise<AppManagementPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AppManagementPolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<AppManagementPolicy | undefined>;
     /**
-     * Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
-     */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
-    /**
      * The appManagementPolicy applied to this service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppManagementPolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -48,6 +37,10 @@ export interface AppManagementPolicyItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AppManagementPolicyItemRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appManagementPolicies/{appManagementPolicy%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AppManagementPolicyItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -58,28 +51,16 @@ const AppManagementPolicyItemRequestBuilderGetQueryParametersMapper: Record<stri
  * Metadata for all the requests in the request builder.
  */
 export const AppManagementPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
-    delete: {
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "sendNoResponseContentAsync",
-    },
     get: {
+        uriTemplate: AppManagementPolicyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAppManagementPolicyFromDiscriminatorValue,
         queryParametersMapper: AppManagementPolicyItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AppManagementPolicyItemRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appManagementPolicies/{appManagementPolicy%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

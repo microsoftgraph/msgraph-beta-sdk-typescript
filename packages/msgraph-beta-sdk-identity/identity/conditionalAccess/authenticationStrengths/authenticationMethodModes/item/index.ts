@@ -12,13 +12,15 @@ export interface AuthenticationMethodModeDetailItemRequestBuilder extends BaseRe
     /**
      * Delete navigation property authenticationMethodModes for identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Names and descriptions of all valid authentication method modes in the system.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationMethodModeDetail
+     * @returns {Promise<AuthenticationMethodModeDetail>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      get(requestConfiguration?: RequestConfiguration<AuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters> | undefined) : Promise<AuthenticationMethodModeDetail | undefined>;
@@ -26,21 +28,22 @@ export interface AuthenticationMethodModeDetailItemRequestBuilder extends BaseRe
      * Update the navigation property authenticationMethodModes in identity
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthenticationMethodModeDetail
+     * @returns {Promise<AuthenticationMethodModeDetail>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      patch(body: AuthenticationMethodModeDetail, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuthenticationMethodModeDetail | undefined>;
     /**
      * Delete navigation property authenticationMethodModes for identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Names and descriptions of all valid authentication method modes in the system.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface AuthenticationMethodModeDetailItemRequestBuilder extends BaseRe
      * Update the navigation property authenticationMethodModes in identity
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
      */
      toPatchRequestInformation(body: AuthenticationMethodModeDetail, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface AuthenticationMethodModeDetailItemRequestBuilderGetQueryParamet
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AuthenticationMethodModeDetailItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/{authenticationMethodModeDetail%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AuthenticationMethodModeDetailItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const AuthenticationMethodModeDetailItemRequestBuilderGetQueryParametersMapper: 
  */
 export const AuthenticationMethodModeDetailItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AuthenticationMethodModeDetailItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AuthenticationMethodModeDetailItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationMethodModeDetailFromDiscriminatorValue,
         queryParametersMapper: AuthenticationMethodModeDetailItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AuthenticationMethodModeDetailItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthenticationMethodModeDetailFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const AuthenticationMethodModeDetailItemRequestBuilderRequestsMetadata: R
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AuthenticationMethodModeDetailItemRequestBuilderUriTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/{authenticationMethodModeDetail%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

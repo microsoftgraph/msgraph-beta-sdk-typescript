@@ -12,13 +12,14 @@ export interface ManagedTenantApiNotificationItemRequestBuilder extends BaseRequ
     /**
      * Get apiNotifications from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedTenantApiNotification
+     * @returns {Promise<ManagedTenantApiNotification>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedTenantApiNotificationItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedTenantApiNotification | undefined>;
     /**
      * Get apiNotifications from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedTenantApiNotificationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagedTenantApiNotificationItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedTenantApiNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/apiNotifications/{managedTenantApiNotification%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedTenantApiNotificationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagedTenantApiNotificationItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const ManagedTenantApiNotificationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagedTenantApiNotificationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedTenantApiNotificationFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantApiNotificationItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedTenantApiNotificationItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/apiNotifications/{managedTenantApiNotification%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

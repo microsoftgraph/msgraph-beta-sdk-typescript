@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getOffice365ActiveUserCountsWithPeriodGetResponse
+ * @returns {GetOffice365ActiveUserCountsWithPeriodGetResponse}
  */
 export function createGetOffice365ActiveUserCountsWithPeriodGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOffice365ActiveUserCountsWithPeriodGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetOffice365ActiveUserCountsWithPeriodGetResponse(getOffice365ActiveUserCountsWithPeriodGetResponse: Partial<GetOffice365ActiveUserCountsWithPeriodGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetOffice365ActiveUserCountsWithPeriodRequestBuilder extends Ba
     /**
      * Invoke function getOffice365ActiveUserCounts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetOffice365ActiveUserCountsWithPeriodGetResponse
+     * @returns {Promise<GetOffice365ActiveUserCountsWithPeriodGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryParameters> | undefined) : Promise<GetOffice365ActiveUserCountsWithPeriodGetResponse | undefined>;
     /**
      * Invoke function getOffice365ActiveUserCounts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -54,6 +55,10 @@ export interface GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryPar
      * Include count of items
      */
     count?: boolean;
+    /**
+     * Expand related entities
+     */
+    expand?: string[];
     /**
      * Filter items by property values
      */
@@ -88,10 +93,15 @@ export function serializeGetOffice365ActiveUserCountsWithPeriodGetResponse(write
     writer.writeCollectionOfObjectValues<Office365ActiveUserCounts>("value", getOffice365ActiveUserCountsWithPeriodGetResponse.value, serializeOffice365ActiveUserCounts);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetOffice365ActiveUserCountsWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365ActiveUserCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
+    "expand": "%24expand",
     "filter": "%24filter",
     "orderby": "%24orderby",
     "search": "%24search",
@@ -104,19 +114,15 @@ const GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryParametersMapp
  */
 export const GetOffice365ActiveUserCountsWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetOffice365ActiveUserCountsWithPeriodRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetOffice365ActiveUserCountsWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetOffice365ActiveUserCountsWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365ActiveUserCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
 /* tslint:enable */
 /* eslint-enable */

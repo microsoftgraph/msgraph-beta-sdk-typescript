@@ -12,13 +12,14 @@ export interface DailyInactiveUsersByApplicationMetricItemRequestBuilder extends
     /**
      * Get inactiveUsersByApplication from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DailyInactiveUsersByApplicationMetric
+     * @returns {Promise<DailyInactiveUsersByApplicationMetric>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<DailyInactiveUsersByApplicationMetric | undefined>;
     /**
      * Get inactiveUsersByApplication from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQuery
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DailyInactiveUsersByApplicationMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/inactiveUsersByApplication/{dailyInactiveUsersByApplicationMetric%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParametersM
  */
 export const DailyInactiveUsersByApplicationMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DailyInactiveUsersByApplicationMetricItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDailyInactiveUsersByApplicationMetricFromDiscriminatorValue,
         queryParametersMapper: DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DailyInactiveUsersByApplicationMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/inactiveUsersByApplication/{dailyInactiveUsersByApplicationMetric%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

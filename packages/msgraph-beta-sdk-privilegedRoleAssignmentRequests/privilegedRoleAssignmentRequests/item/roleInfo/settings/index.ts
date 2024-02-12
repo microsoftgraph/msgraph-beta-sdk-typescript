@@ -12,38 +12,41 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
     /**
      * Delete navigation property settings for privilegedRoleAssignmentRequests
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get settings from privilegedRoleAssignmentRequests
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedRoleSettings
+     * @returns {Promise<PrivilegedRoleSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedRoleSettings | undefined>;
     /**
      * Update the navigation property settings in privilegedRoleAssignmentRequests
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrivilegedRoleSettings
+     * @returns {Promise<PrivilegedRoleSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PrivilegedRoleSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedRoleSettings | undefined>;
     /**
      * Delete navigation property settings for privilegedRoleAssignmentRequests
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get settings from privilegedRoleAssignmentRequests
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property settings in privilegedRoleAssignmentRequests
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PrivilegedRoleSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface SettingsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SettingsRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest%2Did}/roleInfo/settings{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const SettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const SettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedRoleSettingsFromDiscriminatorValue,
         queryParametersMapper: SettingsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrivilegedRoleSettingsFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const SettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SettingsRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest%2Did}/roleInfo/settings{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

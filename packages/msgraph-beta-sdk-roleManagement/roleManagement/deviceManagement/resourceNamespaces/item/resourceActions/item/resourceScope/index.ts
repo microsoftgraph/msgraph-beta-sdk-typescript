@@ -12,38 +12,41 @@ export interface ResourceScopeRequestBuilder extends BaseRequestBuilder<Resource
     /**
      * Delete navigation property resourceScope for roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get resourceScope from roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UnifiedRbacResourceScope
+     * @returns {Promise<UnifiedRbacResourceScope>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ResourceScopeRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRbacResourceScope | undefined>;
     /**
      * Update the navigation property resourceScope in roleManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UnifiedRbacResourceScope
+     * @returns {Promise<UnifiedRbacResourceScope>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UnifiedRbacResourceScope, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRbacResourceScope | undefined>;
     /**
      * Delete navigation property resourceScope for roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get resourceScope from roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ResourceScopeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property resourceScope in roleManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UnifiedRbacResourceScope, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ResourceScopeRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ResourceScopeRequestBuilderUriTemplate = "{+baseurl}/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}/resourceScope{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ResourceScopeRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ResourceScopeRequestBuilderGetQueryParametersMapper: Record<string, string
  */
 export const ResourceScopeRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ResourceScopeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ResourceScopeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUnifiedRbacResourceScopeFromDiscriminatorValue,
         queryParametersMapper: ResourceScopeRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ResourceScopeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUnifiedRbacResourceScopeFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ResourceScopeRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ResourceScopeRequestBuilderUriTemplate = "{+baseurl}/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}/resourceScope{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a evaluateDynamicMembershipPostRequestBody
+ * @returns {EvaluateDynamicMembershipPostRequestBody}
  */
 export function createEvaluateDynamicMembershipPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateDynamicMembershipPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoEvaluateDynamicMembershipPostRequestBody(evaluateDynamicMembershipPostRequestBody: Partial<EvaluateDynamicMembershipPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -50,7 +50,8 @@ export interface EvaluateDynamicMembershipRequestBuilder extends BaseRequestBuil
      * Invoke action evaluateDynamicMembership
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EvaluateDynamicMembershipResult
+     * @returns {Promise<EvaluateDynamicMembershipResult>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-1.0|Find more info here}
      */
      post(body: EvaluateDynamicMembershipPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EvaluateDynamicMembershipResult | undefined>;
@@ -58,7 +59,7 @@ export interface EvaluateDynamicMembershipRequestBuilder extends BaseRequestBuil
      * Invoke action evaluateDynamicMembership
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: EvaluateDynamicMembershipPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -72,14 +73,18 @@ export function serializeEvaluateDynamicMembershipPostRequestBody(writer: Serial
     writer.writeAdditionalData(evaluateDynamicMembershipPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EvaluateDynamicMembershipRequestBuilderUriTemplate = "{+baseurl}/groups/evaluateDynamicMembership";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const EvaluateDynamicMembershipRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: EvaluateDynamicMembershipRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEvaluateDynamicMembershipResultFromDiscriminatorValue,
@@ -88,9 +93,5 @@ export const EvaluateDynamicMembershipRequestBuilderRequestsMetadata: RequestsMe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EvaluateDynamicMembershipRequestBuilderUriTemplate = "{+baseurl}/groups/evaluateDynamicMembership";
 /* tslint:enable */
 /* eslint-enable */

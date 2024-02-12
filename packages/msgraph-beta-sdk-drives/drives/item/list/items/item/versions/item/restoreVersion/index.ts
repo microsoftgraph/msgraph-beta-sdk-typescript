@@ -11,31 +11,32 @@ export interface RestoreVersionRequestBuilder extends BaseRequestBuilder<Restore
     /**
      * Invoke action restoreVersion
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action restoreVersion
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const RestoreVersionRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/versions/{listItemVersion%2Did}/restoreVersion";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const RestoreVersionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RestoreVersionRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RestoreVersionRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/versions/{listItemVersion%2Did}/restoreVersion";
 /* tslint:enable */
 /* eslint-enable */

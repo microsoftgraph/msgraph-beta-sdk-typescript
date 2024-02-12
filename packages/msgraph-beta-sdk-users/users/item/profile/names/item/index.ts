@@ -12,13 +12,15 @@ export interface PersonNameItemRequestBuilder extends BaseRequestBuilder<PersonN
     /**
      * Delete a personName object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties and relationships of a personName object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PersonName
+     * @returns {Promise<PersonName>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personname-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PersonNameItemRequestBuilderGetQueryParameters> | undefined) : Promise<PersonName | undefined>;
@@ -26,27 +28,28 @@ export interface PersonNameItemRequestBuilder extends BaseRequestBuilder<PersonN
      * Update the properties of a personName object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PersonName
+     * @returns {Promise<PersonName>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personname-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: PersonName, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonName | undefined>;
     /**
      * Delete a personName object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of a personName object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PersonNameItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a personName object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PersonName, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface PersonNameItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PersonNameItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/names/{personName%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PersonNameItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const PersonNameItemRequestBuilderGetQueryParametersMapper: Record<string, strin
  */
 export const PersonNameItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PersonNameItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PersonNameItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPersonNameFromDiscriminatorValue,
         queryParametersMapper: PersonNameItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PersonNameItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPersonNameFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const PersonNameItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PersonNameItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/names/{personName%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

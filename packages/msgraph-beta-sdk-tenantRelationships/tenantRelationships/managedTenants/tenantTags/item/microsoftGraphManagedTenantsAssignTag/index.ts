@@ -22,14 +22,14 @@ export interface AssignTagPostRequestBody extends AdditionalDataHolder, BackedMo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a assignTagPostRequestBody
+ * @returns {AssignTagPostRequestBody}
  */
 export function createAssignTagPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignTagPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAssignTagPostRequestBody(assignTagPostRequestBody: Partial<AssignTagPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -45,7 +45,8 @@ export interface MicrosoftGraphManagedTenantsAssignTagRequestBuilder extends Bas
      * Assign the tenant tag to the specified managed tenants.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TenantTag
+     * @returns {Promise<TenantTag>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0|Find more info here}
      */
      post(body: AssignTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TenantTag | undefined>;
@@ -53,7 +54,7 @@ export interface MicrosoftGraphManagedTenantsAssignTagRequestBuilder extends Bas
      * Assign the tenant tag to the specified managed tenants.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: AssignTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -66,14 +67,18 @@ export function serializeAssignTagPostRequestBody(writer: SerializationWriter, a
     writer.writeAdditionalData(assignTagPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphManagedTenantsAssignTagRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantTags/{tenantTag%2Did}/microsoft.graph.managedTenants.assignTag";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphManagedTenantsAssignTagRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphManagedTenantsAssignTagRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTenantTagFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const MicrosoftGraphManagedTenantsAssignTagRequestBuilderRequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphManagedTenantsAssignTagRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantTags/{tenantTag%2Did}/microsoft.graph.managedTenants.assignTag";
 /* tslint:enable */
 /* eslint-enable */

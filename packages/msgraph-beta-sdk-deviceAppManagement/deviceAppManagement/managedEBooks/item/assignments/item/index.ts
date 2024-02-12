@@ -12,38 +12,41 @@ export interface ManagedEBookAssignmentItemRequestBuilder extends BaseRequestBui
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The list of assignments for this eBook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedEBookAssignment
+     * @returns {Promise<ManagedEBookAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedEBookAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedEBookAssignment | undefined>;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedEBookAssignment
+     * @returns {Promise<ManagedEBookAssignment>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ManagedEBookAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedEBookAssignment | undefined>;
     /**
      * Delete navigation property assignments for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of assignments for this eBook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedEBookAssignmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignments in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ManagedEBookAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ManagedEBookAssignmentItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedEBookAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedEBookAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ManagedEBookAssignmentItemRequestBuilderGetQueryParametersMapper: Record<s
  */
 export const ManagedEBookAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ManagedEBookAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ManagedEBookAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedEBookAssignmentFromDiscriminatorValue,
         queryParametersMapper: ManagedEBookAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ManagedEBookAssignmentItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedEBookAssignmentFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ManagedEBookAssignmentItemRequestBuilderRequestsMetadata: RequestsM
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedEBookAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

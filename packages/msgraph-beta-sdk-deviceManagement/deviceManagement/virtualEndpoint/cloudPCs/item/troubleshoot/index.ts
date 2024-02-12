@@ -11,32 +11,33 @@ export interface TroubleshootRequestBuilder extends BaseRequestBuilder<Troublesh
     /**
      * Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const TroubleshootRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/troubleshoot";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const TroubleshootRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: TroubleshootRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TroubleshootRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/troubleshoot";
 /* tslint:enable */
 /* eslint-enable */

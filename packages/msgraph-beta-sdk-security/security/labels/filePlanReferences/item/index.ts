@@ -12,13 +12,15 @@ export interface FilePlanReferenceTemplateItemRequestBuilder extends BaseRequest
     /**
      * Delete a filePlanReferenceTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-labelsroot-delete-fileplanreferences?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a filePlanReferenceTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FilePlanReferenceTemplate
+     * @returns {Promise<FilePlanReferenceTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FilePlanReferenceTemplateItemRequestBuilderGetQueryParameters> | undefined) : Promise<FilePlanReferenceTemplate | undefined>;
@@ -26,26 +28,27 @@ export interface FilePlanReferenceTemplateItemRequestBuilder extends BaseRequest
      * Update the navigation property filePlanReferences in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FilePlanReferenceTemplate
+     * @returns {Promise<FilePlanReferenceTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: FilePlanReferenceTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FilePlanReferenceTemplate | undefined>;
     /**
      * Delete a filePlanReferenceTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a filePlanReferenceTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FilePlanReferenceTemplateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property filePlanReferences in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: FilePlanReferenceTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface FilePlanReferenceTemplateItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const FilePlanReferenceTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/filePlanReferences/{filePlanReferenceTemplate%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const FilePlanReferenceTemplateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const FilePlanReferenceTemplateItemRequestBuilderGetQueryParametersMapper: Recor
  */
 export const FilePlanReferenceTemplateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: FilePlanReferenceTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: FilePlanReferenceTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFilePlanReferenceTemplateFromDiscriminatorValue,
         queryParametersMapper: FilePlanReferenceTemplateItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: FilePlanReferenceTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFilePlanReferenceTemplateFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const FilePlanReferenceTemplateItemRequestBuilderRequestsMetadata: Reques
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const FilePlanReferenceTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/filePlanReferences/{filePlanReferenceTemplate%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

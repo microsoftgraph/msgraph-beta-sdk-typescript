@@ -12,38 +12,41 @@ export interface MicrosoftTunnelHealthThresholdItemRequestBuilder extends BaseRe
     /**
      * Delete navigation property microsoftTunnelHealthThresholds for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Collection of MicrosoftTunnelHealthThreshold settings associated with account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MicrosoftTunnelHealthThreshold
+     * @returns {Promise<MicrosoftTunnelHealthThreshold>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParameters> | undefined) : Promise<MicrosoftTunnelHealthThreshold | undefined>;
     /**
      * Update the navigation property microsoftTunnelHealthThresholds in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of MicrosoftTunnelHealthThreshold
+     * @returns {Promise<MicrosoftTunnelHealthThreshold>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: MicrosoftTunnelHealthThreshold, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MicrosoftTunnelHealthThreshold | undefined>;
     /**
      * Delete navigation property microsoftTunnelHealthThresholds for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Collection of MicrosoftTunnelHealthThreshold settings associated with account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property microsoftTunnelHealthThresholds in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: MicrosoftTunnelHealthThreshold, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParamet
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftTunnelHealthThresholdItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelHealthThresholds/{microsoftTunnelHealthThreshold%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParametersMapper: 
  */
 export const MicrosoftTunnelHealthThresholdItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: MicrosoftTunnelHealthThresholdItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: MicrosoftTunnelHealthThresholdItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMicrosoftTunnelHealthThresholdFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: MicrosoftTunnelHealthThresholdItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createMicrosoftTunnelHealthThresholdFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const MicrosoftTunnelHealthThresholdItemRequestBuilderRequestsMetadata: R
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftTunnelHealthThresholdItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelHealthThresholds/{microsoftTunnelHealthThreshold%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

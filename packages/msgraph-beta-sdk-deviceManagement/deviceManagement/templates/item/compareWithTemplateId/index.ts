@@ -18,13 +18,14 @@ export interface CompareWithTemplateIdRequestBuilder extends BaseRequestBuilder<
     /**
      * Invoke function compare
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CompareWithTemplateIdGetResponse
+     * @returns {Promise<CompareWithTemplateIdGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CompareWithTemplateIdRequestBuilderGetQueryParameters> | undefined) : Promise<CompareWithTemplateIdGetResponse | undefined>;
     /**
      * Invoke function compare
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CompareWithTemplateIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -56,14 +57,14 @@ export interface CompareWithTemplateIdRequestBuilderGetQueryParameters {
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a compareWithTemplateIdGetResponse
+ * @returns {CompareWithTemplateIdGetResponse}
  */
 export function createCompareWithTemplateIdGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCompareWithTemplateIdGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCompareWithTemplateIdGetResponse(compareWithTemplateIdGetResponse: Partial<CompareWithTemplateIdGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -80,6 +81,10 @@ export function serializeCompareWithTemplateIdGetResponse(writer: SerializationW
     writer.writeCollectionOfObjectValues<DeviceManagementSettingComparison>("value", compareWithTemplateIdGetResponse.value, serializeDeviceManagementSettingComparison);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CompareWithTemplateIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CompareWithTemplateIdRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const CompareWithTemplateIdRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const CompareWithTemplateIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: CompareWithTemplateIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCompareWithTemplateIdGetResponseFromDiscriminatorValue,
         queryParametersMapper: CompareWithTemplateIdRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CompareWithTemplateIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

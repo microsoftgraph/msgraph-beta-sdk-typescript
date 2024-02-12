@@ -12,14 +12,15 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
     /**
      * Policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Policy
+     * @returns {Promise<Policy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      get(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : Promise<Policy | undefined>;
     /**
      * Policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface PolicyRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PolicyRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies/{policyLink%2Did}/policy{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const PolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const PolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: PolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPolicyFromDiscriminatorValue,
         queryParametersMapper: PolicyRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PolicyRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies/{policyLink%2Did}/policy{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

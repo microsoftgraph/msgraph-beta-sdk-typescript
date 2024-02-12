@@ -11,32 +11,33 @@ export interface RestartRequestBuilder extends BaseRequestBuilder<RestartRequest
     /**
      * Restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/teamworkdevice-restart?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const RestartRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/restart";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const RestartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RestartRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RestartRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/restart";
 /* tslint:enable */
 /* eslint-enable */

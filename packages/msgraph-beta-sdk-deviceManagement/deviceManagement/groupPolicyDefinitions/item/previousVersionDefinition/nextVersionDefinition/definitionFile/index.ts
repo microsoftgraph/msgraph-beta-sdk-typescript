@@ -12,13 +12,14 @@ export interface DefinitionFileRequestBuilder extends BaseRequestBuilder<Definit
     /**
      * The group policy file associated with the definition.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GroupPolicyDefinitionFile
+     * @returns {Promise<GroupPolicyDefinitionFile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DefinitionFileRequestBuilderGetQueryParameters> | undefined) : Promise<GroupPolicyDefinitionFile | undefined>;
     /**
      * The group policy file associated with the definition.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DefinitionFileRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DefinitionFileRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DefinitionFileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/previousVersionDefinition/nextVersionDefinition/definitionFile{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DefinitionFileRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DefinitionFileRequestBuilderGetQueryParametersMapper: Record<string, strin
  */
 export const DefinitionFileRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DefinitionFileRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGroupPolicyDefinitionFileFromDiscriminatorValue,
         queryParametersMapper: DefinitionFileRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DefinitionFileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/previousVersionDefinition/nextVersionDefinition/definitionFile{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

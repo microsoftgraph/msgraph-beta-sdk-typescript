@@ -12,14 +12,15 @@ export interface ReviewSetRequestBuilder extends BaseRequestBuilder<ReviewSetReq
     /**
      * The review set the content is being exported from.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ReviewSet
+     * @returns {Promise<ReviewSet>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      get(requestConfiguration?: RequestConfiguration<ReviewSetRequestBuilderGetQueryParameters> | undefined) : Promise<ReviewSet | undefined>;
     /**
      * The review set the content is being exported from.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReviewSetRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface ReviewSetRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ReviewSetRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations/{caseOperation%2Did}/microsoft.graph.ediscovery.caseExportOperation/reviewSet{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ReviewSetRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const ReviewSetRequestBuilderGetQueryParametersMapper: Record<string, string> = 
  */
 export const ReviewSetRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ReviewSetRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createReviewSetFromDiscriminatorValue,
         queryParametersMapper: ReviewSetRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ReviewSetRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations/{caseOperation%2Did}/microsoft.graph.ediscovery.caseExportOperation/reviewSet{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

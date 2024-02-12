@@ -22,14 +22,14 @@ export interface AddUserInputLogPostRequestBody extends AdditionalDataHolder, Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a addUserInputLogPostRequestBody
+ * @returns {AddUserInputLogPostRequestBody}
  */
 export function createAddUserInputLogPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddUserInputLogPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAddUserInputLogPostRequestBody(addUserInputLogPostRequestBody: Partial<AddUserInputLogPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -45,14 +45,15 @@ export interface MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilder exten
      * Invoke action addUserInputLog
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedTenantAlert
+     * @returns {Promise<ManagedTenantAlert>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: AddUserInputLogPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedTenantAlert | undefined>;
     /**
      * Invoke action addUserInputLog
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: AddUserInputLogPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -65,14 +66,18 @@ export function serializeAddUserInputLogPostRequestBody(writer: SerializationWri
     writer.writeAdditionalData(addUserInputLogPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/microsoft.graph.managedTenants.addUserInputLog";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedTenantAlertFromDiscriminatorValue,
@@ -81,9 +86,5 @@ export const MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilderRequestsMe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert%2Did}/microsoft.graph.managedTenants.addUserInputLog";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface TelecomExpenseManagementPartnerItemRequestBuilder extends BaseR
     /**
      * Delete navigation property telecomExpenseManagementPartners for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The telecom expense management partners.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TelecomExpenseManagementPartner
+     * @returns {Promise<TelecomExpenseManagementPartner>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParameters> | undefined) : Promise<TelecomExpenseManagementPartner | undefined>;
     /**
      * Update the navigation property telecomExpenseManagementPartners in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TelecomExpenseManagementPartner
+     * @returns {Promise<TelecomExpenseManagementPartner>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: TelecomExpenseManagementPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TelecomExpenseManagementPartner | undefined>;
     /**
      * Delete navigation property telecomExpenseManagementPartners for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The telecom expense management partners.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property telecomExpenseManagementPartners in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: TelecomExpenseManagementPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParame
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TelecomExpenseManagementPartnerItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/telecomExpenseManagementPartners/{telecomExpenseManagementPartner%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParametersMapper:
  */
 export const TelecomExpenseManagementPartnerItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: TelecomExpenseManagementPartnerItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: TelecomExpenseManagementPartnerItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTelecomExpenseManagementPartnerFromDiscriminatorValue,
         queryParametersMapper: TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: TelecomExpenseManagementPartnerItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTelecomExpenseManagementPartnerFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const TelecomExpenseManagementPartnerItemRequestBuilderRequestsMetadata: 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TelecomExpenseManagementPartnerItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/telecomExpenseManagementPartners/{telecomExpenseManagementPartner%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

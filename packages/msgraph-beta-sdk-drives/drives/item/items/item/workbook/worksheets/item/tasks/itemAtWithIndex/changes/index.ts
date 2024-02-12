@@ -12,27 +12,29 @@ export interface ChangesRequestBuilder extends BaseRequestBuilder<ChangesRequest
     /**
      * A collection of task change histories.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WorkbookDocumentTaskChangeCollectionResponse
+     * @returns {Promise<WorkbookDocumentTaskChangeCollectionResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ChangesRequestBuilderGetQueryParameters> | undefined) : Promise<WorkbookDocumentTaskChangeCollectionResponse | undefined>;
     /**
      * Create new navigation property to changes for drives
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WorkbookDocumentTaskChange
+     * @returns {Promise<WorkbookDocumentTaskChange>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: WorkbookDocumentTaskChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WorkbookDocumentTaskChange | undefined>;
     /**
      * A collection of task change histories.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChangesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Create new navigation property to changes for drives
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: WorkbookDocumentTaskChange, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -74,6 +76,10 @@ export interface ChangesRequestBuilderGetQueryParameters {
     top?: number;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ChangesRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tasks/itemAt(index={index})/changes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ChangesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -91,20 +97,20 @@ const ChangesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const ChangesRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ChangesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWorkbookDocumentTaskChangeCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ChangesRequestBuilderGetQueryParametersMapper,
     },
     post: {
+        uriTemplate: ChangesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWorkbookDocumentTaskChangeFromDiscriminatorValue,
@@ -113,9 +119,5 @@ export const ChangesRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ChangesRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tasks/itemAt(index={index})/changes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

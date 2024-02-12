@@ -12,13 +12,15 @@ export interface AccessPackageResourceScopeItemRequestBuilder extends BaseReques
     /**
      * Delete navigation property accessPackageResourceScopes for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AccessPackageResourceScope
+     * @returns {Promise<AccessPackageResourceScope>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageResourceScopeItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageResourceScope | undefined>;
@@ -26,21 +28,22 @@ export interface AccessPackageResourceScopeItemRequestBuilder extends BaseReques
      * Update the navigation property accessPackageResourceScopes in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AccessPackageResourceScope
+     * @returns {Promise<AccessPackageResourceScope>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      patch(body: AccessPackageResourceScope, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageResourceScope | undefined>;
     /**
      * Delete navigation property accessPackageResourceScopes for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageResourceScopeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -48,7 +51,7 @@ export interface AccessPackageResourceScopeItemRequestBuilder extends BaseReques
      * Update the navigation property accessPackageResourceScopes in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toPatchRequestInformation(body: AccessPackageResourceScope, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -67,6 +70,10 @@ export interface AccessPackageResourceScopeItemRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AccessPackageResourceScopeItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageResourceScopes/{accessPackageResourceScope%2Did}/accessPackageResource/accessPackageResourceRoles/{accessPackageResourceRole%2Did}/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope%2Did1}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AccessPackageResourceScopeItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -78,28 +85,28 @@ const AccessPackageResourceScopeItemRequestBuilderGetQueryParametersMapper: Reco
  */
 export const AccessPackageResourceScopeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AccessPackageResourceScopeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AccessPackageResourceScopeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAccessPackageResourceScopeFromDiscriminatorValue,
         queryParametersMapper: AccessPackageResourceScopeItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AccessPackageResourceScopeItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAccessPackageResourceScopeFromDiscriminatorValue,
@@ -108,9 +115,5 @@ export const AccessPackageResourceScopeItemRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AccessPackageResourceScopeItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageResourceScopes/{accessPackageResourceScope%2Did}/accessPackageResource/accessPackageResourceRoles/{accessPackageResourceRole%2Did}/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope%2Did1}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

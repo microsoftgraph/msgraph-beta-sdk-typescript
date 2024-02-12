@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a isSignedUpGetResponse
+ * @returns {IsSignedUpGetResponse}
  */
 export function createIsSignedUpGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIsSignedUpGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoIsSignedUpGetResponse(isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -43,13 +43,14 @@ export interface IsSignedUpRequestBuilder extends BaseRequestBuilder<IsSignedUpR
     /**
      * Invoke function isSignedUp
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IsSignedUpGetResponse
+     * @returns {Promise<IsSignedUpGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IsSignedUpGetResponse | undefined>;
     /**
      * Invoke function isSignedUp
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,22 +63,22 @@ export function serializeIsSignedUpGetResponse(writer: SerializationWriter, isSi
     writer.writeAdditionalData(isSignedUpGetResponse.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const IsSignedUpRequestBuilderUriTemplate = "{+baseurl}/privilegedSignupStatus/isSignedUp()";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const IsSignedUpRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: IsSignedUpRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIsSignedUpGetResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const IsSignedUpRequestBuilderUriTemplate = "{+baseurl}/privilegedSignupStatus/isSignedUp()";
 /* tslint:enable */
 /* eslint-enable */

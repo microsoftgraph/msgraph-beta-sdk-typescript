@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a resizePostRequestBody
+ * @returns {ResizePostRequestBody}
  */
 export function createResizePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoResizePostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoResizePostRequestBody(resizePostRequestBody: Partial<ResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -44,13 +44,14 @@ export interface ResizeRequestBuilder extends BaseRequestBuilder<ResizeRequestBu
      * Invoke action resize
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action resize
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,14 +64,18 @@ export function serializeResizePostRequestBody(writer: SerializationWriter, resi
     writer.writeAdditionalData(resizePostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ResizeRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/resize";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ResizeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ResizeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -78,9 +83,5 @@ export const ResizeRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ResizeRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/resize";
 /* tslint:enable */
 /* eslint-enable */

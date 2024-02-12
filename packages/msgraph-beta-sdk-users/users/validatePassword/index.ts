@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a validatePasswordPostRequestBody
+ * @returns {ValidatePasswordPostRequestBody}
  */
 export function createValidatePasswordPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidatePasswordPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoValidatePasswordPostRequestBody(validatePasswordPostRequestBody: Partial<ValidatePasswordPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -53,7 +53,8 @@ export interface ValidatePasswordRequestBuilder extends BaseRequestBuilder<Valid
      * Check a user's password against the organization's password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PasswordValidationInformation
+     * @returns {Promise<PasswordValidationInformation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/user-validatepassword?view=graph-rest-1.0|Find more info here}
      */
      post(body: ValidatePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordValidationInformation | undefined>;
@@ -61,19 +62,23 @@ export interface ValidatePasswordRequestBuilder extends BaseRequestBuilder<Valid
      * Check a user's password against the organization's password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ValidatePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const ValidatePasswordRequestBuilderUriTemplate = "{+baseurl}/users/validatePassword";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const ValidatePasswordRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ValidatePasswordRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPasswordValidationInformationFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const ValidatePasswordRequestBuilderRequestsMetadata: RequestsMetadata = 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ValidatePasswordRequestBuilderUriTemplate = "{+baseurl}/users/validatePassword";
 /* tslint:enable */
 /* eslint-enable */

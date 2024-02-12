@@ -12,13 +12,15 @@ export interface ItemPhoneItemRequestBuilder extends BaseRequestBuilder<ItemPhon
     /**
      * Delete an itemPhone object from the user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties and relationships of an itemPhone object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemPhone
+     * @returns {Promise<ItemPhone>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemPhoneItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemPhone | undefined>;
@@ -26,27 +28,28 @@ export interface ItemPhoneItemRequestBuilder extends BaseRequestBuilder<ItemPhon
      * Update the properties of an itemPhone object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ItemPhone
+     * @returns {Promise<ItemPhone>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ItemPhone, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemPhone | undefined>;
     /**
      * Delete an itemPhone object from the user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of an itemPhone object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemPhoneItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of an itemPhone object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ItemPhone, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface ItemPhoneItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ItemPhoneItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/phones/{itemPhone%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ItemPhoneItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const ItemPhoneItemRequestBuilderGetQueryParametersMapper: Record<string, string
  */
 export const ItemPhoneItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ItemPhoneItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ItemPhoneItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemPhoneFromDiscriminatorValue,
         queryParametersMapper: ItemPhoneItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ItemPhoneItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createItemPhoneFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const ItemPhoneItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ItemPhoneItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/phones/{itemPhone%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

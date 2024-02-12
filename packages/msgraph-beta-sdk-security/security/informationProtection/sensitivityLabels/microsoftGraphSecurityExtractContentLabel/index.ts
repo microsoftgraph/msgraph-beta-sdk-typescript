@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a extractContentLabelPostRequestBody
+ * @returns {ExtractContentLabelPostRequestBody}
  */
 export function createExtractContentLabelPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExtractContentLabelPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoExtractContentLabelPostRequestBody(extractContentLabelPostRequestBody: Partial<ExtractContentLabelPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -45,7 +45,8 @@ export interface MicrosoftGraphSecurityExtractContentLabelRequestBuilder extends
      * Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ContentLabel
+     * @returns {Promise<ContentLabel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-1.0|Find more info here}
      */
      post(body: ExtractContentLabelPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ContentLabel | undefined>;
@@ -53,7 +54,7 @@ export interface MicrosoftGraphSecurityExtractContentLabelRequestBuilder extends
      * Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ExtractContentLabelPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -66,14 +67,18 @@ export function serializeExtractContentLabelPostRequestBody(writer: Serializatio
     writer.writeAdditionalData(extractContentLabelPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphSecurityExtractContentLabelRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphSecurityExtractContentLabelRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphSecurityExtractContentLabelRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createContentLabelFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const MicrosoftGraphSecurityExtractContentLabelRequestBuilderRequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphSecurityExtractContentLabelRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel";
 /* tslint:enable */
 /* eslint-enable */

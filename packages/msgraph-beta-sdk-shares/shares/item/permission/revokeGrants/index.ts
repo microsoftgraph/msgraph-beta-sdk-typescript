@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a revokeGrantsPostRequestBody
+ * @returns {RevokeGrantsPostRequestBody}
  */
 export function createRevokeGrantsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRevokeGrantsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRevokeGrantsPostRequestBody(revokeGrantsPostRequestBody: Partial<RevokeGrantsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -45,7 +45,8 @@ export interface RevokeGrantsRequestBuilder extends BaseRequestBuilder<RevokeGra
      * Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Permission
+     * @returns {Promise<Permission>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0|Find more info here}
      */
      post(body: RevokeGrantsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Permission | undefined>;
@@ -53,7 +54,7 @@ export interface RevokeGrantsRequestBuilder extends BaseRequestBuilder<RevokeGra
      * Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: RevokeGrantsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -66,14 +67,18 @@ export function serializeRevokeGrantsPostRequestBody(writer: SerializationWriter
     writer.writeAdditionalData(revokeGrantsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RevokeGrantsRequestBuilderUriTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/permission/revokeGrants";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const RevokeGrantsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RevokeGrantsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPermissionFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const RevokeGrantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RevokeGrantsRequestBuilderUriTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/permission/revokeGrants";
 /* tslint:enable */
 /* eslint-enable */

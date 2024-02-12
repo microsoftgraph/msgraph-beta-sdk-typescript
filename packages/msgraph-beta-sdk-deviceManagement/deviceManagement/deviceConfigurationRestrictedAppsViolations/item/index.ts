@@ -12,38 +12,41 @@ export interface RestrictedAppsViolationItemRequestBuilder extends BaseRequestBu
     /**
      * Delete navigation property deviceConfigurationRestrictedAppsViolations for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Restricted apps violations for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RestrictedAppsViolation
+     * @returns {Promise<RestrictedAppsViolation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RestrictedAppsViolationItemRequestBuilderGetQueryParameters> | undefined) : Promise<RestrictedAppsViolation | undefined>;
     /**
      * Update the navigation property deviceConfigurationRestrictedAppsViolations in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RestrictedAppsViolation
+     * @returns {Promise<RestrictedAppsViolation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: RestrictedAppsViolation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RestrictedAppsViolation | undefined>;
     /**
      * Delete navigation property deviceConfigurationRestrictedAppsViolations for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Restricted apps violations for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RestrictedAppsViolationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceConfigurationRestrictedAppsViolations in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: RestrictedAppsViolation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface RestrictedAppsViolationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RestrictedAppsViolationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationRestrictedAppsViolations/{restrictedAppsViolation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RestrictedAppsViolationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const RestrictedAppsViolationItemRequestBuilderGetQueryParametersMapper: Record<
  */
 export const RestrictedAppsViolationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RestrictedAppsViolationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: RestrictedAppsViolationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRestrictedAppsViolationFromDiscriminatorValue,
         queryParametersMapper: RestrictedAppsViolationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: RestrictedAppsViolationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRestrictedAppsViolationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const RestrictedAppsViolationItemRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RestrictedAppsViolationItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationRestrictedAppsViolations/{restrictedAppsViolation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

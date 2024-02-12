@@ -10,27 +10,16 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DataSourceItemRequestBuilder extends BaseRequestBuilder<DataSourceItemRequestBuilder> {
     /**
-     * Remove a dataSource object.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @see {@link https://learn.microsoft.com/graph/api/security-ediscoverysearch-delete-custodiansources?view=graph-rest-1.0|Find more info here}
-     */
-     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
-    /**
      * Custodian sources that are included in the eDiscovery search.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DataSource
+     * @returns {Promise<DataSource>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DataSourceItemRequestBuilderGetQueryParameters> | undefined) : Promise<DataSource | undefined>;
     /**
-     * Remove a dataSource object.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
-     */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
-    /**
      * Custodian sources that are included in the eDiscovery search.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DataSourceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -48,6 +37,10 @@ export interface DataSourceItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DataSourceItemRequestBuilderUriTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}/custodianSources/{dataSource%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DataSourceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -58,28 +51,16 @@ const DataSourceItemRequestBuilderGetQueryParametersMapper: Record<string, strin
  * Metadata for all the requests in the request builder.
  */
 export const DataSourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
-    delete: {
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "sendNoResponseContentAsync",
-    },
     get: {
+        uriTemplate: DataSourceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDataSourceFromDiscriminatorValue,
         queryParametersMapper: DataSourceItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DataSourceItemRequestBuilderUriTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}/custodianSources/{dataSource%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

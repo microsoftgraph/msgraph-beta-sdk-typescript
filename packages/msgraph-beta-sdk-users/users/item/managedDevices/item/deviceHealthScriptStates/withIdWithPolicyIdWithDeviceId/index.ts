@@ -12,38 +12,41 @@ export interface WithIdWithPolicyIdWithDeviceIdRequestBuilder extends BaseReques
     /**
      * Delete navigation property deviceHealthScriptStates for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceHealthScriptPolicyState
+     * @returns {Promise<DeviceHealthScriptPolicyState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceHealthScriptPolicyState | undefined>;
     /**
      * Update the navigation property deviceHealthScriptStates in users
      * @param body Contains properties for policy run state of the device health script.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceHealthScriptPolicyState
+     * @returns {Promise<DeviceHealthScriptPolicyState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceHealthScriptPolicyState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceHealthScriptPolicyState | undefined>;
     /**
      * Delete navigation property deviceHealthScriptStates for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceHealthScriptStates in users
      * @param body Contains properties for policy run state of the device health script.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceHealthScriptPolicyState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParametersMapper: Reco
  */
 export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateFromDiscriminatorValue,
         queryParametersMapper: WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

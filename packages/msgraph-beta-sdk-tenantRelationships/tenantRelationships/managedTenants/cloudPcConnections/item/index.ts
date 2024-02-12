@@ -12,12 +12,14 @@ export interface CloudPcConnectionItemRequestBuilder extends BaseRequestBuilder<
     /**
      * Delete navigation property cloudPcConnections for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a cloudPcConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcConnection
+     * @returns {Promise<CloudPcConnection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/managedtenants-cloudpcconnection-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcConnectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcConnection | undefined>;
@@ -25,26 +27,27 @@ export interface CloudPcConnectionItemRequestBuilder extends BaseRequestBuilder<
      * Update the navigation property cloudPcConnections in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcConnection
+     * @returns {Promise<CloudPcConnection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CloudPcConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcConnection | undefined>;
     /**
      * Delete navigation property cloudPcConnections for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a cloudPcConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcConnectionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property cloudPcConnections in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CloudPcConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface CloudPcConnectionItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CloudPcConnectionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnection%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CloudPcConnectionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const CloudPcConnectionItemRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const CloudPcConnectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CloudPcConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CloudPcConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcConnectionFromDiscriminatorValue,
         queryParametersMapper: CloudPcConnectionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CloudPcConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcConnectionFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const CloudPcConnectionItemRequestBuilderRequestsMetadata: RequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CloudPcConnectionItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnection%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

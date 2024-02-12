@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getCustomizedSettingsGetResponse
+ * @returns {GetCustomizedSettingsGetResponse}
  */
 export function createGetCustomizedSettingsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCustomizedSettingsGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetCustomizedSettingsGetResponse(getCustomizedSettingsGetResponse: Partial<GetCustomizedSettingsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetCustomizedSettingsRequestBuilder extends BaseRequestBuilder<
     /**
      * Invoke function getCustomizedSettings
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetCustomizedSettingsGetResponse
+     * @returns {Promise<GetCustomizedSettingsGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<GetCustomizedSettingsGetResponse | undefined>;
     /**
      * Invoke function getCustomizedSettings
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeGetCustomizedSettingsGetResponse(writer: SerializationW
     writer.writeCollectionOfObjectValues<DeviceManagementIntentCustomizedSetting>("value", getCustomizedSettingsGetResponse.value, serializeDeviceManagementIntentCustomizedSetting);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetCustomizedSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/getCustomizedSettings(){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const GetCustomizedSettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const GetCustomizedSettingsRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const GetCustomizedSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetCustomizedSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetCustomizedSettingsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetCustomizedSettingsRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetCustomizedSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/getCustomizedSettings(){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

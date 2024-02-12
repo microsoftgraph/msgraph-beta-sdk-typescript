@@ -11,31 +11,32 @@ export interface UnarchiveRequestBuilder extends BaseRequestBuilder<UnarchiveReq
     /**
      * Invoke action unarchive
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action unarchive
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UnarchiveRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/unarchive";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UnarchiveRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: UnarchiveRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UnarchiveRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/unarchive";
 /* tslint:enable */
 /* eslint-enable */

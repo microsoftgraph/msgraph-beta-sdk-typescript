@@ -30,27 +30,28 @@ export interface ApproveAppsRequestBuilder extends BaseRequestBuilder<ApproveApp
      * Invoke action approveApps
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ApproveAppsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action approveApps
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ApproveAppsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a approveAppsPostRequestBody
+ * @returns {ApproveAppsPostRequestBody}
  */
 export function createApproveAppsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApproveAppsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoApproveAppsPostRequestBody(approveAppsPostRequestBody: Partial<ApproveAppsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -69,14 +70,18 @@ export function serializeApproveAppsPostRequestBody(writer: SerializationWriter,
     writer.writeAdditionalData(approveAppsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ApproveAppsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ApproveAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ApproveAppsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -84,9 +89,5 @@ export const ApproveAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ApproveAppsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps";
 /* tslint:enable */
 /* eslint-enable */

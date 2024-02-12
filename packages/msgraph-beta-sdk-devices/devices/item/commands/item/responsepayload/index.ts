@@ -12,13 +12,14 @@ export interface ResponsepayloadRequestBuilder extends BaseRequestBuilder<Respon
     /**
      * Get responsepayload from devices
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PayloadResponse
+     * @returns {Promise<PayloadResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters> | undefined) : Promise<PayloadResponse | undefined>;
     /**
      * Get responsepayload from devices
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ResponsepayloadRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ResponsepayloadRequestBuilderUriTemplate = "{+baseurl}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ResponsepayloadRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ResponsepayloadRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const ResponsepayloadRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ResponsepayloadRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPayloadResponseFromDiscriminatorValue,
         queryParametersMapper: ResponsepayloadRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ResponsepayloadRequestBuilderUriTemplate = "{+baseurl}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -11,50 +11,35 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
     /**
      * Revoke the specified group's access to submit print jobs to the associated printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      * @see {@link https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0|Find more info here}
      */
-     delete(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : Promise<void>;
+     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Revoke the specified group's access to submit print jobs to the associated printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : RequestInformation;
+     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Revoke the specified group's access to submit print jobs to the associated printerShare.
+ * Uri template for the request builder.
  */
-export interface RefRequestBuilderDeleteQueryParameters {
-    /**
-     * Delete Uri
-     */
-    id?: string;
-}
-/**
- * Mapper for query parameters from symbol name to serialization name represented as a constant.
- */
-const RefRequestBuilderDeleteQueryParametersMapper: Record<string, string> = {
-    "id": "%40id",
-};
+export const RefRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedGroups/{group%2Did}/$ref";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RefRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
-        queryParametersMapper: RefRequestBuilderDeleteQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedGroups/{group%2Did}/$ref{?%40id*}";
 /* tslint:enable */
 /* eslint-enable */

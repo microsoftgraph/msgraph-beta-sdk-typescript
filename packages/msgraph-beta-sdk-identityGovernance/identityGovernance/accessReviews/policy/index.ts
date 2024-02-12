@@ -12,12 +12,14 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
     /**
      * Delete navigation property policy for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of an accessReviewPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AccessReviewPolicy
+     * @returns {Promise<AccessReviewPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewPolicy | undefined>;
@@ -25,27 +27,28 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      * Update the properties of an accessReviewPolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AccessReviewPolicy
+     * @returns {Promise<AccessReviewPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: AccessReviewPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewPolicy | undefined>;
     /**
      * Delete navigation property policy for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an accessReviewPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of an accessReviewPolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AccessReviewPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface PolicyRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PolicyRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/accessReviews/policy{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const PolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const PolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAccessReviewPolicyFromDiscriminatorValue,
         queryParametersMapper: PolicyRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAccessReviewPolicyFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const PolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PolicyRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/accessReviews/policy{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

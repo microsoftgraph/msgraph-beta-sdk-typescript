@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a pauseConfigurationRefreshPostRequestBody
+ * @returns {PauseConfigurationRefreshPostRequestBody}
  */
 export function createPauseConfigurationRefreshPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPauseConfigurationRefreshPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoPauseConfigurationRefreshPostRequestBody(pauseConfigurationRefreshPostRequestBody: Partial<PauseConfigurationRefreshPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -44,13 +44,14 @@ export interface PauseConfigurationRefreshRequestBuilder extends BaseRequestBuil
      * Initiates a command to pause config refresh for the device.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: PauseConfigurationRefreshPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Initiates a command to pause config refresh for the device.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: PauseConfigurationRefreshPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,14 +64,18 @@ export function serializePauseConfigurationRefreshPostRequestBody(writer: Serial
     writer.writeAdditionalData(pauseConfigurationRefreshPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PauseConfigurationRefreshRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/pauseConfigurationRefresh";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const PauseConfigurationRefreshRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: PauseConfigurationRefreshRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -78,9 +83,5 @@ export const PauseConfigurationRefreshRequestBuilderRequestsMetadata: RequestsMe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PauseConfigurationRefreshRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/pauseConfigurationRefresh";
 /* tslint:enable */
 /* eslint-enable */

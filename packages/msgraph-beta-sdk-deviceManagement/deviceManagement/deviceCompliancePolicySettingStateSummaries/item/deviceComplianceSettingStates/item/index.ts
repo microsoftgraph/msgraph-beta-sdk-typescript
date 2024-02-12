@@ -12,38 +12,41 @@ export interface DeviceComplianceSettingStateItemRequestBuilder extends BaseRequ
     /**
      * Delete navigation property deviceComplianceSettingStates for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get deviceComplianceSettingStates from deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceComplianceSettingState
+     * @returns {Promise<DeviceComplianceSettingState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceComplianceSettingStateItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceComplianceSettingState | undefined>;
     /**
      * Update the navigation property deviceComplianceSettingStates in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceComplianceSettingState
+     * @returns {Promise<DeviceComplianceSettingState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceComplianceSettingState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceComplianceSettingState | undefined>;
     /**
      * Delete navigation property deviceComplianceSettingStates for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get deviceComplianceSettingStates from deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceComplianceSettingStateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceComplianceSettingStates in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceComplianceSettingState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceComplianceSettingStateItemRequestBuilderGetQueryParameter
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceComplianceSettingStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}/deviceComplianceSettingStates/{deviceComplianceSettingState%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceComplianceSettingStateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceComplianceSettingStateItemRequestBuilderGetQueryParametersMapper: Re
  */
 export const DeviceComplianceSettingStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceComplianceSettingStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceComplianceSettingStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceComplianceSettingStateFromDiscriminatorValue,
         queryParametersMapper: DeviceComplianceSettingStateItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceComplianceSettingStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceComplianceSettingStateFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceComplianceSettingStateItemRequestBuilderRequestsMetadata: Req
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceComplianceSettingStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}/deviceComplianceSettingStates/{deviceComplianceSettingState%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

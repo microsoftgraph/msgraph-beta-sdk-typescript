@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getPasswordSingleSignOnCredentialsPostResponse
+ * @returns {GetPasswordSingleSignOnCredentialsPostResponse}
  */
 export function createGetPasswordSingleSignOnCredentialsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPasswordSingleSignOnCredentialsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetPasswordSingleSignOnCredentialsPostResponse(getPasswordSingleSignOnCredentialsPostResponse: Partial<GetPasswordSingleSignOnCredentialsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -34,15 +34,17 @@ export interface GetPasswordSingleSignOnCredentialsPostResponse extends BaseColl
  */
 export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRequestBuilder<GetPasswordSingleSignOnCredentialsRequestBuilder> {
     /**
-     * Invoke action getPasswordSingleSignOnCredentials
+     * Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetPasswordSingleSignOnCredentialsPostResponse
+     * @returns {Promise<GetPasswordSingleSignOnCredentialsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetPasswordSingleSignOnCredentialsPostResponse | undefined>;
     /**
-     * Invoke action getPasswordSingleSignOnCredentials
+     * Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -55,22 +57,22 @@ export function serializeGetPasswordSingleSignOnCredentialsPostResponse(writer: 
     writer.writeCollectionOfObjectValues<PasswordSingleSignOnCredentialSet>("value", getPasswordSingleSignOnCredentialsPostResponse.value, serializePasswordSingleSignOnCredentialSet);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetPasswordSingleSignOnCredentialsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/getPasswordSingleSignOnCredentials";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetPasswordSingleSignOnCredentialsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetPasswordSingleSignOnCredentialsPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetPasswordSingleSignOnCredentialsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/getPasswordSingleSignOnCredentials";
 /* tslint:enable */
 /* eslint-enable */

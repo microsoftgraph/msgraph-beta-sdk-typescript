@@ -12,38 +12,41 @@ export interface ComanagementEligibleDeviceItemRequestBuilder extends BaseReques
     /**
      * Delete navigation property comanagementEligibleDevices for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The list of co-management eligible devices report
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ComanagementEligibleDevice
+     * @returns {Promise<ComanagementEligibleDevice>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ComanagementEligibleDeviceItemRequestBuilderGetQueryParameters> | undefined) : Promise<ComanagementEligibleDevice | undefined>;
     /**
      * Update the navigation property comanagementEligibleDevices in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ComanagementEligibleDevice
+     * @returns {Promise<ComanagementEligibleDevice>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ComanagementEligibleDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComanagementEligibleDevice | undefined>;
     /**
      * Delete navigation property comanagementEligibleDevices for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of co-management eligible devices report
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ComanagementEligibleDeviceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property comanagementEligibleDevices in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ComanagementEligibleDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ComanagementEligibleDeviceItemRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ComanagementEligibleDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagementEligibleDevices/{comanagementEligibleDevice%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ComanagementEligibleDeviceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ComanagementEligibleDeviceItemRequestBuilderGetQueryParametersMapper: Reco
  */
 export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ComanagementEligibleDeviceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ComanagementEligibleDeviceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createComanagementEligibleDeviceFromDiscriminatorValue,
         queryParametersMapper: ComanagementEligibleDeviceItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ComanagementEligibleDeviceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createComanagementEligibleDeviceFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ComanagementEligibleDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagementEligibleDevices/{comanagementEligibleDevice%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,12 +12,14 @@ export interface TenantStatusRequestBuilder extends BaseRequestBuilder<TenantSta
     /**
      * Delete navigation property tenantStatus for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the onboarding status of a specific tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TenantStatus
+     * @returns {Promise<TenantStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tenantstatus-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TenantStatusRequestBuilderGetQueryParameters> | undefined) : Promise<TenantStatus | undefined>;
@@ -25,26 +27,27 @@ export interface TenantStatusRequestBuilder extends BaseRequestBuilder<TenantSta
      * Update the navigation property tenantStatus in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TenantStatus
+     * @returns {Promise<TenantStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: TenantStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TenantStatus | undefined>;
     /**
      * Delete navigation property tenantStatus for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the onboarding status of a specific tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TenantStatusRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property tenantStatus in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: TenantStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface TenantStatusRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TenantStatusRequestBuilderUriTemplate = "{+baseurl}/networkAccess/tenantStatus{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TenantStatusRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const TenantStatusRequestBuilderGetQueryParametersMapper: Record<string, string>
  */
 export const TenantStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: TenantStatusRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: TenantStatusRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTenantStatusFromDiscriminatorValue,
         queryParametersMapper: TenantStatusRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: TenantStatusRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTenantStatusFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const TenantStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TenantStatusRequestBuilderUriTemplate = "{+baseurl}/networkAccess/tenantStatus{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a recordAllDecisionsPostRequestBody
+ * @returns {RecordAllDecisionsPostRequestBody}
  */
 export function createRecordAllDecisionsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRecordAllDecisionsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRecordAllDecisionsPostRequestBody(recordAllDecisionsPostRequestBody: Partial<RecordAllDecisionsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -59,6 +59,7 @@ export interface RecordAllDecisionsRequestBuilder extends BaseRequestBuilder<Rec
      * As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-recordalldecisions?view=graph-rest-1.0|Find more info here}
      */
      post(body: RecordAllDecisionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -66,7 +67,7 @@ export interface RecordAllDecisionsRequestBuilder extends BaseRequestBuilder<Rec
      * As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: RecordAllDecisionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -82,14 +83,18 @@ export function serializeRecordAllDecisionsPostRequestBody(writer: Serialization
     writer.writeAdditionalData(recordAllDecisionsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RecordAllDecisionsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/decisions/recordAllDecisions";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const RecordAllDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RecordAllDecisionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -97,9 +102,5 @@ export const RecordAllDecisionsRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RecordAllDecisionsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/decisions/recordAllDecisions";
 /* tslint:enable */
 /* eslint-enable */

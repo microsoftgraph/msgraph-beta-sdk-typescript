@@ -12,38 +12,41 @@ export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<
     /**
      * Delete navigation property informationProtection for groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get informationProtection from groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InformationProtection
+     * @returns {Promise<InformationProtection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<InformationProtectionRequestBuilderGetQueryParameters> | undefined) : Promise<InformationProtection | undefined>;
     /**
      * Update the navigation property informationProtection in groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InformationProtection
+     * @returns {Promise<InformationProtection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: InformationProtection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InformationProtection | undefined>;
     /**
      * Delete navigation property informationProtection for groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get informationProtection from groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InformationProtectionRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property informationProtection in groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: InformationProtection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface InformationProtectionRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const InformationProtectionRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/informationProtection{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const InformationProtectionRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const InformationProtectionRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const InformationProtectionRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: InformationProtectionRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: InformationProtectionRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInformationProtectionFromDiscriminatorValue,
         queryParametersMapper: InformationProtectionRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: InformationProtectionRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInformationProtectionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const InformationProtectionRequestBuilderRequestsMetadata: RequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const InformationProtectionRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/informationProtection{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

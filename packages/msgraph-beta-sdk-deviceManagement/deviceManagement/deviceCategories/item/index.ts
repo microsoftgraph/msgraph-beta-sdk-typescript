@@ -12,38 +12,41 @@ export interface DeviceCategoryItemRequestBuilder extends BaseRequestBuilder<Dev
     /**
      * Delete navigation property deviceCategories for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The list of device categories with the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceCategory
+     * @returns {Promise<DeviceCategory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceCategoryItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceCategory | undefined>;
     /**
      * Update the navigation property deviceCategories in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceCategory
+     * @returns {Promise<DeviceCategory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceCategory, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceCategory | undefined>;
     /**
      * Delete navigation property deviceCategories for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of device categories with the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceCategoryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceCategories in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceCategory, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceCategoryItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceCategories/{deviceCategory%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceCategoryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceCategoryItemRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const DeviceCategoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceCategoryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceCategoryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceCategoryFromDiscriminatorValue,
         queryParametersMapper: DeviceCategoryItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceCategoryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceCategoryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceCategoryItemRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceCategories/{deviceCategory%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

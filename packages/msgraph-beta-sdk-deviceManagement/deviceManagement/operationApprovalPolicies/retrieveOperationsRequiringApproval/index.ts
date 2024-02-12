@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a retrieveOperationsRequiringApprovalGetResponse
+ * @returns {RetrieveOperationsRequiringApprovalGetResponse}
  */
 export function createRetrieveOperationsRequiringApprovalGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveOperationsRequiringApprovalGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRetrieveOperationsRequiringApprovalGetResponse(retrieveOperationsRequiringApprovalGetResponse: Partial<RetrieveOperationsRequiringApprovalGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface RetrieveOperationsRequiringApprovalRequestBuilder extends BaseR
     /**
      * Invoke function retrieveOperationsRequiringApproval
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RetrieveOperationsRequiringApprovalGetResponse
+     * @returns {Promise<RetrieveOperationsRequiringApprovalGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters> | undefined) : Promise<RetrieveOperationsRequiringApprovalGetResponse | undefined>;
     /**
      * Invoke function retrieveOperationsRequiringApproval
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,6 +81,10 @@ export function serializeRetrieveOperationsRequiringApprovalGetResponse(writer: 
     writer.writeCollectionOfObjectValues<OperationApprovalPolicySet>("value", retrieveOperationsRequiringApprovalGetResponse.value, serializeOperationApprovalPolicySet);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RetrieveOperationsRequiringApprovalRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveOperationsRequiringApproval(){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -94,19 +99,15 @@ const RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParametersMapper:
  */
 export const RetrieveOperationsRequiringApprovalRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: RetrieveOperationsRequiringApprovalRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRetrieveOperationsRequiringApprovalGetResponseFromDiscriminatorValue,
         queryParametersMapper: RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RetrieveOperationsRequiringApprovalRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveOperationsRequiringApproval(){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

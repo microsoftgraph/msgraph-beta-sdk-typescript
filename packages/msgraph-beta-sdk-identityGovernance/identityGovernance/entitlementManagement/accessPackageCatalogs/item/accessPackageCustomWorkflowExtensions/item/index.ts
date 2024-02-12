@@ -12,22 +12,25 @@ export interface CustomCalloutExtensionItemRequestBuilder extends BaseRequestBui
     /**
      * Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+     * Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CustomCalloutExtension
+     * @returns {Promise<CustomCalloutExtension>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
-     * @see {@link https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomCalloutExtensionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomCalloutExtension | undefined>;
     /**
      * Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CustomCalloutExtension
+     * @returns {Promise<CustomCalloutExtension>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      * @see {@link https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0|Find more info here}
      */
@@ -35,14 +38,14 @@ export interface CustomCalloutExtensionItemRequestBuilder extends BaseRequestBui
     /**
      * Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+     * Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomCalloutExtensionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -50,13 +53,13 @@ export interface CustomCalloutExtensionItemRequestBuilder extends BaseRequestBui
      * Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
      toPatchRequestInformation(body: CustomCalloutExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+ * Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
  */
 export interface CustomCalloutExtensionItemRequestBuilderGetQueryParameters {
     /**
@@ -69,6 +72,10 @@ export interface CustomCalloutExtensionItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CustomCalloutExtensionItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageCustomWorkflowExtensions/{customCalloutExtension%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CustomCalloutExtensionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -80,28 +87,28 @@ const CustomCalloutExtensionItemRequestBuilderGetQueryParametersMapper: Record<s
  */
 export const CustomCalloutExtensionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CustomCalloutExtensionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CustomCalloutExtensionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCustomCalloutExtensionFromDiscriminatorValue,
         queryParametersMapper: CustomCalloutExtensionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CustomCalloutExtensionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCustomCalloutExtensionFromDiscriminatorValue,
@@ -110,9 +117,5 @@ export const CustomCalloutExtensionItemRequestBuilderRequestsMetadata: RequestsM
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CustomCalloutExtensionItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageCustomWorkflowExtensions/{customCalloutExtension%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

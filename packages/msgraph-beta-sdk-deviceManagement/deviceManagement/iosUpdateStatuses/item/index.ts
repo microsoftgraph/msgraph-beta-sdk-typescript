@@ -12,38 +12,41 @@ export interface IosUpdateDeviceStatusItemRequestBuilder extends BaseRequestBuil
     /**
      * Delete navigation property iosUpdateStatuses for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The IOS software update installation statuses for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IosUpdateDeviceStatus
+     * @returns {Promise<IosUpdateDeviceStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IosUpdateDeviceStatusItemRequestBuilderGetQueryParameters> | undefined) : Promise<IosUpdateDeviceStatus | undefined>;
     /**
      * Update the navigation property iosUpdateStatuses in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IosUpdateDeviceStatus
+     * @returns {Promise<IosUpdateDeviceStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: IosUpdateDeviceStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IosUpdateDeviceStatus | undefined>;
     /**
      * Delete navigation property iosUpdateStatuses for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The IOS software update installation statuses for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IosUpdateDeviceStatusItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property iosUpdateStatuses in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: IosUpdateDeviceStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface IosUpdateDeviceStatusItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const IosUpdateDeviceStatusItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/iosUpdateStatuses/{iosUpdateDeviceStatus%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const IosUpdateDeviceStatusItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const IosUpdateDeviceStatusItemRequestBuilderGetQueryParametersMapper: Record<st
  */
 export const IosUpdateDeviceStatusItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: IosUpdateDeviceStatusItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: IosUpdateDeviceStatusItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIosUpdateDeviceStatusFromDiscriminatorValue,
         queryParametersMapper: IosUpdateDeviceStatusItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: IosUpdateDeviceStatusItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIosUpdateDeviceStatusFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const IosUpdateDeviceStatusItemRequestBuilderRequestsMetadata: RequestsMe
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const IosUpdateDeviceStatusItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/iosUpdateStatuses/{iosUpdateDeviceStatus%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

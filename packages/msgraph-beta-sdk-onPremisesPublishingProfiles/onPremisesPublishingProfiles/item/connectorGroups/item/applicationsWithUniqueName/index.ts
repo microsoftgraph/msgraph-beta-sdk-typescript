@@ -12,13 +12,14 @@ export interface ApplicationsWithUniqueNameRequestBuilder extends BaseRequestBui
     /**
      * Get applications from onPremisesPublishingProfiles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Application
+     * @returns {Promise<Application>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ApplicationsWithUniqueNameRequestBuilderGetQueryParameters> | undefined) : Promise<Application | undefined>;
     /**
      * Get applications from onPremisesPublishingProfiles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApplicationsWithUniqueNameRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ApplicationsWithUniqueNameRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ApplicationsWithUniqueNameRequestBuilderUriTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(uniqueName='{uniqueName}'){?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ApplicationsWithUniqueNameRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ApplicationsWithUniqueNameRequestBuilderGetQueryParametersMapper: Record<s
  */
 export const ApplicationsWithUniqueNameRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ApplicationsWithUniqueNameRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createApplicationFromDiscriminatorValue,
         queryParametersMapper: ApplicationsWithUniqueNameRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ApplicationsWithUniqueNameRequestBuilderUriTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(uniqueName='{uniqueName}'){?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

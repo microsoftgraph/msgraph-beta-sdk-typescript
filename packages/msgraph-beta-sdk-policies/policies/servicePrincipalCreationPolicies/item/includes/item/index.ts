@@ -12,38 +12,41 @@ export interface ServicePrincipalCreationConditionSetItemRequestBuilder extends 
     /**
      * Delete navigation property includes for policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get includes from policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ServicePrincipalCreationConditionSet
+     * @returns {Promise<ServicePrincipalCreationConditionSet>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipalCreationConditionSet | undefined>;
     /**
      * Update the navigation property includes in policies
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ServicePrincipalCreationConditionSet
+     * @returns {Promise<ServicePrincipalCreationConditionSet>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ServicePrincipalCreationConditionSet, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServicePrincipalCreationConditionSet | undefined>;
     /**
      * Delete navigation property includes for policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get includes from policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property includes in policies
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ServicePrincipalCreationConditionSet, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryP
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate = "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}/includes/{servicePrincipalCreationConditionSet%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParametersMa
  */
 export const ServicePrincipalCreationConditionSetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createServicePrincipalCreationConditionSetFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createServicePrincipalCreationConditionSetFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ServicePrincipalCreationConditionSetItemRequestBuilderRequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate = "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}/includes/{servicePrincipalCreationConditionSet%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

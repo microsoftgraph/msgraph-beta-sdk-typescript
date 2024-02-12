@@ -12,38 +12,41 @@ export interface DeviceStatusSummaryRequestBuilder extends BaseRequestBuilder<De
     /**
      * Delete navigation property deviceStatusSummary for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * App configuration device status summary.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedDeviceMobileAppConfigurationDeviceSummary
+     * @returns {Promise<ManagedDeviceMobileAppConfigurationDeviceSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceStatusSummaryRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedDeviceMobileAppConfigurationDeviceSummary | undefined>;
     /**
      * Update the navigation property deviceStatusSummary in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedDeviceMobileAppConfigurationDeviceSummary
+     * @returns {Promise<ManagedDeviceMobileAppConfigurationDeviceSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ManagedDeviceMobileAppConfigurationDeviceSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedDeviceMobileAppConfigurationDeviceSummary | undefined>;
     /**
      * Delete navigation property deviceStatusSummary for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * App configuration device status summary.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceStatusSummaryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceStatusSummary in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ManagedDeviceMobileAppConfigurationDeviceSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceStatusSummaryRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceStatusSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/deviceStatusSummary{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceStatusSummaryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceStatusSummaryRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const DeviceStatusSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceStatusSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceStatusSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedDeviceMobileAppConfigurationDeviceSummaryFromDiscriminatorValue,
         queryParametersMapper: DeviceStatusSummaryRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceStatusSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedDeviceMobileAppConfigurationDeviceSummaryFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceStatusSummaryRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceStatusSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/deviceStatusSummary{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

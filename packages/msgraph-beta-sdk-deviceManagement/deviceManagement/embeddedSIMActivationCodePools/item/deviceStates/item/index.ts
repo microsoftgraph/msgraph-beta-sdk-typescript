@@ -12,38 +12,41 @@ export interface EmbeddedSIMDeviceStateItemRequestBuilder extends BaseRequestBui
     /**
      * Delete navigation property deviceStates for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Navigational property to a list of device states for this pool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EmbeddedSIMDeviceState
+     * @returns {Promise<EmbeddedSIMDeviceState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParameters> | undefined) : Promise<EmbeddedSIMDeviceState | undefined>;
     /**
      * Update the navigation property deviceStates in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EmbeddedSIMDeviceState
+     * @returns {Promise<EmbeddedSIMDeviceState>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: EmbeddedSIMDeviceState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EmbeddedSIMDeviceState | undefined>;
     /**
      * Delete navigation property deviceStates for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Navigational property to a list of device states for this pool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property deviceStates in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: EmbeddedSIMDeviceState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/deviceStates/{embeddedSIMDeviceState%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParametersMapper: Record<s
  */
 export const EmbeddedSIMDeviceStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEmbeddedSIMDeviceStateFromDiscriminatorValue,
         queryParametersMapper: EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEmbeddedSIMDeviceStateFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const EmbeddedSIMDeviceStateItemRequestBuilderRequestsMetadata: RequestsM
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/deviceStates/{embeddedSIMDeviceState%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

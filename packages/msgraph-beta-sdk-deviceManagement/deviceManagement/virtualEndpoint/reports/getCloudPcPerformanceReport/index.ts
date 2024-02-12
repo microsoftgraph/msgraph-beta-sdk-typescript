@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getCloudPcPerformanceReportPostRequestBody
+ * @returns {GetCloudPcPerformanceReportPostRequestBody}
  */
 export function createGetCloudPcPerformanceReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcPerformanceReportPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetCloudPcPerformanceReportPostRequestBody(getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -80,14 +80,15 @@ export interface GetCloudPcPerformanceReportRequestBuilder extends BaseRequestBu
      * Invoke action getCloudPcPerformanceReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: GetCloudPcPerformanceReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Invoke action getCloudPcPerformanceReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetCloudPcPerformanceReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -107,14 +108,18 @@ export function serializeGetCloudPcPerformanceReportPostRequestBody(writer: Seri
     writer.writeAdditionalData(getCloudPcPerformanceReportPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetCloudPcPerformanceReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getCloudPcPerformanceReport";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetCloudPcPerformanceReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetCloudPcPerformanceReportRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -123,9 +128,5 @@ export const GetCloudPcPerformanceReportRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetCloudPcPerformanceReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getCloudPcPerformanceReport";
 /* tslint:enable */
 /* eslint-enable */

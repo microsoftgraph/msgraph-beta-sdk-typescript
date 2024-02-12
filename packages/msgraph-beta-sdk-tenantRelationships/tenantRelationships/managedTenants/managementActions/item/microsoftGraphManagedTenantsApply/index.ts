@@ -42,14 +42,14 @@ export interface ApplyPostRequestBody extends AdditionalDataHolder, BackedModel,
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a applyPostRequestBody
+ * @returns {ApplyPostRequestBody}
  */
 export function createApplyPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplyPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -70,7 +70,8 @@ export interface MicrosoftGraphManagedTenantsApplyRequestBuilder extends BaseReq
      * Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multifactor authentication for admins management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementActionDeploymentStatus
+     * @returns {Promise<ManagementActionDeploymentStatus>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-1.0|Find more info here}
      */
      post(body: ApplyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagementActionDeploymentStatus | undefined>;
@@ -78,7 +79,7 @@ export interface MicrosoftGraphManagedTenantsApplyRequestBuilder extends BaseReq
      * Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multifactor authentication for admins management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ApplyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -96,14 +97,18 @@ export function serializeApplyPostRequestBody(writer: SerializationWriter, apply
     writer.writeAdditionalData(applyPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphManagedTenantsApplyRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions/{managementAction%2Did}/microsoft.graph.managedTenants.apply";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphManagedTenantsApplyRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphManagedTenantsApplyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementActionDeploymentStatusFromDiscriminatorValue,
@@ -112,9 +117,5 @@ export const MicrosoftGraphManagedTenantsApplyRequestBuilderRequestsMetadata: Re
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphManagedTenantsApplyRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions/{managementAction%2Did}/microsoft.graph.managedTenants.apply";
 /* tslint:enable */
 /* eslint-enable */

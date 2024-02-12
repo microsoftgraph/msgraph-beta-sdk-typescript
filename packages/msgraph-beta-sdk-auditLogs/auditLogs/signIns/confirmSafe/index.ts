@@ -26,6 +26,7 @@ export interface ConfirmSafeRequestBuilder extends BaseRequestBuilder<ConfirmSaf
      * Allow admins to mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-1.0|Find more info here}
      */
      post(body: ConfirmSafePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -33,21 +34,21 @@ export interface ConfirmSafeRequestBuilder extends BaseRequestBuilder<ConfirmSaf
      * Allow admins to mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ConfirmSafePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a confirmSafePostRequestBody
+ * @returns {ConfirmSafePostRequestBody}
  */
 export function createConfirmSafePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConfirmSafePostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoConfirmSafePostRequestBody(confirmSafePostRequestBody: Partial<ConfirmSafePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -64,14 +65,18 @@ export function serializeConfirmSafePostRequestBody(writer: SerializationWriter,
     writer.writeAdditionalData(confirmSafePostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ConfirmSafeRequestBuilderUriTemplate = "{+baseurl}/auditLogs/signIns/confirmSafe";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ConfirmSafeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ConfirmSafeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -79,9 +84,5 @@ export const ConfirmSafeRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ConfirmSafeRequestBuilderUriTemplate = "{+baseurl}/auditLogs/signIns/confirmSafe";
 /* tslint:enable */
 /* eslint-enable */

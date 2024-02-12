@@ -7,7 +7,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a validateXmlPostRequestBody
+ * @returns {ValidateXmlPostRequestBody}
  */
 export function createValidateXmlPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateXmlPostRequestBody;
@@ -15,14 +15,14 @@ export function createValidateXmlPostRequestBodyFromDiscriminatorValue(parseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a validateXmlPostResponse
+ * @returns {ValidateXmlPostResponse}
  */
 export function createValidateXmlPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateXmlPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoValidateXmlPostRequestBody(validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -32,7 +32,7 @@ export function deserializeIntoValidateXmlPostRequestBody(validateXmlPostRequest
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoValidateXmlPostResponse(validateXmlPostResponse: Partial<ValidateXmlPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -92,26 +92,31 @@ export interface ValidateXmlRequestBuilder extends BaseRequestBuilder<ValidateXm
      * Invoke action validateXml
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ValidateXmlPostResponse
+     * @returns {Promise<ValidateXmlPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ValidateXmlPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ValidateXmlPostResponse | undefined>;
     /**
      * Invoke action validateXml
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ValidateXmlPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const ValidateXmlRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/validateXml";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const ValidateXmlRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ValidateXmlRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createValidateXmlPostResponseFromDiscriminatorValue,
@@ -120,9 +125,5 @@ export const ValidateXmlRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ValidateXmlRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/validateXml";
 /* tslint:enable */
 /* eslint-enable */

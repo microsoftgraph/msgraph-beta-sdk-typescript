@@ -12,13 +12,14 @@ export interface ApplicationsWithAppIdRequestBuilder extends BaseRequestBuilder<
     /**
      * Get applications from onPremisesPublishingProfiles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Application
+     * @returns {Promise<Application>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ApplicationsWithAppIdRequestBuilderGetQueryParameters> | undefined) : Promise<Application | undefined>;
     /**
      * Get applications from onPremisesPublishingProfiles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApplicationsWithAppIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ApplicationsWithAppIdRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ApplicationsWithAppIdRequestBuilderUriTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ApplicationsWithAppIdRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ApplicationsWithAppIdRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const ApplicationsWithAppIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ApplicationsWithAppIdRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createApplicationFromDiscriminatorValue,
         queryParametersMapper: ApplicationsWithAppIdRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ApplicationsWithAppIdRequestBuilderUriTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -136,7 +136,7 @@ export interface BookmarkCollectionResponse extends BaseCollectionPaginationCoun
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a acronymCollectionResponse
+ * @returns {AcronymCollectionResponse}
  */
 export function createAcronymCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAcronymCollectionResponse;
@@ -144,7 +144,7 @@ export function createAcronymCollectionResponseFromDiscriminatorValue(parseNode:
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a acronym
+ * @returns {Acronym}
  */
 export function createAcronymFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAcronym;
@@ -152,7 +152,7 @@ export function createAcronymFromDiscriminatorValue(parseNode: ParseNode | undef
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a answerKeyword
+ * @returns {AnswerKeyword}
  */
 export function createAnswerKeywordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAnswerKeyword;
@@ -160,7 +160,7 @@ export function createAnswerKeywordFromDiscriminatorValue(parseNode: ParseNode |
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a answerVariant
+ * @returns {AnswerVariant}
  */
 export function createAnswerVariantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAnswerVariant;
@@ -168,7 +168,7 @@ export function createAnswerVariantFromDiscriminatorValue(parseNode: ParseNode |
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a bookmarkCollectionResponse
+ * @returns {BookmarkCollectionResponse}
  */
 export function createBookmarkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBookmarkCollectionResponse;
@@ -176,7 +176,7 @@ export function createBookmarkCollectionResponseFromDiscriminatorValue(parseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a bookmark
+ * @returns {Bookmark}
  */
 export function createBookmarkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBookmark;
@@ -184,7 +184,7 @@ export function createBookmarkFromDiscriminatorValue(parseNode: ParseNode | unde
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a identity
+ * @returns {Identity}
  */
 export function createIdentityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIdentity;
@@ -192,7 +192,7 @@ export function createIdentityFromDiscriminatorValue(parseNode: ParseNode | unde
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a identitySet
+ * @returns {IdentitySet}
  */
 export function createIdentitySetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIdentitySet;
@@ -200,7 +200,7 @@ export function createIdentitySetFromDiscriminatorValue(parseNode: ParseNode | u
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a qnaCollectionResponse
+ * @returns {QnaCollectionResponse}
  */
 export function createQnaCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQnaCollectionResponse;
@@ -208,7 +208,7 @@ export function createQnaCollectionResponseFromDiscriminatorValue(parseNode: Par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a qna
+ * @returns {Qna}
  */
 export function createQnaFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQna;
@@ -216,7 +216,7 @@ export function createQnaFromDiscriminatorValue(parseNode: ParseNode | undefined
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a searchAnswer
+ * @returns {SearchAnswer}
  */
 export function createSearchAnswerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
@@ -238,7 +238,7 @@ export function createSearchAnswerFromDiscriminatorValue(parseNode: ParseNode | 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAcronym(acronym: Partial<Acronym> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -249,7 +249,7 @@ export function deserializeIntoAcronym(acronym: Partial<Acronym> | undefined = {
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAcronymCollectionResponse(acronymCollectionResponse: Partial<AcronymCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -259,7 +259,7 @@ export function deserializeIntoAcronymCollectionResponse(acronymCollectionRespon
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAnswerKeyword(answerKeyword: Partial<AnswerKeyword> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -272,7 +272,7 @@ export function deserializeIntoAnswerKeyword(answerKeyword: Partial<AnswerKeywor
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoAnswerVariant(answerVariant: Partial<AnswerVariant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -287,7 +287,7 @@ export function deserializeIntoAnswerVariant(answerVariant: Partial<AnswerVarian
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoBookmark(bookmark: Partial<Bookmark> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -307,7 +307,7 @@ export function deserializeIntoBookmark(bookmark: Partial<Bookmark> | undefined 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoBookmarkCollectionResponse(bookmarkCollectionResponse: Partial<BookmarkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -317,7 +317,7 @@ export function deserializeIntoBookmarkCollectionResponse(bookmarkCollectionResp
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoIdentity(identity: Partial<Identity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -329,7 +329,7 @@ export function deserializeIntoIdentity(identity: Partial<Identity> | undefined 
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoIdentitySet(identitySet: Partial<IdentitySet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -342,7 +342,7 @@ export function deserializeIntoIdentitySet(identitySet: Partial<IdentitySet> | u
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoQna(qna: Partial<Qna> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -360,7 +360,7 @@ export function deserializeIntoQna(qna: Partial<Qna> | undefined = {}) : Record<
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoQnaCollectionResponse(qnaCollectionResponse: Partial<QnaCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -370,7 +370,7 @@ export function deserializeIntoQnaCollectionResponse(qnaCollectionResponse: Part
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoSearchAnswer(searchAnswer: Partial<SearchAnswer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -627,6 +627,6 @@ export const AnswerStateObject = {
     Draft: "draft",
     Excluded: "excluded",
     UnknownFutureValue: "unknownFutureValue",
-}  as const;
+} as const;
 /* tslint:enable */
 /* eslint-enable */

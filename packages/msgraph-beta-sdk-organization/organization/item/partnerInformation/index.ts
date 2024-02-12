@@ -12,38 +12,41 @@ export interface PartnerInformationRequestBuilder extends BaseRequestBuilder<Par
     /**
      * Delete navigation property partnerInformation for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get partnerInformation from organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PartnerInformation
+     * @returns {Promise<PartnerInformation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PartnerInformationRequestBuilderGetQueryParameters> | undefined) : Promise<PartnerInformation | undefined>;
     /**
      * Update the navigation property partnerInformation in organization
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PartnerInformation
+     * @returns {Promise<PartnerInformation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PartnerInformation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PartnerInformation | undefined>;
     /**
      * Delete navigation property partnerInformation for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get partnerInformation from organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PartnerInformationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property partnerInformation in organization
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PartnerInformation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PartnerInformationRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PartnerInformationRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/partnerInformation{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PartnerInformationRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PartnerInformationRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const PartnerInformationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PartnerInformationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PartnerInformationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPartnerInformationFromDiscriminatorValue,
         queryParametersMapper: PartnerInformationRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PartnerInformationRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPartnerInformationFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PartnerInformationRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PartnerInformationRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/partnerInformation{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

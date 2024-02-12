@@ -12,13 +12,15 @@ export interface DepartmentTemplateItemRequestBuilder extends BaseRequestBuilder
     /**
      * Delete a departmentTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-labelsroot-delete-departments?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a departmentTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DepartmentTemplate
+     * @returns {Promise<DepartmentTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DepartmentTemplateItemRequestBuilderGetQueryParameters> | undefined) : Promise<DepartmentTemplate | undefined>;
@@ -26,26 +28,27 @@ export interface DepartmentTemplateItemRequestBuilder extends BaseRequestBuilder
      * Update the navigation property departments in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DepartmentTemplate
+     * @returns {Promise<DepartmentTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DepartmentTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DepartmentTemplate | undefined>;
     /**
      * Delete a departmentTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a departmentTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DepartmentTemplateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property departments in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DepartmentTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface DepartmentTemplateItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DepartmentTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DepartmentTemplateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const DepartmentTemplateItemRequestBuilderGetQueryParametersMapper: Record<strin
  */
 export const DepartmentTemplateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DepartmentTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DepartmentTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDepartmentTemplateFromDiscriminatorValue,
         queryParametersMapper: DepartmentTemplateItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DepartmentTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDepartmentTemplateFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const DepartmentTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DepartmentTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getConnectionQualityReportsPostRequestBody
+ * @returns {GetConnectionQualityReportsPostRequestBody}
  */
 export function createGetConnectionQualityReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetConnectionQualityReportsPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetConnectionQualityReportsPostRequestBody(getConnectionQualityReportsPostRequestBody: Partial<GetConnectionQualityReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -74,7 +74,8 @@ export interface GetConnectionQualityReportsRequestBuilder extends BaseRequestBu
      * Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage. Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-1.0|Find more info here}
      */
      post(body: GetConnectionQualityReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
@@ -82,7 +83,7 @@ export interface GetConnectionQualityReportsRequestBuilder extends BaseRequestBu
      * Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage. Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetConnectionQualityReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -101,14 +102,18 @@ export function serializeGetConnectionQualityReportsPostRequestBody(writer: Seri
     writer.writeAdditionalData(getConnectionQualityReportsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetConnectionQualityReportsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getConnectionQualityReports";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetConnectionQualityReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetConnectionQualityReportsRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -117,9 +122,5 @@ export const GetConnectionQualityReportsRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetConnectionQualityReportsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getConnectionQualityReports";
 /* tslint:enable */
 /* eslint-enable */

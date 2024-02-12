@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a moveToContainerPostRequestBody
+ * @returns {MoveToContainerPostRequestBody}
  */
 export function createMoveToContainerPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMoveToContainerPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoMoveToContainerPostRequestBody(moveToContainerPostRequestBody: Partial<MoveToContainerPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -45,7 +45,8 @@ export interface MoveToContainerRequestBuilder extends BaseRequestBuilder<MoveTo
      * Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PlannerPlan
+     * @returns {Promise<PlannerPlan>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-1.0|Find more info here}
      */
      post(body: MoveToContainerPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerPlan | undefined>;
@@ -53,7 +54,7 @@ export interface MoveToContainerRequestBuilder extends BaseRequestBuilder<MoveTo
      * Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: MoveToContainerPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -66,14 +67,18 @@ export function serializeMoveToContainerPostRequestBody(writer: SerializationWri
     writer.writeAdditionalData(moveToContainerPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MoveToContainerRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/moveToContainer";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const MoveToContainerRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MoveToContainerRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPlannerPlanFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const MoveToContainerRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MoveToContainerRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/moveToContainer";
 /* tslint:enable */
 /* eslint-enable */

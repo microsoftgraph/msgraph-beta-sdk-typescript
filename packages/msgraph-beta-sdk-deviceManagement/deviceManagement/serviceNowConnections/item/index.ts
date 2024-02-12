@@ -12,38 +12,41 @@ export interface ServiceNowConnectionItemRequestBuilder extends BaseRequestBuild
     /**
      * Delete navigation property serviceNowConnections for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A list of ServiceNowConnections
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ServiceNowConnection
+     * @returns {Promise<ServiceNowConnection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ServiceNowConnectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ServiceNowConnection | undefined>;
     /**
      * Update the navigation property serviceNowConnections in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ServiceNowConnection
+     * @returns {Promise<ServiceNowConnection>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ServiceNowConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServiceNowConnection | undefined>;
     /**
      * Delete navigation property serviceNowConnections for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A list of ServiceNowConnections
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServiceNowConnectionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property serviceNowConnections in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ServiceNowConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface ServiceNowConnectionItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ServiceNowConnectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ServiceNowConnectionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const ServiceNowConnectionItemRequestBuilderGetQueryParametersMapper: Record<str
  */
 export const ServiceNowConnectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ServiceNowConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ServiceNowConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createServiceNowConnectionFromDiscriminatorValue,
         queryParametersMapper: ServiceNowConnectionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ServiceNowConnectionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createServiceNowConnectionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const ServiceNowConnectionItemRequestBuilderRequestsMetadata: RequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ServiceNowConnectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface AccountRequestBuilder extends BaseRequestBuilder<AccountRequest
     /**
      * Get account from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Account
+     * @returns {Promise<Account>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AccountRequestBuilderGetQueryParameters> | undefined) : Promise<Account | undefined>;
     /**
      * Get account from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccountRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface AccountRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AccountRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines/{journalLine%2Did}/account{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AccountRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const AccountRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const AccountRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: AccountRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAccountFromDiscriminatorValue,
         queryParametersMapper: AccountRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AccountRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines/{journalLine%2Did}/account{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

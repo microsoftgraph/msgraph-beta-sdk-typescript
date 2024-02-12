@@ -12,13 +12,14 @@ export interface ActivityRequestBuilder extends BaseRequestBuilder<ActivityReque
     /**
      * The flow that was run by this activity.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IndustryDataActivity
+     * @returns {Promise<IndustryDataActivity>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ActivityRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataActivity | undefined>;
     /**
      * The flow that was run by this activity.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActivityRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ActivityRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ActivityRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}/activities/{industryDataRunActivity%2Did}/activity{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ActivityRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ActivityRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const ActivityRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ActivityRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIndustryDataActivityFromDiscriminatorValue,
         queryParametersMapper: ActivityRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ActivityRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}/activities/{industryDataRunActivity%2Did}/activity{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

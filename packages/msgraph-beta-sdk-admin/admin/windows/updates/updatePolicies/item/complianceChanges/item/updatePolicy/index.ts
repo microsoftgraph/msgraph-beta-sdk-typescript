@@ -12,13 +12,14 @@ export interface UpdatePolicyRequestBuilder extends BaseRequestBuilder<UpdatePol
     /**
      * The policy this compliance change is a member of.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UpdatePolicy
+     * @returns {Promise<UpdatePolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UpdatePolicyRequestBuilderGetQueryParameters> | undefined) : Promise<UpdatePolicy | undefined>;
     /**
      * The policy this compliance change is a member of.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UpdatePolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface UpdatePolicyRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UpdatePolicyRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}/updatePolicy{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UpdatePolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const UpdatePolicyRequestBuilderGetQueryParametersMapper: Record<string, string>
  */
 export const UpdatePolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: UpdatePolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUpdatePolicyFromDiscriminatorValue,
         queryParametersMapper: UpdatePolicyRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UpdatePolicyRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}/updatePolicy{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

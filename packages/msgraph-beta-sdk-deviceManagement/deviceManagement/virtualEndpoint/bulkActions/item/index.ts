@@ -12,38 +12,41 @@ export interface CloudPcBulkActionItemRequestBuilder extends BaseRequestBuilder<
     /**
      * Delete navigation property bulkActions for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get bulkActions from deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcBulkAction
+     * @returns {Promise<CloudPcBulkAction>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcBulkActionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcBulkAction | undefined>;
     /**
      * Update the navigation property bulkActions in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcBulkAction
+     * @returns {Promise<CloudPcBulkAction>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CloudPcBulkAction, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcBulkAction | undefined>;
     /**
      * Delete navigation property bulkActions for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get bulkActions from deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcBulkActionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property bulkActions in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CloudPcBulkAction, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface CloudPcBulkActionItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CloudPcBulkActionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkAction%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CloudPcBulkActionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const CloudPcBulkActionItemRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const CloudPcBulkActionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CloudPcBulkActionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CloudPcBulkActionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcBulkActionFromDiscriminatorValue,
         queryParametersMapper: CloudPcBulkActionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CloudPcBulkActionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcBulkActionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const CloudPcBulkActionItemRequestBuilderRequestsMetadata: RequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CloudPcBulkActionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkAction%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

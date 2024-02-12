@@ -9,14 +9,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a deviceReportWithStartDateTimeWithEndDateTimeGetResponse
+ * @returns {DeviceReportWithStartDateTimeWithEndDateTimeGetResponse}
  */
 export function createDeviceReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceReportWithStartDateTimeWithEndDateTimeGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoDeviceReportWithStartDateTimeWithEndDateTimeGetResponse(deviceReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<DeviceReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -37,13 +37,14 @@ export interface MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEnd
     /**
      * Invoke function deviceReport
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceReportWithStartDateTimeWithEndDateTimeGetResponse
+     * @returns {Promise<DeviceReportWithStartDateTimeWithEndDateTimeGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceReportWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
     /**
      * Invoke function deviceReport
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -81,6 +82,10 @@ export function serializeDeviceReportWithStartDateTimeWithEndDateTimeGetResponse
     writer.writeCollectionOfObjectValues<Device>("value", deviceReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeDevice);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.deviceReport(startDateTime={startDateTime},endDateTime={endDateTime}){?%24count,%24filter,%24search,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -95,19 +100,15 @@ const MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeReq
  */
 export const MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderUriTemplate = "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.deviceReport(startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface DefaultIosEnrollmentProfileRequestBuilder extends BaseRequestBu
     /**
      * Default iOS Enrollment Profile
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DepIOSEnrollmentProfile
+     * @returns {Promise<DepIOSEnrollmentProfile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DefaultIosEnrollmentProfileRequestBuilderGetQueryParameters> | undefined) : Promise<DepIOSEnrollmentProfile | undefined>;
     /**
      * Default iOS Enrollment Profile
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DefaultIosEnrollmentProfileRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface DefaultIosEnrollmentProfileRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DefaultIosEnrollmentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/defaultIosEnrollmentProfile{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DefaultIosEnrollmentProfileRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const DefaultIosEnrollmentProfileRequestBuilderGetQueryParametersMapper: Record<
  */
 export const DefaultIosEnrollmentProfileRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: DefaultIosEnrollmentProfileRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDepIOSEnrollmentProfileFromDiscriminatorValue,
         queryParametersMapper: DefaultIosEnrollmentProfileRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DefaultIosEnrollmentProfileRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/defaultIosEnrollmentProfile{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

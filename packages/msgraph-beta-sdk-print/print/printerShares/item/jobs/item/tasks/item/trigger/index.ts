@@ -12,14 +12,15 @@ export interface TriggerRequestBuilder extends BaseRequestBuilder<TriggerRequest
     /**
      * The printTaskTrigger that triggered this task's execution. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrintTaskTrigger
+     * @returns {Promise<PrintTaskTrigger>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      get(requestConfiguration?: RequestConfiguration<TriggerRequestBuilderGetQueryParameters> | undefined) : Promise<PrintTaskTrigger | undefined>;
     /**
      * The printTaskTrigger that triggered this task's execution. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TriggerRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface TriggerRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TriggerRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}/trigger{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TriggerRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const TriggerRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const TriggerRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: TriggerRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrintTaskTriggerFromDiscriminatorValue,
         queryParametersMapper: TriggerRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TriggerRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}/trigger{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface SensitivityLabelItemRequestBuilder extends BaseRequestBuilder<S
     /**
      * Delete navigation property sublabels for dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get sublabels from dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SensitivityLabel
+     * @returns {Promise<SensitivityLabel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SensitivityLabelItemRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
      * Update the navigation property sublabels in dataClassification
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SensitivityLabel
+     * @returns {Promise<SensitivityLabel>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
      * Delete navigation property sublabels for dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get sublabels from dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SensitivityLabelItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property sublabels in dataClassification
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface SensitivityLabelItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SensitivityLabelItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/{sensitivityLabel%2Did1}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SensitivityLabelItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const SensitivityLabelItemRequestBuilderGetQueryParametersMapper: Record<string,
  */
 export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SensitivityLabelItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SensitivityLabelItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
         queryParametersMapper: SensitivityLabelItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SensitivityLabelItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SensitivityLabelItemRequestBuilderUriTemplate = "{+baseurl}/dataClassification/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/{sensitivityLabel%2Did1}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

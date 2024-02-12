@@ -12,39 +12,42 @@ export interface DayNoteItemRequestBuilder extends BaseRequestBuilder<DayNoteIte
     /**
      * Delete navigation property dayNotes for teamwork
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The day notes in the schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DayNote
+     * @returns {Promise<DayNote>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DayNoteItemRequestBuilderGetQueryParameters> | undefined) : Promise<DayNote | undefined>;
     /**
      * Update the properties of a day note.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DayNote
+     * @returns {Promise<DayNote>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/daynote-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: DayNote, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DayNote | undefined>;
     /**
      * Delete navigation property dayNotes for teamwork
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The day notes in the schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DayNoteItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a day note.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DayNote, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface DayNoteItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DayNoteItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/dayNotes/{dayNote%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DayNoteItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const DayNoteItemRequestBuilderGetQueryParametersMapper: Record<string, string> 
  */
 export const DayNoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DayNoteItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DayNoteItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDayNoteFromDiscriminatorValue,
         queryParametersMapper: DayNoteItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DayNoteItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDayNoteFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const DayNoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DayNoteItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/dayNotes/{dayNote%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

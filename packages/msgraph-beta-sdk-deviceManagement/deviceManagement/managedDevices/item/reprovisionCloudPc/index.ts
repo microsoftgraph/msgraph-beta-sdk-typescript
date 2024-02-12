@@ -11,6 +11,7 @@ export interface ReprovisionCloudPcRequestBuilder extends BaseRequestBuilder<Rep
     /**
      * Reprovision a Cloud PC with an Intune managed device ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0|Find more info here}
      */
@@ -18,27 +19,27 @@ export interface ReprovisionCloudPcRequestBuilder extends BaseRequestBuilder<Rep
     /**
      * Reprovision a Cloud PC with an Intune managed device ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ReprovisionCloudPcRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/reprovisionCloudPc";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ReprovisionCloudPcRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ReprovisionCloudPcRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ReprovisionCloudPcRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/reprovisionCloudPc";
 /* tslint:enable */
 /* eslint-enable */

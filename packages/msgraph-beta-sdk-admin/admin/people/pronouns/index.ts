@@ -12,12 +12,14 @@ export interface PronounsRequestBuilder extends BaseRequestBuilder<PronounsReque
     /**
      * Delete navigation property pronouns for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PronounsSettings
+     * @returns {Promise<PronounsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PronounsRequestBuilderGetQueryParameters> | undefined) : Promise<PronounsSettings | undefined>;
@@ -25,27 +27,28 @@ export interface PronounsRequestBuilder extends BaseRequestBuilder<PronounsReque
      * Update the properties of a pronounsSettings object in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PronounsSettings
+     * @returns {Promise<PronounsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: PronounsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PronounsSettings | undefined>;
     /**
      * Delete navigation property pronouns for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PronounsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a pronounsSettings object in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PronounsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface PronounsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PronounsRequestBuilderUriTemplate = "{+baseurl}/admin/people/pronouns{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PronounsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const PronounsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const PronounsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PronounsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PronounsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPronounsSettingsFromDiscriminatorValue,
         queryParametersMapper: PronounsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PronounsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPronounsSettingsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const PronounsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PronounsRequestBuilderUriTemplate = "{+baseurl}/admin/people/pronouns{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

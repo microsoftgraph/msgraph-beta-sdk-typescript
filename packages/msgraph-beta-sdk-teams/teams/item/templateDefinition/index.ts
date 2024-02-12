@@ -12,13 +12,14 @@ export interface TemplateDefinitionRequestBuilder extends BaseRequestBuilder<Tem
     /**
      * Generic representation of a team template definition for a team with a specific structure and configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TeamTemplateDefinition
+     * @returns {Promise<TeamTemplateDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<TemplateDefinitionRequestBuilderGetQueryParameters> | undefined) : Promise<TeamTemplateDefinition | undefined>;
     /**
      * Generic representation of a team template definition for a team with a specific structure and configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TemplateDefinitionRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface TemplateDefinitionRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TemplateDefinitionRequestBuilderUriTemplate = "{+baseurl}/teams/{team%2Did}/templateDefinition{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TemplateDefinitionRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const TemplateDefinitionRequestBuilderGetQueryParametersMapper: Record<string, s
  */
 export const TemplateDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: TemplateDefinitionRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTeamTemplateDefinitionFromDiscriminatorValue,
         queryParametersMapper: TemplateDefinitionRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TemplateDefinitionRequestBuilderUriTemplate = "{+baseurl}/teams/{team%2Did}/templateDefinition{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface ActiveUsersMetricItemRequestBuilder extends BaseRequestBuilder<
     /**
      * Insights for active users on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ActiveUsersMetric
+     * @returns {Promise<ActiveUsersMetric>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ActiveUsersMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<ActiveUsersMetric | undefined>;
     /**
      * Insights for active users on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActiveUsersMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ActiveUsersMetricItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ActiveUsersMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/activeUsers/{activeUsersMetric%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ActiveUsersMetricItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ActiveUsersMetricItemRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const ActiveUsersMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ActiveUsersMetricItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createActiveUsersMetricFromDiscriminatorValue,
         queryParametersMapper: ActiveUsersMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ActiveUsersMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/activeUsers/{activeUsersMetric%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

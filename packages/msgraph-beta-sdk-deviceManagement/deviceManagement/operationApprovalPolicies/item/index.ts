@@ -12,38 +12,41 @@ export interface OperationApprovalPolicyItemRequestBuilder extends BaseRequestBu
     /**
      * Delete navigation property operationApprovalPolicies for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The Operation Approval Policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of OperationApprovalPolicy
+     * @returns {Promise<OperationApprovalPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<OperationApprovalPolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<OperationApprovalPolicy | undefined>;
     /**
      * Update the navigation property operationApprovalPolicies in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of OperationApprovalPolicy
+     * @returns {Promise<OperationApprovalPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: OperationApprovalPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OperationApprovalPolicy | undefined>;
     /**
      * Delete navigation property operationApprovalPolicies for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The Operation Approval Policies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OperationApprovalPolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property operationApprovalPolicies in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: OperationApprovalPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface OperationApprovalPolicyItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const OperationApprovalPolicyItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalPolicies/{operationApprovalPolicy%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const OperationApprovalPolicyItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const OperationApprovalPolicyItemRequestBuilderGetQueryParametersMapper: Record<
  */
 export const OperationApprovalPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: OperationApprovalPolicyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: OperationApprovalPolicyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createOperationApprovalPolicyFromDiscriminatorValue,
         queryParametersMapper: OperationApprovalPolicyItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: OperationApprovalPolicyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createOperationApprovalPolicyFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const OperationApprovalPolicyItemRequestBuilderRequestsMetadata: Requests
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const OperationApprovalPolicyItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalPolicies/{operationApprovalPolicy%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

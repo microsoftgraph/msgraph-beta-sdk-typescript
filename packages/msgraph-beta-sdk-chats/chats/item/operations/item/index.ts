@@ -12,12 +12,14 @@ export interface TeamsAsyncOperationItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete navigation property operations for chats
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the specified Teams async operation that ran or is running on a specific resource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TeamsAsyncOperation
+     * @returns {Promise<TeamsAsyncOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/teamsasyncoperation-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TeamsAsyncOperationItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsAsyncOperation | undefined>;
@@ -25,26 +27,27 @@ export interface TeamsAsyncOperationItemRequestBuilder extends BaseRequestBuilde
      * Update the navigation property operations in chats
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TeamsAsyncOperation
+     * @returns {Promise<TeamsAsyncOperation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: TeamsAsyncOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsAsyncOperation | undefined>;
     /**
      * Delete navigation property operations for chats
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the specified Teams async operation that ran or is running on a specific resource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamsAsyncOperationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property operations in chats
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: TeamsAsyncOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface TeamsAsyncOperationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TeamsAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/chats/{chat%2Did}/operations/{teamsAsyncOperation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TeamsAsyncOperationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const TeamsAsyncOperationItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const TeamsAsyncOperationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: TeamsAsyncOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: TeamsAsyncOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTeamsAsyncOperationFromDiscriminatorValue,
         queryParametersMapper: TeamsAsyncOperationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: TeamsAsyncOperationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTeamsAsyncOperationFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const TeamsAsyncOperationItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TeamsAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/chats/{chat%2Did}/operations/{teamsAsyncOperation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface FilePlanReferenceTemplateRequestBuilder extends BaseRequestBuil
     /**
      * Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FilePlanReferenceTemplate
+     * @returns {Promise<FilePlanReferenceTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<FilePlanReferenceTemplateRequestBuilderGetQueryParameters> | undefined) : Promise<FilePlanReferenceTemplate | undefined>;
     /**
      * Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FilePlanReferenceTemplateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface FilePlanReferenceTemplateRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const FilePlanReferenceTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/filePlanReferenceTemplate{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const FilePlanReferenceTemplateRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const FilePlanReferenceTemplateRequestBuilderGetQueryParametersMapper: Record<st
  */
 export const FilePlanReferenceTemplateRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: FilePlanReferenceTemplateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFilePlanReferenceTemplateFromDiscriminatorValue,
         queryParametersMapper: FilePlanReferenceTemplateRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const FilePlanReferenceTemplateRequestBuilderUriTemplate = "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors/filePlanReferenceTemplate{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,14 +12,15 @@ export interface TagItemRequestBuilder extends BaseRequestBuilder<TagItemRequest
     /**
      * Returns the tags that are a child of a tag.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Tag
+     * @returns {Promise<Tag>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      get(requestConfiguration?: RequestConfiguration<TagItemRequestBuilderGetQueryParameters> | undefined) : Promise<Tag | undefined>;
     /**
      * Returns the tags that are a child of a tag.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TagItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface TagItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const TagItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags/{tag%2Did1}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const TagItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const TagItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const TagItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: TagItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTagFromDiscriminatorValue,
         queryParametersMapper: TagItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const TagItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags/{tag%2Did1}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

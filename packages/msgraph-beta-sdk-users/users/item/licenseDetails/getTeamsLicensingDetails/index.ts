@@ -12,33 +12,34 @@ export interface GetTeamsLicensingDetailsRequestBuilder extends BaseRequestBuild
     /**
      * Invoke function getTeamsLicensingDetails
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TeamsLicensingDetails
+     * @returns {Promise<TeamsLicensingDetails>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsLicensingDetails | undefined>;
     /**
      * Invoke function getTeamsLicensingDetails
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const GetTeamsLicensingDetailsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/licenseDetails/getTeamsLicensingDetails()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const GetTeamsLicensingDetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetTeamsLicensingDetailsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTeamsLicensingDetailsFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetTeamsLicensingDetailsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/licenseDetails/getTeamsLicensingDetails()";
 /* tslint:enable */
 /* eslint-enable */

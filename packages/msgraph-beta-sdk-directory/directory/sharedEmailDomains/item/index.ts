@@ -12,38 +12,41 @@ export interface SharedEmailDomainItemRequestBuilder extends BaseRequestBuilder<
     /**
      * Delete navigation property sharedEmailDomains for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get sharedEmailDomains from directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SharedEmailDomain
+     * @returns {Promise<SharedEmailDomain>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SharedEmailDomainItemRequestBuilderGetQueryParameters> | undefined) : Promise<SharedEmailDomain | undefined>;
     /**
      * Update the navigation property sharedEmailDomains in directory
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SharedEmailDomain
+     * @returns {Promise<SharedEmailDomain>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SharedEmailDomain, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharedEmailDomain | undefined>;
     /**
      * Delete navigation property sharedEmailDomains for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get sharedEmailDomains from directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SharedEmailDomainItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property sharedEmailDomains in directory
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SharedEmailDomain, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface SharedEmailDomainItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SharedEmailDomainItemRequestBuilderUriTemplate = "{+baseurl}/directory/sharedEmailDomains/{sharedEmailDomain%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SharedEmailDomainItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const SharedEmailDomainItemRequestBuilderGetQueryParametersMapper: Record<string
  */
 export const SharedEmailDomainItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SharedEmailDomainItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SharedEmailDomainItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSharedEmailDomainFromDiscriminatorValue,
         queryParametersMapper: SharedEmailDomainItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SharedEmailDomainItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSharedEmailDomainFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const SharedEmailDomainItemRequestBuilderRequestsMetadata: RequestsMetada
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SharedEmailDomainItemRequestBuilderUriTemplate = "{+baseurl}/directory/sharedEmailDomains/{sharedEmailDomain%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

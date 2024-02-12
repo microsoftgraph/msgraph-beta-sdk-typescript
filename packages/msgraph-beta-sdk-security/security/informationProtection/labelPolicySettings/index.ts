@@ -12,12 +12,14 @@ export interface LabelPolicySettingsRequestBuilder extends BaseRequestBuilder<La
     /**
      * Delete navigation property labelPolicySettings for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InformationProtectionPolicySetting
+     * @returns {Promise<InformationProtectionPolicySetting>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-informationprotectionpolicysetting-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<LabelPolicySettingsRequestBuilderGetQueryParameters> | undefined) : Promise<InformationProtectionPolicySetting | undefined>;
@@ -25,26 +27,27 @@ export interface LabelPolicySettingsRequestBuilder extends BaseRequestBuilder<La
      * Update the navigation property labelPolicySettings in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InformationProtectionPolicySetting
+     * @returns {Promise<InformationProtectionPolicySetting>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: InformationProtectionPolicySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InformationProtectionPolicySetting | undefined>;
     /**
      * Delete navigation property labelPolicySettings for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LabelPolicySettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property labelPolicySettings in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: InformationProtectionPolicySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface LabelPolicySettingsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const LabelPolicySettingsRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/labelPolicySettings{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const LabelPolicySettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const LabelPolicySettingsRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const LabelPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: LabelPolicySettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: LabelPolicySettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInformationProtectionPolicySettingFromDiscriminatorValue,
         queryParametersMapper: LabelPolicySettingsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: LabelPolicySettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInformationProtectionPolicySettingFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const LabelPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const LabelPolicySettingsRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/labelPolicySettings{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

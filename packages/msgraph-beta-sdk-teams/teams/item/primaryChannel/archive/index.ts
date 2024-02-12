@@ -26,27 +26,28 @@ export interface ArchiveRequestBuilder extends BaseRequestBuilder<ArchiveRequest
      * Invoke action archive
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ArchivePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action archive
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ArchivePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a archivePostRequestBody
+ * @returns {ArchivePostRequestBody}
  */
 export function createArchivePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoArchivePostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoArchivePostRequestBody(archivePostRequestBody: Partial<ArchivePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -63,14 +64,18 @@ export function serializeArchivePostRequestBody(writer: SerializationWriter, arc
     writer.writeAdditionalData(archivePostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ArchiveRequestBuilderUriTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/archive";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ArchiveRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ArchiveRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -78,9 +83,5 @@ export const ArchiveRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ArchiveRequestBuilderUriTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/archive";
 /* tslint:enable */
 /* eslint-enable */

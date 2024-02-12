@@ -12,38 +12,41 @@ export interface PolicySetItemItemRequestBuilder extends BaseRequestBuilder<Poli
     /**
      * Delete navigation property items for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Items of the PolicySet with maximum count 100.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PolicySetItem
+     * @returns {Promise<PolicySetItem>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PolicySetItemItemRequestBuilderGetQueryParameters> | undefined) : Promise<PolicySetItem | undefined>;
     /**
      * Update the navigation property items in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PolicySetItem
+     * @returns {Promise<PolicySetItem>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PolicySetItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PolicySetItem | undefined>;
     /**
      * Delete navigation property items for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Items of the PolicySet with maximum count 100.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicySetItemItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property items in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PolicySetItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface PolicySetItemItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PolicySetItemItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/items/{policySetItem%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PolicySetItemItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const PolicySetItemItemRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const PolicySetItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PolicySetItemItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PolicySetItemItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPolicySetItemFromDiscriminatorValue,
         queryParametersMapper: PolicySetItemItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PolicySetItemItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPolicySetItemFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const PolicySetItemItemRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PolicySetItemItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/items/{policySetItem%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

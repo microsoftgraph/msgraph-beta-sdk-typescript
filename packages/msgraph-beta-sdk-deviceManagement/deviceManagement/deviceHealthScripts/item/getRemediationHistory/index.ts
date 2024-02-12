@@ -12,33 +12,34 @@ export interface GetRemediationHistoryRequestBuilder extends BaseRequestBuilder<
     /**
      * Function to get the number of remediations by a device health scripts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceHealthScriptRemediationHistory
+     * @returns {Promise<DeviceHealthScriptRemediationHistory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceHealthScriptRemediationHistory | undefined>;
     /**
      * Function to get the number of remediations by a device health scripts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const GetRemediationHistoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/getRemediationHistory()";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const GetRemediationHistoryRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: GetRemediationHistoryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceHealthScriptRemediationHistoryFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetRemediationHistoryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/getRemediationHistory()";
 /* tslint:enable */
 /* eslint-enable */

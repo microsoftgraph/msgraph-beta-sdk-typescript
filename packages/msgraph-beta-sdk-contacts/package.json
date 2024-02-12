@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-contacts",
-  "version": "1.0.0-preview.11",
+  "version": "1.0.0-preview.12",
   "description": "Contacts fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",

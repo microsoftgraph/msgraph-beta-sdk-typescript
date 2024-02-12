@@ -12,13 +12,15 @@ export interface QnaItemRequestBuilder extends BaseRequestBuilder<QnaItemRequest
     /**
      * Delete a qna object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a qna object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Qna
+     * @returns {Promise<Qna>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<QnaItemRequestBuilderGetQueryParameters> | undefined) : Promise<Qna | undefined>;
@@ -26,27 +28,28 @@ export interface QnaItemRequestBuilder extends BaseRequestBuilder<QnaItemRequest
      * Update the properties of a qna object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of Qna
+     * @returns {Promise<Qna>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: Qna, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Qna | undefined>;
     /**
      * Delete a qna object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a qna object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<QnaItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a qna object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: Qna, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface QnaItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const QnaItemRequestBuilderUriTemplate = "{+baseurl}/search/qnas/{qna%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const QnaItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const QnaItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: QnaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: QnaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createQnaFromDiscriminatorValue,
         queryParametersMapper: QnaItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: QnaItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createQnaFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const QnaItemRequestBuilderUriTemplate = "{+baseurl}/search/qnas/{qna%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

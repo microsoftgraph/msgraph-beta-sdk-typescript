@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a uploadPkcs12PostRequestBody
+ * @returns {UploadPkcs12PostRequestBody}
  */
 export function createUploadPkcs12PostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadPkcs12PostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUploadPkcs12PostRequestBody(uploadPkcs12PostRequestBody: Partial<UploadPkcs12PostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -59,7 +59,8 @@ export interface UploadPkcs12RequestBuilder extends BaseRequestBuilder<UploadPkc
      * Upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TrustFrameworkKey
+     * @returns {Promise<TrustFrameworkKey>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadpkcs12?view=graph-rest-1.0|Find more info here}
      */
      post(body: UploadPkcs12PostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TrustFrameworkKey | undefined>;
@@ -67,19 +68,23 @@ export interface UploadPkcs12RequestBuilder extends BaseRequestBuilder<UploadPkc
      * Upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: UploadPkcs12PostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UploadPkcs12RequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}/uploadPkcs12";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UploadPkcs12RequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: UploadPkcs12RequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTrustFrameworkKeyFromDiscriminatorValue,
@@ -88,9 +93,5 @@ export const UploadPkcs12RequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UploadPkcs12RequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}/uploadPkcs12";
 /* tslint:enable */
 /* eslint-enable */

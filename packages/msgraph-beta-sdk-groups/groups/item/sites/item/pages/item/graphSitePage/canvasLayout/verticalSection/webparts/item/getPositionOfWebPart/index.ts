@@ -12,33 +12,34 @@ export interface GetPositionOfWebPartRequestBuilder extends BaseRequestBuilder<G
     /**
      * Invoke action getPositionOfWebPart
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WebPartPosition
+     * @returns {Promise<WebPartPosition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WebPartPosition | undefined>;
     /**
      * Invoke action getPositionOfWebPart
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const GetPositionOfWebPartRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/verticalSection/webparts/{webPart%2Did}/getPositionOfWebPart";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const GetPositionOfWebPartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetPositionOfWebPartRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWebPartPositionFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetPositionOfWebPartRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/verticalSection/webparts/{webPart%2Did}/getPositionOfWebPart";
 /* tslint:enable */
 /* eslint-enable */

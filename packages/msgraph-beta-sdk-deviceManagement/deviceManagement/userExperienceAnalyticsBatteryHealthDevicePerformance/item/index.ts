@@ -12,38 +12,41 @@ export interface UserExperienceAnalyticsBatteryHealthDevicePerformanceItemReques
     /**
      * Delete navigation property userExperienceAnalyticsBatteryHealthDevicePerformance for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * User Experience Analytics Battery Health Device Performance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsBatteryHealthDevicePerformance
+     * @returns {Promise<UserExperienceAnalyticsBatteryHealthDevicePerformance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserExperienceAnalyticsBatteryHealthDevicePerformance | undefined>;
     /**
      * Update the navigation property userExperienceAnalyticsBatteryHealthDevicePerformance in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsBatteryHealthDevicePerformance
+     * @returns {Promise<UserExperienceAnalyticsBatteryHealthDevicePerformance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UserExperienceAnalyticsBatteryHealthDevicePerformance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserExperienceAnalyticsBatteryHealthDevicePerformance | undefined>;
     /**
      * Delete navigation property userExperienceAnalyticsBatteryHealthDevicePerformance for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * User Experience Analytics Battery Health Device Performance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property userExperienceAnalyticsBatteryHealthDevicePerformance in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UserExperienceAnalyticsBatteryHealthDevicePerformance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UserExperienceAnalyticsBatteryHealthDevicePerformanceItemReques
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance/{userExperienceAnalyticsBatteryHealthDevicePerformance%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderGet
  */
 export const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBui
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance/{userExperienceAnalyticsBatteryHealthDevicePerformance%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -8,7 +8,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a createPasswordSingleSignOnCredentialsPostRequestBody
+ * @returns {CreatePasswordSingleSignOnCredentialsPostRequestBody}
  */
 export function createCreatePasswordSingleSignOnCredentialsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreatePasswordSingleSignOnCredentialsPostRequestBody;
@@ -39,7 +39,8 @@ export interface CreatePasswordSingleSignOnCredentialsRequestBuilder extends Bas
      * Create single sign-on credentials using a password for a user or group.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PasswordSingleSignOnCredentialSet
+     * @returns {Promise<PasswordSingleSignOnCredentialSet>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-1.0|Find more info here}
      */
      post(body: CreatePasswordSingleSignOnCredentialsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordSingleSignOnCredentialSet | undefined>;
@@ -47,13 +48,13 @@ export interface CreatePasswordSingleSignOnCredentialsRequestBuilder extends Bas
      * Create single sign-on credentials using a password for a user or group.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: CreatePasswordSingleSignOnCredentialsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoCreatePasswordSingleSignOnCredentialsPostRequestBody(createPasswordSingleSignOnCredentialsPostRequestBody: Partial<CreatePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -72,14 +73,18 @@ export function serializeCreatePasswordSingleSignOnCredentialsPostRequestBody(wr
     writer.writeAdditionalData(createPasswordSingleSignOnCredentialsPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CreatePasswordSingleSignOnCredentialsRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/createPasswordSingleSignOnCredentials";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const CreatePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: CreatePasswordSingleSignOnCredentialsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPasswordSingleSignOnCredentialSetFromDiscriminatorValue,
@@ -88,9 +93,5 @@ export const CreatePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CreatePasswordSingleSignOnCredentialsRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/createPasswordSingleSignOnCredentials";
 /* tslint:enable */
 /* eslint-enable */

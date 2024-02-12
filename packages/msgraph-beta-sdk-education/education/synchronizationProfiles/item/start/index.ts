@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a startPostResponse
+ * @returns {StartPostResponse}
  */
 export function createStartPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoStartPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoStartPostResponse(startPostResponse: Partial<StartPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -44,34 +44,35 @@ export interface StartRequestBuilder extends BaseRequestBuilder<StartRequestBuil
     /**
      * Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of StartPostResponse
+     * @returns {Promise<StartPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<StartPostResponse | undefined>;
     /**
      * Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const StartRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/start";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const StartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: StartRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createStartPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const StartRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/start";
 /* tslint:enable */
 /* eslint-enable */

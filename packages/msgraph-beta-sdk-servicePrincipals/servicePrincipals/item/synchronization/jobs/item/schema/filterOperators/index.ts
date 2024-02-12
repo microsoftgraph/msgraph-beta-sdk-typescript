@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a filterOperatorsGetResponse
+ * @returns {FilterOperatorsGetResponse}
  */
 export function createFilterOperatorsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilterOperatorsGetResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoFilterOperatorsGetResponse(filterOperatorsGetResponse: Partial<FilterOperatorsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface FilterOperatorsRequestBuilder extends BaseRequestBuilder<Filter
     /**
      * Invoke function filterOperators
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of FilterOperatorsGetResponse
+     * @returns {Promise<FilterOperatorsGetResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters> | undefined) : Promise<FilterOperatorsGetResponse | undefined>;
     /**
      * Invoke function filterOperators
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -54,6 +55,10 @@ export interface FilterOperatorsRequestBuilderGetQueryParameters {
      * Include count of items
      */
     count?: boolean;
+    /**
+     * Expand related entities
+     */
+    expand?: string[];
     /**
      * Filter items by property values
      */
@@ -88,10 +93,15 @@ export function serializeFilterOperatorsGetResponse(writer: SerializationWriter,
     writer.writeCollectionOfObjectValues<FilterOperatorSchema>("value", filterOperatorsGetResponse.value, serializeFilterOperatorSchema);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const FilterOperatorsRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema/filterOperators(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const FilterOperatorsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "count": "%24count",
+    "expand": "%24expand",
     "filter": "%24filter",
     "orderby": "%24orderby",
     "search": "%24search",
@@ -104,19 +114,15 @@ const FilterOperatorsRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const FilterOperatorsRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: FilterOperatorsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createFilterOperatorsGetResponseFromDiscriminatorValue,
         queryParametersMapper: FilterOperatorsRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const FilterOperatorsRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema/filterOperators(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,38 +12,41 @@ export interface UserExperienceAnalyticsResourcePerformanceItemRequestBuilder ex
     /**
      * Delete navigation property userExperienceAnalyticsResourcePerformance for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * User experience analytics resource performance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsResourcePerformance
+     * @returns {Promise<UserExperienceAnalyticsResourcePerformance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsResourcePerformanceItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserExperienceAnalyticsResourcePerformance | undefined>;
     /**
      * Update the navigation property userExperienceAnalyticsResourcePerformance in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsResourcePerformance
+     * @returns {Promise<UserExperienceAnalyticsResourcePerformance>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UserExperienceAnalyticsResourcePerformance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserExperienceAnalyticsResourcePerformance | undefined>;
     /**
      * Delete navigation property userExperienceAnalyticsResourcePerformance for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * User experience analytics resource performance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsResourcePerformanceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property userExperienceAnalyticsResourcePerformance in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UserExperienceAnalyticsResourcePerformance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UserExperienceAnalyticsResourcePerformanceItemRequestBuilderGet
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserExperienceAnalyticsResourcePerformanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/{userExperienceAnalyticsResourcePerformance%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserExperienceAnalyticsResourcePerformanceItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UserExperienceAnalyticsResourcePerformanceItemRequestBuilderGetQueryParame
  */
 export const UserExperienceAnalyticsResourcePerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UserExperienceAnalyticsResourcePerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UserExperienceAnalyticsResourcePerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsResourcePerformanceFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsResourcePerformanceItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UserExperienceAnalyticsResourcePerformanceItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsResourcePerformanceFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UserExperienceAnalyticsResourcePerformanceItemRequestBuilderRequest
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserExperienceAnalyticsResourcePerformanceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/{userExperienceAnalyticsResourcePerformance%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

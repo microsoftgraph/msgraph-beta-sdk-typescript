@@ -12,13 +12,14 @@ export interface UserSignUpMetricItemRequestBuilder extends BaseRequestBuilder<U
     /**
      * Total sign-ups on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserSignUpMetric
+     * @returns {Promise<UserSignUpMetric>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserSignUpMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserSignUpMetric | undefined>;
     /**
      * Total sign-ups on apps registered in the tenant for a specified period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserSignUpMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface UserSignUpMetricItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserSignUpMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/signUps/{userSignUpMetric%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserSignUpMetricItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const UserSignUpMetricItemRequestBuilderGetQueryParametersMapper: Record<string,
  */
 export const UserSignUpMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: UserSignUpMetricItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserSignUpMetricFromDiscriminatorValue,
         queryParametersMapper: UserSignUpMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserSignUpMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/daily/signUps/{userSignUpMetric%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

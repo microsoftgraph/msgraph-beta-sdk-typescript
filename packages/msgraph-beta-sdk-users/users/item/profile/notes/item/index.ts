@@ -12,13 +12,15 @@ export interface PersonAnnotationItemRequestBuilder extends BaseRequestBuilder<P
     /**
      * Deletes a personAnnotation object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a personAnnotation object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PersonAnnotation
+     * @returns {Promise<PersonAnnotation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PersonAnnotationItemRequestBuilderGetQueryParameters> | undefined) : Promise<PersonAnnotation | undefined>;
@@ -26,27 +28,28 @@ export interface PersonAnnotationItemRequestBuilder extends BaseRequestBuilder<P
      * Update the properties of a personAnnotation object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PersonAnnotation
+     * @returns {Promise<PersonAnnotation>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: PersonAnnotation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonAnnotation | undefined>;
     /**
      * Deletes a personAnnotation object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a personAnnotation object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PersonAnnotationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a personAnnotation object in a user's profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: PersonAnnotation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface PersonAnnotationItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const PersonAnnotationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/notes/{personAnnotation%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const PersonAnnotationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const PersonAnnotationItemRequestBuilderGetQueryParametersMapper: Record<string,
  */
 export const PersonAnnotationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: PersonAnnotationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: PersonAnnotationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPersonAnnotationFromDiscriminatorValue,
         queryParametersMapper: PersonAnnotationItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: PersonAnnotationItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPersonAnnotationFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const PersonAnnotationItemRequestBuilderRequestsMetadata: RequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const PersonAnnotationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/notes/{personAnnotation%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

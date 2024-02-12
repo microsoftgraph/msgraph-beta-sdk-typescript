@@ -12,12 +12,14 @@ export interface EmailThreatSubmissionPolicyItemRequestBuilder extends BaseReque
     /**
      * Delete navigation property emailThreatSubmissionPolicies for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of an emailThreatSubmissionPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EmailThreatSubmissionPolicy
+     * @returns {Promise<EmailThreatSubmissionPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<EmailThreatSubmissionPolicy | undefined>;
@@ -25,26 +27,27 @@ export interface EmailThreatSubmissionPolicyItemRequestBuilder extends BaseReque
      * Update the navigation property emailThreatSubmissionPolicies in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EmailThreatSubmissionPolicy
+     * @returns {Promise<EmailThreatSubmissionPolicy>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: EmailThreatSubmissionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EmailThreatSubmissionPolicy | undefined>;
     /**
      * Delete navigation property emailThreatSubmissionPolicies for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an emailThreatSubmissionPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property emailThreatSubmissionPolicies in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: EmailThreatSubmissionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate = "{+baseurl}/security/threatSubmission/emailThreatSubmissionPolicies/{emailThreatSubmissionPolicy%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParametersMapper: Rec
  */
 export const EmailThreatSubmissionPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEmailThreatSubmissionPolicyFromDiscriminatorValue,
         queryParametersMapper: EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEmailThreatSubmissionPolicyFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const EmailThreatSubmissionPolicyItemRequestBuilderRequestsMetadata: Requ
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate = "{+baseurl}/security/threatSubmission/emailThreatSubmissionPolicies/{emailThreatSubmissionPolicy%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

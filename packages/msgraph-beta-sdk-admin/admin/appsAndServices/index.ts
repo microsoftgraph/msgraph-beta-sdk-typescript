@@ -12,12 +12,14 @@ export interface AppsAndServicesRequestBuilder extends BaseRequestBuilder<AppsAn
     /**
      * Delete navigation property appsAndServices for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a adminAppsAndServices object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AdminAppsAndServices
+     * @returns {Promise<AdminAppsAndServices>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/adminappsandservices-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AppsAndServicesRequestBuilderGetQueryParameters> | undefined) : Promise<AdminAppsAndServices | undefined>;
@@ -25,27 +27,28 @@ export interface AppsAndServicesRequestBuilder extends BaseRequestBuilder<AppsAn
      * Update the properties of a adminAppsAndServices object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AdminAppsAndServices
+     * @returns {Promise<AdminAppsAndServices>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/adminappsandservices-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: AdminAppsAndServices, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AdminAppsAndServices | undefined>;
     /**
      * Delete navigation property appsAndServices for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a adminAppsAndServices object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppsAndServicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a adminAppsAndServices object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: AdminAppsAndServices, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface AppsAndServicesRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AppsAndServicesRequestBuilderUriTemplate = "{+baseurl}/admin/appsAndServices{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AppsAndServicesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const AppsAndServicesRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const AppsAndServicesRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: AppsAndServicesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: AppsAndServicesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAdminAppsAndServicesFromDiscriminatorValue,
         queryParametersMapper: AppsAndServicesRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: AppsAndServicesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAdminAppsAndServicesFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const AppsAndServicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AppsAndServicesRequestBuilderUriTemplate = "{+baseurl}/admin/appsAndServices{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

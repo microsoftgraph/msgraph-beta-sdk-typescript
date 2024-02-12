@@ -12,38 +12,41 @@ export interface DirectorySettingItemRequestBuilder extends BaseRequestBuilder<D
     /**
      * Delete navigation property settings for groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DirectorySetting
+     * @returns {Promise<DirectorySetting>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DirectorySettingItemRequestBuilderGetQueryParameters> | undefined) : Promise<DirectorySetting | undefined>;
     /**
      * Update the navigation property settings in groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DirectorySetting
+     * @returns {Promise<DirectorySetting>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DirectorySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DirectorySetting | undefined>;
     /**
      * Delete navigation property settings for groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DirectorySettingItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property settings in groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DirectorySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DirectorySettingItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DirectorySettingItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/settings/{directorySetting%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DirectorySettingItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DirectorySettingItemRequestBuilderGetQueryParametersMapper: Record<string,
  */
 export const DirectorySettingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DirectorySettingItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DirectorySettingItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDirectorySettingFromDiscriminatorValue,
         queryParametersMapper: DirectorySettingItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DirectorySettingItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDirectorySettingFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DirectorySettingItemRequestBuilderRequestsMetadata: RequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DirectorySettingItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/settings/{directorySetting%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

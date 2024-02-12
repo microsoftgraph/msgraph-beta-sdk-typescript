@@ -12,13 +12,15 @@ export interface BookingStaffMemberItemRequestBuilder extends BaseRequestBuilder
     /**
      * Delete a staff member in the specified bookingbusiness.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BookingStaffMember
+     * @returns {Promise<BookingStaffMember>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BookingStaffMemberItemRequestBuilderGetQueryParameters> | undefined) : Promise<BookingStaffMember | undefined>;
@@ -26,27 +28,28 @@ export interface BookingStaffMemberItemRequestBuilder extends BaseRequestBuilder
      * Update the properties of a bookingStaffMember in the specified bookingBusiness.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of BookingStaffMember
+     * @returns {Promise<BookingStaffMember>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: BookingStaffMember, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingStaffMember | undefined>;
     /**
      * Delete a staff member in the specified bookingbusiness.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BookingStaffMemberItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of a bookingStaffMember in the specified bookingBusiness.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: BookingStaffMember, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +67,10 @@ export interface BookingStaffMemberItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const BookingStaffMemberItemRequestBuilderUriTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/staffMembers/{bookingStaffMember%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const BookingStaffMemberItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -75,28 +82,28 @@ const BookingStaffMemberItemRequestBuilderGetQueryParametersMapper: Record<strin
  */
 export const BookingStaffMemberItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: BookingStaffMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: BookingStaffMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBookingStaffMemberFromDiscriminatorValue,
         queryParametersMapper: BookingStaffMemberItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: BookingStaffMemberItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createBookingStaffMemberFromDiscriminatorValue,
@@ -105,9 +112,5 @@ export const BookingStaffMemberItemRequestBuilderRequestsMetadata: RequestsMetad
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const BookingStaffMemberItemRequestBuilderUriTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/staffMembers/{bookingStaffMember%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

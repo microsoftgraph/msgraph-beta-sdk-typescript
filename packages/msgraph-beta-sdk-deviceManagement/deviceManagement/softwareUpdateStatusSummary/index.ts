@@ -12,13 +12,14 @@ export interface SoftwareUpdateStatusSummaryRequestBuilder extends BaseRequestBu
     /**
      * The software update status summary.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SoftwareUpdateStatusSummary
+     * @returns {Promise<SoftwareUpdateStatusSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters> | undefined) : Promise<SoftwareUpdateStatusSummary | undefined>;
     /**
      * The software update status summary.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SoftwareUpdateStatusSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/softwareUpdateStatusSummary{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SoftwareUpdateStatusSummaryRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const SoftwareUpdateStatusSummaryRequestBuilderGetQueryParametersMapper: Record<
  */
 export const SoftwareUpdateStatusSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: SoftwareUpdateStatusSummaryRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSoftwareUpdateStatusSummaryFromDiscriminatorValue,
         queryParametersMapper: SoftwareUpdateStatusSummaryRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SoftwareUpdateStatusSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/softwareUpdateStatusSummary{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,39 +12,42 @@ export interface EnrichedAuditLogsRequestBuilder extends BaseRequestBuilder<Enri
     /**
      * Delete navigation property enrichedAuditLogs for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get enrichedAuditLogs from networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EnrichedAuditLogs
+     * @returns {Promise<EnrichedAuditLogs>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<EnrichedAuditLogsRequestBuilderGetQueryParameters> | undefined) : Promise<EnrichedAuditLogs | undefined>;
     /**
      * Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of EnrichedAuditLogs
+     * @returns {Promise<EnrichedAuditLogs>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: EnrichedAuditLogs, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EnrichedAuditLogs | undefined>;
     /**
      * Delete navigation property enrichedAuditLogs for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get enrichedAuditLogs from networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EnrichedAuditLogsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: EnrichedAuditLogs, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface EnrichedAuditLogsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const EnrichedAuditLogsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/enrichedAuditLogs{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const EnrichedAuditLogsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const EnrichedAuditLogsRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: EnrichedAuditLogsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: EnrichedAuditLogsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEnrichedAuditLogsFromDiscriminatorValue,
         queryParametersMapper: EnrichedAuditLogsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: EnrichedAuditLogsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createEnrichedAuditLogsFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const EnrichedAuditLogsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/enrichedAuditLogs{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,12 +12,14 @@ export interface ApplicationSignInDetailedSummaryItemRequestBuilder extends Base
     /**
      * Delete navigation property applicationSignInDetailedSummary for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ApplicationSignInDetailedSummary
+     * @returns {Promise<ApplicationSignInDetailedSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/applicationsignindetailedsummary-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParameters> | undefined) : Promise<ApplicationSignInDetailedSummary | undefined>;
@@ -25,26 +27,27 @@ export interface ApplicationSignInDetailedSummaryItemRequestBuilder extends Base
      * Update the navigation property applicationSignInDetailedSummary in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ApplicationSignInDetailedSummary
+     * @returns {Promise<ApplicationSignInDetailedSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: ApplicationSignInDetailedSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApplicationSignInDetailedSummary | undefined>;
     /**
      * Delete navigation property applicationSignInDetailedSummary for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property applicationSignInDetailedSummary in reports
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ApplicationSignInDetailedSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParam
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate = "{+baseurl}/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParametersMapper
  */
 export const ApplicationSignInDetailedSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createApplicationSignInDetailedSummaryFromDiscriminatorValue,
         queryParametersMapper: ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createApplicationSignInDetailedSummaryFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const ApplicationSignInDetailedSummaryItemRequestBuilderRequestsMetadata:
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate = "{+baseurl}/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

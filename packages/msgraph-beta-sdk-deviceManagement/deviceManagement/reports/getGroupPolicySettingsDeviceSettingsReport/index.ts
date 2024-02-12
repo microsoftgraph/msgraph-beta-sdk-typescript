@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getGroupPolicySettingsDeviceSettingsReportPostRequestBody
+ * @returns {GetGroupPolicySettingsDeviceSettingsReportPostRequestBody}
  */
 export function createGetGroupPolicySettingsDeviceSettingsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetGroupPolicySettingsDeviceSettingsReportPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetGroupPolicySettingsDeviceSettingsReportPostRequestBody(getGroupPolicySettingsDeviceSettingsReportPostRequestBody: Partial<GetGroupPolicySettingsDeviceSettingsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -84,14 +84,15 @@ export interface GetGroupPolicySettingsDeviceSettingsReportRequestBuilder extend
      * Invoke action getGroupPolicySettingsDeviceSettingsReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: GetGroupPolicySettingsDeviceSettingsReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Invoke action getGroupPolicySettingsDeviceSettingsReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: GetGroupPolicySettingsDeviceSettingsReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -112,14 +113,18 @@ export function serializeGetGroupPolicySettingsDeviceSettingsReportPostRequestBo
     writer.writeAdditionalData(getGroupPolicySettingsDeviceSettingsReportPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetGroupPolicySettingsDeviceSettingsReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/getGroupPolicySettingsDeviceSettingsReport";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetGroupPolicySettingsDeviceSettingsReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetGroupPolicySettingsDeviceSettingsReportRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -128,9 +133,5 @@ export const GetGroupPolicySettingsDeviceSettingsReportRequestBuilderRequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetGroupPolicySettingsDeviceSettingsReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reports/getGroupPolicySettingsDeviceSettingsReport";
 /* tslint:enable */
 /* eslint-enable */

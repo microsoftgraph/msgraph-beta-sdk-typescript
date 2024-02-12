@@ -12,13 +12,15 @@ export interface SubCategoryTemplateItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete a subCategoryTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-categorytemplate-delete-subcategories?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a subCategoryTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SubCategoryTemplate
+     * @returns {Promise<SubCategoryTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/security-subcategorytemplate-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SubCategoryTemplateItemRequestBuilderGetQueryParameters> | undefined) : Promise<SubCategoryTemplate | undefined>;
@@ -26,26 +28,27 @@ export interface SubCategoryTemplateItemRequestBuilder extends BaseRequestBuilde
      * Update the navigation property subCategories in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SubCategoryTemplate
+     * @returns {Promise<SubCategoryTemplate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SubCategoryTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SubCategoryTemplate | undefined>;
     /**
      * Delete a subCategoryTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a subCategoryTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SubCategoryTemplateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property subCategories in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SubCategoryTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface SubCategoryTemplateItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SubCategoryTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SubCategoryTemplateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const SubCategoryTemplateItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const SubCategoryTemplateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SubCategoryTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SubCategoryTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSubCategoryTemplateFromDiscriminatorValue,
         queryParametersMapper: SubCategoryTemplateItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SubCategoryTemplateItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSubCategoryTemplateFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const SubCategoryTemplateItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SubCategoryTemplateItemRequestBuilderUriTemplate = "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

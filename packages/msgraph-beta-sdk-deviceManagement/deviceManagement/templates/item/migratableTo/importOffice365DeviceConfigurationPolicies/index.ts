@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a importOffice365DeviceConfigurationPoliciesPostResponse
+ * @returns {ImportOffice365DeviceConfigurationPoliciesPostResponse}
  */
 export function createImportOffice365DeviceConfigurationPoliciesPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportOffice365DeviceConfigurationPoliciesPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoImportOffice365DeviceConfigurationPoliciesPostResponse(importOffice365DeviceConfigurationPoliciesPostResponse: Partial<ImportOffice365DeviceConfigurationPoliciesPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface ImportOffice365DeviceConfigurationPoliciesRequestBuilder extend
     /**
      * Invoke action importOffice365DeviceConfigurationPolicies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ImportOffice365DeviceConfigurationPoliciesPostResponse
+     * @returns {Promise<ImportOffice365DeviceConfigurationPoliciesPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ImportOffice365DeviceConfigurationPoliciesPostResponse | undefined>;
     /**
      * Invoke action importOffice365DeviceConfigurationPolicies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -55,22 +56,22 @@ export function serializeImportOffice365DeviceConfigurationPoliciesPostResponse(
     writer.writeCollectionOfObjectValues<DeviceManagementIntent>("value", importOffice365DeviceConfigurationPoliciesPostResponse.value, serializeDeviceManagementIntent);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ImportOffice365DeviceConfigurationPoliciesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/importOffice365DeviceConfigurationPolicies";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ImportOffice365DeviceConfigurationPoliciesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ImportOffice365DeviceConfigurationPoliciesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createImportOffice365DeviceConfigurationPoliciesPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ImportOffice365DeviceConfigurationPoliciesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/importOffice365DeviceConfigurationPolicies";
 /* tslint:enable */
 /* eslint-enable */

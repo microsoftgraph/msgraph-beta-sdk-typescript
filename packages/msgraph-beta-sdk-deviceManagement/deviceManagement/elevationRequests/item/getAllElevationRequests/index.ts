@@ -8,14 +8,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a getAllElevationRequestsPostResponse
+ * @returns {GetAllElevationRequestsPostResponse}
  */
 export function createGetAllElevationRequestsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAllElevationRequestsPostResponse;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoGetAllElevationRequestsPostResponse(getAllElevationRequestsPostResponse: Partial<GetAllElevationRequestsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -36,13 +36,14 @@ export interface GetAllElevationRequestsRequestBuilder extends BaseRequestBuilde
     /**
      * Invoke action getAllElevationRequests
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GetAllElevationRequestsPostResponse
+     * @returns {Promise<GetAllElevationRequestsPostResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetAllElevationRequestsPostResponse | undefined>;
     /**
      * Invoke action getAllElevationRequests
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -55,22 +56,22 @@ export function serializeGetAllElevationRequestsPostResponse(writer: Serializati
     writer.writeCollectionOfObjectValues<PrivilegeManagementElevationRequest>("value", getAllElevationRequestsPostResponse.value, serializePrivilegeManagementElevationRequest);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const GetAllElevationRequestsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}/getAllElevationRequests";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const GetAllElevationRequestsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: GetAllElevationRequestsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGetAllElevationRequestsPostResponseFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const GetAllElevationRequestsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}/getAllElevationRequests";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,12 +12,14 @@ export interface CredentialUserRegistrationsSummaryItemRequestBuilder extends Ba
     /**
      * Delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of a credentialUserRegistrationsSummary object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CredentialUserRegistrationsSummary
+     * @returns {Promise<CredentialUserRegistrationsSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/managedtenants-credentialuserregistrationssummary-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParameters> | undefined) : Promise<CredentialUserRegistrationsSummary | undefined>;
@@ -25,26 +27,27 @@ export interface CredentialUserRegistrationsSummaryItemRequestBuilder extends Ba
      * Update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CredentialUserRegistrationsSummary
+     * @returns {Promise<CredentialUserRegistrationsSummary>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: CredentialUserRegistrationsSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CredentialUserRegistrationsSummary | undefined>;
     /**
      * Delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a credentialUserRegistrationsSummary object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CredentialUserRegistrationsSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryPar
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const CredentialUserRegistrationsSummaryItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/credentialUserRegistrationsSummaries/{credentialUserRegistrationsSummary%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParametersMapp
  */
 export const CredentialUserRegistrationsSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: CredentialUserRegistrationsSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: CredentialUserRegistrationsSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryFromDiscriminatorValue,
         queryParametersMapper: CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: CredentialUserRegistrationsSummaryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const CredentialUserRegistrationsSummaryItemRequestBuilderRequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const CredentialUserRegistrationsSummaryItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/credentialUserRegistrationsSummaries/{credentialUserRegistrationsSummary%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -7,14 +7,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a retrieveCrossRegionDisasterRecoveryReportPostRequestBody
+ * @returns {RetrieveCrossRegionDisasterRecoveryReportPostRequestBody}
  */
 export function createRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -74,14 +74,15 @@ export interface RetrieveCrossRegionDisasterRecoveryReportRequestBuilder extends
      * Invoke action retrieveCrossRegionDisasterRecoveryReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ArrayBuffer
+     * @returns {Promise<ArrayBuffer>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: RetrieveCrossRegionDisasterRecoveryReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Invoke action retrieveCrossRegionDisasterRecoveryReport
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: RetrieveCrossRegionDisasterRecoveryReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -100,14 +101,18 @@ export function serializeRetrieveCrossRegionDisasterRecoveryReportPostRequestBod
     writer.writeAdditionalData(retrieveCrossRegionDisasterRecoveryReportPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RetrieveCrossRegionDisasterRecoveryReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/retrieveCrossRegionDisasterRecoveryReport";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const RetrieveCrossRegionDisasterRecoveryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RetrieveCrossRegionDisasterRecoveryReportRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendPrimitiveAsync",
         responseBodyFactory:  "ArrayBuffer",
@@ -116,9 +121,5 @@ export const RetrieveCrossRegionDisasterRecoveryReportRequestBuilderRequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RetrieveCrossRegionDisasterRecoveryReportRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/retrieveCrossRegionDisasterRecoveryReport";
 /* tslint:enable */
 /* eslint-enable */

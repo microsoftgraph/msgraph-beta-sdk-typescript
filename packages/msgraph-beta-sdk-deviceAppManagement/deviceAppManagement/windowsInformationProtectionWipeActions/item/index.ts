@@ -12,38 +12,41 @@ export interface WindowsInformationProtectionWipeActionItemRequestBuilder extend
     /**
      * Delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Windows information protection wipe actions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsInformationProtectionWipeAction
+     * @returns {Promise<WindowsInformationProtectionWipeAction>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsInformationProtectionWipeAction | undefined>;
     /**
      * Update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of WindowsInformationProtectionWipeAction
+     * @returns {Promise<WindowsInformationProtectionWipeAction>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: WindowsInformationProtectionWipeAction, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsInformationProtectionWipeAction | undefined>;
     /**
      * Delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Windows information protection wipe actions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: WindowsInformationProtectionWipeAction, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface WindowsInformationProtectionWipeActionItemRequestBuilderGetQuer
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const WindowsInformationProtectionWipeActionItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsInformationProtectionWipeActions/{windowsInformationProtectionWipeAction%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParameters
  */
 export const WindowsInformationProtectionWipeActionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: WindowsInformationProtectionWipeActionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: WindowsInformationProtectionWipeActionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsInformationProtectionWipeActionFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: WindowsInformationProtectionWipeActionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createWindowsInformationProtectionWipeActionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const WindowsInformationProtectionWipeActionItemRequestBuilderRequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const WindowsInformationProtectionWipeActionItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsInformationProtectionWipeActions/{windowsInformationProtectionWipeAction%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

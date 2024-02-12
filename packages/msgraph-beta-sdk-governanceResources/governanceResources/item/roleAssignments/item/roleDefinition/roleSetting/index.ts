@@ -12,13 +12,14 @@ export interface RoleSettingRequestBuilder extends BaseRequestBuilder<RoleSettin
     /**
      * The associated role setting for the role definition.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of GovernanceRoleSetting
+     * @returns {Promise<GovernanceRoleSetting>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceRoleSetting | undefined>;
     /**
      * The associated role setting for the role definition.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface RoleSettingRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RoleSettingRequestBuilderUriTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/roleDefinition/roleSetting{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RoleSettingRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const RoleSettingRequestBuilderGetQueryParametersMapper: Record<string, string> 
  */
 export const RoleSettingRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: RoleSettingRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createGovernanceRoleSettingFromDiscriminatorValue,
         queryParametersMapper: RoleSettingRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RoleSettingRequestBuilderUriTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/roleDefinition/roleSetting{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

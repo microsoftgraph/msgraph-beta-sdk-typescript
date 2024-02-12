@@ -12,12 +12,14 @@ export interface ContactInsightsRequestBuilder extends BaseRequestBuilder<Contac
     /**
      * Delete navigation property contactInsights for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InsightsSettings
+     * @returns {Promise<InsightsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ContactInsightsRequestBuilderGetQueryParameters> | undefined) : Promise<InsightsSettings | undefined>;
@@ -25,27 +27,28 @@ export interface ContactInsightsRequestBuilder extends BaseRequestBuilder<Contac
      * Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of InsightsSettings
+     * @returns {Promise<InsightsSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: InsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InsightsSettings | undefined>;
     /**
      * Delete navigation property contactInsights for organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContactInsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: InsightsSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface ContactInsightsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ContactInsightsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/contactInsights{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ContactInsightsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const ContactInsightsRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const ContactInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ContactInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ContactInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInsightsSettingsFromDiscriminatorValue,
         queryParametersMapper: ContactInsightsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ContactInsightsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createInsightsSettingsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const ContactInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ContactInsightsRequestBuilderUriTemplate = "{+baseurl}/organization/{organization%2Did}/settings/contactInsights{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

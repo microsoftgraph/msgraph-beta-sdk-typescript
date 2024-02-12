@@ -35,7 +35,8 @@ export interface BulkRestoreCloudPcRequestBuilder extends BaseRequestBuilder<Bul
      * Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcBulkRemoteActionResult
+     * @returns {Promise<CloudPcBulkRemoteActionResult>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The bulkRestoreCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkRestoreCloudPc
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0|Find more info here}
      */
@@ -44,7 +45,7 @@ export interface BulkRestoreCloudPcRequestBuilder extends BaseRequestBuilder<Bul
      * Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The bulkRestoreCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkRestoreCloudPc
      */
      toPostRequestInformation(body: BulkRestoreCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
@@ -52,14 +53,14 @@ export interface BulkRestoreCloudPcRequestBuilder extends BaseRequestBuilder<Bul
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a bulkRestoreCloudPcPostRequestBody
+ * @returns {BulkRestoreCloudPcPostRequestBody}
  */
 export function createBulkRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkRestoreCloudPcPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoBulkRestoreCloudPcPostRequestBody(bulkRestoreCloudPcPostRequestBody: Partial<BulkRestoreCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -80,14 +81,18 @@ export function serializeBulkRestoreCloudPcPostRequestBody(writer: Serialization
     writer.writeAdditionalData(bulkRestoreCloudPcPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const BulkRestoreCloudPcRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/bulkRestoreCloudPc";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const BulkRestoreCloudPcRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: BulkRestoreCloudPcRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcBulkRemoteActionResultFromDiscriminatorValue,
@@ -96,9 +101,5 @@ export const BulkRestoreCloudPcRequestBuilderRequestsMetadata: RequestsMetadata 
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const BulkRestoreCloudPcRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/bulkRestoreCloudPc";
 /* tslint:enable */
 /* eslint-enable */

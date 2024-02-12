@@ -12,12 +12,14 @@ export interface OrganizationSettingsRequestBuilder extends BaseRequestBuilder<O
     /**
      * Delete navigation property organizationSettings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcOrganizationSettings
+     * @returns {Promise<CloudPcOrganizationSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<OrganizationSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcOrganizationSettings | undefined>;
@@ -25,27 +27,28 @@ export interface OrganizationSettingsRequestBuilder extends BaseRequestBuilder<O
      * Update the properties of the cloudPcOrganizationSettings object in a tenant.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of CloudPcOrganizationSettings
+     * @returns {Promise<CloudPcOrganizationSettings>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: CloudPcOrganizationSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcOrganizationSettings | undefined>;
     /**
      * Delete navigation property organizationSettings for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OrganizationSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the properties of the cloudPcOrganizationSettings object in a tenant.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CloudPcOrganizationSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface OrganizationSettingsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const OrganizationSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/organizationSettings{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const OrganizationSettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const OrganizationSettingsRequestBuilderGetQueryParametersMapper: Record<string,
  */
 export const OrganizationSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: OrganizationSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: OrganizationSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcOrganizationSettingsFromDiscriminatorValue,
         queryParametersMapper: OrganizationSettingsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: OrganizationSettingsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createCloudPcOrganizationSettingsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const OrganizationSettingsRequestBuilderRequestsMetadata: RequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const OrganizationSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/organizationSettings{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface ManagedTenantAlertItemRequestBuilder extends BaseRequestBuilder
     /**
      * Get alerts from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedTenantAlert
+     * @returns {Promise<ManagedTenantAlert>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedTenantAlertItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedTenantAlert | undefined>;
     /**
      * Get alerts from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedTenantAlertItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagedTenantAlertItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedTenantAlertItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule%2Did}/alerts/{managedTenantAlert%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedTenantAlertItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagedTenantAlertItemRequestBuilderGetQueryParametersMapper: Record<strin
  */
 export const ManagedTenantAlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagedTenantAlertItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedTenantAlertFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantAlertItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedTenantAlertItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule%2Did}/alerts/{managedTenantAlert%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

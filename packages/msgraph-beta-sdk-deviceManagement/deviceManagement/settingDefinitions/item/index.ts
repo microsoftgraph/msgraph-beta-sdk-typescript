@@ -12,38 +12,41 @@ export interface DeviceManagementSettingDefinitionItemRequestBuilder extends Bas
     /**
      * Delete navigation property settingDefinitions for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The device management intent setting definitions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementSettingDefinition
+     * @returns {Promise<DeviceManagementSettingDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceManagementSettingDefinitionItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementSettingDefinition | undefined>;
     /**
      * Update the navigation property settingDefinitions in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of DeviceManagementSettingDefinition
+     * @returns {Promise<DeviceManagementSettingDefinition>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: DeviceManagementSettingDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementSettingDefinition | undefined>;
     /**
      * Delete navigation property settingDefinitions for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The device management intent setting definitions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceManagementSettingDefinitionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property settingDefinitions in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: DeviceManagementSettingDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface DeviceManagementSettingDefinitionItemRequestBuilderGetQueryPara
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const DeviceManagementSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/settingDefinitions/{deviceManagementSettingDefinition%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const DeviceManagementSettingDefinitionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const DeviceManagementSettingDefinitionItemRequestBuilderGetQueryParametersMappe
  */
 export const DeviceManagementSettingDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: DeviceManagementSettingDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: DeviceManagementSettingDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementSettingDefinitionFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementSettingDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: DeviceManagementSettingDefinitionItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createDeviceManagementSettingDefinitionFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const DeviceManagementSettingDefinitionItemRequestBuilderRequestsMetadata
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const DeviceManagementSettingDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/settingDefinitions/{deviceManagementSettingDefinition%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

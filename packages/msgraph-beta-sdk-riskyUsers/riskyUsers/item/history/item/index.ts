@@ -12,12 +12,14 @@ export interface RiskyUserHistoryItemItemRequestBuilder extends BaseRequestBuild
     /**
      * Delete navigation property history for riskyUsers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get a riskyUserHistoryItem object of a riskyUser.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RiskyUserHistoryItem
+     * @returns {Promise<RiskyUserHistoryItem>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/riskyuserhistoryitem-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RiskyUserHistoryItemItemRequestBuilderGetQueryParameters> | undefined) : Promise<RiskyUserHistoryItem | undefined>;
@@ -25,26 +27,27 @@ export interface RiskyUserHistoryItemItemRequestBuilder extends BaseRequestBuild
      * Update the navigation property history in riskyUsers
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RiskyUserHistoryItem
+     * @returns {Promise<RiskyUserHistoryItem>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: RiskyUserHistoryItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RiskyUserHistoryItem | undefined>;
     /**
      * Delete navigation property history for riskyUsers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get a riskyUserHistoryItem object of a riskyUser.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RiskyUserHistoryItemItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property history in riskyUsers
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: RiskyUserHistoryItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,6 +65,10 @@ export interface RiskyUserHistoryItemItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RiskyUserHistoryItemItemRequestBuilderUriTemplate = "{+baseurl}/riskyUsers/{riskyUser%2Did}/history/{riskyUserHistoryItem%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RiskyUserHistoryItemItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -73,28 +80,28 @@ const RiskyUserHistoryItemItemRequestBuilderGetQueryParametersMapper: Record<str
  */
 export const RiskyUserHistoryItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RiskyUserHistoryItemItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: RiskyUserHistoryItemItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRiskyUserHistoryItemFromDiscriminatorValue,
         queryParametersMapper: RiskyUserHistoryItemItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: RiskyUserHistoryItemItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRiskyUserHistoryItemFromDiscriminatorValue,
@@ -103,9 +110,5 @@ export const RiskyUserHistoryItemItemRequestBuilderRequestsMetadata: RequestsMet
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RiskyUserHistoryItemItemRequestBuilderUriTemplate = "{+baseurl}/riskyUsers/{riskyUser%2Did}/history/{riskyUserHistoryItem%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

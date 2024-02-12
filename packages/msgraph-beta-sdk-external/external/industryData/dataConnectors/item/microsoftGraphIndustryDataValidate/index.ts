@@ -11,32 +11,33 @@ export interface MicrosoftGraphIndustryDataValidateRequestBuilder extends BaseRe
     /**
      * Perform validations applicable for the specific instance of the data connector.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Perform validations applicable for the specific instance of the data connector.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const MicrosoftGraphIndustryDataValidateRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/microsoft.graph.industryData.validate";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const MicrosoftGraphIndustryDataValidateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: MicrosoftGraphIndustryDataValidateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const MicrosoftGraphIndustryDataValidateRequestBuilderUriTemplate = "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/microsoft.graph.industryData.validate";
 /* tslint:enable */
 /* eslint-enable */

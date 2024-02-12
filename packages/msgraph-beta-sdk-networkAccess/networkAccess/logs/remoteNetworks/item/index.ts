@@ -12,38 +12,41 @@ export interface RemoteNetworkHealthEventItemRequestBuilder extends BaseRequestB
     /**
      * Delete navigation property remoteNetworks for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A collection of remote network health events.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RemoteNetworkHealthEvent
+     * @returns {Promise<RemoteNetworkHealthEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RemoteNetworkHealthEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<RemoteNetworkHealthEvent | undefined>;
     /**
      * Update the navigation property remoteNetworks in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of RemoteNetworkHealthEvent
+     * @returns {Promise<RemoteNetworkHealthEvent>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: RemoteNetworkHealthEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RemoteNetworkHealthEvent | undefined>;
     /**
      * Delete navigation property remoteNetworks for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of remote network health events.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RemoteNetworkHealthEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property remoteNetworks in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: RemoteNetworkHealthEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface RemoteNetworkHealthEventItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RemoteNetworkHealthEventItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RemoteNetworkHealthEventItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const RemoteNetworkHealthEventItemRequestBuilderGetQueryParametersMapper: Record
  */
 export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: RemoteNetworkHealthEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: RemoteNetworkHealthEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRemoteNetworkHealthEventFromDiscriminatorValue,
         queryParametersMapper: RemoteNetworkHealthEventItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: RemoteNetworkHealthEventItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createRemoteNetworkHealthEventFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RemoteNetworkHealthEventItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface ManagedEBookCategoryItemRequestBuilder extends BaseRequestBuild
     /**
      * The list of categories for this eBook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagedEBookCategory
+     * @returns {Promise<ManagedEBookCategory>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedEBookCategory | undefined>;
     /**
      * The list of categories for this eBook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface ManagedEBookCategoryItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ManagedEBookCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ManagedEBookCategoryItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const ManagedEBookCategoryItemRequestBuilderGetQueryParametersMapper: Record<str
  */
 export const ManagedEBookCategoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ManagedEBookCategoryItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagedEBookCategoryFromDiscriminatorValue,
         queryParametersMapper: ManagedEBookCategoryItemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ManagedEBookCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

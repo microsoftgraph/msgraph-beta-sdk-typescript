@@ -39,28 +39,29 @@ export interface ClassifyExactMatchesRequestBuilder extends BaseRequestBuilder<C
      * Invoke action classifyExactMatches
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ExactMatchClassificationResult
+     * @returns {Promise<ExactMatchClassificationResult>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ClassifyExactMatchesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExactMatchClassificationResult | undefined>;
     /**
      * Invoke action classifyExactMatches
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: ClassifyExactMatchesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a classifyExactMatchesPostRequestBody
+ * @returns {ClassifyExactMatchesPostRequestBody}
  */
 export function createClassifyExactMatchesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoClassifyExactMatchesPostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoClassifyExactMatchesPostRequestBody(classifyExactMatchesPostRequestBody: Partial<ClassifyExactMatchesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -83,14 +84,18 @@ export function serializeClassifyExactMatchesPostRequestBody(writer: Serializati
     writer.writeAdditionalData(classifyExactMatchesPostRequestBody.additionalData);
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ClassifyExactMatchesRequestBuilderUriTemplate = "{+baseurl}/dataClassification/classifyExactMatches";
+/**
  * Metadata for all the requests in the request builder.
  */
 export const ClassifyExactMatchesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: ClassifyExactMatchesRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createExactMatchClassificationResultFromDiscriminatorValue,
@@ -99,9 +104,5 @@ export const ClassifyExactMatchesRequestBuilderRequestsMetadata: RequestsMetadat
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ClassifyExactMatchesRequestBuilderUriTemplate = "{+baseurl}/dataClassification/classifyExactMatches";
 /* tslint:enable */
 /* eslint-enable */

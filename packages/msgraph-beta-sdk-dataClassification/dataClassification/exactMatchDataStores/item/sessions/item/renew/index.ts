@@ -12,33 +12,34 @@ export interface RenewRequestBuilder extends BaseRequestBuilder<RenewRequestBuil
     /**
      * Invoke action renew
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ExactMatchSession
+     * @returns {Promise<ExactMatchSession>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExactMatchSession | undefined>;
     /**
      * Invoke action renew
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const RenewRequestBuilderUriTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/renew";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const RenewRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: RenewRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createExactMatchSessionFromDiscriminatorValue,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RenewRequestBuilderUriTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/renew";
 /* tslint:enable */
 /* eslint-enable */

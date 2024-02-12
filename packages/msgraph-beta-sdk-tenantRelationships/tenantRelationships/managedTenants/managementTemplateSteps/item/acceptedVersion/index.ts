@@ -12,13 +12,14 @@ export interface AcceptedVersionRequestBuilder extends BaseRequestBuilder<Accept
     /**
      * Get acceptedVersion from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ManagementTemplateStepVersion
+     * @returns {Promise<ManagementTemplateStepVersion>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AcceptedVersionRequestBuilderGetQueryParameters> | undefined) : Promise<ManagementTemplateStepVersion | undefined>;
     /**
      * Get acceptedVersion from tenantRelationships
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AcceptedVersionRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface AcceptedVersionRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AcceptedVersionRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/acceptedVersion{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AcceptedVersionRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const AcceptedVersionRequestBuilderGetQueryParametersMapper: Record<string, stri
  */
 export const AcceptedVersionRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: AcceptedVersionRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createManagementTemplateStepVersionFromDiscriminatorValue,
         queryParametersMapper: AcceptedVersionRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AcceptedVersionRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/acceptedVersion{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

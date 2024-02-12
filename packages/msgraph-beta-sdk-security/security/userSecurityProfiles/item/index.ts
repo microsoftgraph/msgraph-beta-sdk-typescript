@@ -12,38 +12,41 @@ export interface UserSecurityProfileItemRequestBuilder extends BaseRequestBuilde
     /**
      * Delete navigation property userSecurityProfiles for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Get userSecurityProfiles from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserSecurityProfile
+     * @returns {Promise<UserSecurityProfile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserSecurityProfileItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserSecurityProfile | undefined>;
     /**
      * Update the navigation property userSecurityProfiles in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserSecurityProfile
+     * @returns {Promise<UserSecurityProfile>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UserSecurityProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserSecurityProfile | undefined>;
     /**
      * Delete navigation property userSecurityProfiles for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get userSecurityProfiles from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserSecurityProfileItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property userSecurityProfiles in security
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UserSecurityProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UserSecurityProfileItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UserSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<stri
  */
 export const UserSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UserSecurityProfileItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UserSecurityProfileItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserSecurityProfileFromDiscriminatorValue,
         queryParametersMapper: UserSecurityProfileItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UserSecurityProfileItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserSecurityProfileFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UserSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserSecurityProfileItemRequestBuilderUriTemplate = "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

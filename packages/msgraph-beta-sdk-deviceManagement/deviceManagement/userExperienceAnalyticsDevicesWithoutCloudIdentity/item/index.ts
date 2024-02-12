@@ -12,38 +12,41 @@ export interface UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBui
     /**
      * Delete navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * User experience analytics devices without cloud identity.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsDeviceWithoutCloudIdentity
+     * @returns {Promise<UserExperienceAnalyticsDeviceWithoutCloudIdentity>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserExperienceAnalyticsDeviceWithoutCloudIdentity | undefined>;
     /**
      * Update the navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of UserExperienceAnalyticsDeviceWithoutCloudIdentity
+     * @returns {Promise<UserExperienceAnalyticsDeviceWithoutCloudIdentity>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: UserExperienceAnalyticsDeviceWithoutCloudIdentity, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserExperienceAnalyticsDeviceWithoutCloudIdentity | undefined>;
     /**
      * Delete navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * User experience analytics devices without cloud identity.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property userExperienceAnalyticsDevicesWithoutCloudIdentity in deviceManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: UserExperienceAnalyticsDeviceWithoutCloudIdentity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBui
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicesWithoutCloudIdentity/{userExperienceAnalyticsDeviceWithoutCloudIdentity%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetQuer
  */
 export const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicesWithoutCloudIdentity/{userExperienceAnalyticsDeviceWithoutCloudIdentity%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

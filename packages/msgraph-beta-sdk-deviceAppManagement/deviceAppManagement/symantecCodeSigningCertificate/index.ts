@@ -12,38 +12,41 @@ export interface SymantecCodeSigningCertificateRequestBuilder extends BaseReques
     /**
      * Delete navigation property symantecCodeSigningCertificate for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The WinPhone Symantec Code Signing Certificate.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SymantecCodeSigningCertificate
+     * @returns {Promise<SymantecCodeSigningCertificate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SymantecCodeSigningCertificateRequestBuilderGetQueryParameters> | undefined) : Promise<SymantecCodeSigningCertificate | undefined>;
     /**
      * Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of SymantecCodeSigningCertificate
+     * @returns {Promise<SymantecCodeSigningCertificate>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: SymantecCodeSigningCertificate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SymantecCodeSigningCertificate | undefined>;
     /**
      * Delete navigation property symantecCodeSigningCertificate for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The WinPhone Symantec Code Signing Certificate.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SymantecCodeSigningCertificateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: SymantecCodeSigningCertificate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface SymantecCodeSigningCertificateRequestBuilderGetQueryParameters 
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const SymantecCodeSigningCertificateRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/symantecCodeSigningCertificate{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const SymantecCodeSigningCertificateRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const SymantecCodeSigningCertificateRequestBuilderGetQueryParametersMapper: Reco
  */
 export const SymantecCodeSigningCertificateRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: SymantecCodeSigningCertificateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: SymantecCodeSigningCertificateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSymantecCodeSigningCertificateFromDiscriminatorValue,
         queryParametersMapper: SymantecCodeSigningCertificateRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: SymantecCodeSigningCertificateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createSymantecCodeSigningCertificateFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const SymantecCodeSigningCertificateRequestBuilderRequestsMetadata: Reque
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const SymantecCodeSigningCertificateRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/symantecCodeSigningCertificate{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

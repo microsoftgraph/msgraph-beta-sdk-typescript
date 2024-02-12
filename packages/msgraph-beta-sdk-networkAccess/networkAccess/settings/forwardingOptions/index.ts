@@ -12,12 +12,14 @@ export interface ForwardingOptionsRequestBuilder extends BaseRequestBuilder<Forw
     /**
      * Delete navigation property forwardingOptions for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Retrieve the forwarding options for the tenant, with a specific focus on the 'skipDnsLookupState' flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ForwardingOptions
+     * @returns {Promise<ForwardingOptions>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ForwardingOptionsRequestBuilderGetQueryParameters> | undefined) : Promise<ForwardingOptions | undefined>;
@@ -25,27 +27,28 @@ export interface ForwardingOptionsRequestBuilder extends BaseRequestBuilder<Forw
      * the forwarding options for the tenant, with a specific focus on the skipDnsLookupState flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of ForwardingOptions
+     * @returns {Promise<ForwardingOptions>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ForwardingOptions, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ForwardingOptions | undefined>;
     /**
      * Delete navigation property forwardingOptions for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the forwarding options for the tenant, with a specific focus on the 'skipDnsLookupState' flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ForwardingOptionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * the forwarding options for the tenant, with a specific focus on the skipDnsLookupState flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: ForwardingOptions, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -63,6 +66,10 @@ export interface ForwardingOptionsRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ForwardingOptionsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/forwardingOptions{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ForwardingOptionsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -74,28 +81,28 @@ const ForwardingOptionsRequestBuilderGetQueryParametersMapper: Record<string, st
  */
 export const ForwardingOptionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: ForwardingOptionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: ForwardingOptionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createForwardingOptionsFromDiscriminatorValue,
         queryParametersMapper: ForwardingOptionsRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: ForwardingOptionsRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createForwardingOptionsFromDiscriminatorValue,
@@ -104,9 +111,5 @@ export const ForwardingOptionsRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ForwardingOptionsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/settings/forwardingOptions{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

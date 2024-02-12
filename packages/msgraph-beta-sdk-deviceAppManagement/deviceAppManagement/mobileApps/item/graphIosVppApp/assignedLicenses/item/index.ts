@@ -12,38 +12,41 @@ export interface IosVppAppAssignedLicenseItemRequestBuilder extends BaseRequestB
     /**
      * Delete navigation property assignedLicenses for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * The licenses assigned to this app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IosVppAppAssignedLicense
+     * @returns {Promise<IosVppAppAssignedLicense>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IosVppAppAssignedLicenseItemRequestBuilderGetQueryParameters> | undefined) : Promise<IosVppAppAssignedLicense | undefined>;
     /**
      * Update the navigation property assignedLicenses in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of IosVppAppAssignedLicense
+     * @returns {Promise<IosVppAppAssignedLicense>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: IosVppAppAssignedLicense, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IosVppAppAssignedLicense | undefined>;
     /**
      * Delete navigation property assignedLicenses for deviceAppManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The licenses assigned to this app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IosVppAppAssignedLicenseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property assignedLicenses in deviceAppManagement
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: IosVppAppAssignedLicense, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,6 +64,10 @@ export interface IosVppAppAssignedLicenseItemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const IosVppAppAssignedLicenseItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses/{iosVppAppAssignedLicense%2Did}{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const IosVppAppAssignedLicenseItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -72,28 +79,28 @@ const IosVppAppAssignedLicenseItemRequestBuilderGetQueryParametersMapper: Record
  */
 export const IosVppAppAssignedLicenseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
+        uriTemplate: IosVppAppAssignedLicenseItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
     },
     get: {
+        uriTemplate: IosVppAppAssignedLicenseItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIosVppAppAssignedLicenseFromDiscriminatorValue,
         queryParametersMapper: IosVppAppAssignedLicenseItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
+        uriTemplate: IosVppAppAssignedLicenseItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createIosVppAppAssignedLicenseFromDiscriminatorValue,
@@ -102,9 +109,5 @@ export const IosVppAppAssignedLicenseItemRequestBuilderRequestsMetadata: Request
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const IosVppAppAssignedLicenseItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses/{iosVppAppAssignedLicense%2Did}{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

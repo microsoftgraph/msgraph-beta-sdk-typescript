@@ -8,14 +8,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns a uploadCertificatePostRequestBody
+ * @returns {UploadCertificatePostRequestBody}
  */
 export function createUploadCertificatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadCertificatePostRequestBody;
 }
 /**
  * The deserialization information for the current model
- * @returns a Record<string, (node: ParseNode) => void>
+ * @returns {Record<string, (node: ParseNode) => void>}
  */
 export function deserializeIntoUploadCertificatePostRequestBody(uploadCertificatePostRequestBody: Partial<UploadCertificatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
@@ -53,7 +53,8 @@ export interface UploadCertificateRequestBuilder extends BaseRequestBuilder<Uplo
      * Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of TrustFrameworkKey
+     * @returns {Promise<TrustFrameworkKey>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadcertificate?view=graph-rest-1.0|Find more info here}
      */
      post(body: UploadCertificatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TrustFrameworkKey | undefined>;
@@ -61,19 +62,23 @@ export interface UploadCertificateRequestBuilder extends BaseRequestBuilder<Uplo
      * Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toPostRequestInformation(body: UploadCertificatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
+/**
+ * Uri template for the request builder.
+ */
+export const UploadCertificateRequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}/uploadCertificate";
 /**
  * Metadata for all the requests in the request builder.
  */
 export const UploadCertificateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
+        uriTemplate: UploadCertificateRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createTrustFrameworkKeyFromDiscriminatorValue,
@@ -82,9 +87,5 @@ export const UploadCertificateRequestBuilderRequestsMetadata: RequestsMetadata =
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const UploadCertificateRequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}/uploadCertificate";
 /* tslint:enable */
 /* eslint-enable */

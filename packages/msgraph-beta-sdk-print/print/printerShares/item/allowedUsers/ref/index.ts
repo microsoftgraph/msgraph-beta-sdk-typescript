@@ -10,9 +10,18 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder> {
     /**
+     * Revoke the specified user's access to submit print jobs to the associated printerShare.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     * @see {@link https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0|Find more info here}
+     */
+     delete(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : Promise<void>;
+    /**
      * Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of StringCollectionResponse
+     * @returns {Promise<StringCollectionResponse>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      * @see {@link https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0|Find more info here}
      */
@@ -21,14 +30,22 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      * Grant the specified user access to submit print jobs to the associated printerShare.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      * @see {@link https://learn.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0|Find more info here}
      */
      post(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
+     * Revoke the specified user's access to submit print jobs to the associated printerShare.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @returns {RequestInformation}
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     */
+     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : RequestInformation;
+    /**
      * Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -36,10 +53,19 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      * Grant the specified user access to submit print jobs to the associated printerShare.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toPostRequestInformation(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
+}
+/**
+ * Revoke the specified user's access to submit print jobs to the associated printerShare.
+ */
+export interface RefRequestBuilderDeleteQueryParameters {
+    /**
+     * The delete Uri
+     */
+    id?: string;
 }
 /**
  * Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
@@ -71,6 +97,16 @@ export interface RefRequestBuilderGetQueryParameters {
     top?: number;
 }
 /**
+ * Uri template for the request builder.
+ */
+export const RefRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedUsers/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}";
+/**
+ * Mapper for query parameters from symbol name to serialization name represented as a constant.
+ */
+const RefRequestBuilderDeleteQueryParametersMapper: Record<string, string> = {
+    "id": "%40id",
+};
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const RefRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -85,21 +121,30 @@ const RefRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the requests in the request builder.
  */
 export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
-    get: {
+    delete: {
+        uriTemplate: RefRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+        },
+        adapterMethodName: "sendNoResponseContentAsync",
+        queryParametersMapper: RefRequestBuilderDeleteQueryParametersMapper,
+    },
+    get: {
+        uriTemplate: RefRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
+        errorMappings: {
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createStringCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RefRequestBuilderGetQueryParametersMapper,
     },
     post: {
+        uriTemplate: RefRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContentAsync",
         requestBodyContentType: "application/json",
@@ -107,9 +152,5 @@ export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedUsers/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
 /* tslint:enable */
 /* eslint-enable */

@@ -12,13 +12,14 @@ export interface AuthorizationSystemRequestBuilder extends BaseRequestBuilder<Au
     /**
      * Represents an authorization system onboarded to Permissions Management.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of AuthorizationSystem
+     * @returns {Promise<AuthorizationSystem>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters> | undefined) : Promise<AuthorizationSystem | undefined>;
     /**
      * Represents an authorization system onboarded to Permissions Management.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -36,6 +37,10 @@ export interface AuthorizationSystemRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const AuthorizationSystemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/aws/permissionsCreepIndexDistributions/{permissionsCreepIndexDistribution%2Did}/authorizationSystem{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const AuthorizationSystemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -47,19 +52,15 @@ const AuthorizationSystemRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const AuthorizationSystemRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: AuthorizationSystemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createAuthorizationSystemFromDiscriminatorValue,
         queryParametersMapper: AuthorizationSystemRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const AuthorizationSystemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsAnalytics/aws/permissionsCreepIndexDistributions/{permissionsCreepIndexDistribution%2Did}/authorizationSystem{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */

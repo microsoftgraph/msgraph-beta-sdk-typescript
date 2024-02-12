@@ -12,14 +12,15 @@ export interface ShareRequestBuilder extends BaseRequestBuilder<ShareRequestBuil
     /**
      * Get share from print
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a Promise of PrinterShare
+     * @returns {Promise<PrinterShare>}
+     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      get(requestConfiguration?: RequestConfiguration<ShareRequestBuilderGetQueryParameters> | undefined) : Promise<PrinterShare | undefined>;
     /**
      * Get share from print
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns a RequestInformation
+     * @returns {RequestInformation}
      * @deprecated The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ShareRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
@@ -38,6 +39,10 @@ export interface ShareRequestBuilderGetQueryParameters {
     select?: string[];
 }
 /**
+ * Uri template for the request builder.
+ */
+export const ShareRequestBuilderUriTemplate = "{+baseurl}/print/printers/{printer%2Did}/share{?%24expand,%24select}";
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ShareRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -49,19 +54,15 @@ const ShareRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  */
 export const ShareRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
+        uriTemplate: ShareRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
-            _4XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-            _5XX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
+            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendAsync",
         responseBodyFactory:  createPrinterShareFromDiscriminatorValue,
         queryParametersMapper: ShareRequestBuilderGetQueryParametersMapper,
     },
 };
-/**
- * Uri template for the request builder.
- */
-export const ShareRequestBuilderUriTemplate = "{+baseurl}/print/printers/{printer%2Did}/share{?%24select,%24expand}";
 /* tslint:enable */
 /* eslint-enable */
