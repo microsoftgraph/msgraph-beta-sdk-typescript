@@ -30,18 +30,18 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
     get microsoftGraphWindowsUpdatesRemoveMembersById(): MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder;
     /**
-     * Delete an updatableAsset object.
+     * Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an updatableAssetGroup object.
+     * Read the properties of an azureADDevice object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UpdatableAsset>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UpdatableAssetItemRequestBuilderGetQueryParameters> | undefined) : Promise<UpdatableAsset | undefined>;
     /**
@@ -53,13 +53,13 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
      patch(body: UpdatableAsset, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UpdatableAsset | undefined>;
     /**
-     * Delete an updatableAsset object.
+     * Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an updatableAssetGroup object.
+     * Read the properties of an azureADDevice object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -73,7 +73,7 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      toPatchRequestInformation(body: UpdatableAsset, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an updatableAssetGroup object.
+ * Read the properties of an azureADDevice object.
  */
 export interface UpdatableAssetItemRequestBuilderGetQueryParameters {
     /**
