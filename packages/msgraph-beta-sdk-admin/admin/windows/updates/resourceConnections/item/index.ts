@@ -10,10 +10,10 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder<ResourceConnectionItemRequestBuilder> {
     /**
-     * Delete an operationalInsightsConnection object.
+     * Delete a resourceConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -33,7 +33,7 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
      */
      patch(body: ResourceConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ResourceConnection | undefined>;
     /**
-     * Delete an operationalInsightsConnection object.
+     * Delete a resourceConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

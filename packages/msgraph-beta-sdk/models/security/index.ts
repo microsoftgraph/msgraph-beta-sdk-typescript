@@ -201,7 +201,7 @@ export interface Alert extends Entity, Parsable {
      */
     status?: AlertStatus;
     /**
-     * The systemTags property
+     * The system tags associated with the alert
      */
     systemTags?: string[];
     /**
@@ -10053,11 +10053,11 @@ export interface Incident extends Entity, Parsable {
      */
     createdDateTime?: Date;
     /**
-     * Array of custom tags associated with an incident.
+     * The collection of custom tags that are associated with an incident.
      */
     customTags?: string[];
     /**
-     * The description property
+     * A rich text string describing the incident
      */
     description?: string;
     /**
@@ -10081,11 +10081,11 @@ export interface Incident extends Entity, Parsable {
      */
     lastUpdateDateTime?: Date;
     /**
-     * The recommendedActions property
+     * A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
      */
     recommendedActions?: string;
     /**
-     * The recommendedHuntingQueries property
+     * List of hunting Kusto Query Language (KQL) queries related to the incident
      */
     recommendedHuntingQueries?: RecommendedHuntingQuery[];
     /**
@@ -10101,7 +10101,7 @@ export interface Incident extends Entity, Parsable {
      */
     status?: IncidentStatus;
     /**
-     * The systemTags property
+     * The collection of system tags that are associated with the incident.
      */
     systemTags?: string[];
     /**
@@ -11075,7 +11075,7 @@ export interface RecommendedHuntingQuery extends AdditionalDataHolder, BackedMod
      */
     backingStoreEnabled?: boolean;
     /**
-     * The kqlText property
+     * The query string.
      */
     kqlText?: string;
     /**
