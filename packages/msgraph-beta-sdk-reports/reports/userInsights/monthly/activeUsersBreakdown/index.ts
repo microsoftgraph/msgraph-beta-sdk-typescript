@@ -13,12 +13,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ActiveUsersBreakdownRequestBuilder extends BaseRequestBuilder<ActiveUsersBreakdownRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
      * @param activeUsersBreakdownMetricId The unique identifier of activeUsersBreakdownMetric
      * @returns {ActiveUsersBreakdownMetricItemRequestBuilder}
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      byActiveUsersBreakdownMetricId(activeUsersBreakdownMetricId: string) : ActiveUsersBreakdownMetricItemRequestBuilder;
     /**
@@ -26,6 +28,7 @@ export interface ActiveUsersBreakdownRequestBuilder extends BaseRequestBuilder<A
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActiveUsersBreakdownMetricCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      * @see {@link https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-activeusersbreakdown?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownRequestBuilderGetQueryParameters> | undefined) : Promise<ActiveUsersBreakdownMetricCollectionResponse | undefined>;
@@ -33,6 +36,7 @@ export interface ActiveUsersBreakdownRequestBuilder extends BaseRequestBuilder<A
      * Get a list of monthly activeUsersBreakdown objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

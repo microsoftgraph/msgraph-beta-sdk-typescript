@@ -7,6 +7,7 @@ import { ActivateRequestBuilderRequestsMetadata, type ActivateRequestBuilder } f
 import { CategoriesRequestBuilderNavigationMetadata, CategoriesRequestBuilderRequestsMetadata, type CategoriesRequestBuilder } from './categories/';
 import { DeactivateRequestBuilderRequestsMetadata, type DeactivateRequestBuilder } from './deactivate/';
 import { GradingCategoryRequestBuilderRequestsMetadata, type GradingCategoryRequestBuilder } from './gradingCategory/';
+import { GradingSchemeRequestBuilderRequestsMetadata, type GradingSchemeRequestBuilder } from './gradingScheme/';
 import { PublishRequestBuilderRequestsMetadata, type PublishRequestBuilder } from './publish/';
 import { ResourcesRequestBuilderNavigationMetadata, ResourcesRequestBuilderRequestsMetadata, type ResourcesRequestBuilder } from './resources/';
 import { RubricRequestBuilderNavigationMetadata, RubricRequestBuilderRequestsMetadata, type RubricRequestBuilder } from './rubric/';
@@ -35,6 +36,10 @@ export interface EducationAssignmentItemRequestBuilder extends BaseRequestBuilde
      * Provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.
      */
     get gradingCategory(): GradingCategoryRequestBuilder;
+    /**
+     * Provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.
+     */
+    get gradingScheme(): GradingSchemeRequestBuilder;
     /**
      * Provides operations to call the publish method.
      */
@@ -140,6 +145,9 @@ export const EducationAssignmentItemRequestBuilderNavigationMetadata: Record<Exc
     },
     gradingCategory: {
         requestsMetadata: GradingCategoryRequestBuilderRequestsMetadata,
+    },
+    gradingScheme: {
+        requestsMetadata: GradingSchemeRequestBuilderRequestsMetadata,
     },
     publish: {
         requestsMetadata: PublishRequestBuilderRequestsMetadata,

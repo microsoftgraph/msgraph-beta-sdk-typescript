@@ -10,21 +10,23 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ActiveUsersBreakdownMetricItemRequestBuilder extends BaseRequestBuilder<ActiveUsersBreakdownMetricItemRequestBuilder> {
     /**
-     * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+     * Get activeUsersBreakdown from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActiveUsersBreakdownMetric>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      get(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<ActiveUsersBreakdownMetric | undefined>;
     /**
-     * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+     * Get activeUsersBreakdown from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+ * Get activeUsersBreakdown from reports
  */
 export interface ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters {
     /**

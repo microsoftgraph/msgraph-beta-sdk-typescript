@@ -22,30 +22,30 @@ export interface DataConnectorsRequestBuilder extends BaseRequestBuilder<DataCon
      */
      byIndustryDataConnectorId(industryDataConnectorId: string) : IndustryDataConnectorItemRequestBuilder;
     /**
-     * Get a list of the azureDataLakeConnector objects and their properties.
+     * Get the industryDataConnector resources from the dataConnector navigation property.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IndustryDataConnectorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DataConnectorsRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataConnectorCollectionResponse | undefined>;
     /**
-     * Create a new azureDataLakeConnector object.
+     * Create a new industryDataConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IndustryDataConnector>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0|Find more info here}
      */
      post(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
-     * Get a list of the azureDataLakeConnector objects and their properties.
+     * Get the industryDataConnector resources from the dataConnector navigation property.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DataConnectorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new azureDataLakeConnector object.
+     * Create a new industryDataConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -53,7 +53,7 @@ export interface DataConnectorsRequestBuilder extends BaseRequestBuilder<DataCon
      toPostRequestInformation(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the azureDataLakeConnector objects and their properties.
+ * Get the industryDataConnector resources from the dataConnector navigation property.
  */
 export interface DataConnectorsRequestBuilderGetQueryParameters {
     /**

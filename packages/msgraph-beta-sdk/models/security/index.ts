@@ -101,11 +101,11 @@ export interface Alert extends Entity, Parsable {
      */
     actorDisplayName?: string;
     /**
-     * The alertPolicyId property
+     * The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
      */
     alertPolicyId?: string;
     /**
-     * URL for the alert page in the Microsoft 365 Defender portal.
+     * URL for the Microsoft 365 Defender portal alert page.
      */
     alertWebUrl?: string;
     /**
@@ -133,7 +133,7 @@ export interface Alert extends Entity, Parsable {
      */
     description?: string;
     /**
-     * Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement.
+     * Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
      */
     detectionSource?: DetectionSource;
     /**
@@ -141,7 +141,7 @@ export interface Alert extends Entity, Parsable {
      */
     detectorId?: string;
     /**
-     * Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+     * Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
      */
     determination?: AlertDetermination;
     /**
@@ -173,7 +173,7 @@ export interface Alert extends Entity, Parsable {
      */
     mitreTechniques?: string[];
     /**
-     * The productName property
+     * The name of the product which published this alert.
      */
     productName?: string;
     /**
@@ -201,7 +201,7 @@ export interface Alert extends Entity, Parsable {
      */
     status?: AlertStatus;
     /**
-     * The systemTags property
+     * The system tags associated with the alert.
      */
     systemTags?: string[];
     /**
@@ -2140,6 +2140,14 @@ export function createDetectionActionFromDiscriminatorValue(parseNode: ParseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DetectionRuleCollectionResponse}
+ */
+export function createDetectionRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDetectionRuleCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DetectionRule}
  */
 export function createDetectionRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -3743,6 +3751,14 @@ export function createRuleScheduleFromDiscriminatorValue(parseNode: ParseNode | 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RulesRoot}
+ */
+export function createRulesRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRulesRoot;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RunAntivirusScanResponseAction}
  */
 export function createRunAntivirusScanResponseActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -5334,6 +5350,16 @@ export function deserializeIntoDetectionRule(detectionRule: Partial<DetectionRul
         "lastRunDetails": n => { detectionRule.lastRunDetails = n.getObjectValue<RunDetails>(createRunDetailsFromDiscriminatorValue); },
         "queryCondition": n => { detectionRule.queryCondition = n.getObjectValue<QueryCondition>(createQueryConditionFromDiscriminatorValue); },
         "schedule": n => { detectionRule.schedule = n.getObjectValue<RuleSchedule>(createRuleScheduleFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoDetectionRuleCollectionResponse(detectionRuleCollectionResponse: Partial<DetectionRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(detectionRuleCollectionResponse),
+        "value": n => { detectionRuleCollectionResponse.value = n.getCollectionOfObjectValues<DetectionRule>(createDetectionRuleFromDiscriminatorValue); },
     }
 }
 /**
@@ -7488,6 +7514,16 @@ export function deserializeIntoRuleSchedule(ruleSchedule: Partial<RuleSchedule> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoRulesRoot(rulesRoot: Partial<RulesRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(rulesRoot),
+        "detectionRules": n => { rulesRoot.detectionRules = n.getCollectionOfObjectValues<DetectionRule>(createDetectionRuleFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoRunAntivirusScanResponseAction(runAntivirusScanResponseAction: Partial<RunAntivirusScanResponseAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoResponseAction(runAntivirusScanResponseAction),
@@ -8291,6 +8327,12 @@ export interface DetectionRule extends Parsable, ProtectionRule {
      * Complex type holding data about the triggering schedule of this rule.
      */
     schedule?: RuleSchedule;
+}
+export interface DetectionRuleCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: DetectionRule[];
 }
 export type DetectionSource = (typeof DetectionSourceObject)[keyof typeof DetectionSourceObject];
 export type DetectionStatus = (typeof DetectionStatusObject)[keyof typeof DetectionStatusObject];
@@ -10053,11 +10095,11 @@ export interface Incident extends Entity, Parsable {
      */
     createdDateTime?: Date;
     /**
-     * Array of custom tags associated with an incident.
+     * The collection of custom tags that are associated with an incident.
      */
     customTags?: string[];
     /**
-     * The description property
+     * Description of the incident.
      */
     description?: string;
     /**
@@ -10073,7 +10115,7 @@ export interface Incident extends Entity, Parsable {
      */
     incidentWebUrl?: string;
     /**
-     * The lastModifiedBy property
+     * The identity that last modified the incident.
      */
     lastModifiedBy?: string;
     /**
@@ -10081,11 +10123,11 @@ export interface Incident extends Entity, Parsable {
      */
     lastUpdateDateTime?: Date;
     /**
-     * The recommendedActions property
+     * A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
      */
     recommendedActions?: string;
     /**
-     * The recommendedHuntingQueries property
+     * List of hunting Kusto Query Language (KQL) queries related to the incident
      */
     recommendedHuntingQueries?: RecommendedHuntingQuery[];
     /**
@@ -10101,7 +10143,7 @@ export interface Incident extends Entity, Parsable {
      */
     status?: IncidentStatus;
     /**
-     * The systemTags property
+     * The collection of system tags that are associated with the incident.
      */
     systemTags?: string[];
     /**
@@ -11075,7 +11117,7 @@ export interface RecommendedHuntingQuery extends AdditionalDataHolder, BackedMod
      */
     backingStoreEnabled?: boolean;
     /**
-     * The kqlText property
+     * The query string.
      */
     kqlText?: string;
     /**
@@ -11439,6 +11481,12 @@ export interface RuleSchedule extends AdditionalDataHolder, BackedModel, Parsabl
      * How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
      */
     period?: string;
+}
+export interface RulesRoot extends Entity, Parsable {
+    /**
+     * The detectionRules property
+     */
+    detectionRules?: DetectionRule[];
 }
 export interface RunAntivirusScanResponseAction extends Parsable, ResponseAction {
     /**
@@ -12417,6 +12465,14 @@ export function serializeDetectionRule(writer: SerializationWriter, detectionRul
     writer.writeObjectValue<RunDetails>("lastRunDetails", detectionRule.lastRunDetails, serializeRunDetails);
     writer.writeObjectValue<QueryCondition>("queryCondition", detectionRule.queryCondition, serializeQueryCondition);
     writer.writeObjectValue<RuleSchedule>("schedule", detectionRule.schedule, serializeRuleSchedule);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeDetectionRuleCollectionResponse(writer: SerializationWriter, detectionRuleCollectionResponse: Partial<DetectionRuleCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, detectionRuleCollectionResponse)
+    writer.writeCollectionOfObjectValues<DetectionRule>("value", detectionRuleCollectionResponse.value, serializeDetectionRule);
 }
 /**
  * Serializes information the current object
@@ -14225,6 +14281,14 @@ export function serializeRuleSchedule(writer: SerializationWriter, ruleSchedule:
     writer.writeStringValue("@odata.type", ruleSchedule.odataType);
     writer.writeStringValue("period", ruleSchedule.period);
     writer.writeAdditionalData(ruleSchedule.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRulesRoot(writer: SerializationWriter, rulesRoot: Partial<RulesRoot> | undefined = {}) : void {
+    serializeEntity(writer, rulesRoot)
+    writer.writeCollectionOfObjectValues<DetectionRule>("detectionRules", rulesRoot.detectionRules, serializeDetectionRule);
 }
 /**
  * Serializes information the current object

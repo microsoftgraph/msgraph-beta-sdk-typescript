@@ -4,7 +4,9 @@
 import { createRoomListFromDiscriminatorValue, type RoomList } from '@microsoft/msgraph-beta-sdk/models/';
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { RoomsRequestBuilderNavigationMetadata, RoomsRequestBuilderRequestsMetadata, type RoomsRequestBuilder } from './rooms/';
+import { RoomsWithPlaceIdRequestBuilderRequestsMetadata, type RoomsWithPlaceIdRequestBuilder } from './roomsWithPlaceId/';
 import { type WorkspacesRequestBuilder, WorkspacesRequestBuilderNavigationMetadata, WorkspacesRequestBuilderRequestsMetadata } from './workspaces/';
+import { type WorkspacesWithPlaceIdRequestBuilder, WorkspacesWithPlaceIdRequestBuilderRequestsMetadata } from './workspacesWithPlaceId/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -27,11 +29,23 @@ export interface GraphRoomListRequestBuilder extends BaseRequestBuilder<GraphRoo
      */
      get(requestConfiguration?: RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters> | undefined) : Promise<RoomList | undefined>;
     /**
+     * Provides operations to manage the rooms property of the microsoft.graph.roomList entity.
+     * @param placeId Alternate key of room
+     * @returns {RoomsWithPlaceIdRequestBuilder}
+     */
+     roomsWithPlaceId(placeId: string | undefined) : RoomsWithPlaceIdRequestBuilder;
+    /**
      * Get the item of type microsoft.graph.place as microsoft.graph.roomList
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
+    /**
+     * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+     * @param placeId Alternate key of workspace
+     * @returns {WorkspacesWithPlaceIdRequestBuilder}
+     */
+     workspacesWithPlaceId(placeId: string | undefined) : WorkspacesWithPlaceIdRequestBuilder;
 }
 /**
  * Get the item of type microsoft.graph.place as microsoft.graph.roomList
@@ -61,6 +75,12 @@ const GraphRoomListRequestBuilderGetQueryParametersMapper: Record<string, string
  * Metadata for all the navigation properties in the request builder.
  */
 export const GraphRoomListRequestBuilderNavigationMetadata: Record<Exclude<keyof GraphRoomListRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    roomsWithPlaceId: {
+        requestsMetadata: RoomsWithPlaceIdRequestBuilderRequestsMetadata,
+    },
+    workspacesWithPlaceId: {
+        requestsMetadata: WorkspacesWithPlaceIdRequestBuilderRequestsMetadata,
+    },
     rooms: {
         requestsMetadata: RoomsRequestBuilderRequestsMetadata,
         navigationMetadata: RoomsRequestBuilderNavigationMetadata,

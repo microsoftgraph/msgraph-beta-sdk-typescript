@@ -19,6 +19,7 @@ import { IpSecurityProfilesRequestBuilderNavigationMetadata, IpSecurityProfilesR
 import { LabelsRequestBuilderNavigationMetadata, LabelsRequestBuilderRequestsMetadata, type LabelsRequestBuilder } from './labels/';
 import { MicrosoftGraphSecurityRunHuntingQueryRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityRunHuntingQueryRequestBuilder } from './microsoftGraphSecurityRunHuntingQuery/';
 import { ProviderTenantSettingsRequestBuilderNavigationMetadata, ProviderTenantSettingsRequestBuilderRequestsMetadata, type ProviderTenantSettingsRequestBuilder } from './providerTenantSettings/';
+import { RulesRequestBuilderNavigationMetadata, RulesRequestBuilderRequestsMetadata, type RulesRequestBuilder } from './rules/';
 import { SecureScoreControlProfilesRequestBuilderNavigationMetadata, SecureScoreControlProfilesRequestBuilderRequestsMetadata, type SecureScoreControlProfilesRequestBuilder } from './secureScoreControlProfiles/';
 import { SecureScoresRequestBuilderNavigationMetadata, SecureScoresRequestBuilderRequestsMetadata, type SecureScoresRequestBuilder } from './secureScores/';
 import { SecurityActionsRequestBuilderNavigationMetadata, SecurityActionsRequestBuilderRequestsMetadata, type SecurityActionsRequestBuilder } from './securityActions/';
@@ -99,6 +100,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
      */
     get providerTenantSettings(): ProviderTenantSettingsRequestBuilder;
+    /**
+     * Provides operations to manage the rules property of the microsoft.graph.security entity.
+     */
+    get rules(): RulesRequestBuilder;
     /**
      * Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
      */
@@ -258,6 +263,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     providerTenantSettings: {
         requestsMetadata: ProviderTenantSettingsRequestBuilderRequestsMetadata,
         navigationMetadata: ProviderTenantSettingsRequestBuilderNavigationMetadata,
+    },
+    rules: {
+        requestsMetadata: RulesRequestBuilderRequestsMetadata,
+        navigationMetadata: RulesRequestBuilderNavigationMetadata,
     },
     secureScoreControlProfiles: {
         requestsMetadata: SecureScoreControlProfilesRequestBuilderRequestsMetadata,
