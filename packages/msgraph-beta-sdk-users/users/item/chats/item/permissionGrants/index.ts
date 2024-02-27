@@ -22,7 +22,7 @@ export interface PermissionGrantsRequestBuilder extends BaseRequestBuilder<Permi
      */
      byResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId: string) : ResourceSpecificPermissionGrantItemRequestBuilder;
     /**
-     * List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
+     * List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding resource-specific access that each app has.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ResourceSpecificPermissionGrantCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -38,7 +38,7 @@ export interface PermissionGrantsRequestBuilder extends BaseRequestBuilder<Permi
      */
      post(body: ResourceSpecificPermissionGrant, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ResourceSpecificPermissionGrant | undefined>;
     /**
-     * List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
+     * List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding resource-specific access that each app has.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -52,7 +52,7 @@ export interface PermissionGrantsRequestBuilder extends BaseRequestBuilder<Permi
      toPostRequestInformation(body: ResourceSpecificPermissionGrant, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
+ * List all resource-specific permission grants on the chat. This list specifies the Microsoft Entra apps that have access to the chat, along with the corresponding resource-specific access that each app has.
  */
 export interface PermissionGrantsRequestBuilderGetQueryParameters {
     /**

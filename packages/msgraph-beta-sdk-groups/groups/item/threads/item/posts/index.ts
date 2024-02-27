@@ -22,7 +22,7 @@ export interface PostsRequestBuilder extends BaseRequestBuilder<PostsRequestBuil
      */
      byPostId(postId: string) : PostItemRequestBuilder;
     /**
-     * Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
+     * Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,you can specify the thread without referencing the parent conversation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PostCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -30,14 +30,14 @@ export interface PostsRequestBuilder extends BaseRequestBuilder<PostsRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<PostsRequestBuilderGetQueryParameters> | undefined) : Promise<PostCollectionResponse | undefined>;
     /**
-     * Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
+     * Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,you can specify the thread without referencing the parent conversation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PostsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
+ * Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,you can specify the thread without referencing the parent conversation.
  */
 export interface PostsRequestBuilderGetQueryParameters {
     /**

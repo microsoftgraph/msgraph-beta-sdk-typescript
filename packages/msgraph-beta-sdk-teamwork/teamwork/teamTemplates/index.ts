@@ -22,11 +22,11 @@ export interface TeamTemplatesRequestBuilder extends BaseRequestBuilder<TeamTemp
      */
      byTeamTemplateId(teamTemplateId: string) : TeamTemplateItemRequestBuilder;
     /**
-     * Get the list of teamTemplate objects that are available for a tenant. 
+     * List the teamTemplateDefinition objects associated with a teamTemplate. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamTemplateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TeamTemplatesRequestBuilderGetQueryParameters> | undefined) : Promise<TeamTemplateCollectionResponse | undefined>;
     /**
@@ -38,7 +38,7 @@ export interface TeamTemplatesRequestBuilder extends BaseRequestBuilder<TeamTemp
      */
      post(body: TeamTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamTemplate | undefined>;
     /**
-     * Get the list of teamTemplate objects that are available for a tenant. 
+     * List the teamTemplateDefinition objects associated with a teamTemplate. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -52,7 +52,7 @@ export interface TeamTemplatesRequestBuilder extends BaseRequestBuilder<TeamTemp
      toPostRequestInformation(body: TeamTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the list of teamTemplate objects that are available for a tenant. 
+ * List the teamTemplateDefinition objects associated with a teamTemplate. 
  */
 export interface TeamTemplatesRequestBuilderGetQueryParameters {
     /**

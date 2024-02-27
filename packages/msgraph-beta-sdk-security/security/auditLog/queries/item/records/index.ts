@@ -22,10 +22,11 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      byAuditLogRecordId(auditLogRecordId: string) : AuditLogRecordItemRequestBuilder;
     /**
-     * An individual audit log record.
+     * Get a list of the auditLogRecord objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuditLogRecordCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-auditlogquery-list-records?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RecordsRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogRecordCollectionResponse | undefined>;
     /**
@@ -37,7 +38,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      post(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogRecord | undefined>;
     /**
-     * An individual audit log record.
+     * Get a list of the auditLogRecord objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +52,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      toPostRequestInformation(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * An individual audit log record.
+ * Get a list of the auditLogRecord objects and their properties.
  */
 export interface RecordsRequestBuilderGetQueryParameters {
     /**

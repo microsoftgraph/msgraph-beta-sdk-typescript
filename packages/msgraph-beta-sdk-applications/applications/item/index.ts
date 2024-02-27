@@ -12,6 +12,7 @@ import { ConnectorGroupRequestBuilderNavigationMetadata, ConnectorGroupRequestBu
 import { CreatedOnBehalfOfRequestBuilderRequestsMetadata, type CreatedOnBehalfOfRequestBuilder } from './createdOnBehalfOf/';
 import { ExtensionPropertiesRequestBuilderNavigationMetadata, ExtensionPropertiesRequestBuilderRequestsMetadata, type ExtensionPropertiesRequestBuilder } from './extensionProperties/';
 import { FederatedIdentityCredentialsRequestBuilderNavigationMetadata, FederatedIdentityCredentialsRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsRequestBuilder } from './federatedIdentityCredentials/';
+import { FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsWithNameRequestBuilder } from './federatedIdentityCredentialsWithName/';
 import { GetMemberGroupsRequestBuilderRequestsMetadata, type GetMemberGroupsRequestBuilder } from './getMemberGroups/';
 import { GetMemberObjectsRequestBuilderRequestsMetadata, type GetMemberObjectsRequestBuilder } from './getMemberObjects/';
 import { HomeRealmDiscoveryPoliciesRequestBuilderNavigationMetadata, HomeRealmDiscoveryPoliciesRequestBuilderRequestsMetadata, type HomeRealmDiscoveryPoliciesRequestBuilder } from './homeRealmDiscoveryPolicies/';
@@ -127,6 +128,12 @@ export interface ApplicationItemRequestBuilder extends BaseRequestBuilder<Applic
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
+     * Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
+     * @param name Alternate key of federatedIdentityCredential
+     * @returns {FederatedIdentityCredentialsWithNameRequestBuilder}
+     */
+     federatedIdentityCredentialsWithName(name: string | undefined) : FederatedIdentityCredentialsWithNameRequestBuilder;
+    /**
      * Get the properties and relationships of an application object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Application>}
@@ -191,6 +198,9 @@ const ApplicationItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  * Metadata for all the navigation properties in the request builder.
  */
 export const ApplicationItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ApplicationItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    federatedIdentityCredentialsWithName: {
+        requestsMetadata: FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata,
+    },
     addKey: {
         requestsMetadata: AddKeyRequestBuilderRequestsMetadata,
     },

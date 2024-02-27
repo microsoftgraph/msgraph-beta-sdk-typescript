@@ -27,11 +27,11 @@ export interface RegistrationRequestBuilder extends BaseRequestBuilder<Registrat
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+     * Get the externalMeetingRegistration details associated with an onlineMeeting.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingRegistration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RegistrationRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingRegistration | undefined>;
     /**
@@ -50,7 +50,7 @@ export interface RegistrationRequestBuilder extends BaseRequestBuilder<Registrat
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+     * Get the externalMeetingRegistration details associated with an onlineMeeting.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -64,7 +64,7 @@ export interface RegistrationRequestBuilder extends BaseRequestBuilder<Registrat
      toPatchRequestInformation(body: MeetingRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+ * Get the externalMeetingRegistration details associated with an onlineMeeting.
  */
 export interface RegistrationRequestBuilderGetQueryParameters {
     /**

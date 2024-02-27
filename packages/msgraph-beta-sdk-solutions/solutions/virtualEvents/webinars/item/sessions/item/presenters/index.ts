@@ -4,7 +4,7 @@
 import { createVirtualEventPresenterCollectionResponseFromDiscriminatorValue, type VirtualEventPresenterCollectionResponse } from '@microsoft/msgraph-beta-sdk/models/';
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/';
-import { type VirtualEventPresenterItemRequestBuilder, VirtualEventPresenterItemRequestBuilderNavigationMetadata, VirtualEventPresenterItemRequestBuilderRequestsMetadata } from './item/';
+import { type VirtualEventPresenterItemRequestBuilder, VirtualEventPresenterItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -95,7 +95,6 @@ const PresentersRequestBuilderGetQueryParametersMapper: Record<string, string> =
 export const PresentersRequestBuilderNavigationMetadata: Record<Exclude<keyof PresentersRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byVirtualEventPresenterId: {
         requestsMetadata: VirtualEventPresenterItemRequestBuilderRequestsMetadata,
-        navigationMetadata: VirtualEventPresenterItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["virtualEventPresenter%2Did"],
     },
     count: {

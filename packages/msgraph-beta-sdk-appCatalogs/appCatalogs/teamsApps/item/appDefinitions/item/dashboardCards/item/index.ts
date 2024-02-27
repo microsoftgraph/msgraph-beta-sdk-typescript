@@ -16,7 +16,7 @@ export interface TeamsAppDashboardCardDefinitionItemRequestBuilder extends BaseR
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get dashboardCards from appCatalogs
+     * Dashboard cards specified in the Teams app manifest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppDashboardCardDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface TeamsAppDashboardCardDefinitionItemRequestBuilder extends BaseR
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get dashboardCards from appCatalogs
+     * Dashboard cards specified in the Teams app manifest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface TeamsAppDashboardCardDefinitionItemRequestBuilder extends BaseR
      toPatchRequestInformation(body: TeamsAppDashboardCardDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get dashboardCards from appCatalogs
+ * Dashboard cards specified in the Teams app manifest.
  */
 export interface TeamsAppDashboardCardDefinitionItemRequestBuilderGetQueryParameters {
     /**

@@ -10,7 +10,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ActivateRequestBuilder extends BaseRequestBuilder<ActivateRequestBuilder> {
     /**
-     * Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+     * Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -18,7 +18,7 @@ export interface ActivateRequestBuilder extends BaseRequestBuilder<ActivateReque
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationAssignment | undefined>;
     /**
-     * Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+     * Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
