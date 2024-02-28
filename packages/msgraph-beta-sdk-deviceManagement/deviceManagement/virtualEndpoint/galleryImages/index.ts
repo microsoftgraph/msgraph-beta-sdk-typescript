@@ -62,7 +62,7 @@ export interface GalleryImagesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface GalleryImagesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface GalleryImagesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface GalleryImagesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const GalleryImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcGalleryImageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GalleryImagesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,76 @@ export const GalleryImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcGalleryImageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcGalleryImage,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EndDate: "endDate",
+    EndDateDesc: "endDate desc",
+    ExpirationDate: "expirationDate",
+    ExpirationDateDesc: "expirationDate desc",
+    Offer: "offer",
+    OfferDesc: "offer desc",
+    OfferDisplayName: "offerDisplayName",
+    OfferDisplayNameDesc: "offerDisplayName desc",
+    OfferName: "offerName",
+    OfferNameDesc: "offerName desc",
+    Publisher: "publisher",
+    PublisherDesc: "publisher desc",
+    PublisherName: "publisherName",
+    PublisherNameDesc: "publisherName desc",
+    RecommendedSku: "recommendedSku",
+    RecommendedSkuDesc: "recommendedSku desc",
+    SizeInGB: "sizeInGB",
+    SizeInGBDesc: "sizeInGB desc",
+    Sku: "sku",
+    SkuDesc: "sku desc",
+    SkuDisplayName: "skuDisplayName",
+    SkuDisplayNameDesc: "skuDisplayName desc",
+    SkuName: "skuName",
+    SkuNameDesc: "skuName desc",
+    StartDate: "startDate",
+    StartDateDesc: "startDate desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    EndDate: "endDate",
+    ExpirationDate: "expirationDate",
+    Offer: "offer",
+    OfferDisplayName: "offerDisplayName",
+    OfferName: "offerName",
+    Publisher: "publisher",
+    PublisherName: "publisherName",
+    RecommendedSku: "recommendedSku",
+    SizeInGB: "sizeInGB",
+    Sku: "sku",
+    SkuDisplayName: "skuDisplayName",
+    SkuName: "skuName",
+    StartDate: "startDate",
+    Status: "status",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

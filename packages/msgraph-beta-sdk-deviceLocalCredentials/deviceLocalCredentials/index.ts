@@ -65,7 +65,7 @@ export interface DeviceLocalCredentialsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -73,12 +73,14 @@ export interface DeviceLocalCredentialsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Show only the first n items
      */
     top?: number;
 }
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -116,7 +118,7 @@ export const DeviceLocalCredentialsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceLocalCredentialInfoCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceLocalCredentialsRequestBuilderGetQueryParametersMapper,
     },
@@ -126,12 +128,37 @@ export const DeviceLocalCredentialsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceLocalCredentialInfoFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceLocalCredentialInfo,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of deviceLocalCredentialInfo entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Credentials: "credentials",
+    CredentialsDesc: "credentials desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    LastBackupDateTime: "lastBackupDateTime",
+    LastBackupDateTimeDesc: "lastBackupDateTime desc",
+    RefreshDateTime: "refreshDateTime",
+    RefreshDateTimeDesc: "refreshDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the collection of deviceLocalCredentialInfo entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Credentials: "credentials",
+    DeviceName: "deviceName",
+    LastBackupDateTime: "lastBackupDateTime",
+    RefreshDateTime: "refreshDateTime",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

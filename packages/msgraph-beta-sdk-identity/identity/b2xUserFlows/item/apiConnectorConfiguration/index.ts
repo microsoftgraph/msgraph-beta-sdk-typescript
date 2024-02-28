@@ -45,12 +45,14 @@ export interface ApiConnectorConfigurationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -89,10 +91,21 @@ export const ApiConnectorConfigurationRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFlowApiConnectorConfigurationFromDiscriminatorValue,
         queryParametersMapper: ApiConnectorConfigurationRequestBuilderGetQueryParametersMapper,
     },
 };
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    PostAttributeCollection: "postAttributeCollection",
+    PostFederationSignup: "postFederationSignup",
+    PreTokenIssuance: "preTokenIssuance",
+} as const;
+export const GetSelectQueryParameterTypeObject = {
+    PostAttributeCollection: "postAttributeCollection",
+    PostFederationSignup: "postFederationSignup",
+    PreTokenIssuance: "preTokenIssuance",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

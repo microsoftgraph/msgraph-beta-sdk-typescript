@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type WindowsManagedAppProtectionItemRequestBuilder, WindowsManagedAppProtectionItemRequestBuilderNavigationMetadata, WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
  */
@@ -61,7 +64,7 @@ export interface WindowsManagedAppProtectionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface WindowsManagedAppProtectionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface WindowsManagedAppProtectionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,113 @@ export interface WindowsManagedAppProtectionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const WindowsManagedAppProtectionsRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsManagedAppProtections{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Apps: "apps",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    Version: "version",
+    VersionDesc: "version desc",
+    AllowedInboundDataTransferSources: "allowedInboundDataTransferSources",
+    AllowedInboundDataTransferSourcesDesc: "allowedInboundDataTransferSources desc",
+    AllowedOutboundClipboardSharingLevel: "allowedOutboundClipboardSharingLevel",
+    AllowedOutboundClipboardSharingLevelDesc: "allowedOutboundClipboardSharingLevel desc",
+    AllowedOutboundDataTransferDestinations: "allowedOutboundDataTransferDestinations",
+    AllowedOutboundDataTransferDestinationsDesc: "allowedOutboundDataTransferDestinations desc",
+    AppActionIfUnableToAuthenticateUser: "appActionIfUnableToAuthenticateUser",
+    AppActionIfUnableToAuthenticateUserDesc: "appActionIfUnableToAuthenticateUser desc",
+    DeployedAppCount: "deployedAppCount",
+    DeployedAppCountDesc: "deployedAppCount desc",
+    IsAssigned: "isAssigned",
+    IsAssignedDesc: "isAssigned desc",
+    MaximumAllowedDeviceThreatLevel: "maximumAllowedDeviceThreatLevel",
+    MaximumAllowedDeviceThreatLevelDesc: "maximumAllowedDeviceThreatLevel desc",
+    MaximumRequiredOsVersion: "maximumRequiredOsVersion",
+    MaximumRequiredOsVersionDesc: "maximumRequiredOsVersion desc",
+    MaximumWarningOsVersion: "maximumWarningOsVersion",
+    MaximumWarningOsVersionDesc: "maximumWarningOsVersion desc",
+    MaximumWipeOsVersion: "maximumWipeOsVersion",
+    MaximumWipeOsVersionDesc: "maximumWipeOsVersion desc",
+    MinimumRequiredAppVersion: "minimumRequiredAppVersion",
+    MinimumRequiredAppVersionDesc: "minimumRequiredAppVersion desc",
+    MinimumRequiredOsVersion: "minimumRequiredOsVersion",
+    MinimumRequiredOsVersionDesc: "minimumRequiredOsVersion desc",
+    MinimumRequiredSdkVersion: "minimumRequiredSdkVersion",
+    MinimumRequiredSdkVersionDesc: "minimumRequiredSdkVersion desc",
+    MinimumWarningAppVersion: "minimumWarningAppVersion",
+    MinimumWarningAppVersionDesc: "minimumWarningAppVersion desc",
+    MinimumWarningOsVersion: "minimumWarningOsVersion",
+    MinimumWarningOsVersionDesc: "minimumWarningOsVersion desc",
+    MinimumWipeAppVersion: "minimumWipeAppVersion",
+    MinimumWipeAppVersionDesc: "minimumWipeAppVersion desc",
+    MinimumWipeOsVersion: "minimumWipeOsVersion",
+    MinimumWipeOsVersionDesc: "minimumWipeOsVersion desc",
+    MinimumWipeSdkVersion: "minimumWipeSdkVersion",
+    MinimumWipeSdkVersionDesc: "minimumWipeSdkVersion desc",
+    MobileThreatDefenseRemediationAction: "mobileThreatDefenseRemediationAction",
+    MobileThreatDefenseRemediationActionDesc: "mobileThreatDefenseRemediationAction desc",
+    PeriodOfflineBeforeAccessCheck: "periodOfflineBeforeAccessCheck",
+    PeriodOfflineBeforeAccessCheckDesc: "periodOfflineBeforeAccessCheck desc",
+    PeriodOfflineBeforeWipeIsEnforced: "periodOfflineBeforeWipeIsEnforced",
+    PeriodOfflineBeforeWipeIsEnforcedDesc: "periodOfflineBeforeWipeIsEnforced desc",
+    PrintBlocked: "printBlocked",
+    PrintBlockedDesc: "printBlocked desc",
+} as const;
+/**
+ * Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Version: "version",
+    AllowedInboundDataTransferSources: "allowedInboundDataTransferSources",
+    AllowedOutboundClipboardSharingLevel: "allowedOutboundClipboardSharingLevel",
+    AllowedOutboundDataTransferDestinations: "allowedOutboundDataTransferDestinations",
+    AppActionIfUnableToAuthenticateUser: "appActionIfUnableToAuthenticateUser",
+    DeployedAppCount: "deployedAppCount",
+    IsAssigned: "isAssigned",
+    MaximumAllowedDeviceThreatLevel: "maximumAllowedDeviceThreatLevel",
+    MaximumRequiredOsVersion: "maximumRequiredOsVersion",
+    MaximumWarningOsVersion: "maximumWarningOsVersion",
+    MaximumWipeOsVersion: "maximumWipeOsVersion",
+    MinimumRequiredAppVersion: "minimumRequiredAppVersion",
+    MinimumRequiredOsVersion: "minimumRequiredOsVersion",
+    MinimumRequiredSdkVersion: "minimumRequiredSdkVersion",
+    MinimumWarningAppVersion: "minimumWarningAppVersion",
+    MinimumWarningOsVersion: "minimumWarningOsVersion",
+    MinimumWipeAppVersion: "minimumWipeAppVersion",
+    MinimumWipeOsVersion: "minimumWipeOsVersion",
+    MinimumWipeSdkVersion: "minimumWipeSdkVersion",
+    MobileThreatDefenseRemediationAction: "mobileThreatDefenseRemediationAction",
+    PeriodOfflineBeforeAccessCheck: "periodOfflineBeforeAccessCheck",
+    PeriodOfflineBeforeWipeIsEnforced: "periodOfflineBeforeWipeIsEnforced",
+    PrintBlocked: "printBlocked",
+    Apps: "apps",
+    Assignments: "assignments",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +237,7 @@ export const WindowsManagedAppProtectionsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsManagedAppProtectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsManagedAppProtectionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +247,7 @@ export const WindowsManagedAppProtectionsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsManagedAppProtection,

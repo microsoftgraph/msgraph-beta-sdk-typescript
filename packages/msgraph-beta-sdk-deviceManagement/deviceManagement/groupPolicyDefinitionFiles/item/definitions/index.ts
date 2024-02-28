@@ -46,7 +46,7 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +54,7 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +62,7 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -72,6 +72,9 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -111,10 +114,75 @@ export const DefinitionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DefinitionsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
+/**
+ * Provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CategoryPath: "categoryPath",
+    CategoryPathDesc: "categoryPath desc",
+    ClassType: "classType",
+    ClassTypeDesc: "classType desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ExplainText: "explainText",
+    ExplainTextDesc: "explainText desc",
+    GroupPolicyCategoryId: "groupPolicyCategoryId",
+    GroupPolicyCategoryIdDesc: "groupPolicyCategoryId desc",
+    HasRelatedDefinitions: "hasRelatedDefinitions",
+    HasRelatedDefinitionsDesc: "hasRelatedDefinitions desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    MinDeviceCspVersion: "minDeviceCspVersion",
+    MinDeviceCspVersionDesc: "minDeviceCspVersion desc",
+    MinUserCspVersion: "minUserCspVersion",
+    MinUserCspVersionDesc: "minUserCspVersion desc",
+    PolicyType: "policyType",
+    PolicyTypeDesc: "policyType desc",
+    SupportedOn: "supportedOn",
+    SupportedOnDesc: "supportedOn desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CategoryPath: "categoryPath",
+    ClassType: "classType",
+    DisplayName: "displayName",
+    ExplainText: "explainText",
+    GroupPolicyCategoryId: "groupPolicyCategoryId",
+    HasRelatedDefinitions: "hasRelatedDefinitions",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    MinDeviceCspVersion: "minDeviceCspVersion",
+    MinUserCspVersion: "minUserCspVersion",
+    PolicyType: "policyType",
+    SupportedOn: "supportedOn",
+    Version: "version",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

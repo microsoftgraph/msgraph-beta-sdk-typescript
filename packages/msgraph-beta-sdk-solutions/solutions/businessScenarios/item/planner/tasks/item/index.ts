@@ -80,12 +80,14 @@ export interface BusinessScenarioTaskItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -124,7 +126,7 @@ export const BusinessScenarioTaskItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BusinessScenarioTaskItemRequestBuilderUriTemplate,
@@ -132,7 +134,7 @@ export const BusinessScenarioTaskItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessScenarioTaskFromDiscriminatorValue,
         queryParametersMapper: BusinessScenarioTaskItemRequestBuilderGetQueryParametersMapper,
     },
@@ -142,12 +144,62 @@ export const BusinessScenarioTaskItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessScenarioTaskFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBusinessScenarioTask,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AssignedToTaskBoardFormat: "assignedToTaskBoardFormat",
+    BucketTaskBoardFormat: "bucketTaskBoardFormat",
+    Details: "details",
+    ProgressTaskBoardFormat: "progressTaskBoardFormat",
+} as const;
+/**
+ * Provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActiveChecklistItemCount: "activeChecklistItemCount",
+    AppliedCategories: "appliedCategories",
+    ArchivalInfo: "archivalInfo",
+    AssigneePriority: "assigneePriority",
+    Assignments: "assignments",
+    BucketId: "bucketId",
+    ChecklistItemCount: "checklistItemCount",
+    CompletedBy: "completedBy",
+    CompletedDateTime: "completedDateTime",
+    ConversationThreadId: "conversationThreadId",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    CreationSource: "creationSource",
+    DueDateTime: "dueDateTime",
+    HasDescription: "hasDescription",
+    IsArchived: "isArchived",
+    IsOnMyDay: "isOnMyDay",
+    IsOnMyDayLastModifiedDate: "isOnMyDayLastModifiedDate",
+    OrderHint: "orderHint",
+    PercentComplete: "percentComplete",
+    PlanId: "planId",
+    PreviewType: "previewType",
+    Priority: "priority",
+    Recurrence: "recurrence",
+    ReferenceCount: "referenceCount",
+    SpecifiedCompletionRequirements: "specifiedCompletionRequirements",
+    StartDateTime: "startDateTime",
+    Title: "title",
+    BusinessScenarioProperties: "businessScenarioProperties",
+    Target: "target",
+    AssignedToTaskBoardFormat: "assignedToTaskBoardFormat",
+    BucketTaskBoardFormat: "bucketTaskBoardFormat",
+    Details: "details",
+    ProgressTaskBoardFormat: "progressTaskBoardFormat",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -10,6 +10,8 @@ import { PresentationsRequestBuilderNavigationMetadata, PresentationsRequestBuil
 import { PreviousVersionDefinitionRequestBuilderNavigationMetadata, PreviousVersionDefinitionRequestBuilderRequestsMetadata, type PreviousVersionDefinitionRequestBuilder } from './previousVersionDefinition/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
  */
@@ -82,16 +84,50 @@ export interface GroupPolicyDefinitionItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GroupPolicyDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CategoryPath: "categoryPath",
+    ClassType: "classType",
+    DisplayName: "displayName",
+    ExplainText: "explainText",
+    GroupPolicyCategoryId: "groupPolicyCategoryId",
+    HasRelatedDefinitions: "hasRelatedDefinitions",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    MinDeviceCspVersion: "minDeviceCspVersion",
+    MinUserCspVersion: "minUserCspVersion",
+    PolicyType: "policyType",
+    SupportedOn: "supportedOn",
+    Version: "version",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -132,7 +168,7 @@ export const GroupPolicyDefinitionItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GroupPolicyDefinitionItemRequestBuilderUriTemplate,
@@ -140,7 +176,7 @@ export const GroupPolicyDefinitionItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -150,7 +186,7 @@ export const GroupPolicyDefinitionItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyDefinition,

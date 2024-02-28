@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ManagementTemplateStepTenantSummaryItemRequestBuilderRequestsMetadata, type ManagementTemplateStepTenantSummaryItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -61,7 +64,7 @@ export interface ManagementTemplateStepTenantSummariesRequestBuilderGetQueryPara
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface ManagementTemplateStepTenantSummariesRequestBuilderGetQueryPara
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface ManagementTemplateStepTenantSummariesRequestBuilderGetQueryPara
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,70 @@ export interface ManagementTemplateStepTenantSummariesRequestBuilderGetQueryPara
  * Uri template for the request builder.
  */
 export const ManagementTemplateStepTenantSummariesRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepTenantSummaries{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AssignedTenantsCount: "assignedTenantsCount",
+    AssignedTenantsCountDesc: "assignedTenantsCount desc",
+    CompliantTenantsCount: "compliantTenantsCount",
+    CompliantTenantsCountDesc: "compliantTenantsCount desc",
+    CreatedByUserId: "createdByUserId",
+    CreatedByUserIdDesc: "createdByUserId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DismissedTenantsCount: "dismissedTenantsCount",
+    DismissedTenantsCountDesc: "dismissedTenantsCount desc",
+    IneligibleTenantsCount: "ineligibleTenantsCount",
+    IneligibleTenantsCountDesc: "ineligibleTenantsCount desc",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionByUserIdDesc: "lastActionByUserId desc",
+    LastActionDateTime: "lastActionDateTime",
+    LastActionDateTimeDesc: "lastActionDateTime desc",
+    ManagementTemplateCollectionDisplayName: "managementTemplateCollectionDisplayName",
+    ManagementTemplateCollectionDisplayNameDesc: "managementTemplateCollectionDisplayName desc",
+    ManagementTemplateCollectionId: "managementTemplateCollectionId",
+    ManagementTemplateCollectionIdDesc: "managementTemplateCollectionId desc",
+    ManagementTemplateDisplayName: "managementTemplateDisplayName",
+    ManagementTemplateDisplayNameDesc: "managementTemplateDisplayName desc",
+    ManagementTemplateId: "managementTemplateId",
+    ManagementTemplateIdDesc: "managementTemplateId desc",
+    ManagementTemplateStepDisplayName: "managementTemplateStepDisplayName",
+    ManagementTemplateStepDisplayNameDesc: "managementTemplateStepDisplayName desc",
+    ManagementTemplateStepId: "managementTemplateStepId",
+    ManagementTemplateStepIdDesc: "managementTemplateStepId desc",
+    NotCompliantTenantsCount: "notCompliantTenantsCount",
+    NotCompliantTenantsCountDesc: "notCompliantTenantsCount desc",
+} as const;
+/**
+ * Provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignedTenantsCount: "assignedTenantsCount",
+    CompliantTenantsCount: "compliantTenantsCount",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    DismissedTenantsCount: "dismissedTenantsCount",
+    IneligibleTenantsCount: "ineligibleTenantsCount",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    ManagementTemplateCollectionDisplayName: "managementTemplateCollectionDisplayName",
+    ManagementTemplateCollectionId: "managementTemplateCollectionId",
+    ManagementTemplateDisplayName: "managementTemplateDisplayName",
+    ManagementTemplateId: "managementTemplateId",
+    ManagementTemplateStepDisplayName: "managementTemplateStepDisplayName",
+    ManagementTemplateStepId: "managementTemplateStepId",
+    NotCompliantTenantsCount: "notCompliantTenantsCount",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +193,7 @@ export const ManagementTemplateStepTenantSummariesRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepTenantSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateStepTenantSummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +203,7 @@ export const ManagementTemplateStepTenantSummariesRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepTenantSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementTemplateStepTenantSummary,

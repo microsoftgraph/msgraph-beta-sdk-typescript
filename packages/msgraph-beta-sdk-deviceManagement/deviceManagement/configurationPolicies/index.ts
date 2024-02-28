@@ -61,7 +61,7 @@ export interface ConfigurationPoliciesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ConfigurationPoliciesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ConfigurationPoliciesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ConfigurationPoliciesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const ConfigurationPoliciesRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConfigurationPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,71 @@ export const ConfigurationPoliciesRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementConfigurationPolicy,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    Settings: "settings",
+} as const;
+/**
+ * Provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CreationSource: "creationSource",
+    CreationSourceDesc: "creationSource desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    IsAssigned: "isAssigned",
+    IsAssignedDesc: "isAssigned desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Platforms: "platforms",
+    PlatformsDesc: "platforms desc",
+    PriorityMetaData: "priorityMetaData",
+    PriorityMetaDataDesc: "priorityMetaData desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    SettingCount: "settingCount",
+    SettingCountDesc: "settingCount desc",
+    Technologies: "technologies",
+    TechnologiesDesc: "technologies desc",
+    TemplateReference: "templateReference",
+    TemplateReferenceDesc: "templateReference desc",
+} as const;
+/**
+ * Provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    CreationSource: "creationSource",
+    Description: "description",
+    IsAssigned: "isAssigned",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    Platforms: "platforms",
+    PriorityMetaData: "priorityMetaData",
+    RoleScopeTagIds: "roleScopeTagIds",
+    SettingCount: "settingCount",
+    Technologies: "technologies",
+    TemplateReference: "templateReference",
+    Assignments: "assignments",
+    Settings: "settings",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

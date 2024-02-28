@@ -84,7 +84,7 @@ export const OverrideComplianceStateRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOverrideComplianceStatePostRequestBody,
         requestInformationContentSetMethod: "setContentFromParsable",

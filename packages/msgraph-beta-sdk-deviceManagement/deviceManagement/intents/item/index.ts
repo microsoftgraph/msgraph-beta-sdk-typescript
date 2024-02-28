@@ -129,12 +129,14 @@ export interface DeviceManagementIntentItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -209,7 +211,7 @@ export const DeviceManagementIntentItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementIntentItemRequestBuilderUriTemplate,
@@ -217,7 +219,7 @@ export const DeviceManagementIntentItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementIntentFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementIntentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -227,12 +229,47 @@ export const DeviceManagementIntentItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementIntentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementIntent,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    Categories: "categories",
+    DeviceSettingStateSummaries: "deviceSettingStateSummaries",
+    DeviceStates: "deviceStates",
+    DeviceStateSummary: "deviceStateSummary",
+    Settings: "settings",
+    UserStates: "userStates",
+    UserStateSummary: "userStateSummary",
+} as const;
+/**
+ * Provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    IsAssigned: "isAssigned",
+    IsMigratingToConfigurationPolicy: "isMigratingToConfigurationPolicy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    TemplateId: "templateId",
+    Assignments: "assignments",
+    Categories: "categories",
+    DeviceSettingStateSummaries: "deviceSettingStateSummaries",
+    DeviceStates: "deviceStates",
+    DeviceStateSummary: "deviceStateSummary",
+    Settings: "settings",
+    UserStates: "userStates",
+    UserStateSummary: "userStateSummary",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

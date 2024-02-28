@@ -62,12 +62,14 @@ export interface BusinessFlowItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -97,7 +99,7 @@ export const BusinessFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BusinessFlowItemRequestBuilderUriTemplate,
@@ -105,7 +107,7 @@ export const BusinessFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowFromDiscriminatorValue,
         queryParametersMapper: BusinessFlowItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,12 +117,33 @@ export const BusinessFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBusinessFlow,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CustomData: "customData",
+    DeDuplicationId: "deDuplicationId",
+    Description: "description",
+    DisplayName: "displayName",
+    Policy: "policy",
+    PolicyTemplateId: "policyTemplateId",
+    RecordVersion: "recordVersion",
+    SchemaId: "schemaId",
+    Settings: "settings",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

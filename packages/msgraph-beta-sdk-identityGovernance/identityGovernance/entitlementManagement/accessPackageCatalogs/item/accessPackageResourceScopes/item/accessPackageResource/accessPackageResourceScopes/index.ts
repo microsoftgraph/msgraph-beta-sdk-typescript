@@ -67,7 +67,7 @@ export interface AccessPackageResourceScopesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +75,7 @@ export interface AccessPackageResourceScopesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +83,7 @@ export interface AccessPackageResourceScopesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -93,6 +93,9 @@ export interface AccessPackageResourceScopesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -132,7 +135,7 @@ export const AccessPackageResourceScopesRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageResourceScopeCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessPackageResourceScopesRequestBuilderGetQueryParametersMapper,
     },
@@ -142,12 +145,54 @@ export const AccessPackageResourceScopesRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageResourceScopeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageResourceScope,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackageResourceScopes property of the microsoft.graph.accessPackageResource entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageResource: "accessPackageResource",
+} as const;
+/**
+ * Provides operations to manage the accessPackageResourceScopes property of the microsoft.graph.accessPackageResource entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsRootScope: "isRootScope",
+    IsRootScopeDesc: "isRootScope desc",
+    OriginId: "originId",
+    OriginIdDesc: "originId desc",
+    OriginSystem: "originSystem",
+    OriginSystemDesc: "originSystem desc",
+    RoleOriginId: "roleOriginId",
+    RoleOriginIdDesc: "roleOriginId desc",
+    Url: "url",
+    UrlDesc: "url desc",
+} as const;
+/**
+ * Provides operations to manage the accessPackageResourceScopes property of the microsoft.graph.accessPackageResource entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    IsRootScope: "isRootScope",
+    OriginId: "originId",
+    OriginSystem: "originSystem",
+    RoleOriginId: "roleOriginId",
+    Url: "url",
+    AccessPackageResource: "accessPackageResource",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

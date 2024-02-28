@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { AlertDefinitionRequestBuilderRequestsMetadata, type AlertDefinitionRequestBuilder } from './alertDefinition/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
  */
@@ -62,16 +64,34 @@ export interface UnifiedRoleManagementAlertConfigurationItemRequestBuilderGetQue
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UnifiedRoleManagementAlertConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AlertDefinition: "alertDefinition",
+} as const;
+/**
+ * Provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertDefinitionId: "alertDefinitionId",
+    IsEnabled: "isEnabled",
+    ScopeId: "scopeId",
+    ScopeType: "scopeType",
+    AlertDefinition: "alertDefinition",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -97,7 +117,7 @@ export const UnifiedRoleManagementAlertConfigurationItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UnifiedRoleManagementAlertConfigurationItemRequestBuilderUriTemplate,
@@ -105,7 +125,7 @@ export const UnifiedRoleManagementAlertConfigurationItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertConfigurationFromDiscriminatorValue,
         queryParametersMapper: UnifiedRoleManagementAlertConfigurationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +135,7 @@ export const UnifiedRoleManagementAlertConfigurationItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleManagementAlertConfiguration,

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UnifiedRoleAssignmentItemRequestBuilder, UnifiedRoleAssignmentItemRequestBuilderNavigationMetadata, UnifiedRoleAssignmentItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
  */
@@ -61,7 +64,7 @@ export interface TransitiveRoleAssignmentsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface TransitiveRoleAssignmentsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface TransitiveRoleAssignmentsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,54 @@ export interface TransitiveRoleAssignmentsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TransitiveRoleAssignmentsRequestBuilderUriTemplate = "{+baseurl}/roleManagement/exchange/transitiveRoleAssignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AppScope: "appScope",
+    DirectoryScope: "directoryScope",
+    Principal: "principal",
+    RoleDefinition: "roleDefinition",
+} as const;
+/**
+ * Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppScopeId: "appScopeId",
+    AppScopeIdDesc: "appScopeId desc",
+    Condition: "condition",
+    ConditionDesc: "condition desc",
+    DirectoryScopeId: "directoryScopeId",
+    DirectoryScopeIdDesc: "directoryScopeId desc",
+    PrincipalId: "principalId",
+    PrincipalIdDesc: "principalId desc",
+    PrincipalOrganizationId: "principalOrganizationId",
+    PrincipalOrganizationIdDesc: "principalOrganizationId desc",
+    ResourceScope: "resourceScope",
+    ResourceScopeDesc: "resourceScope desc",
+    RoleDefinitionId: "roleDefinitionId",
+    RoleDefinitionIdDesc: "roleDefinitionId desc",
+} as const;
+/**
+ * Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppScopeId: "appScopeId",
+    Condition: "condition",
+    DirectoryScopeId: "directoryScopeId",
+    PrincipalId: "principalId",
+    PrincipalOrganizationId: "principalOrganizationId",
+    ResourceScope: "resourceScope",
+    RoleDefinitionId: "roleDefinitionId",
+    AppScope: "appScope",
+    DirectoryScope: "directoryScope",
+    Principal: "principal",
+    RoleDefinition: "roleDefinition",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +178,7 @@ export const TransitiveRoleAssignmentsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleAssignmentCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TransitiveRoleAssignmentsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +188,7 @@ export const TransitiveRoleAssignmentsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleAssignment,

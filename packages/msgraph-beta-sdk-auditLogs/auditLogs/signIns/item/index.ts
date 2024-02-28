@@ -5,6 +5,8 @@ import { createSignInFromDiscriminatorValue, serializeSignIn, type SignIn } from
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
  */
@@ -58,16 +60,95 @@ export interface SignInItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SignInItemRequestBuilderUriTemplate = "{+baseurl}/auditLogs/signIns/{signIn%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppDisplayName: "appDisplayName",
+    AppId: "appId",
+    AppliedConditionalAccessPolicies: "appliedConditionalAccessPolicies",
+    AppliedEventListeners: "appliedEventListeners",
+    AppTokenProtectionStatus: "appTokenProtectionStatus",
+    AuthenticationAppDeviceDetails: "authenticationAppDeviceDetails",
+    AuthenticationAppPolicyEvaluationDetails: "authenticationAppPolicyEvaluationDetails",
+    AuthenticationContextClassReferences: "authenticationContextClassReferences",
+    AuthenticationDetails: "authenticationDetails",
+    AuthenticationMethodsUsed: "authenticationMethodsUsed",
+    AuthenticationProcessingDetails: "authenticationProcessingDetails",
+    AuthenticationProtocol: "authenticationProtocol",
+    AuthenticationRequirement: "authenticationRequirement",
+    AuthenticationRequirementPolicies: "authenticationRequirementPolicies",
+    AutonomousSystemNumber: "autonomousSystemNumber",
+    AzureResourceId: "azureResourceId",
+    ClientAppUsed: "clientAppUsed",
+    ClientCredentialType: "clientCredentialType",
+    ConditionalAccessStatus: "conditionalAccessStatus",
+    CorrelationId: "correlationId",
+    CreatedDateTime: "createdDateTime",
+    CrossTenantAccessType: "crossTenantAccessType",
+    DeviceDetail: "deviceDetail",
+    FederatedCredentialId: "federatedCredentialId",
+    FlaggedForReview: "flaggedForReview",
+    HomeTenantId: "homeTenantId",
+    HomeTenantName: "homeTenantName",
+    IncomingTokenType: "incomingTokenType",
+    IpAddress: "ipAddress",
+    IpAddressFromResourceProvider: "ipAddressFromResourceProvider",
+    IsInteractive: "isInteractive",
+    IsTenantRestricted: "isTenantRestricted",
+    Location: "location",
+    ManagedServiceIdentity: "managedServiceIdentity",
+    MfaDetail: "mfaDetail",
+    NetworkLocationDetails: "networkLocationDetails",
+    OriginalRequestId: "originalRequestId",
+    OriginalTransferMethod: "originalTransferMethod",
+    PrivateLinkDetails: "privateLinkDetails",
+    ProcessingTimeInMilliseconds: "processingTimeInMilliseconds",
+    ResourceDisplayName: "resourceDisplayName",
+    ResourceId: "resourceId",
+    ResourceServicePrincipalId: "resourceServicePrincipalId",
+    ResourceTenantId: "resourceTenantId",
+    RiskDetail: "riskDetail",
+    RiskEventTypes_v2: "riskEventTypes_v2",
+    RiskLevelAggregated: "riskLevelAggregated",
+    RiskLevelDuringSignIn: "riskLevelDuringSignIn",
+    RiskState: "riskState",
+    ServicePrincipalCredentialKeyId: "servicePrincipalCredentialKeyId",
+    ServicePrincipalCredentialThumbprint: "servicePrincipalCredentialThumbprint",
+    ServicePrincipalId: "servicePrincipalId",
+    ServicePrincipalName: "servicePrincipalName",
+    SessionLifetimePolicies: "sessionLifetimePolicies",
+    SignInEventTypes: "signInEventTypes",
+    SignInIdentifier: "signInIdentifier",
+    SignInIdentifierType: "signInIdentifierType",
+    SignInTokenProtectionStatus: "signInTokenProtectionStatus",
+    Status: "status",
+    TokenIssuerName: "tokenIssuerName",
+    TokenIssuerType: "tokenIssuerType",
+    UniqueTokenIdentifier: "uniqueTokenIdentifier",
+    UserAgent: "userAgent",
+    UserDisplayName: "userDisplayName",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+    UserType: "userType",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -85,7 +166,7 @@ export const SignInItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SignInItemRequestBuilderUriTemplate,
@@ -93,7 +174,7 @@ export const SignInItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInFromDiscriminatorValue,
         queryParametersMapper: SignInItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +184,7 @@ export const SignInItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSignIn,

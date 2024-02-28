@@ -7,6 +7,8 @@ import { RemoteNetworksRequestBuilderNavigationMetadata, RemoteNetworksRequestBu
 import { TrafficRequestBuilderNavigationMetadata, TrafficRequestBuilderRequestsMetadata, type TrafficRequestBuilder } from './traffic/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the logs property of the microsoft.graph.networkaccess.networkAccessRoot entity.
  */
@@ -67,16 +69,32 @@ export interface LogsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const LogsRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs{?%24expand,%24select}";
+/**
+ * Provides operations to manage the logs property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    RemoteNetworks: "remoteNetworks",
+    Traffic: "traffic",
+} as const;
+/**
+ * Provides operations to manage the logs property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    RemoteNetworks: "remoteNetworks",
+    Traffic: "traffic",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -107,7 +125,7 @@ export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: LogsRequestBuilderUriTemplate,
@@ -115,7 +133,7 @@ export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLogsFromDiscriminatorValue,
         queryParametersMapper: LogsRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +143,7 @@ export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLogsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLogs,

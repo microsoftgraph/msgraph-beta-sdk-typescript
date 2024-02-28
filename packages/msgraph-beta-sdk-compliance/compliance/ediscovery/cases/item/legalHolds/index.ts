@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { LegalHoldItemRequestBuilderNavigationMetadata, LegalHoldItemRequestBuilderRequestsMetadata, type LegalHoldItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
  */
@@ -67,7 +70,7 @@ export interface LegalHoldsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +78,7 @@ export interface LegalHoldsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +86,7 @@ export interface LegalHoldsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -97,6 +100,61 @@ export interface LegalHoldsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const LegalHoldsRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    SiteSources: "siteSources",
+    UnifiedGroupSources: "unifiedGroupSources",
+    UserSources: "userSources",
+} as const;
+/**
+ * Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ContentQuery: "contentQuery",
+    ContentQueryDesc: "contentQuery desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Errors: "errors",
+    ErrorsDesc: "errors desc",
+    IsEnabled: "isEnabled",
+    IsEnabledDesc: "isEnabled desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ContentQuery: "contentQuery",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    Errors: "errors",
+    IsEnabled: "isEnabled",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Status: "status",
+    SiteSources: "siteSources",
+    UnifiedGroupSources: "unifiedGroupSources",
+    UserSources: "userSources",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -133,7 +191,7 @@ export const LegalHoldsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLegalHoldCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: LegalHoldsRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +201,7 @@ export const LegalHoldsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLegalHoldFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLegalHold,

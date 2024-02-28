@@ -66,12 +66,14 @@ export interface DeviceLinkItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -93,7 +95,7 @@ export const DeviceLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceLinkItemRequestBuilderUriTemplate,
@@ -101,7 +103,7 @@ export const DeviceLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceLinkFromDiscriminatorValue,
         queryParametersMapper: DeviceLinkItemRequestBuilderGetQueryParametersMapper,
     },
@@ -111,12 +113,32 @@ export const DeviceLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceLinkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceLink,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceLinks property of the microsoft.graph.networkaccess.branchSite entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceLinks property of the microsoft.graph.networkaccess.branchSite entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BandwidthCapacityInMbps: "bandwidthCapacityInMbps",
+    BgpConfiguration: "bgpConfiguration",
+    DeviceVendor: "deviceVendor",
+    IpAddress: "ipAddress",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    RedundancyConfiguration: "redundancyConfiguration",
+    TunnelConfiguration: "tunnelConfiguration",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -8,6 +8,9 @@ import { DeltaRequestBuilderRequestsMetadata, type DeltaRequestBuilder } from '.
 import { CallTranscriptItemRequestBuilderNavigationMetadata, CallTranscriptItemRequestBuilderRequestsMetadata, type CallTranscriptItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
  */
@@ -67,7 +70,7 @@ export interface TranscriptsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +78,7 @@ export interface TranscriptsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +86,7 @@ export interface TranscriptsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -97,6 +100,46 @@ export interface TranscriptsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TranscriptsRequestBuilderUriTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/transcripts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Content: "content",
+    ContentDesc: "content desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    MeetingId: "meetingId",
+    MeetingIdDesc: "meetingId desc",
+    MeetingOrganizer: "meetingOrganizer",
+    MeetingOrganizerDesc: "meetingOrganizer desc",
+    MeetingOrganizerId: "meetingOrganizerId",
+    MeetingOrganizerIdDesc: "meetingOrganizerId desc",
+    MetadataContent: "metadataContent",
+    MetadataContentDesc: "metadataContent desc",
+    TranscriptContentUrl: "transcriptContentUrl",
+    TranscriptContentUrlDesc: "transcriptContentUrl desc",
+} as const;
+/**
+ * Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Content: "content",
+    CreatedDateTime: "createdDateTime",
+    MeetingId: "meetingId",
+    MeetingOrganizer: "meetingOrganizer",
+    MeetingOrganizerId: "meetingOrganizerId",
+    MetadataContent: "metadataContent",
+    TranscriptContentUrl: "transcriptContentUrl",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -136,7 +179,7 @@ export const TranscriptsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallTranscriptCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TranscriptsRequestBuilderGetQueryParametersMapper,
     },
@@ -146,7 +189,7 @@ export const TranscriptsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallTranscriptFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCallTranscript,

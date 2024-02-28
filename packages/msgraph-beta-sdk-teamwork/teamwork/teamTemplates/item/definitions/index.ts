@@ -61,7 +61,7 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DefinitionsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const DefinitionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DefinitionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,66 @@ export const DefinitionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamTemplateDefinition,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    TeamDefinition: "teamDefinition",
+} as const;
+/**
+ * Provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Audience: "audience",
+    AudienceDesc: "audience desc",
+    Categories: "categories",
+    CategoriesDesc: "categories desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IconUrl: "iconUrl",
+    IconUrlDesc: "iconUrl desc",
+    LanguageTag: "languageTag",
+    LanguageTagDesc: "languageTag desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    ParentTemplateId: "parentTemplateId",
+    ParentTemplateIdDesc: "parentTemplateId desc",
+    PublisherName: "publisherName",
+    PublisherNameDesc: "publisherName desc",
+    ShortDescription: "shortDescription",
+    ShortDescriptionDesc: "shortDescription desc",
+} as const;
+/**
+ * Provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Audience: "audience",
+    Categories: "categories",
+    Description: "description",
+    DisplayName: "displayName",
+    IconUrl: "iconUrl",
+    LanguageTag: "languageTag",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ParentTemplateId: "parentTemplateId",
+    PublisherName: "publisherName",
+    ShortDescription: "shortDescription",
+    TeamDefinition: "teamDefinition",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

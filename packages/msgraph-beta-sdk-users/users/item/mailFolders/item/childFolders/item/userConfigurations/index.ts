@@ -7,6 +7,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UserConfigurationItemRequestBuilder, UserConfigurationItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
  */
@@ -50,11 +52,11 @@ export interface UserConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -68,6 +70,22 @@ export interface UserConfigurationsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const UserConfigurationsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/userConfigurations{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    BinaryData: "binaryData",
+    BinaryDataDesc: "binaryData desc",
+} as const;
+/**
+ * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BinaryData: "binaryData",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -101,7 +119,7 @@ export const UserConfigurationsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserConfigurationsRequestBuilderGetQueryParametersMapper,
     },

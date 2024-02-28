@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata, type NetworkAccessTrafficTransactionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
  */
@@ -62,7 +65,7 @@ export interface TrafficRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface TrafficRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface TrafficRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,133 @@ export interface TrafficRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TrafficRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/traffic{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Action: "action",
+    ActionDesc: "action desc",
+    AgentVersion: "agentVersion",
+    AgentVersionDesc: "agentVersion desc",
+    ApplicationSnapshot: "applicationSnapshot",
+    ApplicationSnapshotDesc: "applicationSnapshot desc",
+    ConnectionId: "connectionId",
+    ConnectionIdDesc: "connectionId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DestinationFQDN: "destinationFQDN",
+    DestinationFQDNDesc: "destinationFQDN desc",
+    DestinationIp: "destinationIp",
+    DestinationIpDesc: "destinationIp desc",
+    DestinationPort: "destinationPort",
+    DestinationPortDesc: "destinationPort desc",
+    DestinationUrl: "destinationUrl",
+    DestinationUrlDesc: "destinationUrl desc",
+    DestinationWebCategory: "destinationWebCategory",
+    DestinationWebCategoryDesc: "destinationWebCategory desc",
+    DeviceCategory: "deviceCategory",
+    DeviceCategoryDesc: "deviceCategory desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceOperatingSystem: "deviceOperatingSystem",
+    DeviceOperatingSystemDesc: "deviceOperatingSystem desc",
+    DeviceOperatingSystemVersion: "deviceOperatingSystemVersion",
+    DeviceOperatingSystemVersionDesc: "deviceOperatingSystemVersion desc",
+    FilteringProfileId: "filteringProfileId",
+    FilteringProfileIdDesc: "filteringProfileId desc",
+    FilteringProfileName: "filteringProfileName",
+    FilteringProfileNameDesc: "filteringProfileName desc",
+    Headers: "headers",
+    HeadersDesc: "headers desc",
+    InitiatingProcessName: "initiatingProcessName",
+    InitiatingProcessNameDesc: "initiatingProcessName desc",
+    NetworkProtocol: "networkProtocol",
+    NetworkProtocolDesc: "networkProtocol desc",
+    PolicyId: "policyId",
+    PolicyIdDesc: "policyId desc",
+    PolicyName: "policyName",
+    PolicyNameDesc: "policyName desc",
+    PolicyRuleId: "policyRuleId",
+    PolicyRuleIdDesc: "policyRuleId desc",
+    PolicyRuleName: "policyRuleName",
+    PolicyRuleNameDesc: "policyRuleName desc",
+    PrivateAccessDetails: "privateAccessDetails",
+    PrivateAccessDetailsDesc: "privateAccessDetails desc",
+    ReceivedBytes: "receivedBytes",
+    ReceivedBytesDesc: "receivedBytes desc",
+    ResourceTenantId: "resourceTenantId",
+    ResourceTenantIdDesc: "resourceTenantId desc",
+    SentBytes: "sentBytes",
+    SentBytesDesc: "sentBytes desc",
+    SessionId: "sessionId",
+    SessionIdDesc: "sessionId desc",
+    SourceIp: "sourceIp",
+    SourceIpDesc: "sourceIp desc",
+    SourcePort: "sourcePort",
+    SourcePortDesc: "sourcePort desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    ThreatType: "threatType",
+    ThreatTypeDesc: "threatType desc",
+    TrafficType: "trafficType",
+    TrafficTypeDesc: "trafficType desc",
+    TransactionId: "transactionId",
+    TransactionIdDesc: "transactionId desc",
+    TransportProtocol: "transportProtocol",
+    TransportProtocolDesc: "transportProtocol desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Action: "action",
+    AgentVersion: "agentVersion",
+    ApplicationSnapshot: "applicationSnapshot",
+    ConnectionId: "connectionId",
+    CreatedDateTime: "createdDateTime",
+    DestinationFQDN: "destinationFQDN",
+    DestinationIp: "destinationIp",
+    DestinationPort: "destinationPort",
+    DestinationUrl: "destinationUrl",
+    DestinationWebCategory: "destinationWebCategory",
+    DeviceCategory: "deviceCategory",
+    DeviceId: "deviceId",
+    DeviceOperatingSystem: "deviceOperatingSystem",
+    DeviceOperatingSystemVersion: "deviceOperatingSystemVersion",
+    FilteringProfileId: "filteringProfileId",
+    FilteringProfileName: "filteringProfileName",
+    Headers: "headers",
+    InitiatingProcessName: "initiatingProcessName",
+    NetworkProtocol: "networkProtocol",
+    PolicyId: "policyId",
+    PolicyName: "policyName",
+    PolicyRuleId: "policyRuleId",
+    PolicyRuleName: "policyRuleName",
+    PrivateAccessDetails: "privateAccessDetails",
+    ReceivedBytes: "receivedBytes",
+    ResourceTenantId: "resourceTenantId",
+    SentBytes: "sentBytes",
+    SessionId: "sessionId",
+    SourceIp: "sourceIp",
+    SourcePort: "sourcePort",
+    TenantId: "tenantId",
+    ThreatType: "threatType",
+    TrafficType: "trafficType",
+    TransactionId: "transactionId",
+    TransportProtocol: "transportProtocol",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +257,7 @@ export const TrafficRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNetworkAccessTrafficCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TrafficRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +267,7 @@ export const TrafficRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNetworkAccessTrafficFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeNetworkAccessTraffic,

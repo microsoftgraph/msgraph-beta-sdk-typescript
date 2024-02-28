@@ -104,7 +104,7 @@ export const GetCustomizedSettingsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetCustomizedSettingsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetCustomizedSettingsRequestBuilderGetQueryParametersMapper,
     },

@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { type WebpartsRequestBuilder, WebpartsRequestBuilderNavigationMetadata, WebpartsRequestBuilderRequestsMetadata } from './webparts/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the columns property of the microsoft.graph.horizontalSection entity.
  */
@@ -62,16 +64,31 @@ export interface HorizontalSectionColumnItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const HorizontalSectionColumnItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/horizontalSections/{horizontalSection%2Did}/columns/{horizontalSectionColumn%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the columns property of the microsoft.graph.horizontalSection entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Webparts: "webparts",
+} as const;
+/**
+ * Provides operations to manage the columns property of the microsoft.graph.horizontalSection entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Width: "width",
+    Webparts: "webparts",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -98,7 +115,7 @@ export const HorizontalSectionColumnItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: HorizontalSectionColumnItemRequestBuilderUriTemplate,
@@ -106,7 +123,7 @@ export const HorizontalSectionColumnItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHorizontalSectionColumnFromDiscriminatorValue,
         queryParametersMapper: HorizontalSectionColumnItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +133,7 @@ export const HorizontalSectionColumnItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHorizontalSectionColumnFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeHorizontalSectionColumn,

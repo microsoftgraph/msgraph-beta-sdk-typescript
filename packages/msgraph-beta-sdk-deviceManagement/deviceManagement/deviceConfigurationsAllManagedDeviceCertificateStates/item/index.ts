@@ -5,6 +5,8 @@ import { createManagedAllDeviceCertificateStateFromDiscriminatorValue, serialize
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,40 @@ export interface ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParam
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceConfigurationsAllManagedDeviceCertificateStates/{managedAllDeviceCertificateState%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CertificateExpirationDateTime: "certificateExpirationDateTime",
+    CertificateExtendedKeyUsages: "certificateExtendedKeyUsages",
+    CertificateIssuanceDateTime: "certificateIssuanceDateTime",
+    CertificateIssuerName: "certificateIssuerName",
+    CertificateKeyUsages: "certificateKeyUsages",
+    CertificateRevokeStatus: "certificateRevokeStatus",
+    CertificateRevokeStatusLastChangeDateTime: "certificateRevokeStatusLastChangeDateTime",
+    CertificateSerialNumber: "certificateSerialNumber",
+    CertificateSubjectName: "certificateSubjectName",
+    CertificateThumbprint: "certificateThumbprint",
+    ManagedDeviceDisplayName: "managedDeviceDisplayName",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +110,7 @@ export const ManagedAllDeviceCertificateStateItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate,
@@ -92,7 +118,7 @@ export const ManagedAllDeviceCertificateStateItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedAllDeviceCertificateStateFromDiscriminatorValue,
         queryParametersMapper: ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +128,7 @@ export const ManagedAllDeviceCertificateStateItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedAllDeviceCertificateStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedAllDeviceCertificateState,

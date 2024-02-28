@@ -61,7 +61,7 @@ export interface EnterpriseAppsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface EnterpriseAppsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface EnterpriseAppsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface EnterpriseAppsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const EnterpriseAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EnterpriseAppsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,53 @@ export const EnterpriseAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRbacApplication,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignmentApprovals: "roleAssignmentApprovals",
+    RoleAssignments: "roleAssignments",
+    RoleAssignmentScheduleInstances: "roleAssignmentScheduleInstances",
+    RoleAssignmentScheduleRequests: "roleAssignmentScheduleRequests",
+    RoleAssignmentSchedules: "roleAssignmentSchedules",
+    RoleDefinitions: "roleDefinitions",
+    RoleEligibilityScheduleInstances: "roleEligibilityScheduleInstances",
+    RoleEligibilityScheduleRequests: "roleEligibilityScheduleRequests",
+    RoleEligibilitySchedules: "roleEligibilitySchedules",
+    TransitiveRoleAssignments: "transitiveRoleAssignments",
+} as const;
+/**
+ * Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+} as const;
+/**
+ * Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignmentApprovals: "roleAssignmentApprovals",
+    RoleAssignments: "roleAssignments",
+    RoleAssignmentScheduleInstances: "roleAssignmentScheduleInstances",
+    RoleAssignmentScheduleRequests: "roleAssignmentScheduleRequests",
+    RoleAssignmentSchedules: "roleAssignmentSchedules",
+    RoleDefinitions: "roleDefinitions",
+    RoleEligibilityScheduleInstances: "roleEligibilityScheduleInstances",
+    RoleEligibilityScheduleRequests: "roleEligibilityScheduleRequests",
+    RoleEligibilitySchedules: "roleEligibilitySchedules",
+    TransitiveRoleAssignments: "transitiveRoleAssignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

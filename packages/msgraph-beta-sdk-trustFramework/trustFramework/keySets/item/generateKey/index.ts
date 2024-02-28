@@ -98,7 +98,7 @@ export const GenerateKeyRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGenerateKeyPostRequestBody,

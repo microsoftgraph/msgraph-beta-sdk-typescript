@@ -6,6 +6,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { GraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpRequestBuilderNavigationMetadata, GraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpRequestBuilderRequestsMetadata, type GraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpRequestBuilder } from './graphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
 /**
  * Builds and executes requests for operations under /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart
  */
@@ -35,7 +36,7 @@ export interface OnAuthenticationMethodLoadStartRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
@@ -45,6 +46,9 @@ export interface OnAuthenticationMethodLoadStartRequestBuilderGetQueryParameters
  * Uri template for the request builder.
  */
 export const OnAuthenticationMethodLoadStartRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart{?%24expand,%24select}";
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -71,7 +75,7 @@ export const OnAuthenticationMethodLoadStartRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnAuthenticationMethodLoadStartHandlerFromDiscriminatorValue,
         queryParametersMapper: OnAuthenticationMethodLoadStartRequestBuilderGetQueryParametersMapper,
     },

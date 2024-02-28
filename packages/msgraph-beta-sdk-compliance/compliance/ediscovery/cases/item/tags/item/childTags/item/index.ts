@@ -5,6 +5,8 @@ import { createTagFromDiscriminatorValue, type Tag } from '@microsoft/msgraph-be
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
  */
@@ -32,16 +34,37 @@ export interface TagItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TagItemRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags/{tag%2Did1}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ChildTags: "childTags",
+    Parent: "parent",
+} as const;
+/**
+ * Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ChildSelectability: "childSelectability",
+    CreatedBy: "createdBy",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ChildTags: "childTags",
+    Parent: "parent",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -59,7 +82,7 @@ export const TagItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTagFromDiscriminatorValue,
         queryParametersMapper: TagItemRequestBuilderGetQueryParametersMapper,
     },

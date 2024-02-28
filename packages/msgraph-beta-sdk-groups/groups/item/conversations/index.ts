@@ -30,12 +30,12 @@ export interface ConversationsRequestBuilder extends BaseRequestBuilder<Conversa
      */
      get(requestConfiguration?: RequestConfiguration<ConversationsRequestBuilderGetQueryParameters> | undefined) : Promise<ConversationCollectionResponse | undefined>;
     /**
-     * Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+     * Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Conversation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0|Find more info here}
      */
      post(body: Conversation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Conversation | undefined>;
     /**
@@ -45,7 +45,7 @@ export interface ConversationsRequestBuilder extends BaseRequestBuilder<Conversa
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConversationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+     * Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -67,7 +67,7 @@ export interface ConversationsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -75,7 +75,7 @@ export interface ConversationsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -85,6 +85,8 @@ export interface ConversationsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -124,7 +126,7 @@ export const ConversationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConversationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConversationsRequestBuilderGetQueryParametersMapper,
     },
@@ -134,12 +136,41 @@ export const ConversationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConversationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConversation,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the conversations property of the microsoft.graph.group entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    HasAttachments: "hasAttachments",
+    HasAttachmentsDesc: "hasAttachments desc",
+    LastDeliveredDateTime: "lastDeliveredDateTime",
+    LastDeliveredDateTimeDesc: "lastDeliveredDateTime desc",
+    Preview: "preview",
+    PreviewDesc: "preview desc",
+    Topic: "topic",
+    TopicDesc: "topic desc",
+    UniqueSenders: "uniqueSenders",
+    UniqueSendersDesc: "uniqueSenders desc",
+} as const;
+/**
+ * Provides operations to manage the conversations property of the microsoft.graph.group entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    HasAttachments: "hasAttachments",
+    LastDeliveredDateTime: "lastDeliveredDateTime",
+    Preview: "preview",
+    Topic: "topic",
+    UniqueSenders: "uniqueSenders",
+    Threads: "threads",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

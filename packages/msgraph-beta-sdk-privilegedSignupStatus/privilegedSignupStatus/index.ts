@@ -11,6 +11,9 @@ import { PrivilegedSignupStatusItemRequestBuilderRequestsMetadata, type Privileg
 import { SignUpRequestBuilderRequestsMetadata, type SignUpRequestBuilder } from './signUp/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of privilegedSignupStatus entities.
  */
@@ -81,7 +84,7 @@ export interface PrivilegedSignupStatusRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -89,7 +92,7 @@ export interface PrivilegedSignupStatusRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -97,7 +100,7 @@ export interface PrivilegedSignupStatusRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -111,6 +114,31 @@ export interface PrivilegedSignupStatusRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PrivilegedSignupStatusRequestBuilderUriTemplate = "{+baseurl}/privilegedSignupStatus{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the collection of privilegedSignupStatus entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the collection of privilegedSignupStatus entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    IsRegistered: "isRegistered",
+    IsRegisteredDesc: "isRegistered desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the collection of privilegedSignupStatus entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    IsRegistered: "isRegistered",
+    Status: "status",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -158,7 +186,7 @@ export const PrivilegedSignupStatusRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedSignupStatusCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PrivilegedSignupStatusRequestBuilderGetQueryParametersMapper,
     },
@@ -168,7 +196,7 @@ export const PrivilegedSignupStatusRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedSignupStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedSignupStatus,

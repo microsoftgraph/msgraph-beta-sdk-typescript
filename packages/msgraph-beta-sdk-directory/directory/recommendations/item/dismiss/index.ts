@@ -80,7 +80,7 @@ export const DismissRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRecommendationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDismissPostRequestBody,

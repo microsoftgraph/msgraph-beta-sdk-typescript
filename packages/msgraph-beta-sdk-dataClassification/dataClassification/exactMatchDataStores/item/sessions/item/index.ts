@@ -77,12 +77,14 @@ export interface ExactMatchSessionItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -121,7 +123,7 @@ export const ExactMatchSessionItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ExactMatchSessionItemRequestBuilderUriTemplate,
@@ -129,7 +131,7 @@ export const ExactMatchSessionItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchSessionFromDiscriminatorValue,
         queryParametersMapper: ExactMatchSessionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -139,12 +141,46 @@ export const ExactMatchSessionItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchSessionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExactMatchSession,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    UploadAgent: "uploadAgent",
+} as const;
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CompletionDateTime: "completionDateTime",
+    CreationDateTime: "creationDateTime",
+    ErrorEscaped: "error",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    StartDateTime: "startDateTime",
+    DataStoreId: "dataStoreId",
+    ProcessingCompletionDateTime: "processingCompletionDateTime",
+    RemainingBlockCount: "remainingBlockCount",
+    RemainingJobCount: "remainingJobCount",
+    State: "state",
+    TotalBlockCount: "totalBlockCount",
+    TotalJobCount: "totalJobCount",
+    UploadCompletionDateTime: "uploadCompletionDateTime",
+    Checksum: "checksum",
+    DataUploadURI: "dataUploadURI",
+    Fields: "fields",
+    FileName: "fileName",
+    RowsPerBlock: "rowsPerBlock",
+    Salt: "salt",
+    UploadAgentId: "uploadAgentId",
+    UploadAgent: "uploadAgent",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

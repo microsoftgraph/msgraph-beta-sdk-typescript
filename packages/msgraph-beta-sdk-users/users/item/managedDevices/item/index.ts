@@ -63,6 +63,8 @@ import { type WindowsProtectionStateRequestBuilder, WindowsProtectionStateReques
 import { type WipeRequestBuilder, WipeRequestBuilderRequestsMetadata } from './wipe/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
  */
@@ -347,16 +349,132 @@ export interface ManagedDeviceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagedDeviceItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AssignmentFilterEvaluationStatusDetails: "assignmentFilterEvaluationStatusDetails",
+    DetectedApps: "detectedApps",
+    DeviceCategory: "deviceCategory",
+    DeviceCompliancePolicyStates: "deviceCompliancePolicyStates",
+    DeviceConfigurationStates: "deviceConfigurationStates",
+    DeviceHealthScriptStates: "deviceHealthScriptStates",
+    LogCollectionRequests: "logCollectionRequests",
+    ManagedDeviceMobileAppConfigurationStates: "managedDeviceMobileAppConfigurationStates",
+    SecurityBaselineStates: "securityBaselineStates",
+    Users: "users",
+    WindowsProtectionState: "windowsProtectionState",
+} as const;
+/**
+ * Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AadRegistered: "aadRegistered",
+    ActivationLockBypassCode: "activationLockBypassCode",
+    AndroidSecurityPatchLevel: "androidSecurityPatchLevel",
+    AutopilotEnrolled: "autopilotEnrolled",
+    AzureActiveDirectoryDeviceId: "azureActiveDirectoryDeviceId",
+    AzureADDeviceId: "azureADDeviceId",
+    AzureADRegistered: "azureADRegistered",
+    BootstrapTokenEscrowed: "bootstrapTokenEscrowed",
+    ChassisType: "chassisType",
+    ChromeOSDeviceInfo: "chromeOSDeviceInfo",
+    CloudPcRemoteActionResults: "cloudPcRemoteActionResults",
+    ComplianceGracePeriodExpirationDateTime: "complianceGracePeriodExpirationDateTime",
+    ComplianceState: "complianceState",
+    ConfigurationManagerClientEnabledFeatures: "configurationManagerClientEnabledFeatures",
+    ConfigurationManagerClientHealthState: "configurationManagerClientHealthState",
+    ConfigurationManagerClientInformation: "configurationManagerClientInformation",
+    DeviceActionResults: "deviceActionResults",
+    DeviceCategoryDisplayName: "deviceCategoryDisplayName",
+    DeviceEnrollmentType: "deviceEnrollmentType",
+    DeviceFirmwareConfigurationInterfaceManaged: "deviceFirmwareConfigurationInterfaceManaged",
+    DeviceHealthAttestationState: "deviceHealthAttestationState",
+    DeviceName: "deviceName",
+    DeviceRegistrationState: "deviceRegistrationState",
+    DeviceType: "deviceType",
+    EasActivated: "easActivated",
+    EasActivationDateTime: "easActivationDateTime",
+    EasDeviceId: "easDeviceId",
+    EmailAddress: "emailAddress",
+    EnrolledDateTime: "enrolledDateTime",
+    EnrollmentProfileName: "enrollmentProfileName",
+    EthernetMacAddress: "ethernetMacAddress",
+    ExchangeAccessState: "exchangeAccessState",
+    ExchangeAccessStateReason: "exchangeAccessStateReason",
+    ExchangeLastSuccessfulSyncDateTime: "exchangeLastSuccessfulSyncDateTime",
+    FreeStorageSpaceInBytes: "freeStorageSpaceInBytes",
+    HardwareInformation: "hardwareInformation",
+    Iccid: "iccid",
+    Imei: "imei",
+    IsEncrypted: "isEncrypted",
+    IsSupervised: "isSupervised",
+    JailBroken: "jailBroken",
+    JoinType: "joinType",
+    LastSyncDateTime: "lastSyncDateTime",
+    LostModeState: "lostModeState",
+    ManagedDeviceName: "managedDeviceName",
+    ManagedDeviceOwnerType: "managedDeviceOwnerType",
+    ManagementAgent: "managementAgent",
+    ManagementCertificateExpirationDate: "managementCertificateExpirationDate",
+    ManagementFeatures: "managementFeatures",
+    ManagementState: "managementState",
+    Manufacturer: "manufacturer",
+    Meid: "meid",
+    Model: "model",
+    Notes: "notes",
+    OperatingSystem: "operatingSystem",
+    OsVersion: "osVersion",
+    OwnerType: "ownerType",
+    PartnerReportedThreatState: "partnerReportedThreatState",
+    PhoneNumber: "phoneNumber",
+    PhysicalMemoryInBytes: "physicalMemoryInBytes",
+    PreferMdmOverGroupPolicyAppliedDateTime: "preferMdmOverGroupPolicyAppliedDateTime",
+    ProcessorArchitecture: "processorArchitecture",
+    RemoteAssistanceSessionErrorDetails: "remoteAssistanceSessionErrorDetails",
+    RemoteAssistanceSessionUrl: "remoteAssistanceSessionUrl",
+    RequireUserEnrollmentApproval: "requireUserEnrollmentApproval",
+    RetireAfterDateTime: "retireAfterDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    SecurityPatchLevel: "securityPatchLevel",
+    SerialNumber: "serialNumber",
+    SkuFamily: "skuFamily",
+    SkuNumber: "skuNumber",
+    SpecificationVersion: "specificationVersion",
+    SubscriberCarrier: "subscriberCarrier",
+    TotalStorageSpaceInBytes: "totalStorageSpaceInBytes",
+    Udid: "udid",
+    UserDisplayName: "userDisplayName",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+    UsersLoggedOn: "usersLoggedOn",
+    WiFiMacAddress: "wiFiMacAddress",
+    WindowsActiveMalwareCount: "windowsActiveMalwareCount",
+    WindowsRemediatedMalwareCount: "windowsRemediatedMalwareCount",
+    AssignmentFilterEvaluationStatusDetails: "assignmentFilterEvaluationStatusDetails",
+    DetectedApps: "detectedApps",
+    DeviceCategory: "deviceCategory",
+    DeviceCompliancePolicyStates: "deviceCompliancePolicyStates",
+    DeviceConfigurationStates: "deviceConfigurationStates",
+    DeviceHealthScriptStates: "deviceHealthScriptStates",
+    LogCollectionRequests: "logCollectionRequests",
+    ManagedDeviceMobileAppConfigurationStates: "managedDeviceMobileAppConfigurationStates",
+    SecurityBaselineStates: "securityBaselineStates",
+    Users: "users",
+    WindowsProtectionState: "windowsProtectionState",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -562,7 +680,7 @@ export const ManagedDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedDeviceItemRequestBuilderUriTemplate,
@@ -570,7 +688,7 @@ export const ManagedDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -580,7 +698,7 @@ export const ManagedDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedDevice,

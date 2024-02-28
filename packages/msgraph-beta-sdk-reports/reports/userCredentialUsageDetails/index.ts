@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UserCredentialUsageDetailsItemRequestBuilder, UserCredentialUsageDetailsItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
  */
@@ -62,7 +65,7 @@ export interface UserCredentialUsageDetailsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface UserCredentialUsageDetailsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface UserCredentialUsageDetailsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,46 @@ export interface UserCredentialUsageDetailsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const UserCredentialUsageDetailsRequestBuilderUriTemplate = "{+baseurl}/reports/userCredentialUsageDetails{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AuthMethod: "authMethod",
+    AuthMethodDesc: "authMethod desc",
+    EventDateTime: "eventDateTime",
+    EventDateTimeDesc: "eventDateTime desc",
+    FailureReason: "failureReason",
+    FailureReasonDesc: "failureReason desc",
+    Feature: "feature",
+    FeatureDesc: "feature desc",
+    IsSuccess: "isSuccess",
+    IsSuccessDesc: "isSuccess desc",
+    UserDisplayName: "userDisplayName",
+    UserDisplayNameDesc: "userDisplayName desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AuthMethod: "authMethod",
+    EventDateTime: "eventDateTime",
+    FailureReason: "failureReason",
+    Feature: "feature",
+    IsSuccess: "isSuccess",
+    UserDisplayName: "userDisplayName",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +170,7 @@ export const UserCredentialUsageDetailsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserCredentialUsageDetailsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserCredentialUsageDetailsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +180,7 @@ export const UserCredentialUsageDetailsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserCredentialUsageDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserCredentialUsageDetails,

@@ -46,7 +46,7 @@ export interface AccessPackageResourcesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +54,7 @@ export interface AccessPackageResourcesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +62,7 @@ export interface AccessPackageResourcesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -72,6 +72,9 @@ export interface AccessPackageResourcesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -111,10 +114,65 @@ export const AccessPackageResourcesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageResourceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessPackageResourcesRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageResourceEnvironment: "accessPackageResourceEnvironment",
+    AccessPackageResourceRoles: "accessPackageResourceRoles",
+    AccessPackageResourceScopes: "accessPackageResourceScopes",
+} as const;
+/**
+ * Provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AddedBy: "addedBy",
+    AddedByDesc: "addedBy desc",
+    AddedOn: "addedOn",
+    AddedOnDesc: "addedOn desc",
+    Attributes: "attributes",
+    AttributesDesc: "attributes desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsPendingOnboarding: "isPendingOnboarding",
+    IsPendingOnboardingDesc: "isPendingOnboarding desc",
+    OriginId: "originId",
+    OriginIdDesc: "originId desc",
+    OriginSystem: "originSystem",
+    OriginSystemDesc: "originSystem desc",
+    ResourceType: "resourceType",
+    ResourceTypeDesc: "resourceType desc",
+    Url: "url",
+    UrlDesc: "url desc",
+} as const;
+/**
+ * Provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AddedBy: "addedBy",
+    AddedOn: "addedOn",
+    Attributes: "attributes",
+    Description: "description",
+    DisplayName: "displayName",
+    IsPendingOnboarding: "isPendingOnboarding",
+    OriginId: "originId",
+    OriginSystem: "originSystem",
+    ResourceType: "resourceType",
+    Url: "url",
+    AccessPackageResourceEnvironment: "accessPackageResourceEnvironment",
+    AccessPackageResourceRoles: "accessPackageResourceRoles",
+    AccessPackageResourceScopes: "accessPackageResourceScopes",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

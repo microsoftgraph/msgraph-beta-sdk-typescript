@@ -8,6 +8,9 @@ import { GetTeamsLicensingDetailsRequestBuilderRequestsMetadata, type GetTeamsLi
 import { LicenseDetailsItemRequestBuilderRequestsMetadata, type LicenseDetailsItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
  */
@@ -66,7 +69,7 @@ export interface LicenseDetailsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +77,7 @@ export interface LicenseDetailsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +85,7 @@ export interface LicenseDetailsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,34 @@ export interface LicenseDetailsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const LicenseDetailsRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/licenseDetails{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ServicePlans: "servicePlans",
+    ServicePlansDesc: "servicePlans desc",
+    SkuId: "skuId",
+    SkuIdDesc: "skuId desc",
+    SkuPartNumber: "skuPartNumber",
+    SkuPartNumberDesc: "skuPartNumber desc",
+} as const;
+/**
+ * Provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ServicePlans: "servicePlans",
+    SkuId: "skuId",
+    SkuPartNumber: "skuPartNumber",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -134,7 +165,7 @@ export const LicenseDetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLicenseDetailsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: LicenseDetailsRequestBuilderGetQueryParametersMapper,
     },
@@ -144,7 +175,7 @@ export const LicenseDetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLicenseDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLicenseDetails,

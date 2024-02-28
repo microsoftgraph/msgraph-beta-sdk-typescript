@@ -80,7 +80,7 @@ export const EvaluateDynamicMembershipRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEvaluateDynamicMembershipResultFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEvaluateDynamicMembershipPostRequestBody,

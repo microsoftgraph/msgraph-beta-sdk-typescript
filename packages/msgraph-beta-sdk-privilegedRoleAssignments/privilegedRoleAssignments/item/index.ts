@@ -8,6 +8,8 @@ import { MakePermanentRequestBuilderRequestsMetadata, type MakePermanentRequestB
 import { RoleInfoRequestBuilderNavigationMetadata, RoleInfoRequestBuilderRequestsMetadata, type RoleInfoRequestBuilder } from './roleInfo/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of privilegedRoleAssignment entities.
  */
@@ -72,16 +74,35 @@ export interface PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrivilegedRoleAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of privilegedRoleAssignment entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    RoleInfo: "roleInfo",
+} as const;
+/**
+ * Provides operations to manage the collection of privilegedRoleAssignment entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExpirationDateTime: "expirationDateTime",
+    IsElevated: "isElevated",
+    ResultMessage: "resultMessage",
+    RoleId: "roleId",
+    UserId: "userId",
+    RoleInfo: "roleInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -114,7 +135,7 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegedRoleAssignmentItemRequestBuilderUriTemplate,
@@ -122,7 +143,7 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: PrivilegedRoleAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -132,7 +153,7 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedRoleAssignment,

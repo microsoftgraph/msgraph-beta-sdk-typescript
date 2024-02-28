@@ -62,7 +62,7 @@ export interface AppCredentialSignInActivitiesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface AppCredentialSignInActivitiesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface AppCredentialSignInActivitiesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface AppCredentialSignInActivitiesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AppCredentialSignInActivitiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AppCredentialSignInActivitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,64 @@ export const AppCredentialSignInActivitiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppCredentialSignInActivity,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppId: "appId",
+    AppIdDesc: "appId desc",
+    AppObjectId: "appObjectId",
+    AppObjectIdDesc: "appObjectId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CredentialOrigin: "credentialOrigin",
+    CredentialOriginDesc: "credentialOrigin desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    KeyId: "keyId",
+    KeyIdDesc: "keyId desc",
+    KeyType: "keyType",
+    KeyTypeDesc: "keyType desc",
+    KeyUsage: "keyUsage",
+    KeyUsageDesc: "keyUsage desc",
+    ResourceId: "resourceId",
+    ResourceIdDesc: "resourceId desc",
+    ServicePrincipalObjectId: "servicePrincipalObjectId",
+    ServicePrincipalObjectIdDesc: "servicePrincipalObjectId desc",
+    SignInActivity: "signInActivity",
+    SignInActivityDesc: "signInActivity desc",
+} as const;
+/**
+ * Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppId: "appId",
+    AppObjectId: "appObjectId",
+    CreatedDateTime: "createdDateTime",
+    CredentialOrigin: "credentialOrigin",
+    ExpirationDateTime: "expirationDateTime",
+    KeyId: "keyId",
+    KeyType: "keyType",
+    KeyUsage: "keyUsage",
+    ResourceId: "resourceId",
+    ServicePrincipalObjectId: "servicePrincipalObjectId",
+    SignInActivity: "signInActivity",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -30,12 +30,14 @@ export interface DefaultIosEnrollmentProfileRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,79 @@ export const DefaultIosEnrollmentProfileRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepIOSEnrollmentProfileFromDiscriminatorValue,
         queryParametersMapper: DefaultIosEnrollmentProfileRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the defaultIosEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the defaultIosEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConfigurationEndpointUrl: "configurationEndpointUrl",
+    Description: "description",
+    DisplayName: "displayName",
+    EnableAuthenticationViaCompanyPortal: "enableAuthenticationViaCompanyPortal",
+    RequireCompanyPortalOnSetupAssistantEnrolledDevices: "requireCompanyPortalOnSetupAssistantEnrolledDevices",
+    RequiresUserAuthentication: "requiresUserAuthentication",
+    AppleIdDisabled: "appleIdDisabled",
+    ApplePayDisabled: "applePayDisabled",
+    ConfigurationWebUrl: "configurationWebUrl",
+    DeviceNameTemplate: "deviceNameTemplate",
+    DiagnosticsDisabled: "diagnosticsDisabled",
+    DisplayToneSetupDisabled: "displayToneSetupDisabled",
+    EnabledSkipKeys: "enabledSkipKeys",
+    EnrollmentTimeAzureAdGroupIds: "enrollmentTimeAzureAdGroupIds",
+    IsDefault: "isDefault",
+    IsMandatory: "isMandatory",
+    LocationDisabled: "locationDisabled",
+    PrivacyPaneDisabled: "privacyPaneDisabled",
+    ProfileRemovalDisabled: "profileRemovalDisabled",
+    RestoreBlocked: "restoreBlocked",
+    ScreenTimeScreenDisabled: "screenTimeScreenDisabled",
+    SiriDisabled: "siriDisabled",
+    SupervisedModeEnabled: "supervisedModeEnabled",
+    SupportDepartment: "supportDepartment",
+    SupportPhoneNumber: "supportPhoneNumber",
+    TermsAndConditionsDisabled: "termsAndConditionsDisabled",
+    TouchIdDisabled: "touchIdDisabled",
+    WaitForDeviceConfiguredConfirmation: "waitForDeviceConfiguredConfirmation",
+    AppearanceScreenDisabled: "appearanceScreenDisabled",
+    AwaitDeviceConfiguredConfirmation: "awaitDeviceConfiguredConfirmation",
+    CarrierActivationUrl: "carrierActivationUrl",
+    CompanyPortalVppTokenId: "companyPortalVppTokenId",
+    DeviceToDeviceMigrationDisabled: "deviceToDeviceMigrationDisabled",
+    EnableSharedIPad: "enableSharedIPad",
+    EnableSingleAppEnrollmentMode: "enableSingleAppEnrollmentMode",
+    ExpressLanguageScreenDisabled: "expressLanguageScreenDisabled",
+    ForceTemporarySession: "forceTemporarySession",
+    HomeButtonScreenDisabled: "homeButtonScreenDisabled",
+    IMessageAndFaceTimeScreenDisabled: "iMessageAndFaceTimeScreenDisabled",
+    ITunesPairingMode: "iTunesPairingMode",
+    ManagementCertificates: "managementCertificates",
+    OnBoardingScreenDisabled: "onBoardingScreenDisabled",
+    PassCodeDisabled: "passCodeDisabled",
+    PasscodeLockGracePeriodInSeconds: "passcodeLockGracePeriodInSeconds",
+    PreferredLanguageScreenDisabled: "preferredLanguageScreenDisabled",
+    RestoreCompletedScreenDisabled: "restoreCompletedScreenDisabled",
+    RestoreFromAndroidDisabled: "restoreFromAndroidDisabled",
+    SharedIPadMaximumUserCount: "sharedIPadMaximumUserCount",
+    SimSetupScreenDisabled: "simSetupScreenDisabled",
+    SoftwareUpdateScreenDisabled: "softwareUpdateScreenDisabled",
+    TemporarySessionTimeoutInSeconds: "temporarySessionTimeoutInSeconds",
+    UpdateCompleteScreenDisabled: "updateCompleteScreenDisabled",
+    UserlessSharedAadModeEnabled: "userlessSharedAadModeEnabled",
+    UserSessionTimeoutInSeconds: "userSessionTimeoutInSeconds",
+    WatchMigrationScreenDisabled: "watchMigrationScreenDisabled",
+    WelcomeScreenDisabled: "welcomeScreenDisabled",
+    ZoomDisabled: "zoomDisabled",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -8,6 +8,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { CloudPcProvisioningPolicyItemRequestBuilderNavigationMetadata, CloudPcProvisioningPolicyItemRequestBuilderRequestsMetadata, type CloudPcProvisioningPolicyItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
  */
@@ -75,7 +78,7 @@ export interface ProvisioningPoliciesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -83,7 +86,7 @@ export interface ProvisioningPoliciesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -91,7 +94,7 @@ export interface ProvisioningPoliciesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -105,6 +108,87 @@ export interface ProvisioningPoliciesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ProvisioningPoliciesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AlternateResourceUrl: "alternateResourceUrl",
+    AlternateResourceUrlDesc: "alternateResourceUrl desc",
+    CloudPcGroupDisplayName: "cloudPcGroupDisplayName",
+    CloudPcGroupDisplayNameDesc: "cloudPcGroupDisplayName desc",
+    CloudPcNamingTemplate: "cloudPcNamingTemplate",
+    CloudPcNamingTemplateDesc: "cloudPcNamingTemplate desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    DomainJoinConfiguration: "domainJoinConfiguration",
+    DomainJoinConfigurationDesc: "domainJoinConfiguration desc",
+    DomainJoinConfigurations: "domainJoinConfigurations",
+    DomainJoinConfigurationsDesc: "domainJoinConfigurations desc",
+    EnableSingleSignOn: "enableSingleSignOn",
+    EnableSingleSignOnDesc: "enableSingleSignOn desc",
+    GracePeriodInHours: "gracePeriodInHours",
+    GracePeriodInHoursDesc: "gracePeriodInHours desc",
+    ImageDisplayName: "imageDisplayName",
+    ImageDisplayNameDesc: "imageDisplayName desc",
+    ImageId: "imageId",
+    ImageIdDesc: "imageId desc",
+    ImageType: "imageType",
+    ImageTypeDesc: "imageType desc",
+    LocalAdminEnabled: "localAdminEnabled",
+    LocalAdminEnabledDesc: "localAdminEnabled desc",
+    ManagedBy: "managedBy",
+    ManagedByDesc: "managedBy desc",
+    MicrosoftManagedDesktop: "microsoftManagedDesktop",
+    MicrosoftManagedDesktopDesc: "microsoftManagedDesktop desc",
+    OnPremisesConnectionId: "onPremisesConnectionId",
+    OnPremisesConnectionIdDesc: "onPremisesConnectionId desc",
+    ProvisioningType: "provisioningType",
+    ProvisioningTypeDesc: "provisioningType desc",
+    ScopeIds: "scopeIds",
+    ScopeIdsDesc: "scopeIds desc",
+    WindowsSetting: "windowsSetting",
+    WindowsSettingDesc: "windowsSetting desc",
+    WindowsSettings: "windowsSettings",
+    WindowsSettingsDesc: "windowsSettings desc",
+} as const;
+/**
+ * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlternateResourceUrl: "alternateResourceUrl",
+    CloudPcGroupDisplayName: "cloudPcGroupDisplayName",
+    CloudPcNamingTemplate: "cloudPcNamingTemplate",
+    Description: "description",
+    DisplayName: "displayName",
+    DomainJoinConfiguration: "domainJoinConfiguration",
+    DomainJoinConfigurations: "domainJoinConfigurations",
+    EnableSingleSignOn: "enableSingleSignOn",
+    GracePeriodInHours: "gracePeriodInHours",
+    ImageDisplayName: "imageDisplayName",
+    ImageId: "imageId",
+    ImageType: "imageType",
+    LocalAdminEnabled: "localAdminEnabled",
+    ManagedBy: "managedBy",
+    MicrosoftManagedDesktop: "microsoftManagedDesktop",
+    OnPremisesConnectionId: "onPremisesConnectionId",
+    ProvisioningType: "provisioningType",
+    ScopeIds: "scopeIds",
+    WindowsSetting: "windowsSetting",
+    WindowsSettings: "windowsSettings",
+    Assignments: "assignments",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -144,7 +228,7 @@ export const ProvisioningPoliciesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ProvisioningPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -154,7 +238,7 @@ export const ProvisioningPoliciesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcProvisioningPolicy,

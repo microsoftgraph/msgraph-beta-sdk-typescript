@@ -7,6 +7,8 @@ import { ActivitiesRequestBuilderNavigationMetadata, ActivitiesRequestBuilderReq
 import { MicrosoftGraphIndustryDataGetStatisticsRequestBuilderRequestsMetadata, type MicrosoftGraphIndustryDataGetStatisticsRequestBuilder } from './microsoftGraphIndustryDataGetStatistics/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
  */
@@ -41,16 +43,35 @@ export interface IndustryDataRunItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const IndustryDataRunItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Activities: "activities",
+} as const;
+/**
+ * Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BlockingError: "blockingError",
+    DisplayName: "displayName",
+    EndDateTime: "endDateTime",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    Activities: "activities",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -80,7 +101,7 @@ export const IndustryDataRunItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIndustryDataRunFromDiscriminatorValue,
         queryParametersMapper: IndustryDataRunItemRequestBuilderGetQueryParametersMapper,
     },

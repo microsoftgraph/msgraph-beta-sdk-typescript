@@ -62,12 +62,14 @@ export interface EmployeeItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const EmployeeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EmployeeItemRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const EmployeeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmployeeFromDiscriminatorValue,
         queryParametersMapper: EmployeeItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,43 @@ export const EmployeeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmployeeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmployee,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the employees property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Picture: "picture",
+} as const;
+/**
+ * Provides operations to manage the employees property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Address: "address",
+    BirthDate: "birthDate",
+    DisplayName: "displayName",
+    Email: "email",
+    EmploymentDate: "employmentDate",
+    GivenName: "givenName",
+    Id: "id",
+    JobTitle: "jobTitle",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    MiddleName: "middleName",
+    MobilePhone: "mobilePhone",
+    Number: "number",
+    PersonalEmail: "personalEmail",
+    PhoneNumber: "phoneNumber",
+    StatisticsGroupCode: "statisticsGroupCode",
+    Status: "status",
+    Surname: "surname",
+    TerminationDate: "terminationDate",
+    Picture: "picture",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

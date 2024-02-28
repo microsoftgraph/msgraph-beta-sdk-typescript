@@ -82,7 +82,7 @@ export interface AccessPackageAssignmentsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -90,7 +90,7 @@ export interface AccessPackageAssignmentsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -98,7 +98,7 @@ export interface AccessPackageAssignmentsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -108,6 +108,9 @@ export interface AccessPackageAssignmentsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -157,7 +160,7 @@ export const AccessPackageAssignmentsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentsRequestBuilderGetQueryParametersMapper,
     },
@@ -167,12 +170,71 @@ export const AccessPackageAssignmentsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageAssignment,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignmentPolicy: "accessPackageAssignmentPolicy",
+    AccessPackageAssignmentRequests: "accessPackageAssignmentRequests",
+    AccessPackageAssignmentResourceRoles: "accessPackageAssignmentResourceRoles",
+    Target: "target",
+} as const;
+/**
+ * Provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AccessPackageId: "accessPackageId",
+    AccessPackageIdDesc: "accessPackageId desc",
+    AssignmentPolicyId: "assignmentPolicyId",
+    AssignmentPolicyIdDesc: "assignmentPolicyId desc",
+    AssignmentState: "assignmentState",
+    AssignmentStateDesc: "assignmentState desc",
+    AssignmentStatus: "assignmentStatus",
+    AssignmentStatusDesc: "assignmentStatus desc",
+    CatalogId: "catalogId",
+    CatalogIdDesc: "catalogId desc",
+    CustomExtensionCalloutInstances: "customExtensionCalloutInstances",
+    CustomExtensionCalloutInstancesDesc: "customExtensionCalloutInstances desc",
+    ExpiredDateTime: "expiredDateTime",
+    ExpiredDateTimeDesc: "expiredDateTime desc",
+    IsExtended: "isExtended",
+    IsExtendedDesc: "isExtended desc",
+    Schedule: "schedule",
+    ScheduleDesc: "schedule desc",
+    TargetId: "targetId",
+    TargetIdDesc: "targetId desc",
+} as const;
+/**
+ * Provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccessPackageId: "accessPackageId",
+    AssignmentPolicyId: "assignmentPolicyId",
+    AssignmentState: "assignmentState",
+    AssignmentStatus: "assignmentStatus",
+    CatalogId: "catalogId",
+    CustomExtensionCalloutInstances: "customExtensionCalloutInstances",
+    ExpiredDateTime: "expiredDateTime",
+    IsExtended: "isExtended",
+    Schedule: "schedule",
+    TargetId: "targetId",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignmentPolicy: "accessPackageAssignmentPolicy",
+    AccessPackageAssignmentRequests: "accessPackageAssignmentRequests",
+    AccessPackageAssignmentResourceRoles: "accessPackageAssignmentResourceRoles",
+    Target: "target",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

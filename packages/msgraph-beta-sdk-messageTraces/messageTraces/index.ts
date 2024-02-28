@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MessageTraceItemRequestBuilderNavigationMetadata, MessageTraceItemRequestBuilderRequestsMetadata, type MessageTraceItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of messageTrace entities.
  */
@@ -61,7 +64,7 @@ export interface MessageTracesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface MessageTracesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface MessageTracesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,48 @@ export interface MessageTracesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const MessageTracesRequestBuilderUriTemplate = "{+baseurl}/messageTraces{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the collection of messageTrace entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Recipients: "recipients",
+} as const;
+/**
+ * Provides operations to manage the collection of messageTrace entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DestinationIPAddress: "destinationIPAddress",
+    DestinationIPAddressDesc: "destinationIPAddress desc",
+    MessageId: "messageId",
+    MessageIdDesc: "messageId desc",
+    ReceivedDateTime: "receivedDateTime",
+    ReceivedDateTimeDesc: "receivedDateTime desc",
+    SenderEmail: "senderEmail",
+    SenderEmailDesc: "senderEmail desc",
+    Size: "size",
+    SizeDesc: "size desc",
+    SourceIPAddress: "sourceIPAddress",
+    SourceIPAddressDesc: "sourceIPAddress desc",
+    Subject: "subject",
+    SubjectDesc: "subject desc",
+} as const;
+/**
+ * Provides operations to manage the collection of messageTrace entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DestinationIPAddress: "destinationIPAddress",
+    MessageId: "messageId",
+    ReceivedDateTime: "receivedDateTime",
+    SenderEmail: "senderEmail",
+    Size: "size",
+    SourceIPAddress: "sourceIPAddress",
+    Subject: "subject",
+    Recipients: "recipients",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +172,7 @@ export const MessageTracesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMessageTraceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MessageTracesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +182,7 @@ export const MessageTracesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMessageTraceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMessageTrace,

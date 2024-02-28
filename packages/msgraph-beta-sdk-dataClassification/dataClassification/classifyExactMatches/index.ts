@@ -97,7 +97,7 @@ export const ClassifyExactMatchesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchClassificationResultFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeClassifyExactMatchesPostRequestBody,

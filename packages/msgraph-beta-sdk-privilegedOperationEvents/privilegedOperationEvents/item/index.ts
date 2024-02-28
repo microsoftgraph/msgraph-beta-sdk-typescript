@@ -5,6 +5,8 @@ import { createPrivilegedOperationEventFromDiscriminatorValue, serializePrivileg
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of privilegedOperationEvent entities.
  */
@@ -57,16 +59,42 @@ export interface PrivilegedOperationEventItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrivilegedOperationEventItemRequestBuilderUriTemplate = "{+baseurl}/privilegedOperationEvents/{privilegedOperationEvent%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of privilegedOperationEvent entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the collection of privilegedOperationEvent entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdditionalInformation: "additionalInformation",
+    CreationDateTime: "creationDateTime",
+    ExpirationDateTime: "expirationDateTime",
+    ReferenceKey: "referenceKey",
+    ReferenceSystem: "referenceSystem",
+    RequestorId: "requestorId",
+    RequestorName: "requestorName",
+    RequestType: "requestType",
+    RoleId: "roleId",
+    RoleName: "roleName",
+    TenantId: "tenantId",
+    UserId: "userId",
+    UserMail: "userMail",
+    UserName: "userName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +112,7 @@ export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegedOperationEventItemRequestBuilderUriTemplate,
@@ -92,7 +120,7 @@ export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedOperationEventFromDiscriminatorValue,
         queryParametersMapper: PrivilegedOperationEventItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +130,7 @@ export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedOperationEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedOperationEvent,

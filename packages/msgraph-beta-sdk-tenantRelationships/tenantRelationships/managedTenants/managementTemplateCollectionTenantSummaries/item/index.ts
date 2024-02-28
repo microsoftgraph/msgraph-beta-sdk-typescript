@@ -5,6 +5,8 @@ import { createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue, 
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -57,16 +59,47 @@ export interface ManagementTemplateCollectionTenantSummaryItemRequestBuilderGetQ
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries/{managementTemplateCollectionTenantSummary%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CompleteStepsCount: "completeStepsCount",
+    CompleteUsersCount: "completeUsersCount",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    DismissedStepsCount: "dismissedStepsCount",
+    ExcludedUsersCount: "excludedUsersCount",
+    ExcludedUsersDistinctCount: "excludedUsersDistinctCount",
+    IncompleteStepsCount: "incompleteStepsCount",
+    IncompleteUsersCount: "incompleteUsersCount",
+    IneligibleStepsCount: "ineligibleStepsCount",
+    IsComplete: "isComplete",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    ManagementTemplateCollectionDisplayName: "managementTemplateCollectionDisplayName",
+    ManagementTemplateCollectionId: "managementTemplateCollectionId",
+    RegressedStepsCount: "regressedStepsCount",
+    RegressedUsersCount: "regressedUsersCount",
+    TenantId: "tenantId",
+    UnlicensedUsersCount: "unlicensedUsersCount",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +117,7 @@ export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagementTemplateCollectionTenantSummaryItemRequestBuilderUriTemplate,
@@ -92,7 +125,7 @@ export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateCollectionTenantSummaryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +135,7 @@ export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementTemplateCollectionTenantSummary,

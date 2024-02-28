@@ -61,7 +61,7 @@ export interface ElevationRequestsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ElevationRequestsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ElevationRequestsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ElevationRequestsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const ElevationRequestsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationRequestCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ElevationRequestsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,73 @@ export const ElevationRequestsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegeManagementElevationRequest,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ApplicationDetail: "applicationDetail",
+    ApplicationDetailDesc: "applicationDetail desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    RequestCreatedDateTime: "requestCreatedDateTime",
+    RequestCreatedDateTimeDesc: "requestCreatedDateTime desc",
+    RequestedByUserId: "requestedByUserId",
+    RequestedByUserIdDesc: "requestedByUserId desc",
+    RequestedByUserPrincipalName: "requestedByUserPrincipalName",
+    RequestedByUserPrincipalNameDesc: "requestedByUserPrincipalName desc",
+    RequestedOnDeviceId: "requestedOnDeviceId",
+    RequestedOnDeviceIdDesc: "requestedOnDeviceId desc",
+    RequestExpiryDateTime: "requestExpiryDateTime",
+    RequestExpiryDateTimeDesc: "requestExpiryDateTime desc",
+    RequestJustification: "requestJustification",
+    RequestJustificationDesc: "requestJustification desc",
+    RequestLastModifiedDateTime: "requestLastModifiedDateTime",
+    RequestLastModifiedDateTimeDesc: "requestLastModifiedDateTime desc",
+    ReviewCompletedByUserId: "reviewCompletedByUserId",
+    ReviewCompletedByUserIdDesc: "reviewCompletedByUserId desc",
+    ReviewCompletedByUserPrincipalName: "reviewCompletedByUserPrincipalName",
+    ReviewCompletedByUserPrincipalNameDesc: "reviewCompletedByUserPrincipalName desc",
+    ReviewCompletedDateTime: "reviewCompletedDateTime",
+    ReviewCompletedDateTimeDesc: "reviewCompletedDateTime desc",
+    ReviewerJustification: "reviewerJustification",
+    ReviewerJustificationDesc: "reviewerJustification desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApplicationDetail: "applicationDetail",
+    DeviceName: "deviceName",
+    RequestCreatedDateTime: "requestCreatedDateTime",
+    RequestedByUserId: "requestedByUserId",
+    RequestedByUserPrincipalName: "requestedByUserPrincipalName",
+    RequestedOnDeviceId: "requestedOnDeviceId",
+    RequestExpiryDateTime: "requestExpiryDateTime",
+    RequestJustification: "requestJustification",
+    RequestLastModifiedDateTime: "requestLastModifiedDateTime",
+    ReviewCompletedByUserId: "reviewCompletedByUserId",
+    ReviewCompletedByUserPrincipalName: "reviewCompletedByUserPrincipalName",
+    ReviewCompletedDateTime: "reviewCompletedDateTime",
+    ReviewerJustification: "reviewerJustification",
+    Status: "status",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

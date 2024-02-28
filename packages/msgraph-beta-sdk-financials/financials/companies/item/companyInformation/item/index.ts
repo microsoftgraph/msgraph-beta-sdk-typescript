@@ -50,12 +50,14 @@ export interface CompanyInformationItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -85,7 +87,7 @@ export const CompanyInformationItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanyInformationFromDiscriminatorValue,
         queryParametersMapper: CompanyInformationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -95,12 +97,36 @@ export const CompanyInformationItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanyInformationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCompanyInformation,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the companyInformation property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the companyInformation property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Address: "address",
+    CurrencyCode: "currencyCode",
+    CurrentFiscalYearStartDate: "currentFiscalYearStartDate",
+    DisplayName: "displayName",
+    Email: "email",
+    FaxNumber: "faxNumber",
+    Id: "id",
+    Industry: "industry",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PhoneNumber: "phoneNumber",
+    Picture: "picture",
+    TaxRegistrationNumber: "taxRegistrationNumber",
+    Website: "website",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { OnPremisesPublishingProfileItemRequestBuilderNavigationMetadata, OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata, type OnPremisesPublishingProfileItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of onPremisesPublishingProfile entities.
  */
@@ -61,7 +64,7 @@ export interface OnPremisesPublishingProfilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface OnPremisesPublishingProfilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface OnPremisesPublishingProfilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,44 @@ export interface OnPremisesPublishingProfilesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const OnPremisesPublishingProfilesRequestBuilderUriTemplate = "{+baseurl}/onPremisesPublishingProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the collection of onPremisesPublishingProfile entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AgentGroups: "agentGroups",
+    Agents: "agents",
+    ConnectorGroups: "connectorGroups",
+    Connectors: "connectors",
+    PublishedResources: "publishedResources",
+} as const;
+/**
+ * Provides operations to manage the collection of onPremisesPublishingProfile entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    HybridAgentUpdaterConfiguration: "hybridAgentUpdaterConfiguration",
+    HybridAgentUpdaterConfigurationDesc: "hybridAgentUpdaterConfiguration desc",
+    IsDefaultAccessEnabled: "isDefaultAccessEnabled",
+    IsDefaultAccessEnabledDesc: "isDefaultAccessEnabled desc",
+    IsEnabled: "isEnabled",
+    IsEnabledDesc: "isEnabled desc",
+} as const;
+/**
+ * Provides operations to manage the collection of onPremisesPublishingProfile entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    HybridAgentUpdaterConfiguration: "hybridAgentUpdaterConfiguration",
+    IsDefaultAccessEnabled: "isDefaultAccessEnabled",
+    IsEnabled: "isEnabled",
+    AgentGroups: "agentGroups",
+    Agents: "agents",
+    ConnectorGroups: "connectorGroups",
+    Connectors: "connectors",
+    PublishedResources: "publishedResources",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +168,7 @@ export const OnPremisesPublishingProfilesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnPremisesPublishingProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: OnPremisesPublishingProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +178,7 @@ export const OnPremisesPublishingProfilesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnPremisesPublishingProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOnPremisesPublishingProfile,

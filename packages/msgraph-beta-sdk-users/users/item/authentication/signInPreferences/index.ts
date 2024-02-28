@@ -5,6 +5,8 @@ import { createSignInPreferencesFromDiscriminatorValue, serializeSignInPreferenc
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Builds and executes requests for operations under /users/{user-id}/authentication/signInPreferences
  */
@@ -45,16 +47,23 @@ export interface SignInPreferencesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SignInPreferencesRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/authentication/signInPreferences{?%24expand,%24select}";
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+export const GetSelectQueryParameterTypeObject = {
+    IsSystemPreferredAuthenticationMethodEnabled: "isSystemPreferredAuthenticationMethodEnabled",
+    UserPreferredMethodForSecondaryAuthentication: "userPreferredMethodForSecondaryAuthentication",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -72,7 +81,7 @@ export const SignInPreferencesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInPreferencesFromDiscriminatorValue,
         queryParametersMapper: SignInPreferencesRequestBuilderGetQueryParametersMapper,
     },
@@ -82,7 +91,7 @@ export const SignInPreferencesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInPreferencesFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSignInPreferences,

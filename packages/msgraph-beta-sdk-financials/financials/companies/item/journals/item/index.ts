@@ -8,6 +8,8 @@ import { JournalLinesRequestBuilderNavigationMetadata, JournalLinesRequestBuilde
 import { PostRequestBuilderRequestsMetadata, type PostRequestBuilder } from './post/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the journals property of the microsoft.graph.company entity.
  */
@@ -72,16 +74,37 @@ export interface JournalItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const JournalItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the journals property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Account: "account",
+    JournalLines: "journalLines",
+} as const;
+/**
+ * Provides operations to manage the journals property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BalancingAccountId: "balancingAccountId",
+    BalancingAccountNumber: "balancingAccountNumber",
+    Code: "code",
+    DisplayName: "displayName",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Account: "account",
+    JournalLines: "journalLines",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -114,7 +137,7 @@ export const JournalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: JournalItemRequestBuilderUriTemplate,
@@ -122,7 +145,7 @@ export const JournalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createJournalFromDiscriminatorValue,
         queryParametersMapper: JournalItemRequestBuilderGetQueryParametersMapper,
     },
@@ -132,7 +155,7 @@ export const JournalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createJournalFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeJournal,

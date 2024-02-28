@@ -205,12 +205,14 @@ export interface CompanyItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -377,10 +379,96 @@ export const CompanyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanyFromDiscriminatorValue,
         queryParametersMapper: CompanyItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the companies property of the microsoft.graph.financials entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Accounts: "accounts",
+    AgedAccountsPayable: "agedAccountsPayable",
+    AgedAccountsReceivable: "agedAccountsReceivable",
+    CompanyInformation: "companyInformation",
+    CountriesRegions: "countriesRegions",
+    Currencies: "currencies",
+    CustomerPaymentJournals: "customerPaymentJournals",
+    CustomerPayments: "customerPayments",
+    Customers: "customers",
+    Dimensions: "dimensions",
+    DimensionValues: "dimensionValues",
+    Employees: "employees",
+    GeneralLedgerEntries: "generalLedgerEntries",
+    ItemCategories: "itemCategories",
+    Items: "items",
+    JournalLines: "journalLines",
+    Journals: "journals",
+    PaymentMethods: "paymentMethods",
+    PaymentTerms: "paymentTerms",
+    Picture: "picture",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    PurchaseInvoices: "purchaseInvoices",
+    SalesCreditMemoLines: "salesCreditMemoLines",
+    SalesCreditMemos: "salesCreditMemos",
+    SalesInvoiceLines: "salesInvoiceLines",
+    SalesInvoices: "salesInvoices",
+    SalesOrderLines: "salesOrderLines",
+    SalesOrders: "salesOrders",
+    SalesQuoteLines: "salesQuoteLines",
+    SalesQuotes: "salesQuotes",
+    ShipmentMethods: "shipmentMethods",
+    TaxAreas: "taxAreas",
+    TaxGroups: "taxGroups",
+    UnitsOfMeasure: "unitsOfMeasure",
+    Vendors: "vendors",
+} as const;
+/**
+ * Provides operations to manage the companies property of the microsoft.graph.financials entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BusinessProfileId: "businessProfileId",
+    DisplayName: "displayName",
+    Id: "id",
+    Name: "name",
+    SystemVersion: "systemVersion",
+    Accounts: "accounts",
+    AgedAccountsPayable: "agedAccountsPayable",
+    AgedAccountsReceivable: "agedAccountsReceivable",
+    CompanyInformation: "companyInformation",
+    CountriesRegions: "countriesRegions",
+    Currencies: "currencies",
+    CustomerPaymentJournals: "customerPaymentJournals",
+    CustomerPayments: "customerPayments",
+    Customers: "customers",
+    Dimensions: "dimensions",
+    DimensionValues: "dimensionValues",
+    Employees: "employees",
+    GeneralLedgerEntries: "generalLedgerEntries",
+    ItemCategories: "itemCategories",
+    Items: "items",
+    JournalLines: "journalLines",
+    Journals: "journals",
+    PaymentMethods: "paymentMethods",
+    PaymentTerms: "paymentTerms",
+    Picture: "picture",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    PurchaseInvoices: "purchaseInvoices",
+    SalesCreditMemoLines: "salesCreditMemoLines",
+    SalesCreditMemos: "salesCreditMemos",
+    SalesInvoiceLines: "salesInvoiceLines",
+    SalesInvoices: "salesInvoices",
+    SalesOrderLines: "salesOrderLines",
+    SalesOrders: "salesOrders",
+    SalesQuoteLines: "salesQuoteLines",
+    SalesQuotes: "salesQuotes",
+    ShipmentMethods: "shipmentMethods",
+    TaxAreas: "taxAreas",
+    TaxGroups: "taxGroups",
+    UnitsOfMeasure: "unitsOfMeasure",
+    Vendors: "vendors",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

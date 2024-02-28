@@ -175,12 +175,14 @@ export interface DeviceAppManagementRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -308,7 +310,7 @@ export const DeviceAppManagementRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAppManagementFromDiscriminatorValue,
         queryParametersMapper: DeviceAppManagementRequestBuilderGetQueryParametersMapper,
     },
@@ -318,12 +320,79 @@ export const DeviceAppManagementRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAppManagementFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceAppManagement,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceAppManagement singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AndroidManagedAppProtections: "androidManagedAppProtections",
+    DefaultManagedAppProtections: "defaultManagedAppProtections",
+    DeviceAppManagementTasks: "deviceAppManagementTasks",
+    EnterpriseCodeSigningCertificates: "enterpriseCodeSigningCertificates",
+    IosLobAppProvisioningConfigurations: "iosLobAppProvisioningConfigurations",
+    IosManagedAppProtections: "iosManagedAppProtections",
+    ManagedAppPolicies: "managedAppPolicies",
+    ManagedAppRegistrations: "managedAppRegistrations",
+    ManagedAppStatuses: "managedAppStatuses",
+    ManagedEBookCategories: "managedEBookCategories",
+    ManagedEBooks: "managedEBooks",
+    MdmWindowsInformationProtectionPolicies: "mdmWindowsInformationProtectionPolicies",
+    MobileAppCategories: "mobileAppCategories",
+    MobileAppConfigurations: "mobileAppConfigurations",
+    MobileApps: "mobileApps",
+    PolicySets: "policySets",
+    SymantecCodeSigningCertificate: "symantecCodeSigningCertificate",
+    TargetedManagedAppConfigurations: "targetedManagedAppConfigurations",
+    VppTokens: "vppTokens",
+    WdacSupplementalPolicies: "wdacSupplementalPolicies",
+    WindowsInformationProtectionDeviceRegistrations: "windowsInformationProtectionDeviceRegistrations",
+    WindowsInformationProtectionPolicies: "windowsInformationProtectionPolicies",
+    WindowsInformationProtectionWipeActions: "windowsInformationProtectionWipeActions",
+    WindowsManagedAppProtections: "windowsManagedAppProtections",
+    WindowsManagementApp: "windowsManagementApp",
+} as const;
+/**
+ * Provides operations to manage the deviceAppManagement singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    IsEnabledForMicrosoftStoreForBusiness: "isEnabledForMicrosoftStoreForBusiness",
+    MicrosoftStoreForBusinessLanguage: "microsoftStoreForBusinessLanguage",
+    MicrosoftStoreForBusinessLastCompletedApplicationSyncTime: "microsoftStoreForBusinessLastCompletedApplicationSyncTime",
+    MicrosoftStoreForBusinessLastSuccessfulSyncDateTime: "microsoftStoreForBusinessLastSuccessfulSyncDateTime",
+    MicrosoftStoreForBusinessPortalSelection: "microsoftStoreForBusinessPortalSelection",
+    AndroidManagedAppProtections: "androidManagedAppProtections",
+    DefaultManagedAppProtections: "defaultManagedAppProtections",
+    DeviceAppManagementTasks: "deviceAppManagementTasks",
+    EnterpriseCodeSigningCertificates: "enterpriseCodeSigningCertificates",
+    IosLobAppProvisioningConfigurations: "iosLobAppProvisioningConfigurations",
+    IosManagedAppProtections: "iosManagedAppProtections",
+    ManagedAppPolicies: "managedAppPolicies",
+    ManagedAppRegistrations: "managedAppRegistrations",
+    ManagedAppStatuses: "managedAppStatuses",
+    ManagedEBookCategories: "managedEBookCategories",
+    ManagedEBooks: "managedEBooks",
+    MdmWindowsInformationProtectionPolicies: "mdmWindowsInformationProtectionPolicies",
+    MobileAppCategories: "mobileAppCategories",
+    MobileAppConfigurations: "mobileAppConfigurations",
+    MobileApps: "mobileApps",
+    PolicySets: "policySets",
+    SymantecCodeSigningCertificate: "symantecCodeSigningCertificate",
+    TargetedManagedAppConfigurations: "targetedManagedAppConfigurations",
+    VppTokens: "vppTokens",
+    WdacSupplementalPolicies: "wdacSupplementalPolicies",
+    WindowsInformationProtectionDeviceRegistrations: "windowsInformationProtectionDeviceRegistrations",
+    WindowsInformationProtectionPolicies: "windowsInformationProtectionPolicies",
+    WindowsInformationProtectionWipeActions: "windowsInformationProtectionWipeActions",
+    WindowsManagedAppProtections: "windowsManagedAppProtections",
+    WindowsManagementApp: "windowsManagementApp",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

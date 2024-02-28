@@ -62,12 +62,14 @@ export interface AuthorizationPolicyItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const AuthorizationPolicyItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AuthorizationPolicyItemRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const AuthorizationPolicyItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationPolicyFromDiscriminatorValue,
         queryParametersMapper: AuthorizationPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,39 @@ export const AuthorizationPolicyItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuthorizationPolicy,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DefaultUserRoleOverrides: "defaultUserRoleOverrides",
+} as const;
+/**
+ * Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    AllowedToSignUpEmailBasedSubscriptions: "allowedToSignUpEmailBasedSubscriptions",
+    AllowedToUseSSPR: "allowedToUseSSPR",
+    AllowEmailVerifiedUsersToJoinOrganization: "allowEmailVerifiedUsersToJoinOrganization",
+    AllowInvitesFrom: "allowInvitesFrom",
+    AllowUserConsentForRiskyApps: "allowUserConsentForRiskyApps",
+    BlockMsolPowerShell: "blockMsolPowerShell",
+    DefaultUserRolePermissions: "defaultUserRolePermissions",
+    EnabledPreviewFeatures: "enabledPreviewFeatures",
+    GuestUserRoleId: "guestUserRoleId",
+    PermissionGrantPolicyIdsAssignedToDefaultUserRole: "permissionGrantPolicyIdsAssignedToDefaultUserRole",
+    DefaultUserRoleOverrides: "defaultUserRoleOverrides",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

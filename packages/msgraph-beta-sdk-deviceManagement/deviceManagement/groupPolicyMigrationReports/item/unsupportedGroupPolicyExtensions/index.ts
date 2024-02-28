@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UnsupportedGroupPolicyExtensionItemRequestBuilder, UnsupportedGroupPolicyExtensionItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
  */
@@ -61,7 +64,7 @@ export interface UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameter
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameter
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,37 @@ export interface UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameter
  * Uri template for the request builder.
  */
 export const UnsupportedGroupPolicyExtensionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/unsupportedGroupPolicyExtensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ExtensionType: "extensionType",
+    ExtensionTypeDesc: "extensionType desc",
+    NamespaceUrl: "namespaceUrl",
+    NamespaceUrlDesc: "namespaceUrl desc",
+    NodeName: "nodeName",
+    NodeNameDesc: "nodeName desc",
+    SettingScope: "settingScope",
+    SettingScopeDesc: "settingScope desc",
+} as const;
+/**
+ * Provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExtensionType: "extensionType",
+    NamespaceUrl: "namespaceUrl",
+    NodeName: "nodeName",
+    SettingScope: "settingScope",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +160,7 @@ export const UnsupportedGroupPolicyExtensionsRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnsupportedGroupPolicyExtensionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +170,7 @@ export const UnsupportedGroupPolicyExtensionsRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnsupportedGroupPolicyExtensionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnsupportedGroupPolicyExtension,

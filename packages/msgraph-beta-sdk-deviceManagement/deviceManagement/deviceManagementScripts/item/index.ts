@@ -87,12 +87,14 @@ export interface DeviceManagementScriptItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -141,7 +143,7 @@ export const DeviceManagementScriptItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementScriptItemRequestBuilderUriTemplate,
@@ -149,7 +151,7 @@ export const DeviceManagementScriptItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementScriptFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementScriptItemRequestBuilderGetQueryParametersMapper,
     },
@@ -159,12 +161,44 @@ export const DeviceManagementScriptItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementScriptFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementScript,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    DeviceRunStates: "deviceRunStates",
+    GroupAssignments: "groupAssignments",
+    RunSummary: "runSummary",
+    UserRunStates: "userRunStates",
+} as const;
+/**
+ * Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    EnforceSignatureCheck: "enforceSignatureCheck",
+    FileName: "fileName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RunAs32Bit: "runAs32Bit",
+    RunAsAccount: "runAsAccount",
+    ScriptContent: "scriptContent",
+    Assignments: "assignments",
+    DeviceRunStates: "deviceRunStates",
+    GroupAssignments: "groupAssignments",
+    RunSummary: "runSummary",
+    UserRunStates: "userRunStates",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

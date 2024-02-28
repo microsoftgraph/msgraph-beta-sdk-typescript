@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { PrintUsageByUserItemRequestBuilderRequestsMetadata, type PrintUsageByUserItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
  */
@@ -67,7 +70,7 @@ export interface MonthlyPrintUsageSummariesByUserRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +78,7 @@ export interface MonthlyPrintUsageSummariesByUserRequestBuilderGetQueryParameter
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +86,7 @@ export interface MonthlyPrintUsageSummariesByUserRequestBuilderGetQueryParameter
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -97,6 +100,61 @@ export interface MonthlyPrintUsageSummariesByUserRequestBuilderGetQueryParameter
  * Uri template for the request builder.
  */
 export const MonthlyPrintUsageSummariesByUserRequestBuilderUriTemplate = "{+baseurl}/reports/monthlyPrintUsageSummariesByUser{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    BlackAndWhitePageCount: "blackAndWhitePageCount",
+    BlackAndWhitePageCountDesc: "blackAndWhitePageCount desc",
+    ColorPageCount: "colorPageCount",
+    ColorPageCountDesc: "colorPageCount desc",
+    CompletedBlackAndWhiteJobCount: "completedBlackAndWhiteJobCount",
+    CompletedBlackAndWhiteJobCountDesc: "completedBlackAndWhiteJobCount desc",
+    CompletedColorJobCount: "completedColorJobCount",
+    CompletedColorJobCountDesc: "completedColorJobCount desc",
+    CompletedJobCount: "completedJobCount",
+    CompletedJobCountDesc: "completedJobCount desc",
+    DoubleSidedSheetCount: "doubleSidedSheetCount",
+    DoubleSidedSheetCountDesc: "doubleSidedSheetCount desc",
+    IncompleteJobCount: "incompleteJobCount",
+    IncompleteJobCountDesc: "incompleteJobCount desc",
+    MediaSheetCount: "mediaSheetCount",
+    MediaSheetCountDesc: "mediaSheetCount desc",
+    PageCount: "pageCount",
+    PageCountDesc: "pageCount desc",
+    SingleSidedSheetCount: "singleSidedSheetCount",
+    SingleSidedSheetCountDesc: "singleSidedSheetCount desc",
+    UsageDate: "usageDate",
+    UsageDateDesc: "usageDate desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BlackAndWhitePageCount: "blackAndWhitePageCount",
+    ColorPageCount: "colorPageCount",
+    CompletedBlackAndWhiteJobCount: "completedBlackAndWhiteJobCount",
+    CompletedColorJobCount: "completedColorJobCount",
+    CompletedJobCount: "completedJobCount",
+    DoubleSidedSheetCount: "doubleSidedSheetCount",
+    IncompleteJobCount: "incompleteJobCount",
+    MediaSheetCount: "mediaSheetCount",
+    PageCount: "pageCount",
+    SingleSidedSheetCount: "singleSidedSheetCount",
+    UsageDate: "usageDate",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -132,7 +190,7 @@ export const MonthlyPrintUsageSummariesByUserRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintUsageByUserCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MonthlyPrintUsageSummariesByUserRequestBuilderGetQueryParametersMapper,
     },
@@ -142,7 +200,7 @@ export const MonthlyPrintUsageSummariesByUserRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintUsageByUserFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrintUsageByUser,

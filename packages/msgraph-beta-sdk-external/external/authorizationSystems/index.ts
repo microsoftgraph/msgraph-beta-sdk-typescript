@@ -62,7 +62,7 @@ export interface AuthorizationSystemsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface AuthorizationSystemsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface AuthorizationSystemsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface AuthorizationSystemsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const AuthorizationSystemsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationSystemCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AuthorizationSystemsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,42 @@ export const AuthorizationSystemsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationSystemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuthorizationSystem,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DataCollectionInfo: "dataCollectionInfo",
+} as const;
+/**
+ * Provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AuthorizationSystemId: "authorizationSystemId",
+    AuthorizationSystemIdDesc: "authorizationSystemId desc",
+    AuthorizationSystemName: "authorizationSystemName",
+    AuthorizationSystemNameDesc: "authorizationSystemName desc",
+    AuthorizationSystemType: "authorizationSystemType",
+    AuthorizationSystemTypeDesc: "authorizationSystemType desc",
+} as const;
+/**
+ * Provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AuthorizationSystemId: "authorizationSystemId",
+    AuthorizationSystemName: "authorizationSystemName",
+    AuthorizationSystemType: "authorizationSystemType",
+    DataCollectionInfo: "dataCollectionInfo",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -103,12 +103,14 @@ export interface BookingBusinessItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -168,7 +170,7 @@ export const BookingBusinessItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BookingBusinessItemRequestBuilderUriTemplate,
@@ -176,7 +178,7 @@ export const BookingBusinessItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingBusinessFromDiscriminatorValue,
         queryParametersMapper: BookingBusinessItemRequestBuilderGetQueryParametersMapper,
     },
@@ -186,12 +188,51 @@ export const BookingBusinessItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingBusinessFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookingBusiness,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Appointments: "appointments",
+    CalendarView: "calendarView",
+    Customers: "customers",
+    CustomQuestions: "customQuestions",
+    Services: "services",
+    StaffMembers: "staffMembers",
+} as const;
+/**
+ * Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    Address: "address",
+    BookingPageSettings: "bookingPageSettings",
+    BusinessHours: "businessHours",
+    BusinessType: "businessType",
+    CreatedDateTime: "createdDateTime",
+    DefaultCurrencyIso: "defaultCurrencyIso",
+    Email: "email",
+    IsPublished: "isPublished",
+    LanguageTag: "languageTag",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    Phone: "phone",
+    PublicUrl: "publicUrl",
+    SchedulingPolicy: "schedulingPolicy",
+    WebSiteUrl: "webSiteUrl",
+    Appointments: "appointments",
+    CalendarView: "calendarView",
+    Customers: "customers",
+    CustomQuestions: "customQuestions",
+    Services: "services",
+    StaffMembers: "staffMembers",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

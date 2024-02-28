@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { RemoteActionAuditItemRequestBuilderRequestsMetadata, type RemoteActionAuditItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface RemoteActionAuditsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface RemoteActionAuditsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface RemoteActionAuditsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,52 @@ export interface RemoteActionAuditsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const RemoteActionAuditsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/remoteActionAudits{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Action: "action",
+    ActionDesc: "action desc",
+    ActionState: "actionState",
+    ActionStateDesc: "actionState desc",
+    DeviceDisplayName: "deviceDisplayName",
+    DeviceDisplayNameDesc: "deviceDisplayName desc",
+    DeviceIMEI: "deviceIMEI",
+    DeviceIMEIDesc: "deviceIMEI desc",
+    DeviceOwnerUserPrincipalName: "deviceOwnerUserPrincipalName",
+    DeviceOwnerUserPrincipalNameDesc: "deviceOwnerUserPrincipalName desc",
+    InitiatedByUserPrincipalName: "initiatedByUserPrincipalName",
+    InitiatedByUserPrincipalNameDesc: "initiatedByUserPrincipalName desc",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceIdDesc: "managedDeviceId desc",
+    RequestDateTime: "requestDateTime",
+    RequestDateTimeDesc: "requestDateTime desc",
+    UserName: "userName",
+    UserNameDesc: "userName desc",
+} as const;
+/**
+ * Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Action: "action",
+    ActionState: "actionState",
+    DeviceDisplayName: "deviceDisplayName",
+    DeviceIMEI: "deviceIMEI",
+    DeviceOwnerUserPrincipalName: "deviceOwnerUserPrincipalName",
+    InitiatedByUserPrincipalName: "initiatedByUserPrincipalName",
+    ManagedDeviceId: "managedDeviceId",
+    RequestDateTime: "requestDateTime",
+    UserName: "userName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +175,7 @@ export const RemoteActionAuditsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteActionAuditCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RemoteActionAuditsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +185,7 @@ export const RemoteActionAuditsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteActionAuditFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteActionAudit,

@@ -63,7 +63,7 @@ export interface AppointmentsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +71,7 @@ export interface AppointmentsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +79,7 @@ export interface AppointmentsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -89,6 +89,9 @@ export interface AppointmentsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -129,7 +132,7 @@ export const AppointmentsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingAppointmentCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AppointmentsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,12 +142,151 @@ export const AppointmentsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingAppointmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookingAppointment,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AdditionalInformation: "additionalInformation",
+    AdditionalInformationDesc: "additionalInformation desc",
+    AnonymousJoinWebUrl: "anonymousJoinWebUrl",
+    AnonymousJoinWebUrlDesc: "anonymousJoinWebUrl desc",
+    AppointmentLabel: "appointmentLabel",
+    AppointmentLabelDesc: "appointmentLabel desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CustomerEmailAddress: "customerEmailAddress",
+    CustomerEmailAddressDesc: "customerEmailAddress desc",
+    CustomerId: "customerId",
+    CustomerIdDesc: "customerId desc",
+    CustomerLocation: "customerLocation",
+    CustomerLocationDesc: "customerLocation desc",
+    CustomerName: "customerName",
+    CustomerNameDesc: "customerName desc",
+    CustomerNotes: "customerNotes",
+    CustomerNotesDesc: "customerNotes desc",
+    CustomerPhone: "customerPhone",
+    CustomerPhoneDesc: "customerPhone desc",
+    Customers: "customers",
+    CustomersDesc: "customers desc",
+    CustomerTimeZone: "customerTimeZone",
+    CustomerTimeZoneDesc: "customerTimeZone desc",
+    Duration: "duration",
+    DurationDesc: "duration desc",
+    End: "end",
+    EndDesc: "end desc",
+    FilledAttendeesCount: "filledAttendeesCount",
+    FilledAttendeesCountDesc: "filledAttendeesCount desc",
+    InvoiceAmount: "invoiceAmount",
+    InvoiceAmountDesc: "invoiceAmount desc",
+    InvoiceDate: "invoiceDate",
+    InvoiceDateDesc: "invoiceDate desc",
+    InvoiceId: "invoiceId",
+    InvoiceIdDesc: "invoiceId desc",
+    InvoiceStatus: "invoiceStatus",
+    InvoiceStatusDesc: "invoiceStatus desc",
+    InvoiceUrl: "invoiceUrl",
+    InvoiceUrlDesc: "invoiceUrl desc",
+    IsCustomerAllowedToManageBooking: "isCustomerAllowedToManageBooking",
+    IsCustomerAllowedToManageBookingDesc: "isCustomerAllowedToManageBooking desc",
+    IsLocationOnline: "isLocationOnline",
+    IsLocationOnlineDesc: "isLocationOnline desc",
+    JoinWebUrl: "joinWebUrl",
+    JoinWebUrlDesc: "joinWebUrl desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    MaximumAttendeesCount: "maximumAttendeesCount",
+    MaximumAttendeesCountDesc: "maximumAttendeesCount desc",
+    OnlineMeetingUrl: "onlineMeetingUrl",
+    OnlineMeetingUrlDesc: "onlineMeetingUrl desc",
+    OptOutOfCustomerEmail: "optOutOfCustomerEmail",
+    OptOutOfCustomerEmailDesc: "optOutOfCustomerEmail desc",
+    PostBuffer: "postBuffer",
+    PostBufferDesc: "postBuffer desc",
+    PreBuffer: "preBuffer",
+    PreBufferDesc: "preBuffer desc",
+    Price: "price",
+    PriceDesc: "price desc",
+    PriceType: "priceType",
+    PriceTypeDesc: "priceType desc",
+    Reminders: "reminders",
+    RemindersDesc: "reminders desc",
+    SelfServiceAppointmentId: "selfServiceAppointmentId",
+    SelfServiceAppointmentIdDesc: "selfServiceAppointmentId desc",
+    ServiceId: "serviceId",
+    ServiceIdDesc: "serviceId desc",
+    ServiceLocation: "serviceLocation",
+    ServiceLocationDesc: "serviceLocation desc",
+    ServiceName: "serviceName",
+    ServiceNameDesc: "serviceName desc",
+    ServiceNotes: "serviceNotes",
+    ServiceNotesDesc: "serviceNotes desc",
+    SmsNotificationsEnabled: "smsNotificationsEnabled",
+    SmsNotificationsEnabledDesc: "smsNotificationsEnabled desc",
+    StaffMemberIds: "staffMemberIds",
+    StaffMemberIdsDesc: "staffMemberIds desc",
+    Start: "start",
+    StartDesc: "start desc",
+} as const;
+/**
+ * Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdditionalInformation: "additionalInformation",
+    AnonymousJoinWebUrl: "anonymousJoinWebUrl",
+    AppointmentLabel: "appointmentLabel",
+    CreatedDateTime: "createdDateTime",
+    CustomerEmailAddress: "customerEmailAddress",
+    CustomerId: "customerId",
+    CustomerLocation: "customerLocation",
+    CustomerName: "customerName",
+    CustomerNotes: "customerNotes",
+    CustomerPhone: "customerPhone",
+    Customers: "customers",
+    CustomerTimeZone: "customerTimeZone",
+    Duration: "duration",
+    End: "end",
+    FilledAttendeesCount: "filledAttendeesCount",
+    InvoiceAmount: "invoiceAmount",
+    InvoiceDate: "invoiceDate",
+    InvoiceId: "invoiceId",
+    InvoiceStatus: "invoiceStatus",
+    InvoiceUrl: "invoiceUrl",
+    IsCustomerAllowedToManageBooking: "isCustomerAllowedToManageBooking",
+    IsLocationOnline: "isLocationOnline",
+    JoinWebUrl: "joinWebUrl",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    MaximumAttendeesCount: "maximumAttendeesCount",
+    OnlineMeetingUrl: "onlineMeetingUrl",
+    OptOutOfCustomerEmail: "optOutOfCustomerEmail",
+    PostBuffer: "postBuffer",
+    PreBuffer: "preBuffer",
+    Price: "price",
+    PriceType: "priceType",
+    Reminders: "reminders",
+    SelfServiceAppointmentId: "selfServiceAppointmentId",
+    ServiceId: "serviceId",
+    ServiceLocation: "serviceLocation",
+    ServiceName: "serviceName",
+    ServiceNotes: "serviceNotes",
+    SmsNotificationsEnabled: "smsNotificationsEnabled",
+    StaffMemberIds: "staffMemberIds",
+    Start: "start",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

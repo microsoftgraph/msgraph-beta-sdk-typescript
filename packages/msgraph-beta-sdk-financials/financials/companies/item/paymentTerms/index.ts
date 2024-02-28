@@ -8,6 +8,9 @@ import { PaymentTermItemRequestBuilderRequestsMetadata, type PaymentTermItemRequ
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 import { type Guid } from 'guid-typescript';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
  */
@@ -62,7 +65,7 @@ export interface PaymentTermsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface PaymentTermsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface PaymentTermsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,46 @@ export interface PaymentTermsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PaymentTermsRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/paymentTerms{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    CalculateDiscountOnCreditMemos: "calculateDiscountOnCreditMemos",
+    CalculateDiscountOnCreditMemosDesc: "calculateDiscountOnCreditMemos desc",
+    Code: "code",
+    CodeDesc: "code desc",
+    DiscountDateCalculation: "discountDateCalculation",
+    DiscountDateCalculationDesc: "discountDateCalculation desc",
+    DiscountPercent: "discountPercent",
+    DiscountPercentDesc: "discountPercent desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    DueDateCalculation: "dueDateCalculation",
+    DueDateCalculationDesc: "dueDateCalculation desc",
+    Id: "id",
+    IdDesc: "id desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    CalculateDiscountOnCreditMemos: "calculateDiscountOnCreditMemos",
+    Code: "code",
+    DiscountDateCalculation: "discountDateCalculation",
+    DiscountPercent: "discountPercent",
+    DisplayName: "displayName",
+    DueDateCalculation: "dueDateCalculation",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +170,7 @@ export const PaymentTermsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPaymentTermCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PaymentTermsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +180,7 @@ export const PaymentTermsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPaymentTermFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePaymentTerm,

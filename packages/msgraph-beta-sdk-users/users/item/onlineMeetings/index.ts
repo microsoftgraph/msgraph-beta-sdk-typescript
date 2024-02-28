@@ -10,6 +10,9 @@ import { GetAllTranscriptsRequestBuilderRequestsMetadata, type GetAllTranscripts
 import { OnlineMeetingItemRequestBuilderNavigationMetadata, OnlineMeetingItemRequestBuilderRequestsMetadata, type OnlineMeetingItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
  */
@@ -78,7 +81,7 @@ export interface OnlineMeetingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -86,7 +89,7 @@ export interface OnlineMeetingsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -94,7 +97,7 @@ export interface OnlineMeetingsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -108,6 +111,146 @@ export interface OnlineMeetingsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const OnlineMeetingsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/onlineMeetings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AttendanceReports: "attendanceReports",
+    MeetingAttendanceReport: "meetingAttendanceReport",
+    Recordings: "recordings",
+    Registration: "registration",
+    Transcripts: "transcripts",
+} as const;
+/**
+ * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AllowAttendeeToEnableCamera: "allowAttendeeToEnableCamera",
+    AllowAttendeeToEnableCameraDesc: "allowAttendeeToEnableCamera desc",
+    AllowAttendeeToEnableMic: "allowAttendeeToEnableMic",
+    AllowAttendeeToEnableMicDesc: "allowAttendeeToEnableMic desc",
+    AllowedPresenters: "allowedPresenters",
+    AllowedPresentersDesc: "allowedPresenters desc",
+    AllowMeetingChat: "allowMeetingChat",
+    AllowMeetingChatDesc: "allowMeetingChat desc",
+    AllowParticipantsToChangeName: "allowParticipantsToChangeName",
+    AllowParticipantsToChangeNameDesc: "allowParticipantsToChangeName desc",
+    AllowRecording: "allowRecording",
+    AllowRecordingDesc: "allowRecording desc",
+    AllowTeamworkReactions: "allowTeamworkReactions",
+    AllowTeamworkReactionsDesc: "allowTeamworkReactions desc",
+    AllowTranscription: "allowTranscription",
+    AllowTranscriptionDesc: "allowTranscription desc",
+    AnonymizeIdentityForRoles: "anonymizeIdentityForRoles",
+    AnonymizeIdentityForRolesDesc: "anonymizeIdentityForRoles desc",
+    AudioConferencing: "audioConferencing",
+    AudioConferencingDesc: "audioConferencing desc",
+    ChatInfo: "chatInfo",
+    ChatInfoDesc: "chatInfo desc",
+    ChatRestrictions: "chatRestrictions",
+    ChatRestrictionsDesc: "chatRestrictions desc",
+    IsEndToEndEncryptionEnabled: "isEndToEndEncryptionEnabled",
+    IsEndToEndEncryptionEnabledDesc: "isEndToEndEncryptionEnabled desc",
+    IsEntryExitAnnounced: "isEntryExitAnnounced",
+    IsEntryExitAnnouncedDesc: "isEntryExitAnnounced desc",
+    JoinInformation: "joinInformation",
+    JoinInformationDesc: "joinInformation desc",
+    JoinMeetingIdSettings: "joinMeetingIdSettings",
+    JoinMeetingIdSettingsDesc: "joinMeetingIdSettings desc",
+    JoinWebUrl: "joinWebUrl",
+    JoinWebUrlDesc: "joinWebUrl desc",
+    LobbyBypassSettings: "lobbyBypassSettings",
+    LobbyBypassSettingsDesc: "lobbyBypassSettings desc",
+    RecordAutomatically: "recordAutomatically",
+    RecordAutomaticallyDesc: "recordAutomatically desc",
+    ShareMeetingChatHistoryDefault: "shareMeetingChatHistoryDefault",
+    ShareMeetingChatHistoryDefaultDesc: "shareMeetingChatHistoryDefault desc",
+    Subject: "subject",
+    SubjectDesc: "subject desc",
+    VideoTeleconferenceId: "videoTeleconferenceId",
+    VideoTeleconferenceIdDesc: "videoTeleconferenceId desc",
+    WatermarkProtection: "watermarkProtection",
+    WatermarkProtectionDesc: "watermarkProtection desc",
+    AlternativeRecording: "alternativeRecording",
+    AlternativeRecordingDesc: "alternativeRecording desc",
+    AttendeeReport: "attendeeReport",
+    AttendeeReportDesc: "attendeeReport desc",
+    BroadcastRecording: "broadcastRecording",
+    BroadcastRecordingDesc: "broadcastRecording desc",
+    BroadcastSettings: "broadcastSettings",
+    BroadcastSettingsDesc: "broadcastSettings desc",
+    Capabilities: "capabilities",
+    CapabilitiesDesc: "capabilities desc",
+    CreationDateTime: "creationDateTime",
+    CreationDateTimeDesc: "creationDateTime desc",
+    EndDateTime: "endDateTime",
+    EndDateTimeDesc: "endDateTime desc",
+    ExternalId: "externalId",
+    ExternalIdDesc: "externalId desc",
+    IsBroadcast: "isBroadcast",
+    IsBroadcastDesc: "isBroadcast desc",
+    JoinUrl: "joinUrl",
+    JoinUrlDesc: "joinUrl desc",
+    MeetingTemplateId: "meetingTemplateId",
+    MeetingTemplateIdDesc: "meetingTemplateId desc",
+    Participants: "participants",
+    ParticipantsDesc: "participants desc",
+    Recording: "recording",
+    RecordingDesc: "recording desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowAttendeeToEnableCamera: "allowAttendeeToEnableCamera",
+    AllowAttendeeToEnableMic: "allowAttendeeToEnableMic",
+    AllowedPresenters: "allowedPresenters",
+    AllowMeetingChat: "allowMeetingChat",
+    AllowParticipantsToChangeName: "allowParticipantsToChangeName",
+    AllowRecording: "allowRecording",
+    AllowTeamworkReactions: "allowTeamworkReactions",
+    AllowTranscription: "allowTranscription",
+    AnonymizeIdentityForRoles: "anonymizeIdentityForRoles",
+    AudioConferencing: "audioConferencing",
+    ChatInfo: "chatInfo",
+    ChatRestrictions: "chatRestrictions",
+    IsEndToEndEncryptionEnabled: "isEndToEndEncryptionEnabled",
+    IsEntryExitAnnounced: "isEntryExitAnnounced",
+    JoinInformation: "joinInformation",
+    JoinMeetingIdSettings: "joinMeetingIdSettings",
+    JoinWebUrl: "joinWebUrl",
+    LobbyBypassSettings: "lobbyBypassSettings",
+    RecordAutomatically: "recordAutomatically",
+    ShareMeetingChatHistoryDefault: "shareMeetingChatHistoryDefault",
+    Subject: "subject",
+    VideoTeleconferenceId: "videoTeleconferenceId",
+    WatermarkProtection: "watermarkProtection",
+    AlternativeRecording: "alternativeRecording",
+    AttendeeReport: "attendeeReport",
+    BroadcastRecording: "broadcastRecording",
+    BroadcastSettings: "broadcastSettings",
+    Capabilities: "capabilities",
+    CreationDateTime: "creationDateTime",
+    EndDateTime: "endDateTime",
+    ExternalId: "externalId",
+    IsBroadcast: "isBroadcast",
+    JoinUrl: "joinUrl",
+    MeetingTemplateId: "meetingTemplateId",
+    Participants: "participants",
+    Recording: "recording",
+    StartDateTime: "startDateTime",
+    AttendanceReports: "attendanceReports",
+    MeetingAttendanceReport: "meetingAttendanceReport",
+    Recordings: "recordings",
+    Registration: "registration",
+    Transcripts: "transcripts",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -153,7 +296,7 @@ export const OnlineMeetingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnlineMeetingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: OnlineMeetingsRequestBuilderGetQueryParametersMapper,
     },
@@ -163,7 +306,7 @@ export const OnlineMeetingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnlineMeetingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOnlineMeeting,

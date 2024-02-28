@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { IntuneBrandingProfileItemRequestBuilderNavigationMetadata, IntuneBrandingProfileItemRequestBuilderRequestsMetadata, type IntuneBrandingProfileItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface IntuneBrandingProfilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface IntuneBrandingProfilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface IntuneBrandingProfilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,126 @@ export interface IntuneBrandingProfilesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const IntuneBrandingProfilesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intuneBrandingProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CompanyPortalBlockedActions: "companyPortalBlockedActions",
+    CompanyPortalBlockedActionsDesc: "companyPortalBlockedActions desc",
+    ContactITEmailAddress: "contactITEmailAddress",
+    ContactITEmailAddressDesc: "contactITEmailAddress desc",
+    ContactITName: "contactITName",
+    ContactITNameDesc: "contactITName desc",
+    ContactITNotes: "contactITNotes",
+    ContactITNotesDesc: "contactITNotes desc",
+    ContactITPhoneNumber: "contactITPhoneNumber",
+    ContactITPhoneNumberDesc: "contactITPhoneNumber desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CustomCanSeePrivacyMessage: "customCanSeePrivacyMessage",
+    CustomCanSeePrivacyMessageDesc: "customCanSeePrivacyMessage desc",
+    CustomCantSeePrivacyMessage: "customCantSeePrivacyMessage",
+    CustomCantSeePrivacyMessageDesc: "customCantSeePrivacyMessage desc",
+    CustomPrivacyMessage: "customPrivacyMessage",
+    CustomPrivacyMessageDesc: "customPrivacyMessage desc",
+    DisableClientTelemetry: "disableClientTelemetry",
+    DisableClientTelemetryDesc: "disableClientTelemetry desc",
+    DisableDeviceCategorySelection: "disableDeviceCategorySelection",
+    DisableDeviceCategorySelectionDesc: "disableDeviceCategorySelection desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EnrollmentAvailability: "enrollmentAvailability",
+    EnrollmentAvailabilityDesc: "enrollmentAvailability desc",
+    IsDefaultProfile: "isDefaultProfile",
+    IsDefaultProfileDesc: "isDefaultProfile desc",
+    IsFactoryResetDisabled: "isFactoryResetDisabled",
+    IsFactoryResetDisabledDesc: "isFactoryResetDisabled desc",
+    IsRemoveDeviceDisabled: "isRemoveDeviceDisabled",
+    IsRemoveDeviceDisabledDesc: "isRemoveDeviceDisabled desc",
+    LandingPageCustomizedImage: "landingPageCustomizedImage",
+    LandingPageCustomizedImageDesc: "landingPageCustomizedImage desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    LightBackgroundLogo: "lightBackgroundLogo",
+    LightBackgroundLogoDesc: "lightBackgroundLogo desc",
+    OnlineSupportSiteName: "onlineSupportSiteName",
+    OnlineSupportSiteNameDesc: "onlineSupportSiteName desc",
+    OnlineSupportSiteUrl: "onlineSupportSiteUrl",
+    OnlineSupportSiteUrlDesc: "onlineSupportSiteUrl desc",
+    PrivacyUrl: "privacyUrl",
+    PrivacyUrlDesc: "privacyUrl desc",
+    ProfileDescription: "profileDescription",
+    ProfileDescriptionDesc: "profileDescription desc",
+    ProfileName: "profileName",
+    ProfileNameDesc: "profileName desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    SendDeviceOwnershipChangePushNotification: "sendDeviceOwnershipChangePushNotification",
+    SendDeviceOwnershipChangePushNotificationDesc: "sendDeviceOwnershipChangePushNotification desc",
+    ShowAzureADEnterpriseApps: "showAzureADEnterpriseApps",
+    ShowAzureADEnterpriseAppsDesc: "showAzureADEnterpriseApps desc",
+    ShowConfigurationManagerApps: "showConfigurationManagerApps",
+    ShowConfigurationManagerAppsDesc: "showConfigurationManagerApps desc",
+    ShowDisplayNameNextToLogo: "showDisplayNameNextToLogo",
+    ShowDisplayNameNextToLogoDesc: "showDisplayNameNextToLogo desc",
+    ShowLogo: "showLogo",
+    ShowLogoDesc: "showLogo desc",
+    ShowOfficeWebApps: "showOfficeWebApps",
+    ShowOfficeWebAppsDesc: "showOfficeWebApps desc",
+    ThemeColor: "themeColor",
+    ThemeColorDesc: "themeColor desc",
+    ThemeColorLogo: "themeColorLogo",
+    ThemeColorLogoDesc: "themeColorLogo desc",
+} as const;
+/**
+ * Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CompanyPortalBlockedActions: "companyPortalBlockedActions",
+    ContactITEmailAddress: "contactITEmailAddress",
+    ContactITName: "contactITName",
+    ContactITNotes: "contactITNotes",
+    ContactITPhoneNumber: "contactITPhoneNumber",
+    CreatedDateTime: "createdDateTime",
+    CustomCanSeePrivacyMessage: "customCanSeePrivacyMessage",
+    CustomCantSeePrivacyMessage: "customCantSeePrivacyMessage",
+    CustomPrivacyMessage: "customPrivacyMessage",
+    DisableClientTelemetry: "disableClientTelemetry",
+    DisableDeviceCategorySelection: "disableDeviceCategorySelection",
+    DisplayName: "displayName",
+    EnrollmentAvailability: "enrollmentAvailability",
+    IsDefaultProfile: "isDefaultProfile",
+    IsFactoryResetDisabled: "isFactoryResetDisabled",
+    IsRemoveDeviceDisabled: "isRemoveDeviceDisabled",
+    LandingPageCustomizedImage: "landingPageCustomizedImage",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LightBackgroundLogo: "lightBackgroundLogo",
+    OnlineSupportSiteName: "onlineSupportSiteName",
+    OnlineSupportSiteUrl: "onlineSupportSiteUrl",
+    PrivacyUrl: "privacyUrl",
+    ProfileDescription: "profileDescription",
+    ProfileName: "profileName",
+    RoleScopeTagIds: "roleScopeTagIds",
+    SendDeviceOwnershipChangePushNotification: "sendDeviceOwnershipChangePushNotification",
+    ShowAzureADEnterpriseApps: "showAzureADEnterpriseApps",
+    ShowConfigurationManagerApps: "showConfigurationManagerApps",
+    ShowDisplayNameNextToLogo: "showDisplayNameNextToLogo",
+    ShowLogo: "showLogo",
+    ShowOfficeWebApps: "showOfficeWebApps",
+    ThemeColor: "themeColor",
+    ThemeColorLogo: "themeColorLogo",
+    Assignments: "assignments",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +250,7 @@ export const IntuneBrandingProfilesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIntuneBrandingProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: IntuneBrandingProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +260,7 @@ export const IntuneBrandingProfilesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIntuneBrandingProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIntuneBrandingProfile,

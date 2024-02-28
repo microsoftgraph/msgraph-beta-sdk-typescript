@@ -9,6 +9,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { SignInItemRequestBuilderRequestsMetadata, type SignInItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
  */
@@ -72,7 +75,7 @@ export interface SignInsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -80,7 +83,7 @@ export interface SignInsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -88,7 +91,7 @@ export interface SignInsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -102,6 +105,226 @@ export interface SignInsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SignInsRequestBuilderUriTemplate = "{+baseurl}/auditLogs/signIns{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppDisplayName: "appDisplayName",
+    AppDisplayNameDesc: "appDisplayName desc",
+    AppId: "appId",
+    AppIdDesc: "appId desc",
+    AppliedConditionalAccessPolicies: "appliedConditionalAccessPolicies",
+    AppliedConditionalAccessPoliciesDesc: "appliedConditionalAccessPolicies desc",
+    AppliedEventListeners: "appliedEventListeners",
+    AppliedEventListenersDesc: "appliedEventListeners desc",
+    AppTokenProtectionStatus: "appTokenProtectionStatus",
+    AppTokenProtectionStatusDesc: "appTokenProtectionStatus desc",
+    AuthenticationAppDeviceDetails: "authenticationAppDeviceDetails",
+    AuthenticationAppDeviceDetailsDesc: "authenticationAppDeviceDetails desc",
+    AuthenticationAppPolicyEvaluationDetails: "authenticationAppPolicyEvaluationDetails",
+    AuthenticationAppPolicyEvaluationDetailsDesc: "authenticationAppPolicyEvaluationDetails desc",
+    AuthenticationContextClassReferences: "authenticationContextClassReferences",
+    AuthenticationContextClassReferencesDesc: "authenticationContextClassReferences desc",
+    AuthenticationDetails: "authenticationDetails",
+    AuthenticationDetailsDesc: "authenticationDetails desc",
+    AuthenticationMethodsUsed: "authenticationMethodsUsed",
+    AuthenticationMethodsUsedDesc: "authenticationMethodsUsed desc",
+    AuthenticationProcessingDetails: "authenticationProcessingDetails",
+    AuthenticationProcessingDetailsDesc: "authenticationProcessingDetails desc",
+    AuthenticationProtocol: "authenticationProtocol",
+    AuthenticationProtocolDesc: "authenticationProtocol desc",
+    AuthenticationRequirement: "authenticationRequirement",
+    AuthenticationRequirementDesc: "authenticationRequirement desc",
+    AuthenticationRequirementPolicies: "authenticationRequirementPolicies",
+    AuthenticationRequirementPoliciesDesc: "authenticationRequirementPolicies desc",
+    AutonomousSystemNumber: "autonomousSystemNumber",
+    AutonomousSystemNumberDesc: "autonomousSystemNumber desc",
+    AzureResourceId: "azureResourceId",
+    AzureResourceIdDesc: "azureResourceId desc",
+    ClientAppUsed: "clientAppUsed",
+    ClientAppUsedDesc: "clientAppUsed desc",
+    ClientCredentialType: "clientCredentialType",
+    ClientCredentialTypeDesc: "clientCredentialType desc",
+    ConditionalAccessStatus: "conditionalAccessStatus",
+    ConditionalAccessStatusDesc: "conditionalAccessStatus desc",
+    CorrelationId: "correlationId",
+    CorrelationIdDesc: "correlationId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CrossTenantAccessType: "crossTenantAccessType",
+    CrossTenantAccessTypeDesc: "crossTenantAccessType desc",
+    DeviceDetail: "deviceDetail",
+    DeviceDetailDesc: "deviceDetail desc",
+    FederatedCredentialId: "federatedCredentialId",
+    FederatedCredentialIdDesc: "federatedCredentialId desc",
+    FlaggedForReview: "flaggedForReview",
+    FlaggedForReviewDesc: "flaggedForReview desc",
+    HomeTenantId: "homeTenantId",
+    HomeTenantIdDesc: "homeTenantId desc",
+    HomeTenantName: "homeTenantName",
+    HomeTenantNameDesc: "homeTenantName desc",
+    IncomingTokenType: "incomingTokenType",
+    IncomingTokenTypeDesc: "incomingTokenType desc",
+    IpAddress: "ipAddress",
+    IpAddressDesc: "ipAddress desc",
+    IpAddressFromResourceProvider: "ipAddressFromResourceProvider",
+    IpAddressFromResourceProviderDesc: "ipAddressFromResourceProvider desc",
+    IsInteractive: "isInteractive",
+    IsInteractiveDesc: "isInteractive desc",
+    IsTenantRestricted: "isTenantRestricted",
+    IsTenantRestrictedDesc: "isTenantRestricted desc",
+    Location: "location",
+    LocationDesc: "location desc",
+    ManagedServiceIdentity: "managedServiceIdentity",
+    ManagedServiceIdentityDesc: "managedServiceIdentity desc",
+    MfaDetail: "mfaDetail",
+    MfaDetailDesc: "mfaDetail desc",
+    NetworkLocationDetails: "networkLocationDetails",
+    NetworkLocationDetailsDesc: "networkLocationDetails desc",
+    OriginalRequestId: "originalRequestId",
+    OriginalRequestIdDesc: "originalRequestId desc",
+    OriginalTransferMethod: "originalTransferMethod",
+    OriginalTransferMethodDesc: "originalTransferMethod desc",
+    PrivateLinkDetails: "privateLinkDetails",
+    PrivateLinkDetailsDesc: "privateLinkDetails desc",
+    ProcessingTimeInMilliseconds: "processingTimeInMilliseconds",
+    ProcessingTimeInMillisecondsDesc: "processingTimeInMilliseconds desc",
+    ResourceDisplayName: "resourceDisplayName",
+    ResourceDisplayNameDesc: "resourceDisplayName desc",
+    ResourceId: "resourceId",
+    ResourceIdDesc: "resourceId desc",
+    ResourceServicePrincipalId: "resourceServicePrincipalId",
+    ResourceServicePrincipalIdDesc: "resourceServicePrincipalId desc",
+    ResourceTenantId: "resourceTenantId",
+    ResourceTenantIdDesc: "resourceTenantId desc",
+    RiskDetail: "riskDetail",
+    RiskDetailDesc: "riskDetail desc",
+    RiskEventTypes_v2: "riskEventTypes_v2",
+    RiskEventTypes_v2Desc: "riskEventTypes_v2 desc",
+    RiskLevelAggregated: "riskLevelAggregated",
+    RiskLevelAggregatedDesc: "riskLevelAggregated desc",
+    RiskLevelDuringSignIn: "riskLevelDuringSignIn",
+    RiskLevelDuringSignInDesc: "riskLevelDuringSignIn desc",
+    RiskState: "riskState",
+    RiskStateDesc: "riskState desc",
+    ServicePrincipalCredentialKeyId: "servicePrincipalCredentialKeyId",
+    ServicePrincipalCredentialKeyIdDesc: "servicePrincipalCredentialKeyId desc",
+    ServicePrincipalCredentialThumbprint: "servicePrincipalCredentialThumbprint",
+    ServicePrincipalCredentialThumbprintDesc: "servicePrincipalCredentialThumbprint desc",
+    ServicePrincipalId: "servicePrincipalId",
+    ServicePrincipalIdDesc: "servicePrincipalId desc",
+    ServicePrincipalName: "servicePrincipalName",
+    ServicePrincipalNameDesc: "servicePrincipalName desc",
+    SessionLifetimePolicies: "sessionLifetimePolicies",
+    SessionLifetimePoliciesDesc: "sessionLifetimePolicies desc",
+    SignInEventTypes: "signInEventTypes",
+    SignInEventTypesDesc: "signInEventTypes desc",
+    SignInIdentifier: "signInIdentifier",
+    SignInIdentifierDesc: "signInIdentifier desc",
+    SignInIdentifierType: "signInIdentifierType",
+    SignInIdentifierTypeDesc: "signInIdentifierType desc",
+    SignInTokenProtectionStatus: "signInTokenProtectionStatus",
+    SignInTokenProtectionStatusDesc: "signInTokenProtectionStatus desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    TokenIssuerName: "tokenIssuerName",
+    TokenIssuerNameDesc: "tokenIssuerName desc",
+    TokenIssuerType: "tokenIssuerType",
+    TokenIssuerTypeDesc: "tokenIssuerType desc",
+    UniqueTokenIdentifier: "uniqueTokenIdentifier",
+    UniqueTokenIdentifierDesc: "uniqueTokenIdentifier desc",
+    UserAgent: "userAgent",
+    UserAgentDesc: "userAgent desc",
+    UserDisplayName: "userDisplayName",
+    UserDisplayNameDesc: "userDisplayName desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+    UserType: "userType",
+    UserTypeDesc: "userType desc",
+} as const;
+/**
+ * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppDisplayName: "appDisplayName",
+    AppId: "appId",
+    AppliedConditionalAccessPolicies: "appliedConditionalAccessPolicies",
+    AppliedEventListeners: "appliedEventListeners",
+    AppTokenProtectionStatus: "appTokenProtectionStatus",
+    AuthenticationAppDeviceDetails: "authenticationAppDeviceDetails",
+    AuthenticationAppPolicyEvaluationDetails: "authenticationAppPolicyEvaluationDetails",
+    AuthenticationContextClassReferences: "authenticationContextClassReferences",
+    AuthenticationDetails: "authenticationDetails",
+    AuthenticationMethodsUsed: "authenticationMethodsUsed",
+    AuthenticationProcessingDetails: "authenticationProcessingDetails",
+    AuthenticationProtocol: "authenticationProtocol",
+    AuthenticationRequirement: "authenticationRequirement",
+    AuthenticationRequirementPolicies: "authenticationRequirementPolicies",
+    AutonomousSystemNumber: "autonomousSystemNumber",
+    AzureResourceId: "azureResourceId",
+    ClientAppUsed: "clientAppUsed",
+    ClientCredentialType: "clientCredentialType",
+    ConditionalAccessStatus: "conditionalAccessStatus",
+    CorrelationId: "correlationId",
+    CreatedDateTime: "createdDateTime",
+    CrossTenantAccessType: "crossTenantAccessType",
+    DeviceDetail: "deviceDetail",
+    FederatedCredentialId: "federatedCredentialId",
+    FlaggedForReview: "flaggedForReview",
+    HomeTenantId: "homeTenantId",
+    HomeTenantName: "homeTenantName",
+    IncomingTokenType: "incomingTokenType",
+    IpAddress: "ipAddress",
+    IpAddressFromResourceProvider: "ipAddressFromResourceProvider",
+    IsInteractive: "isInteractive",
+    IsTenantRestricted: "isTenantRestricted",
+    Location: "location",
+    ManagedServiceIdentity: "managedServiceIdentity",
+    MfaDetail: "mfaDetail",
+    NetworkLocationDetails: "networkLocationDetails",
+    OriginalRequestId: "originalRequestId",
+    OriginalTransferMethod: "originalTransferMethod",
+    PrivateLinkDetails: "privateLinkDetails",
+    ProcessingTimeInMilliseconds: "processingTimeInMilliseconds",
+    ResourceDisplayName: "resourceDisplayName",
+    ResourceId: "resourceId",
+    ResourceServicePrincipalId: "resourceServicePrincipalId",
+    ResourceTenantId: "resourceTenantId",
+    RiskDetail: "riskDetail",
+    RiskEventTypes_v2: "riskEventTypes_v2",
+    RiskLevelAggregated: "riskLevelAggregated",
+    RiskLevelDuringSignIn: "riskLevelDuringSignIn",
+    RiskState: "riskState",
+    ServicePrincipalCredentialKeyId: "servicePrincipalCredentialKeyId",
+    ServicePrincipalCredentialThumbprint: "servicePrincipalCredentialThumbprint",
+    ServicePrincipalId: "servicePrincipalId",
+    ServicePrincipalName: "servicePrincipalName",
+    SessionLifetimePolicies: "sessionLifetimePolicies",
+    SignInEventTypes: "signInEventTypes",
+    SignInIdentifier: "signInIdentifier",
+    SignInIdentifierType: "signInIdentifierType",
+    SignInTokenProtectionStatus: "signInTokenProtectionStatus",
+    Status: "status",
+    TokenIssuerName: "tokenIssuerName",
+    TokenIssuerType: "tokenIssuerType",
+    UniqueTokenIdentifier: "uniqueTokenIdentifier",
+    UserAgent: "userAgent",
+    UserDisplayName: "userDisplayName",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+    UserType: "userType",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -143,7 +366,7 @@ export const SignInsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SignInsRequestBuilderGetQueryParametersMapper,
     },
@@ -153,7 +376,7 @@ export const SignInsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSignIn,

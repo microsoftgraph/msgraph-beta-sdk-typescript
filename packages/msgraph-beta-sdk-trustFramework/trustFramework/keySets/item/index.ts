@@ -10,6 +10,8 @@ import { type UploadPkcs12RequestBuilder, UploadPkcs12RequestBuilderRequestsMeta
 import { type UploadSecretRequestBuilder, UploadSecretRequestBuilderRequestsMetadata } from './uploadSecret/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
  */
@@ -85,16 +87,29 @@ export interface TrustFrameworkKeySetItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TrustFrameworkKeySetItemRequestBuilderUriTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Keys: "keys",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -132,7 +147,7 @@ export const TrustFrameworkKeySetItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TrustFrameworkKeySetItemRequestBuilderUriTemplate,
@@ -140,7 +155,7 @@ export const TrustFrameworkKeySetItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeySetFromDiscriminatorValue,
         queryParametersMapper: TrustFrameworkKeySetItemRequestBuilderGetQueryParametersMapper,
     },
@@ -150,7 +165,7 @@ export const TrustFrameworkKeySetItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeySetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrustFrameworkKeySet,

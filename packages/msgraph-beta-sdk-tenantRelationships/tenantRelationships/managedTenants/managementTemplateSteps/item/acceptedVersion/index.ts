@@ -30,12 +30,14 @@ export interface AcceptedVersionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,36 @@ export const AcceptedVersionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepVersionFromDiscriminatorValue,
         queryParametersMapper: AcceptedVersionRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the acceptedVersion property of the microsoft.graph.managedTenants.managementTemplateStep entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AcceptedFor: "acceptedFor",
+    Deployments: "deployments",
+    TemplateStep: "templateStep",
+} as const;
+/**
+ * Provides operations to manage the acceptedVersion property of the microsoft.graph.managedTenants.managementTemplateStep entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ContentMarkdown: "contentMarkdown",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    Name: "name",
+    Version: "version",
+    VersionInformation: "versionInformation",
+    AcceptedFor: "acceptedFor",
+    Deployments: "deployments",
+    TemplateStep: "templateStep",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

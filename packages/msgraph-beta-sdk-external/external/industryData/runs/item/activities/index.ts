@@ -46,7 +46,7 @@ export interface ActivitiesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +54,7 @@ export interface ActivitiesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +62,7 @@ export interface ActivitiesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -72,6 +72,9 @@ export interface ActivitiesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -112,10 +115,40 @@ export const ActivitiesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIndustryDataRunActivityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ActivitiesRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Activity: "activity",
+} as const;
+/**
+ * Provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    BlockingError: "blockingError",
+    BlockingErrorDesc: "blockingError desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BlockingError: "blockingError",
+    DisplayName: "displayName",
+    Status: "status",
+    Activity: "activity",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

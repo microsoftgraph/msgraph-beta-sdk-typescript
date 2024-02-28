@@ -62,7 +62,7 @@ export interface AlertConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface AlertConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface AlertConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface AlertConfigurationsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const AlertConfigurationsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AlertConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,45 @@ export const AlertConfigurationsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleManagementAlertConfiguration,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AlertDefinition: "alertDefinition",
+} as const;
+/**
+ * Provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AlertDefinitionId: "alertDefinitionId",
+    AlertDefinitionIdDesc: "alertDefinitionId desc",
+    IsEnabled: "isEnabled",
+    IsEnabledDesc: "isEnabled desc",
+    ScopeId: "scopeId",
+    ScopeIdDesc: "scopeId desc",
+    ScopeType: "scopeType",
+    ScopeTypeDesc: "scopeType desc",
+} as const;
+/**
+ * Provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertDefinitionId: "alertDefinitionId",
+    IsEnabled: "isEnabled",
+    ScopeId: "scopeId",
+    ScopeType: "scopeType",
+    AlertDefinition: "alertDefinition",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -73,12 +73,14 @@ export interface CallRecordItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -116,7 +118,7 @@ export const CallRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CallRecordItemRequestBuilderUriTemplate,
@@ -124,7 +126,7 @@ export const CallRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallRecordFromDiscriminatorValue,
         queryParametersMapper: CallRecordItemRequestBuilderGetQueryParametersMapper,
     },
@@ -134,12 +136,39 @@ export const CallRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallRecordFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCallRecord,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Organizer_v2: "organizer_v2",
+    Participants_v2: "participants_v2",
+    Sessions: "sessions",
+} as const;
+/**
+ * Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    EndDateTime: "endDateTime",
+    JoinWebUrl: "joinWebUrl",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Modalities: "modalities",
+    Organizer: "organizer",
+    Participants: "participants",
+    StartDateTime: "startDateTime",
+    Type: "type",
+    Version: "version",
+    Organizer_v2: "organizer_v2",
+    Participants_v2: "participants_v2",
+    Sessions: "sessions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

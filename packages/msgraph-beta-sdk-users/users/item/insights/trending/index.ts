@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { TrendingItemRequestBuilderNavigationMetadata, TrendingItemRequestBuilderRequestsMetadata, type TrendingItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
  */
@@ -61,7 +64,7 @@ export interface TrendingRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface TrendingRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface TrendingRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,39 @@ export interface TrendingRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TrendingRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/insights/trending{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Resource: "resource",
+} as const;
+/**
+ * Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    ResourceReference: "resourceReference",
+    ResourceReferenceDesc: "resourceReference desc",
+    ResourceVisualization: "resourceVisualization",
+    ResourceVisualizationDesc: "resourceVisualization desc",
+    Weight: "weight",
+    WeightDesc: "weight desc",
+} as const;
+/**
+ * Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ResourceReference: "resourceReference",
+    ResourceVisualization: "resourceVisualization",
+    Weight: "weight",
+    Resource: "resource",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +163,7 @@ export const TrendingRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrendingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TrendingRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +173,7 @@ export const TrendingRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrendingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrending,

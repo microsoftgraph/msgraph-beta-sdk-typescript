@@ -78,7 +78,7 @@ export interface ChatsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -86,7 +86,7 @@ export interface ChatsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -94,7 +94,7 @@ export interface ChatsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -104,6 +104,9 @@ export interface ChatsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -153,7 +156,7 @@ export const ChatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChatCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ChatsRequestBuilderGetQueryParametersMapper,
     },
@@ -163,12 +166,71 @@ export const ChatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChatFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChat,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of chat entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    InstalledApps: "installedApps",
+    LastMessagePreview: "lastMessagePreview",
+    Members: "members",
+    Messages: "messages",
+    Operations: "operations",
+    PermissionGrants: "permissionGrants",
+    PinnedMessages: "pinnedMessages",
+    Tabs: "tabs",
+} as const;
+/**
+ * Provides operations to manage the collection of chat entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ChatType: "chatType",
+    ChatTypeDesc: "chatType desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    OnlineMeetingInfo: "onlineMeetingInfo",
+    OnlineMeetingInfoDesc: "onlineMeetingInfo desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    Topic: "topic",
+    TopicDesc: "topic desc",
+    Viewpoint: "viewpoint",
+    ViewpointDesc: "viewpoint desc",
+    WebUrl: "webUrl",
+    WebUrlDesc: "webUrl desc",
+} as const;
+/**
+ * Provides operations to manage the collection of chat entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ChatType: "chatType",
+    CreatedDateTime: "createdDateTime",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    OnlineMeetingInfo: "onlineMeetingInfo",
+    TenantId: "tenantId",
+    Topic: "topic",
+    Viewpoint: "viewpoint",
+    WebUrl: "webUrl",
+    InstalledApps: "installedApps",
+    LastMessagePreview: "lastMessagePreview",
+    Members: "members",
+    Messages: "messages",
+    Operations: "operations",
+    PermissionGrants: "permissionGrants",
+    PinnedMessages: "pinnedMessages",
+    Tabs: "tabs",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

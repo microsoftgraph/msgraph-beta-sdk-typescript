@@ -15,6 +15,8 @@ import { SendRequestBuilderRequestsMetadata, type SendRequestBuilder } from './s
 import { ShipmentMethodRequestBuilderRequestsMetadata, type ShipmentMethodRequestBuilder } from './shipmentMethod/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
  */
@@ -95,16 +97,71 @@ export interface SalesInvoiceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SalesInvoiceItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesInvoiceLines: "salesInvoiceLines",
+    ShipmentMethod: "shipmentMethod",
+} as const;
+/**
+ * Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BillingPostalAddress: "billingPostalAddress",
+    BillToCustomerId: "billToCustomerId",
+    BillToCustomerNumber: "billToCustomerNumber",
+    BillToName: "billToName",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    CustomerId: "customerId",
+    CustomerName: "customerName",
+    CustomerNumber: "customerNumber",
+    CustomerPurchaseOrderReference: "customerPurchaseOrderReference",
+    DiscountAmount: "discountAmount",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DueDate: "dueDate",
+    Email: "email",
+    ExternalDocumentNumber: "externalDocumentNumber",
+    Id: "id",
+    InvoiceDate: "invoiceDate",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    OrderId: "orderId",
+    OrderNumber: "orderNumber",
+    PaymentTermsId: "paymentTermsId",
+    PhoneNumber: "phoneNumber",
+    PricesIncludeTax: "pricesIncludeTax",
+    Salesperson: "salesperson",
+    SellingPostalAddress: "sellingPostalAddress",
+    ShipmentMethodId: "shipmentMethodId",
+    ShippingPostalAddress: "shippingPostalAddress",
+    ShipToContact: "shipToContact",
+    ShipToName: "shipToName",
+    Status: "status",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalTaxAmount: "totalTaxAmount",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesInvoiceLines: "salesInvoiceLines",
+    ShipmentMethod: "shipmentMethod",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -159,7 +216,7 @@ export const SalesInvoiceItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesInvoiceFromDiscriminatorValue,
         queryParametersMapper: SalesInvoiceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -169,7 +226,7 @@ export const SalesInvoiceItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesInvoiceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSalesInvoice,

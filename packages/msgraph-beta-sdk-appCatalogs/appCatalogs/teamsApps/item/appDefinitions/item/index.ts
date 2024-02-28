@@ -9,6 +9,8 @@ import { DashboardCardsRequestBuilderNavigationMetadata, DashboardCardsRequestBu
 import { OutlineIconRequestBuilderNavigationMetadata, OutlineIconRequestBuilderRequestsMetadata, type OutlineIconRequestBuilder } from './outlineIcon/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
  */
@@ -78,16 +80,47 @@ export interface TeamsAppDefinitionItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TeamsAppDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Bot: "bot",
+    ColorIcon: "colorIcon",
+    DashboardCards: "dashboardCards",
+    OutlineIcon: "outlineIcon",
+} as const;
+/**
+ * Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowedInstallationScopes: "allowedInstallationScopes",
+    Authorization: "authorization",
+    AzureADAppId: "azureADAppId",
+    CreatedBy: "createdBy",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PublishingState: "publishingState",
+    Shortdescription: "shortdescription",
+    TeamsAppId: "teamsAppId",
+    Version: "version",
+    Bot: "bot",
+    ColorIcon: "colorIcon",
+    DashboardCards: "dashboardCards",
+    OutlineIcon: "outlineIcon",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -125,7 +158,7 @@ export const TeamsAppDefinitionItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TeamsAppDefinitionItemRequestBuilderUriTemplate,
@@ -133,7 +166,7 @@ export const TeamsAppDefinitionItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAppDefinitionFromDiscriminatorValue,
         queryParametersMapper: TeamsAppDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +176,7 @@ export const TeamsAppDefinitionItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAppDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamsAppDefinition,

@@ -30,12 +30,14 @@ export interface AgedAccountsReceivableItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,33 @@ export const AgedAccountsReceivableItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAgedAccountsReceivableFromDiscriminatorValue,
         queryParametersMapper: AgedAccountsReceivableItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AgedAsOfDate: "agedAsOfDate",
+    BalanceDue: "balanceDue",
+    CurrencyCode: "currencyCode",
+    CurrentAmount: "currentAmount",
+    CustomerId: "customerId",
+    CustomerNumber: "customerNumber",
+    Id: "id",
+    Name: "name",
+    Period1Amount: "period1Amount",
+    Period2Amount: "period2Amount",
+    Period3Amount: "period3Amount",
+    PeriodLengthFilter: "periodLengthFilter",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

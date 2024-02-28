@@ -47,7 +47,7 @@ export interface AgedAccountsPayableRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +55,7 @@ export interface AgedAccountsPayableRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +63,7 @@ export interface AgedAccountsPayableRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +73,9 @@ export interface AgedAccountsPayableRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -112,10 +115,62 @@ export const AgedAccountsPayableRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAgedAccountsPayableCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AgedAccountsPayableRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    AgedAsOfDate: "agedAsOfDate",
+    AgedAsOfDateDesc: "agedAsOfDate desc",
+    BalanceDue: "balanceDue",
+    BalanceDueDesc: "balanceDue desc",
+    CurrencyCode: "currencyCode",
+    CurrencyCodeDesc: "currencyCode desc",
+    CurrentAmount: "currentAmount",
+    CurrentAmountDesc: "currentAmount desc",
+    Id: "id",
+    IdDesc: "id desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Period1Amount: "period1Amount",
+    Period1AmountDesc: "period1Amount desc",
+    Period2Amount: "period2Amount",
+    Period2AmountDesc: "period2Amount desc",
+    Period3Amount: "period3Amount",
+    Period3AmountDesc: "period3Amount desc",
+    PeriodLengthFilter: "periodLengthFilter",
+    PeriodLengthFilterDesc: "periodLengthFilter desc",
+    VendorId: "vendorId",
+    VendorIdDesc: "vendorId desc",
+    VendorNumber: "vendorNumber",
+    VendorNumberDesc: "vendorNumber desc",
+} as const;
+/**
+ * Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AgedAsOfDate: "agedAsOfDate",
+    BalanceDue: "balanceDue",
+    CurrencyCode: "currencyCode",
+    CurrentAmount: "currentAmount",
+    Id: "id",
+    Name: "name",
+    Period1Amount: "period1Amount",
+    Period2Amount: "period2Amount",
+    Period3Amount: "period3Amount",
+    PeriodLengthFilter: "periodLengthFilter",
+    VendorId: "vendorId",
+    VendorNumber: "vendorNumber",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

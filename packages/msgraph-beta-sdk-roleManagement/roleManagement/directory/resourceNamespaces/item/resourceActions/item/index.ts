@@ -7,6 +7,8 @@ import { AuthenticationContextRequestBuilderRequestsMetadata, type Authenticatio
 import { ResourceScopeRequestBuilderRequestsMetadata, type ResourceScopeRequestBuilder } from './resourceScope/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
  */
@@ -68,16 +70,39 @@ export interface UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UnifiedRbacResourceActionItemRequestBuilderUriTemplate = "{+baseurl}/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AuthenticationContext: "authenticationContext",
+    ResourceScope: "resourceScope",
+} as const;
+/**
+ * Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActionVerb: "actionVerb",
+    AuthenticationContextId: "authenticationContextId",
+    Description: "description",
+    IsAuthenticationContextSettable: "isAuthenticationContextSettable",
+    IsPrivileged: "isPrivileged",
+    Name: "name",
+    ResourceScopeId: "resourceScopeId",
+    AuthenticationContext: "authenticationContext",
+    ResourceScope: "resourceScope",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -106,7 +131,7 @@ export const UnifiedRbacResourceActionItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UnifiedRbacResourceActionItemRequestBuilderUriTemplate,
@@ -114,7 +139,7 @@ export const UnifiedRbacResourceActionItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacResourceActionFromDiscriminatorValue,
         queryParametersMapper: UnifiedRbacResourceActionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +149,7 @@ export const UnifiedRbacResourceActionItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacResourceActionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRbacResourceAction,

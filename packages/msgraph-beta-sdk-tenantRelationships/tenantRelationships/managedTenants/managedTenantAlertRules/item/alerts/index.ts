@@ -46,7 +46,7 @@ export interface AlertsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +54,7 @@ export interface AlertsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +62,7 @@ export interface AlertsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -72,6 +72,9 @@ export interface AlertsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -111,10 +114,82 @@ export const AlertsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantAlertCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AlertsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AlertLogs: "alertLogs",
+    AlertRule: "alertRule",
+    ApiNotifications: "apiNotifications",
+    EmailNotifications: "emailNotifications",
+} as const;
+/**
+ * Provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AlertData: "alertData",
+    AlertDataDesc: "alertData desc",
+    AlertDataReferenceStrings: "alertDataReferenceStrings",
+    AlertDataReferenceStringsDesc: "alertDataReferenceStrings desc",
+    AlertRuleDisplayName: "alertRuleDisplayName",
+    AlertRuleDisplayNameDesc: "alertRuleDisplayName desc",
+    AssignedToUserId: "assignedToUserId",
+    AssignedToUserIdDesc: "assignedToUserId desc",
+    CorrelationCount: "correlationCount",
+    CorrelationCountDesc: "correlationCount desc",
+    CorrelationId: "correlationId",
+    CorrelationIdDesc: "correlationId desc",
+    CreatedByUserId: "createdByUserId",
+    CreatedByUserIdDesc: "createdByUserId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionByUserIdDesc: "lastActionByUserId desc",
+    LastActionDateTime: "lastActionDateTime",
+    LastActionDateTimeDesc: "lastActionDateTime desc",
+    Message: "message",
+    MessageDesc: "message desc",
+    Severity: "severity",
+    SeverityDesc: "severity desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    Title: "title",
+    TitleDesc: "title desc",
+} as const;
+/**
+ * Provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertData: "alertData",
+    AlertDataReferenceStrings: "alertDataReferenceStrings",
+    AlertRuleDisplayName: "alertRuleDisplayName",
+    AssignedToUserId: "assignedToUserId",
+    CorrelationCount: "correlationCount",
+    CorrelationId: "correlationId",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    Message: "message",
+    Severity: "severity",
+    Status: "status",
+    TenantId: "tenantId",
+    Title: "title",
+    AlertLogs: "alertLogs",
+    AlertRule: "alertRule",
+    ApiNotifications: "apiNotifications",
+    EmailNotifications: "emailNotifications",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

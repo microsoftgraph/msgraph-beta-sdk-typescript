@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { BookingStaffMemberItemRequestBuilderRequestsMetadata, type BookingStaffMemberItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
  */
@@ -63,7 +66,7 @@ export interface StaffMembersRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +74,7 @@ export interface StaffMembersRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +82,7 @@ export interface StaffMembersRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -93,6 +96,61 @@ export interface StaffMembersRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const StaffMembersRequestBuilderUriTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/staffMembers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EmailAddress: "emailAddress",
+    EmailAddressDesc: "emailAddress desc",
+    AvailabilityIsAffectedByPersonalCalendar: "availabilityIsAffectedByPersonalCalendar",
+    AvailabilityIsAffectedByPersonalCalendarDesc: "availabilityIsAffectedByPersonalCalendar desc",
+    ColorIndex: "colorIndex",
+    ColorIndexDesc: "colorIndex desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    IsEmailNotificationEnabled: "isEmailNotificationEnabled",
+    IsEmailNotificationEnabledDesc: "isEmailNotificationEnabled desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    MembershipStatus: "membershipStatus",
+    MembershipStatusDesc: "membershipStatus desc",
+    Role: "role",
+    RoleDesc: "role desc",
+    TimeZone: "timeZone",
+    TimeZoneDesc: "timeZone desc",
+    UseBusinessHours: "useBusinessHours",
+    UseBusinessHoursDesc: "useBusinessHours desc",
+    WorkingHours: "workingHours",
+    WorkingHoursDesc: "workingHours desc",
+} as const;
+/**
+ * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    EmailAddress: "emailAddress",
+    AvailabilityIsAffectedByPersonalCalendar: "availabilityIsAffectedByPersonalCalendar",
+    ColorIndex: "colorIndex",
+    CreatedDateTime: "createdDateTime",
+    IsEmailNotificationEnabled: "isEmailNotificationEnabled",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    MembershipStatus: "membershipStatus",
+    Role: "role",
+    TimeZone: "timeZone",
+    UseBusinessHours: "useBusinessHours",
+    WorkingHours: "workingHours",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +186,7 @@ export const StaffMembersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingStaffMemberCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: StaffMembersRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +196,7 @@ export const StaffMembersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingStaffMemberFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookingStaffMember,

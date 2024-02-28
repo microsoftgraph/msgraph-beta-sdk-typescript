@@ -102,12 +102,14 @@ export interface AccessPackageCatalogItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -158,7 +160,7 @@ export const AccessPackageCatalogItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageCatalogItemRequestBuilderUriTemplate,
@@ -166,7 +168,7 @@ export const AccessPackageCatalogItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageCatalogFromDiscriminatorValue,
         queryParametersMapper: AccessPackageCatalogItemRequestBuilderGetQueryParametersMapper,
     },
@@ -176,12 +178,45 @@ export const AccessPackageCatalogItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageCatalogFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageCatalog,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageCustomWorkflowExtensions: "accessPackageCustomWorkflowExtensions",
+    AccessPackageResourceRoles: "accessPackageResourceRoles",
+    AccessPackageResources: "accessPackageResources",
+    AccessPackageResourceScopes: "accessPackageResourceScopes",
+    AccessPackages: "accessPackages",
+    CustomAccessPackageWorkflowExtensions: "customAccessPackageWorkflowExtensions",
+} as const;
+/**
+ * Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CatalogStatus: "catalogStatus",
+    CatalogType: "catalogType",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    IsExternallyVisible: "isExternallyVisible",
+    ModifiedBy: "modifiedBy",
+    ModifiedDateTime: "modifiedDateTime",
+    AccessPackageCustomWorkflowExtensions: "accessPackageCustomWorkflowExtensions",
+    AccessPackageResourceRoles: "accessPackageResourceRoles",
+    AccessPackageResources: "accessPackageResources",
+    AccessPackageResourceScopes: "accessPackageResourceScopes",
+    AccessPackages: "accessPackages",
+    CustomAccessPackageWorkflowExtensions: "customAccessPackageWorkflowExtensions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

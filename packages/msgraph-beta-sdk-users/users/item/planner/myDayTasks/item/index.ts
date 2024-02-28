@@ -5,6 +5,8 @@ import { createPlannerTaskFromDiscriminatorValue, type PlannerTask } from '@micr
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
  */
@@ -30,16 +32,64 @@ export interface PlannerTaskItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PlannerTaskItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/planner/myDayTasks/{plannerTask%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AssignedToTaskBoardFormat: "assignedToTaskBoardFormat",
+    BucketTaskBoardFormat: "bucketTaskBoardFormat",
+    Details: "details",
+    ProgressTaskBoardFormat: "progressTaskBoardFormat",
+} as const;
+/**
+ * Provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActiveChecklistItemCount: "activeChecklistItemCount",
+    AppliedCategories: "appliedCategories",
+    ArchivalInfo: "archivalInfo",
+    AssigneePriority: "assigneePriority",
+    Assignments: "assignments",
+    BucketId: "bucketId",
+    ChecklistItemCount: "checklistItemCount",
+    CompletedBy: "completedBy",
+    CompletedDateTime: "completedDateTime",
+    ConversationThreadId: "conversationThreadId",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    CreationSource: "creationSource",
+    DueDateTime: "dueDateTime",
+    HasDescription: "hasDescription",
+    IsArchived: "isArchived",
+    IsOnMyDay: "isOnMyDay",
+    IsOnMyDayLastModifiedDate: "isOnMyDayLastModifiedDate",
+    OrderHint: "orderHint",
+    PercentComplete: "percentComplete",
+    PlanId: "planId",
+    PreviewType: "previewType",
+    Priority: "priority",
+    Recurrence: "recurrence",
+    ReferenceCount: "referenceCount",
+    SpecifiedCompletionRequirements: "specifiedCompletionRequirements",
+    StartDateTime: "startDateTime",
+    Title: "title",
+    AssignedToTaskBoardFormat: "assignedToTaskBoardFormat",
+    BucketTaskBoardFormat: "bucketTaskBoardFormat",
+    Details: "details",
+    ProgressTaskBoardFormat: "progressTaskBoardFormat",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +107,7 @@ export const PlannerTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPlannerTaskFromDiscriminatorValue,
         queryParametersMapper: PlannerTaskItemRequestBuilderGetQueryParametersMapper,
     },

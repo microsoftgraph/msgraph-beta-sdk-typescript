@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ManagementActionItemRequestBuilderNavigationMetadata, ManagementActionItemRequestBuilderRequestsMetadata, type ManagementActionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -62,7 +65,7 @@ export interface ManagementActionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface ManagementActionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface ManagementActionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,43 @@ export interface ManagementActionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ManagementActionsRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Category: "category",
+    CategoryDesc: "category desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ReferenceTemplateId: "referenceTemplateId",
+    ReferenceTemplateIdDesc: "referenceTemplateId desc",
+    ReferenceTemplateVersion: "referenceTemplateVersion",
+    ReferenceTemplateVersionDesc: "referenceTemplateVersion desc",
+    WorkloadActions: "workloadActions",
+    WorkloadActionsDesc: "workloadActions desc",
+} as const;
+/**
+ * Provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Category: "category",
+    Description: "description",
+    DisplayName: "displayName",
+    ReferenceTemplateId: "referenceTemplateId",
+    ReferenceTemplateVersion: "referenceTemplateVersion",
+    WorkloadActions: "workloadActions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +168,7 @@ export const ManagementActionsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagementActionsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +178,7 @@ export const ManagementActionsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementAction,

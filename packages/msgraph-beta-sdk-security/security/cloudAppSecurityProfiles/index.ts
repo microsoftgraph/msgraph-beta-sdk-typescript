@@ -61,7 +61,7 @@ export interface CloudAppSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface CloudAppSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface CloudAppSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface CloudAppSecurityProfilesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const CloudAppSecurityProfilesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudAppSecurityProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CloudAppSecurityProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,82 @@ export const CloudAppSecurityProfilesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudAppSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudAppSecurityProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AzureSubscriptionId: "azureSubscriptionId",
+    AzureSubscriptionIdDesc: "azureSubscriptionId desc",
+    AzureTenantId: "azureTenantId",
+    AzureTenantIdDesc: "azureTenantId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DeploymentPackageUrl: "deploymentPackageUrl",
+    DeploymentPackageUrlDesc: "deploymentPackageUrl desc",
+    DestinationServiceName: "destinationServiceName",
+    DestinationServiceNameDesc: "destinationServiceName desc",
+    IsSigned: "isSigned",
+    IsSignedDesc: "isSigned desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Manifest: "manifest",
+    ManifestDesc: "manifest desc",
+    Name: "name",
+    NameDesc: "name desc",
+    PermissionsRequired: "permissionsRequired",
+    PermissionsRequiredDesc: "permissionsRequired desc",
+    Platform: "platform",
+    PlatformDesc: "platform desc",
+    PolicyName: "policyName",
+    PolicyNameDesc: "policyName desc",
+    Publisher: "publisher",
+    PublisherDesc: "publisher desc",
+    RiskScore: "riskScore",
+    RiskScoreDesc: "riskScore desc",
+    Tags: "tags",
+    TagsDesc: "tags desc",
+    Type: "type",
+    TypeDesc: "type desc",
+    VendorInformation: "vendorInformation",
+    VendorInformationDesc: "vendorInformation desc",
+} as const;
+/**
+ * Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AzureSubscriptionId: "azureSubscriptionId",
+    AzureTenantId: "azureTenantId",
+    CreatedDateTime: "createdDateTime",
+    DeploymentPackageUrl: "deploymentPackageUrl",
+    DestinationServiceName: "destinationServiceName",
+    IsSigned: "isSigned",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Manifest: "manifest",
+    Name: "name",
+    PermissionsRequired: "permissionsRequired",
+    Platform: "platform",
+    PolicyName: "policyName",
+    Publisher: "publisher",
+    RiskScore: "riskScore",
+    Tags: "tags",
+    Type: "type",
+    VendorInformation: "vendorInformation",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createServicePrincipalFromDiscriminatorValue, type ServicePrincipal } f
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
  */
@@ -32,16 +34,105 @@ export interface ServicePrincipalRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ServicePrincipalRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/servicePrincipal{?%24expand,%24select}";
+/**
+ * Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AppManagementPolicies: "appManagementPolicies",
+    AppRoleAssignedTo: "appRoleAssignedTo",
+    AppRoleAssignments: "appRoleAssignments",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    CreatedObjects: "createdObjects",
+    DelegatedPermissionClassifications: "delegatedPermissionClassifications",
+    Endpoints: "endpoints",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    LicenseDetails: "licenseDetails",
+    MemberOf: "memberOf",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    OwnedObjects: "ownedObjects",
+    Owners: "owners",
+    RemoteDesktopSecurityConfiguration: "remoteDesktopSecurityConfiguration",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+    TransitiveMemberOf: "transitiveMemberOf",
+} as const;
+/**
+ * Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AccountEnabled: "accountEnabled",
+    AddIns: "addIns",
+    AlternativeNames: "alternativeNames",
+    AppDescription: "appDescription",
+    AppDisplayName: "appDisplayName",
+    AppId: "appId",
+    ApplicationTemplateId: "applicationTemplateId",
+    AppOwnerOrganizationId: "appOwnerOrganizationId",
+    AppRoleAssignmentRequired: "appRoleAssignmentRequired",
+    AppRoles: "appRoles",
+    CustomSecurityAttributes: "customSecurityAttributes",
+    Description: "description",
+    DisabledByMicrosoftStatus: "disabledByMicrosoftStatus",
+    DisplayName: "displayName",
+    ErrorUrl: "errorUrl",
+    Homepage: "homepage",
+    Info: "info",
+    KeyCredentials: "keyCredentials",
+    LoginUrl: "loginUrl",
+    LogoutUrl: "logoutUrl",
+    Notes: "notes",
+    NotificationEmailAddresses: "notificationEmailAddresses",
+    PasswordCredentials: "passwordCredentials",
+    PasswordSingleSignOnSettings: "passwordSingleSignOnSettings",
+    PreferredSingleSignOnMode: "preferredSingleSignOnMode",
+    PreferredTokenSigningKeyEndDateTime: "preferredTokenSigningKeyEndDateTime",
+    PreferredTokenSigningKeyThumbprint: "preferredTokenSigningKeyThumbprint",
+    PublishedPermissionScopes: "publishedPermissionScopes",
+    PublisherName: "publisherName",
+    ReplyUrls: "replyUrls",
+    SamlMetadataUrl: "samlMetadataUrl",
+    SamlSingleSignOnSettings: "samlSingleSignOnSettings",
+    ServicePrincipalNames: "servicePrincipalNames",
+    ServicePrincipalType: "servicePrincipalType",
+    SignInAudience: "signInAudience",
+    Tags: "tags",
+    TokenEncryptionKeyId: "tokenEncryptionKeyId",
+    VerifiedPublisher: "verifiedPublisher",
+    AppManagementPolicies: "appManagementPolicies",
+    AppRoleAssignedTo: "appRoleAssignedTo",
+    AppRoleAssignments: "appRoleAssignments",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    CreatedObjects: "createdObjects",
+    DelegatedPermissionClassifications: "delegatedPermissionClassifications",
+    Endpoints: "endpoints",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    LicenseDetails: "licenseDetails",
+    MemberOf: "memberOf",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    OwnedObjects: "ownedObjects",
+    Owners: "owners",
+    RemoteDesktopSecurityConfiguration: "remoteDesktopSecurityConfiguration",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+    TransitiveMemberOf: "transitiveMemberOf",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -59,7 +150,7 @@ export const ServicePrincipalRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalRequestBuilderGetQueryParametersMapper,
     },

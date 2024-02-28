@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilder, UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsAnomalyCorrelationGroupOverview property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBu
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBu
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBu
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,55 @@ export interface UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBu
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyCorrelationGroupOverview{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomalyCorrelationGroupOverview property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomalyCorrelationGroupOverview property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AnomalyCorrelationGroupCount: "anomalyCorrelationGroupCount",
+    AnomalyCorrelationGroupCountDesc: "anomalyCorrelationGroupCount desc",
+    AnomalyId: "anomalyId",
+    AnomalyIdDesc: "anomalyId desc",
+    CorrelationGroupAnomalousDeviceCount: "correlationGroupAnomalousDeviceCount",
+    CorrelationGroupAnomalousDeviceCountDesc: "correlationGroupAnomalousDeviceCount desc",
+    CorrelationGroupAtRiskDeviceCount: "correlationGroupAtRiskDeviceCount",
+    CorrelationGroupAtRiskDeviceCountDesc: "correlationGroupAtRiskDeviceCount desc",
+    CorrelationGroupDeviceCount: "correlationGroupDeviceCount",
+    CorrelationGroupDeviceCountDesc: "correlationGroupDeviceCount desc",
+    CorrelationGroupFeatures: "correlationGroupFeatures",
+    CorrelationGroupFeaturesDesc: "correlationGroupFeatures desc",
+    CorrelationGroupId: "correlationGroupId",
+    CorrelationGroupIdDesc: "correlationGroupId desc",
+    CorrelationGroupPrevalence: "correlationGroupPrevalence",
+    CorrelationGroupPrevalenceDesc: "correlationGroupPrevalence desc",
+    CorrelationGroupPrevalencePercentage: "correlationGroupPrevalencePercentage",
+    CorrelationGroupPrevalencePercentageDesc: "correlationGroupPrevalencePercentage desc",
+    TotalDeviceCount: "totalDeviceCount",
+    TotalDeviceCountDesc: "totalDeviceCount desc",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomalyCorrelationGroupOverview property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AnomalyCorrelationGroupCount: "anomalyCorrelationGroupCount",
+    AnomalyId: "anomalyId",
+    CorrelationGroupAnomalousDeviceCount: "correlationGroupAnomalousDeviceCount",
+    CorrelationGroupAtRiskDeviceCount: "correlationGroupAtRiskDeviceCount",
+    CorrelationGroupDeviceCount: "correlationGroupDeviceCount",
+    CorrelationGroupFeatures: "correlationGroupFeatures",
+    CorrelationGroupId: "correlationGroupId",
+    CorrelationGroupPrevalence: "correlationGroupPrevalence",
+    CorrelationGroupPrevalencePercentage: "correlationGroupPrevalencePercentage",
+    TotalDeviceCount: "totalDeviceCount",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +178,7 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilde
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +188,7 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilde
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsAnomalyCorrelationGroupOverview,

@@ -99,12 +99,14 @@ export interface AccessPackageAssignmentRequestItemRequestBuilderGetQueryParamet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -150,7 +152,7 @@ export const AccessPackageAssignmentRequestItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageAssignmentRequestItemRequestBuilderUriTemplate,
@@ -158,7 +160,7 @@ export const AccessPackageAssignmentRequestItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentRequestFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentRequestItemRequestBuilderGetQueryParametersMapper,
     },
@@ -168,12 +170,43 @@ export const AccessPackageAssignmentRequestItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageAssignmentRequest,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignment: "accessPackageAssignment",
+    Requestor: "requestor",
+} as const;
+/**
+ * Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Answers: "answers",
+    CompletedDate: "completedDate",
+    CreatedDateTime: "createdDateTime",
+    CustomExtensionCalloutInstances: "customExtensionCalloutInstances",
+    CustomExtensionHandlerInstances: "customExtensionHandlerInstances",
+    ExpirationDateTime: "expirationDateTime",
+    IsValidationOnly: "isValidationOnly",
+    Justification: "justification",
+    RequestState: "requestState",
+    RequestStatus: "requestStatus",
+    RequestType: "requestType",
+    Schedule: "schedule",
+    VerifiedCredentialsData: "verifiedCredentialsData",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignment: "accessPackageAssignment",
+    Requestor: "requestor",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

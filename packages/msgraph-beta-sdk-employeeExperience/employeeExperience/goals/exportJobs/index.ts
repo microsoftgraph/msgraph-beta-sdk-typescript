@@ -63,7 +63,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +71,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +79,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -89,6 +89,9 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -129,7 +132,7 @@ export const ExportJobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsExportJobCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ExportJobsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,12 +142,58 @@ export const ExportJobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsExportJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGoalsExportJob,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastActionDateTime: "lastActionDateTime",
+    LastActionDateTimeDesc: "lastActionDateTime desc",
+    ResourceLocation: "resourceLocation",
+    ResourceLocationDesc: "resourceLocation desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    StatusDetail: "statusDetail",
+    StatusDetailDesc: "statusDetail desc",
+    Content: "content",
+    ContentDesc: "content desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    ExplorerViewId: "explorerViewId",
+    ExplorerViewIdDesc: "explorerViewId desc",
+    GoalsOrganizationId: "goalsOrganizationId",
+    GoalsOrganizationIdDesc: "goalsOrganizationId desc",
+} as const;
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    LastActionDateTime: "lastActionDateTime",
+    ResourceLocation: "resourceLocation",
+    Status: "status",
+    StatusDetail: "statusDetail",
+    Content: "content",
+    ExpirationDateTime: "expirationDateTime",
+    ExplorerViewId: "explorerViewId",
+    GoalsOrganizationId: "goalsOrganizationId",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

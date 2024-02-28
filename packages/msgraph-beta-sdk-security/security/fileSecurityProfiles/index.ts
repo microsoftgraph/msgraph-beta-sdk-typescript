@@ -61,7 +61,7 @@ export interface FileSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface FileSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface FileSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface FileSecurityProfilesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const FileSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileSecurityProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: FileSecurityProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,79 @@ export const FileSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFileSecurityProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ActivityGroupNames: "activityGroupNames",
+    ActivityGroupNamesDesc: "activityGroupNames desc",
+    AzureSubscriptionId: "azureSubscriptionId",
+    AzureSubscriptionIdDesc: "azureSubscriptionId desc",
+    AzureTenantId: "azureTenantId",
+    AzureTenantIdDesc: "azureTenantId desc",
+    CertificateThumbprint: "certificateThumbprint",
+    CertificateThumbprintDesc: "certificateThumbprint desc",
+    Extensions: "extensions",
+    ExtensionsDesc: "extensions desc",
+    FileType: "fileType",
+    FileTypeDesc: "fileType desc",
+    FirstSeenDateTime: "firstSeenDateTime",
+    FirstSeenDateTimeDesc: "firstSeenDateTime desc",
+    Hashes: "hashes",
+    HashesDesc: "hashes desc",
+    LastSeenDateTime: "lastSeenDateTime",
+    LastSeenDateTimeDesc: "lastSeenDateTime desc",
+    MalwareStates: "malwareStates",
+    MalwareStatesDesc: "malwareStates desc",
+    Names: "names",
+    NamesDesc: "names desc",
+    RiskScore: "riskScore",
+    RiskScoreDesc: "riskScore desc",
+    Size: "size",
+    SizeDesc: "size desc",
+    Tags: "tags",
+    TagsDesc: "tags desc",
+    VendorInformation: "vendorInformation",
+    VendorInformationDesc: "vendorInformation desc",
+    VulnerabilityStates: "vulnerabilityStates",
+    VulnerabilityStatesDesc: "vulnerabilityStates desc",
+} as const;
+/**
+ * Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActivityGroupNames: "activityGroupNames",
+    AzureSubscriptionId: "azureSubscriptionId",
+    AzureTenantId: "azureTenantId",
+    CertificateThumbprint: "certificateThumbprint",
+    Extensions: "extensions",
+    FileType: "fileType",
+    FirstSeenDateTime: "firstSeenDateTime",
+    Hashes: "hashes",
+    LastSeenDateTime: "lastSeenDateTime",
+    MalwareStates: "malwareStates",
+    Names: "names",
+    RiskScore: "riskScore",
+    Size: "size",
+    Tags: "tags",
+    VendorInformation: "vendorInformation",
+    VulnerabilityStates: "vulnerabilityStates",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

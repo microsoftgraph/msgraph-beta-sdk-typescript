@@ -7,18 +7,23 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MonthlyInactiveUsersByApplicationMetricItemRequestBuilderRequestsMetadata, type MonthlyInactiveUsersByApplicationMetricItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
  */
 export interface InactiveUsersByApplicationRequestBuilder extends BaseRequestBuilder<InactiveUsersByApplicationRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
      * @param monthlyInactiveUsersByApplicationMetricId The unique identifier of monthlyInactiveUsersByApplicationMetric
      * @returns {MonthlyInactiveUsersByApplicationMetricItemRequestBuilder}
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      byMonthlyInactiveUsersByApplicationMetricId(monthlyInactiveUsersByApplicationMetricId: string) : MonthlyInactiveUsersByApplicationMetricItemRequestBuilder;
     /**
@@ -26,12 +31,14 @@ export interface InactiveUsersByApplicationRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MonthlyInactiveUsersByApplicationMetricCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      get(requestConfiguration?: RequestConfiguration<InactiveUsersByApplicationRequestBuilderGetQueryParameters> | undefined) : Promise<MonthlyInactiveUsersByApplicationMetricCollectionResponse | undefined>;
     /**
      * Get inactiveUsersByApplication from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InactiveUsersByApplicationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -46,7 +53,7 @@ export interface InactiveUsersByApplicationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +61,7 @@ export interface InactiveUsersByApplicationRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +69,7 @@ export interface InactiveUsersByApplicationRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -76,6 +83,43 @@ export interface InactiveUsersByApplicationRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const InactiveUsersByApplicationRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/inactiveUsersByApplication{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppId: "appId",
+    AppIdDesc: "appId desc",
+    FactDate: "factDate",
+    FactDateDesc: "factDate desc",
+    Inactive30DayCount: "inactive30DayCount",
+    Inactive30DayCountDesc: "inactive30DayCount desc",
+    Inactive60DayCount: "inactive60DayCount",
+    Inactive60DayCountDesc: "inactive60DayCount desc",
+    Inactive90DayCount: "inactive90DayCount",
+    Inactive90DayCountDesc: "inactive90DayCount desc",
+    InactiveCalendarMonthCount: "inactiveCalendarMonthCount",
+    InactiveCalendarMonthCountDesc: "inactiveCalendarMonthCount desc",
+} as const;
+/**
+ * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppId: "appId",
+    FactDate: "factDate",
+    Inactive30DayCount: "inactive30DayCount",
+    Inactive60DayCount: "inactive60DayCount",
+    Inactive90DayCount: "inactive90DayCount",
+    InactiveCalendarMonthCount: "inactiveCalendarMonthCount",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -111,7 +155,7 @@ export const InactiveUsersByApplicationRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMonthlyInactiveUsersByApplicationMetricCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: InactiveUsersByApplicationRequestBuilderGetQueryParametersMapper,
     },

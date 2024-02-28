@@ -8,6 +8,9 @@ import { CreateMigrationReportRequestBuilderRequestsMetadata, type CreateMigrati
 import { GroupPolicyMigrationReportItemRequestBuilderNavigationMetadata, GroupPolicyMigrationReportItemRequestBuilderRequestsMetadata, type GroupPolicyMigrationReportItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
  */
@@ -66,7 +69,7 @@ export interface GroupPolicyMigrationReportsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +77,7 @@ export interface GroupPolicyMigrationReportsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +85,7 @@ export interface GroupPolicyMigrationReportsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,68 @@ export interface GroupPolicyMigrationReportsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const GroupPolicyMigrationReportsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    GroupPolicySettingMappings: "groupPolicySettingMappings",
+    UnsupportedGroupPolicyExtensions: "unsupportedGroupPolicyExtensions",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    GroupPolicyCreatedDateTime: "groupPolicyCreatedDateTime",
+    GroupPolicyCreatedDateTimeDesc: "groupPolicyCreatedDateTime desc",
+    GroupPolicyLastModifiedDateTime: "groupPolicyLastModifiedDateTime",
+    GroupPolicyLastModifiedDateTimeDesc: "groupPolicyLastModifiedDateTime desc",
+    GroupPolicyObjectId: "groupPolicyObjectId",
+    GroupPolicyObjectIdDesc: "groupPolicyObjectId desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    MigrationReadiness: "migrationReadiness",
+    MigrationReadinessDesc: "migrationReadiness desc",
+    OuDistinguishedName: "ouDistinguishedName",
+    OuDistinguishedNameDesc: "ouDistinguishedName desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    SupportedSettingsCount: "supportedSettingsCount",
+    SupportedSettingsCountDesc: "supportedSettingsCount desc",
+    SupportedSettingsPercent: "supportedSettingsPercent",
+    SupportedSettingsPercentDesc: "supportedSettingsPercent desc",
+    TargetedInActiveDirectory: "targetedInActiveDirectory",
+    TargetedInActiveDirectoryDesc: "targetedInActiveDirectory desc",
+    TotalSettingsCount: "totalSettingsCount",
+    TotalSettingsCountDesc: "totalSettingsCount desc",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    DisplayName: "displayName",
+    GroupPolicyCreatedDateTime: "groupPolicyCreatedDateTime",
+    GroupPolicyLastModifiedDateTime: "groupPolicyLastModifiedDateTime",
+    GroupPolicyObjectId: "groupPolicyObjectId",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    MigrationReadiness: "migrationReadiness",
+    OuDistinguishedName: "ouDistinguishedName",
+    RoleScopeTagIds: "roleScopeTagIds",
+    SupportedSettingsCount: "supportedSettingsCount",
+    SupportedSettingsPercent: "supportedSettingsPercent",
+    TargetedInActiveDirectory: "targetedInActiveDirectory",
+    TotalSettingsCount: "totalSettingsCount",
+    GroupPolicySettingMappings: "groupPolicySettingMappings",
+    UnsupportedGroupPolicyExtensions: "unsupportedGroupPolicyExtensions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -135,7 +200,7 @@ export const GroupPolicyMigrationReportsRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyMigrationReportCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyMigrationReportsRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +210,7 @@ export const GroupPolicyMigrationReportsRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyMigrationReportFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyMigrationReport,

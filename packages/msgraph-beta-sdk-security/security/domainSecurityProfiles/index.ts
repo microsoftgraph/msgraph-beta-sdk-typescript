@@ -61,7 +61,7 @@ export interface DomainSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DomainSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DomainSecurityProfilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DomainSecurityProfilesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const DomainSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDomainSecurityProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DomainSecurityProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,73 @@ export const DomainSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDomainSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDomainSecurityProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ActivityGroupNames: "activityGroupNames",
+    ActivityGroupNamesDesc: "activityGroupNames desc",
+    AzureSubscriptionId: "azureSubscriptionId",
+    AzureSubscriptionIdDesc: "azureSubscriptionId desc",
+    AzureTenantId: "azureTenantId",
+    AzureTenantIdDesc: "azureTenantId desc",
+    CountHits: "countHits",
+    CountHitsDesc: "countHits desc",
+    CountInOrg: "countInOrg",
+    CountInOrgDesc: "countInOrg desc",
+    DomainCategories: "domainCategories",
+    DomainCategoriesDesc: "domainCategories desc",
+    DomainRegisteredDateTime: "domainRegisteredDateTime",
+    DomainRegisteredDateTimeDesc: "domainRegisteredDateTime desc",
+    FirstSeenDateTime: "firstSeenDateTime",
+    FirstSeenDateTimeDesc: "firstSeenDateTime desc",
+    LastSeenDateTime: "lastSeenDateTime",
+    LastSeenDateTimeDesc: "lastSeenDateTime desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Registrant: "registrant",
+    RegistrantDesc: "registrant desc",
+    RiskScore: "riskScore",
+    RiskScoreDesc: "riskScore desc",
+    Tags: "tags",
+    TagsDesc: "tags desc",
+    VendorInformation: "vendorInformation",
+    VendorInformationDesc: "vendorInformation desc",
+} as const;
+/**
+ * Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActivityGroupNames: "activityGroupNames",
+    AzureSubscriptionId: "azureSubscriptionId",
+    AzureTenantId: "azureTenantId",
+    CountHits: "countHits",
+    CountInOrg: "countInOrg",
+    DomainCategories: "domainCategories",
+    DomainRegisteredDateTime: "domainRegisteredDateTime",
+    FirstSeenDateTime: "firstSeenDateTime",
+    LastSeenDateTime: "lastSeenDateTime",
+    Name: "name",
+    Registrant: "registrant",
+    RiskScore: "riskScore",
+    Tags: "tags",
+    VendorInformation: "vendorInformation",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

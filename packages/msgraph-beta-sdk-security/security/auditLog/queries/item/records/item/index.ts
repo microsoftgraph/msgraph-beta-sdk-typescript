@@ -57,12 +57,14 @@ export interface AuditLogRecordItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const AuditLogRecordItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AuditLogRecordItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const AuditLogRecordItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRecordFromDiscriminatorValue,
         queryParametersMapper: AuditLogRecordItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,36 @@ export const AuditLogRecordItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRecordFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuditLogRecord,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdministrativeUnits: "administrativeUnits",
+    AuditData: "auditData",
+    AuditLogRecordType: "auditLogRecordType",
+    ClientIp: "clientIp",
+    CreatedDateTime: "createdDateTime",
+    ObjectId: "objectId",
+    Operation: "operation",
+    OrganizationId: "organizationId",
+    Service: "service",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+    UserType: "userType",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

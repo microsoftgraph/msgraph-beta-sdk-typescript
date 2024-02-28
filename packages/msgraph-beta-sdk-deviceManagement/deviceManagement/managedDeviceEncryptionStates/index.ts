@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ManagedDeviceEncryptionStateItemRequestBuilderRequestsMetadata, type ManagedDeviceEncryptionStateItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface ManagedDeviceEncryptionStatesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface ManagedDeviceEncryptionStatesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface ManagedDeviceEncryptionStatesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,58 @@ export interface ManagedDeviceEncryptionStatesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ManagedDeviceEncryptionStatesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDeviceEncryptionStates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AdvancedBitLockerStates: "advancedBitLockerStates",
+    AdvancedBitLockerStatesDesc: "advancedBitLockerStates desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    DeviceType: "deviceType",
+    DeviceTypeDesc: "deviceType desc",
+    EncryptionPolicySettingState: "encryptionPolicySettingState",
+    EncryptionPolicySettingStateDesc: "encryptionPolicySettingState desc",
+    EncryptionReadinessState: "encryptionReadinessState",
+    EncryptionReadinessStateDesc: "encryptionReadinessState desc",
+    EncryptionState: "encryptionState",
+    EncryptionStateDesc: "encryptionState desc",
+    FileVaultStates: "fileVaultStates",
+    FileVaultStatesDesc: "fileVaultStates desc",
+    OsVersion: "osVersion",
+    OsVersionDesc: "osVersion desc",
+    PolicyDetails: "policyDetails",
+    PolicyDetailsDesc: "policyDetails desc",
+    TpmSpecificationVersion: "tpmSpecificationVersion",
+    TpmSpecificationVersionDesc: "tpmSpecificationVersion desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdvancedBitLockerStates: "advancedBitLockerStates",
+    DeviceName: "deviceName",
+    DeviceType: "deviceType",
+    EncryptionPolicySettingState: "encryptionPolicySettingState",
+    EncryptionReadinessState: "encryptionReadinessState",
+    EncryptionState: "encryptionState",
+    FileVaultStates: "fileVaultStates",
+    OsVersion: "osVersion",
+    PolicyDetails: "policyDetails",
+    TpmSpecificationVersion: "tpmSpecificationVersion",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +181,7 @@ export const ManagedDeviceEncryptionStatesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceEncryptionStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceEncryptionStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +191,7 @@ export const ManagedDeviceEncryptionStatesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceEncryptionStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedDeviceEncryptionState,

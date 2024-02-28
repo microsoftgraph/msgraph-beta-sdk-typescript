@@ -62,12 +62,14 @@ export interface AuthorizationSystemItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -97,7 +99,7 @@ export const AuthorizationSystemItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AuthorizationSystemItemRequestBuilderUriTemplate,
@@ -105,7 +107,7 @@ export const AuthorizationSystemItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationSystemFromDiscriminatorValue,
         queryParametersMapper: AuthorizationSystemItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,12 +117,29 @@ export const AuthorizationSystemItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationSystemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuthorizationSystem,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DataCollectionInfo: "dataCollectionInfo",
+} as const;
+/**
+ * Provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AuthorizationSystemId: "authorizationSystemId",
+    AuthorizationSystemName: "authorizationSystemName",
+    AuthorizationSystemType: "authorizationSystemType",
+    DataCollectionInfo: "dataCollectionInfo",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

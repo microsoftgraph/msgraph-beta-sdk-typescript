@@ -62,7 +62,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const ExportJobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcExportJobCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ExportJobsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,55 @@ export const ExportJobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcExportJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcExportJob,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    ExportJobStatus: "exportJobStatus",
+    ExportJobStatusDesc: "exportJobStatus desc",
+    ExportUrl: "exportUrl",
+    ExportUrlDesc: "exportUrl desc",
+    Filter: "filter",
+    FilterDesc: "filter desc",
+    Format: "format",
+    FormatDesc: "format desc",
+    ReportName: "reportName",
+    ReportNameDesc: "reportName desc",
+    RequestDateTime: "requestDateTime",
+    RequestDateTimeDesc: "requestDateTime desc",
+    Select: "select",
+    SelectDesc: "select desc",
+} as const;
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExpirationDateTime: "expirationDateTime",
+    ExportJobStatus: "exportJobStatus",
+    ExportUrl: "exportUrl",
+    Filter: "filter",
+    Format: "format",
+    ReportName: "reportName",
+    RequestDateTime: "requestDateTime",
+    Select: "select",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

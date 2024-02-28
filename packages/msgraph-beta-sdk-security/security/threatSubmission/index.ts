@@ -9,6 +9,8 @@ import { FileThreatsRequestBuilderNavigationMetadata, FileThreatsRequestBuilderR
 import { type UrlThreatsRequestBuilder, UrlThreatsRequestBuilderNavigationMetadata, UrlThreatsRequestBuilderRequestsMetadata } from './urlThreats/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the threatSubmission property of the microsoft.graph.security entity.
  */
@@ -77,16 +79,36 @@ export interface ThreatSubmissionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ThreatSubmissionRequestBuilderUriTemplate = "{+baseurl}/security/threatSubmission{?%24expand,%24select}";
+/**
+ * Provides operations to manage the threatSubmission property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    EmailThreats: "emailThreats",
+    EmailThreatSubmissionPolicies: "emailThreatSubmissionPolicies",
+    FileThreats: "fileThreats",
+    UrlThreats: "urlThreats",
+} as const;
+/**
+ * Provides operations to manage the threatSubmission property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    EmailThreats: "emailThreats",
+    EmailThreatSubmissionPolicies: "emailThreatSubmissionPolicies",
+    FileThreats: "fileThreats",
+    UrlThreats: "urlThreats",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -125,7 +147,7 @@ export const ThreatSubmissionRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ThreatSubmissionRequestBuilderUriTemplate,
@@ -133,7 +155,7 @@ export const ThreatSubmissionRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createThreatSubmissionRootFromDiscriminatorValue,
         queryParametersMapper: ThreatSubmissionRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +165,7 @@ export const ThreatSubmissionRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createThreatSubmissionRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeThreatSubmissionRoot,

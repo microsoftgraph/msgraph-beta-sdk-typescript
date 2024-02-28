@@ -23,6 +23,9 @@ export function deserializeIntoMyGetResponse(myGetResponse: Partial<MyGetRespons
         "value": n => { myGetResponse.value = n.getCollectionOfObjectValues<AccessPackageAssignmentResourceRole>(createAccessPackageAssignmentResourceRoleFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 export interface MyGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +61,7 @@ export interface MyRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +69,7 @@ export interface MyRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +77,7 @@ export interface MyRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,42 @@ export function serializeMyGetResponse(writer: SerializationWriter, myGetRespons
  * Uri template for the request builder.
  */
 export const MyRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentResourceRoles/My(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the My method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageAssignments: "accessPackageAssignments",
+    AccessPackageResourceRole: "accessPackageResourceRole",
+    AccessPackageResourceScope: "accessPackageResourceScope",
+    AccessPackageSubject: "accessPackageSubject",
+} as const;
+/**
+ * Provides operations to call the My method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    OriginId: "originId",
+    OriginIdDesc: "originId desc",
+    OriginSystem: "originSystem",
+    OriginSystemDesc: "originSystem desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to call the My method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    OriginId: "originId",
+    OriginSystem: "originSystem",
+    Status: "status",
+    AccessPackageAssignments: "accessPackageAssignments",
+    AccessPackageResourceRole: "accessPackageResourceRole",
+    AccessPackageResourceScope: "accessPackageResourceScope",
+    AccessPackageSubject: "accessPackageSubject",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +158,7 @@ export const MyRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMyGetResponseFromDiscriminatorValue,
         queryParametersMapper: MyRequestBuilderGetQueryParametersMapper,
     },

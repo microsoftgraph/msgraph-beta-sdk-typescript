@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { PrintJobItemRequestBuilderNavigationMetadata, PrintJobItemRequestBuilderRequestsMetadata, type PrintJobItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
  */
@@ -67,7 +70,7 @@ export interface JobsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +78,7 @@ export interface JobsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +86,7 @@ export interface JobsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -97,6 +100,62 @@ export interface JobsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const JobsRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Documents: "documents",
+    Tasks: "tasks",
+} as const;
+/**
+ * Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AcknowledgedDateTime: "acknowledgedDateTime",
+    AcknowledgedDateTimeDesc: "acknowledgedDateTime desc",
+    CompletedDateTime: "completedDateTime",
+    CompletedDateTimeDesc: "completedDateTime desc",
+    Configuration: "configuration",
+    ConfigurationDesc: "configuration desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ErrorCode: "errorCode",
+    ErrorCodeDesc: "errorCode desc",
+    IsFetchable: "isFetchable",
+    IsFetchableDesc: "isFetchable desc",
+    RedirectedFrom: "redirectedFrom",
+    RedirectedFromDesc: "redirectedFrom desc",
+    RedirectedTo: "redirectedTo",
+    RedirectedToDesc: "redirectedTo desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AcknowledgedDateTime: "acknowledgedDateTime",
+    CompletedDateTime: "completedDateTime",
+    Configuration: "configuration",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    DisplayName: "displayName",
+    ErrorCode: "errorCode",
+    IsFetchable: "isFetchable",
+    RedirectedFrom: "redirectedFrom",
+    RedirectedTo: "redirectedTo",
+    Status: "status",
+    Documents: "documents",
+    Tasks: "tasks",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -133,7 +192,7 @@ export const JobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintJobCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: JobsRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +202,7 @@ export const JobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrintJob,

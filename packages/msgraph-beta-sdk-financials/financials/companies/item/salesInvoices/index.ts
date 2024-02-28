@@ -8,6 +8,9 @@ import { SalesInvoiceItemRequestBuilderNavigationMetadata, SalesInvoiceItemReque
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 import { type Guid } from 'guid-typescript';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
  */
@@ -47,7 +50,7 @@ export interface SalesInvoicesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +58,7 @@ export interface SalesInvoicesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +66,7 @@ export interface SalesInvoicesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -77,6 +80,134 @@ export interface SalesInvoicesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SalesInvoicesRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesInvoices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesInvoiceLines: "salesInvoiceLines",
+    ShipmentMethod: "shipmentMethod",
+} as const;
+/**
+ * Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    BillingPostalAddress: "billingPostalAddress",
+    BillingPostalAddressDesc: "billingPostalAddress desc",
+    BillToCustomerId: "billToCustomerId",
+    BillToCustomerIdDesc: "billToCustomerId desc",
+    BillToCustomerNumber: "billToCustomerNumber",
+    BillToCustomerNumberDesc: "billToCustomerNumber desc",
+    BillToName: "billToName",
+    BillToNameDesc: "billToName desc",
+    CurrencyCode: "currencyCode",
+    CurrencyCodeDesc: "currencyCode desc",
+    CurrencyId: "currencyId",
+    CurrencyIdDesc: "currencyId desc",
+    CustomerId: "customerId",
+    CustomerIdDesc: "customerId desc",
+    CustomerName: "customerName",
+    CustomerNameDesc: "customerName desc",
+    CustomerNumber: "customerNumber",
+    CustomerNumberDesc: "customerNumber desc",
+    CustomerPurchaseOrderReference: "customerPurchaseOrderReference",
+    CustomerPurchaseOrderReferenceDesc: "customerPurchaseOrderReference desc",
+    DiscountAmount: "discountAmount",
+    DiscountAmountDesc: "discountAmount desc",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DiscountAppliedBeforeTaxDesc: "discountAppliedBeforeTax desc",
+    DueDate: "dueDate",
+    DueDateDesc: "dueDate desc",
+    Email: "email",
+    EmailDesc: "email desc",
+    ExternalDocumentNumber: "externalDocumentNumber",
+    ExternalDocumentNumberDesc: "externalDocumentNumber desc",
+    Id: "id",
+    IdDesc: "id desc",
+    InvoiceDate: "invoiceDate",
+    InvoiceDateDesc: "invoiceDate desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Number: "number",
+    NumberDesc: "number desc",
+    OrderId: "orderId",
+    OrderIdDesc: "orderId desc",
+    OrderNumber: "orderNumber",
+    OrderNumberDesc: "orderNumber desc",
+    PaymentTermsId: "paymentTermsId",
+    PaymentTermsIdDesc: "paymentTermsId desc",
+    PhoneNumber: "phoneNumber",
+    PhoneNumberDesc: "phoneNumber desc",
+    PricesIncludeTax: "pricesIncludeTax",
+    PricesIncludeTaxDesc: "pricesIncludeTax desc",
+    Salesperson: "salesperson",
+    SalespersonDesc: "salesperson desc",
+    SellingPostalAddress: "sellingPostalAddress",
+    SellingPostalAddressDesc: "sellingPostalAddress desc",
+    ShipmentMethodId: "shipmentMethodId",
+    ShipmentMethodIdDesc: "shipmentMethodId desc",
+    ShippingPostalAddress: "shippingPostalAddress",
+    ShippingPostalAddressDesc: "shippingPostalAddress desc",
+    ShipToContact: "shipToContact",
+    ShipToContactDesc: "shipToContact desc",
+    ShipToName: "shipToName",
+    ShipToNameDesc: "shipToName desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountExcludingTaxDesc: "totalAmountExcludingTax desc",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalAmountIncludingTaxDesc: "totalAmountIncludingTax desc",
+    TotalTaxAmount: "totalTaxAmount",
+    TotalTaxAmountDesc: "totalTaxAmount desc",
+} as const;
+/**
+ * Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BillingPostalAddress: "billingPostalAddress",
+    BillToCustomerId: "billToCustomerId",
+    BillToCustomerNumber: "billToCustomerNumber",
+    BillToName: "billToName",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    CustomerId: "customerId",
+    CustomerName: "customerName",
+    CustomerNumber: "customerNumber",
+    CustomerPurchaseOrderReference: "customerPurchaseOrderReference",
+    DiscountAmount: "discountAmount",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DueDate: "dueDate",
+    Email: "email",
+    ExternalDocumentNumber: "externalDocumentNumber",
+    Id: "id",
+    InvoiceDate: "invoiceDate",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    OrderId: "orderId",
+    OrderNumber: "orderNumber",
+    PaymentTermsId: "paymentTermsId",
+    PhoneNumber: "phoneNumber",
+    PricesIncludeTax: "pricesIncludeTax",
+    Salesperson: "salesperson",
+    SellingPostalAddress: "sellingPostalAddress",
+    ShipmentMethodId: "shipmentMethodId",
+    ShippingPostalAddress: "shippingPostalAddress",
+    ShipToContact: "shipToContact",
+    ShipToName: "shipToName",
+    Status: "status",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalTaxAmount: "totalTaxAmount",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesInvoiceLines: "salesInvoiceLines",
+    ShipmentMethod: "shipmentMethod",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -113,7 +244,7 @@ export const SalesInvoicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesInvoiceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SalesInvoicesRequestBuilderGetQueryParametersMapper,
     },

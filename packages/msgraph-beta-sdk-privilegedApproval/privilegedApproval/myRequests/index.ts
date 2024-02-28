@@ -23,6 +23,9 @@ export function deserializeIntoMyRequestsGetResponse(myRequestsGetResponse: Part
         "value": n => { myRequestsGetResponse.value = n.getCollectionOfObjectValues<PrivilegedApproval>(createPrivilegedApprovalFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 export interface MyRequestsGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +61,7 @@ export interface MyRequestsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +69,7 @@ export interface MyRequestsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +77,7 @@ export interface MyRequestsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,56 @@ export function serializeMyRequestsGetResponse(writer: SerializationWriter, myRe
  * Uri template for the request builder.
  */
 export const MyRequestsRequestBuilderUriTemplate = "{+baseurl}/privilegedApproval/myRequests(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the myRequests method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Request: "request",
+    RoleInfo: "roleInfo",
+} as const;
+/**
+ * Provides operations to call the myRequests method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ApprovalDuration: "approvalDuration",
+    ApprovalDurationDesc: "approvalDuration desc",
+    ApprovalState: "approvalState",
+    ApprovalStateDesc: "approvalState desc",
+    ApprovalType: "approvalType",
+    ApprovalTypeDesc: "approvalType desc",
+    ApproverReason: "approverReason",
+    ApproverReasonDesc: "approverReason desc",
+    EndDateTime: "endDateTime",
+    EndDateTimeDesc: "endDateTime desc",
+    RequestorReason: "requestorReason",
+    RequestorReasonDesc: "requestorReason desc",
+    RoleId: "roleId",
+    RoleIdDesc: "roleId desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+} as const;
+/**
+ * Provides operations to call the myRequests method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApprovalDuration: "approvalDuration",
+    ApprovalState: "approvalState",
+    ApprovalType: "approvalType",
+    ApproverReason: "approverReason",
+    EndDateTime: "endDateTime",
+    RequestorReason: "requestorReason",
+    RoleId: "roleId",
+    StartDateTime: "startDateTime",
+    UserId: "userId",
+    Request: "request",
+    RoleInfo: "roleInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +172,7 @@ export const MyRequestsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMyRequestsGetResponseFromDiscriminatorValue,
         queryParametersMapper: MyRequestsRequestBuilderGetQueryParametersMapper,
     },

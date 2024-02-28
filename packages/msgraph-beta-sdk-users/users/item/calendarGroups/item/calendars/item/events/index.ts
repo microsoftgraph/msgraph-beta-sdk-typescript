@@ -35,7 +35,7 @@ export interface EventsRequestBuilder extends BaseRequestBuilder<EventsRequestBu
      */
      get(requestConfiguration?: RequestConfiguration<EventsRequestBuilderGetQueryParameters> | undefined) : Promise<EventCollectionResponse | undefined>;
     /**
-     * Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. 
+     * Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Event>}
@@ -50,7 +50,7 @@ export interface EventsRequestBuilder extends BaseRequestBuilder<EventsRequestBu
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EventsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. 
+     * Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -68,7 +68,7 @@ export interface EventsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -76,11 +76,11 @@ export interface EventsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -90,6 +90,9 @@ export interface EventsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -132,7 +135,7 @@ export const EventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEventCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EventsRequestBuilderGetQueryParametersMapper,
     },
@@ -142,12 +145,171 @@ export const EventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEvent,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the events property of the microsoft.graph.calendar entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Attachments: "attachments",
+    Calendar: "calendar",
+    ExceptionOccurrences: "exceptionOccurrences",
+    Extensions: "extensions",
+    Instances: "instances",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
+/**
+ * Provides operations to manage the events property of the microsoft.graph.calendar entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Categories: "categories",
+    CategoriesDesc: "categories desc",
+    ChangeKey: "changeKey",
+    ChangeKeyDesc: "changeKey desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    AllowNewTimeProposals: "allowNewTimeProposals",
+    AllowNewTimeProposalsDesc: "allowNewTimeProposals desc",
+    Attendees: "attendees",
+    AttendeesDesc: "attendees desc",
+    Body: "body",
+    BodyDesc: "body desc",
+    BodyPreview: "bodyPreview",
+    BodyPreviewDesc: "bodyPreview desc",
+    CancelledOccurrences: "cancelledOccurrences",
+    CancelledOccurrencesDesc: "cancelledOccurrences desc",
+    End: "end",
+    EndDesc: "end desc",
+    HasAttachments: "hasAttachments",
+    HasAttachmentsDesc: "hasAttachments desc",
+    HideAttendees: "hideAttendees",
+    HideAttendeesDesc: "hideAttendees desc",
+    Importance: "importance",
+    ImportanceDesc: "importance desc",
+    IsAllDay: "isAllDay",
+    IsAllDayDesc: "isAllDay desc",
+    IsCancelled: "isCancelled",
+    IsCancelledDesc: "isCancelled desc",
+    IsDraft: "isDraft",
+    IsDraftDesc: "isDraft desc",
+    IsOnlineMeeting: "isOnlineMeeting",
+    IsOnlineMeetingDesc: "isOnlineMeeting desc",
+    IsOrganizer: "isOrganizer",
+    IsOrganizerDesc: "isOrganizer desc",
+    IsReminderOn: "isReminderOn",
+    IsReminderOnDesc: "isReminderOn desc",
+    Location: "location",
+    LocationDesc: "location desc",
+    Locations: "locations",
+    LocationsDesc: "locations desc",
+    OccurrenceId: "occurrenceId",
+    OccurrenceIdDesc: "occurrenceId desc",
+    OnlineMeeting: "onlineMeeting",
+    OnlineMeetingDesc: "onlineMeeting desc",
+    OnlineMeetingProvider: "onlineMeetingProvider",
+    OnlineMeetingProviderDesc: "onlineMeetingProvider desc",
+    OnlineMeetingUrl: "onlineMeetingUrl",
+    OnlineMeetingUrlDesc: "onlineMeetingUrl desc",
+    Organizer: "organizer",
+    OrganizerDesc: "organizer desc",
+    OriginalEndTimeZone: "originalEndTimeZone",
+    OriginalEndTimeZoneDesc: "originalEndTimeZone desc",
+    OriginalStart: "originalStart",
+    OriginalStartDesc: "originalStart desc",
+    OriginalStartTimeZone: "originalStartTimeZone",
+    OriginalStartTimeZoneDesc: "originalStartTimeZone desc",
+    Recurrence: "recurrence",
+    RecurrenceDesc: "recurrence desc",
+    ReminderMinutesBeforeStart: "reminderMinutesBeforeStart",
+    ReminderMinutesBeforeStartDesc: "reminderMinutesBeforeStart desc",
+    ResponseRequested: "responseRequested",
+    ResponseRequestedDesc: "responseRequested desc",
+    ResponseStatus: "responseStatus",
+    ResponseStatusDesc: "responseStatus desc",
+    Sensitivity: "sensitivity",
+    SensitivityDesc: "sensitivity desc",
+    SeriesMasterId: "seriesMasterId",
+    SeriesMasterIdDesc: "seriesMasterId desc",
+    ShowAs: "showAs",
+    ShowAsDesc: "showAs desc",
+    Start: "start",
+    StartDesc: "start desc",
+    Subject: "subject",
+    SubjectDesc: "subject desc",
+    TransactionId: "transactionId",
+    TransactionIdDesc: "transactionId desc",
+    Type: "type",
+    TypeDesc: "type desc",
+    Uid: "uid",
+    UidDesc: "uid desc",
+    WebLink: "webLink",
+    WebLinkDesc: "webLink desc",
+} as const;
+/**
+ * Provides operations to manage the events property of the microsoft.graph.calendar entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Categories: "categories",
+    ChangeKey: "changeKey",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    AllowNewTimeProposals: "allowNewTimeProposals",
+    Attendees: "attendees",
+    Body: "body",
+    BodyPreview: "bodyPreview",
+    CancelledOccurrences: "cancelledOccurrences",
+    End: "end",
+    HasAttachments: "hasAttachments",
+    HideAttendees: "hideAttendees",
+    Importance: "importance",
+    IsAllDay: "isAllDay",
+    IsCancelled: "isCancelled",
+    IsDraft: "isDraft",
+    IsOnlineMeeting: "isOnlineMeeting",
+    IsOrganizer: "isOrganizer",
+    IsReminderOn: "isReminderOn",
+    Location: "location",
+    Locations: "locations",
+    OccurrenceId: "occurrenceId",
+    OnlineMeeting: "onlineMeeting",
+    OnlineMeetingProvider: "onlineMeetingProvider",
+    OnlineMeetingUrl: "onlineMeetingUrl",
+    Organizer: "organizer",
+    OriginalEndTimeZone: "originalEndTimeZone",
+    OriginalStart: "originalStart",
+    OriginalStartTimeZone: "originalStartTimeZone",
+    Recurrence: "recurrence",
+    ReminderMinutesBeforeStart: "reminderMinutesBeforeStart",
+    ResponseRequested: "responseRequested",
+    ResponseStatus: "responseStatus",
+    Sensitivity: "sensitivity",
+    SeriesMasterId: "seriesMasterId",
+    ShowAs: "showAs",
+    Start: "start",
+    Subject: "subject",
+    TransactionId: "transactionId",
+    Type: "type",
+    Uid: "uid",
+    WebLink: "webLink",
+    Attachments: "attachments",
+    Calendar: "calendar",
+    ExceptionOccurrences: "exceptionOccurrences",
+    Extensions: "extensions",
+    Instances: "instances",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

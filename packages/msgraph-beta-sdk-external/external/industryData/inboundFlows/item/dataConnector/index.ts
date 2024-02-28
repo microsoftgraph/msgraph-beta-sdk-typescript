@@ -30,12 +30,14 @@ export interface DataConnectorRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,25 @@ export const DataConnectorRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIndustryDataConnectorFromDiscriminatorValue,
         queryParametersMapper: DataConnectorRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the dataConnector property of the microsoft.graph.industryData.inboundFlow entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    SourceSystem: "sourceSystem",
+} as const;
+/**
+ * Provides operations to manage the dataConnector property of the microsoft.graph.industryData.inboundFlow entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    SourceSystem: "sourceSystem",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

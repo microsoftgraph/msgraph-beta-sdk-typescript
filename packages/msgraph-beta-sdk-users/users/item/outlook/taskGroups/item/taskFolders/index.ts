@@ -7,6 +7,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { OutlookTaskFolderItemRequestBuilderNavigationMetadata, OutlookTaskFolderItemRequestBuilderRequestsMetadata, type OutlookTaskFolderItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
  */
@@ -73,11 +75,11 @@ export interface TaskFoldersRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +93,34 @@ export interface TaskFoldersRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TaskFoldersRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ChangeKey: "changeKey",
+    ChangeKeyDesc: "changeKey desc",
+    IsDefaultFolder: "isDefaultFolder",
+    IsDefaultFolderDesc: "isDefaultFolder desc",
+    Name: "name",
+    NameDesc: "name desc",
+    ParentGroupKey: "parentGroupKey",
+    ParentGroupKeyDesc: "parentGroupKey desc",
+} as const;
+/**
+ * Provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ChangeKey: "changeKey",
+    IsDefaultFolder: "isDefaultFolder",
+    Name: "name",
+    ParentGroupKey: "parentGroupKey",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+    Tasks: "tasks",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -125,7 +155,7 @@ export const TaskFoldersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskFolderCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TaskFoldersRequestBuilderGetQueryParametersMapper,
     },
@@ -135,7 +165,7 @@ export const TaskFoldersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskFolderFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOutlookTaskFolder,

@@ -5,6 +5,8 @@ import { createUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue, se
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,41 @@ export interface UserExperienceAnalyticsRemoteConnectionItemRequestBuilderGetQue
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsRemoteConnectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRemoteConnection/{userExperienceAnalyticsRemoteConnection%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CloudPcFailurePercentage: "cloudPcFailurePercentage",
+    CloudPcRoundTripTime: "cloudPcRoundTripTime",
+    CloudPcSignInTime: "cloudPcSignInTime",
+    CoreBootTime: "coreBootTime",
+    CoreSignInTime: "coreSignInTime",
+    DeviceCount: "deviceCount",
+    DeviceId: "deviceId",
+    DeviceName: "deviceName",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    RemoteSignInTime: "remoteSignInTime",
+    UserPrincipalName: "userPrincipalName",
+    VirtualNetwork: "virtualNetwork",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +111,7 @@ export const UserExperienceAnalyticsRemoteConnectionItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserExperienceAnalyticsRemoteConnectionItemRequestBuilderUriTemplate,
@@ -92,7 +119,7 @@ export const UserExperienceAnalyticsRemoteConnectionItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsRemoteConnectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +129,7 @@ export const UserExperienceAnalyticsRemoteConnectionItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsRemoteConnection,

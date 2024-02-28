@@ -5,6 +5,8 @@ import { createSiteFromDiscriminatorValue, type Site } from '@microsoft/msgraph-
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the followedSites property of the microsoft.graph.user entity.
  */
@@ -30,16 +32,80 @@ export interface SiteItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SiteItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/followedSites/{site%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the followedSites property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Analytics: "analytics",
+    Columns: "columns",
+    ContentTypes: "contentTypes",
+    Drive: "drive",
+    Drives: "drives",
+    ExternalColumns: "externalColumns",
+    InformationProtection: "informationProtection",
+    Items: "items",
+    Lists: "lists",
+    Onenote: "onenote",
+    Operations: "operations",
+    Pages: "pages",
+    Permissions: "permissions",
+    RecycleBin: "recycleBin",
+    Sites: "sites",
+    TermStore: "termStore",
+} as const;
+/**
+ * Provides operations to manage the followedSites property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    ETag: "eTag",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    ParentReference: "parentReference",
+    WebUrl: "webUrl",
+    Deleted: "deleted",
+    DisplayName: "displayName",
+    IsPersonalSite: "isPersonalSite",
+    Root: "root",
+    Settings: "settings",
+    SharepointIds: "sharepointIds",
+    SiteCollection: "siteCollection",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Analytics: "analytics",
+    Columns: "columns",
+    ContentTypes: "contentTypes",
+    Drive: "drive",
+    Drives: "drives",
+    ExternalColumns: "externalColumns",
+    InformationProtection: "informationProtection",
+    Items: "items",
+    Lists: "lists",
+    Onenote: "onenote",
+    Operations: "operations",
+    Pages: "pages",
+    Permissions: "permissions",
+    RecycleBin: "recycleBin",
+    Sites: "sites",
+    TermStore: "termStore",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +123,7 @@ export const SiteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSiteFromDiscriminatorValue,
         queryParametersMapper: SiteItemRequestBuilderGetQueryParametersMapper,
     },

@@ -59,7 +59,7 @@ export interface GetCredentialUserRegistrationCountRequestBuilderGetQueryParamet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -67,7 +67,7 @@ export interface GetCredentialUserRegistrationCountRequestBuilderGetQueryParamet
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -75,7 +75,7 @@ export interface GetCredentialUserRegistrationCountRequestBuilderGetQueryParamet
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -85,6 +85,9 @@ export interface GetCredentialUserRegistrationCountRequestBuilderGetQueryParamet
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -120,10 +123,35 @@ export const GetCredentialUserRegistrationCountRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetCredentialUserRegistrationCountGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetCredentialUserRegistrationCountRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getCredentialUserRegistrationCount method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the getCredentialUserRegistrationCount method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    TotalUserCount: "totalUserCount",
+    TotalUserCountDesc: "totalUserCount desc",
+    UserRegistrationCounts: "userRegistrationCounts",
+    UserRegistrationCountsDesc: "userRegistrationCounts desc",
+} as const;
+/**
+ * Provides operations to call the getCredentialUserRegistrationCount method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    TotalUserCount: "totalUserCount",
+    UserRegistrationCounts: "userRegistrationCounts",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

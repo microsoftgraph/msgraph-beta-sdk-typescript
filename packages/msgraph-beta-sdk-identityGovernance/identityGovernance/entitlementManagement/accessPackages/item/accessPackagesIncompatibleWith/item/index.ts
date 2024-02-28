@@ -30,12 +30,14 @@ export interface AccessPackageItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,43 @@ export const AccessPackageItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageFromDiscriminatorValue,
         queryParametersMapper: AccessPackageItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageAssignmentPolicies: "accessPackageAssignmentPolicies",
+    AccessPackageCatalog: "accessPackageCatalog",
+    AccessPackageResourceRoleScopes: "accessPackageResourceRoleScopes",
+    AccessPackagesIncompatibleWith: "accessPackagesIncompatibleWith",
+    IncompatibleAccessPackages: "incompatibleAccessPackages",
+    IncompatibleGroups: "incompatibleGroups",
+} as const;
+/**
+ * Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CatalogId: "catalogId",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    IsHidden: "isHidden",
+    IsRoleScopesVisible: "isRoleScopesVisible",
+    ModifiedBy: "modifiedBy",
+    ModifiedDateTime: "modifiedDateTime",
+    AccessPackageAssignmentPolicies: "accessPackageAssignmentPolicies",
+    AccessPackageCatalog: "accessPackageCatalog",
+    AccessPackageResourceRoleScopes: "accessPackageResourceRoleScopes",
+    AccessPackagesIncompatibleWith: "accessPackagesIncompatibleWith",
+    IncompatibleAccessPackages: "incompatibleAccessPackages",
+    IncompatibleGroups: "incompatibleGroups",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

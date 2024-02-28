@@ -82,12 +82,14 @@ export interface CustomerRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -130,7 +132,7 @@ export const CustomerRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CustomerRequestBuilderUriTemplate,
@@ -138,7 +140,7 @@ export const CustomerRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomerFromDiscriminatorValue,
         queryParametersMapper: CustomerRequestBuilderGetQueryParametersMapper,
     },
@@ -148,12 +150,52 @@ export const CustomerRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomerFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCustomer,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the customer property of the microsoft.graph.salesQuote entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    PaymentMethod: "paymentMethod",
+    PaymentTerm: "paymentTerm",
+    Picture: "picture",
+    ShipmentMethod: "shipmentMethod",
+} as const;
+/**
+ * Provides operations to manage the customer property of the microsoft.graph.salesQuote entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Address: "address",
+    Blocked: "blocked",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    DisplayName: "displayName",
+    Email: "email",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    PaymentMethodId: "paymentMethodId",
+    PaymentTermsId: "paymentTermsId",
+    PhoneNumber: "phoneNumber",
+    ShipmentMethodId: "shipmentMethodId",
+    TaxAreaDisplayName: "taxAreaDisplayName",
+    TaxAreaId: "taxAreaId",
+    TaxLiable: "taxLiable",
+    TaxRegistrationNumber: "taxRegistrationNumber",
+    Type: "type",
+    Website: "website",
+    Currency: "currency",
+    PaymentMethod: "paymentMethod",
+    PaymentTerm: "paymentTerm",
+    Picture: "picture",
+    ShipmentMethod: "shipmentMethod",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

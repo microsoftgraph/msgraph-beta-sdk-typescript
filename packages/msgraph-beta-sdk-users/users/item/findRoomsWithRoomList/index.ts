@@ -104,7 +104,7 @@ export const FindRoomsWithRoomListRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFindRoomsWithRoomListGetResponseFromDiscriminatorValue,
         queryParametersMapper: FindRoomsWithRoomListRequestBuilderGetQueryParametersMapper,
     },

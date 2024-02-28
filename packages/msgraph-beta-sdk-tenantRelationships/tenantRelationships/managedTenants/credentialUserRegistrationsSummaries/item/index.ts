@@ -58,12 +58,14 @@ export interface CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryPar
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -85,7 +87,7 @@ export const CredentialUserRegistrationsSummaryItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CredentialUserRegistrationsSummaryItemRequestBuilderUriTemplate,
@@ -93,7 +95,7 @@ export const CredentialUserRegistrationsSummaryItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryFromDiscriminatorValue,
         queryParametersMapper: CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,12 +105,36 @@ export const CredentialUserRegistrationsSummaryItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCredentialUserRegistrationsSummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    MfaAndSsprCapableUserCount: "mfaAndSsprCapableUserCount",
+    MfaConditionalAccessPolicyState: "mfaConditionalAccessPolicyState",
+    MfaExcludedUserCount: "mfaExcludedUserCount",
+    MfaRegisteredUserCount: "mfaRegisteredUserCount",
+    SecurityDefaultsEnabled: "securityDefaultsEnabled",
+    SsprEnabledUserCount: "ssprEnabledUserCount",
+    SsprRegisteredUserCount: "ssprRegisteredUserCount",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    TenantLicenseType: "tenantLicenseType",
+    TotalUserCount: "totalUserCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

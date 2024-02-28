@@ -23,11 +23,12 @@ export interface EducationGradingCategoryItemRequestBuilder extends BaseRequestB
      */
      get(requestConfiguration?: RequestConfiguration<EducationGradingCategoryItemRequestBuilderGetQueryParameters> | undefined) : Promise<EducationGradingCategory | undefined>;
     /**
-     * Update the navigation property gradingCategories in education
+     * Update a single gradingCategory on the educationAssignmentSettings. Only teachers can perform this operation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationGradingCategory>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationgradingcategory-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: EducationGradingCategory, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationGradingCategory | undefined>;
     /**
@@ -43,7 +44,7 @@ export interface EducationGradingCategoryItemRequestBuilder extends BaseRequestB
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EducationGradingCategoryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property gradingCategories in education
+     * Update a single gradingCategory on the educationAssignmentSettings. Only teachers can perform this operation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -57,12 +58,14 @@ export interface EducationGradingCategoryItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +87,7 @@ export const EducationGradingCategoryItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EducationGradingCategoryItemRequestBuilderUriTemplate,
@@ -92,7 +95,7 @@ export const EducationGradingCategoryItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationGradingCategoryFromDiscriminatorValue,
         queryParametersMapper: EducationGradingCategoryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +105,26 @@ export const EducationGradingCategoryItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationGradingCategoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEducationGradingCategory,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    PercentageWeight: "percentageWeight",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

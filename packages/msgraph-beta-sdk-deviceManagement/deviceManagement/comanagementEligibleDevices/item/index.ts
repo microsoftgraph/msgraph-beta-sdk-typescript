@@ -57,12 +57,14 @@ export interface ComanagementEligibleDeviceItemRequestBuilderGetQueryParameters 
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ComanagementEligibleDeviceItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComanagementEligibleDeviceFromDiscriminatorValue,
         queryParametersMapper: ComanagementEligibleDeviceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,43 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComanagementEligibleDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeComanagementEligibleDevice,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ClientRegistrationStatus: "clientRegistrationStatus",
+    DeviceName: "deviceName",
+    DeviceType: "deviceType",
+    EntitySource: "entitySource",
+    ManagementAgents: "managementAgents",
+    ManagementState: "managementState",
+    Manufacturer: "manufacturer",
+    MdmStatus: "mdmStatus",
+    Model: "model",
+    OsDescription: "osDescription",
+    OsVersion: "osVersion",
+    OwnerType: "ownerType",
+    ReferenceId: "referenceId",
+    SerialNumber: "serialNumber",
+    Status: "status",
+    Upn: "upn",
+    UserEmail: "userEmail",
+    UserId: "userId",
+    UserName: "userName",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

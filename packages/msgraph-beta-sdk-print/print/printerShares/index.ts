@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { PrinterShareItemRequestBuilderNavigationMetadata, PrinterShareItemRequestBuilderRequestsMetadata, type PrinterShareItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the printerShares property of the microsoft.graph.print entity.
  */
@@ -67,7 +70,7 @@ export interface PrinterSharesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +78,7 @@ export interface PrinterSharesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +86,7 @@ export interface PrinterSharesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -97,6 +100,69 @@ export interface PrinterSharesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PrinterSharesRequestBuilderUriTemplate = "{+baseurl}/print/printerShares{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the printerShares property of the microsoft.graph.print entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Jobs: "jobs",
+    AllowedGroups: "allowedGroups",
+    AllowedUsers: "allowedUsers",
+    Printer: "printer",
+} as const;
+/**
+ * Provides operations to manage the printerShares property of the microsoft.graph.print entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Capabilities: "capabilities",
+    CapabilitiesDesc: "capabilities desc",
+    Defaults: "defaults",
+    DefaultsDesc: "defaults desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsAcceptingJobs: "isAcceptingJobs",
+    IsAcceptingJobsDesc: "isAcceptingJobs desc",
+    Location: "location",
+    LocationDesc: "location desc",
+    Manufacturer: "manufacturer",
+    ManufacturerDesc: "manufacturer desc",
+    Model: "model",
+    ModelDesc: "model desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    AllowAllUsers: "allowAllUsers",
+    AllowAllUsersDesc: "allowAllUsers desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    ViewPoint: "viewPoint",
+    ViewPointDesc: "viewPoint desc",
+} as const;
+/**
+ * Provides operations to manage the printerShares property of the microsoft.graph.print entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Capabilities: "capabilities",
+    Defaults: "defaults",
+    DisplayName: "displayName",
+    IsAcceptingJobs: "isAcceptingJobs",
+    Location: "location",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    Name: "name",
+    Status: "status",
+    AllowAllUsers: "allowAllUsers",
+    CreatedDateTime: "createdDateTime",
+    ViewPoint: "viewPoint",
+    Jobs: "jobs",
+    AllowedGroups: "allowedGroups",
+    AllowedUsers: "allowedUsers",
+    Printer: "printer",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -133,7 +199,7 @@ export const PrinterSharesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrinterShareCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PrinterSharesRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +209,7 @@ export const PrinterSharesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrinterShareFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrinterShare,

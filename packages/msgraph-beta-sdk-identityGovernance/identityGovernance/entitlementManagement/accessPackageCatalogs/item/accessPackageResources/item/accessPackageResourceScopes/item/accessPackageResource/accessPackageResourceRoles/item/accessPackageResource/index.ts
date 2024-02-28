@@ -75,12 +75,14 @@ export interface AccessPackageResourceRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -113,7 +115,7 @@ export const AccessPackageResourceRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageResourceRequestBuilderUriTemplate,
@@ -121,7 +123,7 @@ export const AccessPackageResourceRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageResourceFromDiscriminatorValue,
         queryParametersMapper: AccessPackageResourceRequestBuilderGetQueryParametersMapper,
     },
@@ -131,12 +133,40 @@ export const AccessPackageResourceRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageResourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageResource,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackageResource property of the microsoft.graph.accessPackageResourceRole entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageResourceEnvironment: "accessPackageResourceEnvironment",
+    AccessPackageResourceRoles: "accessPackageResourceRoles",
+    AccessPackageResourceScopes: "accessPackageResourceScopes",
+} as const;
+/**
+ * Provides operations to manage the accessPackageResource property of the microsoft.graph.accessPackageResourceRole entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AddedBy: "addedBy",
+    AddedOn: "addedOn",
+    Attributes: "attributes",
+    Description: "description",
+    DisplayName: "displayName",
+    IsPendingOnboarding: "isPendingOnboarding",
+    OriginId: "originId",
+    OriginSystem: "originSystem",
+    ResourceType: "resourceType",
+    Url: "url",
+    AccessPackageResourceEnvironment: "accessPackageResourceEnvironment",
+    AccessPackageResourceRoles: "accessPackageResourceRoles",
+    AccessPackageResourceScopes: "accessPackageResourceScopes",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

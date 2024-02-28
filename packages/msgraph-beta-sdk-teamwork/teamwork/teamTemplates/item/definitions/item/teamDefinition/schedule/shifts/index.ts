@@ -7,6 +7,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ShiftItemRequestBuilderRequestsMetadata, type ShiftItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the shifts property of the microsoft.graph.schedule entity.
  */
@@ -67,7 +69,7 @@ export interface ShiftsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -75,7 +77,7 @@ export interface ShiftsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -89,6 +91,55 @@ export interface ShiftsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ShiftsRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/shifts{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    DraftShift: "draftShift",
+    DraftShiftDesc: "draftShift desc",
+    IsStagedForDeletion: "isStagedForDeletion",
+    IsStagedForDeletionDesc: "isStagedForDeletion desc",
+    SchedulingGroupId: "schedulingGroupId",
+    SchedulingGroupIdDesc: "schedulingGroupId desc",
+    SchedulingGroupInfo: "schedulingGroupInfo",
+    SchedulingGroupInfoDesc: "schedulingGroupInfo desc",
+    SharedShift: "sharedShift",
+    SharedShiftDesc: "sharedShift desc",
+    TeamInfo: "teamInfo",
+    TeamInfoDesc: "teamInfo desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+    UserInfo: "userInfo",
+    UserInfoDesc: "userInfo desc",
+} as const;
+/**
+ * Provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    DraftShift: "draftShift",
+    IsStagedForDeletion: "isStagedForDeletion",
+    SchedulingGroupId: "schedulingGroupId",
+    SchedulingGroupInfo: "schedulingGroupInfo",
+    SharedShift: "sharedShift",
+    TeamInfo: "teamInfo",
+    UserId: "userId",
+    UserInfo: "userInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -123,7 +174,7 @@ export const ShiftsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createShiftCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ShiftsRequestBuilderGetQueryParametersMapper,
     },
@@ -133,7 +184,7 @@ export const ShiftsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createShiftFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeShift,

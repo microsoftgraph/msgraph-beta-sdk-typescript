@@ -35,12 +35,14 @@ export interface GeneralLedgerEntryItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -70,10 +72,33 @@ export const GeneralLedgerEntryItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGeneralLedgerEntryFromDiscriminatorValue,
         queryParametersMapper: GeneralLedgerEntryItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Account: "account",
+} as const;
+/**
+ * Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AccountId: "accountId",
+    AccountNumber: "accountNumber",
+    CreditAmount: "creditAmount",
+    DebitAmount: "debitAmount",
+    Description: "description",
+    DocumentNumber: "documentNumber",
+    DocumentType: "documentType",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PostingDate: "postingDate",
+    Account: "account",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { createQnaFromDiscriminatorValue, serializeQna, type Qna } from '@microsoft/msgraph-beta-sdk/models/search/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
  */
@@ -60,16 +62,42 @@ export interface QnaItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const QnaItemRequestBuilderUriTemplate = "{+baseurl}/search/qnas/{qna%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    WebUrl: "webUrl",
+    AvailabilityEndDateTime: "availabilityEndDateTime",
+    AvailabilityStartDateTime: "availabilityStartDateTime",
+    GroupIds: "groupIds",
+    IsSuggested: "isSuggested",
+    Keywords: "keywords",
+    LanguageTags: "languageTags",
+    Platforms: "platforms",
+    State: "state",
+    TargetedVariations: "targetedVariations",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -87,7 +115,7 @@ export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: QnaItemRequestBuilderUriTemplate,
@@ -95,7 +123,7 @@ export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createQnaFromDiscriminatorValue,
         queryParametersMapper: QnaItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +133,7 @@ export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createQnaFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeQna,

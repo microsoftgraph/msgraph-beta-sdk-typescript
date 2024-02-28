@@ -10,6 +10,8 @@ import { MentionsRequestBuilderNavigationMetadata, MentionsRequestBuilderRequest
 import { ReplyRequestBuilderRequestsMetadata, type ReplyRequestBuilder } from './reply/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
  */
@@ -55,16 +57,53 @@ export interface InReplyToRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const InReplyToRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo{?%24expand,%24select}";
+/**
+ * Provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Attachments: "attachments",
+    Extensions: "extensions",
+    InReplyTo: "inReplyTo",
+    Mentions: "mentions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
+/**
+ * Provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Categories: "categories",
+    ChangeKey: "changeKey",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Body: "body",
+    ConversationId: "conversationId",
+    ConversationThreadId: "conversationThreadId",
+    From: "from",
+    HasAttachments: "hasAttachments",
+    Importance: "importance",
+    NewParticipants: "newParticipants",
+    ReceivedDateTime: "receivedDateTime",
+    Sender: "sender",
+    Attachments: "attachments",
+    Extensions: "extensions",
+    InReplyTo: "inReplyTo",
+    Mentions: "mentions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -105,7 +144,7 @@ export const InReplyToRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPostFromDiscriminatorValue,
         queryParametersMapper: InReplyToRequestBuilderGetQueryParametersMapper,
     },

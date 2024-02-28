@@ -58,12 +58,14 @@ export interface EnrichedAuditLogsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -85,7 +87,7 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EnrichedAuditLogsRequestBuilderUriTemplate,
@@ -93,7 +95,7 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrichedAuditLogsFromDiscriminatorValue,
         queryParametersMapper: EnrichedAuditLogsRequestBuilderGetQueryParametersMapper,
     },
@@ -103,12 +105,27 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrichedAuditLogsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEnrichedAuditLogs,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the enrichedAuditLogs property of the microsoft.graph.networkaccess.settings entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the enrichedAuditLogs property of the microsoft.graph.networkaccess.settings entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Exchange: "exchange",
+    Sharepoint: "sharepoint",
+    Teams: "teams",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

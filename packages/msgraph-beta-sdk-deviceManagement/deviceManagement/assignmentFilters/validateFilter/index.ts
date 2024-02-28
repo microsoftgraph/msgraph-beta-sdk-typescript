@@ -79,7 +79,7 @@ export const ValidateFilterRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAssignmentFilterValidationResultFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeValidateFilterPostRequestBody,

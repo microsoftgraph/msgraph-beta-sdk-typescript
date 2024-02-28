@@ -22,7 +22,7 @@ export interface DashboardCardsRequestBuilder extends BaseRequestBuilder<Dashboa
      */
      byTeamsAppDashboardCardDefinitionId(teamsAppDashboardCardDefinitionId: string) : TeamsAppDashboardCardDefinitionItemRequestBuilder;
     /**
-     * Get dashboardCards from appCatalogs
+     * Dashboard cards specified in the Teams app manifest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppDashboardCardDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface DashboardCardsRequestBuilder extends BaseRequestBuilder<Dashboa
      */
      post(body: TeamsAppDashboardCardDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsAppDashboardCardDefinition | undefined>;
     /**
-     * Get dashboardCards from appCatalogs
+     * Dashboard cards specified in the Teams app manifest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface DashboardCardsRequestBuilder extends BaseRequestBuilder<Dashboa
      toPostRequestInformation(body: TeamsAppDashboardCardDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get dashboardCards from appCatalogs
+ * Dashboard cards specified in the Teams app manifest.
  */
 export interface DashboardCardsRequestBuilderGetQueryParameters {
     /**
@@ -61,7 +61,7 @@ export interface DashboardCardsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DashboardCardsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DashboardCardsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DashboardCardsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const DashboardCardsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAppDashboardCardDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DashboardCardsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,49 @@ export const DashboardCardsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAppDashboardCardDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamsAppDashboardCardDefinition,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ContentSource: "contentSource",
+    ContentSourceDesc: "contentSource desc",
+    DefaultSize: "defaultSize",
+    DefaultSizeDesc: "defaultSize desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Icon: "icon",
+    IconDesc: "icon desc",
+    PickerGroupId: "pickerGroupId",
+    PickerGroupIdDesc: "pickerGroupId desc",
+} as const;
+/**
+ * Provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ContentSource: "contentSource",
+    DefaultSize: "defaultSize",
+    Description: "description",
+    DisplayName: "displayName",
+    Icon: "icon",
+    PickerGroupId: "pickerGroupId",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

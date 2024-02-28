@@ -20,10 +20,10 @@ export interface ConversationThreadItemRequestBuilder extends BaseRequestBuilder
      */
     get reply(): ReplyRequestBuilder;
     /**
-     * Delete conversationThread.
+     * Delete a thread object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -44,7 +44,7 @@ export interface ConversationThreadItemRequestBuilder extends BaseRequestBuilder
      */
      patch(body: ConversationThread, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConversationThread | undefined>;
     /**
-     * Delete conversationThread.
+     * Delete a thread object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -70,8 +70,9 @@ export interface ConversationThreadItemRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -104,7 +105,7 @@ export const ConversationThreadItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ConversationThreadItemRequestBuilderUriTemplate,
@@ -112,7 +113,7 @@ export const ConversationThreadItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConversationThreadFromDiscriminatorValue,
         queryParametersMapper: ConversationThreadItemRequestBuilderGetQueryParametersMapper,
     },
@@ -122,12 +123,27 @@ export const ConversationThreadItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConversationThreadFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConversationThread,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the threads property of the microsoft.graph.group entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CcRecipients: "ccRecipients",
+    HasAttachments: "hasAttachments",
+    IsLocked: "isLocked",
+    LastDeliveredDateTime: "lastDeliveredDateTime",
+    Preview: "preview",
+    Topic: "topic",
+    ToRecipients: "toRecipients",
+    UniqueSenders: "uniqueSenders",
+    Posts: "posts",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -11,6 +11,8 @@ import { InstallSummaryRequestBuilderRequestsMetadata, type InstallSummaryReques
 import { type UserStateSummaryRequestBuilder, UserStateSummaryRequestBuilderNavigationMetadata, UserStateSummaryRequestBuilderRequestsMetadata } from './userStateSummary/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
  */
@@ -87,16 +89,47 @@ export interface ManagedEBookItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagedEBookItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    Categories: "categories",
+    DeviceStates: "deviceStates",
+    InstallSummary: "installSummary",
+    UserStateSummary: "userStateSummary",
+} as const;
+/**
+ * Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    InformationUrl: "informationUrl",
+    LargeCover: "largeCover",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PrivacyInformationUrl: "privacyInformationUrl",
+    PublishedDateTime: "publishedDateTime",
+    Publisher: "publisher",
+    Assignments: "assignments",
+    Categories: "categories",
+    DeviceStates: "deviceStates",
+    InstallSummary: "installSummary",
+    UserStateSummary: "userStateSummary",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -141,7 +174,7 @@ export const ManagedEBookItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedEBookItemRequestBuilderUriTemplate,
@@ -149,7 +182,7 @@ export const ManagedEBookItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedEBookFromDiscriminatorValue,
         queryParametersMapper: ManagedEBookItemRequestBuilderGetQueryParametersMapper,
     },
@@ -159,7 +192,7 @@ export const ManagedEBookItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedEBookFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedEBook,

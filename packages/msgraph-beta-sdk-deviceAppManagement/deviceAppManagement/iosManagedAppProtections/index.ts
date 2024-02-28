@@ -8,6 +8,9 @@ import { HasPayloadLinksRequestBuilderRequestsMetadata, type HasPayloadLinksRequ
 import { IosManagedAppProtectionItemRequestBuilderNavigationMetadata, IosManagedAppProtectionItemRequestBuilderRequestsMetadata, type IosManagedAppProtectionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
  */
@@ -66,7 +69,7 @@ export interface IosManagedAppProtectionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +77,7 @@ export interface IosManagedAppProtectionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +85,7 @@ export interface IosManagedAppProtectionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,253 @@ export interface IosManagedAppProtectionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const IosManagedAppProtectionsRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/iosManagedAppProtections{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    Apps: "apps",
+    DeploymentSummary: "deploymentSummary",
+} as const;
+/**
+ * Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    Version: "version",
+    VersionDesc: "version desc",
+    AllowedDataIngestionLocations: "allowedDataIngestionLocations",
+    AllowedDataIngestionLocationsDesc: "allowedDataIngestionLocations desc",
+    AllowedDataStorageLocations: "allowedDataStorageLocations",
+    AllowedDataStorageLocationsDesc: "allowedDataStorageLocations desc",
+    AllowedInboundDataTransferSources: "allowedInboundDataTransferSources",
+    AllowedInboundDataTransferSourcesDesc: "allowedInboundDataTransferSources desc",
+    AllowedOutboundClipboardSharingExceptionLength: "allowedOutboundClipboardSharingExceptionLength",
+    AllowedOutboundClipboardSharingExceptionLengthDesc: "allowedOutboundClipboardSharingExceptionLength desc",
+    AllowedOutboundClipboardSharingLevel: "allowedOutboundClipboardSharingLevel",
+    AllowedOutboundClipboardSharingLevelDesc: "allowedOutboundClipboardSharingLevel desc",
+    AllowedOutboundDataTransferDestinations: "allowedOutboundDataTransferDestinations",
+    AllowedOutboundDataTransferDestinationsDesc: "allowedOutboundDataTransferDestinations desc",
+    AppActionIfDeviceComplianceRequired: "appActionIfDeviceComplianceRequired",
+    AppActionIfDeviceComplianceRequiredDesc: "appActionIfDeviceComplianceRequired desc",
+    AppActionIfMaximumPinRetriesExceeded: "appActionIfMaximumPinRetriesExceeded",
+    AppActionIfMaximumPinRetriesExceededDesc: "appActionIfMaximumPinRetriesExceeded desc",
+    AppActionIfUnableToAuthenticateUser: "appActionIfUnableToAuthenticateUser",
+    AppActionIfUnableToAuthenticateUserDesc: "appActionIfUnableToAuthenticateUser desc",
+    BlockDataIngestionIntoOrganizationDocuments: "blockDataIngestionIntoOrganizationDocuments",
+    BlockDataIngestionIntoOrganizationDocumentsDesc: "blockDataIngestionIntoOrganizationDocuments desc",
+    ContactSyncBlocked: "contactSyncBlocked",
+    ContactSyncBlockedDesc: "contactSyncBlocked desc",
+    DataBackupBlocked: "dataBackupBlocked",
+    DataBackupBlockedDesc: "dataBackupBlocked desc",
+    DeviceComplianceRequired: "deviceComplianceRequired",
+    DeviceComplianceRequiredDesc: "deviceComplianceRequired desc",
+    DialerRestrictionLevel: "dialerRestrictionLevel",
+    DialerRestrictionLevelDesc: "dialerRestrictionLevel desc",
+    DisableAppPinIfDevicePinIsSet: "disableAppPinIfDevicePinIsSet",
+    DisableAppPinIfDevicePinIsSetDesc: "disableAppPinIfDevicePinIsSet desc",
+    FingerprintBlocked: "fingerprintBlocked",
+    FingerprintBlockedDesc: "fingerprintBlocked desc",
+    GracePeriodToBlockAppsDuringOffClockHours: "gracePeriodToBlockAppsDuringOffClockHours",
+    GracePeriodToBlockAppsDuringOffClockHoursDesc: "gracePeriodToBlockAppsDuringOffClockHours desc",
+    ManagedBrowser: "managedBrowser",
+    ManagedBrowserDesc: "managedBrowser desc",
+    ManagedBrowserToOpenLinksRequired: "managedBrowserToOpenLinksRequired",
+    ManagedBrowserToOpenLinksRequiredDesc: "managedBrowserToOpenLinksRequired desc",
+    MaximumAllowedDeviceThreatLevel: "maximumAllowedDeviceThreatLevel",
+    MaximumAllowedDeviceThreatLevelDesc: "maximumAllowedDeviceThreatLevel desc",
+    MaximumPinRetries: "maximumPinRetries",
+    MaximumPinRetriesDesc: "maximumPinRetries desc",
+    MaximumRequiredOsVersion: "maximumRequiredOsVersion",
+    MaximumRequiredOsVersionDesc: "maximumRequiredOsVersion desc",
+    MaximumWarningOsVersion: "maximumWarningOsVersion",
+    MaximumWarningOsVersionDesc: "maximumWarningOsVersion desc",
+    MaximumWipeOsVersion: "maximumWipeOsVersion",
+    MaximumWipeOsVersionDesc: "maximumWipeOsVersion desc",
+    MinimumPinLength: "minimumPinLength",
+    MinimumPinLengthDesc: "minimumPinLength desc",
+    MinimumRequiredAppVersion: "minimumRequiredAppVersion",
+    MinimumRequiredAppVersionDesc: "minimumRequiredAppVersion desc",
+    MinimumRequiredOsVersion: "minimumRequiredOsVersion",
+    MinimumRequiredOsVersionDesc: "minimumRequiredOsVersion desc",
+    MinimumWarningAppVersion: "minimumWarningAppVersion",
+    MinimumWarningAppVersionDesc: "minimumWarningAppVersion desc",
+    MinimumWarningOsVersion: "minimumWarningOsVersion",
+    MinimumWarningOsVersionDesc: "minimumWarningOsVersion desc",
+    MinimumWipeAppVersion: "minimumWipeAppVersion",
+    MinimumWipeAppVersionDesc: "minimumWipeAppVersion desc",
+    MinimumWipeOsVersion: "minimumWipeOsVersion",
+    MinimumWipeOsVersionDesc: "minimumWipeOsVersion desc",
+    MobileThreatDefensePartnerPriority: "mobileThreatDefensePartnerPriority",
+    MobileThreatDefensePartnerPriorityDesc: "mobileThreatDefensePartnerPriority desc",
+    MobileThreatDefenseRemediationAction: "mobileThreatDefenseRemediationAction",
+    MobileThreatDefenseRemediationActionDesc: "mobileThreatDefenseRemediationAction desc",
+    NotificationRestriction: "notificationRestriction",
+    NotificationRestrictionDesc: "notificationRestriction desc",
+    OrganizationalCredentialsRequired: "organizationalCredentialsRequired",
+    OrganizationalCredentialsRequiredDesc: "organizationalCredentialsRequired desc",
+    PeriodBeforePinReset: "periodBeforePinReset",
+    PeriodBeforePinResetDesc: "periodBeforePinReset desc",
+    PeriodOfflineBeforeAccessCheck: "periodOfflineBeforeAccessCheck",
+    PeriodOfflineBeforeAccessCheckDesc: "periodOfflineBeforeAccessCheck desc",
+    PeriodOfflineBeforeWipeIsEnforced: "periodOfflineBeforeWipeIsEnforced",
+    PeriodOfflineBeforeWipeIsEnforcedDesc: "periodOfflineBeforeWipeIsEnforced desc",
+    PeriodOnlineBeforeAccessCheck: "periodOnlineBeforeAccessCheck",
+    PeriodOnlineBeforeAccessCheckDesc: "periodOnlineBeforeAccessCheck desc",
+    PinCharacterSet: "pinCharacterSet",
+    PinCharacterSetDesc: "pinCharacterSet desc",
+    PinRequired: "pinRequired",
+    PinRequiredDesc: "pinRequired desc",
+    PinRequiredInsteadOfBiometricTimeout: "pinRequiredInsteadOfBiometricTimeout",
+    PinRequiredInsteadOfBiometricTimeoutDesc: "pinRequiredInsteadOfBiometricTimeout desc",
+    PreviousPinBlockCount: "previousPinBlockCount",
+    PreviousPinBlockCountDesc: "previousPinBlockCount desc",
+    PrintBlocked: "printBlocked",
+    PrintBlockedDesc: "printBlocked desc",
+    ProtectedMessagingRedirectAppType: "protectedMessagingRedirectAppType",
+    ProtectedMessagingRedirectAppTypeDesc: "protectedMessagingRedirectAppType desc",
+    SaveAsBlocked: "saveAsBlocked",
+    SaveAsBlockedDesc: "saveAsBlocked desc",
+    SimplePinBlocked: "simplePinBlocked",
+    SimplePinBlockedDesc: "simplePinBlocked desc",
+    AppGroupType: "appGroupType",
+    AppGroupTypeDesc: "appGroupType desc",
+    IsAssigned: "isAssigned",
+    IsAssignedDesc: "isAssigned desc",
+    TargetedAppManagementLevels: "targetedAppManagementLevels",
+    TargetedAppManagementLevelsDesc: "targetedAppManagementLevels desc",
+    AllowedIosDeviceModels: "allowedIosDeviceModels",
+    AllowedIosDeviceModelsDesc: "allowedIosDeviceModels desc",
+    AppActionIfIosDeviceModelNotAllowed: "appActionIfIosDeviceModelNotAllowed",
+    AppActionIfIosDeviceModelNotAllowedDesc: "appActionIfIosDeviceModelNotAllowed desc",
+    AppDataEncryptionType: "appDataEncryptionType",
+    AppDataEncryptionTypeDesc: "appDataEncryptionType desc",
+    CustomBrowserProtocol: "customBrowserProtocol",
+    CustomBrowserProtocolDesc: "customBrowserProtocol desc",
+    CustomDialerAppProtocol: "customDialerAppProtocol",
+    CustomDialerAppProtocolDesc: "customDialerAppProtocol desc",
+    DeployedAppCount: "deployedAppCount",
+    DeployedAppCountDesc: "deployedAppCount desc",
+    DisableProtectionOfManagedOutboundOpenInData: "disableProtectionOfManagedOutboundOpenInData",
+    DisableProtectionOfManagedOutboundOpenInDataDesc: "disableProtectionOfManagedOutboundOpenInData desc",
+    ExemptedAppProtocols: "exemptedAppProtocols",
+    ExemptedAppProtocolsDesc: "exemptedAppProtocols desc",
+    ExemptedUniversalLinks: "exemptedUniversalLinks",
+    ExemptedUniversalLinksDesc: "exemptedUniversalLinks desc",
+    FaceIdBlocked: "faceIdBlocked",
+    FaceIdBlockedDesc: "faceIdBlocked desc",
+    FilterOpenInToOnlyManagedApps: "filterOpenInToOnlyManagedApps",
+    FilterOpenInToOnlyManagedAppsDesc: "filterOpenInToOnlyManagedApps desc",
+    ManagedUniversalLinks: "managedUniversalLinks",
+    ManagedUniversalLinksDesc: "managedUniversalLinks desc",
+    MessagingRedirectAppUrlScheme: "messagingRedirectAppUrlScheme",
+    MessagingRedirectAppUrlSchemeDesc: "messagingRedirectAppUrlScheme desc",
+    MinimumRequiredSdkVersion: "minimumRequiredSdkVersion",
+    MinimumRequiredSdkVersionDesc: "minimumRequiredSdkVersion desc",
+    MinimumWarningSdkVersion: "minimumWarningSdkVersion",
+    MinimumWarningSdkVersionDesc: "minimumWarningSdkVersion desc",
+    MinimumWipeSdkVersion: "minimumWipeSdkVersion",
+    MinimumWipeSdkVersionDesc: "minimumWipeSdkVersion desc",
+    ProtectInboundDataFromUnknownSources: "protectInboundDataFromUnknownSources",
+    ProtectInboundDataFromUnknownSourcesDesc: "protectInboundDataFromUnknownSources desc",
+    ThirdPartyKeyboardsBlocked: "thirdPartyKeyboardsBlocked",
+    ThirdPartyKeyboardsBlockedDesc: "thirdPartyKeyboardsBlocked desc",
+} as const;
+/**
+ * Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Version: "version",
+    AllowedDataIngestionLocations: "allowedDataIngestionLocations",
+    AllowedDataStorageLocations: "allowedDataStorageLocations",
+    AllowedInboundDataTransferSources: "allowedInboundDataTransferSources",
+    AllowedOutboundClipboardSharingExceptionLength: "allowedOutboundClipboardSharingExceptionLength",
+    AllowedOutboundClipboardSharingLevel: "allowedOutboundClipboardSharingLevel",
+    AllowedOutboundDataTransferDestinations: "allowedOutboundDataTransferDestinations",
+    AppActionIfDeviceComplianceRequired: "appActionIfDeviceComplianceRequired",
+    AppActionIfMaximumPinRetriesExceeded: "appActionIfMaximumPinRetriesExceeded",
+    AppActionIfUnableToAuthenticateUser: "appActionIfUnableToAuthenticateUser",
+    BlockDataIngestionIntoOrganizationDocuments: "blockDataIngestionIntoOrganizationDocuments",
+    ContactSyncBlocked: "contactSyncBlocked",
+    DataBackupBlocked: "dataBackupBlocked",
+    DeviceComplianceRequired: "deviceComplianceRequired",
+    DialerRestrictionLevel: "dialerRestrictionLevel",
+    DisableAppPinIfDevicePinIsSet: "disableAppPinIfDevicePinIsSet",
+    FingerprintBlocked: "fingerprintBlocked",
+    GracePeriodToBlockAppsDuringOffClockHours: "gracePeriodToBlockAppsDuringOffClockHours",
+    ManagedBrowser: "managedBrowser",
+    ManagedBrowserToOpenLinksRequired: "managedBrowserToOpenLinksRequired",
+    MaximumAllowedDeviceThreatLevel: "maximumAllowedDeviceThreatLevel",
+    MaximumPinRetries: "maximumPinRetries",
+    MaximumRequiredOsVersion: "maximumRequiredOsVersion",
+    MaximumWarningOsVersion: "maximumWarningOsVersion",
+    MaximumWipeOsVersion: "maximumWipeOsVersion",
+    MinimumPinLength: "minimumPinLength",
+    MinimumRequiredAppVersion: "minimumRequiredAppVersion",
+    MinimumRequiredOsVersion: "minimumRequiredOsVersion",
+    MinimumWarningAppVersion: "minimumWarningAppVersion",
+    MinimumWarningOsVersion: "minimumWarningOsVersion",
+    MinimumWipeAppVersion: "minimumWipeAppVersion",
+    MinimumWipeOsVersion: "minimumWipeOsVersion",
+    MobileThreatDefensePartnerPriority: "mobileThreatDefensePartnerPriority",
+    MobileThreatDefenseRemediationAction: "mobileThreatDefenseRemediationAction",
+    NotificationRestriction: "notificationRestriction",
+    OrganizationalCredentialsRequired: "organizationalCredentialsRequired",
+    PeriodBeforePinReset: "periodBeforePinReset",
+    PeriodOfflineBeforeAccessCheck: "periodOfflineBeforeAccessCheck",
+    PeriodOfflineBeforeWipeIsEnforced: "periodOfflineBeforeWipeIsEnforced",
+    PeriodOnlineBeforeAccessCheck: "periodOnlineBeforeAccessCheck",
+    PinCharacterSet: "pinCharacterSet",
+    PinRequired: "pinRequired",
+    PinRequiredInsteadOfBiometricTimeout: "pinRequiredInsteadOfBiometricTimeout",
+    PreviousPinBlockCount: "previousPinBlockCount",
+    PrintBlocked: "printBlocked",
+    ProtectedMessagingRedirectAppType: "protectedMessagingRedirectAppType",
+    SaveAsBlocked: "saveAsBlocked",
+    SimplePinBlocked: "simplePinBlocked",
+    AppGroupType: "appGroupType",
+    IsAssigned: "isAssigned",
+    TargetedAppManagementLevels: "targetedAppManagementLevels",
+    AllowedIosDeviceModels: "allowedIosDeviceModels",
+    AppActionIfIosDeviceModelNotAllowed: "appActionIfIosDeviceModelNotAllowed",
+    AppDataEncryptionType: "appDataEncryptionType",
+    CustomBrowserProtocol: "customBrowserProtocol",
+    CustomDialerAppProtocol: "customDialerAppProtocol",
+    DeployedAppCount: "deployedAppCount",
+    DisableProtectionOfManagedOutboundOpenInData: "disableProtectionOfManagedOutboundOpenInData",
+    ExemptedAppProtocols: "exemptedAppProtocols",
+    ExemptedUniversalLinks: "exemptedUniversalLinks",
+    FaceIdBlocked: "faceIdBlocked",
+    FilterOpenInToOnlyManagedApps: "filterOpenInToOnlyManagedApps",
+    ManagedUniversalLinks: "managedUniversalLinks",
+    MessagingRedirectAppUrlScheme: "messagingRedirectAppUrlScheme",
+    MinimumRequiredSdkVersion: "minimumRequiredSdkVersion",
+    MinimumWarningSdkVersion: "minimumWarningSdkVersion",
+    MinimumWipeSdkVersion: "minimumWipeSdkVersion",
+    ProtectInboundDataFromUnknownSources: "protectInboundDataFromUnknownSources",
+    ThirdPartyKeyboardsBlocked: "thirdPartyKeyboardsBlocked",
+    Assignments: "assignments",
+    Apps: "apps",
+    DeploymentSummary: "deploymentSummary",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -135,7 +385,7 @@ export const IosManagedAppProtectionsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosManagedAppProtectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: IosManagedAppProtectionsRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +395,7 @@ export const IosManagedAppProtectionsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIosManagedAppProtection,

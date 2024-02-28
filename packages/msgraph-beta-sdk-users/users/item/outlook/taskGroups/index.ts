@@ -7,6 +7,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { OutlookTaskGroupItemRequestBuilderNavigationMetadata, OutlookTaskGroupItemRequestBuilderRequestsMetadata, type OutlookTaskGroupItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
  */
@@ -73,11 +75,11 @@ export interface TaskGroupsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +93,32 @@ export interface TaskGroupsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TaskGroupsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskGroups{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ChangeKey: "changeKey",
+    ChangeKeyDesc: "changeKey desc",
+    GroupKey: "groupKey",
+    GroupKeyDesc: "groupKey desc",
+    IsDefaultGroup: "isDefaultGroup",
+    IsDefaultGroupDesc: "isDefaultGroup desc",
+    Name: "name",
+    NameDesc: "name desc",
+} as const;
+/**
+ * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ChangeKey: "changeKey",
+    GroupKey: "groupKey",
+    IsDefaultGroup: "isDefaultGroup",
+    Name: "name",
+    TaskFolders: "taskFolders",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -125,7 +153,7 @@ export const TaskGroupsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskGroupCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TaskGroupsRequestBuilderGetQueryParametersMapper,
     },
@@ -135,7 +163,7 @@ export const TaskGroupsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskGroupFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOutlookTaskGroup,

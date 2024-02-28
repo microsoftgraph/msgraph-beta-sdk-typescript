@@ -9,6 +9,8 @@ import { AssignmentsRequestBuilderNavigationMetadata, AssignmentsRequestBuilderR
 import { TargetAppsRequestBuilderRequestsMetadata, type TargetAppsRequestBuilder } from './targetApps/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
  */
@@ -77,16 +79,60 @@ export interface WindowsManagedAppProtectionItemRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WindowsManagedAppProtectionItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Apps: "apps",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Version: "version",
+    AllowedInboundDataTransferSources: "allowedInboundDataTransferSources",
+    AllowedOutboundClipboardSharingLevel: "allowedOutboundClipboardSharingLevel",
+    AllowedOutboundDataTransferDestinations: "allowedOutboundDataTransferDestinations",
+    AppActionIfUnableToAuthenticateUser: "appActionIfUnableToAuthenticateUser",
+    DeployedAppCount: "deployedAppCount",
+    IsAssigned: "isAssigned",
+    MaximumAllowedDeviceThreatLevel: "maximumAllowedDeviceThreatLevel",
+    MaximumRequiredOsVersion: "maximumRequiredOsVersion",
+    MaximumWarningOsVersion: "maximumWarningOsVersion",
+    MaximumWipeOsVersion: "maximumWipeOsVersion",
+    MinimumRequiredAppVersion: "minimumRequiredAppVersion",
+    MinimumRequiredOsVersion: "minimumRequiredOsVersion",
+    MinimumRequiredSdkVersion: "minimumRequiredSdkVersion",
+    MinimumWarningAppVersion: "minimumWarningAppVersion",
+    MinimumWarningOsVersion: "minimumWarningOsVersion",
+    MinimumWipeAppVersion: "minimumWipeAppVersion",
+    MinimumWipeOsVersion: "minimumWipeOsVersion",
+    MinimumWipeSdkVersion: "minimumWipeSdkVersion",
+    MobileThreatDefenseRemediationAction: "mobileThreatDefenseRemediationAction",
+    PeriodOfflineBeforeAccessCheck: "periodOfflineBeforeAccessCheck",
+    PeriodOfflineBeforeWipeIsEnforced: "periodOfflineBeforeWipeIsEnforced",
+    PrintBlocked: "printBlocked",
+    Apps: "apps",
+    Assignments: "assignments",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -123,7 +169,7 @@ export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsManagedAppProtectionItemRequestBuilderUriTemplate,
@@ -131,7 +177,7 @@ export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsManagedAppProtectionFromDiscriminatorValue,
         queryParametersMapper: WindowsManagedAppProtectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -141,7 +187,7 @@ export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsManagedAppProtection,

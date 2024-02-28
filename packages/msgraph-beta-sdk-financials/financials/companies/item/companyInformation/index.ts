@@ -47,7 +47,7 @@ export interface CompanyInformationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +55,7 @@ export interface CompanyInformationRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +63,7 @@ export interface CompanyInformationRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +73,9 @@ export interface CompanyInformationRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -113,10 +116,65 @@ export const CompanyInformationRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanyInformationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CompanyInformationRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the companyInformation property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the companyInformation property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Address: "address",
+    AddressDesc: "address desc",
+    CurrencyCode: "currencyCode",
+    CurrencyCodeDesc: "currencyCode desc",
+    CurrentFiscalYearStartDate: "currentFiscalYearStartDate",
+    CurrentFiscalYearStartDateDesc: "currentFiscalYearStartDate desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Email: "email",
+    EmailDesc: "email desc",
+    FaxNumber: "faxNumber",
+    FaxNumberDesc: "faxNumber desc",
+    Id: "id",
+    IdDesc: "id desc",
+    Industry: "industry",
+    IndustryDesc: "industry desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    PhoneNumber: "phoneNumber",
+    PhoneNumberDesc: "phoneNumber desc",
+    Picture: "picture",
+    PictureDesc: "picture desc",
+    TaxRegistrationNumber: "taxRegistrationNumber",
+    TaxRegistrationNumberDesc: "taxRegistrationNumber desc",
+    Website: "website",
+    WebsiteDesc: "website desc",
+} as const;
+/**
+ * Provides operations to manage the companyInformation property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Address: "address",
+    CurrencyCode: "currencyCode",
+    CurrentFiscalYearStartDate: "currentFiscalYearStartDate",
+    DisplayName: "displayName",
+    Email: "email",
+    FaxNumber: "faxNumber",
+    Id: "id",
+    Industry: "industry",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PhoneNumber: "phoneNumber",
+    Picture: "picture",
+    TaxRegistrationNumber: "taxRegistrationNumber",
+    Website: "website",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createDeviceHealthScriptRunSummaryFromDiscriminatorValue, serializeDevi
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the runSummary property of the microsoft.graph.deviceHealthScript entity.
  */
@@ -57,16 +59,39 @@ export interface RunSummaryRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const RunSummaryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24expand,%24select}";
+/**
+ * Provides operations to manage the runSummary property of the microsoft.graph.deviceHealthScript entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the runSummary property of the microsoft.graph.deviceHealthScript entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DetectionScriptErrorDeviceCount: "detectionScriptErrorDeviceCount",
+    DetectionScriptNotApplicableDeviceCount: "detectionScriptNotApplicableDeviceCount",
+    DetectionScriptPendingDeviceCount: "detectionScriptPendingDeviceCount",
+    IssueDetectedDeviceCount: "issueDetectedDeviceCount",
+    IssueRemediatedCumulativeDeviceCount: "issueRemediatedCumulativeDeviceCount",
+    IssueRemediatedDeviceCount: "issueRemediatedDeviceCount",
+    IssueReoccurredDeviceCount: "issueReoccurredDeviceCount",
+    LastScriptRunDateTime: "lastScriptRunDateTime",
+    NoIssueDetectedDeviceCount: "noIssueDetectedDeviceCount",
+    RemediationScriptErrorDeviceCount: "remediationScriptErrorDeviceCount",
+    RemediationSkippedDeviceCount: "remediationSkippedDeviceCount",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +109,7 @@ export const RunSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RunSummaryRequestBuilderUriTemplate,
@@ -92,7 +117,7 @@ export const RunSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptRunSummaryFromDiscriminatorValue,
         queryParametersMapper: RunSummaryRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +127,7 @@ export const RunSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptRunSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceHealthScriptRunSummary,

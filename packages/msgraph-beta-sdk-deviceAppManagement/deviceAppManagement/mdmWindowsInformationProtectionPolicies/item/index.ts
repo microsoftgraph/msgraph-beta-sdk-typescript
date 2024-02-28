@@ -8,6 +8,8 @@ import { ExemptAppLockerFilesRequestBuilderNavigationMetadata, ExemptAppLockerFi
 import { ProtectedAppLockerFilesRequestBuilderNavigationMetadata, ProtectedAppLockerFilesRequestBuilderRequestsMetadata, type ProtectedAppLockerFilesRequestBuilder } from './protectedAppLockerFiles/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
  */
@@ -72,16 +74,62 @@ export interface MdmWindowsInformationProtectionPolicyItemRequestBuilderGetQuery
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const MdmWindowsInformationProtectionPolicyItemRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mdmWindowsInformationProtectionPolicies/{mdmWindowsInformationProtectionPolicy%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    ExemptAppLockerFiles: "exemptAppLockerFiles",
+    ProtectedAppLockerFiles: "protectedAppLockerFiles",
+} as const;
+/**
+ * Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Version: "version",
+    AzureRightsManagementServicesAllowed: "azureRightsManagementServicesAllowed",
+    DataRecoveryCertificate: "dataRecoveryCertificate",
+    EnforcementLevel: "enforcementLevel",
+    EnterpriseDomain: "enterpriseDomain",
+    EnterpriseInternalProxyServers: "enterpriseInternalProxyServers",
+    EnterpriseIPRanges: "enterpriseIPRanges",
+    EnterpriseIPRangesAreAuthoritative: "enterpriseIPRangesAreAuthoritative",
+    EnterpriseNetworkDomainNames: "enterpriseNetworkDomainNames",
+    EnterpriseProtectedDomainNames: "enterpriseProtectedDomainNames",
+    EnterpriseProxiedDomains: "enterpriseProxiedDomains",
+    EnterpriseProxyServers: "enterpriseProxyServers",
+    EnterpriseProxyServersAreAuthoritative: "enterpriseProxyServersAreAuthoritative",
+    ExemptApps: "exemptApps",
+    IconsVisible: "iconsVisible",
+    IndexingEncryptedStoresOrItemsBlocked: "indexingEncryptedStoresOrItemsBlocked",
+    IsAssigned: "isAssigned",
+    NeutralDomainResources: "neutralDomainResources",
+    ProtectedApps: "protectedApps",
+    ProtectionUnderLockConfigRequired: "protectionUnderLockConfigRequired",
+    RevokeOnUnenrollDisabled: "revokeOnUnenrollDisabled",
+    RightsManagementServicesTemplateId: "rightsManagementServicesTemplateId",
+    SmbAutoEncryptedFileExtensions: "smbAutoEncryptedFileExtensions",
+    Assignments: "assignments",
+    ExemptAppLockerFiles: "exemptAppLockerFiles",
+    ProtectedAppLockerFiles: "protectedAppLockerFiles",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -116,7 +164,7 @@ export const MdmWindowsInformationProtectionPolicyItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MdmWindowsInformationProtectionPolicyItemRequestBuilderUriTemplate,
@@ -124,7 +172,7 @@ export const MdmWindowsInformationProtectionPolicyItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMdmWindowsInformationProtectionPolicyFromDiscriminatorValue,
         queryParametersMapper: MdmWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +182,7 @@ export const MdmWindowsInformationProtectionPolicyItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMdmWindowsInformationProtectionPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMdmWindowsInformationProtectionPolicy,

@@ -6,6 +6,8 @@ import { createSensitivityLabelFromDiscriminatorValue, serializeSensitivityLabel
 import { ParentRequestBuilderRequestsMetadata, type ParentRequestBuilder } from './parent/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
  */
@@ -62,16 +64,39 @@ export interface SensitivityLabelItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SensitivityLabelItemRequestBuilderUriTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Parent: "parent",
+} as const;
+/**
+ * Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Color: "color",
+    ContentFormats: "contentFormats",
+    Description: "description",
+    HasProtection: "hasProtection",
+    IsActive: "isActive",
+    IsAppliable: "isAppliable",
+    Name: "name",
+    Sensitivity: "sensitivity",
+    Tooltip: "tooltip",
+    Parent: "parent",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -97,7 +122,7 @@ export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SensitivityLabelItemRequestBuilderUriTemplate,
@@ -105,7 +130,7 @@ export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
         queryParametersMapper: SensitivityLabelItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +140,7 @@ export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSensitivityLabel,

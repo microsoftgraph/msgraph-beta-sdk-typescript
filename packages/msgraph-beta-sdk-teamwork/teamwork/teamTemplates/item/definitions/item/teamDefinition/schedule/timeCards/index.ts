@@ -8,6 +8,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { TimeCardItemRequestBuilderNavigationMetadata, TimeCardItemRequestBuilderRequestsMetadata, type TimeCardItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
  */
@@ -68,7 +71,7 @@ export interface TimeCardsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -76,7 +79,7 @@ export interface TimeCardsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -84,7 +87,7 @@ export interface TimeCardsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -98,6 +101,61 @@ export interface TimeCardsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TimeCardsRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Breaks: "breaks",
+    BreaksDesc: "breaks desc",
+    ClockInEvent: "clockInEvent",
+    ClockInEventDesc: "clockInEvent desc",
+    ClockOutEvent: "clockOutEvent",
+    ClockOutEventDesc: "clockOutEvent desc",
+    ConfirmedBy: "confirmedBy",
+    ConfirmedByDesc: "confirmedBy desc",
+    Notes: "notes",
+    NotesDesc: "notes desc",
+    OriginalEntry: "originalEntry",
+    OriginalEntryDesc: "originalEntry desc",
+    State: "state",
+    StateDesc: "state desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+} as const;
+/**
+ * Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Breaks: "breaks",
+    ClockInEvent: "clockInEvent",
+    ClockOutEvent: "clockOutEvent",
+    ConfirmedBy: "confirmedBy",
+    Notes: "notes",
+    OriginalEntry: "originalEntry",
+    State: "state",
+    UserId: "userId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -137,7 +195,7 @@ export const TimeCardsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTimeCardCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TimeCardsRequestBuilderGetQueryParametersMapper,
     },
@@ -147,7 +205,7 @@ export const TimeCardsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTimeCardFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTimeCard,

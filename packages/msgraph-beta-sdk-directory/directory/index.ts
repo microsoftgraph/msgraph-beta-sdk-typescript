@@ -9,12 +9,14 @@ import { CertificateAuthoritiesRequestBuilderNavigationMetadata, CertificateAuth
 import { CustomSecurityAttributeDefinitionsRequestBuilderNavigationMetadata, CustomSecurityAttributeDefinitionsRequestBuilderRequestsMetadata, type CustomSecurityAttributeDefinitionsRequestBuilder } from './customSecurityAttributeDefinitions/';
 import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilderRequestsMetadata, type DeletedItemsRequestBuilder } from './deletedItems/';
 import { DeviceLocalCredentialsRequestBuilderNavigationMetadata, DeviceLocalCredentialsRequestBuilderRequestsMetadata, type DeviceLocalCredentialsRequestBuilder } from './deviceLocalCredentials/';
+import { ExternalUserProfilesRequestBuilderNavigationMetadata, ExternalUserProfilesRequestBuilderRequestsMetadata, type ExternalUserProfilesRequestBuilder } from './externalUserProfiles/';
 import { FeatureRolloutPoliciesRequestBuilderNavigationMetadata, FeatureRolloutPoliciesRequestBuilderRequestsMetadata, type FeatureRolloutPoliciesRequestBuilder } from './featureRolloutPolicies/';
 import { FederationConfigurationsRequestBuilderNavigationMetadata, FederationConfigurationsRequestBuilderRequestsMetadata, type FederationConfigurationsRequestBuilder } from './federationConfigurations/';
 import { ImpactedResourcesRequestBuilderNavigationMetadata, ImpactedResourcesRequestBuilderRequestsMetadata, type ImpactedResourcesRequestBuilder } from './impactedResources/';
 import { InboundSharedUserProfilesRequestBuilderNavigationMetadata, InboundSharedUserProfilesRequestBuilderRequestsMetadata, type InboundSharedUserProfilesRequestBuilder } from './inboundSharedUserProfiles/';
 import { OnPremisesSynchronizationRequestBuilderNavigationMetadata, OnPremisesSynchronizationRequestBuilderRequestsMetadata, type OnPremisesSynchronizationRequestBuilder } from './onPremisesSynchronization/';
 import { OutboundSharedUserProfilesRequestBuilderNavigationMetadata, OutboundSharedUserProfilesRequestBuilderRequestsMetadata, type OutboundSharedUserProfilesRequestBuilder } from './outboundSharedUserProfiles/';
+import { PendingExternalUserProfilesRequestBuilderNavigationMetadata, PendingExternalUserProfilesRequestBuilderRequestsMetadata, type PendingExternalUserProfilesRequestBuilder } from './pendingExternalUserProfiles/';
 import { RecommendationsRequestBuilderNavigationMetadata, RecommendationsRequestBuilderRequestsMetadata, type RecommendationsRequestBuilder } from './recommendations/';
 import { SharedEmailDomainsRequestBuilderNavigationMetadata, SharedEmailDomainsRequestBuilderRequestsMetadata, type SharedEmailDomainsRequestBuilder } from './sharedEmailDomains/';
 import { SubscriptionsRequestBuilderNavigationMetadata, SubscriptionsRequestBuilderRequestsMetadata, type SubscriptionsRequestBuilder } from './subscriptions/';
@@ -51,6 +53,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      */
     get deviceLocalCredentials(): DeviceLocalCredentialsRequestBuilder;
     /**
+     * Provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.
+     */
+    get externalUserProfiles(): ExternalUserProfilesRequestBuilder;
+    /**
      * Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
      */
     get featureRolloutPolicies(): FeatureRolloutPoliciesRequestBuilder;
@@ -74,6 +80,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      * Provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.
      */
     get outboundSharedUserProfiles(): OutboundSharedUserProfilesRequestBuilder;
+    /**
+     * Provides operations to manage the pendingExternalUserProfiles property of the microsoft.graph.directory entity.
+     */
+    get pendingExternalUserProfiles(): PendingExternalUserProfilesRequestBuilder;
     /**
      * Provides operations to manage the recommendations property of the microsoft.graph.directory entity.
      */
@@ -134,12 +144,14 @@ export interface DirectoryRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -185,6 +197,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
         requestsMetadata: DeviceLocalCredentialsRequestBuilderRequestsMetadata,
         navigationMetadata: DeviceLocalCredentialsRequestBuilderNavigationMetadata,
     },
+    externalUserProfiles: {
+        requestsMetadata: ExternalUserProfilesRequestBuilderRequestsMetadata,
+        navigationMetadata: ExternalUserProfilesRequestBuilderNavigationMetadata,
+    },
     featureRolloutPolicies: {
         requestsMetadata: FeatureRolloutPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: FeatureRolloutPoliciesRequestBuilderNavigationMetadata,
@@ -209,6 +225,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
         requestsMetadata: OutboundSharedUserProfilesRequestBuilderRequestsMetadata,
         navigationMetadata: OutboundSharedUserProfilesRequestBuilderNavigationMetadata,
     },
+    pendingExternalUserProfiles: {
+        requestsMetadata: PendingExternalUserProfilesRequestBuilderRequestsMetadata,
+        navigationMetadata: PendingExternalUserProfilesRequestBuilderNavigationMetadata,
+    },
     recommendations: {
         requestsMetadata: RecommendationsRequestBuilderRequestsMetadata,
         navigationMetadata: RecommendationsRequestBuilderNavigationMetadata,
@@ -232,7 +252,7 @@ export const DirectoryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDirectoryFromDiscriminatorValue,
         queryParametersMapper: DirectoryRequestBuilderGetQueryParametersMapper,
     },
@@ -242,12 +262,58 @@ export const DirectoryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDirectoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDirectory,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the directory singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AdministrativeUnits: "administrativeUnits",
+    AttributeSets: "attributeSets",
+    CertificateAuthorities: "certificateAuthorities",
+    CustomSecurityAttributeDefinitions: "customSecurityAttributeDefinitions",
+    DeletedItems: "deletedItems",
+    DeviceLocalCredentials: "deviceLocalCredentials",
+    ExternalUserProfiles: "externalUserProfiles",
+    FeatureRolloutPolicies: "featureRolloutPolicies",
+    FederationConfigurations: "federationConfigurations",
+    ImpactedResources: "impactedResources",
+    InboundSharedUserProfiles: "inboundSharedUserProfiles",
+    OnPremisesSynchronization: "onPremisesSynchronization",
+    OutboundSharedUserProfiles: "outboundSharedUserProfiles",
+    PendingExternalUserProfiles: "pendingExternalUserProfiles",
+    Recommendations: "recommendations",
+    SharedEmailDomains: "sharedEmailDomains",
+    Subscriptions: "subscriptions",
+} as const;
+/**
+ * Provides operations to manage the directory singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdministrativeUnits: "administrativeUnits",
+    AttributeSets: "attributeSets",
+    CertificateAuthorities: "certificateAuthorities",
+    CustomSecurityAttributeDefinitions: "customSecurityAttributeDefinitions",
+    DeletedItems: "deletedItems",
+    DeviceLocalCredentials: "deviceLocalCredentials",
+    ExternalUserProfiles: "externalUserProfiles",
+    FeatureRolloutPolicies: "featureRolloutPolicies",
+    FederationConfigurations: "federationConfigurations",
+    ImpactedResources: "impactedResources",
+    InboundSharedUserProfiles: "inboundSharedUserProfiles",
+    OnPremisesSynchronization: "onPremisesSynchronization",
+    OutboundSharedUserProfiles: "outboundSharedUserProfiles",
+    PendingExternalUserProfiles: "pendingExternalUserProfiles",
+    Recommendations: "recommendations",
+    SharedEmailDomains: "sharedEmailDomains",
+    Subscriptions: "subscriptions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

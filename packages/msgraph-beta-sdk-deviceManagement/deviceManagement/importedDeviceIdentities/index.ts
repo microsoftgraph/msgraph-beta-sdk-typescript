@@ -9,6 +9,9 @@ import { ImportedDeviceIdentityItemRequestBuilderRequestsMetadata, type Imported
 import { SearchExistingIdentitiesRequestBuilderRequestsMetadata, type SearchExistingIdentitiesRequestBuilder } from './searchExistingIdentities/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
  */
@@ -71,7 +74,7 @@ export interface ImportedDeviceIdentitiesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -79,7 +82,7 @@ export interface ImportedDeviceIdentitiesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -87,7 +90,7 @@ export interface ImportedDeviceIdentitiesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -101,6 +104,49 @@ export interface ImportedDeviceIdentitiesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ImportedDeviceIdentitiesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/importedDeviceIdentities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    EnrollmentState: "enrollmentState",
+    EnrollmentStateDesc: "enrollmentState desc",
+    ImportedDeviceIdentifier: "importedDeviceIdentifier",
+    ImportedDeviceIdentifierDesc: "importedDeviceIdentifier desc",
+    ImportedDeviceIdentityType: "importedDeviceIdentityType",
+    ImportedDeviceIdentityTypeDesc: "importedDeviceIdentityType desc",
+    LastContactedDateTime: "lastContactedDateTime",
+    LastContactedDateTimeDesc: "lastContactedDateTime desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Platform: "platform",
+    PlatformDesc: "platform desc",
+} as const;
+/**
+ * Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    EnrollmentState: "enrollmentState",
+    ImportedDeviceIdentifier: "importedDeviceIdentifier",
+    ImportedDeviceIdentityType: "importedDeviceIdentityType",
+    LastContactedDateTime: "lastContactedDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Platform: "platform",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -142,7 +188,7 @@ export const ImportedDeviceIdentitiesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedDeviceIdentityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ImportedDeviceIdentitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -152,7 +198,7 @@ export const ImportedDeviceIdentitiesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedDeviceIdentityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeImportedDeviceIdentity,

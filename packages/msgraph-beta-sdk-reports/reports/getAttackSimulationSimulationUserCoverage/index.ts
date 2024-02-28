@@ -106,7 +106,7 @@ export const GetAttackSimulationSimulationUserCoverageRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetAttackSimulationSimulationUserCoverageGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParametersMapper,
     },

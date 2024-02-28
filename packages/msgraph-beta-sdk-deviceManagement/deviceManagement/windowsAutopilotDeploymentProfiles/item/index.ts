@@ -8,6 +8,8 @@ import { AssignedDevicesRequestBuilderNavigationMetadata, AssignedDevicesRequest
 import { AssignmentsRequestBuilderNavigationMetadata, AssignmentsRequestBuilderRequestsMetadata, type AssignmentsRequestBuilder } from './assignments/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
  */
@@ -72,16 +74,45 @@ export interface WindowsAutopilotDeploymentProfileItemRequestBuilderGetQueryPara
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WindowsAutopilotDeploymentProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AssignedDevices: "assignedDevices",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DeviceNameTemplate: "deviceNameTemplate",
+    DeviceType: "deviceType",
+    DisplayName: "displayName",
+    EnableWhiteGlove: "enableWhiteGlove",
+    EnrollmentStatusScreenSettings: "enrollmentStatusScreenSettings",
+    ExtractHardwareHash: "extractHardwareHash",
+    Language: "language",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ManagementServiceAppId: "managementServiceAppId",
+    OutOfBoxExperienceSettings: "outOfBoxExperienceSettings",
+    RoleScopeTagIds: "roleScopeTagIds",
+    AssignedDevices: "assignedDevices",
+    Assignments: "assignments",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -115,7 +146,7 @@ export const WindowsAutopilotDeploymentProfileItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsAutopilotDeploymentProfileItemRequestBuilderUriTemplate,
@@ -123,7 +154,7 @@ export const WindowsAutopilotDeploymentProfileItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsAutopilotDeploymentProfileFromDiscriminatorValue,
         queryParametersMapper: WindowsAutopilotDeploymentProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -133,7 +164,7 @@ export const WindowsAutopilotDeploymentProfileItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsAutopilotDeploymentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsAutopilotDeploymentProfile,

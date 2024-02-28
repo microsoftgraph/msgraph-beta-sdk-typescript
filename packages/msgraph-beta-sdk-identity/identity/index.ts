@@ -16,6 +16,8 @@ import { type UserFlowAttributesRequestBuilder, UserFlowAttributesRequestBuilder
 import { type UserFlowsRequestBuilder, UserFlowsRequestBuilderNavigationMetadata, UserFlowsRequestBuilderRequestsMetadata } from './userFlows/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the identityContainer singleton.
  */
@@ -100,16 +102,49 @@ export interface IdentityRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const IdentityRequestBuilderUriTemplate = "{+baseurl}/identity{?%24expand,%24select}";
+/**
+ * Provides operations to manage the identityContainer singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ApiConnectors: "apiConnectors",
+    AuthenticationEventListeners: "authenticationEventListeners",
+    AuthenticationEventsFlows: "authenticationEventsFlows",
+    B2cUserFlows: "b2cUserFlows",
+    B2xUserFlows: "b2xUserFlows",
+    ConditionalAccess: "conditionalAccess",
+    ContinuousAccessEvaluationPolicy: "continuousAccessEvaluationPolicy",
+    CustomAuthenticationExtensions: "customAuthenticationExtensions",
+    IdentityProviders: "identityProviders",
+    UserFlowAttributes: "userFlowAttributes",
+    UserFlows: "userFlows",
+} as const;
+/**
+ * Provides operations to manage the identityContainer singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    ApiConnectors: "apiConnectors",
+    AuthenticationEventListeners: "authenticationEventListeners",
+    AuthenticationEventsFlows: "authenticationEventsFlows",
+    B2cUserFlows: "b2cUserFlows",
+    B2xUserFlows: "b2xUserFlows",
+    ConditionalAccess: "conditionalAccess",
+    ContinuousAccessEvaluationPolicy: "continuousAccessEvaluationPolicy",
+    CustomAuthenticationExtensions: "customAuthenticationExtensions",
+    IdentityProviders: "identityProviders",
+    UserFlowAttributes: "userFlowAttributes",
+    UserFlows: "userFlows",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -174,7 +209,7 @@ export const IdentityRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIdentityContainerFromDiscriminatorValue,
         queryParametersMapper: IdentityRequestBuilderGetQueryParametersMapper,
     },
@@ -184,7 +219,7 @@ export const IdentityRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIdentityContainerFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIdentityContainer,

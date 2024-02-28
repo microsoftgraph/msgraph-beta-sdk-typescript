@@ -70,12 +70,14 @@ export interface ContactItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -110,7 +112,7 @@ export const ContactItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ContactItemRequestBuilderUriTemplate,
@@ -118,7 +120,7 @@ export const ContactItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createContactFromDiscriminatorValue,
         queryParametersMapper: ContactItemRequestBuilderGetQueryParametersMapper,
     },
@@ -128,12 +130,69 @@ export const ContactItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createContactFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeContact,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the contacts property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Extensions: "extensions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    Photo: "photo",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
+/**
+ * Provides operations to manage the contacts property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Categories: "categories",
+    ChangeKey: "changeKey",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    AssistantName: "assistantName",
+    Birthday: "birthday",
+    Children: "children",
+    CompanyName: "companyName",
+    Department: "department",
+    DisplayName: "displayName",
+    EmailAddresses: "emailAddresses",
+    FileAs: "fileAs",
+    Flag: "flag",
+    Gender: "gender",
+    Generation: "generation",
+    GivenName: "givenName",
+    ImAddresses: "imAddresses",
+    Initials: "initials",
+    IsFavorite: "isFavorite",
+    JobTitle: "jobTitle",
+    Manager: "manager",
+    MiddleName: "middleName",
+    NickName: "nickName",
+    OfficeLocation: "officeLocation",
+    ParentFolderId: "parentFolderId",
+    PersonalNotes: "personalNotes",
+    Phones: "phones",
+    PostalAddresses: "postalAddresses",
+    Profession: "profession",
+    SpouseName: "spouseName",
+    Surname: "surname",
+    Title: "title",
+    Websites: "websites",
+    WeddingAnniversary: "weddingAnniversary",
+    YomiCompanyName: "yomiCompanyName",
+    YomiGivenName: "yomiGivenName",
+    YomiSurname: "yomiSurname",
+    Extensions: "extensions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    Photo: "photo",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

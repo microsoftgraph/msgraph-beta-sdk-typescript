@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type WindowsAutopilotDeviceIdentityItemRequestBuilder, WindowsAutopilotDeviceIdentityItemRequestBuilderNavigationMetadata, WindowsAutopilotDeviceIdentityItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameter
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameter
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,107 @@ export interface WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameter
  * Uri template for the request builder.
  */
 export const WindowsAutopilotDeviceIdentitiesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DeploymentProfile: "deploymentProfile",
+    IntendedDeploymentProfile: "intendedDeploymentProfile",
+} as const;
+/**
+ * Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AddressableUserName: "addressableUserName",
+    AddressableUserNameDesc: "addressableUserName desc",
+    AzureActiveDirectoryDeviceId: "azureActiveDirectoryDeviceId",
+    AzureActiveDirectoryDeviceIdDesc: "azureActiveDirectoryDeviceId desc",
+    AzureAdDeviceId: "azureAdDeviceId",
+    AzureAdDeviceIdDesc: "azureAdDeviceId desc",
+    DeploymentProfileAssignedDateTime: "deploymentProfileAssignedDateTime",
+    DeploymentProfileAssignedDateTimeDesc: "deploymentProfileAssignedDateTime desc",
+    DeploymentProfileAssignmentDetailedStatus: "deploymentProfileAssignmentDetailedStatus",
+    DeploymentProfileAssignmentDetailedStatusDesc: "deploymentProfileAssignmentDetailedStatus desc",
+    DeploymentProfileAssignmentStatus: "deploymentProfileAssignmentStatus",
+    DeploymentProfileAssignmentStatusDesc: "deploymentProfileAssignmentStatus desc",
+    DeviceAccountPassword: "deviceAccountPassword",
+    DeviceAccountPasswordDesc: "deviceAccountPassword desc",
+    DeviceAccountUpn: "deviceAccountUpn",
+    DeviceAccountUpnDesc: "deviceAccountUpn desc",
+    DeviceFriendlyName: "deviceFriendlyName",
+    DeviceFriendlyNameDesc: "deviceFriendlyName desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EnrollmentState: "enrollmentState",
+    EnrollmentStateDesc: "enrollmentState desc",
+    GroupTag: "groupTag",
+    GroupTagDesc: "groupTag desc",
+    LastContactedDateTime: "lastContactedDateTime",
+    LastContactedDateTimeDesc: "lastContactedDateTime desc",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceIdDesc: "managedDeviceId desc",
+    Manufacturer: "manufacturer",
+    ManufacturerDesc: "manufacturer desc",
+    Model: "model",
+    ModelDesc: "model desc",
+    ProductKey: "productKey",
+    ProductKeyDesc: "productKey desc",
+    PurchaseOrderIdentifier: "purchaseOrderIdentifier",
+    PurchaseOrderIdentifierDesc: "purchaseOrderIdentifier desc",
+    RemediationState: "remediationState",
+    RemediationStateDesc: "remediationState desc",
+    RemediationStateLastModifiedDateTime: "remediationStateLastModifiedDateTime",
+    RemediationStateLastModifiedDateTimeDesc: "remediationStateLastModifiedDateTime desc",
+    ResourceName: "resourceName",
+    ResourceNameDesc: "resourceName desc",
+    SerialNumber: "serialNumber",
+    SerialNumberDesc: "serialNumber desc",
+    SkuNumber: "skuNumber",
+    SkuNumberDesc: "skuNumber desc",
+    SystemFamily: "systemFamily",
+    SystemFamilyDesc: "systemFamily desc",
+    UserlessEnrollmentStatus: "userlessEnrollmentStatus",
+    UserlessEnrollmentStatusDesc: "userlessEnrollmentStatus desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AddressableUserName: "addressableUserName",
+    AzureActiveDirectoryDeviceId: "azureActiveDirectoryDeviceId",
+    AzureAdDeviceId: "azureAdDeviceId",
+    DeploymentProfileAssignedDateTime: "deploymentProfileAssignedDateTime",
+    DeploymentProfileAssignmentDetailedStatus: "deploymentProfileAssignmentDetailedStatus",
+    DeploymentProfileAssignmentStatus: "deploymentProfileAssignmentStatus",
+    DeviceAccountPassword: "deviceAccountPassword",
+    DeviceAccountUpn: "deviceAccountUpn",
+    DeviceFriendlyName: "deviceFriendlyName",
+    DisplayName: "displayName",
+    EnrollmentState: "enrollmentState",
+    GroupTag: "groupTag",
+    LastContactedDateTime: "lastContactedDateTime",
+    ManagedDeviceId: "managedDeviceId",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    ProductKey: "productKey",
+    PurchaseOrderIdentifier: "purchaseOrderIdentifier",
+    RemediationState: "remediationState",
+    RemediationStateLastModifiedDateTime: "remediationStateLastModifiedDateTime",
+    ResourceName: "resourceName",
+    SerialNumber: "serialNumber",
+    SkuNumber: "skuNumber",
+    SystemFamily: "systemFamily",
+    UserlessEnrollmentStatus: "userlessEnrollmentStatus",
+    UserPrincipalName: "userPrincipalName",
+    DeploymentProfile: "deploymentProfile",
+    IntendedDeploymentProfile: "intendedDeploymentProfile",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +231,7 @@ export const WindowsAutopilotDeviceIdentitiesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsAutopilotDeviceIdentityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +241,7 @@ export const WindowsAutopilotDeviceIdentitiesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsAutopilotDeviceIdentityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsAutopilotDeviceIdentity,

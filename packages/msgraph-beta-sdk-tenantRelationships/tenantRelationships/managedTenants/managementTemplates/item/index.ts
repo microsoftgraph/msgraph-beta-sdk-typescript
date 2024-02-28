@@ -7,6 +7,8 @@ import { ManagementTemplateCollectionsRequestBuilderNavigationMetadata, Manageme
 import { ManagementTemplateStepsRequestBuilderNavigationMetadata, ManagementTemplateStepsRequestBuilderRequestsMetadata, type ManagementTemplateStepsRequestBuilder } from './managementTemplateSteps/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -68,16 +70,46 @@ export interface ManagementTemplateItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagementTemplateItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplates/{managementTemplate%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ManagementTemplateCollections: "managementTemplateCollections",
+    ManagementTemplateSteps: "managementTemplateSteps",
+} as const;
+/**
+ * Provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Category: "category",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    InformationLinks: "informationLinks",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    Parameters: "parameters",
+    Priority: "priority",
+    Provider: "provider",
+    UserImpact: "userImpact",
+    Version: "version",
+    WorkloadActions: "workloadActions",
+    ManagementTemplateCollections: "managementTemplateCollections",
+    ManagementTemplateSteps: "managementTemplateSteps",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -108,7 +140,7 @@ export const ManagementTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagementTemplateItemRequestBuilderUriTemplate,
@@ -116,7 +148,7 @@ export const ManagementTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -126,7 +158,7 @@ export const ManagementTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementTemplate,

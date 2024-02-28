@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { RemoteNetworkItemRequestBuilderNavigationMetadata, RemoteNetworkItemRequestBuilderRequestsMetadata, type RemoteNetworkItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.
  */
@@ -61,7 +64,7 @@ export interface RemoteNetworksRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface RemoteNetworksRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface RemoteNetworksRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,52 @@ export interface RemoteNetworksRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const RemoteNetworksRequestBuilderUriTemplate = "{+baseurl}/networkAccess/connectivity/remoteNetworks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ConnectivityConfiguration: "connectivityConfiguration",
+    DeviceLinks: "deviceLinks",
+    ForwardingProfiles: "forwardingProfiles",
+} as const;
+/**
+ * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    BandwidthCapacity: "bandwidthCapacity",
+    BandwidthCapacityDesc: "bandwidthCapacity desc",
+    ConnectivityState: "connectivityState",
+    ConnectivityStateDesc: "connectivityState desc",
+    Country: "country",
+    CountryDesc: "country desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Region: "region",
+    RegionDesc: "region desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BandwidthCapacity: "bandwidthCapacity",
+    ConnectivityState: "connectivityState",
+    Country: "country",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    Region: "region",
+    Version: "version",
+    ConnectivityConfiguration: "connectivityConfiguration",
+    DeviceLinks: "deviceLinks",
+    ForwardingProfiles: "forwardingProfiles",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +176,7 @@ export const RemoteNetworksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RemoteNetworksRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +186,7 @@ export const RemoteNetworksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteNetwork,

@@ -67,12 +67,14 @@ export interface DeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryP
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -106,7 +108,7 @@ export const DeviceAndAppManagementRoleAssignmentItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceAndAppManagementRoleAssignmentItemRequestBuilderUriTemplate,
@@ -114,7 +116,7 @@ export const DeviceAndAppManagementRoleAssignmentItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: DeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,12 +126,34 @@ export const DeviceAndAppManagementRoleAssignmentItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceAndAppManagementRoleAssignment,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    RoleDefinition: "roleDefinition",
+    RoleScopeTags: "roleScopeTags",
+} as const;
+/**
+ * Provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    ResourceScopes: "resourceScopes",
+    ScopeMembers: "scopeMembers",
+    ScopeType: "scopeType",
+    Members: "members",
+    RoleDefinition: "roleDefinition",
+    RoleScopeTags: "roleScopeTags",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

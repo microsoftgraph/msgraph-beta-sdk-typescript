@@ -9,6 +9,9 @@ import { type VppTokenItemRequestBuilder, VppTokenItemRequestBuilderNavigationMe
 import { SyncLicenseCountsRequestBuilderRequestsMetadata, type SyncLicenseCountsRequestBuilder } from './syncLicenseCounts/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
  */
@@ -73,7 +76,7 @@ export interface VppTokensRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -81,7 +84,7 @@ export interface VppTokensRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -89,7 +92,7 @@ export interface VppTokensRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -103,6 +106,76 @@ export interface VppTokensRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const VppTokensRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/vppTokens{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppleId: "appleId",
+    AppleIdDesc: "appleId desc",
+    AutomaticallyUpdateApps: "automaticallyUpdateApps",
+    AutomaticallyUpdateAppsDesc: "automaticallyUpdateApps desc",
+    ClaimTokenManagementFromExternalMdm: "claimTokenManagementFromExternalMdm",
+    ClaimTokenManagementFromExternalMdmDesc: "claimTokenManagementFromExternalMdm desc",
+    CountryOrRegion: "countryOrRegion",
+    CountryOrRegionDesc: "countryOrRegion desc",
+    DataSharingConsentGranted: "dataSharingConsentGranted",
+    DataSharingConsentGrantedDesc: "dataSharingConsentGranted desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    LastSyncDateTime: "lastSyncDateTime",
+    LastSyncDateTimeDesc: "lastSyncDateTime desc",
+    LastSyncStatus: "lastSyncStatus",
+    LastSyncStatusDesc: "lastSyncStatus desc",
+    LocationName: "locationName",
+    LocationNameDesc: "locationName desc",
+    OrganizationName: "organizationName",
+    OrganizationNameDesc: "organizationName desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    State: "state",
+    StateDesc: "state desc",
+    Token: "token",
+    TokenDesc: "token desc",
+    TokenActionResults: "tokenActionResults",
+    TokenActionResultsDesc: "tokenActionResults desc",
+    VppTokenAccountType: "vppTokenAccountType",
+    VppTokenAccountTypeDesc: "vppTokenAccountType desc",
+} as const;
+/**
+ * Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppleId: "appleId",
+    AutomaticallyUpdateApps: "automaticallyUpdateApps",
+    ClaimTokenManagementFromExternalMdm: "claimTokenManagementFromExternalMdm",
+    CountryOrRegion: "countryOrRegion",
+    DataSharingConsentGranted: "dataSharingConsentGranted",
+    DisplayName: "displayName",
+    ExpirationDateTime: "expirationDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastSyncDateTime: "lastSyncDateTime",
+    LastSyncStatus: "lastSyncStatus",
+    LocationName: "locationName",
+    OrganizationName: "organizationName",
+    RoleScopeTagIds: "roleScopeTagIds",
+    State: "state",
+    Token: "token",
+    TokenActionResults: "tokenActionResults",
+    VppTokenAccountType: "vppTokenAccountType",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -145,7 +218,7 @@ export const VppTokensRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVppTokenCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: VppTokensRequestBuilderGetQueryParametersMapper,
     },
@@ -155,7 +228,7 @@ export const VppTokensRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVppTokenFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVppToken,

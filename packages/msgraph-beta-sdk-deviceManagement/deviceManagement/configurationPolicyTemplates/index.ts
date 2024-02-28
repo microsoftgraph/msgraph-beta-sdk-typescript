@@ -61,7 +61,7 @@ export interface ConfigurationPolicyTemplatesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ConfigurationPolicyTemplatesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ConfigurationPolicyTemplatesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ConfigurationPolicyTemplatesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const ConfigurationPolicyTemplatesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyTemplateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConfigurationPolicyTemplatesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,66 @@ export const ConfigurationPolicyTemplatesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementConfigurationPolicyTemplate,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    SettingTemplates: "settingTemplates",
+} as const;
+/**
+ * Provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AllowUnmanagedSettings: "allowUnmanagedSettings",
+    AllowUnmanagedSettingsDesc: "allowUnmanagedSettings desc",
+    BaseId: "baseId",
+    BaseIdDesc: "baseId desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    DisplayVersion: "displayVersion",
+    DisplayVersionDesc: "displayVersion desc",
+    LifecycleState: "lifecycleState",
+    LifecycleStateDesc: "lifecycleState desc",
+    Platforms: "platforms",
+    PlatformsDesc: "platforms desc",
+    SettingTemplateCount: "settingTemplateCount",
+    SettingTemplateCountDesc: "settingTemplateCount desc",
+    Technologies: "technologies",
+    TechnologiesDesc: "technologies desc",
+    TemplateFamily: "templateFamily",
+    TemplateFamilyDesc: "templateFamily desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowUnmanagedSettings: "allowUnmanagedSettings",
+    BaseId: "baseId",
+    Description: "description",
+    DisplayName: "displayName",
+    DisplayVersion: "displayVersion",
+    LifecycleState: "lifecycleState",
+    Platforms: "platforms",
+    SettingTemplateCount: "settingTemplateCount",
+    Technologies: "technologies",
+    TemplateFamily: "templateFamily",
+    Version: "version",
+    SettingTemplates: "settingTemplates",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

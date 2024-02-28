@@ -100,12 +100,14 @@ export interface DataClassificationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -174,7 +176,7 @@ export const DataClassificationRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataClassificationServiceFromDiscriminatorValue,
         queryParametersMapper: DataClassificationRequestBuilderGetQueryParametersMapper,
     },
@@ -184,12 +186,42 @@ export const DataClassificationRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataClassificationServiceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDataClassificationService,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the dataClassificationService singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ClassifyFileJobs: "classifyFileJobs",
+    ClassifyTextJobs: "classifyTextJobs",
+    EvaluateDlpPoliciesJobs: "evaluateDlpPoliciesJobs",
+    EvaluateLabelJobs: "evaluateLabelJobs",
+    ExactMatchDataStores: "exactMatchDataStores",
+    ExactMatchUploadAgents: "exactMatchUploadAgents",
+    Jobs: "jobs",
+    SensitiveTypes: "sensitiveTypes",
+    SensitivityLabels: "sensitivityLabels",
+} as const;
+/**
+ * Provides operations to manage the dataClassificationService singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ClassifyFileJobs: "classifyFileJobs",
+    ClassifyTextJobs: "classifyTextJobs",
+    EvaluateDlpPoliciesJobs: "evaluateDlpPoliciesJobs",
+    EvaluateLabelJobs: "evaluateLabelJobs",
+    ExactMatchDataStores: "exactMatchDataStores",
+    ExactMatchUploadAgents: "exactMatchUploadAgents",
+    Jobs: "jobs",
+    SensitiveTypes: "sensitiveTypes",
+    SensitivityLabels: "sensitivityLabels",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

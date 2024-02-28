@@ -10,6 +10,8 @@ import { RoleDefinitionsRequestBuilderNavigationMetadata, RoleDefinitionsRequest
 import { RoleSettingsRequestBuilderNavigationMetadata, RoleSettingsRequestBuilderRequestsMetadata, type RoleSettingsRequestBuilder } from './roleSettings/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of governanceResource entities.
  */
@@ -82,16 +84,44 @@ export interface GovernanceResourceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GovernanceResourceItemRequestBuilderUriTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of governanceResource entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Parent: "parent",
+    RoleAssignmentRequests: "roleAssignmentRequests",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    RoleSettings: "roleSettings",
+} as const;
+/**
+ * Provides operations to manage the collection of governanceResource entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    ExternalId: "externalId",
+    RegisteredDateTime: "registeredDateTime",
+    RegisteredRoot: "registeredRoot",
+    Status: "status",
+    Type: "type",
+    Parent: "parent",
+    RoleAssignmentRequests: "roleAssignmentRequests",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    RoleSettings: "roleSettings",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -133,7 +163,7 @@ export const GovernanceResourceItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GovernanceResourceItemRequestBuilderUriTemplate,
@@ -141,7 +171,7 @@ export const GovernanceResourceItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceResourceFromDiscriminatorValue,
         queryParametersMapper: GovernanceResourceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -151,7 +181,7 @@ export const GovernanceResourceItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceResourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGovernanceResource,

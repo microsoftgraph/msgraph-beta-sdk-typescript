@@ -8,6 +8,8 @@ import { CancelApprovalRequestBuilderRequestsMetadata, type CancelApprovalReques
 import { RejectRequestBuilderRequestsMetadata, type RejectRequestBuilder } from './reject/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.
  */
@@ -72,16 +74,38 @@ export interface OperationApprovalRequestItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const OperationApprovalRequestItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/{operationApprovalRequest%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApprovalJustification: "approvalJustification",
+    Approver: "approver",
+    ExpirationDateTime: "expirationDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    OperationApprovalPolicies: "operationApprovalPolicies",
+    RequestDateTime: "requestDateTime",
+    RequestJustification: "requestJustification",
+    Requestor: "requestor",
+    RequiredOperationApprovalPolicyTypes: "requiredOperationApprovalPolicyTypes",
+    Status: "status",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -113,7 +137,7 @@ export const OperationApprovalRequestItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OperationApprovalRequestItemRequestBuilderUriTemplate,
@@ -121,7 +145,7 @@ export const OperationApprovalRequestItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOperationApprovalRequestFromDiscriminatorValue,
         queryParametersMapper: OperationApprovalRequestItemRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +155,7 @@ export const OperationApprovalRequestItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOperationApprovalRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOperationApprovalRequest,

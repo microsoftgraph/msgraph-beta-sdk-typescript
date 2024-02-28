@@ -42,6 +42,8 @@ import { type WindowsDeviceMalwareStatesRequestBuilder, WindowsDeviceMalwareStat
 import { type WindowsProtectionStatesRequestBuilder, WindowsProtectionStatesRequestBuilderNavigationMetadata, WindowsProtectionStatesRequestBuilderRequestsMetadata } from './windowsProtectionStates/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
  */
@@ -242,16 +244,102 @@ export interface ManagedTenantsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagedTenantsRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants{?%24expand,%24select}";
+/**
+ * Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AggregatedPolicyCompliances: "aggregatedPolicyCompliances",
+    AppPerformances: "appPerformances",
+    AuditEvents: "auditEvents",
+    CloudPcConnections: "cloudPcConnections",
+    CloudPcDevices: "cloudPcDevices",
+    CloudPcsOverview: "cloudPcsOverview",
+    ConditionalAccessPolicyCoverages: "conditionalAccessPolicyCoverages",
+    CredentialUserRegistrationsSummaries: "credentialUserRegistrationsSummaries",
+    DeviceAppPerformances: "deviceAppPerformances",
+    DeviceCompliancePolicySettingStateSummaries: "deviceCompliancePolicySettingStateSummaries",
+    DeviceHealthStatuses: "deviceHealthStatuses",
+    ManagedDeviceCompliances: "managedDeviceCompliances",
+    ManagedDeviceComplianceTrends: "managedDeviceComplianceTrends",
+    ManagedTenantAlertLogs: "managedTenantAlertLogs",
+    ManagedTenantAlertRuleDefinitions: "managedTenantAlertRuleDefinitions",
+    ManagedTenantAlertRules: "managedTenantAlertRules",
+    ManagedTenantAlerts: "managedTenantAlerts",
+    ManagedTenantApiNotifications: "managedTenantApiNotifications",
+    ManagedTenantEmailNotifications: "managedTenantEmailNotifications",
+    ManagedTenantTicketingEndpoints: "managedTenantTicketingEndpoints",
+    ManagementActions: "managementActions",
+    ManagementActionTenantDeploymentStatuses: "managementActionTenantDeploymentStatuses",
+    ManagementIntents: "managementIntents",
+    ManagementTemplateCollections: "managementTemplateCollections",
+    ManagementTemplateCollectionTenantSummaries: "managementTemplateCollectionTenantSummaries",
+    ManagementTemplates: "managementTemplates",
+    ManagementTemplateSteps: "managementTemplateSteps",
+    ManagementTemplateStepTenantSummaries: "managementTemplateStepTenantSummaries",
+    ManagementTemplateStepVersions: "managementTemplateStepVersions",
+    MyRoles: "myRoles",
+    TenantGroups: "tenantGroups",
+    Tenants: "tenants",
+    TenantsCustomizedInformation: "tenantsCustomizedInformation",
+    TenantsDetailedInformation: "tenantsDetailedInformation",
+    TenantTags: "tenantTags",
+    WindowsDeviceMalwareStates: "windowsDeviceMalwareStates",
+    WindowsProtectionStates: "windowsProtectionStates",
+} as const;
+/**
+ * Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AggregatedPolicyCompliances: "aggregatedPolicyCompliances",
+    AppPerformances: "appPerformances",
+    AuditEvents: "auditEvents",
+    CloudPcConnections: "cloudPcConnections",
+    CloudPcDevices: "cloudPcDevices",
+    CloudPcsOverview: "cloudPcsOverview",
+    ConditionalAccessPolicyCoverages: "conditionalAccessPolicyCoverages",
+    CredentialUserRegistrationsSummaries: "credentialUserRegistrationsSummaries",
+    DeviceAppPerformances: "deviceAppPerformances",
+    DeviceCompliancePolicySettingStateSummaries: "deviceCompliancePolicySettingStateSummaries",
+    DeviceHealthStatuses: "deviceHealthStatuses",
+    ManagedDeviceCompliances: "managedDeviceCompliances",
+    ManagedDeviceComplianceTrends: "managedDeviceComplianceTrends",
+    ManagedTenantAlertLogs: "managedTenantAlertLogs",
+    ManagedTenantAlertRuleDefinitions: "managedTenantAlertRuleDefinitions",
+    ManagedTenantAlertRules: "managedTenantAlertRules",
+    ManagedTenantAlerts: "managedTenantAlerts",
+    ManagedTenantApiNotifications: "managedTenantApiNotifications",
+    ManagedTenantEmailNotifications: "managedTenantEmailNotifications",
+    ManagedTenantTicketingEndpoints: "managedTenantTicketingEndpoints",
+    ManagementActions: "managementActions",
+    ManagementActionTenantDeploymentStatuses: "managementActionTenantDeploymentStatuses",
+    ManagementIntents: "managementIntents",
+    ManagementTemplateCollections: "managementTemplateCollections",
+    ManagementTemplateCollectionTenantSummaries: "managementTemplateCollectionTenantSummaries",
+    ManagementTemplates: "managementTemplates",
+    ManagementTemplateSteps: "managementTemplateSteps",
+    ManagementTemplateStepTenantSummaries: "managementTemplateStepTenantSummaries",
+    ManagementTemplateStepVersions: "managementTemplateStepVersions",
+    MyRoles: "myRoles",
+    TenantGroups: "tenantGroups",
+    Tenants: "tenants",
+    TenantsCustomizedInformation: "tenantsCustomizedInformation",
+    TenantsDetailedInformation: "tenantsDetailedInformation",
+    TenantTags: "tenantTags",
+    WindowsDeviceMalwareStates: "windowsDeviceMalwareStates",
+    WindowsProtectionStates: "windowsProtectionStates",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -422,7 +510,7 @@ export const ManagedTenantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedTenantsRequestBuilderUriTemplate,
@@ -430,7 +518,7 @@ export const ManagedTenantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantsRequestBuilderGetQueryParametersMapper,
     },
@@ -440,7 +528,7 @@ export const ManagedTenantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedTenant,

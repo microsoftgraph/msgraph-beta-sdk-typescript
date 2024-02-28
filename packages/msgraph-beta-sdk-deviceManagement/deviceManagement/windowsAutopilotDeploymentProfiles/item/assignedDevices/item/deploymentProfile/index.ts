@@ -30,12 +30,14 @@ export interface DeploymentProfileRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,39 @@ export const DeploymentProfileRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsAutopilotDeploymentProfileFromDiscriminatorValue,
         queryParametersMapper: DeploymentProfileRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the deploymentProfile property of the microsoft.graph.windowsAutopilotDeviceIdentity entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AssignedDevices: "assignedDevices",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the deploymentProfile property of the microsoft.graph.windowsAutopilotDeviceIdentity entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DeviceNameTemplate: "deviceNameTemplate",
+    DeviceType: "deviceType",
+    DisplayName: "displayName",
+    EnableWhiteGlove: "enableWhiteGlove",
+    EnrollmentStatusScreenSettings: "enrollmentStatusScreenSettings",
+    ExtractHardwareHash: "extractHardwareHash",
+    Language: "language",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ManagementServiceAppId: "managementServiceAppId",
+    OutOfBoxExperienceSettings: "outOfBoxExperienceSettings",
+    RoleScopeTagIds: "roleScopeTagIds",
+    AssignedDevices: "assignedDevices",
+    Assignments: "assignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

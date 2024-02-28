@@ -62,7 +62,7 @@ export interface DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQue
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQue
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQue
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQue
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const DeviceCompliancePolicySettingStateSummariesRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceCompliancePolicySettingStateSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,70 @@ export const DeviceCompliancePolicySettingStateSummariesRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceCompliancePolicySettingStateSummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ConflictDeviceCount: "conflictDeviceCount",
+    ConflictDeviceCountDesc: "conflictDeviceCount desc",
+    ErrorDeviceCount: "errorDeviceCount",
+    ErrorDeviceCountDesc: "errorDeviceCount desc",
+    FailedDeviceCount: "failedDeviceCount",
+    FailedDeviceCountDesc: "failedDeviceCount desc",
+    IntuneAccountId: "intuneAccountId",
+    IntuneAccountIdDesc: "intuneAccountId desc",
+    IntuneSettingId: "intuneSettingId",
+    IntuneSettingIdDesc: "intuneSettingId desc",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastRefreshedDateTimeDesc: "lastRefreshedDateTime desc",
+    NotApplicableDeviceCount: "notApplicableDeviceCount",
+    NotApplicableDeviceCountDesc: "notApplicableDeviceCount desc",
+    PendingDeviceCount: "pendingDeviceCount",
+    PendingDeviceCountDesc: "pendingDeviceCount desc",
+    PolicyType: "policyType",
+    PolicyTypeDesc: "policyType desc",
+    SettingName: "settingName",
+    SettingNameDesc: "settingName desc",
+    SucceededDeviceCount: "succeededDeviceCount",
+    SucceededDeviceCountDesc: "succeededDeviceCount desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+} as const;
+/**
+ * Provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConflictDeviceCount: "conflictDeviceCount",
+    ErrorDeviceCount: "errorDeviceCount",
+    FailedDeviceCount: "failedDeviceCount",
+    IntuneAccountId: "intuneAccountId",
+    IntuneSettingId: "intuneSettingId",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    NotApplicableDeviceCount: "notApplicableDeviceCount",
+    PendingDeviceCount: "pendingDeviceCount",
+    PolicyType: "policyType",
+    SettingName: "settingName",
+    SucceededDeviceCount: "succeededDeviceCount",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

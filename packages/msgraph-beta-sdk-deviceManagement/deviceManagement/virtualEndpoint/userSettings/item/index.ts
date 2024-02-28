@@ -70,12 +70,14 @@ export interface CloudPcUserSettingItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -109,7 +111,7 @@ export const CloudPcUserSettingItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcUserSettingItemRequestBuilderUriTemplate,
@@ -117,7 +119,7 @@ export const CloudPcUserSettingItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcUserSettingFromDiscriminatorValue,
         queryParametersMapper: CloudPcUserSettingItemRequestBuilderGetQueryParametersMapper,
     },
@@ -127,12 +129,34 @@ export const CloudPcUserSettingItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcUserSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcUserSetting,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    CrossRegionDisasterRecoverySetting: "crossRegionDisasterRecoverySetting",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LocalAdminEnabled: "localAdminEnabled",
+    ResetEnabled: "resetEnabled",
+    RestorePointSetting: "restorePointSetting",
+    SelfServiceEnabled: "selfServiceEnabled",
+    Assignments: "assignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

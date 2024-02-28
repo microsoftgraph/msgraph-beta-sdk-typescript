@@ -42,7 +42,7 @@ export interface DevicesRequestBuilder extends BaseRequestBuilder<DevicesRequest
      */
      byDeviceId(deviceId: string) : DeviceItemRequestBuilder;
     /**
-     * Retrieve a list of devices registered in the directory. 
+     * Retrieve a list of devices registered in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -59,7 +59,7 @@ export interface DevicesRequestBuilder extends BaseRequestBuilder<DevicesRequest
      */
      post(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Device | undefined>;
     /**
-     * Retrieve a list of devices registered in the directory. 
+     * Retrieve a list of devices registered in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -73,7 +73,7 @@ export interface DevicesRequestBuilder extends BaseRequestBuilder<DevicesRequest
      toPostRequestInformation(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of devices registered in the directory. 
+ * Retrieve a list of devices registered in the directory.
  */
 export interface DevicesRequestBuilderGetQueryParameters {
     /**
@@ -83,7 +83,7 @@ export interface DevicesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -91,7 +91,7 @@ export interface DevicesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -99,7 +99,7 @@ export interface DevicesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -109,6 +109,9 @@ export interface DevicesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -161,7 +164,7 @@ export const DevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DevicesRequestBuilderGetQueryParametersMapper,
     },
@@ -171,12 +174,159 @@ export const DevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDevice,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of device entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Commands: "commands",
+    Extensions: "extensions",
+    MemberOf: "memberOf",
+    RegisteredOwners: "registeredOwners",
+    RegisteredUsers: "registeredUsers",
+    TransitiveMemberOf: "transitiveMemberOf",
+    UsageRights: "usageRights",
+} as const;
+/**
+ * Provides operations to manage the collection of device entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeletedDateTime: "deletedDateTime",
+    DeletedDateTimeDesc: "deletedDateTime desc",
+    AccountEnabled: "accountEnabled",
+    AccountEnabledDesc: "accountEnabled desc",
+    AlternativeSecurityIds: "alternativeSecurityIds",
+    AlternativeSecurityIdsDesc: "alternativeSecurityIds desc",
+    ApproximateLastSignInDateTime: "approximateLastSignInDateTime",
+    ApproximateLastSignInDateTimeDesc: "approximateLastSignInDateTime desc",
+    ComplianceExpirationDateTime: "complianceExpirationDateTime",
+    ComplianceExpirationDateTimeDesc: "complianceExpirationDateTime desc",
+    DeviceCategory: "deviceCategory",
+    DeviceCategoryDesc: "deviceCategory desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceMetadata: "deviceMetadata",
+    DeviceMetadataDesc: "deviceMetadata desc",
+    DeviceOwnership: "deviceOwnership",
+    DeviceOwnershipDesc: "deviceOwnership desc",
+    DeviceVersion: "deviceVersion",
+    DeviceVersionDesc: "deviceVersion desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    DomainName: "domainName",
+    DomainNameDesc: "domainName desc",
+    EnrollmentProfileName: "enrollmentProfileName",
+    EnrollmentProfileNameDesc: "enrollmentProfileName desc",
+    EnrollmentType: "enrollmentType",
+    EnrollmentTypeDesc: "enrollmentType desc",
+    ExtensionAttributes: "extensionAttributes",
+    ExtensionAttributesDesc: "extensionAttributes desc",
+    Hostnames: "hostnames",
+    HostnamesDesc: "hostnames desc",
+    IsCompliant: "isCompliant",
+    IsCompliantDesc: "isCompliant desc",
+    IsManaged: "isManaged",
+    IsManagedDesc: "isManaged desc",
+    IsManagementRestricted: "isManagementRestricted",
+    IsManagementRestrictedDesc: "isManagementRestricted desc",
+    IsRooted: "isRooted",
+    IsRootedDesc: "isRooted desc",
+    Kind: "kind",
+    KindDesc: "kind desc",
+    ManagementType: "managementType",
+    ManagementTypeDesc: "managementType desc",
+    Manufacturer: "manufacturer",
+    ManufacturerDesc: "manufacturer desc",
+    MdmAppId: "mdmAppId",
+    MdmAppIdDesc: "mdmAppId desc",
+    Model: "model",
+    ModelDesc: "model desc",
+    Name: "name",
+    NameDesc: "name desc",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesLastSyncDateTimeDesc: "onPremisesLastSyncDateTime desc",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    OnPremisesSecurityIdentifierDesc: "onPremisesSecurityIdentifier desc",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    OnPremisesSyncEnabledDesc: "onPremisesSyncEnabled desc",
+    OperatingSystem: "operatingSystem",
+    OperatingSystemDesc: "operatingSystem desc",
+    OperatingSystemVersion: "operatingSystemVersion",
+    OperatingSystemVersionDesc: "operatingSystemVersion desc",
+    PhysicalIds: "physicalIds",
+    PhysicalIdsDesc: "physicalIds desc",
+    Platform: "platform",
+    PlatformDesc: "platform desc",
+    ProfileType: "profileType",
+    ProfileTypeDesc: "profileType desc",
+    RegistrationDateTime: "registrationDateTime",
+    RegistrationDateTimeDesc: "registrationDateTime desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    SystemLabels: "systemLabels",
+    SystemLabelsDesc: "systemLabels desc",
+    TrustType: "trustType",
+    TrustTypeDesc: "trustType desc",
+} as const;
+/**
+ * Provides operations to manage the collection of device entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AccountEnabled: "accountEnabled",
+    AlternativeSecurityIds: "alternativeSecurityIds",
+    ApproximateLastSignInDateTime: "approximateLastSignInDateTime",
+    ComplianceExpirationDateTime: "complianceExpirationDateTime",
+    DeviceCategory: "deviceCategory",
+    DeviceId: "deviceId",
+    DeviceMetadata: "deviceMetadata",
+    DeviceOwnership: "deviceOwnership",
+    DeviceVersion: "deviceVersion",
+    DisplayName: "displayName",
+    DomainName: "domainName",
+    EnrollmentProfileName: "enrollmentProfileName",
+    EnrollmentType: "enrollmentType",
+    ExtensionAttributes: "extensionAttributes",
+    Hostnames: "hostnames",
+    IsCompliant: "isCompliant",
+    IsManaged: "isManaged",
+    IsManagementRestricted: "isManagementRestricted",
+    IsRooted: "isRooted",
+    Kind: "kind",
+    ManagementType: "managementType",
+    Manufacturer: "manufacturer",
+    MdmAppId: "mdmAppId",
+    Model: "model",
+    Name: "name",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    OperatingSystem: "operatingSystem",
+    OperatingSystemVersion: "operatingSystemVersion",
+    PhysicalIds: "physicalIds",
+    Platform: "platform",
+    ProfileType: "profileType",
+    RegistrationDateTime: "registrationDateTime",
+    Status: "status",
+    SystemLabels: "systemLabels",
+    TrustType: "trustType",
+    Commands: "commands",
+    Extensions: "extensions",
+    MemberOf: "memberOf",
+    RegisteredOwners: "registeredOwners",
+    RegisteredUsers: "registeredUsers",
+    TransitiveMemberOf: "transitiveMemberOf",
+    UsageRights: "usageRights",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

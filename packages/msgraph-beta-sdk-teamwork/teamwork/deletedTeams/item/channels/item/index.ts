@@ -112,12 +112,14 @@ export interface ChannelItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -182,7 +184,7 @@ export const ChannelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ChannelItemRequestBuilderUriTemplate,
@@ -190,7 +192,7 @@ export const ChannelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChannelFromDiscriminatorValue,
         queryParametersMapper: ChannelItemRequestBuilderGetQueryParametersMapper,
     },
@@ -200,12 +202,45 @@ export const ChannelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChannelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChannel,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    FilesFolder: "filesFolder",
+    Members: "members",
+    Messages: "messages",
+    SharedWithTeams: "sharedWithTeams",
+    Tabs: "tabs",
+} as const;
+/**
+ * Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    Email: "email",
+    IsArchived: "isArchived",
+    IsFavoriteByDefault: "isFavoriteByDefault",
+    MembershipType: "membershipType",
+    ModerationSettings: "moderationSettings",
+    Summary: "summary",
+    TenantId: "tenantId",
+    WebUrl: "webUrl",
+    FilesFolder: "filesFolder",
+    Members: "members",
+    Messages: "messages",
+    SharedWithTeams: "sharedWithTeams",
+    Tabs: "tabs",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

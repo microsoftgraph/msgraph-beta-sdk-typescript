@@ -104,7 +104,7 @@ export const GetIosAvailableUpdateVersionsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetIosAvailableUpdateVersionsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetIosAvailableUpdateVersionsRequestBuilderGetQueryParametersMapper,
     },

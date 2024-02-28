@@ -61,7 +61,7 @@ export interface BookingBusinessesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface BookingBusinessesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface BookingBusinessesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface BookingBusinessesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const BookingBusinessesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingBusinessCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BookingBusinessesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,88 @@ export const BookingBusinessesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingBusinessFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookingBusiness,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of bookingBusiness entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Appointments: "appointments",
+    CalendarView: "calendarView",
+    Customers: "customers",
+    CustomQuestions: "customQuestions",
+    Services: "services",
+    StaffMembers: "staffMembers",
+} as const;
+/**
+ * Provides operations to manage the collection of bookingBusiness entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Address: "address",
+    AddressDesc: "address desc",
+    BookingPageSettings: "bookingPageSettings",
+    BookingPageSettingsDesc: "bookingPageSettings desc",
+    BusinessHours: "businessHours",
+    BusinessHoursDesc: "businessHours desc",
+    BusinessType: "businessType",
+    BusinessTypeDesc: "businessType desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DefaultCurrencyIso: "defaultCurrencyIso",
+    DefaultCurrencyIsoDesc: "defaultCurrencyIso desc",
+    Email: "email",
+    EmailDesc: "email desc",
+    IsPublished: "isPublished",
+    IsPublishedDesc: "isPublished desc",
+    LanguageTag: "languageTag",
+    LanguageTagDesc: "languageTag desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    Phone: "phone",
+    PhoneDesc: "phone desc",
+    PublicUrl: "publicUrl",
+    PublicUrlDesc: "publicUrl desc",
+    SchedulingPolicy: "schedulingPolicy",
+    SchedulingPolicyDesc: "schedulingPolicy desc",
+    WebSiteUrl: "webSiteUrl",
+    WebSiteUrlDesc: "webSiteUrl desc",
+} as const;
+/**
+ * Provides operations to manage the collection of bookingBusiness entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    Address: "address",
+    BookingPageSettings: "bookingPageSettings",
+    BusinessHours: "businessHours",
+    BusinessType: "businessType",
+    CreatedDateTime: "createdDateTime",
+    DefaultCurrencyIso: "defaultCurrencyIso",
+    Email: "email",
+    IsPublished: "isPublished",
+    LanguageTag: "languageTag",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    Phone: "phone",
+    PublicUrl: "publicUrl",
+    SchedulingPolicy: "schedulingPolicy",
+    WebSiteUrl: "webSiteUrl",
+    Appointments: "appointments",
+    CalendarView: "calendarView",
+    Customers: "customers",
+    CustomQuestions: "customQuestions",
+    Services: "services",
+    StaffMembers: "staffMembers",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

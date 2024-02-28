@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ImpactedResourceItemRequestBuilderNavigationMetadata, ImpactedResourceItemRequestBuilderRequestsMetadata, type ImpactedResourceItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
  */
@@ -61,7 +64,7 @@ export interface ImpactedResourcesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface ImpactedResourcesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface ImpactedResourcesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,67 @@ export interface ImpactedResourcesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ImpactedResourcesRequestBuilderUriTemplate = "{+baseurl}/directory/impactedResources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AddedDateTime: "addedDateTime",
+    AddedDateTimeDesc: "addedDateTime desc",
+    AdditionalDetails: "additionalDetails",
+    AdditionalDetailsDesc: "additionalDetails desc",
+    ApiUrl: "apiUrl",
+    ApiUrlDesc: "apiUrl desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Owner: "owner",
+    OwnerDesc: "owner desc",
+    PortalUrl: "portalUrl",
+    PortalUrlDesc: "portalUrl desc",
+    PostponeUntilDateTime: "postponeUntilDateTime",
+    PostponeUntilDateTimeDesc: "postponeUntilDateTime desc",
+    Rank: "rank",
+    RankDesc: "rank desc",
+    RecommendationId: "recommendationId",
+    RecommendationIdDesc: "recommendationId desc",
+    ResourceType: "resourceType",
+    ResourceTypeDesc: "resourceType desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    SubjectId: "subjectId",
+    SubjectIdDesc: "subjectId desc",
+} as const;
+/**
+ * Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AddedDateTime: "addedDateTime",
+    AdditionalDetails: "additionalDetails",
+    ApiUrl: "apiUrl",
+    DisplayName: "displayName",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Owner: "owner",
+    PortalUrl: "portalUrl",
+    PostponeUntilDateTime: "postponeUntilDateTime",
+    Rank: "rank",
+    RecommendationId: "recommendationId",
+    ResourceType: "resourceType",
+    Status: "status",
+    SubjectId: "subjectId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +191,7 @@ export const ImpactedResourcesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImpactedResourceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ImpactedResourcesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +201,7 @@ export const ImpactedResourcesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImpactedResourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeImpactedResource,

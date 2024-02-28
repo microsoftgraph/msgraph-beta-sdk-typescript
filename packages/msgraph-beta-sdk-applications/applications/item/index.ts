@@ -12,6 +12,7 @@ import { ConnectorGroupRequestBuilderNavigationMetadata, ConnectorGroupRequestBu
 import { CreatedOnBehalfOfRequestBuilderRequestsMetadata, type CreatedOnBehalfOfRequestBuilder } from './createdOnBehalfOf/';
 import { ExtensionPropertiesRequestBuilderNavigationMetadata, ExtensionPropertiesRequestBuilderRequestsMetadata, type ExtensionPropertiesRequestBuilder } from './extensionProperties/';
 import { FederatedIdentityCredentialsRequestBuilderNavigationMetadata, FederatedIdentityCredentialsRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsRequestBuilder } from './federatedIdentityCredentials/';
+import { FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsWithNameRequestBuilder } from './federatedIdentityCredentialsWithName/';
 import { GetMemberGroupsRequestBuilderRequestsMetadata, type GetMemberGroupsRequestBuilder } from './getMemberGroups/';
 import { GetMemberObjectsRequestBuilderRequestsMetadata, type GetMemberObjectsRequestBuilder } from './getMemberObjects/';
 import { HomeRealmDiscoveryPoliciesRequestBuilderNavigationMetadata, HomeRealmDiscoveryPoliciesRequestBuilderRequestsMetadata, type HomeRealmDiscoveryPoliciesRequestBuilder } from './homeRealmDiscoveryPolicies/';
@@ -127,6 +128,12 @@ export interface ApplicationItemRequestBuilder extends BaseRequestBuilder<Applic
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
+     * Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
+     * @param name Alternate key of federatedIdentityCredential
+     * @returns {FederatedIdentityCredentialsWithNameRequestBuilder}
+     */
+     federatedIdentityCredentialsWithName(name: string | undefined) : FederatedIdentityCredentialsWithNameRequestBuilder;
+    /**
      * Get the properties and relationships of an application object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Application>}
@@ -170,12 +177,14 @@ export interface ApplicationItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -191,6 +200,9 @@ const ApplicationItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  * Metadata for all the navigation properties in the request builder.
  */
 export const ApplicationItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ApplicationItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    federatedIdentityCredentialsWithName: {
+        requestsMetadata: FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata,
+    },
     addKey: {
         requestsMetadata: AddKeyRequestBuilderRequestsMetadata,
     },
@@ -277,7 +289,7 @@ export const ApplicationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ApplicationItemRequestBuilderUriTemplate,
@@ -285,7 +297,7 @@ export const ApplicationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplicationFromDiscriminatorValue,
         queryParametersMapper: ApplicationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -295,12 +307,82 @@ export const ApplicationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplicationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeApplication,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of application entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AppManagementPolicies: "appManagementPolicies",
+    ConnectorGroup: "connectorGroup",
+    CreatedOnBehalfOf: "createdOnBehalfOf",
+    ExtensionProperties: "extensionProperties",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    Owners: "owners",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+} as const;
+/**
+ * Provides operations to manage the collection of application entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    Api: "api",
+    AppId: "appId",
+    AppRoles: "appRoles",
+    AuthenticationBehaviors: "authenticationBehaviors",
+    Certification: "certification",
+    CreatedDateTime: "createdDateTime",
+    DefaultRedirectUri: "defaultRedirectUri",
+    Description: "description",
+    DisabledByMicrosoftStatus: "disabledByMicrosoftStatus",
+    DisplayName: "displayName",
+    GroupMembershipClaims: "groupMembershipClaims",
+    IdentifierUris: "identifierUris",
+    Info: "info",
+    IsDeviceOnlyAuthSupported: "isDeviceOnlyAuthSupported",
+    IsFallbackPublicClient: "isFallbackPublicClient",
+    KeyCredentials: "keyCredentials",
+    Logo: "logo",
+    Notes: "notes",
+    OnPremisesPublishing: "onPremisesPublishing",
+    OptionalClaims: "optionalClaims",
+    ParentalControlSettings: "parentalControlSettings",
+    PasswordCredentials: "passwordCredentials",
+    PublicClient: "publicClient",
+    PublisherDomain: "publisherDomain",
+    RequestSignatureVerification: "requestSignatureVerification",
+    RequiredResourceAccess: "requiredResourceAccess",
+    SamlMetadataUrl: "samlMetadataUrl",
+    ServiceManagementReference: "serviceManagementReference",
+    ServicePrincipalLockConfiguration: "servicePrincipalLockConfiguration",
+    SignInAudience: "signInAudience",
+    Spa: "spa",
+    Tags: "tags",
+    TokenEncryptionKeyId: "tokenEncryptionKeyId",
+    UniqueName: "uniqueName",
+    VerifiedPublisher: "verifiedPublisher",
+    Web: "web",
+    Windows: "windows",
+    AppManagementPolicies: "appManagementPolicies",
+    ConnectorGroup: "connectorGroup",
+    CreatedOnBehalfOf: "createdOnBehalfOf",
+    ExtensionProperties: "extensionProperties",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    Owners: "owners",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

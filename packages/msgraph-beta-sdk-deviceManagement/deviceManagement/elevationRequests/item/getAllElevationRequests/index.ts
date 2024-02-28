@@ -69,7 +69,7 @@ export const GetAllElevationRequestsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetAllElevationRequestsPostResponseFromDiscriminatorValue,
     },
 };

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type WorkspaceItemRequestBuilder, WorkspaceItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
  */
@@ -61,7 +64,7 @@ export interface WorkspacesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface WorkspacesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface WorkspacesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,67 @@ export interface WorkspacesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const WorkspacesRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did}/graph.roomList/workspaces{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Address: "address",
+    AddressDesc: "address desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    GeoCoordinates: "geoCoordinates",
+    GeoCoordinatesDesc: "geoCoordinates desc",
+    Phone: "phone",
+    PhoneDesc: "phone desc",
+    PlaceId: "placeId",
+    PlaceIdDesc: "placeId desc",
+    Building: "building",
+    BuildingDesc: "building desc",
+    Capacity: "capacity",
+    CapacityDesc: "capacity desc",
+    EmailAddress: "emailAddress",
+    EmailAddressDesc: "emailAddress desc",
+    FloorLabel: "floorLabel",
+    FloorLabelDesc: "floorLabel desc",
+    FloorNumber: "floorNumber",
+    FloorNumberDesc: "floorNumber desc",
+    IsWheelChairAccessible: "isWheelChairAccessible",
+    IsWheelChairAccessibleDesc: "isWheelChairAccessible desc",
+    Label: "label",
+    LabelDesc: "label desc",
+    Nickname: "nickname",
+    NicknameDesc: "nickname desc",
+    Tags: "tags",
+    TagsDesc: "tags desc",
+} as const;
+/**
+ * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Address: "address",
+    DisplayName: "displayName",
+    GeoCoordinates: "geoCoordinates",
+    Phone: "phone",
+    PlaceId: "placeId",
+    Building: "building",
+    Capacity: "capacity",
+    EmailAddress: "emailAddress",
+    FloorLabel: "floorLabel",
+    FloorNumber: "floorNumber",
+    IsWheelChairAccessible: "isWheelChairAccessible",
+    Label: "label",
+    Nickname: "nickname",
+    Tags: "tags",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +190,7 @@ export const WorkspacesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkspaceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WorkspacesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +200,7 @@ export const WorkspacesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkspaceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWorkspace,

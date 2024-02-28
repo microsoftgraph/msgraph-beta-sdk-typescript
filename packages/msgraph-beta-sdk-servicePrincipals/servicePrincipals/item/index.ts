@@ -16,6 +16,7 @@ import { DelegatedPermissionClassificationsRequestBuilderNavigationMetadata, Del
 import { DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type DeletePasswordSingleSignOnCredentialsRequestBuilder } from './deletePasswordSingleSignOnCredentials/';
 import { EndpointsRequestBuilderNavigationMetadata, EndpointsRequestBuilderRequestsMetadata, type EndpointsRequestBuilder } from './endpoints/';
 import { FederatedIdentityCredentialsRequestBuilderNavigationMetadata, FederatedIdentityCredentialsRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsRequestBuilder } from './federatedIdentityCredentials/';
+import { FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsWithNameRequestBuilder } from './federatedIdentityCredentialsWithName/';
 import { GetMemberGroupsRequestBuilderRequestsMetadata, type GetMemberGroupsRequestBuilder } from './getMemberGroups/';
 import { GetMemberObjectsRequestBuilderRequestsMetadata, type GetMemberObjectsRequestBuilder } from './getMemberObjects/';
 import { GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type GetPasswordSingleSignOnCredentialsRequestBuilder } from './getPasswordSingleSignOnCredentials/';
@@ -34,6 +35,8 @@ import { TransitiveMemberOfRequestBuilderNavigationMetadata, TransitiveMemberOfR
 import { type UpdatePasswordSingleSignOnCredentialsRequestBuilder, UpdatePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata } from './updatePasswordSingleSignOnCredentials/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of servicePrincipal entities.
  */
@@ -162,6 +165,12 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
+     * Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+     * @param name Alternate key of federatedIdentityCredential
+     * @returns {FederatedIdentityCredentialsWithNameRequestBuilder}
+     */
+     federatedIdentityCredentialsWithName(name: string | undefined) : FederatedIdentityCredentialsWithNameRequestBuilder;
+    /**
      * Retrieve the properties and relationships of a servicePrincipal object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipal>}
@@ -205,16 +214,105 @@ export interface ServicePrincipalItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ServicePrincipalItemRequestBuilderUriTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of servicePrincipal entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AppManagementPolicies: "appManagementPolicies",
+    AppRoleAssignedTo: "appRoleAssignedTo",
+    AppRoleAssignments: "appRoleAssignments",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    CreatedObjects: "createdObjects",
+    DelegatedPermissionClassifications: "delegatedPermissionClassifications",
+    Endpoints: "endpoints",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    LicenseDetails: "licenseDetails",
+    MemberOf: "memberOf",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    OwnedObjects: "ownedObjects",
+    Owners: "owners",
+    RemoteDesktopSecurityConfiguration: "remoteDesktopSecurityConfiguration",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+    TransitiveMemberOf: "transitiveMemberOf",
+} as const;
+/**
+ * Provides operations to manage the collection of servicePrincipal entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AccountEnabled: "accountEnabled",
+    AddIns: "addIns",
+    AlternativeNames: "alternativeNames",
+    AppDescription: "appDescription",
+    AppDisplayName: "appDisplayName",
+    AppId: "appId",
+    ApplicationTemplateId: "applicationTemplateId",
+    AppOwnerOrganizationId: "appOwnerOrganizationId",
+    AppRoleAssignmentRequired: "appRoleAssignmentRequired",
+    AppRoles: "appRoles",
+    CustomSecurityAttributes: "customSecurityAttributes",
+    Description: "description",
+    DisabledByMicrosoftStatus: "disabledByMicrosoftStatus",
+    DisplayName: "displayName",
+    ErrorUrl: "errorUrl",
+    Homepage: "homepage",
+    Info: "info",
+    KeyCredentials: "keyCredentials",
+    LoginUrl: "loginUrl",
+    LogoutUrl: "logoutUrl",
+    Notes: "notes",
+    NotificationEmailAddresses: "notificationEmailAddresses",
+    PasswordCredentials: "passwordCredentials",
+    PasswordSingleSignOnSettings: "passwordSingleSignOnSettings",
+    PreferredSingleSignOnMode: "preferredSingleSignOnMode",
+    PreferredTokenSigningKeyEndDateTime: "preferredTokenSigningKeyEndDateTime",
+    PreferredTokenSigningKeyThumbprint: "preferredTokenSigningKeyThumbprint",
+    PublishedPermissionScopes: "publishedPermissionScopes",
+    PublisherName: "publisherName",
+    ReplyUrls: "replyUrls",
+    SamlMetadataUrl: "samlMetadataUrl",
+    SamlSingleSignOnSettings: "samlSingleSignOnSettings",
+    ServicePrincipalNames: "servicePrincipalNames",
+    ServicePrincipalType: "servicePrincipalType",
+    SignInAudience: "signInAudience",
+    Tags: "tags",
+    TokenEncryptionKeyId: "tokenEncryptionKeyId",
+    VerifiedPublisher: "verifiedPublisher",
+    AppManagementPolicies: "appManagementPolicies",
+    AppRoleAssignedTo: "appRoleAssignedTo",
+    AppRoleAssignments: "appRoleAssignments",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    CreatedObjects: "createdObjects",
+    DelegatedPermissionClassifications: "delegatedPermissionClassifications",
+    Endpoints: "endpoints",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    LicenseDetails: "licenseDetails",
+    MemberOf: "memberOf",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    OwnedObjects: "ownedObjects",
+    Owners: "owners",
+    RemoteDesktopSecurityConfiguration: "remoteDesktopSecurityConfiguration",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+    TransitiveMemberOf: "transitiveMemberOf",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -226,6 +324,9 @@ const ServicePrincipalItemRequestBuilderGetQueryParametersMapper: Record<string,
  * Metadata for all the navigation properties in the request builder.
  */
 export const ServicePrincipalItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ServicePrincipalItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    federatedIdentityCredentialsWithName: {
+        requestsMetadata: FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata,
+    },
     addTokenSigningCertificate: {
         requestsMetadata: AddTokenSigningCertificateRequestBuilderRequestsMetadata,
     },
@@ -343,7 +444,7 @@ export const ServicePrincipalItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ServicePrincipalItemRequestBuilderUriTemplate,
@@ -351,7 +452,7 @@ export const ServicePrincipalItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalItemRequestBuilderGetQueryParametersMapper,
     },
@@ -361,7 +462,7 @@ export const ServicePrincipalItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServicePrincipal,

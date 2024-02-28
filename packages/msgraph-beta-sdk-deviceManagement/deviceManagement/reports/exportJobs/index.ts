@@ -61,7 +61,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ExportJobsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const ExportJobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementExportJobCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ExportJobsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,64 @@ export const ExportJobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementExportJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementExportJob,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    Filter: "filter",
+    FilterDesc: "filter desc",
+    Format: "format",
+    FormatDesc: "format desc",
+    LocalizationType: "localizationType",
+    LocalizationTypeDesc: "localizationType desc",
+    ReportName: "reportName",
+    ReportNameDesc: "reportName desc",
+    RequestDateTime: "requestDateTime",
+    RequestDateTimeDesc: "requestDateTime desc",
+    Search: "search",
+    SearchDesc: "search desc",
+    Select: "select",
+    SelectDesc: "select desc",
+    SnapshotId: "snapshotId",
+    SnapshotIdDesc: "snapshotId desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    Url: "url",
+    UrlDesc: "url desc",
+} as const;
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExpirationDateTime: "expirationDateTime",
+    Filter: "filter",
+    Format: "format",
+    LocalizationType: "localizationType",
+    ReportName: "reportName",
+    RequestDateTime: "requestDateTime",
+    Search: "search",
+    Select: "select",
+    SnapshotId: "snapshotId",
+    Status: "status",
+    Url: "url",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

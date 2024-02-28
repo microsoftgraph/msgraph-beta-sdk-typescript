@@ -23,6 +23,9 @@ export function deserializeIntoSummarizeDeviceRemoteConnectionWithSummarizeByGet
         "value": n => { summarizeDeviceRemoteConnectionWithSummarizeByGetResponse.value = n.getCollectionOfObjectValues<UserExperienceAnalyticsRemoteConnection>(createUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -66,7 +69,7 @@ export interface SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +77,7 @@ export interface SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGet
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +85,7 @@ export interface SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGet
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,64 @@ export interface SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGet
  * Uri template for the request builder.
  */
 export const SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRemoteConnection/summarizeDeviceRemoteConnection(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the summarizeDeviceRemoteConnection method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the summarizeDeviceRemoteConnection method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CloudPcFailurePercentage: "cloudPcFailurePercentage",
+    CloudPcFailurePercentageDesc: "cloudPcFailurePercentage desc",
+    CloudPcRoundTripTime: "cloudPcRoundTripTime",
+    CloudPcRoundTripTimeDesc: "cloudPcRoundTripTime desc",
+    CloudPcSignInTime: "cloudPcSignInTime",
+    CloudPcSignInTimeDesc: "cloudPcSignInTime desc",
+    CoreBootTime: "coreBootTime",
+    CoreBootTimeDesc: "coreBootTime desc",
+    CoreSignInTime: "coreSignInTime",
+    CoreSignInTimeDesc: "coreSignInTime desc",
+    DeviceCount: "deviceCount",
+    DeviceCountDesc: "deviceCount desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    Manufacturer: "manufacturer",
+    ManufacturerDesc: "manufacturer desc",
+    Model: "model",
+    ModelDesc: "model desc",
+    RemoteSignInTime: "remoteSignInTime",
+    RemoteSignInTimeDesc: "remoteSignInTime desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+    VirtualNetwork: "virtualNetwork",
+    VirtualNetworkDesc: "virtualNetwork desc",
+} as const;
+/**
+ * Provides operations to call the summarizeDeviceRemoteConnection method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CloudPcFailurePercentage: "cloudPcFailurePercentage",
+    CloudPcRoundTripTime: "cloudPcRoundTripTime",
+    CloudPcSignInTime: "cloudPcSignInTime",
+    CoreBootTime: "coreBootTime",
+    CoreSignInTime: "coreSignInTime",
+    DeviceCount: "deviceCount",
+    DeviceId: "deviceId",
+    DeviceName: "deviceName",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    RemoteSignInTime: "remoteSignInTime",
+    UserPrincipalName: "userPrincipalName",
+    VirtualNetwork: "virtualNetwork",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +180,7 @@ export const SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSummarizeDeviceRemoteConnectionWithSummarizeByGetResponseFromDiscriminatorValue,
         queryParametersMapper: SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetQueryParametersMapper,
     },

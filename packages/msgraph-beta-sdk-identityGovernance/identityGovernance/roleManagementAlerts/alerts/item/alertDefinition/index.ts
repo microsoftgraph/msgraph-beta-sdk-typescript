@@ -30,12 +30,14 @@ export interface AlertDefinitionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,32 @@ export const AlertDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue,
         queryParametersMapper: AlertDefinitionRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the alertDefinition property of the microsoft.graph.unifiedRoleManagementAlert entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the alertDefinition property of the microsoft.graph.unifiedRoleManagementAlert entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    HowToPrevent: "howToPrevent",
+    IsConfigurable: "isConfigurable",
+    IsRemediatable: "isRemediatable",
+    MitigationSteps: "mitigationSteps",
+    ScopeId: "scopeId",
+    ScopeType: "scopeType",
+    SecurityImpact: "securityImpact",
+    SeverityLevel: "severityLevel",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

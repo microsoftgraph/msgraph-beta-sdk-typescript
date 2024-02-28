@@ -8,6 +8,8 @@ import { DenyRequestBuilderRequestsMetadata, type DenyRequestBuilder } from './d
 import { GetAllElevationRequestsRequestBuilderRequestsMetadata, type GetAllElevationRequestsRequestBuilder } from './getAllElevationRequests/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
  */
@@ -72,16 +74,42 @@ export interface PrivilegeManagementElevationRequestItemRequestBuilderGetQueryPa
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrivilegeManagementElevationRequestItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApplicationDetail: "applicationDetail",
+    DeviceName: "deviceName",
+    RequestCreatedDateTime: "requestCreatedDateTime",
+    RequestedByUserId: "requestedByUserId",
+    RequestedByUserPrincipalName: "requestedByUserPrincipalName",
+    RequestedOnDeviceId: "requestedOnDeviceId",
+    RequestExpiryDateTime: "requestExpiryDateTime",
+    RequestJustification: "requestJustification",
+    RequestLastModifiedDateTime: "requestLastModifiedDateTime",
+    ReviewCompletedByUserId: "reviewCompletedByUserId",
+    ReviewCompletedByUserPrincipalName: "reviewCompletedByUserPrincipalName",
+    ReviewCompletedDateTime: "reviewCompletedDateTime",
+    ReviewerJustification: "reviewerJustification",
+    Status: "status",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -113,7 +141,7 @@ export const PrivilegeManagementElevationRequestItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegeManagementElevationRequestItemRequestBuilderUriTemplate,
@@ -121,7 +149,7 @@ export const PrivilegeManagementElevationRequestItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationRequestFromDiscriminatorValue,
         queryParametersMapper: PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +159,7 @@ export const PrivilegeManagementElevationRequestItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegeManagementElevationRequest,

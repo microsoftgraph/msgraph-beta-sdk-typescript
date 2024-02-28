@@ -47,7 +47,7 @@ export interface AppRoleAssignedResourcesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +55,7 @@ export interface AppRoleAssignedResourcesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +63,7 @@ export interface AppRoleAssignedResourcesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +73,9 @@ export interface AppRoleAssignedResourcesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -112,10 +115,184 @@ export const AppRoleAssignedResourcesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AppRoleAssignedResourcesRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AppManagementPolicies: "appManagementPolicies",
+    AppRoleAssignedTo: "appRoleAssignedTo",
+    AppRoleAssignments: "appRoleAssignments",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    CreatedObjects: "createdObjects",
+    DelegatedPermissionClassifications: "delegatedPermissionClassifications",
+    Endpoints: "endpoints",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    LicenseDetails: "licenseDetails",
+    MemberOf: "memberOf",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    OwnedObjects: "ownedObjects",
+    Owners: "owners",
+    RemoteDesktopSecurityConfiguration: "remoteDesktopSecurityConfiguration",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+    TransitiveMemberOf: "transitiveMemberOf",
+} as const;
+/**
+ * Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeletedDateTime: "deletedDateTime",
+    DeletedDateTimeDesc: "deletedDateTime desc",
+    AccountEnabled: "accountEnabled",
+    AccountEnabledDesc: "accountEnabled desc",
+    AddIns: "addIns",
+    AddInsDesc: "addIns desc",
+    AlternativeNames: "alternativeNames",
+    AlternativeNamesDesc: "alternativeNames desc",
+    AppDescription: "appDescription",
+    AppDescriptionDesc: "appDescription desc",
+    AppDisplayName: "appDisplayName",
+    AppDisplayNameDesc: "appDisplayName desc",
+    AppId: "appId",
+    AppIdDesc: "appId desc",
+    ApplicationTemplateId: "applicationTemplateId",
+    ApplicationTemplateIdDesc: "applicationTemplateId desc",
+    AppOwnerOrganizationId: "appOwnerOrganizationId",
+    AppOwnerOrganizationIdDesc: "appOwnerOrganizationId desc",
+    AppRoleAssignmentRequired: "appRoleAssignmentRequired",
+    AppRoleAssignmentRequiredDesc: "appRoleAssignmentRequired desc",
+    AppRoles: "appRoles",
+    AppRolesDesc: "appRoles desc",
+    CustomSecurityAttributes: "customSecurityAttributes",
+    CustomSecurityAttributesDesc: "customSecurityAttributes desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisabledByMicrosoftStatus: "disabledByMicrosoftStatus",
+    DisabledByMicrosoftStatusDesc: "disabledByMicrosoftStatus desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ErrorUrl: "errorUrl",
+    ErrorUrlDesc: "errorUrl desc",
+    Homepage: "homepage",
+    HomepageDesc: "homepage desc",
+    Info: "info",
+    InfoDesc: "info desc",
+    KeyCredentials: "keyCredentials",
+    KeyCredentialsDesc: "keyCredentials desc",
+    LoginUrl: "loginUrl",
+    LoginUrlDesc: "loginUrl desc",
+    LogoutUrl: "logoutUrl",
+    LogoutUrlDesc: "logoutUrl desc",
+    Notes: "notes",
+    NotesDesc: "notes desc",
+    NotificationEmailAddresses: "notificationEmailAddresses",
+    NotificationEmailAddressesDesc: "notificationEmailAddresses desc",
+    PasswordCredentials: "passwordCredentials",
+    PasswordCredentialsDesc: "passwordCredentials desc",
+    PasswordSingleSignOnSettings: "passwordSingleSignOnSettings",
+    PasswordSingleSignOnSettingsDesc: "passwordSingleSignOnSettings desc",
+    PreferredSingleSignOnMode: "preferredSingleSignOnMode",
+    PreferredSingleSignOnModeDesc: "preferredSingleSignOnMode desc",
+    PreferredTokenSigningKeyEndDateTime: "preferredTokenSigningKeyEndDateTime",
+    PreferredTokenSigningKeyEndDateTimeDesc: "preferredTokenSigningKeyEndDateTime desc",
+    PreferredTokenSigningKeyThumbprint: "preferredTokenSigningKeyThumbprint",
+    PreferredTokenSigningKeyThumbprintDesc: "preferredTokenSigningKeyThumbprint desc",
+    PublishedPermissionScopes: "publishedPermissionScopes",
+    PublishedPermissionScopesDesc: "publishedPermissionScopes desc",
+    PublisherName: "publisherName",
+    PublisherNameDesc: "publisherName desc",
+    ReplyUrls: "replyUrls",
+    ReplyUrlsDesc: "replyUrls desc",
+    SamlMetadataUrl: "samlMetadataUrl",
+    SamlMetadataUrlDesc: "samlMetadataUrl desc",
+    SamlSingleSignOnSettings: "samlSingleSignOnSettings",
+    SamlSingleSignOnSettingsDesc: "samlSingleSignOnSettings desc",
+    ServicePrincipalNames: "servicePrincipalNames",
+    ServicePrincipalNamesDesc: "servicePrincipalNames desc",
+    ServicePrincipalType: "servicePrincipalType",
+    ServicePrincipalTypeDesc: "servicePrincipalType desc",
+    SignInAudience: "signInAudience",
+    SignInAudienceDesc: "signInAudience desc",
+    Tags: "tags",
+    TagsDesc: "tags desc",
+    TokenEncryptionKeyId: "tokenEncryptionKeyId",
+    TokenEncryptionKeyIdDesc: "tokenEncryptionKeyId desc",
+    VerifiedPublisher: "verifiedPublisher",
+    VerifiedPublisherDesc: "verifiedPublisher desc",
+} as const;
+/**
+ * Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AccountEnabled: "accountEnabled",
+    AddIns: "addIns",
+    AlternativeNames: "alternativeNames",
+    AppDescription: "appDescription",
+    AppDisplayName: "appDisplayName",
+    AppId: "appId",
+    ApplicationTemplateId: "applicationTemplateId",
+    AppOwnerOrganizationId: "appOwnerOrganizationId",
+    AppRoleAssignmentRequired: "appRoleAssignmentRequired",
+    AppRoles: "appRoles",
+    CustomSecurityAttributes: "customSecurityAttributes",
+    Description: "description",
+    DisabledByMicrosoftStatus: "disabledByMicrosoftStatus",
+    DisplayName: "displayName",
+    ErrorUrl: "errorUrl",
+    Homepage: "homepage",
+    Info: "info",
+    KeyCredentials: "keyCredentials",
+    LoginUrl: "loginUrl",
+    LogoutUrl: "logoutUrl",
+    Notes: "notes",
+    NotificationEmailAddresses: "notificationEmailAddresses",
+    PasswordCredentials: "passwordCredentials",
+    PasswordSingleSignOnSettings: "passwordSingleSignOnSettings",
+    PreferredSingleSignOnMode: "preferredSingleSignOnMode",
+    PreferredTokenSigningKeyEndDateTime: "preferredTokenSigningKeyEndDateTime",
+    PreferredTokenSigningKeyThumbprint: "preferredTokenSigningKeyThumbprint",
+    PublishedPermissionScopes: "publishedPermissionScopes",
+    PublisherName: "publisherName",
+    ReplyUrls: "replyUrls",
+    SamlMetadataUrl: "samlMetadataUrl",
+    SamlSingleSignOnSettings: "samlSingleSignOnSettings",
+    ServicePrincipalNames: "servicePrincipalNames",
+    ServicePrincipalType: "servicePrincipalType",
+    SignInAudience: "signInAudience",
+    Tags: "tags",
+    TokenEncryptionKeyId: "tokenEncryptionKeyId",
+    VerifiedPublisher: "verifiedPublisher",
+    AppManagementPolicies: "appManagementPolicies",
+    AppRoleAssignedTo: "appRoleAssignedTo",
+    AppRoleAssignments: "appRoleAssignments",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    CreatedObjects: "createdObjects",
+    DelegatedPermissionClassifications: "delegatedPermissionClassifications",
+    Endpoints: "endpoints",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    LicenseDetails: "licenseDetails",
+    MemberOf: "memberOf",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    OwnedObjects: "ownedObjects",
+    Owners: "owners",
+    RemoteDesktopSecurityConfiguration: "remoteDesktopSecurityConfiguration",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+    TransitiveMemberOf: "transitiveMemberOf",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

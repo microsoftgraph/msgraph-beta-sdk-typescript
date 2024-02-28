@@ -21,7 +21,7 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the properties and relationships of an alert in an organization based on the specified alert id property.
+     * Get the properties and relationships of an alert object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Alert>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -29,7 +29,7 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      */
      get(requestConfiguration?: RequestConfiguration<AlertItemRequestBuilderGetQueryParameters> | undefined) : Promise<Alert | undefined>;
     /**
-     * Update the properties of an alert object in an organization based on the specified alert id property.
+     * Update the properties of an alert object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Alert>}
@@ -44,13 +44,13 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the properties and relationships of an alert in an organization based on the specified alert id property.
+     * Get the properties and relationships of an alert object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AlertItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an alert object in an organization based on the specified alert id property.
+     * Update the properties of an alert object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,18 +58,20 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      toPatchRequestInformation(body: Alert, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the properties and relationships of an alert in an organization based on the specified alert id property.
+ * Get the properties and relationships of an alert object.
  */
 export interface AlertItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -100,7 +102,7 @@ export const AlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AlertItemRequestBuilderUriTemplate,
@@ -108,7 +110,7 @@ export const AlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertFromDiscriminatorValue,
         queryParametersMapper: AlertItemRequestBuilderGetQueryParametersMapper,
     },
@@ -118,12 +120,56 @@ export const AlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAlert,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActorDisplayName: "actorDisplayName",
+    AdditionalData: "additionalData",
+    AlertPolicyId: "alertPolicyId",
+    AlertWebUrl: "alertWebUrl",
+    AssignedTo: "assignedTo",
+    Category: "category",
+    Classification: "classification",
+    Comments: "comments",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DetectionSource: "detectionSource",
+    DetectorId: "detectorId",
+    Determination: "determination",
+    Evidence: "evidence",
+    FirstActivityDateTime: "firstActivityDateTime",
+    IncidentId: "incidentId",
+    IncidentWebUrl: "incidentWebUrl",
+    LastActivityDateTime: "lastActivityDateTime",
+    LastUpdateDateTime: "lastUpdateDateTime",
+    MitreTechniques: "mitreTechniques",
+    ProductName: "productName",
+    ProviderAlertId: "providerAlertId",
+    RecommendedActions: "recommendedActions",
+    ResolvedDateTime: "resolvedDateTime",
+    ServiceSource: "serviceSource",
+    Severity: "severity",
+    Status: "status",
+    SystemTags: "systemTags",
+    TenantId: "tenantId",
+    ThreatDisplayName: "threatDisplayName",
+    ThreatFamilyName: "threatFamilyName",
+    Title: "title",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

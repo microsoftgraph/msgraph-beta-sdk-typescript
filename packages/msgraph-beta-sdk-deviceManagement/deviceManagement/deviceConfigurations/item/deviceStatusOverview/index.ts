@@ -57,12 +57,14 @@ export interface DeviceStatusOverviewRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const DeviceStatusOverviewRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceStatusOverviewRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const DeviceStatusOverviewRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceConfigurationDeviceOverviewFromDiscriminatorValue,
         queryParametersMapper: DeviceStatusOverviewRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,33 @@ export const DeviceStatusOverviewRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceConfigurationDeviceOverviewFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceConfigurationDeviceOverview,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceStatusOverview property of the microsoft.graph.deviceConfiguration entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceStatusOverview property of the microsoft.graph.deviceConfiguration entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConfigurationVersion: "configurationVersion",
+    ConflictCount: "conflictCount",
+    ErrorCount: "errorCount",
+    FailedCount: "failedCount",
+    LastUpdateDateTime: "lastUpdateDateTime",
+    NotApplicableCount: "notApplicableCount",
+    NotApplicablePlatformCount: "notApplicablePlatformCount",
+    PendingCount: "pendingCount",
+    SuccessCount: "successCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

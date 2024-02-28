@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { InboundFlowItemRequestBuilderNavigationMetadata, InboundFlowItemRequestBuilderRequestsMetadata, type InboundFlowItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
  */
@@ -22,11 +25,11 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      */
      byInboundFlowId(inboundFlowId: string) : InboundFlowItemRequestBuilder;
     /**
-     * Get a list of the inboundFileFlow objects and their properties.
+     * Get a list of the inboundFlow objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InboundFlowCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters> | undefined) : Promise<InboundFlowCollectionResponse | undefined>;
     /**
@@ -39,7 +42,7 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      */
      post(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InboundFlow | undefined>;
     /**
-     * Get a list of the inboundFileFlow objects and their properties.
+     * Get a list of the inboundFlow objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -53,7 +56,7 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      toPostRequestInformation(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the inboundFileFlow objects and their properties.
+ * Get a list of the inboundFlow objects and their properties.
  */
 export interface InboundFlowsRequestBuilderGetQueryParameters {
     /**
@@ -63,7 +66,7 @@ export interface InboundFlowsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +74,7 @@ export interface InboundFlowsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +82,7 @@ export interface InboundFlowsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -93,6 +96,44 @@ export interface InboundFlowsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const InboundFlowsRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DataConnector: "dataConnector",
+    Year: "year",
+} as const;
+/**
+ * Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ReadinessStatus: "readinessStatus",
+    ReadinessStatusDesc: "readinessStatus desc",
+    DataDomain: "dataDomain",
+    DataDomainDesc: "dataDomain desc",
+    EffectiveDateTime: "effectiveDateTime",
+    EffectiveDateTimeDesc: "effectiveDateTime desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    ReadinessStatus: "readinessStatus",
+    DataDomain: "dataDomain",
+    EffectiveDateTime: "effectiveDateTime",
+    ExpirationDateTime: "expirationDateTime",
+    DataConnector: "dataConnector",
+    Year: "year",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -129,7 +170,7 @@ export const InboundFlowsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundFlowCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: InboundFlowsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +180,7 @@ export const InboundFlowsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundFlowFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeInboundFlow,

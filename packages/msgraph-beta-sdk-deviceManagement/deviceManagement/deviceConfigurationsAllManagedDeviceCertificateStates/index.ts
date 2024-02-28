@@ -61,7 +61,7 @@ export interface DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBui
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBui
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBui
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBui
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedAllDeviceCertificateStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,67 @@ export const DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedAllDeviceCertificateStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedAllDeviceCertificateState,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CertificateExpirationDateTime: "certificateExpirationDateTime",
+    CertificateExpirationDateTimeDesc: "certificateExpirationDateTime desc",
+    CertificateExtendedKeyUsages: "certificateExtendedKeyUsages",
+    CertificateExtendedKeyUsagesDesc: "certificateExtendedKeyUsages desc",
+    CertificateIssuanceDateTime: "certificateIssuanceDateTime",
+    CertificateIssuanceDateTimeDesc: "certificateIssuanceDateTime desc",
+    CertificateIssuerName: "certificateIssuerName",
+    CertificateIssuerNameDesc: "certificateIssuerName desc",
+    CertificateKeyUsages: "certificateKeyUsages",
+    CertificateKeyUsagesDesc: "certificateKeyUsages desc",
+    CertificateRevokeStatus: "certificateRevokeStatus",
+    CertificateRevokeStatusDesc: "certificateRevokeStatus desc",
+    CertificateRevokeStatusLastChangeDateTime: "certificateRevokeStatusLastChangeDateTime",
+    CertificateRevokeStatusLastChangeDateTimeDesc: "certificateRevokeStatusLastChangeDateTime desc",
+    CertificateSerialNumber: "certificateSerialNumber",
+    CertificateSerialNumberDesc: "certificateSerialNumber desc",
+    CertificateSubjectName: "certificateSubjectName",
+    CertificateSubjectNameDesc: "certificateSubjectName desc",
+    CertificateThumbprint: "certificateThumbprint",
+    CertificateThumbprintDesc: "certificateThumbprint desc",
+    ManagedDeviceDisplayName: "managedDeviceDisplayName",
+    ManagedDeviceDisplayNameDesc: "managedDeviceDisplayName desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CertificateExpirationDateTime: "certificateExpirationDateTime",
+    CertificateExtendedKeyUsages: "certificateExtendedKeyUsages",
+    CertificateIssuanceDateTime: "certificateIssuanceDateTime",
+    CertificateIssuerName: "certificateIssuerName",
+    CertificateKeyUsages: "certificateKeyUsages",
+    CertificateRevokeStatus: "certificateRevokeStatus",
+    CertificateRevokeStatusLastChangeDateTime: "certificateRevokeStatusLastChangeDateTime",
+    CertificateSerialNumber: "certificateSerialNumber",
+    CertificateSubjectName: "certificateSubjectName",
+    CertificateThumbprint: "certificateThumbprint",
+    ManagedDeviceDisplayName: "managedDeviceDisplayName",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

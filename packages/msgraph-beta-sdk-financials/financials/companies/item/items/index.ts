@@ -8,6 +8,9 @@ import { ItemItemRequestBuilderNavigationMetadata, ItemItemRequestBuilderRequest
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 import { type Guid } from 'guid-typescript';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the items property of the microsoft.graph.company entity.
  */
@@ -62,7 +65,7 @@ export interface ItemsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface ItemsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface ItemsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,74 @@ export interface ItemsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ItemsRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/items{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the items property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ItemCategory: "itemCategory",
+    Picture: "picture",
+} as const;
+/**
+ * Provides operations to manage the items property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    BaseUnitOfMeasureId: "baseUnitOfMeasureId",
+    BaseUnitOfMeasureIdDesc: "baseUnitOfMeasureId desc",
+    Blocked: "blocked",
+    BlockedDesc: "blocked desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Gtin: "gtin",
+    GtinDesc: "gtin desc",
+    Id: "id",
+    IdDesc: "id desc",
+    Inventory: "inventory",
+    InventoryDesc: "inventory desc",
+    ItemCategoryCode: "itemCategoryCode",
+    ItemCategoryCodeDesc: "itemCategoryCode desc",
+    ItemCategoryId: "itemCategoryId",
+    ItemCategoryIdDesc: "itemCategoryId desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Number: "number",
+    NumberDesc: "number desc",
+    PriceIncludesTax: "priceIncludesTax",
+    PriceIncludesTaxDesc: "priceIncludesTax desc",
+    TaxGroupCode: "taxGroupCode",
+    TaxGroupCodeDesc: "taxGroupCode desc",
+    TaxGroupId: "taxGroupId",
+    TaxGroupIdDesc: "taxGroupId desc",
+    Type: "type",
+    TypeDesc: "type desc",
+    UnitCost: "unitCost",
+    UnitCostDesc: "unitCost desc",
+    UnitPrice: "unitPrice",
+    UnitPriceDesc: "unitPrice desc",
+} as const;
+/**
+ * Provides operations to manage the items property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BaseUnitOfMeasureId: "baseUnitOfMeasureId",
+    Blocked: "blocked",
+    DisplayName: "displayName",
+    Gtin: "gtin",
+    Id: "id",
+    Inventory: "inventory",
+    ItemCategoryCode: "itemCategoryCode",
+    ItemCategoryId: "itemCategoryId",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    PriceIncludesTax: "priceIncludesTax",
+    TaxGroupCode: "taxGroupCode",
+    TaxGroupId: "taxGroupId",
+    Type: "type",
+    UnitCost: "unitCost",
+    UnitPrice: "unitPrice",
+    ItemCategory: "itemCategory",
+    Picture: "picture",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +199,7 @@ export const ItemsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ItemsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +209,7 @@ export const ItemsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeItem,

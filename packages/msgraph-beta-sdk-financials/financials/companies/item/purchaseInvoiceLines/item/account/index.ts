@@ -30,12 +30,14 @@ export interface AccountRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,28 @@ export const AccountRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccountFromDiscriminatorValue,
         queryParametersMapper: AccountRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the account property of the microsoft.graph.purchaseInvoiceLine entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the account property of the microsoft.graph.purchaseInvoiceLine entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Blocked: "blocked",
+    Category: "category",
+    DisplayName: "displayName",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    SubCategory: "subCategory",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

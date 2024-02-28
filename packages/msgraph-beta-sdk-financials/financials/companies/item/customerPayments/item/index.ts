@@ -62,12 +62,14 @@ export interface CustomerPaymentItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const CustomerPaymentItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CustomerPaymentItemRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const CustomerPaymentItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomerPaymentFromDiscriminatorValue,
         queryParametersMapper: CustomerPaymentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,40 @@ export const CustomerPaymentItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomerPaymentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCustomerPayment,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the customerPayments property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Customer: "customer",
+} as const;
+/**
+ * Provides operations to manage the customerPayments property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Amount: "amount",
+    AppliesToInvoiceId: "appliesToInvoiceId",
+    AppliesToInvoiceNumber: "appliesToInvoiceNumber",
+    Comment: "comment",
+    ContactId: "contactId",
+    CustomerId: "customerId",
+    CustomerNumber: "customerNumber",
+    Description: "description",
+    DocumentNumber: "documentNumber",
+    ExternalDocumentNumber: "externalDocumentNumber",
+    Id: "id",
+    JournalDisplayName: "journalDisplayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LineNumber: "lineNumber",
+    PostingDate: "postingDate",
+    Customer: "customer",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

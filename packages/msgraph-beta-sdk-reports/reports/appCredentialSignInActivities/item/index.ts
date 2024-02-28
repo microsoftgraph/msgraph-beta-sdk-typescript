@@ -58,12 +58,14 @@ export interface AppCredentialSignInActivityItemRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -85,7 +87,7 @@ export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AppCredentialSignInActivityItemRequestBuilderUriTemplate,
@@ -93,7 +95,7 @@ export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityFromDiscriminatorValue,
         queryParametersMapper: AppCredentialSignInActivityItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,12 +105,35 @@ export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppCredentialSignInActivity,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppId: "appId",
+    AppObjectId: "appObjectId",
+    CreatedDateTime: "createdDateTime",
+    CredentialOrigin: "credentialOrigin",
+    ExpirationDateTime: "expirationDateTime",
+    KeyId: "keyId",
+    KeyType: "keyType",
+    KeyUsage: "keyUsage",
+    ResourceId: "resourceId",
+    ServicePrincipalObjectId: "servicePrincipalObjectId",
+    SignInActivity: "signInActivity",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

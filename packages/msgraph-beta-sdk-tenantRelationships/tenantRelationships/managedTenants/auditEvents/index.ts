@@ -62,7 +62,7 @@ export interface AuditEventsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface AuditEventsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface AuditEventsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface AuditEventsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AuditEventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditEventCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AuditEventsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,70 @@ export const AuditEventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuditEvent,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Activity: "activity",
+    ActivityDesc: "activity desc",
+    ActivityDateTime: "activityDateTime",
+    ActivityDateTimeDesc: "activityDateTime desc",
+    ActivityId: "activityId",
+    ActivityIdDesc: "activityId desc",
+    Category: "category",
+    CategoryDesc: "category desc",
+    HttpVerb: "httpVerb",
+    HttpVerbDesc: "httpVerb desc",
+    InitiatedByAppId: "initiatedByAppId",
+    InitiatedByAppIdDesc: "initiatedByAppId desc",
+    InitiatedByUpn: "initiatedByUpn",
+    InitiatedByUpnDesc: "initiatedByUpn desc",
+    InitiatedByUserId: "initiatedByUserId",
+    InitiatedByUserIdDesc: "initiatedByUserId desc",
+    IpAddress: "ipAddress",
+    IpAddressDesc: "ipAddress desc",
+    RequestBody: "requestBody",
+    RequestBodyDesc: "requestBody desc",
+    RequestUrl: "requestUrl",
+    RequestUrlDesc: "requestUrl desc",
+    TenantIds: "tenantIds",
+    TenantIdsDesc: "tenantIds desc",
+    TenantNames: "tenantNames",
+    TenantNamesDesc: "tenantNames desc",
+} as const;
+/**
+ * Provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Activity: "activity",
+    ActivityDateTime: "activityDateTime",
+    ActivityId: "activityId",
+    Category: "category",
+    HttpVerb: "httpVerb",
+    InitiatedByAppId: "initiatedByAppId",
+    InitiatedByUpn: "initiatedByUpn",
+    InitiatedByUserId: "initiatedByUserId",
+    IpAddress: "ipAddress",
+    RequestBody: "requestBody",
+    RequestUrl: "requestUrl",
+    TenantIds: "tenantIds",
+    TenantNames: "tenantNames",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

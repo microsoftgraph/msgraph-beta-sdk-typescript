@@ -7,8 +7,11 @@ import { ContactMergeSuggestionsRequestBuilderRequestsMetadata, type ContactMerg
 import { ItemInsightsRequestBuilderRequestsMetadata, type ItemInsightsRequestBuilder } from './itemInsights/';
 import { RegionalAndLanguageSettingsRequestBuilderRequestsMetadata, type RegionalAndLanguageSettingsRequestBuilder } from './regionalAndLanguageSettings/';
 import { ShiftPreferencesRequestBuilderRequestsMetadata, type ShiftPreferencesRequestBuilder } from './shiftPreferences/';
+import { type WindowsRequestBuilder, WindowsRequestBuilderNavigationMetadata, WindowsRequestBuilderRequestsMetadata } from './windows/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the settings property of the microsoft.graph.user entity.
  */
@@ -29,6 +32,10 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * Provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.
      */
     get shiftPreferences(): ShiftPreferencesRequestBuilder;
+    /**
+     * Provides operations to manage the windows property of the microsoft.graph.userSettings entity.
+     */
+    get windows(): WindowsRequestBuilder;
     /**
      * Delete navigation property settings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -77,16 +84,40 @@ export interface SettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SettingsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings{?%24expand,%24select}";
+/**
+ * Provides operations to manage the settings property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ContactMergeSuggestions: "contactMergeSuggestions",
+    ItemInsights: "itemInsights",
+    RegionalAndLanguageSettings: "regionalAndLanguageSettings",
+    ShiftPreferences: "shiftPreferences",
+    Windows: "windows",
+} as const;
+/**
+ * Provides operations to manage the settings property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ContributionToContentDiscoveryAsOrganizationDisabled: "contributionToContentDiscoveryAsOrganizationDisabled",
+    ContributionToContentDiscoveryDisabled: "contributionToContentDiscoveryDisabled",
+    ContactMergeSuggestions: "contactMergeSuggestions",
+    ItemInsights: "itemInsights",
+    RegionalAndLanguageSettings: "regionalAndLanguageSettings",
+    ShiftPreferences: "shiftPreferences",
+    Windows: "windows",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -110,6 +141,10 @@ export const SettingsRequestBuilderNavigationMetadata: Record<Exclude<keyof Sett
     shiftPreferences: {
         requestsMetadata: ShiftPreferencesRequestBuilderRequestsMetadata,
     },
+    windows: {
+        requestsMetadata: WindowsRequestBuilderRequestsMetadata,
+        navigationMetadata: WindowsRequestBuilderNavigationMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.
@@ -121,7 +156,7 @@ export const SettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SettingsRequestBuilderUriTemplate,
@@ -129,7 +164,7 @@ export const SettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserSettingsFromDiscriminatorValue,
         queryParametersMapper: SettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +174,7 @@ export const SettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserSettings,

@@ -77,12 +77,14 @@ export interface AccessReviewsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -124,7 +126,7 @@ export const AccessReviewsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessReviewsRequestBuilderUriTemplate,
@@ -132,7 +134,7 @@ export const AccessReviewsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewSetFromDiscriminatorValue,
         queryParametersMapper: AccessReviewsRequestBuilderGetQueryParametersMapper,
     },
@@ -142,12 +144,32 @@ export const AccessReviewsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewSetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessReviewSet,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Decisions: "decisions",
+    Definitions: "definitions",
+    HistoryDefinitions: "historyDefinitions",
+    Policy: "policy",
+} as const;
+/**
+ * Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Decisions: "decisions",
+    Definitions: "definitions",
+    HistoryDefinitions: "historyDefinitions",
+    Policy: "policy",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

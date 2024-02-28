@@ -12,6 +12,7 @@ import { TaskGroupsRequestBuilderNavigationMetadata, TaskGroupsRequestBuilderReq
 import { TasksRequestBuilderNavigationMetadata, TasksRequestBuilderRequestsMetadata, type TasksRequestBuilder } from './tasks/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the outlook property of the microsoft.graph.user entity.
  */
@@ -67,12 +68,22 @@ export interface OutlookRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const OutlookRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook{?%24select}";
+/**
+ * Provides operations to manage the outlook property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    MasterCategories: "masterCategories",
+    TaskFolders: "taskFolders",
+    TaskGroups: "taskGroups",
+    Tasks: "tasks",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +130,7 @@ export const OutlookRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookUserFromDiscriminatorValue,
         queryParametersMapper: OutlookRequestBuilderGetQueryParametersMapper,
     },

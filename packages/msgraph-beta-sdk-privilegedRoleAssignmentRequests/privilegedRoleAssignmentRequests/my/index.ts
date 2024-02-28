@@ -23,6 +23,9 @@ export function deserializeIntoMyGetResponse(myGetResponse: Partial<MyGetRespons
         "value": n => { myGetResponse.value = n.getCollectionOfObjectValues<PrivilegedRoleAssignmentRequest>(createPrivilegedRoleAssignmentRequestFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 export interface MyGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +61,7 @@ export interface MyRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +69,7 @@ export interface MyRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +77,7 @@ export interface MyRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,60 @@ export function serializeMyGetResponse(writer: SerializationWriter, myGetRespons
  * Uri template for the request builder.
  */
 export const MyRequestBuilderUriTemplate = "{+baseurl}/privilegedRoleAssignmentRequests/my(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the my method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    RoleInfo: "roleInfo",
+} as const;
+/**
+ * Provides operations to call the my method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AssignmentState: "assignmentState",
+    AssignmentStateDesc: "assignmentState desc",
+    Duration: "duration",
+    DurationDesc: "duration desc",
+    Reason: "reason",
+    ReasonDesc: "reason desc",
+    RequestedDateTime: "requestedDateTime",
+    RequestedDateTimeDesc: "requestedDateTime desc",
+    RoleId: "roleId",
+    RoleIdDesc: "roleId desc",
+    Schedule: "schedule",
+    ScheduleDesc: "schedule desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    TicketNumber: "ticketNumber",
+    TicketNumberDesc: "ticketNumber desc",
+    TicketSystem: "ticketSystem",
+    TicketSystemDesc: "ticketSystem desc",
+    Type: "type",
+    TypeDesc: "type desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+} as const;
+/**
+ * Provides operations to call the my method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignmentState: "assignmentState",
+    Duration: "duration",
+    Reason: "reason",
+    RequestedDateTime: "requestedDateTime",
+    RoleId: "roleId",
+    Schedule: "schedule",
+    Status: "status",
+    TicketNumber: "ticketNumber",
+    TicketSystem: "ticketSystem",
+    Type: "type",
+    UserId: "userId",
+    RoleInfo: "roleInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +176,7 @@ export const MyRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMyGetResponseFromDiscriminatorValue,
         queryParametersMapper: MyRequestBuilderGetQueryParametersMapper,
     },

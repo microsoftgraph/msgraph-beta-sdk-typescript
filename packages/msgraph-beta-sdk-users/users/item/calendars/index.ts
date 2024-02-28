@@ -22,7 +22,7 @@ export interface CalendarsRequestBuilder extends BaseRequestBuilder<CalendarsReq
      */
      byCalendarId(calendarId: string) : CalendarItemRequestBuilder;
     /**
-     * Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+     * Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CalendarCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -39,7 +39,7 @@ export interface CalendarsRequestBuilder extends BaseRequestBuilder<CalendarsReq
      */
      post(body: Calendar, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Calendar | undefined>;
     /**
-     * Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+     * Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -53,7 +53,7 @@ export interface CalendarsRequestBuilder extends BaseRequestBuilder<CalendarsReq
      toPostRequestInformation(body: Calendar, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+ * Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
  */
 export interface CalendarsRequestBuilderGetQueryParameters {
     /**
@@ -63,7 +63,7 @@ export interface CalendarsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,11 +71,11 @@ export interface CalendarsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -85,6 +85,9 @@ export interface CalendarsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -124,7 +127,7 @@ export const CalendarsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCalendarCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CalendarsRequestBuilderGetQueryParametersMapper,
     },
@@ -134,12 +137,89 @@ export const CalendarsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCalendarFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCalendar,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the calendars property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    CalendarPermissions: "calendarPermissions",
+    CalendarView: "calendarView",
+    Events: "events",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
+/**
+ * Provides operations to manage the calendars property of the microsoft.graph.user entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AllowedOnlineMeetingProviders: "allowedOnlineMeetingProviders",
+    AllowedOnlineMeetingProvidersDesc: "allowedOnlineMeetingProviders desc",
+    CalendarGroupId: "calendarGroupId",
+    CalendarGroupIdDesc: "calendarGroupId desc",
+    CanEdit: "canEdit",
+    CanEditDesc: "canEdit desc",
+    CanShare: "canShare",
+    CanShareDesc: "canShare desc",
+    CanViewPrivateItems: "canViewPrivateItems",
+    CanViewPrivateItemsDesc: "canViewPrivateItems desc",
+    ChangeKey: "changeKey",
+    ChangeKeyDesc: "changeKey desc",
+    Color: "color",
+    ColorDesc: "color desc",
+    DefaultOnlineMeetingProvider: "defaultOnlineMeetingProvider",
+    DefaultOnlineMeetingProviderDesc: "defaultOnlineMeetingProvider desc",
+    HexColor: "hexColor",
+    HexColorDesc: "hexColor desc",
+    IsDefaultCalendar: "isDefaultCalendar",
+    IsDefaultCalendarDesc: "isDefaultCalendar desc",
+    IsRemovable: "isRemovable",
+    IsRemovableDesc: "isRemovable desc",
+    IsShared: "isShared",
+    IsSharedDesc: "isShared desc",
+    IsSharedWithMe: "isSharedWithMe",
+    IsSharedWithMeDesc: "isSharedWithMe desc",
+    IsTallyingResponses: "isTallyingResponses",
+    IsTallyingResponsesDesc: "isTallyingResponses desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Owner: "owner",
+    OwnerDesc: "owner desc",
+} as const;
+/**
+ * Provides operations to manage the calendars property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowedOnlineMeetingProviders: "allowedOnlineMeetingProviders",
+    CalendarGroupId: "calendarGroupId",
+    CanEdit: "canEdit",
+    CanShare: "canShare",
+    CanViewPrivateItems: "canViewPrivateItems",
+    ChangeKey: "changeKey",
+    Color: "color",
+    DefaultOnlineMeetingProvider: "defaultOnlineMeetingProvider",
+    HexColor: "hexColor",
+    IsDefaultCalendar: "isDefaultCalendar",
+    IsRemovable: "isRemovable",
+    IsShared: "isShared",
+    IsSharedWithMe: "isSharedWithMe",
+    IsTallyingResponses: "isTallyingResponses",
+    Name: "name",
+    Owner: "owner",
+    CalendarPermissions: "calendarPermissions",
+    CalendarView: "calendarView",
+    Events: "events",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

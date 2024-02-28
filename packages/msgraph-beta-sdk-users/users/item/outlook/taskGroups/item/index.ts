@@ -6,6 +6,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { TaskFoldersRequestBuilderNavigationMetadata, TaskFoldersRequestBuilderRequestsMetadata, type TaskFoldersRequestBuilder } from './taskFolders/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
  */
@@ -70,12 +71,23 @@ export interface OutlookTaskGroupItemRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const OutlookTaskGroupItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskGroups/{outlookTaskGroup%2Did}{?%24select}";
+/**
+ * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ChangeKey: "changeKey",
+    GroupKey: "groupKey",
+    IsDefaultGroup: "isDefaultGroup",
+    Name: "name",
+    TaskFolders: "taskFolders",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -101,7 +113,7 @@ export const OutlookTaskGroupItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OutlookTaskGroupItemRequestBuilderUriTemplate,
@@ -109,7 +121,7 @@ export const OutlookTaskGroupItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskGroupFromDiscriminatorValue,
         queryParametersMapper: OutlookTaskGroupItemRequestBuilderGetQueryParametersMapper,
     },
@@ -119,7 +131,7 @@ export const OutlookTaskGroupItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskGroupFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOutlookTaskGroup,

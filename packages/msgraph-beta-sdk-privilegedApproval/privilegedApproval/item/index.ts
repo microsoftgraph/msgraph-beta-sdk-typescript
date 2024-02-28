@@ -7,6 +7,8 @@ import { RequestRequestBuilderRequestsMetadata, type RequestRequestBuilder } fro
 import { RoleInfoRequestBuilderNavigationMetadata, RoleInfoRequestBuilderRequestsMetadata, type RoleInfoRequestBuilder } from './roleInfo/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of privilegedApproval entities.
  */
@@ -67,16 +69,41 @@ export interface PrivilegedApprovalItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrivilegedApprovalItemRequestBuilderUriTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of privilegedApproval entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Request: "request",
+    RoleInfo: "roleInfo",
+} as const;
+/**
+ * Provides operations to manage the collection of privilegedApproval entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApprovalDuration: "approvalDuration",
+    ApprovalState: "approvalState",
+    ApprovalType: "approvalType",
+    ApproverReason: "approverReason",
+    EndDateTime: "endDateTime",
+    RequestorReason: "requestorReason",
+    RoleId: "roleId",
+    StartDateTime: "startDateTime",
+    UserId: "userId",
+    Request: "request",
+    RoleInfo: "roleInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -106,7 +133,7 @@ export const PrivilegedApprovalItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegedApprovalItemRequestBuilderUriTemplate,
@@ -114,7 +141,7 @@ export const PrivilegedApprovalItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedApprovalFromDiscriminatorValue,
         queryParametersMapper: PrivilegedApprovalItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +151,7 @@ export const PrivilegedApprovalItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedApprovalFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedApproval,

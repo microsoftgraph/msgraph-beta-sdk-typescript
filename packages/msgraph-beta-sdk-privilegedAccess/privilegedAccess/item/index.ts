@@ -10,6 +10,8 @@ import { RoleDefinitionsRequestBuilderNavigationMetadata, RoleDefinitionsRequest
 import { RoleSettingsRequestBuilderNavigationMetadata, RoleSettingsRequestBuilderRequestsMetadata, type RoleSettingsRequestBuilder } from './roleSettings/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of privilegedAccess entities.
  */
@@ -82,16 +84,39 @@ export interface PrivilegedAccessItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrivilegedAccessItemRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of privilegedAccess entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Resources: "resources",
+    RoleAssignmentRequests: "roleAssignmentRequests",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    RoleSettings: "roleSettings",
+} as const;
+/**
+ * Provides operations to manage the collection of privilegedAccess entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    Resources: "resources",
+    RoleAssignmentRequests: "roleAssignmentRequests",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    RoleSettings: "roleSettings",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -134,7 +159,7 @@ export const PrivilegedAccessItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegedAccessItemRequestBuilderUriTemplate,
@@ -142,7 +167,7 @@ export const PrivilegedAccessItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedAccessFromDiscriminatorValue,
         queryParametersMapper: PrivilegedAccessItemRequestBuilderGetQueryParametersMapper,
     },
@@ -152,7 +177,7 @@ export const PrivilegedAccessItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedAccessFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedAccess,

@@ -9,6 +9,9 @@ import { MicrosoftGraphEdiscoveryApplyHoldRequestBuilderRequestsMetadata, type M
 import { MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderRequestsMetadata, type MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder } from './microsoftGraphEdiscoveryRemoveHold/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
  */
@@ -81,7 +84,7 @@ export interface NoncustodialDataSourcesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -89,7 +92,7 @@ export interface NoncustodialDataSourcesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -97,7 +100,7 @@ export interface NoncustodialDataSourcesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -111,6 +114,50 @@ export interface NoncustodialDataSourcesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const NoncustodialDataSourcesRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/noncustodialDataSources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    LastIndexOperation: "lastIndexOperation",
+    DataSource: "dataSource",
+} as const;
+/**
+ * Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    HoldStatus: "holdStatus",
+    HoldStatusDesc: "holdStatus desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    ReleasedDateTime: "releasedDateTime",
+    ReleasedDateTimeDesc: "releasedDateTime desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    ApplyHoldToSource: "applyHoldToSource",
+    ApplyHoldToSourceDesc: "applyHoldToSource desc",
+} as const;
+/**
+ * Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    DisplayName: "displayName",
+    HoldStatus: "holdStatus",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ReleasedDateTime: "releasedDateTime",
+    Status: "status",
+    ApplyHoldToSource: "applyHoldToSource",
+    LastIndexOperation: "lastIndexOperation",
+    DataSource: "dataSource",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -153,7 +200,7 @@ export const NoncustodialDataSourcesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNoncustodialDataSourceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: NoncustodialDataSourcesRequestBuilderGetQueryParametersMapper,
     },
@@ -163,7 +210,7 @@ export const NoncustodialDataSourcesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNoncustodialDataSourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeNoncustodialDataSource,

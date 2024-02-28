@@ -62,12 +62,14 @@ export interface AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue,
         queryParametersMapper: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,34 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdvancedThreatProtectionOnboardingStateSummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AdvancedThreatProtectionOnboardingDeviceSettingStates: "advancedThreatProtectionOnboardingDeviceSettingStates",
+} as const;
+/**
+ * Provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CompliantDeviceCount: "compliantDeviceCount",
+    ConflictDeviceCount: "conflictDeviceCount",
+    ErrorDeviceCount: "errorDeviceCount",
+    NonCompliantDeviceCount: "nonCompliantDeviceCount",
+    NotApplicableDeviceCount: "notApplicableDeviceCount",
+    NotAssignedDeviceCount: "notAssignedDeviceCount",
+    RemediatedDeviceCount: "remediatedDeviceCount",
+    UnknownDeviceCount: "unknownDeviceCount",
+    AdvancedThreatProtectionOnboardingDeviceSettingStates: "advancedThreatProtectionOnboardingDeviceSettingStates",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

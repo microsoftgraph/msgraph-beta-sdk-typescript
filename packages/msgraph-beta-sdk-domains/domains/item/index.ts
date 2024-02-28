@@ -105,12 +105,14 @@ export interface DomainItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -169,7 +171,7 @@ export const DomainItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DomainItemRequestBuilderUriTemplate,
@@ -177,7 +179,7 @@ export const DomainItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDomainFromDiscriminatorValue,
         queryParametersMapper: DomainItemRequestBuilderGetQueryParametersMapper,
     },
@@ -187,12 +189,45 @@ export const DomainItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDomainFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDomain,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of domain entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DomainNameReferences: "domainNameReferences",
+    FederationConfiguration: "federationConfiguration",
+    ServiceConfigurationRecords: "serviceConfigurationRecords",
+    SharedEmailDomainInvitations: "sharedEmailDomainInvitations",
+    VerificationDnsRecords: "verificationDnsRecords",
+} as const;
+/**
+ * Provides operations to manage the collection of domain entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AuthenticationType: "authenticationType",
+    AvailabilityStatus: "availabilityStatus",
+    IsAdminManaged: "isAdminManaged",
+    IsDefault: "isDefault",
+    IsInitial: "isInitial",
+    IsRoot: "isRoot",
+    IsVerified: "isVerified",
+    PasswordNotificationWindowInDays: "passwordNotificationWindowInDays",
+    PasswordValidityPeriodInDays: "passwordValidityPeriodInDays",
+    State: "state",
+    SupportedServices: "supportedServices",
+    DomainNameReferences: "domainNameReferences",
+    FederationConfiguration: "federationConfiguration",
+    ServiceConfigurationRecords: "serviceConfigurationRecords",
+    SharedEmailDomainInvitations: "sharedEmailDomainInvitations",
+    VerificationDnsRecords: "verificationDnsRecords",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

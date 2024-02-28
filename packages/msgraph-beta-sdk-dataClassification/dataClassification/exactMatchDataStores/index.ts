@@ -61,7 +61,7 @@ export interface ExactMatchDataStoresRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ExactMatchDataStoresRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ExactMatchDataStoresRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ExactMatchDataStoresRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const ExactMatchDataStoresRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchDataStoreCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ExactMatchDataStoresRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,45 @@ export const ExactMatchDataStoresRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchDataStoreFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExactMatchDataStore,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Sessions: "sessions",
+} as const;
+/**
+ * Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Columns: "columns",
+    ColumnsDesc: "columns desc",
+    DataLastUpdatedDateTime: "dataLastUpdatedDateTime",
+    DataLastUpdatedDateTimeDesc: "dataLastUpdatedDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+} as const;
+/**
+ * Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Columns: "columns",
+    DataLastUpdatedDateTime: "dataLastUpdatedDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    Sessions: "sessions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

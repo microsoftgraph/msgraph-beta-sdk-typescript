@@ -61,7 +61,7 @@ export interface DeviceAppPerformancesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DeviceAppPerformancesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DeviceAppPerformancesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DeviceAppPerformancesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const DeviceAppPerformancesRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAppPerformanceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceAppPerformancesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,79 @@ export const DeviceAppPerformancesRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAppPerformanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceAppPerformance,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceAppPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceAppPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppFriendlyName: "appFriendlyName",
+    AppFriendlyNameDesc: "appFriendlyName desc",
+    AppName: "appName",
+    AppNameDesc: "appName desc",
+    AppPublisher: "appPublisher",
+    AppPublisherDesc: "appPublisher desc",
+    AppVersion: "appVersion",
+    AppVersionDesc: "appVersion desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceManufacturer: "deviceManufacturer",
+    DeviceManufacturerDesc: "deviceManufacturer desc",
+    DeviceModel: "deviceModel",
+    DeviceModelDesc: "deviceModel desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    HealthStatus: "healthStatus",
+    HealthStatusDesc: "healthStatus desc",
+    IsLatestUsedVersion: "isLatestUsedVersion",
+    IsLatestUsedVersionDesc: "isLatestUsedVersion desc",
+    IsMostUsedVersion: "isMostUsedVersion",
+    IsMostUsedVersionDesc: "isMostUsedVersion desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    TotalAppCrashCount: "totalAppCrashCount",
+    TotalAppCrashCountDesc: "totalAppCrashCount desc",
+    TotalAppFreezeCount: "totalAppFreezeCount",
+    TotalAppFreezeCountDesc: "totalAppFreezeCount desc",
+} as const;
+/**
+ * Provides operations to manage the deviceAppPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppFriendlyName: "appFriendlyName",
+    AppName: "appName",
+    AppPublisher: "appPublisher",
+    AppVersion: "appVersion",
+    DeviceId: "deviceId",
+    DeviceManufacturer: "deviceManufacturer",
+    DeviceModel: "deviceModel",
+    DeviceName: "deviceName",
+    HealthStatus: "healthStatus",
+    IsLatestUsedVersion: "isLatestUsedVersion",
+    IsMostUsedVersion: "isMostUsedVersion",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    TotalAppCrashCount: "totalAppCrashCount",
+    TotalAppFreezeCount: "totalAppFreezeCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

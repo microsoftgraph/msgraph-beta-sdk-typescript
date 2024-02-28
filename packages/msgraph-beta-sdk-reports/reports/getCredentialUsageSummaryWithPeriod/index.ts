@@ -58,7 +58,7 @@ export interface GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParame
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +66,7 @@ export interface GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParame
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +74,7 @@ export interface GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParame
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +84,9 @@ export interface GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParame
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -119,10 +122,41 @@ export const GetCredentialUsageSummaryWithPeriodRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetCredentialUsageSummaryWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getCredentialUsageSummary method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the getCredentialUsageSummary method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AuthMethod: "authMethod",
+    AuthMethodDesc: "authMethod desc",
+    FailureActivityCount: "failureActivityCount",
+    FailureActivityCountDesc: "failureActivityCount desc",
+    Feature: "feature",
+    FeatureDesc: "feature desc",
+    SuccessfulActivityCount: "successfulActivityCount",
+    SuccessfulActivityCountDesc: "successfulActivityCount desc",
+} as const;
+/**
+ * Provides operations to call the getCredentialUsageSummary method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AuthMethod: "authMethod",
+    FailureActivityCount: "failureActivityCount",
+    Feature: "feature",
+    SuccessfulActivityCount: "successfulActivityCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

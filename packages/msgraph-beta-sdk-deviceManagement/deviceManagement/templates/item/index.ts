@@ -84,12 +84,14 @@ export interface DeviceManagementTemplateItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -134,7 +136,7 @@ export const DeviceManagementTemplateItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementTemplateItemRequestBuilderUriTemplate,
@@ -142,7 +144,7 @@ export const DeviceManagementTemplateItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementTemplateFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementTemplateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -152,12 +154,39 @@ export const DeviceManagementTemplateItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementTemplate,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Categories: "categories",
+    MigratableTo: "migratableTo",
+    Settings: "settings",
+} as const;
+/**
+ * Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    IntentCount: "intentCount",
+    IsDeprecated: "isDeprecated",
+    PlatformType: "platformType",
+    PublishedDateTime: "publishedDateTime",
+    TemplateSubtype: "templateSubtype",
+    TemplateType: "templateType",
+    VersionInfo: "versionInfo",
+    Categories: "categories",
+    MigratableTo: "migratableTo",
+    Settings: "settings",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

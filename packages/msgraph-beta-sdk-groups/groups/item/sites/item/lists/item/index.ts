@@ -14,6 +14,8 @@ import { OperationsRequestBuilderNavigationMetadata, OperationsRequestBuilderReq
 import { SubscriptionsRequestBuilderNavigationMetadata, SubscriptionsRequestBuilderRequestsMetadata, type SubscriptionsRequestBuilder } from './subscriptions/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the lists property of the microsoft.graph.site entity.
  */
@@ -61,11 +63,11 @@ export interface ListItemRequestBuilder extends BaseRequestBuilder<ListItemReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the list of richLongRunningOperations associated with a list.
+     * Return the metadata for a [list][].
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<List>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ListItemRequestBuilderGetQueryParameters> | undefined) : Promise<List | undefined>;
     /**
@@ -83,7 +85,7 @@ export interface ListItemRequestBuilder extends BaseRequestBuilder<ListItemReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the list of richLongRunningOperations associated with a list.
+     * Return the metadata for a [list][].
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -97,22 +99,65 @@ export interface ListItemRequestBuilder extends BaseRequestBuilder<ListItemReque
      toPatchRequestInformation(body: List, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the list of richLongRunningOperations associated with a list.
+ * Return the metadata for a [list][].
  */
 export interface ListItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ListItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the lists property of the microsoft.graph.site entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Activities: "activities",
+    Columns: "columns",
+    ContentTypes: "contentTypes",
+    Drive: "drive",
+    Items: "items",
+    Operations: "operations",
+    Subscriptions: "subscriptions",
+} as const;
+/**
+ * Provides operations to manage the lists property of the microsoft.graph.site entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    ETag: "eTag",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    ParentReference: "parentReference",
+    WebUrl: "webUrl",
+    DisplayName: "displayName",
+    List: "list",
+    SharepointIds: "sharepointIds",
+    System: "system",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Activities: "activities",
+    Columns: "columns",
+    ContentTypes: "contentTypes",
+    Drive: "drive",
+    Items: "items",
+    Operations: "operations",
+    Subscriptions: "subscriptions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -169,7 +214,7 @@ export const ListItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ListItemRequestBuilderUriTemplate,
@@ -177,7 +222,7 @@ export const ListItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createListFromDiscriminatorValue,
         queryParametersMapper: ListItemRequestBuilderGetQueryParametersMapper,
     },
@@ -187,7 +232,7 @@ export const ListItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createListFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeList,

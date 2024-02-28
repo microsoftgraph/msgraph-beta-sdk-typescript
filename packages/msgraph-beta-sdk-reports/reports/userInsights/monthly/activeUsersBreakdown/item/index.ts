@@ -10,32 +10,36 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ActiveUsersBreakdownMetricItemRequestBuilder extends BaseRequestBuilder<ActiveUsersBreakdownMetricItemRequestBuilder> {
     /**
-     * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+     * Get activeUsersBreakdown from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActiveUsersBreakdownMetric>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      get(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<ActiveUsersBreakdownMetric | undefined>;
     /**
-     * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+     * Get activeUsersBreakdown from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+ * Get activeUsersBreakdown from reports
  */
 export interface ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +61,27 @@ export const ActiveUsersBreakdownMetricItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createActiveUsersBreakdownMetricFromDiscriminatorValue,
         queryParametersMapper: ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppId: "appId",
+    AppName: "appName",
+    Count: "count",
+    FactDate: "factDate",
+    Os: "os",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -9,6 +9,8 @@ import { MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilderRequestsMetadata
 import { MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilderRequestsMetadata, type MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder } from './microsoftGraphWindowsUpdatesRemoveMembersById/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
  */
@@ -30,10 +32,10 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
     get microsoftGraphWindowsUpdatesRemoveMembersById(): MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder;
     /**
-     * Delete an updatableAsset object.
+     * Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -53,7 +55,7 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
      patch(body: UpdatableAsset, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UpdatableAsset | undefined>;
     /**
-     * Delete an updatableAsset object.
+     * Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -79,16 +81,28 @@ export interface UpdatableAssetItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UpdatableAssetItemRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatableAssets/{updatableAsset%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -123,7 +137,7 @@ export const UpdatableAssetItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UpdatableAssetItemRequestBuilderUriTemplate,
@@ -131,7 +145,7 @@ export const UpdatableAssetItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUpdatableAssetFromDiscriminatorValue,
         queryParametersMapper: UpdatableAssetItemRequestBuilderGetQueryParametersMapper,
     },
@@ -141,7 +155,7 @@ export const UpdatableAssetItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUpdatableAssetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUpdatableAsset,

@@ -68,7 +68,7 @@ export interface DeviceImagesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -76,7 +76,7 @@ export interface DeviceImagesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -84,7 +84,7 @@ export interface DeviceImagesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -94,6 +94,9 @@ export interface DeviceImagesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -137,7 +140,7 @@ export const DeviceImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceImageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceImagesRequestBuilderGetQueryParametersMapper,
     },
@@ -147,12 +150,67 @@ export const DeviceImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceImageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcDeviceImage,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ErrorCode: "errorCode",
+    ErrorCodeDesc: "errorCode desc",
+    ExpirationDate: "expirationDate",
+    ExpirationDateDesc: "expirationDate desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    OperatingSystem: "operatingSystem",
+    OperatingSystemDesc: "operatingSystem desc",
+    OsBuildNumber: "osBuildNumber",
+    OsBuildNumberDesc: "osBuildNumber desc",
+    OsStatus: "osStatus",
+    OsStatusDesc: "osStatus desc",
+    ScopeIds: "scopeIds",
+    ScopeIdsDesc: "scopeIds desc",
+    SourceImageResourceId: "sourceImageResourceId",
+    SourceImageResourceIdDesc: "sourceImageResourceId desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    StatusDetails: "statusDetails",
+    StatusDetailsDesc: "statusDetails desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    ErrorCode: "errorCode",
+    ExpirationDate: "expirationDate",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    OperatingSystem: "operatingSystem",
+    OsBuildNumber: "osBuildNumber",
+    OsStatus: "osStatus",
+    ScopeIds: "scopeIds",
+    SourceImageResourceId: "sourceImageResourceId",
+    Status: "status",
+    StatusDetails: "statusDetails",
+    Version: "version",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

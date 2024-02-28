@@ -57,12 +57,14 @@ export interface DeviceAppPerformanceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const DeviceAppPerformanceItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceAppPerformanceItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const DeviceAppPerformanceItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAppPerformanceFromDiscriminatorValue,
         queryParametersMapper: DeviceAppPerformanceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,40 @@ export const DeviceAppPerformanceItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAppPerformanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceAppPerformance,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceAppPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceAppPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppFriendlyName: "appFriendlyName",
+    AppName: "appName",
+    AppPublisher: "appPublisher",
+    AppVersion: "appVersion",
+    DeviceId: "deviceId",
+    DeviceManufacturer: "deviceManufacturer",
+    DeviceModel: "deviceModel",
+    DeviceName: "deviceName",
+    HealthStatus: "healthStatus",
+    IsLatestUsedVersion: "isLatestUsedVersion",
+    IsMostUsedVersion: "isMostUsedVersion",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    TotalAppCrashCount: "totalAppCrashCount",
+    TotalAppFreezeCount: "totalAppFreezeCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

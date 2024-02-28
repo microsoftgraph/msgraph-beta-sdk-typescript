@@ -5,6 +5,8 @@ import { createTiIndicatorFromDiscriminatorValue, serializeTiIndicator, type TiI
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
  */
@@ -60,16 +62,86 @@ export interface TiIndicatorItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TiIndicatorItemRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators/{tiIndicator%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Action: "action",
+    ActivityGroupNames: "activityGroupNames",
+    AdditionalInformation: "additionalInformation",
+    AzureTenantId: "azureTenantId",
+    Confidence: "confidence",
+    Description: "description",
+    DiamondModel: "diamondModel",
+    DomainName: "domainName",
+    EmailEncoding: "emailEncoding",
+    EmailLanguage: "emailLanguage",
+    EmailRecipient: "emailRecipient",
+    EmailSenderAddress: "emailSenderAddress",
+    EmailSenderName: "emailSenderName",
+    EmailSourceDomain: "emailSourceDomain",
+    EmailSourceIpAddress: "emailSourceIpAddress",
+    EmailSubject: "emailSubject",
+    EmailXMailer: "emailXMailer",
+    ExpirationDateTime: "expirationDateTime",
+    ExternalId: "externalId",
+    FileCompileDateTime: "fileCompileDateTime",
+    FileCreatedDateTime: "fileCreatedDateTime",
+    FileHashType: "fileHashType",
+    FileHashValue: "fileHashValue",
+    FileMutexName: "fileMutexName",
+    FileName: "fileName",
+    FilePacker: "filePacker",
+    FilePath: "filePath",
+    FileSize: "fileSize",
+    FileType: "fileType",
+    IngestedDateTime: "ingestedDateTime",
+    IsActive: "isActive",
+    KillChain: "killChain",
+    KnownFalsePositives: "knownFalsePositives",
+    LastReportedDateTime: "lastReportedDateTime",
+    MalwareFamilyNames: "malwareFamilyNames",
+    NetworkCidrBlock: "networkCidrBlock",
+    NetworkDestinationAsn: "networkDestinationAsn",
+    NetworkDestinationCidrBlock: "networkDestinationCidrBlock",
+    NetworkDestinationIPv4: "networkDestinationIPv4",
+    NetworkDestinationIPv6: "networkDestinationIPv6",
+    NetworkDestinationPort: "networkDestinationPort",
+    NetworkIPv4: "networkIPv4",
+    NetworkIPv6: "networkIPv6",
+    NetworkPort: "networkPort",
+    NetworkProtocol: "networkProtocol",
+    NetworkSourceAsn: "networkSourceAsn",
+    NetworkSourceCidrBlock: "networkSourceCidrBlock",
+    NetworkSourceIPv4: "networkSourceIPv4",
+    NetworkSourceIPv6: "networkSourceIPv6",
+    NetworkSourcePort: "networkSourcePort",
+    PassiveOnly: "passiveOnly",
+    Severity: "severity",
+    Tags: "tags",
+    TargetProduct: "targetProduct",
+    ThreatType: "threatType",
+    TlpLevel: "tlpLevel",
+    Url: "url",
+    UserAgent: "userAgent",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -87,7 +159,7 @@ export const TiIndicatorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TiIndicatorItemRequestBuilderUriTemplate,
@@ -95,7 +167,7 @@ export const TiIndicatorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTiIndicatorFromDiscriminatorValue,
         queryParametersMapper: TiIndicatorItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +177,7 @@ export const TiIndicatorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTiIndicatorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTiIndicator,

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ManagementTemplateStepVersionItemRequestBuilderRequestsMetadata, type ManagementTemplateStepVersionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
  */
@@ -46,7 +49,7 @@ export interface VersionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +57,7 @@ export interface VersionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +65,7 @@ export interface VersionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -76,6 +79,55 @@ export interface VersionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const VersionsRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep%2Did}/versions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AcceptedFor: "acceptedFor",
+    Deployments: "deployments",
+    TemplateStep: "templateStep",
+} as const;
+/**
+ * Provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ContentMarkdown: "contentMarkdown",
+    ContentMarkdownDesc: "contentMarkdown desc",
+    CreatedByUserId: "createdByUserId",
+    CreatedByUserIdDesc: "createdByUserId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionByUserIdDesc: "lastActionByUserId desc",
+    LastActionDateTime: "lastActionDateTime",
+    LastActionDateTimeDesc: "lastActionDateTime desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Version: "version",
+    VersionDesc: "version desc",
+    VersionInformation: "versionInformation",
+    VersionInformationDesc: "versionInformation desc",
+} as const;
+/**
+ * Provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ContentMarkdown: "contentMarkdown",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    Name: "name",
+    Version: "version",
+    VersionInformation: "versionInformation",
+    AcceptedFor: "acceptedFor",
+    Deployments: "deployments",
+    TemplateStep: "templateStep",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -111,7 +163,7 @@ export const VersionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepVersionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: VersionsRequestBuilderGetQueryParametersMapper,
     },

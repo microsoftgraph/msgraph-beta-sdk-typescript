@@ -76,7 +76,7 @@ export interface DeviceConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -84,7 +84,7 @@ export interface DeviceConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -92,7 +92,7 @@ export interface DeviceConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -102,6 +102,9 @@ export interface DeviceConfigurationsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -151,7 +154,7 @@ export const DeviceConfigurationsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -161,12 +164,75 @@ export const DeviceConfigurationsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceConfiguration,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    DeviceSettingStateSummaries: "deviceSettingStateSummaries",
+    DeviceStatuses: "deviceStatuses",
+    DeviceStatusOverview: "deviceStatusOverview",
+    GroupAssignments: "groupAssignments",
+    UserStatuses: "userStatuses",
+    UserStatusOverview: "userStatusOverview",
+} as const;
+/**
+ * Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DeviceManagementApplicabilityRuleDeviceMode: "deviceManagementApplicabilityRuleDeviceMode",
+    DeviceManagementApplicabilityRuleDeviceModeDesc: "deviceManagementApplicabilityRuleDeviceMode desc",
+    DeviceManagementApplicabilityRuleOsEdition: "deviceManagementApplicabilityRuleOsEdition",
+    DeviceManagementApplicabilityRuleOsEditionDesc: "deviceManagementApplicabilityRuleOsEdition desc",
+    DeviceManagementApplicabilityRuleOsVersion: "deviceManagementApplicabilityRuleOsVersion",
+    DeviceManagementApplicabilityRuleOsVersionDesc: "deviceManagementApplicabilityRuleOsVersion desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    SupportsScopeTags: "supportsScopeTags",
+    SupportsScopeTagsDesc: "supportsScopeTags desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DeviceManagementApplicabilityRuleDeviceMode: "deviceManagementApplicabilityRuleDeviceMode",
+    DeviceManagementApplicabilityRuleOsEdition: "deviceManagementApplicabilityRuleOsEdition",
+    DeviceManagementApplicabilityRuleOsVersion: "deviceManagementApplicabilityRuleOsVersion",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    SupportsScopeTags: "supportsScopeTags",
+    Version: "version",
+    Assignments: "assignments",
+    DeviceSettingStateSummaries: "deviceSettingStateSummaries",
+    DeviceStatuses: "deviceStatuses",
+    DeviceStatusOverview: "deviceStatusOverview",
+    GroupAssignments: "groupAssignments",
+    UserStatuses: "userStatuses",
+    UserStatusOverview: "userStatusOverview",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

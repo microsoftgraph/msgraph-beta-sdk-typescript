@@ -82,12 +82,14 @@ export interface ExchangeRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -134,7 +136,7 @@ export const ExchangeRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ExchangeRequestBuilderUriTemplate,
@@ -142,7 +144,7 @@ export const ExchangeRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacApplicationFromDiscriminatorValue,
         queryParametersMapper: ExchangeRequestBuilderGetQueryParametersMapper,
     },
@@ -152,12 +154,34 @@ export const ExchangeRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacApplicationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRbacApplication,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the exchange property of the microsoft.graph.roleManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    CustomAppScopes: "customAppScopes",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    TransitiveRoleAssignments: "transitiveRoleAssignments",
+} as const;
+/**
+ * Provides operations to manage the exchange property of the microsoft.graph.roleManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CustomAppScopes: "customAppScopes",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    TransitiveRoleAssignments: "transitiveRoleAssignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createGroupPolicySettingMappingFromDiscriminatorValue, serializeGroupPo
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
  */
@@ -57,16 +59,48 @@ export interface GroupPolicySettingMappingItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GroupPolicySettingMappingItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/groupPolicySettingMappings/{groupPolicySettingMapping%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdmxSettingDefinitionId: "admxSettingDefinitionId",
+    ChildIdList: "childIdList",
+    IntuneSettingDefinitionId: "intuneSettingDefinitionId",
+    IntuneSettingUriList: "intuneSettingUriList",
+    IsMdmSupported: "isMdmSupported",
+    MdmCspName: "mdmCspName",
+    MdmMinimumOSVersion: "mdmMinimumOSVersion",
+    MdmSettingUri: "mdmSettingUri",
+    MdmSupportedState: "mdmSupportedState",
+    ParentId: "parentId",
+    SettingCategory: "settingCategory",
+    SettingDisplayName: "settingDisplayName",
+    SettingDisplayValue: "settingDisplayValue",
+    SettingDisplayValueType: "settingDisplayValueType",
+    SettingName: "settingName",
+    SettingScope: "settingScope",
+    SettingType: "settingType",
+    SettingValue: "settingValue",
+    SettingValueDisplayUnits: "settingValueDisplayUnits",
+    SettingValueType: "settingValueType",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +118,7 @@ export const GroupPolicySettingMappingItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GroupPolicySettingMappingItemRequestBuilderUriTemplate,
@@ -92,7 +126,7 @@ export const GroupPolicySettingMappingItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicySettingMappingFromDiscriminatorValue,
         queryParametersMapper: GroupPolicySettingMappingItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +136,7 @@ export const GroupPolicySettingMappingItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicySettingMappingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicySettingMapping,

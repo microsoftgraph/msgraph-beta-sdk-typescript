@@ -61,7 +61,7 @@ export interface AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetQueryParam
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetQueryParam
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetQueryParam
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetQueryParam
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AndroidDeviceOwnerEnrollmentProfilesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidDeviceOwnerEnrollmentProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,94 @@ export const AndroidDeviceOwnerEnrollmentProfilesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidDeviceOwnerEnrollmentProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AccountId: "accountId",
+    AccountIdDesc: "accountId desc",
+    ConfigureWifi: "configureWifi",
+    ConfigureWifiDesc: "configureWifi desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EnrolledDeviceCount: "enrolledDeviceCount",
+    EnrolledDeviceCountDesc: "enrolledDeviceCount desc",
+    EnrollmentMode: "enrollmentMode",
+    EnrollmentModeDesc: "enrollmentMode desc",
+    EnrollmentTokenType: "enrollmentTokenType",
+    EnrollmentTokenTypeDesc: "enrollmentTokenType desc",
+    EnrollmentTokenUsageCount: "enrollmentTokenUsageCount",
+    EnrollmentTokenUsageCountDesc: "enrollmentTokenUsageCount desc",
+    IsTeamsDeviceProfile: "isTeamsDeviceProfile",
+    IsTeamsDeviceProfileDesc: "isTeamsDeviceProfile desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    QrCodeContent: "qrCodeContent",
+    QrCodeContentDesc: "qrCodeContent desc",
+    QrCodeImage: "qrCodeImage",
+    QrCodeImageDesc: "qrCodeImage desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    TokenCreationDateTime: "tokenCreationDateTime",
+    TokenCreationDateTimeDesc: "tokenCreationDateTime desc",
+    TokenExpirationDateTime: "tokenExpirationDateTime",
+    TokenExpirationDateTimeDesc: "tokenExpirationDateTime desc",
+    TokenValue: "tokenValue",
+    TokenValueDesc: "tokenValue desc",
+    WifiHidden: "wifiHidden",
+    WifiHiddenDesc: "wifiHidden desc",
+    WifiPassword: "wifiPassword",
+    WifiPasswordDesc: "wifiPassword desc",
+    WifiSecurityType: "wifiSecurityType",
+    WifiSecurityTypeDesc: "wifiSecurityType desc",
+    WifiSsid: "wifiSsid",
+    WifiSsidDesc: "wifiSsid desc",
+} as const;
+/**
+ * Provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccountId: "accountId",
+    ConfigureWifi: "configureWifi",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    EnrolledDeviceCount: "enrolledDeviceCount",
+    EnrollmentMode: "enrollmentMode",
+    EnrollmentTokenType: "enrollmentTokenType",
+    EnrollmentTokenUsageCount: "enrollmentTokenUsageCount",
+    IsTeamsDeviceProfile: "isTeamsDeviceProfile",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    QrCodeContent: "qrCodeContent",
+    QrCodeImage: "qrCodeImage",
+    RoleScopeTagIds: "roleScopeTagIds",
+    TokenCreationDateTime: "tokenCreationDateTime",
+    TokenExpirationDateTime: "tokenExpirationDateTime",
+    TokenValue: "tokenValue",
+    WifiHidden: "wifiHidden",
+    WifiPassword: "wifiPassword",
+    WifiSecurityType: "wifiSecurityType",
+    WifiSsid: "wifiSsid",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

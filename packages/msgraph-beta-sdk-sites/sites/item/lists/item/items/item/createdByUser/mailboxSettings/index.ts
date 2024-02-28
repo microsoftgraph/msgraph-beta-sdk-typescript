@@ -5,6 +5,8 @@ import { createMailboxSettingsFromDiscriminatorValue, serializeMailboxSettings, 
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Builds and executes requests for operations under /sites/{site-id}/lists/{list-id}/items/{listItem-id}/createdByUser/mailboxSettings
  */
@@ -45,16 +47,31 @@ export interface MailboxSettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const MailboxSettingsRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/createdByUser/mailboxSettings{?%24expand,%24select}";
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+export const GetSelectQueryParameterTypeObject = {
+    ArchiveFolder: "archiveFolder",
+    AutomaticRepliesSetting: "automaticRepliesSetting",
+    DateFormat: "dateFormat",
+    DelegateMeetingMessageDeliveryOptions: "delegateMeetingMessageDeliveryOptions",
+    Language: "language",
+    TimeFormat: "timeFormat",
+    TimeZone: "timeZone",
+    UserPurpose: "userPurpose",
+    UserPurposeV2: "userPurposeV2",
+    WorkingHours: "workingHours",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -72,7 +89,7 @@ export const MailboxSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMailboxSettingsFromDiscriminatorValue,
         queryParametersMapper: MailboxSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -82,7 +99,7 @@ export const MailboxSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMailboxSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMailboxSettings,

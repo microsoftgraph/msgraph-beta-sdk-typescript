@@ -61,7 +61,7 @@ export interface CategorySummariesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface CategorySummariesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface CategorySummariesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface CategorySummariesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const CategorySummariesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateCategorySummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CategorySummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,57 @@ export const CategorySummariesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateCategorySummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMacOSSoftwareUpdateCategorySummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    UpdateStateSummaries: "updateStateSummaries",
+} as const;
+/**
+ * Provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    FailedUpdateCount: "failedUpdateCount",
+    FailedUpdateCountDesc: "failedUpdateCount desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    SuccessfulUpdateCount: "successfulUpdateCount",
+    SuccessfulUpdateCountDesc: "successfulUpdateCount desc",
+    TotalUpdateCount: "totalUpdateCount",
+    TotalUpdateCountDesc: "totalUpdateCount desc",
+    UpdateCategory: "updateCategory",
+    UpdateCategoryDesc: "updateCategory desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+} as const;
+/**
+ * Provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeviceId: "deviceId",
+    DisplayName: "displayName",
+    FailedUpdateCount: "failedUpdateCount",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    SuccessfulUpdateCount: "successfulUpdateCount",
+    TotalUpdateCount: "totalUpdateCount",
+    UpdateCategory: "updateCategory",
+    UserId: "userId",
+    UpdateStateSummaries: "updateStateSummaries",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ManagedDeviceComplianceItemRequestBuilderRequestsMetadata, type ManagedDeviceComplianceItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managedDeviceCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -62,7 +65,7 @@ export interface ManagedDeviceCompliancesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface ManagedDeviceCompliancesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface ManagedDeviceCompliancesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,67 @@ export interface ManagedDeviceCompliancesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const ManagedDeviceCompliancesRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedDeviceCompliances{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the managedDeviceCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the managedDeviceCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ComplianceStatus: "complianceStatus",
+    ComplianceStatusDesc: "complianceStatus desc",
+    DeviceType: "deviceType",
+    DeviceTypeDesc: "deviceType desc",
+    InGracePeriodUntilDateTime: "inGracePeriodUntilDateTime",
+    InGracePeriodUntilDateTimeDesc: "inGracePeriodUntilDateTime desc",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastRefreshedDateTimeDesc: "lastRefreshedDateTime desc",
+    LastSyncDateTime: "lastSyncDateTime",
+    LastSyncDateTimeDesc: "lastSyncDateTime desc",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceIdDesc: "managedDeviceId desc",
+    ManagedDeviceName: "managedDeviceName",
+    ManagedDeviceNameDesc: "managedDeviceName desc",
+    Manufacturer: "manufacturer",
+    ManufacturerDesc: "manufacturer desc",
+    Model: "model",
+    ModelDesc: "model desc",
+    OsDescription: "osDescription",
+    OsDescriptionDesc: "osDescription desc",
+    OsVersion: "osVersion",
+    OsVersionDesc: "osVersion desc",
+    OwnerType: "ownerType",
+    OwnerTypeDesc: "ownerType desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+} as const;
+/**
+ * Provides operations to manage the managedDeviceCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ComplianceStatus: "complianceStatus",
+    DeviceType: "deviceType",
+    InGracePeriodUntilDateTime: "inGracePeriodUntilDateTime",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastSyncDateTime: "lastSyncDateTime",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceName: "managedDeviceName",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    OsDescription: "osDescription",
+    OsVersion: "osVersion",
+    OwnerType: "ownerType",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +191,7 @@ export const ManagedDeviceCompliancesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceComplianceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceCompliancesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +201,7 @@ export const ManagedDeviceCompliancesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceComplianceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedDeviceCompliance,

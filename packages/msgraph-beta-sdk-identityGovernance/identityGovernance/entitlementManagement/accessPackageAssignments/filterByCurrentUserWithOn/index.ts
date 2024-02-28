@@ -58,7 +58,7 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +66,7 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +74,7 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +84,9 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -119,10 +122,69 @@ export const FilterByCurrentUserWithOnRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue,
         queryParametersMapper: FilterByCurrentUserWithOnRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the filterByCurrentUser method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignmentPolicy: "accessPackageAssignmentPolicy",
+    AccessPackageAssignmentRequests: "accessPackageAssignmentRequests",
+    AccessPackageAssignmentResourceRoles: "accessPackageAssignmentResourceRoles",
+    Target: "target",
+} as const;
+/**
+ * Provides operations to call the filterByCurrentUser method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AccessPackageId: "accessPackageId",
+    AccessPackageIdDesc: "accessPackageId desc",
+    AssignmentPolicyId: "assignmentPolicyId",
+    AssignmentPolicyIdDesc: "assignmentPolicyId desc",
+    AssignmentState: "assignmentState",
+    AssignmentStateDesc: "assignmentState desc",
+    AssignmentStatus: "assignmentStatus",
+    AssignmentStatusDesc: "assignmentStatus desc",
+    CatalogId: "catalogId",
+    CatalogIdDesc: "catalogId desc",
+    CustomExtensionCalloutInstances: "customExtensionCalloutInstances",
+    CustomExtensionCalloutInstancesDesc: "customExtensionCalloutInstances desc",
+    ExpiredDateTime: "expiredDateTime",
+    ExpiredDateTimeDesc: "expiredDateTime desc",
+    IsExtended: "isExtended",
+    IsExtendedDesc: "isExtended desc",
+    Schedule: "schedule",
+    ScheduleDesc: "schedule desc",
+    TargetId: "targetId",
+    TargetIdDesc: "targetId desc",
+} as const;
+/**
+ * Provides operations to call the filterByCurrentUser method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccessPackageId: "accessPackageId",
+    AssignmentPolicyId: "assignmentPolicyId",
+    AssignmentState: "assignmentState",
+    AssignmentStatus: "assignmentStatus",
+    CatalogId: "catalogId",
+    CustomExtensionCalloutInstances: "customExtensionCalloutInstances",
+    ExpiredDateTime: "expiredDateTime",
+    IsExtended: "isExtended",
+    Schedule: "schedule",
+    TargetId: "targetId",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignmentPolicy: "accessPackageAssignmentPolicy",
+    AccessPackageAssignmentRequests: "accessPackageAssignmentRequests",
+    AccessPackageAssignmentResourceRoles: "accessPackageAssignmentResourceRoles",
+    Target: "target",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

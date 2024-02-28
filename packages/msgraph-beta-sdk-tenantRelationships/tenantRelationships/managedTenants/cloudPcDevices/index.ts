@@ -62,7 +62,7 @@ export interface CloudPcDevicesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface CloudPcDevicesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface CloudPcDevicesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface CloudPcDevicesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const CloudPcDevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CloudPcDevicesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,67 @@ export const CloudPcDevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcDevice,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the cloudPcDevices property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the cloudPcDevices property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CloudPcStatus: "cloudPcStatus",
+    CloudPcStatusDesc: "cloudPcStatus desc",
+    DeviceSpecification: "deviceSpecification",
+    DeviceSpecificationDesc: "deviceSpecification desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastRefreshedDateTimeDesc: "lastRefreshedDateTime desc",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceIdDesc: "managedDeviceId desc",
+    ManagedDeviceName: "managedDeviceName",
+    ManagedDeviceNameDesc: "managedDeviceName desc",
+    ProvisioningPolicyId: "provisioningPolicyId",
+    ProvisioningPolicyIdDesc: "provisioningPolicyId desc",
+    ServicePlanName: "servicePlanName",
+    ServicePlanNameDesc: "servicePlanName desc",
+    ServicePlanType: "servicePlanType",
+    ServicePlanTypeDesc: "servicePlanType desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the cloudPcDevices property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CloudPcStatus: "cloudPcStatus",
+    DeviceSpecification: "deviceSpecification",
+    DisplayName: "displayName",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceName: "managedDeviceName",
+    ProvisioningPolicyId: "provisioningPolicyId",
+    ServicePlanName: "servicePlanName",
+    ServicePlanType: "servicePlanType",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -11,6 +11,9 @@ import { SubmitTiIndicatorsRequestBuilderRequestsMetadata, type SubmitTiIndicato
 import { type UpdateTiIndicatorsRequestBuilder, UpdateTiIndicatorsRequestBuilderRequestsMetadata } from './updateTiIndicators/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
  */
@@ -83,7 +86,7 @@ export interface TiIndicatorsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -91,7 +94,7 @@ export interface TiIndicatorsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -99,7 +102,7 @@ export interface TiIndicatorsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -113,6 +116,199 @@ export interface TiIndicatorsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TiIndicatorsRequestBuilderUriTemplate = "{+baseurl}/security/tiIndicators{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Action: "action",
+    ActionDesc: "action desc",
+    ActivityGroupNames: "activityGroupNames",
+    ActivityGroupNamesDesc: "activityGroupNames desc",
+    AdditionalInformation: "additionalInformation",
+    AdditionalInformationDesc: "additionalInformation desc",
+    AzureTenantId: "azureTenantId",
+    AzureTenantIdDesc: "azureTenantId desc",
+    Confidence: "confidence",
+    ConfidenceDesc: "confidence desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DiamondModel: "diamondModel",
+    DiamondModelDesc: "diamondModel desc",
+    DomainName: "domainName",
+    DomainNameDesc: "domainName desc",
+    EmailEncoding: "emailEncoding",
+    EmailEncodingDesc: "emailEncoding desc",
+    EmailLanguage: "emailLanguage",
+    EmailLanguageDesc: "emailLanguage desc",
+    EmailRecipient: "emailRecipient",
+    EmailRecipientDesc: "emailRecipient desc",
+    EmailSenderAddress: "emailSenderAddress",
+    EmailSenderAddressDesc: "emailSenderAddress desc",
+    EmailSenderName: "emailSenderName",
+    EmailSenderNameDesc: "emailSenderName desc",
+    EmailSourceDomain: "emailSourceDomain",
+    EmailSourceDomainDesc: "emailSourceDomain desc",
+    EmailSourceIpAddress: "emailSourceIpAddress",
+    EmailSourceIpAddressDesc: "emailSourceIpAddress desc",
+    EmailSubject: "emailSubject",
+    EmailSubjectDesc: "emailSubject desc",
+    EmailXMailer: "emailXMailer",
+    EmailXMailerDesc: "emailXMailer desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    ExternalId: "externalId",
+    ExternalIdDesc: "externalId desc",
+    FileCompileDateTime: "fileCompileDateTime",
+    FileCompileDateTimeDesc: "fileCompileDateTime desc",
+    FileCreatedDateTime: "fileCreatedDateTime",
+    FileCreatedDateTimeDesc: "fileCreatedDateTime desc",
+    FileHashType: "fileHashType",
+    FileHashTypeDesc: "fileHashType desc",
+    FileHashValue: "fileHashValue",
+    FileHashValueDesc: "fileHashValue desc",
+    FileMutexName: "fileMutexName",
+    FileMutexNameDesc: "fileMutexName desc",
+    FileName: "fileName",
+    FileNameDesc: "fileName desc",
+    FilePacker: "filePacker",
+    FilePackerDesc: "filePacker desc",
+    FilePath: "filePath",
+    FilePathDesc: "filePath desc",
+    FileSize: "fileSize",
+    FileSizeDesc: "fileSize desc",
+    FileType: "fileType",
+    FileTypeDesc: "fileType desc",
+    IngestedDateTime: "ingestedDateTime",
+    IngestedDateTimeDesc: "ingestedDateTime desc",
+    IsActive: "isActive",
+    IsActiveDesc: "isActive desc",
+    KillChain: "killChain",
+    KillChainDesc: "killChain desc",
+    KnownFalsePositives: "knownFalsePositives",
+    KnownFalsePositivesDesc: "knownFalsePositives desc",
+    LastReportedDateTime: "lastReportedDateTime",
+    LastReportedDateTimeDesc: "lastReportedDateTime desc",
+    MalwareFamilyNames: "malwareFamilyNames",
+    MalwareFamilyNamesDesc: "malwareFamilyNames desc",
+    NetworkCidrBlock: "networkCidrBlock",
+    NetworkCidrBlockDesc: "networkCidrBlock desc",
+    NetworkDestinationAsn: "networkDestinationAsn",
+    NetworkDestinationAsnDesc: "networkDestinationAsn desc",
+    NetworkDestinationCidrBlock: "networkDestinationCidrBlock",
+    NetworkDestinationCidrBlockDesc: "networkDestinationCidrBlock desc",
+    NetworkDestinationIPv4: "networkDestinationIPv4",
+    NetworkDestinationIPv4Desc: "networkDestinationIPv4 desc",
+    NetworkDestinationIPv6: "networkDestinationIPv6",
+    NetworkDestinationIPv6Desc: "networkDestinationIPv6 desc",
+    NetworkDestinationPort: "networkDestinationPort",
+    NetworkDestinationPortDesc: "networkDestinationPort desc",
+    NetworkIPv4: "networkIPv4",
+    NetworkIPv4Desc: "networkIPv4 desc",
+    NetworkIPv6: "networkIPv6",
+    NetworkIPv6Desc: "networkIPv6 desc",
+    NetworkPort: "networkPort",
+    NetworkPortDesc: "networkPort desc",
+    NetworkProtocol: "networkProtocol",
+    NetworkProtocolDesc: "networkProtocol desc",
+    NetworkSourceAsn: "networkSourceAsn",
+    NetworkSourceAsnDesc: "networkSourceAsn desc",
+    NetworkSourceCidrBlock: "networkSourceCidrBlock",
+    NetworkSourceCidrBlockDesc: "networkSourceCidrBlock desc",
+    NetworkSourceIPv4: "networkSourceIPv4",
+    NetworkSourceIPv4Desc: "networkSourceIPv4 desc",
+    NetworkSourceIPv6: "networkSourceIPv6",
+    NetworkSourceIPv6Desc: "networkSourceIPv6 desc",
+    NetworkSourcePort: "networkSourcePort",
+    NetworkSourcePortDesc: "networkSourcePort desc",
+    PassiveOnly: "passiveOnly",
+    PassiveOnlyDesc: "passiveOnly desc",
+    Severity: "severity",
+    SeverityDesc: "severity desc",
+    Tags: "tags",
+    TagsDesc: "tags desc",
+    TargetProduct: "targetProduct",
+    TargetProductDesc: "targetProduct desc",
+    ThreatType: "threatType",
+    ThreatTypeDesc: "threatType desc",
+    TlpLevel: "tlpLevel",
+    TlpLevelDesc: "tlpLevel desc",
+    Url: "url",
+    UrlDesc: "url desc",
+    UserAgent: "userAgent",
+    UserAgentDesc: "userAgent desc",
+} as const;
+/**
+ * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Action: "action",
+    ActivityGroupNames: "activityGroupNames",
+    AdditionalInformation: "additionalInformation",
+    AzureTenantId: "azureTenantId",
+    Confidence: "confidence",
+    Description: "description",
+    DiamondModel: "diamondModel",
+    DomainName: "domainName",
+    EmailEncoding: "emailEncoding",
+    EmailLanguage: "emailLanguage",
+    EmailRecipient: "emailRecipient",
+    EmailSenderAddress: "emailSenderAddress",
+    EmailSenderName: "emailSenderName",
+    EmailSourceDomain: "emailSourceDomain",
+    EmailSourceIpAddress: "emailSourceIpAddress",
+    EmailSubject: "emailSubject",
+    EmailXMailer: "emailXMailer",
+    ExpirationDateTime: "expirationDateTime",
+    ExternalId: "externalId",
+    FileCompileDateTime: "fileCompileDateTime",
+    FileCreatedDateTime: "fileCreatedDateTime",
+    FileHashType: "fileHashType",
+    FileHashValue: "fileHashValue",
+    FileMutexName: "fileMutexName",
+    FileName: "fileName",
+    FilePacker: "filePacker",
+    FilePath: "filePath",
+    FileSize: "fileSize",
+    FileType: "fileType",
+    IngestedDateTime: "ingestedDateTime",
+    IsActive: "isActive",
+    KillChain: "killChain",
+    KnownFalsePositives: "knownFalsePositives",
+    LastReportedDateTime: "lastReportedDateTime",
+    MalwareFamilyNames: "malwareFamilyNames",
+    NetworkCidrBlock: "networkCidrBlock",
+    NetworkDestinationAsn: "networkDestinationAsn",
+    NetworkDestinationCidrBlock: "networkDestinationCidrBlock",
+    NetworkDestinationIPv4: "networkDestinationIPv4",
+    NetworkDestinationIPv6: "networkDestinationIPv6",
+    NetworkDestinationPort: "networkDestinationPort",
+    NetworkIPv4: "networkIPv4",
+    NetworkIPv6: "networkIPv6",
+    NetworkPort: "networkPort",
+    NetworkProtocol: "networkProtocol",
+    NetworkSourceAsn: "networkSourceAsn",
+    NetworkSourceCidrBlock: "networkSourceCidrBlock",
+    NetworkSourceIPv4: "networkSourceIPv4",
+    NetworkSourceIPv6: "networkSourceIPv6",
+    NetworkSourcePort: "networkSourcePort",
+    PassiveOnly: "passiveOnly",
+    Severity: "severity",
+    Tags: "tags",
+    TargetProduct: "targetProduct",
+    ThreatType: "threatType",
+    TlpLevel: "tlpLevel",
+    Url: "url",
+    UserAgent: "userAgent",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -160,7 +356,7 @@ export const TiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTiIndicatorCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TiIndicatorsRequestBuilderGetQueryParametersMapper,
     },
@@ -170,7 +366,7 @@ export const TiIndicatorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTiIndicatorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTiIndicator,

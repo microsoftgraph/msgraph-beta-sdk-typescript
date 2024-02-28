@@ -50,12 +50,14 @@ export interface FinancialsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -86,7 +88,7 @@ export const FinancialsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFinancialsFromDiscriminatorValue,
         queryParametersMapper: FinancialsRequestBuilderGetQueryParametersMapper,
     },
@@ -96,12 +98,26 @@ export const FinancialsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFinancialsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFinancials,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the financials singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Companies: "companies",
+} as const;
+/**
+ * Provides operations to manage the financials singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Companies: "companies",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

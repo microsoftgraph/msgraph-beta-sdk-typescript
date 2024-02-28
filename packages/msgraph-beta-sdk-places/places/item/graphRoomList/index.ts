@@ -4,9 +4,13 @@
 import { createRoomListFromDiscriminatorValue, type RoomList } from '@microsoft/msgraph-beta-sdk/models/';
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { RoomsRequestBuilderNavigationMetadata, RoomsRequestBuilderRequestsMetadata, type RoomsRequestBuilder } from './rooms/';
+import { RoomsWithPlaceIdRequestBuilderRequestsMetadata, type RoomsWithPlaceIdRequestBuilder } from './roomsWithPlaceId/';
 import { type WorkspacesRequestBuilder, WorkspacesRequestBuilderNavigationMetadata, WorkspacesRequestBuilderRequestsMetadata } from './workspaces/';
+import { type WorkspacesWithPlaceIdRequestBuilder, WorkspacesWithPlaceIdRequestBuilderRequestsMetadata } from './workspacesWithPlaceId/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Casts the previous resource to roomList.
  */
@@ -27,11 +31,23 @@ export interface GraphRoomListRequestBuilder extends BaseRequestBuilder<GraphRoo
      */
      get(requestConfiguration?: RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters> | undefined) : Promise<RoomList | undefined>;
     /**
+     * Provides operations to manage the rooms property of the microsoft.graph.roomList entity.
+     * @param placeId Alternate key of room
+     * @returns {RoomsWithPlaceIdRequestBuilder}
+     */
+     roomsWithPlaceId(placeId: string | undefined) : RoomsWithPlaceIdRequestBuilder;
+    /**
      * Get the item of type microsoft.graph.place as microsoft.graph.roomList
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
+    /**
+     * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+     * @param placeId Alternate key of workspace
+     * @returns {WorkspacesWithPlaceIdRequestBuilder}
+     */
+     workspacesWithPlaceId(placeId: string | undefined) : WorkspacesWithPlaceIdRequestBuilder;
 }
 /**
  * Get the item of type microsoft.graph.place as microsoft.graph.roomList
@@ -40,16 +56,33 @@ export interface GraphRoomListRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GraphRoomListRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did}/graph.roomList{?%24expand,%24select}";
+/**
+ * Casts the previous resource to roomList.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Casts the previous resource to roomList.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Address: "address",
+    DisplayName: "displayName",
+    GeoCoordinates: "geoCoordinates",
+    Phone: "phone",
+    PlaceId: "placeId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -61,6 +94,12 @@ const GraphRoomListRequestBuilderGetQueryParametersMapper: Record<string, string
  * Metadata for all the navigation properties in the request builder.
  */
 export const GraphRoomListRequestBuilderNavigationMetadata: Record<Exclude<keyof GraphRoomListRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    roomsWithPlaceId: {
+        requestsMetadata: RoomsWithPlaceIdRequestBuilderRequestsMetadata,
+    },
+    workspacesWithPlaceId: {
+        requestsMetadata: WorkspacesWithPlaceIdRequestBuilderRequestsMetadata,
+    },
     rooms: {
         requestsMetadata: RoomsRequestBuilderRequestsMetadata,
         navigationMetadata: RoomsRequestBuilderNavigationMetadata,
@@ -80,7 +119,7 @@ export const GraphRoomListRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRoomListFromDiscriminatorValue,
         queryParametersMapper: GraphRoomListRequestBuilderGetQueryParametersMapper,
     },

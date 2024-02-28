@@ -23,6 +23,7 @@ export function deserializeIntoGetOffice365GroupsActivityDetailWithPeriodGetResp
         "value": n => { getOffice365GroupsActivityDetailWithPeriodGetResponse.value = n.getCollectionOfObjectValues<Office365GroupsActivityDetail>(createOffice365GroupsActivityDetailFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
 export interface GetOffice365GroupsActivityDetailWithPeriodGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +59,7 @@ export interface GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQuer
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +67,7 @@ export interface GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQuer
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +75,7 @@ export interface GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQuer
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +85,8 @@ export interface GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQuer
      */
     top?: number;
 }
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -96,6 +99,12 @@ export function serializeGetOffice365GroupsActivityDetailWithPeriodGetResponse(w
  * Uri template for the request builder.
  */
 export const GetOffice365GroupsActivityDetailWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365GroupsActivityDetail(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getOffice365GroupsActivityDetail method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,10 +128,86 @@ export const GetOffice365GroupsActivityDetailWithPeriodRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOffice365GroupsActivityDetailWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getOffice365GroupsActivityDetail method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ExchangeMailboxStorageUsedInBytes: "exchangeMailboxStorageUsedInBytes",
+    ExchangeMailboxStorageUsedInBytesDesc: "exchangeMailboxStorageUsedInBytes desc",
+    ExchangeMailboxTotalItemCount: "exchangeMailboxTotalItemCount",
+    ExchangeMailboxTotalItemCountDesc: "exchangeMailboxTotalItemCount desc",
+    ExchangeReceivedEmailCount: "exchangeReceivedEmailCount",
+    ExchangeReceivedEmailCountDesc: "exchangeReceivedEmailCount desc",
+    ExternalMemberCount: "externalMemberCount",
+    ExternalMemberCountDesc: "externalMemberCount desc",
+    GroupDisplayName: "groupDisplayName",
+    GroupDisplayNameDesc: "groupDisplayName desc",
+    GroupId: "groupId",
+    GroupIdDesc: "groupId desc",
+    GroupType: "groupType",
+    GroupTypeDesc: "groupType desc",
+    IsDeleted: "isDeleted",
+    IsDeletedDesc: "isDeleted desc",
+    LastActivityDate: "lastActivityDate",
+    LastActivityDateDesc: "lastActivityDate desc",
+    MemberCount: "memberCount",
+    MemberCountDesc: "memberCount desc",
+    OwnerPrincipalName: "ownerPrincipalName",
+    OwnerPrincipalNameDesc: "ownerPrincipalName desc",
+    ReportPeriod: "reportPeriod",
+    ReportPeriodDesc: "reportPeriod desc",
+    ReportRefreshDate: "reportRefreshDate",
+    ReportRefreshDateDesc: "reportRefreshDate desc",
+    SharePointActiveFileCount: "sharePointActiveFileCount",
+    SharePointActiveFileCountDesc: "sharePointActiveFileCount desc",
+    SharePointSiteStorageUsedInBytes: "sharePointSiteStorageUsedInBytes",
+    SharePointSiteStorageUsedInBytesDesc: "sharePointSiteStorageUsedInBytes desc",
+    SharePointTotalFileCount: "sharePointTotalFileCount",
+    SharePointTotalFileCountDesc: "sharePointTotalFileCount desc",
+    TeamsChannelMessagesCount: "teamsChannelMessagesCount",
+    TeamsChannelMessagesCountDesc: "teamsChannelMessagesCount desc",
+    TeamsMeetingsOrganizedCount: "teamsMeetingsOrganizedCount",
+    TeamsMeetingsOrganizedCountDesc: "teamsMeetingsOrganizedCount desc",
+    YammerLikedMessageCount: "yammerLikedMessageCount",
+    YammerLikedMessageCountDesc: "yammerLikedMessageCount desc",
+    YammerPostedMessageCount: "yammerPostedMessageCount",
+    YammerPostedMessageCountDesc: "yammerPostedMessageCount desc",
+    YammerReadMessageCount: "yammerReadMessageCount",
+    YammerReadMessageCountDesc: "yammerReadMessageCount desc",
+} as const;
+/**
+ * Provides operations to call the getOffice365GroupsActivityDetail method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExchangeMailboxStorageUsedInBytes: "exchangeMailboxStorageUsedInBytes",
+    ExchangeMailboxTotalItemCount: "exchangeMailboxTotalItemCount",
+    ExchangeReceivedEmailCount: "exchangeReceivedEmailCount",
+    ExternalMemberCount: "externalMemberCount",
+    GroupDisplayName: "groupDisplayName",
+    GroupId: "groupId",
+    GroupType: "groupType",
+    IsDeleted: "isDeleted",
+    LastActivityDate: "lastActivityDate",
+    MemberCount: "memberCount",
+    OwnerPrincipalName: "ownerPrincipalName",
+    ReportPeriod: "reportPeriod",
+    ReportRefreshDate: "reportRefreshDate",
+    SharePointActiveFileCount: "sharePointActiveFileCount",
+    SharePointSiteStorageUsedInBytes: "sharePointSiteStorageUsedInBytes",
+    SharePointTotalFileCount: "sharePointTotalFileCount",
+    TeamsChannelMessagesCount: "teamsChannelMessagesCount",
+    TeamsMeetingsOrganizedCount: "teamsMeetingsOrganizedCount",
+    YammerLikedMessageCount: "yammerLikedMessageCount",
+    YammerPostedMessageCount: "yammerPostedMessageCount",
+    YammerReadMessageCount: "yammerReadMessageCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

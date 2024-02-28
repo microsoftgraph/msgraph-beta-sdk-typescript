@@ -69,7 +69,7 @@ export interface CasesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -77,7 +77,7 @@ export interface CasesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -85,7 +85,7 @@ export interface CasesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -95,6 +95,9 @@ export interface CasesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -135,7 +138,7 @@ export const CasesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CasesRequestBuilderGetQueryParametersMapper,
     },
@@ -145,12 +148,74 @@ export const CasesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseEscapedFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCaseEscaped,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Custodians: "custodians",
+    LegalHolds: "legalHolds",
+    NoncustodialDataSources: "noncustodialDataSources",
+    Operations: "operations",
+    ReviewSets: "reviewSets",
+    Settings: "settings",
+    SourceCollections: "sourceCollections",
+    Tags: "tags",
+} as const;
+/**
+ * Provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ClosedBy: "closedBy",
+    ClosedByDesc: "closedBy desc",
+    ClosedDateTime: "closedDateTime",
+    ClosedDateTimeDesc: "closedDateTime desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ExternalId: "externalId",
+    ExternalIdDesc: "externalId desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ClosedBy: "closedBy",
+    ClosedDateTime: "closedDateTime",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    ExternalId: "externalId",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Status: "status",
+    Custodians: "custodians",
+    LegalHolds: "legalHolds",
+    NoncustodialDataSources: "noncustodialDataSources",
+    Operations: "operations",
+    ReviewSets: "reviewSets",
+    Settings: "settings",
+    SourceCollections: "sourceCollections",
+    Tags: "tags",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { TeamTemplateDefinitionItemRequestBuilderNavigationMetadata, TeamTemplateDefinitionItemRequestBuilderRequestsMetadata, type TeamTemplateDefinitionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of teamTemplateDefinition entities.
  */
@@ -61,7 +64,7 @@ export interface TeamTemplateDefinitionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface TeamTemplateDefinitionRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface TeamTemplateDefinitionRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,60 @@ export interface TeamTemplateDefinitionRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TeamTemplateDefinitionRequestBuilderUriTemplate = "{+baseurl}/teamTemplateDefinition{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the collection of teamTemplateDefinition entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    TeamDefinition: "teamDefinition",
+} as const;
+/**
+ * Provides operations to manage the collection of teamTemplateDefinition entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Audience: "audience",
+    AudienceDesc: "audience desc",
+    Categories: "categories",
+    CategoriesDesc: "categories desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IconUrl: "iconUrl",
+    IconUrlDesc: "iconUrl desc",
+    LanguageTag: "languageTag",
+    LanguageTagDesc: "languageTag desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    ParentTemplateId: "parentTemplateId",
+    ParentTemplateIdDesc: "parentTemplateId desc",
+    PublisherName: "publisherName",
+    PublisherNameDesc: "publisherName desc",
+    ShortDescription: "shortDescription",
+    ShortDescriptionDesc: "shortDescription desc",
+} as const;
+/**
+ * Provides operations to manage the collection of teamTemplateDefinition entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Audience: "audience",
+    Categories: "categories",
+    Description: "description",
+    DisplayName: "displayName",
+    IconUrl: "iconUrl",
+    LanguageTag: "languageTag",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ParentTemplateId: "parentTemplateId",
+    PublisherName: "publisherName",
+    ShortDescription: "shortDescription",
+    TeamDefinition: "teamDefinition",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +184,7 @@ export const TeamTemplateDefinitionRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TeamTemplateDefinitionRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +194,7 @@ export const TeamTemplateDefinitionRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamTemplateDefinition,

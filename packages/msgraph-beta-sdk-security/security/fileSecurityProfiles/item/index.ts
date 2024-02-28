@@ -57,12 +57,14 @@ export interface FileSecurityProfileItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const FileSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: FileSecurityProfileItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const FileSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileSecurityProfileFromDiscriminatorValue,
         queryParametersMapper: FileSecurityProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,40 @@ export const FileSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFileSecurityProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActivityGroupNames: "activityGroupNames",
+    AzureSubscriptionId: "azureSubscriptionId",
+    AzureTenantId: "azureTenantId",
+    CertificateThumbprint: "certificateThumbprint",
+    Extensions: "extensions",
+    FileType: "fileType",
+    FirstSeenDateTime: "firstSeenDateTime",
+    Hashes: "hashes",
+    LastSeenDateTime: "lastSeenDateTime",
+    MalwareStates: "malwareStates",
+    Names: "names",
+    RiskScore: "riskScore",
+    Size: "size",
+    Tags: "tags",
+    VendorInformation: "vendorInformation",
+    VulnerabilityStates: "vulnerabilityStates",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

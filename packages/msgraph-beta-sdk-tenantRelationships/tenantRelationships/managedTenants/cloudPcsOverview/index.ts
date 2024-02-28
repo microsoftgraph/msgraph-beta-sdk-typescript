@@ -62,7 +62,7 @@ export interface CloudPcsOverviewRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface CloudPcsOverviewRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface CloudPcsOverviewRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface CloudPcsOverviewRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const CloudPcsOverviewRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOverviewCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CloudPcsOverviewRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,91 @@ export const CloudPcsOverviewRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOverviewFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcOverview,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastRefreshedDateTimeDesc: "lastRefreshedDateTime desc",
+    NumberOfCloudPcConnectionStatusFailed: "numberOfCloudPcConnectionStatusFailed",
+    NumberOfCloudPcConnectionStatusFailedDesc: "numberOfCloudPcConnectionStatusFailed desc",
+    NumberOfCloudPcConnectionStatusPassed: "numberOfCloudPcConnectionStatusPassed",
+    NumberOfCloudPcConnectionStatusPassedDesc: "numberOfCloudPcConnectionStatusPassed desc",
+    NumberOfCloudPcConnectionStatusPending: "numberOfCloudPcConnectionStatusPending",
+    NumberOfCloudPcConnectionStatusPendingDesc: "numberOfCloudPcConnectionStatusPending desc",
+    NumberOfCloudPcConnectionStatusRunning: "numberOfCloudPcConnectionStatusRunning",
+    NumberOfCloudPcConnectionStatusRunningDesc: "numberOfCloudPcConnectionStatusRunning desc",
+    NumberOfCloudPcConnectionStatusUnkownFutureValue: "numberOfCloudPcConnectionStatusUnkownFutureValue",
+    NumberOfCloudPcConnectionStatusUnkownFutureValueDesc: "numberOfCloudPcConnectionStatusUnkownFutureValue desc",
+    NumberOfCloudPcStatusDeprovisioning: "numberOfCloudPcStatusDeprovisioning",
+    NumberOfCloudPcStatusDeprovisioningDesc: "numberOfCloudPcStatusDeprovisioning desc",
+    NumberOfCloudPcStatusFailed: "numberOfCloudPcStatusFailed",
+    NumberOfCloudPcStatusFailedDesc: "numberOfCloudPcStatusFailed desc",
+    NumberOfCloudPcStatusInGracePeriod: "numberOfCloudPcStatusInGracePeriod",
+    NumberOfCloudPcStatusInGracePeriodDesc: "numberOfCloudPcStatusInGracePeriod desc",
+    NumberOfCloudPcStatusNotProvisioned: "numberOfCloudPcStatusNotProvisioned",
+    NumberOfCloudPcStatusNotProvisionedDesc: "numberOfCloudPcStatusNotProvisioned desc",
+    NumberOfCloudPcStatusProvisioned: "numberOfCloudPcStatusProvisioned",
+    NumberOfCloudPcStatusProvisionedDesc: "numberOfCloudPcStatusProvisioned desc",
+    NumberOfCloudPcStatusProvisioning: "numberOfCloudPcStatusProvisioning",
+    NumberOfCloudPcStatusProvisioningDesc: "numberOfCloudPcStatusProvisioning desc",
+    NumberOfCloudPcStatusUnknown: "numberOfCloudPcStatusUnknown",
+    NumberOfCloudPcStatusUnknownDesc: "numberOfCloudPcStatusUnknown desc",
+    NumberOfCloudPcStatusUpgrading: "numberOfCloudPcStatusUpgrading",
+    NumberOfCloudPcStatusUpgradingDesc: "numberOfCloudPcStatusUpgrading desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    TotalBusinessLicenses: "totalBusinessLicenses",
+    TotalBusinessLicensesDesc: "totalBusinessLicenses desc",
+    TotalCloudPcConnectionStatus: "totalCloudPcConnectionStatus",
+    TotalCloudPcConnectionStatusDesc: "totalCloudPcConnectionStatus desc",
+    TotalCloudPcStatus: "totalCloudPcStatus",
+    TotalCloudPcStatusDesc: "totalCloudPcStatus desc",
+    TotalEnterpriseLicenses: "totalEnterpriseLicenses",
+    TotalEnterpriseLicensesDesc: "totalEnterpriseLicenses desc",
+} as const;
+/**
+ * Provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    NumberOfCloudPcConnectionStatusFailed: "numberOfCloudPcConnectionStatusFailed",
+    NumberOfCloudPcConnectionStatusPassed: "numberOfCloudPcConnectionStatusPassed",
+    NumberOfCloudPcConnectionStatusPending: "numberOfCloudPcConnectionStatusPending",
+    NumberOfCloudPcConnectionStatusRunning: "numberOfCloudPcConnectionStatusRunning",
+    NumberOfCloudPcConnectionStatusUnkownFutureValue: "numberOfCloudPcConnectionStatusUnkownFutureValue",
+    NumberOfCloudPcStatusDeprovisioning: "numberOfCloudPcStatusDeprovisioning",
+    NumberOfCloudPcStatusFailed: "numberOfCloudPcStatusFailed",
+    NumberOfCloudPcStatusInGracePeriod: "numberOfCloudPcStatusInGracePeriod",
+    NumberOfCloudPcStatusNotProvisioned: "numberOfCloudPcStatusNotProvisioned",
+    NumberOfCloudPcStatusProvisioned: "numberOfCloudPcStatusProvisioned",
+    NumberOfCloudPcStatusProvisioning: "numberOfCloudPcStatusProvisioning",
+    NumberOfCloudPcStatusUnknown: "numberOfCloudPcStatusUnknown",
+    NumberOfCloudPcStatusUpgrading: "numberOfCloudPcStatusUpgrading",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    TotalBusinessLicenses: "totalBusinessLicenses",
+    TotalCloudPcConnectionStatus: "totalCloudPcConnectionStatus",
+    TotalCloudPcStatus: "totalCloudPcStatus",
+    TotalEnterpriseLicenses: "totalEnterpriseLicenses",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

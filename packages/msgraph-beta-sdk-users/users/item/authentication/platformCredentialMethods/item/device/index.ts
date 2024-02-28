@@ -30,12 +30,14 @@ export interface DeviceRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,74 @@ export const DeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceFromDiscriminatorValue,
         queryParametersMapper: DeviceRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the device property of the microsoft.graph.platformCredentialAuthenticationMethod entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Commands: "commands",
+    Extensions: "extensions",
+    MemberOf: "memberOf",
+    RegisteredOwners: "registeredOwners",
+    RegisteredUsers: "registeredUsers",
+    TransitiveMemberOf: "transitiveMemberOf",
+    UsageRights: "usageRights",
+} as const;
+/**
+ * Provides operations to manage the device property of the microsoft.graph.platformCredentialAuthenticationMethod entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AccountEnabled: "accountEnabled",
+    AlternativeSecurityIds: "alternativeSecurityIds",
+    ApproximateLastSignInDateTime: "approximateLastSignInDateTime",
+    ComplianceExpirationDateTime: "complianceExpirationDateTime",
+    DeviceCategory: "deviceCategory",
+    DeviceId: "deviceId",
+    DeviceMetadata: "deviceMetadata",
+    DeviceOwnership: "deviceOwnership",
+    DeviceVersion: "deviceVersion",
+    DisplayName: "displayName",
+    DomainName: "domainName",
+    EnrollmentProfileName: "enrollmentProfileName",
+    EnrollmentType: "enrollmentType",
+    ExtensionAttributes: "extensionAttributes",
+    Hostnames: "hostnames",
+    IsCompliant: "isCompliant",
+    IsManaged: "isManaged",
+    IsManagementRestricted: "isManagementRestricted",
+    IsRooted: "isRooted",
+    Kind: "kind",
+    ManagementType: "managementType",
+    Manufacturer: "manufacturer",
+    MdmAppId: "mdmAppId",
+    Model: "model",
+    Name: "name",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    OperatingSystem: "operatingSystem",
+    OperatingSystemVersion: "operatingSystemVersion",
+    PhysicalIds: "physicalIds",
+    Platform: "platform",
+    ProfileType: "profileType",
+    RegistrationDateTime: "registrationDateTime",
+    Status: "status",
+    SystemLabels: "systemLabels",
+    TrustType: "trustType",
+    Commands: "commands",
+    Extensions: "extensions",
+    MemberOf: "memberOf",
+    RegisteredOwners: "registeredOwners",
+    RegisteredUsers: "registeredUsers",
+    TransitiveMemberOf: "transitiveMemberOf",
+    UsageRights: "usageRights",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

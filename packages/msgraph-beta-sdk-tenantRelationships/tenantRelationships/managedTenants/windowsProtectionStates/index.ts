@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type WindowsProtectionStateItemRequestBuilder, WindowsProtectionStateItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -62,7 +65,7 @@ export interface WindowsProtectionStatesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface WindowsProtectionStatesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface WindowsProtectionStatesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,100 @@ export interface WindowsProtectionStatesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const WindowsProtectionStatesRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/windowsProtectionStates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AntiMalwareVersion: "antiMalwareVersion",
+    AntiMalwareVersionDesc: "antiMalwareVersion desc",
+    AttentionRequired: "attentionRequired",
+    AttentionRequiredDesc: "attentionRequired desc",
+    DeviceDeleted: "deviceDeleted",
+    DeviceDeletedDesc: "deviceDeleted desc",
+    DevicePropertyRefreshDateTime: "devicePropertyRefreshDateTime",
+    DevicePropertyRefreshDateTimeDesc: "devicePropertyRefreshDateTime desc",
+    EngineVersion: "engineVersion",
+    EngineVersionDesc: "engineVersion desc",
+    FullScanOverdue: "fullScanOverdue",
+    FullScanOverdueDesc: "fullScanOverdue desc",
+    FullScanRequired: "fullScanRequired",
+    FullScanRequiredDesc: "fullScanRequired desc",
+    LastFullScanDateTime: "lastFullScanDateTime",
+    LastFullScanDateTimeDesc: "lastFullScanDateTime desc",
+    LastFullScanSignatureVersion: "lastFullScanSignatureVersion",
+    LastFullScanSignatureVersionDesc: "lastFullScanSignatureVersion desc",
+    LastQuickScanDateTime: "lastQuickScanDateTime",
+    LastQuickScanDateTimeDesc: "lastQuickScanDateTime desc",
+    LastQuickScanSignatureVersion: "lastQuickScanSignatureVersion",
+    LastQuickScanSignatureVersionDesc: "lastQuickScanSignatureVersion desc",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastRefreshedDateTimeDesc: "lastRefreshedDateTime desc",
+    LastReportedDateTime: "lastReportedDateTime",
+    LastReportedDateTimeDesc: "lastReportedDateTime desc",
+    MalwareProtectionEnabled: "malwareProtectionEnabled",
+    MalwareProtectionEnabledDesc: "malwareProtectionEnabled desc",
+    ManagedDeviceHealthState: "managedDeviceHealthState",
+    ManagedDeviceHealthStateDesc: "managedDeviceHealthState desc",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceIdDesc: "managedDeviceId desc",
+    ManagedDeviceName: "managedDeviceName",
+    ManagedDeviceNameDesc: "managedDeviceName desc",
+    NetworkInspectionSystemEnabled: "networkInspectionSystemEnabled",
+    NetworkInspectionSystemEnabledDesc: "networkInspectionSystemEnabled desc",
+    QuickScanOverdue: "quickScanOverdue",
+    QuickScanOverdueDesc: "quickScanOverdue desc",
+    RealTimeProtectionEnabled: "realTimeProtectionEnabled",
+    RealTimeProtectionEnabledDesc: "realTimeProtectionEnabled desc",
+    RebootRequired: "rebootRequired",
+    RebootRequiredDesc: "rebootRequired desc",
+    SignatureUpdateOverdue: "signatureUpdateOverdue",
+    SignatureUpdateOverdueDesc: "signatureUpdateOverdue desc",
+    SignatureVersion: "signatureVersion",
+    SignatureVersionDesc: "signatureVersion desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+} as const;
+/**
+ * Provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AntiMalwareVersion: "antiMalwareVersion",
+    AttentionRequired: "attentionRequired",
+    DeviceDeleted: "deviceDeleted",
+    DevicePropertyRefreshDateTime: "devicePropertyRefreshDateTime",
+    EngineVersion: "engineVersion",
+    FullScanOverdue: "fullScanOverdue",
+    FullScanRequired: "fullScanRequired",
+    LastFullScanDateTime: "lastFullScanDateTime",
+    LastFullScanSignatureVersion: "lastFullScanSignatureVersion",
+    LastQuickScanDateTime: "lastQuickScanDateTime",
+    LastQuickScanSignatureVersion: "lastQuickScanSignatureVersion",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastReportedDateTime: "lastReportedDateTime",
+    MalwareProtectionEnabled: "malwareProtectionEnabled",
+    ManagedDeviceHealthState: "managedDeviceHealthState",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceName: "managedDeviceName",
+    NetworkInspectionSystemEnabled: "networkInspectionSystemEnabled",
+    QuickScanOverdue: "quickScanOverdue",
+    RealTimeProtectionEnabled: "realTimeProtectionEnabled",
+    RebootRequired: "rebootRequired",
+    SignatureUpdateOverdue: "signatureUpdateOverdue",
+    SignatureVersion: "signatureVersion",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +224,7 @@ export const WindowsProtectionStatesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsProtectionStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsProtectionStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +234,7 @@ export const WindowsProtectionStatesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsProtectionStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsProtectionState,

@@ -62,7 +62,7 @@ export interface ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameter
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameter
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameter
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const ConditionalAccessPolicyCoveragesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConditionalAccessPolicyCoverageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,43 @@ export const ConditionalAccessPolicyCoveragesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConditionalAccessPolicyCoverageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConditionalAccessPolicyCoverage,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ConditionalAccessPolicyState: "conditionalAccessPolicyState",
+    ConditionalAccessPolicyStateDesc: "conditionalAccessPolicyState desc",
+    LatestPolicyModifiedDateTime: "latestPolicyModifiedDateTime",
+    LatestPolicyModifiedDateTimeDesc: "latestPolicyModifiedDateTime desc",
+    RequiresDeviceCompliance: "requiresDeviceCompliance",
+    RequiresDeviceComplianceDesc: "requiresDeviceCompliance desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+} as const;
+/**
+ * Provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConditionalAccessPolicyState: "conditionalAccessPolicyState",
+    LatestPolicyModifiedDateTime: "latestPolicyModifiedDateTime",
+    RequiresDeviceCompliance: "requiresDeviceCompliance",
+    TenantDisplayName: "tenantDisplayName",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

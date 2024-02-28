@@ -57,12 +57,14 @@ export interface AggregatedPolicyComplianceItemRequestBuilderGetQueryParameters 
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const AggregatedPolicyComplianceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AggregatedPolicyComplianceItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const AggregatedPolicyComplianceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAggregatedPolicyComplianceFromDiscriminatorValue,
         queryParametersMapper: AggregatedPolicyComplianceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,35 @@ export const AggregatedPolicyComplianceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAggregatedPolicyComplianceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAggregatedPolicyCompliance,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CompliancePolicyId: "compliancePolicyId",
+    CompliancePolicyName: "compliancePolicyName",
+    CompliancePolicyPlatform: "compliancePolicyPlatform",
+    CompliancePolicyType: "compliancePolicyType",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    NumberOfCompliantDevices: "numberOfCompliantDevices",
+    NumberOfErrorDevices: "numberOfErrorDevices",
+    NumberOfNonCompliantDevices: "numberOfNonCompliantDevices",
+    PolicyModifiedDateTime: "policyModifiedDateTime",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

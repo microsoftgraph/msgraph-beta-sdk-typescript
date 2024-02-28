@@ -63,7 +63,7 @@ export interface AccessReviewsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +71,7 @@ export interface AccessReviewsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +79,7 @@ export interface AccessReviewsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -89,6 +89,9 @@ export interface AccessReviewsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -129,7 +132,7 @@ export const AccessReviewsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessReviewsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,12 +142,69 @@ export const AccessReviewsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessReview,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of accessReview entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Decisions: "decisions",
+    Instances: "instances",
+    MyDecisions: "myDecisions",
+    Reviewers: "reviewers",
+} as const;
+/**
+ * Provides operations to manage the collection of accessReview entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    BusinessFlowTemplateId: "businessFlowTemplateId",
+    BusinessFlowTemplateIdDesc: "businessFlowTemplateId desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EndDateTime: "endDateTime",
+    EndDateTimeDesc: "endDateTime desc",
+    ReviewedEntity: "reviewedEntity",
+    ReviewedEntityDesc: "reviewedEntity desc",
+    ReviewerType: "reviewerType",
+    ReviewerTypeDesc: "reviewerType desc",
+    Settings: "settings",
+    SettingsDesc: "settings desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the collection of accessReview entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BusinessFlowTemplateId: "businessFlowTemplateId",
+    CreatedBy: "createdBy",
+    Description: "description",
+    DisplayName: "displayName",
+    EndDateTime: "endDateTime",
+    ReviewedEntity: "reviewedEntity",
+    ReviewerType: "reviewerType",
+    Settings: "settings",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    Decisions: "decisions",
+    Instances: "instances",
+    MyDecisions: "myDecisions",
+    Reviewers: "reviewers",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createNdesConnectorFromDiscriminatorValue, serializeNdesConnector, type
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,35 @@ export interface NdesConnectorItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const NdesConnectorItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/ndesConnectors/{ndesConnector%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConnectorVersion: "connectorVersion",
+    DisplayName: "displayName",
+    EnrolledDateTime: "enrolledDateTime",
+    LastConnectionDateTime: "lastConnectionDateTime",
+    MachineName: "machineName",
+    RoleScopeTagIds: "roleScopeTagIds",
+    State: "state",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +105,7 @@ export const NdesConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: NdesConnectorItemRequestBuilderUriTemplate,
@@ -92,7 +113,7 @@ export const NdesConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNdesConnectorFromDiscriminatorValue,
         queryParametersMapper: NdesConnectorItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +123,7 @@ export const NdesConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNdesConnectorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeNdesConnector,

@@ -11,6 +11,9 @@ import { OrganizationItemRequestBuilderNavigationMetadata, OrganizationItemReque
 import { type ValidatePropertiesRequestBuilder, ValidatePropertiesRequestBuilderRequestsMetadata } from './validateProperties/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of organization entities.
  */
@@ -82,7 +85,7 @@ export interface OrganizationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -90,7 +93,7 @@ export interface OrganizationRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -98,7 +101,7 @@ export interface OrganizationRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -112,6 +115,119 @@ export interface OrganizationRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const OrganizationRequestBuilderUriTemplate = "{+baseurl}/organization{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the collection of organization entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Branding: "branding",
+    CertificateBasedAuthConfiguration: "certificateBasedAuthConfiguration",
+    Extensions: "extensions",
+    PartnerInformation: "partnerInformation",
+    Settings: "settings",
+} as const;
+/**
+ * Provides operations to manage the collection of organization entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeletedDateTime: "deletedDateTime",
+    DeletedDateTimeDesc: "deletedDateTime desc",
+    AssignedPlans: "assignedPlans",
+    AssignedPlansDesc: "assignedPlans desc",
+    BusinessPhones: "businessPhones",
+    BusinessPhonesDesc: "businessPhones desc",
+    CertificateConnectorSetting: "certificateConnectorSetting",
+    CertificateConnectorSettingDesc: "certificateConnectorSetting desc",
+    City: "city",
+    CityDesc: "city desc",
+    Country: "country",
+    CountryDesc: "country desc",
+    CountryLetterCode: "countryLetterCode",
+    CountryLetterCodeDesc: "countryLetterCode desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DefaultUsageLocation: "defaultUsageLocation",
+    DefaultUsageLocationDesc: "defaultUsageLocation desc",
+    DirectorySizeQuota: "directorySizeQuota",
+    DirectorySizeQuotaDesc: "directorySizeQuota desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsMultipleDataLocationsForServicesEnabled: "isMultipleDataLocationsForServicesEnabled",
+    IsMultipleDataLocationsForServicesEnabledDesc: "isMultipleDataLocationsForServicesEnabled desc",
+    MarketingNotificationEmails: "marketingNotificationEmails",
+    MarketingNotificationEmailsDesc: "marketingNotificationEmails desc",
+    MobileDeviceManagementAuthority: "mobileDeviceManagementAuthority",
+    MobileDeviceManagementAuthorityDesc: "mobileDeviceManagementAuthority desc",
+    OnPremisesLastPasswordSyncDateTime: "onPremisesLastPasswordSyncDateTime",
+    OnPremisesLastPasswordSyncDateTimeDesc: "onPremisesLastPasswordSyncDateTime desc",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesLastSyncDateTimeDesc: "onPremisesLastSyncDateTime desc",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    OnPremisesSyncEnabledDesc: "onPremisesSyncEnabled desc",
+    PartnerTenantType: "partnerTenantType",
+    PartnerTenantTypeDesc: "partnerTenantType desc",
+    PostalCode: "postalCode",
+    PostalCodeDesc: "postalCode desc",
+    PreferredLanguage: "preferredLanguage",
+    PreferredLanguageDesc: "preferredLanguage desc",
+    PrivacyProfile: "privacyProfile",
+    PrivacyProfileDesc: "privacyProfile desc",
+    ProvisionedPlans: "provisionedPlans",
+    ProvisionedPlansDesc: "provisionedPlans desc",
+    SecurityComplianceNotificationMails: "securityComplianceNotificationMails",
+    SecurityComplianceNotificationMailsDesc: "securityComplianceNotificationMails desc",
+    SecurityComplianceNotificationPhones: "securityComplianceNotificationPhones",
+    SecurityComplianceNotificationPhonesDesc: "securityComplianceNotificationPhones desc",
+    State: "state",
+    StateDesc: "state desc",
+    Street: "street",
+    StreetDesc: "street desc",
+    TechnicalNotificationMails: "technicalNotificationMails",
+    TechnicalNotificationMailsDesc: "technicalNotificationMails desc",
+    VerifiedDomains: "verifiedDomains",
+    VerifiedDomainsDesc: "verifiedDomains desc",
+} as const;
+/**
+ * Provides operations to manage the collection of organization entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AssignedPlans: "assignedPlans",
+    BusinessPhones: "businessPhones",
+    CertificateConnectorSetting: "certificateConnectorSetting",
+    City: "city",
+    Country: "country",
+    CountryLetterCode: "countryLetterCode",
+    CreatedDateTime: "createdDateTime",
+    DefaultUsageLocation: "defaultUsageLocation",
+    DirectorySizeQuota: "directorySizeQuota",
+    DisplayName: "displayName",
+    IsMultipleDataLocationsForServicesEnabled: "isMultipleDataLocationsForServicesEnabled",
+    MarketingNotificationEmails: "marketingNotificationEmails",
+    MobileDeviceManagementAuthority: "mobileDeviceManagementAuthority",
+    OnPremisesLastPasswordSyncDateTime: "onPremisesLastPasswordSyncDateTime",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    PartnerTenantType: "partnerTenantType",
+    PostalCode: "postalCode",
+    PreferredLanguage: "preferredLanguage",
+    PrivacyProfile: "privacyProfile",
+    ProvisionedPlans: "provisionedPlans",
+    SecurityComplianceNotificationMails: "securityComplianceNotificationMails",
+    SecurityComplianceNotificationPhones: "securityComplianceNotificationPhones",
+    State: "state",
+    Street: "street",
+    TechnicalNotificationMails: "technicalNotificationMails",
+    VerifiedDomains: "verifiedDomains",
+    Branding: "branding",
+    CertificateBasedAuthConfiguration: "certificateBasedAuthConfiguration",
+    Extensions: "extensions",
+    PartnerInformation: "partnerInformation",
+    Settings: "settings",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -160,7 +276,7 @@ export const OrganizationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOrganizationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: OrganizationRequestBuilderGetQueryParametersMapper,
     },
@@ -170,7 +286,7 @@ export const OrganizationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOrganizationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOrganization,

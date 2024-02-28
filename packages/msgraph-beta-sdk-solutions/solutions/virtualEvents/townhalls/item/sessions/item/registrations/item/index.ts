@@ -5,6 +5,8 @@ import { createVirtualEventRegistrationFromDiscriminatorValue, type VirtualEvent
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
  */
@@ -30,16 +32,38 @@ export interface VirtualEventRegistrationItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const VirtualEventRegistrationItemRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/sessions/{virtualEventSession%2Did}/registrations/{virtualEventRegistration%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Sessions: "sessions",
+} as const;
+/**
+ * Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CancelationDateTime: "cancelationDateTime",
+    Email: "email",
+    FirstName: "firstName",
+    LastName: "lastName",
+    RegistrationDateTime: "registrationDateTime",
+    RegistrationQuestionAnswers: "registrationQuestionAnswers",
+    Status: "status",
+    UserId: "userId",
+    Sessions: "sessions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +81,7 @@ export const VirtualEventRegistrationItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventRegistrationFromDiscriminatorValue,
         queryParametersMapper: VirtualEventRegistrationItemRequestBuilderGetQueryParametersMapper,
     },

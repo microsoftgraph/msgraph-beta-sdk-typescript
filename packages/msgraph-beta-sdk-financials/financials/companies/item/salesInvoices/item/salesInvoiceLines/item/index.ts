@@ -7,6 +7,8 @@ import { AccountRequestBuilderRequestsMetadata, type AccountRequestBuilder } fro
 import { ItemRequestBuilderNavigationMetadata, ItemRequestBuilderRequestsMetadata, type ItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
  */
@@ -55,16 +57,54 @@ export interface SalesInvoiceLineItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SalesInvoiceLineItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Account: "account",
+    Item: "item",
+} as const;
+/**
+ * Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccountId: "accountId",
+    AmountExcludingTax: "amountExcludingTax",
+    AmountIncludingTax: "amountIncludingTax",
+    Description: "description",
+    DiscountAmount: "discountAmount",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DiscountPercent: "discountPercent",
+    DocumentId: "documentId",
+    InvoiceDiscountAllocation: "invoiceDiscountAllocation",
+    ItemId: "itemId",
+    LineType: "lineType",
+    NetAmount: "netAmount",
+    NetAmountIncludingTax: "netAmountIncludingTax",
+    NetTaxAmount: "netTaxAmount",
+    Quantity: "quantity",
+    Sequence: "sequence",
+    ShipmentDate: "shipmentDate",
+    TaxCode: "taxCode",
+    TaxPercent: "taxPercent",
+    TotalTaxAmount: "totalTaxAmount",
+    UnitOfMeasureId: "unitOfMeasureId",
+    UnitPrice: "unitPrice",
+    Account: "account",
+    Item: "item",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -94,7 +134,7 @@ export const SalesInvoiceLineItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesInvoiceLineFromDiscriminatorValue,
         queryParametersMapper: SalesInvoiceLineItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +144,7 @@ export const SalesInvoiceLineItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesInvoiceLineFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSalesInvoiceLine,

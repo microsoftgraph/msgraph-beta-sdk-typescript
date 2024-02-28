@@ -11,6 +11,8 @@ import { MentionsRequestBuilderNavigationMetadata, MentionsRequestBuilderRequest
 import { ReplyRequestBuilderRequestsMetadata, type ReplyRequestBuilder } from './reply/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
  */
@@ -40,7 +42,7 @@ export interface PostItemRequestBuilder extends BaseRequestBuilder<PostItemReque
      */
     get reply(): ReplyRequestBuilder;
     /**
-     * Get the properties and relationships of a post in a specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
+     * Get the properties and relationships of a post in a specified thread. You can specify both the parentconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Post>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -56,7 +58,7 @@ export interface PostItemRequestBuilder extends BaseRequestBuilder<PostItemReque
      */
      patch(body: Post, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Post | undefined>;
     /**
-     * Get the properties and relationships of a post in a specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
+     * Get the properties and relationships of a post in a specified thread. You can specify both the parentconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -70,22 +72,59 @@ export interface PostItemRequestBuilder extends BaseRequestBuilder<PostItemReque
      toPatchRequestInformation(body: Post, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the properties and relationships of a post in a specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
+ * Get the properties and relationships of a post in a specified thread. You can specify both the parentconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
  */
 export interface PostItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PostItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Attachments: "attachments",
+    Extensions: "extensions",
+    InReplyTo: "inReplyTo",
+    Mentions: "mentions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
+/**
+ * Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Categories: "categories",
+    ChangeKey: "changeKey",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Body: "body",
+    ConversationId: "conversationId",
+    ConversationThreadId: "conversationThreadId",
+    From: "from",
+    HasAttachments: "hasAttachments",
+    Importance: "importance",
+    NewParticipants: "newParticipants",
+    ReceivedDateTime: "receivedDateTime",
+    Sender: "sender",
+    Attachments: "attachments",
+    Extensions: "extensions",
+    InReplyTo: "inReplyTo",
+    Mentions: "mentions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -130,7 +169,7 @@ export const PostItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPostFromDiscriminatorValue,
         queryParametersMapper: PostItemRequestBuilderGetQueryParametersMapper,
     },
@@ -140,7 +179,7 @@ export const PostItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPostFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePost,

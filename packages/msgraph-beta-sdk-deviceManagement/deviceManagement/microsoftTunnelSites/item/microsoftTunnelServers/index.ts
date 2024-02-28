@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MicrosoftTunnelServerItemRequestBuilderNavigationMetadata, MicrosoftTunnelServerItemRequestBuilderRequestsMetadata, type MicrosoftTunnelServerItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
  */
@@ -61,7 +64,7 @@ export interface MicrosoftTunnelServersRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface MicrosoftTunnelServersRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface MicrosoftTunnelServersRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,40 @@ export interface MicrosoftTunnelServersRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const MicrosoftTunnelServersRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelServers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AgentImageDigest: "agentImageDigest",
+    AgentImageDigestDesc: "agentImageDigest desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastCheckinDateTime: "lastCheckinDateTime",
+    LastCheckinDateTimeDesc: "lastCheckinDateTime desc",
+    ServerImageDigest: "serverImageDigest",
+    ServerImageDigestDesc: "serverImageDigest desc",
+    TunnelServerHealthStatus: "tunnelServerHealthStatus",
+    TunnelServerHealthStatusDesc: "tunnelServerHealthStatus desc",
+} as const;
+/**
+ * Provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AgentImageDigest: "agentImageDigest",
+    DisplayName: "displayName",
+    LastCheckinDateTime: "lastCheckinDateTime",
+    ServerImageDigest: "serverImageDigest",
+    TunnelServerHealthStatus: "tunnelServerHealthStatus",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +164,7 @@ export const MicrosoftTunnelServersRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelServerCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelServersRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +174,7 @@ export const MicrosoftTunnelServersRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelServerFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftTunnelServer,

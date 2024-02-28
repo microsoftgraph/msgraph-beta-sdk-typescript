@@ -94,12 +94,14 @@ export interface EducationSynchronizationProfileItemRequestBuilderGetQueryParame
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -148,7 +150,7 @@ export const EducationSynchronizationProfileItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EducationSynchronizationProfileItemRequestBuilderUriTemplate,
@@ -156,7 +158,7 @@ export const EducationSynchronizationProfileItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationSynchronizationProfileFromDiscriminatorValue,
         queryParametersMapper: EducationSynchronizationProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -166,12 +168,35 @@ export const EducationSynchronizationProfileItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationSynchronizationProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEducationSynchronizationProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Errors: "errors",
+    ProfileStatus: "profileStatus",
+} as const;
+/**
+ * Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DataProvider: "dataProvider",
+    DisplayName: "displayName",
+    ExpirationDate: "expirationDate",
+    HandleSpecialCharacterConstraint: "handleSpecialCharacterConstraint",
+    IdentitySynchronizationConfiguration: "identitySynchronizationConfiguration",
+    LicensesToAssign: "licensesToAssign",
+    State: "state",
+    Errors: "errors",
+    ProfileStatus: "profileStatus",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

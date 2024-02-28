@@ -57,12 +57,14 @@ export interface EducationAssignmentResourceItemRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const EducationAssignmentResourceItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EducationAssignmentResourceItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const EducationAssignmentResourceItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationAssignmentResourceFromDiscriminatorValue,
         queryParametersMapper: EducationAssignmentResourceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,28 @@ export const EducationAssignmentResourceItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationAssignmentResourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEducationAssignmentResource,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the dependentResources property of the microsoft.graph.educationAssignmentResource entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DependentResources: "dependentResources",
+} as const;
+/**
+ * Provides operations to manage the dependentResources property of the microsoft.graph.educationAssignmentResource entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DistributeForStudentWork: "distributeForStudentWork",
+    Resource: "resource",
+    DependentResources: "dependentResources",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

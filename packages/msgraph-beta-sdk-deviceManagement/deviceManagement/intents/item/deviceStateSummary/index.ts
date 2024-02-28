@@ -57,12 +57,14 @@ export interface DeviceStateSummaryRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const DeviceStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceStateSummaryRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const DeviceStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue,
         queryParametersMapper: DeviceStateSummaryRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,30 @@ export const DeviceStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementIntentDeviceStateSummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceStateSummary property of the microsoft.graph.deviceManagementIntent entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceStateSummary property of the microsoft.graph.deviceManagementIntent entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConflictCount: "conflictCount",
+    ErrorCount: "errorCount",
+    FailedCount: "failedCount",
+    NotApplicableCount: "notApplicableCount",
+    NotApplicablePlatformCount: "notApplicablePlatformCount",
+    SuccessCount: "successCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

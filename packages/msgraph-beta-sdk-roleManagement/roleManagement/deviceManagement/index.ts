@@ -72,12 +72,14 @@ export interface DeviceManagementRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -116,7 +118,7 @@ export const DeviceManagementRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementRequestBuilderUriTemplate,
@@ -124,7 +126,7 @@ export const DeviceManagementRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationMultipleFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementRequestBuilderGetQueryParametersMapper,
     },
@@ -134,12 +136,30 @@ export const DeviceManagementRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationMultipleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRbacApplicationMultiple,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+} as const;
+/**
+ * Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

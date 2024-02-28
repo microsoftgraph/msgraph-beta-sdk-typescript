@@ -5,6 +5,8 @@ import { createManagedDeviceEncryptionStateFromDiscriminatorValue, serializeMana
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,39 @@ export interface ManagedDeviceEncryptionStateItemRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagedDeviceEncryptionStateItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDeviceEncryptionStates/{managedDeviceEncryptionState%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdvancedBitLockerStates: "advancedBitLockerStates",
+    DeviceName: "deviceName",
+    DeviceType: "deviceType",
+    EncryptionPolicySettingState: "encryptionPolicySettingState",
+    EncryptionReadinessState: "encryptionReadinessState",
+    EncryptionState: "encryptionState",
+    FileVaultStates: "fileVaultStates",
+    OsVersion: "osVersion",
+    PolicyDetails: "policyDetails",
+    TpmSpecificationVersion: "tpmSpecificationVersion",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +109,7 @@ export const ManagedDeviceEncryptionStateItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedDeviceEncryptionStateItemRequestBuilderUriTemplate,
@@ -92,7 +117,7 @@ export const ManagedDeviceEncryptionStateItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceEncryptionStateFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceEncryptionStateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +127,7 @@ export const ManagedDeviceEncryptionStateItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceEncryptionStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedDeviceEncryptionState,
