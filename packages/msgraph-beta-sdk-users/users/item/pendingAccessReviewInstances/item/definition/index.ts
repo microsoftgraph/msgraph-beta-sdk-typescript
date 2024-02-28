@@ -30,12 +30,14 @@ export interface DefinitionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,39 @@ export const DefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewScheduleDefinitionFromDiscriminatorValue,
         queryParametersMapper: DefinitionRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Instances: "instances",
+} as const;
+/**
+ * Provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdditionalNotificationRecipients: "additionalNotificationRecipients",
+    BackupReviewers: "backupReviewers",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    DescriptionForAdmins: "descriptionForAdmins",
+    DescriptionForReviewers: "descriptionForReviewers",
+    DisplayName: "displayName",
+    FallbackReviewers: "fallbackReviewers",
+    InstanceEnumerationScope: "instanceEnumerationScope",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Reviewers: "reviewers",
+    Scope: "scope",
+    Settings: "settings",
+    StageSettings: "stageSettings",
+    Status: "status",
+    Instances: "instances",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createPrivilegedRoleAssignmentRequestFromDiscriminatorValue, type Privi
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the request property of the microsoft.graph.privilegedApproval entity.
  */
@@ -30,16 +32,41 @@ export interface RequestRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const RequestRequestBuilderUriTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24expand,%24select}";
+/**
+ * Provides operations to manage the request property of the microsoft.graph.privilegedApproval entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    RoleInfo: "roleInfo",
+} as const;
+/**
+ * Provides operations to manage the request property of the microsoft.graph.privilegedApproval entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignmentState: "assignmentState",
+    Duration: "duration",
+    Reason: "reason",
+    RequestedDateTime: "requestedDateTime",
+    RoleId: "roleId",
+    Schedule: "schedule",
+    Status: "status",
+    TicketNumber: "ticketNumber",
+    TicketSystem: "ticketSystem",
+    Type: "type",
+    UserId: "userId",
+    RoleInfo: "roleInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +84,7 @@ export const RequestRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentRequestFromDiscriminatorValue,
         queryParametersMapper: RequestRequestBuilderGetQueryParametersMapper,
     },

@@ -23,6 +23,9 @@ export function deserializeIntoGetShiftsGetResponse(getShiftsGetResponse: Partia
         "value": n => { getShiftsGetResponse.value = n.getCollectionOfObjectValues<Shift>(createShiftFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 export interface GetShiftsGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +61,7 @@ export interface GetShiftsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +69,7 @@ export interface GetShiftsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +77,7 @@ export interface GetShiftsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,61 @@ export function serializeGetShiftsGetResponse(writer: SerializationWriter, getSh
  * Uri template for the request builder.
  */
 export const GetShiftsRequestBuilderUriTemplate = "{+baseurl}/teams/getShifts(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getShifts method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the getShifts method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    DraftShift: "draftShift",
+    DraftShiftDesc: "draftShift desc",
+    IsStagedForDeletion: "isStagedForDeletion",
+    IsStagedForDeletionDesc: "isStagedForDeletion desc",
+    SchedulingGroupId: "schedulingGroupId",
+    SchedulingGroupIdDesc: "schedulingGroupId desc",
+    SchedulingGroupInfo: "schedulingGroupInfo",
+    SchedulingGroupInfoDesc: "schedulingGroupInfo desc",
+    SharedShift: "sharedShift",
+    SharedShiftDesc: "sharedShift desc",
+    TeamInfo: "teamInfo",
+    TeamInfoDesc: "teamInfo desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+    UserInfo: "userInfo",
+    UserInfoDesc: "userInfo desc",
+} as const;
+/**
+ * Provides operations to call the getShifts method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    DraftShift: "draftShift",
+    IsStagedForDeletion: "isStagedForDeletion",
+    SchedulingGroupId: "schedulingGroupId",
+    SchedulingGroupInfo: "schedulingGroupInfo",
+    SharedShift: "sharedShift",
+    TeamInfo: "teamInfo",
+    UserId: "userId",
+    UserInfo: "userInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +177,7 @@ export const GetShiftsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetShiftsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetShiftsRequestBuilderGetQueryParametersMapper,
     },

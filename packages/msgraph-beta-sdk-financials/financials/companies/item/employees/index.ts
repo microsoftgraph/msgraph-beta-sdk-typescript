@@ -62,7 +62,7 @@ export interface EmployeesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface EmployeesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface EmployeesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface EmployeesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const EmployeesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmployeeCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EmployeesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,84 @@ export const EmployeesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmployeeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmployee,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the employees property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Picture: "picture",
+} as const;
+/**
+ * Provides operations to manage the employees property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Address: "address",
+    AddressDesc: "address desc",
+    BirthDate: "birthDate",
+    BirthDateDesc: "birthDate desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Email: "email",
+    EmailDesc: "email desc",
+    EmploymentDate: "employmentDate",
+    EmploymentDateDesc: "employmentDate desc",
+    GivenName: "givenName",
+    GivenNameDesc: "givenName desc",
+    Id: "id",
+    IdDesc: "id desc",
+    JobTitle: "jobTitle",
+    JobTitleDesc: "jobTitle desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    MiddleName: "middleName",
+    MiddleNameDesc: "middleName desc",
+    MobilePhone: "mobilePhone",
+    MobilePhoneDesc: "mobilePhone desc",
+    Number: "number",
+    NumberDesc: "number desc",
+    PersonalEmail: "personalEmail",
+    PersonalEmailDesc: "personalEmail desc",
+    PhoneNumber: "phoneNumber",
+    PhoneNumberDesc: "phoneNumber desc",
+    StatisticsGroupCode: "statisticsGroupCode",
+    StatisticsGroupCodeDesc: "statisticsGroupCode desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    Surname: "surname",
+    SurnameDesc: "surname desc",
+    TerminationDate: "terminationDate",
+    TerminationDateDesc: "terminationDate desc",
+} as const;
+/**
+ * Provides operations to manage the employees property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Address: "address",
+    BirthDate: "birthDate",
+    DisplayName: "displayName",
+    Email: "email",
+    EmploymentDate: "employmentDate",
+    GivenName: "givenName",
+    Id: "id",
+    JobTitle: "jobTitle",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    MiddleName: "middleName",
+    MobilePhone: "mobilePhone",
+    Number: "number",
+    PersonalEmail: "personalEmail",
+    PhoneNumber: "phoneNumber",
+    StatisticsGroupCode: "statisticsGroupCode",
+    Status: "status",
+    Surname: "surname",
+    TerminationDate: "terminationDate",
+    Picture: "picture",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

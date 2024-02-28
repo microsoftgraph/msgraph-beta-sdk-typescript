@@ -61,7 +61,7 @@ export interface EnrollmentProfilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface EnrollmentProfilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface EnrollmentProfilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface EnrollmentProfilesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const EnrollmentProfilesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrollmentProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EnrollmentProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,49 @@ export const EnrollmentProfilesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrollmentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEnrollmentProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ConfigurationEndpointUrl: "configurationEndpointUrl",
+    ConfigurationEndpointUrlDesc: "configurationEndpointUrl desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EnableAuthenticationViaCompanyPortal: "enableAuthenticationViaCompanyPortal",
+    EnableAuthenticationViaCompanyPortalDesc: "enableAuthenticationViaCompanyPortal desc",
+    RequireCompanyPortalOnSetupAssistantEnrolledDevices: "requireCompanyPortalOnSetupAssistantEnrolledDevices",
+    RequireCompanyPortalOnSetupAssistantEnrolledDevicesDesc: "requireCompanyPortalOnSetupAssistantEnrolledDevices desc",
+    RequiresUserAuthentication: "requiresUserAuthentication",
+    RequiresUserAuthenticationDesc: "requiresUserAuthentication desc",
+} as const;
+/**
+ * Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConfigurationEndpointUrl: "configurationEndpointUrl",
+    Description: "description",
+    DisplayName: "displayName",
+    EnableAuthenticationViaCompanyPortal: "enableAuthenticationViaCompanyPortal",
+    RequireCompanyPortalOnSetupAssistantEnrolledDevices: "requireCompanyPortalOnSetupAssistantEnrolledDevices",
+    RequiresUserAuthentication: "requiresUserAuthentication",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createSensitivityPolicySettingsFromDiscriminatorValue, serializeSensiti
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
  */
@@ -57,16 +59,32 @@ export interface SensitivityPolicySettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SensitivityPolicySettingsRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityPolicySettings{?%24expand,%24select}";
+/**
+ * Provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApplicableTo: "applicableTo",
+    DowngradeSensitivityRequiresJustification: "downgradeSensitivityRequiresJustification",
+    HelpWebUrl: "helpWebUrl",
+    IsMandatory: "isMandatory",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +102,7 @@ export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SensitivityPolicySettingsRequestBuilderUriTemplate,
@@ -92,7 +110,7 @@ export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityPolicySettingsFromDiscriminatorValue,
         queryParametersMapper: SensitivityPolicySettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +120,7 @@ export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityPolicySettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSensitivityPolicySettings,

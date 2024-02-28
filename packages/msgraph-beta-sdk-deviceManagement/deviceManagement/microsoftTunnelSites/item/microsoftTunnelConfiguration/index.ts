@@ -5,6 +5,8 @@ import { createMicrosoftTunnelConfigurationFromDiscriminatorValue, serializeMicr
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the microsoftTunnelConfiguration property of the microsoft.graph.microsoftTunnelSite entity.
  */
@@ -57,16 +59,43 @@ export interface MicrosoftTunnelConfigurationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const MicrosoftTunnelConfigurationRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelConfiguration{?%24expand,%24select}";
+/**
+ * Provides operations to manage the microsoftTunnelConfiguration property of the microsoft.graph.microsoftTunnelSite entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the microsoftTunnelConfiguration property of the microsoft.graph.microsoftTunnelSite entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdvancedSettings: "advancedSettings",
+    DefaultDomainSuffix: "defaultDomainSuffix",
+    Description: "description",
+    DisableUdpConnections: "disableUdpConnections",
+    DisplayName: "displayName",
+    DnsServers: "dnsServers",
+    LastUpdateDateTime: "lastUpdateDateTime",
+    ListenPort: "listenPort",
+    Network: "network",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RouteExcludes: "routeExcludes",
+    RouteIncludes: "routeIncludes",
+    RoutesExclude: "routesExclude",
+    RoutesInclude: "routesInclude",
+    SplitDNS: "splitDNS",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +113,7 @@ export const MicrosoftTunnelConfigurationRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MicrosoftTunnelConfigurationRequestBuilderUriTemplate,
@@ -92,7 +121,7 @@ export const MicrosoftTunnelConfigurationRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelConfigurationFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelConfigurationRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +131,7 @@ export const MicrosoftTunnelConfigurationRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftTunnelConfiguration,

@@ -57,12 +57,14 @@ export interface AnalyzedEmailItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const AnalyzedEmailItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AnalyzedEmailItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const AnalyzedEmailItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAnalyzedEmailFromDiscriminatorValue,
         queryParametersMapper: AnalyzedEmailItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,54 @@ export const AnalyzedEmailItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAnalyzedEmailFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAnalyzedEmail,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the analyzedEmails property of the microsoft.graph.security.collaborationRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the analyzedEmails property of the microsoft.graph.security.collaborationRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertIds: "alertIds",
+    Attachments: "attachments",
+    AttachmentsCount: "attachmentsCount",
+    AuthenticationDetails: "authenticationDetails",
+    BulkComplaintLevel: "bulkComplaintLevel",
+    Contexts: "contexts",
+    DetectionMethods: "detectionMethods",
+    Directionality: "directionality",
+    DistributionList: "distributionList",
+    EmailClusterId: "emailClusterId",
+    ExchangeTransportRules: "exchangeTransportRules",
+    InternetMessageId: "internetMessageId",
+    Language: "language",
+    LatestDelivery: "latestDelivery",
+    LoggedDateTime: "loggedDateTime",
+    NetworkMessageId: "networkMessageId",
+    OriginalDelivery: "originalDelivery",
+    OverrideSources: "overrideSources",
+    PhishConfidenceLevel: "phishConfidenceLevel",
+    Policy: "policy",
+    PolicyAction: "policyAction",
+    RecipientEmailAddresses: "recipientEmailAddresses",
+    ReturnPath: "returnPath",
+    SenderDetail: "senderDetail",
+    SizeInBytes: "sizeInBytes",
+    SpamConfidenceLevel: "spamConfidenceLevel",
+    Subject: "subject",
+    ThreatType: "threatType",
+    Urls: "urls",
+    UrlsCount: "urlsCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

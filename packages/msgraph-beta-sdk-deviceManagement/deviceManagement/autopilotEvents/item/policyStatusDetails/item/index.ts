@@ -57,12 +57,14 @@ export interface DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGe
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderReques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderReques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,30 @@ export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderReques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementAutopilotPolicyStatusDetail,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ComplianceStatus: "complianceStatus",
+    DisplayName: "displayName",
+    ErrorCode: "errorCode",
+    LastReportedDateTime: "lastReportedDateTime",
+    PolicyType: "policyType",
+    TrackedOnEnrollmentStatus: "trackedOnEnrollmentStatus",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

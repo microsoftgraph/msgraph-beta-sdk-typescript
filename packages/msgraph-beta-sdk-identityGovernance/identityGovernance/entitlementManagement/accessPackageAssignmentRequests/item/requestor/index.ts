@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { ConnectedOrganizationRequestBuilderRequestsMetadata, type ConnectedOrganizationRequestBuilder } from './connectedOrganization/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the requestor property of the microsoft.graph.accessPackageAssignmentRequest entity.
  */
@@ -69,16 +71,40 @@ export interface RequestorRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const RequestorRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest%2Did}/requestor{?%24expand,%24select}";
+/**
+ * Provides operations to manage the requestor property of the microsoft.graph.accessPackageAssignmentRequest entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ConnectedOrganization: "connectedOrganization",
+} as const;
+/**
+ * Provides operations to manage the requestor property of the microsoft.graph.accessPackageAssignmentRequest entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AltSecId: "altSecId",
+    CleanupScheduledDateTime: "cleanupScheduledDateTime",
+    ConnectedOrganizationId: "connectedOrganizationId",
+    DisplayName: "displayName",
+    Email: "email",
+    ObjectId: "objectId",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    PrincipalName: "principalName",
+    SubjectLifecycle: "subjectLifecycle",
+    Type: "type",
+    ConnectedOrganization: "connectedOrganization",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -104,7 +130,7 @@ export const RequestorRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RequestorRequestBuilderUriTemplate,
@@ -112,7 +138,7 @@ export const RequestorRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageSubjectFromDiscriminatorValue,
         queryParametersMapper: RequestorRequestBuilderGetQueryParametersMapper,
     },
@@ -122,7 +148,7 @@ export const RequestorRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageSubjectFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageSubject,

@@ -62,7 +62,7 @@ export interface CredentialUserRegistrationsSummariesRequestBuilderGetQueryParam
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface CredentialUserRegistrationsSummariesRequestBuilderGetQueryParam
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface CredentialUserRegistrationsSummariesRequestBuilderGetQueryParam
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface CredentialUserRegistrationsSummariesRequestBuilderGetQueryParam
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const CredentialUserRegistrationsSummariesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CredentialUserRegistrationsSummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,67 @@ export const CredentialUserRegistrationsSummariesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCredentialUserRegistrationsSummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastRefreshedDateTimeDesc: "lastRefreshedDateTime desc",
+    MfaAndSsprCapableUserCount: "mfaAndSsprCapableUserCount",
+    MfaAndSsprCapableUserCountDesc: "mfaAndSsprCapableUserCount desc",
+    MfaConditionalAccessPolicyState: "mfaConditionalAccessPolicyState",
+    MfaConditionalAccessPolicyStateDesc: "mfaConditionalAccessPolicyState desc",
+    MfaExcludedUserCount: "mfaExcludedUserCount",
+    MfaExcludedUserCountDesc: "mfaExcludedUserCount desc",
+    MfaRegisteredUserCount: "mfaRegisteredUserCount",
+    MfaRegisteredUserCountDesc: "mfaRegisteredUserCount desc",
+    SecurityDefaultsEnabled: "securityDefaultsEnabled",
+    SecurityDefaultsEnabledDesc: "securityDefaultsEnabled desc",
+    SsprEnabledUserCount: "ssprEnabledUserCount",
+    SsprEnabledUserCountDesc: "ssprEnabledUserCount desc",
+    SsprRegisteredUserCount: "ssprRegisteredUserCount",
+    SsprRegisteredUserCountDesc: "ssprRegisteredUserCount desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    TenantLicenseType: "tenantLicenseType",
+    TenantLicenseTypeDesc: "tenantLicenseType desc",
+    TotalUserCount: "totalUserCount",
+    TotalUserCountDesc: "totalUserCount desc",
+} as const;
+/**
+ * Provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    MfaAndSsprCapableUserCount: "mfaAndSsprCapableUserCount",
+    MfaConditionalAccessPolicyState: "mfaConditionalAccessPolicyState",
+    MfaExcludedUserCount: "mfaExcludedUserCount",
+    MfaRegisteredUserCount: "mfaRegisteredUserCount",
+    SecurityDefaultsEnabled: "securityDefaultsEnabled",
+    SsprEnabledUserCount: "ssprEnabledUserCount",
+    SsprRegisteredUserCount: "ssprRegisteredUserCount",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    TenantLicenseType: "tenantLicenseType",
+    TotalUserCount: "totalUserCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

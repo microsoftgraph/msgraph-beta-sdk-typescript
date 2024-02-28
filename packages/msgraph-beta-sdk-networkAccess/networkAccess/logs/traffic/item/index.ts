@@ -5,6 +5,8 @@ import { createNetworkAccessTrafficFromDiscriminatorValue, serializeNetworkAcces
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
  */
@@ -57,16 +59,64 @@ export interface NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParame
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Action: "action",
+    AgentVersion: "agentVersion",
+    ApplicationSnapshot: "applicationSnapshot",
+    ConnectionId: "connectionId",
+    CreatedDateTime: "createdDateTime",
+    DestinationFQDN: "destinationFQDN",
+    DestinationIp: "destinationIp",
+    DestinationPort: "destinationPort",
+    DestinationUrl: "destinationUrl",
+    DestinationWebCategory: "destinationWebCategory",
+    DeviceCategory: "deviceCategory",
+    DeviceId: "deviceId",
+    DeviceOperatingSystem: "deviceOperatingSystem",
+    DeviceOperatingSystemVersion: "deviceOperatingSystemVersion",
+    FilteringProfileId: "filteringProfileId",
+    FilteringProfileName: "filteringProfileName",
+    Headers: "headers",
+    InitiatingProcessName: "initiatingProcessName",
+    NetworkProtocol: "networkProtocol",
+    PolicyId: "policyId",
+    PolicyName: "policyName",
+    PolicyRuleId: "policyRuleId",
+    PolicyRuleName: "policyRuleName",
+    PrivateAccessDetails: "privateAccessDetails",
+    ReceivedBytes: "receivedBytes",
+    ResourceTenantId: "resourceTenantId",
+    SentBytes: "sentBytes",
+    SessionId: "sessionId",
+    SourceIp: "sourceIp",
+    SourcePort: "sourcePort",
+    TenantId: "tenantId",
+    ThreatType: "threatType",
+    TrafficType: "trafficType",
+    TransactionId: "transactionId",
+    TransportProtocol: "transportProtocol",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +134,7 @@ export const NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate,
@@ -92,7 +142,7 @@ export const NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNetworkAccessTrafficFromDiscriminatorValue,
         queryParametersMapper: NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +152,7 @@ export const NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNetworkAccessTrafficFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeNetworkAccessTraffic,

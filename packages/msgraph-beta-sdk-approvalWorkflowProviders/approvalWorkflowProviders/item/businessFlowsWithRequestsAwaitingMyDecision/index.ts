@@ -61,7 +61,7 @@ export interface BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQue
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQue
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQue
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQue
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,58 @@ export const BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBusinessFlow,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CustomData: "customData",
+    CustomDataDesc: "customData desc",
+    DeDuplicationId: "deDuplicationId",
+    DeDuplicationIdDesc: "deDuplicationId desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Policy: "policy",
+    PolicyDesc: "policy desc",
+    PolicyTemplateId: "policyTemplateId",
+    PolicyTemplateIdDesc: "policyTemplateId desc",
+    RecordVersion: "recordVersion",
+    RecordVersionDesc: "recordVersion desc",
+    SchemaId: "schemaId",
+    SchemaIdDesc: "schemaId desc",
+    Settings: "settings",
+    SettingsDesc: "settings desc",
+} as const;
+/**
+ * Provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CustomData: "customData",
+    DeDuplicationId: "deDuplicationId",
+    Description: "description",
+    DisplayName: "displayName",
+    Policy: "policy",
+    PolicyTemplateId: "policyTemplateId",
+    RecordVersion: "recordVersion",
+    SchemaId: "schemaId",
+    Settings: "settings",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

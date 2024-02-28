@@ -12,6 +12,8 @@ import { TeamTemplatesRequestBuilderNavigationMetadata, TeamTemplatesRequestBuil
 import { type WorkforceIntegrationsRequestBuilder, WorkforceIntegrationsRequestBuilderNavigationMetadata, WorkforceIntegrationsRequestBuilderRequestsMetadata } from './workforceIntegrations/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the teamwork singleton.
  */
@@ -81,16 +83,42 @@ export interface TeamworkRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TeamworkRequestBuilderUriTemplate = "{+baseurl}/teamwork{?%24expand,%24select}";
+/**
+ * Provides operations to manage the teamwork singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DeletedChats: "deletedChats",
+    DeletedTeams: "deletedTeams",
+    Devices: "devices",
+    TeamsAppSettings: "teamsAppSettings",
+    TeamTemplates: "teamTemplates",
+    WorkforceIntegrations: "workforceIntegrations",
+} as const;
+/**
+ * Provides operations to manage the teamwork singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    IsTeamsEnabled: "isTeamsEnabled",
+    Region: "region",
+    DeletedChats: "deletedChats",
+    DeletedTeams: "deletedTeams",
+    Devices: "devices",
+    TeamsAppSettings: "teamsAppSettings",
+    TeamTemplates: "teamTemplates",
+    WorkforceIntegrations: "workforceIntegrations",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -139,7 +167,7 @@ export const TeamworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamworkFromDiscriminatorValue,
         queryParametersMapper: TeamworkRequestBuilderGetQueryParametersMapper,
     },
@@ -149,7 +177,7 @@ export const TeamworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamworkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamwork,

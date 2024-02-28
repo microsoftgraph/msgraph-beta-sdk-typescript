@@ -62,7 +62,7 @@ export interface ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameter
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameter
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameter
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const ApplicationSignInDetailedSummaryRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplicationSignInDetailedSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ApplicationSignInDetailedSummaryRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,46 @@ export const ApplicationSignInDetailedSummaryRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplicationSignInDetailedSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeApplicationSignInDetailedSummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AggregatedEventDateTime: "aggregatedEventDateTime",
+    AggregatedEventDateTimeDesc: "aggregatedEventDateTime desc",
+    AppDisplayName: "appDisplayName",
+    AppDisplayNameDesc: "appDisplayName desc",
+    AppId: "appId",
+    AppIdDesc: "appId desc",
+    SignInCount: "signInCount",
+    SignInCountDesc: "signInCount desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AggregatedEventDateTime: "aggregatedEventDateTime",
+    AppDisplayName: "appDisplayName",
+    AppId: "appId",
+    SignInCount: "signInCount",
+    Status: "status",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

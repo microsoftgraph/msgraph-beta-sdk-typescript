@@ -5,6 +5,8 @@ import { createWebAccountFromDiscriminatorValue, serializeWebAccount, type WebAc
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
  */
@@ -60,16 +62,42 @@ export interface WebAccountItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WebAccountItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/webAccounts/{webAccount%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowedAudiences: "allowedAudiences",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Inference: "inference",
+    IsSearchable: "isSearchable",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Source: "source",
+    Description: "description",
+    Service: "service",
+    StatusMessage: "statusMessage",
+    ThumbnailUrl: "thumbnailUrl",
+    UserId: "userId",
+    WebUrl: "webUrl",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -87,7 +115,7 @@ export const WebAccountItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WebAccountItemRequestBuilderUriTemplate,
@@ -95,7 +123,7 @@ export const WebAccountItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWebAccountFromDiscriminatorValue,
         queryParametersMapper: WebAccountItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +133,7 @@ export const WebAccountItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWebAccountFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWebAccount,

@@ -30,12 +30,14 @@ export interface DefinitionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,44 @@ export const DefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFromDiscriminatorValue,
         queryParametersMapper: DefinitionRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the definition property of the microsoft.graph.groupPolicyPresentation entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
+/**
+ * Provides operations to manage the definition property of the microsoft.graph.groupPolicyPresentation entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CategoryPath: "categoryPath",
+    ClassType: "classType",
+    DisplayName: "displayName",
+    ExplainText: "explainText",
+    GroupPolicyCategoryId: "groupPolicyCategoryId",
+    HasRelatedDefinitions: "hasRelatedDefinitions",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    MinDeviceCspVersion: "minDeviceCspVersion",
+    MinUserCspVersion: "minUserCspVersion",
+    PolicyType: "policyType",
+    SupportedOn: "supportedOn",
+    Version: "version",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

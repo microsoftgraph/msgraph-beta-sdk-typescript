@@ -68,7 +68,7 @@ export interface DepOnboardingSettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -76,7 +76,7 @@ export interface DepOnboardingSettingsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -84,7 +84,7 @@ export interface DepOnboardingSettingsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -94,6 +94,9 @@ export interface DepOnboardingSettingsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -137,7 +140,7 @@ export const DepOnboardingSettingsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepOnboardingSettingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DepOnboardingSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -147,12 +150,75 @@ export const DepOnboardingSettingsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepOnboardingSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDepOnboardingSetting,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DefaultIosEnrollmentProfile: "defaultIosEnrollmentProfile",
+    DefaultMacOsEnrollmentProfile: "defaultMacOsEnrollmentProfile",
+    EnrollmentProfiles: "enrollmentProfiles",
+    ImportedAppleDeviceIdentities: "importedAppleDeviceIdentities",
+} as const;
+/**
+ * Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppleIdentifier: "appleIdentifier",
+    AppleIdentifierDesc: "appleIdentifier desc",
+    DataSharingConsentGranted: "dataSharingConsentGranted",
+    DataSharingConsentGrantedDesc: "dataSharingConsentGranted desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    LastSuccessfulSyncDateTime: "lastSuccessfulSyncDateTime",
+    LastSuccessfulSyncDateTimeDesc: "lastSuccessfulSyncDateTime desc",
+    LastSyncErrorCode: "lastSyncErrorCode",
+    LastSyncErrorCodeDesc: "lastSyncErrorCode desc",
+    LastSyncTriggeredDateTime: "lastSyncTriggeredDateTime",
+    LastSyncTriggeredDateTimeDesc: "lastSyncTriggeredDateTime desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    ShareTokenWithSchoolDataSyncService: "shareTokenWithSchoolDataSyncService",
+    ShareTokenWithSchoolDataSyncServiceDesc: "shareTokenWithSchoolDataSyncService desc",
+    SyncedDeviceCount: "syncedDeviceCount",
+    SyncedDeviceCountDesc: "syncedDeviceCount desc",
+    TokenExpirationDateTime: "tokenExpirationDateTime",
+    TokenExpirationDateTimeDesc: "tokenExpirationDateTime desc",
+    TokenName: "tokenName",
+    TokenNameDesc: "tokenName desc",
+    TokenType: "tokenType",
+    TokenTypeDesc: "tokenType desc",
+} as const;
+/**
+ * Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppleIdentifier: "appleIdentifier",
+    DataSharingConsentGranted: "dataSharingConsentGranted",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastSuccessfulSyncDateTime: "lastSuccessfulSyncDateTime",
+    LastSyncErrorCode: "lastSyncErrorCode",
+    LastSyncTriggeredDateTime: "lastSyncTriggeredDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    ShareTokenWithSchoolDataSyncService: "shareTokenWithSchoolDataSyncService",
+    SyncedDeviceCount: "syncedDeviceCount",
+    TokenExpirationDateTime: "tokenExpirationDateTime",
+    TokenName: "tokenName",
+    TokenType: "tokenType",
+    DefaultIosEnrollmentProfile: "defaultIosEnrollmentProfile",
+    DefaultMacOsEnrollmentProfile: "defaultMacOsEnrollmentProfile",
+    EnrollmentProfiles: "enrollmentProfiles",
+    ImportedAppleDeviceIdentities: "importedAppleDeviceIdentities",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

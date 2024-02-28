@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { ExportJobsRequestBuilderNavigationMetadata, ExportJobsRequestBuilderRequestsMetadata, type ExportJobsRequestBuilder } from './exportJobs/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the goals property of the microsoft.graph.employeeExperience entity.
  */
@@ -62,16 +64,30 @@ export interface GoalsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GoalsRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/goals{?%24expand,%24select}";
+/**
+ * Provides operations to manage the goals property of the microsoft.graph.employeeExperience entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ExportJobs: "exportJobs",
+} as const;
+/**
+ * Provides operations to manage the goals property of the microsoft.graph.employeeExperience entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExportJobs: "exportJobs",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -98,7 +114,7 @@ export const GoalsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GoalsRequestBuilderUriTemplate,
@@ -106,7 +122,7 @@ export const GoalsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsFromDiscriminatorValue,
         queryParametersMapper: GoalsRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +132,7 @@ export const GoalsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGoals,

@@ -5,6 +5,8 @@ import { createUsageRightFromDiscriminatorValue, serializeUsageRight, type Usage
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the usageRights property of the microsoft.graph.device entity.
  */
@@ -57,16 +59,31 @@ export interface UsageRightItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UsageRightItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/usageRights/{usageRight%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the usageRights property of the microsoft.graph.device entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the usageRights property of the microsoft.graph.device entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CatalogId: "catalogId",
+    ServiceIdentifier: "serviceIdentifier",
+    State: "state",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +101,7 @@ export const UsageRightItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UsageRightItemRequestBuilderUriTemplate,
@@ -92,7 +109,7 @@ export const UsageRightItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUsageRightFromDiscriminatorValue,
         queryParametersMapper: UsageRightItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +119,7 @@ export const UsageRightItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUsageRightFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUsageRight,

@@ -67,12 +67,14 @@ export interface DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetQ
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -106,7 +108,7 @@ export const DeviceManagementResourceAccessProfileBaseItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementResourceAccessProfileBaseItemRequestBuilderUriTemplate,
@@ -114,7 +116,7 @@ export const DeviceManagementResourceAccessProfileBaseItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,12 +126,32 @@ export const DeviceManagementResourceAccessProfileBaseItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementResourceAccessProfileBase,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreationDateTime: "creationDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Version: "version",
+    Assignments: "assignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -7,6 +7,8 @@ import { AlertsRequestBuilderNavigationMetadata, AlertsRequestBuilderRequestsMet
 import { RuleDefinitionRequestBuilderRequestsMetadata, type RuleDefinitionRequestBuilder } from './ruleDefinition/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -67,16 +69,45 @@ export interface ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ManagedTenantAlertRuleItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRules/{managedTenantAlertRule%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Alerts: "alerts",
+    RuleDefinition: "ruleDefinition",
+} as const;
+/**
+ * Provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertDisplayName: "alertDisplayName",
+    AlertTTL: "alertTTL",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    LastRunDateTime: "lastRunDateTime",
+    NotificationFinalDestinations: "notificationFinalDestinations",
+    Severity: "severity",
+    Targets: "targets",
+    TenantIds: "tenantIds",
+    Alerts: "alerts",
+    RuleDefinition: "ruleDefinition",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -106,7 +137,7 @@ export const ManagedTenantAlertRuleItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedTenantAlertRuleItemRequestBuilderUriTemplate,
@@ -114,7 +145,7 @@ export const ManagedTenantAlertRuleItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantAlertRuleFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantAlertRuleItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +155,7 @@ export const ManagedTenantAlertRuleItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantAlertRuleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedTenantAlertRule,

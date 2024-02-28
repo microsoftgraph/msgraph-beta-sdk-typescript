@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MobilityManagementPolicyItemRequestBuilderNavigationMetadata, MobilityManagementPolicyItemRequestBuilderRequestsMetadata, type MobilityManagementPolicyItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of mobilityManagementPolicy entities.
  */
@@ -61,7 +64,7 @@ export interface MobilityManagementPoliciesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface MobilityManagementPoliciesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface MobilityManagementPoliciesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,48 @@ export interface MobilityManagementPoliciesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const MobilityManagementPoliciesRequestBuilderUriTemplate = "{+baseurl}/mobilityManagementPolicies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the collection of mobilityManagementPolicy entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    IncludedGroups: "includedGroups",
+} as const;
+/**
+ * Provides operations to manage the collection of mobilityManagementPolicy entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppliesTo: "appliesTo",
+    AppliesToDesc: "appliesTo desc",
+    ComplianceUrl: "complianceUrl",
+    ComplianceUrlDesc: "complianceUrl desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DiscoveryUrl: "discoveryUrl",
+    DiscoveryUrlDesc: "discoveryUrl desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsValid: "isValid",
+    IsValidDesc: "isValid desc",
+    TermsOfUseUrl: "termsOfUseUrl",
+    TermsOfUseUrlDesc: "termsOfUseUrl desc",
+} as const;
+/**
+ * Provides operations to manage the collection of mobilityManagementPolicy entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppliesTo: "appliesTo",
+    ComplianceUrl: "complianceUrl",
+    Description: "description",
+    DiscoveryUrl: "discoveryUrl",
+    DisplayName: "displayName",
+    IsValid: "isValid",
+    TermsOfUseUrl: "termsOfUseUrl",
+    IncludedGroups: "includedGroups",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +172,7 @@ export const MobilityManagementPoliciesRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobilityManagementPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MobilityManagementPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +182,7 @@ export const MobilityManagementPoliciesRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobilityManagementPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMobilityManagementPolicy,

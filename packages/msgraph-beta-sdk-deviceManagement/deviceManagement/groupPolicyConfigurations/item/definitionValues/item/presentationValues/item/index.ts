@@ -7,6 +7,8 @@ import { DefinitionValueRequestBuilderRequestsMetadata, type DefinitionValueRequ
 import { PresentationRequestBuilderRequestsMetadata, type PresentationRequestBuilder } from './presentation/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
  */
@@ -67,16 +69,34 @@ export interface GroupPolicyPresentationValueItemRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GroupPolicyPresentationValueItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration%2Did}/definitionValues/{groupPolicyDefinitionValue%2Did}/presentationValues/{groupPolicyPresentationValue%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DefinitionValue: "definitionValue",
+    Presentation: "presentation",
+} as const;
+/**
+ * Provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    DefinitionValue: "definitionValue",
+    Presentation: "presentation",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -105,7 +125,7 @@ export const GroupPolicyPresentationValueItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GroupPolicyPresentationValueItemRequestBuilderUriTemplate,
@@ -113,7 +133,7 @@ export const GroupPolicyPresentationValueItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyPresentationValueFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyPresentationValueItemRequestBuilderGetQueryParametersMapper,
     },
@@ -123,7 +143,7 @@ export const GroupPolicyPresentationValueItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyPresentationValueFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyPresentationValue,

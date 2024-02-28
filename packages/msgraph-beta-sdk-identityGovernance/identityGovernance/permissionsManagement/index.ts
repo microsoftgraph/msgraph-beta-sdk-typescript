@@ -8,6 +8,8 @@ import { ScheduledPermissionsApprovalsRequestBuilderNavigationMetadata, Schedule
 import { ScheduledPermissionsRequestsRequestBuilderNavigationMetadata, ScheduledPermissionsRequestsRequestBuilderRequestsMetadata, type ScheduledPermissionsRequestsRequestBuilder } from './scheduledPermissionsRequests/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the permissionsManagement property of the microsoft.graph.identityGovernance entity.
  */
@@ -72,16 +74,34 @@ export interface PermissionsManagementRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PermissionsManagementRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/permissionsManagement{?%24expand,%24select}";
+/**
+ * Provides operations to manage the permissionsManagement property of the microsoft.graph.identityGovernance entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    PermissionsRequestChanges: "permissionsRequestChanges",
+    ScheduledPermissionsApprovals: "scheduledPermissionsApprovals",
+    ScheduledPermissionsRequests: "scheduledPermissionsRequests",
+} as const;
+/**
+ * Provides operations to manage the permissionsManagement property of the microsoft.graph.identityGovernance entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    PermissionsRequestChanges: "permissionsRequestChanges",
+    ScheduledPermissionsApprovals: "scheduledPermissionsApprovals",
+    ScheduledPermissionsRequests: "scheduledPermissionsRequests",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -116,7 +136,7 @@ export const PermissionsManagementRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PermissionsManagementRequestBuilderUriTemplate,
@@ -124,7 +144,7 @@ export const PermissionsManagementRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsManagementFromDiscriminatorValue,
         queryParametersMapper: PermissionsManagementRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +154,7 @@ export const PermissionsManagementRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsManagementFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePermissionsManagement,

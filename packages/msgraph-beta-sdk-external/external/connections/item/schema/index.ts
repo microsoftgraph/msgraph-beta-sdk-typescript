@@ -5,6 +5,8 @@ import { createSchemaFromDiscriminatorValue, serializeSchema, type Schema } from
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the schema property of the microsoft.graph.externalConnectors.externalConnection entity.
  */
@@ -18,12 +20,12 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      */
      get(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : Promise<Schema | undefined>;
     /**
-     * Update the properties of a schema for an externalConnection.
+     * Create the schema for a Microsoft Search connection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Schema>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0|Find more info here}
      */
      patch(body: Schema, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Schema | undefined>;
     /**
@@ -33,7 +35,7 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a schema for an externalConnection.
+     * Create the schema for a Microsoft Search connection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -47,16 +49,30 @@ export interface SchemaRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SchemaRequestBuilderUriTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/schema{?%24expand,%24select}";
+/**
+ * Provides operations to manage the schema property of the microsoft.graph.externalConnectors.externalConnection entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the schema property of the microsoft.graph.externalConnectors.externalConnection entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BaseType: "baseType",
+    Properties: "properties",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -74,7 +90,7 @@ export const SchemaRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSchemaFromDiscriminatorValue,
         queryParametersMapper: SchemaRequestBuilderGetQueryParametersMapper,
     },
@@ -84,7 +100,7 @@ export const SchemaRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSchemaFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSchema,

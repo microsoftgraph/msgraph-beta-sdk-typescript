@@ -61,7 +61,7 @@ export interface DeviceConfigurationConflictSummaryRequestBuilderGetQueryParamet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DeviceConfigurationConflictSummaryRequestBuilderGetQueryParamet
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DeviceConfigurationConflictSummaryRequestBuilderGetQueryParamet
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DeviceConfigurationConflictSummaryRequestBuilderGetQueryParamet
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const DeviceConfigurationConflictSummaryRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceConfigurationConflictSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceConfigurationConflictSummaryRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,40 @@ export const DeviceConfigurationConflictSummaryRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceConfigurationConflictSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceConfigurationConflictSummary,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ConflictingDeviceConfigurations: "conflictingDeviceConfigurations",
+    ConflictingDeviceConfigurationsDesc: "conflictingDeviceConfigurations desc",
+    ContributingSettings: "contributingSettings",
+    ContributingSettingsDesc: "contributingSettings desc",
+    DeviceCheckinsImpacted: "deviceCheckinsImpacted",
+    DeviceCheckinsImpactedDesc: "deviceCheckinsImpacted desc",
+} as const;
+/**
+ * Provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConflictingDeviceConfigurations: "conflictingDeviceConfigurations",
+    ContributingSettings: "contributingSettings",
+    DeviceCheckinsImpacted: "deviceCheckinsImpacted",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

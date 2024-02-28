@@ -62,7 +62,7 @@ export interface AlertDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface AlertDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface AlertDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface AlertDefinitionsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AlertDefinitionsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AlertDefinitionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,61 @@ export const AlertDefinitionsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleManagementAlertDefinition,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the alertDefinitions property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the alertDefinitions property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    HowToPrevent: "howToPrevent",
+    HowToPreventDesc: "howToPrevent desc",
+    IsConfigurable: "isConfigurable",
+    IsConfigurableDesc: "isConfigurable desc",
+    IsRemediatable: "isRemediatable",
+    IsRemediatableDesc: "isRemediatable desc",
+    MitigationSteps: "mitigationSteps",
+    MitigationStepsDesc: "mitigationSteps desc",
+    ScopeId: "scopeId",
+    ScopeIdDesc: "scopeId desc",
+    ScopeType: "scopeType",
+    ScopeTypeDesc: "scopeType desc",
+    SecurityImpact: "securityImpact",
+    SecurityImpactDesc: "securityImpact desc",
+    SeverityLevel: "severityLevel",
+    SeverityLevelDesc: "severityLevel desc",
+} as const;
+/**
+ * Provides operations to manage the alertDefinitions property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    HowToPrevent: "howToPrevent",
+    IsConfigurable: "isConfigurable",
+    IsRemediatable: "isRemediatable",
+    MitigationSteps: "mitigationSteps",
+    ScopeId: "scopeId",
+    ScopeType: "scopeType",
+    SecurityImpact: "securityImpact",
+    SeverityLevel: "severityLevel",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

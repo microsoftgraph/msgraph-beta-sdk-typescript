@@ -8,6 +8,9 @@ import { TenantGroupItemRequestBuilderRequestsMetadata, type TenantGroupItemRequ
 import { MicrosoftGraphManagedTenantsTenantSearchRequestBuilderRequestsMetadata, type MicrosoftGraphManagedTenantsTenantSearchRequestBuilder } from './microsoftGraphManagedTenantsTenantSearch/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
  */
@@ -67,7 +70,7 @@ export interface TenantGroupsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +78,7 @@ export interface TenantGroupsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +86,7 @@ export interface TenantGroupsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -97,6 +100,40 @@ export interface TenantGroupsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TenantGroupsRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AllTenantsIncluded: "allTenantsIncluded",
+    AllTenantsIncludedDesc: "allTenantsIncluded desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ManagementActions: "managementActions",
+    ManagementActionsDesc: "managementActions desc",
+    ManagementIntents: "managementIntents",
+    ManagementIntentsDesc: "managementIntents desc",
+    TenantIds: "tenantIds",
+    TenantIdsDesc: "tenantIds desc",
+} as const;
+/**
+ * Provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllTenantsIncluded: "allTenantsIncluded",
+    DisplayName: "displayName",
+    ManagementActions: "managementActions",
+    ManagementIntents: "managementIntents",
+    TenantIds: "tenantIds",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -135,7 +172,7 @@ export const TenantGroupsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTenantGroupCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TenantGroupsRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +182,7 @@ export const TenantGroupsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTenantGroupFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTenantGroup,

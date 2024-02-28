@@ -5,6 +5,7 @@ import { createUserConfigurationFromDiscriminatorValue, type UserConfiguration }
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
  */
@@ -30,12 +31,19 @@ export interface UserConfigurationItemRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UserConfigurationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/userConfigurations/{userConfiguration%2Did}{?%24select}";
+/**
+ * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BinaryData: "binaryData",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -52,7 +60,7 @@ export const UserConfigurationItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserConfigurationFromDiscriminatorValue,
         queryParametersMapper: UserConfigurationItemRequestBuilderGetQueryParametersMapper,
     },

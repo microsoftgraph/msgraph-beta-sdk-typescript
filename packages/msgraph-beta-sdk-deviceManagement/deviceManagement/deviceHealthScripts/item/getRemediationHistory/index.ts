@@ -37,7 +37,7 @@ export const GetRemediationHistoryRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptRemediationHistoryFromDiscriminatorValue,
     },
 };

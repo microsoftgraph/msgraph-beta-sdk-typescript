@@ -35,12 +35,14 @@ export interface DimensionItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -71,10 +73,27 @@ export const DimensionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDimensionFromDiscriminatorValue,
         queryParametersMapper: DimensionItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the dimensions property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DimensionValues: "dimensionValues",
+} as const;
+/**
+ * Provides operations to manage the dimensions property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Code: "code",
+    DisplayName: "displayName",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    DimensionValues: "dimensionValues",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

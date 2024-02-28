@@ -15,6 +15,8 @@ import { LastModifiedByUserRequestBuilderNavigationMetadata, LastModifiedByUserR
 import { type VersionsRequestBuilder, VersionsRequestBuilderNavigationMetadata, VersionsRequestBuilderRequestsMetadata } from './versions/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the items property of the microsoft.graph.list entity.
  */
@@ -113,16 +115,56 @@ export interface ListItemItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ListItemItemRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the items property of the microsoft.graph.list entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Activities: "activities",
+    Analytics: "analytics",
+    DocumentSetVersions: "documentSetVersions",
+    DriveItem: "driveItem",
+    Fields: "fields",
+    Versions: "versions",
+} as const;
+/**
+ * Provides operations to manage the items property of the microsoft.graph.list entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    ETag: "eTag",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    ParentReference: "parentReference",
+    WebUrl: "webUrl",
+    ContentType: "contentType",
+    Deleted: "deleted",
+    SharepointIds: "sharepointIds",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Activities: "activities",
+    Analytics: "analytics",
+    DocumentSetVersions: "documentSetVersions",
+    DriveItem: "driveItem",
+    Fields: "fields",
+    Versions: "versions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -181,7 +223,7 @@ export const ListItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ListItemItemRequestBuilderUriTemplate,
@@ -189,7 +231,7 @@ export const ListItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createListItemFromDiscriminatorValue,
         queryParametersMapper: ListItemItemRequestBuilderGetQueryParametersMapper,
     },
@@ -199,7 +241,7 @@ export const ListItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createListItemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeListItem,

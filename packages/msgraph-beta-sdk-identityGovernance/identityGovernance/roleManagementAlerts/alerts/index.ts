@@ -67,7 +67,7 @@ export interface AlertsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -75,7 +75,7 @@ export interface AlertsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -83,7 +83,7 @@ export interface AlertsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -93,6 +93,9 @@ export interface AlertsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -136,7 +139,7 @@ export const AlertsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AlertsRequestBuilderGetQueryParametersMapper,
     },
@@ -146,12 +149,58 @@ export const AlertsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleManagementAlert,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AlertConfiguration: "alertConfiguration",
+    AlertDefinition: "alertDefinition",
+    AlertIncidents: "alertIncidents",
+} as const;
+/**
+ * Provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AlertDefinitionId: "alertDefinitionId",
+    AlertDefinitionIdDesc: "alertDefinitionId desc",
+    IncidentCount: "incidentCount",
+    IncidentCountDesc: "incidentCount desc",
+    IsActive: "isActive",
+    IsActiveDesc: "isActive desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    LastScannedDateTime: "lastScannedDateTime",
+    LastScannedDateTimeDesc: "lastScannedDateTime desc",
+    ScopeId: "scopeId",
+    ScopeIdDesc: "scopeId desc",
+    ScopeType: "scopeType",
+    ScopeTypeDesc: "scopeType desc",
+} as const;
+/**
+ * Provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertDefinitionId: "alertDefinitionId",
+    IncidentCount: "incidentCount",
+    IsActive: "isActive",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastScannedDateTime: "lastScannedDateTime",
+    ScopeId: "scopeId",
+    ScopeType: "scopeType",
+    AlertConfiguration: "alertConfiguration",
+    AlertDefinition: "alertDefinition",
+    AlertIncidents: "alertIncidents",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

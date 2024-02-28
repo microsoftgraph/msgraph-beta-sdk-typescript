@@ -12,6 +12,8 @@ import { SendRequestBuilderRequestsMetadata, type SendRequestBuilder } from './s
 import { ShipmentMethodRequestBuilderRequestsMetadata, type ShipmentMethodRequestBuilder } from './shipmentMethod/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
  */
@@ -80,16 +82,69 @@ export interface SalesQuoteItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SalesQuoteItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesQuoteLines: "salesQuoteLines",
+    ShipmentMethod: "shipmentMethod",
+} as const;
+/**
+ * Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AcceptedDate: "acceptedDate",
+    BillingPostalAddress: "billingPostalAddress",
+    BillToCustomerId: "billToCustomerId",
+    BillToCustomerNumber: "billToCustomerNumber",
+    BillToName: "billToName",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    CustomerId: "customerId",
+    CustomerName: "customerName",
+    CustomerNumber: "customerNumber",
+    DiscountAmount: "discountAmount",
+    DocumentDate: "documentDate",
+    DueDate: "dueDate",
+    Email: "email",
+    ExternalDocumentNumber: "externalDocumentNumber",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    PaymentTermsId: "paymentTermsId",
+    PhoneNumber: "phoneNumber",
+    Salesperson: "salesperson",
+    SellingPostalAddress: "sellingPostalAddress",
+    SentDate: "sentDate",
+    ShipmentMethodId: "shipmentMethodId",
+    ShippingPostalAddress: "shippingPostalAddress",
+    ShipToContact: "shipToContact",
+    ShipToName: "shipToName",
+    Status: "status",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalTaxAmount: "totalTaxAmount",
+    ValidUntilDate: "validUntilDate",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesQuoteLines: "salesQuoteLines",
+    ShipmentMethod: "shipmentMethod",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -135,7 +190,7 @@ export const SalesQuoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesQuoteFromDiscriminatorValue,
         queryParametersMapper: SalesQuoteItemRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +200,7 @@ export const SalesQuoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesQuoteFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSalesQuote,

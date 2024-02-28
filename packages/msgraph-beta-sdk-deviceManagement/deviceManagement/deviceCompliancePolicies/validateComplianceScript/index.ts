@@ -79,7 +79,7 @@ export const ValidateComplianceScriptRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceScriptValidationResultFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeValidateComplianceScriptPostRequestBody,

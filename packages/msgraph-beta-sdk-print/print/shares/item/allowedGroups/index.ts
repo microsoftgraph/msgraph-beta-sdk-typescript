@@ -52,7 +52,7 @@ export interface AllowedGroupsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -60,7 +60,7 @@ export interface AllowedGroupsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -68,7 +68,7 @@ export interface AllowedGroupsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -78,6 +78,9 @@ export interface AllowedGroupsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -120,10 +123,244 @@ export const AllowedGroupsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AllowedGroupsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AcceptedSenders: "acceptedSenders",
+    AppRoleAssignments: "appRoleAssignments",
+    Calendar: "calendar",
+    CalendarView: "calendarView",
+    Conversations: "conversations",
+    CreatedOnBehalfOf: "createdOnBehalfOf",
+    Drive: "drive",
+    Drives: "drives",
+    Endpoints: "endpoints",
+    Events: "events",
+    Extensions: "extensions",
+    GroupLifecyclePolicies: "groupLifecyclePolicies",
+    MemberOf: "memberOf",
+    Members: "members",
+    MembersWithLicenseErrors: "membersWithLicenseErrors",
+    Onenote: "onenote",
+    Owners: "owners",
+    PermissionGrants: "permissionGrants",
+    Photo: "photo",
+    Photos: "photos",
+    Planner: "planner",
+    RejectedSenders: "rejectedSenders",
+    Settings: "settings",
+    Sites: "sites",
+    Team: "team",
+    Threads: "threads",
+    TransitiveMemberOf: "transitiveMemberOf",
+    TransitiveMembers: "transitiveMembers",
+} as const;
+/**
+ * Provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeletedDateTime: "deletedDateTime",
+    DeletedDateTimeDesc: "deletedDateTime desc",
+    AccessType: "accessType",
+    AccessTypeDesc: "accessType desc",
+    AllowExternalSenders: "allowExternalSenders",
+    AllowExternalSendersDesc: "allowExternalSenders desc",
+    AssignedLabels: "assignedLabels",
+    AssignedLabelsDesc: "assignedLabels desc",
+    AssignedLicenses: "assignedLicenses",
+    AssignedLicensesDesc: "assignedLicenses desc",
+    AutoSubscribeNewMembers: "autoSubscribeNewMembers",
+    AutoSubscribeNewMembersDesc: "autoSubscribeNewMembers desc",
+    Classification: "classification",
+    ClassificationDesc: "classification desc",
+    CreatedByAppId: "createdByAppId",
+    CreatedByAppIdDesc: "createdByAppId desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    GroupTypes: "groupTypes",
+    GroupTypesDesc: "groupTypes desc",
+    HasMembersWithLicenseErrors: "hasMembersWithLicenseErrors",
+    HasMembersWithLicenseErrorsDesc: "hasMembersWithLicenseErrors desc",
+    HideFromAddressLists: "hideFromAddressLists",
+    HideFromAddressListsDesc: "hideFromAddressLists desc",
+    HideFromOutlookClients: "hideFromOutlookClients",
+    HideFromOutlookClientsDesc: "hideFromOutlookClients desc",
+    InfoCatalogs: "infoCatalogs",
+    InfoCatalogsDesc: "infoCatalogs desc",
+    IsArchived: "isArchived",
+    IsArchivedDesc: "isArchived desc",
+    IsAssignableToRole: "isAssignableToRole",
+    IsAssignableToRoleDesc: "isAssignableToRole desc",
+    IsFavorite: "isFavorite",
+    IsFavoriteDesc: "isFavorite desc",
+    IsManagementRestricted: "isManagementRestricted",
+    IsManagementRestrictedDesc: "isManagementRestricted desc",
+    IsSubscribedByMail: "isSubscribedByMail",
+    IsSubscribedByMailDesc: "isSubscribedByMail desc",
+    LicenseProcessingState: "licenseProcessingState",
+    LicenseProcessingStateDesc: "licenseProcessingState desc",
+    Mail: "mail",
+    MailDesc: "mail desc",
+    MailEnabled: "mailEnabled",
+    MailEnabledDesc: "mailEnabled desc",
+    MailNickname: "mailNickname",
+    MailNicknameDesc: "mailNickname desc",
+    MembershipRule: "membershipRule",
+    MembershipRuleDesc: "membershipRule desc",
+    MembershipRuleProcessingState: "membershipRuleProcessingState",
+    MembershipRuleProcessingStateDesc: "membershipRuleProcessingState desc",
+    MembershipRuleProcessingStatus: "membershipRuleProcessingStatus",
+    MembershipRuleProcessingStatusDesc: "membershipRuleProcessingStatus desc",
+    OnPremisesDomainName: "onPremisesDomainName",
+    OnPremisesDomainNameDesc: "onPremisesDomainName desc",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesLastSyncDateTimeDesc: "onPremisesLastSyncDateTime desc",
+    OnPremisesNetBiosName: "onPremisesNetBiosName",
+    OnPremisesNetBiosNameDesc: "onPremisesNetBiosName desc",
+    OnPremisesProvisioningErrors: "onPremisesProvisioningErrors",
+    OnPremisesProvisioningErrorsDesc: "onPremisesProvisioningErrors desc",
+    OnPremisesSamAccountName: "onPremisesSamAccountName",
+    OnPremisesSamAccountNameDesc: "onPremisesSamAccountName desc",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    OnPremisesSecurityIdentifierDesc: "onPremisesSecurityIdentifier desc",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    OnPremisesSyncEnabledDesc: "onPremisesSyncEnabled desc",
+    OrganizationId: "organizationId",
+    OrganizationIdDesc: "organizationId desc",
+    PreferredDataLocation: "preferredDataLocation",
+    PreferredDataLocationDesc: "preferredDataLocation desc",
+    PreferredLanguage: "preferredLanguage",
+    PreferredLanguageDesc: "preferredLanguage desc",
+    ProxyAddresses: "proxyAddresses",
+    ProxyAddressesDesc: "proxyAddresses desc",
+    RenewedDateTime: "renewedDateTime",
+    RenewedDateTimeDesc: "renewedDateTime desc",
+    ResourceBehaviorOptions: "resourceBehaviorOptions",
+    ResourceBehaviorOptionsDesc: "resourceBehaviorOptions desc",
+    ResourceProvisioningOptions: "resourceProvisioningOptions",
+    ResourceProvisioningOptionsDesc: "resourceProvisioningOptions desc",
+    SecurityEnabled: "securityEnabled",
+    SecurityEnabledDesc: "securityEnabled desc",
+    SecurityIdentifier: "securityIdentifier",
+    SecurityIdentifierDesc: "securityIdentifier desc",
+    ServiceProvisioningErrors: "serviceProvisioningErrors",
+    ServiceProvisioningErrorsDesc: "serviceProvisioningErrors desc",
+    Theme: "theme",
+    ThemeDesc: "theme desc",
+    UniqueName: "uniqueName",
+    UniqueNameDesc: "uniqueName desc",
+    UnseenConversationsCount: "unseenConversationsCount",
+    UnseenConversationsCountDesc: "unseenConversationsCount desc",
+    UnseenCount: "unseenCount",
+    UnseenCountDesc: "unseenCount desc",
+    UnseenMessagesCount: "unseenMessagesCount",
+    UnseenMessagesCountDesc: "unseenMessagesCount desc",
+    Visibility: "visibility",
+    VisibilityDesc: "visibility desc",
+    WritebackConfiguration: "writebackConfiguration",
+    WritebackConfigurationDesc: "writebackConfiguration desc",
+} as const;
+/**
+ * Provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AccessType: "accessType",
+    AllowExternalSenders: "allowExternalSenders",
+    AssignedLabels: "assignedLabels",
+    AssignedLicenses: "assignedLicenses",
+    AutoSubscribeNewMembers: "autoSubscribeNewMembers",
+    Classification: "classification",
+    CreatedByAppId: "createdByAppId",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    ExpirationDateTime: "expirationDateTime",
+    GroupTypes: "groupTypes",
+    HasMembersWithLicenseErrors: "hasMembersWithLicenseErrors",
+    HideFromAddressLists: "hideFromAddressLists",
+    HideFromOutlookClients: "hideFromOutlookClients",
+    InfoCatalogs: "infoCatalogs",
+    IsArchived: "isArchived",
+    IsAssignableToRole: "isAssignableToRole",
+    IsFavorite: "isFavorite",
+    IsManagementRestricted: "isManagementRestricted",
+    IsSubscribedByMail: "isSubscribedByMail",
+    LicenseProcessingState: "licenseProcessingState",
+    Mail: "mail",
+    MailEnabled: "mailEnabled",
+    MailNickname: "mailNickname",
+    MembershipRule: "membershipRule",
+    MembershipRuleProcessingState: "membershipRuleProcessingState",
+    MembershipRuleProcessingStatus: "membershipRuleProcessingStatus",
+    OnPremisesDomainName: "onPremisesDomainName",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesNetBiosName: "onPremisesNetBiosName",
+    OnPremisesProvisioningErrors: "onPremisesProvisioningErrors",
+    OnPremisesSamAccountName: "onPremisesSamAccountName",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    OrganizationId: "organizationId",
+    PreferredDataLocation: "preferredDataLocation",
+    PreferredLanguage: "preferredLanguage",
+    ProxyAddresses: "proxyAddresses",
+    RenewedDateTime: "renewedDateTime",
+    ResourceBehaviorOptions: "resourceBehaviorOptions",
+    ResourceProvisioningOptions: "resourceProvisioningOptions",
+    SecurityEnabled: "securityEnabled",
+    SecurityIdentifier: "securityIdentifier",
+    ServiceProvisioningErrors: "serviceProvisioningErrors",
+    Theme: "theme",
+    UniqueName: "uniqueName",
+    UnseenConversationsCount: "unseenConversationsCount",
+    UnseenCount: "unseenCount",
+    UnseenMessagesCount: "unseenMessagesCount",
+    Visibility: "visibility",
+    WritebackConfiguration: "writebackConfiguration",
+    AcceptedSenders: "acceptedSenders",
+    AppRoleAssignments: "appRoleAssignments",
+    Calendar: "calendar",
+    CalendarView: "calendarView",
+    Conversations: "conversations",
+    CreatedOnBehalfOf: "createdOnBehalfOf",
+    Drive: "drive",
+    Drives: "drives",
+    Endpoints: "endpoints",
+    Events: "events",
+    Extensions: "extensions",
+    GroupLifecyclePolicies: "groupLifecyclePolicies",
+    MemberOf: "memberOf",
+    Members: "members",
+    MembersWithLicenseErrors: "membersWithLicenseErrors",
+    Onenote: "onenote",
+    Owners: "owners",
+    PermissionGrants: "permissionGrants",
+    Photo: "photo",
+    Photos: "photos",
+    Planner: "planner",
+    RejectedSenders: "rejectedSenders",
+    Settings: "settings",
+    Sites: "sites",
+    Team: "team",
+    Threads: "threads",
+    TransitiveMemberOf: "transitiveMemberOf",
+    TransitiveMembers: "transitiveMembers",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -19,6 +19,7 @@ import { IpSecurityProfilesRequestBuilderNavigationMetadata, IpSecurityProfilesR
 import { LabelsRequestBuilderNavigationMetadata, LabelsRequestBuilderRequestsMetadata, type LabelsRequestBuilder } from './labels/';
 import { MicrosoftGraphSecurityRunHuntingQueryRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityRunHuntingQueryRequestBuilder } from './microsoftGraphSecurityRunHuntingQuery/';
 import { ProviderTenantSettingsRequestBuilderNavigationMetadata, ProviderTenantSettingsRequestBuilderRequestsMetadata, type ProviderTenantSettingsRequestBuilder } from './providerTenantSettings/';
+import { RulesRequestBuilderNavigationMetadata, RulesRequestBuilderRequestsMetadata, type RulesRequestBuilder } from './rules/';
 import { SecureScoreControlProfilesRequestBuilderNavigationMetadata, SecureScoreControlProfilesRequestBuilderRequestsMetadata, type SecureScoreControlProfilesRequestBuilder } from './secureScoreControlProfiles/';
 import { SecureScoresRequestBuilderNavigationMetadata, SecureScoresRequestBuilderRequestsMetadata, type SecureScoresRequestBuilder } from './secureScores/';
 import { SecurityActionsRequestBuilderNavigationMetadata, SecurityActionsRequestBuilderRequestsMetadata, type SecurityActionsRequestBuilder } from './securityActions/';
@@ -31,6 +32,8 @@ import { TriggerTypesRequestBuilderNavigationMetadata, TriggerTypesRequestBuilde
 import { type UserSecurityProfilesRequestBuilder, UserSecurityProfilesRequestBuilderNavigationMetadata, UserSecurityProfilesRequestBuilderRequestsMetadata } from './userSecurityProfiles/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the security singleton.
  */
@@ -99,6 +102,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
      */
     get providerTenantSettings(): ProviderTenantSettingsRequestBuilder;
+    /**
+     * Provides operations to manage the rules property of the microsoft.graph.security entity.
+     */
+    get rules(): RulesRequestBuilder;
     /**
      * Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
      */
@@ -175,16 +182,81 @@ export interface SecurityRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SecurityRequestBuilderUriTemplate = "{+baseurl}/security{?%24expand,%24select}";
+/**
+ * Provides operations to manage the security singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Alerts: "alerts",
+    Alerts_v2: "alerts_v2",
+    AttackSimulation: "attackSimulation",
+    AuditLog: "auditLog",
+    Cases: "cases",
+    CloudAppSecurityProfiles: "cloudAppSecurityProfiles",
+    Collaboration: "collaboration",
+    DomainSecurityProfiles: "domainSecurityProfiles",
+    FileSecurityProfiles: "fileSecurityProfiles",
+    HostSecurityProfiles: "hostSecurityProfiles",
+    Incidents: "incidents",
+    InformationProtection: "informationProtection",
+    IpSecurityProfiles: "ipSecurityProfiles",
+    Labels: "labels",
+    ProviderTenantSettings: "providerTenantSettings",
+    Rules: "rules",
+    SecureScoreControlProfiles: "secureScoreControlProfiles",
+    SecureScores: "secureScores",
+    SecurityActions: "securityActions",
+    SubjectRightsRequests: "subjectRightsRequests",
+    ThreatIntelligence: "threatIntelligence",
+    ThreatSubmission: "threatSubmission",
+    TiIndicators: "tiIndicators",
+    Triggers: "triggers",
+    TriggerTypes: "triggerTypes",
+    UserSecurityProfiles: "userSecurityProfiles",
+} as const;
+/**
+ * Provides operations to manage the security singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ProviderStatus: "providerStatus",
+    Alerts: "alerts",
+    Alerts_v2: "alerts_v2",
+    AttackSimulation: "attackSimulation",
+    AuditLog: "auditLog",
+    Cases: "cases",
+    CloudAppSecurityProfiles: "cloudAppSecurityProfiles",
+    Collaboration: "collaboration",
+    DomainSecurityProfiles: "domainSecurityProfiles",
+    FileSecurityProfiles: "fileSecurityProfiles",
+    HostSecurityProfiles: "hostSecurityProfiles",
+    Incidents: "incidents",
+    InformationProtection: "informationProtection",
+    IpSecurityProfiles: "ipSecurityProfiles",
+    Labels: "labels",
+    ProviderTenantSettings: "providerTenantSettings",
+    Rules: "rules",
+    SecureScoreControlProfiles: "secureScoreControlProfiles",
+    SecureScores: "secureScores",
+    SecurityActions: "securityActions",
+    SubjectRightsRequests: "subjectRightsRequests",
+    ThreatIntelligence: "threatIntelligence",
+    ThreatSubmission: "threatSubmission",
+    TiIndicators: "tiIndicators",
+    Triggers: "triggers",
+    TriggerTypes: "triggerTypes",
+    UserSecurityProfiles: "userSecurityProfiles",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -259,6 +331,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
         requestsMetadata: ProviderTenantSettingsRequestBuilderRequestsMetadata,
         navigationMetadata: ProviderTenantSettingsRequestBuilderNavigationMetadata,
     },
+    rules: {
+        requestsMetadata: RulesRequestBuilderRequestsMetadata,
+        navigationMetadata: RulesRequestBuilderNavigationMetadata,
+    },
     secureScoreControlProfiles: {
         requestsMetadata: SecureScoreControlProfilesRequestBuilderRequestsMetadata,
         navigationMetadata: SecureScoreControlProfilesRequestBuilderNavigationMetadata,
@@ -310,7 +386,7 @@ export const SecurityRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSecurityFromDiscriminatorValue,
         queryParametersMapper: SecurityRequestBuilderGetQueryParametersMapper,
     },
@@ -320,7 +396,7 @@ export const SecurityRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSecurityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSecurity,

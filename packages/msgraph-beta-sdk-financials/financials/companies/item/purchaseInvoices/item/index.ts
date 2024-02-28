@@ -9,6 +9,8 @@ import { PurchaseInvoiceLinesRequestBuilderNavigationMetadata, PurchaseInvoiceLi
 import { type VendorRequestBuilder, VendorRequestBuilderNavigationMetadata, VendorRequestBuilderRequestsMetadata } from './vendor/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
  */
@@ -65,16 +67,60 @@ export interface PurchaseInvoiceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PurchaseInvoiceItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    Vendor: "vendor",
+} as const;
+/**
+ * Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BuyFromAddress: "buyFromAddress",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    DiscountAmount: "discountAmount",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DueDate: "dueDate",
+    Id: "id",
+    InvoiceDate: "invoiceDate",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    PayToAddress: "payToAddress",
+    PayToContact: "payToContact",
+    PayToName: "payToName",
+    PayToVendorId: "payToVendorId",
+    PayToVendorNumber: "payToVendorNumber",
+    PricesIncludeTax: "pricesIncludeTax",
+    ShipToAddress: "shipToAddress",
+    ShipToContact: "shipToContact",
+    ShipToName: "shipToName",
+    Status: "status",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalTaxAmount: "totalTaxAmount",
+    VendorId: "vendorId",
+    VendorInvoiceNumber: "vendorInvoiceNumber",
+    VendorName: "vendorName",
+    VendorNumber: "vendorNumber",
+    Currency: "currency",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    Vendor: "vendor",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -111,7 +157,7 @@ export const PurchaseInvoiceItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPurchaseInvoiceFromDiscriminatorValue,
         queryParametersMapper: PurchaseInvoiceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -121,7 +167,7 @@ export const PurchaseInvoiceItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPurchaseInvoiceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePurchaseInvoice,

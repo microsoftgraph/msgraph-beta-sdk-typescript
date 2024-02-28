@@ -59,12 +59,14 @@ export interface ContactMergeSuggestionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -86,7 +88,7 @@ export const ContactMergeSuggestionsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ContactMergeSuggestionsRequestBuilderUriTemplate,
@@ -94,7 +96,7 @@ export const ContactMergeSuggestionsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createContactMergeSuggestionsFromDiscriminatorValue,
         queryParametersMapper: ContactMergeSuggestionsRequestBuilderGetQueryParametersMapper,
     },
@@ -104,12 +106,25 @@ export const ContactMergeSuggestionsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createContactMergeSuggestionsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeContactMergeSuggestions,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    IsEnabled: "isEnabled",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

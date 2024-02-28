@@ -5,6 +5,8 @@ import { createTeamworkDeviceHealthFromDiscriminatorValue, serializeTeamworkDevi
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.
  */
@@ -58,16 +60,37 @@ export interface HealthRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const HealthRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/health{?%24expand,%24select}";
+/**
+ * Provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Connection: "connection",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    HardwareHealth: "hardwareHealth",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LoginStatus: "loginStatus",
+    PeripheralsHealth: "peripheralsHealth",
+    SoftwareUpdateHealth: "softwareUpdateHealth",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -85,7 +108,7 @@ export const HealthRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: HealthRequestBuilderUriTemplate,
@@ -93,7 +116,7 @@ export const HealthRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamworkDeviceHealthFromDiscriminatorValue,
         queryParametersMapper: HealthRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +126,7 @@ export const HealthRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamworkDeviceHealthFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamworkDeviceHealth,

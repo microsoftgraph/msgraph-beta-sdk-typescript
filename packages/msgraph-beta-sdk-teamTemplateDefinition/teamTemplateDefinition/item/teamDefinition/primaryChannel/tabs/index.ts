@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { TeamsTabItemRequestBuilderNavigationMetadata, TeamsTabItemRequestBuilderRequestsMetadata, type TeamsTabItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tabs property of the microsoft.graph.channel entity.
  */
@@ -62,7 +65,7 @@ export interface TabsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface TabsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface TabsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,45 @@ export interface TabsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TabsRequestBuilderUriTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/tabs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the tabs property of the microsoft.graph.channel entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    TeamsApp: "teamsApp",
+} as const;
+/**
+ * Provides operations to manage the tabs property of the microsoft.graph.channel entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Configuration: "configuration",
+    ConfigurationDesc: "configuration desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    MessageId: "messageId",
+    MessageIdDesc: "messageId desc",
+    SortOrderIndex: "sortOrderIndex",
+    SortOrderIndexDesc: "sortOrderIndex desc",
+    TeamsAppId: "teamsAppId",
+    TeamsAppIdDesc: "teamsAppId desc",
+    WebUrl: "webUrl",
+    WebUrlDesc: "webUrl desc",
+} as const;
+/**
+ * Provides operations to manage the tabs property of the microsoft.graph.channel entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Configuration: "configuration",
+    DisplayName: "displayName",
+    MessageId: "messageId",
+    SortOrderIndex: "sortOrderIndex",
+    TeamsAppId: "teamsAppId",
+    WebUrl: "webUrl",
+    TeamsApp: "teamsApp",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +170,7 @@ export const TabsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsTabCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TabsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +180,7 @@ export const TabsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsTabFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamsTab,

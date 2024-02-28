@@ -16,6 +16,8 @@ import { TabsRequestBuilderNavigationMetadata, TabsRequestBuilderRequestsMetadat
 import { type UnarchiveRequestBuilder, UnarchiveRequestBuilderRequestsMetadata } from './unarchive/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
  */
@@ -113,16 +115,49 @@ export interface PrimaryChannelRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrimaryChannelRequestBuilderUriTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel{?%24expand,%24select}";
+/**
+ * Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    FilesFolder: "filesFolder",
+    Members: "members",
+    Messages: "messages",
+    SharedWithTeams: "sharedWithTeams",
+    Tabs: "tabs",
+} as const;
+/**
+ * Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    Email: "email",
+    IsArchived: "isArchived",
+    IsFavoriteByDefault: "isFavoriteByDefault",
+    MembershipType: "membershipType",
+    ModerationSettings: "moderationSettings",
+    Summary: "summary",
+    TenantId: "tenantId",
+    WebUrl: "webUrl",
+    FilesFolder: "filesFolder",
+    Members: "members",
+    Messages: "messages",
+    SharedWithTeams: "sharedWithTeams",
+    Tabs: "tabs",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -183,7 +218,7 @@ export const PrimaryChannelRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrimaryChannelRequestBuilderUriTemplate,
@@ -191,7 +226,7 @@ export const PrimaryChannelRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChannelFromDiscriminatorValue,
         queryParametersMapper: PrimaryChannelRequestBuilderGetQueryParametersMapper,
     },
@@ -201,7 +236,7 @@ export const PrimaryChannelRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChannelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChannel,

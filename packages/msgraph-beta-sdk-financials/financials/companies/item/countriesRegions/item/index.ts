@@ -57,12 +57,14 @@ export interface CountryRegionItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CountryRegionItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCountryRegionFromDiscriminatorValue,
         queryParametersMapper: CountryRegionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,28 @@ export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCountryRegionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCountryRegion,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the countriesRegions property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the countriesRegions property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AddressFormat: "addressFormat",
+    Code: "code",
+    DisplayName: "displayName",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UrlThreatSubmissionItemRequestBuilder, UrlThreatSubmissionItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
  */
@@ -63,7 +66,7 @@ export interface UrlThreatsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +74,7 @@ export interface UrlThreatsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +82,7 @@ export interface UrlThreatsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -93,6 +96,58 @@ export interface UrlThreatsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const UrlThreatsRequestBuilderUriTemplate = "{+baseurl}/threatSubmission/urlThreats{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AdminReview: "adminReview",
+    AdminReviewDesc: "adminReview desc",
+    Category: "category",
+    CategoryDesc: "category desc",
+    ClientSource: "clientSource",
+    ClientSourceDesc: "clientSource desc",
+    ContentType: "contentType",
+    ContentTypeDesc: "contentType desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Result: "result",
+    ResultDesc: "result desc",
+    Source: "source",
+    SourceDesc: "source desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    WebUrl: "webUrl",
+    WebUrlDesc: "webUrl desc",
+} as const;
+/**
+ * Provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdminReview: "adminReview",
+    Category: "category",
+    ClientSource: "clientSource",
+    ContentType: "contentType",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Result: "result",
+    Source: "source",
+    Status: "status",
+    TenantId: "tenantId",
+    WebUrl: "webUrl",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +183,7 @@ export const UrlThreatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUrlThreatSubmissionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UrlThreatsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +193,7 @@ export const UrlThreatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUrlThreatSubmissionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUrlThreatSubmission,

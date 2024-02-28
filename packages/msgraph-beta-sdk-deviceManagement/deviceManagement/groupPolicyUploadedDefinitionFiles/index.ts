@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { GroupPolicyUploadedDefinitionFileItemRequestBuilderNavigationMetadata, GroupPolicyUploadedDefinitionFileItemRequestBuilderRequestsMetadata, type GroupPolicyUploadedDefinitionFileItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParamet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParamet
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParamet
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,71 @@ export interface GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParamet
  * Uri template for the request builder.
  */
 export const GroupPolicyUploadedDefinitionFilesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyUploadedDefinitionFiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Definitions: "definitions",
+    GroupPolicyOperations: "groupPolicyOperations",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    FileName: "fileName",
+    FileNameDesc: "fileName desc",
+    LanguageCodes: "languageCodes",
+    LanguageCodesDesc: "languageCodes desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    PolicyType: "policyType",
+    PolicyTypeDesc: "policyType desc",
+    Revision: "revision",
+    RevisionDesc: "revision desc",
+    TargetNamespace: "targetNamespace",
+    TargetNamespaceDesc: "targetNamespace desc",
+    TargetPrefix: "targetPrefix",
+    TargetPrefixDesc: "targetPrefix desc",
+    Content: "content",
+    ContentDesc: "content desc",
+    DefaultLanguageCode: "defaultLanguageCode",
+    DefaultLanguageCodeDesc: "defaultLanguageCode desc",
+    GroupPolicyUploadedLanguageFiles: "groupPolicyUploadedLanguageFiles",
+    GroupPolicyUploadedLanguageFilesDesc: "groupPolicyUploadedLanguageFiles desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    UploadDateTime: "uploadDateTime",
+    UploadDateTimeDesc: "uploadDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    FileName: "fileName",
+    LanguageCodes: "languageCodes",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PolicyType: "policyType",
+    Revision: "revision",
+    TargetNamespace: "targetNamespace",
+    TargetPrefix: "targetPrefix",
+    Content: "content",
+    DefaultLanguageCode: "defaultLanguageCode",
+    GroupPolicyUploadedLanguageFiles: "groupPolicyUploadedLanguageFiles",
+    Status: "status",
+    UploadDateTime: "uploadDateTime",
+    Definitions: "definitions",
+    GroupPolicyOperations: "groupPolicyOperations",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +195,7 @@ export const GroupPolicyUploadedDefinitionFilesRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyUploadedDefinitionFileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +205,7 @@ export const GroupPolicyUploadedDefinitionFilesRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyUploadedDefinitionFileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyUploadedDefinitionFile,

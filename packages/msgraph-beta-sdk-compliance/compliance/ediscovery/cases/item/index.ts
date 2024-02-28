@@ -126,12 +126,14 @@ export interface CaseItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -196,7 +198,7 @@ export const CaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CaseItemRequestBuilderUriTemplate,
@@ -204,7 +206,7 @@ export const CaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseEscapedFromDiscriminatorValue,
         queryParametersMapper: CaseItemRequestBuilderGetQueryParametersMapper,
     },
@@ -214,12 +216,49 @@ export const CaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseEscapedFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCaseEscaped,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Custodians: "custodians",
+    LegalHolds: "legalHolds",
+    NoncustodialDataSources: "noncustodialDataSources",
+    Operations: "operations",
+    ReviewSets: "reviewSets",
+    Settings: "settings",
+    SourceCollections: "sourceCollections",
+    Tags: "tags",
+} as const;
+/**
+ * Provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ClosedBy: "closedBy",
+    ClosedDateTime: "closedDateTime",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    ExternalId: "externalId",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Status: "status",
+    Custodians: "custodians",
+    LegalHolds: "legalHolds",
+    NoncustodialDataSources: "noncustodialDataSources",
+    Operations: "operations",
+    ReviewSets: "reviewSets",
+    Settings: "settings",
+    SourceCollections: "sourceCollections",
+    Tags: "tags",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

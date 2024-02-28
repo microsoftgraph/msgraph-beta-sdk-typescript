@@ -113,7 +113,7 @@ export const UpdateDevicePropertiesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUpdateDevicePropertiesPostRequestBody,
         requestInformationContentSetMethod: "setContentFromParsable",

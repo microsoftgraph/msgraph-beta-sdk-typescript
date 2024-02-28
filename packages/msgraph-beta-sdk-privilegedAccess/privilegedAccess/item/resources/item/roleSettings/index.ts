@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { GovernanceRoleSettingItemRequestBuilderNavigationMetadata, GovernanceRoleSettingItemRequestBuilderRequestsMetadata, type GovernanceRoleSettingItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
  */
@@ -61,7 +64,7 @@ export interface RoleSettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface RoleSettingsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface RoleSettingsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,56 @@ export interface RoleSettingsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const RoleSettingsRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleSettings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+} as const;
+/**
+ * Provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AdminEligibleSettings: "adminEligibleSettings",
+    AdminEligibleSettingsDesc: "adminEligibleSettings desc",
+    AdminMemberSettings: "adminMemberSettings",
+    AdminMemberSettingsDesc: "adminMemberSettings desc",
+    IsDefault: "isDefault",
+    IsDefaultDesc: "isDefault desc",
+    LastUpdatedBy: "lastUpdatedBy",
+    LastUpdatedByDesc: "lastUpdatedBy desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    ResourceId: "resourceId",
+    ResourceIdDesc: "resourceId desc",
+    RoleDefinitionId: "roleDefinitionId",
+    RoleDefinitionIdDesc: "roleDefinitionId desc",
+    UserEligibleSettings: "userEligibleSettings",
+    UserEligibleSettingsDesc: "userEligibleSettings desc",
+    UserMemberSettings: "userMemberSettings",
+    UserMemberSettingsDesc: "userMemberSettings desc",
+} as const;
+/**
+ * Provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdminEligibleSettings: "adminEligibleSettings",
+    AdminMemberSettings: "adminMemberSettings",
+    IsDefault: "isDefault",
+    LastUpdatedBy: "lastUpdatedBy",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    ResourceId: "resourceId",
+    RoleDefinitionId: "roleDefinitionId",
+    UserEligibleSettings: "userEligibleSettings",
+    UserMemberSettings: "userMemberSettings",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +180,7 @@ export const RoleSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleSettingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RoleSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +190,7 @@ export const RoleSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGovernanceRoleSetting,

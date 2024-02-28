@@ -61,7 +61,7 @@ export interface DeviceRunStatesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DeviceRunStatesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DeviceRunStatesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DeviceRunStatesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const DeviceRunStatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceScriptDeviceStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceRunStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,51 @@ export const DeviceRunStatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceScriptDeviceStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceComplianceScriptDeviceState,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ManagedDevice: "managedDevice",
+} as const;
+/**
+ * Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DetectionState: "detectionState",
+    DetectionStateDesc: "detectionState desc",
+    ExpectedStateUpdateDateTime: "expectedStateUpdateDateTime",
+    ExpectedStateUpdateDateTimeDesc: "expectedStateUpdateDateTime desc",
+    LastStateUpdateDateTime: "lastStateUpdateDateTime",
+    LastStateUpdateDateTimeDesc: "lastStateUpdateDateTime desc",
+    LastSyncDateTime: "lastSyncDateTime",
+    LastSyncDateTimeDesc: "lastSyncDateTime desc",
+    ScriptError: "scriptError",
+    ScriptErrorDesc: "scriptError desc",
+    ScriptOutput: "scriptOutput",
+    ScriptOutputDesc: "scriptOutput desc",
+} as const;
+/**
+ * Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DetectionState: "detectionState",
+    ExpectedStateUpdateDateTime: "expectedStateUpdateDateTime",
+    LastStateUpdateDateTime: "lastStateUpdateDateTime",
+    LastSyncDateTime: "lastSyncDateTime",
+    ScriptError: "scriptError",
+    ScriptOutput: "scriptOutput",
+    ManagedDevice: "managedDevice",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -6,6 +6,9 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { RiskDetectionItemRequestBuilderRequestsMetadata, type RiskDetectionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of riskDetection entities.
  */
@@ -17,11 +20,11 @@ export interface RiskDetectionsRequestBuilder extends BaseRequestBuilder<RiskDet
      */
      byRiskDetectionId(riskDetectionId: string) : RiskDetectionItemRequestBuilder;
     /**
-     * Retrieve the properties of a riskDetection object.
+     * Retrieve the properties of a collection of riskDetection objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RiskDetectionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters> | undefined) : Promise<RiskDetectionCollectionResponse | undefined>;
     /**
@@ -33,7 +36,7 @@ export interface RiskDetectionsRequestBuilder extends BaseRequestBuilder<RiskDet
      */
      post(body: RiskDetection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RiskDetection | undefined>;
     /**
-     * Retrieve the properties of a riskDetection object.
+     * Retrieve the properties of a collection of riskDetection objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -47,13 +50,13 @@ export interface RiskDetectionsRequestBuilder extends BaseRequestBuilder<RiskDet
      toPostRequestInformation(body: RiskDetection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties of a riskDetection object.
+ * Retrieve the properties of a collection of riskDetection objects.
  */
 export interface RiskDetectionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -61,7 +64,7 @@ export interface RiskDetectionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -69,7 +72,7 @@ export interface RiskDetectionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Show only the first n items
      */
@@ -79,6 +82,88 @@ export interface RiskDetectionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const RiskDetectionsRequestBuilderUriTemplate = "{+baseurl}/riskDetections{?%24expand,%24filter,%24orderby,%24search,%24select,%24top}";
+/**
+ * Provides operations to manage the collection of riskDetection entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the collection of riskDetection entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Activity: "activity",
+    ActivityDesc: "activity desc",
+    ActivityDateTime: "activityDateTime",
+    ActivityDateTimeDesc: "activityDateTime desc",
+    AdditionalInfo: "additionalInfo",
+    AdditionalInfoDesc: "additionalInfo desc",
+    CorrelationId: "correlationId",
+    CorrelationIdDesc: "correlationId desc",
+    DetectedDateTime: "detectedDateTime",
+    DetectedDateTimeDesc: "detectedDateTime desc",
+    DetectionTimingType: "detectionTimingType",
+    DetectionTimingTypeDesc: "detectionTimingType desc",
+    IpAddress: "ipAddress",
+    IpAddressDesc: "ipAddress desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    Location: "location",
+    LocationDesc: "location desc",
+    MitreTechniqueId: "mitreTechniqueId",
+    MitreTechniqueIdDesc: "mitreTechniqueId desc",
+    RequestId: "requestId",
+    RequestIdDesc: "requestId desc",
+    RiskDetail: "riskDetail",
+    RiskDetailDesc: "riskDetail desc",
+    RiskEventType: "riskEventType",
+    RiskEventTypeDesc: "riskEventType desc",
+    RiskLevel: "riskLevel",
+    RiskLevelDesc: "riskLevel desc",
+    RiskState: "riskState",
+    RiskStateDesc: "riskState desc",
+    RiskType: "riskType",
+    RiskTypeDesc: "riskType desc",
+    Source: "source",
+    SourceDesc: "source desc",
+    TokenIssuerType: "tokenIssuerType",
+    TokenIssuerTypeDesc: "tokenIssuerType desc",
+    UserDisplayName: "userDisplayName",
+    UserDisplayNameDesc: "userDisplayName desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the collection of riskDetection entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Activity: "activity",
+    ActivityDateTime: "activityDateTime",
+    AdditionalInfo: "additionalInfo",
+    CorrelationId: "correlationId",
+    DetectedDateTime: "detectedDateTime",
+    DetectionTimingType: "detectionTimingType",
+    IpAddress: "ipAddress",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    Location: "location",
+    MitreTechniqueId: "mitreTechniqueId",
+    RequestId: "requestId",
+    RiskDetail: "riskDetail",
+    RiskEventType: "riskEventType",
+    RiskLevel: "riskLevel",
+    RiskState: "riskState",
+    RiskType: "riskType",
+    Source: "source",
+    TokenIssuerType: "tokenIssuerType",
+    UserDisplayName: "userDisplayName",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -109,7 +194,7 @@ export const RiskDetectionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRiskDetectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RiskDetectionsRequestBuilderGetQueryParametersMapper,
     },
@@ -119,7 +204,7 @@ export const RiskDetectionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRiskDetectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRiskDetection,

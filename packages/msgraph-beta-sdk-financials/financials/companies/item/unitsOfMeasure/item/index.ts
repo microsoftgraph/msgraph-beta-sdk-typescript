@@ -5,6 +5,8 @@ import { createUnitOfMeasureFromDiscriminatorValue, serializeUnitOfMeasure, type
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.
  */
@@ -57,16 +59,32 @@ export interface UnitOfMeasureItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UnitOfMeasureItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Code: "code",
+    DisplayName: "displayName",
+    Id: "id",
+    InternationalStandardCode: "internationalStandardCode",
+    LastModifiedDateTime: "lastModifiedDateTime",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +102,7 @@ export const UnitOfMeasureItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UnitOfMeasureItemRequestBuilderUriTemplate,
@@ -92,7 +110,7 @@ export const UnitOfMeasureItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnitOfMeasureFromDiscriminatorValue,
         queryParametersMapper: UnitOfMeasureItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +120,7 @@ export const UnitOfMeasureItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnitOfMeasureFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnitOfMeasure,

@@ -61,7 +61,7 @@ export interface ComplianceCategoriesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ComplianceCategoriesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ComplianceCategoriesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ComplianceCategoriesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const ComplianceCategoriesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationCategoryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ComplianceCategoriesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,64 @@ export const ComplianceCategoriesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationCategoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementConfigurationCategory,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CategoryDescription: "categoryDescription",
+    CategoryDescriptionDesc: "categoryDescription desc",
+    ChildCategoryIds: "childCategoryIds",
+    ChildCategoryIdsDesc: "childCategoryIds desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    HelpText: "helpText",
+    HelpTextDesc: "helpText desc",
+    Name: "name",
+    NameDesc: "name desc",
+    ParentCategoryId: "parentCategoryId",
+    ParentCategoryIdDesc: "parentCategoryId desc",
+    Platforms: "platforms",
+    PlatformsDesc: "platforms desc",
+    RootCategoryId: "rootCategoryId",
+    RootCategoryIdDesc: "rootCategoryId desc",
+    SettingUsage: "settingUsage",
+    SettingUsageDesc: "settingUsage desc",
+    Technologies: "technologies",
+    TechnologiesDesc: "technologies desc",
+} as const;
+/**
+ * Provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CategoryDescription: "categoryDescription",
+    ChildCategoryIds: "childCategoryIds",
+    Description: "description",
+    DisplayName: "displayName",
+    HelpText: "helpText",
+    Name: "name",
+    ParentCategoryId: "parentCategoryId",
+    Platforms: "platforms",
+    RootCategoryId: "rootCategoryId",
+    SettingUsage: "settingUsage",
+    Technologies: "technologies",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

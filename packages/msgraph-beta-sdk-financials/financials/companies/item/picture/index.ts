@@ -8,6 +8,9 @@ import { PictureItemRequestBuilderNavigationMetadata, PictureItemRequestBuilderR
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 import { type Guid } from 'guid-typescript';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the picture property of the microsoft.graph.company entity.
  */
@@ -62,7 +65,7 @@ export interface PictureRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface PictureRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface PictureRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,37 @@ export interface PictureRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PictureRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/picture{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the picture property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the picture property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Content: "content",
+    ContentDesc: "content desc",
+    ContentType: "contentType",
+    ContentTypeDesc: "contentType desc",
+    Height: "height",
+    HeightDesc: "height desc",
+    Id: "id",
+    IdDesc: "id desc",
+    Width: "width",
+    WidthDesc: "width desc",
+} as const;
+/**
+ * Provides operations to manage the picture property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Content: "content",
+    ContentType: "contentType",
+    Height: "height",
+    Id: "id",
+    Width: "width",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +162,7 @@ export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPictureCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PictureRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +172,7 @@ export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPictureFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePicture,

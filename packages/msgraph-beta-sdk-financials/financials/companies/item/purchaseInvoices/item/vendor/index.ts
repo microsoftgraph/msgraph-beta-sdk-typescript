@@ -9,6 +9,8 @@ import { PaymentTermRequestBuilderRequestsMetadata, type PaymentTermRequestBuild
 import { PictureRequestBuilderNavigationMetadata, PictureRequestBuilderRequestsMetadata, type PictureRequestBuilder } from './picture/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the vendor property of the microsoft.graph.purchaseInvoice entity.
  */
@@ -77,16 +79,51 @@ export interface VendorRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const VendorRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/vendor{?%24expand,%24select}";
+/**
+ * Provides operations to manage the vendor property of the microsoft.graph.purchaseInvoice entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    PaymentMethod: "paymentMethod",
+    PaymentTerm: "paymentTerm",
+    Picture: "picture",
+} as const;
+/**
+ * Provides operations to manage the vendor property of the microsoft.graph.purchaseInvoice entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Address: "address",
+    Balance: "balance",
+    Blocked: "blocked",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    DisplayName: "displayName",
+    Email: "email",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    PaymentMethodId: "paymentMethodId",
+    PaymentTermsId: "paymentTermsId",
+    PhoneNumber: "phoneNumber",
+    TaxLiable: "taxLiable",
+    TaxRegistrationNumber: "taxRegistrationNumber",
+    Website: "website",
+    Currency: "currency",
+    PaymentMethod: "paymentMethod",
+    PaymentTerm: "paymentTerm",
+    Picture: "picture",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -122,7 +159,7 @@ export const VendorRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: VendorRequestBuilderUriTemplate,
@@ -130,7 +167,7 @@ export const VendorRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVendorFromDiscriminatorValue,
         queryParametersMapper: VendorRequestBuilderGetQueryParametersMapper,
     },
@@ -140,7 +177,7 @@ export const VendorRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVendorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVendor,

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type VirtualEventSessionItemRequestBuilder, VirtualEventSessionItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
  */
@@ -46,7 +49,7 @@ export interface SessionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +57,7 @@ export interface SessionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +65,7 @@ export interface SessionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -76,6 +79,106 @@ export interface SessionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SessionsRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/sessions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AttendanceReports: "attendanceReports",
+    Presenters: "presenters",
+    Registrations: "registrations",
+} as const;
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AllowAttendeeToEnableCamera: "allowAttendeeToEnableCamera",
+    AllowAttendeeToEnableCameraDesc: "allowAttendeeToEnableCamera desc",
+    AllowAttendeeToEnableMic: "allowAttendeeToEnableMic",
+    AllowAttendeeToEnableMicDesc: "allowAttendeeToEnableMic desc",
+    AllowedPresenters: "allowedPresenters",
+    AllowedPresentersDesc: "allowedPresenters desc",
+    AllowMeetingChat: "allowMeetingChat",
+    AllowMeetingChatDesc: "allowMeetingChat desc",
+    AllowParticipantsToChangeName: "allowParticipantsToChangeName",
+    AllowParticipantsToChangeNameDesc: "allowParticipantsToChangeName desc",
+    AllowRecording: "allowRecording",
+    AllowRecordingDesc: "allowRecording desc",
+    AllowTeamworkReactions: "allowTeamworkReactions",
+    AllowTeamworkReactionsDesc: "allowTeamworkReactions desc",
+    AllowTranscription: "allowTranscription",
+    AllowTranscriptionDesc: "allowTranscription desc",
+    AnonymizeIdentityForRoles: "anonymizeIdentityForRoles",
+    AnonymizeIdentityForRolesDesc: "anonymizeIdentityForRoles desc",
+    AudioConferencing: "audioConferencing",
+    AudioConferencingDesc: "audioConferencing desc",
+    ChatInfo: "chatInfo",
+    ChatInfoDesc: "chatInfo desc",
+    ChatRestrictions: "chatRestrictions",
+    ChatRestrictionsDesc: "chatRestrictions desc",
+    IsEndToEndEncryptionEnabled: "isEndToEndEncryptionEnabled",
+    IsEndToEndEncryptionEnabledDesc: "isEndToEndEncryptionEnabled desc",
+    IsEntryExitAnnounced: "isEntryExitAnnounced",
+    IsEntryExitAnnouncedDesc: "isEntryExitAnnounced desc",
+    JoinInformation: "joinInformation",
+    JoinInformationDesc: "joinInformation desc",
+    JoinMeetingIdSettings: "joinMeetingIdSettings",
+    JoinMeetingIdSettingsDesc: "joinMeetingIdSettings desc",
+    JoinWebUrl: "joinWebUrl",
+    JoinWebUrlDesc: "joinWebUrl desc",
+    LobbyBypassSettings: "lobbyBypassSettings",
+    LobbyBypassSettingsDesc: "lobbyBypassSettings desc",
+    RecordAutomatically: "recordAutomatically",
+    RecordAutomaticallyDesc: "recordAutomatically desc",
+    ShareMeetingChatHistoryDefault: "shareMeetingChatHistoryDefault",
+    ShareMeetingChatHistoryDefaultDesc: "shareMeetingChatHistoryDefault desc",
+    Subject: "subject",
+    SubjectDesc: "subject desc",
+    VideoTeleconferenceId: "videoTeleconferenceId",
+    VideoTeleconferenceIdDesc: "videoTeleconferenceId desc",
+    WatermarkProtection: "watermarkProtection",
+    WatermarkProtectionDesc: "watermarkProtection desc",
+    EndDateTime: "endDateTime",
+    EndDateTimeDesc: "endDateTime desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowAttendeeToEnableCamera: "allowAttendeeToEnableCamera",
+    AllowAttendeeToEnableMic: "allowAttendeeToEnableMic",
+    AllowedPresenters: "allowedPresenters",
+    AllowMeetingChat: "allowMeetingChat",
+    AllowParticipantsToChangeName: "allowParticipantsToChangeName",
+    AllowRecording: "allowRecording",
+    AllowTeamworkReactions: "allowTeamworkReactions",
+    AllowTranscription: "allowTranscription",
+    AnonymizeIdentityForRoles: "anonymizeIdentityForRoles",
+    AudioConferencing: "audioConferencing",
+    ChatInfo: "chatInfo",
+    ChatRestrictions: "chatRestrictions",
+    IsEndToEndEncryptionEnabled: "isEndToEndEncryptionEnabled",
+    IsEntryExitAnnounced: "isEntryExitAnnounced",
+    JoinInformation: "joinInformation",
+    JoinMeetingIdSettings: "joinMeetingIdSettings",
+    JoinWebUrl: "joinWebUrl",
+    LobbyBypassSettings: "lobbyBypassSettings",
+    RecordAutomatically: "recordAutomatically",
+    ShareMeetingChatHistoryDefault: "shareMeetingChatHistoryDefault",
+    Subject: "subject",
+    VideoTeleconferenceId: "videoTeleconferenceId",
+    WatermarkProtection: "watermarkProtection",
+    EndDateTime: "endDateTime",
+    StartDateTime: "startDateTime",
+    AttendanceReports: "attendanceReports",
+    Presenters: "presenters",
+    Registrations: "registrations",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -111,7 +214,7 @@ export const SessionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventSessionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SessionsRequestBuilderGetQueryParametersMapper,
     },

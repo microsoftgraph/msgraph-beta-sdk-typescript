@@ -61,7 +61,7 @@ export interface ComplianceSettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ComplianceSettingsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ComplianceSettingsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ComplianceSettingsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const ComplianceSettingsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationSettingDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ComplianceSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,85 @@ export const ComplianceSettingsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementConfigurationSettingDefinition,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AccessTypes: "accessTypes",
+    AccessTypesDesc: "accessTypes desc",
+    Applicability: "applicability",
+    ApplicabilityDesc: "applicability desc",
+    BaseUri: "baseUri",
+    BaseUriDesc: "baseUri desc",
+    CategoryId: "categoryId",
+    CategoryIdDesc: "categoryId desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    HelpText: "helpText",
+    HelpTextDesc: "helpText desc",
+    InfoUrls: "infoUrls",
+    InfoUrlsDesc: "infoUrls desc",
+    Keywords: "keywords",
+    KeywordsDesc: "keywords desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Occurrence: "occurrence",
+    OccurrenceDesc: "occurrence desc",
+    OffsetUri: "offsetUri",
+    OffsetUriDesc: "offsetUri desc",
+    ReferredSettingInformationList: "referredSettingInformationList",
+    ReferredSettingInformationListDesc: "referredSettingInformationList desc",
+    RootDefinitionId: "rootDefinitionId",
+    RootDefinitionIdDesc: "rootDefinitionId desc",
+    SettingUsage: "settingUsage",
+    SettingUsageDesc: "settingUsage desc",
+    UxBehavior: "uxBehavior",
+    UxBehaviorDesc: "uxBehavior desc",
+    Version: "version",
+    VersionDesc: "version desc",
+    Visibility: "visibility",
+    VisibilityDesc: "visibility desc",
+} as const;
+/**
+ * Provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccessTypes: "accessTypes",
+    Applicability: "applicability",
+    BaseUri: "baseUri",
+    CategoryId: "categoryId",
+    Description: "description",
+    DisplayName: "displayName",
+    HelpText: "helpText",
+    InfoUrls: "infoUrls",
+    Keywords: "keywords",
+    Name: "name",
+    Occurrence: "occurrence",
+    OffsetUri: "offsetUri",
+    ReferredSettingInformationList: "referredSettingInformationList",
+    RootDefinitionId: "rootDefinitionId",
+    SettingUsage: "settingUsage",
+    UxBehavior: "uxBehavior",
+    Version: "version",
+    Visibility: "visibility",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

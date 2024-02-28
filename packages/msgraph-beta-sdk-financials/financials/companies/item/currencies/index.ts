@@ -62,7 +62,7 @@ export interface CurrenciesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface CurrenciesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface CurrenciesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface CurrenciesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const CurrenciesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCurrencyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CurrenciesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,49 @@ export const CurrenciesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCurrencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCurrency,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the currencies property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the currencies property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    AmountDecimalPlaces: "amountDecimalPlaces",
+    AmountDecimalPlacesDesc: "amountDecimalPlaces desc",
+    AmountRoundingPrecision: "amountRoundingPrecision",
+    AmountRoundingPrecisionDesc: "amountRoundingPrecision desc",
+    Code: "code",
+    CodeDesc: "code desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Id: "id",
+    IdDesc: "id desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Symbol: "symbol",
+    SymbolDesc: "symbol desc",
+} as const;
+/**
+ * Provides operations to manage the currencies property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AmountDecimalPlaces: "amountDecimalPlaces",
+    AmountRoundingPrecision: "amountRoundingPrecision",
+    Code: "code",
+    DisplayName: "displayName",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Symbol: "symbol",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

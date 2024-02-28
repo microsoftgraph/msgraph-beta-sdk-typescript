@@ -10,6 +10,8 @@ import { SessionsRequestBuilderNavigationMetadata, SessionsRequestBuilderRequest
 import { SessionsWithJoinWebUrlRequestBuilderRequestsMetadata, type SessionsWithJoinWebUrlRequestBuilder } from './sessionsWithJoinWebUrl/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the events property of the microsoft.graph.virtualEventsRoot entity.
  */
@@ -84,16 +86,38 @@ export interface VirtualEventItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const VirtualEventItemRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the events property of the microsoft.graph.virtualEventsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Presenters: "presenters",
+    Sessions: "sessions",
+} as const;
+/**
+ * Provides operations to manage the events property of the microsoft.graph.virtualEventsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    Description: "description",
+    DisplayName: "displayName",
+    EndDateTime: "endDateTime",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    Presenters: "presenters",
+    Sessions: "sessions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -133,7 +157,7 @@ export const VirtualEventItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: VirtualEventItemRequestBuilderUriTemplate,
@@ -141,7 +165,7 @@ export const VirtualEventItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventFromDiscriminatorValue,
         queryParametersMapper: VirtualEventItemRequestBuilderGetQueryParametersMapper,
     },
@@ -151,7 +175,7 @@ export const VirtualEventItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVirtualEvent,

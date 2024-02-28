@@ -63,7 +63,7 @@ export interface AlertRulesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +71,7 @@ export interface AlertRulesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +79,7 @@ export interface AlertRulesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -89,6 +89,9 @@ export interface AlertRulesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const AlertRulesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertRuleCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AlertRulesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,58 @@ export const AlertRulesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertRuleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAlertRule,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AlertRuleTemplate: "alertRuleTemplate",
+    AlertRuleTemplateDesc: "alertRuleTemplate desc",
+    Conditions: "conditions",
+    ConditionsDesc: "conditions desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Enabled: "enabled",
+    EnabledDesc: "enabled desc",
+    IsSystemRule: "isSystemRule",
+    IsSystemRuleDesc: "isSystemRule desc",
+    NotificationChannels: "notificationChannels",
+    NotificationChannelsDesc: "notificationChannels desc",
+    Severity: "severity",
+    SeverityDesc: "severity desc",
+    Threshold: "threshold",
+    ThresholdDesc: "threshold desc",
+} as const;
+/**
+ * Provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertRuleTemplate: "alertRuleTemplate",
+    Conditions: "conditions",
+    Description: "description",
+    DisplayName: "displayName",
+    Enabled: "enabled",
+    IsSystemRule: "isSystemRule",
+    NotificationChannels: "notificationChannels",
+    Severity: "severity",
+    Threshold: "threshold",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

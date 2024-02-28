@@ -9,6 +9,8 @@ import { RoleDefinitionRequestBuilderNavigationMetadata, RoleDefinitionRequestBu
 import { SubjectRequestBuilderRequestsMetadata, type SubjectRequestBuilder } from './subject/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
  */
@@ -77,16 +79,46 @@ export interface GovernanceRoleAssignmentItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GovernanceRoleAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    LinkedEligibleRoleAssignment: "linkedEligibleRoleAssignment",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+    Subject: "subject",
+} as const;
+/**
+ * Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignmentState: "assignmentState",
+    EndDateTime: "endDateTime",
+    ExternalId: "externalId",
+    LinkedEligibleRoleAssignmentId: "linkedEligibleRoleAssignmentId",
+    MemberType: "memberType",
+    ResourceId: "resourceId",
+    RoleDefinitionId: "roleDefinitionId",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    SubjectId: "subjectId",
+    LinkedEligibleRoleAssignment: "linkedEligibleRoleAssignment",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+    Subject: "subject",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -122,7 +154,7 @@ export const GovernanceRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GovernanceRoleAssignmentItemRequestBuilderUriTemplate,
@@ -130,7 +162,7 @@ export const GovernanceRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: GovernanceRoleAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -140,7 +172,7 @@ export const GovernanceRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGovernanceRoleAssignment,

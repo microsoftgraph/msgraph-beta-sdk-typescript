@@ -181,12 +181,12 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      */
      getActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime: string | undefined, interval: string | undefined, startDateTime: string | undefined) : GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder;
     /**
-     * To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
+     * Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: DriveItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveItem | undefined>;
     /**
@@ -208,7 +208,7 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveItemItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
+     * Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -222,12 +222,14 @@ export interface DriveItemItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -357,7 +359,7 @@ export const DriveItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DriveItemItemRequestBuilderUriTemplate,
@@ -365,7 +367,7 @@ export const DriveItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDriveItemFromDiscriminatorValue,
         queryParametersMapper: DriveItemItemRequestBuilderGetQueryParametersMapper,
     },
@@ -375,12 +377,83 @@ export const DriveItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDriveItemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDriveItem,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the items property of the microsoft.graph.drive entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Activities: "activities",
+    Analytics: "analytics",
+    Children: "children",
+    ListItem: "listItem",
+    Permissions: "permissions",
+    RetentionLabel: "retentionLabel",
+    Subscriptions: "subscriptions",
+    Thumbnails: "thumbnails",
+    Versions: "versions",
+    Workbook: "workbook",
+} as const;
+/**
+ * Provides operations to manage the items property of the microsoft.graph.drive entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    ETag: "eTag",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    ParentReference: "parentReference",
+    WebUrl: "webUrl",
+    Audio: "audio",
+    Bundle: "bundle",
+    Content: "content",
+    CTag: "cTag",
+    Deleted: "deleted",
+    File: "file",
+    FileSystemInfo: "fileSystemInfo",
+    Folder: "folder",
+    Image: "image",
+    Location: "location",
+    Malware: "malware",
+    Media: "media",
+    PackageEscaped: "package",
+    PendingOperations: "pendingOperations",
+    Photo: "photo",
+    Publication: "publication",
+    RemoteItem: "remoteItem",
+    Root: "root",
+    SearchResult: "searchResult",
+    Shared: "shared",
+    SharepointIds: "sharepointIds",
+    Size: "size",
+    Source: "source",
+    SpecialFolder: "specialFolder",
+    Video: "video",
+    WebDavUrl: "webDavUrl",
+    CreatedByUser: "createdByUser",
+    LastModifiedByUser: "lastModifiedByUser",
+    Activities: "activities",
+    Analytics: "analytics",
+    Children: "children",
+    ListItem: "listItem",
+    Permissions: "permissions",
+    RetentionLabel: "retentionLabel",
+    Subscriptions: "subscriptions",
+    Thumbnails: "thumbnails",
+    Versions: "versions",
+    Workbook: "workbook",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

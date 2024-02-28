@@ -68,7 +68,7 @@ export interface ConfigManagerCollectionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -76,7 +76,7 @@ export interface ConfigManagerCollectionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -84,7 +84,7 @@ export interface ConfigManagerCollectionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -94,6 +94,9 @@ export interface ConfigManagerCollectionsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -136,7 +139,7 @@ export const ConfigManagerCollectionsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConfigManagerCollectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConfigManagerCollectionsRequestBuilderGetQueryParametersMapper,
     },
@@ -146,12 +149,49 @@ export const ConfigManagerCollectionsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConfigManagerCollectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConfigManagerCollection,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CollectionIdentifier: "collectionIdentifier",
+    CollectionIdentifierDesc: "collectionIdentifier desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    HierarchyIdentifier: "hierarchyIdentifier",
+    HierarchyIdentifierDesc: "hierarchyIdentifier desc",
+    HierarchyName: "hierarchyName",
+    HierarchyNameDesc: "hierarchyName desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CollectionIdentifier: "collectionIdentifier",
+    CreatedDateTime: "createdDateTime",
+    DisplayName: "displayName",
+    HierarchyIdentifier: "hierarchyIdentifier",
+    HierarchyName: "hierarchyName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

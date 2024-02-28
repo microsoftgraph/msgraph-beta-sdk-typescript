@@ -23,6 +23,9 @@ export function deserializeIntoSummarizeDeviceResourcePerformanceWithSummarizeBy
         "value": n => { summarizeDeviceResourcePerformanceWithSummarizeByGetResponse.value = n.getCollectionOfObjectValues<UserExperienceAnalyticsResourcePerformance>(createUserExperienceAnalyticsResourcePerformanceFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -66,7 +69,7 @@ export interface SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +77,7 @@ export interface SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +85,7 @@ export interface SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,85 @@ export interface SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder
  * Uri template for the request builder.
  */
 export const SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the summarizeDeviceResourcePerformance method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the summarizeDeviceResourcePerformance method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AverageSpikeTimeScore: "averageSpikeTimeScore",
+    AverageSpikeTimeScoreDesc: "averageSpikeTimeScore desc",
+    CpuClockSpeedInMHz: "cpuClockSpeedInMHz",
+    CpuClockSpeedInMHzDesc: "cpuClockSpeedInMHz desc",
+    CpuDisplayName: "cpuDisplayName",
+    CpuDisplayNameDesc: "cpuDisplayName desc",
+    CpuSpikeTimePercentage: "cpuSpikeTimePercentage",
+    CpuSpikeTimePercentageDesc: "cpuSpikeTimePercentage desc",
+    CpuSpikeTimePercentageThreshold: "cpuSpikeTimePercentageThreshold",
+    CpuSpikeTimePercentageThresholdDesc: "cpuSpikeTimePercentageThreshold desc",
+    CpuSpikeTimeScore: "cpuSpikeTimeScore",
+    CpuSpikeTimeScoreDesc: "cpuSpikeTimeScore desc",
+    DeviceCount: "deviceCount",
+    DeviceCountDesc: "deviceCount desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    DeviceResourcePerformanceScore: "deviceResourcePerformanceScore",
+    DeviceResourcePerformanceScoreDesc: "deviceResourcePerformanceScore desc",
+    DiskType: "diskType",
+    DiskTypeDesc: "diskType desc",
+    HealthStatus: "healthStatus",
+    HealthStatusDesc: "healthStatus desc",
+    MachineType: "machineType",
+    MachineTypeDesc: "machineType desc",
+    Manufacturer: "manufacturer",
+    ManufacturerDesc: "manufacturer desc",
+    Model: "model",
+    ModelDesc: "model desc",
+    RamSpikeTimePercentage: "ramSpikeTimePercentage",
+    RamSpikeTimePercentageDesc: "ramSpikeTimePercentage desc",
+    RamSpikeTimePercentageThreshold: "ramSpikeTimePercentageThreshold",
+    RamSpikeTimePercentageThresholdDesc: "ramSpikeTimePercentageThreshold desc",
+    RamSpikeTimeScore: "ramSpikeTimeScore",
+    RamSpikeTimeScoreDesc: "ramSpikeTimeScore desc",
+    TotalProcessorCoreCount: "totalProcessorCoreCount",
+    TotalProcessorCoreCountDesc: "totalProcessorCoreCount desc",
+    TotalRamInMB: "totalRamInMB",
+    TotalRamInMBDesc: "totalRamInMB desc",
+} as const;
+/**
+ * Provides operations to call the summarizeDeviceResourcePerformance method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AverageSpikeTimeScore: "averageSpikeTimeScore",
+    CpuClockSpeedInMHz: "cpuClockSpeedInMHz",
+    CpuDisplayName: "cpuDisplayName",
+    CpuSpikeTimePercentage: "cpuSpikeTimePercentage",
+    CpuSpikeTimePercentageThreshold: "cpuSpikeTimePercentageThreshold",
+    CpuSpikeTimeScore: "cpuSpikeTimeScore",
+    DeviceCount: "deviceCount",
+    DeviceId: "deviceId",
+    DeviceName: "deviceName",
+    DeviceResourcePerformanceScore: "deviceResourcePerformanceScore",
+    DiskType: "diskType",
+    HealthStatus: "healthStatus",
+    MachineType: "machineType",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    RamSpikeTimePercentage: "ramSpikeTimePercentage",
+    RamSpikeTimePercentageThreshold: "ramSpikeTimePercentageThreshold",
+    RamSpikeTimeScore: "ramSpikeTimeScore",
+    TotalProcessorCoreCount: "totalProcessorCoreCount",
+    TotalRamInMB: "totalRamInMB",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +201,7 @@ export const SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderRequ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseFromDiscriminatorValue,
         queryParametersMapper: SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParametersMapper,
     },

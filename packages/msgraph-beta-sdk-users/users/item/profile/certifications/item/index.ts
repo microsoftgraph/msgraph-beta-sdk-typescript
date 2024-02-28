@@ -5,6 +5,8 @@ import { createPersonCertificationFromDiscriminatorValue, serializePersonCertifi
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the certifications property of the microsoft.graph.profile entity.
  */
@@ -60,16 +62,46 @@ export interface PersonCertificationItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PersonCertificationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/certifications/{personCertification%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the certifications property of the microsoft.graph.profile entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the certifications property of the microsoft.graph.profile entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowedAudiences: "allowedAudiences",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Inference: "inference",
+    IsSearchable: "isSearchable",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Source: "source",
+    CertificationId: "certificationId",
+    Description: "description",
+    DisplayName: "displayName",
+    EndDate: "endDate",
+    IssuedDate: "issuedDate",
+    IssuingAuthority: "issuingAuthority",
+    IssuingCompany: "issuingCompany",
+    StartDate: "startDate",
+    ThumbnailUrl: "thumbnailUrl",
+    WebUrl: "webUrl",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -87,7 +119,7 @@ export const PersonCertificationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PersonCertificationItemRequestBuilderUriTemplate,
@@ -95,7 +127,7 @@ export const PersonCertificationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonCertificationFromDiscriminatorValue,
         queryParametersMapper: PersonCertificationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +137,7 @@ export const PersonCertificationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonCertificationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePersonCertification,

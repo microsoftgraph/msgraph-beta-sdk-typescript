@@ -70,12 +70,14 @@ export interface CloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -108,7 +110,7 @@ export const CloudPcOnPremisesConnectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcOnPremisesConnectionItemRequestBuilderUriTemplate,
@@ -116,7 +118,7 @@ export const CloudPcOnPremisesConnectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOnPremisesConnectionFromDiscriminatorValue,
         queryParametersMapper: CloudPcOnPremisesConnectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -126,12 +128,44 @@ export const CloudPcOnPremisesConnectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOnPremisesConnectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcOnPremisesConnection,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdDomainName: "adDomainName",
+    AdDomainPassword: "adDomainPassword",
+    AdDomainUsername: "adDomainUsername",
+    AlternateResourceUrl: "alternateResourceUrl",
+    ConnectionType: "connectionType",
+    DisplayName: "displayName",
+    HealthCheckStatus: "healthCheckStatus",
+    HealthCheckStatusDetail: "healthCheckStatusDetail",
+    HealthCheckStatusDetails: "healthCheckStatusDetails",
+    InUse: "inUse",
+    ManagedBy: "managedBy",
+    OrganizationalUnit: "organizationalUnit",
+    ResourceGroupId: "resourceGroupId",
+    ScopeIds: "scopeIds",
+    SubnetId: "subnetId",
+    SubscriptionId: "subscriptionId",
+    SubscriptionName: "subscriptionName",
+    Type: "type",
+    VirtualNetworkId: "virtualNetworkId",
+    VirtualNetworkLocation: "virtualNetworkLocation",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -23,6 +23,7 @@ export function deserializeIntoGetOffice365ActiveUserDetailWithDateGetResponse(g
         "value": n => { getOffice365ActiveUserDetailWithDateGetResponse.value = n.getCollectionOfObjectValues<Office365ActiveUserDetail>(createOffice365ActiveUserDetailFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
 export interface GetOffice365ActiveUserDetailWithDateGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +59,7 @@ export interface GetOffice365ActiveUserDetailWithDateRequestBuilderGetQueryParam
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +67,7 @@ export interface GetOffice365ActiveUserDetailWithDateRequestBuilderGetQueryParam
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +75,7 @@ export interface GetOffice365ActiveUserDetailWithDateRequestBuilderGetQueryParam
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +85,8 @@ export interface GetOffice365ActiveUserDetailWithDateRequestBuilderGetQueryParam
      */
     top?: number;
 }
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -96,6 +99,12 @@ export function serializeGetOffice365ActiveUserDetailWithDateGetResponse(writer:
  * Uri template for the request builder.
  */
 export const GetOffice365ActiveUserDetailWithDateRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365ActiveUserDetail(date={date}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getOffice365ActiveUserDetail method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,10 +128,95 @@ export const GetOffice365ActiveUserDetailWithDateRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOffice365ActiveUserDetailWithDateGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOffice365ActiveUserDetailWithDateRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getOffice365ActiveUserDetail method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AssignedProducts: "assignedProducts",
+    AssignedProductsDesc: "assignedProducts desc",
+    DeletedDate: "deletedDate",
+    DeletedDateDesc: "deletedDate desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ExchangeLastActivityDate: "exchangeLastActivityDate",
+    ExchangeLastActivityDateDesc: "exchangeLastActivityDate desc",
+    ExchangeLicenseAssignDate: "exchangeLicenseAssignDate",
+    ExchangeLicenseAssignDateDesc: "exchangeLicenseAssignDate desc",
+    HasExchangeLicense: "hasExchangeLicense",
+    HasExchangeLicenseDesc: "hasExchangeLicense desc",
+    HasOneDriveLicense: "hasOneDriveLicense",
+    HasOneDriveLicenseDesc: "hasOneDriveLicense desc",
+    HasSharePointLicense: "hasSharePointLicense",
+    HasSharePointLicenseDesc: "hasSharePointLicense desc",
+    HasSkypeForBusinessLicense: "hasSkypeForBusinessLicense",
+    HasSkypeForBusinessLicenseDesc: "hasSkypeForBusinessLicense desc",
+    HasTeamsLicense: "hasTeamsLicense",
+    HasTeamsLicenseDesc: "hasTeamsLicense desc",
+    HasYammerLicense: "hasYammerLicense",
+    HasYammerLicenseDesc: "hasYammerLicense desc",
+    IsDeleted: "isDeleted",
+    IsDeletedDesc: "isDeleted desc",
+    OneDriveLastActivityDate: "oneDriveLastActivityDate",
+    OneDriveLastActivityDateDesc: "oneDriveLastActivityDate desc",
+    OneDriveLicenseAssignDate: "oneDriveLicenseAssignDate",
+    OneDriveLicenseAssignDateDesc: "oneDriveLicenseAssignDate desc",
+    ReportRefreshDate: "reportRefreshDate",
+    ReportRefreshDateDesc: "reportRefreshDate desc",
+    SharePointLastActivityDate: "sharePointLastActivityDate",
+    SharePointLastActivityDateDesc: "sharePointLastActivityDate desc",
+    SharePointLicenseAssignDate: "sharePointLicenseAssignDate",
+    SharePointLicenseAssignDateDesc: "sharePointLicenseAssignDate desc",
+    SkypeForBusinessLastActivityDate: "skypeForBusinessLastActivityDate",
+    SkypeForBusinessLastActivityDateDesc: "skypeForBusinessLastActivityDate desc",
+    SkypeForBusinessLicenseAssignDate: "skypeForBusinessLicenseAssignDate",
+    SkypeForBusinessLicenseAssignDateDesc: "skypeForBusinessLicenseAssignDate desc",
+    TeamsLastActivityDate: "teamsLastActivityDate",
+    TeamsLastActivityDateDesc: "teamsLastActivityDate desc",
+    TeamsLicenseAssignDate: "teamsLicenseAssignDate",
+    TeamsLicenseAssignDateDesc: "teamsLicenseAssignDate desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+    YammerLastActivityDate: "yammerLastActivityDate",
+    YammerLastActivityDateDesc: "yammerLastActivityDate desc",
+    YammerLicenseAssignDate: "yammerLicenseAssignDate",
+    YammerLicenseAssignDateDesc: "yammerLicenseAssignDate desc",
+} as const;
+/**
+ * Provides operations to call the getOffice365ActiveUserDetail method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignedProducts: "assignedProducts",
+    DeletedDate: "deletedDate",
+    DisplayName: "displayName",
+    ExchangeLastActivityDate: "exchangeLastActivityDate",
+    ExchangeLicenseAssignDate: "exchangeLicenseAssignDate",
+    HasExchangeLicense: "hasExchangeLicense",
+    HasOneDriveLicense: "hasOneDriveLicense",
+    HasSharePointLicense: "hasSharePointLicense",
+    HasSkypeForBusinessLicense: "hasSkypeForBusinessLicense",
+    HasTeamsLicense: "hasTeamsLicense",
+    HasYammerLicense: "hasYammerLicense",
+    IsDeleted: "isDeleted",
+    OneDriveLastActivityDate: "oneDriveLastActivityDate",
+    OneDriveLicenseAssignDate: "oneDriveLicenseAssignDate",
+    ReportRefreshDate: "reportRefreshDate",
+    SharePointLastActivityDate: "sharePointLastActivityDate",
+    SharePointLicenseAssignDate: "sharePointLicenseAssignDate",
+    SkypeForBusinessLastActivityDate: "skypeForBusinessLastActivityDate",
+    SkypeForBusinessLicenseAssignDate: "skypeForBusinessLicenseAssignDate",
+    TeamsLastActivityDate: "teamsLastActivityDate",
+    TeamsLicenseAssignDate: "teamsLicenseAssignDate",
+    UserPrincipalName: "userPrincipalName",
+    YammerLastActivityDate: "yammerLastActivityDate",
+    YammerLicenseAssignDate: "yammerLicenseAssignDate",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

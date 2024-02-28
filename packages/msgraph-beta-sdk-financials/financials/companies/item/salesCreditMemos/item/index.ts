@@ -9,6 +9,8 @@ import { PaymentTermRequestBuilderRequestsMetadata, type PaymentTermRequestBuild
 import { SalesCreditMemoLinesRequestBuilderNavigationMetadata, SalesCreditMemoLinesRequestBuilderRequestsMetadata, type SalesCreditMemoLinesRequestBuilder } from './salesCreditMemoLines/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
  */
@@ -65,16 +67,64 @@ export interface SalesCreditMemoItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SalesCreditMemoItemRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemos/{salesCreditMemo%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesCreditMemoLines: "salesCreditMemoLines",
+} as const;
+/**
+ * Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BillingPostalAddress: "billingPostalAddress",
+    BillToCustomerId: "billToCustomerId",
+    BillToCustomerNumber: "billToCustomerNumber",
+    BillToName: "billToName",
+    CreditMemoDate: "creditMemoDate",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    CustomerId: "customerId",
+    CustomerName: "customerName",
+    CustomerNumber: "customerNumber",
+    DiscountAmount: "discountAmount",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DueDate: "dueDate",
+    Email: "email",
+    ExternalDocumentNumber: "externalDocumentNumber",
+    Id: "id",
+    InvoiceId: "invoiceId",
+    InvoiceNumber: "invoiceNumber",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    PaymentTermsId: "paymentTermsId",
+    PhoneNumber: "phoneNumber",
+    PricesIncludeTax: "pricesIncludeTax",
+    Salesperson: "salesperson",
+    SellingPostalAddress: "sellingPostalAddress",
+    Status: "status",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalTaxAmount: "totalTaxAmount",
+    Currency: "currency",
+    Customer: "customer",
+    PaymentTerm: "paymentTerm",
+    SalesCreditMemoLines: "salesCreditMemoLines",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -111,7 +161,7 @@ export const SalesCreditMemoItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesCreditMemoFromDiscriminatorValue,
         queryParametersMapper: SalesCreditMemoItemRequestBuilderGetQueryParametersMapper,
     },
@@ -121,7 +171,7 @@ export const SalesCreditMemoItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesCreditMemoFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSalesCreditMemo,

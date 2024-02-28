@@ -70,12 +70,14 @@ export interface EducationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -122,7 +124,7 @@ export const EducationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationRootFromDiscriminatorValue,
         queryParametersMapper: EducationRequestBuilderGetQueryParametersMapper,
     },
@@ -132,12 +134,33 @@ export const EducationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEducationRoot,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the educationRoot singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Classes: "classes",
+    Me: "me",
+    Schools: "schools",
+    SynchronizationProfiles: "synchronizationProfiles",
+    Users: "users",
+} as const;
+/**
+ * Provides operations to manage the educationRoot singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Classes: "classes",
+    Me: "me",
+    Schools: "schools",
+    SynchronizationProfiles: "synchronizationProfiles",
+    Users: "users",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

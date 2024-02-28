@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { GroupPolicyCategoryItemRequestBuilderNavigationMetadata, GroupPolicyCategoryItemRequestBuilderRequestsMetadata, type GroupPolicyCategoryItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface GroupPolicyCategoriesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface GroupPolicyCategoriesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface GroupPolicyCategoriesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,45 @@ export interface GroupPolicyCategoriesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const GroupPolicyCategoriesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Children: "children",
+    DefinitionFile: "definitionFile",
+    Definitions: "definitions",
+    Parent: "parent",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IngestionSource: "ingestionSource",
+    IngestionSourceDesc: "ingestionSource desc",
+    IsRoot: "isRoot",
+    IsRootDesc: "isRoot desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    IngestionSource: "ingestionSource",
+    IsRoot: "isRoot",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Children: "children",
+    DefinitionFile: "definitionFile",
+    Definitions: "definitions",
+    Parent: "parent",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +169,7 @@ export const GroupPolicyCategoriesRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyCategoryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyCategoriesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +179,7 @@ export const GroupPolicyCategoriesRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyCategoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyCategory,

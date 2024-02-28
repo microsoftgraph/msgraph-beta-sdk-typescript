@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { IncidentItemRequestBuilderNavigationMetadata, IncidentItemRequestBuilderRequestsMetadata, type IncidentItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the incidents property of the microsoft.graph.security entity.
  */
@@ -22,7 +25,7 @@ export interface IncidentsRequestBuilder extends BaseRequestBuilder<IncidentsReq
      */
      byIncidentId(incidentId: string) : IncidentItemRequestBuilder;
     /**
-     * Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
+     * Get a list of incident objects that Microsoft 365 Defender created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IncidentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -38,7 +41,7 @@ export interface IncidentsRequestBuilder extends BaseRequestBuilder<IncidentsReq
      */
      post(body: Incident, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Incident | undefined>;
     /**
-     * Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
+     * Get a list of incident objects that Microsoft 365 Defender created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -52,7 +55,7 @@ export interface IncidentsRequestBuilder extends BaseRequestBuilder<IncidentsReq
      toPostRequestInformation(body: Incident, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
+ * Get a list of incident objects that Microsoft 365 Defender created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
  */
 export interface IncidentsRequestBuilderGetQueryParameters {
     /**
@@ -62,7 +65,7 @@ export interface IncidentsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface IncidentsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface IncidentsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,81 @@ export interface IncidentsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const IncidentsRequestBuilderUriTemplate = "{+baseurl}/security/incidents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the incidents property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Alerts: "alerts",
+} as const;
+/**
+ * Provides operations to manage the incidents property of the microsoft.graph.security entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AssignedTo: "assignedTo",
+    AssignedToDesc: "assignedTo desc",
+    Classification: "classification",
+    ClassificationDesc: "classification desc",
+    Comments: "comments",
+    CommentsDesc: "comments desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CustomTags: "customTags",
+    CustomTagsDesc: "customTags desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    Determination: "determination",
+    DeterminationDesc: "determination desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IncidentWebUrl: "incidentWebUrl",
+    IncidentWebUrlDesc: "incidentWebUrl desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastUpdateDateTime: "lastUpdateDateTime",
+    LastUpdateDateTimeDesc: "lastUpdateDateTime desc",
+    RecommendedActions: "recommendedActions",
+    RecommendedActionsDesc: "recommendedActions desc",
+    RecommendedHuntingQueries: "recommendedHuntingQueries",
+    RecommendedHuntingQueriesDesc: "recommendedHuntingQueries desc",
+    RedirectIncidentId: "redirectIncidentId",
+    RedirectIncidentIdDesc: "redirectIncidentId desc",
+    Severity: "severity",
+    SeverityDesc: "severity desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    SystemTags: "systemTags",
+    SystemTagsDesc: "systemTags desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+} as const;
+/**
+ * Provides operations to manage the incidents property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignedTo: "assignedTo",
+    Classification: "classification",
+    Comments: "comments",
+    CreatedDateTime: "createdDateTime",
+    CustomTags: "customTags",
+    Description: "description",
+    Determination: "determination",
+    DisplayName: "displayName",
+    IncidentWebUrl: "incidentWebUrl",
+    LastModifiedBy: "lastModifiedBy",
+    LastUpdateDateTime: "lastUpdateDateTime",
+    RecommendedActions: "recommendedActions",
+    RecommendedHuntingQueries: "recommendedHuntingQueries",
+    RedirectIncidentId: "redirectIncidentId",
+    Severity: "severity",
+    Status: "status",
+    SystemTags: "systemTags",
+    TenantId: "tenantId",
+    Alerts: "alerts",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +206,7 @@ export const IncidentsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIncidentCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: IncidentsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +216,7 @@ export const IncidentsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIncidentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIncident,

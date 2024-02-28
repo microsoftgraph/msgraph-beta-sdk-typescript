@@ -58,7 +58,7 @@ export interface GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQu
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +66,7 @@ export interface GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQu
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +74,7 @@ export interface GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQu
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +84,9 @@ export interface GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQu
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -119,10 +122,41 @@ export const GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetAzureADApplicationSignInSummaryWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getAzureADApplicationSignInSummary method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the getAzureADApplicationSignInSummary method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppDisplayName: "appDisplayName",
+    AppDisplayNameDesc: "appDisplayName desc",
+    FailedSignInCount: "failedSignInCount",
+    FailedSignInCountDesc: "failedSignInCount desc",
+    SuccessfulSignInCount: "successfulSignInCount",
+    SuccessfulSignInCountDesc: "successfulSignInCount desc",
+    SuccessPercentage: "successPercentage",
+    SuccessPercentageDesc: "successPercentage desc",
+} as const;
+/**
+ * Provides operations to call the getAzureADApplicationSignInSummary method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppDisplayName: "appDisplayName",
+    FailedSignInCount: "failedSignInCount",
+    SuccessfulSignInCount: "successfulSignInCount",
+    SuccessPercentage: "successPercentage",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

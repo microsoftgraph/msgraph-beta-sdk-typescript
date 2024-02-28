@@ -61,7 +61,7 @@ export interface ExcludesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface ExcludesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface ExcludesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface ExcludesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const ExcludesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalCreationConditionSetCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ExcludesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,46 @@ export const ExcludesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalCreationConditionSetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServicePrincipalCreationConditionSet,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ApplicationIds: "applicationIds",
+    ApplicationIdsDesc: "applicationIds desc",
+    ApplicationPublisherIds: "applicationPublisherIds",
+    ApplicationPublisherIdsDesc: "applicationPublisherIds desc",
+    ApplicationsFromVerifiedPublisherOnly: "applicationsFromVerifiedPublisherOnly",
+    ApplicationsFromVerifiedPublisherOnlyDesc: "applicationsFromVerifiedPublisherOnly desc",
+    ApplicationTenantIds: "applicationTenantIds",
+    ApplicationTenantIdsDesc: "applicationTenantIds desc",
+    CertifiedApplicationsOnly: "certifiedApplicationsOnly",
+    CertifiedApplicationsOnlyDesc: "certifiedApplicationsOnly desc",
+} as const;
+/**
+ * Provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApplicationIds: "applicationIds",
+    ApplicationPublisherIds: "applicationPublisherIds",
+    ApplicationsFromVerifiedPublisherOnly: "applicationsFromVerifiedPublisherOnly",
+    ApplicationTenantIds: "applicationTenantIds",
+    CertifiedApplicationsOnly: "certifiedApplicationsOnly",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

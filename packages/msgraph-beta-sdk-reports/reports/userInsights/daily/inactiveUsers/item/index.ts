@@ -30,12 +30,14 @@ export interface DailyInactiveUsersMetricItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,27 @@ export const DailyInactiveUsersMetricItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDailyInactiveUsersMetricFromDiscriminatorValue,
         queryParametersMapper: DailyInactiveUsersMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the inactiveUsers property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the inactiveUsers property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    FactDate: "factDate",
+    Inactive30DayCount: "inactive30DayCount",
+    Inactive60DayCount: "inactive60DayCount",
+    Inactive90DayCount: "inactive90DayCount",
+    Inactive1DayCount: "inactive1DayCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

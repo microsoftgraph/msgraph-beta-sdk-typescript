@@ -60,12 +60,14 @@ export interface BookingStaffMemberItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -87,7 +89,7 @@ export const BookingStaffMemberItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BookingStaffMemberItemRequestBuilderUriTemplate,
@@ -95,7 +97,7 @@ export const BookingStaffMemberItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingStaffMemberFromDiscriminatorValue,
         queryParametersMapper: BookingStaffMemberItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,12 +107,36 @@ export const BookingStaffMemberItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingStaffMemberFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookingStaffMember,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    EmailAddress: "emailAddress",
+    AvailabilityIsAffectedByPersonalCalendar: "availabilityIsAffectedByPersonalCalendar",
+    ColorIndex: "colorIndex",
+    CreatedDateTime: "createdDateTime",
+    IsEmailNotificationEnabled: "isEmailNotificationEnabled",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    MembershipStatus: "membershipStatus",
+    Role: "role",
+    TimeZone: "timeZone",
+    UseBusinessHours: "useBusinessHours",
+    WorkingHours: "workingHours",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

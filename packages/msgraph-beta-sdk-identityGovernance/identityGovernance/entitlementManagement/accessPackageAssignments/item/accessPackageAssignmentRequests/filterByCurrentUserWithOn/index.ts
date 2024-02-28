@@ -60,7 +60,7 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -68,7 +68,7 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -76,7 +76,7 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -86,6 +86,9 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -121,10 +124,74 @@ export const FilterByCurrentUserWithOnRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue,
         queryParametersMapper: FilterByCurrentUserWithOnRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the filterByCurrentUser method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignment: "accessPackageAssignment",
+    Requestor: "requestor",
+} as const;
+/**
+ * Provides operations to call the filterByCurrentUser method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Answers: "answers",
+    AnswersDesc: "answers desc",
+    CompletedDate: "completedDate",
+    CompletedDateDesc: "completedDate desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CustomExtensionCalloutInstances: "customExtensionCalloutInstances",
+    CustomExtensionCalloutInstancesDesc: "customExtensionCalloutInstances desc",
+    CustomExtensionHandlerInstances: "customExtensionHandlerInstances",
+    CustomExtensionHandlerInstancesDesc: "customExtensionHandlerInstances desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    IsValidationOnly: "isValidationOnly",
+    IsValidationOnlyDesc: "isValidationOnly desc",
+    Justification: "justification",
+    JustificationDesc: "justification desc",
+    RequestState: "requestState",
+    RequestStateDesc: "requestState desc",
+    RequestStatus: "requestStatus",
+    RequestStatusDesc: "requestStatus desc",
+    RequestType: "requestType",
+    RequestTypeDesc: "requestType desc",
+    Schedule: "schedule",
+    ScheduleDesc: "schedule desc",
+    VerifiedCredentialsData: "verifiedCredentialsData",
+    VerifiedCredentialsDataDesc: "verifiedCredentialsData desc",
+} as const;
+/**
+ * Provides operations to call the filterByCurrentUser method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Answers: "answers",
+    CompletedDate: "completedDate",
+    CreatedDateTime: "createdDateTime",
+    CustomExtensionCalloutInstances: "customExtensionCalloutInstances",
+    CustomExtensionHandlerInstances: "customExtensionHandlerInstances",
+    ExpirationDateTime: "expirationDateTime",
+    IsValidationOnly: "isValidationOnly",
+    Justification: "justification",
+    RequestState: "requestState",
+    RequestStatus: "requestStatus",
+    RequestType: "requestType",
+    Schedule: "schedule",
+    VerifiedCredentialsData: "verifiedCredentialsData",
+    AccessPackage: "accessPackage",
+    AccessPackageAssignment: "accessPackageAssignment",
+    Requestor: "requestor",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

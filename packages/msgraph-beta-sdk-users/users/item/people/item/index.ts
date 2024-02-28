@@ -5,6 +5,7 @@ import { createPersonFromDiscriminatorValue, type Person } from '@microsoft/msgr
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the people property of the microsoft.graph.user entity.
  */
@@ -30,12 +31,38 @@ export interface PersonItemRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PersonItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/people/{person%2Did}{?%24select}";
+/**
+ * Provides operations to manage the people property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Birthday: "birthday",
+    CompanyName: "companyName",
+    Department: "department",
+    DisplayName: "displayName",
+    EmailAddresses: "emailAddresses",
+    GivenName: "givenName",
+    IsFavorite: "isFavorite",
+    MailboxType: "mailboxType",
+    OfficeLocation: "officeLocation",
+    PersonNotes: "personNotes",
+    PersonType: "personType",
+    Phones: "phones",
+    PostalAddresses: "postalAddresses",
+    Profession: "profession",
+    Sources: "sources",
+    Surname: "surname",
+    Title: "title",
+    UserPrincipalName: "userPrincipalName",
+    Websites: "websites",
+    YomiCompany: "yomiCompany",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -52,7 +79,7 @@ export const PersonItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonFromDiscriminatorValue,
         queryParametersMapper: PersonItemRequestBuilderGetQueryParametersMapper,
     },

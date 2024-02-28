@@ -5,6 +5,8 @@ import { createRegionalAndLanguageSettingsFromDiscriminatorValue, serializeRegio
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.
  */
@@ -59,16 +61,35 @@ export interface RegionalAndLanguageSettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const RegionalAndLanguageSettingsRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/settings/regionalAndLanguageSettings{?%24expand,%24select}";
+/**
+ * Provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AuthoringLanguages: "authoringLanguages",
+    DefaultDisplayLanguage: "defaultDisplayLanguage",
+    DefaultRegionalFormat: "defaultRegionalFormat",
+    DefaultSpeechInputLanguage: "defaultSpeechInputLanguage",
+    DefaultTranslationLanguage: "defaultTranslationLanguage",
+    RegionalFormatOverrides: "regionalFormatOverrides",
+    TranslationPreferences: "translationPreferences",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -86,7 +107,7 @@ export const RegionalAndLanguageSettingsRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RegionalAndLanguageSettingsRequestBuilderUriTemplate,
@@ -94,7 +115,7 @@ export const RegionalAndLanguageSettingsRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRegionalAndLanguageSettingsFromDiscriminatorValue,
         queryParametersMapper: RegionalAndLanguageSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +125,7 @@ export const RegionalAndLanguageSettingsRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRegionalAndLanguageSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRegionalAndLanguageSettings,

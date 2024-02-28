@@ -23,6 +23,7 @@ export function deserializeIntoGetOffice365GroupsActivityGroupCountsWithPeriodGe
         "value": n => { getOffice365GroupsActivityGroupCountsWithPeriodGetResponse.value = n.getCollectionOfObjectValues<Office365GroupsActivityGroupCounts>(createOffice365GroupsActivityGroupCountsFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
 export interface GetOffice365GroupsActivityGroupCountsWithPeriodGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +59,7 @@ export interface GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGe
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +67,7 @@ export interface GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGe
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +75,7 @@ export interface GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGe
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +85,8 @@ export interface GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGe
      */
     top?: number;
 }
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -96,6 +99,12 @@ export function serializeGetOffice365GroupsActivityGroupCountsWithPeriodGetRespo
  * Uri template for the request builder.
  */
 export const GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365GroupsActivityGroupCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getOffice365GroupsActivityGroupCounts method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,10 +128,38 @@ export const GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderReques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOffice365GroupsActivityGroupCountsWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getOffice365GroupsActivityGroupCounts method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Active: "active",
+    ActiveDesc: "active desc",
+    ReportDate: "reportDate",
+    ReportDateDesc: "reportDate desc",
+    ReportPeriod: "reportPeriod",
+    ReportPeriodDesc: "reportPeriod desc",
+    ReportRefreshDate: "reportRefreshDate",
+    ReportRefreshDateDesc: "reportRefreshDate desc",
+    Total: "total",
+    TotalDesc: "total desc",
+} as const;
+/**
+ * Provides operations to call the getOffice365GroupsActivityGroupCounts method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Active: "active",
+    ReportDate: "reportDate",
+    ReportPeriod: "reportPeriod",
+    ReportRefreshDate: "reportRefreshDate",
+    Total: "total",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -30,6 +30,9 @@ import { MobileAppItemRequestBuilderNavigationMetadata, MobileAppItemRequestBuil
 import { type ValidateXmlRequestBuilder, ValidateXmlRequestBuilderRequestsMetadata } from './validateXml/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
  */
@@ -176,7 +179,7 @@ export interface MobileAppsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -184,7 +187,7 @@ export interface MobileAppsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -192,7 +195,7 @@ export interface MobileAppsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -206,6 +209,88 @@ export interface MobileAppsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const MobileAppsRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/mobileApps{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    Categories: "categories",
+    Relationships: "relationships",
+} as const;
+/**
+ * Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DependentAppCount: "dependentAppCount",
+    DependentAppCountDesc: "dependentAppCount desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    Developer: "developer",
+    DeveloperDesc: "developer desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    InformationUrl: "informationUrl",
+    InformationUrlDesc: "informationUrl desc",
+    IsAssigned: "isAssigned",
+    IsAssignedDesc: "isAssigned desc",
+    IsFeatured: "isFeatured",
+    IsFeaturedDesc: "isFeatured desc",
+    LargeIcon: "largeIcon",
+    LargeIconDesc: "largeIcon desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Notes: "notes",
+    NotesDesc: "notes desc",
+    Owner: "owner",
+    OwnerDesc: "owner desc",
+    PrivacyInformationUrl: "privacyInformationUrl",
+    PrivacyInformationUrlDesc: "privacyInformationUrl desc",
+    Publisher: "publisher",
+    PublisherDesc: "publisher desc",
+    PublishingState: "publishingState",
+    PublishingStateDesc: "publishingState desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    SupersededAppCount: "supersededAppCount",
+    SupersededAppCountDesc: "supersededAppCount desc",
+    SupersedingAppCount: "supersedingAppCount",
+    SupersedingAppCountDesc: "supersedingAppCount desc",
+    UploadState: "uploadState",
+    UploadStateDesc: "uploadState desc",
+} as const;
+/**
+ * Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    DependentAppCount: "dependentAppCount",
+    Description: "description",
+    Developer: "developer",
+    DisplayName: "displayName",
+    InformationUrl: "informationUrl",
+    IsAssigned: "isAssigned",
+    IsFeatured: "isFeatured",
+    LargeIcon: "largeIcon",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Notes: "notes",
+    Owner: "owner",
+    PrivacyInformationUrl: "privacyInformationUrl",
+    Publisher: "publisher",
+    PublishingState: "publishingState",
+    RoleScopeTagIds: "roleScopeTagIds",
+    SupersededAppCount: "supersededAppCount",
+    SupersedingAppCount: "supersedingAppCount",
+    UploadState: "uploadState",
+    Assignments: "assignments",
+    Categories: "categories",
+    Relationships: "relationships",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -332,7 +417,7 @@ export const MobileAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobileAppCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MobileAppsRequestBuilderGetQueryParametersMapper,
     },
@@ -342,7 +427,7 @@ export const MobileAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobileAppFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMobileApp,

@@ -57,12 +57,14 @@ export interface ExactMatchUploadAgentItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const ExactMatchUploadAgentItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ExactMatchUploadAgentItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const ExactMatchUploadAgentItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchUploadAgentFromDiscriminatorValue,
         queryParametersMapper: ExactMatchUploadAgentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,26 @@ export const ExactMatchUploadAgentItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchUploadAgentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExactMatchUploadAgent,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreationDateTime: "creationDateTime",
+    Description: "description",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

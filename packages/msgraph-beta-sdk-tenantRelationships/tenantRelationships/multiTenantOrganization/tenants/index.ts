@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MultiTenantOrganizationMemberItemRequestBuilderRequestsMetadata, type MultiTenantOrganizationMemberItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.
  */
@@ -63,7 +66,7 @@ export interface TenantsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +74,7 @@ export interface TenantsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +82,7 @@ export interface TenantsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -93,6 +96,52 @@ export interface TenantsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TenantsRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeletedDateTime: "deletedDateTime",
+    DeletedDateTimeDesc: "deletedDateTime desc",
+    AddedByTenantId: "addedByTenantId",
+    AddedByTenantIdDesc: "addedByTenantId desc",
+    AddedDateTime: "addedDateTime",
+    AddedDateTimeDesc: "addedDateTime desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    JoinedDateTime: "joinedDateTime",
+    JoinedDateTimeDesc: "joinedDateTime desc",
+    Role: "role",
+    RoleDesc: "role desc",
+    State: "state",
+    StateDesc: "state desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    TransitionDetails: "transitionDetails",
+    TransitionDetailsDesc: "transitionDetails desc",
+} as const;
+/**
+ * Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AddedByTenantId: "addedByTenantId",
+    AddedDateTime: "addedDateTime",
+    DisplayName: "displayName",
+    JoinedDateTime: "joinedDateTime",
+    Role: "role",
+    State: "state",
+    TenantId: "tenantId",
+    TransitionDetails: "transitionDetails",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +177,7 @@ export const TenantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationMemberCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TenantsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +187,7 @@ export const TenantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationMemberFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMultiTenantOrganizationMember,

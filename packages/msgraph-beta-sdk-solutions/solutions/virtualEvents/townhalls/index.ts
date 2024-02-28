@@ -9,6 +9,9 @@ import { GetByUserRoleWithRoleRequestBuilderRequestsMetadata, type GetByUserRole
 import { type VirtualEventTownhallItemRequestBuilder, VirtualEventTownhallItemRequestBuilderNavigationMetadata, VirtualEventTownhallItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
  */
@@ -76,7 +79,7 @@ export interface TownhallsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -84,7 +87,7 @@ export interface TownhallsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -92,7 +95,7 @@ export interface TownhallsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -106,6 +109,59 @@ export interface TownhallsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const TownhallsRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/townhalls{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Presenters: "presenters",
+    Sessions: "sessions",
+} as const;
+/**
+ * Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EndDateTime: "endDateTime",
+    EndDateTimeDesc: "endDateTime desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    Audience: "audience",
+    AudienceDesc: "audience desc",
+    CoOrganizers: "coOrganizers",
+    CoOrganizersDesc: "coOrganizers desc",
+    InvitedAttendees: "invitedAttendees",
+    InvitedAttendeesDesc: "invitedAttendees desc",
+    IsInviteOnly: "isInviteOnly",
+    IsInviteOnlyDesc: "isInviteOnly desc",
+} as const;
+/**
+ * Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    Description: "description",
+    DisplayName: "displayName",
+    EndDateTime: "endDateTime",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    Audience: "audience",
+    CoOrganizers: "coOrganizers",
+    InvitedAttendees: "invitedAttendees",
+    IsInviteOnly: "isInviteOnly",
+    Presenters: "presenters",
+    Sessions: "sessions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -148,7 +204,7 @@ export const TownhallsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventTownhallCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TownhallsRequestBuilderGetQueryParametersMapper,
     },
@@ -158,7 +214,7 @@ export const TownhallsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventTownhallFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVirtualEventTownhall,

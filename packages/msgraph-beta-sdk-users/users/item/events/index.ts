@@ -35,7 +35,7 @@ export interface EventsRequestBuilder extends BaseRequestBuilder<EventsRequestBu
      */
      get(requestConfiguration?: RequestConfiguration<EventsRequestBuilderGetQueryParameters> | undefined) : Promise<EventCollectionResponse | undefined>;
     /**
-     * Create an event in the user's default calendar or specified calendar. By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because the start and end properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.  When an event is sent, the server sends invitations to all the attendees. Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipmentlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejectsthe meeting request based on the free/busy schedule of the resource.If the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled,the server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executivesor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
+     * Create an event in the user's default calendar or specified calendar. By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because thestart and end properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server. When an event is sent, the server sends invitations to all the attendees. Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipmentlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejectsthe meeting request based on the free/busy schedule of the resource.If the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled,the server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executivesor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Event>}
@@ -50,7 +50,7 @@ export interface EventsRequestBuilder extends BaseRequestBuilder<EventsRequestBu
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EventsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create an event in the user's default calendar or specified calendar. By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because the start and end properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.  When an event is sent, the server sends invitations to all the attendees. Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipmentlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejectsthe meeting request based on the free/busy schedule of the resource.If the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled,the server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executivesor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
+     * Create an event in the user's default calendar or specified calendar. By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because thestart and end properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server. When an event is sent, the server sends invitations to all the attendees. Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipmentlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejectsthe meeting request based on the free/busy schedule of the resource.If the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled,the server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executivesor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -68,7 +68,7 @@ export interface EventsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -76,11 +76,11 @@ export interface EventsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -90,6 +90,9 @@ export interface EventsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -132,7 +135,7 @@ export const EventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEventCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EventsRequestBuilderGetQueryParametersMapper,
     },
@@ -142,12 +145,171 @@ export const EventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEvent,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the events property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Attachments: "attachments",
+    Calendar: "calendar",
+    ExceptionOccurrences: "exceptionOccurrences",
+    Extensions: "extensions",
+    Instances: "instances",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
+/**
+ * Provides operations to manage the events property of the microsoft.graph.user entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Categories: "categories",
+    CategoriesDesc: "categories desc",
+    ChangeKey: "changeKey",
+    ChangeKeyDesc: "changeKey desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    AllowNewTimeProposals: "allowNewTimeProposals",
+    AllowNewTimeProposalsDesc: "allowNewTimeProposals desc",
+    Attendees: "attendees",
+    AttendeesDesc: "attendees desc",
+    Body: "body",
+    BodyDesc: "body desc",
+    BodyPreview: "bodyPreview",
+    BodyPreviewDesc: "bodyPreview desc",
+    CancelledOccurrences: "cancelledOccurrences",
+    CancelledOccurrencesDesc: "cancelledOccurrences desc",
+    End: "end",
+    EndDesc: "end desc",
+    HasAttachments: "hasAttachments",
+    HasAttachmentsDesc: "hasAttachments desc",
+    HideAttendees: "hideAttendees",
+    HideAttendeesDesc: "hideAttendees desc",
+    Importance: "importance",
+    ImportanceDesc: "importance desc",
+    IsAllDay: "isAllDay",
+    IsAllDayDesc: "isAllDay desc",
+    IsCancelled: "isCancelled",
+    IsCancelledDesc: "isCancelled desc",
+    IsDraft: "isDraft",
+    IsDraftDesc: "isDraft desc",
+    IsOnlineMeeting: "isOnlineMeeting",
+    IsOnlineMeetingDesc: "isOnlineMeeting desc",
+    IsOrganizer: "isOrganizer",
+    IsOrganizerDesc: "isOrganizer desc",
+    IsReminderOn: "isReminderOn",
+    IsReminderOnDesc: "isReminderOn desc",
+    Location: "location",
+    LocationDesc: "location desc",
+    Locations: "locations",
+    LocationsDesc: "locations desc",
+    OccurrenceId: "occurrenceId",
+    OccurrenceIdDesc: "occurrenceId desc",
+    OnlineMeeting: "onlineMeeting",
+    OnlineMeetingDesc: "onlineMeeting desc",
+    OnlineMeetingProvider: "onlineMeetingProvider",
+    OnlineMeetingProviderDesc: "onlineMeetingProvider desc",
+    OnlineMeetingUrl: "onlineMeetingUrl",
+    OnlineMeetingUrlDesc: "onlineMeetingUrl desc",
+    Organizer: "organizer",
+    OrganizerDesc: "organizer desc",
+    OriginalEndTimeZone: "originalEndTimeZone",
+    OriginalEndTimeZoneDesc: "originalEndTimeZone desc",
+    OriginalStart: "originalStart",
+    OriginalStartDesc: "originalStart desc",
+    OriginalStartTimeZone: "originalStartTimeZone",
+    OriginalStartTimeZoneDesc: "originalStartTimeZone desc",
+    Recurrence: "recurrence",
+    RecurrenceDesc: "recurrence desc",
+    ReminderMinutesBeforeStart: "reminderMinutesBeforeStart",
+    ReminderMinutesBeforeStartDesc: "reminderMinutesBeforeStart desc",
+    ResponseRequested: "responseRequested",
+    ResponseRequestedDesc: "responseRequested desc",
+    ResponseStatus: "responseStatus",
+    ResponseStatusDesc: "responseStatus desc",
+    Sensitivity: "sensitivity",
+    SensitivityDesc: "sensitivity desc",
+    SeriesMasterId: "seriesMasterId",
+    SeriesMasterIdDesc: "seriesMasterId desc",
+    ShowAs: "showAs",
+    ShowAsDesc: "showAs desc",
+    Start: "start",
+    StartDesc: "start desc",
+    Subject: "subject",
+    SubjectDesc: "subject desc",
+    TransactionId: "transactionId",
+    TransactionIdDesc: "transactionId desc",
+    Type: "type",
+    TypeDesc: "type desc",
+    Uid: "uid",
+    UidDesc: "uid desc",
+    WebLink: "webLink",
+    WebLinkDesc: "webLink desc",
+} as const;
+/**
+ * Provides operations to manage the events property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Categories: "categories",
+    ChangeKey: "changeKey",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    AllowNewTimeProposals: "allowNewTimeProposals",
+    Attendees: "attendees",
+    Body: "body",
+    BodyPreview: "bodyPreview",
+    CancelledOccurrences: "cancelledOccurrences",
+    End: "end",
+    HasAttachments: "hasAttachments",
+    HideAttendees: "hideAttendees",
+    Importance: "importance",
+    IsAllDay: "isAllDay",
+    IsCancelled: "isCancelled",
+    IsDraft: "isDraft",
+    IsOnlineMeeting: "isOnlineMeeting",
+    IsOrganizer: "isOrganizer",
+    IsReminderOn: "isReminderOn",
+    Location: "location",
+    Locations: "locations",
+    OccurrenceId: "occurrenceId",
+    OnlineMeeting: "onlineMeeting",
+    OnlineMeetingProvider: "onlineMeetingProvider",
+    OnlineMeetingUrl: "onlineMeetingUrl",
+    Organizer: "organizer",
+    OriginalEndTimeZone: "originalEndTimeZone",
+    OriginalStart: "originalStart",
+    OriginalStartTimeZone: "originalStartTimeZone",
+    Recurrence: "recurrence",
+    ReminderMinutesBeforeStart: "reminderMinutesBeforeStart",
+    ResponseRequested: "responseRequested",
+    ResponseStatus: "responseStatus",
+    Sensitivity: "sensitivity",
+    SeriesMasterId: "seriesMasterId",
+    ShowAs: "showAs",
+    Start: "start",
+    Subject: "subject",
+    TransactionId: "transactionId",
+    Type: "type",
+    Uid: "uid",
+    WebLink: "webLink",
+    Attachments: "attachments",
+    Calendar: "calendar",
+    ExceptionOccurrences: "exceptionOccurrences",
+    Extensions: "extensions",
+    Instances: "instances",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

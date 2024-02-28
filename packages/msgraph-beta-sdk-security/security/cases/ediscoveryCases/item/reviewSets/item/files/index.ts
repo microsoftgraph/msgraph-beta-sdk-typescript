@@ -62,7 +62,7 @@ export interface FilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface FilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface FilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface FilesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const FilesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEdiscoveryFileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: FilesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,71 @@ export const FilesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEdiscoveryFileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEdiscoveryFile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Custodian: "custodian",
+    Tags: "tags",
+} as const;
+/**
+ * Provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Content: "content",
+    ContentDesc: "content desc",
+    DateTime: "dateTime",
+    DateTimeDesc: "dateTime desc",
+    Extension: "extension",
+    ExtensionDesc: "extension desc",
+    ExtractedTextContent: "extractedTextContent",
+    ExtractedTextContentDesc: "extractedTextContent desc",
+    MediaType: "mediaType",
+    MediaTypeDesc: "mediaType desc",
+    Name: "name",
+    NameDesc: "name desc",
+    OtherProperties: "otherProperties",
+    OtherPropertiesDesc: "otherProperties desc",
+    ProcessingStatus: "processingStatus",
+    ProcessingStatusDesc: "processingStatus desc",
+    SenderOrAuthors: "senderOrAuthors",
+    SenderOrAuthorsDesc: "senderOrAuthors desc",
+    Size: "size",
+    SizeDesc: "size desc",
+    SourceType: "sourceType",
+    SourceTypeDesc: "sourceType desc",
+    SubjectTitle: "subjectTitle",
+    SubjectTitleDesc: "subjectTitle desc",
+} as const;
+/**
+ * Provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Content: "content",
+    DateTime: "dateTime",
+    Extension: "extension",
+    ExtractedTextContent: "extractedTextContent",
+    MediaType: "mediaType",
+    Name: "name",
+    OtherProperties: "otherProperties",
+    ProcessingStatus: "processingStatus",
+    SenderOrAuthors: "senderOrAuthors",
+    Size: "size",
+    SourceType: "sourceType",
+    SubjectTitle: "subjectTitle",
+    Custodian: "custodian",
+    Tags: "tags",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -87,12 +87,14 @@ export interface DeviceCustomAttributeShellScriptItemRequestBuilderGetQueryParam
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -141,7 +143,7 @@ export const DeviceCustomAttributeShellScriptItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceCustomAttributeShellScriptItemRequestBuilderUriTemplate,
@@ -149,7 +151,7 @@ export const DeviceCustomAttributeShellScriptItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceCustomAttributeShellScriptFromDiscriminatorValue,
         queryParametersMapper: DeviceCustomAttributeShellScriptItemRequestBuilderGetQueryParametersMapper,
     },
@@ -159,12 +161,44 @@ export const DeviceCustomAttributeShellScriptItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceCustomAttributeShellScriptFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceCustomAttributeShellScript,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    DeviceRunStates: "deviceRunStates",
+    GroupAssignments: "groupAssignments",
+    RunSummary: "runSummary",
+    UserRunStates: "userRunStates",
+} as const;
+/**
+ * Provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    CustomAttributeName: "customAttributeName",
+    CustomAttributeType: "customAttributeType",
+    Description: "description",
+    DisplayName: "displayName",
+    FileName: "fileName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RunAsAccount: "runAsAccount",
+    ScriptContent: "scriptContent",
+    Assignments: "assignments",
+    DeviceRunStates: "deviceRunStates",
+    GroupAssignments: "groupAssignments",
+    RunSummary: "runSummary",
+    UserRunStates: "userRunStates",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

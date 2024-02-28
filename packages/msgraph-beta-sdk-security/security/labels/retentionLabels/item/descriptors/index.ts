@@ -82,12 +82,14 @@ export interface DescriptorsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -129,7 +131,7 @@ export const DescriptorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DescriptorsRequestBuilderUriTemplate,
@@ -137,7 +139,7 @@ export const DescriptorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFilePlanDescriptorFromDiscriminatorValue,
         queryParametersMapper: DescriptorsRequestBuilderGetQueryParametersMapper,
     },
@@ -147,12 +149,39 @@ export const DescriptorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFilePlanDescriptorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFilePlanDescriptor,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the descriptors property of the microsoft.graph.security.retentionLabel entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AuthorityTemplate: "authorityTemplate",
+    CategoryTemplate: "categoryTemplate",
+    CitationTemplate: "citationTemplate",
+    DepartmentTemplate: "departmentTemplate",
+    FilePlanReferenceTemplate: "filePlanReferenceTemplate",
+} as const;
+/**
+ * Provides operations to manage the descriptors property of the microsoft.graph.security.retentionLabel entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Authority: "authority",
+    Category: "category",
+    Citation: "citation",
+    Department: "department",
+    FilePlanReference: "filePlanReference",
+    AuthorityTemplate: "authorityTemplate",
+    CategoryTemplate: "categoryTemplate",
+    CitationTemplate: "citationTemplate",
+    DepartmentTemplate: "departmentTemplate",
+    FilePlanReferenceTemplate: "filePlanReferenceTemplate",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

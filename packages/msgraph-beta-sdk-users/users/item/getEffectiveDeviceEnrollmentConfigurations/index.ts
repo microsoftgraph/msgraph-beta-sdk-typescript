@@ -58,7 +58,7 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQuer
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +66,7 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQuer
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +74,7 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQuer
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +84,9 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQuer
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -119,10 +122,55 @@ export const GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetEffectiveDeviceEnrollmentConfigurationsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DeviceEnrollmentConfigurationType: "deviceEnrollmentConfigurationType",
+    DeviceEnrollmentConfigurationTypeDesc: "deviceEnrollmentConfigurationType desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Priority: "priority",
+    PriorityDesc: "priority desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DeviceEnrollmentConfigurationType: "deviceEnrollmentConfigurationType",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Priority: "priority",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Version: "version",
+    Assignments: "assignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

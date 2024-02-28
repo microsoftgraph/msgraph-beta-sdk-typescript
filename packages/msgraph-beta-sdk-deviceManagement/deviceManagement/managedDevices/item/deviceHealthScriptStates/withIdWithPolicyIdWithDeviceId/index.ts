@@ -5,6 +5,8 @@ import { createDeviceHealthScriptPolicyStateFromDiscriminatorValue, serializeDev
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
  */
@@ -57,16 +59,45 @@ export interface WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParameters 
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24expand,%24select}";
+/**
+ * Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AssignmentFilterIds: "assignmentFilterIds",
+    DetectionState: "detectionState",
+    DeviceId: "deviceId",
+    DeviceName: "deviceName",
+    ExpectedStateUpdateDateTime: "expectedStateUpdateDateTime",
+    Id: "id",
+    LastStateUpdateDateTime: "lastStateUpdateDateTime",
+    LastSyncDateTime: "lastSyncDateTime",
+    OsVersion: "osVersion",
+    PolicyId: "policyId",
+    PolicyName: "policyName",
+    PostRemediationDetectionScriptError: "postRemediationDetectionScriptError",
+    PostRemediationDetectionScriptOutput: "postRemediationDetectionScriptOutput",
+    PreRemediationDetectionScriptError: "preRemediationDetectionScriptError",
+    PreRemediationDetectionScriptOutput: "preRemediationDetectionScriptOutput",
+    RemediationScriptError: "remediationScriptError",
+    RemediationState: "remediationState",
+    UserName: "userName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +115,7 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate,
@@ -92,7 +123,7 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateFromDiscriminatorValue,
         queryParametersMapper: WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +133,7 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceHealthScriptPolicyState,

@@ -70,12 +70,14 @@ export interface AuditLogsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -122,7 +124,7 @@ export const AuditLogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRootFromDiscriminatorValue,
         queryParametersMapper: AuditLogsRequestBuilderGetQueryParametersMapper,
     },
@@ -132,12 +134,33 @@ export const AuditLogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuditLogRoot,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the auditLogRoot singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    CustomSecurityAttributeAudits: "customSecurityAttributeAudits",
+    DirectoryAudits: "directoryAudits",
+    DirectoryProvisioning: "directoryProvisioning",
+    Provisioning: "provisioning",
+    SignIns: "signIns",
+} as const;
+/**
+ * Provides operations to manage the auditLogRoot singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    CustomSecurityAttributeAudits: "customSecurityAttributeAudits",
+    DirectoryAudits: "directoryAudits",
+    DirectoryProvisioning: "directoryProvisioning",
+    Provisioning: "provisioning",
+    SignIns: "signIns",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

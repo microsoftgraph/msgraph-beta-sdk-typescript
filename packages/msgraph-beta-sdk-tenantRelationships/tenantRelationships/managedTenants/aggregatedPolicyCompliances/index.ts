@@ -62,7 +62,7 @@ export interface AggregatedPolicyCompliancesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface AggregatedPolicyCompliancesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface AggregatedPolicyCompliancesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface AggregatedPolicyCompliancesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AggregatedPolicyCompliancesRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAggregatedPolicyComplianceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AggregatedPolicyCompliancesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,64 @@ export const AggregatedPolicyCompliancesRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAggregatedPolicyComplianceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAggregatedPolicyCompliance,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CompliancePolicyId: "compliancePolicyId",
+    CompliancePolicyIdDesc: "compliancePolicyId desc",
+    CompliancePolicyName: "compliancePolicyName",
+    CompliancePolicyNameDesc: "compliancePolicyName desc",
+    CompliancePolicyPlatform: "compliancePolicyPlatform",
+    CompliancePolicyPlatformDesc: "compliancePolicyPlatform desc",
+    CompliancePolicyType: "compliancePolicyType",
+    CompliancePolicyTypeDesc: "compliancePolicyType desc",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    LastRefreshedDateTimeDesc: "lastRefreshedDateTime desc",
+    NumberOfCompliantDevices: "numberOfCompliantDevices",
+    NumberOfCompliantDevicesDesc: "numberOfCompliantDevices desc",
+    NumberOfErrorDevices: "numberOfErrorDevices",
+    NumberOfErrorDevicesDesc: "numberOfErrorDevices desc",
+    NumberOfNonCompliantDevices: "numberOfNonCompliantDevices",
+    NumberOfNonCompliantDevicesDesc: "numberOfNonCompliantDevices desc",
+    PolicyModifiedDateTime: "policyModifiedDateTime",
+    PolicyModifiedDateTimeDesc: "policyModifiedDateTime desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+} as const;
+/**
+ * Provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CompliancePolicyId: "compliancePolicyId",
+    CompliancePolicyName: "compliancePolicyName",
+    CompliancePolicyPlatform: "compliancePolicyPlatform",
+    CompliancePolicyType: "compliancePolicyType",
+    LastRefreshedDateTime: "lastRefreshedDateTime",
+    NumberOfCompliantDevices: "numberOfCompliantDevices",
+    NumberOfErrorDevices: "numberOfErrorDevices",
+    NumberOfNonCompliantDevices: "numberOfNonCompliantDevices",
+    PolicyModifiedDateTime: "policyModifiedDateTime",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

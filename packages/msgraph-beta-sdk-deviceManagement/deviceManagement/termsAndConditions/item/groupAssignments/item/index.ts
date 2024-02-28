@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { TermsAndConditionsRequestBuilderRequestsMetadata, type TermsAndConditionsRequestBuilder } from './termsAndConditions/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
  */
@@ -62,16 +64,31 @@ export interface TermsAndConditionsGroupAssignmentItemRequestBuilderGetQueryPara
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TermsAndConditionsGroupAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/termsAndConditions/{termsAndConditions%2Did}/groupAssignments/{termsAndConditionsGroupAssignment%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    TermsAndConditions: "termsAndConditions",
+} as const;
+/**
+ * Provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    TargetGroupId: "targetGroupId",
+    TermsAndConditions: "termsAndConditions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -97,7 +114,7 @@ export const TermsAndConditionsGroupAssignmentItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TermsAndConditionsGroupAssignmentItemRequestBuilderUriTemplate,
@@ -105,7 +122,7 @@ export const TermsAndConditionsGroupAssignmentItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsGroupAssignmentFromDiscriminatorValue,
         queryParametersMapper: TermsAndConditionsGroupAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +132,7 @@ export const TermsAndConditionsGroupAssignmentItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsGroupAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTermsAndConditionsGroupAssignment,

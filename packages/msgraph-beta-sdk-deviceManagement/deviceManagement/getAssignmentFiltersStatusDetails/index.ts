@@ -109,7 +109,7 @@ export const GetAssignmentFiltersStatusDetailsRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAssignmentFilterStatusDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGetAssignmentFiltersStatusDetailsPostRequestBody,

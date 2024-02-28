@@ -5,6 +5,8 @@ import { createTeamsAsyncOperationFromDiscriminatorValue, serializeTeamsAsyncOpe
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the operations property of the microsoft.graph.chat entity.
  */
@@ -58,16 +60,36 @@ export interface TeamsAsyncOperationItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TeamsAsyncOperationItemRequestBuilderUriTemplate = "{+baseurl}/chats/{chat%2Did}/operations/{teamsAsyncOperation%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the operations property of the microsoft.graph.chat entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the operations property of the microsoft.graph.chat entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AttemptsCount: "attemptsCount",
+    CreatedDateTime: "createdDateTime",
+    ErrorEscaped: "error",
+    LastActionDateTime: "lastActionDateTime",
+    OperationType: "operationType",
+    Status: "status",
+    TargetResourceId: "targetResourceId",
+    TargetResourceLocation: "targetResourceLocation",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -85,7 +107,7 @@ export const TeamsAsyncOperationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TeamsAsyncOperationItemRequestBuilderUriTemplate,
@@ -93,7 +115,7 @@ export const TeamsAsyncOperationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAsyncOperationFromDiscriminatorValue,
         queryParametersMapper: TeamsAsyncOperationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +125,7 @@ export const TeamsAsyncOperationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAsyncOperationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamsAsyncOperation,

@@ -122,12 +122,14 @@ export interface DirectoryRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -204,7 +206,7 @@ export const DirectoryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DirectoryRequestBuilderUriTemplate,
@@ -212,7 +214,7 @@ export const DirectoryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationFromDiscriminatorValue,
         queryParametersMapper: DirectoryRequestBuilderGetQueryParametersMapper,
     },
@@ -222,12 +224,46 @@ export const DirectoryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRbacApplication,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignmentApprovals: "roleAssignmentApprovals",
+    RoleAssignments: "roleAssignments",
+    RoleAssignmentScheduleInstances: "roleAssignmentScheduleInstances",
+    RoleAssignmentScheduleRequests: "roleAssignmentScheduleRequests",
+    RoleAssignmentSchedules: "roleAssignmentSchedules",
+    RoleDefinitions: "roleDefinitions",
+    RoleEligibilityScheduleInstances: "roleEligibilityScheduleInstances",
+    RoleEligibilityScheduleRequests: "roleEligibilityScheduleRequests",
+    RoleEligibilitySchedules: "roleEligibilitySchedules",
+    TransitiveRoleAssignments: "transitiveRoleAssignments",
+} as const;
+/**
+ * Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ResourceNamespaces: "resourceNamespaces",
+    RoleAssignmentApprovals: "roleAssignmentApprovals",
+    RoleAssignments: "roleAssignments",
+    RoleAssignmentScheduleInstances: "roleAssignmentScheduleInstances",
+    RoleAssignmentScheduleRequests: "roleAssignmentScheduleRequests",
+    RoleAssignmentSchedules: "roleAssignmentSchedules",
+    RoleDefinitions: "roleDefinitions",
+    RoleEligibilityScheduleInstances: "roleEligibilityScheduleInstances",
+    RoleEligibilityScheduleRequests: "roleEligibilityScheduleRequests",
+    RoleEligibilitySchedules: "roleEligibilitySchedules",
+    TransitiveRoleAssignments: "transitiveRoleAssignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

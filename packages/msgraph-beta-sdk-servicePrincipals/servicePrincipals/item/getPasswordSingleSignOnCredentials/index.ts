@@ -80,7 +80,7 @@ export const GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPasswordSingleSignOnCredentialSetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGetPasswordSingleSignOnCredentialsPostRequestBody,

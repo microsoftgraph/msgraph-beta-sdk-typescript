@@ -62,7 +62,7 @@ export interface AuthorizationPolicyRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface AuthorizationPolicyRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface AuthorizationPolicyRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface AuthorizationPolicyRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const AuthorizationPolicyRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AuthorizationPolicyRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,72 @@ export const AuthorizationPolicyRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthorizationPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuthorizationPolicy,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DefaultUserRoleOverrides: "defaultUserRoleOverrides",
+} as const;
+/**
+ * Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeletedDateTime: "deletedDateTime",
+    DeletedDateTimeDesc: "deletedDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    AllowedToSignUpEmailBasedSubscriptions: "allowedToSignUpEmailBasedSubscriptions",
+    AllowedToSignUpEmailBasedSubscriptionsDesc: "allowedToSignUpEmailBasedSubscriptions desc",
+    AllowedToUseSSPR: "allowedToUseSSPR",
+    AllowedToUseSSPRDesc: "allowedToUseSSPR desc",
+    AllowEmailVerifiedUsersToJoinOrganization: "allowEmailVerifiedUsersToJoinOrganization",
+    AllowEmailVerifiedUsersToJoinOrganizationDesc: "allowEmailVerifiedUsersToJoinOrganization desc",
+    AllowInvitesFrom: "allowInvitesFrom",
+    AllowInvitesFromDesc: "allowInvitesFrom desc",
+    AllowUserConsentForRiskyApps: "allowUserConsentForRiskyApps",
+    AllowUserConsentForRiskyAppsDesc: "allowUserConsentForRiskyApps desc",
+    BlockMsolPowerShell: "blockMsolPowerShell",
+    BlockMsolPowerShellDesc: "blockMsolPowerShell desc",
+    DefaultUserRolePermissions: "defaultUserRolePermissions",
+    DefaultUserRolePermissionsDesc: "defaultUserRolePermissions desc",
+    EnabledPreviewFeatures: "enabledPreviewFeatures",
+    EnabledPreviewFeaturesDesc: "enabledPreviewFeatures desc",
+    GuestUserRoleId: "guestUserRoleId",
+    GuestUserRoleIdDesc: "guestUserRoleId desc",
+    PermissionGrantPolicyIdsAssignedToDefaultUserRole: "permissionGrantPolicyIdsAssignedToDefaultUserRole",
+    PermissionGrantPolicyIdsAssignedToDefaultUserRoleDesc: "permissionGrantPolicyIdsAssignedToDefaultUserRole desc",
+} as const;
+/**
+ * Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    AllowedToSignUpEmailBasedSubscriptions: "allowedToSignUpEmailBasedSubscriptions",
+    AllowedToUseSSPR: "allowedToUseSSPR",
+    AllowEmailVerifiedUsersToJoinOrganization: "allowEmailVerifiedUsersToJoinOrganization",
+    AllowInvitesFrom: "allowInvitesFrom",
+    AllowUserConsentForRiskyApps: "allowUserConsentForRiskyApps",
+    BlockMsolPowerShell: "blockMsolPowerShell",
+    DefaultUserRolePermissions: "defaultUserRolePermissions",
+    EnabledPreviewFeatures: "enabledPreviewFeatures",
+    GuestUserRoleId: "guestUserRoleId",
+    PermissionGrantPolicyIdsAssignedToDefaultUserRole: "permissionGrantPolicyIdsAssignedToDefaultUserRole",
+    DefaultUserRoleOverrides: "defaultUserRoleOverrides",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

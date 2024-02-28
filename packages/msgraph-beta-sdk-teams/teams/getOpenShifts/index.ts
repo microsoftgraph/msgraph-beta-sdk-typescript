@@ -23,6 +23,7 @@ export function deserializeIntoGetOpenShiftsGetResponse(getOpenShiftsGetResponse
         "value": n => { getOpenShiftsGetResponse.value = n.getCollectionOfObjectValues<OpenShift>(createOpenShiftFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
 export interface GetOpenShiftsGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +59,7 @@ export interface GetOpenShiftsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +67,7 @@ export interface GetOpenShiftsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +75,7 @@ export interface GetOpenShiftsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +85,8 @@ export interface GetOpenShiftsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -96,6 +99,12 @@ export function serializeGetOpenShiftsGetResponse(writer: SerializationWriter, g
  * Uri template for the request builder.
  */
 export const GetOpenShiftsRequestBuilderUriTemplate = "{+baseurl}/teams/getOpenShifts(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getOpenShifts method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,10 +128,53 @@ export const GetOpenShiftsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOpenShiftsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOpenShiftsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getOpenShifts method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    DraftOpenShift: "draftOpenShift",
+    DraftOpenShiftDesc: "draftOpenShift desc",
+    IsStagedForDeletion: "isStagedForDeletion",
+    IsStagedForDeletionDesc: "isStagedForDeletion desc",
+    SchedulingGroupId: "schedulingGroupId",
+    SchedulingGroupIdDesc: "schedulingGroupId desc",
+    SchedulingGroupInfo: "schedulingGroupInfo",
+    SchedulingGroupInfoDesc: "schedulingGroupInfo desc",
+    SharedOpenShift: "sharedOpenShift",
+    SharedOpenShiftDesc: "sharedOpenShift desc",
+    TeamInfo: "teamInfo",
+    TeamInfoDesc: "teamInfo desc",
+} as const;
+/**
+ * Provides operations to call the getOpenShifts method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    DraftOpenShift: "draftOpenShift",
+    IsStagedForDeletion: "isStagedForDeletion",
+    SchedulingGroupId: "schedulingGroupId",
+    SchedulingGroupInfo: "schedulingGroupInfo",
+    SharedOpenShift: "sharedOpenShift",
+    TeamInfo: "teamInfo",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

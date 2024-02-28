@@ -5,6 +5,8 @@ import { createRemoteNetworkHealthEventFromDiscriminatorValue, serializeRemoteNe
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.
  */
@@ -57,16 +59,37 @@ export interface RemoteNetworkHealthEventItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const RemoteNetworkHealthEventItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BgpRoutesAdvertisedCount: "bgpRoutesAdvertisedCount",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DestinationIp: "destinationIp",
+    ReceivedBytes: "receivedBytes",
+    RemoteNetworkId: "remoteNetworkId",
+    SentBytes: "sentBytes",
+    SourceIp: "sourceIp",
+    Status: "status",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +107,7 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RemoteNetworkHealthEventItemRequestBuilderUriTemplate,
@@ -92,7 +115,7 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkHealthEventFromDiscriminatorValue,
         queryParametersMapper: RemoteNetworkHealthEventItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +125,7 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkHealthEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteNetworkHealthEvent,

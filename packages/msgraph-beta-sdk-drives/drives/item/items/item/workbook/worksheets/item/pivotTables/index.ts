@@ -8,6 +8,9 @@ import { type WorkbookPivotTableItemRequestBuilder, WorkbookPivotTableItemReques
 import { RefreshAllRequestBuilderRequestsMetadata, type RefreshAllRequestBuilder } from './refreshAll/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
  */
@@ -66,7 +69,7 @@ export interface PivotTablesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +77,7 @@ export interface PivotTablesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +85,7 @@ export interface PivotTablesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,30 @@ export interface PivotTablesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PivotTablesRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/pivotTables{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Worksheet: "worksheet",
+} as const;
+/**
+ * Provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Name: "name",
+    NameDesc: "name desc",
+} as const;
+/**
+ * Provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Name: "name",
+    Worksheet: "worksheet",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -135,7 +162,7 @@ export const PivotTablesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookPivotTableCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PivotTablesRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +172,7 @@ export const PivotTablesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookPivotTableFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWorkbookPivotTable,

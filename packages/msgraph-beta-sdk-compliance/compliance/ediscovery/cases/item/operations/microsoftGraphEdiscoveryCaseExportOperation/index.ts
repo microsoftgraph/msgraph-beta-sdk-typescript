@@ -6,6 +6,9 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Casts the previous resource to caseExportOperation.
  */
@@ -42,7 +45,7 @@ export interface MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQue
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -50,7 +53,7 @@ export interface MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQue
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -58,7 +61,7 @@ export interface MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQue
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -72,6 +75,46 @@ export interface MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQue
  * Uri template for the request builder.
  */
 export const MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderUriTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations/microsoft.graph.ediscovery.caseExportOperation{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Casts the previous resource to caseExportOperation.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Casts the previous resource to caseExportOperation.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Action: "action",
+    ActionDesc: "action desc",
+    CompletedDateTime: "completedDateTime",
+    CompletedDateTimeDesc: "completedDateTime desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    PercentProgress: "percentProgress",
+    PercentProgressDesc: "percentProgress desc",
+    ResultInfo: "resultInfo",
+    ResultInfoDesc: "resultInfo desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Casts the previous resource to caseExportOperation.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Action: "action",
+    CompletedDateTime: "completedDateTime",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    PercentProgress: "percentProgress",
+    ResultInfo: "resultInfo",
+    Status: "status",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -103,7 +146,7 @@ export const MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseExportOperationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParametersMapper,
     },

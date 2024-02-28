@@ -22,20 +22,20 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a contentApproval object.
+     * Read the properties and relationships of a complianceChange object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ComplianceChange>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ComplianceChangeItemRequestBuilderGetQueryParameters> | undefined) : Promise<ComplianceChange | undefined>;
     /**
-     * Update the properties of a complianceChange object.
+     * Update the properties of a contentApproval object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ComplianceChange>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ComplianceChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComplianceChange | undefined>;
     /**
@@ -45,13 +45,13 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a contentApproval object.
+     * Read the properties and relationships of a complianceChange object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ComplianceChangeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a complianceChange object.
+     * Update the properties of a contentApproval object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -59,18 +59,20 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      toPatchRequestInformation(body: ComplianceChange, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a contentApproval object.
+ * Read the properties and relationships of a complianceChange object.
  */
 export interface ComplianceChangeItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -100,7 +102,7 @@ export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ComplianceChangeItemRequestBuilderUriTemplate,
@@ -108,7 +110,7 @@ export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceChangeFromDiscriminatorValue,
         queryParametersMapper: ComplianceChangeItemRequestBuilderGetQueryParametersMapper,
     },
@@ -118,12 +120,29 @@ export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceChangeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeComplianceChange,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    UpdatePolicy: "updatePolicy",
+} as const;
+/**
+ * Provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    IsRevoked: "isRevoked",
+    RevokedDateTime: "revokedDateTime",
+    UpdatePolicy: "updatePolicy",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

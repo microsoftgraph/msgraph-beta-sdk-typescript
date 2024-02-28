@@ -23,6 +23,8 @@ export function deserializeIntoGetProvisionedCloudPCsWithGroupIdWithServicePlanI
         "value": n => { getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.value = n.getCollectionOfObjectValues<CloudPC>(createCloudPCFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
 export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +60,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +68,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +76,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +86,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
      */
     top?: number;
 }
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -96,6 +99,75 @@ export function serializeGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetRe
  * Uri template for the request builder.
  */
 export const GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getProvisionedCloudPCs method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the getProvisionedCloudPCs method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AadDeviceId: "aadDeviceId",
+    AadDeviceIdDesc: "aadDeviceId desc",
+    ConnectionSettings: "connectionSettings",
+    ConnectionSettingsDesc: "connectionSettings desc",
+    ConnectivityResult: "connectivityResult",
+    ConnectivityResultDesc: "connectivityResult desc",
+    DisasterRecoveryCapability: "disasterRecoveryCapability",
+    DisasterRecoveryCapabilityDesc: "disasterRecoveryCapability desc",
+    DiskEncryptionState: "diskEncryptionState",
+    DiskEncryptionStateDesc: "diskEncryptionState desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    GracePeriodEndDateTime: "gracePeriodEndDateTime",
+    GracePeriodEndDateTimeDesc: "gracePeriodEndDateTime desc",
+    ImageDisplayName: "imageDisplayName",
+    ImageDisplayNameDesc: "imageDisplayName desc",
+    LastLoginResult: "lastLoginResult",
+    LastLoginResultDesc: "lastLoginResult desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    LastRemoteActionResult: "lastRemoteActionResult",
+    LastRemoteActionResultDesc: "lastRemoteActionResult desc",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceIdDesc: "managedDeviceId desc",
+    ManagedDeviceName: "managedDeviceName",
+    ManagedDeviceNameDesc: "managedDeviceName desc",
+    OnPremisesConnectionName: "onPremisesConnectionName",
+    OnPremisesConnectionNameDesc: "onPremisesConnectionName desc",
+    OsVersion: "osVersion",
+    OsVersionDesc: "osVersion desc",
+    PartnerAgentInstallResults: "partnerAgentInstallResults",
+    PartnerAgentInstallResultsDesc: "partnerAgentInstallResults desc",
+    PowerState: "powerState",
+    PowerStateDesc: "powerState desc",
+    ProvisioningPolicyId: "provisioningPolicyId",
+    ProvisioningPolicyIdDesc: "provisioningPolicyId desc",
+    ProvisioningPolicyName: "provisioningPolicyName",
+    ProvisioningPolicyNameDesc: "provisioningPolicyName desc",
+    ProvisioningType: "provisioningType",
+    ProvisioningTypeDesc: "provisioningType desc",
+    ScopeIds: "scopeIds",
+    ScopeIdsDesc: "scopeIds desc",
+    ServicePlanId: "servicePlanId",
+    ServicePlanIdDesc: "servicePlanId desc",
+    ServicePlanName: "servicePlanName",
+    ServicePlanNameDesc: "servicePlanName desc",
+    ServicePlanType: "servicePlanType",
+    ServicePlanTypeDesc: "servicePlanType desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    StatusDetails: "statusDetails",
+    StatusDetailsDesc: "statusDetails desc",
+    UserAccountType: "userAccountType",
+    UserAccountTypeDesc: "userAccountType desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,10 +191,44 @@ export const GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getProvisionedCloudPCs method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AadDeviceId: "aadDeviceId",
+    ConnectionSettings: "connectionSettings",
+    ConnectivityResult: "connectivityResult",
+    DisasterRecoveryCapability: "disasterRecoveryCapability",
+    DiskEncryptionState: "diskEncryptionState",
+    DisplayName: "displayName",
+    GracePeriodEndDateTime: "gracePeriodEndDateTime",
+    ImageDisplayName: "imageDisplayName",
+    LastLoginResult: "lastLoginResult",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastRemoteActionResult: "lastRemoteActionResult",
+    ManagedDeviceId: "managedDeviceId",
+    ManagedDeviceName: "managedDeviceName",
+    OnPremisesConnectionName: "onPremisesConnectionName",
+    OsVersion: "osVersion",
+    PartnerAgentInstallResults: "partnerAgentInstallResults",
+    PowerState: "powerState",
+    ProvisioningPolicyId: "provisioningPolicyId",
+    ProvisioningPolicyName: "provisioningPolicyName",
+    ProvisioningType: "provisioningType",
+    ScopeIds: "scopeIds",
+    ServicePlanId: "servicePlanId",
+    ServicePlanName: "servicePlanName",
+    ServicePlanType: "servicePlanType",
+    Status: "status",
+    StatusDetails: "statusDetails",
+    UserAccountType: "userAccountType",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

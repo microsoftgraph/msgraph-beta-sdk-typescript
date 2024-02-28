@@ -67,12 +67,14 @@ export interface ExactMatchDataStoreItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -106,7 +108,7 @@ export const ExactMatchDataStoreItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ExactMatchDataStoreItemRequestBuilderUriTemplate,
@@ -114,7 +116,7 @@ export const ExactMatchDataStoreItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchDataStoreFromDiscriminatorValue,
         queryParametersMapper: ExactMatchDataStoreItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,12 +126,30 @@ export const ExactMatchDataStoreItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchDataStoreFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExactMatchDataStore,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Sessions: "sessions",
+} as const;
+/**
+ * Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Columns: "columns",
+    DataLastUpdatedDateTime: "dataLastUpdatedDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    Sessions: "sessions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

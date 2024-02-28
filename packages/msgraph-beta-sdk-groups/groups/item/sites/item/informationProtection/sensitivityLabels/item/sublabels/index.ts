@@ -8,6 +8,9 @@ import { EvaluateRequestBuilderRequestsMetadata, type EvaluateRequestBuilder } f
 import { SensitivityLabelItemRequestBuilderRequestsMetadata, type SensitivityLabelItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
  */
@@ -66,7 +69,7 @@ export interface SublabelsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +77,7 @@ export interface SublabelsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +85,7 @@ export interface SublabelsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,63 @@ export interface SublabelsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SublabelsRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/sublabels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Sublabels: "sublabels",
+} as const;
+/**
+ * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ApplicableTo: "applicableTo",
+    ApplicableToDesc: "applicableTo desc",
+    ApplicationMode: "applicationMode",
+    ApplicationModeDesc: "applicationMode desc",
+    AssignedPolicies: "assignedPolicies",
+    AssignedPoliciesDesc: "assignedPolicies desc",
+    AutoLabeling: "autoLabeling",
+    AutoLabelingDesc: "autoLabeling desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsDefault: "isDefault",
+    IsDefaultDesc: "isDefault desc",
+    IsEndpointProtectionEnabled: "isEndpointProtectionEnabled",
+    IsEndpointProtectionEnabledDesc: "isEndpointProtectionEnabled desc",
+    LabelActions: "labelActions",
+    LabelActionsDesc: "labelActions desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Priority: "priority",
+    PriorityDesc: "priority desc",
+    ToolTip: "toolTip",
+    ToolTipDesc: "toolTip desc",
+} as const;
+/**
+ * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApplicableTo: "applicableTo",
+    ApplicationMode: "applicationMode",
+    AssignedPolicies: "assignedPolicies",
+    AutoLabeling: "autoLabeling",
+    Description: "description",
+    DisplayName: "displayName",
+    IsDefault: "isDefault",
+    IsEndpointProtectionEnabled: "isEndpointProtectionEnabled",
+    LabelActions: "labelActions",
+    Name: "name",
+    Priority: "priority",
+    ToolTip: "toolTip",
+    Sublabels: "sublabels",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -134,7 +194,7 @@ export const SublabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityLabelCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SublabelsRequestBuilderGetQueryParametersMapper,
     },
@@ -144,7 +204,7 @@ export const SublabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSensitivityLabel,

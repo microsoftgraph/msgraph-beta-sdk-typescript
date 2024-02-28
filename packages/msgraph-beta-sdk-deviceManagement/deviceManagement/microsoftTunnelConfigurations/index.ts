@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MicrosoftTunnelConfigurationItemRequestBuilderRequestsMetadata, type MicrosoftTunnelConfigurationItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface MicrosoftTunnelConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface MicrosoftTunnelConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface MicrosoftTunnelConfigurationsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,70 @@ export interface MicrosoftTunnelConfigurationsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const MicrosoftTunnelConfigurationsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelConfigurations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AdvancedSettings: "advancedSettings",
+    AdvancedSettingsDesc: "advancedSettings desc",
+    DefaultDomainSuffix: "defaultDomainSuffix",
+    DefaultDomainSuffixDesc: "defaultDomainSuffix desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisableUdpConnections: "disableUdpConnections",
+    DisableUdpConnectionsDesc: "disableUdpConnections desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    DnsServers: "dnsServers",
+    DnsServersDesc: "dnsServers desc",
+    LastUpdateDateTime: "lastUpdateDateTime",
+    LastUpdateDateTimeDesc: "lastUpdateDateTime desc",
+    ListenPort: "listenPort",
+    ListenPortDesc: "listenPort desc",
+    Network: "network",
+    NetworkDesc: "network desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    RouteExcludes: "routeExcludes",
+    RouteExcludesDesc: "routeExcludes desc",
+    RouteIncludes: "routeIncludes",
+    RouteIncludesDesc: "routeIncludes desc",
+    RoutesExclude: "routesExclude",
+    RoutesExcludeDesc: "routesExclude desc",
+    RoutesInclude: "routesInclude",
+    RoutesIncludeDesc: "routesInclude desc",
+    SplitDNS: "splitDNS",
+    SplitDNSDesc: "splitDNS desc",
+} as const;
+/**
+ * Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdvancedSettings: "advancedSettings",
+    DefaultDomainSuffix: "defaultDomainSuffix",
+    Description: "description",
+    DisableUdpConnections: "disableUdpConnections",
+    DisplayName: "displayName",
+    DnsServers: "dnsServers",
+    LastUpdateDateTime: "lastUpdateDateTime",
+    ListenPort: "listenPort",
+    Network: "network",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RouteExcludes: "routeExcludes",
+    RouteIncludes: "routeIncludes",
+    RoutesExclude: "routesExclude",
+    RoutesInclude: "routesInclude",
+    SplitDNS: "splitDNS",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +193,7 @@ export const MicrosoftTunnelConfigurationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +203,7 @@ export const MicrosoftTunnelConfigurationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftTunnelConfiguration,

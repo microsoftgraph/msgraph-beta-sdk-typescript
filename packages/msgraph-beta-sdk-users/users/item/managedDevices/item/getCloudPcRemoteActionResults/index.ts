@@ -104,7 +104,7 @@ export const GetCloudPcRemoteActionResultsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetCloudPcRemoteActionResultsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetCloudPcRemoteActionResultsRequestBuilderGetQueryParametersMapper,
     },

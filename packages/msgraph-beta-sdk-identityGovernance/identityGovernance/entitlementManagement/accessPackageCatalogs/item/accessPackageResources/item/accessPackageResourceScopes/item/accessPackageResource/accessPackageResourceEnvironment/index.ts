@@ -32,12 +32,14 @@ export interface AccessPackageResourceEnvironmentRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -59,10 +61,34 @@ export const AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageResourceEnvironmentFromDiscriminatorValue,
         queryParametersMapper: AccessPackageResourceEnvironmentRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the accessPackageResourceEnvironment property of the microsoft.graph.accessPackageResource entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageResources: "accessPackageResources",
+} as const;
+/**
+ * Provides operations to manage the accessPackageResourceEnvironment property of the microsoft.graph.accessPackageResource entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConnectionInfo: "connectionInfo",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    IsDefaultEnvironment: "isDefaultEnvironment",
+    ModifiedBy: "modifiedBy",
+    ModifiedDateTime: "modifiedDateTime",
+    OriginId: "originId",
+    OriginSystem: "originSystem",
+    AccessPackageResources: "accessPackageResources",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

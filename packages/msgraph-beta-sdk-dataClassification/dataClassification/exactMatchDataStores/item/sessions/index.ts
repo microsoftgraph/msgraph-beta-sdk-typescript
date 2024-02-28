@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { ExactMatchSessionItemRequestBuilderNavigationMetadata, ExactMatchSessionItemRequestBuilderRequestsMetadata, type ExactMatchSessionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
  */
@@ -61,7 +64,7 @@ export interface SessionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface SessionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface SessionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,87 @@ export interface SessionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SessionsRequestBuilderUriTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    UploadAgent: "uploadAgent",
+} as const;
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CompletionDateTime: "completionDateTime",
+    CompletionDateTimeDesc: "completionDateTime desc",
+    CreationDateTime: "creationDateTime",
+    CreationDateTimeDesc: "creationDateTime desc",
+    ErrorEscaped: "error",
+    ErrorDesc: "error desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+    DataStoreId: "dataStoreId",
+    DataStoreIdDesc: "dataStoreId desc",
+    ProcessingCompletionDateTime: "processingCompletionDateTime",
+    ProcessingCompletionDateTimeDesc: "processingCompletionDateTime desc",
+    RemainingBlockCount: "remainingBlockCount",
+    RemainingBlockCountDesc: "remainingBlockCount desc",
+    RemainingJobCount: "remainingJobCount",
+    RemainingJobCountDesc: "remainingJobCount desc",
+    State: "state",
+    StateDesc: "state desc",
+    TotalBlockCount: "totalBlockCount",
+    TotalBlockCountDesc: "totalBlockCount desc",
+    TotalJobCount: "totalJobCount",
+    TotalJobCountDesc: "totalJobCount desc",
+    UploadCompletionDateTime: "uploadCompletionDateTime",
+    UploadCompletionDateTimeDesc: "uploadCompletionDateTime desc",
+    Checksum: "checksum",
+    ChecksumDesc: "checksum desc",
+    DataUploadURI: "dataUploadURI",
+    DataUploadURIDesc: "dataUploadURI desc",
+    Fields: "fields",
+    FieldsDesc: "fields desc",
+    FileName: "fileName",
+    FileNameDesc: "fileName desc",
+    RowsPerBlock: "rowsPerBlock",
+    RowsPerBlockDesc: "rowsPerBlock desc",
+    Salt: "salt",
+    SaltDesc: "salt desc",
+    UploadAgentId: "uploadAgentId",
+    UploadAgentIdDesc: "uploadAgentId desc",
+} as const;
+/**
+ * Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CompletionDateTime: "completionDateTime",
+    CreationDateTime: "creationDateTime",
+    ErrorEscaped: "error",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    StartDateTime: "startDateTime",
+    DataStoreId: "dataStoreId",
+    ProcessingCompletionDateTime: "processingCompletionDateTime",
+    RemainingBlockCount: "remainingBlockCount",
+    RemainingJobCount: "remainingJobCount",
+    State: "state",
+    TotalBlockCount: "totalBlockCount",
+    TotalJobCount: "totalJobCount",
+    UploadCompletionDateTime: "uploadCompletionDateTime",
+    Checksum: "checksum",
+    DataUploadURI: "dataUploadURI",
+    Fields: "fields",
+    FileName: "fileName",
+    RowsPerBlock: "rowsPerBlock",
+    Salt: "salt",
+    UploadAgentId: "uploadAgentId",
+    UploadAgent: "uploadAgent",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +211,7 @@ export const SessionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchSessionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SessionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +221,7 @@ export const SessionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchSessionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExactMatchSession,

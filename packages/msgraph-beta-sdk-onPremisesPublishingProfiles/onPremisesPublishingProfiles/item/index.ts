@@ -10,6 +10,8 @@ import { ConnectorsRequestBuilderNavigationMetadata, ConnectorsRequestBuilderReq
 import { PublishedResourcesRequestBuilderNavigationMetadata, PublishedResourcesRequestBuilderRequestsMetadata, type PublishedResourcesRequestBuilder } from './publishedResources/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of onPremisesPublishingProfile entities.
  */
@@ -82,16 +84,41 @@ export interface OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const OnPremisesPublishingProfileItemRequestBuilderUriTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of onPremisesPublishingProfile entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AgentGroups: "agentGroups",
+    Agents: "agents",
+    ConnectorGroups: "connectorGroups",
+    Connectors: "connectors",
+    PublishedResources: "publishedResources",
+} as const;
+/**
+ * Provides operations to manage the collection of onPremisesPublishingProfile entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    HybridAgentUpdaterConfiguration: "hybridAgentUpdaterConfiguration",
+    IsDefaultAccessEnabled: "isDefaultAccessEnabled",
+    IsEnabled: "isEnabled",
+    AgentGroups: "agentGroups",
+    Agents: "agents",
+    ConnectorGroups: "connectorGroups",
+    Connectors: "connectors",
+    PublishedResources: "publishedResources",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -134,7 +161,7 @@ export const OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OnPremisesPublishingProfileItemRequestBuilderUriTemplate,
@@ -142,7 +169,7 @@ export const OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnPremisesPublishingProfileFromDiscriminatorValue,
         queryParametersMapper: OnPremisesPublishingProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -152,7 +179,7 @@ export const OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnPremisesPublishingProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOnPremisesPublishingProfile,

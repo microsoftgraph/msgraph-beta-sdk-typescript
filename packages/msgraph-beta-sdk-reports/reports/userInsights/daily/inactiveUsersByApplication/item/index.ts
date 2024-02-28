@@ -14,12 +14,14 @@ export interface DailyInactiveUsersByApplicationMetricItemRequestBuilder extends
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DailyInactiveUsersByApplicationMetric>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      get(requestConfiguration?: RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<DailyInactiveUsersByApplicationMetric | undefined>;
     /**
      * Get inactiveUsersByApplication from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -30,12 +32,14 @@ export interface DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQuery
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +61,28 @@ export const DailyInactiveUsersByApplicationMetricItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDailyInactiveUsersByApplicationMetricFromDiscriminatorValue,
         queryParametersMapper: DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppId: "appId",
+    FactDate: "factDate",
+    Inactive30DayCount: "inactive30DayCount",
+    Inactive60DayCount: "inactive60DayCount",
+    Inactive90DayCount: "inactive90DayCount",
+    Inactive1DayCount: "inactive1DayCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

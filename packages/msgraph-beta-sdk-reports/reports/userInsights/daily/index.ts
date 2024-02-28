@@ -102,12 +102,14 @@ export interface DailyRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -170,7 +172,7 @@ export const DailyRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DailyRequestBuilderUriTemplate,
@@ -178,7 +180,7 @@ export const DailyRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDailyUserInsightMetricsRootFromDiscriminatorValue,
         queryParametersMapper: DailyRequestBuilderGetQueryParametersMapper,
     },
@@ -188,12 +190,42 @@ export const DailyRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDailyUserInsightMetricsRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDailyUserInsightMetricsRoot,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the daily property of the microsoft.graph.userInsightsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ActiveUsers: "activeUsers",
+    ActiveUsersBreakdown: "activeUsersBreakdown",
+    Authentications: "authentications",
+    InactiveUsers: "inactiveUsers",
+    InactiveUsersByApplication: "inactiveUsersByApplication",
+    MfaCompletions: "mfaCompletions",
+    SignUps: "signUps",
+    Summary: "summary",
+    UserCount: "userCount",
+} as const;
+/**
+ * Provides operations to manage the daily property of the microsoft.graph.userInsightsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActiveUsers: "activeUsers",
+    ActiveUsersBreakdown: "activeUsersBreakdown",
+    Authentications: "authentications",
+    InactiveUsers: "inactiveUsers",
+    InactiveUsersByApplication: "inactiveUsersByApplication",
+    MfaCompletions: "mfaCompletions",
+    SignUps: "signUps",
+    Summary: "summary",
+    UserCount: "userCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

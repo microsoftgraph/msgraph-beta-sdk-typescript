@@ -112,7 +112,7 @@ export const DeleteTiIndicatorsByExternalIdRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeleteTiIndicatorsByExternalIdPostResponseFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeleteTiIndicatorsByExternalIdPostRequestBody,

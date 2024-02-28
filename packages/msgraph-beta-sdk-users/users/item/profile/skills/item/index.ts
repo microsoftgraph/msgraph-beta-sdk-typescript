@@ -5,6 +5,8 @@ import { createSkillProficiencyFromDiscriminatorValue, serializeSkillProficiency
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the skills property of the microsoft.graph.profile entity.
  */
@@ -60,16 +62,42 @@ export interface SkillProficiencyItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const SkillProficiencyItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/profile/skills/{skillProficiency%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the skills property of the microsoft.graph.profile entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the skills property of the microsoft.graph.profile entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowedAudiences: "allowedAudiences",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Inference: "inference",
+    IsSearchable: "isSearchable",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Source: "source",
+    Categories: "categories",
+    CollaborationTags: "collaborationTags",
+    DisplayName: "displayName",
+    Proficiency: "proficiency",
+    ThumbnailUrl: "thumbnailUrl",
+    WebUrl: "webUrl",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -87,7 +115,7 @@ export const SkillProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SkillProficiencyItemRequestBuilderUriTemplate,
@@ -95,7 +123,7 @@ export const SkillProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSkillProficiencyFromDiscriminatorValue,
         queryParametersMapper: SkillProficiencyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +133,7 @@ export const SkillProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSkillProficiencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSkillProficiency,

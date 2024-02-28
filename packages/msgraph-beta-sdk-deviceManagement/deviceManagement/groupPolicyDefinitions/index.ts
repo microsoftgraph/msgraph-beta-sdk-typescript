@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { GroupPolicyDefinitionItemRequestBuilderNavigationMetadata, GroupPolicyDefinitionItemRequestBuilderRequestsMetadata, type GroupPolicyDefinitionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface GroupPolicyDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface GroupPolicyDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface GroupPolicyDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,71 @@ export interface GroupPolicyDefinitionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const GroupPolicyDefinitionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyDefinitions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CategoryPath: "categoryPath",
+    CategoryPathDesc: "categoryPath desc",
+    ClassType: "classType",
+    ClassTypeDesc: "classType desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ExplainText: "explainText",
+    ExplainTextDesc: "explainText desc",
+    GroupPolicyCategoryId: "groupPolicyCategoryId",
+    GroupPolicyCategoryIdDesc: "groupPolicyCategoryId desc",
+    HasRelatedDefinitions: "hasRelatedDefinitions",
+    HasRelatedDefinitionsDesc: "hasRelatedDefinitions desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    MinDeviceCspVersion: "minDeviceCspVersion",
+    MinDeviceCspVersionDesc: "minDeviceCspVersion desc",
+    MinUserCspVersion: "minUserCspVersion",
+    MinUserCspVersionDesc: "minUserCspVersion desc",
+    PolicyType: "policyType",
+    PolicyTypeDesc: "policyType desc",
+    SupportedOn: "supportedOn",
+    SupportedOnDesc: "supportedOn desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CategoryPath: "categoryPath",
+    ClassType: "classType",
+    DisplayName: "displayName",
+    ExplainText: "explainText",
+    GroupPolicyCategoryId: "groupPolicyCategoryId",
+    HasRelatedDefinitions: "hasRelatedDefinitions",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    MinDeviceCspVersion: "minDeviceCspVersion",
+    MinUserCspVersion: "minUserCspVersion",
+    PolicyType: "policyType",
+    SupportedOn: "supportedOn",
+    Version: "version",
+    Category: "category",
+    DefinitionFile: "definitionFile",
+    NextVersionDefinition: "nextVersionDefinition",
+    Presentations: "presentations",
+    PreviousVersionDefinition: "previousVersionDefinition",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +195,7 @@ export const GroupPolicyDefinitionsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyDefinitionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +205,7 @@ export const GroupPolicyDefinitionsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyDefinition,

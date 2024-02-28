@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { DeviceManagementConfigurationSettingDefinitionItemRequestBuilderRequestsMetadata, type DeviceManagementConfigurationSettingDefinitionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
  */
@@ -46,7 +49,7 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +57,7 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +65,7 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -76,6 +79,79 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SettingDefinitionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}/settings/{deviceManagementConfigurationSetting%2Did}/settingDefinitions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AccessTypes: "accessTypes",
+    AccessTypesDesc: "accessTypes desc",
+    Applicability: "applicability",
+    ApplicabilityDesc: "applicability desc",
+    BaseUri: "baseUri",
+    BaseUriDesc: "baseUri desc",
+    CategoryId: "categoryId",
+    CategoryIdDesc: "categoryId desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    HelpText: "helpText",
+    HelpTextDesc: "helpText desc",
+    InfoUrls: "infoUrls",
+    InfoUrlsDesc: "infoUrls desc",
+    Keywords: "keywords",
+    KeywordsDesc: "keywords desc",
+    Name: "name",
+    NameDesc: "name desc",
+    Occurrence: "occurrence",
+    OccurrenceDesc: "occurrence desc",
+    OffsetUri: "offsetUri",
+    OffsetUriDesc: "offsetUri desc",
+    ReferredSettingInformationList: "referredSettingInformationList",
+    ReferredSettingInformationListDesc: "referredSettingInformationList desc",
+    RootDefinitionId: "rootDefinitionId",
+    RootDefinitionIdDesc: "rootDefinitionId desc",
+    SettingUsage: "settingUsage",
+    SettingUsageDesc: "settingUsage desc",
+    UxBehavior: "uxBehavior",
+    UxBehaviorDesc: "uxBehavior desc",
+    Version: "version",
+    VersionDesc: "version desc",
+    Visibility: "visibility",
+    VisibilityDesc: "visibility desc",
+} as const;
+/**
+ * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccessTypes: "accessTypes",
+    Applicability: "applicability",
+    BaseUri: "baseUri",
+    CategoryId: "categoryId",
+    Description: "description",
+    DisplayName: "displayName",
+    HelpText: "helpText",
+    InfoUrls: "infoUrls",
+    Keywords: "keywords",
+    Name: "name",
+    Occurrence: "occurrence",
+    OffsetUri: "offsetUri",
+    ReferredSettingInformationList: "referredSettingInformationList",
+    RootDefinitionId: "rootDefinitionId",
+    SettingUsage: "settingUsage",
+    UxBehavior: "uxBehavior",
+    Version: "version",
+    Visibility: "visibility",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -111,7 +187,7 @@ export const SettingDefinitionsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationSettingDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SettingDefinitionsRequestBuilderGetQueryParametersMapper,
     },

@@ -62,12 +62,14 @@ export interface DeviceManagementConfigurationSettingItemRequestBuilderGetQueryP
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const DeviceManagementConfigurationSettingItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementConfigurationSettingItemRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const DeviceManagementConfigurationSettingItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationSettingFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementConfigurationSettingItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,27 @@ export const DeviceManagementConfigurationSettingItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementConfigurationSetting,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the settings property of the microsoft.graph.deviceManagementCompliancePolicy entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    SettingDefinitions: "settingDefinitions",
+} as const;
+/**
+ * Provides operations to manage the settings property of the microsoft.graph.deviceManagementCompliancePolicy entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    SettingInstance: "settingInstance",
+    SettingDefinitions: "settingDefinitions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

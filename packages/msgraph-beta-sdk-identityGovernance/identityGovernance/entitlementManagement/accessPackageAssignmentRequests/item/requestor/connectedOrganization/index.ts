@@ -32,12 +32,14 @@ export interface ConnectedOrganizationRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -59,10 +61,34 @@ export const ConnectedOrganizationRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectedOrganizationFromDiscriminatorValue,
         queryParametersMapper: ConnectedOrganizationRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the connectedOrganization property of the microsoft.graph.accessPackageSubject entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ExternalSponsors: "externalSponsors",
+    InternalSponsors: "internalSponsors",
+} as const;
+/**
+ * Provides operations to manage the connectedOrganization property of the microsoft.graph.accessPackageSubject entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    IdentitySources: "identitySources",
+    ModifiedBy: "modifiedBy",
+    ModifiedDateTime: "modifiedDateTime",
+    State: "state",
+    ExternalSponsors: "externalSponsors",
+    InternalSponsors: "internalSponsors",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

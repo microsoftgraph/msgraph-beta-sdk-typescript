@@ -9,6 +9,8 @@ import { DisconnectRequestBuilderRequestsMetadata, type DisconnectRequestBuilder
 import { HasActiveDeploymentsRequestBuilderRequestsMetadata, type HasActiveDeploymentsRequestBuilder } from './hasActiveDeployments/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the zebraFotaConnector property of the microsoft.graph.deviceManagement entity.
  */
@@ -77,16 +79,33 @@ export interface ZebraFotaConnectorRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ZebraFotaConnectorRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector{?%24expand,%24select}";
+/**
+ * Provides operations to manage the zebraFotaConnector property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the zebraFotaConnector property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    EnrollmentAuthorizationUrl: "enrollmentAuthorizationUrl",
+    EnrollmentToken: "enrollmentToken",
+    FotaAppsApproved: "fotaAppsApproved",
+    LastSyncDateTime: "lastSyncDateTime",
+    State: "state",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -121,7 +140,7 @@ export const ZebraFotaConnectorRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ZebraFotaConnectorRequestBuilderUriTemplate,
@@ -129,7 +148,7 @@ export const ZebraFotaConnectorRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createZebraFotaConnectorFromDiscriminatorValue,
         queryParametersMapper: ZebraFotaConnectorRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +158,7 @@ export const ZebraFotaConnectorRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createZebraFotaConnectorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeZebraFotaConnector,

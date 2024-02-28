@@ -13,6 +13,8 @@ import { SourceSystemsRequestBuilderNavigationMetadata, SourceSystemsRequestBuil
 import { type YearsRequestBuilder, YearsRequestBuilderNavigationMetadata, YearsRequestBuilderRequestsMetadata } from './years/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.
  */
@@ -70,16 +72,44 @@ export interface IndustryDataRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const IndustryDataRequestBuilderUriTemplate = "{+baseurl}/external/industryData{?%24expand,%24select}";
+/**
+ * Provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DataConnectors: "dataConnectors",
+    InboundFlows: "inboundFlows",
+    Operations: "operations",
+    ReferenceDefinitions: "referenceDefinitions",
+    RoleGroups: "roleGroups",
+    Runs: "runs",
+    SourceSystems: "sourceSystems",
+    Years: "years",
+} as const;
+/**
+ * Provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DataConnectors: "dataConnectors",
+    InboundFlows: "inboundFlows",
+    Operations: "operations",
+    ReferenceDefinitions: "referenceDefinitions",
+    RoleGroups: "roleGroups",
+    Runs: "runs",
+    SourceSystems: "sourceSystems",
+    Years: "years",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -134,7 +164,7 @@ export const IndustryDataRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIndustryDataRootFromDiscriminatorValue,
         queryParametersMapper: IndustryDataRequestBuilderGetQueryParametersMapper,
     },

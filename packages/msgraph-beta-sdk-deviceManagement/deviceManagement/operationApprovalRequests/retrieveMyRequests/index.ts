@@ -23,6 +23,9 @@ export function deserializeIntoRetrieveMyRequestsGetResponse(retrieveMyRequestsG
         "value": n => { retrieveMyRequestsGetResponse.value = n.getCollectionOfObjectValues<OperationApprovalRequest>(createOperationApprovalRequestFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 export interface RetrieveMyRequestsGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +61,7 @@ export interface RetrieveMyRequestsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +69,7 @@ export interface RetrieveMyRequestsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +77,7 @@ export interface RetrieveMyRequestsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -96,6 +99,55 @@ export function serializeRetrieveMyRequestsGetResponse(writer: SerializationWrit
  * Uri template for the request builder.
  */
 export const RetrieveMyRequestsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/operationApprovalRequests/retrieveMyRequests(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the retrieveMyRequests method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the retrieveMyRequests method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ApprovalJustification: "approvalJustification",
+    ApprovalJustificationDesc: "approvalJustification desc",
+    Approver: "approver",
+    ApproverDesc: "approver desc",
+    ExpirationDateTime: "expirationDateTime",
+    ExpirationDateTimeDesc: "expirationDateTime desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    OperationApprovalPolicies: "operationApprovalPolicies",
+    OperationApprovalPoliciesDesc: "operationApprovalPolicies desc",
+    RequestDateTime: "requestDateTime",
+    RequestDateTimeDesc: "requestDateTime desc",
+    RequestJustification: "requestJustification",
+    RequestJustificationDesc: "requestJustification desc",
+    Requestor: "requestor",
+    RequestorDesc: "requestor desc",
+    RequiredOperationApprovalPolicyTypes: "requiredOperationApprovalPolicyTypes",
+    RequiredOperationApprovalPolicyTypesDesc: "requiredOperationApprovalPolicyTypes desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to call the retrieveMyRequests method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApprovalJustification: "approvalJustification",
+    Approver: "approver",
+    ExpirationDateTime: "expirationDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    OperationApprovalPolicies: "operationApprovalPolicies",
+    RequestDateTime: "requestDateTime",
+    RequestJustification: "requestJustification",
+    Requestor: "requestor",
+    RequiredOperationApprovalPolicyTypes: "requiredOperationApprovalPolicyTypes",
+    Status: "status",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,7 +171,7 @@ export const RetrieveMyRequestsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRetrieveMyRequestsGetResponseFromDiscriminatorValue,
         queryParametersMapper: RetrieveMyRequestsRequestBuilderGetQueryParametersMapper,
     },

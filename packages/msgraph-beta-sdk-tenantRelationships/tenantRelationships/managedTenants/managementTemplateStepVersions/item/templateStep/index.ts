@@ -5,6 +5,8 @@ import { createManagementTemplateStepFromDiscriminatorValue, type ManagementTemp
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the templateStep property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
  */
@@ -30,16 +32,45 @@ export interface TemplateStepRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TemplateStepRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion%2Did}/templateStep{?%24expand,%24select}";
+/**
+ * Provides operations to manage the templateStep property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AcceptedVersion: "acceptedVersion",
+    ManagementTemplate: "managementTemplate",
+    Versions: "versions",
+} as const;
+/**
+ * Provides operations to manage the templateStep property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Category: "category",
+    CreatedByUserId: "createdByUserId",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    InformationLinks: "informationLinks",
+    LastActionByUserId: "lastActionByUserId",
+    LastActionDateTime: "lastActionDateTime",
+    PortalLink: "portalLink",
+    Priority: "priority",
+    UserImpact: "userImpact",
+    AcceptedVersion: "acceptedVersion",
+    ManagementTemplate: "managementTemplate",
+    Versions: "versions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +88,7 @@ export const TemplateStepRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepFromDiscriminatorValue,
         queryParametersMapper: TemplateStepRequestBuilderGetQueryParametersMapper,
     },

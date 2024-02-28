@@ -37,7 +37,7 @@ export const GetPolicySummaryWithPolicyIdRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConfigManagerPolicySummaryFromDiscriminatorValue,
     },
 };

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MonthlyInactiveUsersMetricItemRequestBuilderRequestsMetadata, type MonthlyInactiveUsersMetricItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the inactiveUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
  */
@@ -46,7 +49,7 @@ export interface InactiveUsersRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +57,7 @@ export interface InactiveUsersRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +65,7 @@ export interface InactiveUsersRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -76,6 +79,40 @@ export interface InactiveUsersRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const InactiveUsersRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/inactiveUsers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the inactiveUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the inactiveUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    FactDate: "factDate",
+    FactDateDesc: "factDate desc",
+    Inactive30DayCount: "inactive30DayCount",
+    Inactive30DayCountDesc: "inactive30DayCount desc",
+    Inactive60DayCount: "inactive60DayCount",
+    Inactive60DayCountDesc: "inactive60DayCount desc",
+    Inactive90DayCount: "inactive90DayCount",
+    Inactive90DayCountDesc: "inactive90DayCount desc",
+    InactiveCalendarMonthCount: "inactiveCalendarMonthCount",
+    InactiveCalendarMonthCountDesc: "inactiveCalendarMonthCount desc",
+} as const;
+/**
+ * Provides operations to manage the inactiveUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    FactDate: "factDate",
+    Inactive30DayCount: "inactive30DayCount",
+    Inactive60DayCount: "inactive60DayCount",
+    Inactive90DayCount: "inactive90DayCount",
+    InactiveCalendarMonthCount: "inactiveCalendarMonthCount",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -111,7 +148,7 @@ export const InactiveUsersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMonthlyInactiveUsersMetricCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: InactiveUsersRequestBuilderGetQueryParametersMapper,
     },

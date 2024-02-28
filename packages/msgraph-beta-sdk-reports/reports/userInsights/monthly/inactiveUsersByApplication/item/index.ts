@@ -5,6 +5,8 @@ import { createMonthlyInactiveUsersByApplicationMetricFromDiscriminatorValue, ty
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
  */
@@ -14,12 +16,14 @@ export interface MonthlyInactiveUsersByApplicationMetricItemRequestBuilder exten
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MonthlyInactiveUsersByApplicationMetric>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      get(requestConfiguration?: RequestConfiguration<MonthlyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<MonthlyInactiveUsersByApplicationMetric | undefined>;
     /**
      * Get inactiveUsersByApplication from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MonthlyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -30,16 +34,34 @@ export interface MonthlyInactiveUsersByApplicationMetricItemRequestBuilderGetQue
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const MonthlyInactiveUsersByApplicationMetricItemRequestBuilderUriTemplate = "{+baseurl}/reports/userInsights/monthly/inactiveUsersByApplication/{monthlyInactiveUsersByApplicationMetric%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppId: "appId",
+    FactDate: "factDate",
+    Inactive30DayCount: "inactive30DayCount",
+    Inactive60DayCount: "inactive60DayCount",
+    Inactive90DayCount: "inactive90DayCount",
+    InactiveCalendarMonthCount: "inactiveCalendarMonthCount",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +79,7 @@ export const MonthlyInactiveUsersByApplicationMetricItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMonthlyInactiveUsersByApplicationMetricFromDiscriminatorValue,
         queryParametersMapper: MonthlyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParametersMapper,
     },

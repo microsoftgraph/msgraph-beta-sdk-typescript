@@ -7,6 +7,8 @@ import { AlertRecordsRequestBuilderNavigationMetadata, AlertRecordsRequestBuilde
 import { AlertRulesRequestBuilderNavigationMetadata, AlertRulesRequestBuilderRequestsMetadata, type AlertRulesRequestBuilder } from './alertRules/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the monitoring property of the microsoft.graph.deviceManagement entity.
  */
@@ -67,16 +69,32 @@ export interface MonitoringRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const MonitoringRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/monitoring{?%24expand,%24select}";
+/**
+ * Provides operations to manage the monitoring property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AlertRecords: "alertRecords",
+    AlertRules: "alertRules",
+} as const;
+/**
+ * Provides operations to manage the monitoring property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertRecords: "alertRecords",
+    AlertRules: "alertRules",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -107,7 +125,7 @@ export const MonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MonitoringRequestBuilderUriTemplate,
@@ -115,7 +133,7 @@ export const MonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMonitoringFromDiscriminatorValue,
         queryParametersMapper: MonitoringRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +143,7 @@ export const MonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMonitoringFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMonitoring,

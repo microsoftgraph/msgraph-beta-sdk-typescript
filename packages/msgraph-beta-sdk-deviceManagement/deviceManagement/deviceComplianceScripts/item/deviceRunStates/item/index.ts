@@ -62,12 +62,14 @@ export interface DeviceComplianceScriptDeviceStateItemRequestBuilderGetQueryPara
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -97,7 +99,7 @@ export const DeviceComplianceScriptDeviceStateItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceComplianceScriptDeviceStateItemRequestBuilderUriTemplate,
@@ -105,7 +107,7 @@ export const DeviceComplianceScriptDeviceStateItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceScriptDeviceStateFromDiscriminatorValue,
         queryParametersMapper: DeviceComplianceScriptDeviceStateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,12 +117,32 @@ export const DeviceComplianceScriptDeviceStateItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceScriptDeviceStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceComplianceScriptDeviceState,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ManagedDevice: "managedDevice",
+} as const;
+/**
+ * Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DetectionState: "detectionState",
+    ExpectedStateUpdateDateTime: "expectedStateUpdateDateTime",
+    LastStateUpdateDateTime: "lastStateUpdateDateTime",
+    LastSyncDateTime: "lastSyncDateTime",
+    ScriptError: "scriptError",
+    ScriptOutput: "scriptOutput",
+    ManagedDevice: "managedDevice",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

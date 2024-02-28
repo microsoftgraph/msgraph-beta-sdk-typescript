@@ -5,6 +5,8 @@ import { createTeamsAppDefinitionFromDiscriminatorValue, type TeamsAppDefinition
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
  */
@@ -30,16 +32,47 @@ export interface TeamsAppDefinitionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TeamsAppDefinitionRequestBuilderUriTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/installedApps/{teamsAppInstallation%2Did}/teamsAppDefinition{?%24expand,%24select}";
+/**
+ * Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Bot: "bot",
+    ColorIcon: "colorIcon",
+    DashboardCards: "dashboardCards",
+    OutlineIcon: "outlineIcon",
+} as const;
+/**
+ * Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AllowedInstallationScopes: "allowedInstallationScopes",
+    Authorization: "authorization",
+    AzureADAppId: "azureADAppId",
+    CreatedBy: "createdBy",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PublishingState: "publishingState",
+    Shortdescription: "shortdescription",
+    TeamsAppId: "teamsAppId",
+    Version: "version",
+    Bot: "bot",
+    ColorIcon: "colorIcon",
+    DashboardCards: "dashboardCards",
+    OutlineIcon: "outlineIcon",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +90,7 @@ export const TeamsAppDefinitionRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAppDefinitionFromDiscriminatorValue,
         queryParametersMapper: TeamsAppDefinitionRequestBuilderGetQueryParametersMapper,
     },

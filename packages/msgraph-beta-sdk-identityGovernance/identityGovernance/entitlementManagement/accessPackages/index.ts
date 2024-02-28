@@ -75,7 +75,7 @@ export interface AccessPackagesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -83,7 +83,7 @@ export interface AccessPackagesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -91,7 +91,7 @@ export interface AccessPackagesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -101,6 +101,9 @@ export interface AccessPackagesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -147,7 +150,7 @@ export const AccessPackagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessPackagesRequestBuilderGetQueryParametersMapper,
     },
@@ -157,12 +160,70 @@ export const AccessPackagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackage,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageAssignmentPolicies: "accessPackageAssignmentPolicies",
+    AccessPackageCatalog: "accessPackageCatalog",
+    AccessPackageResourceRoleScopes: "accessPackageResourceRoleScopes",
+    AccessPackagesIncompatibleWith: "accessPackagesIncompatibleWith",
+    IncompatibleAccessPackages: "incompatibleAccessPackages",
+    IncompatibleGroups: "incompatibleGroups",
+} as const;
+/**
+ * Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CatalogId: "catalogId",
+    CatalogIdDesc: "catalogId desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsHidden: "isHidden",
+    IsHiddenDesc: "isHidden desc",
+    IsRoleScopesVisible: "isRoleScopesVisible",
+    IsRoleScopesVisibleDesc: "isRoleScopesVisible desc",
+    ModifiedBy: "modifiedBy",
+    ModifiedByDesc: "modifiedBy desc",
+    ModifiedDateTime: "modifiedDateTime",
+    ModifiedDateTimeDesc: "modifiedDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CatalogId: "catalogId",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    IsHidden: "isHidden",
+    IsRoleScopesVisible: "isRoleScopesVisible",
+    ModifiedBy: "modifiedBy",
+    ModifiedDateTime: "modifiedDateTime",
+    AccessPackageAssignmentPolicies: "accessPackageAssignmentPolicies",
+    AccessPackageCatalog: "accessPackageCatalog",
+    AccessPackageResourceRoleScopes: "accessPackageResourceRoleScopes",
+    AccessPackagesIncompatibleWith: "accessPackagesIncompatibleWith",
+    IncompatibleAccessPackages: "incompatibleAccessPackages",
+    IncompatibleGroups: "incompatibleGroups",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

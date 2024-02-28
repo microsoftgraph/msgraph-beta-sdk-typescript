@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { SalesQuoteLineItemRequestBuilderNavigationMetadata, SalesQuoteLineItemRequestBuilderRequestsMetadata, type SalesQuoteLineItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
  */
@@ -46,7 +49,7 @@ export interface SalesQuoteLinesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -54,7 +57,7 @@ export interface SalesQuoteLinesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -62,7 +65,7 @@ export interface SalesQuoteLinesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -76,6 +79,89 @@ export interface SalesQuoteLinesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SalesQuoteLinesRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Account: "account",
+    Item: "item",
+} as const;
+/**
+ * Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AccountId: "accountId",
+    AccountIdDesc: "accountId desc",
+    AmountExcludingTax: "amountExcludingTax",
+    AmountExcludingTaxDesc: "amountExcludingTax desc",
+    AmountIncludingTax: "amountIncludingTax",
+    AmountIncludingTaxDesc: "amountIncludingTax desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DiscountAmount: "discountAmount",
+    DiscountAmountDesc: "discountAmount desc",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DiscountAppliedBeforeTaxDesc: "discountAppliedBeforeTax desc",
+    DiscountPercent: "discountPercent",
+    DiscountPercentDesc: "discountPercent desc",
+    DocumentId: "documentId",
+    DocumentIdDesc: "documentId desc",
+    ItemId: "itemId",
+    ItemIdDesc: "itemId desc",
+    LineType: "lineType",
+    LineTypeDesc: "lineType desc",
+    NetAmount: "netAmount",
+    NetAmountDesc: "netAmount desc",
+    NetAmountIncludingTax: "netAmountIncludingTax",
+    NetAmountIncludingTaxDesc: "netAmountIncludingTax desc",
+    NetTaxAmount: "netTaxAmount",
+    NetTaxAmountDesc: "netTaxAmount desc",
+    Quantity: "quantity",
+    QuantityDesc: "quantity desc",
+    Sequence: "sequence",
+    SequenceDesc: "sequence desc",
+    TaxCode: "taxCode",
+    TaxCodeDesc: "taxCode desc",
+    TaxPercent: "taxPercent",
+    TaxPercentDesc: "taxPercent desc",
+    TotalTaxAmount: "totalTaxAmount",
+    TotalTaxAmountDesc: "totalTaxAmount desc",
+    UnitOfMeasureId: "unitOfMeasureId",
+    UnitOfMeasureIdDesc: "unitOfMeasureId desc",
+    UnitPrice: "unitPrice",
+    UnitPriceDesc: "unitPrice desc",
+} as const;
+/**
+ * Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccountId: "accountId",
+    AmountExcludingTax: "amountExcludingTax",
+    AmountIncludingTax: "amountIncludingTax",
+    Description: "description",
+    DiscountAmount: "discountAmount",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DiscountPercent: "discountPercent",
+    DocumentId: "documentId",
+    ItemId: "itemId",
+    LineType: "lineType",
+    NetAmount: "netAmount",
+    NetAmountIncludingTax: "netAmountIncludingTax",
+    NetTaxAmount: "netTaxAmount",
+    Quantity: "quantity",
+    Sequence: "sequence",
+    TaxCode: "taxCode",
+    TaxPercent: "taxPercent",
+    TotalTaxAmount: "totalTaxAmount",
+    UnitOfMeasureId: "unitOfMeasureId",
+    UnitPrice: "unitPrice",
+    Account: "account",
+    Item: "item",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -112,7 +198,7 @@ export const SalesQuoteLinesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesQuoteLineCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SalesQuoteLinesRequestBuilderGetQueryParametersMapper,
     },

@@ -7,6 +7,7 @@ import { AttachmentsRequestBuilderNavigationMetadata, AttachmentsRequestBuilderR
 import { CompleteRequestBuilderRequestsMetadata, type CompleteRequestBuilder } from './complete/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
  */
@@ -75,12 +76,40 @@ export interface OutlookTaskItemRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const OutlookTaskItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}{?%24select}";
+/**
+ * Provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Categories: "categories",
+    ChangeKey: "changeKey",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    AssignedTo: "assignedTo",
+    Body: "body",
+    CompletedDateTime: "completedDateTime",
+    DueDateTime: "dueDateTime",
+    HasAttachments: "hasAttachments",
+    Importance: "importance",
+    IsReminderOn: "isReminderOn",
+    Owner: "owner",
+    ParentFolderId: "parentFolderId",
+    Recurrence: "recurrence",
+    ReminderDateTime: "reminderDateTime",
+    Sensitivity: "sensitivity",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    Subject: "subject",
+    Attachments: "attachments",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -109,7 +138,7 @@ export const OutlookTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OutlookTaskItemRequestBuilderUriTemplate,
@@ -117,7 +146,7 @@ export const OutlookTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskFromDiscriminatorValue,
         queryParametersMapper: OutlookTaskItemRequestBuilderGetQueryParametersMapper,
     },
@@ -127,7 +156,7 @@ export const OutlookTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOutlookTask,

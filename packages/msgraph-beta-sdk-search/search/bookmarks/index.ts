@@ -63,7 +63,7 @@ export interface BookmarksRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +71,7 @@ export interface BookmarksRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +79,7 @@ export interface BookmarksRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -89,6 +89,9 @@ export interface BookmarksRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const BookmarksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookmarkCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BookmarksRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,79 @@ export const BookmarksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookmarkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookmark,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    WebUrl: "webUrl",
+    WebUrlDesc: "webUrl desc",
+    AvailabilityEndDateTime: "availabilityEndDateTime",
+    AvailabilityEndDateTimeDesc: "availabilityEndDateTime desc",
+    AvailabilityStartDateTime: "availabilityStartDateTime",
+    AvailabilityStartDateTimeDesc: "availabilityStartDateTime desc",
+    Categories: "categories",
+    CategoriesDesc: "categories desc",
+    GroupIds: "groupIds",
+    GroupIdsDesc: "groupIds desc",
+    IsSuggested: "isSuggested",
+    IsSuggestedDesc: "isSuggested desc",
+    Keywords: "keywords",
+    KeywordsDesc: "keywords desc",
+    LanguageTags: "languageTags",
+    LanguageTagsDesc: "languageTags desc",
+    Platforms: "platforms",
+    PlatformsDesc: "platforms desc",
+    PowerAppIds: "powerAppIds",
+    PowerAppIdsDesc: "powerAppIds desc",
+    State: "state",
+    StateDesc: "state desc",
+    TargetedVariations: "targetedVariations",
+    TargetedVariationsDesc: "targetedVariations desc",
+} as const;
+/**
+ * Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    WebUrl: "webUrl",
+    AvailabilityEndDateTime: "availabilityEndDateTime",
+    AvailabilityStartDateTime: "availabilityStartDateTime",
+    Categories: "categories",
+    GroupIds: "groupIds",
+    IsSuggested: "isSuggested",
+    Keywords: "keywords",
+    LanguageTags: "languageTags",
+    Platforms: "platforms",
+    PowerAppIds: "powerAppIds",
+    State: "state",
+    TargetedVariations: "targetedVariations",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

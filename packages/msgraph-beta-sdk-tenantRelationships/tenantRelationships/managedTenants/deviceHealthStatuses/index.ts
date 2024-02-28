@@ -61,7 +61,7 @@ export interface DeviceHealthStatusesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DeviceHealthStatusesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DeviceHealthStatusesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DeviceHealthStatusesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const DeviceHealthStatusesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthStatusCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceHealthStatusesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,76 @@ export const DeviceHealthStatusesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceHealthStatus,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceHealthStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceHealthStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    BlueScreenCount: "blueScreenCount",
+    BlueScreenCountDesc: "blueScreenCount desc",
+    BootTotalDurationInSeconds: "bootTotalDurationInSeconds",
+    BootTotalDurationInSecondsDesc: "bootTotalDurationInSeconds desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceMake: "deviceMake",
+    DeviceMakeDesc: "deviceMake desc",
+    DeviceModel: "deviceModel",
+    DeviceModelDesc: "deviceModel desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    HealthStatus: "healthStatus",
+    HealthStatusDesc: "healthStatus desc",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    LastUpdatedDateTimeDesc: "lastUpdatedDateTime desc",
+    OsVersion: "osVersion",
+    OsVersionDesc: "osVersion desc",
+    PrimaryDiskType: "primaryDiskType",
+    PrimaryDiskTypeDesc: "primaryDiskType desc",
+    RestartCount: "restartCount",
+    RestartCountDesc: "restartCount desc",
+    StartupPerformanceScore: "startupPerformanceScore",
+    StartupPerformanceScoreDesc: "startupPerformanceScore desc",
+    TenantDisplayName: "tenantDisplayName",
+    TenantDisplayNameDesc: "tenantDisplayName desc",
+    TenantId: "tenantId",
+    TenantIdDesc: "tenantId desc",
+    TopProcesses: "topProcesses",
+    TopProcessesDesc: "topProcesses desc",
+} as const;
+/**
+ * Provides operations to manage the deviceHealthStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BlueScreenCount: "blueScreenCount",
+    BootTotalDurationInSeconds: "bootTotalDurationInSeconds",
+    DeviceId: "deviceId",
+    DeviceMake: "deviceMake",
+    DeviceModel: "deviceModel",
+    DeviceName: "deviceName",
+    HealthStatus: "healthStatus",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    OsVersion: "osVersion",
+    PrimaryDiskType: "primaryDiskType",
+    RestartCount: "restartCount",
+    StartupPerformanceScore: "startupPerformanceScore",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    TopProcesses: "topProcesses",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

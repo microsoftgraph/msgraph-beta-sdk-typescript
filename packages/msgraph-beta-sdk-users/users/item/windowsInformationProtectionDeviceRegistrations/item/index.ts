@@ -5,6 +5,8 @@ import { createWindowsInformationProtectionDeviceRegistrationFromDiscriminatorVa
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
  */
@@ -30,16 +32,34 @@ export interface WindowsInformationProtectionDeviceRegistrationItemRequestBuilde
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeviceMacAddress: "deviceMacAddress",
+    DeviceName: "deviceName",
+    DeviceRegistrationId: "deviceRegistrationId",
+    DeviceType: "deviceType",
+    LastCheckInDateTime: "lastCheckInDateTime",
+    UserId: "userId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +77,7 @@ export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParametersMapper,
     },

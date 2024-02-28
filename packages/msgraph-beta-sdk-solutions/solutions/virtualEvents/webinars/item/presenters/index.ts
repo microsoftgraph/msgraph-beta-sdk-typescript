@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type VirtualEventPresenterItemRequestBuilder, VirtualEventPresenterItemRequestBuilderNavigationMetadata, VirtualEventPresenterItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.
  */
@@ -61,7 +64,7 @@ export interface PresentersRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface PresentersRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface PresentersRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,36 @@ export interface PresentersRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PresentersRequestBuilderUriTemplate = "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/presenters{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Sessions: "sessions",
+} as const;
+/**
+ * Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Email: "email",
+    EmailDesc: "email desc",
+    Identity: "identity",
+    IdentityDesc: "identity desc",
+    PresenterDetails: "presenterDetails",
+    PresenterDetailsDesc: "presenterDetails desc",
+} as const;
+/**
+ * Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Email: "email",
+    Identity: "identity",
+    PresenterDetails: "presenterDetails",
+    Sessions: "sessions",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +160,7 @@ export const PresentersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventPresenterCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PresentersRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +170,7 @@ export const PresentersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventPresenterFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVirtualEventPresenter,

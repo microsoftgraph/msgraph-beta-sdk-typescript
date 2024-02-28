@@ -104,7 +104,7 @@ export const GetManagedAppBlockedUsersRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetManagedAppBlockedUsersRequestBuilderGetQueryParametersMapper,
     },

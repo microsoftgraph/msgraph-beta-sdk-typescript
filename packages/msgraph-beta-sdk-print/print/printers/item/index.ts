@@ -13,6 +13,8 @@ import { SharesRequestBuilderNavigationMetadata, SharesRequestBuilderRequestsMet
 import { TaskTriggersRequestBuilderNavigationMetadata, TaskTriggersRequestBuilderRequestsMetadata, type TaskTriggersRequestBuilder } from './taskTriggers/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the printers property of the microsoft.graph.print entity.
  */
@@ -100,16 +102,52 @@ export interface PrinterItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrinterItemRequestBuilderUriTemplate = "{+baseurl}/print/printers/{printer%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the printers property of the microsoft.graph.print entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Jobs: "jobs",
+    Connectors: "connectors",
+    Share: "share",
+    Shares: "shares",
+    TaskTriggers: "taskTriggers",
+} as const;
+/**
+ * Provides operations to manage the printers property of the microsoft.graph.print entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Capabilities: "capabilities",
+    Defaults: "defaults",
+    DisplayName: "displayName",
+    IsAcceptingJobs: "isAcceptingJobs",
+    Location: "location",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    Name: "name",
+    Status: "status",
+    AcceptingJobs: "acceptingJobs",
+    HasPhysicalDevice: "hasPhysicalDevice",
+    IsShared: "isShared",
+    LastSeenDateTime: "lastSeenDateTime",
+    RegisteredDateTime: "registeredDateTime",
+    Jobs: "jobs",
+    Connectors: "connectors",
+    Share: "share",
+    Shares: "shares",
+    TaskTriggers: "taskTriggers",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -160,7 +198,7 @@ export const PrinterItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrinterItemRequestBuilderUriTemplate,
@@ -168,7 +206,7 @@ export const PrinterItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrinterFromDiscriminatorValue,
         queryParametersMapper: PrinterItemRequestBuilderGetQueryParametersMapper,
     },
@@ -178,7 +216,7 @@ export const PrinterItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrinterFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrinter,

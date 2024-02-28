@@ -159,12 +159,14 @@ export interface CallItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -255,7 +257,7 @@ export const CallItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CallItemRequestBuilderUriTemplate,
@@ -263,7 +265,7 @@ export const CallItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallFromDiscriminatorValue,
         queryParametersMapper: CallItemRequestBuilderGetQueryParametersMapper,
     },
@@ -273,12 +275,58 @@ export const CallItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCall,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AudioRoutingGroups: "audioRoutingGroups",
+    ContentSharingSessions: "contentSharingSessions",
+    Operations: "operations",
+    Participants: "participants",
+} as const;
+/**
+ * Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActiveModalities: "activeModalities",
+    AnsweredBy: "answeredBy",
+    CallbackUri: "callbackUri",
+    CallChainId: "callChainId",
+    CallOptions: "callOptions",
+    CallRoutes: "callRoutes",
+    ChatInfo: "chatInfo",
+    Direction: "direction",
+    IncomingContext: "incomingContext",
+    MediaConfig: "mediaConfig",
+    MediaState: "mediaState",
+    MeetingCapability: "meetingCapability",
+    MeetingInfo: "meetingInfo",
+    MyParticipantId: "myParticipantId",
+    RequestedModalities: "requestedModalities",
+    ResultInfo: "resultInfo",
+    RingingTimeoutInSeconds: "ringingTimeoutInSeconds",
+    RoutingPolicies: "routingPolicies",
+    Source: "source",
+    State: "state",
+    Subject: "subject",
+    Targets: "targets",
+    TenantId: "tenantId",
+    TerminationReason: "terminationReason",
+    ToneInfo: "toneInfo",
+    Transcription: "transcription",
+    AudioRoutingGroups: "audioRoutingGroups",
+    ContentSharingSessions: "contentSharingSessions",
+    Operations: "operations",
+    Participants: "participants",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

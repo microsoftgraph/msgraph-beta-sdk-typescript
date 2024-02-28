@@ -7,6 +7,8 @@ import { KeySetsRequestBuilderNavigationMetadata, KeySetsRequestBuilderRequestsM
 import { PoliciesRequestBuilderNavigationMetadata, PoliciesRequestBuilderRequestsMetadata, type PoliciesRequestBuilder } from './policies/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the trustFramework singleton.
  */
@@ -55,16 +57,31 @@ export interface TrustFrameworkRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TrustFrameworkRequestBuilderUriTemplate = "{+baseurl}/trustFramework{?%24expand,%24select}";
+/**
+ * Provides operations to manage the trustFramework singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    KeySets: "keySets",
+    Policies: "policies",
+} as const;
+/**
+ * Provides operations to manage the trustFramework singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    KeySets: "keySets",
+    Policies: "policies",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -95,7 +112,7 @@ export const TrustFrameworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkFromDiscriminatorValue,
         queryParametersMapper: TrustFrameworkRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +122,7 @@ export const TrustFrameworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrustFramework,

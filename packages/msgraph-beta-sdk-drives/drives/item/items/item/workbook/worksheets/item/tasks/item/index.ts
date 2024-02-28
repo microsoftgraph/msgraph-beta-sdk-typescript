@@ -7,6 +7,8 @@ import { ChangesRequestBuilderNavigationMetadata, ChangesRequestBuilderRequestsM
 import { CommentRequestBuilderNavigationMetadata, CommentRequestBuilderRequestsMetadata, type CommentRequestBuilder } from './comment/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tasks property of the microsoft.graph.workbookWorksheet entity.
  */
@@ -67,16 +69,41 @@ export interface WorkbookDocumentTaskItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WorkbookDocumentTaskItemRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tasks/{workbookDocumentTask%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the tasks property of the microsoft.graph.workbookWorksheet entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Changes: "changes",
+    Comment: "comment",
+} as const;
+/**
+ * Provides operations to manage the tasks property of the microsoft.graph.workbookWorksheet entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Assignees: "assignees",
+    CompletedBy: "completedBy",
+    CompletedDateTime: "completedDateTime",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    PercentComplete: "percentComplete",
+    Priority: "priority",
+    StartAndDueDateTime: "startAndDueDateTime",
+    Title: "title",
+    Changes: "changes",
+    Comment: "comment",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -107,7 +134,7 @@ export const WorkbookDocumentTaskItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WorkbookDocumentTaskItemRequestBuilderUriTemplate,
@@ -115,7 +142,7 @@ export const WorkbookDocumentTaskItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookDocumentTaskFromDiscriminatorValue,
         queryParametersMapper: WorkbookDocumentTaskItemRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +152,7 @@ export const WorkbookDocumentTaskItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookDocumentTaskFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWorkbookDocumentTask,

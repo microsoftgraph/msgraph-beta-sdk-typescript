@@ -47,7 +47,7 @@ export interface GeneralLedgerEntriesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +55,7 @@ export interface GeneralLedgerEntriesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +63,7 @@ export interface GeneralLedgerEntriesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +73,9 @@ export interface GeneralLedgerEntriesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -113,10 +116,58 @@ export const GeneralLedgerEntriesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGeneralLedgerEntryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GeneralLedgerEntriesRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Account: "account",
+} as const;
+/**
+ * Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    AccountId: "accountId",
+    AccountIdDesc: "accountId desc",
+    AccountNumber: "accountNumber",
+    AccountNumberDesc: "accountNumber desc",
+    CreditAmount: "creditAmount",
+    CreditAmountDesc: "creditAmount desc",
+    DebitAmount: "debitAmount",
+    DebitAmountDesc: "debitAmount desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DocumentNumber: "documentNumber",
+    DocumentNumberDesc: "documentNumber desc",
+    DocumentType: "documentType",
+    DocumentTypeDesc: "documentType desc",
+    Id: "id",
+    IdDesc: "id desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    PostingDate: "postingDate",
+    PostingDateDesc: "postingDate desc",
+} as const;
+/**
+ * Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AccountId: "accountId",
+    AccountNumber: "accountNumber",
+    CreditAmount: "creditAmount",
+    DebitAmount: "debitAmount",
+    Description: "description",
+    DocumentNumber: "documentNumber",
+    DocumentType: "documentType",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    PostingDate: "postingDate",
+    Account: "account",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

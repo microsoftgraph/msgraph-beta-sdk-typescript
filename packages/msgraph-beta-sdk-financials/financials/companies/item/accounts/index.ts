@@ -47,7 +47,7 @@ export interface AccountsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +55,7 @@ export interface AccountsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +63,7 @@ export interface AccountsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +73,9 @@ export interface AccountsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -112,10 +115,47 @@ export const AccountsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccountCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccountsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the accounts property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the accounts property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Blocked: "blocked",
+    BlockedDesc: "blocked desc",
+    Category: "category",
+    CategoryDesc: "category desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Id: "id",
+    IdDesc: "id desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Number: "number",
+    NumberDesc: "number desc",
+    SubCategory: "subCategory",
+    SubCategoryDesc: "subCategory desc",
+} as const;
+/**
+ * Provides operations to manage the accounts property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Blocked: "blocked",
+    Category: "category",
+    DisplayName: "displayName",
+    Id: "id",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    SubCategory: "subCategory",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

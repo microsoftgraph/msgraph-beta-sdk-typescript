@@ -47,7 +47,7 @@ export interface AuthenticationsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +55,7 @@ export interface AuthenticationsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +63,7 @@ export interface AuthenticationsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +73,9 @@ export interface AuthenticationsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -112,10 +115,47 @@ export const AuthenticationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthenticationsMetricCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AuthenticationsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the authentications property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the authentications property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Appid: "appid",
+    AppidDesc: "appid desc",
+    AttemptsCount: "attemptsCount",
+    AttemptsCountDesc: "attemptsCount desc",
+    Country: "country",
+    CountryDesc: "country desc",
+    FactDate: "factDate",
+    FactDateDesc: "factDate desc",
+    Os: "os",
+    OsDesc: "os desc",
+    SuccessCount: "successCount",
+    SuccessCountDesc: "successCount desc",
+} as const;
+/**
+ * Provides operations to manage the authentications property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Appid: "appid",
+    AttemptsCount: "attemptsCount",
+    Country: "country",
+    FactDate: "factDate",
+    Os: "os",
+    SuccessCount: "successCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

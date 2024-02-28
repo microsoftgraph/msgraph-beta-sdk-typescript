@@ -57,12 +57,14 @@ export interface DeviceManagementCachedReportConfigurationItemRequestBuilderGetQ
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementCachedReportConfigurationItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementCachedReportConfigurationFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,32 @@ export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementCachedReportConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementCachedReportConfiguration,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExpirationDateTime: "expirationDateTime",
+    Filter: "filter",
+    LastRefreshDateTime: "lastRefreshDateTime",
+    Metadata: "metadata",
+    OrderBy: "orderBy",
+    ReportName: "reportName",
+    Select: "select",
+    Status: "status",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

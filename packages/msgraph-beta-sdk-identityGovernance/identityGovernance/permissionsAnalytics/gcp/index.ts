@@ -67,12 +67,14 @@ export interface GcpRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -107,7 +109,7 @@ export const GcpRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GcpRequestBuilderUriTemplate,
@@ -115,7 +117,7 @@ export const GcpRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsAnalyticsFromDiscriminatorValue,
         queryParametersMapper: GcpRequestBuilderGetQueryParametersMapper,
     },
@@ -125,12 +127,28 @@ export const GcpRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsAnalyticsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePermissionsAnalytics,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the gcp property of the microsoft.graph.permissionsAnalyticsAggregation entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Findings: "findings",
+    PermissionsCreepIndexDistributions: "permissionsCreepIndexDistributions",
+} as const;
+/**
+ * Provides operations to manage the gcp property of the microsoft.graph.permissionsAnalyticsAggregation entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Findings: "findings",
+    PermissionsCreepIndexDistributions: "permissionsCreepIndexDistributions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

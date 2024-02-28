@@ -84,12 +84,14 @@ export interface BranchSiteItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +130,7 @@ export const BranchSiteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BranchSiteItemRequestBuilderUriTemplate,
@@ -136,7 +138,7 @@ export const BranchSiteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBranchSiteFromDiscriminatorValue,
         queryParametersMapper: BranchSiteItemRequestBuilderGetQueryParametersMapper,
     },
@@ -146,12 +148,37 @@ export const BranchSiteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBranchSiteFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBranchSite,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ConnectivityConfiguration: "connectivityConfiguration",
+    DeviceLinks: "deviceLinks",
+    ForwardingProfiles: "forwardingProfiles",
+} as const;
+/**
+ * Provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BandwidthCapacity: "bandwidthCapacity",
+    ConnectivityState: "connectivityState",
+    Country: "country",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Name: "name",
+    Region: "region",
+    Version: "version",
+    ConnectivityConfiguration: "connectivityConfiguration",
+    DeviceLinks: "deviceLinks",
+    ForwardingProfiles: "forwardingProfiles",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

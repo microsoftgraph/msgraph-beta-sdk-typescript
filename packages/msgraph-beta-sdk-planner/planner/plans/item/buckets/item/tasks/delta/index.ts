@@ -48,7 +48,7 @@ export interface DeltaRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -56,7 +56,7 @@ export interface DeltaRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -64,7 +64,7 @@ export interface DeltaRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +84,9 @@ export function deserializeIntoDeltaGetResponse(deltaGetResponse: Partial<DeltaG
         "value": n => { deltaGetResponse.value = n.getCollectionOfObjectValues<PlannerTask>(createPlannerTaskFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -119,10 +122,121 @@ export const DeltaRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeltaGetResponseFromDiscriminatorValue,
         queryParametersMapper: DeltaRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the delta method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AssignedToTaskBoardFormat: "assignedToTaskBoardFormat",
+    BucketTaskBoardFormat: "bucketTaskBoardFormat",
+    Details: "details",
+    ProgressTaskBoardFormat: "progressTaskBoardFormat",
+} as const;
+/**
+ * Provides operations to call the delta method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ActiveChecklistItemCount: "activeChecklistItemCount",
+    ActiveChecklistItemCountDesc: "activeChecklistItemCount desc",
+    AppliedCategories: "appliedCategories",
+    AppliedCategoriesDesc: "appliedCategories desc",
+    ArchivalInfo: "archivalInfo",
+    ArchivalInfoDesc: "archivalInfo desc",
+    AssigneePriority: "assigneePriority",
+    AssigneePriorityDesc: "assigneePriority desc",
+    Assignments: "assignments",
+    AssignmentsDesc: "assignments desc",
+    BucketId: "bucketId",
+    BucketIdDesc: "bucketId desc",
+    ChecklistItemCount: "checklistItemCount",
+    ChecklistItemCountDesc: "checklistItemCount desc",
+    CompletedBy: "completedBy",
+    CompletedByDesc: "completedBy desc",
+    CompletedDateTime: "completedDateTime",
+    CompletedDateTimeDesc: "completedDateTime desc",
+    ConversationThreadId: "conversationThreadId",
+    ConversationThreadIdDesc: "conversationThreadId desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CreationSource: "creationSource",
+    CreationSourceDesc: "creationSource desc",
+    DueDateTime: "dueDateTime",
+    DueDateTimeDesc: "dueDateTime desc",
+    HasDescription: "hasDescription",
+    HasDescriptionDesc: "hasDescription desc",
+    IsArchived: "isArchived",
+    IsArchivedDesc: "isArchived desc",
+    IsOnMyDay: "isOnMyDay",
+    IsOnMyDayDesc: "isOnMyDay desc",
+    IsOnMyDayLastModifiedDate: "isOnMyDayLastModifiedDate",
+    IsOnMyDayLastModifiedDateDesc: "isOnMyDayLastModifiedDate desc",
+    OrderHint: "orderHint",
+    OrderHintDesc: "orderHint desc",
+    PercentComplete: "percentComplete",
+    PercentCompleteDesc: "percentComplete desc",
+    PlanId: "planId",
+    PlanIdDesc: "planId desc",
+    PreviewType: "previewType",
+    PreviewTypeDesc: "previewType desc",
+    Priority: "priority",
+    PriorityDesc: "priority desc",
+    Recurrence: "recurrence",
+    RecurrenceDesc: "recurrence desc",
+    ReferenceCount: "referenceCount",
+    ReferenceCountDesc: "referenceCount desc",
+    SpecifiedCompletionRequirements: "specifiedCompletionRequirements",
+    SpecifiedCompletionRequirementsDesc: "specifiedCompletionRequirements desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+    Title: "title",
+    TitleDesc: "title desc",
+} as const;
+/**
+ * Provides operations to call the delta method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActiveChecklistItemCount: "activeChecklistItemCount",
+    AppliedCategories: "appliedCategories",
+    ArchivalInfo: "archivalInfo",
+    AssigneePriority: "assigneePriority",
+    Assignments: "assignments",
+    BucketId: "bucketId",
+    ChecklistItemCount: "checklistItemCount",
+    CompletedBy: "completedBy",
+    CompletedDateTime: "completedDateTime",
+    ConversationThreadId: "conversationThreadId",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    CreationSource: "creationSource",
+    DueDateTime: "dueDateTime",
+    HasDescription: "hasDescription",
+    IsArchived: "isArchived",
+    IsOnMyDay: "isOnMyDay",
+    IsOnMyDayLastModifiedDate: "isOnMyDayLastModifiedDate",
+    OrderHint: "orderHint",
+    PercentComplete: "percentComplete",
+    PlanId: "planId",
+    PreviewType: "previewType",
+    Priority: "priority",
+    Recurrence: "recurrence",
+    ReferenceCount: "referenceCount",
+    SpecifiedCompletionRequirements: "specifiedCompletionRequirements",
+    StartDateTime: "startDateTime",
+    Title: "title",
+    AssignedToTaskBoardFormat: "assignedToTaskBoardFormat",
+    BucketTaskBoardFormat: "bucketTaskBoardFormat",
+    Details: "details",
+    ProgressTaskBoardFormat: "progressTaskBoardFormat",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder, UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,61 @@ export interface UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthOsPerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ActiveDevices: "activeDevices",
+    ActiveDevicesDesc: "activeDevices desc",
+    AverageBatteryAgeInDays: "averageBatteryAgeInDays",
+    AverageBatteryAgeInDaysDesc: "averageBatteryAgeInDays desc",
+    AverageEstimatedRuntimeInMinutes: "averageEstimatedRuntimeInMinutes",
+    AverageEstimatedRuntimeInMinutesDesc: "averageEstimatedRuntimeInMinutes desc",
+    AverageMaxCapacityPercentage: "averageMaxCapacityPercentage",
+    AverageMaxCapacityPercentageDesc: "averageMaxCapacityPercentage desc",
+    MeanFullBatteryDrainCount: "meanFullBatteryDrainCount",
+    MeanFullBatteryDrainCountDesc: "meanFullBatteryDrainCount desc",
+    MedianEstimatedRuntimeInMinutes: "medianEstimatedRuntimeInMinutes",
+    MedianEstimatedRuntimeInMinutesDesc: "medianEstimatedRuntimeInMinutes desc",
+    MedianFullBatteryDrainCount: "medianFullBatteryDrainCount",
+    MedianFullBatteryDrainCountDesc: "medianFullBatteryDrainCount desc",
+    MedianMaxCapacityPercentage: "medianMaxCapacityPercentage",
+    MedianMaxCapacityPercentageDesc: "medianMaxCapacityPercentage desc",
+    OsBatteryHealthScore: "osBatteryHealthScore",
+    OsBatteryHealthScoreDesc: "osBatteryHealthScore desc",
+    OsBuildNumber: "osBuildNumber",
+    OsBuildNumberDesc: "osBuildNumber desc",
+    OsHealthStatus: "osHealthStatus",
+    OsHealthStatusDesc: "osHealthStatus desc",
+    OsVersion: "osVersion",
+    OsVersionDesc: "osVersion desc",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActiveDevices: "activeDevices",
+    AverageBatteryAgeInDays: "averageBatteryAgeInDays",
+    AverageEstimatedRuntimeInMinutes: "averageEstimatedRuntimeInMinutes",
+    AverageMaxCapacityPercentage: "averageMaxCapacityPercentage",
+    MeanFullBatteryDrainCount: "meanFullBatteryDrainCount",
+    MedianEstimatedRuntimeInMinutes: "medianEstimatedRuntimeInMinutes",
+    MedianFullBatteryDrainCount: "medianFullBatteryDrainCount",
+    MedianMaxCapacityPercentage: "medianMaxCapacityPercentage",
+    OsBatteryHealthScore: "osBatteryHealthScore",
+    OsBuildNumber: "osBuildNumber",
+    OsHealthStatus: "osHealthStatus",
+    OsVersion: "osVersion",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +184,7 @@ export const UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderRequ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthOsPerformanceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +194,7 @@ export const UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderRequ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthOsPerformanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsBatteryHealthOsPerformance,

@@ -63,7 +63,7 @@ export interface DeviceHealthScriptStatesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -71,7 +71,7 @@ export interface DeviceHealthScriptStatesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -79,7 +79,7 @@ export interface DeviceHealthScriptStatesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -89,6 +89,9 @@ export interface DeviceHealthScriptStatesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const DeviceHealthScriptStatesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceHealthScriptStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,82 @@ export const DeviceHealthScriptStatesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceHealthScriptPolicyState,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    AssignmentFilterIds: "assignmentFilterIds",
+    AssignmentFilterIdsDesc: "assignmentFilterIds desc",
+    DetectionState: "detectionState",
+    DetectionStateDesc: "detectionState desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    ExpectedStateUpdateDateTime: "expectedStateUpdateDateTime",
+    ExpectedStateUpdateDateTimeDesc: "expectedStateUpdateDateTime desc",
+    Id: "id",
+    IdDesc: "id desc",
+    LastStateUpdateDateTime: "lastStateUpdateDateTime",
+    LastStateUpdateDateTimeDesc: "lastStateUpdateDateTime desc",
+    LastSyncDateTime: "lastSyncDateTime",
+    LastSyncDateTimeDesc: "lastSyncDateTime desc",
+    OsVersion: "osVersion",
+    OsVersionDesc: "osVersion desc",
+    PolicyId: "policyId",
+    PolicyIdDesc: "policyId desc",
+    PolicyName: "policyName",
+    PolicyNameDesc: "policyName desc",
+    PostRemediationDetectionScriptError: "postRemediationDetectionScriptError",
+    PostRemediationDetectionScriptErrorDesc: "postRemediationDetectionScriptError desc",
+    PostRemediationDetectionScriptOutput: "postRemediationDetectionScriptOutput",
+    PostRemediationDetectionScriptOutputDesc: "postRemediationDetectionScriptOutput desc",
+    PreRemediationDetectionScriptError: "preRemediationDetectionScriptError",
+    PreRemediationDetectionScriptErrorDesc: "preRemediationDetectionScriptError desc",
+    PreRemediationDetectionScriptOutput: "preRemediationDetectionScriptOutput",
+    PreRemediationDetectionScriptOutputDesc: "preRemediationDetectionScriptOutput desc",
+    RemediationScriptError: "remediationScriptError",
+    RemediationScriptErrorDesc: "remediationScriptError desc",
+    RemediationState: "remediationState",
+    RemediationStateDesc: "remediationState desc",
+    UserName: "userName",
+    UserNameDesc: "userName desc",
+} as const;
+/**
+ * Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AssignmentFilterIds: "assignmentFilterIds",
+    DetectionState: "detectionState",
+    DeviceId: "deviceId",
+    DeviceName: "deviceName",
+    ExpectedStateUpdateDateTime: "expectedStateUpdateDateTime",
+    Id: "id",
+    LastStateUpdateDateTime: "lastStateUpdateDateTime",
+    LastSyncDateTime: "lastSyncDateTime",
+    OsVersion: "osVersion",
+    PolicyId: "policyId",
+    PolicyName: "policyName",
+    PostRemediationDetectionScriptError: "postRemediationDetectionScriptError",
+    PostRemediationDetectionScriptOutput: "postRemediationDetectionScriptOutput",
+    PreRemediationDetectionScriptError: "preRemediationDetectionScriptError",
+    PreRemediationDetectionScriptOutput: "preRemediationDetectionScriptOutput",
+    RemediationScriptError: "remediationScriptError",
+    RemediationState: "remediationState",
+    UserName: "userName",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

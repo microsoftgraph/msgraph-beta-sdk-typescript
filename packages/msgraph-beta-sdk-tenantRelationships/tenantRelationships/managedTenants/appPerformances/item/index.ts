@@ -57,12 +57,14 @@ export interface AppPerformanceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const AppPerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AppPerformanceItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const AppPerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppPerformanceFromDiscriminatorValue,
         queryParametersMapper: AppPerformanceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,34 @@ export const AppPerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppPerformanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppPerformance,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppFriendlyName: "appFriendlyName",
+    AppName: "appName",
+    AppPublisher: "appPublisher",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    MeanTimeToFailureInMinutes: "meanTimeToFailureInMinutes",
+    TenantDisplayName: "tenantDisplayName",
+    TenantId: "tenantId",
+    TotalActiveDeviceCount: "totalActiveDeviceCount",
+    TotalAppCrashCount: "totalAppCrashCount",
+    TotalAppFreezeCount: "totalAppFreezeCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

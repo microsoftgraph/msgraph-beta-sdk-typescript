@@ -66,7 +66,7 @@ export interface AnalyzedEmailsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -74,7 +74,7 @@ export interface AnalyzedEmailsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -82,7 +82,7 @@ export interface AnalyzedEmailsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +92,9 @@ export interface AnalyzedEmailsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -134,7 +137,7 @@ export const AnalyzedEmailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAnalyzedEmailCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AnalyzedEmailsRequestBuilderGetQueryParametersMapper,
     },
@@ -144,12 +147,121 @@ export const AnalyzedEmailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAnalyzedEmailFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAnalyzedEmail,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the analyzedEmails property of the microsoft.graph.security.collaborationRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the analyzedEmails property of the microsoft.graph.security.collaborationRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AlertIds: "alertIds",
+    AlertIdsDesc: "alertIds desc",
+    Attachments: "attachments",
+    AttachmentsDesc: "attachments desc",
+    AttachmentsCount: "attachmentsCount",
+    AttachmentsCountDesc: "attachmentsCount desc",
+    AuthenticationDetails: "authenticationDetails",
+    AuthenticationDetailsDesc: "authenticationDetails desc",
+    BulkComplaintLevel: "bulkComplaintLevel",
+    BulkComplaintLevelDesc: "bulkComplaintLevel desc",
+    Contexts: "contexts",
+    ContextsDesc: "contexts desc",
+    DetectionMethods: "detectionMethods",
+    DetectionMethodsDesc: "detectionMethods desc",
+    Directionality: "directionality",
+    DirectionalityDesc: "directionality desc",
+    DistributionList: "distributionList",
+    DistributionListDesc: "distributionList desc",
+    EmailClusterId: "emailClusterId",
+    EmailClusterIdDesc: "emailClusterId desc",
+    ExchangeTransportRules: "exchangeTransportRules",
+    ExchangeTransportRulesDesc: "exchangeTransportRules desc",
+    InternetMessageId: "internetMessageId",
+    InternetMessageIdDesc: "internetMessageId desc",
+    Language: "language",
+    LanguageDesc: "language desc",
+    LatestDelivery: "latestDelivery",
+    LatestDeliveryDesc: "latestDelivery desc",
+    LoggedDateTime: "loggedDateTime",
+    LoggedDateTimeDesc: "loggedDateTime desc",
+    NetworkMessageId: "networkMessageId",
+    NetworkMessageIdDesc: "networkMessageId desc",
+    OriginalDelivery: "originalDelivery",
+    OriginalDeliveryDesc: "originalDelivery desc",
+    OverrideSources: "overrideSources",
+    OverrideSourcesDesc: "overrideSources desc",
+    PhishConfidenceLevel: "phishConfidenceLevel",
+    PhishConfidenceLevelDesc: "phishConfidenceLevel desc",
+    Policy: "policy",
+    PolicyDesc: "policy desc",
+    PolicyAction: "policyAction",
+    PolicyActionDesc: "policyAction desc",
+    RecipientEmailAddresses: "recipientEmailAddresses",
+    RecipientEmailAddressesDesc: "recipientEmailAddresses desc",
+    ReturnPath: "returnPath",
+    ReturnPathDesc: "returnPath desc",
+    SenderDetail: "senderDetail",
+    SenderDetailDesc: "senderDetail desc",
+    SizeInBytes: "sizeInBytes",
+    SizeInBytesDesc: "sizeInBytes desc",
+    SpamConfidenceLevel: "spamConfidenceLevel",
+    SpamConfidenceLevelDesc: "spamConfidenceLevel desc",
+    Subject: "subject",
+    SubjectDesc: "subject desc",
+    ThreatType: "threatType",
+    ThreatTypeDesc: "threatType desc",
+    Urls: "urls",
+    UrlsDesc: "urls desc",
+    UrlsCount: "urlsCount",
+    UrlsCountDesc: "urlsCount desc",
+} as const;
+/**
+ * Provides operations to manage the analyzedEmails property of the microsoft.graph.security.collaborationRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertIds: "alertIds",
+    Attachments: "attachments",
+    AttachmentsCount: "attachmentsCount",
+    AuthenticationDetails: "authenticationDetails",
+    BulkComplaintLevel: "bulkComplaintLevel",
+    Contexts: "contexts",
+    DetectionMethods: "detectionMethods",
+    Directionality: "directionality",
+    DistributionList: "distributionList",
+    EmailClusterId: "emailClusterId",
+    ExchangeTransportRules: "exchangeTransportRules",
+    InternetMessageId: "internetMessageId",
+    Language: "language",
+    LatestDelivery: "latestDelivery",
+    LoggedDateTime: "loggedDateTime",
+    NetworkMessageId: "networkMessageId",
+    OriginalDelivery: "originalDelivery",
+    OverrideSources: "overrideSources",
+    PhishConfidenceLevel: "phishConfidenceLevel",
+    Policy: "policy",
+    PolicyAction: "policyAction",
+    RecipientEmailAddresses: "recipientEmailAddresses",
+    ReturnPath: "returnPath",
+    SenderDetail: "senderDetail",
+    SizeInBytes: "sizeInBytes",
+    SpamConfidenceLevel: "spamConfidenceLevel",
+    Subject: "subject",
+    ThreatType: "threatType",
+    Urls: "urls",
+    UrlsCount: "urlsCount",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

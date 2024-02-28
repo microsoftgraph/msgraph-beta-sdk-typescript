@@ -84,12 +84,14 @@ export interface CloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +128,7 @@ export const CloudPcProvisioningPolicyItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcProvisioningPolicyItemRequestBuilderUriTemplate,
@@ -134,7 +136,7 @@ export const CloudPcProvisioningPolicyItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyFromDiscriminatorValue,
         queryParametersMapper: CloudPcProvisioningPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -144,12 +146,46 @@ export const CloudPcProvisioningPolicyItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcProvisioningPolicy,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlternateResourceUrl: "alternateResourceUrl",
+    CloudPcGroupDisplayName: "cloudPcGroupDisplayName",
+    CloudPcNamingTemplate: "cloudPcNamingTemplate",
+    Description: "description",
+    DisplayName: "displayName",
+    DomainJoinConfiguration: "domainJoinConfiguration",
+    DomainJoinConfigurations: "domainJoinConfigurations",
+    EnableSingleSignOn: "enableSingleSignOn",
+    GracePeriodInHours: "gracePeriodInHours",
+    ImageDisplayName: "imageDisplayName",
+    ImageId: "imageId",
+    ImageType: "imageType",
+    LocalAdminEnabled: "localAdminEnabled",
+    ManagedBy: "managedBy",
+    MicrosoftManagedDesktop: "microsoftManagedDesktop",
+    OnPremisesConnectionId: "onPremisesConnectionId",
+    ProvisioningType: "provisioningType",
+    ScopeIds: "scopeIds",
+    WindowsSetting: "windowsSetting",
+    WindowsSettings: "windowsSettings",
+    Assignments: "assignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

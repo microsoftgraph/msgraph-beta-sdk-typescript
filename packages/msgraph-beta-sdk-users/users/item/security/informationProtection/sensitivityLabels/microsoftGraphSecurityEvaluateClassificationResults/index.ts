@@ -119,7 +119,7 @@ export const MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilderRe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEvaluateClassificationResultsPostResponseFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEvaluateClassificationResultsPostRequestBody,

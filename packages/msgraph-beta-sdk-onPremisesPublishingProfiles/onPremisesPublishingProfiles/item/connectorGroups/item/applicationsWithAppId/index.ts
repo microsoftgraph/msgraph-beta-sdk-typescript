@@ -30,12 +30,14 @@ export interface ApplicationsWithAppIdRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,80 @@ export const ApplicationsWithAppIdRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplicationFromDiscriminatorValue,
         queryParametersMapper: ApplicationsWithAppIdRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AppManagementPolicies: "appManagementPolicies",
+    ConnectorGroup: "connectorGroup",
+    CreatedOnBehalfOf: "createdOnBehalfOf",
+    ExtensionProperties: "extensionProperties",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    Owners: "owners",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+} as const;
+/**
+ * Provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    Api: "api",
+    AppId: "appId",
+    AppRoles: "appRoles",
+    AuthenticationBehaviors: "authenticationBehaviors",
+    Certification: "certification",
+    CreatedDateTime: "createdDateTime",
+    DefaultRedirectUri: "defaultRedirectUri",
+    Description: "description",
+    DisabledByMicrosoftStatus: "disabledByMicrosoftStatus",
+    DisplayName: "displayName",
+    GroupMembershipClaims: "groupMembershipClaims",
+    IdentifierUris: "identifierUris",
+    Info: "info",
+    IsDeviceOnlyAuthSupported: "isDeviceOnlyAuthSupported",
+    IsFallbackPublicClient: "isFallbackPublicClient",
+    KeyCredentials: "keyCredentials",
+    Logo: "logo",
+    Notes: "notes",
+    OnPremisesPublishing: "onPremisesPublishing",
+    OptionalClaims: "optionalClaims",
+    ParentalControlSettings: "parentalControlSettings",
+    PasswordCredentials: "passwordCredentials",
+    PublicClient: "publicClient",
+    PublisherDomain: "publisherDomain",
+    RequestSignatureVerification: "requestSignatureVerification",
+    RequiredResourceAccess: "requiredResourceAccess",
+    SamlMetadataUrl: "samlMetadataUrl",
+    ServiceManagementReference: "serviceManagementReference",
+    ServicePrincipalLockConfiguration: "servicePrincipalLockConfiguration",
+    SignInAudience: "signInAudience",
+    Spa: "spa",
+    Tags: "tags",
+    TokenEncryptionKeyId: "tokenEncryptionKeyId",
+    UniqueName: "uniqueName",
+    VerifiedPublisher: "verifiedPublisher",
+    Web: "web",
+    Windows: "windows",
+    AppManagementPolicies: "appManagementPolicies",
+    ConnectorGroup: "connectorGroup",
+    CreatedOnBehalfOf: "createdOnBehalfOf",
+    ExtensionProperties: "extensionProperties",
+    FederatedIdentityCredentials: "federatedIdentityCredentials",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    Owners: "owners",
+    Synchronization: "synchronization",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

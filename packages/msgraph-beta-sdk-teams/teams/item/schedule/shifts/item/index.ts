@@ -5,6 +5,7 @@ import { createShiftFromDiscriminatorValue, serializeShift, type Shift } from '@
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the shifts property of the microsoft.graph.schedule entity.
  */
@@ -60,12 +61,30 @@ export interface ShiftItemRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ShiftItemRequestBuilderUriTemplate = "{+baseurl}/teams/{team%2Did}/schedule/shifts/{shift%2Did}{?%24select}";
+/**
+ * Provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    DraftShift: "draftShift",
+    IsStagedForDeletion: "isStagedForDeletion",
+    SchedulingGroupId: "schedulingGroupId",
+    SchedulingGroupInfo: "schedulingGroupInfo",
+    SharedShift: "sharedShift",
+    TeamInfo: "teamInfo",
+    UserId: "userId",
+    UserInfo: "userInfo",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -82,7 +101,7 @@ export const ShiftItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ShiftItemRequestBuilderUriTemplate,
@@ -90,7 +109,7 @@ export const ShiftItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createShiftFromDiscriminatorValue,
         queryParametersMapper: ShiftItemRequestBuilderGetQueryParametersMapper,
     },
@@ -100,7 +119,7 @@ export const ShiftItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createShiftFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeShift,

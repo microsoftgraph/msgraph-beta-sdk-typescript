@@ -62,12 +62,14 @@ export interface CatalogRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const CatalogRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CatalogRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const CatalogRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCatalogFromDiscriminatorValue,
         queryParametersMapper: CatalogRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,26 @@ export const CatalogRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCatalogFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCatalog,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Entries: "entries",
+} as const;
+/**
+ * Provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Entries: "entries",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createGroupPolicyCategoryFromDiscriminatorValue, type GroupPolicyCatego
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
  */
@@ -30,16 +32,40 @@ export interface GroupPolicyCategoryItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GroupPolicyCategoryItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/children/{groupPolicyCategory%2Did1}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Children: "children",
+    DefinitionFile: "definitionFile",
+    Definitions: "definitions",
+    Parent: "parent",
+} as const;
+/**
+ * Provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    IngestionSource: "ingestionSource",
+    IsRoot: "isRoot",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Children: "children",
+    DefinitionFile: "definitionFile",
+    Definitions: "definitions",
+    Parent: "parent",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +83,7 @@ export const GroupPolicyCategoryItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyCategoryFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyCategoryItemRequestBuilderGetQueryParametersMapper,
     },

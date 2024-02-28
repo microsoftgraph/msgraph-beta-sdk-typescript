@@ -5,6 +5,8 @@ import { createUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorVa
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,37 @@ export interface UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilde
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AutoPilotProfileAssigned: "autoPilotProfileAssigned",
+    AutoPilotRegistered: "autoPilotRegistered",
+    AzureAdJoinType: "azureAdJoinType",
+    AzureAdRegistered: "azureAdRegistered",
+    DeviceName: "deviceName",
+    ManagedBy: "managedBy",
+    Manufacturer: "manufacturer",
+    Model: "model",
+    SerialNumber: "serialNumber",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +107,7 @@ export const UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderUriTemplate,
@@ -92,7 +115,7 @@ export const UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +125,7 @@ export const UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsNotAutopilotReadyDevice,

@@ -62,12 +62,14 @@ export interface DeviceHealthScriptDeviceStateItemRequestBuilderGetQueryParamete
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -97,7 +99,7 @@ export const DeviceHealthScriptDeviceStateItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceHealthScriptDeviceStateItemRequestBuilderUriTemplate,
@@ -105,7 +107,7 @@ export const DeviceHealthScriptDeviceStateItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptDeviceStateFromDiscriminatorValue,
         queryParametersMapper: DeviceHealthScriptDeviceStateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,12 +117,37 @@ export const DeviceHealthScriptDeviceStateItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptDeviceStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceHealthScriptDeviceState,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceHealthScript entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ManagedDevice: "managedDevice",
+} as const;
+/**
+ * Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceHealthScript entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignmentFilterIds: "assignmentFilterIds",
+    DetectionState: "detectionState",
+    ExpectedStateUpdateDateTime: "expectedStateUpdateDateTime",
+    LastStateUpdateDateTime: "lastStateUpdateDateTime",
+    LastSyncDateTime: "lastSyncDateTime",
+    PostRemediationDetectionScriptError: "postRemediationDetectionScriptError",
+    PostRemediationDetectionScriptOutput: "postRemediationDetectionScriptOutput",
+    PreRemediationDetectionScriptError: "preRemediationDetectionScriptError",
+    PreRemediationDetectionScriptOutput: "preRemediationDetectionScriptOutput",
+    RemediationScriptError: "remediationScriptError",
+    RemediationState: "remediationState",
+    ManagedDevice: "managedDevice",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

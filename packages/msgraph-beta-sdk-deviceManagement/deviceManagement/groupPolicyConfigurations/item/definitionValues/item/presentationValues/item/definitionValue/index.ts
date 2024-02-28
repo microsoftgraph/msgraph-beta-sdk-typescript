@@ -30,12 +30,14 @@ export interface DefinitionValueRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,30 @@ export const DefinitionValueRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionValueFromDiscriminatorValue,
         queryParametersMapper: DefinitionValueRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the definitionValue property of the microsoft.graph.groupPolicyPresentationValue entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Definition: "definition",
+    PresentationValues: "presentationValues",
+} as const;
+/**
+ * Provides operations to manage the definitionValue property of the microsoft.graph.groupPolicyPresentationValue entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConfigurationType: "configurationType",
+    CreatedDateTime: "createdDateTime",
+    Enabled: "enabled",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Definition: "definition",
+    PresentationValues: "presentationValues",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

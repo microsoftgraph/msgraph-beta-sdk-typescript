@@ -61,7 +61,7 @@ export interface AutopilotEventsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface AutopilotEventsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface AutopilotEventsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface AutopilotEventsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AutopilotEventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotEventCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AutopilotEventsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,111 @@ export const AutopilotEventsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementAutopilotEvent,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    PolicyStatusDetails: "policyStatusDetails",
+} as const;
+/**
+ * Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AccountSetupDuration: "accountSetupDuration",
+    AccountSetupDurationDesc: "accountSetupDuration desc",
+    AccountSetupStatus: "accountSetupStatus",
+    AccountSetupStatusDesc: "accountSetupStatus desc",
+    DeploymentDuration: "deploymentDuration",
+    DeploymentDurationDesc: "deploymentDuration desc",
+    DeploymentEndDateTime: "deploymentEndDateTime",
+    DeploymentEndDateTimeDesc: "deploymentEndDateTime desc",
+    DeploymentStartDateTime: "deploymentStartDateTime",
+    DeploymentStartDateTimeDesc: "deploymentStartDateTime desc",
+    DeploymentState: "deploymentState",
+    DeploymentStateDesc: "deploymentState desc",
+    DeploymentTotalDuration: "deploymentTotalDuration",
+    DeploymentTotalDurationDesc: "deploymentTotalDuration desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DevicePreparationDuration: "devicePreparationDuration",
+    DevicePreparationDurationDesc: "devicePreparationDuration desc",
+    DeviceRegisteredDateTime: "deviceRegisteredDateTime",
+    DeviceRegisteredDateTimeDesc: "deviceRegisteredDateTime desc",
+    DeviceSerialNumber: "deviceSerialNumber",
+    DeviceSerialNumberDesc: "deviceSerialNumber desc",
+    DeviceSetupDuration: "deviceSetupDuration",
+    DeviceSetupDurationDesc: "deviceSetupDuration desc",
+    DeviceSetupStatus: "deviceSetupStatus",
+    DeviceSetupStatusDesc: "deviceSetupStatus desc",
+    EnrollmentFailureDetails: "enrollmentFailureDetails",
+    EnrollmentFailureDetailsDesc: "enrollmentFailureDetails desc",
+    EnrollmentStartDateTime: "enrollmentStartDateTime",
+    EnrollmentStartDateTimeDesc: "enrollmentStartDateTime desc",
+    EnrollmentState: "enrollmentState",
+    EnrollmentStateDesc: "enrollmentState desc",
+    EnrollmentType: "enrollmentType",
+    EnrollmentTypeDesc: "enrollmentType desc",
+    EventDateTime: "eventDateTime",
+    EventDateTimeDesc: "eventDateTime desc",
+    ManagedDeviceName: "managedDeviceName",
+    ManagedDeviceNameDesc: "managedDeviceName desc",
+    OsVersion: "osVersion",
+    OsVersionDesc: "osVersion desc",
+    TargetedAppCount: "targetedAppCount",
+    TargetedAppCountDesc: "targetedAppCount desc",
+    TargetedPolicyCount: "targetedPolicyCount",
+    TargetedPolicyCountDesc: "targetedPolicyCount desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+    Windows10EnrollmentCompletionPageConfigurationDisplayName: "windows10EnrollmentCompletionPageConfigurationDisplayName",
+    Windows10EnrollmentCompletionPageConfigurationDisplayNameDesc: "windows10EnrollmentCompletionPageConfigurationDisplayName desc",
+    Windows10EnrollmentCompletionPageConfigurationId: "windows10EnrollmentCompletionPageConfigurationId",
+    Windows10EnrollmentCompletionPageConfigurationIdDesc: "windows10EnrollmentCompletionPageConfigurationId desc",
+    WindowsAutopilotDeploymentProfileDisplayName: "windowsAutopilotDeploymentProfileDisplayName",
+    WindowsAutopilotDeploymentProfileDisplayNameDesc: "windowsAutopilotDeploymentProfileDisplayName desc",
+} as const;
+/**
+ * Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccountSetupDuration: "accountSetupDuration",
+    AccountSetupStatus: "accountSetupStatus",
+    DeploymentDuration: "deploymentDuration",
+    DeploymentEndDateTime: "deploymentEndDateTime",
+    DeploymentStartDateTime: "deploymentStartDateTime",
+    DeploymentState: "deploymentState",
+    DeploymentTotalDuration: "deploymentTotalDuration",
+    DeviceId: "deviceId",
+    DevicePreparationDuration: "devicePreparationDuration",
+    DeviceRegisteredDateTime: "deviceRegisteredDateTime",
+    DeviceSerialNumber: "deviceSerialNumber",
+    DeviceSetupDuration: "deviceSetupDuration",
+    DeviceSetupStatus: "deviceSetupStatus",
+    EnrollmentFailureDetails: "enrollmentFailureDetails",
+    EnrollmentStartDateTime: "enrollmentStartDateTime",
+    EnrollmentState: "enrollmentState",
+    EnrollmentType: "enrollmentType",
+    EventDateTime: "eventDateTime",
+    ManagedDeviceName: "managedDeviceName",
+    OsVersion: "osVersion",
+    TargetedAppCount: "targetedAppCount",
+    TargetedPolicyCount: "targetedPolicyCount",
+    UserPrincipalName: "userPrincipalName",
+    Windows10EnrollmentCompletionPageConfigurationDisplayName: "windows10EnrollmentCompletionPageConfigurationDisplayName",
+    Windows10EnrollmentCompletionPageConfigurationId: "windows10EnrollmentCompletionPageConfigurationId",
+    WindowsAutopilotDeploymentProfileDisplayName: "windowsAutopilotDeploymentProfileDisplayName",
+    PolicyStatusDetails: "policyStatusDetails",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

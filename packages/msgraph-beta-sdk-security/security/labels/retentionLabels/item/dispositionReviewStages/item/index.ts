@@ -57,12 +57,14 @@ export interface DispositionReviewStageItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -84,7 +86,7 @@ export const DispositionReviewStageItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DispositionReviewStageItemRequestBuilderUriTemplate,
@@ -92,7 +94,7 @@ export const DispositionReviewStageItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDispositionReviewStageFromDiscriminatorValue,
         queryParametersMapper: DispositionReviewStageItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,12 +104,27 @@ export const DispositionReviewStageItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDispositionReviewStageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDispositionReviewStage,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Name: "name",
+    ReviewersEmailAddresses: "reviewersEmailAddresses",
+    StageNumber: "stageNumber",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

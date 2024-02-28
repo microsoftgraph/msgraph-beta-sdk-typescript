@@ -61,7 +61,7 @@ export interface EngagementAsyncOperationsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface EngagementAsyncOperationsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface EngagementAsyncOperationsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface EngagementAsyncOperationsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -126,7 +129,7 @@ export const EngagementAsyncOperationsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEngagementAsyncOperationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EngagementAsyncOperationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,12 +139,52 @@ export const EngagementAsyncOperationsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEngagementAsyncOperationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEngagementAsyncOperation,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the engagementAsyncOperations property of the microsoft.graph.employeeExperience entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the engagementAsyncOperations property of the microsoft.graph.employeeExperience entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastActionDateTime: "lastActionDateTime",
+    LastActionDateTimeDesc: "lastActionDateTime desc",
+    ResourceLocation: "resourceLocation",
+    ResourceLocationDesc: "resourceLocation desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    StatusDetail: "statusDetail",
+    StatusDetailDesc: "statusDetail desc",
+    OperationType: "operationType",
+    OperationTypeDesc: "operationType desc",
+    ResourceId: "resourceId",
+    ResourceIdDesc: "resourceId desc",
+} as const;
+/**
+ * Provides operations to manage the engagementAsyncOperations property of the microsoft.graph.employeeExperience entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    LastActionDateTime: "lastActionDateTime",
+    ResourceLocation: "resourceLocation",
+    Status: "status",
+    StatusDetail: "statusDetail",
+    OperationType: "operationType",
+    ResourceId: "resourceId",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -5,6 +5,8 @@ import { createTeamsAppDashboardCardDefinitionFromDiscriminatorValue, serializeT
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
  */
@@ -16,7 +18,7 @@ export interface TeamsAppDashboardCardDefinitionItemRequestBuilder extends BaseR
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get dashboardCards from appCatalogs
+     * Dashboard cards specified in the Teams app manifest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppDashboardCardDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +39,7 @@ export interface TeamsAppDashboardCardDefinitionItemRequestBuilder extends BaseR
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get dashboardCards from appCatalogs
+     * Dashboard cards specified in the Teams app manifest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,22 +53,40 @@ export interface TeamsAppDashboardCardDefinitionItemRequestBuilder extends BaseR
      toPatchRequestInformation(body: TeamsAppDashboardCardDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get dashboardCards from appCatalogs
+ * Dashboard cards specified in the Teams app manifest.
  */
 export interface TeamsAppDashboardCardDefinitionItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const TeamsAppDashboardCardDefinitionItemRequestBuilderUriTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/dashboardCards/{teamsAppDashboardCardDefinition%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the dashboardCards property of the microsoft.graph.teamsAppDefinition entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ContentSource: "contentSource",
+    DefaultSize: "defaultSize",
+    Description: "description",
+    DisplayName: "displayName",
+    Icon: "icon",
+    PickerGroupId: "pickerGroupId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +104,7 @@ export const TeamsAppDashboardCardDefinitionItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TeamsAppDashboardCardDefinitionItemRequestBuilderUriTemplate,
@@ -92,7 +112,7 @@ export const TeamsAppDashboardCardDefinitionItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAppDashboardCardDefinitionFromDiscriminatorValue,
         queryParametersMapper: TeamsAppDashboardCardDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +122,7 @@ export const TeamsAppDashboardCardDefinitionItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsAppDashboardCardDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamsAppDashboardCardDefinition,

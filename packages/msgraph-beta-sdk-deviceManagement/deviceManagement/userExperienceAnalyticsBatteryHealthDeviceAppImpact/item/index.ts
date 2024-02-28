@@ -5,6 +5,8 @@ import { createUserExperienceAnalyticsBatteryHealthDeviceAppImpactFromDiscrimina
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,34 @@ export interface UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestB
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDeviceAppImpact/{userExperienceAnalyticsBatteryHealthDeviceAppImpact%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppDisplayName: "appDisplayName",
+    AppName: "appName",
+    AppPublisher: "appPublisher",
+    BatteryUsagePercentage: "batteryUsagePercentage",
+    DeviceId: "deviceId",
+    IsForegroundApp: "isForegroundApp",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +104,7 @@ export const UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuild
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderUriTemplate,
@@ -92,7 +112,7 @@ export const UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuild
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthDeviceAppImpactFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +122,7 @@ export const UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuild
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthDeviceAppImpactFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsBatteryHealthDeviceAppImpact,

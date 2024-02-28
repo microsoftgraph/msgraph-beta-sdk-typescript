@@ -9,6 +9,9 @@ import { HasCustomRoleScopeTagRequestBuilderRequestsMetadata, type HasCustomRole
 import { RoleScopeTagItemRequestBuilderNavigationMetadata, RoleScopeTagItemRequestBuilderRequestsMetadata, type RoleScopeTagItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
  */
@@ -71,7 +74,7 @@ export interface RoleScopeTagsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -79,7 +82,7 @@ export interface RoleScopeTagsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -87,7 +90,7 @@ export interface RoleScopeTagsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -101,6 +104,36 @@ export interface RoleScopeTagsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const RoleScopeTagsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/roleScopeTags{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsBuiltIn: "isBuiltIn",
+    IsBuiltInDesc: "isBuiltIn desc",
+} as const;
+/**
+ * Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    IsBuiltIn: "isBuiltIn",
+    Assignments: "assignments",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -143,7 +176,7 @@ export const RoleScopeTagsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRoleScopeTagCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RoleScopeTagsRequestBuilderGetQueryParametersMapper,
     },
@@ -153,7 +186,7 @@ export const RoleScopeTagsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRoleScopeTagFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRoleScopeTag,

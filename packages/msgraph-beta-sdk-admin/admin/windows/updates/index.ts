@@ -11,6 +11,8 @@ import { type UpdatableAssetsRequestBuilder, UpdatableAssetsRequestBuilderNaviga
 import { type UpdatePoliciesRequestBuilder, UpdatePoliciesRequestBuilderNavigationMetadata, UpdatePoliciesRequestBuilderRequestsMetadata } from './updatePolicies/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the updates property of the microsoft.graph.adminWindows entity.
  */
@@ -87,16 +89,40 @@ export interface UpdatesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UpdatesRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates{?%24expand,%24select}";
+/**
+ * Provides operations to manage the updates property of the microsoft.graph.adminWindows entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Catalog: "catalog",
+    DeploymentAudiences: "deploymentAudiences",
+    Deployments: "deployments",
+    ResourceConnections: "resourceConnections",
+    UpdatableAssets: "updatableAssets",
+    UpdatePolicies: "updatePolicies",
+} as const;
+/**
+ * Provides operations to manage the updates property of the microsoft.graph.adminWindows entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Catalog: "catalog",
+    DeploymentAudiences: "deploymentAudiences",
+    Deployments: "deployments",
+    ResourceConnections: "resourceConnections",
+    UpdatableAssets: "updatableAssets",
+    UpdatePolicies: "updatePolicies",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -143,7 +169,7 @@ export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UpdatesRequestBuilderUriTemplate,
@@ -151,7 +177,7 @@ export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminWindowsUpdatesFromDiscriminatorValue,
         queryParametersMapper: UpdatesRequestBuilderGetQueryParametersMapper,
     },
@@ -161,7 +187,7 @@ export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminWindowsUpdatesFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdminWindowsUpdates,

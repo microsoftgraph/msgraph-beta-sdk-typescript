@@ -61,7 +61,7 @@ export interface AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParam
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParam
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParam
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParam
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AppleUserInitiatedEnrollmentProfilesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppleUserInitiatedEnrollmentProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AppleUserInitiatedEnrollmentProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,57 @@ export const AppleUserInitiatedEnrollmentProfilesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppleUserInitiatedEnrollmentProfile,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AvailableEnrollmentTypeOptions: "availableEnrollmentTypeOptions",
+    AvailableEnrollmentTypeOptionsDesc: "availableEnrollmentTypeOptions desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    DefaultEnrollmentType: "defaultEnrollmentType",
+    DefaultEnrollmentTypeDesc: "defaultEnrollmentType desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Platform: "platform",
+    PlatformDesc: "platform desc",
+    Priority: "priority",
+    PriorityDesc: "priority desc",
+} as const;
+/**
+ * Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AvailableEnrollmentTypeOptions: "availableEnrollmentTypeOptions",
+    CreatedDateTime: "createdDateTime",
+    DefaultEnrollmentType: "defaultEnrollmentType",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Platform: "platform",
+    Priority: "priority",
+    Assignments: "assignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

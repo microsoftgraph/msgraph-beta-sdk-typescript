@@ -67,12 +67,14 @@ export interface DefaultManagedAppProtectionItemRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -106,7 +108,7 @@ export const DefaultManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DefaultManagedAppProtectionItemRequestBuilderUriTemplate,
@@ -114,7 +116,7 @@ export const DefaultManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDefaultManagedAppProtectionFromDiscriminatorValue,
         queryParametersMapper: DefaultManagedAppProtectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,12 +126,137 @@ export const DefaultManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDefaultManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDefaultManagedAppProtection,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Apps: "apps",
+    DeploymentSummary: "deploymentSummary",
+} as const;
+/**
+ * Provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Version: "version",
+    AllowedDataIngestionLocations: "allowedDataIngestionLocations",
+    AllowedDataStorageLocations: "allowedDataStorageLocations",
+    AllowedInboundDataTransferSources: "allowedInboundDataTransferSources",
+    AllowedOutboundClipboardSharingExceptionLength: "allowedOutboundClipboardSharingExceptionLength",
+    AllowedOutboundClipboardSharingLevel: "allowedOutboundClipboardSharingLevel",
+    AllowedOutboundDataTransferDestinations: "allowedOutboundDataTransferDestinations",
+    AppActionIfDeviceComplianceRequired: "appActionIfDeviceComplianceRequired",
+    AppActionIfMaximumPinRetriesExceeded: "appActionIfMaximumPinRetriesExceeded",
+    AppActionIfUnableToAuthenticateUser: "appActionIfUnableToAuthenticateUser",
+    BlockDataIngestionIntoOrganizationDocuments: "blockDataIngestionIntoOrganizationDocuments",
+    ContactSyncBlocked: "contactSyncBlocked",
+    DataBackupBlocked: "dataBackupBlocked",
+    DeviceComplianceRequired: "deviceComplianceRequired",
+    DialerRestrictionLevel: "dialerRestrictionLevel",
+    DisableAppPinIfDevicePinIsSet: "disableAppPinIfDevicePinIsSet",
+    FingerprintBlocked: "fingerprintBlocked",
+    GracePeriodToBlockAppsDuringOffClockHours: "gracePeriodToBlockAppsDuringOffClockHours",
+    ManagedBrowser: "managedBrowser",
+    ManagedBrowserToOpenLinksRequired: "managedBrowserToOpenLinksRequired",
+    MaximumAllowedDeviceThreatLevel: "maximumAllowedDeviceThreatLevel",
+    MaximumPinRetries: "maximumPinRetries",
+    MaximumRequiredOsVersion: "maximumRequiredOsVersion",
+    MaximumWarningOsVersion: "maximumWarningOsVersion",
+    MaximumWipeOsVersion: "maximumWipeOsVersion",
+    MinimumPinLength: "minimumPinLength",
+    MinimumRequiredAppVersion: "minimumRequiredAppVersion",
+    MinimumRequiredOsVersion: "minimumRequiredOsVersion",
+    MinimumWarningAppVersion: "minimumWarningAppVersion",
+    MinimumWarningOsVersion: "minimumWarningOsVersion",
+    MinimumWipeAppVersion: "minimumWipeAppVersion",
+    MinimumWipeOsVersion: "minimumWipeOsVersion",
+    MobileThreatDefensePartnerPriority: "mobileThreatDefensePartnerPriority",
+    MobileThreatDefenseRemediationAction: "mobileThreatDefenseRemediationAction",
+    NotificationRestriction: "notificationRestriction",
+    OrganizationalCredentialsRequired: "organizationalCredentialsRequired",
+    PeriodBeforePinReset: "periodBeforePinReset",
+    PeriodOfflineBeforeAccessCheck: "periodOfflineBeforeAccessCheck",
+    PeriodOfflineBeforeWipeIsEnforced: "periodOfflineBeforeWipeIsEnforced",
+    PeriodOnlineBeforeAccessCheck: "periodOnlineBeforeAccessCheck",
+    PinCharacterSet: "pinCharacterSet",
+    PinRequired: "pinRequired",
+    PinRequiredInsteadOfBiometricTimeout: "pinRequiredInsteadOfBiometricTimeout",
+    PreviousPinBlockCount: "previousPinBlockCount",
+    PrintBlocked: "printBlocked",
+    ProtectedMessagingRedirectAppType: "protectedMessagingRedirectAppType",
+    SaveAsBlocked: "saveAsBlocked",
+    SimplePinBlocked: "simplePinBlocked",
+    AllowedAndroidDeviceManufacturers: "allowedAndroidDeviceManufacturers",
+    AllowedAndroidDeviceModels: "allowedAndroidDeviceModels",
+    AllowedIosDeviceModels: "allowedIosDeviceModels",
+    AppActionIfAccountIsClockedOut: "appActionIfAccountIsClockedOut",
+    AppActionIfAndroidDeviceManufacturerNotAllowed: "appActionIfAndroidDeviceManufacturerNotAllowed",
+    AppActionIfAndroidDeviceModelNotAllowed: "appActionIfAndroidDeviceModelNotAllowed",
+    AppActionIfAndroidSafetyNetAppsVerificationFailed: "appActionIfAndroidSafetyNetAppsVerificationFailed",
+    AppActionIfAndroidSafetyNetDeviceAttestationFailed: "appActionIfAndroidSafetyNetDeviceAttestationFailed",
+    AppActionIfDeviceLockNotSet: "appActionIfDeviceLockNotSet",
+    AppActionIfDevicePasscodeComplexityLessThanHigh: "appActionIfDevicePasscodeComplexityLessThanHigh",
+    AppActionIfDevicePasscodeComplexityLessThanLow: "appActionIfDevicePasscodeComplexityLessThanLow",
+    AppActionIfDevicePasscodeComplexityLessThanMedium: "appActionIfDevicePasscodeComplexityLessThanMedium",
+    AppActionIfIosDeviceModelNotAllowed: "appActionIfIosDeviceModelNotAllowed",
+    AppDataEncryptionType: "appDataEncryptionType",
+    BiometricAuthenticationBlocked: "biometricAuthenticationBlocked",
+    BlockAfterCompanyPortalUpdateDeferralInDays: "blockAfterCompanyPortalUpdateDeferralInDays",
+    ConnectToVpnOnLaunch: "connectToVpnOnLaunch",
+    CustomBrowserDisplayName: "customBrowserDisplayName",
+    CustomBrowserPackageId: "customBrowserPackageId",
+    CustomBrowserProtocol: "customBrowserProtocol",
+    CustomDialerAppDisplayName: "customDialerAppDisplayName",
+    CustomDialerAppPackageId: "customDialerAppPackageId",
+    CustomDialerAppProtocol: "customDialerAppProtocol",
+    CustomSettings: "customSettings",
+    DeployedAppCount: "deployedAppCount",
+    DeviceLockRequired: "deviceLockRequired",
+    DisableAppEncryptionIfDeviceEncryptionIsEnabled: "disableAppEncryptionIfDeviceEncryptionIsEnabled",
+    DisableProtectionOfManagedOutboundOpenInData: "disableProtectionOfManagedOutboundOpenInData",
+    EncryptAppData: "encryptAppData",
+    ExemptedAppPackages: "exemptedAppPackages",
+    ExemptedAppProtocols: "exemptedAppProtocols",
+    FaceIdBlocked: "faceIdBlocked",
+    FilterOpenInToOnlyManagedApps: "filterOpenInToOnlyManagedApps",
+    FingerprintAndBiometricEnabled: "fingerprintAndBiometricEnabled",
+    MessagingRedirectAppDisplayName: "messagingRedirectAppDisplayName",
+    MessagingRedirectAppPackageId: "messagingRedirectAppPackageId",
+    MessagingRedirectAppUrlScheme: "messagingRedirectAppUrlScheme",
+    MinimumRequiredCompanyPortalVersion: "minimumRequiredCompanyPortalVersion",
+    MinimumRequiredPatchVersion: "minimumRequiredPatchVersion",
+    MinimumRequiredSdkVersion: "minimumRequiredSdkVersion",
+    MinimumWarningCompanyPortalVersion: "minimumWarningCompanyPortalVersion",
+    MinimumWarningPatchVersion: "minimumWarningPatchVersion",
+    MinimumWarningSdkVersion: "minimumWarningSdkVersion",
+    MinimumWipeCompanyPortalVersion: "minimumWipeCompanyPortalVersion",
+    MinimumWipePatchVersion: "minimumWipePatchVersion",
+    MinimumWipeSdkVersion: "minimumWipeSdkVersion",
+    ProtectInboundDataFromUnknownSources: "protectInboundDataFromUnknownSources",
+    RequireClass3Biometrics: "requireClass3Biometrics",
+    RequiredAndroidSafetyNetAppsVerificationType: "requiredAndroidSafetyNetAppsVerificationType",
+    RequiredAndroidSafetyNetDeviceAttestationType: "requiredAndroidSafetyNetDeviceAttestationType",
+    RequiredAndroidSafetyNetEvaluationType: "requiredAndroidSafetyNetEvaluationType",
+    RequirePinAfterBiometricChange: "requirePinAfterBiometricChange",
+    ScreenCaptureBlocked: "screenCaptureBlocked",
+    ThirdPartyKeyboardsBlocked: "thirdPartyKeyboardsBlocked",
+    WarnAfterCompanyPortalUpdateDeferralInDays: "warnAfterCompanyPortalUpdateDeferralInDays",
+    WipeAfterCompanyPortalUpdateDeferralInDays: "wipeAfterCompanyPortalUpdateDeferralInDays",
+    Apps: "apps",
+    DeploymentSummary: "deploymentSummary",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

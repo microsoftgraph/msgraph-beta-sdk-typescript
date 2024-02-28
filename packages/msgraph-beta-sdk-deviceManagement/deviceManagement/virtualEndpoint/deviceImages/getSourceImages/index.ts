@@ -104,7 +104,7 @@ export const GetSourceImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetSourceImagesGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetSourceImagesRequestBuilderGetQueryParametersMapper,
     },

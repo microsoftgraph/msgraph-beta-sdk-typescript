@@ -62,7 +62,7 @@ export interface DevicesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface DevicesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface DevicesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface DevicesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -128,7 +131,7 @@ export const DevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamworkDeviceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DevicesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,12 +141,72 @@ export const DevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamworkDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamworkDevice,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the devices property of the microsoft.graph.teamwork entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Activity: "activity",
+    Configuration: "configuration",
+    Health: "health",
+    Operations: "operations",
+} as const;
+/**
+ * Provides operations to manage the devices property of the microsoft.graph.teamwork entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ActivityState: "activityState",
+    ActivityStateDesc: "activityState desc",
+    CompanyAssetTag: "companyAssetTag",
+    CompanyAssetTagDesc: "companyAssetTag desc",
+    CreatedBy: "createdBy",
+    CreatedByDesc: "createdBy desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    CurrentUser: "currentUser",
+    CurrentUserDesc: "currentUser desc",
+    DeviceType: "deviceType",
+    DeviceTypeDesc: "deviceType desc",
+    HardwareDetail: "hardwareDetail",
+    HardwareDetailDesc: "hardwareDetail desc",
+    HealthStatus: "healthStatus",
+    HealthStatusDesc: "healthStatus desc",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedByDesc: "lastModifiedBy desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Notes: "notes",
+    NotesDesc: "notes desc",
+} as const;
+/**
+ * Provides operations to manage the devices property of the microsoft.graph.teamwork entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ActivityState: "activityState",
+    CompanyAssetTag: "companyAssetTag",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    CurrentUser: "currentUser",
+    DeviceType: "deviceType",
+    HardwareDetail: "hardwareDetail",
+    HealthStatus: "healthStatus",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Notes: "notes",
+    Activity: "activity",
+    Configuration: "configuration",
+    Health: "health",
+    Operations: "operations",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

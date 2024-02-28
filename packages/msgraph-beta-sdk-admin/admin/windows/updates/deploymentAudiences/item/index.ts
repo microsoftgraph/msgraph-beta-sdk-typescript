@@ -79,12 +79,14 @@ export interface DeploymentAudienceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -125,7 +127,7 @@ export const DeploymentAudienceItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeploymentAudienceItemRequestBuilderUriTemplate,
@@ -133,7 +135,7 @@ export const DeploymentAudienceItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeploymentAudienceFromDiscriminatorValue,
         queryParametersMapper: DeploymentAudienceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -143,12 +145,29 @@ export const DeploymentAudienceItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeploymentAudienceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeploymentAudience,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Exclusions: "exclusions",
+    Members: "members",
+} as const;
+/**
+ * Provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApplicableContent: "applicableContent",
+    Exclusions: "exclusions",
+    Members: "members",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

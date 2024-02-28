@@ -11,6 +11,8 @@ import { FilePlanReferencesRequestBuilderNavigationMetadata, FilePlanReferencesR
 import { RetentionLabelsRequestBuilderNavigationMetadata, RetentionLabelsRequestBuilderRequestsMetadata, type RetentionLabelsRequestBuilder } from './retentionLabels/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the labels property of the microsoft.graph.security entity.
  */
@@ -87,16 +89,40 @@ export interface LabelsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const LabelsRequestBuilderUriTemplate = "{+baseurl}/security/labels{?%24expand,%24select}";
+/**
+ * Provides operations to manage the labels property of the microsoft.graph.security entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Authorities: "authorities",
+    Categories: "categories",
+    Citations: "citations",
+    Departments: "departments",
+    FilePlanReferences: "filePlanReferences",
+    RetentionLabels: "retentionLabels",
+} as const;
+/**
+ * Provides operations to manage the labels property of the microsoft.graph.security entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Authorities: "authorities",
+    Categories: "categories",
+    Citations: "citations",
+    Departments: "departments",
+    FilePlanReferences: "filePlanReferences",
+    RetentionLabels: "retentionLabels",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -143,7 +169,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: LabelsRequestBuilderUriTemplate,
@@ -151,7 +177,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLabelsRootFromDiscriminatorValue,
         queryParametersMapper: LabelsRequestBuilderGetQueryParametersMapper,
     },
@@ -161,7 +187,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLabelsRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLabelsRoot,

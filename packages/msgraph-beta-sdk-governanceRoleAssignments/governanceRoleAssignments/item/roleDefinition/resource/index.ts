@@ -5,6 +5,8 @@ import { createGovernanceResourceFromDiscriminatorValue, type GovernanceResource
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the resource property of the microsoft.graph.governanceRoleDefinition entity.
  */
@@ -30,16 +32,44 @@ export interface ResourceRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const ResourceRequestBuilderUriTemplate = "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/roleDefinition/resource{?%24expand,%24select}";
+/**
+ * Provides operations to manage the resource property of the microsoft.graph.governanceRoleDefinition entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Parent: "parent",
+    RoleAssignmentRequests: "roleAssignmentRequests",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    RoleSettings: "roleSettings",
+} as const;
+/**
+ * Provides operations to manage the resource property of the microsoft.graph.governanceRoleDefinition entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    ExternalId: "externalId",
+    RegisteredDateTime: "registeredDateTime",
+    RegisteredRoot: "registeredRoot",
+    Status: "status",
+    Type: "type",
+    Parent: "parent",
+    RoleAssignmentRequests: "roleAssignmentRequests",
+    RoleAssignments: "roleAssignments",
+    RoleDefinitions: "roleDefinitions",
+    RoleSettings: "roleSettings",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +87,7 @@ export const ResourceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceResourceFromDiscriminatorValue,
         queryParametersMapper: ResourceRequestBuilderGetQueryParametersMapper,
     },

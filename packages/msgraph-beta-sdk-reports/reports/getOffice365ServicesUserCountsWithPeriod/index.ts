@@ -23,6 +23,7 @@ export function deserializeIntoGetOffice365ServicesUserCountsWithPeriodGetRespon
         "value": n => { getOffice365ServicesUserCountsWithPeriodGetResponse.value = n.getCollectionOfObjectValues<Office365ServicesUserCounts>(createOffice365ServicesUserCountsFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
 export interface GetOffice365ServicesUserCountsWithPeriodGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +59,7 @@ export interface GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryP
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +67,7 @@ export interface GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryP
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +75,7 @@ export interface GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryP
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +85,8 @@ export interface GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryP
      */
     top?: number;
 }
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -96,6 +99,12 @@ export function serializeGetOffice365ServicesUserCountsWithPeriodGetResponse(wri
  * Uri template for the request builder.
  */
 export const GetOffice365ServicesUserCountsWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getOffice365ServicesUserCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getOffice365ServicesUserCounts method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,10 +128,71 @@ export const GetOffice365ServicesUserCountsWithPeriodRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOffice365ServicesUserCountsWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getOffice365ServicesUserCounts method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ExchangeActive: "exchangeActive",
+    ExchangeActiveDesc: "exchangeActive desc",
+    ExchangeInactive: "exchangeInactive",
+    ExchangeInactiveDesc: "exchangeInactive desc",
+    Office365Active: "office365Active",
+    Office365ActiveDesc: "office365Active desc",
+    Office365Inactive: "office365Inactive",
+    Office365InactiveDesc: "office365Inactive desc",
+    OneDriveActive: "oneDriveActive",
+    OneDriveActiveDesc: "oneDriveActive desc",
+    OneDriveInactive: "oneDriveInactive",
+    OneDriveInactiveDesc: "oneDriveInactive desc",
+    ReportPeriod: "reportPeriod",
+    ReportPeriodDesc: "reportPeriod desc",
+    ReportRefreshDate: "reportRefreshDate",
+    ReportRefreshDateDesc: "reportRefreshDate desc",
+    SharePointActive: "sharePointActive",
+    SharePointActiveDesc: "sharePointActive desc",
+    SharePointInactive: "sharePointInactive",
+    SharePointInactiveDesc: "sharePointInactive desc",
+    SkypeForBusinessActive: "skypeForBusinessActive",
+    SkypeForBusinessActiveDesc: "skypeForBusinessActive desc",
+    SkypeForBusinessInactive: "skypeForBusinessInactive",
+    SkypeForBusinessInactiveDesc: "skypeForBusinessInactive desc",
+    TeamsActive: "teamsActive",
+    TeamsActiveDesc: "teamsActive desc",
+    TeamsInactive: "teamsInactive",
+    TeamsInactiveDesc: "teamsInactive desc",
+    YammerActive: "yammerActive",
+    YammerActiveDesc: "yammerActive desc",
+    YammerInactive: "yammerInactive",
+    YammerInactiveDesc: "yammerInactive desc",
+} as const;
+/**
+ * Provides operations to call the getOffice365ServicesUserCounts method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ExchangeActive: "exchangeActive",
+    ExchangeInactive: "exchangeInactive",
+    Office365Active: "office365Active",
+    Office365Inactive: "office365Inactive",
+    OneDriveActive: "oneDriveActive",
+    OneDriveInactive: "oneDriveInactive",
+    ReportPeriod: "reportPeriod",
+    ReportRefreshDate: "reportRefreshDate",
+    SharePointActive: "sharePointActive",
+    SharePointInactive: "sharePointInactive",
+    SkypeForBusinessActive: "skypeForBusinessActive",
+    SkypeForBusinessInactive: "skypeForBusinessInactive",
+    TeamsActive: "teamsActive",
+    TeamsInactive: "teamsInactive",
+    YammerActive: "yammerActive",
+    YammerInactive: "yammerInactive",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

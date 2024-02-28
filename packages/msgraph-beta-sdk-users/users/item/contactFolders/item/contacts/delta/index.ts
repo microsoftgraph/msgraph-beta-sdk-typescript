@@ -49,7 +49,7 @@ export interface DeltaRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -57,7 +57,7 @@ export interface DeltaRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -65,7 +65,7 @@ export interface DeltaRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -85,6 +85,9 @@ export function deserializeIntoDeltaGetResponse(deltaGetResponse: Partial<DeltaG
         "value": n => { deltaGetResponse.value = n.getCollectionOfObjectValues<Contact>(createContactFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -120,10 +123,148 @@ export const DeltaRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeltaGetResponseFromDiscriminatorValue,
         queryParametersMapper: DeltaRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the delta method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Extensions: "extensions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    Photo: "photo",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
+/**
+ * Provides operations to call the delta method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Categories: "categories",
+    CategoriesDesc: "categories desc",
+    ChangeKey: "changeKey",
+    ChangeKeyDesc: "changeKey desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    AssistantName: "assistantName",
+    AssistantNameDesc: "assistantName desc",
+    Birthday: "birthday",
+    BirthdayDesc: "birthday desc",
+    Children: "children",
+    ChildrenDesc: "children desc",
+    CompanyName: "companyName",
+    CompanyNameDesc: "companyName desc",
+    Department: "department",
+    DepartmentDesc: "department desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EmailAddresses: "emailAddresses",
+    EmailAddressesDesc: "emailAddresses desc",
+    FileAs: "fileAs",
+    FileAsDesc: "fileAs desc",
+    Flag: "flag",
+    FlagDesc: "flag desc",
+    Gender: "gender",
+    GenderDesc: "gender desc",
+    Generation: "generation",
+    GenerationDesc: "generation desc",
+    GivenName: "givenName",
+    GivenNameDesc: "givenName desc",
+    ImAddresses: "imAddresses",
+    ImAddressesDesc: "imAddresses desc",
+    Initials: "initials",
+    InitialsDesc: "initials desc",
+    IsFavorite: "isFavorite",
+    IsFavoriteDesc: "isFavorite desc",
+    JobTitle: "jobTitle",
+    JobTitleDesc: "jobTitle desc",
+    Manager: "manager",
+    ManagerDesc: "manager desc",
+    MiddleName: "middleName",
+    MiddleNameDesc: "middleName desc",
+    NickName: "nickName",
+    NickNameDesc: "nickName desc",
+    OfficeLocation: "officeLocation",
+    OfficeLocationDesc: "officeLocation desc",
+    ParentFolderId: "parentFolderId",
+    ParentFolderIdDesc: "parentFolderId desc",
+    PersonalNotes: "personalNotes",
+    PersonalNotesDesc: "personalNotes desc",
+    Phones: "phones",
+    PhonesDesc: "phones desc",
+    PostalAddresses: "postalAddresses",
+    PostalAddressesDesc: "postalAddresses desc",
+    Profession: "profession",
+    ProfessionDesc: "profession desc",
+    SpouseName: "spouseName",
+    SpouseNameDesc: "spouseName desc",
+    Surname: "surname",
+    SurnameDesc: "surname desc",
+    Title: "title",
+    TitleDesc: "title desc",
+    Websites: "websites",
+    WebsitesDesc: "websites desc",
+    WeddingAnniversary: "weddingAnniversary",
+    WeddingAnniversaryDesc: "weddingAnniversary desc",
+    YomiCompanyName: "yomiCompanyName",
+    YomiCompanyNameDesc: "yomiCompanyName desc",
+    YomiGivenName: "yomiGivenName",
+    YomiGivenNameDesc: "yomiGivenName desc",
+    YomiSurname: "yomiSurname",
+    YomiSurnameDesc: "yomiSurname desc",
+} as const;
+/**
+ * Provides operations to call the delta method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Categories: "categories",
+    ChangeKey: "changeKey",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    AssistantName: "assistantName",
+    Birthday: "birthday",
+    Children: "children",
+    CompanyName: "companyName",
+    Department: "department",
+    DisplayName: "displayName",
+    EmailAddresses: "emailAddresses",
+    FileAs: "fileAs",
+    Flag: "flag",
+    Gender: "gender",
+    Generation: "generation",
+    GivenName: "givenName",
+    ImAddresses: "imAddresses",
+    Initials: "initials",
+    IsFavorite: "isFavorite",
+    JobTitle: "jobTitle",
+    Manager: "manager",
+    MiddleName: "middleName",
+    NickName: "nickName",
+    OfficeLocation: "officeLocation",
+    ParentFolderId: "parentFolderId",
+    PersonalNotes: "personalNotes",
+    Phones: "phones",
+    PostalAddresses: "postalAddresses",
+    Profession: "profession",
+    SpouseName: "spouseName",
+    Surname: "surname",
+    Title: "title",
+    Websites: "websites",
+    WeddingAnniversary: "weddingAnniversary",
+    YomiCompanyName: "yomiCompanyName",
+    YomiGivenName: "yomiGivenName",
+    YomiSurname: "yomiSurname",
+    Extensions: "extensions",
+    MultiValueExtendedProperties: "multiValueExtendedProperties",
+    Photo: "photo",
+    SingleValueExtendedProperties: "singleValueExtendedProperties",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

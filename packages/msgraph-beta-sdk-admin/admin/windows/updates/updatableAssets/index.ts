@@ -11,6 +11,9 @@ import { MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderRequestsMetadat
 import { MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilderRequestsMetadata, type MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder } from './microsoftGraphWindowsUpdatesUnenrollAssetsById/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
  */
@@ -83,7 +86,7 @@ export interface UpdatableAssetsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -91,7 +94,7 @@ export interface UpdatableAssetsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -99,7 +102,7 @@ export interface UpdatableAssetsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -113,6 +116,25 @@ export interface UpdatableAssetsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const UpdatableAssetsRequestBuilderUriTemplate = "{+baseurl}/admin/windows/updates/updatableAssets{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+} as const;
+/**
+ * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -161,7 +183,7 @@ export const UpdatableAssetsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUpdatableAssetCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UpdatableAssetsRequestBuilderGetQueryParametersMapper,
     },
@@ -171,7 +193,7 @@ export const UpdatableAssetsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUpdatableAssetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUpdatableAsset,

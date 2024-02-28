@@ -68,7 +68,7 @@ export interface AppConsentRequestsForApprovalRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -76,7 +76,7 @@ export interface AppConsentRequestsForApprovalRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -84,7 +84,7 @@ export interface AppConsentRequestsForApprovalRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -94,6 +94,9 @@ export interface AppConsentRequestsForApprovalRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -137,7 +140,7 @@ export const AppConsentRequestsForApprovalRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppConsentRequestCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AppConsentRequestsForApprovalRequestBuilderGetQueryParametersMapper,
     },
@@ -147,12 +150,45 @@ export const AppConsentRequestsForApprovalRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppConsentRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppConsentRequest,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    UserConsentRequests: "userConsentRequests",
+} as const;
+/**
+ * Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppDisplayName: "appDisplayName",
+    AppDisplayNameDesc: "appDisplayName desc",
+    AppId: "appId",
+    AppIdDesc: "appId desc",
+    ConsentType: "consentType",
+    ConsentTypeDesc: "consentType desc",
+    PendingScopes: "pendingScopes",
+    PendingScopesDesc: "pendingScopes desc",
+} as const;
+/**
+ * Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppDisplayName: "appDisplayName",
+    AppId: "appId",
+    ConsentType: "consentType",
+    PendingScopes: "pendingScopes",
+    UserConsentRequests: "userConsentRequests",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

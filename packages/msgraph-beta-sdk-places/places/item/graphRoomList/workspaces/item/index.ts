@@ -5,6 +5,8 @@ import { createWorkspaceFromDiscriminatorValue, serializeWorkspace, type Workspa
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
  */
@@ -57,16 +59,42 @@ export interface WorkspaceItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WorkspaceItemRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did}/graph.roomList/workspaces/{workspace%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Address: "address",
+    DisplayName: "displayName",
+    GeoCoordinates: "geoCoordinates",
+    Phone: "phone",
+    PlaceId: "placeId",
+    Building: "building",
+    Capacity: "capacity",
+    EmailAddress: "emailAddress",
+    FloorLabel: "floorLabel",
+    FloorNumber: "floorNumber",
+    IsWheelChairAccessible: "isWheelChairAccessible",
+    Label: "label",
+    Nickname: "nickname",
+    Tags: "tags",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +112,7 @@ export const WorkspaceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WorkspaceItemRequestBuilderUriTemplate,
@@ -92,7 +120,7 @@ export const WorkspaceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkspaceFromDiscriminatorValue,
         queryParametersMapper: WorkspaceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +130,7 @@ export const WorkspaceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkspaceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWorkspace,

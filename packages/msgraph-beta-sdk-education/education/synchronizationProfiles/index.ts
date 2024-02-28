@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { EducationSynchronizationProfileItemRequestBuilderNavigationMetadata, EducationSynchronizationProfileItemRequestBuilderRequestsMetadata, type EducationSynchronizationProfileItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
  */
@@ -62,7 +65,7 @@ export interface SynchronizationProfilesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +73,7 @@ export interface SynchronizationProfilesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +81,7 @@ export interface SynchronizationProfilesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -92,6 +95,50 @@ export interface SynchronizationProfilesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SynchronizationProfilesRequestBuilderUriTemplate = "{+baseurl}/education/synchronizationProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Errors: "errors",
+    ProfileStatus: "profileStatus",
+} as const;
+/**
+ * Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DataProvider: "dataProvider",
+    DataProviderDesc: "dataProvider desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ExpirationDate: "expirationDate",
+    ExpirationDateDesc: "expirationDate desc",
+    HandleSpecialCharacterConstraint: "handleSpecialCharacterConstraint",
+    HandleSpecialCharacterConstraintDesc: "handleSpecialCharacterConstraint desc",
+    IdentitySynchronizationConfiguration: "identitySynchronizationConfiguration",
+    IdentitySynchronizationConfigurationDesc: "identitySynchronizationConfiguration desc",
+    LicensesToAssign: "licensesToAssign",
+    LicensesToAssignDesc: "licensesToAssign desc",
+    State: "state",
+    StateDesc: "state desc",
+} as const;
+/**
+ * Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DataProvider: "dataProvider",
+    DisplayName: "displayName",
+    ExpirationDate: "expirationDate",
+    HandleSpecialCharacterConstraint: "handleSpecialCharacterConstraint",
+    IdentitySynchronizationConfiguration: "identitySynchronizationConfiguration",
+    LicensesToAssign: "licensesToAssign",
+    State: "state",
+    Errors: "errors",
+    ProfileStatus: "profileStatus",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -128,7 +175,7 @@ export const SynchronizationProfilesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationSynchronizationProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SynchronizationProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +185,7 @@ export const SynchronizationProfilesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationSynchronizationProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEducationSynchronizationProfile,

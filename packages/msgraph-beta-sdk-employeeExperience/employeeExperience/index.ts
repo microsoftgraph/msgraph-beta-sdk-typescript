@@ -77,8 +77,9 @@ export interface EmployeeExperienceRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +128,7 @@ export const EmployeeExperienceRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmployeeExperienceFromDiscriminatorValue,
         queryParametersMapper: EmployeeExperienceRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +138,22 @@ export const EmployeeExperienceRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmployeeExperienceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmployeeExperience,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the employeeExperience singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Communities: "communities",
+    EngagementAsyncOperations: "engagementAsyncOperations",
+    Goals: "goals",
+    LearningCourseActivities: "learningCourseActivities",
+    LearningProviders: "learningProviders",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

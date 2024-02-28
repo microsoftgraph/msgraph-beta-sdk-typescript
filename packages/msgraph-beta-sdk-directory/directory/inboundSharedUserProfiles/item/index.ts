@@ -7,6 +7,8 @@ import { ExportPersonalDataRequestBuilderRequestsMetadata, type ExportPersonalDa
 import { RemovePersonalDataRequestBuilderRequestsMetadata, type RemovePersonalDataRequestBuilder } from './removePersonalData/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
  */
@@ -68,16 +70,31 @@ export interface InboundSharedUserProfileUserItemRequestBuilderGetQueryParameter
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const InboundSharedUserProfileUserItemRequestBuilderUriTemplate = "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    DisplayName: "displayName",
+    HomeTenantId: "homeTenantId",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -106,7 +123,7 @@ export const InboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: InboundSharedUserProfileUserItemRequestBuilderUriTemplate,
@@ -114,7 +131,7 @@ export const InboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundSharedUserProfileFromDiscriminatorValue,
         queryParametersMapper: InboundSharedUserProfileUserItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +141,7 @@ export const InboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundSharedUserProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeInboundSharedUserProfile,

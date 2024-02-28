@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { MicrosoftTunnelSiteItemRequestBuilderNavigationMetadata, MicrosoftTunnelSiteItemRequestBuilderRequestsMetadata, type MicrosoftTunnelSiteItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface MicrosoftTunnelSitesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface MicrosoftTunnelSitesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface MicrosoftTunnelSitesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,59 @@ export interface MicrosoftTunnelSitesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const MicrosoftTunnelSitesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    MicrosoftTunnelConfiguration: "microsoftTunnelConfiguration",
+    MicrosoftTunnelServers: "microsoftTunnelServers",
+} as const;
+/**
+ * Provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    InternalNetworkProbeUrl: "internalNetworkProbeUrl",
+    InternalNetworkProbeUrlDesc: "internalNetworkProbeUrl desc",
+    PublicAddress: "publicAddress",
+    PublicAddressDesc: "publicAddress desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    UpgradeAutomatically: "upgradeAutomatically",
+    UpgradeAutomaticallyDesc: "upgradeAutomatically desc",
+    UpgradeAvailable: "upgradeAvailable",
+    UpgradeAvailableDesc: "upgradeAvailable desc",
+    UpgradeWindowEndTime: "upgradeWindowEndTime",
+    UpgradeWindowEndTimeDesc: "upgradeWindowEndTime desc",
+    UpgradeWindowStartTime: "upgradeWindowStartTime",
+    UpgradeWindowStartTimeDesc: "upgradeWindowStartTime desc",
+    UpgradeWindowUtcOffsetInMinutes: "upgradeWindowUtcOffsetInMinutes",
+    UpgradeWindowUtcOffsetInMinutesDesc: "upgradeWindowUtcOffsetInMinutes desc",
+} as const;
+/**
+ * Provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    InternalNetworkProbeUrl: "internalNetworkProbeUrl",
+    PublicAddress: "publicAddress",
+    RoleScopeTagIds: "roleScopeTagIds",
+    UpgradeAutomatically: "upgradeAutomatically",
+    UpgradeAvailable: "upgradeAvailable",
+    UpgradeWindowEndTime: "upgradeWindowEndTime",
+    UpgradeWindowStartTime: "upgradeWindowStartTime",
+    UpgradeWindowUtcOffsetInMinutes: "upgradeWindowUtcOffsetInMinutes",
+    MicrosoftTunnelConfiguration: "microsoftTunnelConfiguration",
+    MicrosoftTunnelServers: "microsoftTunnelServers",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +183,7 @@ export const MicrosoftTunnelSitesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelSiteCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelSitesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +193,7 @@ export const MicrosoftTunnelSitesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelSiteFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftTunnelSite,

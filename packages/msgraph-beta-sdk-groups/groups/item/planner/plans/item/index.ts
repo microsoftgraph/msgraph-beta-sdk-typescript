@@ -11,6 +11,8 @@ import { TasksRequestBuilderNavigationMetadata, TasksRequestBuilderRequestsMetad
 import { type UnarchiveRequestBuilder, UnarchiveRequestBuilderRequestsMetadata } from './unarchive/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.
  */
@@ -87,16 +89,44 @@ export interface PlannerPlanItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PlannerPlanItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/planner/plans/{plannerPlan%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Buckets: "buckets",
+    Details: "details",
+    Tasks: "tasks",
+} as const;
+/**
+ * Provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ArchivalInfo: "archivalInfo",
+    Container: "container",
+    Contexts: "contexts",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    CreationSource: "creationSource",
+    IsArchived: "isArchived",
+    Owner: "owner",
+    SharedWithContainers: "sharedWithContainers",
+    Title: "title",
+    Buckets: "buckets",
+    Details: "details",
+    Tasks: "tasks",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -139,7 +169,7 @@ export const PlannerPlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PlannerPlanItemRequestBuilderUriTemplate,
@@ -147,7 +177,7 @@ export const PlannerPlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPlannerPlanFromDiscriminatorValue,
         queryParametersMapper: PlannerPlanItemRequestBuilderGetQueryParametersMapper,
     },
@@ -157,7 +187,7 @@ export const PlannerPlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPlannerPlanFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePlannerPlan,

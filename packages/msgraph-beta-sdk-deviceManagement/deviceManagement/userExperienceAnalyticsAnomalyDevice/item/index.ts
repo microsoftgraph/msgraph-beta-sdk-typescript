@@ -5,6 +5,8 @@ import { createUserExperienceAnalyticsAnomalyDeviceFromDiscriminatorValue, seria
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,39 @@ export interface UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderGetQueryP
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomalyDevice/{userExperienceAnalyticsAnomalyDevice%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AnomalyId: "anomalyId",
+    AnomalyOnDeviceFirstOccurrenceDateTime: "anomalyOnDeviceFirstOccurrenceDateTime",
+    AnomalyOnDeviceLatestOccurrenceDateTime: "anomalyOnDeviceLatestOccurrenceDateTime",
+    CorrelationGroupId: "correlationGroupId",
+    DeviceId: "deviceId",
+    DeviceManufacturer: "deviceManufacturer",
+    DeviceModel: "deviceModel",
+    DeviceName: "deviceName",
+    DeviceStatus: "deviceStatus",
+    OsName: "osName",
+    OsVersion: "osVersion",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +109,7 @@ export const UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderUriTemplate,
@@ -92,7 +117,7 @@ export const UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyDeviceFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +127,7 @@ export const UserExperienceAnalyticsAnomalyDeviceItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsAnomalyDevice,

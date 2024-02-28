@@ -67,12 +67,14 @@ export interface ConnectivityRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -107,7 +109,7 @@ export const ConnectivityRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ConnectivityRequestBuilderUriTemplate,
@@ -115,7 +117,7 @@ export const ConnectivityRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectivityFromDiscriminatorValue,
         queryParametersMapper: ConnectivityRequestBuilderGetQueryParametersMapper,
     },
@@ -125,12 +127,29 @@ export const ConnectivityRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectivityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConnectivity,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Branches: "branches",
+    RemoteNetworks: "remoteNetworks",
+} as const;
+/**
+ * Provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    WebCategories: "webCategories",
+    Branches: "branches",
+    RemoteNetworks: "remoteNetworks",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

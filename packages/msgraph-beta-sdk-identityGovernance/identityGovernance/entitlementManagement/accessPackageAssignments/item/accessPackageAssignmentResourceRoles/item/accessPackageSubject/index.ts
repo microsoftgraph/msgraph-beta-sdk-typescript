@@ -62,12 +62,14 @@ export interface AccessPackageSubjectRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -97,7 +99,7 @@ export const AccessPackageSubjectRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageSubjectRequestBuilderUriTemplate,
@@ -105,7 +107,7 @@ export const AccessPackageSubjectRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageSubjectFromDiscriminatorValue,
         queryParametersMapper: AccessPackageSubjectRequestBuilderGetQueryParametersMapper,
     },
@@ -115,12 +117,36 @@ export const AccessPackageSubjectRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageSubjectFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageSubject,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackageSubject property of the microsoft.graph.accessPackageAssignmentResourceRole entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ConnectedOrganization: "connectedOrganization",
+} as const;
+/**
+ * Provides operations to manage the accessPackageSubject property of the microsoft.graph.accessPackageAssignmentResourceRole entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AltSecId: "altSecId",
+    CleanupScheduledDateTime: "cleanupScheduledDateTime",
+    ConnectedOrganizationId: "connectedOrganizationId",
+    DisplayName: "displayName",
+    Email: "email",
+    ObjectId: "objectId",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    PrincipalName: "principalName",
+    SubjectLifecycle: "subjectLifecycle",
+    Type: "type",
+    ConnectedOrganization: "connectedOrganization",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

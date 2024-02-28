@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UserExperienceAnalyticsAnomalyItemRequestBuilder, UserExperienceAnalyticsAnomalyItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface UserExperienceAnalyticsAnomalyRequestBuilderGetQueryParameters 
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface UserExperienceAnalyticsAnomalyRequestBuilderGetQueryParameters 
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface UserExperienceAnalyticsAnomalyRequestBuilderGetQueryParameters 
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,64 @@ export interface UserExperienceAnalyticsAnomalyRequestBuilderGetQueryParameters 
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsAnomalyRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomaly{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AnomalyFirstOccurrenceDateTime: "anomalyFirstOccurrenceDateTime",
+    AnomalyFirstOccurrenceDateTimeDesc: "anomalyFirstOccurrenceDateTime desc",
+    AnomalyId: "anomalyId",
+    AnomalyIdDesc: "anomalyId desc",
+    AnomalyLatestOccurrenceDateTime: "anomalyLatestOccurrenceDateTime",
+    AnomalyLatestOccurrenceDateTimeDesc: "anomalyLatestOccurrenceDateTime desc",
+    AnomalyName: "anomalyName",
+    AnomalyNameDesc: "anomalyName desc",
+    AnomalyType: "anomalyType",
+    AnomalyTypeDesc: "anomalyType desc",
+    AssetName: "assetName",
+    AssetNameDesc: "assetName desc",
+    AssetPublisher: "assetPublisher",
+    AssetPublisherDesc: "assetPublisher desc",
+    AssetVersion: "assetVersion",
+    AssetVersionDesc: "assetVersion desc",
+    DetectionModelId: "detectionModelId",
+    DetectionModelIdDesc: "detectionModelId desc",
+    DeviceImpactedCount: "deviceImpactedCount",
+    DeviceImpactedCountDesc: "deviceImpactedCount desc",
+    IssueId: "issueId",
+    IssueIdDesc: "issueId desc",
+    Severity: "severity",
+    SeverityDesc: "severity desc",
+    State: "state",
+    StateDesc: "state desc",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AnomalyFirstOccurrenceDateTime: "anomalyFirstOccurrenceDateTime",
+    AnomalyId: "anomalyId",
+    AnomalyLatestOccurrenceDateTime: "anomalyLatestOccurrenceDateTime",
+    AnomalyName: "anomalyName",
+    AnomalyType: "anomalyType",
+    AssetName: "assetName",
+    AssetPublisher: "assetPublisher",
+    AssetVersion: "assetVersion",
+    DetectionModelId: "detectionModelId",
+    DeviceImpactedCount: "deviceImpactedCount",
+    IssueId: "issueId",
+    Severity: "severity",
+    State: "state",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +187,7 @@ export const UserExperienceAnalyticsAnomalyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsAnomalyRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +197,7 @@ export const UserExperienceAnalyticsAnomalyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsAnomaly,

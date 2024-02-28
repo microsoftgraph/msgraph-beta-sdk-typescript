@@ -23,6 +23,8 @@ export function deserializeIntoGetRoleScopeTagsByResourceWithResourceGetResponse
         "value": n => { getRoleScopeTagsByResourceWithResourceGetResponse.value = n.getCollectionOfObjectValues<RoleScopeTag>(createRoleScopeTagFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
 export interface GetRoleScopeTagsByResourceWithResourceGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
@@ -58,7 +60,7 @@ export interface GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryPar
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +68,7 @@ export interface GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryPar
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +76,7 @@ export interface GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryPar
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +86,7 @@ export interface GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryPar
      */
     top?: number;
 }
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -96,6 +99,26 @@ export function serializeGetRoleScopeTagsByResourceWithResourceGetResponse(write
  * Uri template for the request builder.
  */
 export const GetRoleScopeTagsByResourceWithResourceRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/getRoleScopeTagsByResource(resource='{resource}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to call the getRoleScopeTagsByResource method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+} as const;
+/**
+ * Provides operations to call the getRoleScopeTagsByResource method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    IsBuiltIn: "isBuiltIn",
+    IsBuiltInDesc: "isBuiltIn desc",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -119,10 +142,20 @@ export const GetRoleScopeTagsByResourceWithResourceRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetRoleScopeTagsByResourceWithResourceGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getRoleScopeTagsByResource method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Description: "description",
+    DisplayName: "displayName",
+    IsBuiltIn: "isBuiltIn",
+    Assignments: "assignments",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

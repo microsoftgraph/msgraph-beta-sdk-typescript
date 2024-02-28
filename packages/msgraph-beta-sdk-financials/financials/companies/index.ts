@@ -47,7 +47,7 @@ export interface CompaniesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +55,7 @@ export interface CompaniesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +63,7 @@ export interface CompaniesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +73,9 @@ export interface CompaniesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -113,10 +116,111 @@ export const CompaniesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CompaniesRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the companies property of the microsoft.graph.financials entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Accounts: "accounts",
+    AgedAccountsPayable: "agedAccountsPayable",
+    AgedAccountsReceivable: "agedAccountsReceivable",
+    CompanyInformation: "companyInformation",
+    CountriesRegions: "countriesRegions",
+    Currencies: "currencies",
+    CustomerPaymentJournals: "customerPaymentJournals",
+    CustomerPayments: "customerPayments",
+    Customers: "customers",
+    Dimensions: "dimensions",
+    DimensionValues: "dimensionValues",
+    Employees: "employees",
+    GeneralLedgerEntries: "generalLedgerEntries",
+    ItemCategories: "itemCategories",
+    Items: "items",
+    JournalLines: "journalLines",
+    Journals: "journals",
+    PaymentMethods: "paymentMethods",
+    PaymentTerms: "paymentTerms",
+    Picture: "picture",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    PurchaseInvoices: "purchaseInvoices",
+    SalesCreditMemoLines: "salesCreditMemoLines",
+    SalesCreditMemos: "salesCreditMemos",
+    SalesInvoiceLines: "salesInvoiceLines",
+    SalesInvoices: "salesInvoices",
+    SalesOrderLines: "salesOrderLines",
+    SalesOrders: "salesOrders",
+    SalesQuoteLines: "salesQuoteLines",
+    SalesQuotes: "salesQuotes",
+    ShipmentMethods: "shipmentMethods",
+    TaxAreas: "taxAreas",
+    TaxGroups: "taxGroups",
+    UnitsOfMeasure: "unitsOfMeasure",
+    Vendors: "vendors",
+} as const;
+/**
+ * Provides operations to manage the companies property of the microsoft.graph.financials entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    BusinessProfileId: "businessProfileId",
+    BusinessProfileIdDesc: "businessProfileId desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    Id: "id",
+    IdDesc: "id desc",
+    Name: "name",
+    NameDesc: "name desc",
+    SystemVersion: "systemVersion",
+    SystemVersionDesc: "systemVersion desc",
+} as const;
+/**
+ * Provides operations to manage the companies property of the microsoft.graph.financials entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BusinessProfileId: "businessProfileId",
+    DisplayName: "displayName",
+    Id: "id",
+    Name: "name",
+    SystemVersion: "systemVersion",
+    Accounts: "accounts",
+    AgedAccountsPayable: "agedAccountsPayable",
+    AgedAccountsReceivable: "agedAccountsReceivable",
+    CompanyInformation: "companyInformation",
+    CountriesRegions: "countriesRegions",
+    Currencies: "currencies",
+    CustomerPaymentJournals: "customerPaymentJournals",
+    CustomerPayments: "customerPayments",
+    Customers: "customers",
+    Dimensions: "dimensions",
+    DimensionValues: "dimensionValues",
+    Employees: "employees",
+    GeneralLedgerEntries: "generalLedgerEntries",
+    ItemCategories: "itemCategories",
+    Items: "items",
+    JournalLines: "journalLines",
+    Journals: "journals",
+    PaymentMethods: "paymentMethods",
+    PaymentTerms: "paymentTerms",
+    Picture: "picture",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    PurchaseInvoices: "purchaseInvoices",
+    SalesCreditMemoLines: "salesCreditMemoLines",
+    SalesCreditMemos: "salesCreditMemos",
+    SalesInvoiceLines: "salesInvoiceLines",
+    SalesInvoices: "salesInvoices",
+    SalesOrderLines: "salesOrderLines",
+    SalesOrders: "salesOrders",
+    SalesQuoteLines: "salesQuoteLines",
+    SalesQuotes: "salesQuotes",
+    ShipmentMethods: "shipmentMethods",
+    TaxAreas: "taxAreas",
+    TaxGroups: "taxGroups",
+    UnitsOfMeasure: "unitsOfMeasure",
+    Vendors: "vendors",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

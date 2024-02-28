@@ -7,6 +7,8 @@ import { DefinitionRequestBuilderRequestsMetadata, type DefinitionRequestBuilder
 import { TriggerRequestBuilderRequestsMetadata, type TriggerRequestBuilder } from './trigger/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tasks property of the microsoft.graph.printJob entity.
  */
@@ -75,16 +77,34 @@ export interface PrintTaskItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PrintTaskItemRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the tasks property of the microsoft.graph.printJob entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Definition: "definition",
+    Trigger: "trigger",
+} as const;
+/**
+ * Provides operations to manage the tasks property of the microsoft.graph.printJob entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ParentUrl: "parentUrl",
+    Status: "status",
+    Definition: "definition",
+    Trigger: "trigger",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -113,7 +133,7 @@ export const PrintTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrintTaskItemRequestBuilderUriTemplate,
@@ -121,7 +141,7 @@ export const PrintTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintTaskFromDiscriminatorValue,
         queryParametersMapper: PrintTaskItemRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +151,7 @@ export const PrintTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintTaskFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrintTask,

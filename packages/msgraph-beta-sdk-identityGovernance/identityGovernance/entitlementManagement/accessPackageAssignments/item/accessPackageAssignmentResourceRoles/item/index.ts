@@ -77,12 +77,14 @@ export interface AccessPackageAssignmentResourceRoleItemRequestBuilderGetQueryPa
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -125,7 +127,7 @@ export const AccessPackageAssignmentResourceRoleItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageAssignmentResourceRoleItemRequestBuilderUriTemplate,
@@ -133,7 +135,7 @@ export const AccessPackageAssignmentResourceRoleItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentResourceRoleFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentResourceRoleItemRequestBuilderGetQueryParametersMapper,
     },
@@ -143,12 +145,35 @@ export const AccessPackageAssignmentResourceRoleItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentResourceRoleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageAssignmentResourceRole,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.accessPackageAssignment entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackageAssignments: "accessPackageAssignments",
+    AccessPackageResourceRole: "accessPackageResourceRole",
+    AccessPackageResourceScope: "accessPackageResourceScope",
+    AccessPackageSubject: "accessPackageSubject",
+} as const;
+/**
+ * Provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.accessPackageAssignment entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    OriginId: "originId",
+    OriginSystem: "originSystem",
+    Status: "status",
+    AccessPackageAssignments: "accessPackageAssignments",
+    AccessPackageResourceRole: "accessPackageResourceRole",
+    AccessPackageResourceScope: "accessPackageResourceScope",
+    AccessPackageSubject: "accessPackageSubject",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -8,6 +8,9 @@ import { FilterByCurrentUserWithOnRequestBuilderRequestsMetadata, type FilterByC
 import { AccessReviewInstanceItemRequestBuilderNavigationMetadata, AccessReviewInstanceItemRequestBuilderRequestsMetadata, type AccessReviewInstanceItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
  */
@@ -69,7 +72,7 @@ export interface PendingAccessReviewInstancesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -77,7 +80,7 @@ export interface PendingAccessReviewInstancesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -85,7 +88,7 @@ export interface PendingAccessReviewInstancesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -99,6 +102,54 @@ export interface PendingAccessReviewInstancesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PendingAccessReviewInstancesRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ContactedReviewers: "contactedReviewers",
+    Decisions: "decisions",
+    Definition: "definition",
+    Stages: "stages",
+} as const;
+/**
+ * Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    EndDateTime: "endDateTime",
+    EndDateTimeDesc: "endDateTime desc",
+    Errors: "errors",
+    ErrorsDesc: "errors desc",
+    FallbackReviewers: "fallbackReviewers",
+    FallbackReviewersDesc: "fallbackReviewers desc",
+    Reviewers: "reviewers",
+    ReviewersDesc: "reviewers desc",
+    Scope: "scope",
+    ScopeDesc: "scope desc",
+    StartDateTime: "startDateTime",
+    StartDateTimeDesc: "startDateTime desc",
+    Status: "status",
+    StatusDesc: "status desc",
+} as const;
+/**
+ * Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    EndDateTime: "endDateTime",
+    Errors: "errors",
+    FallbackReviewers: "fallbackReviewers",
+    Reviewers: "reviewers",
+    Scope: "scope",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    ContactedReviewers: "contactedReviewers",
+    Decisions: "decisions",
+    Definition: "definition",
+    Stages: "stages",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -138,7 +189,7 @@ export const PendingAccessReviewInstancesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PendingAccessReviewInstancesRequestBuilderGetQueryParametersMapper,
     },
@@ -148,7 +199,7 @@ export const PendingAccessReviewInstancesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessReviewInstance,

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { DeviceManagementSettingDefinitionItemRequestBuilderRequestsMetadata, type DeviceManagementSettingDefinitionItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
  */
@@ -61,7 +64,7 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,58 @@ export interface SettingDefinitionsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SettingDefinitionsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/categories/{deviceManagementIntentSettingCategory%2Did}/settingDefinitions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Constraints: "constraints",
+    ConstraintsDesc: "constraints desc",
+    Dependencies: "dependencies",
+    DependenciesDesc: "dependencies desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    DocumentationUrl: "documentationUrl",
+    DocumentationUrlDesc: "documentationUrl desc",
+    HeaderSubtitle: "headerSubtitle",
+    HeaderSubtitleDesc: "headerSubtitle desc",
+    HeaderTitle: "headerTitle",
+    HeaderTitleDesc: "headerTitle desc",
+    IsTopLevel: "isTopLevel",
+    IsTopLevelDesc: "isTopLevel desc",
+    Keywords: "keywords",
+    KeywordsDesc: "keywords desc",
+    PlaceholderText: "placeholderText",
+    PlaceholderTextDesc: "placeholderText desc",
+    ValueType: "valueType",
+    ValueTypeDesc: "valueType desc",
+} as const;
+/**
+ * Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Constraints: "constraints",
+    Dependencies: "dependencies",
+    Description: "description",
+    DisplayName: "displayName",
+    DocumentationUrl: "documentationUrl",
+    HeaderSubtitle: "headerSubtitle",
+    HeaderTitle: "headerTitle",
+    IsTopLevel: "isTopLevel",
+    Keywords: "keywords",
+    PlaceholderText: "placeholderText",
+    ValueType: "valueType",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +181,7 @@ export const SettingDefinitionsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementSettingDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SettingDefinitionsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +191,7 @@ export const SettingDefinitionsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementSettingDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementSettingDefinition,

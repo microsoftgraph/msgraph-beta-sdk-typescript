@@ -63,12 +63,14 @@ export interface AlertRecordItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const AlertRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AlertRecordItemRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const AlertRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertRecordFromDiscriminatorValue,
         queryParametersMapper: AlertRecordItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,33 @@ export const AlertRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertRecordFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAlertRecord,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AlertImpact: "alertImpact",
+    AlertRuleId: "alertRuleId",
+    AlertRuleTemplate: "alertRuleTemplate",
+    DetectedDateTime: "detectedDateTime",
+    DisplayName: "displayName",
+    LastUpdatedDateTime: "lastUpdatedDateTime",
+    ResolvedDateTime: "resolvedDateTime",
+    Severity: "severity",
+    Status: "status",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

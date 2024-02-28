@@ -7,6 +7,8 @@ import { DataConnectorRequestBuilderRequestsMetadata, type DataConnectorRequestB
 import { type YearRequestBuilder, YearRequestBuilderRequestsMetadata } from './year/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
  */
@@ -70,16 +72,37 @@ export interface InboundFlowItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const InboundFlowItemRequestBuilderUriTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    DataConnector: "dataConnector",
+    Year: "year",
+} as const;
+/**
+ * Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DisplayName: "displayName",
+    ReadinessStatus: "readinessStatus",
+    DataDomain: "dataDomain",
+    EffectiveDateTime: "effectiveDateTime",
+    ExpirationDateTime: "expirationDateTime",
+    DataConnector: "dataConnector",
+    Year: "year",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -108,7 +131,7 @@ export const InboundFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: InboundFlowItemRequestBuilderUriTemplate,
@@ -116,7 +139,7 @@ export const InboundFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundFlowFromDiscriminatorValue,
         queryParametersMapper: InboundFlowItemRequestBuilderGetQueryParametersMapper,
     },
@@ -126,7 +149,7 @@ export const InboundFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundFlowFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeInboundFlow,

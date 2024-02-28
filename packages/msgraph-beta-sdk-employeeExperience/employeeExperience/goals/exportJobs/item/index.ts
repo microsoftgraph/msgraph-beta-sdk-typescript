@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { ContentRequestBuilderRequestsMetadata, type ContentRequestBuilder } from './content/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
  */
@@ -62,16 +64,37 @@ export interface GoalsExportJobItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const GoalsExportJobItemRequestBuilderUriTemplate = "{+baseurl}/employeeExperience/goals/exportJobs/{goalsExportJob%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    LastActionDateTime: "lastActionDateTime",
+    ResourceLocation: "resourceLocation",
+    Status: "status",
+    StatusDetail: "statusDetail",
+    Content: "content",
+    ExpirationDateTime: "expirationDateTime",
+    ExplorerViewId: "explorerViewId",
+    GoalsOrganizationId: "goalsOrganizationId",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -97,7 +120,7 @@ export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GoalsExportJobItemRequestBuilderUriTemplate,
@@ -105,7 +128,7 @@ export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsExportJobFromDiscriminatorValue,
         queryParametersMapper: GoalsExportJobItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +138,7 @@ export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsExportJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGoalsExportJob,

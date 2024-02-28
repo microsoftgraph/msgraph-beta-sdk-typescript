@@ -6,6 +6,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequestBuilderNavigationMetadata, GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequestBuilderRequestsMetadata, type GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequestBuilder } from './graphOnAttributeCollectionExternalUsersSelfServiceSignUp/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
 /**
  * Builds and executes requests for operations under /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection
  */
@@ -35,7 +36,7 @@ export interface OnAttributeCollectionRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
@@ -45,6 +46,9 @@ export interface OnAttributeCollectionRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const OnAttributeCollectionRequestBuilderUriTemplate = "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection{?%24expand,%24select}";
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -71,7 +75,7 @@ export const OnAttributeCollectionRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnAttributeCollectionHandlerFromDiscriminatorValue,
         queryParametersMapper: OnAttributeCollectionRequestBuilderGetQueryParametersMapper,
     },

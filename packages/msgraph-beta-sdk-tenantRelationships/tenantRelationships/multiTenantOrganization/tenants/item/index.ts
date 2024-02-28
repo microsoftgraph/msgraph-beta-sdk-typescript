@@ -5,6 +5,8 @@ import { createMultiTenantOrganizationMemberFromDiscriminatorValue, serializeMul
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.
  */
@@ -59,16 +61,37 @@ export interface MultiTenantOrganizationMemberItemRequestBuilderGetQueryParamete
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const MultiTenantOrganizationMemberItemRequestBuilderUriTemplate = "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AddedByTenantId: "addedByTenantId",
+    AddedDateTime: "addedDateTime",
+    DisplayName: "displayName",
+    JoinedDateTime: "joinedDateTime",
+    Role: "role",
+    State: "state",
+    TenantId: "tenantId",
+    TransitionDetails: "transitionDetails",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -86,7 +109,7 @@ export const MultiTenantOrganizationMemberItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MultiTenantOrganizationMemberItemRequestBuilderUriTemplate,
@@ -94,7 +117,7 @@ export const MultiTenantOrganizationMemberItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationMemberFromDiscriminatorValue,
         queryParametersMapper: MultiTenantOrganizationMemberItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +127,7 @@ export const MultiTenantOrganizationMemberItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationMemberFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMultiTenantOrganizationMember,

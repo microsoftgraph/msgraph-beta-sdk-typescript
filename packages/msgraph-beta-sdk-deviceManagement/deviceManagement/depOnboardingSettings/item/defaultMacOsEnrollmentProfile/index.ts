@@ -30,12 +30,14 @@ export interface DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -57,10 +59,71 @@ export const DefaultMacOsEnrollmentProfileRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepMacOSEnrollmentProfileFromDiscriminatorValue,
         queryParametersMapper: DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the defaultMacOsEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the defaultMacOsEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ConfigurationEndpointUrl: "configurationEndpointUrl",
+    Description: "description",
+    DisplayName: "displayName",
+    EnableAuthenticationViaCompanyPortal: "enableAuthenticationViaCompanyPortal",
+    RequireCompanyPortalOnSetupAssistantEnrolledDevices: "requireCompanyPortalOnSetupAssistantEnrolledDevices",
+    RequiresUserAuthentication: "requiresUserAuthentication",
+    AppleIdDisabled: "appleIdDisabled",
+    ApplePayDisabled: "applePayDisabled",
+    ConfigurationWebUrl: "configurationWebUrl",
+    DeviceNameTemplate: "deviceNameTemplate",
+    DiagnosticsDisabled: "diagnosticsDisabled",
+    DisplayToneSetupDisabled: "displayToneSetupDisabled",
+    EnabledSkipKeys: "enabledSkipKeys",
+    EnrollmentTimeAzureAdGroupIds: "enrollmentTimeAzureAdGroupIds",
+    IsDefault: "isDefault",
+    IsMandatory: "isMandatory",
+    LocationDisabled: "locationDisabled",
+    PrivacyPaneDisabled: "privacyPaneDisabled",
+    ProfileRemovalDisabled: "profileRemovalDisabled",
+    RestoreBlocked: "restoreBlocked",
+    ScreenTimeScreenDisabled: "screenTimeScreenDisabled",
+    SiriDisabled: "siriDisabled",
+    SupervisedModeEnabled: "supervisedModeEnabled",
+    SupportDepartment: "supportDepartment",
+    SupportPhoneNumber: "supportPhoneNumber",
+    TermsAndConditionsDisabled: "termsAndConditionsDisabled",
+    TouchIdDisabled: "touchIdDisabled",
+    WaitForDeviceConfiguredConfirmation: "waitForDeviceConfiguredConfirmation",
+    AccessibilityScreenDisabled: "accessibilityScreenDisabled",
+    AdminAccountFullName: "adminAccountFullName",
+    AdminAccountPassword: "adminAccountPassword",
+    AdminAccountUserName: "adminAccountUserName",
+    AutoAdvanceSetupEnabled: "autoAdvanceSetupEnabled",
+    AutoUnlockWithWatchDisabled: "autoUnlockWithWatchDisabled",
+    ChooseYourLockScreenDisabled: "chooseYourLockScreenDisabled",
+    DontAutoPopulatePrimaryAccountInfo: "dontAutoPopulatePrimaryAccountInfo",
+    EnableRestrictEditing: "enableRestrictEditing",
+    FileVaultDisabled: "fileVaultDisabled",
+    HideAdminAccount: "hideAdminAccount",
+    ICloudDiagnosticsDisabled: "iCloudDiagnosticsDisabled",
+    ICloudStorageDisabled: "iCloudStorageDisabled",
+    PassCodeDisabled: "passCodeDisabled",
+    PrimaryAccountFullName: "primaryAccountFullName",
+    PrimaryAccountUserName: "primaryAccountUserName",
+    RegistrationDisabled: "registrationDisabled",
+    RequestRequiresNetworkTether: "requestRequiresNetworkTether",
+    SetPrimarySetupAccountAsRegularUser: "setPrimarySetupAccountAsRegularUser",
+    SkipPrimarySetupAccountCreation: "skipPrimarySetupAccountCreation",
+    ZoomDisabled: "zoomDisabled",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -61,7 +61,7 @@ export interface DeviceComplianceScriptsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface DeviceComplianceScriptsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface DeviceComplianceScriptsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface DeviceComplianceScriptsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const DeviceComplianceScriptsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceScriptCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceComplianceScriptsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,70 @@ export const DeviceComplianceScriptsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceScriptFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceComplianceScript,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    DeviceRunStates: "deviceRunStates",
+    RunSummary: "runSummary",
+} as const;
+/**
+ * Provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    Description: "description",
+    DescriptionDesc: "description desc",
+    DetectionScriptContent: "detectionScriptContent",
+    DetectionScriptContentDesc: "detectionScriptContent desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    EnforceSignatureCheck: "enforceSignatureCheck",
+    EnforceSignatureCheckDesc: "enforceSignatureCheck desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Publisher: "publisher",
+    PublisherDesc: "publisher desc",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RoleScopeTagIdsDesc: "roleScopeTagIds desc",
+    RunAs32Bit: "runAs32Bit",
+    RunAs32BitDesc: "runAs32Bit desc",
+    RunAsAccount: "runAsAccount",
+    RunAsAccountDesc: "runAsAccount desc",
+    Version: "version",
+    VersionDesc: "version desc",
+} as const;
+/**
+ * Provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DetectionScriptContent: "detectionScriptContent",
+    DisplayName: "displayName",
+    EnforceSignatureCheck: "enforceSignatureCheck",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Publisher: "publisher",
+    RoleScopeTagIds: "roleScopeTagIds",
+    RunAs32Bit: "runAs32Bit",
+    RunAsAccount: "runAsAccount",
+    Version: "version",
+    Assignments: "assignments",
+    DeviceRunStates: "deviceRunStates",
+    RunSummary: "runSummary",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

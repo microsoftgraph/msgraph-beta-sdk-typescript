@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { GovernanceRoleAssignmentRequestItemRequestBuilderNavigationMetadata, GovernanceRoleAssignmentRequestItemRequestBuilderRequestsMetadata, type GovernanceRoleAssignmentRequestItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
  */
@@ -61,7 +64,7 @@ export interface RoleAssignmentRequestsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface RoleAssignmentRequestsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface RoleAssignmentRequestsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,61 @@ export interface RoleAssignmentRequestsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const RoleAssignmentRequestsRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignmentRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+    Subject: "subject",
+} as const;
+/**
+ * Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AssignmentState: "assignmentState",
+    AssignmentStateDesc: "assignmentState desc",
+    LinkedEligibleRoleAssignmentId: "linkedEligibleRoleAssignmentId",
+    LinkedEligibleRoleAssignmentIdDesc: "linkedEligibleRoleAssignmentId desc",
+    Reason: "reason",
+    ReasonDesc: "reason desc",
+    RequestedDateTime: "requestedDateTime",
+    RequestedDateTimeDesc: "requestedDateTime desc",
+    ResourceId: "resourceId",
+    ResourceIdDesc: "resourceId desc",
+    RoleDefinitionId: "roleDefinitionId",
+    RoleDefinitionIdDesc: "roleDefinitionId desc",
+    Schedule: "schedule",
+    ScheduleDesc: "schedule desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    SubjectId: "subjectId",
+    SubjectIdDesc: "subjectId desc",
+    Type: "type",
+    TypeDesc: "type desc",
+} as const;
+/**
+ * Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignmentState: "assignmentState",
+    LinkedEligibleRoleAssignmentId: "linkedEligibleRoleAssignmentId",
+    Reason: "reason",
+    RequestedDateTime: "requestedDateTime",
+    ResourceId: "resourceId",
+    RoleDefinitionId: "roleDefinitionId",
+    Schedule: "schedule",
+    Status: "status",
+    SubjectId: "subjectId",
+    Type: "type",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+    Subject: "subject",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -127,7 +185,7 @@ export const RoleAssignmentRequestsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleAssignmentRequestCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RoleAssignmentRequestsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +195,7 @@ export const RoleAssignmentRequestsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleAssignmentRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGovernanceRoleAssignmentRequest,

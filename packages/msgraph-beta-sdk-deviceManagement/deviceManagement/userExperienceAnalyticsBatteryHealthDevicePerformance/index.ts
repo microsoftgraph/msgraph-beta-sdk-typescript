@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { type UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder, UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderRequestsMetadata } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
  */
@@ -61,7 +64,7 @@ export interface UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBui
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBui
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBui
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,64 @@ export interface UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBui
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    BatteryAgeInDays: "batteryAgeInDays",
+    BatteryAgeInDaysDesc: "batteryAgeInDays desc",
+    DeviceBatteriesDetails: "deviceBatteriesDetails",
+    DeviceBatteriesDetailsDesc: "deviceBatteriesDetails desc",
+    DeviceBatteryCount: "deviceBatteryCount",
+    DeviceBatteryCountDesc: "deviceBatteryCount desc",
+    DeviceBatteryHealthScore: "deviceBatteryHealthScore",
+    DeviceBatteryHealthScoreDesc: "deviceBatteryHealthScore desc",
+    DeviceBatteryTags: "deviceBatteryTags",
+    DeviceBatteryTagsDesc: "deviceBatteryTags desc",
+    DeviceId: "deviceId",
+    DeviceIdDesc: "deviceId desc",
+    DeviceName: "deviceName",
+    DeviceNameDesc: "deviceName desc",
+    EstimatedRuntimeInMinutes: "estimatedRuntimeInMinutes",
+    EstimatedRuntimeInMinutesDesc: "estimatedRuntimeInMinutes desc",
+    FullBatteryDrainCount: "fullBatteryDrainCount",
+    FullBatteryDrainCountDesc: "fullBatteryDrainCount desc",
+    HealthStatus: "healthStatus",
+    HealthStatusDesc: "healthStatus desc",
+    Manufacturer: "manufacturer",
+    ManufacturerDesc: "manufacturer desc",
+    MaxCapacityPercentage: "maxCapacityPercentage",
+    MaxCapacityPercentageDesc: "maxCapacityPercentage desc",
+    Model: "model",
+    ModelDesc: "model desc",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BatteryAgeInDays: "batteryAgeInDays",
+    DeviceBatteriesDetails: "deviceBatteriesDetails",
+    DeviceBatteryCount: "deviceBatteryCount",
+    DeviceBatteryHealthScore: "deviceBatteryHealthScore",
+    DeviceBatteryTags: "deviceBatteryTags",
+    DeviceId: "deviceId",
+    DeviceName: "deviceName",
+    EstimatedRuntimeInMinutes: "estimatedRuntimeInMinutes",
+    FullBatteryDrainCount: "fullBatteryDrainCount",
+    HealthStatus: "healthStatus",
+    Manufacturer: "manufacturer",
+    MaxCapacityPercentage: "maxCapacityPercentage",
+    Model: "model",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +187,7 @@ export const UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +197,7 @@ export const UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsBatteryHealthDevicePerformance,

@@ -97,12 +97,14 @@ export interface AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQu
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -153,7 +155,7 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderUriTemplate,
@@ -161,7 +163,7 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue,
         queryParametersMapper: AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -171,12 +173,36 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidManagedStoreAccountEnterpriseSettings,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the androidManagedStoreAccountEnterpriseSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the androidManagedStoreAccountEnterpriseSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AndroidDeviceOwnerFullyManagedEnrollmentEnabled: "androidDeviceOwnerFullyManagedEnrollmentEnabled",
+    BindStatus: "bindStatus",
+    CompanyCodes: "companyCodes",
+    DeviceOwnerManagementEnabled: "deviceOwnerManagementEnabled",
+    EnrollmentTarget: "enrollmentTarget",
+    LastAppSyncDateTime: "lastAppSyncDateTime",
+    LastAppSyncStatus: "lastAppSyncStatus",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ManagedGooglePlayInitialScopeTagIds: "managedGooglePlayInitialScopeTagIds",
+    OwnerOrganizationName: "ownerOrganizationName",
+    OwnerUserPrincipalName: "ownerUserPrincipalName",
+    TargetGroupIds: "targetGroupIds",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

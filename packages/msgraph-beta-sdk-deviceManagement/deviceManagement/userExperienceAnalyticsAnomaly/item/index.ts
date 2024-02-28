@@ -5,6 +5,8 @@ import { createUserExperienceAnalyticsAnomalyFromDiscriminatorValue, serializeUs
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
  */
@@ -57,16 +59,41 @@ export interface UserExperienceAnalyticsAnomalyItemRequestBuilderGetQueryParamet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UserExperienceAnalyticsAnomalyItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsAnomaly/{userExperienceAnalyticsAnomaly%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AnomalyFirstOccurrenceDateTime: "anomalyFirstOccurrenceDateTime",
+    AnomalyId: "anomalyId",
+    AnomalyLatestOccurrenceDateTime: "anomalyLatestOccurrenceDateTime",
+    AnomalyName: "anomalyName",
+    AnomalyType: "anomalyType",
+    AssetName: "assetName",
+    AssetPublisher: "assetPublisher",
+    AssetVersion: "assetVersion",
+    DetectionModelId: "detectionModelId",
+    DeviceImpactedCount: "deviceImpactedCount",
+    IssueId: "issueId",
+    Severity: "severity",
+    State: "state",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -84,7 +111,7 @@ export const UserExperienceAnalyticsAnomalyItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserExperienceAnalyticsAnomalyItemRequestBuilderUriTemplate,
@@ -92,7 +119,7 @@ export const UserExperienceAnalyticsAnomalyItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsAnomalyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +129,7 @@ export const UserExperienceAnalyticsAnomalyItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsAnomaly,

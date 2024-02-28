@@ -77,12 +77,14 @@ export interface AndroidForWorkSettingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -121,7 +123,7 @@ export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AndroidForWorkSettingsRequestBuilderUriTemplate,
@@ -129,7 +131,7 @@ export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkSettingsFromDiscriminatorValue,
         queryParametersMapper: AndroidForWorkSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,12 +141,33 @@ export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidForWorkSettings,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the androidForWorkSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the androidForWorkSettings property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    BindStatus: "bindStatus",
+    DeviceOwnerManagementEnabled: "deviceOwnerManagementEnabled",
+    EnrollmentTarget: "enrollmentTarget",
+    LastAppSyncDateTime: "lastAppSyncDateTime",
+    LastAppSyncStatus: "lastAppSyncStatus",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    OwnerOrganizationName: "ownerOrganizationName",
+    OwnerUserPrincipalName: "ownerUserPrincipalName",
+    TargetGroupIds: "targetGroupIds",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -21,6 +21,7 @@ import { ChangePasswordRequestBuilderRequestsMetadata, type ChangePasswordReques
 import { ChatsRequestBuilderNavigationMetadata, ChatsRequestBuilderRequestsMetadata, type ChatsRequestBuilder } from './chats/';
 import { CheckMemberGroupsRequestBuilderRequestsMetadata, type CheckMemberGroupsRequestBuilder } from './checkMemberGroups/';
 import { CheckMemberObjectsRequestBuilderRequestsMetadata, type CheckMemberObjectsRequestBuilder } from './checkMemberObjects/';
+import { CloudClipboardRequestBuilderNavigationMetadata, CloudClipboardRequestBuilderRequestsMetadata, type CloudClipboardRequestBuilder } from './cloudClipboard/';
 import { CloudPCsRequestBuilderNavigationMetadata, CloudPCsRequestBuilderRequestsMetadata, type CloudPCsRequestBuilder } from './cloudPCs/';
 import { ContactFoldersRequestBuilderNavigationMetadata, ContactFoldersRequestBuilderRequestsMetadata, type ContactFoldersRequestBuilder } from './contactFolders/';
 import { ContactsRequestBuilderNavigationMetadata, ContactsRequestBuilderRequestsMetadata, type ContactsRequestBuilder } from './contacts/';
@@ -115,6 +116,8 @@ import { type WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder, WipeMa
 import { type WipeManagedAppRegistrationsByDeviceTagRequestBuilder, WipeManagedAppRegistrationsByDeviceTagRequestBuilderRequestsMetadata } from './wipeManagedAppRegistrationsByDeviceTag/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the collection of user entities.
  */
@@ -187,6 +190,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to call the checkMemberObjects method.
      */
     get checkMemberObjects(): CheckMemberObjectsRequestBuilder;
+    /**
+     * Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.
+     */
+    get cloudClipboard(): CloudClipboardRequestBuilder;
     /**
      * Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
      */
@@ -624,16 +631,251 @@ export interface UserItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const UserItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the collection of user entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Activities: "activities",
+    AgreementAcceptances: "agreementAcceptances",
+    Analytics: "analytics",
+    AppConsentRequestsForApproval: "appConsentRequestsForApproval",
+    AppRoleAssignedResources: "appRoleAssignedResources",
+    AppRoleAssignments: "appRoleAssignments",
+    Approvals: "approvals",
+    Authentication: "authentication",
+    Calendar: "calendar",
+    CalendarGroups: "calendarGroups",
+    Calendars: "calendars",
+    CalendarView: "calendarView",
+    Chats: "chats",
+    CloudClipboard: "cloudClipboard",
+    CloudPCs: "cloudPCs",
+    ContactFolders: "contactFolders",
+    Contacts: "contacts",
+    CreatedObjects: "createdObjects",
+    DeviceEnrollmentConfigurations: "deviceEnrollmentConfigurations",
+    DeviceManagementTroubleshootingEvents: "deviceManagementTroubleshootingEvents",
+    Devices: "devices",
+    DirectReports: "directReports",
+    Drive: "drive",
+    Drives: "drives",
+    EmployeeExperience: "employeeExperience",
+    Events: "events",
+    Extensions: "extensions",
+    FollowedSites: "followedSites",
+    InferenceClassification: "inferenceClassification",
+    InformationProtection: "informationProtection",
+    Insights: "insights",
+    JoinedGroups: "joinedGroups",
+    JoinedTeams: "joinedTeams",
+    LicenseDetails: "licenseDetails",
+    MailFolders: "mailFolders",
+    ManagedAppRegistrations: "managedAppRegistrations",
+    ManagedDevices: "managedDevices",
+    Manager: "manager",
+    MemberOf: "memberOf",
+    Messages: "messages",
+    MobileAppIntentAndStates: "mobileAppIntentAndStates",
+    MobileAppTroubleshootingEvents: "mobileAppTroubleshootingEvents",
+    Notifications: "notifications",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    Onenote: "onenote",
+    OnlineMeetings: "onlineMeetings",
+    Outlook: "outlook",
+    OwnedDevices: "ownedDevices",
+    OwnedObjects: "ownedObjects",
+    PendingAccessReviewInstances: "pendingAccessReviewInstances",
+    People: "people",
+    PermissionGrants: "permissionGrants",
+    Photo: "photo",
+    Photos: "photos",
+    Planner: "planner",
+    Presence: "presence",
+    Profile: "profile",
+    RegisteredDevices: "registeredDevices",
+    ScopedRoleMemberOf: "scopedRoleMemberOf",
+    Security: "security",
+    Settings: "settings",
+    Sponsors: "sponsors",
+    Teamwork: "teamwork",
+    Todo: "todo",
+    TransitiveMemberOf: "transitiveMemberOf",
+    TransitiveReports: "transitiveReports",
+    UsageRights: "usageRights",
+    VirtualEvents: "virtualEvents",
+    WindowsInformationProtectionDeviceRegistrations: "windowsInformationProtectionDeviceRegistrations",
+} as const;
+/**
+ * Provides operations to manage the collection of user entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeletedDateTime: "deletedDateTime",
+    AboutMe: "aboutMe",
+    AccountEnabled: "accountEnabled",
+    AgeGroup: "ageGroup",
+    AssignedLicenses: "assignedLicenses",
+    AssignedPlans: "assignedPlans",
+    AuthorizationInfo: "authorizationInfo",
+    Birthday: "birthday",
+    BusinessPhones: "businessPhones",
+    City: "city",
+    CloudRealtimeCommunicationInfo: "cloudRealtimeCommunicationInfo",
+    CompanyName: "companyName",
+    ConsentProvidedForMinor: "consentProvidedForMinor",
+    Country: "country",
+    CreatedDateTime: "createdDateTime",
+    CreationType: "creationType",
+    CustomSecurityAttributes: "customSecurityAttributes",
+    Department: "department",
+    DeviceEnrollmentLimit: "deviceEnrollmentLimit",
+    DeviceKeys: "deviceKeys",
+    DisplayName: "displayName",
+    EmployeeHireDate: "employeeHireDate",
+    EmployeeId: "employeeId",
+    EmployeeLeaveDateTime: "employeeLeaveDateTime",
+    EmployeeOrgData: "employeeOrgData",
+    EmployeeType: "employeeType",
+    ExternalUserState: "externalUserState",
+    ExternalUserStateChangeDateTime: "externalUserStateChangeDateTime",
+    FaxNumber: "faxNumber",
+    GivenName: "givenName",
+    HireDate: "hireDate",
+    Identities: "identities",
+    ImAddresses: "imAddresses",
+    InfoCatalogs: "infoCatalogs",
+    Interests: "interests",
+    IsLicenseReconciliationNeeded: "isLicenseReconciliationNeeded",
+    IsManagementRestricted: "isManagementRestricted",
+    IsResourceAccount: "isResourceAccount",
+    JobTitle: "jobTitle",
+    LastPasswordChangeDateTime: "lastPasswordChangeDateTime",
+    LegalAgeGroupClassification: "legalAgeGroupClassification",
+    LicenseAssignmentStates: "licenseAssignmentStates",
+    Mail: "mail",
+    MailboxSettings: "mailboxSettings",
+    MailNickname: "mailNickname",
+    MobilePhone: "mobilePhone",
+    MySite: "mySite",
+    OfficeLocation: "officeLocation",
+    OnPremisesDistinguishedName: "onPremisesDistinguishedName",
+    OnPremisesDomainName: "onPremisesDomainName",
+    OnPremisesExtensionAttributes: "onPremisesExtensionAttributes",
+    OnPremisesImmutableId: "onPremisesImmutableId",
+    OnPremisesLastSyncDateTime: "onPremisesLastSyncDateTime",
+    OnPremisesProvisioningErrors: "onPremisesProvisioningErrors",
+    OnPremisesSamAccountName: "onPremisesSamAccountName",
+    OnPremisesSecurityIdentifier: "onPremisesSecurityIdentifier",
+    OnPremisesSipInfo: "onPremisesSipInfo",
+    OnPremisesSyncEnabled: "onPremisesSyncEnabled",
+    OnPremisesUserPrincipalName: "onPremisesUserPrincipalName",
+    OtherMails: "otherMails",
+    PasswordPolicies: "passwordPolicies",
+    PasswordProfile: "passwordProfile",
+    PastProjects: "pastProjects",
+    PostalCode: "postalCode",
+    PreferredDataLocation: "preferredDataLocation",
+    PreferredLanguage: "preferredLanguage",
+    PreferredName: "preferredName",
+    Print: "print",
+    ProvisionedPlans: "provisionedPlans",
+    ProxyAddresses: "proxyAddresses",
+    RefreshTokensValidFromDateTime: "refreshTokensValidFromDateTime",
+    Responsibilities: "responsibilities",
+    Schools: "schools",
+    SecurityIdentifier: "securityIdentifier",
+    ServiceProvisioningErrors: "serviceProvisioningErrors",
+    ShowInAddressList: "showInAddressList",
+    SignInActivity: "signInActivity",
+    SignInSessionsValidFromDateTime: "signInSessionsValidFromDateTime",
+    Skills: "skills",
+    State: "state",
+    StreetAddress: "streetAddress",
+    Surname: "surname",
+    UsageLocation: "usageLocation",
+    UserPrincipalName: "userPrincipalName",
+    UserType: "userType",
+    Activities: "activities",
+    AgreementAcceptances: "agreementAcceptances",
+    Analytics: "analytics",
+    AppConsentRequestsForApproval: "appConsentRequestsForApproval",
+    AppRoleAssignedResources: "appRoleAssignedResources",
+    AppRoleAssignments: "appRoleAssignments",
+    Approvals: "approvals",
+    Authentication: "authentication",
+    Calendar: "calendar",
+    CalendarGroups: "calendarGroups",
+    Calendars: "calendars",
+    CalendarView: "calendarView",
+    Chats: "chats",
+    CloudClipboard: "cloudClipboard",
+    CloudPCs: "cloudPCs",
+    ContactFolders: "contactFolders",
+    Contacts: "contacts",
+    CreatedObjects: "createdObjects",
+    DeviceEnrollmentConfigurations: "deviceEnrollmentConfigurations",
+    DeviceManagementTroubleshootingEvents: "deviceManagementTroubleshootingEvents",
+    Devices: "devices",
+    DirectReports: "directReports",
+    Drive: "drive",
+    Drives: "drives",
+    EmployeeExperience: "employeeExperience",
+    Events: "events",
+    Extensions: "extensions",
+    FollowedSites: "followedSites",
+    InferenceClassification: "inferenceClassification",
+    InformationProtection: "informationProtection",
+    Insights: "insights",
+    JoinedGroups: "joinedGroups",
+    JoinedTeams: "joinedTeams",
+    LicenseDetails: "licenseDetails",
+    MailFolders: "mailFolders",
+    ManagedAppRegistrations: "managedAppRegistrations",
+    ManagedDevices: "managedDevices",
+    Manager: "manager",
+    MemberOf: "memberOf",
+    Messages: "messages",
+    MobileAppIntentAndStates: "mobileAppIntentAndStates",
+    MobileAppTroubleshootingEvents: "mobileAppTroubleshootingEvents",
+    Notifications: "notifications",
+    Oauth2PermissionGrants: "oauth2PermissionGrants",
+    Onenote: "onenote",
+    OnlineMeetings: "onlineMeetings",
+    Outlook: "outlook",
+    OwnedDevices: "ownedDevices",
+    OwnedObjects: "ownedObjects",
+    PendingAccessReviewInstances: "pendingAccessReviewInstances",
+    People: "people",
+    PermissionGrants: "permissionGrants",
+    Photo: "photo",
+    Photos: "photos",
+    Planner: "planner",
+    Presence: "presence",
+    Profile: "profile",
+    RegisteredDevices: "registeredDevices",
+    ScopedRoleMemberOf: "scopedRoleMemberOf",
+    Security: "security",
+    Settings: "settings",
+    Sponsors: "sponsors",
+    Teamwork: "teamwork",
+    Todo: "todo",
+    TransitiveMemberOf: "transitiveMemberOf",
+    TransitiveReports: "transitiveReports",
+    UsageRights: "usageRights",
+    VirtualEvents: "virtualEvents",
+    WindowsInformationProtectionDeviceRegistrations: "windowsInformationProtectionDeviceRegistrations",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -727,6 +969,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     },
     checkMemberObjects: {
         requestsMetadata: CheckMemberObjectsRequestBuilderRequestsMetadata,
+    },
+    cloudClipboard: {
+        requestsMetadata: CloudClipboardRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudClipboardRequestBuilderNavigationMetadata,
     },
     cloudPCs: {
         requestsMetadata: CloudPCsRequestBuilderRequestsMetadata,
@@ -1055,7 +1301,7 @@ export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserItemRequestBuilderUriTemplate,
@@ -1063,7 +1309,7 @@ export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFromDiscriminatorValue,
         queryParametersMapper: UserItemRequestBuilderGetQueryParametersMapper,
     },
@@ -1073,7 +1319,7 @@ export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUser,

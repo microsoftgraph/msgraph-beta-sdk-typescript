@@ -10,6 +10,8 @@ import { ExecuteActionRequestBuilderRequestsMetadata, type ExecuteActionRequestB
 import { SyncInventoryRequestBuilderRequestsMetadata, type SyncInventoryRequestBuilder } from './syncInventory/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
  */
@@ -82,16 +84,42 @@ export interface WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters 
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const WindowsDriverUpdateProfileItemRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}{?%24expand,%24select}";
+/**
+ * Provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Assignments: "assignments",
+    DriverInventories: "driverInventories",
+} as const;
+/**
+ * Provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ApprovalType: "approvalType",
+    CreatedDateTime: "createdDateTime",
+    DeploymentDeferralInDays: "deploymentDeferralInDays",
+    Description: "description",
+    DeviceReporting: "deviceReporting",
+    DisplayName: "displayName",
+    InventorySyncStatus: "inventorySyncStatus",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    NewUpdates: "newUpdates",
+    RoleScopeTagIds: "roleScopeTagIds",
+    Assignments: "assignments",
+    DriverInventories: "driverInventories",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -131,7 +159,7 @@ export const WindowsDriverUpdateProfileItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsDriverUpdateProfileItemRequestBuilderUriTemplate,
@@ -139,7 +167,7 @@ export const WindowsDriverUpdateProfileItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateProfileFromDiscriminatorValue,
         queryParametersMapper: WindowsDriverUpdateProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -149,7 +177,7 @@ export const WindowsDriverUpdateProfileItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsDriverUpdateProfile,

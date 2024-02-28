@@ -62,12 +62,14 @@ export interface DeviceManagementAutopilotEventItemRequestBuilderGetQueryParamet
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -98,7 +100,7 @@ export const DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementAutopilotEventItemRequestBuilderUriTemplate,
@@ -106,7 +108,7 @@ export const DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotEventFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementAutopilotEventItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,12 +118,52 @@ export const DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementAutopilotEvent,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    PolicyStatusDetails: "policyStatusDetails",
+} as const;
+/**
+ * Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccountSetupDuration: "accountSetupDuration",
+    AccountSetupStatus: "accountSetupStatus",
+    DeploymentDuration: "deploymentDuration",
+    DeploymentEndDateTime: "deploymentEndDateTime",
+    DeploymentStartDateTime: "deploymentStartDateTime",
+    DeploymentState: "deploymentState",
+    DeploymentTotalDuration: "deploymentTotalDuration",
+    DeviceId: "deviceId",
+    DevicePreparationDuration: "devicePreparationDuration",
+    DeviceRegisteredDateTime: "deviceRegisteredDateTime",
+    DeviceSerialNumber: "deviceSerialNumber",
+    DeviceSetupDuration: "deviceSetupDuration",
+    DeviceSetupStatus: "deviceSetupStatus",
+    EnrollmentFailureDetails: "enrollmentFailureDetails",
+    EnrollmentStartDateTime: "enrollmentStartDateTime",
+    EnrollmentState: "enrollmentState",
+    EnrollmentType: "enrollmentType",
+    EventDateTime: "eventDateTime",
+    ManagedDeviceName: "managedDeviceName",
+    OsVersion: "osVersion",
+    TargetedAppCount: "targetedAppCount",
+    TargetedPolicyCount: "targetedPolicyCount",
+    UserPrincipalName: "userPrincipalName",
+    Windows10EnrollmentCompletionPageConfigurationDisplayName: "windows10EnrollmentCompletionPageConfigurationDisplayName",
+    Windows10EnrollmentCompletionPageConfigurationId: "windows10EnrollmentCompletionPageConfigurationId",
+    WindowsAutopilotDeploymentProfileDisplayName: "windowsAutopilotDeploymentProfileDisplayName",
+    PolicyStatusDetails: "policyStatusDetails",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { AuditLogRecordItemRequestBuilderRequestsMetadata, type AuditLogRecordItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.
  */
@@ -22,10 +25,11 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      byAuditLogRecordId(auditLogRecordId: string) : AuditLogRecordItemRequestBuilder;
     /**
-     * An individual audit log record.
+     * Get a list of the auditLogRecord objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuditLogRecordCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-auditlogquery-list-records?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RecordsRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogRecordCollectionResponse | undefined>;
     /**
@@ -37,7 +41,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      post(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogRecord | undefined>;
     /**
-     * An individual audit log record.
+     * Get a list of the auditLogRecord objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +55,7 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      toPostRequestInformation(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * An individual audit log record.
+ * Get a list of the auditLogRecord objects and their properties.
  */
 export interface RecordsRequestBuilderGetQueryParameters {
     /**
@@ -61,7 +65,7 @@ export interface RecordsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +73,7 @@ export interface RecordsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +81,7 @@ export interface RecordsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +95,61 @@ export interface RecordsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const RecordsRequestBuilderUriTemplate = "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}/records{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AdministrativeUnits: "administrativeUnits",
+    AdministrativeUnitsDesc: "administrativeUnits desc",
+    AuditData: "auditData",
+    AuditDataDesc: "auditData desc",
+    AuditLogRecordType: "auditLogRecordType",
+    AuditLogRecordTypeDesc: "auditLogRecordType desc",
+    ClientIp: "clientIp",
+    ClientIpDesc: "clientIp desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    ObjectId: "objectId",
+    ObjectIdDesc: "objectId desc",
+    Operation: "operation",
+    OperationDesc: "operation desc",
+    OrganizationId: "organizationId",
+    OrganizationIdDesc: "organizationId desc",
+    Service: "service",
+    ServiceDesc: "service desc",
+    UserId: "userId",
+    UserIdDesc: "userId desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+    UserType: "userType",
+    UserTypeDesc: "userType desc",
+} as const;
+/**
+ * Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdministrativeUnits: "administrativeUnits",
+    AuditData: "auditData",
+    AuditLogRecordType: "auditLogRecordType",
+    ClientIp: "clientIp",
+    CreatedDateTime: "createdDateTime",
+    ObjectId: "objectId",
+    Operation: "operation",
+    OrganizationId: "organizationId",
+    Service: "service",
+    UserId: "userId",
+    UserPrincipalName: "userPrincipalName",
+    UserType: "userType",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +185,7 @@ export const RecordsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRecordCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RecordsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +195,7 @@ export const RecordsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRecordFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuditLogRecord,

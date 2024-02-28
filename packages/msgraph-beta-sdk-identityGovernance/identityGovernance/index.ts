@@ -14,6 +14,8 @@ import { RoleManagementAlertsRequestBuilderNavigationMetadata, RoleManagementAle
 import { TermsOfUseRequestBuilderNavigationMetadata, TermsOfUseRequestBuilderRequestsMetadata, type TermsOfUseRequestBuilder } from './termsOfUse/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the identityGovernance singleton.
  */
@@ -90,16 +92,45 @@ export interface IdentityGovernanceRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const IdentityGovernanceRequestBuilderUriTemplate = "{+baseurl}/identityGovernance{?%24expand,%24select}";
+/**
+ * Provides operations to manage the identityGovernance singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessReviews: "accessReviews",
+    AppConsent: "appConsent",
+    EntitlementManagement: "entitlementManagement",
+    LifecycleWorkflows: "lifecycleWorkflows",
+    PermissionsAnalytics: "permissionsAnalytics",
+    PermissionsManagement: "permissionsManagement",
+    PrivilegedAccess: "privilegedAccess",
+    RoleManagementAlerts: "roleManagementAlerts",
+    TermsOfUse: "termsOfUse",
+} as const;
+/**
+ * Provides operations to manage the identityGovernance singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    AccessReviews: "accessReviews",
+    AppConsent: "appConsent",
+    EntitlementManagement: "entitlementManagement",
+    LifecycleWorkflows: "lifecycleWorkflows",
+    PermissionsAnalytics: "permissionsAnalytics",
+    PermissionsManagement: "permissionsManagement",
+    PrivilegedAccess: "privilegedAccess",
+    RoleManagementAlerts: "roleManagementAlerts",
+    TermsOfUse: "termsOfUse",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -158,7 +189,7 @@ export const IdentityGovernanceRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIdentityGovernanceFromDiscriminatorValue,
         queryParametersMapper: IdentityGovernanceRequestBuilderGetQueryParametersMapper,
     },
@@ -168,7 +199,7 @@ export const IdentityGovernanceRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIdentityGovernanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIdentityGovernance,

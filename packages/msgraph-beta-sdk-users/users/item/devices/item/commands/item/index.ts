@@ -62,12 +62,14 @@ export interface CommandItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -97,7 +99,7 @@ export const CommandItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CommandItemRequestBuilderUriTemplate,
@@ -105,7 +107,7 @@ export const CommandItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommandFromDiscriminatorValue,
         queryParametersMapper: CommandItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,12 +117,34 @@ export const CommandItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommandFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCommand,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the commands property of the microsoft.graph.device entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Responsepayload: "responsepayload",
+} as const;
+/**
+ * Provides operations to manage the commands property of the microsoft.graph.device entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppServiceName: "appServiceName",
+    ErrorEscaped: "error",
+    PackageFamilyName: "packageFamilyName",
+    Payload: "payload",
+    PermissionTicket: "permissionTicket",
+    PostBackUri: "postBackUri",
+    Status: "status",
+    Type: "type",
+    Responsepayload: "responsepayload",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

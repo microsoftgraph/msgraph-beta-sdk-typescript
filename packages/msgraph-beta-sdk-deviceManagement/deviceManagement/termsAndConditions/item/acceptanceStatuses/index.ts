@@ -61,7 +61,7 @@ export interface AcceptanceStatusesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface AcceptanceStatusesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface AcceptanceStatusesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface AcceptanceStatusesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const AcceptanceStatusesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsAcceptanceStatusCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AcceptanceStatusesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,45 @@ export const AcceptanceStatusesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsAcceptanceStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTermsAndConditionsAcceptanceStatus,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    TermsAndConditions: "termsAndConditions",
+} as const;
+/**
+ * Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AcceptedDateTime: "acceptedDateTime",
+    AcceptedDateTimeDesc: "acceptedDateTime desc",
+    AcceptedVersion: "acceptedVersion",
+    AcceptedVersionDesc: "acceptedVersion desc",
+    UserDisplayName: "userDisplayName",
+    UserDisplayNameDesc: "userDisplayName desc",
+    UserPrincipalName: "userPrincipalName",
+    UserPrincipalNameDesc: "userPrincipalName desc",
+} as const;
+/**
+ * Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AcceptedDateTime: "acceptedDateTime",
+    AcceptedVersion: "acceptedVersion",
+    UserDisplayName: "userDisplayName",
+    UserPrincipalName: "userPrincipalName",
+    TermsAndConditions: "termsAndConditions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

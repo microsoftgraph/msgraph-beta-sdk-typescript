@@ -16,6 +16,8 @@ import { StopRequestBuilderRequestsMetadata, type StopRequestBuilder } from './s
 import { StopApplyDecisionsRequestBuilderRequestsMetadata, type StopApplyDecisionsRequestBuilder } from './stopApplyDecisions/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
  */
@@ -112,16 +114,43 @@ export interface InstanceRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const InstanceRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance{?%24expand,%24select}";
+/**
+ * Provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    ContactedReviewers: "contactedReviewers",
+    Decisions: "decisions",
+    Definition: "definition",
+    Stages: "stages",
+} as const;
+/**
+ * Provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    EndDateTime: "endDateTime",
+    Errors: "errors",
+    FallbackReviewers: "fallbackReviewers",
+    Reviewers: "reviewers",
+    Scope: "scope",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    ContactedReviewers: "contactedReviewers",
+    Decisions: "decisions",
+    Definition: "definition",
+    Stages: "stages",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -180,7 +209,7 @@ export const InstanceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: InstanceRequestBuilderUriTemplate,
@@ -188,7 +217,7 @@ export const InstanceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceFromDiscriminatorValue,
         queryParametersMapper: InstanceRequestBuilderGetQueryParametersMapper,
     },
@@ -198,7 +227,7 @@ export const InstanceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessReviewInstance,

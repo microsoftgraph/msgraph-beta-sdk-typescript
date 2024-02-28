@@ -33,6 +33,8 @@ import { TokenIssuancePoliciesRequestBuilderNavigationMetadata, TokenIssuancePol
 import { TokenLifetimePoliciesRequestBuilderNavigationMetadata, TokenLifetimePoliciesRequestBuilderRequestsMetadata, type TokenLifetimePoliciesRequestBuilder } from './tokenLifetimePolicies/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the policyRoot singleton.
  */
@@ -185,16 +187,84 @@ export interface PoliciesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const PoliciesRequestBuilderUriTemplate = "{+baseurl}/policies{?%24expand,%24select}";
+/**
+ * Provides operations to manage the policyRoot singleton.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessReviewPolicy: "accessReviewPolicy",
+    ActivityBasedTimeoutPolicies: "activityBasedTimeoutPolicies",
+    AdminConsentRequestPolicy: "adminConsentRequestPolicy",
+    AppManagementPolicies: "appManagementPolicies",
+    AuthenticationFlowsPolicy: "authenticationFlowsPolicy",
+    AuthenticationMethodsPolicy: "authenticationMethodsPolicy",
+    AuthenticationStrengthPolicies: "authenticationStrengthPolicies",
+    AuthorizationPolicy: "authorizationPolicy",
+    B2cAuthenticationMethodsPolicy: "b2cAuthenticationMethodsPolicy",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    ConditionalAccessPolicies: "conditionalAccessPolicies",
+    CrossTenantAccessPolicy: "crossTenantAccessPolicy",
+    DefaultAppManagementPolicy: "defaultAppManagementPolicy",
+    DeviceRegistrationPolicy: "deviceRegistrationPolicy",
+    DirectoryRoleAccessReviewPolicy: "directoryRoleAccessReviewPolicy",
+    ExternalIdentitiesPolicy: "externalIdentitiesPolicy",
+    FeatureRolloutPolicies: "featureRolloutPolicies",
+    FederatedTokenValidationPolicy: "federatedTokenValidationPolicy",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    IdentitySecurityDefaultsEnforcementPolicy: "identitySecurityDefaultsEnforcementPolicy",
+    MobileAppManagementPolicies: "mobileAppManagementPolicies",
+    MobileDeviceManagementPolicies: "mobileDeviceManagementPolicies",
+    PermissionGrantPolicies: "permissionGrantPolicies",
+    RoleManagementPolicies: "roleManagementPolicies",
+    RoleManagementPolicyAssignments: "roleManagementPolicyAssignments",
+    ServicePrincipalCreationPolicies: "servicePrincipalCreationPolicies",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+} as const;
+/**
+ * Provides operations to manage the policyRoot singleton.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccessReviewPolicy: "accessReviewPolicy",
+    ActivityBasedTimeoutPolicies: "activityBasedTimeoutPolicies",
+    AdminConsentRequestPolicy: "adminConsentRequestPolicy",
+    AppManagementPolicies: "appManagementPolicies",
+    AuthenticationFlowsPolicy: "authenticationFlowsPolicy",
+    AuthenticationMethodsPolicy: "authenticationMethodsPolicy",
+    AuthenticationStrengthPolicies: "authenticationStrengthPolicies",
+    AuthorizationPolicy: "authorizationPolicy",
+    B2cAuthenticationMethodsPolicy: "b2cAuthenticationMethodsPolicy",
+    ClaimsMappingPolicies: "claimsMappingPolicies",
+    ConditionalAccessPolicies: "conditionalAccessPolicies",
+    CrossTenantAccessPolicy: "crossTenantAccessPolicy",
+    DefaultAppManagementPolicy: "defaultAppManagementPolicy",
+    DeviceRegistrationPolicy: "deviceRegistrationPolicy",
+    DirectoryRoleAccessReviewPolicy: "directoryRoleAccessReviewPolicy",
+    ExternalIdentitiesPolicy: "externalIdentitiesPolicy",
+    FeatureRolloutPolicies: "featureRolloutPolicies",
+    FederatedTokenValidationPolicy: "federatedTokenValidationPolicy",
+    HomeRealmDiscoveryPolicies: "homeRealmDiscoveryPolicies",
+    IdentitySecurityDefaultsEnforcementPolicy: "identitySecurityDefaultsEnforcementPolicy",
+    MobileAppManagementPolicies: "mobileAppManagementPolicies",
+    MobileDeviceManagementPolicies: "mobileDeviceManagementPolicies",
+    PermissionGrantPolicies: "permissionGrantPolicies",
+    RoleManagementPolicies: "roleManagementPolicies",
+    RoleManagementPolicyAssignments: "roleManagementPolicyAssignments",
+    ServicePrincipalCreationPolicies: "servicePrincipalCreationPolicies",
+    TokenIssuancePolicies: "tokenIssuancePolicies",
+    TokenLifetimePolicies: "tokenLifetimePolicies",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -319,7 +389,7 @@ export const PoliciesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPolicyRootFromDiscriminatorValue,
         queryParametersMapper: PoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -329,7 +399,7 @@ export const PoliciesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPolicyRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePolicyRoot,

@@ -58,12 +58,14 @@ export interface EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -85,7 +87,7 @@ export const EmailThreatSubmissionPolicyItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate,
@@ -93,7 +95,7 @@ export const EmailThreatSubmissionPolicyItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmailThreatSubmissionPolicyFromDiscriminatorValue,
         queryParametersMapper: EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,12 +105,37 @@ export const EmailThreatSubmissionPolicyItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmailThreatSubmissionPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmailThreatSubmissionPolicy,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    CustomizedNotificationSenderEmailAddress: "customizedNotificationSenderEmailAddress",
+    CustomizedReportRecipientEmailAddress: "customizedReportRecipientEmailAddress",
+    IsAlwaysReportEnabledForUsers: "isAlwaysReportEnabledForUsers",
+    IsAskMeEnabledForUsers: "isAskMeEnabledForUsers",
+    IsCustomizedMessageEnabled: "isCustomizedMessageEnabled",
+    IsCustomizedMessageEnabledForPhishing: "isCustomizedMessageEnabledForPhishing",
+    IsCustomizedNotificationSenderEnabled: "isCustomizedNotificationSenderEnabled",
+    IsNeverReportEnabledForUsers: "isNeverReportEnabledForUsers",
+    IsOrganizationBrandingEnabled: "isOrganizationBrandingEnabled",
+    IsReportFromQuarantineEnabled: "isReportFromQuarantineEnabled",
+    IsReportToCustomizedEmailAddressEnabled: "isReportToCustomizedEmailAddressEnabled",
+    IsReportToMicrosoftEnabled: "isReportToMicrosoftEnabled",
+    IsReviewEmailNotificationEnabled: "isReviewEmailNotificationEnabled",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

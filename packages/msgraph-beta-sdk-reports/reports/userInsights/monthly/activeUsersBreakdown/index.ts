@@ -13,12 +13,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ActiveUsersBreakdownRequestBuilder extends BaseRequestBuilder<ActiveUsersBreakdownRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
      * @param activeUsersBreakdownMetricId The unique identifier of activeUsersBreakdownMetric
      * @returns {ActiveUsersBreakdownMetricItemRequestBuilder}
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      byActiveUsersBreakdownMetricId(activeUsersBreakdownMetricId: string) : ActiveUsersBreakdownMetricItemRequestBuilder;
     /**
@@ -26,6 +28,7 @@ export interface ActiveUsersBreakdownRequestBuilder extends BaseRequestBuilder<A
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActiveUsersBreakdownMetricCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      * @see {@link https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-activeusersbreakdown?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownRequestBuilderGetQueryParameters> | undefined) : Promise<ActiveUsersBreakdownMetricCollectionResponse | undefined>;
@@ -33,6 +36,7 @@ export interface ActiveUsersBreakdownRequestBuilder extends BaseRequestBuilder<A
      * Get a list of monthly activeUsersBreakdown objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActiveUsersBreakdownRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -47,7 +51,7 @@ export interface ActiveUsersBreakdownRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +59,7 @@ export interface ActiveUsersBreakdownRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +67,7 @@ export interface ActiveUsersBreakdownRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -73,6 +77,9 @@ export interface ActiveUsersBreakdownRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -112,10 +119,44 @@ export const ActiveUsersBreakdownRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createActiveUsersBreakdownMetricCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ActiveUsersBreakdownRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppId: "appId",
+    AppIdDesc: "appId desc",
+    AppName: "appName",
+    AppNameDesc: "appName desc",
+    Count: "count",
+    CountDesc: "count desc",
+    FactDate: "factDate",
+    FactDateDesc: "factDate desc",
+    Os: "os",
+    OsDesc: "os desc",
+} as const;
+/**
+ * Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppId: "appId",
+    AppName: "appName",
+    Count: "count",
+    FactDate: "factDate",
+    Os: "os",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

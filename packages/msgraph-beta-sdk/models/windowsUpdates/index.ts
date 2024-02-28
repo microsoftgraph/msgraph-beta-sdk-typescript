@@ -18,7 +18,7 @@ export interface ApplicableContent extends AdditionalDataHolder, BackedModel, Pa
      */
     catalogEntry?: CatalogEntry;
     /**
-     * Collection of devices and recommendations for applicable catalog content.
+     * The matchedDevices property
      */
     matchedDevices?: ApplicableContentDeviceMatch[];
     /**
@@ -36,7 +36,7 @@ export interface ApplicableContentDeviceMatch extends AdditionalDataHolder, Back
      */
     backingStoreEnabled?: boolean;
     /**
-     * The deviceId property
+     * Collection of vendors who recommend the content.
      */
     deviceId?: string;
     /**
@@ -929,7 +929,7 @@ export interface Deployment extends Entity, Parsable {
 }
 export interface DeploymentAudience extends Entity, Parsable {
     /**
-     * Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+     * The applicableContent property
      */
     applicableContent?: ApplicableContent[];
     /**

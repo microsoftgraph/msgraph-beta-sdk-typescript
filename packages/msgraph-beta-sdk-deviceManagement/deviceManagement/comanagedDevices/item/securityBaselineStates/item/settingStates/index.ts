@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { SecurityBaselineSettingStateItemRequestBuilderRequestsMetadata, type SecurityBaselineSettingStateItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
  */
@@ -61,7 +64,7 @@ export interface SettingStatesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface SettingStatesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface SettingStatesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,49 @@ export interface SettingStatesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const SettingStatesRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/securityBaselineStates/{securityBaselineState%2Did}/settingStates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    ContributingPolicies: "contributingPolicies",
+    ContributingPoliciesDesc: "contributingPolicies desc",
+    ErrorCode: "errorCode",
+    ErrorCodeDesc: "errorCode desc",
+    SettingCategoryId: "settingCategoryId",
+    SettingCategoryIdDesc: "settingCategoryId desc",
+    SettingCategoryName: "settingCategoryName",
+    SettingCategoryNameDesc: "settingCategoryName desc",
+    SettingId: "settingId",
+    SettingIdDesc: "settingId desc",
+    SettingName: "settingName",
+    SettingNameDesc: "settingName desc",
+    SourcePolicies: "sourcePolicies",
+    SourcePoliciesDesc: "sourcePolicies desc",
+    State: "state",
+    StateDesc: "state desc",
+} as const;
+/**
+ * Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    ContributingPolicies: "contributingPolicies",
+    ErrorCode: "errorCode",
+    SettingCategoryId: "settingCategoryId",
+    SettingCategoryName: "settingCategoryName",
+    SettingId: "settingId",
+    SettingName: "settingName",
+    SourcePolicies: "sourcePolicies",
+    State: "state",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +172,7 @@ export const SettingStatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSecurityBaselineSettingStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SettingStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +182,7 @@ export const SettingStatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSecurityBaselineSettingStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSecurityBaselineSettingState,

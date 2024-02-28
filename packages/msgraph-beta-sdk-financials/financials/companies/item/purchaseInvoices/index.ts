@@ -8,6 +8,9 @@ import { PurchaseInvoiceItemRequestBuilderNavigationMetadata, PurchaseInvoiceIte
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 import { type Guid } from 'guid-typescript';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
  */
@@ -47,7 +50,7 @@ export interface PurchaseInvoicesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -55,7 +58,7 @@ export interface PurchaseInvoicesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -63,7 +66,7 @@ export interface PurchaseInvoicesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -77,6 +80,109 @@ export interface PurchaseInvoicesRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const PurchaseInvoicesRequestBuilderUriTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Currency: "currency",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    Vendor: "vendor",
+} as const;
+/**
+ * Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    BuyFromAddress: "buyFromAddress",
+    BuyFromAddressDesc: "buyFromAddress desc",
+    CurrencyCode: "currencyCode",
+    CurrencyCodeDesc: "currencyCode desc",
+    CurrencyId: "currencyId",
+    CurrencyIdDesc: "currencyId desc",
+    DiscountAmount: "discountAmount",
+    DiscountAmountDesc: "discountAmount desc",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DiscountAppliedBeforeTaxDesc: "discountAppliedBeforeTax desc",
+    DueDate: "dueDate",
+    DueDateDesc: "dueDate desc",
+    Id: "id",
+    IdDesc: "id desc",
+    InvoiceDate: "invoiceDate",
+    InvoiceDateDesc: "invoiceDate desc",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    LastModifiedDateTimeDesc: "lastModifiedDateTime desc",
+    Number: "number",
+    NumberDesc: "number desc",
+    PayToAddress: "payToAddress",
+    PayToAddressDesc: "payToAddress desc",
+    PayToContact: "payToContact",
+    PayToContactDesc: "payToContact desc",
+    PayToName: "payToName",
+    PayToNameDesc: "payToName desc",
+    PayToVendorId: "payToVendorId",
+    PayToVendorIdDesc: "payToVendorId desc",
+    PayToVendorNumber: "payToVendorNumber",
+    PayToVendorNumberDesc: "payToVendorNumber desc",
+    PricesIncludeTax: "pricesIncludeTax",
+    PricesIncludeTaxDesc: "pricesIncludeTax desc",
+    ShipToAddress: "shipToAddress",
+    ShipToAddressDesc: "shipToAddress desc",
+    ShipToContact: "shipToContact",
+    ShipToContactDesc: "shipToContact desc",
+    ShipToName: "shipToName",
+    ShipToNameDesc: "shipToName desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountExcludingTaxDesc: "totalAmountExcludingTax desc",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalAmountIncludingTaxDesc: "totalAmountIncludingTax desc",
+    TotalTaxAmount: "totalTaxAmount",
+    TotalTaxAmountDesc: "totalTaxAmount desc",
+    VendorId: "vendorId",
+    VendorIdDesc: "vendorId desc",
+    VendorInvoiceNumber: "vendorInvoiceNumber",
+    VendorInvoiceNumberDesc: "vendorInvoiceNumber desc",
+    VendorName: "vendorName",
+    VendorNameDesc: "vendorName desc",
+    VendorNumber: "vendorNumber",
+    VendorNumberDesc: "vendorNumber desc",
+} as const;
+/**
+ * Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    BuyFromAddress: "buyFromAddress",
+    CurrencyCode: "currencyCode",
+    CurrencyId: "currencyId",
+    DiscountAmount: "discountAmount",
+    DiscountAppliedBeforeTax: "discountAppliedBeforeTax",
+    DueDate: "dueDate",
+    Id: "id",
+    InvoiceDate: "invoiceDate",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    Number: "number",
+    PayToAddress: "payToAddress",
+    PayToContact: "payToContact",
+    PayToName: "payToName",
+    PayToVendorId: "payToVendorId",
+    PayToVendorNumber: "payToVendorNumber",
+    PricesIncludeTax: "pricesIncludeTax",
+    ShipToAddress: "shipToAddress",
+    ShipToContact: "shipToContact",
+    ShipToName: "shipToName",
+    Status: "status",
+    TotalAmountExcludingTax: "totalAmountExcludingTax",
+    TotalAmountIncludingTax: "totalAmountIncludingTax",
+    TotalTaxAmount: "totalTaxAmount",
+    VendorId: "vendorId",
+    VendorInvoiceNumber: "vendorInvoiceNumber",
+    VendorName: "vendorName",
+    VendorNumber: "vendorNumber",
+    Currency: "currency",
+    PurchaseInvoiceLines: "purchaseInvoiceLines",
+    Vendor: "vendor",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -113,7 +219,7 @@ export const PurchaseInvoicesRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPurchaseInvoiceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PurchaseInvoicesRequestBuilderGetQueryParametersMapper,
     },

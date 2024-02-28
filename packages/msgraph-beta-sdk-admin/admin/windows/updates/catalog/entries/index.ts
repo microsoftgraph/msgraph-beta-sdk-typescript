@@ -62,7 +62,7 @@ export interface EntriesRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -70,7 +70,7 @@ export interface EntriesRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -78,7 +78,7 @@ export interface EntriesRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -88,6 +88,9 @@ export interface EntriesRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const EntriesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCatalogEntryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EntriesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,40 @@ export const EntriesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCatalogEntryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCatalogEntry,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    DeployableUntilDateTime: "deployableUntilDateTime",
+    DeployableUntilDateTimeDesc: "deployableUntilDateTime desc",
+    DisplayName: "displayName",
+    DisplayNameDesc: "displayName desc",
+    ReleaseDateTime: "releaseDateTime",
+    ReleaseDateTimeDesc: "releaseDateTime desc",
+} as const;
+/**
+ * Provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    DeployableUntilDateTime: "deployableUntilDateTime",
+    DisplayName: "displayName",
+    ReleaseDateTime: "releaseDateTime",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

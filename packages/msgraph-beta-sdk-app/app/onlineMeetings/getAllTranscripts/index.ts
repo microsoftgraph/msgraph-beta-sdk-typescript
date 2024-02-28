@@ -58,7 +58,7 @@ export interface GetAllTranscriptsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -66,7 +66,7 @@ export interface GetAllTranscriptsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -74,7 +74,7 @@ export interface GetAllTranscriptsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -84,6 +84,9 @@ export interface GetAllTranscriptsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -119,10 +122,50 @@ export const GetAllTranscriptsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetAllTranscriptsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetAllTranscriptsRequestBuilderGetQueryParametersMapper,
     },
 };
+/**
+ * Provides operations to call the getAllTranscripts method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to call the getAllTranscripts method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Content: "content",
+    ContentDesc: "content desc",
+    CreatedDateTime: "createdDateTime",
+    CreatedDateTimeDesc: "createdDateTime desc",
+    MeetingId: "meetingId",
+    MeetingIdDesc: "meetingId desc",
+    MeetingOrganizer: "meetingOrganizer",
+    MeetingOrganizerDesc: "meetingOrganizer desc",
+    MeetingOrganizerId: "meetingOrganizerId",
+    MeetingOrganizerIdDesc: "meetingOrganizerId desc",
+    MetadataContent: "metadataContent",
+    MetadataContentDesc: "metadataContent desc",
+    TranscriptContentUrl: "transcriptContentUrl",
+    TranscriptContentUrlDesc: "transcriptContentUrl desc",
+} as const;
+/**
+ * Provides operations to call the getAllTranscripts method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Content: "content",
+    CreatedDateTime: "createdDateTime",
+    MeetingId: "meetingId",
+    MeetingOrganizer: "meetingOrganizer",
+    MeetingOrganizerId: "meetingOrganizerId",
+    MetadataContent: "metadataContent",
+    TranscriptContentUrl: "transcriptContentUrl",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

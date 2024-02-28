@@ -61,7 +61,7 @@ export interface CommandsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +69,7 @@ export interface CommandsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +77,7 @@ export interface CommandsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -87,6 +87,9 @@ export interface CommandsRequestBuilderGetQueryParameters {
      */
     top?: number;
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -127,7 +130,7 @@ export const CommandsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommandCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CommandsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,12 +140,57 @@ export const CommandsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommandFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCommand,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the collection of command entities.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Responsepayload: "responsepayload",
+} as const;
+/**
+ * Provides operations to manage the collection of command entities.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AppServiceName: "appServiceName",
+    AppServiceNameDesc: "appServiceName desc",
+    ErrorEscaped: "error",
+    ErrorDesc: "error desc",
+    PackageFamilyName: "packageFamilyName",
+    PackageFamilyNameDesc: "packageFamilyName desc",
+    Payload: "payload",
+    PayloadDesc: "payload desc",
+    PermissionTicket: "permissionTicket",
+    PermissionTicketDesc: "permissionTicket desc",
+    PostBackUri: "postBackUri",
+    PostBackUriDesc: "postBackUri desc",
+    Status: "status",
+    StatusDesc: "status desc",
+    Type: "type",
+    TypeDesc: "type desc",
+} as const;
+/**
+ * Provides operations to manage the collection of command entities.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AppServiceName: "appServiceName",
+    ErrorEscaped: "error",
+    PackageFamilyName: "packageFamilyName",
+    Payload: "payload",
+    PermissionTicket: "permissionTicket",
+    PostBackUri: "postBackUri",
+    Status: "status",
+    Type: "type",
+    Responsepayload: "responsepayload",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

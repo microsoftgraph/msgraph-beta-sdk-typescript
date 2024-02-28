@@ -7,6 +7,7 @@ import { ActivateRequestBuilderRequestsMetadata, type ActivateRequestBuilder } f
 import { CategoriesRequestBuilderNavigationMetadata, CategoriesRequestBuilderRequestsMetadata, type CategoriesRequestBuilder } from './categories/';
 import { DeactivateRequestBuilderRequestsMetadata, type DeactivateRequestBuilder } from './deactivate/';
 import { GradingCategoryRequestBuilderRequestsMetadata, type GradingCategoryRequestBuilder } from './gradingCategory/';
+import { GradingSchemeRequestBuilderRequestsMetadata, type GradingSchemeRequestBuilder } from './gradingScheme/';
 import { PublishRequestBuilderRequestsMetadata, type PublishRequestBuilder } from './publish/';
 import { ResourcesRequestBuilderNavigationMetadata, ResourcesRequestBuilderRequestsMetadata, type ResourcesRequestBuilder } from './resources/';
 import { RubricRequestBuilderNavigationMetadata, RubricRequestBuilderRequestsMetadata, type RubricRequestBuilder } from './rubric/';
@@ -35,6 +36,10 @@ export interface EducationAssignmentItemRequestBuilder extends BaseRequestBuilde
      * Provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.
      */
     get gradingCategory(): GradingCategoryRequestBuilder;
+    /**
+     * Provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.
+     */
+    get gradingScheme(): GradingSchemeRequestBuilder;
     /**
      * Provides operations to call the publish method.
      */
@@ -67,7 +72,7 @@ export interface EducationAssignmentItemRequestBuilder extends BaseRequestBuilde
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, you will get an unknownFutureValue value in the response.
+     * Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -90,7 +95,7 @@ export interface EducationAssignmentItemRequestBuilder extends BaseRequestBuilde
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, you will get an unknownFutureValue value in the response.
+     * Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -104,18 +109,20 @@ export interface EducationAssignmentItemRequestBuilder extends BaseRequestBuilde
      toPatchRequestInformation(body: EducationAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, you will get an unknownFutureValue value in the response.
+ * Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.
  */
 export interface EducationAssignmentItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -143,6 +150,9 @@ export const EducationAssignmentItemRequestBuilderNavigationMetadata: Record<Exc
     },
     gradingCategory: {
         requestsMetadata: GradingCategoryRequestBuilderRequestsMetadata,
+    },
+    gradingScheme: {
+        requestsMetadata: GradingSchemeRequestBuilderRequestsMetadata,
     },
     publish: {
         requestsMetadata: PublishRequestBuilderRequestsMetadata,
@@ -176,7 +186,7 @@ export const EducationAssignmentItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EducationAssignmentItemRequestBuilderUriTemplate,
@@ -184,7 +194,7 @@ export const EducationAssignmentItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationAssignmentFromDiscriminatorValue,
         queryParametersMapper: EducationAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -194,12 +204,59 @@ export const EducationAssignmentItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEducationAssignment,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Categories: "categories",
+    GradingCategory: "gradingCategory",
+    GradingScheme: "gradingScheme",
+    Resources: "resources",
+    Rubric: "rubric",
+    Submissions: "submissions",
+} as const;
+/**
+ * Provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AddedStudentAction: "addedStudentAction",
+    AddToCalendarAction: "addToCalendarAction",
+    AllowLateSubmissions: "allowLateSubmissions",
+    AllowStudentsToAddResourcesToSubmission: "allowStudentsToAddResourcesToSubmission",
+    AssignDateTime: "assignDateTime",
+    AssignedDateTime: "assignedDateTime",
+    AssignTo: "assignTo",
+    ClassId: "classId",
+    CloseDateTime: "closeDateTime",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    DisplayName: "displayName",
+    DueDateTime: "dueDateTime",
+    FeedbackResourcesFolderUrl: "feedbackResourcesFolderUrl",
+    Grading: "grading",
+    Instructions: "instructions",
+    LastModifiedBy: "lastModifiedBy",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    ModuleUrl: "moduleUrl",
+    NotificationChannelUrl: "notificationChannelUrl",
+    ResourcesFolderUrl: "resourcesFolderUrl",
+    Status: "status",
+    WebUrl: "webUrl",
+    Categories: "categories",
+    GradingCategory: "gradingCategory",
+    GradingScheme: "gradingScheme",
+    Resources: "resources",
+    Rubric: "rubric",
+    Submissions: "submissions",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

@@ -24,6 +24,9 @@ export function deserializeIntoRunGetResponse(runGetResponse: Partial<RunGetResp
         "value": n => { runGetResponse.value = n.getCollectionOfObjectValues<EdiscoveryFile>(createEdiscoveryFileFromDiscriminatorValue); },
     }
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to call the run method.
  */
@@ -53,7 +56,7 @@ export interface MicrosoftGraphSecurityRunRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -61,7 +64,7 @@ export interface MicrosoftGraphSecurityRunRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -69,7 +72,7 @@ export interface MicrosoftGraphSecurityRunRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -98,6 +101,65 @@ export function serializeRunGetResponse(writer: SerializationWriter, runGetRespo
  */
 export const MicrosoftGraphSecurityRunRequestBuilderUriTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}/microsoft.graph.security.run(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
 /**
+ * Provides operations to call the run method.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    Custodian: "custodian",
+    Tags: "tags",
+} as const;
+/**
+ * Provides operations to call the run method.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    Content: "content",
+    ContentDesc: "content desc",
+    DateTime: "dateTime",
+    DateTimeDesc: "dateTime desc",
+    Extension: "extension",
+    ExtensionDesc: "extension desc",
+    ExtractedTextContent: "extractedTextContent",
+    ExtractedTextContentDesc: "extractedTextContent desc",
+    MediaType: "mediaType",
+    MediaTypeDesc: "mediaType desc",
+    Name: "name",
+    NameDesc: "name desc",
+    OtherProperties: "otherProperties",
+    OtherPropertiesDesc: "otherProperties desc",
+    ProcessingStatus: "processingStatus",
+    ProcessingStatusDesc: "processingStatus desc",
+    SenderOrAuthors: "senderOrAuthors",
+    SenderOrAuthorsDesc: "senderOrAuthors desc",
+    Size: "size",
+    SizeDesc: "size desc",
+    SourceType: "sourceType",
+    SourceTypeDesc: "sourceType desc",
+    SubjectTitle: "subjectTitle",
+    SubjectTitleDesc: "subjectTitle desc",
+} as const;
+/**
+ * Provides operations to call the run method.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    Content: "content",
+    DateTime: "dateTime",
+    Extension: "extension",
+    ExtractedTextContent: "extractedTextContent",
+    MediaType: "mediaType",
+    Name: "name",
+    OtherProperties: "otherProperties",
+    ProcessingStatus: "processingStatus",
+    SenderOrAuthors: "senderOrAuthors",
+    Size: "size",
+    SourceType: "sourceType",
+    SubjectTitle: "subjectTitle",
+    Custodian: "custodian",
+    Tags: "tags",
+} as const;
+/**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const MicrosoftGraphSecurityRunRequestBuilderGetQueryParametersMapper: Record<string, string> = {
@@ -120,7 +182,7 @@ export const MicrosoftGraphSecurityRunRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRunGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphSecurityRunRequestBuilderGetQueryParametersMapper,
     },

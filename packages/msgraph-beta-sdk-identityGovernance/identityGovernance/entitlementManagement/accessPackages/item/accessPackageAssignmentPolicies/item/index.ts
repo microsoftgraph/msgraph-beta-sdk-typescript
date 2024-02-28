@@ -87,12 +87,14 @@ export interface AccessPackageAssignmentPolicyItemRequestBuilderGetQueryParamete
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Uri template for the request builder.
  */
@@ -133,7 +135,7 @@ export const AccessPackageAssignmentPolicyItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageAssignmentPolicyItemRequestBuilderUriTemplate,
@@ -141,7 +143,7 @@ export const AccessPackageAssignmentPolicyItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentPolicyFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -151,12 +153,47 @@ export const AccessPackageAssignmentPolicyItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageAssignmentPolicy,
         requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
+/**
+ * Provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    AccessPackage: "accessPackage",
+    AccessPackageCatalog: "accessPackageCatalog",
+    CustomExtensionHandlers: "customExtensionHandlers",
+    CustomExtensionStageSettings: "customExtensionStageSettings",
+} as const;
+/**
+ * Provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AccessPackageId: "accessPackageId",
+    AccessReviewSettings: "accessReviewSettings",
+    CanExtend: "canExtend",
+    CreatedBy: "createdBy",
+    CreatedDateTime: "createdDateTime",
+    Description: "description",
+    DisplayName: "displayName",
+    DurationInDays: "durationInDays",
+    ExpirationDateTime: "expirationDateTime",
+    ModifiedBy: "modifiedBy",
+    ModifiedDateTime: "modifiedDateTime",
+    Questions: "questions",
+    RequestApprovalSettings: "requestApprovalSettings",
+    RequestorSettings: "requestorSettings",
+    VerifiableCredentialSettings: "verifiableCredentialSettings",
+    AccessPackage: "accessPackage",
+    AccessPackageCatalog: "accessPackageCatalog",
+    CustomExtensionHandlers: "customExtensionHandlers",
+    CustomExtensionStageSettings: "customExtensionStageSettings",
+} as const;
 /* tslint:enable */
 /* eslint-enable */

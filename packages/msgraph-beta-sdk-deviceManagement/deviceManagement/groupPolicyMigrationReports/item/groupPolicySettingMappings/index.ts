@@ -7,6 +7,9 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 import { GroupPolicySettingMappingItemRequestBuilderRequestsMetadata, type GroupPolicySettingMappingItemRequestBuilder } from './item/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetOrderbyQueryParameterType = (typeof GetOrderbyQueryParameterTypeObject)[keyof typeof GetOrderbyQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
  */
@@ -61,7 +64,7 @@ export interface GroupPolicySettingMappingsRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Filter items by property values
      */
@@ -69,7 +72,7 @@ export interface GroupPolicySettingMappingsRequestBuilderGetQueryParameters {
     /**
      * Order items by property values
      */
-    orderby?: string[];
+    orderby?: GetOrderbyQueryParameterType[];
     /**
      * Search items by search phrases
      */
@@ -77,7 +80,7 @@ export interface GroupPolicySettingMappingsRequestBuilderGetQueryParameters {
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
     /**
      * Skip the first n items
      */
@@ -91,6 +94,85 @@ export interface GroupPolicySettingMappingsRequestBuilderGetQueryParameters {
  * Uri template for the request builder.
  */
 export const GroupPolicySettingMappingsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReport%2Did}/groupPolicySettingMappings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}";
+/**
+ * Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+} as const;
+/**
+ * Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetOrderbyQueryParameterTypeObject = {
+    Id: "id",
+    IdDesc: "id desc",
+    AdmxSettingDefinitionId: "admxSettingDefinitionId",
+    AdmxSettingDefinitionIdDesc: "admxSettingDefinitionId desc",
+    ChildIdList: "childIdList",
+    ChildIdListDesc: "childIdList desc",
+    IntuneSettingDefinitionId: "intuneSettingDefinitionId",
+    IntuneSettingDefinitionIdDesc: "intuneSettingDefinitionId desc",
+    IntuneSettingUriList: "intuneSettingUriList",
+    IntuneSettingUriListDesc: "intuneSettingUriList desc",
+    IsMdmSupported: "isMdmSupported",
+    IsMdmSupportedDesc: "isMdmSupported desc",
+    MdmCspName: "mdmCspName",
+    MdmCspNameDesc: "mdmCspName desc",
+    MdmMinimumOSVersion: "mdmMinimumOSVersion",
+    MdmMinimumOSVersionDesc: "mdmMinimumOSVersion desc",
+    MdmSettingUri: "mdmSettingUri",
+    MdmSettingUriDesc: "mdmSettingUri desc",
+    MdmSupportedState: "mdmSupportedState",
+    MdmSupportedStateDesc: "mdmSupportedState desc",
+    ParentId: "parentId",
+    ParentIdDesc: "parentId desc",
+    SettingCategory: "settingCategory",
+    SettingCategoryDesc: "settingCategory desc",
+    SettingDisplayName: "settingDisplayName",
+    SettingDisplayNameDesc: "settingDisplayName desc",
+    SettingDisplayValue: "settingDisplayValue",
+    SettingDisplayValueDesc: "settingDisplayValue desc",
+    SettingDisplayValueType: "settingDisplayValueType",
+    SettingDisplayValueTypeDesc: "settingDisplayValueType desc",
+    SettingName: "settingName",
+    SettingNameDesc: "settingName desc",
+    SettingScope: "settingScope",
+    SettingScopeDesc: "settingScope desc",
+    SettingType: "settingType",
+    SettingTypeDesc: "settingType desc",
+    SettingValue: "settingValue",
+    SettingValueDesc: "settingValue desc",
+    SettingValueDisplayUnits: "settingValueDisplayUnits",
+    SettingValueDisplayUnitsDesc: "settingValueDisplayUnits desc",
+    SettingValueType: "settingValueType",
+    SettingValueTypeDesc: "settingValueType desc",
+} as const;
+/**
+ * Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AdmxSettingDefinitionId: "admxSettingDefinitionId",
+    ChildIdList: "childIdList",
+    IntuneSettingDefinitionId: "intuneSettingDefinitionId",
+    IntuneSettingUriList: "intuneSettingUriList",
+    IsMdmSupported: "isMdmSupported",
+    MdmCspName: "mdmCspName",
+    MdmMinimumOSVersion: "mdmMinimumOSVersion",
+    MdmSettingUri: "mdmSettingUri",
+    MdmSupportedState: "mdmSupportedState",
+    ParentId: "parentId",
+    SettingCategory: "settingCategory",
+    SettingDisplayName: "settingDisplayName",
+    SettingDisplayValue: "settingDisplayValue",
+    SettingDisplayValueType: "settingDisplayValueType",
+    SettingName: "settingName",
+    SettingScope: "settingScope",
+    SettingType: "settingType",
+    SettingValue: "settingValue",
+    SettingValueDisplayUnits: "settingValueDisplayUnits",
+    SettingValueType: "settingValueType",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -126,7 +208,7 @@ export const GroupPolicySettingMappingsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicySettingMappingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GroupPolicySettingMappingsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +218,7 @@ export const GroupPolicySettingMappingsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicySettingMappingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicySettingMapping,

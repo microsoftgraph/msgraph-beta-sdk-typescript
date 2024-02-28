@@ -5,6 +5,8 @@ import { createGovernanceRoleAssignmentFromDiscriminatorValue, type GovernanceRo
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
+export type GetExpandQueryParameterType = (typeof GetExpandQueryParameterTypeObject)[keyof typeof GetExpandQueryParameterTypeObject];
+export type GetSelectQueryParameterType = (typeof GetSelectQueryParameterTypeObject)[keyof typeof GetSelectQueryParameterTypeObject];
 /**
  * Provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
  */
@@ -30,16 +32,46 @@ export interface LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
-    expand?: string[];
+    expand?: GetExpandQueryParameterType[];
     /**
      * Select properties to be returned
      */
-    select?: string[];
+    select?: GetSelectQueryParameterType[];
 }
 /**
  * Uri template for the request builder.
  */
 export const LinkedEligibleRoleAssignmentRequestBuilderUriTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}";
+/**
+ * Provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
+ */
+export const GetExpandQueryParameterTypeObject = {
+    Asterisk: "*",
+    LinkedEligibleRoleAssignment: "linkedEligibleRoleAssignment",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+    Subject: "subject",
+} as const;
+/**
+ * Provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
+ */
+export const GetSelectQueryParameterTypeObject = {
+    Id: "id",
+    AssignmentState: "assignmentState",
+    EndDateTime: "endDateTime",
+    ExternalId: "externalId",
+    LinkedEligibleRoleAssignmentId: "linkedEligibleRoleAssignmentId",
+    MemberType: "memberType",
+    ResourceId: "resourceId",
+    RoleDefinitionId: "roleDefinitionId",
+    StartDateTime: "startDateTime",
+    Status: "status",
+    SubjectId: "subjectId",
+    LinkedEligibleRoleAssignment: "linkedEligibleRoleAssignment",
+    Resource: "resource",
+    RoleDefinition: "roleDefinition",
+    Subject: "subject",
+} as const;
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
@@ -57,7 +89,7 @@ export const LinkedEligibleRoleAssignmentRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: LinkedEligibleRoleAssignmentRequestBuilderGetQueryParametersMapper,
     },
