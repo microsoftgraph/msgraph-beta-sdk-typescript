@@ -105,7 +105,7 @@ export const ApplePushNotificationCertificateRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ApplePushNotificationCertificateRequestBuilderUriTemplate,
@@ -113,7 +113,7 @@ export const ApplePushNotificationCertificateRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplePushNotificationCertificateFromDiscriminatorValue,
         queryParametersMapper: ApplePushNotificationCertificateRequestBuilderGetQueryParametersMapper,
     },
@@ -123,7 +123,7 @@ export const ApplePushNotificationCertificateRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplePushNotificationCertificateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeApplePushNotificationCertificate,

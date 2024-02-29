@@ -84,7 +84,7 @@ export const ProviderTenantSettingItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ProviderTenantSettingItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ProviderTenantSettingItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProviderTenantSettingFromDiscriminatorValue,
         queryParametersMapper: ProviderTenantSettingItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ProviderTenantSettingItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProviderTenantSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeProviderTenantSetting,

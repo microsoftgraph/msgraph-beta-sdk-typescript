@@ -144,7 +144,7 @@ export const AccessPackageCatalogsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageCatalogCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessPackageCatalogsRequestBuilderGetQueryParametersMapper,
     },
@@ -154,7 +154,7 @@ export const AccessPackageCatalogsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageCatalogFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageCatalog,

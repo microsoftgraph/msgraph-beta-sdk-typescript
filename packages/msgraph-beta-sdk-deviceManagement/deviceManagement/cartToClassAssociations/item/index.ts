@@ -84,7 +84,7 @@ export const CartToClassAssociationItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CartToClassAssociationItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const CartToClassAssociationItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCartToClassAssociationFromDiscriminatorValue,
         queryParametersMapper: CartToClassAssociationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const CartToClassAssociationItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCartToClassAssociationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCartToClassAssociation,

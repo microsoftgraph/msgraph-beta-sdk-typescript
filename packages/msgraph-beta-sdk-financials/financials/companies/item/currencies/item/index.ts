@@ -84,7 +84,7 @@ export const CurrencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CurrencyItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const CurrencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCurrencyFromDiscriminatorValue,
         queryParametersMapper: CurrencyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const CurrencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCurrencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCurrency,

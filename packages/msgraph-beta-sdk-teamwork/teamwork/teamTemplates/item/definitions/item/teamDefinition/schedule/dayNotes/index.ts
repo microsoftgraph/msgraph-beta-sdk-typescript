@@ -126,7 +126,7 @@ export const DayNotesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDayNoteCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DayNotesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const DayNotesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDayNoteFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDayNote,

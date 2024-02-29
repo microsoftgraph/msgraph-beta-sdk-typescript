@@ -128,7 +128,7 @@ export const ManagementActionsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagementActionsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const ManagementActionsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementAction,

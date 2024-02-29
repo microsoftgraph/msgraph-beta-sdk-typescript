@@ -86,7 +86,7 @@ export const FormsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: FormsRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const FormsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminFormsFromDiscriminatorValue,
         queryParametersMapper: FormsRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const FormsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminFormsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdminForms,

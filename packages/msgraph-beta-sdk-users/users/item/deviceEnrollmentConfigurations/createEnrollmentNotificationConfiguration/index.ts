@@ -78,7 +78,7 @@ export const CreateEnrollmentNotificationConfigurationRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCreateEnrollmentNotificationConfigurationPostRequestBody,
         requestInformationContentSetMethod: "setContentFromParsable",

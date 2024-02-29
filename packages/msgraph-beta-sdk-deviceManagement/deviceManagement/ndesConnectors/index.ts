@@ -126,7 +126,7 @@ export const NdesConnectorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNdesConnectorCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: NdesConnectorsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const NdesConnectorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNdesConnectorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeNdesConnector,

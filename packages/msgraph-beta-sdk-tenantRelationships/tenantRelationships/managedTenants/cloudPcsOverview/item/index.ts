@@ -85,7 +85,7 @@ export const CloudPcOverviewTenantItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcOverviewTenantItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const CloudPcOverviewTenantItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOverviewFromDiscriminatorValue,
         queryParametersMapper: CloudPcOverviewTenantItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const CloudPcOverviewTenantItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOverviewFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcOverview,

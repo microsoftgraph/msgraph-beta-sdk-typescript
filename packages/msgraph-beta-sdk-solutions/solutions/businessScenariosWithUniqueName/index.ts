@@ -87,7 +87,7 @@ export const BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BusinessScenariosWithUniqueNameRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessScenarioFromDiscriminatorValue,
         queryParametersMapper: BusinessScenariosWithUniqueNameRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessScenarioFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBusinessScenario,

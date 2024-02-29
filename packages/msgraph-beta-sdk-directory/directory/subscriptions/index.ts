@@ -127,7 +127,7 @@ export const SubscriptionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanySubscriptionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SubscriptionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const SubscriptionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanySubscriptionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCompanySubscription,

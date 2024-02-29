@@ -139,7 +139,7 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementConfigurationPolicyItemRequestBuilderUriTemplate,
@@ -147,7 +147,7 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -157,7 +157,7 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementConfigurationPolicy,

@@ -112,7 +112,7 @@ export const FavoritePlansRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPlannerPlanCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: FavoritePlansRequestBuilderGetQueryParametersMapper,
     },

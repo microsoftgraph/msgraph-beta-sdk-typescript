@@ -127,7 +127,7 @@ export const ManagedTenantApiNotificationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantApiNotificationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantApiNotificationsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ManagedTenantApiNotificationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantApiNotificationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedTenantApiNotification,

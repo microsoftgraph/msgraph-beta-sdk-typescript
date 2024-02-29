@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-threatsubmission",
-  "version": "1.0.0-preview.12",
+  "version": "1.0.0-preview.13",
   "description": "ThreatSubmission fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",

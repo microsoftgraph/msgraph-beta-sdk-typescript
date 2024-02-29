@@ -127,7 +127,7 @@ export const ColumnsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHorizontalSectionColumnCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ColumnsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ColumnsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHorizontalSectionColumnFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeHorizontalSectionColumn,

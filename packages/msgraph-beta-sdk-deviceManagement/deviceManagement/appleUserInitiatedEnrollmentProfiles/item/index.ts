@@ -106,7 +106,7 @@ export const AppleUserInitiatedEnrollmentProfileItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AppleUserInitiatedEnrollmentProfileItemRequestBuilderUriTemplate,
@@ -114,7 +114,7 @@ export const AppleUserInitiatedEnrollmentProfileItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue,
         queryParametersMapper: AppleUserInitiatedEnrollmentProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +124,7 @@ export const AppleUserInitiatedEnrollmentProfileItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppleUserInitiatedEnrollmentProfile,

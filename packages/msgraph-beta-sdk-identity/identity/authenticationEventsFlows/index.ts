@@ -138,7 +138,7 @@ export const AuthenticationEventsFlowsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthenticationEventsFlowCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AuthenticationEventsFlowsRequestBuilderGetQueryParametersMapper,
     },
@@ -148,7 +148,7 @@ export const AuthenticationEventsFlowsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthenticationEventsFlowFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuthenticationEventsFlow,

@@ -126,7 +126,7 @@ export const ManagedTenantTicketingEndpointsRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantTicketingEndpointCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantTicketingEndpointsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ManagedTenantTicketingEndpointsRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantTicketingEndpointFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedTenantTicketingEndpoint,

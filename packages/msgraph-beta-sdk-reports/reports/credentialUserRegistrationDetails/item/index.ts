@@ -90,7 +90,7 @@ export const CredentialUserRegistrationDetailsItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CredentialUserRegistrationDetailsItemRequestBuilderUriTemplate,
@@ -98,7 +98,7 @@ export const CredentialUserRegistrationDetailsItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationDetailsFromDiscriminatorValue,
         queryParametersMapper: CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParametersMapper,
     },
@@ -108,7 +108,7 @@ export const CredentialUserRegistrationDetailsItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCredentialUserRegistrationDetails,

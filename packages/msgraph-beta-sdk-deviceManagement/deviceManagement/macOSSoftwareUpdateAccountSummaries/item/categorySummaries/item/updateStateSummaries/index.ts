@@ -126,7 +126,7 @@ export const UpdateStateSummariesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateStateSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UpdateStateSummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const UpdateStateSummariesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMacOSSoftwareUpdateStateSummary,

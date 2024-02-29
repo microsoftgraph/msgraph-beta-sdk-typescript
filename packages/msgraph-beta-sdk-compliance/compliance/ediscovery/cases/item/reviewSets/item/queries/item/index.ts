@@ -107,7 +107,7 @@ export const ReviewSetQueryItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ReviewSetQueryItemRequestBuilderUriTemplate,
@@ -115,7 +115,7 @@ export const ReviewSetQueryItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createReviewSetQueryFromDiscriminatorValue,
         queryParametersMapper: ReviewSetQueryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +125,7 @@ export const ReviewSetQueryItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createReviewSetQueryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeReviewSetQuery,

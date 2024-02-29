@@ -128,7 +128,7 @@ export const PatentsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemPatentCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PatentsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const PatentsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemPatentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeItemPatent,

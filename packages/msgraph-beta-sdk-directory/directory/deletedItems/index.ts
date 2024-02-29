@@ -62,21 +62,21 @@ export interface DeletedItemsRequestBuilder extends BaseRequestBuilder<DeletedIt
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
-     * Get deletedItems from directory
+     * Recently deleted items. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeletedItemsRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
-     * Get deletedItems from directory
+     * Recently deleted items. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeletedItemsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get deletedItems from directory
+ * Recently deleted items. Read-only. Nullable.
  */
 export interface DeletedItemsRequestBuilderGetQueryParameters {
     /**
@@ -182,7 +182,7 @@ export const DeletedItemsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDirectoryObjectCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeletedItemsRequestBuilderGetQueryParametersMapper,
     },

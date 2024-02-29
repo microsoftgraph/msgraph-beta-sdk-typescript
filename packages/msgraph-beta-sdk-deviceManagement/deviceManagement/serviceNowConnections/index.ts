@@ -126,7 +126,7 @@ export const ServiceNowConnectionsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServiceNowConnectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ServiceNowConnectionsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ServiceNowConnectionsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServiceNowConnectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServiceNowConnection,

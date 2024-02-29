@@ -57,7 +57,7 @@ export const AlertDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue,
         queryParametersMapper: AlertDefinitionRequestBuilderGetQueryParametersMapper,
     },

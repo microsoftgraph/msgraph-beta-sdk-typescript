@@ -99,7 +99,7 @@ export const CloudPcDeviceImageItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcDeviceImageItemRequestBuilderUriTemplate,
@@ -107,7 +107,7 @@ export const CloudPcDeviceImageItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceImageFromDiscriminatorValue,
         queryParametersMapper: CloudPcDeviceImageItemRequestBuilderGetQueryParametersMapper,
     },
@@ -117,7 +117,7 @@ export const CloudPcDeviceImageItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceImageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcDeviceImage,

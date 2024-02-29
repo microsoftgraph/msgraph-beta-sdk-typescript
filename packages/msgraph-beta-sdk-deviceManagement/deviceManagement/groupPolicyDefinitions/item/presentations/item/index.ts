@@ -97,7 +97,7 @@ export const GroupPolicyPresentationItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GroupPolicyPresentationItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const GroupPolicyPresentationItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyPresentationFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyPresentationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const GroupPolicyPresentationItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyPresentationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyPresentation,

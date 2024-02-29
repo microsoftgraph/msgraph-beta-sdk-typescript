@@ -110,7 +110,7 @@ export const RegistrationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RegistrationRequestBuilderUriTemplate,
@@ -118,7 +118,7 @@ export const RegistrationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMeetingRegistrationFromDiscriminatorValue,
         queryParametersMapper: RegistrationRequestBuilderGetQueryParametersMapper,
     },
@@ -128,7 +128,7 @@ export const RegistrationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMeetingRegistrationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMeetingRegistration,

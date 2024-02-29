@@ -127,7 +127,7 @@ export const EnterpriseAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EnterpriseAppsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const EnterpriseAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRbacApplication,

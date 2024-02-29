@@ -135,7 +135,7 @@ export const WindowsAutopilotDeploymentProfilesRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsAutopilotDeploymentProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsAutopilotDeploymentProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const WindowsAutopilotDeploymentProfilesRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsAutopilotDeploymentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsAutopilotDeploymentProfile,

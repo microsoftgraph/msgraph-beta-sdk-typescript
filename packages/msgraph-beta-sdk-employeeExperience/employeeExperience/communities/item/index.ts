@@ -108,7 +108,7 @@ export const CommunityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CommunityItemRequestBuilderUriTemplate,
@@ -116,7 +116,7 @@ export const CommunityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommunityFromDiscriminatorValue,
         queryParametersMapper: CommunityItemRequestBuilderGetQueryParametersMapper,
     },
@@ -126,7 +126,7 @@ export const CommunityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommunityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCommunity,

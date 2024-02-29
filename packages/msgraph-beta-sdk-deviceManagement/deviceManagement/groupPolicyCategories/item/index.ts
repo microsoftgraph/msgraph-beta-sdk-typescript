@@ -123,7 +123,7 @@ export const GroupPolicyCategoryItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GroupPolicyCategoryItemRequestBuilderUriTemplate,
@@ -131,7 +131,7 @@ export const GroupPolicyCategoryItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyCategoryFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyCategoryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -141,7 +141,7 @@ export const GroupPolicyCategoryItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyCategoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyCategory,

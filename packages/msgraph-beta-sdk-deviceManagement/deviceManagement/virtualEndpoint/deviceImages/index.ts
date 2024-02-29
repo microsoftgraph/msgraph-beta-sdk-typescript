@@ -137,7 +137,7 @@ export const DeviceImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceImageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceImagesRequestBuilderGetQueryParametersMapper,
     },
@@ -147,7 +147,7 @@ export const DeviceImagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcDeviceImageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcDeviceImage,

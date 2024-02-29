@@ -137,7 +137,7 @@ export const DepOnboardingSettingsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepOnboardingSettingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DepOnboardingSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -147,7 +147,7 @@ export const DepOnboardingSettingsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepOnboardingSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDepOnboardingSetting,

@@ -114,7 +114,7 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegedRoleAssignmentItemRequestBuilderUriTemplate,
@@ -122,7 +122,7 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: PrivilegedRoleAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -132,7 +132,7 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedRoleAssignment,

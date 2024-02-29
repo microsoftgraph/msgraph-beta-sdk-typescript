@@ -99,7 +99,7 @@ export const OutboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OutboundSharedUserProfileUserItemRequestBuilderUriTemplate,
@@ -107,7 +107,7 @@ export const OutboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutboundSharedUserProfileFromDiscriminatorValue,
         queryParametersMapper: OutboundSharedUserProfileUserItemRequestBuilderGetQueryParametersMapper,
     },
@@ -117,7 +117,7 @@ export const OutboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutboundSharedUserProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOutboundSharedUserProfile,

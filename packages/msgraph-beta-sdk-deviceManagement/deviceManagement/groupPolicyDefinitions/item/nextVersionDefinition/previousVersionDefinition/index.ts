@@ -114,7 +114,7 @@ export const PreviousVersionDefinitionRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PreviousVersionDefinitionRequestBuilderUriTemplate,
@@ -122,7 +122,7 @@ export const PreviousVersionDefinitionRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFromDiscriminatorValue,
         queryParametersMapper: PreviousVersionDefinitionRequestBuilderGetQueryParametersMapper,
     },
@@ -132,7 +132,7 @@ export const PreviousVersionDefinitionRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyDefinition,

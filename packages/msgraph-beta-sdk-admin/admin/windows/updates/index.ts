@@ -143,7 +143,7 @@ export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UpdatesRequestBuilderUriTemplate,
@@ -151,7 +151,7 @@ export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminWindowsUpdatesFromDiscriminatorValue,
         queryParametersMapper: UpdatesRequestBuilderGetQueryParametersMapper,
     },
@@ -161,7 +161,7 @@ export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminWindowsUpdatesFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdminWindowsUpdates,

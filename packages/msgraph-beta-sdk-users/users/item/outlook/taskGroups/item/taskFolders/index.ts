@@ -125,7 +125,7 @@ export const TaskFoldersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskFolderCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TaskFoldersRequestBuilderGetQueryParametersMapper,
     },
@@ -135,7 +135,7 @@ export const TaskFoldersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOutlookTaskFolderFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOutlookTaskFolder,

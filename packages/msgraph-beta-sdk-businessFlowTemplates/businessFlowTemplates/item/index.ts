@@ -84,7 +84,7 @@ export const BusinessFlowTemplateItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BusinessFlowTemplateItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const BusinessFlowTemplateItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowTemplateFromDiscriminatorValue,
         queryParametersMapper: BusinessFlowTemplateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const BusinessFlowTemplateItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBusinessFlowTemplate,

@@ -95,7 +95,7 @@ export const MonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMonitoringFromDiscriminatorValue,
         queryParametersMapper: MonitoringRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const MonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMonitoringFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMonitoring,

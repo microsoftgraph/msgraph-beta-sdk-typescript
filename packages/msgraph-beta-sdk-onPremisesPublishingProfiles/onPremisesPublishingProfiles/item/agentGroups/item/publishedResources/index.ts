@@ -127,7 +127,7 @@ export const PublishedResourcesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPublishedResourceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PublishedResourcesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const PublishedResourcesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPublishedResourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePublishedResource,

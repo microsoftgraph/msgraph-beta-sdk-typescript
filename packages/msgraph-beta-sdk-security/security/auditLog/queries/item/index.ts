@@ -21,10 +21,11 @@ export interface AuditLogQueryItemRequestBuilder extends BaseRequestBuilder<Audi
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get queries from security
+     * Read the properties and relationships of an auditLogQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuditLogQuery>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-auditlogquery-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogQuery | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface AuditLogQueryItemRequestBuilder extends BaseRequestBuilder<Audi
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get queries from security
+     * Read the properties and relationships of an auditLogQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface AuditLogQueryItemRequestBuilder extends BaseRequestBuilder<Audi
      toPatchRequestInformation(body: AuditLogQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get queries from security
+ * Read the properties and relationships of an auditLogQuery object.
  */
 export interface AuditLogQueryItemRequestBuilderGetQueryParameters {
     /**
@@ -98,7 +99,7 @@ export const AuditLogQueryItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AuditLogQueryItemRequestBuilderUriTemplate,
@@ -106,7 +107,7 @@ export const AuditLogQueryItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogQueryFromDiscriminatorValue,
         queryParametersMapper: AuditLogQueryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +117,7 @@ export const AuditLogQueryItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogQueryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuditLogQuery,

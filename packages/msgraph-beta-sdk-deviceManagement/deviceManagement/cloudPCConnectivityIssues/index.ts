@@ -126,7 +126,7 @@ export const CloudPCConnectivityIssuesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPCConnectivityIssueCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CloudPCConnectivityIssuesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const CloudPCConnectivityIssuesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPCConnectivityIssueFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPCConnectivityIssue,

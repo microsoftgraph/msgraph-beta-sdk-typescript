@@ -98,7 +98,7 @@ export const MessageTraceItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MessageTraceItemRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const MessageTraceItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMessageTraceFromDiscriminatorValue,
         queryParametersMapper: MessageTraceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const MessageTraceItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMessageTraceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMessageTrace,

@@ -126,7 +126,7 @@ export const FileSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileSecurityProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: FileSecurityProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const FileSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFileSecurityProfile,

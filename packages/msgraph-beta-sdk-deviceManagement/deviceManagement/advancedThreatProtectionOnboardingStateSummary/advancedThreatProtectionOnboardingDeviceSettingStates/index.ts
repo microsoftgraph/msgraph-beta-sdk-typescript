@@ -126,7 +126,7 @@ export const AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdvancedThreatProtectionOnboardingDeviceSettingState,

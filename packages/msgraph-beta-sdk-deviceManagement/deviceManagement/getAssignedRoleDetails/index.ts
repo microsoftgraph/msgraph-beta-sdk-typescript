@@ -37,7 +37,7 @@ export const GetAssignedRoleDetailsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAndAppManagementAssignedRoleDetailsFromDiscriminatorValue,
     },
 };

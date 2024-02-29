@@ -132,7 +132,7 @@ export const LinksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectivityConfigurationLinkCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: LinksRequestBuilderGetQueryParametersMapper,
     },
@@ -142,7 +142,7 @@ export const LinksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectivityConfigurationLinkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConnectivityConfigurationLink,

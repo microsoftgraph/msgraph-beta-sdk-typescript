@@ -116,7 +116,7 @@ export const CloudPCRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPCRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const CloudPCRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationMultipleFromDiscriminatorValue,
         queryParametersMapper: CloudPCRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const CloudPCRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRbacApplicationMultipleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRbacApplicationMultiple,

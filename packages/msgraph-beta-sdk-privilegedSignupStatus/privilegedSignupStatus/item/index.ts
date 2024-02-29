@@ -84,7 +84,7 @@ export const PrivilegedSignupStatusItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegedSignupStatusItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const PrivilegedSignupStatusItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedSignupStatusFromDiscriminatorValue,
         queryParametersMapper: PrivilegedSignupStatusItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const PrivilegedSignupStatusItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedSignupStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedSignupStatus,

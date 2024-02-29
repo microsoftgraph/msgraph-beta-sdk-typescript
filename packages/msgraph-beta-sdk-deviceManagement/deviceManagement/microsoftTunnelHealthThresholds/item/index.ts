@@ -84,7 +84,7 @@ export const MicrosoftTunnelHealthThresholdItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MicrosoftTunnelHealthThresholdItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const MicrosoftTunnelHealthThresholdItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelHealthThresholdFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const MicrosoftTunnelHealthThresholdItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelHealthThresholdFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftTunnelHealthThreshold,

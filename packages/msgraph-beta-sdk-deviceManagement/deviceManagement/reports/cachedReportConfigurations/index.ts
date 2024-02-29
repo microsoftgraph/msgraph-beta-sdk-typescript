@@ -126,7 +126,7 @@ export const CachedReportConfigurationsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementCachedReportConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CachedReportConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const CachedReportConfigurationsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementCachedReportConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementCachedReportConfiguration,

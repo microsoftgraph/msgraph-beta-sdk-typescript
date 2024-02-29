@@ -102,7 +102,7 @@ export const ChangesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookDocumentTaskChangeCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ChangesRequestBuilderGetQueryParametersMapper,
     },
@@ -112,7 +112,7 @@ export const ChangesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookDocumentTaskChangeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWorkbookDocumentTaskChange,

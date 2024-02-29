@@ -127,7 +127,7 @@ export const ApplicationSignInDetailedSummaryRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplicationSignInDetailedSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ApplicationSignInDetailedSummaryRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ApplicationSignInDetailedSummaryRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApplicationSignInDetailedSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeApplicationSignInDetailedSummary,

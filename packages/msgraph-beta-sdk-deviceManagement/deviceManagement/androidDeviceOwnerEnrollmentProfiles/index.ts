@@ -127,7 +127,7 @@ export const AndroidDeviceOwnerEnrollmentProfilesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidDeviceOwnerEnrollmentProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const AndroidDeviceOwnerEnrollmentProfilesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidDeviceOwnerEnrollmentProfile,

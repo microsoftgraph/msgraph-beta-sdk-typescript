@@ -84,7 +84,7 @@ export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderReques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderReques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderReques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementAutopilotPolicyStatusDetail,

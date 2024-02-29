@@ -126,7 +126,7 @@ export const ManagedDeviceCleanupRulesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceCleanupRuleCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceCleanupRulesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ManagedDeviceCleanupRulesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceCleanupRuleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedDeviceCleanupRule,

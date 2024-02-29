@@ -86,7 +86,7 @@ export const ForwardingOptionsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ForwardingOptionsRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const ForwardingOptionsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createForwardingOptionsFromDiscriminatorValue,
         queryParametersMapper: ForwardingOptionsRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const ForwardingOptionsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createForwardingOptionsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeForwardingOptions,

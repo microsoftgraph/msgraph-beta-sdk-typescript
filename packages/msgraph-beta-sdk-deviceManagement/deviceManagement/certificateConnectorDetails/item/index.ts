@@ -105,7 +105,7 @@ export const CertificateConnectorDetailsItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CertificateConnectorDetailsItemRequestBuilderUriTemplate,
@@ -113,7 +113,7 @@ export const CertificateConnectorDetailsItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateConnectorDetailsFromDiscriminatorValue,
         queryParametersMapper: CertificateConnectorDetailsItemRequestBuilderGetQueryParametersMapper,
     },
@@ -123,7 +123,7 @@ export const CertificateConnectorDetailsItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateConnectorDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCertificateConnectorDetails,

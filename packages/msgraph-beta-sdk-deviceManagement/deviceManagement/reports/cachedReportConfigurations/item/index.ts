@@ -84,7 +84,7 @@ export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementCachedReportConfigurationItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementCachedReportConfigurationFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementCachedReportConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementCachedReportConfiguration,

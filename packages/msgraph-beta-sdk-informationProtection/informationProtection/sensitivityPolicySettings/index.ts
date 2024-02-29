@@ -84,7 +84,7 @@ export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SensitivityPolicySettingsRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityPolicySettingsFromDiscriminatorValue,
         queryParametersMapper: SensitivityPolicySettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityPolicySettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSensitivityPolicySettings,

@@ -126,7 +126,7 @@ export const MicrosoftTunnelHealthThresholdsRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelHealthThresholdCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelHealthThresholdsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const MicrosoftTunnelHealthThresholdsRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelHealthThresholdFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftTunnelHealthThreshold,

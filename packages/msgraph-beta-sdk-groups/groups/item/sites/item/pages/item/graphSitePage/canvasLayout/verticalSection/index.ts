@@ -98,7 +98,7 @@ export const VerticalSectionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: VerticalSectionRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const VerticalSectionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVerticalSectionFromDiscriminatorValue,
         queryParametersMapper: VerticalSectionRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const VerticalSectionRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVerticalSectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVerticalSection,

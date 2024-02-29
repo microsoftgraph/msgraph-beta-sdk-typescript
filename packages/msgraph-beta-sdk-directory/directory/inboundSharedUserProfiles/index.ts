@@ -128,7 +128,7 @@ export const InboundSharedUserProfilesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundSharedUserProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: InboundSharedUserProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const InboundSharedUserProfilesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInboundSharedUserProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeInboundSharedUserProfile,

@@ -126,7 +126,7 @@ export const ProviderTenantSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProviderTenantSettingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ProviderTenantSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ProviderTenantSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProviderTenantSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeProviderTenantSetting,

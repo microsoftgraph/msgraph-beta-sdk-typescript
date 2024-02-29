@@ -111,7 +111,7 @@ export const ApiNotificationsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantApiNotificationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ApiNotificationsRequestBuilderGetQueryParametersMapper,
     },

@@ -126,7 +126,7 @@ export const UserPfxCertificatesRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserPFXCertificateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserPfxCertificatesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const UserPfxCertificatesRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserPFXCertificateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserPFXCertificate,

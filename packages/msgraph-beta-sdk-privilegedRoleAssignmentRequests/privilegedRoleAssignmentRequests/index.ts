@@ -135,7 +135,7 @@ export const PrivilegedRoleAssignmentRequestsRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentRequestCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const PrivilegedRoleAssignmentRequestsRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedRoleAssignmentRequest,

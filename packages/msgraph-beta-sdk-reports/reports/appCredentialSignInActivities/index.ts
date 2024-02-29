@@ -127,7 +127,7 @@ export const AppCredentialSignInActivitiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AppCredentialSignInActivitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const AppCredentialSignInActivitiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppCredentialSignInActivity,

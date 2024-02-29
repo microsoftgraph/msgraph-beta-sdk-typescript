@@ -91,7 +91,7 @@ export const MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepDeploymentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChangeDeploymentStatusPostRequestBody,

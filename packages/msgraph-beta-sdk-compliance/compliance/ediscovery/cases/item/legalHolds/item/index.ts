@@ -128,7 +128,7 @@ export const LegalHoldItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: LegalHoldItemRequestBuilderUriTemplate,
@@ -136,7 +136,7 @@ export const LegalHoldItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLegalHoldFromDiscriminatorValue,
         queryParametersMapper: LegalHoldItemRequestBuilderGetQueryParametersMapper,
     },
@@ -146,7 +146,7 @@ export const LegalHoldItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLegalHoldFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLegalHold,

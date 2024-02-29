@@ -84,7 +84,7 @@ export const EmbeddedSIMDeviceStateItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const EmbeddedSIMDeviceStateItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmbeddedSIMDeviceStateFromDiscriminatorValue,
         queryParametersMapper: EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const EmbeddedSIMDeviceStateItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmbeddedSIMDeviceStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmbeddedSIMDeviceState,

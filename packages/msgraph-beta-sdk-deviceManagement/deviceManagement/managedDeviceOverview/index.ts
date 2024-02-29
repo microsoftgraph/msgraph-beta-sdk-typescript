@@ -57,7 +57,7 @@ export const ManagedDeviceOverviewRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceOverviewFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceOverviewRequestBuilderGetQueryParametersMapper,
     },

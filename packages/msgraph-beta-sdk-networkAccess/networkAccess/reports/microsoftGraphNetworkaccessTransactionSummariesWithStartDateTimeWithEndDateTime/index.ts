@@ -105,7 +105,7 @@ export const MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWit
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParametersMapper,
     },

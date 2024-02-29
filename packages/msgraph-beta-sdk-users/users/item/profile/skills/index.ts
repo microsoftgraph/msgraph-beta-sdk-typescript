@@ -128,7 +128,7 @@ export const SkillsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSkillProficiencyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SkillsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const SkillsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSkillProficiencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSkillProficiency,

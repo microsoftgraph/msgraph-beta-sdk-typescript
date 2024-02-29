@@ -97,7 +97,7 @@ export const ManagedTenantAlertLogItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedTenantAlertLogItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const ManagedTenantAlertLogItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantAlertLogFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantAlertLogItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const ManagedTenantAlertLogItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantAlertLogFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedTenantAlertLog,

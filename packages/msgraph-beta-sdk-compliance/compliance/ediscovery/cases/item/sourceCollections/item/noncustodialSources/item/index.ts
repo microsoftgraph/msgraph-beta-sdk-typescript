@@ -59,7 +59,7 @@ export const NoncustodialDataSourceItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNoncustodialDataSourceFromDiscriminatorValue,
         queryParametersMapper: NoncustodialDataSourceItemRequestBuilderGetQueryParametersMapper,
     },

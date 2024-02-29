@@ -70,7 +70,7 @@ export const GeneralLedgerEntryItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGeneralLedgerEntryFromDiscriminatorValue,
         queryParametersMapper: GeneralLedgerEntryItemRequestBuilderGetQueryParametersMapper,
     },

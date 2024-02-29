@@ -152,7 +152,7 @@ export const ChatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChatCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ChatsRequestBuilderGetQueryParametersMapper,
     },
@@ -162,7 +162,7 @@ export const ChatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChatFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChat,

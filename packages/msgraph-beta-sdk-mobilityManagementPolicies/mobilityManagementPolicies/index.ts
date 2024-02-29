@@ -127,7 +127,7 @@ export const MobilityManagementPoliciesRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobilityManagementPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MobilityManagementPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const MobilityManagementPoliciesRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobilityManagementPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMobilityManagementPolicy,

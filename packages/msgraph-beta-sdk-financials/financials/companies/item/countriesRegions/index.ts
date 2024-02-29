@@ -127,7 +127,7 @@ export const CountriesRegionsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCountryRegionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CountriesRegionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const CountriesRegionsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCountryRegionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCountryRegion,

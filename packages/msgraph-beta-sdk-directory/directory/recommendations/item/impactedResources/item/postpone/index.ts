@@ -80,7 +80,7 @@ export const PostponeRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImpactedResourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePostponePostRequestBody,

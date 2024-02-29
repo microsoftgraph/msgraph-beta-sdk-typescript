@@ -84,7 +84,7 @@ export const DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderRe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderRe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const DeviceManagementResourceAccessProfileAssignmentItemRequestBuilderRe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementResourceAccessProfileAssignment,

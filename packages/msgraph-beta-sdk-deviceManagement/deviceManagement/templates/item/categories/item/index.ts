@@ -107,7 +107,7 @@ export const DeviceManagementTemplateSettingCategoryItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementTemplateSettingCategoryItemRequestBuilderUriTemplate,
@@ -115,7 +115,7 @@ export const DeviceManagementTemplateSettingCategoryItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementTemplateSettingCategoryFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementTemplateSettingCategoryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +125,7 @@ export const DeviceManagementTemplateSettingCategoryItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementTemplateSettingCategoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementTemplateSettingCategory,

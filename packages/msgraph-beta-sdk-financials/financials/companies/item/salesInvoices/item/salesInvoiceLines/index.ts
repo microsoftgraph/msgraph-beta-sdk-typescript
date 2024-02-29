@@ -112,7 +112,7 @@ export const SalesInvoiceLinesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesInvoiceLineCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SalesInvoiceLinesRequestBuilderGetQueryParametersMapper,
     },

@@ -126,7 +126,7 @@ export const DerivedCredentialsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementDerivedCredentialSettingsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DerivedCredentialsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const DerivedCredentialsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementDerivedCredentialSettings,

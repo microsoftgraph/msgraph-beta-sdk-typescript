@@ -135,7 +135,7 @@ export const PrivilegedApprovalRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedApprovalCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PrivilegedApprovalRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const PrivilegedApprovalRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedApprovalFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedApproval,

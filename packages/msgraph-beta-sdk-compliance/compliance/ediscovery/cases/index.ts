@@ -135,7 +135,7 @@ export const CasesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CasesRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const CasesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseEscapedFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCaseEscaped,

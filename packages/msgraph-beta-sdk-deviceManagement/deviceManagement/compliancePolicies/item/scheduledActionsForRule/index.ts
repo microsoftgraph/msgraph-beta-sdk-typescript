@@ -127,7 +127,7 @@ export const ScheduledActionsForRuleRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementComplianceScheduledActionForRuleCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ScheduledActionsForRuleRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ScheduledActionsForRuleRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementComplianceScheduledActionForRule,

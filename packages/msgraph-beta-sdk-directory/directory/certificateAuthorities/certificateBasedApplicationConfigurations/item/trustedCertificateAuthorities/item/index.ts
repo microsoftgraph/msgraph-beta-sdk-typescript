@@ -84,7 +84,7 @@ export const CertificateAuthorityAsEntityItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CertificateAuthorityAsEntityItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const CertificateAuthorityAsEntityItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateAuthorityAsEntityFromDiscriminatorValue,
         queryParametersMapper: CertificateAuthorityAsEntityItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const CertificateAuthorityAsEntityItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateAuthorityAsEntityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCertificateAuthorityAsEntity,

@@ -84,7 +84,7 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RemoteNetworkHealthEventItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkHealthEventFromDiscriminatorValue,
         queryParametersMapper: RemoteNetworkHealthEventItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkHealthEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteNetworkHealthEvent,

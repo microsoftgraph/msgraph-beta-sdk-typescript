@@ -86,7 +86,7 @@ export const ComplianceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceFromDiscriminatorValue,
         queryParametersMapper: ComplianceRequestBuilderGetQueryParametersMapper,
     },
@@ -96,7 +96,7 @@ export const ComplianceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCompliance,

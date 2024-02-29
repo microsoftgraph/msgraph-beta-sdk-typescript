@@ -84,7 +84,7 @@ export const AndroidForWorkAppConfigurationSchemaItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AndroidForWorkAppConfigurationSchemaItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const AndroidForWorkAppConfigurationSchemaItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue,
         queryParametersMapper: AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const AndroidForWorkAppConfigurationSchemaItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidForWorkAppConfigurationSchema,

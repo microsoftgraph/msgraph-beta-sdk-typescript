@@ -105,7 +105,7 @@ export const VppTokenItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: VppTokenItemRequestBuilderUriTemplate,
@@ -113,7 +113,7 @@ export const VppTokenItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVppTokenFromDiscriminatorValue,
         queryParametersMapper: VppTokenItemRequestBuilderGetQueryParametersMapper,
     },
@@ -123,7 +123,7 @@ export const VppTokenItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVppTokenFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVppToken,

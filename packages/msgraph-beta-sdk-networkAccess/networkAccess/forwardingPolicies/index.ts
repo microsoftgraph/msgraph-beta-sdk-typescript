@@ -127,7 +127,7 @@ export const ForwardingPoliciesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createForwardingPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ForwardingPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ForwardingPoliciesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createForwardingPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeForwardingPolicy,

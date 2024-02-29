@@ -84,7 +84,7 @@ export const PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBu
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBu
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue,
         queryParametersMapper: PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParametersMapper,
     },

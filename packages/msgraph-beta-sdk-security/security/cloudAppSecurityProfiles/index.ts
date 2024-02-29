@@ -126,7 +126,7 @@ export const CloudAppSecurityProfilesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudAppSecurityProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CloudAppSecurityProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const CloudAppSecurityProfilesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudAppSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudAppSecurityProfile,

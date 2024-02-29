@@ -98,7 +98,7 @@ export const UserInstallStateSummaryItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserInstallStateSummaryItemRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const UserInstallStateSummaryItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserInstallStateSummaryFromDiscriminatorValue,
         queryParametersMapper: UserInstallStateSummaryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const UserInstallStateSummaryItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserInstallStateSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserInstallStateSummary,

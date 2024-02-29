@@ -97,7 +97,7 @@ export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GoalsExportJobItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsExportJobFromDiscriminatorValue,
         queryParametersMapper: GoalsExportJobItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGoalsExportJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGoalsExportJob,

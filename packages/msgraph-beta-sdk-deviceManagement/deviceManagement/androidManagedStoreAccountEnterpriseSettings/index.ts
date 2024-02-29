@@ -153,7 +153,7 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderUriTemplate,
@@ -161,7 +161,7 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue,
         queryParametersMapper: AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -171,7 +171,7 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidManagedStoreAccountEnterpriseSettings,

@@ -84,7 +84,7 @@ export const MacOSSoftwareUpdateStateSummaryItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MacOSSoftwareUpdateStateSummaryItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const MacOSSoftwareUpdateStateSummaryItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue,
         queryParametersMapper: MacOSSoftwareUpdateStateSummaryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const MacOSSoftwareUpdateStateSummaryItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMacOSSoftwareUpdateStateSummary,

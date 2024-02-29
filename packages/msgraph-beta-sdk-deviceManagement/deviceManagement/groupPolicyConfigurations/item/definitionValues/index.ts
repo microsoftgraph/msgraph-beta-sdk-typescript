@@ -127,7 +127,7 @@ export const DefinitionValuesRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionValueCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DefinitionValuesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const DefinitionValuesRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionValueFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyDefinitionValue,

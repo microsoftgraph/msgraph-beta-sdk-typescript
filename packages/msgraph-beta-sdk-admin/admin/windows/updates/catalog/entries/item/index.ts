@@ -84,7 +84,7 @@ export const CatalogEntryItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CatalogEntryItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const CatalogEntryItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCatalogEntryFromDiscriminatorValue,
         queryParametersMapper: CatalogEntryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const CatalogEntryItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCatalogEntryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCatalogEntry,

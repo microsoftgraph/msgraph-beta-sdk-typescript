@@ -108,7 +108,7 @@ export const AccessReviewInstanceDecisionItemItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessReviewInstanceDecisionItemItemRequestBuilderUriTemplate,
@@ -116,7 +116,7 @@ export const AccessReviewInstanceDecisionItemItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceDecisionItemFromDiscriminatorValue,
         queryParametersMapper: AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParametersMapper,
     },
@@ -126,7 +126,7 @@ export const AccessReviewInstanceDecisionItemItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceDecisionItemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessReviewInstanceDecisionItem,

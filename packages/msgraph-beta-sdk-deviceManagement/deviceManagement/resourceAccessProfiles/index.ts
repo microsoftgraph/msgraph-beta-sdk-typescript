@@ -135,7 +135,7 @@ export const ResourceAccessProfilesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementResourceAccessProfileBaseCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ResourceAccessProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const ResourceAccessProfilesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementResourceAccessProfileBase,

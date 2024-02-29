@@ -152,7 +152,7 @@ export const AccessPackageAssignmentRequestItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageAssignmentRequestItemRequestBuilderUriTemplate,
@@ -160,7 +160,7 @@ export const AccessPackageAssignmentRequestItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentRequestFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentRequestItemRequestBuilderGetQueryParametersMapper,
     },
@@ -170,7 +170,7 @@ export const AccessPackageAssignmentRequestItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageAssignmentRequest,

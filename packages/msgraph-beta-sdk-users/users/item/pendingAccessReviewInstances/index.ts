@@ -138,7 +138,7 @@ export const PendingAccessReviewInstancesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PendingAccessReviewInstancesRequestBuilderGetQueryParametersMapper,
     },
@@ -148,7 +148,7 @@ export const PendingAccessReviewInstancesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewInstanceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessReviewInstance,

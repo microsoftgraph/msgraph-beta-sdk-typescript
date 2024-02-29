@@ -112,7 +112,7 @@ export const AgedAccountsReceivableRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAgedAccountsReceivableCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AgedAccountsReceivableRequestBuilderGetQueryParametersMapper,
     },

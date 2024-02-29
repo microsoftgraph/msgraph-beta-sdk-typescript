@@ -112,7 +112,7 @@ export const SignUpsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserSignUpMetricCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SignUpsRequestBuilderGetQueryParametersMapper,
     },

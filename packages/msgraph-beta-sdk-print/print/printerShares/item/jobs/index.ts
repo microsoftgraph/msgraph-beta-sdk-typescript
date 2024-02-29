@@ -133,7 +133,7 @@ export const JobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintJobCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: JobsRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +143,7 @@ export const JobsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrintJob,

@@ -111,7 +111,7 @@ export const PurchaseInvoiceItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPurchaseInvoiceFromDiscriminatorValue,
         queryParametersMapper: PurchaseInvoiceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -121,7 +121,7 @@ export const PurchaseInvoiceItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPurchaseInvoiceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePurchaseInvoice,

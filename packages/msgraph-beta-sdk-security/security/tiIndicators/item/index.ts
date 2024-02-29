@@ -87,7 +87,7 @@ export const TiIndicatorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TiIndicatorItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const TiIndicatorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTiIndicatorFromDiscriminatorValue,
         queryParametersMapper: TiIndicatorItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const TiIndicatorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTiIndicatorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTiIndicator,

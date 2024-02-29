@@ -106,7 +106,7 @@ export const UnifiedRbacResourceNamespaceItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UnifiedRbacResourceNamespaceItemRequestBuilderUriTemplate,
@@ -114,7 +114,7 @@ export const UnifiedRbacResourceNamespaceItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacResourceNamespaceFromDiscriminatorValue,
         queryParametersMapper: UnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +124,7 @@ export const UnifiedRbacResourceNamespaceItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacResourceNamespaceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRbacResourceNamespace,

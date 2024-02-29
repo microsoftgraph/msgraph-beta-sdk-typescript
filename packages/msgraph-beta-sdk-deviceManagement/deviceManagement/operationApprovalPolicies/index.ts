@@ -158,7 +158,7 @@ export const OperationApprovalPoliciesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOperationApprovalPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: OperationApprovalPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -168,7 +168,7 @@ export const OperationApprovalPoliciesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOperationApprovalPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOperationApprovalPolicy,

@@ -130,7 +130,7 @@ export const PresenceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PresenceRequestBuilderUriTemplate,
@@ -138,7 +138,7 @@ export const PresenceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPresenceFromDiscriminatorValue,
         queryParametersMapper: PresenceRequestBuilderGetQueryParametersMapper,
     },
@@ -148,7 +148,7 @@ export const PresenceRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPresenceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePresence,

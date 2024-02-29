@@ -84,7 +84,7 @@ export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue,
         queryParametersMapper: AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAssignmentFilterEvaluationStatusDetails,

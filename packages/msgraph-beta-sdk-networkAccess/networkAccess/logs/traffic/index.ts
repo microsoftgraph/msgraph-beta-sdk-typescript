@@ -127,7 +127,7 @@ export const TrafficRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNetworkAccessTrafficCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TrafficRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const TrafficRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createNetworkAccessTrafficFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeNetworkAccessTraffic,

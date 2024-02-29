@@ -126,7 +126,7 @@ export const DefaultUserRoleOverridesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDefaultUserRoleOverrideCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DefaultUserRoleOverridesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const DefaultUserRoleOverridesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDefaultUserRoleOverrideFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDefaultUserRoleOverride,

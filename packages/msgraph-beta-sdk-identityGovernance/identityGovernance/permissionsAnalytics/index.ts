@@ -116,7 +116,7 @@ export const PermissionsAnalyticsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PermissionsAnalyticsRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const PermissionsAnalyticsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsAnalyticsAggregationFromDiscriminatorValue,
         queryParametersMapper: PermissionsAnalyticsRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const PermissionsAnalyticsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsAnalyticsAggregationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePermissionsAnalyticsAggregation,

@@ -87,7 +87,7 @@ export const SkillProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SkillProficiencyItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const SkillProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSkillProficiencyFromDiscriminatorValue,
         queryParametersMapper: SkillProficiencyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const SkillProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSkillProficiencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSkillProficiency,

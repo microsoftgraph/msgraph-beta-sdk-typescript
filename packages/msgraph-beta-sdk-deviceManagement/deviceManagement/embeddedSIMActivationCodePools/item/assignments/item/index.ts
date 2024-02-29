@@ -84,7 +84,7 @@ export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue,
         queryParametersMapper: EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmbeddedSIMActivationCodePoolAssignment,

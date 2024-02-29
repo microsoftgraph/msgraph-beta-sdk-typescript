@@ -126,7 +126,7 @@ export const ChromeOSOnboardingSettingsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChromeOSOnboardingSettingsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ChromeOSOnboardingSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ChromeOSOnboardingSettingsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChromeOSOnboardingSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChromeOSOnboardingSettings,

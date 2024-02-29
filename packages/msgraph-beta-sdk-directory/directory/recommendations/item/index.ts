@@ -131,7 +131,7 @@ export const RecommendationItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RecommendationItemRequestBuilderUriTemplate,
@@ -139,7 +139,7 @@ export const RecommendationItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRecommendationFromDiscriminatorValue,
         queryParametersMapper: RecommendationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -149,7 +149,7 @@ export const RecommendationItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRecommendationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRecommendation,

@@ -84,7 +84,7 @@ export const IpSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: IpSecurityProfileItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const IpSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIpSecurityProfileFromDiscriminatorValue,
         queryParametersMapper: IpSecurityProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const IpSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIpSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIpSecurityProfile,

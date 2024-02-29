@@ -106,7 +106,7 @@ export const DeviceAndAppManagementRoleAssignmentItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceAndAppManagementRoleAssignmentItemRequestBuilderUriTemplate,
@@ -114,7 +114,7 @@ export const DeviceAndAppManagementRoleAssignmentItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: DeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +124,7 @@ export const DeviceAndAppManagementRoleAssignmentItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceAndAppManagementRoleAssignment,

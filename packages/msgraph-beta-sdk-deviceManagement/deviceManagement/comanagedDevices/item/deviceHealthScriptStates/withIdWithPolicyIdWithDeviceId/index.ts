@@ -84,7 +84,7 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateFromDiscriminatorValue,
         queryParametersMapper: WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptPolicyStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceHealthScriptPolicyState,

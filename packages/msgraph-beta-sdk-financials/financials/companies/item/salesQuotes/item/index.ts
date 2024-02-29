@@ -135,7 +135,7 @@ export const SalesQuoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesQuoteFromDiscriminatorValue,
         queryParametersMapper: SalesQuoteItemRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const SalesQuoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesQuoteFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSalesQuote,

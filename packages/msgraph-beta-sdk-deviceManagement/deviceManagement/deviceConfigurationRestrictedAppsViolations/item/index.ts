@@ -84,7 +84,7 @@ export const RestrictedAppsViolationItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RestrictedAppsViolationItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const RestrictedAppsViolationItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRestrictedAppsViolationFromDiscriminatorValue,
         queryParametersMapper: RestrictedAppsViolationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const RestrictedAppsViolationItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRestrictedAppsViolationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRestrictedAppsViolation,

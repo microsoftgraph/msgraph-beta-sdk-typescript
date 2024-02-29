@@ -119,7 +119,7 @@ export const GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParametersMapper,
     },

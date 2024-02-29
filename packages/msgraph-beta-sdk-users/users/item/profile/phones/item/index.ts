@@ -87,7 +87,7 @@ export const ItemPhoneItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ItemPhoneItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const ItemPhoneItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemPhoneFromDiscriminatorValue,
         queryParametersMapper: ItemPhoneItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const ItemPhoneItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemPhoneFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeItemPhone,

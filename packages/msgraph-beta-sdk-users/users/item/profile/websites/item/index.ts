@@ -87,7 +87,7 @@ export const PersonWebsiteItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PersonWebsiteItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const PersonWebsiteItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonWebsiteFromDiscriminatorValue,
         queryParametersMapper: PersonWebsiteItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const PersonWebsiteItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonWebsiteFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePersonWebsite,

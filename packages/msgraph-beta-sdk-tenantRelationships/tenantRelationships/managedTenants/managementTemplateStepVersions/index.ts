@@ -127,7 +127,7 @@ export const ManagementTemplateStepVersionsRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepVersionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateStepVersionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ManagementTemplateStepVersionsRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepVersionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementTemplateStepVersion,

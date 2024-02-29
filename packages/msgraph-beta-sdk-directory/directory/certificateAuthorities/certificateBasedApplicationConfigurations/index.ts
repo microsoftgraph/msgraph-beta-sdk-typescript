@@ -128,7 +128,7 @@ export const CertificateBasedApplicationConfigurationsRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateBasedApplicationConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CertificateBasedApplicationConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const CertificateBasedApplicationConfigurationsRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateBasedApplicationConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCertificateBasedApplicationConfiguration,

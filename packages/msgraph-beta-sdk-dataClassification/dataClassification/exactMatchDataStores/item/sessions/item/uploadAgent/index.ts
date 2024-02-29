@@ -84,7 +84,7 @@ export const UploadAgentRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UploadAgentRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const UploadAgentRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchUploadAgentFromDiscriminatorValue,
         queryParametersMapper: UploadAgentRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const UploadAgentRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchUploadAgentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExactMatchUploadAgent,

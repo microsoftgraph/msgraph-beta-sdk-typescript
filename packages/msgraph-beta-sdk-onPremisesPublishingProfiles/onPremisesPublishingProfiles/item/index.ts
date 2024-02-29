@@ -134,7 +134,7 @@ export const OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OnPremisesPublishingProfileItemRequestBuilderUriTemplate,
@@ -142,7 +142,7 @@ export const OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnPremisesPublishingProfileFromDiscriminatorValue,
         queryParametersMapper: OnPremisesPublishingProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -152,7 +152,7 @@ export const OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnPremisesPublishingProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOnPremisesPublishingProfile,

@@ -116,7 +116,7 @@ export const ApprovalWorkflowProviderItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ApprovalWorkflowProviderItemRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const ApprovalWorkflowProviderItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApprovalWorkflowProviderFromDiscriminatorValue,
         queryParametersMapper: ApprovalWorkflowProviderItemRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const ApprovalWorkflowProviderItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApprovalWorkflowProviderFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeApprovalWorkflowProvider,

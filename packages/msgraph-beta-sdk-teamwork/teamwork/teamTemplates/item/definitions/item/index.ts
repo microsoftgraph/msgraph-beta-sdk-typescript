@@ -99,7 +99,7 @@ export const TeamTemplateDefinitionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TeamTemplateDefinitionItemRequestBuilderUriTemplate,
@@ -107,7 +107,7 @@ export const TeamTemplateDefinitionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionFromDiscriminatorValue,
         queryParametersMapper: TeamTemplateDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -117,7 +117,7 @@ export const TeamTemplateDefinitionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamTemplateDefinition,

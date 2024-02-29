@@ -143,7 +143,7 @@ export const DeviceHealthScriptsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeviceHealthScriptsRequestBuilderGetQueryParametersMapper,
     },
@@ -153,7 +153,7 @@ export const DeviceHealthScriptsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceHealthScriptFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceHealthScript,

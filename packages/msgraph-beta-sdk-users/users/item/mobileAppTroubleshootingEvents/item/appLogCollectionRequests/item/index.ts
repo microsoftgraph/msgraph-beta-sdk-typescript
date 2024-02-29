@@ -97,7 +97,7 @@ export const AppLogCollectionRequestItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AppLogCollectionRequestItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const AppLogCollectionRequestItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppLogCollectionRequestFromDiscriminatorValue,
         queryParametersMapper: AppLogCollectionRequestItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const AppLogCollectionRequestItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppLogCollectionRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppLogCollectionRequest,

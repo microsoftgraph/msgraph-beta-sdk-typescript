@@ -126,7 +126,7 @@ export const RegistrantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMeetingRegistrantBaseCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RegistrantsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const RegistrantsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMeetingRegistrantBaseFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMeetingRegistrantBase,

@@ -115,7 +115,7 @@ export const GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendPrimitiveAsync",
+        adapterMethodName: "sendPrimitive",
         responseBodyFactory:  "ArrayBuffer",
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGetTotalAggregatedRemoteConnectionReportsPostRequestBody,

@@ -126,7 +126,7 @@ export const AndroidForWorkAppConfigurationSchemasRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkAppConfigurationSchemaCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AndroidForWorkAppConfigurationSchemasRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const AndroidForWorkAppConfigurationSchemasRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidForWorkAppConfigurationSchema,

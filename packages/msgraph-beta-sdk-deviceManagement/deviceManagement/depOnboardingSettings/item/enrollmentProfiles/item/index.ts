@@ -113,7 +113,7 @@ export const EnrollmentProfileItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EnrollmentProfileItemRequestBuilderUriTemplate,
@@ -121,7 +121,7 @@ export const EnrollmentProfileItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrollmentProfileFromDiscriminatorValue,
         queryParametersMapper: EnrollmentProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +131,7 @@ export const EnrollmentProfileItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrollmentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEnrollmentProfile,

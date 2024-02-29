@@ -85,7 +85,7 @@ export const ServicePrincipalSignInActivityItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ServicePrincipalSignInActivityItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const ServicePrincipalSignInActivityItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalSignInActivityFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalSignInActivityItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const ServicePrincipalSignInActivityItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalSignInActivityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServicePrincipalSignInActivity,

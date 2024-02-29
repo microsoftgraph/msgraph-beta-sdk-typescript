@@ -111,7 +111,7 @@ export const VersionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateStepVersionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: VersionsRequestBuilderGetQueryParametersMapper,
     },

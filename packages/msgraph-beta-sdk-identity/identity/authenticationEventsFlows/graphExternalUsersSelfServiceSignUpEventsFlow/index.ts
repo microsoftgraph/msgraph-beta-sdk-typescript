@@ -100,7 +100,7 @@ export const GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExternalUsersSelfServiceSignUpEventsFlowCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParametersMapper,
     },

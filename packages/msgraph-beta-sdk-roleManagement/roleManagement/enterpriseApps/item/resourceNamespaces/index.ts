@@ -128,7 +128,7 @@ export const ResourceNamespacesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacResourceNamespaceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ResourceNamespacesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const ResourceNamespacesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacResourceNamespaceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRbacResourceNamespace,

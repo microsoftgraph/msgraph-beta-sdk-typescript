@@ -86,7 +86,7 @@ export const FinancialsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFinancialsFromDiscriminatorValue,
         queryParametersMapper: FinancialsRequestBuilderGetQueryParametersMapper,
     },
@@ -96,7 +96,7 @@ export const FinancialsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFinancialsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFinancials,

@@ -115,7 +115,7 @@ export const PolicySetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PolicySetItemRequestBuilderUriTemplate,
@@ -123,7 +123,7 @@ export const PolicySetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPolicySetFromDiscriminatorValue,
         queryParametersMapper: PolicySetItemRequestBuilderGetQueryParametersMapper,
     },
@@ -133,7 +133,7 @@ export const PolicySetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPolicySetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePolicySet,

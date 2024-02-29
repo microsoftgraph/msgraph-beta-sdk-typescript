@@ -57,7 +57,7 @@ export const AgedAccountsPayableItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAgedAccountsPayableFromDiscriminatorValue,
         queryParametersMapper: AgedAccountsPayableItemRequestBuilderGetQueryParametersMapper,
     },

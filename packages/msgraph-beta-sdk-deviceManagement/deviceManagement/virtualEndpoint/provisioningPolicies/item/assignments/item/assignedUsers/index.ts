@@ -116,7 +116,7 @@ export const AssignedUsersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AssignedUsersRequestBuilderGetQueryParametersMapper,
     },

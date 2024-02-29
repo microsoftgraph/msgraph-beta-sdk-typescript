@@ -81,7 +81,7 @@ export const SignDigestRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSigningResultFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSignDigestPostRequestBody,

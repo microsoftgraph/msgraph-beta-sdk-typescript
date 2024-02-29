@@ -84,7 +84,7 @@ export const SymantecCodeSigningCertificateRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SymantecCodeSigningCertificateRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const SymantecCodeSigningCertificateRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSymantecCodeSigningCertificateFromDiscriminatorValue,
         queryParametersMapper: SymantecCodeSigningCertificateRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const SymantecCodeSigningCertificateRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSymantecCodeSigningCertificateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSymantecCodeSigningCertificate,

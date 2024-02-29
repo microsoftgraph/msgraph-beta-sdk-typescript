@@ -127,7 +127,7 @@ export const TrendingRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrendingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TrendingRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const TrendingRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrendingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrending,

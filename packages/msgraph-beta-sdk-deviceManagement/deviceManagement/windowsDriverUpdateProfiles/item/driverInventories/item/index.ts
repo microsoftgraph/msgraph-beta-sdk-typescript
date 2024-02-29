@@ -84,7 +84,7 @@ export const WindowsDriverUpdateInventoryItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const WindowsDriverUpdateInventoryItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateInventoryFromDiscriminatorValue,
         queryParametersMapper: WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const WindowsDriverUpdateInventoryItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateInventoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsDriverUpdateInventory,

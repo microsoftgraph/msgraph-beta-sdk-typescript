@@ -112,7 +112,7 @@ export const SalesCreditMemoLinesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesCreditMemoLineCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SalesCreditMemoLinesRequestBuilderGetQueryParametersMapper,
     },

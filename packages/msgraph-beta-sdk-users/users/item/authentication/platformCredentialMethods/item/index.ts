@@ -84,7 +84,7 @@ export const PlatformCredentialAuthenticationMethodItemRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PlatformCredentialAuthenticationMethodItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const PlatformCredentialAuthenticationMethodItemRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPlatformCredentialAuthenticationMethodFromDiscriminatorValue,
         queryParametersMapper: PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParametersMapper,
     },

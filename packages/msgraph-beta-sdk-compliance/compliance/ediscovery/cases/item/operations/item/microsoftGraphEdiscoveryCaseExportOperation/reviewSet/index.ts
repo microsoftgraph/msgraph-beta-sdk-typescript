@@ -59,7 +59,7 @@ export const ReviewSetRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createReviewSetFromDiscriminatorValue,
         queryParametersMapper: ReviewSetRequestBuilderGetQueryParametersMapper,
     },

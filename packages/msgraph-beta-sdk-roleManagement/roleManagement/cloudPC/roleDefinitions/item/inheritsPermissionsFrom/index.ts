@@ -127,7 +127,7 @@ export const InheritsPermissionsFromRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: InheritsPermissionsFromRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const InheritsPermissionsFromRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleDefinition,

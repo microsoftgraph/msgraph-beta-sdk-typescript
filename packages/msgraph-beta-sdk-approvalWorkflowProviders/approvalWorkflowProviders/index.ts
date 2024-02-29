@@ -127,7 +127,7 @@ export const ApprovalWorkflowProvidersRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApprovalWorkflowProviderCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ApprovalWorkflowProvidersRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ApprovalWorkflowProvidersRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createApprovalWorkflowProviderFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeApprovalWorkflowProvider,

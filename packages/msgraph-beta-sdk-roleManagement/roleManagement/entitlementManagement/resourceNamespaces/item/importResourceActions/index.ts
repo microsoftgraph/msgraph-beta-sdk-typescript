@@ -91,7 +91,7 @@ export const ImportResourceActionsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRbacResourceNamespaceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeImportResourceActionsPostRequestBody,

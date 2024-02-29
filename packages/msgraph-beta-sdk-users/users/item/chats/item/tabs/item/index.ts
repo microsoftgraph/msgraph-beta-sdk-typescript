@@ -30,7 +30,7 @@ export interface TeamsTabItemRequestBuilder extends BaseRequestBuilder<TeamsTabI
      */
      get(requestConfiguration?: RequestConfiguration<TeamsTabItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsTab | undefined>;
     /**
-     * Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
+     * Update the properties of the specified tab in a chat. This API can be used to configure the content of the tab.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsTab>}
@@ -51,7 +51,7 @@ export interface TeamsTabItemRequestBuilder extends BaseRequestBuilder<TeamsTabI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamsTabItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
+     * Update the properties of the specified tab in a chat. This API can be used to configure the content of the tab.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -100,7 +100,7 @@ export const TeamsTabItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TeamsTabItemRequestBuilderUriTemplate,
@@ -108,7 +108,7 @@ export const TeamsTabItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsTabFromDiscriminatorValue,
         queryParametersMapper: TeamsTabItemRequestBuilderGetQueryParametersMapper,
     },
@@ -118,7 +118,7 @@ export const TeamsTabItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamsTabFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamsTab,

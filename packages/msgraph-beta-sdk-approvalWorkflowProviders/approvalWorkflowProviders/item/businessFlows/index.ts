@@ -127,7 +127,7 @@ export const BusinessFlowsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BusinessFlowsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const BusinessFlowsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessFlowFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBusinessFlow,

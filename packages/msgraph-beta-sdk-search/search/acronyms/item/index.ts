@@ -87,7 +87,7 @@ export const AcronymItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AcronymItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const AcronymItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAcronymFromDiscriminatorValue,
         queryParametersMapper: AcronymItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const AcronymItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAcronymFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAcronym,

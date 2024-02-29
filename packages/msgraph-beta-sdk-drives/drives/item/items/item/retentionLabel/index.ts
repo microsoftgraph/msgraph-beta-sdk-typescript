@@ -86,7 +86,7 @@ export const RetentionLabelRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RetentionLabelRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const RetentionLabelRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemRetentionLabelFromDiscriminatorValue,
         queryParametersMapper: RetentionLabelRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const RetentionLabelRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemRetentionLabelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeItemRetentionLabel,

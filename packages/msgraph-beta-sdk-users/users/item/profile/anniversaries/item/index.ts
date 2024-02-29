@@ -87,7 +87,7 @@ export const PersonAnnualEventItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PersonAnnualEventItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const PersonAnnualEventItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonAnnualEventFromDiscriminatorValue,
         queryParametersMapper: PersonAnnualEventItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const PersonAnnualEventItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonAnnualEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePersonAnnualEvent,

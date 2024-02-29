@@ -128,7 +128,7 @@ export const RecommendationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRecommendationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RecommendationsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const RecommendationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRecommendationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRecommendation,

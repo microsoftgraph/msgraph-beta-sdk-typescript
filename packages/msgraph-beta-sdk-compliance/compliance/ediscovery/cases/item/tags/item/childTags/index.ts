@@ -116,7 +116,7 @@ export const ChildTagsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTagCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ChildTagsRequestBuilderGetQueryParametersMapper,
     },

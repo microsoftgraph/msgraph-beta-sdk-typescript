@@ -84,7 +84,7 @@ export const DirectoryRoleAccessReviewPolicyRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DirectoryRoleAccessReviewPolicyRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const DirectoryRoleAccessReviewPolicyRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDirectoryRoleAccessReviewPolicyFromDiscriminatorValue,
         queryParametersMapper: DirectoryRoleAccessReviewPolicyRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const DirectoryRoleAccessReviewPolicyRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDirectoryRoleAccessReviewPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDirectoryRoleAccessReviewPolicy,

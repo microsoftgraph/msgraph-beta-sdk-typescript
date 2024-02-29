@@ -16,7 +16,7 @@ export interface ShiftsRoleDefinitionItemRequestBuilder extends BaseRequestBuild
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get shiftsRoleDefinitions from teamTemplateDefinition
+     * The definitions of the roles in the schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ShiftsRoleDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface ShiftsRoleDefinitionItemRequestBuilder extends BaseRequestBuild
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get shiftsRoleDefinitions from teamTemplateDefinition
+     * The definitions of the roles in the schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface ShiftsRoleDefinitionItemRequestBuilder extends BaseRequestBuild
      toPatchRequestInformation(body: ShiftsRoleDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get shiftsRoleDefinitions from teamTemplateDefinition
+ * The definitions of the roles in the schedule.
  */
 export interface ShiftsRoleDefinitionItemRequestBuilderGetQueryParameters {
     /**
@@ -84,7 +84,7 @@ export const ShiftsRoleDefinitionItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ShiftsRoleDefinitionItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ShiftsRoleDefinitionItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createShiftsRoleDefinitionFromDiscriminatorValue,
         queryParametersMapper: ShiftsRoleDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ShiftsRoleDefinitionItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createShiftsRoleDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeShiftsRoleDefinition,

@@ -98,7 +98,7 @@ export const DeletedChatItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeletedChatItemRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const DeletedChatItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeletedChatFromDiscriminatorValue,
         queryParametersMapper: DeletedChatItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const DeletedChatItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeletedChatFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeletedChat,

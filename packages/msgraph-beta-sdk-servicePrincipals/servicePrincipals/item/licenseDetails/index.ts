@@ -134,7 +134,7 @@ export const LicenseDetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLicenseDetailsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: LicenseDetailsRequestBuilderGetQueryParametersMapper,
     },
@@ -144,7 +144,7 @@ export const LicenseDetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLicenseDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLicenseDetails,

@@ -135,7 +135,7 @@ export const CallsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CallsRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const CallsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCall,

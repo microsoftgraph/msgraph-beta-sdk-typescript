@@ -76,7 +76,7 @@ export const GetEncryptionPublicKeyRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetEncryptionPublicKeyGetResponseFromDiscriminatorValue,
     },
 };

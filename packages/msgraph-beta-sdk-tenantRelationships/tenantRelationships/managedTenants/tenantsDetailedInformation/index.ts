@@ -127,7 +127,7 @@ export const TenantsDetailedInformationRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTenantDetailedInformationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TenantsDetailedInformationRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const TenantsDetailedInformationRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTenantDetailedInformationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTenantDetailedInformation,

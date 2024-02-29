@@ -94,7 +94,7 @@ export const SalesOrderLineItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesOrderLineFromDiscriminatorValue,
         queryParametersMapper: SalesOrderLineItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const SalesOrderLineItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesOrderLineFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSalesOrderLine,

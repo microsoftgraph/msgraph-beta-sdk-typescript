@@ -14,12 +14,14 @@ export interface DailyInactiveUsersByApplicationMetricItemRequestBuilder extends
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DailyInactiveUsersByApplicationMetric>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      get(requestConfiguration?: RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : Promise<DailyInactiveUsersByApplicationMetric | undefined>;
     /**
      * Get inactiveUsersByApplication from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -57,7 +59,7 @@ export const DailyInactiveUsersByApplicationMetricItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDailyInactiveUsersByApplicationMetricFromDiscriminatorValue,
         queryParametersMapper: DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParametersMapper,
     },

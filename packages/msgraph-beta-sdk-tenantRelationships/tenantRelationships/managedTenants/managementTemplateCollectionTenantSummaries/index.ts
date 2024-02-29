@@ -126,7 +126,7 @@ export const ManagementTemplateCollectionTenantSummariesRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateCollectionTenantSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateCollectionTenantSummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ManagementTemplateCollectionTenantSummariesRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementTemplateCollectionTenantSummary,

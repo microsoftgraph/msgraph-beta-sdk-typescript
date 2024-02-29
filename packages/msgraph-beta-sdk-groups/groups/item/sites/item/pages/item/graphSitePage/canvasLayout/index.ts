@@ -107,7 +107,7 @@ export const CanvasLayoutRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CanvasLayoutRequestBuilderUriTemplate,
@@ -115,7 +115,7 @@ export const CanvasLayoutRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCanvasLayoutFromDiscriminatorValue,
         queryParametersMapper: CanvasLayoutRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +125,7 @@ export const CanvasLayoutRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCanvasLayoutFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCanvasLayout,

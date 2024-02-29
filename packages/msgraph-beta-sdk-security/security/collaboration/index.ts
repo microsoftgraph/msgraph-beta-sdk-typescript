@@ -98,7 +98,7 @@ export const CollaborationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CollaborationRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const CollaborationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCollaborationRootFromDiscriminatorValue,
         queryParametersMapper: CollaborationRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const CollaborationRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCollaborationRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCollaborationRoot,

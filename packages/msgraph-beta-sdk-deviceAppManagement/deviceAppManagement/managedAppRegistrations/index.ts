@@ -135,7 +135,7 @@ export const ManagedAppRegistrationsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedAppRegistrationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagedAppRegistrationsRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const ManagedAppRegistrationsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedAppRegistrationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedAppRegistration,

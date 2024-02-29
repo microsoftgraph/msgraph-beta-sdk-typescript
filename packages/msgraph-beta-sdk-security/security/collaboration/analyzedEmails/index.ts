@@ -134,7 +134,7 @@ export const AnalyzedEmailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAnalyzedEmailCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AnalyzedEmailsRequestBuilderGetQueryParametersMapper,
     },
@@ -144,7 +144,7 @@ export const AnalyzedEmailsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAnalyzedEmailFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAnalyzedEmail,

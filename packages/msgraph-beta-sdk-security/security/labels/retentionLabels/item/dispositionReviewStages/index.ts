@@ -126,7 +126,7 @@ export const DispositionReviewStagesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDispositionReviewStageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DispositionReviewStagesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const DispositionReviewStagesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDispositionReviewStageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDispositionReviewStage,

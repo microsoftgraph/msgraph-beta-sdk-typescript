@@ -127,7 +127,7 @@ export const UnifiedRoleAssignmentMultipleItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UnifiedRoleAssignmentMultipleItemRequestBuilderUriTemplate,
@@ -135,7 +135,7 @@ export const UnifiedRoleAssignmentMultipleItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleAssignmentMultipleFromDiscriminatorValue,
         queryParametersMapper: UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const UnifiedRoleAssignmentMultipleItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleAssignmentMultipleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleAssignmentMultiple,

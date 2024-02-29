@@ -87,7 +87,7 @@ export const YearTimePeriodDefinitionItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: YearTimePeriodDefinitionItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const YearTimePeriodDefinitionItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createYearTimePeriodDefinitionFromDiscriminatorValue,
         queryParametersMapper: YearTimePeriodDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const YearTimePeriodDefinitionItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createYearTimePeriodDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeYearTimePeriodDefinition,

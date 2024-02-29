@@ -57,7 +57,7 @@ export const DefinitionFileRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFileFromDiscriminatorValue,
         queryParametersMapper: DefinitionFileRequestBuilderGetQueryParametersMapper,
     },

@@ -87,7 +87,7 @@ export const PersonAnnotationItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PersonAnnotationItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const PersonAnnotationItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonAnnotationFromDiscriminatorValue,
         queryParametersMapper: PersonAnnotationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const PersonAnnotationItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonAnnotationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePersonAnnotation,

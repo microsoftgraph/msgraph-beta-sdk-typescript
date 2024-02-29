@@ -98,7 +98,7 @@ export const SecurityBaselineStateItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SecurityBaselineStateItemRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const SecurityBaselineStateItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSecurityBaselineStateFromDiscriminatorValue,
         queryParametersMapper: SecurityBaselineStateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const SecurityBaselineStateItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSecurityBaselineStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSecurityBaselineState,

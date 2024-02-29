@@ -84,7 +84,7 @@ export const PaymentMethodRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PaymentMethodRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const PaymentMethodRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPaymentMethodFromDiscriminatorValue,
         queryParametersMapper: PaymentMethodRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const PaymentMethodRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPaymentMethodFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePaymentMethod,

@@ -128,7 +128,7 @@ export const CustomerPaymentJournalsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomerPaymentJournalCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CustomerPaymentJournalsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const CustomerPaymentJournalsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomerPaymentJournalFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCustomerPaymentJournal,

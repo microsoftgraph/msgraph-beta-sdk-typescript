@@ -112,7 +112,7 @@ export const DimensionValuesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDimensionValueCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DimensionValuesRequestBuilderGetQueryParametersMapper,
     },

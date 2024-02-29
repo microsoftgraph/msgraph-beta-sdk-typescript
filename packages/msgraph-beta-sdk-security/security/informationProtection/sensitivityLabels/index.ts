@@ -160,7 +160,7 @@ export const SensitivityLabelsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityLabelCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SensitivityLabelsRequestBuilderGetQueryParametersMapper,
     },
@@ -170,7 +170,7 @@ export const SensitivityLabelsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSensitivityLabelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSensitivityLabel,

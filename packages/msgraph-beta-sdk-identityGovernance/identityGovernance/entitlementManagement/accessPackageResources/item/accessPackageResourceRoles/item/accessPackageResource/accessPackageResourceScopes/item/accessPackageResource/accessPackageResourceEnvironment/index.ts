@@ -57,7 +57,7 @@ export const AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageResourceEnvironmentFromDiscriminatorValue,
         queryParametersMapper: AccessPackageResourceEnvironmentRequestBuilderGetQueryParametersMapper,
     },

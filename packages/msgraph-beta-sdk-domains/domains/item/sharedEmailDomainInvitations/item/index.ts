@@ -84,7 +84,7 @@ export const SharedEmailDomainInvitationItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SharedEmailDomainInvitationItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const SharedEmailDomainInvitationItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSharedEmailDomainInvitationFromDiscriminatorValue,
         queryParametersMapper: SharedEmailDomainInvitationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const SharedEmailDomainInvitationItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSharedEmailDomainInvitationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSharedEmailDomainInvitation,

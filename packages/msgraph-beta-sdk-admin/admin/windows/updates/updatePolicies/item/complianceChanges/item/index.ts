@@ -15,10 +15,10 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
     get updatePolicy(): UpdatePolicyRequestBuilder;
     /**
-     * Delete a complianceChange object.
+     * Delete a contentApproval object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -30,16 +30,16 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      get(requestConfiguration?: RequestConfiguration<ComplianceChangeItemRequestBuilderGetQueryParameters> | undefined) : Promise<ComplianceChange | undefined>;
     /**
-     * Update the properties of a complianceChange object.
+     * Update the properties of a contentApproval object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ComplianceChange>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ComplianceChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComplianceChange | undefined>;
     /**
-     * Delete a complianceChange object.
+     * Delete a contentApproval object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ComplianceChangeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a complianceChange object.
+     * Update the properties of a contentApproval object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -100,7 +100,7 @@ export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ComplianceChangeItemRequestBuilderUriTemplate,
@@ -108,7 +108,7 @@ export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceChangeFromDiscriminatorValue,
         queryParametersMapper: ComplianceChangeItemRequestBuilderGetQueryParametersMapper,
     },
@@ -118,7 +118,7 @@ export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceChangeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeComplianceChange,

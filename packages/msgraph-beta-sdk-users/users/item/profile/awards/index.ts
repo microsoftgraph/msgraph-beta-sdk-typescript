@@ -128,7 +128,7 @@ export const AwardsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonAwardCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AwardsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const AwardsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonAwardFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePersonAward,

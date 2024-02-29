@@ -87,7 +87,7 @@ export const UserAccountInformationItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserAccountInformationItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const UserAccountInformationItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserAccountInformationFromDiscriminatorValue,
         queryParametersMapper: UserAccountInformationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const UserAccountInformationItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserAccountInformationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserAccountInformation,

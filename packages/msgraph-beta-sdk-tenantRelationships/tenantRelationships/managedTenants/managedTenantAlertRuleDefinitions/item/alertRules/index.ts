@@ -111,7 +111,7 @@ export const AlertRulesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantAlertRuleCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AlertRulesRequestBuilderGetQueryParametersMapper,
     },

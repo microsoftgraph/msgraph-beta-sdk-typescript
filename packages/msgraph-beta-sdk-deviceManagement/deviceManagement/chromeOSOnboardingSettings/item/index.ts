@@ -84,7 +84,7 @@ export const ChromeOSOnboardingSettingsItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ChromeOSOnboardingSettingsItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChromeOSOnboardingSettingsFromDiscriminatorValue,
         queryParametersMapper: ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ChromeOSOnboardingSettingsItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChromeOSOnboardingSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChromeOSOnboardingSettings,

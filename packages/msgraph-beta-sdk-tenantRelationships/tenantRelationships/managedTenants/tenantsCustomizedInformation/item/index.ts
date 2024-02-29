@@ -86,7 +86,7 @@ export const TenantCustomizedInformationItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TenantCustomizedInformationItemRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const TenantCustomizedInformationItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTenantCustomizedInformationFromDiscriminatorValue,
         queryParametersMapper: TenantCustomizedInformationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const TenantCustomizedInformationItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTenantCustomizedInformationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTenantCustomizedInformation,

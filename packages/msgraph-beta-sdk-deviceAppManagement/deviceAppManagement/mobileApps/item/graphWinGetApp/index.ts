@@ -89,7 +89,7 @@ export const GraphWinGetAppRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWinGetAppFromDiscriminatorValue,
         queryParametersMapper: GraphWinGetAppRequestBuilderGetQueryParametersMapper,
     },

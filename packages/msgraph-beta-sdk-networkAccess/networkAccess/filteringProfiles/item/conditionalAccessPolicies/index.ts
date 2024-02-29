@@ -111,7 +111,7 @@ export const ConditionalAccessPoliciesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConditionalAccessPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConditionalAccessPoliciesRequestBuilderGetQueryParametersMapper,
     },

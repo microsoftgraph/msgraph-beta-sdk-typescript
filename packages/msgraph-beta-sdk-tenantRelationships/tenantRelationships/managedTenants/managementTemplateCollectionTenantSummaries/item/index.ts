@@ -84,7 +84,7 @@ export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagementTemplateCollectionTenantSummaryItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue,
         queryParametersMapper: ManagementTemplateCollectionTenantSummaryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ManagementTemplateCollectionTenantSummaryItemRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementTemplateCollectionTenantSummary,

@@ -82,7 +82,7 @@ export const ExtractLabelRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInformationProtectionContentLabelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExtractLabelPostRequestBody,

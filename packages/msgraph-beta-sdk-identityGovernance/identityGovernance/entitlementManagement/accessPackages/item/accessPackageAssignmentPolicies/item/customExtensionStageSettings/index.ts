@@ -133,7 +133,7 @@ export const CustomExtensionStageSettingsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomExtensionStageSettingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CustomExtensionStageSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +143,7 @@ export const CustomExtensionStageSettingsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomExtensionStageSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCustomExtensionStageSetting,

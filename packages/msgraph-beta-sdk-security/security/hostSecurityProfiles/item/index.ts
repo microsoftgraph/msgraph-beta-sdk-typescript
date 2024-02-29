@@ -84,7 +84,7 @@ export const HostSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: HostSecurityProfileItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const HostSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHostSecurityProfileFromDiscriminatorValue,
         queryParametersMapper: HostSecurityProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const HostSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHostSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeHostSecurityProfile,

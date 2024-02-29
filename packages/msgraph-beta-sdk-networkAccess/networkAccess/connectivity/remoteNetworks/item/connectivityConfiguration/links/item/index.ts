@@ -84,7 +84,7 @@ export const ConnectivityConfigurationLinkItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ConnectivityConfigurationLinkItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ConnectivityConfigurationLinkItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectivityConfigurationLinkFromDiscriminatorValue,
         queryParametersMapper: ConnectivityConfigurationLinkItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ConnectivityConfigurationLinkItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectivityConfigurationLinkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConnectivityConfigurationLink,

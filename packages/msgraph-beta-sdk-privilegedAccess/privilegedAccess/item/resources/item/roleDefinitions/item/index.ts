@@ -105,7 +105,7 @@ export const GovernanceRoleDefinitionItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GovernanceRoleDefinitionItemRequestBuilderUriTemplate,
@@ -113,7 +113,7 @@ export const GovernanceRoleDefinitionItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleDefinitionFromDiscriminatorValue,
         queryParametersMapper: GovernanceRoleDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -123,7 +123,7 @@ export const GovernanceRoleDefinitionItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGovernanceRoleDefinition,

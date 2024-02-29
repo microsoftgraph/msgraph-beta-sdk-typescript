@@ -127,7 +127,7 @@ export const WindowsQualityUpdateProfilesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsQualityUpdateProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsQualityUpdateProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const WindowsQualityUpdateProfilesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsQualityUpdateProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsQualityUpdateProfile,

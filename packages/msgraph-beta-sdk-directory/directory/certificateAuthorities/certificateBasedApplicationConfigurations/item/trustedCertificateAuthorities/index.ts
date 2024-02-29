@@ -126,7 +126,7 @@ export const TrustedCertificateAuthoritiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateAuthorityAsEntityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TrustedCertificateAuthoritiesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const TrustedCertificateAuthoritiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCertificateAuthorityAsEntityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCertificateAuthorityAsEntity,

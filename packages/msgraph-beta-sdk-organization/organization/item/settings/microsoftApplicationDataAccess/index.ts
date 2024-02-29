@@ -86,7 +86,7 @@ export const MicrosoftApplicationDataAccessRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MicrosoftApplicationDataAccessRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const MicrosoftApplicationDataAccessRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue,
         queryParametersMapper: MicrosoftApplicationDataAccessRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const MicrosoftApplicationDataAccessRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftApplicationDataAccessSettings,

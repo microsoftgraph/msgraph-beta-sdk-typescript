@@ -113,7 +113,7 @@ export const PrivilegeManagementElevationRequestItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegeManagementElevationRequestItemRequestBuilderUriTemplate,
@@ -121,7 +121,7 @@ export const PrivilegeManagementElevationRequestItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationRequestFromDiscriminatorValue,
         queryParametersMapper: PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +131,7 @@ export const PrivilegeManagementElevationRequestItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegeManagementElevationRequest,

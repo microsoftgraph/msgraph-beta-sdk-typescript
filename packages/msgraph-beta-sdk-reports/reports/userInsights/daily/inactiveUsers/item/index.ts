@@ -57,7 +57,7 @@ export const DailyInactiveUsersMetricItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDailyInactiveUsersMetricFromDiscriminatorValue,
         queryParametersMapper: DailyInactiveUsersMetricItemRequestBuilderGetQueryParametersMapper,
     },

@@ -119,7 +119,7 @@ export const GetOffice365GroupsActivityDetailWithPeriodRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOffice365GroupsActivityDetailWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQueryParametersMapper,
     },

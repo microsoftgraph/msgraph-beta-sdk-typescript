@@ -123,7 +123,7 @@ export const WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuild
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderUriTemplate,
@@ -131,7 +131,7 @@ export const WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuild
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue,
         queryParametersMapper: WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -141,7 +141,7 @@ export const WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuild
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsDefenderApplicationControlSupplementalPolicy,

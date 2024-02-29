@@ -128,7 +128,7 @@ export const PermissionsCreepIndexDistributionsRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsCreepIndexDistributionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PermissionsCreepIndexDistributionsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const PermissionsCreepIndexDistributionsRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsCreepIndexDistributionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePermissionsCreepIndexDistribution,

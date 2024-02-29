@@ -86,7 +86,7 @@ export const GetUserOwnedObjectsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDirectoryObjectFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGetUserOwnedObjectsPostRequestBody,

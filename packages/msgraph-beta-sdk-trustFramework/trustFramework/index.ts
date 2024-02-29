@@ -95,7 +95,7 @@ export const TrustFrameworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkFromDiscriminatorValue,
         queryParametersMapper: TrustFrameworkRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const TrustFrameworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrustFramework,

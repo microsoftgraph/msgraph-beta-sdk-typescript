@@ -98,7 +98,7 @@ export const WindowsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const WindowsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminWindowsFromDiscriminatorValue,
         queryParametersMapper: WindowsRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const WindowsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminWindowsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdminWindows,

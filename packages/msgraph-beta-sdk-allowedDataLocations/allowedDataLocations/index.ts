@@ -126,7 +126,7 @@ export const AllowedDataLocationsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAllowedDataLocationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AllowedDataLocationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const AllowedDataLocationsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAllowedDataLocationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAllowedDataLocation,

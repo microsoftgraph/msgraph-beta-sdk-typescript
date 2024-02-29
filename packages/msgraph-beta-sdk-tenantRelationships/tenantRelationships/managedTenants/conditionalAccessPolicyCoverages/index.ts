@@ -127,7 +127,7 @@ export const ConditionalAccessPolicyCoveragesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConditionalAccessPolicyCoverageCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ConditionalAccessPolicyCoveragesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConditionalAccessPolicyCoverageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConditionalAccessPolicyCoverage,

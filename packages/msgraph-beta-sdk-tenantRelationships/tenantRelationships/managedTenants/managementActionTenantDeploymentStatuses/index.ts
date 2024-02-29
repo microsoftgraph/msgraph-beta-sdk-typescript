@@ -135,7 +135,7 @@ export const ManagementActionTenantDeploymentStatusesRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionTenantDeploymentStatusCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const ManagementActionTenantDeploymentStatusesRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionTenantDeploymentStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementActionTenantDeploymentStatus,

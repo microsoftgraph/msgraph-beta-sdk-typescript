@@ -116,7 +116,7 @@ export const RecycleBinRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RecycleBinRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const RecycleBinRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRecycleBinFromDiscriminatorValue,
         queryParametersMapper: RecycleBinRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const RecycleBinRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRecycleBinFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRecycleBin,

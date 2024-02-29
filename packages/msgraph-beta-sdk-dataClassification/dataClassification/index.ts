@@ -174,7 +174,7 @@ export const DataClassificationRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataClassificationServiceFromDiscriminatorValue,
         queryParametersMapper: DataClassificationRequestBuilderGetQueryParametersMapper,
     },
@@ -184,7 +184,7 @@ export const DataClassificationRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataClassificationServiceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDataClassificationService,

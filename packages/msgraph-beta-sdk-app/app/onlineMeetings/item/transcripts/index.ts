@@ -136,7 +136,7 @@ export const TranscriptsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallTranscriptCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TranscriptsRequestBuilderGetQueryParametersMapper,
     },
@@ -146,7 +146,7 @@ export const TranscriptsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCallTranscriptFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCallTranscript,

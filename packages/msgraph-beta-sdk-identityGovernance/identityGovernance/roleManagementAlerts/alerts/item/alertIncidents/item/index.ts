@@ -98,7 +98,7 @@ export const UnifiedRoleManagementAlertIncidentItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UnifiedRoleManagementAlertIncidentItemRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const UnifiedRoleManagementAlertIncidentItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertIncidentFromDiscriminatorValue,
         queryParametersMapper: UnifiedRoleManagementAlertIncidentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const UnifiedRoleManagementAlertIncidentItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementAlertIncidentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleManagementAlertIncident,

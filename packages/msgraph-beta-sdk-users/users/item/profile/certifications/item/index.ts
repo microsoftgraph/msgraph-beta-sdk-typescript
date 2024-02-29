@@ -87,7 +87,7 @@ export const PersonCertificationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PersonCertificationItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const PersonCertificationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonCertificationFromDiscriminatorValue,
         queryParametersMapper: PersonCertificationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const PersonCertificationItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonCertificationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePersonCertification,

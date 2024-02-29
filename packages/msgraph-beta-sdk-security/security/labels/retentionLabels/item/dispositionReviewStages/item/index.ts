@@ -84,7 +84,7 @@ export const DispositionReviewStageItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DispositionReviewStageItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const DispositionReviewStageItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDispositionReviewStageFromDiscriminatorValue,
         queryParametersMapper: DispositionReviewStageItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const DispositionReviewStageItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDispositionReviewStageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDispositionReviewStage,

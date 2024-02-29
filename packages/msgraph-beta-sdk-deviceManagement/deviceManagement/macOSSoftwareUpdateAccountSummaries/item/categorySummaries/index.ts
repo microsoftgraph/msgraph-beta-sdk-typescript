@@ -127,7 +127,7 @@ export const CategorySummariesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateCategorySummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CategorySummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const CategorySummariesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMacOSSoftwareUpdateCategorySummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMacOSSoftwareUpdateCategorySummary,

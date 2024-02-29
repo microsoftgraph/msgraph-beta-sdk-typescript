@@ -97,7 +97,7 @@ export const DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue,
         queryParametersMapper: DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementExchangeOnPremisesPolicy,

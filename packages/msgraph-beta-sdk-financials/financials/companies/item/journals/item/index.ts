@@ -114,7 +114,7 @@ export const JournalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: JournalItemRequestBuilderUriTemplate,
@@ -122,7 +122,7 @@ export const JournalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createJournalFromDiscriminatorValue,
         queryParametersMapper: JournalItemRequestBuilderGetQueryParametersMapper,
     },
@@ -132,7 +132,7 @@ export const JournalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createJournalFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeJournal,

@@ -97,7 +97,7 @@ export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsInformationProtectionDeviceRegistrationItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsInformationProtectionDeviceRegistration,

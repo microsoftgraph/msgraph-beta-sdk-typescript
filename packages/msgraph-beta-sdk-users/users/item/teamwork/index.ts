@@ -116,7 +116,7 @@ export const TeamworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TeamworkRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const TeamworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserTeamworkFromDiscriminatorValue,
         queryParametersMapper: TeamworkRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const TeamworkRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserTeamworkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserTeamwork,

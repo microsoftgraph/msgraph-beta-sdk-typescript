@@ -127,7 +127,7 @@ export const RemoteNetworksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkHealthEventCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RemoteNetworksRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const RemoteNetworksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkHealthEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteNetworkHealthEvent,

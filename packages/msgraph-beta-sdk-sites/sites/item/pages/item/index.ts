@@ -117,7 +117,7 @@ export const BaseSitePageItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: BaseSitePageItemRequestBuilderUriTemplate,
@@ -125,7 +125,7 @@ export const BaseSitePageItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBaseSitePageFromDiscriminatorValue,
         queryParametersMapper: BaseSitePageItemRequestBuilderGetQueryParametersMapper,
     },
@@ -135,7 +135,7 @@ export const BaseSitePageItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBaseSitePageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBaseSitePage,

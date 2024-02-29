@@ -84,7 +84,7 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBu
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBu
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBu
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsAnomalyCorrelationGroupOverview,

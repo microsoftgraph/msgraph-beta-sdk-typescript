@@ -127,7 +127,7 @@ export const FileThreatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileThreatSubmissionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: FileThreatsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const FileThreatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileThreatSubmissionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFileThreatSubmission,

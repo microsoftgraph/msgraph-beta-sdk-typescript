@@ -143,7 +143,7 @@ export const RoleScopeTagsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRoleScopeTagCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RoleScopeTagsRequestBuilderGetQueryParametersMapper,
     },
@@ -153,7 +153,7 @@ export const RoleScopeTagsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRoleScopeTagFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRoleScopeTag,

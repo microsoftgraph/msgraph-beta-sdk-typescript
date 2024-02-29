@@ -132,7 +132,7 @@ export const TrustFrameworkKeySetItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TrustFrameworkKeySetItemRequestBuilderUriTemplate,
@@ -140,7 +140,7 @@ export const TrustFrameworkKeySetItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeySetFromDiscriminatorValue,
         queryParametersMapper: TrustFrameworkKeySetItemRequestBuilderGetQueryParametersMapper,
     },
@@ -150,7 +150,7 @@ export const TrustFrameworkKeySetItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeySetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrustFrameworkKeySet,

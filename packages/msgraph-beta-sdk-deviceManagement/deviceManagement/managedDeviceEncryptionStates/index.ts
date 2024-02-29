@@ -126,7 +126,7 @@ export const ManagedDeviceEncryptionStatesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceEncryptionStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceEncryptionStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ManagedDeviceEncryptionStatesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceEncryptionStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedDeviceEncryptionState,
