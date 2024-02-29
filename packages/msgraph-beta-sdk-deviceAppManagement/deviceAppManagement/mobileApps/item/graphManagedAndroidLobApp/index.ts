@@ -98,7 +98,7 @@ export const GraphManagedAndroidLobAppRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedAndroidLobAppFromDiscriminatorValue,
         queryParametersMapper: GraphManagedAndroidLobAppRequestBuilderGetQueryParametersMapper,
     },

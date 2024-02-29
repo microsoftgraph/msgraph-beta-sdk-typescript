@@ -118,7 +118,7 @@ export const ScheduledPermissionsRequestsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createScheduledPermissionsRequestCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ScheduledPermissionsRequestsRequestBuilderGetQueryParametersMapper,
     },
@@ -128,7 +128,7 @@ export const ScheduledPermissionsRequestsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createScheduledPermissionsRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeScheduledPermissionsRequest,

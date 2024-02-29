@@ -127,7 +127,7 @@ export const SupportedRegionsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSupportedRegionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SupportedRegionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const SupportedRegionsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSupportedRegionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcSupportedRegion,

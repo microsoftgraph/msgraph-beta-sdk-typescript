@@ -115,7 +115,7 @@ export const GroupPolicyMigrationReportItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: GroupPolicyMigrationReportItemRequestBuilderUriTemplate,
@@ -123,7 +123,7 @@ export const GroupPolicyMigrationReportItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyMigrationReportFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyMigrationReportItemRequestBuilderGetQueryParametersMapper,
     },
@@ -133,7 +133,7 @@ export const GroupPolicyMigrationReportItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyMigrationReportFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGroupPolicyMigrationReport,

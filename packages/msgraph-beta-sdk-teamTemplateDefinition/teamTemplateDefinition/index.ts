@@ -127,7 +127,7 @@ export const TeamTemplateDefinitionRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TeamTemplateDefinitionRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const TeamTemplateDefinitionRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamTemplateDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeamTemplateDefinition,

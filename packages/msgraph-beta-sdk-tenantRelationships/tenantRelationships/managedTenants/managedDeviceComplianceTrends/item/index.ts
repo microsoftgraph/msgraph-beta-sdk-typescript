@@ -85,7 +85,7 @@ export const ManagedDeviceComplianceTrendItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedDeviceComplianceTrendItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const ManagedDeviceComplianceTrendItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceComplianceTrendFromDiscriminatorValue,
         queryParametersMapper: ManagedDeviceComplianceTrendItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const ManagedDeviceComplianceTrendItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedDeviceComplianceTrendFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedDeviceComplianceTrend,

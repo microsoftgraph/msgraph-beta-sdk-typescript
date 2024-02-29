@@ -113,7 +113,7 @@ export const CompaniesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CompaniesRequestBuilderGetQueryParametersMapper,
     },

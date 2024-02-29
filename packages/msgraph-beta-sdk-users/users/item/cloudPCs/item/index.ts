@@ -8,6 +8,8 @@ import { CreateSnapshotRequestBuilderRequestsMetadata, type CreateSnapshotReques
 import { EndGracePeriodRequestBuilderRequestsMetadata, type EndGracePeriodRequestBuilder } from './endGracePeriod/';
 import { GetCloudPcConnectivityHistoryRequestBuilderRequestsMetadata, type GetCloudPcConnectivityHistoryRequestBuilder } from './getCloudPcConnectivityHistory/';
 import { GetCloudPcLaunchInfoRequestBuilderRequestsMetadata, type GetCloudPcLaunchInfoRequestBuilder } from './getCloudPcLaunchInfo/';
+import { GetFrontlineCloudPcAccessStateRequestBuilderRequestsMetadata, type GetFrontlineCloudPcAccessStateRequestBuilder } from './getFrontlineCloudPcAccessState/';
+import { GetShiftWorkCloudPcAccessStateRequestBuilderRequestsMetadata, type GetShiftWorkCloudPcAccessStateRequestBuilder } from './getShiftWorkCloudPcAccessState/';
 import { GetSupportedCloudPcRemoteActionsRequestBuilderRequestsMetadata, type GetSupportedCloudPcRemoteActionsRequestBuilder } from './getSupportedCloudPcRemoteActions/';
 import { PowerOffRequestBuilderRequestsMetadata, type PowerOffRequestBuilder } from './powerOff/';
 import { PowerOnRequestBuilderRequestsMetadata, type PowerOnRequestBuilder } from './powerOn/';
@@ -46,6 +48,14 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * Provides operations to call the getCloudPcLaunchInfo method.
      */
     get getCloudPcLaunchInfo(): GetCloudPcLaunchInfoRequestBuilder;
+    /**
+     * Provides operations to call the getFrontlineCloudPcAccessState method.
+     */
+    get getFrontlineCloudPcAccessState(): GetFrontlineCloudPcAccessStateRequestBuilder;
+    /**
+     * Provides operations to call the getShiftWorkCloudPcAccessState method.
+     */
+    get getShiftWorkCloudPcAccessState(): GetShiftWorkCloudPcAccessStateRequestBuilder;
     /**
      * Provides operations to call the getSupportedCloudPcRemoteActions method.
      */
@@ -179,6 +189,12 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     getCloudPcLaunchInfo: {
         requestsMetadata: GetCloudPcLaunchInfoRequestBuilderRequestsMetadata,
     },
+    getFrontlineCloudPcAccessState: {
+        requestsMetadata: GetFrontlineCloudPcAccessStateRequestBuilderRequestsMetadata,
+    },
+    getShiftWorkCloudPcAccessState: {
+        requestsMetadata: GetShiftWorkCloudPcAccessStateRequestBuilderRequestsMetadata,
+    },
     getSupportedCloudPcRemoteActions: {
         requestsMetadata: GetSupportedCloudPcRemoteActionsRequestBuilderRequestsMetadata,
     },
@@ -226,7 +242,7 @@ export const CloudPCItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPCItemRequestBuilderUriTemplate,
@@ -234,7 +250,7 @@ export const CloudPCItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPCFromDiscriminatorValue,
         queryParametersMapper: CloudPCItemRequestBuilderGetQueryParametersMapper,
     },
@@ -244,7 +260,7 @@ export const CloudPCItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPCFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPC,

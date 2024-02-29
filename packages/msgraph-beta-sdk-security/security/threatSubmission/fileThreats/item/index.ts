@@ -85,7 +85,7 @@ export const FileThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: FileThreatSubmissionItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const FileThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileThreatSubmissionFromDiscriminatorValue,
         queryParametersMapper: FileThreatSubmissionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const FileThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFileThreatSubmissionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFileThreatSubmission,

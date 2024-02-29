@@ -72,7 +72,7 @@ export const SignInPreferencesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInPreferencesFromDiscriminatorValue,
         queryParametersMapper: SignInPreferencesRequestBuilderGetQueryParametersMapper,
     },
@@ -82,7 +82,7 @@ export const SignInPreferencesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSignInPreferencesFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSignInPreferences,

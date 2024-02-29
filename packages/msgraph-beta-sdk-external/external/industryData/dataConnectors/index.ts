@@ -129,7 +129,7 @@ export const DataConnectorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIndustryDataConnectorCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DataConnectorsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +139,7 @@ export const DataConnectorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIndustryDataConnectorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIndustryDataConnector,

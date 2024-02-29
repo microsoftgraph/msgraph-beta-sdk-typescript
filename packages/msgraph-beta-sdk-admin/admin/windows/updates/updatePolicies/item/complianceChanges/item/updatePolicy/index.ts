@@ -57,7 +57,7 @@ export const UpdatePolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUpdatePolicyFromDiscriminatorValue,
         queryParametersMapper: UpdatePolicyRequestBuilderGetQueryParametersMapper,
     },

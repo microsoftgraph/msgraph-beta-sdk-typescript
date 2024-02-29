@@ -97,7 +97,7 @@ export const DataSharingConsentItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DataSharingConsentItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const DataSharingConsentItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataSharingConsentFromDiscriminatorValue,
         queryParametersMapper: DataSharingConsentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const DataSharingConsentItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataSharingConsentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDataSharingConsent,

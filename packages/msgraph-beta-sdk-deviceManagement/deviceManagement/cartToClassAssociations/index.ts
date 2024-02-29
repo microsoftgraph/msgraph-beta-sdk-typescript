@@ -126,7 +126,7 @@ export const CartToClassAssociationsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCartToClassAssociationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CartToClassAssociationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const CartToClassAssociationsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCartToClassAssociationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCartToClassAssociation,

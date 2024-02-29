@@ -111,7 +111,7 @@ export const SummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInsightSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SummaryRequestBuilderGetQueryParametersMapper,
     },

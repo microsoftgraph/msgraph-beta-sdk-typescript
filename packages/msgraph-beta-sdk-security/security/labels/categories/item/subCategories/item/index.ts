@@ -86,7 +86,7 @@ export const SubCategoryTemplateItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SubCategoryTemplateItemRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const SubCategoryTemplateItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSubCategoryTemplateFromDiscriminatorValue,
         queryParametersMapper: SubCategoryTemplateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const SubCategoryTemplateItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSubCategoryTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSubCategoryTemplate,

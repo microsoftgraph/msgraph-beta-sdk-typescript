@@ -115,7 +115,7 @@ export const IosManagedAppProtectionItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: IosManagedAppProtectionItemRequestBuilderUriTemplate,
@@ -123,7 +123,7 @@ export const IosManagedAppProtectionItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosManagedAppProtectionFromDiscriminatorValue,
         queryParametersMapper: IosManagedAppProtectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -133,7 +133,7 @@ export const IosManagedAppProtectionItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIosManagedAppProtection,

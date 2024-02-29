@@ -86,7 +86,7 @@ export const DepartmentTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DepartmentTemplateItemRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const DepartmentTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepartmentTemplateFromDiscriminatorValue,
         queryParametersMapper: DepartmentTemplateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const DepartmentTemplateItemRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDepartmentTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDepartmentTemplate,

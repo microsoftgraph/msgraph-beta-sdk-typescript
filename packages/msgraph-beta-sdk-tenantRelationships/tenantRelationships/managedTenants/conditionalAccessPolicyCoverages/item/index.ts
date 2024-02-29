@@ -85,7 +85,7 @@ export const ConditionalAccessPolicyCoverageItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ConditionalAccessPolicyCoverageItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const ConditionalAccessPolicyCoverageItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConditionalAccessPolicyCoverageFromDiscriminatorValue,
         queryParametersMapper: ConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const ConditionalAccessPolicyCoverageItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConditionalAccessPolicyCoverageFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConditionalAccessPolicyCoverage,

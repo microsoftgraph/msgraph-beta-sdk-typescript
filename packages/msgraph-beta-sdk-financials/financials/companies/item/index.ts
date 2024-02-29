@@ -377,7 +377,7 @@ export const CompanyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanyFromDiscriminatorValue,
         queryParametersMapper: CompanyItemRequestBuilderGetQueryParametersMapper,
     },

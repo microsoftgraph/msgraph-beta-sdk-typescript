@@ -57,7 +57,7 @@ export const AuthenticationsMetricItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthenticationsMetricFromDiscriminatorValue,
         queryParametersMapper: AuthenticationsMetricItemRequestBuilderGetQueryParametersMapper,
     },

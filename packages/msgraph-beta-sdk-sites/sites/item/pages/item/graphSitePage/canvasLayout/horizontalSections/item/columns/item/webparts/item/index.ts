@@ -97,7 +97,7 @@ export const WebPartItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WebPartItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const WebPartItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWebPartFromDiscriminatorValue,
         queryParametersMapper: WebPartItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const WebPartItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWebPartFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWebPart,

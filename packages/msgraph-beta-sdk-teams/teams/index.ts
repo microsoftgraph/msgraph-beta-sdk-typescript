@@ -169,7 +169,7 @@ export const TeamsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TeamsRequestBuilderGetQueryParametersMapper,
     },
@@ -179,7 +179,7 @@ export const TeamsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTeamFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTeam,

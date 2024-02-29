@@ -84,7 +84,7 @@ export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrivilegedOperationEventItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedOperationEventFromDiscriminatorValue,
         queryParametersMapper: PrivilegedOperationEventItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedOperationEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedOperationEvent,

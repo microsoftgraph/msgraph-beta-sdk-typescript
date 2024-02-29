@@ -84,7 +84,7 @@ export const ImportedAppleDeviceIdentityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ImportedAppleDeviceIdentityItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ImportedAppleDeviceIdentityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedAppleDeviceIdentityFromDiscriminatorValue,
         queryParametersMapper: ImportedAppleDeviceIdentityItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ImportedAppleDeviceIdentityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedAppleDeviceIdentityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeImportedAppleDeviceIdentity,

@@ -161,7 +161,7 @@ export const UpdatableAssetsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUpdatableAssetCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UpdatableAssetsRequestBuilderGetQueryParametersMapper,
     },
@@ -171,7 +171,7 @@ export const UpdatableAssetsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUpdatableAssetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUpdatableAsset,

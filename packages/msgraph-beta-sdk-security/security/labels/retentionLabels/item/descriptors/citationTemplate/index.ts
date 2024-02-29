@@ -57,7 +57,7 @@ export const CitationTemplateRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCitationTemplateFromDiscriminatorValue,
         queryParametersMapper: CitationTemplateRequestBuilderGetQueryParametersMapper,
     },

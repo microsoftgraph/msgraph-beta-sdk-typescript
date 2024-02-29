@@ -86,7 +86,7 @@ export const UploadPkcs12RequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUploadPkcs12PostRequestBody,

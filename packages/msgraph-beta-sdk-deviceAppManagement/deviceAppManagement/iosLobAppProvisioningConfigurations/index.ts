@@ -135,7 +135,7 @@ export const IosLobAppProvisioningConfigurationsRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosLobAppProvisioningConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: IosLobAppProvisioningConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -145,7 +145,7 @@ export const IosLobAppProvisioningConfigurationsRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosLobAppProvisioningConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIosLobAppProvisioningConfiguration,

@@ -42,7 +42,7 @@ export interface DevicesRequestBuilder extends BaseRequestBuilder<DevicesRequest
      */
      byDeviceId(deviceId: string) : DeviceItemRequestBuilder;
     /**
-     * Retrieve a list of devices registered in the directory. 
+     * Retrieve a list of devices registered in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -59,7 +59,7 @@ export interface DevicesRequestBuilder extends BaseRequestBuilder<DevicesRequest
      */
      post(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Device | undefined>;
     /**
-     * Retrieve a list of devices registered in the directory. 
+     * Retrieve a list of devices registered in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -73,7 +73,7 @@ export interface DevicesRequestBuilder extends BaseRequestBuilder<DevicesRequest
      toPostRequestInformation(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of devices registered in the directory. 
+ * Retrieve a list of devices registered in the directory.
  */
 export interface DevicesRequestBuilderGetQueryParameters {
     /**
@@ -161,7 +161,7 @@ export const DevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DevicesRequestBuilderGetQueryParametersMapper,
     },
@@ -171,7 +171,7 @@ export const DevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDevice,

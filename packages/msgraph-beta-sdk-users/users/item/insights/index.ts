@@ -116,7 +116,7 @@ export const InsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: InsightsRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const InsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemInsightsFromDiscriminatorValue,
         queryParametersMapper: InsightsRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const InsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createItemInsightsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeItemInsights,

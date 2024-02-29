@@ -144,7 +144,7 @@ export const EventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEventFromDiscriminatorValue,
         queryParametersMapper: EventItemRequestBuilderGetQueryParametersMapper,
     },

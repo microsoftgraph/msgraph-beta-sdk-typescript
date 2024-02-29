@@ -84,7 +84,7 @@ export const RemoteAssistanceSettingsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: RemoteAssistanceSettingsRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const RemoteAssistanceSettingsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteAssistanceSettingsFromDiscriminatorValue,
         queryParametersMapper: RemoteAssistanceSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const RemoteAssistanceSettingsRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteAssistanceSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteAssistanceSettings,

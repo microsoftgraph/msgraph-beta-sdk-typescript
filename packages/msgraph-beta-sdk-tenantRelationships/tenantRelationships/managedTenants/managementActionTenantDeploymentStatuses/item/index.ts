@@ -85,7 +85,7 @@ export const ManagementActionTenantDeploymentStatusItemRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagementActionTenantDeploymentStatusItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const ManagementActionTenantDeploymentStatusItemRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionTenantDeploymentStatusFromDiscriminatorValue,
         queryParametersMapper: ManagementActionTenantDeploymentStatusItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const ManagementActionTenantDeploymentStatusItemRequestBuilderRequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagementActionTenantDeploymentStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagementActionTenantDeploymentStatus,

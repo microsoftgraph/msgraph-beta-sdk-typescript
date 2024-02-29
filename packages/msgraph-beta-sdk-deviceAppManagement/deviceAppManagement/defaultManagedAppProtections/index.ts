@@ -127,7 +127,7 @@ export const DefaultManagedAppProtectionsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDefaultManagedAppProtectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DefaultManagedAppProtectionsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const DefaultManagedAppProtectionsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDefaultManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDefaultManagedAppProtection,

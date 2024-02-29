@@ -120,7 +120,7 @@ export const GetCredentialUserRegistrationCountRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetCredentialUserRegistrationCountGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetCredentialUserRegistrationCountRequestBuilderGetQueryParametersMapper,
     },

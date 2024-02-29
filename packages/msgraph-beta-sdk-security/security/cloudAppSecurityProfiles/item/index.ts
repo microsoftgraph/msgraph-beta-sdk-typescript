@@ -84,7 +84,7 @@ export const CloudAppSecurityProfileItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudAppSecurityProfileItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const CloudAppSecurityProfileItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudAppSecurityProfileFromDiscriminatorValue,
         queryParametersMapper: CloudAppSecurityProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const CloudAppSecurityProfileItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudAppSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudAppSecurityProfile,

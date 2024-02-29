@@ -84,7 +84,7 @@ export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CountryRegionItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCountryRegionFromDiscriminatorValue,
         queryParametersMapper: CountryRegionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCountryRegionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCountryRegion,

@@ -126,7 +126,7 @@ export const ExactMatchUploadAgentsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchUploadAgentCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ExactMatchUploadAgentsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ExactMatchUploadAgentsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createExactMatchUploadAgentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExactMatchUploadAgent,

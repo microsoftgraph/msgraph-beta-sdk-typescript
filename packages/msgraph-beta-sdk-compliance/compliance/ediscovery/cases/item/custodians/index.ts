@@ -153,7 +153,7 @@ export const CustodiansRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustodianCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CustodiansRequestBuilderGetQueryParametersMapper,
     },
@@ -163,7 +163,7 @@ export const CustodiansRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustodianFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCustodian,

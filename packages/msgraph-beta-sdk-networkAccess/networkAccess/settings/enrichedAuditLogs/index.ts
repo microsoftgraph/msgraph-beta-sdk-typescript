@@ -85,7 +85,7 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EnrichedAuditLogsRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrichedAuditLogsFromDiscriminatorValue,
         queryParametersMapper: EnrichedAuditLogsRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnrichedAuditLogsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEnrichedAuditLogs,

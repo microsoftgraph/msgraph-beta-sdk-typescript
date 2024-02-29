@@ -126,7 +126,7 @@ export const EvaluateDlpPoliciesJobsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createJobResponseBaseCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EvaluateDlpPoliciesJobsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const EvaluateDlpPoliciesJobsRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createJobResponseBaseFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeJobResponseBase,

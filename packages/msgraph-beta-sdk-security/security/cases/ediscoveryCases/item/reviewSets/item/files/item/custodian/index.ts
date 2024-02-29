@@ -57,7 +57,7 @@ export const CustodianRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEdiscoveryCustodianFromDiscriminatorValue,
         queryParametersMapper: CustodianRequestBuilderGetQueryParametersMapper,
     },

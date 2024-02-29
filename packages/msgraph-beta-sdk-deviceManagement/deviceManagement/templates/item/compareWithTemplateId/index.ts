@@ -104,7 +104,7 @@ export const CompareWithTemplateIdRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompareWithTemplateIdGetResponseFromDiscriminatorValue,
         queryParametersMapper: CompareWithTemplateIdRequestBuilderGetQueryParametersMapper,
     },

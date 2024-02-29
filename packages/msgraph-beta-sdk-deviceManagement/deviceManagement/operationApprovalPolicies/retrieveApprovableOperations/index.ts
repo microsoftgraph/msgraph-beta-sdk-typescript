@@ -104,7 +104,7 @@ export const RetrieveApprovableOperationsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRetrieveApprovableOperationsGetResponseFromDiscriminatorValue,
         queryParametersMapper: RetrieveApprovableOperationsRequestBuilderGetQueryParametersMapper,
     },

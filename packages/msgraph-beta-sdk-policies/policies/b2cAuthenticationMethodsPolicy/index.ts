@@ -86,7 +86,7 @@ export const B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createB2cAuthenticationMethodsPolicyFromDiscriminatorValue,
         queryParametersMapper: B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createB2cAuthenticationMethodsPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeB2cAuthenticationMethodsPolicy,

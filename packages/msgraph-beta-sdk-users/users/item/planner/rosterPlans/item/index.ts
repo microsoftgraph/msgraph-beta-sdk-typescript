@@ -57,7 +57,7 @@ export const PlannerPlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPlannerPlanFromDiscriminatorValue,
         queryParametersMapper: PlannerPlanItemRequestBuilderGetQueryParametersMapper,
     },

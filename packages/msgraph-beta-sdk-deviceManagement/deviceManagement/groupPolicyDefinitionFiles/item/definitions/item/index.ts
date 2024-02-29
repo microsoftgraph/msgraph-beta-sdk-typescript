@@ -57,7 +57,7 @@ export const GroupPolicyDefinitionItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGroupPolicyDefinitionFromDiscriminatorValue,
         queryParametersMapper: GroupPolicyDefinitionItemRequestBuilderGetQueryParametersMapper,
     },

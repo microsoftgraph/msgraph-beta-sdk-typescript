@@ -128,7 +128,7 @@ export const VendorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVendorCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: VendorsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const VendorsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVendorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVendor,

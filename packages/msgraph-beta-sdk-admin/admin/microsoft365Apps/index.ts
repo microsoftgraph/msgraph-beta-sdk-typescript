@@ -97,7 +97,7 @@ export const Microsoft365AppsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: Microsoft365AppsRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const Microsoft365AppsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminMicrosoft365AppsFromDiscriminatorValue,
         queryParametersMapper: Microsoft365AppsRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const Microsoft365AppsRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminMicrosoft365AppsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdminMicrosoft365Apps,

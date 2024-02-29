@@ -126,7 +126,7 @@ export const RemoteActionAuditsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteActionAuditCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RemoteActionAuditsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const RemoteActionAuditsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteActionAuditFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteActionAudit,

@@ -126,7 +126,7 @@ export const MobileThreatDefenseConnectorsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobileThreatDefenseConnectorCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MobileThreatDefenseConnectorsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const MobileThreatDefenseConnectorsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobileThreatDefenseConnectorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMobileThreatDefenseConnector,

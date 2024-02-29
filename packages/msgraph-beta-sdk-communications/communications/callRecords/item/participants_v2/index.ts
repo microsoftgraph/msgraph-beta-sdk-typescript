@@ -127,7 +127,7 @@ export const Participants_v2RequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createParticipantCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: Participants_v2RequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const Participants_v2RequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createParticipantFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeParticipant,

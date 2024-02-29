@@ -106,7 +106,7 @@ export const WindowsFeatureUpdateProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsFeatureUpdateProfileItemRequestBuilderUriTemplate,
@@ -114,7 +114,7 @@ export const WindowsFeatureUpdateProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsFeatureUpdateProfileFromDiscriminatorValue,
         queryParametersMapper: WindowsFeatureUpdateProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +124,7 @@ export const WindowsFeatureUpdateProfileItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsFeatureUpdateProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsFeatureUpdateProfile,

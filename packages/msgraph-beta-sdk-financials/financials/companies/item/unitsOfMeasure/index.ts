@@ -127,7 +127,7 @@ export const UnitsOfMeasureRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnitOfMeasureCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UnitsOfMeasureRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const UnitsOfMeasureRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnitOfMeasureFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnitOfMeasure,

@@ -126,7 +126,7 @@ export const WindowsInformationProtectionWipeActionsRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionWipeActionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionWipeActionsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const WindowsInformationProtectionWipeActionsRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionWipeActionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsInformationProtectionWipeAction,

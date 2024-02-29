@@ -122,7 +122,7 @@ export const MicrosoftGraphEdiscoveryAsHierarchyRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAsHierarchyGetResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphEdiscoveryAsHierarchyRequestBuilderGetQueryParametersMapper,
     },

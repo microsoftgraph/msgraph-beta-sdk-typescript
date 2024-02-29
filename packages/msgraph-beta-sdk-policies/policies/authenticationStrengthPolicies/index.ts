@@ -140,7 +140,7 @@ export const AuthenticationStrengthPoliciesRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthenticationStrengthPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AuthenticationStrengthPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -150,7 +150,7 @@ export const AuthenticationStrengthPoliciesRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthenticationStrengthPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuthenticationStrengthPolicy,

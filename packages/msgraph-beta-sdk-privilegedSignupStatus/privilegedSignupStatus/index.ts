@@ -158,7 +158,7 @@ export const PrivilegedSignupStatusRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedSignupStatusCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PrivilegedSignupStatusRequestBuilderGetQueryParametersMapper,
     },
@@ -168,7 +168,7 @@ export const PrivilegedSignupStatusRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedSignupStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedSignupStatus,

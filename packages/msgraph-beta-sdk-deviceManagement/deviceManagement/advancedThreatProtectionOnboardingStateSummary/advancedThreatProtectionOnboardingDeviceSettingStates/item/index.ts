@@ -84,7 +84,7 @@ export const AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuil
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuil
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue,
         queryParametersMapper: AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuil
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdvancedThreatProtectionOnboardingDeviceSettingState,

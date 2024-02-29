@@ -128,7 +128,7 @@ export const CommunitiesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommunityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CommunitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const CommunitiesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCommunityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCommunity,

@@ -78,7 +78,7 @@ export const AssignedAccessMultiModeProfilesRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAssignedAccessMultiModeProfilesPostRequestBody,
         requestInformationContentSetMethod: "setContentFromParsable",

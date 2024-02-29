@@ -120,7 +120,7 @@ export const GetDevicesStatusBySettingReportRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendPrimitiveAsync",
+        adapterMethodName: "sendPrimitive",
         responseBodyFactory:  "ArrayBuffer",
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGetDevicesStatusBySettingReportPostRequestBody,

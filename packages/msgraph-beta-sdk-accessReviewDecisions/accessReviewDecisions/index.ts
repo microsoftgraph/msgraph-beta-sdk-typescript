@@ -126,7 +126,7 @@ export const AccessReviewDecisionsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewDecisionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessReviewDecisionsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const AccessReviewDecisionsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessReviewDecisionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessReviewDecision,

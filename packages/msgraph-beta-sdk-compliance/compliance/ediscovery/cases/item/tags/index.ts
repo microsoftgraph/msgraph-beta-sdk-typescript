@@ -144,7 +144,7 @@ export const TagsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTagCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TagsRequestBuilderGetQueryParametersMapper,
     },
@@ -154,7 +154,7 @@ export const TagsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTagFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTag,

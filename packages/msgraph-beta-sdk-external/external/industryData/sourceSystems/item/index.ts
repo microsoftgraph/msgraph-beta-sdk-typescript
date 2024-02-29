@@ -87,7 +87,7 @@ export const SourceSystemDefinitionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SourceSystemDefinitionItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const SourceSystemDefinitionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSourceSystemDefinitionFromDiscriminatorValue,
         queryParametersMapper: SourceSystemDefinitionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const SourceSystemDefinitionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSourceSystemDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSourceSystemDefinition,

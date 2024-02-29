@@ -112,7 +112,7 @@ export const SearchRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSearchEntityFromDiscriminatorValue,
         queryParametersMapper: SearchRequestBuilderGetQueryParametersMapper,
     },
@@ -122,7 +122,7 @@ export const SearchRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSearchEntityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSearchEntity,

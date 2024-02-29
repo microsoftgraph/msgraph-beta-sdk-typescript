@@ -115,7 +115,7 @@ export const AndroidManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AndroidManagedAppProtectionItemRequestBuilderUriTemplate,
@@ -123,7 +123,7 @@ export const AndroidManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidManagedAppProtectionFromDiscriminatorValue,
         queryParametersMapper: AndroidManagedAppProtectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -133,7 +133,7 @@ export const AndroidManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidManagedAppProtection,

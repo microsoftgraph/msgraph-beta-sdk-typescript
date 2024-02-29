@@ -126,7 +126,7 @@ export const HostSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHostSecurityProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: HostSecurityProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const HostSecurityProfilesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createHostSecurityProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeHostSecurityProfile,

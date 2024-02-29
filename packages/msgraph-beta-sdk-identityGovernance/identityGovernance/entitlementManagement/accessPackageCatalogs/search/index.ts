@@ -121,7 +121,7 @@ export const SearchRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSearchGetResponseFromDiscriminatorValue,
         queryParametersMapper: SearchRequestBuilderGetQueryParametersMapper,
     },

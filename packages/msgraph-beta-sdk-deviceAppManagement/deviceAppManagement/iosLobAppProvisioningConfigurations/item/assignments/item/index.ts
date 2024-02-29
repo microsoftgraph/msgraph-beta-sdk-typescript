@@ -84,7 +84,7 @@ export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderReque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderReque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosLobAppProvisioningConfigurationAssignmentFromDiscriminatorValue,
         queryParametersMapper: IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderReque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosLobAppProvisioningConfigurationAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIosLobAppProvisioningConfigurationAssignment,

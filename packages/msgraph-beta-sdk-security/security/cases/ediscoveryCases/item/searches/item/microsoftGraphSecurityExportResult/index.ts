@@ -114,7 +114,7 @@ export const MicrosoftGraphSecurityExportResultRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeExportResultPostRequestBody,
         requestInformationContentSetMethod: "setContentFromParsable",

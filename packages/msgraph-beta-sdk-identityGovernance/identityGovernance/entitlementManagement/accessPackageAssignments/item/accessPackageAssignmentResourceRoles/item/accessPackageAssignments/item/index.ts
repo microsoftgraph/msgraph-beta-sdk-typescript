@@ -57,7 +57,7 @@ export const AccessPackageAssignmentItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentItemRequestBuilderGetQueryParametersMapper,
     },

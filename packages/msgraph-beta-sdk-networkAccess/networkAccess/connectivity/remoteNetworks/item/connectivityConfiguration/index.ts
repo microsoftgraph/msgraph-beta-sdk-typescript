@@ -98,7 +98,7 @@ export const ConnectivityConfigurationRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ConnectivityConfigurationRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const ConnectivityConfigurationRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkConnectivityConfigurationFromDiscriminatorValue,
         queryParametersMapper: ConnectivityConfigurationRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const ConnectivityConfigurationRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRemoteNetworkConnectivityConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRemoteNetworkConnectivityConfiguration,

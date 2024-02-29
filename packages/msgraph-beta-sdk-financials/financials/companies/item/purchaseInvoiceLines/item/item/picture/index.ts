@@ -128,7 +128,7 @@ export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPictureCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PictureRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPictureFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePicture,

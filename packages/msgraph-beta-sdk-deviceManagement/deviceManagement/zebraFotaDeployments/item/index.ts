@@ -97,7 +97,7 @@ export const ZebraFotaDeploymentItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ZebraFotaDeploymentItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const ZebraFotaDeploymentItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createZebraFotaDeploymentFromDiscriminatorValue,
         queryParametersMapper: ZebraFotaDeploymentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const ZebraFotaDeploymentItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createZebraFotaDeploymentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeZebraFotaDeployment,

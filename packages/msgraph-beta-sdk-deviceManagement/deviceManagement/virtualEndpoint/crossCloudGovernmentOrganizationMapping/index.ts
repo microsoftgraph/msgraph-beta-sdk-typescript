@@ -85,7 +85,7 @@ export const CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcCrossCloudGovernmentOrganizationMappingFromDiscriminatorValue,
         queryParametersMapper: CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcCrossCloudGovernmentOrganizationMappingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcCrossCloudGovernmentOrganizationMapping,

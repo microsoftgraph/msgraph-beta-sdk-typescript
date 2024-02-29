@@ -128,7 +128,7 @@ export const LanguagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLanguageProficiencyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: LanguagesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const LanguagesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLanguageProficiencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLanguageProficiency,

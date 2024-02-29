@@ -128,7 +128,7 @@ export const FilePlanReferencesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFilePlanReferenceTemplateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: FilePlanReferencesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const FilePlanReferencesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFilePlanReferenceTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFilePlanReferenceTemplate,

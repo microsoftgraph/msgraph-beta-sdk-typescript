@@ -84,7 +84,7 @@ export const OperationApprovalPolicyItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OperationApprovalPolicyItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const OperationApprovalPolicyItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOperationApprovalPolicyFromDiscriminatorValue,
         queryParametersMapper: OperationApprovalPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const OperationApprovalPolicyItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOperationApprovalPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOperationApprovalPolicy,

@@ -137,7 +137,7 @@ export const CustomAuthenticationExtensionsRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomAuthenticationExtensionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CustomAuthenticationExtensionsRequestBuilderGetQueryParametersMapper,
     },
@@ -147,7 +147,7 @@ export const CustomAuthenticationExtensionsRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomAuthenticationExtensionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCustomAuthenticationExtension,

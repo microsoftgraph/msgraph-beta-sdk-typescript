@@ -89,7 +89,7 @@ export const ApiConnectorConfigurationRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFlowApiConnectorConfigurationFromDiscriminatorValue,
         queryParametersMapper: ApiConnectorConfigurationRequestBuilderGetQueryParametersMapper,
     },

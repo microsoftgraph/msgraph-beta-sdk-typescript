@@ -84,7 +84,7 @@ export const FederatedTokenValidationPolicyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: FederatedTokenValidationPolicyRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const FederatedTokenValidationPolicyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFederatedTokenValidationPolicyFromDiscriminatorValue,
         queryParametersMapper: FederatedTokenValidationPolicyRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const FederatedTokenValidationPolicyRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFederatedTokenValidationPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeFederatedTokenValidationPolicy,

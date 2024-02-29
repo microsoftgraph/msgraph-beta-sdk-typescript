@@ -89,7 +89,7 @@ export const GraphAndroidStoreAppRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidStoreAppFromDiscriminatorValue,
         queryParametersMapper: GraphAndroidStoreAppRequestBuilderGetQueryParametersMapper,
     },

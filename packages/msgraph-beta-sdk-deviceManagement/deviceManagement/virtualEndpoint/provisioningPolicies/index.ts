@@ -144,7 +144,7 @@ export const ProvisioningPoliciesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ProvisioningPoliciesRequestBuilderGetQueryParametersMapper,
     },
@@ -154,7 +154,7 @@ export const ProvisioningPoliciesRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcProvisioningPolicy,

@@ -79,7 +79,7 @@ export const DeviceLocalCredentialInfoItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceLocalCredentialInfoItemRequestBuilderUriTemplate,
@@ -87,7 +87,7 @@ export const DeviceLocalCredentialInfoItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceLocalCredentialInfoFromDiscriminatorValue,
         queryParametersMapper: DeviceLocalCredentialInfoItemRequestBuilderGetQueryParametersMapper,
     },
@@ -97,7 +97,7 @@ export const DeviceLocalCredentialInfoItemRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceLocalCredentialInfoFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceLocalCredentialInfo,

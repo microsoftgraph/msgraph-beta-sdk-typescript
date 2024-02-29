@@ -105,7 +105,7 @@ export const AndroidForWorkEnrollmentProfileItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AndroidForWorkEnrollmentProfileItemRequestBuilderUriTemplate,
@@ -113,7 +113,7 @@ export const AndroidForWorkEnrollmentProfileItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkEnrollmentProfileFromDiscriminatorValue,
         queryParametersMapper: AndroidForWorkEnrollmentProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -123,7 +123,7 @@ export const AndroidForWorkEnrollmentProfileItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkEnrollmentProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidForWorkEnrollmentProfile,

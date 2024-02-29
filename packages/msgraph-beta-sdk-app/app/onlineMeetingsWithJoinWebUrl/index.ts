@@ -113,7 +113,7 @@ export const OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: OnlineMeetingsWithJoinWebUrlRequestBuilderUriTemplate,
@@ -121,7 +121,7 @@ export const OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnlineMeetingFromDiscriminatorValue,
         queryParametersMapper: OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +131,7 @@ export const OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnlineMeetingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeOnlineMeeting,

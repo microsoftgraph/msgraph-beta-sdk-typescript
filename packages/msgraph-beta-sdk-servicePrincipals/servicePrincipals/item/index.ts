@@ -16,6 +16,7 @@ import { DelegatedPermissionClassificationsRequestBuilderNavigationMetadata, Del
 import { DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type DeletePasswordSingleSignOnCredentialsRequestBuilder } from './deletePasswordSingleSignOnCredentials/';
 import { EndpointsRequestBuilderNavigationMetadata, EndpointsRequestBuilderRequestsMetadata, type EndpointsRequestBuilder } from './endpoints/';
 import { FederatedIdentityCredentialsRequestBuilderNavigationMetadata, FederatedIdentityCredentialsRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsRequestBuilder } from './federatedIdentityCredentials/';
+import { FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata, type FederatedIdentityCredentialsWithNameRequestBuilder } from './federatedIdentityCredentialsWithName/';
 import { GetMemberGroupsRequestBuilderRequestsMetadata, type GetMemberGroupsRequestBuilder } from './getMemberGroups/';
 import { GetMemberObjectsRequestBuilderRequestsMetadata, type GetMemberObjectsRequestBuilder } from './getMemberObjects/';
 import { GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type GetPasswordSingleSignOnCredentialsRequestBuilder } from './getPasswordSingleSignOnCredentials/';
@@ -162,6 +163,12 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
+     * Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+     * @param name Alternate key of federatedIdentityCredential
+     * @returns {FederatedIdentityCredentialsWithNameRequestBuilder}
+     */
+     federatedIdentityCredentialsWithName(name: string | undefined) : FederatedIdentityCredentialsWithNameRequestBuilder;
+    /**
      * Retrieve the properties and relationships of a servicePrincipal object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipal>}
@@ -226,6 +233,9 @@ const ServicePrincipalItemRequestBuilderGetQueryParametersMapper: Record<string,
  * Metadata for all the navigation properties in the request builder.
  */
 export const ServicePrincipalItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ServicePrincipalItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    federatedIdentityCredentialsWithName: {
+        requestsMetadata: FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata,
+    },
     addTokenSigningCertificate: {
         requestsMetadata: AddTokenSigningCertificateRequestBuilderRequestsMetadata,
     },
@@ -343,7 +353,7 @@ export const ServicePrincipalItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ServicePrincipalItemRequestBuilderUriTemplate,
@@ -351,7 +361,7 @@ export const ServicePrincipalItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalItemRequestBuilderGetQueryParametersMapper,
     },
@@ -361,7 +371,7 @@ export const ServicePrincipalItemRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServicePrincipal,

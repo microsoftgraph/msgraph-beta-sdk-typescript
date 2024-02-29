@@ -91,7 +91,7 @@ export const CloudPcSharedUseServicePlanItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcSharedUseServicePlanItemRequestBuilderUriTemplate,
@@ -99,7 +99,7 @@ export const CloudPcSharedUseServicePlanItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSharedUseServicePlanFromDiscriminatorValue,
         queryParametersMapper: CloudPcSharedUseServicePlanItemRequestBuilderGetQueryParametersMapper,
     },
@@ -109,7 +109,7 @@ export const CloudPcSharedUseServicePlanItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSharedUseServicePlanFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcSharedUseServicePlan,

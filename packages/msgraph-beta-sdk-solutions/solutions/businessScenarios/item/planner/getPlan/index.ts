@@ -80,7 +80,7 @@ export const GetPlanRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessScenarioPlanReferenceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGetPlanPostRequestBody,

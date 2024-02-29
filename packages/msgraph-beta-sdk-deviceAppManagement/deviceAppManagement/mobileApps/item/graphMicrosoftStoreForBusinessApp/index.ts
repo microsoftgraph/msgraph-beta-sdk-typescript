@@ -98,7 +98,7 @@ export const GraphMicrosoftStoreForBusinessAppRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftStoreForBusinessAppFromDiscriminatorValue,
         queryParametersMapper: GraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParametersMapper,
     },

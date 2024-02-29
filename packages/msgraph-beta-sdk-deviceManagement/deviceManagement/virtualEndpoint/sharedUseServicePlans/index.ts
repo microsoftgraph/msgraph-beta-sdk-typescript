@@ -133,7 +133,7 @@ export const SharedUseServicePlansRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSharedUseServicePlanCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SharedUseServicePlansRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +143,7 @@ export const SharedUseServicePlansRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSharedUseServicePlanFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcSharedUseServicePlan,

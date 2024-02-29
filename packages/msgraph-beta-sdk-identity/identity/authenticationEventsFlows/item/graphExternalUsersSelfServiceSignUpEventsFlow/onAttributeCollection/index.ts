@@ -71,7 +71,7 @@ export const OnAttributeCollectionRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnAttributeCollectionHandlerFromDiscriminatorValue,
         queryParametersMapper: OnAttributeCollectionRequestBuilderGetQueryParametersMapper,
     },

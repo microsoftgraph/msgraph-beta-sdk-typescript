@@ -169,7 +169,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInformationProtectionLabelCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: LabelsRequestBuilderGetQueryParametersMapper,
     },
@@ -179,7 +179,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInformationProtectionLabelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeInformationProtectionLabel,

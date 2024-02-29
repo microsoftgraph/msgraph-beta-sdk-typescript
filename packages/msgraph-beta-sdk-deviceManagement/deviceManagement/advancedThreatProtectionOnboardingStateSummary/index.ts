@@ -98,7 +98,7 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue,
         queryParametersMapper: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdvancedThreatProtectionOnboardingStateSummary,

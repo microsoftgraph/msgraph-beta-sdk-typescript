@@ -129,7 +129,7 @@ export const KeySetsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeySetCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: KeySetsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +139,7 @@ export const KeySetsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkKeySetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrustFrameworkKeySet,

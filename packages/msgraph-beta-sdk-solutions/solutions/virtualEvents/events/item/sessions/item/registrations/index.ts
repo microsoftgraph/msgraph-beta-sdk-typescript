@@ -111,7 +111,7 @@ export const RegistrationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventRegistrationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RegistrationsRequestBuilderGetQueryParametersMapper,
     },

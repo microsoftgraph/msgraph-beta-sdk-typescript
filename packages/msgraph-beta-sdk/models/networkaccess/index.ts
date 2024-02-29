@@ -26,6 +26,10 @@ export interface Alert extends Entity, Parsable {
      * The firstImpactedDateTime property
      */
     firstImpactedDateTime?: Date;
+    /**
+     * The relatedResources property
+     */
+    relatedResources?: RelatedResource[];
 }
 export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -48,6 +52,12 @@ export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable
      * The OdataType property
      */
     odataType?: string;
+}
+export interface AlertCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Alert[];
 }
 export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
 export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
@@ -266,6 +276,14 @@ export type ConnectivityState = (typeof ConnectivityStateObject)[keyof typeof Co
  */
 export function createAlertActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AlertCollectionResponse}
+ */
+export function createAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAlertCollectionResponse;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -883,6 +901,93 @@ export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: P
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedDestination}
+ */
+export function createRelatedDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedDevice}
+ */
+export function createRelatedDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedDevice;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedProcess}
+ */
+export function createRelatedProcessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedProcess;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedRemoteNetwork}
+ */
+export function createRelatedRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedRemoteNetwork;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedResource}
+ */
+export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.relatedDestination":
+                    return deserializeIntoRelatedDestination;
+                case "#microsoft.graph.networkaccess.relatedDevice":
+                    return deserializeIntoRelatedDevice;
+                case "#microsoft.graph.networkaccess.relatedProcess":
+                    return deserializeIntoRelatedProcess;
+                case "#microsoft.graph.networkaccess.relatedRemoteNetwork":
+                    return deserializeIntoRelatedRemoteNetwork;
+                case "#microsoft.graph.networkaccess.relatedTenant":
+                    return deserializeIntoRelatedTenant;
+                case "#microsoft.graph.networkaccess.relatedThreatIntelligence":
+                    return deserializeIntoRelatedThreatIntelligence;
+                case "#microsoft.graph.networkaccess.relatedWebCategory":
+                    return deserializeIntoRelatedWebCategory;
+            }
+        }
+    }
+    return deserializeIntoRelatedResource;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedTenant}
+ */
+export function createRelatedTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedTenant;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedThreatIntelligence}
+ */
+export function createRelatedThreatIntelligenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedThreatIntelligence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedWebCategory}
+ */
+export function createRelatedWebCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedWebCategory;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkCollectionResponse}
  */
 export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -1164,6 +1269,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
         "creationDateTime": n => { alert.creationDateTime = n.getDateValue(); },
         "description": n => { alert.description = n.getStringValue(); },
         "firstImpactedDateTime": n => { alert.firstImpactedDateTime = n.getDateValue(); },
+        "relatedResources": n => { alert.relatedResources = n.getCollectionOfObjectValues<RelatedResource>(createRelatedResourceFromDiscriminatorValue); },
     }
 }
 /**
@@ -1176,6 +1282,16 @@ export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | u
         "actionText": n => { alertAction.actionText = n.getStringValue(); },
         "backingStoreEnabled": n => { alertAction.backingStoreEnabled = true; },
         "@odata.type": n => { alertAction.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoAlertCollectionResponse(alertCollectionResponse: Partial<AlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(alertCollectionResponse),
+        "value": n => { alertCollectionResponse.value = n.getCollectionOfObjectValues<Alert>(createAlertFromDiscriminatorValue); },
     }
 }
 /**
@@ -1785,6 +1901,7 @@ export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M3
 export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<NetworkAccessRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(networkAccessRoot),
+        "alerts": n => { networkAccessRoot.alerts = n.getCollectionOfObjectValues<Alert>(createAlertFromDiscriminatorValue); },
         "connectivity": n => { networkAccessRoot.connectivity = n.getObjectValue<Connectivity>(createConnectivityFromDiscriminatorValue); },
         "filteringPolicies": n => { networkAccessRoot.filteringPolicies = n.getCollectionOfObjectValues<FilteringPolicy>(createFilteringPolicyFromDiscriminatorValue); },
         "filteringProfiles": n => { networkAccessRoot.filteringProfiles = n.getCollectionOfObjectValues<FilteringProfile>(createFilteringProfileFromDiscriminatorValue); },
@@ -1983,6 +2100,90 @@ export function deserializeIntoRedundancyConfiguration(redundancyConfiguration: 
         "@odata.type": n => { redundancyConfiguration.odataType = n.getStringValue(); },
         "redundancyTier": n => { redundancyConfiguration.redundancyTier = n.getEnumValue<RedundancyTier>(RedundancyTierObject); },
         "zoneLocalIpAddress": n => { redundancyConfiguration.zoneLocalIpAddress = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedDestination(relatedDestination: Partial<RelatedDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedDestination),
+        "fqdn": n => { relatedDestination.fqdn = n.getStringValue(); },
+        "ip": n => { relatedDestination.ip = n.getStringValue(); },
+        "networkingProtocol": n => { relatedDestination.networkingProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
+        "port": n => { relatedDestination.port = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedDevice),
+        "deviceId": n => { relatedDevice.deviceId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedProcess(relatedProcess: Partial<RelatedProcess> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedProcess),
+        "isSuspicious": n => { relatedProcess.isSuspicious = n.getBooleanValue(); },
+        "processName": n => { relatedProcess.processName = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedRemoteNetwork(relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedRemoteNetwork),
+        "remoteNetworkId": n => { relatedRemoteNetwork.remoteNetworkId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedResource(relatedResource: Partial<RelatedResource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { relatedResource.backingStoreEnabled = true; },
+        "@odata.type": n => { relatedResource.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedTenant(relatedTenant: Partial<RelatedTenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedTenant),
+        "tenantId": n => { relatedTenant.tenantId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedThreatIntelligence(relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedThreatIntelligence),
+        "threatCount": n => { relatedThreatIntelligence.threatCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedWebCategory(relatedWebCategory: Partial<RelatedWebCategory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedWebCategory),
+        "webCategoryName": n => { relatedWebCategory.webCategoryName = n.getStringValue(); },
     }
 }
 /**
@@ -2798,6 +2999,10 @@ export interface M365ForwardingRule extends ForwardingRule, Parsable {
 }
 export interface NetworkAccessRoot extends Entity, Parsable {
     /**
+     * The alerts property
+     */
+    alerts?: Alert[];
+    /**
      * Connectivity represents all the connectivity components in Global Secure Access.
      */
     connectivity?: Connectivity;
@@ -3194,6 +3399,78 @@ export interface RedundancyConfiguration extends AdditionalDataHolder, BackedMod
 }
 export type RedundancyTier = (typeof RedundancyTierObject)[keyof typeof RedundancyTierObject];
 export type Region = (typeof RegionObject)[keyof typeof RegionObject];
+export interface RelatedDestination extends Parsable, RelatedResource {
+    /**
+     * The fqdn property
+     */
+    fqdn?: string;
+    /**
+     * The ip property
+     */
+    ip?: string;
+    /**
+     * The networkingProtocol property
+     */
+    networkingProtocol?: NetworkingProtocol;
+    /**
+     * The port property
+     */
+    port?: number;
+}
+export interface RelatedDevice extends Parsable, RelatedResource {
+    /**
+     * The deviceId property
+     */
+    deviceId?: string;
+}
+export interface RelatedProcess extends Parsable, RelatedResource {
+    /**
+     * The isSuspicious property
+     */
+    isSuspicious?: boolean;
+    /**
+     * The processName property
+     */
+    processName?: string;
+}
+export interface RelatedRemoteNetwork extends Parsable, RelatedResource {
+    /**
+     * The remoteNetworkId property
+     */
+    remoteNetworkId?: string;
+}
+export interface RelatedResource extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
+export interface RelatedTenant extends Parsable, RelatedResource {
+    /**
+     * The tenantId property
+     */
+    tenantId?: string;
+}
+export interface RelatedThreatIntelligence extends Parsable, RelatedResource {
+    /**
+     * The threatCount property
+     */
+    threatCount?: number;
+}
+export interface RelatedWebCategory extends Parsable, RelatedResource {
+    /**
+     * The webCategoryName property
+     */
+    webCategoryName?: string;
+}
 export interface RemoteNetwork extends Entity, Parsable {
     /**
      * The bandwidthCapacity property
@@ -3340,6 +3617,7 @@ export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert
     writer.writeDateValue("creationDateTime", alert.creationDateTime);
     writer.writeStringValue("description", alert.description);
     writer.writeDateValue("firstImpactedDateTime", alert.firstImpactedDateTime);
+    writer.writeCollectionOfObjectValues<RelatedResource>("relatedResources", alert.relatedResources, serializeRelatedResource);
 }
 /**
  * Serializes information the current object
@@ -3350,6 +3628,14 @@ export function serializeAlertAction(writer: SerializationWriter, alertAction: P
     writer.writeStringValue("actionText", alertAction.actionText);
     writer.writeStringValue("@odata.type", alertAction.odataType);
     writer.writeAdditionalData(alertAction.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse)
+    writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
 }
 /**
  * Serializes information the current object
@@ -3859,6 +4145,7 @@ export function serializeM365ForwardingRule(writer: SerializationWriter, m365For
  */
 export function serializeNetworkAccessRoot(writer: SerializationWriter, networkAccessRoot: Partial<NetworkAccessRoot> | undefined = {}) : void {
     serializeEntity(writer, networkAccessRoot)
+    writer.writeCollectionOfObjectValues<Alert>("alerts", networkAccessRoot.alerts, serializeAlert);
     writer.writeObjectValue<Connectivity>("connectivity", networkAccessRoot.connectivity, serializeConnectivity);
     writer.writeCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", networkAccessRoot.filteringPolicies, serializeFilteringPolicy);
     writer.writeCollectionOfObjectValues<FilteringProfile>("filteringProfiles", networkAccessRoot.filteringProfiles, serializeFilteringProfile);
@@ -4031,6 +4318,74 @@ export function serializeRedundancyConfiguration(writer: SerializationWriter, re
     writer.writeEnumValue<RedundancyTier>("redundancyTier", redundancyConfiguration.redundancyTier);
     writer.writeStringValue("zoneLocalIpAddress", redundancyConfiguration.zoneLocalIpAddress);
     writer.writeAdditionalData(redundancyConfiguration.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedDestination(writer: SerializationWriter, relatedDestination: Partial<RelatedDestination> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedDestination)
+    writer.writeStringValue("fqdn", relatedDestination.fqdn);
+    writer.writeStringValue("ip", relatedDestination.ip);
+    writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", relatedDestination.networkingProtocol);
+    writer.writeNumberValue("port", relatedDestination.port);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedDevice(writer: SerializationWriter, relatedDevice: Partial<RelatedDevice> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedDevice)
+    writer.writeStringValue("deviceId", relatedDevice.deviceId);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedProcess(writer: SerializationWriter, relatedProcess: Partial<RelatedProcess> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedProcess)
+    writer.writeBooleanValue("isSuspicious", relatedProcess.isSuspicious);
+    writer.writeStringValue("processName", relatedProcess.processName);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedRemoteNetwork)
+    writer.writeStringValue("remoteNetworkId", relatedRemoteNetwork.remoteNetworkId);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedResource(writer: SerializationWriter, relatedResource: Partial<RelatedResource> | undefined = {}) : void {
+    writer.writeStringValue("@odata.type", relatedResource.odataType);
+    writer.writeAdditionalData(relatedResource.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedTenant(writer: SerializationWriter, relatedTenant: Partial<RelatedTenant> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedTenant)
+    writer.writeStringValue("tenantId", relatedTenant.tenantId);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedThreatIntelligence(writer: SerializationWriter, relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedThreatIntelligence)
+    writer.writeNumberValue("threatCount", relatedThreatIntelligence.threatCount);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedWebCategory(writer: SerializationWriter, relatedWebCategory: Partial<RelatedWebCategory> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedWebCategory)
+    writer.writeStringValue("webCategoryName", relatedWebCategory.webCategoryName);
 }
 /**
  * Serializes information the current object
@@ -4483,6 +4838,7 @@ export const AlertTypeObject = {
     SuspiciousProcess: "suspiciousProcess",
     ThreatIntelligenceTransactions: "threatIntelligenceTransactions",
     UnknownFutureValue: "unknownFutureValue",
+    WebContentBlocked: "webContentBlocked",
 } as const;
 export const BandwidthCapacityInMbpsObject = {
     Mbps250: "mbps250",
@@ -4508,6 +4864,7 @@ export const DeviceCategoryObject = {
     Client: "client",
     Branch: "branch",
     UnknownFutureValue: "unknownFutureValue",
+    RemoteNetwork: "remoteNetwork",
 } as const;
 export const DeviceVendorObject = {
     BarracudaNetworks: "barracudaNetworks",

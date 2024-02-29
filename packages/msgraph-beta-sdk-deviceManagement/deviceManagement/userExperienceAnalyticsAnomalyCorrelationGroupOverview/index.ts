@@ -126,7 +126,7 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilde
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilde
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsAnomalyCorrelationGroupOverviewFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsAnomalyCorrelationGroupOverview,

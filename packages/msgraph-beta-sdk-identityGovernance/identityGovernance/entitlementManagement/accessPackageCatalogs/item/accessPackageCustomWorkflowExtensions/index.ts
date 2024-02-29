@@ -133,7 +133,7 @@ export const AccessPackageCustomWorkflowExtensionsRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomCalloutExtensionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessPackageCustomWorkflowExtensionsRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +143,7 @@ export const AccessPackageCustomWorkflowExtensionsRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCustomCalloutExtensionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCustomCalloutExtension,

@@ -100,7 +100,7 @@ export const ProgramItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ProgramItemRequestBuilderUriTemplate,
@@ -108,7 +108,7 @@ export const ProgramItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProgramFromDiscriminatorValue,
         queryParametersMapper: ProgramItemRequestBuilderGetQueryParametersMapper,
     },
@@ -118,7 +118,7 @@ export const ProgramItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProgramFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeProgram,

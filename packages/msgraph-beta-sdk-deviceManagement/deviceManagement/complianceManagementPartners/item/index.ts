@@ -84,7 +84,7 @@ export const ComplianceManagementPartnerItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ComplianceManagementPartnerItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ComplianceManagementPartnerItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceManagementPartnerFromDiscriminatorValue,
         queryParametersMapper: ComplianceManagementPartnerItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ComplianceManagementPartnerItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceManagementPartnerFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeComplianceManagementPartner,

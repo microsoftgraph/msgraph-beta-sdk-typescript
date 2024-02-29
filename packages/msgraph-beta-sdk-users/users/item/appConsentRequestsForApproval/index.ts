@@ -137,7 +137,7 @@ export const AppConsentRequestsForApprovalRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppConsentRequestCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AppConsentRequestsForApprovalRequestBuilderGetQueryParametersMapper,
     },
@@ -147,7 +147,7 @@ export const AppConsentRequestsForApprovalRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppConsentRequestFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppConsentRequest,

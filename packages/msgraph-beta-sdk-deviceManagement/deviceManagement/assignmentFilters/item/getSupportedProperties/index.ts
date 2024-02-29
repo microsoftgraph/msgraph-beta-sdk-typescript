@@ -104,7 +104,7 @@ export const GetSupportedPropertiesRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetSupportedPropertiesGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetSupportedPropertiesRequestBuilderGetQueryParametersMapper,
     },

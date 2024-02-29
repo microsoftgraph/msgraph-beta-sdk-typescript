@@ -103,7 +103,7 @@ export const MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCaseExportOperationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParametersMapper,
     },

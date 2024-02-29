@@ -128,7 +128,7 @@ export const YearsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createYearTimePeriodDefinitionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: YearsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const YearsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createYearTimePeriodDefinitionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeYearTimePeriodDefinition,

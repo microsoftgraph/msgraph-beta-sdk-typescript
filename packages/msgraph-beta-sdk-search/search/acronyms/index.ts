@@ -128,7 +128,7 @@ export const AcronymsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAcronymCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AcronymsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const AcronymsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAcronymFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAcronym,

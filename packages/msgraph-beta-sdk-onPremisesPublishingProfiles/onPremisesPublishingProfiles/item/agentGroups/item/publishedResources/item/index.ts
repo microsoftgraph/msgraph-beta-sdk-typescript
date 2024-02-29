@@ -98,7 +98,7 @@ export const PublishedResourceItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PublishedResourceItemRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const PublishedResourceItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPublishedResourceFromDiscriminatorValue,
         queryParametersMapper: PublishedResourceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const PublishedResourceItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPublishedResourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePublishedResource,

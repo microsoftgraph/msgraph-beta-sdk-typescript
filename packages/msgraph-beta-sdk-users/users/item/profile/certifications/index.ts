@@ -128,7 +128,7 @@ export const CertificationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonCertificationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CertificationsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const CertificationsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPersonCertificationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePersonCertification,

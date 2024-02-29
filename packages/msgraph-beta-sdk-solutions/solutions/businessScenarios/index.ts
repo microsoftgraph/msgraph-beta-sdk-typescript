@@ -129,7 +129,7 @@ export const BusinessScenariosRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessScenarioCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BusinessScenariosRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +139,7 @@ export const BusinessScenariosRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBusinessScenarioFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBusinessScenario,

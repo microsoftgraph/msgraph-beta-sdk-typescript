@@ -127,7 +127,7 @@ export const CredentialUserRegistrationsSummariesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CredentialUserRegistrationsSummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const CredentialUserRegistrationsSummariesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCredentialUserRegistrationsSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCredentialUserRegistrationsSummary,

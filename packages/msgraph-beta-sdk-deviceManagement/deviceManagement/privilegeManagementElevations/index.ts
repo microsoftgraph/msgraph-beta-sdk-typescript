@@ -126,7 +126,7 @@ export const PrivilegeManagementElevationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PrivilegeManagementElevationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const PrivilegeManagementElevationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegeManagementElevationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegeManagementElevation,

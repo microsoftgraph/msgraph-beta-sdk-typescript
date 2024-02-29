@@ -126,7 +126,7 @@ export const MicrosoftTunnelConfigurationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelConfigurationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MicrosoftTunnelConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const MicrosoftTunnelConfigurationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMicrosoftTunnelConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMicrosoftTunnelConfiguration,

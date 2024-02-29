@@ -106,7 +106,7 @@ export const IntuneBrandingProfileItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: IntuneBrandingProfileItemRequestBuilderUriTemplate,
@@ -114,7 +114,7 @@ export const IntuneBrandingProfileItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIntuneBrandingProfileFromDiscriminatorValue,
         queryParametersMapper: IntuneBrandingProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -124,7 +124,7 @@ export const IntuneBrandingProfileItemRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIntuneBrandingProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIntuneBrandingProfile,

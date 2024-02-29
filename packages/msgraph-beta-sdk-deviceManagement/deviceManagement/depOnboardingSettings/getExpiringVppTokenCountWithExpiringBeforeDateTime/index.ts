@@ -76,7 +76,7 @@ export const GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderReq
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseFromDiscriminatorValue,
     },
 };

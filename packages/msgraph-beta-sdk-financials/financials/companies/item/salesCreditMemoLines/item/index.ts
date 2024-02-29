@@ -94,7 +94,7 @@ export const SalesCreditMemoLineItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesCreditMemoLineFromDiscriminatorValue,
         queryParametersMapper: SalesCreditMemoLineItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const SalesCreditMemoLineItemRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSalesCreditMemoLineFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSalesCreditMemoLine,

@@ -84,7 +84,7 @@ export const ServicePrincipalCreationConditionSetItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ServicePrincipalCreationConditionSetItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalCreationConditionSetFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ServicePrincipalCreationConditionSetItemRequestBuilderRequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalCreationConditionSetFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServicePrincipalCreationConditionSet,

@@ -98,7 +98,7 @@ export const TrustFrameworkPolicyItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TrustFrameworkPolicyItemRequestBuilderUriTemplate,
@@ -106,7 +106,7 @@ export const TrustFrameworkPolicyItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkPolicyFromDiscriminatorValue,
         queryParametersMapper: TrustFrameworkPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -116,7 +116,7 @@ export const TrustFrameworkPolicyItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTrustFrameworkPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTrustFrameworkPolicy,

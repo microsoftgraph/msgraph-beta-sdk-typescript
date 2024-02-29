@@ -107,7 +107,7 @@ export const EdiscoveryHoldPolicyItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EdiscoveryHoldPolicyItemRequestBuilderUriTemplate,
@@ -115,7 +115,7 @@ export const EdiscoveryHoldPolicyItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEdiscoveryHoldPolicyFromDiscriminatorValue,
         queryParametersMapper: EdiscoveryHoldPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +125,7 @@ export const EdiscoveryHoldPolicyItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEdiscoveryHoldPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEdiscoveryHoldPolicy,

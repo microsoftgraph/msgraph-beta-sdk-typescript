@@ -126,7 +126,7 @@ export const DirectoryProvisioningRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProvisioningObjectSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DirectoryProvisioningRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const DirectoryProvisioningRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProvisioningObjectSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeProvisioningObjectSummary,

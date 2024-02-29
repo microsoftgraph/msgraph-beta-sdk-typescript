@@ -71,7 +71,7 @@ export const OnAuthenticationMethodLoadStartRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createOnAuthenticationMethodLoadStartHandlerFromDiscriminatorValue,
         queryParametersMapper: OnAuthenticationMethodLoadStartRequestBuilderGetQueryParametersMapper,
     },

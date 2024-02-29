@@ -128,7 +128,7 @@ export const QnasRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createQnaCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: QnasRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const QnasRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createQnaFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeQna,

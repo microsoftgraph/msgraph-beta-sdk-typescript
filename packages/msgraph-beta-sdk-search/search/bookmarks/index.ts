@@ -128,7 +128,7 @@ export const BookmarksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookmarkCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BookmarksRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const BookmarksRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookmarkFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookmark,

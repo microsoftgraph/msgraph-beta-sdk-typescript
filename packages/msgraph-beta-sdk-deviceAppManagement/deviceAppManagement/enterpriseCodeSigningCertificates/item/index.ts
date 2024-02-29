@@ -84,7 +84,7 @@ export const EnterpriseCodeSigningCertificateItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EnterpriseCodeSigningCertificateItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const EnterpriseCodeSigningCertificateItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnterpriseCodeSigningCertificateFromDiscriminatorValue,
         queryParametersMapper: EnterpriseCodeSigningCertificateItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const EnterpriseCodeSigningCertificateItemRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEnterpriseCodeSigningCertificateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEnterpriseCodeSigningCertificate,

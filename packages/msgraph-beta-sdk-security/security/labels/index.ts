@@ -143,7 +143,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: LabelsRequestBuilderUriTemplate,
@@ -151,7 +151,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLabelsRootFromDiscriminatorValue,
         queryParametersMapper: LabelsRequestBuilderGetQueryParametersMapper,
     },
@@ -161,7 +161,7 @@ export const LabelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLabelsRootFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLabelsRoot,

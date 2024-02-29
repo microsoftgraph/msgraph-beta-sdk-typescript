@@ -127,7 +127,7 @@ export const EmbeddedSIMActivationCodePoolsRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmbeddedSIMActivationCodePoolCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EmbeddedSIMActivationCodePoolsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const EmbeddedSIMActivationCodePoolsRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmbeddedSIMActivationCodePoolFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmbeddedSIMActivationCodePool,

@@ -171,7 +171,7 @@ export const AdminRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminFromDiscriminatorValue,
         queryParametersMapper: AdminRequestBuilderGetQueryParametersMapper,
     },
@@ -181,7 +181,7 @@ export const AdminRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdminFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdmin,

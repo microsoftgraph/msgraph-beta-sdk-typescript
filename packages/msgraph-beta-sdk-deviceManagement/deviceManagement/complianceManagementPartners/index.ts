@@ -126,7 +126,7 @@ export const ComplianceManagementPartnersRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceManagementPartnerCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ComplianceManagementPartnersRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ComplianceManagementPartnersRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComplianceManagementPartnerFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeComplianceManagementPartner,

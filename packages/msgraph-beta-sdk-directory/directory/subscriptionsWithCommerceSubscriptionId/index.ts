@@ -85,7 +85,7 @@ export const SubscriptionsWithCommerceSubscriptionIdRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SubscriptionsWithCommerceSubscriptionIdRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const SubscriptionsWithCommerceSubscriptionIdRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanySubscriptionFromDiscriminatorValue,
         queryParametersMapper: SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const SubscriptionsWithCommerceSubscriptionIdRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCompanySubscriptionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCompanySubscription,

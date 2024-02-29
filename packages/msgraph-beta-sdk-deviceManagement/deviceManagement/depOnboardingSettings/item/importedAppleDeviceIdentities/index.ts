@@ -134,7 +134,7 @@ export const ImportedAppleDeviceIdentitiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedAppleDeviceIdentityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -144,7 +144,7 @@ export const ImportedAppleDeviceIdentitiesRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedAppleDeviceIdentityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeImportedAppleDeviceIdentity,

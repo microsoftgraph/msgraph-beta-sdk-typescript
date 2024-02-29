@@ -57,7 +57,7 @@ export const AuthenticationContextRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuthenticationContextClassReferenceFromDiscriminatorValue,
         queryParametersMapper: AuthenticationContextRequestBuilderGetQueryParametersMapper,
     },

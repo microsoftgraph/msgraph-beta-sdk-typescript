@@ -52,7 +52,7 @@ export const UserConfigurationItemRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserConfigurationFromDiscriminatorValue,
         queryParametersMapper: UserConfigurationItemRequestBuilderGetQueryParametersMapper,
     },

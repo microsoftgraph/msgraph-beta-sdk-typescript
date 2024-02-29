@@ -127,7 +127,7 @@ export const FrontLineServicePlansRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcFrontLineServicePlanCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: FrontLineServicePlansRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const FrontLineServicePlansRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcFrontLineServicePlanFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcFrontLineServicePlan,

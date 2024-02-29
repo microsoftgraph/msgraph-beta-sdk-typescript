@@ -126,7 +126,7 @@ export const DriverInventoriesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateInventoryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DriverInventoriesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const DriverInventoriesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateInventoryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsDriverUpdateInventory,

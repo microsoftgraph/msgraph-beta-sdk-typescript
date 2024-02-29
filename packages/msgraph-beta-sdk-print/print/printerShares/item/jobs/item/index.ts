@@ -169,7 +169,7 @@ export const PrintJobItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrintJobItemRequestBuilderUriTemplate,
@@ -177,7 +177,7 @@ export const PrintJobItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintJobFromDiscriminatorValue,
         queryParametersMapper: PrintJobItemRequestBuilderGetQueryParametersMapper,
     },
@@ -187,7 +187,7 @@ export const PrintJobItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrintJobFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrintJob,

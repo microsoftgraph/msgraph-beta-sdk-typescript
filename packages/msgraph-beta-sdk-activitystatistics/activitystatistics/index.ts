@@ -121,7 +121,7 @@ export const ActivitystatisticsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createActivityStatisticsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ActivitystatisticsRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +131,7 @@ export const ActivitystatisticsRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createActivityStatisticsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeActivityStatistics,

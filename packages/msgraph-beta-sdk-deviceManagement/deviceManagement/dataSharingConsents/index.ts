@@ -127,7 +127,7 @@ export const DataSharingConsentsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataSharingConsentCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DataSharingConsentsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const DataSharingConsentsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDataSharingConsentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDataSharingConsent,

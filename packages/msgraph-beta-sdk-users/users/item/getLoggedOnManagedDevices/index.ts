@@ -119,7 +119,7 @@ export const GetLoggedOnManagedDevicesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetLoggedOnManagedDevicesGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetLoggedOnManagedDevicesRequestBuilderGetQueryParametersMapper,
     },

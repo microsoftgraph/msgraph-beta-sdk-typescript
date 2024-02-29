@@ -96,7 +96,7 @@ export const MultiTenantOrganizationRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationFromDiscriminatorValue,
         queryParametersMapper: MultiTenantOrganizationRequestBuilderGetQueryParametersMapper,
     },
@@ -106,7 +106,7 @@ export const MultiTenantOrganizationRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMultiTenantOrganization,

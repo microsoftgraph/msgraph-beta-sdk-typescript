@@ -133,7 +133,7 @@ export const LegalHoldsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLegalHoldCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: LegalHoldsRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +143,7 @@ export const LegalHoldsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLegalHoldFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLegalHold,

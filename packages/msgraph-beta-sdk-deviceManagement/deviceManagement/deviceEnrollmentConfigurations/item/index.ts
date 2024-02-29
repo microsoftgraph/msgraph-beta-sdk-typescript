@@ -114,7 +114,7 @@ export const DeviceEnrollmentConfigurationItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DeviceEnrollmentConfigurationItemRequestBuilderUriTemplate,
@@ -122,7 +122,7 @@ export const DeviceEnrollmentConfigurationItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceEnrollmentConfigurationFromDiscriminatorValue,
         queryParametersMapper: DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -132,7 +132,7 @@ export const DeviceEnrollmentConfigurationItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceEnrollmentConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceEnrollmentConfiguration,

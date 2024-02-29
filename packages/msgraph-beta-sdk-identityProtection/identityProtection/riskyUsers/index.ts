@@ -32,11 +32,11 @@ export interface RiskyUsersRequestBuilder extends BaseRequestBuilder<RiskyUsersR
      */
      byRiskyUserId(riskyUserId: string) : RiskyUserItemRequestBuilder;
     /**
-     * Retrieve the properties and relationships of a collection of riskyUser objects.
+     * Retrieve the properties and relationships of a riskyUser object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RiskyUserCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RiskyUsersRequestBuilderGetQueryParameters> | undefined) : Promise<RiskyUserCollectionResponse | undefined>;
     /**
@@ -48,7 +48,7 @@ export interface RiskyUsersRequestBuilder extends BaseRequestBuilder<RiskyUsersR
      */
      post(body: RiskyUser, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RiskyUser | undefined>;
     /**
-     * Retrieve the properties and relationships of a collection of riskyUser objects.
+     * Retrieve the properties and relationships of a riskyUser object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -62,7 +62,7 @@ export interface RiskyUsersRequestBuilder extends BaseRequestBuilder<RiskyUsersR
      toPostRequestInformation(body: RiskyUser, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties and relationships of a collection of riskyUser objects.
+ * Retrieve the properties and relationships of a riskyUser object.
  */
 export interface RiskyUsersRequestBuilderGetQueryParameters {
     /**
@@ -144,7 +144,7 @@ export const RiskyUsersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRiskyUserCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RiskyUsersRequestBuilderGetQueryParametersMapper,
     },
@@ -154,7 +154,7 @@ export const RiskyUsersRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createRiskyUserFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeRiskyUser,

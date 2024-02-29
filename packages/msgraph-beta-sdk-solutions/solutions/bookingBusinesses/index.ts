@@ -127,7 +127,7 @@ export const BookingBusinessesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingBusinessCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BookingBusinessesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const BookingBusinessesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingBusinessFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookingBusiness,

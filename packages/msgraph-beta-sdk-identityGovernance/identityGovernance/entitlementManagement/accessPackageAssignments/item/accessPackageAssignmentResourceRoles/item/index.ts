@@ -125,7 +125,7 @@ export const AccessPackageAssignmentResourceRoleItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AccessPackageAssignmentResourceRoleItemRequestBuilderUriTemplate,
@@ -133,7 +133,7 @@ export const AccessPackageAssignmentResourceRoleItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentResourceRoleFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentResourceRoleItemRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +143,7 @@ export const AccessPackageAssignmentResourceRoleItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentResourceRoleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageAssignmentResourceRole,

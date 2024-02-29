@@ -84,7 +84,7 @@ export const WorkbookDocumentTaskChangeItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WorkbookDocumentTaskChangeItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const WorkbookDocumentTaskChangeItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookDocumentTaskChangeFromDiscriminatorValue,
         queryParametersMapper: WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const WorkbookDocumentTaskChangeItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWorkbookDocumentTaskChangeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWorkbookDocumentTaskChange,

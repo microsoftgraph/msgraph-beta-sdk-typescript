@@ -97,7 +97,7 @@ export const ManagedTenantEmailNotificationItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ManagedTenantEmailNotificationItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const ManagedTenantEmailNotificationItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantEmailNotificationFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantEmailNotificationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const ManagedTenantEmailNotificationItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantEmailNotificationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeManagedTenantEmailNotification,

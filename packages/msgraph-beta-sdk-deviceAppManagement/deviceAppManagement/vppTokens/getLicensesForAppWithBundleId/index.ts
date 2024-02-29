@@ -104,7 +104,7 @@ export const GetLicensesForAppWithBundleIdRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetLicensesForAppWithBundleIdGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetLicensesForAppWithBundleIdRequestBuilderGetQueryParametersMapper,
     },

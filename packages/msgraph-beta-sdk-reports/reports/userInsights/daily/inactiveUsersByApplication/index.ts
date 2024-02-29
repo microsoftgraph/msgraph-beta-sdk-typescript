@@ -13,12 +13,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InactiveUsersByApplicationRequestBuilder extends BaseRequestBuilder<InactiveUsersByApplicationRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
      * @param dailyInactiveUsersByApplicationMetricId The unique identifier of dailyInactiveUsersByApplicationMetric
      * @returns {DailyInactiveUsersByApplicationMetricItemRequestBuilder}
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      byDailyInactiveUsersByApplicationMetricId(dailyInactiveUsersByApplicationMetricId: string) : DailyInactiveUsersByApplicationMetricItemRequestBuilder;
     /**
@@ -26,12 +28,14 @@ export interface InactiveUsersByApplicationRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DailyInactiveUsersByApplicationMetricCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      get(requestConfiguration?: RequestConfiguration<InactiveUsersByApplicationRequestBuilderGetQueryParameters> | undefined) : Promise<DailyInactiveUsersByApplicationMetricCollectionResponse | undefined>;
     /**
      * Get inactiveUsersByApplication from reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InactiveUsersByApplicationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -111,7 +115,7 @@ export const InactiveUsersByApplicationRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDailyInactiveUsersByApplicationMetricCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: InactiveUsersByApplicationRequestBuilderGetQueryParametersMapper,
     },

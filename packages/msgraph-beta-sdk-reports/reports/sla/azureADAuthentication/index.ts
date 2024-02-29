@@ -85,7 +85,7 @@ export const AzureADAuthenticationRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AzureADAuthenticationRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const AzureADAuthenticationRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAzureADAuthenticationFromDiscriminatorValue,
         queryParametersMapper: AzureADAuthenticationRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const AzureADAuthenticationRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAzureADAuthenticationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAzureADAuthentication,

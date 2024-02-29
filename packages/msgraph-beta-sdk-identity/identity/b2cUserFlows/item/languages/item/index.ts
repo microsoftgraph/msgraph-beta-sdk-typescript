@@ -110,7 +110,7 @@ export const UserFlowLanguageConfigurationItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserFlowLanguageConfigurationItemRequestBuilderUriTemplate,
@@ -118,7 +118,7 @@ export const UserFlowLanguageConfigurationItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFlowLanguageConfigurationFromDiscriminatorValue,
         queryParametersMapper: UserFlowLanguageConfigurationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -128,7 +128,7 @@ export const UserFlowLanguageConfigurationItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFlowLanguageConfigurationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserFlowLanguageConfiguration,

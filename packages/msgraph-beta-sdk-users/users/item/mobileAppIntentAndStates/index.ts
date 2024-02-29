@@ -126,7 +126,7 @@ export const MobileAppIntentAndStatesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobileAppIntentAndStateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MobileAppIntentAndStatesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const MobileAppIntentAndStatesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMobileAppIntentAndStateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMobileAppIntentAndState,

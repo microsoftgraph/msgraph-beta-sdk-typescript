@@ -131,7 +131,7 @@ export const WindowsDriverUpdateProfileItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsDriverUpdateProfileItemRequestBuilderUriTemplate,
@@ -139,7 +139,7 @@ export const WindowsDriverUpdateProfileItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateProfileFromDiscriminatorValue,
         queryParametersMapper: WindowsDriverUpdateProfileItemRequestBuilderGetQueryParametersMapper,
     },
@@ -149,7 +149,7 @@ export const WindowsDriverUpdateProfileItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsDriverUpdateProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsDriverUpdateProfile,

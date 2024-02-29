@@ -84,7 +84,7 @@ export const ConfigManagerCollectionItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ConfigManagerCollectionItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ConfigManagerCollectionItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConfigManagerCollectionFromDiscriminatorValue,
         queryParametersMapper: ConfigManagerCollectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ConfigManagerCollectionItemRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConfigManagerCollectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeConfigManagerCollection,

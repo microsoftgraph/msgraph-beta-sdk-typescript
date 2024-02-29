@@ -126,7 +126,7 @@ export const BookingCurrenciesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingCurrencyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: BookingCurrenciesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const BookingCurrenciesRequestBuilderRequestsMetadata: RequestsMetadata =
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createBookingCurrencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeBookingCurrency,

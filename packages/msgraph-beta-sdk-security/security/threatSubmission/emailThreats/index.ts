@@ -128,7 +128,7 @@ export const EmailThreatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmailThreatSubmissionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EmailThreatsRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const EmailThreatsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEmailThreatSubmissionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEmailThreatSubmission,

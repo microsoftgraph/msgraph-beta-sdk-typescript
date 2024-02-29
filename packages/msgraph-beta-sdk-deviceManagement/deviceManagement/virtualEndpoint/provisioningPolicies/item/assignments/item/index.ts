@@ -105,7 +105,7 @@ export const CloudPcProvisioningPolicyAssignmentItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcProvisioningPolicyAssignmentItemRequestBuilderUriTemplate,
@@ -113,7 +113,7 @@ export const CloudPcProvisioningPolicyAssignmentItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue,
         queryParametersMapper: CloudPcProvisioningPolicyAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -123,7 +123,7 @@ export const CloudPcProvisioningPolicyAssignmentItemRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcProvisioningPolicyAssignment,

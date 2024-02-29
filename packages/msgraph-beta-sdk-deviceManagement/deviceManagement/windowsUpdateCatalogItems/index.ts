@@ -126,7 +126,7 @@ export const WindowsUpdateCatalogItemsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsUpdateCatalogItemCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsUpdateCatalogItemsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const WindowsUpdateCatalogItemsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsUpdateCatalogItemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsUpdateCatalogItem,

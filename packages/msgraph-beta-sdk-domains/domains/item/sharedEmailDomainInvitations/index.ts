@@ -126,7 +126,7 @@ export const SharedEmailDomainInvitationsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSharedEmailDomainInvitationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SharedEmailDomainInvitationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const SharedEmailDomainInvitationsRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createSharedEmailDomainInvitationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeSharedEmailDomainInvitation,

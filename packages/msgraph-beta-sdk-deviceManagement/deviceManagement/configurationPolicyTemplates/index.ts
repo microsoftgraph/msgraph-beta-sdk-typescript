@@ -127,7 +127,7 @@ export const ConfigurationPolicyTemplatesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyTemplateCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ConfigurationPolicyTemplatesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ConfigurationPolicyTemplatesRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementConfigurationPolicyTemplate,

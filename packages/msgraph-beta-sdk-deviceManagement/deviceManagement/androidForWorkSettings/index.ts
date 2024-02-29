@@ -121,7 +121,7 @@ export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AndroidForWorkSettingsRequestBuilderUriTemplate,
@@ -129,7 +129,7 @@ export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkSettingsFromDiscriminatorValue,
         queryParametersMapper: AndroidForWorkSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +139,7 @@ export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAndroidForWorkSettingsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAndroidForWorkSettings,

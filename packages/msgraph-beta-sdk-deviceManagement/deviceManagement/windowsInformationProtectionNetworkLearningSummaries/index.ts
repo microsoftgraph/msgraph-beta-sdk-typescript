@@ -126,7 +126,7 @@ export const WindowsInformationProtectionNetworkLearningSummariesRequestBuilderR
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionNetworkLearningSummaryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const WindowsInformationProtectionNetworkLearningSummariesRequestBuilderR
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsInformationProtectionNetworkLearningSummary,

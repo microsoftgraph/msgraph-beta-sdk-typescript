@@ -84,7 +84,7 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ComanagementEligibleDeviceItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComanagementEligibleDeviceFromDiscriminatorValue,
         queryParametersMapper: ComanagementEligibleDeviceItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComanagementEligibleDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeComanagementEligibleDevice,

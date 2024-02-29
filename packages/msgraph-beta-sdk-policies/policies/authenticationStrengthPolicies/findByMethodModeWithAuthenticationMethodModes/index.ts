@@ -121,7 +121,7 @@ export const FindByMethodModeWithAuthenticationMethodModesRequestBuilderRequests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createFindByMethodModeWithAuthenticationMethodModesGetResponseFromDiscriminatorValue,
         queryParametersMapper: FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParametersMapper,
     },

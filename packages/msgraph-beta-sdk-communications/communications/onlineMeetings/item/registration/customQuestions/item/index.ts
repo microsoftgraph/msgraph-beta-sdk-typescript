@@ -87,7 +87,7 @@ export const MeetingRegistrationQuestionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MeetingRegistrationQuestionItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const MeetingRegistrationQuestionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMeetingRegistrationQuestionFromDiscriminatorValue,
         queryParametersMapper: MeetingRegistrationQuestionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const MeetingRegistrationQuestionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMeetingRegistrationQuestionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMeetingRegistrationQuestion,

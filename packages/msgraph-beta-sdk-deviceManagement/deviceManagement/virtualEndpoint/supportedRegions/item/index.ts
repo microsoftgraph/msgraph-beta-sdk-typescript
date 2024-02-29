@@ -84,7 +84,7 @@ export const CloudPcSupportedRegionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcSupportedRegionItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const CloudPcSupportedRegionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSupportedRegionFromDiscriminatorValue,
         queryParametersMapper: CloudPcSupportedRegionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const CloudPcSupportedRegionItemRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcSupportedRegionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcSupportedRegion,

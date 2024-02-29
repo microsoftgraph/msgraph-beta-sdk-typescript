@@ -97,7 +97,7 @@ export const TermsAndConditionsAcceptanceStatusItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TermsAndConditionsAcceptanceStatusItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const TermsAndConditionsAcceptanceStatusItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsAcceptanceStatusFromDiscriminatorValue,
         queryParametersMapper: TermsAndConditionsAcceptanceStatusItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const TermsAndConditionsAcceptanceStatusItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsAcceptanceStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTermsAndConditionsAcceptanceStatus,

@@ -129,7 +129,7 @@ export const OnPremisesConnectionsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOnPremisesConnectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: OnPremisesConnectionsRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +139,7 @@ export const OnPremisesConnectionsRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOnPremisesConnectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcOnPremisesConnection,

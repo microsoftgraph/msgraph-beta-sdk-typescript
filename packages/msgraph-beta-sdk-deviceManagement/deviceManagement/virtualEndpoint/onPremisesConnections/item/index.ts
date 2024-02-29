@@ -108,7 +108,7 @@ export const CloudPcOnPremisesConnectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcOnPremisesConnectionItemRequestBuilderUriTemplate,
@@ -116,7 +116,7 @@ export const CloudPcOnPremisesConnectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOnPremisesConnectionFromDiscriminatorValue,
         queryParametersMapper: CloudPcOnPremisesConnectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -126,7 +126,7 @@ export const CloudPcOnPremisesConnectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcOnPremisesConnectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcOnPremisesConnection,

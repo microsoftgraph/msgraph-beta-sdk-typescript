@@ -57,7 +57,7 @@ export const RunSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementScriptRunSummaryFromDiscriminatorValue,
         queryParametersMapper: RunSummaryRequestBuilderGetQueryParametersMapper,
     },

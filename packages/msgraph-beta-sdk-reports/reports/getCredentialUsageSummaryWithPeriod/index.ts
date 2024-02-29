@@ -119,7 +119,7 @@ export const GetCredentialUsageSummaryWithPeriodRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetCredentialUsageSummaryWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParametersMapper,
     },

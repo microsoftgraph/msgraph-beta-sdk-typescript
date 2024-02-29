@@ -85,7 +85,7 @@ export const DayNoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: DayNoteItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const DayNoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDayNoteFromDiscriminatorValue,
         queryParametersMapper: DayNoteItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const DayNoteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDayNoteFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDayNote,

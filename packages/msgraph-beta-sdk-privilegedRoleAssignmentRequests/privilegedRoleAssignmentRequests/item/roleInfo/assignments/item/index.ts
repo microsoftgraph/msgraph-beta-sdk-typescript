@@ -57,7 +57,7 @@ export const PrivilegedRoleAssignmentItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedRoleAssignmentFromDiscriminatorValue,
         queryParametersMapper: PrivilegedRoleAssignmentItemRequestBuilderGetQueryParametersMapper,
     },

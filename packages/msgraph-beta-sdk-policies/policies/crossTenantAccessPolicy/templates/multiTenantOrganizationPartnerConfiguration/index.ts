@@ -99,7 +99,7 @@ export const MultiTenantOrganizationPartnerConfigurationRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: MultiTenantOrganizationPartnerConfigurationRequestBuilderUriTemplate,
@@ -107,7 +107,7 @@ export const MultiTenantOrganizationPartnerConfigurationRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationPartnerConfigurationTemplateFromDiscriminatorValue,
         queryParametersMapper: MultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParametersMapper,
     },
@@ -117,7 +117,7 @@ export const MultiTenantOrganizationPartnerConfigurationRequestBuilderRequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMultiTenantOrganizationPartnerConfigurationTemplateFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMultiTenantOrganizationPartnerConfigurationTemplate,

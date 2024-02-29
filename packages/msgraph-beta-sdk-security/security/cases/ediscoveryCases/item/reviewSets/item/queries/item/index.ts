@@ -116,7 +116,7 @@ export const EdiscoveryReviewSetQueryItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: EdiscoveryReviewSetQueryItemRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const EdiscoveryReviewSetQueryItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEdiscoveryReviewSetQueryFromDiscriminatorValue,
         queryParametersMapper: EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const EdiscoveryReviewSetQueryItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEdiscoveryReviewSetQueryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEdiscoveryReviewSetQuery,

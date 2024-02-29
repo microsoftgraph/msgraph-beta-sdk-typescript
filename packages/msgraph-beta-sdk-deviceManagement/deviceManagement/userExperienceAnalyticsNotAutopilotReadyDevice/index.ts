@@ -126,7 +126,7 @@ export const UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderRequest
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsNotAutopilotReadyDevice,

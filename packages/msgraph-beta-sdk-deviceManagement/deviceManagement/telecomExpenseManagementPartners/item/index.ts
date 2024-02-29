@@ -84,7 +84,7 @@ export const TelecomExpenseManagementPartnerItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: TelecomExpenseManagementPartnerItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const TelecomExpenseManagementPartnerItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTelecomExpenseManagementPartnerFromDiscriminatorValue,
         queryParametersMapper: TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const TelecomExpenseManagementPartnerItemRequestBuilderRequestsMetadata: 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTelecomExpenseManagementPartnerFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTelecomExpenseManagementPartner,

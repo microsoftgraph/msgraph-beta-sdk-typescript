@@ -57,7 +57,7 @@ export const VirtualEventRegistrationItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventRegistrationFromDiscriminatorValue,
         queryParametersMapper: VirtualEventRegistrationItemRequestBuilderGetQueryParametersMapper,
     },

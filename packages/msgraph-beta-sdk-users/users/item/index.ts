@@ -21,6 +21,7 @@ import { ChangePasswordRequestBuilderRequestsMetadata, type ChangePasswordReques
 import { ChatsRequestBuilderNavigationMetadata, ChatsRequestBuilderRequestsMetadata, type ChatsRequestBuilder } from './chats/';
 import { CheckMemberGroupsRequestBuilderRequestsMetadata, type CheckMemberGroupsRequestBuilder } from './checkMemberGroups/';
 import { CheckMemberObjectsRequestBuilderRequestsMetadata, type CheckMemberObjectsRequestBuilder } from './checkMemberObjects/';
+import { CloudClipboardRequestBuilderNavigationMetadata, CloudClipboardRequestBuilderRequestsMetadata, type CloudClipboardRequestBuilder } from './cloudClipboard/';
 import { CloudPCsRequestBuilderNavigationMetadata, CloudPCsRequestBuilderRequestsMetadata, type CloudPCsRequestBuilder } from './cloudPCs/';
 import { ContactFoldersRequestBuilderNavigationMetadata, ContactFoldersRequestBuilderRequestsMetadata, type ContactFoldersRequestBuilder } from './contactFolders/';
 import { ContactsRequestBuilderNavigationMetadata, ContactsRequestBuilderRequestsMetadata, type ContactsRequestBuilder } from './contacts/';
@@ -187,6 +188,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to call the checkMemberObjects method.
      */
     get checkMemberObjects(): CheckMemberObjectsRequestBuilder;
+    /**
+     * Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.
+     */
+    get cloudClipboard(): CloudClipboardRequestBuilder;
     /**
      * Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
      */
@@ -728,6 +733,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     checkMemberObjects: {
         requestsMetadata: CheckMemberObjectsRequestBuilderRequestsMetadata,
     },
+    cloudClipboard: {
+        requestsMetadata: CloudClipboardRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudClipboardRequestBuilderNavigationMetadata,
+    },
     cloudPCs: {
         requestsMetadata: CloudPCsRequestBuilderRequestsMetadata,
         navigationMetadata: CloudPCsRequestBuilderNavigationMetadata,
@@ -1055,7 +1064,7 @@ export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UserItemRequestBuilderUriTemplate,
@@ -1063,7 +1072,7 @@ export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFromDiscriminatorValue,
         queryParametersMapper: UserItemRequestBuilderGetQueryParametersMapper,
     },
@@ -1073,7 +1082,7 @@ export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUser,

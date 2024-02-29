@@ -128,7 +128,7 @@ export const SynchronizationProfilesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationSynchronizationProfileCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: SynchronizationProfilesRequestBuilderGetQueryParametersMapper,
     },
@@ -138,7 +138,7 @@ export const SynchronizationProfilesRequestBuilderRequestsMetadata: RequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEducationSynchronizationProfileFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEducationSynchronizationProfile,

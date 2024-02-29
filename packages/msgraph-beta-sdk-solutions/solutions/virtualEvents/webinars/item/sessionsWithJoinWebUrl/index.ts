@@ -84,7 +84,7 @@ export const SessionsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: SessionsWithJoinWebUrlRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const SessionsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventSessionFromDiscriminatorValue,
         queryParametersMapper: SessionsWithJoinWebUrlRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const SessionsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVirtualEventSessionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVirtualEventSession,

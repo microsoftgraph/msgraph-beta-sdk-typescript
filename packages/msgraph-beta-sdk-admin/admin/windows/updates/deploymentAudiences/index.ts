@@ -129,7 +129,7 @@ export const DeploymentAudiencesRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeploymentAudienceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DeploymentAudiencesRequestBuilderGetQueryParametersMapper,
     },
@@ -139,7 +139,7 @@ export const DeploymentAudiencesRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeploymentAudienceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeploymentAudience,

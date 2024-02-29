@@ -126,7 +126,7 @@ export const PrivilegedOperationEventsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedOperationEventCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PrivilegedOperationEventsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const PrivilegedOperationEventsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrivilegedOperationEventFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrivilegedOperationEvent,

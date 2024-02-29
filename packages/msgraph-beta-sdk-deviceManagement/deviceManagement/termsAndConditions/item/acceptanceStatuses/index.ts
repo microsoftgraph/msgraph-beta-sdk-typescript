@@ -127,7 +127,7 @@ export const AcceptanceStatusesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsAcceptanceStatusCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AcceptanceStatusesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const AcceptanceStatusesRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTermsAndConditionsAcceptanceStatusFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTermsAndConditionsAcceptanceStatus,

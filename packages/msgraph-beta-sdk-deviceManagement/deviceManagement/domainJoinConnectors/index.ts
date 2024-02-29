@@ -126,7 +126,7 @@ export const DomainJoinConnectorsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementDomainJoinConnectorCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: DomainJoinConnectorsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const DomainJoinConnectorsRequestBuilderRequestsMetadata: RequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceManagementDomainJoinConnectorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceManagementDomainJoinConnector,

@@ -107,7 +107,7 @@ export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: LogsRequestBuilderUriTemplate,
@@ -115,7 +115,7 @@ export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLogsFromDiscriminatorValue,
         queryParametersMapper: LogsRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +125,7 @@ export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createLogsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeLogs,

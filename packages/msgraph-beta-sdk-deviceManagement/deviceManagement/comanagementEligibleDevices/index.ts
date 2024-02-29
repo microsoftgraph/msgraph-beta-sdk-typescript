@@ -126,7 +126,7 @@ export const ComanagementEligibleDevicesRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComanagementEligibleDeviceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ComanagementEligibleDevicesRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ComanagementEligibleDevicesRequestBuilderRequestsMetadata: Requests
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createComanagementEligibleDeviceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeComanagementEligibleDevice,

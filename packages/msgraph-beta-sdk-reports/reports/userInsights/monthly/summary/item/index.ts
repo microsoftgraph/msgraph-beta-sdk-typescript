@@ -57,7 +57,7 @@ export const InsightSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInsightSummaryFromDiscriminatorValue,
         queryParametersMapper: InsightSummaryItemRequestBuilderGetQueryParametersMapper,
     },

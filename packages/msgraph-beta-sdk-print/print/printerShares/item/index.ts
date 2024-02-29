@@ -134,7 +134,7 @@ export const PrinterShareItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PrinterShareItemRequestBuilderUriTemplate,
@@ -142,7 +142,7 @@ export const PrinterShareItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrinterShareFromDiscriminatorValue,
         queryParametersMapper: PrinterShareItemRequestBuilderGetQueryParametersMapper,
     },
@@ -152,7 +152,7 @@ export const PrinterShareItemRequestBuilderRequestsMetadata: RequestsMetadata = 
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPrinterShareFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePrinterShare,

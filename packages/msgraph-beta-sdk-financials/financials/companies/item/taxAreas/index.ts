@@ -127,7 +127,7 @@ export const TaxAreasRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTaxAreaCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: TaxAreasRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const TaxAreasRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTaxAreaFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeTaxArea,

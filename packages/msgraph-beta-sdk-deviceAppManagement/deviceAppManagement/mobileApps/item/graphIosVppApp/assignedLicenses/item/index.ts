@@ -84,7 +84,7 @@ export const IosVppAppAssignedLicenseItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: IosVppAppAssignedLicenseItemRequestBuilderUriTemplate,
@@ -92,7 +92,7 @@ export const IosVppAppAssignedLicenseItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosVppAppAssignedLicenseFromDiscriminatorValue,
         queryParametersMapper: IosVppAppAssignedLicenseItemRequestBuilderGetQueryParametersMapper,
     },
@@ -102,7 +102,7 @@ export const IosVppAppAssignedLicenseItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIosVppAppAssignedLicenseFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeIosVppAppAssignedLicense,

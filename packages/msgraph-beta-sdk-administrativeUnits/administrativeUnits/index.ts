@@ -161,7 +161,7 @@ export const AdministrativeUnitsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdministrativeUnitCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AdministrativeUnitsRequestBuilderGetQueryParametersMapper,
     },
@@ -171,7 +171,7 @@ export const AdministrativeUnitsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAdministrativeUnitFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAdministrativeUnit,

@@ -127,7 +127,7 @@ export const GovernanceRoleSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleSettingCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: GovernanceRoleSettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const GovernanceRoleSettingsRequestBuilderRequestsMetadata: RequestsMetad
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGovernanceRoleSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeGovernanceRoleSetting,

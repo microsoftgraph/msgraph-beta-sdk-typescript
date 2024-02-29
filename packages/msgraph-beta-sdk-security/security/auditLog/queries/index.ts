@@ -22,28 +22,30 @@ export interface QueriesRequestBuilder extends BaseRequestBuilder<QueriesRequest
      */
      byAuditLogQueryId(auditLogQueryId: string) : AuditLogQueryItemRequestBuilder;
     /**
-     * Get queries from security
+     * Get a list of auditLogQuery objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuditLogQueryCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-auditcoreroot-list-auditlogqueries?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<QueriesRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogQueryCollectionResponse | undefined>;
     /**
-     * Create new navigation property to queries for security
+     * Create a new auditLogQuery object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuditLogQuery>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-auditcoreroot-post-auditlogqueries?view=graph-rest-1.0|Find more info here}
      */
      post(body: AuditLogQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogQuery | undefined>;
     /**
-     * Get queries from security
+     * Get a list of auditLogQuery objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<QueriesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to queries for security
+     * Create a new auditLogQuery object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -51,7 +53,7 @@ export interface QueriesRequestBuilder extends BaseRequestBuilder<QueriesRequest
      toPostRequestInformation(body: AuditLogQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get queries from security
+ * Get a list of auditLogQuery objects and their properties.
  */
 export interface QueriesRequestBuilderGetQueryParameters {
     /**
@@ -127,7 +129,7 @@ export const QueriesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogQueryCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: QueriesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +139,7 @@ export const QueriesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAuditLogQueryFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAuditLogQuery,

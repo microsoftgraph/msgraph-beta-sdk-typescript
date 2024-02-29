@@ -121,7 +121,7 @@ export const MentionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMentionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: MentionsRequestBuilderGetQueryParametersMapper,
     },
@@ -131,7 +131,7 @@ export const MentionsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createMentionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeMention,

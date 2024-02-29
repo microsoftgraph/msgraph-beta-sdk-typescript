@@ -153,7 +153,7 @@ export const ChannelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChannelCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ChannelsRequestBuilderGetQueryParametersMapper,
     },
@@ -163,7 +163,7 @@ export const ChannelsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createChannelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeChannel,

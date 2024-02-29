@@ -85,7 +85,7 @@ export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AppCredentialSignInActivityItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityFromDiscriminatorValue,
         queryParametersMapper: AppCredentialSignInActivityItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAppCredentialSignInActivityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAppCredentialSignInActivity,

@@ -21,7 +21,7 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the properties and relationships of an alert in an organization based on the specified alert id property.
+     * Get the properties and relationships of an alert object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Alert>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -29,7 +29,7 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      */
      get(requestConfiguration?: RequestConfiguration<AlertItemRequestBuilderGetQueryParameters> | undefined) : Promise<Alert | undefined>;
     /**
-     * Update the properties of an alert object in an organization based on the specified alert id property.
+     * Update the properties of an alert object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Alert>}
@@ -44,13 +44,13 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the properties and relationships of an alert in an organization based on the specified alert id property.
+     * Get the properties and relationships of an alert object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AlertItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an alert object in an organization based on the specified alert id property.
+     * Update the properties of an alert object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemReq
      toPatchRequestInformation(body: Alert, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the properties and relationships of an alert in an organization based on the specified alert id property.
+ * Get the properties and relationships of an alert object.
  */
 export interface AlertItemRequestBuilderGetQueryParameters {
     /**
@@ -100,7 +100,7 @@ export const AlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: AlertItemRequestBuilderUriTemplate,
@@ -108,7 +108,7 @@ export const AlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertFromDiscriminatorValue,
         queryParametersMapper: AlertItemRequestBuilderGetQueryParametersMapper,
     },
@@ -118,7 +118,7 @@ export const AlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAlertFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAlert,

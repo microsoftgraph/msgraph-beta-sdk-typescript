@@ -126,7 +126,7 @@ export const ScheduledActionConfigurationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceActionItemCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ScheduledActionConfigurationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const ScheduledActionConfigurationsRequestBuilderRequestsMetadata: Reques
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createDeviceComplianceActionItemFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeDeviceComplianceActionItem,

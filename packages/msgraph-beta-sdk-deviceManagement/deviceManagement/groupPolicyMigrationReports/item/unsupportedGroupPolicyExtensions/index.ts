@@ -126,7 +126,7 @@ export const UnsupportedGroupPolicyExtensionsRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnsupportedGroupPolicyExtensionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const UnsupportedGroupPolicyExtensionsRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnsupportedGroupPolicyExtensionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnsupportedGroupPolicyExtension,

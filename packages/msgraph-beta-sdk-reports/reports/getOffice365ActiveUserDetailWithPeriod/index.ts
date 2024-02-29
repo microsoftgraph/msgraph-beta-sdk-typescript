@@ -119,7 +119,7 @@ export const GetOffice365ActiveUserDetailWithPeriodRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOffice365ActiveUserDetailWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParametersMapper,
     },

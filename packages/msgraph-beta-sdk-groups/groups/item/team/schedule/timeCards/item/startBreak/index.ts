@@ -86,7 +86,7 @@ export const StartBreakRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createTimeCardFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeStartBreakPostRequestBody,

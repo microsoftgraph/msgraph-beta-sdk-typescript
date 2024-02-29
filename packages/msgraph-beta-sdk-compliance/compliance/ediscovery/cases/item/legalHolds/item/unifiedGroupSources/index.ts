@@ -133,7 +133,7 @@ export const UnifiedGroupSourcesRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedGroupSourceCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UnifiedGroupSourcesRequestBuilderGetQueryParametersMapper,
     },
@@ -143,7 +143,7 @@ export const UnifiedGroupSourcesRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedGroupSourceFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedGroupSource,

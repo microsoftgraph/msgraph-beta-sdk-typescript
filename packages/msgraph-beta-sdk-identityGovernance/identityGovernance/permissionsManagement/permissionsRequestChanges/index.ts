@@ -127,7 +127,7 @@ export const PermissionsRequestChangesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsRequestChangeCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: PermissionsRequestChangesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const PermissionsRequestChangesRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsRequestChangeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePermissionsRequestChange,

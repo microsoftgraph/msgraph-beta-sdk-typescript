@@ -91,7 +91,7 @@ export const InformationProtectionLabelItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: InformationProtectionLabelItemRequestBuilderUriTemplate,
@@ -99,7 +99,7 @@ export const InformationProtectionLabelItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInformationProtectionLabelFromDiscriminatorValue,
         queryParametersMapper: InformationProtectionLabelItemRequestBuilderGetQueryParametersMapper,
     },
@@ -109,7 +109,7 @@ export const InformationProtectionLabelItemRequestBuilderRequestsMetadata: Reque
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInformationProtectionLabelFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeInformationProtectionLabel,

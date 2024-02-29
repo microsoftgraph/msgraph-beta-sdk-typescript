@@ -119,7 +119,7 @@ export const GetOpenShiftsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetOpenShiftsGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetOpenShiftsRequestBuilderGetQueryParametersMapper,
     },

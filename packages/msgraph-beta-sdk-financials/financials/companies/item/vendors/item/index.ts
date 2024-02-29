@@ -122,7 +122,7 @@ export const VendorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: VendorItemRequestBuilderUriTemplate,
@@ -130,7 +130,7 @@ export const VendorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVendorFromDiscriminatorValue,
         queryParametersMapper: VendorItemRequestBuilderGetQueryParametersMapper,
     },
@@ -140,7 +140,7 @@ export const VendorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createVendorFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeVendor,

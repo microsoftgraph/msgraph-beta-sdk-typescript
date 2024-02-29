@@ -97,7 +97,7 @@ export const UnifiedRoleManagementPolicyAssignmentItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: UnifiedRoleManagementPolicyAssignmentItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const UnifiedRoleManagementPolicyAssignmentItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue,
         queryParametersMapper: UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const UnifiedRoleManagementPolicyAssignmentItemRequestBuilderRequestsMeta
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUnifiedRoleManagementPolicyAssignment,

@@ -127,7 +127,7 @@ export const WebpartsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWebPartCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: WebpartsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const WebpartsRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWebPartFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWebPart,

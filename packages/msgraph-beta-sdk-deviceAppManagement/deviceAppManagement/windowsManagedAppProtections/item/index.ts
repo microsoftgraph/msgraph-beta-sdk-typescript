@@ -123,7 +123,7 @@ export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsManagedAppProtectionItemRequestBuilderUriTemplate,
@@ -131,7 +131,7 @@ export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsManagedAppProtectionFromDiscriminatorValue,
         queryParametersMapper: WindowsManagedAppProtectionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -141,7 +141,7 @@ export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: Requ
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsManagedAppProtectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsManagedAppProtection,

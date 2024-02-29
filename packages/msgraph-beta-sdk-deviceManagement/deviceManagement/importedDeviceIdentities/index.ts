@@ -142,7 +142,7 @@ export const ImportedDeviceIdentitiesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedDeviceIdentityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ImportedDeviceIdentitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -152,7 +152,7 @@ export const ImportedDeviceIdentitiesRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createImportedDeviceIdentityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeImportedDeviceIdentity,

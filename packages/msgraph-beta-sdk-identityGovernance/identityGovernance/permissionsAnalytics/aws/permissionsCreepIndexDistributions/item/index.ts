@@ -97,7 +97,7 @@ export const PermissionsCreepIndexDistributionItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PermissionsCreepIndexDistributionItemRequestBuilderUriTemplate,
@@ -105,7 +105,7 @@ export const PermissionsCreepIndexDistributionItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsCreepIndexDistributionFromDiscriminatorValue,
         queryParametersMapper: PermissionsCreepIndexDistributionItemRequestBuilderGetQueryParametersMapper,
     },
@@ -115,7 +115,7 @@ export const PermissionsCreepIndexDistributionItemRequestBuilderRequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsCreepIndexDistributionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePermissionsCreepIndexDistribution,

@@ -127,7 +127,7 @@ export const CurrenciesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCurrencyCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: CurrenciesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const CurrenciesRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCurrencyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCurrency,

@@ -57,7 +57,7 @@ export const ManagedTenantApiNotificationItemRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedTenantApiNotificationFromDiscriminatorValue,
         queryParametersMapper: ManagedTenantApiNotificationItemRequestBuilderGetQueryParametersMapper,
     },

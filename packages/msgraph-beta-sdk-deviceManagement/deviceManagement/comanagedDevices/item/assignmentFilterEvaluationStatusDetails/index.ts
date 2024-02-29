@@ -126,7 +126,7 @@ export const AssignmentFilterEvaluationStatusDetailsRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAssignmentFilterEvaluationStatusDetailsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AssignmentFilterEvaluationStatusDetailsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const AssignmentFilterEvaluationStatusDetailsRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAssignmentFilterEvaluationStatusDetails,

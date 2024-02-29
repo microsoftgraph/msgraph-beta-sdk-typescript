@@ -87,7 +87,7 @@ export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: QnaItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createQnaFromDiscriminatorValue,
         queryParametersMapper: QnaItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const QnaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createQnaFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeQna,

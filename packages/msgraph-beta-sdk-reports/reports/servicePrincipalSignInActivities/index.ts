@@ -127,7 +127,7 @@ export const ServicePrincipalSignInActivitiesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalSignInActivityCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalSignInActivitiesRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const ServicePrincipalSignInActivitiesRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalSignInActivityFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServicePrincipalSignInActivity,

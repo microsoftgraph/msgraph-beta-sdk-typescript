@@ -127,7 +127,7 @@ export const UserCredentialUsageDetailsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserCredentialUsageDetailsCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserCredentialUsageDetailsRequestBuilderGetQueryParametersMapper,
     },
@@ -137,7 +137,7 @@ export const UserCredentialUsageDetailsRequestBuilderRequestsMetadata: RequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserCredentialUsageDetailsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserCredentialUsageDetails,

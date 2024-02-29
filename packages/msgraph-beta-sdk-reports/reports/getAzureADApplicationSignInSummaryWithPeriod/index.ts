@@ -119,7 +119,7 @@ export const GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderRequestsM
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetAzureADApplicationSignInSummaryWithPeriodGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParametersMapper,
     },

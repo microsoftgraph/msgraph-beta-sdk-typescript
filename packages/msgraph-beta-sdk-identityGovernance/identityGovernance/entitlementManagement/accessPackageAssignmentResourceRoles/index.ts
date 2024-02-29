@@ -136,7 +136,7 @@ export const AccessPackageAssignmentResourceRolesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentResourceRoleCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: AccessPackageAssignmentResourceRolesRequestBuilderGetQueryParametersMapper,
     },
@@ -146,7 +146,7 @@ export const AccessPackageAssignmentResourceRolesRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createAccessPackageAssignmentResourceRoleFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeAccessPackageAssignmentResourceRole,

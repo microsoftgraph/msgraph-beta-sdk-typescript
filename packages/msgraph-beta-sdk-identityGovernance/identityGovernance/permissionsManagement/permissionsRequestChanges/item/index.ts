@@ -85,7 +85,7 @@ export const PermissionsRequestChangeItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: PermissionsRequestChangeItemRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const PermissionsRequestChangeItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsRequestChangeFromDiscriminatorValue,
         queryParametersMapper: PermissionsRequestChangeItemRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const PermissionsRequestChangeItemRequestBuilderRequestsMetadata: Request
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createPermissionsRequestChangeFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializePermissionsRequestChange,

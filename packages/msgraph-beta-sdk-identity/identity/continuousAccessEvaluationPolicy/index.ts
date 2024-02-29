@@ -86,7 +86,7 @@ export const ContinuousAccessEvaluationPolicyRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ContinuousAccessEvaluationPolicyRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const ContinuousAccessEvaluationPolicyRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createContinuousAccessEvaluationPolicyFromDiscriminatorValue,
         queryParametersMapper: ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const ContinuousAccessEvaluationPolicyRequestBuilderRequestsMetadata: Req
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createContinuousAccessEvaluationPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeContinuousAccessEvaluationPolicy,

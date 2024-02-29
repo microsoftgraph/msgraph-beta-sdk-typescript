@@ -87,7 +87,7 @@ export const ProjectParticipationItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ProjectParticipationItemRequestBuilderUriTemplate,
@@ -95,7 +95,7 @@ export const ProjectParticipationItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProjectParticipationFromDiscriminatorValue,
         queryParametersMapper: ProjectParticipationItemRequestBuilderGetQueryParametersMapper,
     },
@@ -105,7 +105,7 @@ export const ProjectParticipationItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createProjectParticipationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeProjectParticipation,

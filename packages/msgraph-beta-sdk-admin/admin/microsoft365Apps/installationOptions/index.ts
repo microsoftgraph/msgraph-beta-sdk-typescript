@@ -86,7 +86,7 @@ export const InstallationOptionsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: InstallationOptionsRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const InstallationOptionsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createM365AppsInstallationOptionsFromDiscriminatorValue,
         queryParametersMapper: InstallationOptionsRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const InstallationOptionsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createM365AppsInstallationOptionsFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeM365AppsInstallationOptions,

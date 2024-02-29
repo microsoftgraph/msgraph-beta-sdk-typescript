@@ -59,7 +59,7 @@ export const ConnectedOrganizationRequestBuilderRequestsMetadata: RequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createConnectedOrganizationFromDiscriminatorValue,
         queryParametersMapper: ConnectedOrganizationRequestBuilderGetQueryParametersMapper,
     },

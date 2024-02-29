@@ -116,7 +116,7 @@ export const WindowsInformationProtectionPolicyItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: WindowsInformationProtectionPolicyItemRequestBuilderUriTemplate,
@@ -124,7 +124,7 @@ export const WindowsInformationProtectionPolicyItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionPolicyFromDiscriminatorValue,
         queryParametersMapper: WindowsInformationProtectionPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -134,7 +134,7 @@ export const WindowsInformationProtectionPolicyItemRequestBuilderRequestsMetadat
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createWindowsInformationProtectionPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeWindowsInformationProtectionPolicy,

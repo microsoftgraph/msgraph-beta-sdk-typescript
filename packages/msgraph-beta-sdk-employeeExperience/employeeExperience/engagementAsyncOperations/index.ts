@@ -126,7 +126,7 @@ export const EngagementAsyncOperationsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEngagementAsyncOperationCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: EngagementAsyncOperationsRequestBuilderGetQueryParametersMapper,
     },
@@ -136,7 +136,7 @@ export const EngagementAsyncOperationsRequestBuilderRequestsMetadata: RequestsMe
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createEngagementAsyncOperationFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeEngagementAsyncOperation,

@@ -86,7 +86,7 @@ export const CloudPcExternalPartnerSettingItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: CloudPcExternalPartnerSettingItemRequestBuilderUriTemplate,
@@ -94,7 +94,7 @@ export const CloudPcExternalPartnerSettingItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcExternalPartnerSettingFromDiscriminatorValue,
         queryParametersMapper: CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParametersMapper,
     },
@@ -104,7 +104,7 @@ export const CloudPcExternalPartnerSettingItemRequestBuilderRequestsMetadata: Re
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createCloudPcExternalPartnerSettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeCloudPcExternalPartnerSetting,

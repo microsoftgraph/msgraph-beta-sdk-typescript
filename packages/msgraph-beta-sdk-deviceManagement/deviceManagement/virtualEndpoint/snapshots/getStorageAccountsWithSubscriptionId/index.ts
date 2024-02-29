@@ -104,7 +104,7 @@ export const GetStorageAccountsWithSubscriptionIdRequestBuilderRequestsMetadata:
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createGetStorageAccountsWithSubscriptionIdGetResponseFromDiscriminatorValue,
         queryParametersMapper: GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParametersMapper,
     },

@@ -80,7 +80,7 @@ export const IndustryDataRunItemRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createIndustryDataRunFromDiscriminatorValue,
         queryParametersMapper: IndustryDataRunItemRequestBuilderGetQueryParametersMapper,
     },

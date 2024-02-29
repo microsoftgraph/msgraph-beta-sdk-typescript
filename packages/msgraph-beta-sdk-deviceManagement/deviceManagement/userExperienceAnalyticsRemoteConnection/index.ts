@@ -136,7 +136,7 @@ export const UserExperienceAnalyticsRemoteConnectionRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsRemoteConnectionCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: UserExperienceAnalyticsRemoteConnectionRequestBuilderGetQueryParametersMapper,
     },
@@ -146,7 +146,7 @@ export const UserExperienceAnalyticsRemoteConnectionRequestBuilderRequestsMetada
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeUserExperienceAnalyticsRemoteConnection,

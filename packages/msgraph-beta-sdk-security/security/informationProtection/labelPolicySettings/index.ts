@@ -85,7 +85,7 @@ export const LabelPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: LabelPolicySettingsRequestBuilderUriTemplate,
@@ -93,7 +93,7 @@ export const LabelPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInformationProtectionPolicySettingFromDiscriminatorValue,
         queryParametersMapper: LabelPolicySettingsRequestBuilderGetQueryParametersMapper,
     },
@@ -103,7 +103,7 @@ export const LabelPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createInformationProtectionPolicySettingFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeInformationProtectionPolicySetting,

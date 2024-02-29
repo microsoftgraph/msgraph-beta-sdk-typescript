@@ -107,7 +107,7 @@ export const ServicePrincipalCreationPolicyItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendNoResponseContentAsync",
+        adapterMethodName: "sendNoResponseContent",
     },
     get: {
         uriTemplate: ServicePrincipalCreationPolicyItemRequestBuilderUriTemplate,
@@ -115,7 +115,7 @@ export const ServicePrincipalCreationPolicyItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalCreationPolicyFromDiscriminatorValue,
         queryParametersMapper: ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParametersMapper,
     },
@@ -125,7 +125,7 @@ export const ServicePrincipalCreationPolicyItemRequestBuilderRequestsMetadata: R
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createServicePrincipalCreationPolicyFromDiscriminatorValue,
         requestBodyContentType: "application/json",
         requestBodySerializer: serializeServicePrincipalCreationPolicy,

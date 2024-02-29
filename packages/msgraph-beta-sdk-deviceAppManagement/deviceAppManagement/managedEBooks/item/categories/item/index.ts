@@ -57,7 +57,7 @@ export const ManagedEBookCategoryItemRequestBuilderRequestsMetadata: RequestsMet
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
-        adapterMethodName: "sendAsync",
+        adapterMethodName: "send",
         responseBodyFactory:  createManagedEBookCategoryFromDiscriminatorValue,
         queryParametersMapper: ManagedEBookCategoryItemRequestBuilderGetQueryParametersMapper,
     },
