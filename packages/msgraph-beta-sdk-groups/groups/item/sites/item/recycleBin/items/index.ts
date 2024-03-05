@@ -22,7 +22,7 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      */
      byRecycleBinItemId(recycleBinItemId: string) : RecycleBinItemItemRequestBuilder;
     /**
-     * Get a collection of recycleBinItem resources in the recyleBin of the specified SharePoint site.
+     * Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RecycleBinItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -38,7 +38,7 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      */
      post(body: RecycleBinItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RecycleBinItem | undefined>;
     /**
-     * Get a collection of recycleBinItem resources in the recyleBin of the specified SharePoint site.
+     * Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -52,7 +52,7 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      toPostRequestInformation(body: RecycleBinItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a collection of recycleBinItem resources in the recyleBin of the specified SharePoint site.
+ * Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
  */
 export interface ItemsRequestBuilderGetQueryParameters {
     /**

@@ -4,7 +4,63 @@
 import { createCommunicationsIdentitySetFromDiscriminatorValue, createIdentityFromDiscriminatorValue, createIdentitySetFromDiscriminatorValue, deserializeIntoBaseCollectionPaginationCountResponse, deserializeIntoEntity, deserializeIntoIdentity, serializeBaseCollectionPaginationCountResponse, serializeCommunicationsIdentitySet, serializeEntity, serializeIdentity, serializeIdentitySet, type BaseCollectionPaginationCountResponse, type CommunicationsIdentitySet, type Entity, type Identity, type IdentitySet } from '../';
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Duration, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
+export interface AdministrativeUnitInfo extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * Unique identifier for the administrative unit.
+     */
+    id?: string;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
 export type AudioCodec = (typeof AudioCodecObject)[keyof typeof AudioCodecObject];
+export interface CallLogRow extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * The administrativeUnitInfos property
+     */
+    administrativeUnitInfos?: AdministrativeUnitInfo[];
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The id property
+     */
+    id?: string;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * The otherPartyCountryCode property
+     */
+    otherPartyCountryCode?: string;
+    /**
+     * The userDisplayName property
+     */
+    userDisplayName?: string;
+    /**
+     * The userId property
+     */
+    userId?: string;
+    /**
+     * The userPrincipalName property
+     */
+    userPrincipalName?: string;
+}
 export interface CallRecord extends Entity, Parsable {
     /**
      * UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -80,6 +136,37 @@ export interface ClientUserAgent extends Parsable, UserAgent {
      * The productFamily property
      */
     productFamily?: ProductFamily;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AdministrativeUnitInfo}
+ */
+export function createAdministrativeUnitInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAdministrativeUnitInfo;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CallLogRow}
+ */
+export function createCallLogRowFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.callRecords.directRoutingLogRow":
+                    return deserializeIntoDirectRoutingLogRow;
+                case "#microsoft.graph.callRecords.pstnCallLogRow":
+                    return deserializeIntoPstnCallLogRow;
+                case "#microsoft.graph.callRecords.smsLogRow":
+                    return deserializeIntoSmsLogRow;
+            }
+        }
+    }
+    return deserializeIntoCallLogRow;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -364,6 +451,33 @@ export function createUserIdentityFromDiscriminatorValue(parseNode: ParseNode | 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoAdministrativeUnitInfo(administrativeUnitInfo: Partial<AdministrativeUnitInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { administrativeUnitInfo.backingStoreEnabled = true; },
+        "id": n => { administrativeUnitInfo.id = n.getStringValue(); },
+        "@odata.type": n => { administrativeUnitInfo.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoCallLogRow(callLogRow: Partial<CallLogRow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "administrativeUnitInfos": n => { callLogRow.administrativeUnitInfos = n.getCollectionOfObjectValues<AdministrativeUnitInfo>(createAdministrativeUnitInfoFromDiscriminatorValue); },
+        "backingStoreEnabled": n => { callLogRow.backingStoreEnabled = true; },
+        "id": n => { callLogRow.id = n.getStringValue(); },
+        "@odata.type": n => { callLogRow.odataType = n.getStringValue(); },
+        "otherPartyCountryCode": n => { callLogRow.otherPartyCountryCode = n.getStringValue(); },
+        "userDisplayName": n => { callLogRow.userDisplayName = n.getStringValue(); },
+        "userId": n => { callLogRow.userId = n.getStringValue(); },
+        "userPrincipalName": n => { callLogRow.userPrincipalName = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoCallRecord(callRecord: Partial<CallRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(callRecord),
@@ -441,7 +555,7 @@ export function deserializeIntoDeviceInfo(deviceInfo: Partial<DeviceInfo> | unde
  */
 export function deserializeIntoDirectRoutingLogRow(directRoutingLogRow: Partial<DirectRoutingLogRow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "backingStoreEnabled": n => { directRoutingLogRow.backingStoreEnabled = true; },
+        ...deserializeIntoCallLogRow(directRoutingLogRow),
         "calleeNumber": n => { directRoutingLogRow.calleeNumber = n.getStringValue(); },
         "callEndSubReason": n => { directRoutingLogRow.callEndSubReason = n.getNumberValue(); },
         "callerNumber": n => { directRoutingLogRow.callerNumber = n.getStringValue(); },
@@ -452,20 +566,15 @@ export function deserializeIntoDirectRoutingLogRow(directRoutingLogRow: Partial<
         "failureDateTime": n => { directRoutingLogRow.failureDateTime = n.getDateValue(); },
         "finalSipCode": n => { directRoutingLogRow.finalSipCode = n.getNumberValue(); },
         "finalSipCodePhrase": n => { directRoutingLogRow.finalSipCodePhrase = n.getStringValue(); },
-        "id": n => { directRoutingLogRow.id = n.getStringValue(); },
         "inviteDateTime": n => { directRoutingLogRow.inviteDateTime = n.getDateValue(); },
         "mediaBypassEnabled": n => { directRoutingLogRow.mediaBypassEnabled = n.getBooleanValue(); },
         "mediaPathLocation": n => { directRoutingLogRow.mediaPathLocation = n.getStringValue(); },
-        "@odata.type": n => { directRoutingLogRow.odataType = n.getStringValue(); },
-        "otherPartyCountryCode": n => { directRoutingLogRow.otherPartyCountryCode = n.getStringValue(); },
         "signalingLocation": n => { directRoutingLogRow.signalingLocation = n.getStringValue(); },
         "startDateTime": n => { directRoutingLogRow.startDateTime = n.getDateValue(); },
         "successfulCall": n => { directRoutingLogRow.successfulCall = n.getBooleanValue(); },
+        "transferorCorrelationId": n => { directRoutingLogRow.transferorCorrelationId = n.getStringValue(); },
         "trunkFullyQualifiedDomainName": n => { directRoutingLogRow.trunkFullyQualifiedDomainName = n.getStringValue(); },
         "userCountryCode": n => { directRoutingLogRow.userCountryCode = n.getStringValue(); },
-        "userDisplayName": n => { directRoutingLogRow.userDisplayName = n.getStringValue(); },
-        "userId": n => { directRoutingLogRow.userId = n.getStringValue(); },
-        "userPrincipalName": n => { directRoutingLogRow.userPrincipalName = n.getStringValue(); },
     }
 }
 /**
@@ -618,6 +727,7 @@ export function deserializeIntoParticipant(participant: Partial<Participant> | u
 export function deserializeIntoParticipantBase(participantBase: Partial<ParticipantBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(participantBase),
+        "administrativeUnitInfos": n => { participantBase.administrativeUnitInfos = n.getCollectionOfObjectValues<AdministrativeUnitInfo>(createAdministrativeUnitInfoFromDiscriminatorValue); },
         "identity": n => { participantBase.identity = n.getObjectValue<CommunicationsIdentitySet>(createCommunicationsIdentitySetFromDiscriminatorValue); },
     }
 }
@@ -671,7 +781,7 @@ export function deserializeIntoPstnBlockedUsersLogRow(pstnBlockedUsersLogRow: Pa
  */
 export function deserializeIntoPstnCallLogRow(pstnCallLogRow: Partial<PstnCallLogRow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "backingStoreEnabled": n => { pstnCallLogRow.backingStoreEnabled = true; },
+        ...deserializeIntoCallLogRow(pstnCallLogRow),
         "callDurationSource": n => { pstnCallLogRow.callDurationSource = n.getEnumValue<PstnCallDurationSource>(PstnCallDurationSourceObject); },
         "calleeNumber": n => { pstnCallLogRow.calleeNumber = n.getStringValue(); },
         "callerNumber": n => { pstnCallLogRow.callerNumber = n.getStringValue(); },
@@ -689,18 +799,12 @@ export function deserializeIntoPstnCallLogRow(pstnCallLogRow: Partial<PstnCallLo
         "destinationName": n => { pstnCallLogRow.destinationName = n.getStringValue(); },
         "duration": n => { pstnCallLogRow.duration = n.getNumberValue(); },
         "endDateTime": n => { pstnCallLogRow.endDateTime = n.getDateValue(); },
-        "id": n => { pstnCallLogRow.id = n.getStringValue(); },
         "inventoryType": n => { pstnCallLogRow.inventoryType = n.getStringValue(); },
         "licenseCapability": n => { pstnCallLogRow.licenseCapability = n.getStringValue(); },
-        "@odata.type": n => { pstnCallLogRow.odataType = n.getStringValue(); },
         "operator": n => { pstnCallLogRow.operator = n.getStringValue(); },
-        "otherPartyCountryCode": n => { pstnCallLogRow.otherPartyCountryCode = n.getStringValue(); },
         "startDateTime": n => { pstnCallLogRow.startDateTime = n.getDateValue(); },
         "tenantCountryCode": n => { pstnCallLogRow.tenantCountryCode = n.getStringValue(); },
         "usageCountryCode": n => { pstnCallLogRow.usageCountryCode = n.getStringValue(); },
-        "userDisplayName": n => { pstnCallLogRow.userDisplayName = n.getStringValue(); },
-        "userId": n => { pstnCallLogRow.userId = n.getStringValue(); },
-        "userPrincipalName": n => { pstnCallLogRow.userPrincipalName = n.getStringValue(); },
     }
 }
 /**
@@ -799,16 +903,13 @@ export function deserializeIntoSessionCollectionResponse(sessionCollectionRespon
  */
 export function deserializeIntoSmsLogRow(smsLogRow: Partial<SmsLogRow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "backingStoreEnabled": n => { smsLogRow.backingStoreEnabled = true; },
+        ...deserializeIntoCallLogRow(smsLogRow),
         "callCharge": n => { smsLogRow.callCharge = n.getNumberValue(); },
         "currency": n => { smsLogRow.currency = n.getStringValue(); },
         "destinationContext": n => { smsLogRow.destinationContext = n.getStringValue(); },
         "destinationName": n => { smsLogRow.destinationName = n.getStringValue(); },
         "destinationNumber": n => { smsLogRow.destinationNumber = n.getStringValue(); },
-        "id": n => { smsLogRow.id = n.getStringValue(); },
         "licenseCapability": n => { smsLogRow.licenseCapability = n.getStringValue(); },
-        "@odata.type": n => { smsLogRow.odataType = n.getStringValue(); },
-        "otherPartyCountryCode": n => { smsLogRow.otherPartyCountryCode = n.getStringValue(); },
         "sentDateTime": n => { smsLogRow.sentDateTime = n.getDateValue(); },
         "smsId": n => { smsLogRow.smsId = n.getStringValue(); },
         "smsType": n => { smsLogRow.smsType = n.getStringValue(); },
@@ -816,9 +917,6 @@ export function deserializeIntoSmsLogRow(smsLogRow: Partial<SmsLogRow> | undefin
         "sourceNumber": n => { smsLogRow.sourceNumber = n.getStringValue(); },
         "tenantCountryCode": n => { smsLogRow.tenantCountryCode = n.getStringValue(); },
         "userCountryCode": n => { smsLogRow.userCountryCode = n.getStringValue(); },
-        "userDisplayName": n => { smsLogRow.userDisplayName = n.getStringValue(); },
-        "userId": n => { smsLogRow.userId = n.getStringValue(); },
-        "userPrincipalName": n => { smsLogRow.userPrincipalName = n.getStringValue(); },
     }
 }
 /**
@@ -967,17 +1065,9 @@ export interface DeviceInfo extends AdditionalDataHolder, BackedModel, Parsable 
      */
     speakerGlitchRate?: number;
 }
-export interface DirectRoutingLogRow extends AdditionalDataHolder, BackedModel, Parsable {
+export interface DirectRoutingLogRow extends CallLogRow, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean;
-    /**
-     * Number of the user or bot who received the call (E.164 format, but may include more data).
+     * Number of the user or bot who received the call (E.164 format, but might include more data).
      */
     calleeNumber?: string;
     /**
@@ -985,7 +1075,7 @@ export interface DirectRoutingLogRow extends AdditionalDataHolder, BackedModel, 
      */
     callEndSubReason?: number;
     /**
-     * Number of the user or bot who made the call (E.164 format, but may include more data).
+     * Number of the user or bot who made the call (E.164 format, but might include more data).
      */
     callerNumber?: string;
     /**
@@ -1001,7 +1091,7 @@ export interface DirectRoutingLogRow extends AdditionalDataHolder, BackedModel, 
      */
     duration?: number;
     /**
-     * Only exists for successful (fully established) calls. Time when call ended.
+     * Only exists for successful (fully established) calls. The time when the call ended.
      */
     endDateTime?: Date;
     /**
@@ -1009,17 +1099,13 @@ export interface DirectRoutingLogRow extends AdditionalDataHolder, BackedModel, 
      */
     failureDateTime?: Date;
     /**
-     * The code with which the call ended (RFC 3261).
+     * The final response code with which the call ended (RFC 3261).
      */
     finalSipCode?: number;
     /**
      * Description of the SIP code and Microsoft subcode.
      */
     finalSipCodePhrase?: string;
-    /**
-     * Unique call identifier (GUID).
-     */
-    id?: string;
     /**
      * The date and time when the initial invite was sent.
      */
@@ -1033,19 +1119,11 @@ export interface DirectRoutingLogRow extends AdditionalDataHolder, BackedModel, 
      */
     mediaPathLocation?: string;
     /**
-     * The OdataType property
-     */
-    odataType?: string;
-    /**
-     * Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
-     */
-    otherPartyCountryCode?: string;
-    /**
      * The data center used for signaling for both bypass and non-bypass calls.
      */
     signalingLocation?: string;
     /**
-     * Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
+     * Call start time.For failed and unanswered calls, this value can be equal to invite or failure time.
      */
     startDateTime?: Date;
     /**
@@ -1053,25 +1131,17 @@ export interface DirectRoutingLogRow extends AdditionalDataHolder, BackedModel, 
      */
     successfulCall?: boolean;
     /**
+     * Correlation ID of the call to the transferor.
+     */
+    transferorCorrelationId?: string;
+    /**
      * Fully qualified domain name of the session border controller.
      */
     trunkFullyQualifiedDomainName?: string;
     /**
-     * Country code of the user. For details, see ISO 3166-1 alpha-2.
+     * Country/region code of the user. For details, see ISO 3166-1 alpha-2.
      */
     userCountryCode?: string;
-    /**
-     * Display name of the user.
-     */
-    userDisplayName?: string;
-    /**
-     * The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info is null/empty for bot call types.
-     */
-    userId?: string;
-    /**
-     * The user principal name (sign-in name) in Microsoft Entra ID, is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-     */
-    userPrincipalName?: string;
 }
 export interface Endpoint extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1428,6 +1498,10 @@ export interface Participant extends Parsable, ParticipantBase {
 }
 export interface ParticipantBase extends Entity, Parsable {
     /**
+     * List of administrativeUnitInfo of the call participant.
+     */
+    administrativeUnitInfos?: AdministrativeUnitInfo[];
+    /**
      * The identity of the call participant.
      */
     identity?: CommunicationsIdentitySet;
@@ -1516,15 +1590,7 @@ export interface PstnBlockedUsersLogRow extends AdditionalDataHolder, BackedMode
     userTelephoneNumber?: string;
 }
 export type PstnCallDurationSource = (typeof PstnCallDurationSourceObject)[keyof typeof PstnCallDurationSourceObject];
-export interface PstnCallLogRow extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean;
+export interface PstnCallLogRow extends CallLogRow, Parsable {
     /**
      * The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
      */
@@ -1594,10 +1660,6 @@ export interface PstnCallLogRow extends AdditionalDataHolder, BackedModel, Parsa
      */
     endDateTime?: Date;
     /**
-     * Unique call identifier (GUID).
-     */
-    id?: string;
-    /**
      * User's phone number type, such as a service of toll-free number.
      */
     inventoryType?: string;
@@ -1606,17 +1668,9 @@ export interface PstnCallLogRow extends AdditionalDataHolder, BackedModel, Parsa
      */
     licenseCapability?: string;
     /**
-     * The OdataType property
-     */
-    odataType?: string;
-    /**
-     * The telecommunications operator that provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+     * The telecommunications operator that provided PSTN services for this call. It may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
      */
     operator?: string;
-    /**
-     * Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
-     */
-    otherPartyCountryCode?: string;
     /**
      * Call start time.
      */
@@ -1629,18 +1683,6 @@ export interface PstnCallLogRow extends AdditionalDataHolder, BackedModel, Parsa
      * Country code of the user. For details, see ISO 3166-1 alpha-2.
      */
     usageCountryCode?: string;
-    /**
-     * Display name of the user.
-     */
-    userDisplayName?: string;
-    /**
-     * The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
-     */
-    userId?: string;
-    /**
-     * The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-     */
-    userPrincipalName?: string;
 }
 export interface PstnOnlineMeetingDialoutReport extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1729,6 +1771,29 @@ export interface SegmentCollectionResponse extends BaseCollectionPaginationCount
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeAdministrativeUnitInfo(writer: SerializationWriter, administrativeUnitInfo: Partial<AdministrativeUnitInfo> | undefined = {}) : void {
+    writer.writeStringValue("id", administrativeUnitInfo.id);
+    writer.writeStringValue("@odata.type", administrativeUnitInfo.odataType);
+    writer.writeAdditionalData(administrativeUnitInfo.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeCallLogRow(writer: SerializationWriter, callLogRow: Partial<CallLogRow> | undefined = {}) : void {
+    writer.writeCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", callLogRow.administrativeUnitInfos, serializeAdministrativeUnitInfo);
+    writer.writeStringValue("id", callLogRow.id);
+    writer.writeStringValue("@odata.type", callLogRow.odataType);
+    writer.writeStringValue("otherPartyCountryCode", callLogRow.otherPartyCountryCode);
+    writer.writeStringValue("userDisplayName", callLogRow.userDisplayName);
+    writer.writeStringValue("userId", callLogRow.userId);
+    writer.writeStringValue("userPrincipalName", callLogRow.userPrincipalName);
+    writer.writeAdditionalData(callLogRow.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeCallRecord(writer: SerializationWriter, callRecord: Partial<CallRecord> | undefined = {}) : void {
     serializeEntity(writer, callRecord)
     writer.writeDateValue("endDateTime", callRecord.endDateTime);
@@ -1798,6 +1863,7 @@ export function serializeDeviceInfo(writer: SerializationWriter, deviceInfo: Par
  * @param writer Serialization writer to use to serialize this model
  */
 export function serializeDirectRoutingLogRow(writer: SerializationWriter, directRoutingLogRow: Partial<DirectRoutingLogRow> | undefined = {}) : void {
+    serializeCallLogRow(writer, directRoutingLogRow)
     writer.writeStringValue("calleeNumber", directRoutingLogRow.calleeNumber);
     writer.writeNumberValue("callEndSubReason", directRoutingLogRow.callEndSubReason);
     writer.writeStringValue("callerNumber", directRoutingLogRow.callerNumber);
@@ -1808,21 +1874,15 @@ export function serializeDirectRoutingLogRow(writer: SerializationWriter, direct
     writer.writeDateValue("failureDateTime", directRoutingLogRow.failureDateTime);
     writer.writeNumberValue("finalSipCode", directRoutingLogRow.finalSipCode);
     writer.writeStringValue("finalSipCodePhrase", directRoutingLogRow.finalSipCodePhrase);
-    writer.writeStringValue("id", directRoutingLogRow.id);
     writer.writeDateValue("inviteDateTime", directRoutingLogRow.inviteDateTime);
     writer.writeBooleanValue("mediaBypassEnabled", directRoutingLogRow.mediaBypassEnabled);
     writer.writeStringValue("mediaPathLocation", directRoutingLogRow.mediaPathLocation);
-    writer.writeStringValue("@odata.type", directRoutingLogRow.odataType);
-    writer.writeStringValue("otherPartyCountryCode", directRoutingLogRow.otherPartyCountryCode);
     writer.writeStringValue("signalingLocation", directRoutingLogRow.signalingLocation);
     writer.writeDateValue("startDateTime", directRoutingLogRow.startDateTime);
     writer.writeBooleanValue("successfulCall", directRoutingLogRow.successfulCall);
+    writer.writeStringValue("transferorCorrelationId", directRoutingLogRow.transferorCorrelationId);
     writer.writeStringValue("trunkFullyQualifiedDomainName", directRoutingLogRow.trunkFullyQualifiedDomainName);
     writer.writeStringValue("userCountryCode", directRoutingLogRow.userCountryCode);
-    writer.writeStringValue("userDisplayName", directRoutingLogRow.userDisplayName);
-    writer.writeStringValue("userId", directRoutingLogRow.userId);
-    writer.writeStringValue("userPrincipalName", directRoutingLogRow.userPrincipalName);
-    writer.writeAdditionalData(directRoutingLogRow.additionalData);
 }
 /**
  * Serializes information the current object
@@ -1957,6 +2017,7 @@ export function serializeParticipant(writer: SerializationWriter, participant: P
  */
 export function serializeParticipantBase(writer: SerializationWriter, participantBase: Partial<ParticipantBase> | undefined = {}) : void {
     serializeEntity(writer, participantBase)
+    writer.writeCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", participantBase.administrativeUnitInfos, serializeAdministrativeUnitInfo);
     writer.writeObjectValue<CommunicationsIdentitySet>("identity", participantBase.identity, serializeCommunicationsIdentitySet);
 }
 /**
@@ -2002,6 +2063,7 @@ export function serializePstnBlockedUsersLogRow(writer: SerializationWriter, pst
  * @param writer Serialization writer to use to serialize this model
  */
 export function serializePstnCallLogRow(writer: SerializationWriter, pstnCallLogRow: Partial<PstnCallLogRow> | undefined = {}) : void {
+    serializeCallLogRow(writer, pstnCallLogRow)
     writer.writeEnumValue<PstnCallDurationSource>("callDurationSource", pstnCallLogRow.callDurationSource);
     writer.writeStringValue("calleeNumber", pstnCallLogRow.calleeNumber);
     writer.writeStringValue("callerNumber", pstnCallLogRow.callerNumber);
@@ -2019,19 +2081,12 @@ export function serializePstnCallLogRow(writer: SerializationWriter, pstnCallLog
     writer.writeStringValue("destinationName", pstnCallLogRow.destinationName);
     writer.writeNumberValue("duration", pstnCallLogRow.duration);
     writer.writeDateValue("endDateTime", pstnCallLogRow.endDateTime);
-    writer.writeStringValue("id", pstnCallLogRow.id);
     writer.writeStringValue("inventoryType", pstnCallLogRow.inventoryType);
     writer.writeStringValue("licenseCapability", pstnCallLogRow.licenseCapability);
-    writer.writeStringValue("@odata.type", pstnCallLogRow.odataType);
     writer.writeStringValue("operator", pstnCallLogRow.operator);
-    writer.writeStringValue("otherPartyCountryCode", pstnCallLogRow.otherPartyCountryCode);
     writer.writeDateValue("startDateTime", pstnCallLogRow.startDateTime);
     writer.writeStringValue("tenantCountryCode", pstnCallLogRow.tenantCountryCode);
     writer.writeStringValue("usageCountryCode", pstnCallLogRow.usageCountryCode);
-    writer.writeStringValue("userDisplayName", pstnCallLogRow.userDisplayName);
-    writer.writeStringValue("userId", pstnCallLogRow.userId);
-    writer.writeStringValue("userPrincipalName", pstnCallLogRow.userPrincipalName);
-    writer.writeAdditionalData(pstnCallLogRow.additionalData);
 }
 /**
  * Serializes information the current object
@@ -2115,15 +2170,13 @@ export function serializeSessionCollectionResponse(writer: SerializationWriter, 
  * @param writer Serialization writer to use to serialize this model
  */
 export function serializeSmsLogRow(writer: SerializationWriter, smsLogRow: Partial<SmsLogRow> | undefined = {}) : void {
+    serializeCallLogRow(writer, smsLogRow)
     writer.writeNumberValue("callCharge", smsLogRow.callCharge);
     writer.writeStringValue("currency", smsLogRow.currency);
     writer.writeStringValue("destinationContext", smsLogRow.destinationContext);
     writer.writeStringValue("destinationName", smsLogRow.destinationName);
     writer.writeStringValue("destinationNumber", smsLogRow.destinationNumber);
-    writer.writeStringValue("id", smsLogRow.id);
     writer.writeStringValue("licenseCapability", smsLogRow.licenseCapability);
-    writer.writeStringValue("@odata.type", smsLogRow.odataType);
-    writer.writeStringValue("otherPartyCountryCode", smsLogRow.otherPartyCountryCode);
     writer.writeDateValue("sentDateTime", smsLogRow.sentDateTime);
     writer.writeStringValue("smsId", smsLogRow.smsId);
     writer.writeStringValue("smsType", smsLogRow.smsType);
@@ -2131,10 +2184,6 @@ export function serializeSmsLogRow(writer: SerializationWriter, smsLogRow: Parti
     writer.writeStringValue("sourceNumber", smsLogRow.sourceNumber);
     writer.writeStringValue("tenantCountryCode", smsLogRow.tenantCountryCode);
     writer.writeStringValue("userCountryCode", smsLogRow.userCountryCode);
-    writer.writeStringValue("userDisplayName", smsLogRow.userDisplayName);
-    writer.writeStringValue("userId", smsLogRow.userId);
-    writer.writeStringValue("userPrincipalName", smsLogRow.userPrincipalName);
-    writer.writeAdditionalData(smsLogRow.additionalData);
 }
 /**
  * Serializes information the current object
@@ -2225,15 +2274,7 @@ export interface SessionCollectionResponse extends BaseCollectionPaginationCount
      */
     value?: Session[];
 }
-export interface SmsLogRow extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean;
+export interface SmsLogRow extends CallLogRow, Parsable {
     /**
      * Amount of money or cost of the SMS that is charged.
      */
@@ -2255,21 +2296,9 @@ export interface SmsLogRow extends AdditionalDataHolder, BackedModel, Parsable {
      */
     destinationNumber?: string;
     /**
-     * Unique identifier (GUID) for the SMS.
-     */
-    id?: string;
-    /**
      * The license used for the SMS.
      */
     licenseCapability?: string;
-    /**
-     * The OdataType property
-     */
-    odataType?: string;
-    /**
-     * For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.
-     */
-    otherPartyCountryCode?: string;
     /**
      * The date and time when the SMS was sent.
      */
@@ -2298,18 +2327,6 @@ export interface SmsLogRow extends AdditionalDataHolder, BackedModel, Parsable {
      * Country code of the user. For details, see ISO 3166-1 alpha-2.
      */
     userCountryCode?: string;
-    /**
-     * Display name of the user.
-     */
-    userDisplayName?: string;
-    /**
-     * The unique identifier (GUID) of the user in Microsoft Entra ID.
-     */
-    userId?: string;
-    /**
-     * The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-     */
-    userPrincipalName?: string;
 }
 export interface TraceRouteHop extends AdditionalDataHolder, BackedModel, Parsable {
     /**

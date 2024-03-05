@@ -22,7 +22,7 @@ export interface OnPremisesConnectionsRequestBuilder extends BaseRequestBuilder<
      */
      byCloudPcOnPremisesConnectionId(cloudPcOnPremisesConnectionId: string) : CloudPcOnPremisesConnectionItemRequestBuilder;
     /**
-     * List properties and relationships of the cloudPcOnPremisesConnection objects.
+     * Get a list of the cloudPcOnPremisesConnection objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcOnPremisesConnectionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -39,7 +39,7 @@ export interface OnPremisesConnectionsRequestBuilder extends BaseRequestBuilder<
      */
      post(body: CloudPcOnPremisesConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcOnPremisesConnection | undefined>;
     /**
-     * List properties and relationships of the cloudPcOnPremisesConnection objects.
+     * Get a list of the cloudPcOnPremisesConnection objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -53,7 +53,7 @@ export interface OnPremisesConnectionsRequestBuilder extends BaseRequestBuilder<
      toPostRequestInformation(body: CloudPcOnPremisesConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List properties and relationships of the cloudPcOnPremisesConnection objects.
+ * Get a list of the cloudPcOnPremisesConnection objects and their properties.
  */
 export interface OnPremisesConnectionsRequestBuilderGetQueryParameters {
     /**

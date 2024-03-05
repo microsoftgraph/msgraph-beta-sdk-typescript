@@ -2321,6 +2321,7 @@ export function deserializeIntoTunnelConfiguration(tunnelConfiguration: Partial<
         "backingStoreEnabled": n => { tunnelConfiguration.backingStoreEnabled = true; },
         "@odata.type": n => { tunnelConfiguration.odataType = n.getStringValue(); },
         "preSharedKey": n => { tunnelConfiguration.preSharedKey = n.getStringValue(); },
+        "zoneRedundancyPreSharedKey": n => { tunnelConfiguration.zoneRedundancyPreSharedKey = n.getStringValue(); },
     }
 }
 /**
@@ -4500,6 +4501,7 @@ export function serializeTransactionSummary(writer: SerializationWriter, transac
 export function serializeTunnelConfiguration(writer: SerializationWriter, tunnelConfiguration: Partial<TunnelConfiguration> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", tunnelConfiguration.odataType);
     writer.writeStringValue("preSharedKey", tunnelConfiguration.preSharedKey);
+    writer.writeStringValue("zoneRedundancyPreSharedKey", tunnelConfiguration.zoneRedundancyPreSharedKey);
     writer.writeAdditionalData(tunnelConfiguration.additionalData);
 }
 /**
@@ -4662,6 +4664,10 @@ export interface TunnelConfiguration extends AdditionalDataHolder, BackedModel, 
      * A key to establish secure connection between the link and VPN tunnel on the edge.
      */
     preSharedKey?: string;
+    /**
+     * The zoneRedundancyPreSharedKey property
+     */
+    zoneRedundancyPreSharedKey?: string;
 }
 export interface TunnelConfigurationIKEv2Custom extends Parsable, TunnelConfiguration {
     /**
@@ -5030,6 +5036,7 @@ export const RegionObject = {
     JapanEast: "japanEast",
     JapanWest: "japanWest",
     UnknownFutureValue: "unknownFutureValue",
+    KoreaSouth: "koreaSouth",
 } as const;
 export const RemoteNetworkStatusObject = {
     TunnelDisconnected: "tunnelDisconnected",

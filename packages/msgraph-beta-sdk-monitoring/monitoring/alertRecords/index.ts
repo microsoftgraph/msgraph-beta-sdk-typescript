@@ -5,6 +5,7 @@ import { createAlertRecordCollectionResponseFromDiscriminatorValue, createAlertR
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/';
 import { AlertRecordItemRequestBuilderNavigationMetadata, AlertRecordItemRequestBuilderRequestsMetadata, type AlertRecordItemRequestBuilder } from './item/';
+import { MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderRequestsMetadata, type MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder } from './microsoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent/';
 import { MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderRequestsMetadata, type MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder } from './microsoftGraphDeviceManagementGetPortalNotifications/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -16,6 +17,10 @@ export interface AlertRecordsRequestBuilder extends BaseRequestBuilder<AlertReco
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Provides operations to call the changeAlertRecordsPortalNotificationAsSent method.
+     */
+    get microsoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent(): MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder;
     /**
      * Provides operations to call the getPortalNotifications method.
      */
@@ -121,6 +126,9 @@ export const AlertRecordsRequestBuilderNavigationMetadata: Record<Exclude<keyof 
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent: {
+        requestsMetadata: MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderRequestsMetadata,
     },
     microsoftGraphDeviceManagementGetPortalNotifications: {
         requestsMetadata: MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderRequestsMetadata,
