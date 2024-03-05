@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BranchesRequestBuilder extends BaseRequestBuilder<BranchesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
      * @param branchSiteId The unique identifier of branchSite
      * @returns {BranchSiteItemRequestBuilder}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      byBranchSiteId(branchSiteId: string) : BranchSiteItemRequestBuilder;
     /**
@@ -28,7 +28,7 @@ export interface BranchesRequestBuilder extends BaseRequestBuilder<BranchesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BranchSiteCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-connectivity-list-branches?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BranchesRequestBuilderGetQueryParameters> | undefined) : Promise<BranchSiteCollectionResponse | undefined>;
@@ -38,7 +38,7 @@ export interface BranchesRequestBuilder extends BaseRequestBuilder<BranchesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BranchSite>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-connectivity-post-branches?view=graph-rest-1.0|Find more info here}
      */
      post(body: BranchSite, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BranchSite | undefined>;
@@ -46,7 +46,7 @@ export interface BranchesRequestBuilder extends BaseRequestBuilder<BranchesReque
      * Retrieve a list of branches within a tenant connected to the Global Secure Access services.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BranchesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,7 +54,7 @@ export interface BranchesRequestBuilder extends BaseRequestBuilder<BranchesReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toPostRequestInformation(body: BranchSite, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

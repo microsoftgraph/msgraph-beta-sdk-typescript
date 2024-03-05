@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LinksRequestBuilder extends BaseRequestBuilder<LinksRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the links property of the microsoft.graph.networkaccess.branchConnectivityConfiguration entity.
      * @param connectivityConfigurationLinkId The unique identifier of connectivityConfigurationLink
      * @returns {ConnectivityConfigurationLinkItemRequestBuilder}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      byConnectivityConfigurationLinkId(connectivityConfigurationLinkId: string) : ConnectivityConfigurationLinkItemRequestBuilder;
     /**
@@ -28,7 +28,7 @@ export interface LinksRequestBuilder extends BaseRequestBuilder<LinksRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConnectivityConfigurationLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      get(requestConfiguration?: RequestConfiguration<LinksRequestBuilderGetQueryParameters> | undefined) : Promise<ConnectivityConfigurationLinkCollectionResponse | undefined>;
     /**
@@ -37,14 +37,14 @@ export interface LinksRequestBuilder extends BaseRequestBuilder<LinksRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConnectivityConfigurationLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      post(body: ConnectivityConfigurationLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConnectivityConfigurationLink | undefined>;
     /**
      * List of connectivity configurations for deviceLink objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LinksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,7 +52,7 @@ export interface LinksRequestBuilder extends BaseRequestBuilder<LinksRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toPostRequestInformation(body: ConnectivityConfigurationLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

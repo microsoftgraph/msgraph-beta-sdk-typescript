@@ -14,17 +14,27 @@ export interface ApplicableContent extends AdditionalDataHolder, BackedModel, Pa
      */
     backingStoreEnabled?: boolean;
     /**
-     * The catalogEntry property
+     * Catalog entry for the update or content.
      */
     catalogEntry?: CatalogEntry;
     /**
-     * The matchedDevices property
+     * ID of the catalog entry for the applicable content.
+     */
+    catalogEntryId?: string;
+    /**
+     * Collection of devices and recommendations for applicable catalog content.
      */
     matchedDevices?: ApplicableContentDeviceMatch[];
     /**
      * The OdataType property
      */
     odataType?: string;
+}
+export interface ApplicableContentCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ApplicableContent[];
 }
 export interface ApplicableContentDeviceMatch extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -47,6 +57,12 @@ export interface ApplicableContentDeviceMatch extends AdditionalDataHolder, Back
      * Collection of vendors who recommend the content.
      */
     recommendedBy?: string[];
+}
+export interface ApplicableContentDeviceMatchCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ApplicableContentDeviceMatch[];
 }
 export interface AzureADDevice extends Parsable, UpdatableAsset {
     /**
@@ -236,6 +252,22 @@ export interface ContentFilter extends AdditionalDataHolder, BackedModel, Parsab
      * The OdataType property
      */
     odataType?: string;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableContentCollectionResponse}
+ */
+export function createApplicableContentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableContentCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableContentDeviceMatchCollectionResponse}
+ */
+export function createApplicableContentDeviceMatchCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableContentDeviceMatchCollectionResponse;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -929,7 +961,7 @@ export interface Deployment extends Entity, Parsable {
 }
 export interface DeploymentAudience extends Entity, Parsable {
     /**
-     * The applicableContent property
+     * Content eligible to deploy to devices in the audience. Not nullable. Read-only.
      */
     applicableContent?: ApplicableContent[];
     /**
@@ -1041,8 +1073,19 @@ export function deserializeIntoApplicableContent(applicableContent: Partial<Appl
     return {
         "backingStoreEnabled": n => { applicableContent.backingStoreEnabled = true; },
         "catalogEntry": n => { applicableContent.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
+        "catalogEntryId": n => { applicableContent.catalogEntryId = n.getStringValue(); },
         "matchedDevices": n => { applicableContent.matchedDevices = n.getCollectionOfObjectValues<ApplicableContentDeviceMatch>(createApplicableContentDeviceMatchFromDiscriminatorValue); },
         "@odata.type": n => { applicableContent.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoApplicableContentCollectionResponse(applicableContentCollectionResponse: Partial<ApplicableContentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(applicableContentCollectionResponse),
+        "value": n => { applicableContentCollectionResponse.value = n.getCollectionOfObjectValues<ApplicableContent>(createApplicableContentFromDiscriminatorValue); },
     }
 }
 /**
@@ -1055,6 +1098,16 @@ export function deserializeIntoApplicableContentDeviceMatch(applicableContentDev
         "deviceId": n => { applicableContentDeviceMatch.deviceId = n.getStringValue(); },
         "@odata.type": n => { applicableContentDeviceMatch.odataType = n.getStringValue(); },
         "recommendedBy": n => { applicableContentDeviceMatch.recommendedBy = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoApplicableContentDeviceMatchCollectionResponse(applicableContentDeviceMatchCollectionResponse: Partial<ApplicableContentDeviceMatchCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(applicableContentDeviceMatchCollectionResponse),
+        "value": n => { applicableContentDeviceMatchCollectionResponse.value = n.getCollectionOfObjectValues<ApplicableContentDeviceMatch>(createApplicableContentDeviceMatchFromDiscriminatorValue); },
     }
 }
 /**
@@ -2001,9 +2054,18 @@ export interface ScheduleSettings extends AdditionalDataHolder, BackedModel, Par
  */
 export function serializeApplicableContent(writer: SerializationWriter, applicableContent: Partial<ApplicableContent> | undefined = {}) : void {
     writer.writeObjectValue<CatalogEntry>("catalogEntry", applicableContent.catalogEntry, serializeCatalogEntry);
+    writer.writeStringValue("catalogEntryId", applicableContent.catalogEntryId);
     writer.writeCollectionOfObjectValues<ApplicableContentDeviceMatch>("matchedDevices", applicableContent.matchedDevices, serializeApplicableContentDeviceMatch);
     writer.writeStringValue("@odata.type", applicableContent.odataType);
     writer.writeAdditionalData(applicableContent.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeApplicableContentCollectionResponse(writer: SerializationWriter, applicableContentCollectionResponse: Partial<ApplicableContentCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, applicableContentCollectionResponse)
+    writer.writeCollectionOfObjectValues<ApplicableContent>("value", applicableContentCollectionResponse.value, serializeApplicableContent);
 }
 /**
  * Serializes information the current object
@@ -2014,6 +2076,14 @@ export function serializeApplicableContentDeviceMatch(writer: SerializationWrite
     writer.writeStringValue("@odata.type", applicableContentDeviceMatch.odataType);
     writer.writeCollectionOfPrimitiveValues<string>("recommendedBy", applicableContentDeviceMatch.recommendedBy);
     writer.writeAdditionalData(applicableContentDeviceMatch.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeApplicableContentDeviceMatchCollectionResponse(writer: SerializationWriter, applicableContentDeviceMatchCollectionResponse: Partial<ApplicableContentDeviceMatchCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, applicableContentDeviceMatchCollectionResponse)
+    writer.writeCollectionOfObjectValues<ApplicableContentDeviceMatch>("value", applicableContentDeviceMatchCollectionResponse.value, serializeApplicableContentDeviceMatch);
 }
 /**
  * Serializes information the current object

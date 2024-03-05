@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ForwardingProfilesRequestBuilder extends BaseRequestBuilder<ForwardingProfilesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.
      * @param forwardingProfileId The unique identifier of forwardingProfile
      * @returns {ForwardingProfileItemRequestBuilder}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      byForwardingProfileId(forwardingProfileId: string) : ForwardingProfileItemRequestBuilder;
     /**
@@ -28,7 +28,7 @@ export interface ForwardingProfilesRequestBuilder extends BaseRequestBuilder<For
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ForwardingProfileCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      * @see {@link https://learn.microsoft.com/graph/api/networkaccess-branchsite-list-forwardingprofiles?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ForwardingProfilesRequestBuilderGetQueryParameters> | undefined) : Promise<ForwardingProfileCollectionResponse | undefined>;
@@ -38,14 +38,14 @@ export interface ForwardingProfilesRequestBuilder extends BaseRequestBuilder<For
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ForwardingProfile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      post(body: ForwardingProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ForwardingProfile | undefined>;
     /**
      * Retrieve a list of traffic forwarding profiles associated with a branch.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ForwardingProfilesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,7 +53,7 @@ export interface ForwardingProfilesRequestBuilder extends BaseRequestBuilder<For
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
      */
      toPostRequestInformation(body: ForwardingProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

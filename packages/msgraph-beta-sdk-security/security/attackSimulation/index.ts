@@ -10,6 +10,7 @@ import { OperationsRequestBuilderNavigationMetadata, OperationsRequestBuilderReq
 import { PayloadsRequestBuilderNavigationMetadata, PayloadsRequestBuilderRequestsMetadata, type PayloadsRequestBuilder } from './payloads/';
 import { SimulationAutomationsRequestBuilderNavigationMetadata, SimulationAutomationsRequestBuilderRequestsMetadata, type SimulationAutomationsRequestBuilder } from './simulationAutomations/';
 import { SimulationsRequestBuilderNavigationMetadata, SimulationsRequestBuilderRequestsMetadata, type SimulationsRequestBuilder } from './simulations/';
+import { TrainingCampaignsRequestBuilderNavigationMetadata, TrainingCampaignsRequestBuilderRequestsMetadata, type TrainingCampaignsRequestBuilder } from './trainingCampaigns/';
 import { TrainingsRequestBuilderNavigationMetadata, TrainingsRequestBuilderRequestsMetadata, type TrainingsRequestBuilder } from './trainings/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -45,6 +46,10 @@ export interface AttackSimulationRequestBuilder extends BaseRequestBuilder<Attac
      * Provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
      */
     get simulations(): SimulationsRequestBuilder;
+    /**
+     * Provides operations to manage the trainingCampaigns property of the microsoft.graph.attackSimulationRoot entity.
+     */
+    get trainingCampaigns(): TrainingCampaignsRequestBuilder;
     /**
      * Provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.
      */
@@ -145,6 +150,10 @@ export const AttackSimulationRequestBuilderNavigationMetadata: Record<Exclude<ke
     simulations: {
         requestsMetadata: SimulationsRequestBuilderRequestsMetadata,
         navigationMetadata: SimulationsRequestBuilderNavigationMetadata,
+    },
+    trainingCampaigns: {
+        requestsMetadata: TrainingCampaignsRequestBuilderRequestsMetadata,
+        navigationMetadata: TrainingCampaignsRequestBuilderNavigationMetadata,
     },
     trainings: {
         requestsMetadata: TrainingsRequestBuilderRequestsMetadata,

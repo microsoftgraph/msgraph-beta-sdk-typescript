@@ -16,18 +16,20 @@ export interface FederatedTokenValidationPolicyRequestBuilder extends BaseReques
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get federatedTokenValidationPolicy from policies
+     * Get a list of the federatedTokenValidationPolicy objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FederatedTokenValidationPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<FederatedTokenValidationPolicy | undefined>;
     /**
-     * Update the navigation property federatedTokenValidationPolicy in policies
+     * Update the properties of a federatedTokenValidationPolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FederatedTokenValidationPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-update?view=graph-rest-1.0|Find more info here}
      */
      patch(body: FederatedTokenValidationPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FederatedTokenValidationPolicy | undefined>;
     /**
@@ -37,13 +39,13 @@ export interface FederatedTokenValidationPolicyRequestBuilder extends BaseReques
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get federatedTokenValidationPolicy from policies
+     * Get a list of the federatedTokenValidationPolicy objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property federatedTokenValidationPolicy in policies
+     * Update the properties of a federatedTokenValidationPolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -51,7 +53,7 @@ export interface FederatedTokenValidationPolicyRequestBuilder extends BaseReques
      toPatchRequestInformation(body: FederatedTokenValidationPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get federatedTokenValidationPolicy from policies
+ * Get a list of the federatedTokenValidationPolicy objects and their properties.
  */
 export interface FederatedTokenValidationPolicyRequestBuilderGetQueryParameters {
     /**
