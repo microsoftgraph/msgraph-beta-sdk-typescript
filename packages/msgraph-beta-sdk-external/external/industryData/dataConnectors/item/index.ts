@@ -20,18 +20,18 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
     get sourceSystem(): SourceSystemRequestBuilder;
     /**
-     * Delete an industryDataConnector object.
+     * Delete an azureDataLakeConnector object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an azureDataLakeConnector object.
+     * Read the properties and relationships of an industryDataConnector object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IndustryDataConnector>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
@@ -44,13 +44,13 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
      patch(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
-     * Delete an industryDataConnector object.
+     * Delete an azureDataLakeConnector object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an azureDataLakeConnector object.
+     * Read the properties and relationships of an industryDataConnector object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -64,7 +64,7 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an azureDataLakeConnector object.
+ * Read the properties and relationships of an industryDataConnector object.
  */
 export interface IndustryDataConnectorItemRequestBuilderGetQueryParameters {
     /**

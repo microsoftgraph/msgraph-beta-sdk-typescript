@@ -442,6 +442,8 @@ export function createContentFilterFromDiscriminatorValue(parseNode: ParseNode |
             switch (mappingValue) {
                 case "#microsoft.graph.windowsUpdates.driverUpdateFilter":
                     return deserializeIntoDriverUpdateFilter;
+                case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
+                    return deserializeIntoQualityUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.softwareUpdateFilter":
                     return deserializeIntoSoftwareUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
@@ -664,6 +666,14 @@ export function createQualityUpdateCveSeverityInformationFromDiscriminatorValue(
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {QualityUpdateFilter}
+ */
+export function createQualityUpdateFilterFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoQualityUpdateFilter;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RateDrivenRolloutSettings}
  */
 export function createRateDrivenRolloutSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -757,6 +767,8 @@ export function createSoftwareUpdateFilterFromDiscriminatorValue(parseNode: Pars
             switch (mappingValue) {
                 case "#microsoft.graph.windowsUpdates.driverUpdateFilter":
                     return deserializeIntoDriverUpdateFilter;
+                case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
+                    return deserializeIntoQualityUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
                     return deserializeIntoWindowsUpdateFilter;
             }
@@ -885,6 +897,8 @@ export function createWindowsUpdateFilterFromDiscriminatorValue(parseNode: Parse
             switch (mappingValue) {
                 case "#microsoft.graph.windowsUpdates.driverUpdateFilter":
                     return deserializeIntoDriverUpdateFilter;
+                case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
+                    return deserializeIntoQualityUpdateFilter;
             }
         }
     }
@@ -1549,6 +1563,17 @@ export function deserializeIntoQualityUpdateCveSeverityInformation(qualityUpdate
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoQualityUpdateFilter(qualityUpdateFilter: Partial<QualityUpdateFilter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoWindowsUpdateFilter(qualityUpdateFilter),
+        "cadence": n => { qualityUpdateFilter.cadence = n.getEnumValue<QualityUpdateCadence>(QualityUpdateCadenceObject); },
+        "classification": n => { qualityUpdateFilter.classification = n.getEnumValue<QualityUpdateClassification>(QualityUpdateClassificationObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoRateDrivenRolloutSettings(rateDrivenRolloutSettings: Partial<RateDrivenRolloutSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoGradualRolloutSettings(rateDrivenRolloutSettings),
@@ -1718,6 +1743,7 @@ export function deserializeIntoUserExperienceSettings(userExperienceSettings: Pa
     return {
         "backingStoreEnabled": n => { userExperienceSettings.backingStoreEnabled = true; },
         "daysUntilForcedReboot": n => { userExperienceSettings.daysUntilForcedReboot = n.getNumberValue(); },
+        "isHotpatchEnabled": n => { userExperienceSettings.isHotpatchEnabled = n.getBooleanValue(); },
         "@odata.type": n => { userExperienceSettings.odataType = n.getStringValue(); },
         "offerAsOptional": n => { userExperienceSettings.offerAsOptional = n.getBooleanValue(); },
     }
@@ -1968,6 +1994,16 @@ export interface QualityUpdateCveSeverityInformation extends AdditionalDataHolde
      * The OdataType property
      */
     odataType?: string;
+}
+export interface QualityUpdateFilter extends Parsable, WindowsUpdateFilter {
+    /**
+     * The cadence property
+     */
+    cadence?: QualityUpdateCadence;
+    /**
+     * The classification property
+     */
+    classification?: QualityUpdateClassification;
 }
 export interface RateDrivenRolloutSettings extends GradualRolloutSettings, Parsable {
     /**
@@ -2450,6 +2486,15 @@ export function serializeQualityUpdateCveSeverityInformation(writer: Serializati
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeQualityUpdateFilter(writer: SerializationWriter, qualityUpdateFilter: Partial<QualityUpdateFilter> | undefined = {}) : void {
+    serializeWindowsUpdateFilter(writer, qualityUpdateFilter)
+    writer.writeEnumValue<QualityUpdateCadence>("cadence", qualityUpdateFilter.cadence);
+    writer.writeEnumValue<QualityUpdateClassification>("classification", qualityUpdateFilter.classification);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeRateDrivenRolloutSettings(writer: SerializationWriter, rateDrivenRolloutSettings: Partial<RateDrivenRolloutSettings> | undefined = {}) : void {
     serializeGradualRolloutSettings(writer, rateDrivenRolloutSettings)
     writer.writeNumberValue("devicesPerOffer", rateDrivenRolloutSettings.devicesPerOffer);
@@ -2585,6 +2630,7 @@ export function serializeUpdatePolicyCollectionResponse(writer: SerializationWri
  */
 export function serializeUserExperienceSettings(writer: SerializationWriter, userExperienceSettings: Partial<UserExperienceSettings> | undefined = {}) : void {
     writer.writeNumberValue("daysUntilForcedReboot", userExperienceSettings.daysUntilForcedReboot);
+    writer.writeBooleanValue("isHotpatchEnabled", userExperienceSettings.isHotpatchEnabled);
     writer.writeStringValue("@odata.type", userExperienceSettings.odataType);
     writer.writeBooleanValue("offerAsOptional", userExperienceSettings.offerAsOptional);
     writer.writeAdditionalData(userExperienceSettings.additionalData);
@@ -2690,6 +2736,10 @@ export interface UserExperienceSettings extends AdditionalDataHolder, BackedMode
      * Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
      */
     daysUntilForcedReboot?: number;
+    /**
+     * The isHotpatchEnabled property
+     */
+    isHotpatchEnabled?: boolean;
     /**
      * The OdataType property
      */

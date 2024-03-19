@@ -75,7 +75,7 @@ export interface ContentTypeItemRequestBuilder extends BaseRequestBuilder<Conten
      */
      get(requestConfiguration?: RequestConfiguration<ContentTypeItemRequestBuilderGetQueryParameters> | undefined) : Promise<ContentType | undefined>;
     /**
-     * Update a [content type][contentType].
+     * Update contentType
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContentType>}
@@ -96,7 +96,7 @@ export interface ContentTypeItemRequestBuilder extends BaseRequestBuilder<Conten
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContentTypeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update a [content type][contentType].
+     * Update contentType
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

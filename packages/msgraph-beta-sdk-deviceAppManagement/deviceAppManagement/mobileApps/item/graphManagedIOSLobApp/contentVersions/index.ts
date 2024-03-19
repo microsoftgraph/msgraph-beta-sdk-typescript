@@ -22,7 +22,7 @@ export interface ContentVersionsRequestBuilder extends BaseRequestBuilder<Conten
      */
      byMobileAppContentId(mobileAppContentId: string) : MobileAppContentItemRequestBuilder;
     /**
-     * The list of content versions for this app.
+     * The list of content versions for this app. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppContentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface ContentVersionsRequestBuilder extends BaseRequestBuilder<Conten
      */
      post(body: MobileAppContent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MobileAppContent | undefined>;
     /**
-     * The list of content versions for this app.
+     * The list of content versions for this app. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface ContentVersionsRequestBuilder extends BaseRequestBuilder<Conten
      toPostRequestInformation(body: MobileAppContent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The list of content versions for this app.
+ * The list of content versions for this app. This property is read-only.
  */
 export interface ContentVersionsRequestBuilderGetQueryParameters {
     /**

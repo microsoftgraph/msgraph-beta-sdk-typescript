@@ -22,7 +22,7 @@ export interface ColumnsRequestBuilder extends BaseRequestBuilder<ColumnsRequest
      */
      byColumnDefinitionId(columnDefinitionId: string) : ColumnDefinitionItemRequestBuilder;
     /**
-     * Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+     * The collection of field definitions for this list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -30,7 +30,7 @@ export interface ColumnsRequestBuilder extends BaseRequestBuilder<ColumnsRequest
      */
      get(requestConfiguration?: RequestConfiguration<ColumnsRequestBuilderGetQueryParameters> | undefined) : Promise<ColumnDefinitionCollectionResponse | undefined>;
     /**
-     * Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+     * Create columnDefinition
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnDefinition>}
@@ -39,13 +39,13 @@ export interface ColumnsRequestBuilder extends BaseRequestBuilder<ColumnsRequest
      */
      post(body: ColumnDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ColumnDefinition | undefined>;
     /**
-     * Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+     * The collection of field definitions for this list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ColumnsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+     * Create columnDefinition
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -53,7 +53,7 @@ export interface ColumnsRequestBuilder extends BaseRequestBuilder<ColumnsRequest
      toPostRequestInformation(body: ColumnDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+ * The collection of field definitions for this list.
  */
 export interface ColumnsRequestBuilderGetQueryParameters {
     /**

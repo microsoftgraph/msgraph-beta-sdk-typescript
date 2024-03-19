@@ -15,14 +15,14 @@ export interface ColumnDefinitionItemRequestBuilder extends BaseRequestBuilder<C
      */
     get sourceColumn(): SourceColumnRequestBuilder;
     /**
-     * Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+     * Delete columnDefinition
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+     * Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -30,7 +30,7 @@ export interface ColumnDefinitionItemRequestBuilder extends BaseRequestBuilder<C
      */
      get(requestConfiguration?: RequestConfiguration<ColumnDefinitionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ColumnDefinition | undefined>;
     /**
-     * Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+     * Update columnDefinition
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnDefinition>}
@@ -39,19 +39,19 @@ export interface ColumnDefinitionItemRequestBuilder extends BaseRequestBuilder<C
      */
      patch(body: ColumnDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ColumnDefinition | undefined>;
     /**
-     * Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+     * Delete columnDefinition
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+     * Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ColumnDefinitionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+     * Update columnDefinition
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -59,7 +59,7 @@ export interface ColumnDefinitionItemRequestBuilder extends BaseRequestBuilder<C
      toPatchRequestInformation(body: ColumnDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+ * Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
  */
 export interface ColumnDefinitionItemRequestBuilderGetQueryParameters {
     /**

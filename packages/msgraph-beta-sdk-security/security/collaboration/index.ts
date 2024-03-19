@@ -21,7 +21,7 @@ export interface CollaborationRequestBuilder extends BaseRequestBuilder<Collabor
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get collaboration from security
+     * Enables read and other actions on collaborative entities in Microsoft Defender.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CollaborationRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface CollaborationRequestBuilder extends BaseRequestBuilder<Collabor
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get collaboration from security
+     * Enables read and other actions on collaborative entities in Microsoft Defender.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface CollaborationRequestBuilder extends BaseRequestBuilder<Collabor
      toPatchRequestInformation(body: CollaborationRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get collaboration from security
+ * Enables read and other actions on collaborative entities in Microsoft Defender.
  */
 export interface CollaborationRequestBuilderGetQueryParameters {
     /**

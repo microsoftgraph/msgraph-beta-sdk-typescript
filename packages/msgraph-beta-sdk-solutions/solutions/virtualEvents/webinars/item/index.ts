@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { PresentersRequestBuilderNavigationMetadata, PresentersRequestBuilderRequestsMetadata, type PresentersRequestBuilder } from './presenters/';
 import { RegistrationConfigurationRequestBuilderRequestsMetadata, type RegistrationConfigurationRequestBuilder } from './registrationConfiguration/';
 import { RegistrationsRequestBuilderNavigationMetadata, RegistrationsRequestBuilderRequestsMetadata, type RegistrationsRequestBuilder } from './registrations/';
+import { RegistrationsWithEmailRequestBuilderRequestsMetadata, type RegistrationsWithEmailRequestBuilder } from './registrationsWithEmail/';
+import { RegistrationsWithUserIdRequestBuilderRequestsMetadata, type RegistrationsWithUserIdRequestBuilder } from './registrationsWithUserId/';
 import { SessionsRequestBuilderNavigationMetadata, SessionsRequestBuilderRequestsMetadata, type SessionsRequestBuilder } from './sessions/';
 import { SessionsWithJoinWebUrlRequestBuilderRequestsMetadata, type SessionsWithJoinWebUrlRequestBuilder } from './sessionsWithJoinWebUrl/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -52,6 +54,18 @@ export interface VirtualEventWebinarItemRequestBuilder extends BaseRequestBuilde
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: VirtualEventWebinar, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventWebinar | undefined>;
+    /**
+     * Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
+     * @param email Alternate key of virtualEventRegistration
+     * @returns {RegistrationsWithEmailRequestBuilder}
+     */
+     registrationsWithEmail(email: string | undefined) : RegistrationsWithEmailRequestBuilder;
+    /**
+     * Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
+     * @param userId Alternate key of virtualEventRegistration
+     * @returns {RegistrationsWithUserIdRequestBuilder}
+     */
+     registrationsWithUserId(userId: string | undefined) : RegistrationsWithUserIdRequestBuilder;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
      * @param joinWebUrl Alternate key of virtualEventSession
@@ -106,6 +120,12 @@ const VirtualEventWebinarItemRequestBuilderGetQueryParametersMapper: Record<stri
  * Metadata for all the navigation properties in the request builder.
  */
 export const VirtualEventWebinarItemRequestBuilderNavigationMetadata: Record<Exclude<keyof VirtualEventWebinarItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    registrationsWithEmail: {
+        requestsMetadata: RegistrationsWithEmailRequestBuilderRequestsMetadata,
+    },
+    registrationsWithUserId: {
+        requestsMetadata: RegistrationsWithUserIdRequestBuilderRequestsMetadata,
+    },
     sessionsWithJoinWebUrl: {
         requestsMetadata: SessionsWithJoinWebUrlRequestBuilderRequestsMetadata,
     },

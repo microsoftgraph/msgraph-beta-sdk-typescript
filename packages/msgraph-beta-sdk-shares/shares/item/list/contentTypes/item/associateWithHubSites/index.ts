@@ -27,7 +27,7 @@ export interface AssociateWithHubSitesPostRequestBody extends AdditionalDataHold
  */
 export interface AssociateWithHubSitesRequestBuilder extends BaseRequestBuilder<AssociateWithHubSitesRequestBuilder> {
     /**
-     * Associate a [content type][contentType] with a list of hub sites.
+     * Invoke action associateWithHubSites
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface AssociateWithHubSitesRequestBuilder extends BaseRequestBuilder<
      */
      post(body: AssociateWithHubSitesPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Associate a [content type][contentType] with a list of hub sites.
+     * Invoke action associateWithHubSites
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

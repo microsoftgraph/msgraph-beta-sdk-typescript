@@ -22,7 +22,7 @@ export interface RelationshipsRequestBuilder extends BaseRequestBuilder<Relation
      */
      byMobileAppRelationshipId(mobileAppRelationshipId: string) : MobileAppRelationshipItemRequestBuilder;
     /**
-     * List of relationships for this mobile app.
+     * The set of direct relationships for this app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppRelationshipCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface RelationshipsRequestBuilder extends BaseRequestBuilder<Relation
      */
      post(body: MobileAppRelationship, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MobileAppRelationship | undefined>;
     /**
-     * List of relationships for this mobile app.
+     * The set of direct relationships for this app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface RelationshipsRequestBuilder extends BaseRequestBuilder<Relation
      toPostRequestInformation(body: MobileAppRelationship, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List of relationships for this mobile app.
+ * The set of direct relationships for this app.
  */
 export interface RelationshipsRequestBuilderGetQueryParameters {
     /**

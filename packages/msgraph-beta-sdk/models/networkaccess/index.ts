@@ -23,10 +23,6 @@ export interface Alert extends Entity, Parsable {
      */
     description?: string;
     /**
-     * The firstImpactedDateTime property
-     */
-    firstImpactedDateTime?: Date;
-    /**
      * The relatedResources property
      */
     relatedResources?: RelatedResource[];
@@ -1268,7 +1264,6 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
         "alertType": n => { alert.alertType = n.getEnumValue<AlertType>(AlertTypeObject); },
         "creationDateTime": n => { alert.creationDateTime = n.getDateValue(); },
         "description": n => { alert.description = n.getStringValue(); },
-        "firstImpactedDateTime": n => { alert.firstImpactedDateTime = n.getDateValue(); },
         "relatedResources": n => { alert.relatedResources = n.getCollectionOfObjectValues<RelatedResource>(createRelatedResourceFromDiscriminatorValue); },
     }
 }
@@ -3617,7 +3612,6 @@ export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert
     writer.writeEnumValue<AlertType>("alertType", alert.alertType);
     writer.writeDateValue("creationDateTime", alert.creationDateTime);
     writer.writeStringValue("description", alert.description);
-    writer.writeDateValue("firstImpactedDateTime", alert.firstImpactedDateTime);
     writer.writeCollectionOfObjectValues<RelatedResource>("relatedResources", alert.relatedResources, serializeRelatedResource);
 }
 /**

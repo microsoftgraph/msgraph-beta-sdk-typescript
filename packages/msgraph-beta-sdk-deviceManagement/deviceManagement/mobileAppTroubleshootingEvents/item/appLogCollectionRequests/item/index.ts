@@ -21,7 +21,7 @@ export interface AppLogCollectionRequestItemRequestBuilder extends BaseRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection property of AppLogUploadRequest.
+     * Indicates collection of App Log Upload Request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppLogCollectionRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface AppLogCollectionRequestItemRequestBuilder extends BaseRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection property of AppLogUploadRequest.
+     * Indicates collection of App Log Upload Request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface AppLogCollectionRequestItemRequestBuilder extends BaseRequestBu
      toPatchRequestInformation(body: AppLogCollectionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection property of AppLogUploadRequest.
+ * Indicates collection of App Log Upload Request.
  */
 export interface AppLogCollectionRequestItemRequestBuilderGetQueryParameters {
     /**

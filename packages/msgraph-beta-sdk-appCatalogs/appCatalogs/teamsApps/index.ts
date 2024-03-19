@@ -22,7 +22,7 @@ export interface TeamsAppsRequestBuilder extends BaseRequestBuilder<TeamsAppsReq
      */
      byTeamsAppId(teamsAppId: string) : TeamsAppItemRequestBuilder;
     /**
-     * List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify organization as the distributionMethod in the request.
+     * List apps from the Microsoft Teams app catalog.It includes apps from the Microsoft Teams store, and apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify organization as the distributionMethod in the request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -39,7 +39,7 @@ export interface TeamsAppsRequestBuilder extends BaseRequestBuilder<TeamsAppsReq
      */
      post(body: TeamsApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsApp | undefined>;
     /**
-     * List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify organization as the distributionMethod in the request.
+     * List apps from the Microsoft Teams app catalog.It includes apps from the Microsoft Teams store, and apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify organization as the distributionMethod in the request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -53,7 +53,7 @@ export interface TeamsAppsRequestBuilder extends BaseRequestBuilder<TeamsAppsReq
      toPostRequestInformation(body: TeamsApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify organization as the distributionMethod in the request.
+ * List apps from the Microsoft Teams app catalog.It includes apps from the Microsoft Teams store, and apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify organization as the distributionMethod in the request.
  */
 export interface TeamsAppsRequestBuilderGetQueryParameters {
     /**

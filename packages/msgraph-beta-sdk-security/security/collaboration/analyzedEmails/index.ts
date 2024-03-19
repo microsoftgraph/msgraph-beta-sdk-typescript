@@ -27,7 +27,7 @@ export interface AnalyzedEmailsRequestBuilder extends BaseRequestBuilder<Analyze
      */
      byAnalyzedEmailId(analyzedEmailId: string) : AnalyzedEmailItemRequestBuilder;
     /**
-     * Get analyzedEmails from security
+     * Read the properties and relationships of an analyzedEmail object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AnalyzedEmailCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface AnalyzedEmailsRequestBuilder extends BaseRequestBuilder<Analyze
      */
      post(body: AnalyzedEmail, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AnalyzedEmail | undefined>;
     /**
-     * Get analyzedEmails from security
+     * Read the properties and relationships of an analyzedEmail object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface AnalyzedEmailsRequestBuilder extends BaseRequestBuilder<Analyze
      toPostRequestInformation(body: AnalyzedEmail, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get analyzedEmails from security
+ * Read the properties and relationships of an analyzedEmail object.
  */
 export interface AnalyzedEmailsRequestBuilderGetQueryParameters {
     /**

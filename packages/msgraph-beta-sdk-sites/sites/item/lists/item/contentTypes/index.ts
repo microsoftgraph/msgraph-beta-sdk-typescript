@@ -37,7 +37,7 @@ export interface ContentTypesRequestBuilder extends BaseRequestBuilder<ContentTy
      */
      byContentTypeId(contentTypeId: string) : ContentTypeItemRequestBuilder;
     /**
-     * Get the collection of [contentType][contentType] resources in a [list][].
+     * The collection of content types present in this list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContentTypeCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -53,7 +53,7 @@ export interface ContentTypesRequestBuilder extends BaseRequestBuilder<ContentTy
      */
      post(body: ContentType, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ContentType | undefined>;
     /**
-     * Get the collection of [contentType][contentType] resources in a [list][].
+     * The collection of content types present in this list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -67,7 +67,7 @@ export interface ContentTypesRequestBuilder extends BaseRequestBuilder<ContentTy
      toPostRequestInformation(body: ContentType, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the collection of [contentType][contentType] resources in a [list][].
+ * The collection of content types present in this list.
  */
 export interface ContentTypesRequestBuilderGetQueryParameters {
     /**

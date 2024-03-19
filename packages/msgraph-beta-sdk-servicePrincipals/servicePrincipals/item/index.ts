@@ -177,12 +177,12 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      */
      get(requestConfiguration?: RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipal | undefined>;
     /**
-     * Update the properties of servicePrincipal object.
+     * Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipal>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0|Find more info here}
      */
      patch(body: ServicePrincipal, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServicePrincipal | undefined>;
     /**
@@ -198,7 +198,7 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of servicePrincipal object.
+     * Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

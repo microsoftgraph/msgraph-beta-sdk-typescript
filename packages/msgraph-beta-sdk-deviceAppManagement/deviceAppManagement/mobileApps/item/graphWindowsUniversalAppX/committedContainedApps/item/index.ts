@@ -16,7 +16,7 @@ export interface MobileContainedAppItemRequestBuilder extends BaseRequestBuilder
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+     * The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileContainedApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface MobileContainedAppItemRequestBuilder extends BaseRequestBuilder
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+     * The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface MobileContainedAppItemRequestBuilder extends BaseRequestBuilder
      toPatchRequestInformation(body: MobileContainedApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+ * The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
  */
 export interface MobileContainedAppItemRequestBuilderGetQueryParameters {
     /**

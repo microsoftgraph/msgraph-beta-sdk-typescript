@@ -22,7 +22,7 @@ export interface ChildrenRequestBuilder extends BaseRequestBuilder<ChildrenReque
      */
      byDriveItemId1(driveItemId1: string) : DriveItemItemRequestBuilder;
     /**
-     * Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+     * Return a collection of driveItems in the children relationship of a driveItem. DriveItems with a non-null folder or package facet can have one or more child driveItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -39,7 +39,7 @@ export interface ChildrenRequestBuilder extends BaseRequestBuilder<ChildrenReque
      */
      post(body: DriveItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveItem | undefined>;
     /**
-     * Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+     * Return a collection of driveItems in the children relationship of a driveItem. DriveItems with a non-null folder or package facet can have one or more child driveItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -53,7 +53,7 @@ export interface ChildrenRequestBuilder extends BaseRequestBuilder<ChildrenReque
      toPostRequestInformation(body: DriveItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+ * Return a collection of driveItems in the children relationship of a driveItem. DriveItems with a non-null folder or package facet can have one or more child driveItems.
  */
 export interface ChildrenRequestBuilderGetQueryParameters {
     /**

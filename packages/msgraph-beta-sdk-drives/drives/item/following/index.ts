@@ -22,7 +22,7 @@ export interface FollowingRequestBuilder extends BaseRequestBuilder<FollowingReq
      */
      byDriveItemId(driveItemId: string) : DriveItemItemRequestBuilder;
     /**
-     * List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
+     * List the items that the signed-in user followed.This collection includes items that are in the user's drive and items they have access to from other drives.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -30,14 +30,14 @@ export interface FollowingRequestBuilder extends BaseRequestBuilder<FollowingReq
      */
      get(requestConfiguration?: RequestConfiguration<FollowingRequestBuilderGetQueryParameters> | undefined) : Promise<DriveItemCollectionResponse | undefined>;
     /**
-     * List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
+     * List the items that the signed-in user followed.This collection includes items that are in the user's drive and items they have access to from other drives.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FollowingRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
+ * List the items that the signed-in user followed.This collection includes items that are in the user's drive and items they have access to from other drives.
  */
 export interface FollowingRequestBuilderGetQueryParameters {
     /**

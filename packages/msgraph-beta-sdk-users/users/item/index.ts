@@ -25,6 +25,7 @@ import { CloudClipboardRequestBuilderNavigationMetadata, CloudClipboardRequestBu
 import { CloudPCsRequestBuilderNavigationMetadata, CloudPCsRequestBuilderRequestsMetadata, type CloudPCsRequestBuilder } from './cloudPCs/';
 import { ContactFoldersRequestBuilderNavigationMetadata, ContactFoldersRequestBuilderRequestsMetadata, type ContactFoldersRequestBuilder } from './contactFolders/';
 import { ContactsRequestBuilderNavigationMetadata, ContactsRequestBuilderRequestsMetadata, type ContactsRequestBuilder } from './contacts/';
+import { ConvertExternalToInternalMemberUserRequestBuilderRequestsMetadata, type ConvertExternalToInternalMemberUserRequestBuilder } from './convertExternalToInternalMemberUser/';
 import { CreatedObjectsRequestBuilderNavigationMetadata, CreatedObjectsRequestBuilderRequestsMetadata, type CreatedObjectsRequestBuilder } from './createdObjects/';
 import { DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type DeletePasswordSingleSignOnCredentialsRequestBuilder } from './deletePasswordSingleSignOnCredentials/';
 import { DeviceEnrollmentConfigurationsRequestBuilderNavigationMetadata, DeviceEnrollmentConfigurationsRequestBuilderRequestsMetadata, type DeviceEnrollmentConfigurationsRequestBuilder } from './deviceEnrollmentConfigurations/';
@@ -204,6 +205,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the contacts property of the microsoft.graph.user entity.
      */
     get contacts(): ContactsRequestBuilder;
+    /**
+     * Provides operations to call the convertExternalToInternalMemberUser method.
+     */
+    get convertExternalToInternalMemberUser(): ConvertExternalToInternalMemberUserRequestBuilder;
     /**
      * Provides operations to manage the createdObjects property of the microsoft.graph.user entity.
      */
@@ -748,6 +753,9 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     contacts: {
         requestsMetadata: ContactsRequestBuilderRequestsMetadata,
         navigationMetadata: ContactsRequestBuilderNavigationMetadata,
+    },
+    convertExternalToInternalMemberUser: {
+        requestsMetadata: ConvertExternalToInternalMemberUserRequestBuilderRequestsMetadata,
     },
     createdObjects: {
         requestsMetadata: CreatedObjectsRequestBuilderRequestsMetadata,

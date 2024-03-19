@@ -142,12 +142,12 @@ export interface ApplicationItemRequestBuilder extends BaseRequestBuilder<Applic
      */
      get(requestConfiguration?: RequestConfiguration<ApplicationItemRequestBuilderGetQueryParameters> | undefined) : Promise<Application | undefined>;
     /**
-     * Update the properties of an application object.
+     * Create a new application object if it doesn't exist, or update the properties of an existing application object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Application>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0|Find more info here}
      */
      patch(body: Application, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Application | undefined>;
     /**
@@ -163,7 +163,7 @@ export interface ApplicationItemRequestBuilder extends BaseRequestBuilder<Applic
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApplicationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an application object.
+     * Create a new application object if it doesn't exist, or update the properties of an existing application object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
