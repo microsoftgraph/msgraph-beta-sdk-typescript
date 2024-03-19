@@ -42,7 +42,7 @@ export interface MutePostRequestBody extends AdditionalDataHolder, BackedModel, 
  */
 export interface MuteRequestBuilder extends BaseRequestBuilder<MuteRequestBuilder> {
     /**
-     * Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation
+     * Allows the application to mute itself. This is a server mute, meaning that the server drops all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MuteParticipantOperation>}
@@ -51,7 +51,7 @@ export interface MuteRequestBuilder extends BaseRequestBuilder<MuteRequestBuilde
      */
      post(body: MutePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MuteParticipantOperation | undefined>;
     /**
-     * Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation
+     * Allows the application to mute itself. This is a server mute, meaning that the server drops all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

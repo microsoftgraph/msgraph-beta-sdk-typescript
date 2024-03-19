@@ -22,7 +22,7 @@ export interface ShiftsRequestBuilder extends BaseRequestBuilder<ShiftsRequestBu
      */
      byShiftId(shiftId: string) : ShiftItemRequestBuilder;
     /**
-     * Get the list of shift instances in a schedule.
+     * The shifts in the schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ShiftCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -39,7 +39,7 @@ export interface ShiftsRequestBuilder extends BaseRequestBuilder<ShiftsRequestBu
      */
      post(body: Shift, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Shift | undefined>;
     /**
-     * Get the list of shift instances in a schedule.
+     * The shifts in the schedule.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -53,7 +53,7 @@ export interface ShiftsRequestBuilder extends BaseRequestBuilder<ShiftsRequestBu
      toPostRequestInformation(body: Shift, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the list of shift instances in a schedule.
+ * The shifts in the schedule.
  */
 export interface ShiftsRequestBuilderGetQueryParameters {
     /**

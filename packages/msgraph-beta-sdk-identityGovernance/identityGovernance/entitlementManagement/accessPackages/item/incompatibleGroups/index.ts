@@ -27,7 +27,7 @@ export interface IncompatibleGroupsRequestBuilder extends BaseRequestBuilder<Inc
      */
      byGroupId(groupId: string) : GroupItemRequestBuilder;
     /**
-     * Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+     * Retrieve a list of the group objects marked as incompatible on an accessPackage.  
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GroupCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,14 +35,14 @@ export interface IncompatibleGroupsRequestBuilder extends BaseRequestBuilder<Inc
      */
      get(requestConfiguration?: RequestConfiguration<IncompatibleGroupsRequestBuilderGetQueryParameters> | undefined) : Promise<GroupCollectionResponse | undefined>;
     /**
-     * Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+     * Retrieve a list of the group objects marked as incompatible on an accessPackage.  
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IncompatibleGroupsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+ * Retrieve a list of the group objects marked as incompatible on an accessPackage.  
  */
 export interface IncompatibleGroupsRequestBuilderGetQueryParameters {
     /**

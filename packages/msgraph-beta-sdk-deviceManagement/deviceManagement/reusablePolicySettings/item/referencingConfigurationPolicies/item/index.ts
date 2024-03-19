@@ -4,9 +4,11 @@
 import { createDeviceManagementConfigurationPolicyFromDiscriminatorValue, serializeDeviceManagementConfigurationPolicy, type DeviceManagementConfigurationPolicy } from '@microsoft/msgraph-beta-sdk/models/';
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { AssignRequestBuilderRequestsMetadata, type AssignRequestBuilder } from './assign/';
+import { AssignJustInTimeConfigurationRequestBuilderRequestsMetadata, type AssignJustInTimeConfigurationRequestBuilder } from './assignJustInTimeConfiguration/';
 import { AssignmentsRequestBuilderNavigationMetadata, AssignmentsRequestBuilderRequestsMetadata, type AssignmentsRequestBuilder } from './assignments/';
 import { CreateCopyRequestBuilderRequestsMetadata, type CreateCopyRequestBuilder } from './createCopy/';
 import { ReorderRequestBuilderRequestsMetadata, type ReorderRequestBuilder } from './reorder/';
+import { RetrieveJustInTimeConfigurationRequestBuilderRequestsMetadata, type RetrieveJustInTimeConfigurationRequestBuilder } from './retrieveJustInTimeConfiguration/';
 import { RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderRequestsMetadata, type RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder } from './retrieveLatestUpgradeDefaultBaselinePolicy/';
 import { SettingsRequestBuilderNavigationMetadata, SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -20,6 +22,10 @@ export interface DeviceManagementConfigurationPolicyItemRequestBuilder extends B
      */
     get assign(): AssignRequestBuilder;
     /**
+     * Provides operations to call the assignJustInTimeConfiguration method.
+     */
+    get assignJustInTimeConfiguration(): AssignJustInTimeConfigurationRequestBuilder;
+    /**
      * Provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
      */
     get assignments(): AssignmentsRequestBuilder;
@@ -31,6 +37,10 @@ export interface DeviceManagementConfigurationPolicyItemRequestBuilder extends B
      * Provides operations to call the reorder method.
      */
     get reorder(): ReorderRequestBuilder;
+    /**
+     * Provides operations to call the retrieveJustInTimeConfiguration method.
+     */
+    get retrieveJustInTimeConfiguration(): RetrieveJustInTimeConfigurationRequestBuilder;
     /**
      * Provides operations to call the retrieveLatestUpgradeDefaultBaselinePolicy method.
      */
@@ -111,6 +121,9 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderNavigationMeta
     assign: {
         requestsMetadata: AssignRequestBuilderRequestsMetadata,
     },
+    assignJustInTimeConfiguration: {
+        requestsMetadata: AssignJustInTimeConfigurationRequestBuilderRequestsMetadata,
+    },
     assignments: {
         requestsMetadata: AssignmentsRequestBuilderRequestsMetadata,
         navigationMetadata: AssignmentsRequestBuilderNavigationMetadata,
@@ -120,6 +133,9 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderNavigationMeta
     },
     reorder: {
         requestsMetadata: ReorderRequestBuilderRequestsMetadata,
+    },
+    retrieveJustInTimeConfiguration: {
+        requestsMetadata: RetrieveJustInTimeConfigurationRequestBuilderRequestsMetadata,
     },
     retrieveLatestUpgradeDefaultBaselinePolicy: {
         requestsMetadata: RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderRequestsMetadata,

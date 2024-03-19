@@ -6321,6 +6321,7 @@ export const TenantOnboardingStatusObject = {
     Active: "active",
     Inactive: "inactive",
     UnknownFutureValue: "unknownFutureValue",
+    Disabled: "disabled",
 } as const;
 export const WorkloadActionCategoryObject = {
     Automated: "automated",

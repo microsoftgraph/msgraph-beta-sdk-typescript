@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { AttendanceReportsRequestBuilderNavigationMetadata, AttendanceReportsRequestBuilderRequestsMetadata, type AttendanceReportsRequestBuilder } from './attendanceReports/';
 import { PresentersRequestBuilderNavigationMetadata, PresentersRequestBuilderRequestsMetadata, type PresentersRequestBuilder } from './presenters/';
 import { RegistrationsRequestBuilderNavigationMetadata, RegistrationsRequestBuilderRequestsMetadata, type RegistrationsRequestBuilder } from './registrations/';
+import { RegistrationsWithEmailRequestBuilderRequestsMetadata, type RegistrationsWithEmailRequestBuilder } from './registrationsWithEmail/';
+import { RegistrationsWithUserIdRequestBuilderRequestsMetadata, type RegistrationsWithUserIdRequestBuilder } from './registrationsWithUserId/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -45,6 +47,18 @@ export interface VirtualEventSessionItemRequestBuilder extends BaseRequestBuilde
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: VirtualEventSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventSession | undefined>;
+    /**
+     * Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+     * @param email Alternate key of virtualEventRegistration
+     * @returns {RegistrationsWithEmailRequestBuilder}
+     */
+     registrationsWithEmail(email: string | undefined) : RegistrationsWithEmailRequestBuilder;
+    /**
+     * Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+     * @param userId Alternate key of virtualEventRegistration
+     * @returns {RegistrationsWithUserIdRequestBuilder}
+     */
+     registrationsWithUserId(userId: string | undefined) : RegistrationsWithUserIdRequestBuilder;
     /**
      * Delete navigation property sessions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -93,6 +107,12 @@ const VirtualEventSessionItemRequestBuilderGetQueryParametersMapper: Record<stri
  * Metadata for all the navigation properties in the request builder.
  */
 export const VirtualEventSessionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof VirtualEventSessionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    registrationsWithEmail: {
+        requestsMetadata: RegistrationsWithEmailRequestBuilderRequestsMetadata,
+    },
+    registrationsWithUserId: {
+        requestsMetadata: RegistrationsWithUserIdRequestBuilderRequestsMetadata,
+    },
     attendanceReports: {
         requestsMetadata: AttendanceReportsRequestBuilderRequestsMetadata,
         navigationMetadata: AttendanceReportsRequestBuilderNavigationMetadata,

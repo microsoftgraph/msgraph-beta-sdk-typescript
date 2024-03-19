@@ -22,28 +22,29 @@ export interface GradingSchemesRequestBuilder extends BaseRequestBuilder<Grading
      */
      byEducationGradingSchemeId(educationGradingSchemeId: string) : EducationGradingSchemeItemRequestBuilder;
     /**
-     * Get gradingSchemes from education
+     * Read the properties and relationships of an educationGradingScheme object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationGradingSchemeCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GradingSchemesRequestBuilderGetQueryParameters> | undefined) : Promise<EducationGradingSchemeCollectionResponse | undefined>;
     /**
-     * Create new navigation property to gradingSchemes for education
+     * Create a new educationGradingScheme object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationGradingScheme>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationgradingscheme-post?view=graph-rest-1.0|Find more info here}
      */
      post(body: EducationGradingScheme, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationGradingScheme | undefined>;
     /**
-     * Get gradingSchemes from education
+     * Read the properties and relationships of an educationGradingScheme object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GradingSchemesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to gradingSchemes for education
+     * Create a new educationGradingScheme object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -51,7 +52,7 @@ export interface GradingSchemesRequestBuilder extends BaseRequestBuilder<Grading
      toPostRequestInformation(body: EducationGradingScheme, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get gradingSchemes from education
+ * Read the properties and relationships of an educationGradingScheme object.
  */
 export interface GradingSchemesRequestBuilderGetQueryParameters {
     /**

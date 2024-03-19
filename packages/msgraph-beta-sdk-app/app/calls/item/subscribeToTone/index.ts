@@ -50,7 +50,7 @@ export interface SubscribeToTonePostRequestBody extends AdditionalDataHolder, Ba
  */
 export interface SubscribeToToneRequestBuilder extends BaseRequestBuilder<SubscribeToToneRequestBuilder> {
     /**
-     * Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a 'Dialpad'.
+     * Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a dialpad. This action is supported only for calls that are initiated with serviceHostedMediaConfig.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SubscribeToToneOperation>}
@@ -59,7 +59,7 @@ export interface SubscribeToToneRequestBuilder extends BaseRequestBuilder<Subscr
      */
      post(body: SubscribeToTonePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SubscribeToToneOperation | undefined>;
     /**
-     * Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a 'Dialpad'.
+     * Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a dialpad. This action is supported only for calls that are initiated with serviceHostedMediaConfig.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

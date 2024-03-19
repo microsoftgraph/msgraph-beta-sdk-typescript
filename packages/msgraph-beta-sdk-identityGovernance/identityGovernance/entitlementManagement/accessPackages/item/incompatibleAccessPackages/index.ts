@@ -27,7 +27,7 @@ export interface IncompatibleAccessPackagesRequestBuilder extends BaseRequestBui
      */
      byAccessPackageId1(accessPackageId1: string) : AccessPackageItemRequestBuilder;
     /**
-     * Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+     * Retrieve a list of the accessPackage objects marked as incompatible on an accessPackage.  
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,14 +35,14 @@ export interface IncompatibleAccessPackagesRequestBuilder extends BaseRequestBui
      */
      get(requestConfiguration?: RequestConfiguration<IncompatibleAccessPackagesRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageCollectionResponse | undefined>;
     /**
-     * Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+     * Retrieve a list of the accessPackage objects marked as incompatible on an accessPackage.  
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IncompatibleAccessPackagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+ * Retrieve a list of the accessPackage objects marked as incompatible on an accessPackage.  
  */
 export interface IncompatibleAccessPackagesRequestBuilderGetQueryParameters {
     /**

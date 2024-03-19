@@ -22,10 +22,11 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      */
      byCloudClipboardItemId(cloudClipboardItemId: string) : CloudClipboardItemItemRequestBuilder;
     /**
-     * Get items from users
+     * Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn't support using another user's credentials to get a cloudClipboardItem for a user. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudClipboardItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudclipboardroot-list-items?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudClipboardItemCollectionResponse | undefined>;
     /**
@@ -37,7 +38,7 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      */
      post(body: CloudClipboardItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudClipboardItem | undefined>;
     /**
-     * Get items from users
+     * Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn't support using another user's credentials to get a cloudClipboardItem for a user. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +52,7 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      toPostRequestInformation(body: CloudClipboardItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get items from users
+ * Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn't support using another user's credentials to get a cloudClipboardItem for a user. 
  */
 export interface ItemsRequestBuilderGetQueryParameters {
     /**

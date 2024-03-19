@@ -10,7 +10,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface AcronymItemRequestBuilder extends BaseRequestBuilder<AcronymItemRequestBuilder> {
     /**
-     * Deletes an acronym object.
+     * Delete an acronym object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0|Find more info here}
@@ -34,7 +34,7 @@ export interface AcronymItemRequestBuilder extends BaseRequestBuilder<AcronymIte
      */
      patch(body: Acronym, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Acronym | undefined>;
     /**
-     * Deletes an acronym object.
+     * Delete an acronym object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

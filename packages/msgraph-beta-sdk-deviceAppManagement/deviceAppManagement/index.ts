@@ -15,6 +15,7 @@ import { ManagedAppStatusesRequestBuilderNavigationMetadata, ManagedAppStatusesR
 import { ManagedEBookCategoriesRequestBuilderNavigationMetadata, ManagedEBookCategoriesRequestBuilderRequestsMetadata, type ManagedEBookCategoriesRequestBuilder } from './managedEBookCategories/';
 import { ManagedEBooksRequestBuilderNavigationMetadata, ManagedEBooksRequestBuilderRequestsMetadata, type ManagedEBooksRequestBuilder } from './managedEBooks/';
 import { MdmWindowsInformationProtectionPoliciesRequestBuilderNavigationMetadata, MdmWindowsInformationProtectionPoliciesRequestBuilderRequestsMetadata, type MdmWindowsInformationProtectionPoliciesRequestBuilder } from './mdmWindowsInformationProtectionPolicies/';
+import { MobileAppCatalogPackagesRequestBuilderNavigationMetadata, MobileAppCatalogPackagesRequestBuilderRequestsMetadata, type MobileAppCatalogPackagesRequestBuilder } from './mobileAppCatalogPackages/';
 import { MobileAppCategoriesRequestBuilderNavigationMetadata, MobileAppCategoriesRequestBuilderRequestsMetadata, type MobileAppCategoriesRequestBuilder } from './mobileAppCategories/';
 import { MobileAppConfigurationsRequestBuilderNavigationMetadata, MobileAppConfigurationsRequestBuilderRequestsMetadata, type MobileAppConfigurationsRequestBuilder } from './mobileAppConfigurations/';
 import { MobileAppsRequestBuilderNavigationMetadata, MobileAppsRequestBuilderRequestsMetadata, type MobileAppsRequestBuilder } from './mobileApps/';
@@ -83,6 +84,10 @@ export interface DeviceAppManagementRequestBuilder extends BaseRequestBuilder<De
      * Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
      */
     get mdmWindowsInformationProtectionPolicies(): MdmWindowsInformationProtectionPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the mobileAppCatalogPackages property of the microsoft.graph.deviceAppManagement entity.
+     */
+    get mobileAppCatalogPackages(): MobileAppCatalogPackagesRequestBuilder;
     /**
      * Provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.
      */
@@ -243,6 +248,10 @@ export const DeviceAppManagementRequestBuilderNavigationMetadata: Record<Exclude
     mdmWindowsInformationProtectionPolicies: {
         requestsMetadata: MdmWindowsInformationProtectionPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: MdmWindowsInformationProtectionPoliciesRequestBuilderNavigationMetadata,
+    },
+    mobileAppCatalogPackages: {
+        requestsMetadata: MobileAppCatalogPackagesRequestBuilderRequestsMetadata,
+        navigationMetadata: MobileAppCatalogPackagesRequestBuilderNavigationMetadata,
     },
     mobileAppCategories: {
         requestsMetadata: MobileAppCategoriesRequestBuilderRequestsMetadata,
