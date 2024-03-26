@@ -6,6 +6,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { CatalogRequestBuilderNavigationMetadata, CatalogRequestBuilderRequestsMetadata, type CatalogRequestBuilder } from './catalog/';
 import { DeploymentAudiencesRequestBuilderNavigationMetadata, DeploymentAudiencesRequestBuilderRequestsMetadata, type DeploymentAudiencesRequestBuilder } from './deploymentAudiences/';
 import { DeploymentsRequestBuilderNavigationMetadata, DeploymentsRequestBuilderRequestsMetadata, type DeploymentsRequestBuilder } from './deployments/';
+import { ProductsRequestBuilderNavigationMetadata, ProductsRequestBuilderRequestsMetadata, type ProductsRequestBuilder } from './products/';
 import { ResourceConnectionsRequestBuilderNavigationMetadata, ResourceConnectionsRequestBuilderRequestsMetadata, type ResourceConnectionsRequestBuilder } from './resourceConnections/';
 import { type UpdatableAssetsRequestBuilder, UpdatableAssetsRequestBuilderNavigationMetadata, UpdatableAssetsRequestBuilderRequestsMetadata } from './updatableAssets/';
 import { type UpdatePoliciesRequestBuilder, UpdatePoliciesRequestBuilderNavigationMetadata, UpdatePoliciesRequestBuilderRequestsMetadata } from './updatePolicies/';
@@ -27,6 +28,10 @@ export interface UpdatesRequestBuilder extends BaseRequestBuilder<UpdatesRequest
      * Provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
      */
     get deployments(): DeploymentsRequestBuilder;
+    /**
+     * Provides operations to manage the products property of the microsoft.graph.adminWindowsUpdates entity.
+     */
+    get products(): ProductsRequestBuilder;
     /**
      * Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
      */
@@ -119,6 +124,10 @@ export const UpdatesRequestBuilderNavigationMetadata: Record<Exclude<keyof Updat
     deployments: {
         requestsMetadata: DeploymentsRequestBuilderRequestsMetadata,
         navigationMetadata: DeploymentsRequestBuilderNavigationMetadata,
+    },
+    products: {
+        requestsMetadata: ProductsRequestBuilderRequestsMetadata,
+        navigationMetadata: ProductsRequestBuilderNavigationMetadata,
     },
     resourceConnections: {
         requestsMetadata: ResourceConnectionsRequestBuilderRequestsMetadata,

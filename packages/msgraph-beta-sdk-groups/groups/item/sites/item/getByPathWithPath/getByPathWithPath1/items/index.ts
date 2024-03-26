@@ -10,21 +10,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuilder> {
     /**
-     * Used to address any item contained in this site. This collection cannot be enumerated.
+     * Used to address any item contained in this site. This collection can't be enumerated.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BaseItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ItemsRequestBuilderGetQueryParameters> | undefined) : Promise<BaseItemCollectionResponse | undefined>;
     /**
-     * Used to address any item contained in this site. This collection cannot be enumerated.
+     * Used to address any item contained in this site. This collection can't be enumerated.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Used to address any item contained in this site. This collection cannot be enumerated.
+ * Used to address any item contained in this site. This collection can't be enumerated.
  */
 export interface ItemsRequestBuilderGetQueryParameters {
     /**

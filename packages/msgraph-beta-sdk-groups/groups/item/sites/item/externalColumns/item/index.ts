@@ -10,21 +10,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ColumnDefinitionItemRequestBuilder extends BaseRequestBuilder<ColumnDefinitionItemRequestBuilder> {
     /**
-     * The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+     * The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ColumnDefinitionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ColumnDefinition | undefined>;
     /**
-     * The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+     * The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ColumnDefinitionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+ * The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
  */
 export interface ColumnDefinitionItemRequestBuilderGetQueryParameters {
     /**

@@ -26,7 +26,7 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleAssignmentMultipleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRoleAssignmentMultipleCollectionResponse | undefined>;
     /**

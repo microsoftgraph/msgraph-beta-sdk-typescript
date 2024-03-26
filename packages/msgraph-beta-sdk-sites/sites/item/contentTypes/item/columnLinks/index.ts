@@ -22,7 +22,7 @@ export interface ColumnLinksRequestBuilder extends BaseRequestBuilder<ColumnLink
      */
      byColumnLinkId(columnLinkId: string) : ColumnLinkItemRequestBuilder;
     /**
-     * The collection of columns that are required by this content type
+     * The collection of columns that are required by this content type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface ColumnLinksRequestBuilder extends BaseRequestBuilder<ColumnLink
      */
      post(body: ColumnLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ColumnLink | undefined>;
     /**
-     * The collection of columns that are required by this content type
+     * The collection of columns that are required by this content type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface ColumnLinksRequestBuilder extends BaseRequestBuilder<ColumnLink
      toPostRequestInformation(body: ColumnLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of columns that are required by this content type
+ * The collection of columns that are required by this content type.
  */
 export interface ColumnLinksRequestBuilderGetQueryParameters {
     /**

@@ -4,6 +4,7 @@
 import { createDriveItemFromDiscriminatorValue, type DriveItem } from '@microsoft/msgraph-beta-sdk/models/';
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { ContentRequestBuilderRequestsMetadata, type ContentRequestBuilder } from './content/';
+import { ContentStreamRequestBuilderRequestsMetadata, type ContentStreamRequestBuilder } from './contentStream/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -14,6 +15,10 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      * Provides operations to manage the media for the drive entity.
      */
     get content(): ContentRequestBuilder;
+    /**
+     * Provides operations to manage the media for the drive entity.
+     */
+    get contentStream(): ContentStreamRequestBuilder;
     /**
      * Use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist. If a user deletes one, it is recreated when written to again.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -59,6 +64,9 @@ const DriveItemItemRequestBuilderGetQueryParametersMapper: Record<string, string
 export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DriveItemItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     content: {
         requestsMetadata: ContentRequestBuilderRequestsMetadata,
+    },
+    contentStream: {
+        requestsMetadata: ContentStreamRequestBuilderRequestsMetadata,
     },
 };
 /**

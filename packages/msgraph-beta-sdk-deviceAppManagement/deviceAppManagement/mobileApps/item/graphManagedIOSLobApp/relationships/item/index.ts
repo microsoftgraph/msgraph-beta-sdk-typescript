@@ -16,7 +16,7 @@ export interface MobileAppRelationshipItemRequestBuilder extends BaseRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The set of direct relationships for this app.
+     * List of relationships for this mobile app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppRelationship>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface MobileAppRelationshipItemRequestBuilder extends BaseRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The set of direct relationships for this app.
+     * List of relationships for this mobile app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface MobileAppRelationshipItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: MobileAppRelationship, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The set of direct relationships for this app.
+ * List of relationships for this mobile app.
  */
 export interface MobileAppRelationshipItemRequestBuilderGetQueryParameters {
     /**

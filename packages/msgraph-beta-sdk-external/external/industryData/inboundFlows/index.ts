@@ -30,12 +30,12 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      */
      get(requestConfiguration?: RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters> | undefined) : Promise<InboundFlowCollectionResponse | undefined>;
     /**
-     * Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
+     * Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InboundFlow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0|Find more info here}
      */
      post(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InboundFlow | undefined>;
     /**
@@ -45,7 +45,7 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
+     * Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

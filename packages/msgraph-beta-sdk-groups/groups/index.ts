@@ -55,12 +55,12 @@ export interface GroupsRequestBuilder extends BaseRequestBuilder<GroupsRequestBu
      */
      get(requestConfiguration?: RequestConfiguration<GroupsRequestBuilderGetQueryParameters> | undefined) : Promise<GroupCollectionResponse | undefined>;
     /**
-     * Create a new group as specified in the request body. You can create one of the following groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.
+     * Create a new group object if it doesn't exist, or update the properties of an existing group object.You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Group>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0|Find more info here}
      */
      post(body: Group, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Group | undefined>;
     /**
@@ -70,7 +70,7 @@ export interface GroupsRequestBuilder extends BaseRequestBuilder<GroupsRequestBu
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GroupsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new group as specified in the request body. You can create one of the following groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.
+     * Create a new group object if it doesn't exist, or update the properties of an existing group object.You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

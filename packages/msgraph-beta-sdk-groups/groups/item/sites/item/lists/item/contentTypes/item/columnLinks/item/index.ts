@@ -16,7 +16,7 @@ export interface ColumnLinkItemRequestBuilder extends BaseRequestBuilder<ColumnL
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of columns that are required by this content type
+     * The collection of columns that are required by this content type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface ColumnLinkItemRequestBuilder extends BaseRequestBuilder<ColumnL
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of columns that are required by this content type
+     * The collection of columns that are required by this content type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface ColumnLinkItemRequestBuilder extends BaseRequestBuilder<ColumnL
      toPatchRequestInformation(body: ColumnLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of columns that are required by this content type
+ * The collection of columns that are required by this content type.
  */
 export interface ColumnLinkItemRequestBuilderGetQueryParameters {
     /**

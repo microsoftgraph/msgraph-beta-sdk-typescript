@@ -101,6 +101,10 @@ export interface Alert extends Entity, Parsable {
      */
     actorDisplayName?: string;
     /**
+     * A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.
+     */
+    additionalDataProperty?: Dictionary;
+    /**
      * The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
      */
     alertPolicyId?: string;
@@ -4484,6 +4488,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
     return {
         ...deserializeIntoEntity(alert),
         "actorDisplayName": n => { alert.actorDisplayName = n.getStringValue(); },
+        "additionalData": n => { alert.additionalDataProperty = n.getObjectValue<Dictionary>(createDictionaryFromDiscriminatorValue); },
         "alertPolicyId": n => { alert.alertPolicyId = n.getStringValue(); },
         "alertWebUrl": n => { alert.alertWebUrl = n.getStringValue(); },
         "assignedTo": n => { alert.assignedTo = n.getStringValue(); },
@@ -6618,6 +6623,7 @@ export function deserializeIntoIncident(incident: Partial<Incident> | undefined 
         "recommendedActions": n => { incident.recommendedActions = n.getStringValue(); },
         "recommendedHuntingQueries": n => { incident.recommendedHuntingQueries = n.getCollectionOfObjectValues<RecommendedHuntingQuery>(createRecommendedHuntingQueryFromDiscriminatorValue); },
         "redirectIncidentId": n => { incident.redirectIncidentId = n.getStringValue(); },
+        "resolvingComment": n => { incident.resolvingComment = n.getStringValue(); },
         "severity": n => { incident.severity = n.getEnumValue<AlertSeverity>(AlertSeverityObject); },
         "status": n => { incident.status = n.getEnumValue<IncidentStatus>(IncidentStatusObject); },
         "systemTags": n => { incident.systemTags = n.getCollectionOfPrimitiveValues<string>(); },
@@ -10191,6 +10197,10 @@ export interface Incident extends Entity, Parsable {
      */
     redirectIncidentId?: string;
     /**
+     * The resolvingComment property
+     */
+    resolvingComment?: string;
+    /**
      * The severity property
      */
     severity?: AlertSeverity;
@@ -11796,6 +11806,7 @@ export function serializeAddWatermarkAction(writer: SerializationWriter, addWate
 export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined = {}) : void {
     serializeEntity(writer, alert)
     writer.writeStringValue("actorDisplayName", alert.actorDisplayName);
+    writer.writeObjectValue<Dictionary>("additionalData", alert.additionalDataProperty, serializeDictionary);
     writer.writeStringValue("alertPolicyId", alert.alertPolicyId);
     writer.writeStringValue("alertWebUrl", alert.alertWebUrl);
     writer.writeStringValue("assignedTo", alert.assignedTo);
@@ -13600,6 +13611,7 @@ export function serializeIncident(writer: SerializationWriter, incident: Partial
     writer.writeStringValue("recommendedActions", incident.recommendedActions);
     writer.writeCollectionOfObjectValues<RecommendedHuntingQuery>("recommendedHuntingQueries", incident.recommendedHuntingQueries, serializeRecommendedHuntingQuery);
     writer.writeStringValue("redirectIncidentId", incident.redirectIncidentId);
+    writer.writeStringValue("resolvingComment", incident.resolvingComment);
     writer.writeEnumValue<AlertSeverity>("severity", incident.severity);
     writer.writeEnumValue<IncidentStatus>("status", incident.status);
     writer.writeCollectionOfPrimitiveValues<string>("systemTags", incident.systemTags);

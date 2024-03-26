@@ -10,6 +10,7 @@ import { CheckinRequestBuilderRequestsMetadata, type CheckinRequestBuilder } fro
 import { CheckoutRequestBuilderRequestsMetadata, type CheckoutRequestBuilder } from './checkout/';
 import { ChildrenRequestBuilderNavigationMetadata, ChildrenRequestBuilderRequestsMetadata, type ChildrenRequestBuilder } from './children/';
 import { ContentRequestBuilderRequestsMetadata, type ContentRequestBuilder } from './content/';
+import { ContentStreamRequestBuilderRequestsMetadata, type ContentStreamRequestBuilder } from './contentStream/';
 import { CopyRequestBuilderRequestsMetadata, type CopyRequestBuilder } from './copy/';
 import { CreatedByUserRequestBuilderNavigationMetadata, CreatedByUserRequestBuilderRequestsMetadata, type CreatedByUserRequestBuilder } from './createdByUser/';
 import { CreateLinkRequestBuilderRequestsMetadata, type CreateLinkRequestBuilder } from './createLink/';
@@ -68,6 +69,10 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      * Provides operations to manage the media for the drive entity.
      */
     get content(): ContentRequestBuilder;
+    /**
+     * Provides operations to manage the media for the drive entity.
+     */
+    get contentStream(): ContentStreamRequestBuilder;
     /**
      * Provides operations to call the copy method.
      */
@@ -275,6 +280,9 @@ export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
     },
     content: {
         requestsMetadata: ContentRequestBuilderRequestsMetadata,
+    },
+    contentStream: {
+        requestsMetadata: ContentStreamRequestBuilderRequestsMetadata,
     },
     copy: {
         requestsMetadata: CopyRequestBuilderRequestsMetadata,
