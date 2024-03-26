@@ -34,7 +34,7 @@ export interface CallsRequestBuilder extends BaseRequestBuilder<CallsRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<CallsRequestBuilderGetQueryParameters> | undefined) : Promise<CallCollectionResponse | undefined>;
     /**
-     * Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.
+     * Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You need to register the calling bot and go through the list of permissions needed.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Call>}
@@ -49,7 +49,7 @@ export interface CallsRequestBuilder extends BaseRequestBuilder<CallsRequestBuil
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CallsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.
+     * Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You need to register the calling bot and go through the list of permissions needed.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -4,6 +4,7 @@
 import { AuthenticationContextClassReferencesRequestBuilderNavigationMetadata, AuthenticationContextClassReferencesRequestBuilderRequestsMetadata, type AuthenticationContextClassReferencesRequestBuilder } from './authenticationContextClassReferences/';
 import { AuthenticationStrengthRequestBuilderNavigationMetadata, AuthenticationStrengthRequestBuilderRequestsMetadata, type AuthenticationStrengthRequestBuilder } from './authenticationStrength/';
 import { AuthenticationStrengthsRequestBuilderNavigationMetadata, AuthenticationStrengthsRequestBuilderRequestsMetadata, type AuthenticationStrengthsRequestBuilder } from './authenticationStrengths/';
+import { EvaluateRequestBuilderRequestsMetadata, type EvaluateRequestBuilder } from './evaluate/';
 import { NamedLocationsRequestBuilderNavigationMetadata, NamedLocationsRequestBuilderRequestsMetadata, type NamedLocationsRequestBuilder } from './namedLocations/';
 import { PoliciesRequestBuilderNavigationMetadata, PoliciesRequestBuilderRequestsMetadata, type PoliciesRequestBuilder } from './policies/';
 import { TemplatesRequestBuilderNavigationMetadata, TemplatesRequestBuilderRequestsMetadata, type TemplatesRequestBuilder } from './templates/';
@@ -25,6 +26,10 @@ export interface ConditionalAccessRequestBuilder extends BaseRequestBuilder<Cond
      * Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.
      */
     get authenticationStrengths(): AuthenticationStrengthsRequestBuilder;
+    /**
+     * Provides operations to call the evaluate method.
+     */
+    get evaluate(): EvaluateRequestBuilder;
     /**
      * Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
      */
@@ -57,6 +62,9 @@ export const ConditionalAccessRequestBuilderNavigationMetadata: Record<Exclude<k
     authenticationStrengths: {
         requestsMetadata: AuthenticationStrengthsRequestBuilderRequestsMetadata,
         navigationMetadata: AuthenticationStrengthsRequestBuilderNavigationMetadata,
+    },
+    evaluate: {
+        requestsMetadata: EvaluateRequestBuilderRequestsMetadata,
     },
     namedLocations: {
         requestsMetadata: NamedLocationsRequestBuilderRequestsMetadata,

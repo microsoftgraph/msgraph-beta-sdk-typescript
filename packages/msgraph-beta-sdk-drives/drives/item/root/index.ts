@@ -4,6 +4,7 @@
 import { createDriveItemFromDiscriminatorValue, type DriveItem } from '@microsoft/msgraph-beta-sdk/models/';
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 import { ContentRequestBuilderRequestsMetadata, type ContentRequestBuilder } from './content/';
+import { ContentStreamRequestBuilderRequestsMetadata, type ContentStreamRequestBuilder } from './contentStream/';
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -14,6 +15,10 @@ export interface RootRequestBuilder extends BaseRequestBuilder<RootRequestBuilde
      * Provides operations to manage the media for the drive entity.
      */
     get content(): ContentRequestBuilder;
+    /**
+     * Provides operations to manage the media for the drive entity.
+     */
+    get contentStream(): ContentStreamRequestBuilder;
     /**
      * Retrieve the metadata for a driveItem in a drive by file system path or ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -59,6 +64,9 @@ const RootRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const RootRequestBuilderNavigationMetadata: Record<Exclude<keyof RootRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     content: {
         requestsMetadata: ContentRequestBuilderRequestsMetadata,
+    },
+    contentStream: {
+        requestsMetadata: ContentStreamRequestBuilderRequestsMetadata,
     },
 };
 /**

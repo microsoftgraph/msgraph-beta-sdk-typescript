@@ -81,6 +81,7 @@ export interface AzureADDeviceRegistrationError extends Parsable, UpdatableAsset
     reason?: AzureADDeviceRegistrationErrorReason;
 }
 export type AzureADDeviceRegistrationErrorReason = (typeof AzureADDeviceRegistrationErrorReasonObject)[keyof typeof AzureADDeviceRegistrationErrorReasonObject];
+export type BodyType = (typeof BodyTypeObject)[keyof typeof BodyTypeObject];
 export interface BuildVersionDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -571,6 +572,22 @@ export function createDurationDrivenRolloutSettingsFromDiscriminatorValue(parseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EditionCollectionResponse}
+ */
+export function createEditionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEditionCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Edition}
+ */
+export function createEditionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEdition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExpediteSettings}
  */
 export function createExpediteSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -610,10 +627,42 @@ export function createGradualRolloutSettingsFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ItemBody}
+ */
+export function createItemBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoItemBody;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {KnowledgeBaseArticle}
  */
 export function createKnowledgeBaseArticleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoKnowledgeBaseArticle;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {KnownIssueCollectionResponse}
+ */
+export function createKnownIssueCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoKnownIssueCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {KnownIssue}
+ */
+export function createKnownIssueFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoKnownIssue;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {KnownIssueHistoryItem}
+ */
+export function createKnownIssueHistoryItemFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoKnownIssueHistoryItem;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -638,6 +687,30 @@ export function createMonitoringSettingsFromDiscriminatorValue(parseNode: ParseN
  */
 export function createOperationalInsightsConnectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoOperationalInsightsConnection;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProductCollectionResponse}
+ */
+export function createProductCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProductCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Product}
+ */
+export function createProductFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProduct;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProductRevisionCollectionResponse}
+ */
+export function createProductRevisionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProductRevisionCollectionResponse;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -729,6 +802,14 @@ export function createSafeguardSettingsFromDiscriminatorValue(parseNode: ParseNo
  */
 export function createScheduleSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoScheduleSettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ServicingPeriod}
+ */
+export function createServicingPeriodFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoServicingPeriod;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1439,6 +1520,32 @@ export function deserializeIntoDurationDrivenRolloutSettings(durationDrivenRollo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoEdition(edition: Partial<Edition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(edition),
+        "deviceFamily": n => { edition.deviceFamily = n.getStringValue(); },
+        "endOfServiceDateTime": n => { edition.endOfServiceDateTime = n.getDateValue(); },
+        "generalAvailabilityDateTime": n => { edition.generalAvailabilityDateTime = n.getDateValue(); },
+        "isInService": n => { edition.isInService = n.getBooleanValue(); },
+        "name": n => { edition.name = n.getStringValue(); },
+        "releasedName": n => { edition.releasedName = n.getStringValue(); },
+        "servicingPeriods": n => { edition.servicingPeriods = n.getCollectionOfObjectValues<ServicingPeriod>(createServicingPeriodFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoEditionCollectionResponse(editionCollectionResponse: Partial<EditionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(editionCollectionResponse),
+        "value": n => { editionCollectionResponse.value = n.getCollectionOfObjectValues<Edition>(createEditionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoExpediteSettings(expediteSettings: Partial<ExpediteSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { expediteSettings.backingStoreEnabled = true; },
@@ -1473,10 +1580,64 @@ export function deserializeIntoGradualRolloutSettings(gradualRolloutSettings: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoItemBody(itemBody: Partial<ItemBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { itemBody.backingStoreEnabled = true; },
+        "content": n => { itemBody.content = n.getStringValue(); },
+        "contentType": n => { itemBody.contentType = n.getEnumValue<BodyType>(BodyTypeObject); },
+        "@odata.type": n => { itemBody.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoKnowledgeBaseArticle(knowledgeBaseArticle: Partial<KnowledgeBaseArticle> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(knowledgeBaseArticle),
         "url": n => { knowledgeBaseArticle.url = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoKnownIssue(knownIssue: Partial<KnownIssue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(knownIssue),
+        "description": n => { knownIssue.description = n.getStringValue(); },
+        "knownIssueHistories": n => { knownIssue.knownIssueHistories = n.getCollectionOfObjectValues<KnownIssueHistoryItem>(createKnownIssueHistoryItemFromDiscriminatorValue); },
+        "lastUpdatedDateTime": n => { knownIssue.lastUpdatedDateTime = n.getDateValue(); },
+        "originatingKnowledgeBaseArticle": n => { knownIssue.originatingKnowledgeBaseArticle = n.getObjectValue<KnowledgeBaseArticle>(createKnowledgeBaseArticleFromDiscriminatorValue); },
+        "resolvedDateTime": n => { knownIssue.resolvedDateTime = n.getDateValue(); },
+        "resolvingKnowledgeBaseArticle": n => { knownIssue.resolvingKnowledgeBaseArticle = n.getObjectValue<KnowledgeBaseArticle>(createKnowledgeBaseArticleFromDiscriminatorValue); },
+        "safeguardHoldIds": n => { knownIssue.safeguardHoldIds = n.getCollectionOfPrimitiveValues<number>(); },
+        "startDateTime": n => { knownIssue.startDateTime = n.getDateValue(); },
+        "status": n => { knownIssue.status = n.getEnumValue<WindowsReleaseHealthStatus>(WindowsReleaseHealthStatusObject); },
+        "title": n => { knownIssue.title = n.getStringValue(); },
+        "webViewUrl": n => { knownIssue.webViewUrl = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoKnownIssueCollectionResponse(knownIssueCollectionResponse: Partial<KnownIssueCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(knownIssueCollectionResponse),
+        "value": n => { knownIssueCollectionResponse.value = n.getCollectionOfObjectValues<KnownIssue>(createKnownIssueFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoKnownIssueHistoryItem(knownIssueHistoryItem: Partial<KnownIssueHistoryItem> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { knownIssueHistoryItem.backingStoreEnabled = true; },
+        "body": n => { knownIssueHistoryItem.body = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
+        "createdDateTime": n => { knownIssueHistoryItem.createdDateTime = n.getDateValue(); },
+        "@odata.type": n => { knownIssueHistoryItem.odataType = n.getStringValue(); },
     }
 }
 /**
@@ -1519,15 +1680,51 @@ export function deserializeIntoOperationalInsightsConnection(operationalInsights
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoProduct(product: Partial<Product> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(product),
+        "editions": n => { product.editions = n.getCollectionOfObjectValues<Edition>(createEditionFromDiscriminatorValue); },
+        "friendlyNames": n => { product.friendlyNames = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupName": n => { product.groupName = n.getStringValue(); },
+        "knownIssues": n => { product.knownIssues = n.getCollectionOfObjectValues<KnownIssue>(createKnownIssueFromDiscriminatorValue); },
+        "name": n => { product.name = n.getStringValue(); },
+        "revisions": n => { product.revisions = n.getCollectionOfObjectValues<ProductRevision>(createProductRevisionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoProductCollectionResponse(productCollectionResponse: Partial<ProductCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(productCollectionResponse),
+        "value": n => { productCollectionResponse.value = n.getCollectionOfObjectValues<Product>(createProductFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoProductRevision(productRevision: Partial<ProductRevision> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(productRevision),
+        "catalogEntry": n => { productRevision.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
         "displayName": n => { productRevision.displayName = n.getStringValue(); },
         "knowledgeBaseArticle": n => { productRevision.knowledgeBaseArticle = n.getObjectValue<KnowledgeBaseArticle>(createKnowledgeBaseArticleFromDiscriminatorValue); },
         "osBuild": n => { productRevision.osBuild = n.getObjectValue<BuildVersionDetails>(createBuildVersionDetailsFromDiscriminatorValue); },
         "product": n => { productRevision.product = n.getStringValue(); },
         "releaseDateTime": n => { productRevision.releaseDateTime = n.getDateValue(); },
         "version": n => { productRevision.version = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoProductRevisionCollectionResponse(productRevisionCollectionResponse: Partial<ProductRevisionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(productRevisionCollectionResponse),
+        "value": n => { productRevisionCollectionResponse.value = n.getCollectionOfObjectValues<ProductRevision>(createProductRevisionFromDiscriminatorValue); },
     }
 }
 /**
@@ -1632,6 +1829,19 @@ export function deserializeIntoScheduleSettings(scheduleSettings: Partial<Schedu
         "gradualRollout": n => { scheduleSettings.gradualRollout = n.getObjectValue<GradualRolloutSettings>(createGradualRolloutSettingsFromDiscriminatorValue); },
         "@odata.type": n => { scheduleSettings.odataType = n.getStringValue(); },
         "startDateTime": n => { scheduleSettings.startDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoServicingPeriod(servicingPeriod: Partial<ServicingPeriod> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { servicingPeriod.backingStoreEnabled = true; },
+        "endDateTime": n => { servicingPeriod.endDateTime = n.getDateValue(); },
+        "name": n => { servicingPeriod.name = n.getStringValue(); },
+        "@odata.type": n => { servicingPeriod.odataType = n.getStringValue(); },
+        "startDateTime": n => { servicingPeriod.startDateTime = n.getDateValue(); },
     }
 }
 /**
@@ -1795,6 +2005,42 @@ export interface DurationDrivenRolloutSettings extends GradualRolloutSettings, P
      */
     durationUntilDeploymentEnd?: Duration;
 }
+export interface Edition extends Entity, Parsable {
+    /**
+     * The device family targeted by the edition.
+     */
+    deviceFamily?: string;
+    /**
+     * The date and time when the edition reached the end of service. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     */
+    endOfServiceDateTime?: Date;
+    /**
+     * The date and time when the edition became available to the general customers for the first time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     */
+    generalAvailabilityDateTime?: Date;
+    /**
+     * Indicates whether the edition is in service or out of service.
+     */
+    isInService?: boolean;
+    /**
+     * The name of the edition. Read-only.
+     */
+    name?: string;
+    /**
+     * The public name of the edition. Read-only.
+     */
+    releasedName?: string;
+    /**
+     * The servicingPeriods property
+     */
+    servicingPeriods?: ServicingPeriod[];
+}
+export interface EditionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Edition[];
+}
 export interface ExpediteSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -1845,11 +2091,107 @@ export interface GradualRolloutSettings extends AdditionalDataHolder, BackedMode
      */
     odataType?: string;
 }
+export interface ItemBody extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The content of the item.
+     */
+    content?: string;
+    /**
+     * The type of the content indicated by the enum value of bodyType. Possible values are: text, html, unknownFutureValue.
+     */
+    contentType?: BodyType;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
 export interface KnowledgeBaseArticle extends Entity, Parsable {
     /**
      * The URL of the knowledge base article. Read-only.
      */
     url?: string;
+}
+export interface KnownIssue extends Entity, Parsable {
+    /**
+     * The description of the particular known issue.
+     */
+    description?: string;
+    /**
+     * The knownIssueHistories property
+     */
+    knownIssueHistories?: KnownIssueHistoryItem[];
+    /**
+     * The date and time when the known issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     */
+    lastUpdatedDateTime?: Date;
+    /**
+     * Knowledge base article associated with the release when the known issue was first reported.
+     */
+    originatingKnowledgeBaseArticle?: KnowledgeBaseArticle;
+    /**
+     * The date and time when the known issue was resolved or mitigated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    resolvedDateTime?: Date;
+    /**
+     * Knowledge base article associated with the release when the known issue was resolved or mitigated.
+     */
+    resolvingKnowledgeBaseArticle?: KnowledgeBaseArticle;
+    /**
+     * The safeguardHoldIds property
+     */
+    safeguardHoldIds?: number[];
+    /**
+     * The date and time when the known issue was first reported. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    startDateTime?: Date;
+    /**
+     * The status property
+     */
+    status?: WindowsReleaseHealthStatus;
+    /**
+     * The title of the known issue.
+     */
+    title?: string;
+    /**
+     * The URL to the known issue in the Windows Release Health dashboard on Microsoft 365 admin center.
+     */
+    webViewUrl?: string;
+}
+export interface KnownIssueCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: KnownIssue[];
+}
+export interface KnownIssueHistoryItem extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The body property
+     */
+    body?: ItemBody;
+    /**
+     * The date and time when the post was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     */
+    createdDateTime?: Date;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
 }
 export type MonitoringAction = (typeof MonitoringActionObject)[keyof typeof MonitoringActionObject];
 export interface MonitoringRule extends AdditionalDataHolder, BackedModel, Parsable {
@@ -1911,7 +2253,43 @@ export interface OperationalInsightsConnection extends Parsable, ResourceConnect
      */
     workspaceName?: string;
 }
+export interface Product extends Entity, Parsable {
+    /**
+     * Represents an edition of a particular Windows product.
+     */
+    editions?: Edition[];
+    /**
+     * The friendly names of the product. For example, Version 22H2 (OS build 22621). Read-only.
+     */
+    friendlyNames?: string[];
+    /**
+     * The name of the product group. For example, Windows 11. Read-only.
+     */
+    groupName?: string;
+    /**
+     * Represents a known issue related to a Windows product.
+     */
+    knownIssues?: KnownIssue[];
+    /**
+     * The name of the product. For example, Windows 11, version 22H2. Read-only.
+     */
+    name?: string;
+    /**
+     * Represents a product revision.
+     */
+    revisions?: ProductRevision[];
+}
+export interface ProductCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Product[];
+}
 export interface ProductRevision extends Entity, Parsable {
+    /**
+     * The catalogEntry property
+     */
+    catalogEntry?: CatalogEntry;
     /**
      * The display name of the content. Read-only.
      */
@@ -1936,6 +2314,12 @@ export interface ProductRevision extends Entity, Parsable {
      * The version of the feature update. Read-only.
      */
     version?: string;
+}
+export interface ProductRevisionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ProductRevision[];
 }
 export type QualityUpdateCadence = (typeof QualityUpdateCadenceObject)[keyof typeof QualityUpdateCadenceObject];
 export interface QualityUpdateCatalogEntry extends Parsable, SoftwareUpdateCatalogEntry {
@@ -2382,6 +2766,28 @@ export function serializeDurationDrivenRolloutSettings(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeEdition(writer: SerializationWriter, edition: Partial<Edition> | undefined = {}) : void {
+    serializeEntity(writer, edition)
+    writer.writeStringValue("deviceFamily", edition.deviceFamily);
+    writer.writeDateValue("endOfServiceDateTime", edition.endOfServiceDateTime);
+    writer.writeDateValue("generalAvailabilityDateTime", edition.generalAvailabilityDateTime);
+    writer.writeBooleanValue("isInService", edition.isInService);
+    writer.writeStringValue("name", edition.name);
+    writer.writeStringValue("releasedName", edition.releasedName);
+    writer.writeCollectionOfObjectValues<ServicingPeriod>("servicingPeriods", edition.servicingPeriods, serializeServicingPeriod);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeEditionCollectionResponse(writer: SerializationWriter, editionCollectionResponse: Partial<EditionCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, editionCollectionResponse)
+    writer.writeCollectionOfObjectValues<Edition>("value", editionCollectionResponse.value, serializeEdition);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeExpediteSettings(writer: SerializationWriter, expediteSettings: Partial<ExpediteSettings> | undefined = {}) : void {
     writer.writeBooleanValue("isExpedited", expediteSettings.isExpedited);
     writer.writeBooleanValue("isReadinessTest", expediteSettings.isReadinessTest);
@@ -2410,9 +2816,55 @@ export function serializeGradualRolloutSettings(writer: SerializationWriter, gra
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeItemBody(writer: SerializationWriter, itemBody: Partial<ItemBody> | undefined = {}) : void {
+    writer.writeStringValue("content", itemBody.content);
+    writer.writeEnumValue<BodyType>("contentType", itemBody.contentType);
+    writer.writeStringValue("@odata.type", itemBody.odataType);
+    writer.writeAdditionalData(itemBody.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeKnowledgeBaseArticle(writer: SerializationWriter, knowledgeBaseArticle: Partial<KnowledgeBaseArticle> | undefined = {}) : void {
     serializeEntity(writer, knowledgeBaseArticle)
     writer.writeStringValue("url", knowledgeBaseArticle.url);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeKnownIssue(writer: SerializationWriter, knownIssue: Partial<KnownIssue> | undefined = {}) : void {
+    serializeEntity(writer, knownIssue)
+    writer.writeStringValue("description", knownIssue.description);
+    writer.writeCollectionOfObjectValues<KnownIssueHistoryItem>("knownIssueHistories", knownIssue.knownIssueHistories, serializeKnownIssueHistoryItem);
+    writer.writeDateValue("lastUpdatedDateTime", knownIssue.lastUpdatedDateTime);
+    writer.writeObjectValue<KnowledgeBaseArticle>("originatingKnowledgeBaseArticle", knownIssue.originatingKnowledgeBaseArticle, serializeKnowledgeBaseArticle);
+    writer.writeDateValue("resolvedDateTime", knownIssue.resolvedDateTime);
+    writer.writeObjectValue<KnowledgeBaseArticle>("resolvingKnowledgeBaseArticle", knownIssue.resolvingKnowledgeBaseArticle, serializeKnowledgeBaseArticle);
+    writer.writeCollectionOfPrimitiveValues<number>("safeguardHoldIds", knownIssue.safeguardHoldIds);
+    writer.writeDateValue("startDateTime", knownIssue.startDateTime);
+    writer.writeEnumValue<WindowsReleaseHealthStatus>("status", knownIssue.status);
+    writer.writeStringValue("title", knownIssue.title);
+    writer.writeStringValue("webViewUrl", knownIssue.webViewUrl);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeKnownIssueCollectionResponse(writer: SerializationWriter, knownIssueCollectionResponse: Partial<KnownIssueCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, knownIssueCollectionResponse)
+    writer.writeCollectionOfObjectValues<KnownIssue>("value", knownIssueCollectionResponse.value, serializeKnownIssue);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeKnownIssueHistoryItem(writer: SerializationWriter, knownIssueHistoryItem: Partial<KnownIssueHistoryItem> | undefined = {}) : void {
+    writer.writeObjectValue<ItemBody>("body", knownIssueHistoryItem.body, serializeItemBody);
+    writer.writeDateValue("createdDateTime", knownIssueHistoryItem.createdDateTime);
+    writer.writeStringValue("@odata.type", knownIssueHistoryItem.odataType);
+    writer.writeAdditionalData(knownIssueHistoryItem.additionalData);
 }
 /**
  * Serializes information the current object
@@ -2448,14 +2900,44 @@ export function serializeOperationalInsightsConnection(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeProduct(writer: SerializationWriter, product: Partial<Product> | undefined = {}) : void {
+    serializeEntity(writer, product)
+    writer.writeCollectionOfObjectValues<Edition>("editions", product.editions, serializeEdition);
+    writer.writeCollectionOfPrimitiveValues<string>("friendlyNames", product.friendlyNames);
+    writer.writeStringValue("groupName", product.groupName);
+    writer.writeCollectionOfObjectValues<KnownIssue>("knownIssues", product.knownIssues, serializeKnownIssue);
+    writer.writeStringValue("name", product.name);
+    writer.writeCollectionOfObjectValues<ProductRevision>("revisions", product.revisions, serializeProductRevision);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeProductCollectionResponse(writer: SerializationWriter, productCollectionResponse: Partial<ProductCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, productCollectionResponse)
+    writer.writeCollectionOfObjectValues<Product>("value", productCollectionResponse.value, serializeProduct);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeProductRevision(writer: SerializationWriter, productRevision: Partial<ProductRevision> | undefined = {}) : void {
     serializeEntity(writer, productRevision)
+    writer.writeObjectValue<CatalogEntry>("catalogEntry", productRevision.catalogEntry, serializeCatalogEntry);
     writer.writeStringValue("displayName", productRevision.displayName);
     writer.writeObjectValue<KnowledgeBaseArticle>("knowledgeBaseArticle", productRevision.knowledgeBaseArticle, serializeKnowledgeBaseArticle);
     writer.writeObjectValue<BuildVersionDetails>("osBuild", productRevision.osBuild, serializeBuildVersionDetails);
     writer.writeStringValue("product", productRevision.product);
     writer.writeDateValue("releaseDateTime", productRevision.releaseDateTime);
     writer.writeStringValue("version", productRevision.version);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeProductRevisionCollectionResponse(writer: SerializationWriter, productRevisionCollectionResponse: Partial<ProductRevisionCollectionResponse> | undefined = {}) : void {
+    serializeBaseCollectionPaginationCountResponse(writer, productRevisionCollectionResponse)
+    writer.writeCollectionOfObjectValues<ProductRevision>("value", productRevisionCollectionResponse.value, serializeProductRevision);
 }
 /**
  * Serializes information the current object
@@ -2542,6 +3024,17 @@ export function serializeScheduleSettings(writer: SerializationWriter, scheduleS
     writer.writeStringValue("@odata.type", scheduleSettings.odataType);
     writer.writeDateValue("startDateTime", scheduleSettings.startDateTime);
     writer.writeAdditionalData(scheduleSettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeServicingPeriod(writer: SerializationWriter, servicingPeriod: Partial<ServicingPeriod> | undefined = {}) : void {
+    writer.writeDateValue("endDateTime", servicingPeriod.endDateTime);
+    writer.writeStringValue("name", servicingPeriod.name);
+    writer.writeStringValue("@odata.type", servicingPeriod.odataType);
+    writer.writeDateValue("startDateTime", servicingPeriod.startDateTime);
+    writer.writeAdditionalData(servicingPeriod.additionalData);
 }
 /**
  * Serializes information the current object
@@ -2641,6 +3134,32 @@ export function serializeUserExperienceSettings(writer: SerializationWriter, use
  */
 export function serializeWindowsUpdateFilter(writer: SerializationWriter, windowsUpdateFilter: Partial<WindowsUpdateFilter> | undefined = {}) : void {
     serializeSoftwareUpdateFilter(writer, windowsUpdateFilter)
+}
+export interface ServicingPeriod extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The date and time when the servicing period ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     */
+    endDateTime?: Date;
+    /**
+     * The name of the servicing period. For example, Modern Lifecycle.
+     */
+    name?: string;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * The start date and time of the servicing period. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     */
+    startDateTime?: Date;
 }
 export interface SoftwareUpdateCatalogEntry extends CatalogEntry, Parsable {
 }
@@ -2749,6 +3268,7 @@ export interface UserExperienceSettings extends AdditionalDataHolder, BackedMode
      */
     offerAsOptional?: boolean;
 }
+export type WindowsReleaseHealthStatus = (typeof WindowsReleaseHealthStatusObject)[keyof typeof WindowsReleaseHealthStatusObject];
 export interface WindowsUpdateFilter extends Parsable, SoftwareUpdateFilter {
 }
 export const AzureADDeviceRegistrationErrorReasonObject = {
@@ -2756,6 +3276,11 @@ export const AzureADDeviceRegistrationErrorReasonObject = {
     InvalidAzureADDeviceId: "invalidAzureADDeviceId",
     MissingTrustType: "missingTrustType",
     InvalidAzureADJoin: "invalidAzureADJoin",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const BodyTypeObject = {
+    Text: "text",
+    Html: "html",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const CveSeverityLevelObject = {
@@ -2823,6 +3348,16 @@ export const UpdateCategoryObject = {
     Quality: "quality",
     UnknownFutureValue: "unknownFutureValue",
     Driver: "driver",
+} as const;
+export const WindowsReleaseHealthStatusObject = {
+    Resolved: "resolved",
+    MitigatedExternal: "mitigatedExternal",
+    Mitigated: "mitigated",
+    ResolvedExternal: "resolvedExternal",
+    Confirmed: "confirmed",
+    Reported: "reported",
+    Investigating: "investigating",
+    UnknownFutureValue: "unknownFutureValue",
 } as const;
 /* tslint:enable */
 /* eslint-enable */

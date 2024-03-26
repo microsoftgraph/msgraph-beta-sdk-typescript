@@ -14,6 +14,7 @@ import { CheckMemberGroupsRequestBuilderRequestsMetadata, type CheckMemberGroups
 import { CheckMemberObjectsRequestBuilderRequestsMetadata, type CheckMemberObjectsRequestBuilder } from './checkMemberObjects/';
 import { ConversationsRequestBuilderNavigationMetadata, ConversationsRequestBuilderRequestsMetadata, type ConversationsRequestBuilder } from './conversations/';
 import { CreatedOnBehalfOfRequestBuilderRequestsMetadata, type CreatedOnBehalfOfRequestBuilder } from './createdOnBehalfOf/';
+import { DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type DeletePasswordSingleSignOnCredentialsRequestBuilder } from './deletePasswordSingleSignOnCredentials/';
 import { DriveRequestBuilderRequestsMetadata, type DriveRequestBuilder } from './drive/';
 import { DrivesRequestBuilderNavigationMetadata, DrivesRequestBuilderRequestsMetadata, type DrivesRequestBuilder } from './drives/';
 import { EndpointsRequestBuilderNavigationMetadata, EndpointsRequestBuilderRequestsMetadata, type EndpointsRequestBuilder } from './endpoints/';
@@ -22,6 +23,7 @@ import { EventsRequestBuilderNavigationMetadata, EventsRequestBuilderRequestsMet
 import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/';
 import { GetMemberGroupsRequestBuilderRequestsMetadata, type GetMemberGroupsRequestBuilder } from './getMemberGroups/';
 import { GetMemberObjectsRequestBuilderRequestsMetadata, type GetMemberObjectsRequestBuilder } from './getMemberObjects/';
+import { GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type GetPasswordSingleSignOnCredentialsRequestBuilder } from './getPasswordSingleSignOnCredentials/';
 import { GroupLifecyclePoliciesRequestBuilderNavigationMetadata, GroupLifecyclePoliciesRequestBuilderRequestsMetadata, type GroupLifecyclePoliciesRequestBuilder } from './groupLifecyclePolicies/';
 import { MemberOfRequestBuilderNavigationMetadata, MemberOfRequestBuilderRequestsMetadata, type MemberOfRequestBuilder } from './memberOf/';
 import { MembersRequestBuilderNavigationMetadata, MembersRequestBuilderRequestsMetadata, type MembersRequestBuilder } from './members/';
@@ -99,6 +101,10 @@ export interface GroupItemRequestBuilder extends BaseRequestBuilder<GroupItemReq
      */
     get createdOnBehalfOf(): CreatedOnBehalfOfRequestBuilder;
     /**
+     * Provides operations to call the deletePasswordSingleSignOnCredentials method.
+     */
+    get deletePasswordSingleSignOnCredentials(): DeletePasswordSingleSignOnCredentialsRequestBuilder;
+    /**
      * Provides operations to manage the drive property of the microsoft.graph.group entity.
      */
     get drive(): DriveRequestBuilder;
@@ -130,6 +136,10 @@ export interface GroupItemRequestBuilder extends BaseRequestBuilder<GroupItemReq
      * Provides operations to call the getMemberObjects method.
      */
     get getMemberObjects(): GetMemberObjectsRequestBuilder;
+    /**
+     * Provides operations to call the getPasswordSingleSignOnCredentials method.
+     */
+    get getPasswordSingleSignOnCredentials(): GetPasswordSingleSignOnCredentialsRequestBuilder;
     /**
      * Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
      */
@@ -344,6 +354,9 @@ export const GroupItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Gro
     createdOnBehalfOf: {
         requestsMetadata: CreatedOnBehalfOfRequestBuilderRequestsMetadata,
     },
+    deletePasswordSingleSignOnCredentials: {
+        requestsMetadata: DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata,
+    },
     drive: {
         requestsMetadata: DriveRequestBuilderRequestsMetadata,
     },
@@ -371,6 +384,9 @@ export const GroupItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Gro
     },
     getMemberObjects: {
         requestsMetadata: GetMemberObjectsRequestBuilderRequestsMetadata,
+    },
+    getPasswordSingleSignOnCredentials: {
+        requestsMetadata: GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata,
     },
     groupLifecyclePolicies: {
         requestsMetadata: GroupLifecyclePoliciesRequestBuilderRequestsMetadata,

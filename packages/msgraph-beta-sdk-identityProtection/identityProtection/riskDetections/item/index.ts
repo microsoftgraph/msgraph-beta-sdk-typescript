@@ -16,11 +16,11 @@ export interface RiskDetectionItemRequestBuilder extends BaseRequestBuilder<Risk
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Retrieve the properties of a collection of riskDetection objects.
+     * Retrieve the properties of a riskDetection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RiskDetection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RiskDetectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<RiskDetection | undefined>;
     /**
@@ -38,7 +38,7 @@ export interface RiskDetectionItemRequestBuilder extends BaseRequestBuilder<Risk
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Retrieve the properties of a collection of riskDetection objects.
+     * Retrieve the properties of a riskDetection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -52,7 +52,7 @@ export interface RiskDetectionItemRequestBuilder extends BaseRequestBuilder<Risk
      toPatchRequestInformation(body: RiskDetection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties of a collection of riskDetection objects.
+ * Retrieve the properties of a riskDetection object.
  */
 export interface RiskDetectionItemRequestBuilderGetQueryParameters {
     /**

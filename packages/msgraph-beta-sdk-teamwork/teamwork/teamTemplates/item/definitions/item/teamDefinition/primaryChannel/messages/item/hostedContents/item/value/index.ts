@@ -15,7 +15,7 @@ export interface ContentRequestBuilder extends BaseRequestBuilder<ContentRequest
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0|Find more info here}
      */
-     get(requestConfiguration?: RequestConfiguration<ContentRequestBuilderGetQueryParameters> | undefined) : Promise<ArrayBuffer | undefined>;
+     get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
      * Update media content for the navigation property hostedContents in teamwork
      * @param body Binary request body
@@ -29,7 +29,7 @@ export interface ContentRequestBuilder extends BaseRequestBuilder<ContentRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
-     toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
+     toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Update media content for the navigation property hostedContents in teamwork
      * @param body Binary request body
@@ -39,24 +39,9 @@ export interface ContentRequestBuilder extends BaseRequestBuilder<ContentRequest
      toPutRequestInformation(body: ArrayBuffer | undefined, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get media content for the navigation property hostedContents from teamwork
- */
-export interface ContentRequestBuilderGetQueryParameters {
-    /**
-     * Format of the content
-     */
-    format?: string;
-}
-/**
  * Uri template for the request builder.
  */
-export const ContentRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/messages/{chatMessage%2Did}/hostedContents/{chatMessageHostedContent%2Did}/$value{?%24format*}";
-/**
- * Mapper for query parameters from symbol name to serialization name represented as a constant.
- */
-const ContentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
-    "format": "%24format",
-};
+export const ContentRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/messages/{chatMessage%2Did}/hostedContents/{chatMessageHostedContent%2Did}/$value";
 /**
  * Metadata for all the requests in the request builder.
  */
@@ -69,7 +54,6 @@ export const ContentRequestBuilderRequestsMetadata: RequestsMetadata = {
         },
         adapterMethodName: "sendPrimitive",
         responseBodyFactory:  "ArrayBuffer",
-        queryParametersMapper: ContentRequestBuilderGetQueryParametersMapper,
     },
     put: {
         uriTemplate: ContentRequestBuilderUriTemplate,

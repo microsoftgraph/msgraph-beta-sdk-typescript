@@ -22,7 +22,7 @@ export interface ColumnsRequestBuilder extends BaseRequestBuilder<ColumnsRequest
      */
      byColumnDefinitionId(columnDefinitionId: string) : ColumnDefinitionItemRequestBuilder;
     /**
-     * The collection of column definitions for this contentType.
+     * The collection of column definitions for this content type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ColumnDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -39,7 +39,7 @@ export interface ColumnsRequestBuilder extends BaseRequestBuilder<ColumnsRequest
      */
      post(body: ColumnDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ColumnDefinition | undefined>;
     /**
-     * The collection of column definitions for this contentType.
+     * The collection of column definitions for this content type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -53,7 +53,7 @@ export interface ColumnsRequestBuilder extends BaseRequestBuilder<ColumnsRequest
      toPostRequestInformation(body: ColumnDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of column definitions for this contentType.
+ * The collection of column definitions for this content type.
  */
 export interface ColumnsRequestBuilderGetQueryParameters {
     /**

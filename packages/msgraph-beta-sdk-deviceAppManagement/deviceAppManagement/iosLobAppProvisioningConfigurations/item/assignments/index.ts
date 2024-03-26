@@ -22,7 +22,7 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      */
      byIosLobAppProvisioningConfigurationAssignmentId(iosLobAppProvisioningConfigurationAssignmentId: string) : IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder;
     /**
-     * The associated group assignments for IosLobAppProvisioningConfiguration.
+     * The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IosLobAppProvisioningConfigurationAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      */
      post(body: IosLobAppProvisioningConfigurationAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IosLobAppProvisioningConfigurationAssignment | undefined>;
     /**
-     * The associated group assignments for IosLobAppProvisioningConfiguration.
+     * The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -51,7 +51,7 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      toPostRequestInformation(body: IosLobAppProvisioningConfigurationAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The associated group assignments for IosLobAppProvisioningConfiguration.
+ * The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
  */
 export interface AssignmentsRequestBuilderGetQueryParameters {
     /**
