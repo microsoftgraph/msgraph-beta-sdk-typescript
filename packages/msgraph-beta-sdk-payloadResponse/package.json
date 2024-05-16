@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-payloadresponse",
-  "version": "1.0.0-preview.16",
+  "version": "1.0.0-preview.17",
   "description": "PayloadResponse fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
