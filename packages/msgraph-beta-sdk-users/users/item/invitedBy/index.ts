@@ -13,21 +13,22 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface InvitedByRequestBuilder extends BaseRequestBuilder<InvitedByRequestBuilder> {
     /**
-     * Get invitedBy from users
+     * Get the user or servicePrincipal that invited the specified user into the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/user-list-invitedby?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InvitedByRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObject | undefined>;
     /**
-     * Get invitedBy from users
+     * Get the user or servicePrincipal that invited the specified user into the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InvitedByRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get invitedBy from users
+ * Get the user or servicePrincipal that invited the specified user into the tenant.
  */
 export interface InvitedByRequestBuilderGetQueryParameters {
     /**

@@ -27,7 +27,7 @@ export interface PresentersRequestBuilder extends BaseRequestBuilder<PresentersR
      */
      byVirtualEventPresenterId(virtualEventPresenterId: string) : VirtualEventPresenterItemRequestBuilder;
     /**
-     * Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+     * Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventPresenterCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface PresentersRequestBuilder extends BaseRequestBuilder<PresentersR
      */
      get(requestConfiguration?: RequestConfiguration<PresentersRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventPresenterCollectionResponse | undefined>;
     /**
-     * Create a new virtualEventPresenter object on a virtual event.  Currently the supported virtual event type is virtualEventTownhall.
+     * Create a new virtualEventPresenter object on a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventPresenter>}
@@ -44,13 +44,13 @@ export interface PresentersRequestBuilder extends BaseRequestBuilder<PresentersR
      */
      post(body: VirtualEventPresenter, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventPresenter | undefined>;
     /**
-     * Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+     * Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PresentersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new virtualEventPresenter object on a virtual event.  Currently the supported virtual event type is virtualEventTownhall.
+     * Create a new virtualEventPresenter object on a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface PresentersRequestBuilder extends BaseRequestBuilder<PresentersR
      toPostRequestInformation(body: VirtualEventPresenter, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+ * Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
  */
 export interface PresentersRequestBuilderGetQueryParameters {
     /**

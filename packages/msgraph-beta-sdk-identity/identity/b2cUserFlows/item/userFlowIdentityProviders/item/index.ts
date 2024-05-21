@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface IdentityProviderBaseItemRequestBuilder extends BaseRequestBuilder<IdentityProviderBaseItemRequestBuilder> {
     /**
-     * Get userFlowIdentityProviders from identity
+     * The identity providers included in the user flow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityProviderBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IdentityProviderBaseItemRequestBuilderGetQueryParameters> | undefined) : Promise<IdentityProviderBase | undefined>;
     /**
-     * Get userFlowIdentityProviders from identity
+     * The identity providers included in the user flow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IdentityProviderBaseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get userFlowIdentityProviders from identity
+ * The identity providers included in the user flow.
  */
 export interface IdentityProviderBaseItemRequestBuilderGetQueryParameters {
     /**

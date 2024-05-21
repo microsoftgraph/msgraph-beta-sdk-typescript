@@ -29,7 +29,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      */
      byOutlookTaskId(outlookTaskId: string) : OutlookTaskItemRequestBuilder;
     /**
-     * Get tasks from users
+     * The user's Outlook tasks. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OutlookTaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      */
      post(body: OutlookTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OutlookTask | undefined>;
     /**
-     * Get tasks from users
+     * The user's Outlook tasks. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
@@ -62,7 +62,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      toPostRequestInformation(body: OutlookTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get tasks from users
+ * The user's Outlook tasks. Read-only. Nullable.
  */
 export interface TasksRequestBuilderGetQueryParameters {
     /**

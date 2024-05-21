@@ -21,14 +21,14 @@ export interface VirtualEventPresenterItemRequestBuilder extends BaseRequestBuil
      */
     get sessions(): SessionsRequestBuilder;
     /**
-     * Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+     * Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventpresenter-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a virtualEventPresenter object.
+     * Read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventPresenter>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -50,13 +50,13 @@ export interface VirtualEventPresenterItemRequestBuilder extends BaseRequestBuil
      */
      sessionsWithJoinWebUrl(joinWebUrl: string | undefined) : SessionsWithJoinWebUrlRequestBuilder;
     /**
-     * Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+     * Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a virtualEventPresenter object.
+     * Read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -70,7 +70,7 @@ export interface VirtualEventPresenterItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: VirtualEventPresenter, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a virtualEventPresenter object.
+ * Read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
  */
 export interface VirtualEventPresenterItemRequestBuilderGetQueryParameters {
     /**

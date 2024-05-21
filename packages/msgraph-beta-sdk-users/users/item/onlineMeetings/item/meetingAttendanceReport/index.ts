@@ -25,7 +25,7 @@ export interface MeetingAttendanceReportRequestBuilder extends BaseRequestBuilde
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get meetingAttendanceReport from users
+     * The attendance report of the latest online meeting session. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingAttendanceReport>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface MeetingAttendanceReportRequestBuilder extends BaseRequestBuilde
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get meetingAttendanceReport from users
+     * The attendance report of the latest online meeting session. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface MeetingAttendanceReportRequestBuilder extends BaseRequestBuilde
      toPatchRequestInformation(body: MeetingAttendanceReport, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get meetingAttendanceReport from users
+ * The attendance report of the latest online meeting session. Read-only.
  */
 export interface MeetingAttendanceReportRequestBuilderGetQueryParameters {
     /**

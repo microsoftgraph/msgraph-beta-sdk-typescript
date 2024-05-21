@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/';
 // @ts-ignore
-import { ProvisioningFlowItemRequestBuilderRequestsMetadata, type ProvisioningFlowItemRequestBuilder } from './item/';
+import { ProvisioningFlowItemRequestBuilderNavigationMetadata, ProvisioningFlowItemRequestBuilderRequestsMetadata, type ProvisioningFlowItemRequestBuilder } from './item/';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -116,6 +116,7 @@ const ProvisioningFlowsRequestBuilderGetQueryParametersMapper: Record<string, st
 export const ProvisioningFlowsRequestBuilderNavigationMetadata: Record<Exclude<keyof ProvisioningFlowsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byProvisioningFlowId: {
         requestsMetadata: ProvisioningFlowItemRequestBuilderRequestsMetadata,
+        navigationMetadata: ProvisioningFlowItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["provisioningFlow%2Did"],
     },
     count: {

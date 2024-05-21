@@ -6,6 +6,8 @@ import { createPlannerRosterFromDiscriminatorValue, serializePlannerRoster, type
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 // @ts-ignore
+import { AssignSensitivityLabelRequestBuilderRequestsMetadata, type AssignSensitivityLabelRequestBuilder } from './assignSensitivityLabel/';
+// @ts-ignore
 import { MembersRequestBuilderNavigationMetadata, MembersRequestBuilderRequestsMetadata, type MembersRequestBuilder } from './members/';
 // @ts-ignore
 import { PlansRequestBuilderNavigationMetadata, PlansRequestBuilderRequestsMetadata, type PlansRequestBuilder } from './plans/';
@@ -16,6 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the rosters property of the microsoft.graph.planner entity.
  */
 export interface PlannerRosterItemRequestBuilder extends BaseRequestBuilder<PlannerRosterItemRequestBuilder> {
+    /**
+     * Provides operations to call the assignSensitivityLabel method.
+     */
+    get assignSensitivityLabel(): AssignSensitivityLabelRequestBuilder;
     /**
      * Provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
      */
@@ -95,6 +101,9 @@ const PlannerRosterItemRequestBuilderGetQueryParametersMapper: Record<string, st
  * Metadata for all the navigation properties in the request builder.
  */
 export const PlannerRosterItemRequestBuilderNavigationMetadata: Record<Exclude<keyof PlannerRosterItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    assignSensitivityLabel: {
+        requestsMetadata: AssignSensitivityLabelRequestBuilderRequestsMetadata,
+    },
     members: {
         requestsMetadata: MembersRequestBuilderRequestsMetadata,
         navigationMetadata: MembersRequestBuilderNavigationMetadata,

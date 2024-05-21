@@ -31,7 +31,6 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-beta|Find more info here}
      */
      post(body: AssignPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -40,7 +39,6 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toPostRequestInformation(body: AssignPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

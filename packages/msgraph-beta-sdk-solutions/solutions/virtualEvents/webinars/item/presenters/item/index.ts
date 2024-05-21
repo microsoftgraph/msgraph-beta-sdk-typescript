@@ -34,11 +34,12 @@ export interface VirtualEventPresenterItemRequestBuilder extends BaseRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<VirtualEventPresenterItemRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventPresenter | undefined>;
     /**
-     * Update the navigation property presenters in solutions
+     * Update the properties of a virtualEventPresenter object. Currently the supported virtual event type is virtualEventWebinar.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventPresenter>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualeventpresenter-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: VirtualEventPresenter, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventPresenter | undefined>;
     /**
@@ -60,7 +61,7 @@ export interface VirtualEventPresenterItemRequestBuilder extends BaseRequestBuil
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VirtualEventPresenterItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property presenters in solutions
+     * Update the properties of a virtualEventPresenter object. Currently the supported virtual event type is virtualEventWebinar.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

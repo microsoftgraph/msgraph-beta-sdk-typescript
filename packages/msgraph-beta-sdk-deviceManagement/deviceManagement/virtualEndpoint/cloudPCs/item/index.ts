@@ -36,7 +36,11 @@ import { ResizeRequestBuilderRequestsMetadata, type ResizeRequestBuilder } from 
 // @ts-ignore
 import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/';
 // @ts-ignore
+import { RetrieveReviewStatusRequestBuilderRequestsMetadata, type RetrieveReviewStatusRequestBuilder } from './retrieveReviewStatus/';
+// @ts-ignore
 import { RetryPartnerAgentInstallationRequestBuilderRequestsMetadata, type RetryPartnerAgentInstallationRequestBuilder } from './retryPartnerAgentInstallation/';
+// @ts-ignore
+import { SetReviewStatusRequestBuilderRequestsMetadata, type SetReviewStatusRequestBuilder } from './setReviewStatus/';
 // @ts-ignore
 import { StartRequestBuilderRequestsMetadata, type StartRequestBuilder } from './start/';
 // @ts-ignore
@@ -111,9 +115,17 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      */
     get restore(): RestoreRequestBuilder;
     /**
+     * Provides operations to call the retrieveReviewStatus method.
+     */
+    get retrieveReviewStatus(): RetrieveReviewStatusRequestBuilder;
+    /**
      * Provides operations to call the retryPartnerAgentInstallation method.
      */
     get retryPartnerAgentInstallation(): RetryPartnerAgentInstallationRequestBuilder;
+    /**
+     * Provides operations to call the setReviewStatus method.
+     */
+    get setReviewStatus(): SetReviewStatusRequestBuilder;
     /**
      * Provides operations to call the start method.
      */
@@ -241,8 +253,14 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     restore: {
         requestsMetadata: RestoreRequestBuilderRequestsMetadata,
     },
+    retrieveReviewStatus: {
+        requestsMetadata: RetrieveReviewStatusRequestBuilderRequestsMetadata,
+    },
     retryPartnerAgentInstallation: {
         requestsMetadata: RetryPartnerAgentInstallationRequestBuilderRequestsMetadata,
+    },
+    setReviewStatus: {
+        requestsMetadata: SetReviewStatusRequestBuilderRequestsMetadata,
     },
     start: {
         requestsMetadata: StartRequestBuilderRequestsMetadata,

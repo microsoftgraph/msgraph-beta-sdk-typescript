@@ -27,21 +27,21 @@ export interface UserFlowIdentityProvidersRequestBuilder extends BaseRequestBuil
      */
      byIdentityProviderBaseId(identityProviderBaseId: string) : IdentityProviderBaseItemRequestBuilder;
     /**
-     * Get userFlowIdentityProviders from identity
+     * The identity providers included in the user flow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityProviderBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserFlowIdentityProvidersRequestBuilderGetQueryParameters> | undefined) : Promise<IdentityProviderBaseCollectionResponse | undefined>;
     /**
-     * Get userFlowIdentityProviders from identity
+     * The identity providers included in the user flow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserFlowIdentityProvidersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get userFlowIdentityProviders from identity
+ * The identity providers included in the user flow.
  */
 export interface UserFlowIdentityProvidersRequestBuilderGetQueryParameters {
     /**

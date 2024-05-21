@@ -27,7 +27,7 @@ export interface OutlookTaskGroupItemRequestBuilder extends BaseRequestBuilder<O
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get taskGroups from users
+     * The user's Outlook task groups. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OutlookTaskGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -51,7 +51,7 @@ export interface OutlookTaskGroupItemRequestBuilder extends BaseRequestBuilder<O
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get taskGroups from users
+     * The user's Outlook task groups. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
@@ -67,7 +67,7 @@ export interface OutlookTaskGroupItemRequestBuilder extends BaseRequestBuilder<O
      toPatchRequestInformation(body: OutlookTaskGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get taskGroups from users
+ * The user's Outlook task groups. Read-only. Nullable.
  */
 export interface OutlookTaskGroupItemRequestBuilderGetQueryParameters {
     /**

@@ -10,6 +10,8 @@ import { CustomTaskExtensionsRequestBuilderNavigationMetadata, CustomTaskExtensi
 // @ts-ignore
 import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilderRequestsMetadata, type DeletedItemsRequestBuilder } from './deletedItems/';
 // @ts-ignore
+import { InsightsRequestBuilderNavigationMetadata, InsightsRequestBuilderRequestsMetadata, type InsightsRequestBuilder } from './insights/';
+// @ts-ignore
 import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/';
 // @ts-ignore
 import { TaskDefinitionsRequestBuilderNavigationMetadata, TaskDefinitionsRequestBuilderRequestsMetadata, type TaskDefinitionsRequestBuilder } from './taskDefinitions/';
@@ -32,6 +34,10 @@ export interface LifecycleWorkflowsRequestBuilder extends BaseRequestBuilder<Lif
      * Provides operations to manage the deletedItems property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      */
     get deletedItems(): DeletedItemsRequestBuilder;
+    /**
+     * Provides operations to manage the insights property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+     */
+    get insights(): InsightsRequestBuilder;
     /**
      * Provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      */
@@ -124,6 +130,10 @@ export const LifecycleWorkflowsRequestBuilderNavigationMetadata: Record<Exclude<
     deletedItems: {
         requestsMetadata: DeletedItemsRequestBuilderRequestsMetadata,
         navigationMetadata: DeletedItemsRequestBuilderNavigationMetadata,
+    },
+    insights: {
+        requestsMetadata: InsightsRequestBuilderRequestsMetadata,
+        navigationMetadata: InsightsRequestBuilderNavigationMetadata,
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,

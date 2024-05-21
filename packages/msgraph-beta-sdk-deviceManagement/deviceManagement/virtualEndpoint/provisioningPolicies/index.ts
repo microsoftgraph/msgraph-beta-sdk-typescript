@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProvisioningPoliciesRequestBuilder extends BaseRequestBuilder<ProvisioningPoliciesRequestBuilder> {
     /**
      * Provides operations to call the applyConfig method.
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
     get applyConfig(): ApplyConfigRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
      * @param cloudPcProvisioningPolicyId The unique identifier of cloudPcProvisioningPolicy
      * @returns {CloudPcProvisioningPolicyItemRequestBuilder}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      byCloudPcProvisioningPolicyId(cloudPcProvisioningPolicyId: string) : CloudPcProvisioningPolicyItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface ProvisioningPoliciesRequestBuilder extends BaseRequestBuilder<P
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcProvisioningPolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ProvisioningPoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcProvisioningPolicyCollectionResponse | undefined>;
@@ -50,7 +46,6 @@ export interface ProvisioningPoliciesRequestBuilder extends BaseRequestBuilder<P
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcProvisioningPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-beta|Find more info here}
      */
      post(body: CloudPcProvisioningPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcProvisioningPolicy | undefined>;
@@ -58,7 +53,6 @@ export interface ProvisioningPoliciesRequestBuilder extends BaseRequestBuilder<P
      * List properties and relationships of the cloudPcProvisioningPolicy objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProvisioningPoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -66,7 +60,6 @@ export interface ProvisioningPoliciesRequestBuilder extends BaseRequestBuilder<P
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toPostRequestInformation(body: CloudPcProvisioningPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk",
-  "version": "1.0.0-preview.17",
+  "version": "1.0.0-preview.18",
   "description": "Microsoft Graph Beta JavaScript client library",
   "keywords": [
     "microsoft",

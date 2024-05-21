@@ -34,7 +34,7 @@ export interface AuthenticationStrengthsRequestBuilder extends BaseRequestBuilde
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get authenticationStrengths from identity
+     * DEPRECATED. See the authenticationStrength relationship instead.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuthenticationStrengthRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -58,7 +58,7 @@ export interface AuthenticationStrengthsRequestBuilder extends BaseRequestBuilde
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get authenticationStrengths from identity
+     * DEPRECATED. See the authenticationStrength relationship instead.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
@@ -74,7 +74,7 @@ export interface AuthenticationStrengthsRequestBuilder extends BaseRequestBuilde
      toPatchRequestInformation(body: AuthenticationStrengthRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get authenticationStrengths from identity
+ * DEPRECATED. See the authenticationStrength relationship instead.
  */
 export interface AuthenticationStrengthsRequestBuilderGetQueryParameters {
     /**
