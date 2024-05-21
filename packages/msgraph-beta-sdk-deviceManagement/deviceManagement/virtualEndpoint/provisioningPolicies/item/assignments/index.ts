@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AssignmentsRequestBuilder extends BaseRequestBuilder<AssignmentsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
      * @param cloudPcProvisioningPolicyAssignmentId The unique identifier of cloudPcProvisioningPolicyAssignment
      * @returns {CloudPcProvisioningPolicyAssignmentItemRequestBuilder}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      byCloudPcProvisioningPolicyAssignmentId(cloudPcProvisioningPolicyAssignmentId: string) : CloudPcProvisioningPolicyAssignmentItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcProvisioningPolicyAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      get(requestConfiguration?: RequestConfiguration<AssignmentsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcProvisioningPolicyAssignmentCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcProvisioningPolicyAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      post(body: CloudPcProvisioningPolicyAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcProvisioningPolicyAssignment | undefined>;
     /**
      * A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignmentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toPostRequestInformation(body: CloudPcProvisioningPolicyAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

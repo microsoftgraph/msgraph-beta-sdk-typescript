@@ -20,24 +20,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequestBuilder<CloudPcProvisioningPolicyItemRequestBuilder> {
     /**
      * Provides operations to call the apply method.
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
     get apply(): ApplyRequestBuilder;
     /**
      * Provides operations to call the assign method.
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
     get assign(): AssignRequestBuilder;
     /**
      * Provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
     get assignments(): AssignmentsRequestBuilder;
     /**
      * Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -46,7 +42,6 @@ export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcProvisioningPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcProvisioningPolicy | undefined>;
@@ -56,7 +51,6 @@ export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcProvisioningPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CloudPcProvisioningPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcProvisioningPolicy | undefined>;
@@ -64,14 +58,12 @@ export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequest
      * Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a cloudPcProvisioningPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -79,7 +71,6 @@ export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
      */
      toPatchRequestInformation(body: CloudPcProvisioningPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

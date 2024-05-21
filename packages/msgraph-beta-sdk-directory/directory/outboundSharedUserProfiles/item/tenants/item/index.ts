@@ -25,7 +25,7 @@ export interface TenantReferenceTenantItemRequestBuilder extends BaseRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+     * The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TenantReference>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface TenantReferenceTenantItemRequestBuilder extends BaseRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+     * The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface TenantReferenceTenantItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: TenantReference, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+ * The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
  */
 export interface TenantReferenceTenantItemRequestBuilderGetQueryParameters {
     /**

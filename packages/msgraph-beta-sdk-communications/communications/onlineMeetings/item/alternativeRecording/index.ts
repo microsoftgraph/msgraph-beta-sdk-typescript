@@ -11,20 +11,20 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface AlternativeRecordingRequestBuilder extends BaseRequestBuilder<AlternativeRecordingRequestBuilder> {
     /**
-     * Delete alternativeRecording for the navigation property onlineMeetings in communications
+     * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get alternativeRecording for the navigation property onlineMeetings from communications
+     * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
-     * Update alternativeRecording for the navigation property onlineMeetings in communications
+     * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
      * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
@@ -32,19 +32,19 @@ export interface AlternativeRecordingRequestBuilder extends BaseRequestBuilder<A
      */
      put(body: ArrayBuffer | undefined, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
-     * Delete alternativeRecording for the navigation property onlineMeetings in communications
+     * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get alternativeRecording for the navigation property onlineMeetings from communications
+     * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Update alternativeRecording for the navigation property onlineMeetings in communications
+     * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
      * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

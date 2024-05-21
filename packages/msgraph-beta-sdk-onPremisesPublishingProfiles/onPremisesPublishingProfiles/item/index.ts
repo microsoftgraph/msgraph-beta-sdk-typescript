@@ -10,6 +10,8 @@ import { AgentGroupsRequestBuilderNavigationMetadata, AgentGroupsRequestBuilderR
 // @ts-ignore
 import { AgentsRequestBuilderNavigationMetadata, AgentsRequestBuilderRequestsMetadata, type AgentsRequestBuilder } from './agents/';
 // @ts-ignore
+import { ApplicationSegmentsRequestBuilderNavigationMetadata, ApplicationSegmentsRequestBuilderRequestsMetadata, type ApplicationSegmentsRequestBuilder } from './applicationSegments/';
+// @ts-ignore
 import { ConnectorGroupsRequestBuilderNavigationMetadata, ConnectorGroupsRequestBuilderRequestsMetadata, type ConnectorGroupsRequestBuilder } from './connectorGroups/';
 // @ts-ignore
 import { ConnectorsRequestBuilderNavigationMetadata, ConnectorsRequestBuilderRequestsMetadata, type ConnectorsRequestBuilder } from './connectors/';
@@ -30,6 +32,10 @@ export interface OnPremisesPublishingProfileItemRequestBuilder extends BaseReque
      * Provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.
      */
     get agents(): AgentsRequestBuilder;
+    /**
+     * Provides operations to manage the applicationSegments property of the microsoft.graph.onPremisesPublishingProfile entity.
+     */
+    get applicationSegments(): ApplicationSegmentsRequestBuilder;
     /**
      * Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
      */
@@ -118,6 +124,10 @@ export const OnPremisesPublishingProfileItemRequestBuilderNavigationMetadata: Re
     agents: {
         requestsMetadata: AgentsRequestBuilderRequestsMetadata,
         navigationMetadata: AgentsRequestBuilderNavigationMetadata,
+    },
+    applicationSegments: {
+        requestsMetadata: ApplicationSegmentsRequestBuilderRequestsMetadata,
+        navigationMetadata: ApplicationSegmentsRequestBuilderNavigationMetadata,
     },
     connectorGroups: {
         requestsMetadata: ConnectorGroupsRequestBuilderRequestsMetadata,

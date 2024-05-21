@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface IdentityProviderItemRequestBuilder extends BaseRequestBuilder<IdentityProviderItemRequestBuilder> {
     /**
-     * Get identityProviders from identity
+     * The identity providers included in the user flow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityProvider>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -21,7 +21,7 @@ export interface IdentityProviderItemRequestBuilder extends BaseRequestBuilder<I
      */
      get(requestConfiguration?: RequestConfiguration<IdentityProviderItemRequestBuilderGetQueryParameters> | undefined) : Promise<IdentityProvider | undefined>;
     /**
-     * Get identityProviders from identity
+     * The identity providers included in the user flow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
@@ -29,7 +29,7 @@ export interface IdentityProviderItemRequestBuilder extends BaseRequestBuilder<I
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IdentityProviderItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get identityProviders from identity
+ * The identity providers included in the user flow.
  */
 export interface IdentityProviderItemRequestBuilderGetQueryParameters {
     /**

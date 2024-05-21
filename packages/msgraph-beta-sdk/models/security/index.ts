@@ -1117,7 +1117,7 @@ export interface CaseEscaped extends Entity, Parsable {
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
-     * The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+     * The type of action the operation represents. Possible values are: contentExport, applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
      */
     action?: CaseAction;
     /**
@@ -8995,11 +8995,11 @@ export interface EdiscoveryEstimateOperation extends CaseOperation, Parsable {
 }
 export interface EdiscoveryExportOperation extends CaseOperation, Parsable {
     /**
-     * The azureBlobContainer property
+     * The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.
      */
     azureBlobContainer?: string;
     /**
-     * The azureBlobToken property
+     * The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and will stop returning data on April 30, 2023.
      */
     azureBlobToken?: string;
     /**
@@ -9007,7 +9007,7 @@ export interface EdiscoveryExportOperation extends CaseOperation, Parsable {
      */
     description?: string;
     /**
-     * The exportFileMetadata property
+     * Contains the properties for an export file metadata, including downloadUrl, fileName, and size. If you export to an Azure storage location, this property returns empty.
      */
     exportFileMetadata?: ExportFileMetadata[];
     /**
@@ -9019,7 +9019,7 @@ export interface EdiscoveryExportOperation extends CaseOperation, Parsable {
      */
     exportStructure?: ExportFileStructure;
     /**
-     * The outputFolderId property
+     * The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.
      */
     outputFolderId?: string;
     /**
@@ -9159,7 +9159,7 @@ export interface EdiscoverySearch extends Parsable, Search {
      */
     custodianSources?: DataSource[];
     /**
-     * When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+     * When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
      */
     dataSourceScopes?: DataSourceScopes[];
     /**
@@ -9179,39 +9179,39 @@ export interface EdiscoverySearchCollectionResponse extends BaseCollectionPagina
 }
 export interface EdiscoverySearchExportOperation extends CaseOperation, Parsable {
     /**
-     * The additionalOptions property
+     * The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.
      */
     additionalOptions?: AdditionalOptions[];
     /**
-     * The description property
+     * The name of export provided by the user.
      */
     description?: string;
     /**
-     * The displayName property
+     * The description of the export by the user.
      */
     displayName?: string;
     /**
-     * The exportCriteria property
+     * Items to be included in the export. The possible values are: searchHits, partiallyIndexed, unknownFutureValue.
      */
     exportCriteria?: ExportCriteria[];
     /**
-     * The exportFileMetadata property
+     * Contains the properties for an export file metadata, including downloadUrl, fileName, and size.
      */
     exportFileMetadata?: ExportFileMetadata[];
     /**
-     * The exportFormat property
+     * Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.
      */
     exportFormat?: ExportFormat;
     /**
-     * The exportLocation property
+     * Location scope for partially indexed items. You can choose to include partially indexed items only in responsive locations with search hits or in all targeted locations. The possible values are: responsiveLocations, nonresponsiveLocations, unknownFutureValue.
      */
     exportLocation?: ExportLocation[];
     /**
-     * The exportSingleItems property
+     * Indicates whether to export single items.
      */
     exportSingleItems?: boolean;
     /**
-     * The search property
+     * The eDiscovery searches under each case.
      */
     search?: EdiscoverySearch;
 }
@@ -9620,7 +9620,7 @@ export interface FilePlanDepartment extends FilePlanDescriptorBase, Parsable {
 }
 export interface FilePlanDescriptor extends Entity, Parsable {
     /**
-     * Represents the file plan descriptor of type authority applied to a particular retention label.
+     * The authority property
      */
     authority?: FilePlanAuthority;
     /**
@@ -9636,7 +9636,7 @@ export interface FilePlanDescriptor extends Entity, Parsable {
      */
     categoryTemplate?: CategoryTemplate;
     /**
-     * Represents the file plan descriptor of type citation applied to a particular retention label.
+     * The citation property
      */
     citation?: FilePlanCitation;
     /**
@@ -9644,7 +9644,7 @@ export interface FilePlanDescriptor extends Entity, Parsable {
      */
     citationTemplate?: CitationTemplate;
     /**
-     * Represents the file plan descriptor of type department applied to a particular retention label.
+     * The department property
      */
     department?: FilePlanDepartment;
     /**
@@ -9652,7 +9652,7 @@ export interface FilePlanDescriptor extends Entity, Parsable {
      */
     departmentTemplate?: DepartmentTemplate;
     /**
-     * Represents the file plan descriptor of type filePlanReference applied to a particular retention label.
+     * The filePlanReference property
      */
     filePlanReference?: FilePlanReference;
     /**
@@ -11759,15 +11759,15 @@ export interface RetentionEvent extends Entity, Parsable {
      */
     displayName?: string;
     /**
-     * The eventPropagationResults property
+     * Represents the success status of a created event and additional information.
      */
     eventPropagationResults?: EventPropagationResult[];
     /**
-     * The eventQueries property
+     * Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
      */
     eventQueries?: EventQuery[];
     /**
-     * The eventStatus property
+     * Status of event propogation to the scoped locations after the event has been created.
      */
     eventStatus?: RetentionEventStatus;
     /**

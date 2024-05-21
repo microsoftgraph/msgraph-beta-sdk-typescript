@@ -116,7 +116,7 @@ export interface CaseExportOperation extends CaseOperation, Parsable {
      */
     exportStructure?: ExportFileStructure;
     /**
-     * The outputFolderId property
+     * The output folder ID.
      */
     outputFolderId?: string;
     /**

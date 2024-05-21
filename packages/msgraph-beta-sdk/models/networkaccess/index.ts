@@ -111,7 +111,7 @@ export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Par
      */
     backingStoreEnabled?: boolean;
     /**
-     * The ipAddress property
+     * Specifies the BGP IP address.
      */
     ipAddress?: string;
     /**
@@ -167,7 +167,7 @@ export interface BranchSite extends Entity, Parsable {
      */
     connectivityState?: ConnectivityState;
     /**
-     * The country property
+     * The branch site is created in the specified country. DO NOT USE.
      */
     country?: string;
     /**
@@ -1251,7 +1251,7 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
      */
     odataType?: string;
     /**
-     * The rarelyUsedTenantCount property
+     * The number of tenants that are rarely used.
      */
     rarelyUsedTenantCount?: number;
     /**
@@ -2807,7 +2807,7 @@ export interface FilteringPolicyLink extends Parsable, PolicyLink {
      */
     loggingState?: Status;
     /**
-     * The priority property
+     * Provides an integer priority level for each instance of a URL filtering policy linked to a profile. Required.
      */
     priority?: number;
 }
@@ -3061,7 +3061,7 @@ export interface NetworkAccessRoot extends Entity, Parsable {
 }
 export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The action property
+     * Indicates what action to take based on filtering policies. The possible values are: block, allow.
      */
     action?: FilteringPolicyAction;
     /**

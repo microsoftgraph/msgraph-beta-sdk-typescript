@@ -71,6 +71,14 @@ export function createGroupBasedSubjectSetFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Insights}
+ */
+export function createInsightsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoInsights;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LifecycleManagementSettings}
  */
 export function createLifecycleManagementSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -223,6 +231,22 @@ export function createTimeBasedAttributeTriggerFromDiscriminatorValue(parseNode:
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TopTasksInsightsSummary}
+ */
+export function createTopTasksInsightsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTopTasksInsightsSummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TopWorkflowsInsightsSummary}
+ */
+export function createTopWorkflowsInsightsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTopWorkflowsInsightsSummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TriggerAndScopeBasedConditions}
  */
 export function createTriggerAndScopeBasedConditionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -340,6 +364,22 @@ export function createWorkflowExecutionTriggerFromDiscriminatorValue(parseNode: 
  */
 export function createWorkflowFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflow;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {WorkflowsInsightsByCategory}
+ */
+export function createWorkflowsInsightsByCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoWorkflowsInsightsByCategory;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {WorkflowsInsightsSummary}
+ */
+export function createWorkflowsInsightsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoWorkflowsInsightsSummary;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -513,6 +553,15 @@ export function deserializeIntoGroupBasedSubjectSet(groupBasedSubjectSet: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoInsights(insights: Partial<Insights> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(insights),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoLifecycleManagementSettings(lifecycleManagementSettings: Partial<LifecycleManagementSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(lifecycleManagementSettings),
@@ -529,6 +578,7 @@ export function deserializeIntoLifecycleWorkflowsContainer(lifecycleWorkflowsCon
         ...deserializeIntoEntity(lifecycleWorkflowsContainer),
         "customTaskExtensions": n => { lifecycleWorkflowsContainer.customTaskExtensions = n.getCollectionOfObjectValues<CustomTaskExtension>(createCustomTaskExtensionFromDiscriminatorValue); },
         "deletedItems": n => { lifecycleWorkflowsContainer.deletedItems = n.getObjectValue<DeletedItemContainer>(createDeletedItemContainerFromDiscriminatorValue); },
+        "insights": n => { lifecycleWorkflowsContainer.insights = n.getObjectValue<Insights>(createInsightsFromDiscriminatorValue); },
         "settings": n => { lifecycleWorkflowsContainer.settings = n.getObjectValue<LifecycleManagementSettings>(createLifecycleManagementSettingsFromDiscriminatorValue); },
         "taskDefinitions": n => { lifecycleWorkflowsContainer.taskDefinitions = n.getCollectionOfObjectValues<TaskDefinition>(createTaskDefinitionFromDiscriminatorValue); },
         "workflows": n => { lifecycleWorkflowsContainer.workflows = n.getCollectionOfObjectValues<Workflow>(createWorkflowFromDiscriminatorValue); },
@@ -765,6 +815,44 @@ export function deserializeIntoTimeBasedAttributeTrigger(timeBasedAttributeTrigg
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoTopTasksInsightsSummary(topTasksInsightsSummary: Partial<TopTasksInsightsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { topTasksInsightsSummary.backingStoreEnabled = true; },
+        "failedTasks": n => { topTasksInsightsSummary.failedTasks = n.getNumberValue(); },
+        "failedUsers": n => { topTasksInsightsSummary.failedUsers = n.getNumberValue(); },
+        "@odata.type": n => { topTasksInsightsSummary.odataType = n.getStringValue(); },
+        "successfulTasks": n => { topTasksInsightsSummary.successfulTasks = n.getNumberValue(); },
+        "successfulUsers": n => { topTasksInsightsSummary.successfulUsers = n.getNumberValue(); },
+        "taskDefinitionDisplayName": n => { topTasksInsightsSummary.taskDefinitionDisplayName = n.getStringValue(); },
+        "taskDefinitionId": n => { topTasksInsightsSummary.taskDefinitionId = n.getStringValue(); },
+        "totalTasks": n => { topTasksInsightsSummary.totalTasks = n.getNumberValue(); },
+        "totalUsers": n => { topTasksInsightsSummary.totalUsers = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoTopWorkflowsInsightsSummary(topWorkflowsInsightsSummary: Partial<TopWorkflowsInsightsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { topWorkflowsInsightsSummary.backingStoreEnabled = true; },
+        "failedRuns": n => { topWorkflowsInsightsSummary.failedRuns = n.getNumberValue(); },
+        "failedUsers": n => { topWorkflowsInsightsSummary.failedUsers = n.getNumberValue(); },
+        "@odata.type": n => { topWorkflowsInsightsSummary.odataType = n.getStringValue(); },
+        "successfulRuns": n => { topWorkflowsInsightsSummary.successfulRuns = n.getNumberValue(); },
+        "successfulUsers": n => { topWorkflowsInsightsSummary.successfulUsers = n.getNumberValue(); },
+        "totalRuns": n => { topWorkflowsInsightsSummary.totalRuns = n.getNumberValue(); },
+        "totalUsers": n => { topWorkflowsInsightsSummary.totalUsers = n.getNumberValue(); },
+        "workflowCategory": n => { topWorkflowsInsightsSummary.workflowCategory = n.getEnumValue<LifecycleWorkflowCategory>(LifecycleWorkflowCategoryObject); },
+        "workflowDisplayName": n => { topWorkflowsInsightsSummary.workflowDisplayName = n.getStringValue(); },
+        "workflowId": n => { topWorkflowsInsightsSummary.workflowId = n.getStringValue(); },
+        "workflowVersion": n => { topWorkflowsInsightsSummary.workflowVersion = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoTriggerAndScopeBasedConditions(triggerAndScopeBasedConditions: Partial<TriggerAndScopeBasedConditions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowExecutionConditions(triggerAndScopeBasedConditions),
@@ -901,6 +989,44 @@ export function deserializeIntoWorkflowExecutionTrigger(workflowExecutionTrigger
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoWorkflowsInsightsByCategory(workflowsInsightsByCategory: Partial<WorkflowsInsightsByCategory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { workflowsInsightsByCategory.backingStoreEnabled = true; },
+        "failedJoinerRuns": n => { workflowsInsightsByCategory.failedJoinerRuns = n.getNumberValue(); },
+        "failedLeaverRuns": n => { workflowsInsightsByCategory.failedLeaverRuns = n.getNumberValue(); },
+        "failedMoverRuns": n => { workflowsInsightsByCategory.failedMoverRuns = n.getNumberValue(); },
+        "@odata.type": n => { workflowsInsightsByCategory.odataType = n.getStringValue(); },
+        "successfulJoinerRuns": n => { workflowsInsightsByCategory.successfulJoinerRuns = n.getNumberValue(); },
+        "successfulLeaverRuns": n => { workflowsInsightsByCategory.successfulLeaverRuns = n.getNumberValue(); },
+        "successfulMoverRuns": n => { workflowsInsightsByCategory.successfulMoverRuns = n.getNumberValue(); },
+        "totalJoinerRuns": n => { workflowsInsightsByCategory.totalJoinerRuns = n.getNumberValue(); },
+        "totalLeaverRuns": n => { workflowsInsightsByCategory.totalLeaverRuns = n.getNumberValue(); },
+        "totalMoverRuns": n => { workflowsInsightsByCategory.totalMoverRuns = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoWorkflowsInsightsSummary(workflowsInsightsSummary: Partial<WorkflowsInsightsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { workflowsInsightsSummary.backingStoreEnabled = true; },
+        "failedRuns": n => { workflowsInsightsSummary.failedRuns = n.getNumberValue(); },
+        "failedTasks": n => { workflowsInsightsSummary.failedTasks = n.getNumberValue(); },
+        "failedUsers": n => { workflowsInsightsSummary.failedUsers = n.getNumberValue(); },
+        "@odata.type": n => { workflowsInsightsSummary.odataType = n.getStringValue(); },
+        "successfulRuns": n => { workflowsInsightsSummary.successfulRuns = n.getNumberValue(); },
+        "successfulTasks": n => { workflowsInsightsSummary.successfulTasks = n.getNumberValue(); },
+        "successfulUsers": n => { workflowsInsightsSummary.successfulUsers = n.getNumberValue(); },
+        "totalRuns": n => { workflowsInsightsSummary.totalRuns = n.getNumberValue(); },
+        "totalTasks": n => { workflowsInsightsSummary.totalTasks = n.getNumberValue(); },
+        "totalUsers": n => { workflowsInsightsSummary.totalUsers = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoWorkflowTemplate(workflowTemplate: Partial<WorkflowTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(workflowTemplate),
@@ -947,6 +1073,8 @@ export interface GroupBasedSubjectSet extends Parsable, SubjectSet {
      */
     groups?: Group[];
 }
+export interface Insights extends Entity, Parsable {
+}
 export interface LifecycleManagementSettings extends Entity, Parsable {
     /**
      * The emailSettings property
@@ -969,6 +1097,10 @@ export interface LifecycleWorkflowsContainer extends Entity, Parsable {
      * Deleted workflows in your lifecycle workflows instance.
      */
     deletedItems?: DeletedItemContainer;
+    /**
+     * The insight container holding workflow insight summaries for a tenant.
+     */
+    insights?: Insights;
     /**
      * The settings property
      */
@@ -1196,6 +1328,13 @@ export function serializeGroupBasedSubjectSet(writer: SerializationWriter, group
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeInsights(writer: SerializationWriter, insights: Partial<Insights> | undefined = {}) : void {
+    serializeEntity(writer, insights)
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeLifecycleManagementSettings(writer: SerializationWriter, lifecycleManagementSettings: Partial<LifecycleManagementSettings> | undefined = {}) : void {
     serializeEntity(writer, lifecycleManagementSettings)
     writer.writeObjectValue<EmailSettings>("emailSettings", lifecycleManagementSettings.emailSettings, serializeEmailSettings);
@@ -1209,6 +1348,7 @@ export function serializeLifecycleWorkflowsContainer(writer: SerializationWriter
     serializeEntity(writer, lifecycleWorkflowsContainer)
     writer.writeCollectionOfObjectValues<CustomTaskExtension>("customTaskExtensions", lifecycleWorkflowsContainer.customTaskExtensions, serializeCustomTaskExtension);
     writer.writeObjectValue<DeletedItemContainer>("deletedItems", lifecycleWorkflowsContainer.deletedItems, serializeDeletedItemContainer);
+    writer.writeObjectValue<Insights>("insights", lifecycleWorkflowsContainer.insights, serializeInsights);
     writer.writeObjectValue<LifecycleManagementSettings>("settings", lifecycleWorkflowsContainer.settings, serializeLifecycleManagementSettings);
     writer.writeCollectionOfObjectValues<TaskDefinition>("taskDefinitions", lifecycleWorkflowsContainer.taskDefinitions, serializeTaskDefinition);
     writer.writeCollectionOfObjectValues<Workflow>("workflows", lifecycleWorkflowsContainer.workflows, serializeWorkflow);
@@ -1410,6 +1550,40 @@ export function serializeTimeBasedAttributeTrigger(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeTopTasksInsightsSummary(writer: SerializationWriter, topTasksInsightsSummary: Partial<TopTasksInsightsSummary> | undefined = {}) : void {
+    writer.writeNumberValue("failedTasks", topTasksInsightsSummary.failedTasks);
+    writer.writeNumberValue("failedUsers", topTasksInsightsSummary.failedUsers);
+    writer.writeStringValue("@odata.type", topTasksInsightsSummary.odataType);
+    writer.writeNumberValue("successfulTasks", topTasksInsightsSummary.successfulTasks);
+    writer.writeNumberValue("successfulUsers", topTasksInsightsSummary.successfulUsers);
+    writer.writeStringValue("taskDefinitionDisplayName", topTasksInsightsSummary.taskDefinitionDisplayName);
+    writer.writeStringValue("taskDefinitionId", topTasksInsightsSummary.taskDefinitionId);
+    writer.writeNumberValue("totalTasks", topTasksInsightsSummary.totalTasks);
+    writer.writeNumberValue("totalUsers", topTasksInsightsSummary.totalUsers);
+    writer.writeAdditionalData(topTasksInsightsSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeTopWorkflowsInsightsSummary(writer: SerializationWriter, topWorkflowsInsightsSummary: Partial<TopWorkflowsInsightsSummary> | undefined = {}) : void {
+    writer.writeNumberValue("failedRuns", topWorkflowsInsightsSummary.failedRuns);
+    writer.writeNumberValue("failedUsers", topWorkflowsInsightsSummary.failedUsers);
+    writer.writeStringValue("@odata.type", topWorkflowsInsightsSummary.odataType);
+    writer.writeNumberValue("successfulRuns", topWorkflowsInsightsSummary.successfulRuns);
+    writer.writeNumberValue("successfulUsers", topWorkflowsInsightsSummary.successfulUsers);
+    writer.writeNumberValue("totalRuns", topWorkflowsInsightsSummary.totalRuns);
+    writer.writeNumberValue("totalUsers", topWorkflowsInsightsSummary.totalUsers);
+    writer.writeEnumValue<LifecycleWorkflowCategory>("workflowCategory", topWorkflowsInsightsSummary.workflowCategory);
+    writer.writeStringValue("workflowDisplayName", topWorkflowsInsightsSummary.workflowDisplayName);
+    writer.writeStringValue("workflowId", topWorkflowsInsightsSummary.workflowId);
+    writer.writeNumberValue("workflowVersion", topWorkflowsInsightsSummary.workflowVersion);
+    writer.writeAdditionalData(topWorkflowsInsightsSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeTriggerAndScopeBasedConditions(writer: SerializationWriter, triggerAndScopeBasedConditions: Partial<TriggerAndScopeBasedConditions> | undefined = {}) : void {
     serializeWorkflowExecutionConditions(writer, triggerAndScopeBasedConditions)
     writer.writeObjectValue<SubjectSet>("scope", triggerAndScopeBasedConditions.scope, serializeSubjectSet);
@@ -1526,6 +1700,40 @@ export function serializeWorkflowExecutionTrigger(writer: SerializationWriter, w
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeWorkflowsInsightsByCategory(writer: SerializationWriter, workflowsInsightsByCategory: Partial<WorkflowsInsightsByCategory> | undefined = {}) : void {
+    writer.writeNumberValue("failedJoinerRuns", workflowsInsightsByCategory.failedJoinerRuns);
+    writer.writeNumberValue("failedLeaverRuns", workflowsInsightsByCategory.failedLeaverRuns);
+    writer.writeNumberValue("failedMoverRuns", workflowsInsightsByCategory.failedMoverRuns);
+    writer.writeStringValue("@odata.type", workflowsInsightsByCategory.odataType);
+    writer.writeNumberValue("successfulJoinerRuns", workflowsInsightsByCategory.successfulJoinerRuns);
+    writer.writeNumberValue("successfulLeaverRuns", workflowsInsightsByCategory.successfulLeaverRuns);
+    writer.writeNumberValue("successfulMoverRuns", workflowsInsightsByCategory.successfulMoverRuns);
+    writer.writeNumberValue("totalJoinerRuns", workflowsInsightsByCategory.totalJoinerRuns);
+    writer.writeNumberValue("totalLeaverRuns", workflowsInsightsByCategory.totalLeaverRuns);
+    writer.writeNumberValue("totalMoverRuns", workflowsInsightsByCategory.totalMoverRuns);
+    writer.writeAdditionalData(workflowsInsightsByCategory.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeWorkflowsInsightsSummary(writer: SerializationWriter, workflowsInsightsSummary: Partial<WorkflowsInsightsSummary> | undefined = {}) : void {
+    writer.writeNumberValue("failedRuns", workflowsInsightsSummary.failedRuns);
+    writer.writeNumberValue("failedTasks", workflowsInsightsSummary.failedTasks);
+    writer.writeNumberValue("failedUsers", workflowsInsightsSummary.failedUsers);
+    writer.writeStringValue("@odata.type", workflowsInsightsSummary.odataType);
+    writer.writeNumberValue("successfulRuns", workflowsInsightsSummary.successfulRuns);
+    writer.writeNumberValue("successfulTasks", workflowsInsightsSummary.successfulTasks);
+    writer.writeNumberValue("successfulUsers", workflowsInsightsSummary.successfulUsers);
+    writer.writeNumberValue("totalRuns", workflowsInsightsSummary.totalRuns);
+    writer.writeNumberValue("totalTasks", workflowsInsightsSummary.totalTasks);
+    writer.writeNumberValue("totalUsers", workflowsInsightsSummary.totalUsers);
+    writer.writeAdditionalData(workflowsInsightsSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeWorkflowTemplate(writer: SerializationWriter, workflowTemplate: Partial<WorkflowTemplate> | undefined = {}) : void {
     serializeEntity(writer, workflowTemplate)
     writer.writeEnumValue<LifecycleWorkflowCategory>("category", workflowTemplate.category);
@@ -1608,7 +1816,7 @@ export interface TaskDefinition extends Entity, Parsable {
      */
     category?: LifecycleTaskCategory[];
     /**
-     * The continueOnError property
+     * Defines if the workflow will continue if the task has an error.
      */
     continueOnError?: boolean;
     /**
@@ -1765,6 +1973,106 @@ export interface TimeBasedAttributeTrigger extends Parsable, WorkflowExecutionTr
      * The timeBasedAttribute property
      */
     timeBasedAttribute?: WorkflowTriggerTimeBasedAttribute;
+}
+export interface TopTasksInsightsSummary extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * Count of failed runs of the task.
+     */
+    failedTasks?: number;
+    /**
+     * Count of failed users who were processed by the task.
+     */
+    failedUsers?: number;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * Count of successful runs of the task.
+     */
+    successfulTasks?: number;
+    /**
+     * Count of successful users processed by the task.
+     */
+    successfulUsers?: number;
+    /**
+     * The name of the task.
+     */
+    taskDefinitionDisplayName?: string;
+    /**
+     * The task ID.
+     */
+    taskDefinitionId?: string;
+    /**
+     * Count of total runs of the task.
+     */
+    totalTasks?: number;
+    /**
+     * Count of total users processed by the task.
+     */
+    totalUsers?: number;
+}
+export interface TopWorkflowsInsightsSummary extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * Count of failed runs for workflow.
+     */
+    failedRuns?: number;
+    /**
+     * Count of failed users who were processed.
+     */
+    failedUsers?: number;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * Count of successful runs of the workflow.
+     */
+    successfulRuns?: number;
+    /**
+     * Count of successful users processed by the workflow.
+     */
+    successfulUsers?: number;
+    /**
+     * Count of total runs of workflow.
+     */
+    totalRuns?: number;
+    /**
+     * Total number of users processed by the workflow.
+     */
+    totalUsers?: number;
+    /**
+     * The workflowCategory property
+     */
+    workflowCategory?: LifecycleWorkflowCategory;
+    /**
+     * The name of the workflow.
+     */
+    workflowDisplayName?: string;
+    /**
+     * The workflow ID.
+     */
+    workflowId?: string;
+    /**
+     * The version of the workflow that was a top workflow ran.
+     */
+    workflowVersion?: number;
 }
 export interface TriggerAndScopeBasedConditions extends Parsable, WorkflowExecutionConditions {
     /**
@@ -2012,6 +2320,106 @@ export interface WorkflowExecutionTrigger extends AdditionalDataHolder, BackedMo
     odataType?: string;
 }
 export type WorkflowExecutionType = (typeof WorkflowExecutionTypeObject)[keyof typeof WorkflowExecutionTypeObject];
+export interface WorkflowsInsightsByCategory extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * Failed 'Joiner' workflows processed in a tenant.
+     */
+    failedJoinerRuns?: number;
+    /**
+     * Failed 'Leaver' workflows processed in a tenant.
+     */
+    failedLeaverRuns?: number;
+    /**
+     * Failed 'Mover' workflows processed in a tenant.
+     */
+    failedMoverRuns?: number;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * Successful 'Joiner' workflows processed in a tenant.
+     */
+    successfulJoinerRuns?: number;
+    /**
+     * Successful 'Leaver' workflows processed in a tenant.
+     */
+    successfulLeaverRuns?: number;
+    /**
+     * Successful 'Mover' workflows processed in a tenant.
+     */
+    successfulMoverRuns?: number;
+    /**
+     * Total 'Joiner' workflows processed in a tenant.
+     */
+    totalJoinerRuns?: number;
+    /**
+     * Total 'Leaver' workflows processed in a tenant.
+     */
+    totalLeaverRuns?: number;
+    /**
+     * Total 'Mover' workflows processed in a tenant.
+     */
+    totalMoverRuns?: number;
+}
+export interface WorkflowsInsightsSummary extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * Count of failed workflow runs processed in the tenant.
+     */
+    failedRuns?: number;
+    /**
+     * Count of failed tasks processed in the tenant.
+     */
+    failedTasks?: number;
+    /**
+     * Count of failed users processed by workflows in the tenant.
+     */
+    failedUsers?: number;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+    /**
+     * Count of successful workflow runs processed in the tenant.
+     */
+    successfulRuns?: number;
+    /**
+     * Count of successful tasks processed in the tenant.
+     */
+    successfulTasks?: number;
+    /**
+     * Count of successful users processed by workflows in the tenant.
+     */
+    successfulUsers?: number;
+    /**
+     * Count of total workflows processed in the tenant.
+     */
+    totalRuns?: number;
+    /**
+     * Count of total tasks processed by workflows in the tenant.
+     */
+    totalTasks?: number;
+    /**
+     * Count of total users processed by workflows in the tenant.
+     */
+    totalUsers?: number;
+}
 export interface WorkflowTemplate extends Entity, Parsable {
     /**
      * The category property

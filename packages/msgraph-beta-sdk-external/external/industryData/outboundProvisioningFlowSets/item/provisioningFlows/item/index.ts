@@ -6,12 +6,18 @@ import { createProvisioningFlowFromDiscriminatorValue, serializeProvisioningFlow
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { MicrosoftGraphIndustryDataResetRequestBuilderRequestsMetadata, type MicrosoftGraphIndustryDataResetRequestBuilder } from './microsoftGraphIndustryDataReset/';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the provisioningFlows property of the microsoft.graph.industryData.outboundProvisioningFlowSet entity.
  */
 export interface ProvisioningFlowItemRequestBuilder extends BaseRequestBuilder<ProvisioningFlowItemRequestBuilder> {
+    /**
+     * Provides operations to call the reset method.
+     */
+    get microsoftGraphIndustryDataReset(): MicrosoftGraphIndustryDataResetRequestBuilder;
     /**
      * Delete navigation property provisioningFlows for external
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -76,6 +82,14 @@ export const ProvisioningFlowItemRequestBuilderUriTemplate = "{+baseurl}/externa
 const ProvisioningFlowItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const ProvisioningFlowItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ProvisioningFlowItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    microsoftGraphIndustryDataReset: {
+        requestsMetadata: MicrosoftGraphIndustryDataResetRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

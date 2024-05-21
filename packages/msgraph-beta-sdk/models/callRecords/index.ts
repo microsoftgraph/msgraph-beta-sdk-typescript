@@ -81,7 +81,7 @@ export interface CallRecord extends Entity, Parsable {
      */
     modalities?: Modality[];
     /**
-     * The organizer property
+     * The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
      */
     organizer?: IdentitySet;
     /**
@@ -89,7 +89,7 @@ export interface CallRecord extends Entity, Parsable {
      */
     organizer_v2?: Organizer;
     /**
-     * The participants property
+     * List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
      */
     participants?: IdentitySet[];
     /**
@@ -1536,7 +1536,7 @@ export interface ParticipantEndpoint extends Endpoint, Parsable {
      */
     feedback?: UserFeedback;
     /**
-     * The identity property
+     * Identity associated with the endpoint. The identity property is deprecated and will stop returning data on June 30, 2026. Going forward, use the associatedIdentity property.
      */
     identity?: IdentitySet;
     /**
