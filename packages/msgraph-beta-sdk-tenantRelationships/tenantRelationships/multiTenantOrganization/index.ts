@@ -33,12 +33,12 @@ export interface MultiTenantOrganizationRequestBuilder extends BaseRequestBuilde
      */
      get(requestConfiguration?: RequestConfiguration<MultiTenantOrganizationRequestBuilderGetQueryParameters> | undefined) : Promise<MultiTenantOrganization | undefined>;
     /**
-     * Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
+     * Update the properties of a multi-tenant organization.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MultiTenantOrganization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-beta|Find more info here}
      */
      put(body: MultiTenantOrganization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MultiTenantOrganization | undefined>;
     /**
@@ -48,7 +48,7 @@ export interface MultiTenantOrganizationRequestBuilder extends BaseRequestBuilde
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MultiTenantOrganizationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
+     * Update the properties of a multi-tenant organization.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

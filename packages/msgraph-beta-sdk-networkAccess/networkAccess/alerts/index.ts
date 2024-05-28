@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/';
 // @ts-ignore
-import { AlertItemRequestBuilderRequestsMetadata, type AlertItemRequestBuilder } from './item/';
+import { AlertItemRequestBuilderNavigationMetadata, AlertItemRequestBuilderRequestsMetadata, type AlertItemRequestBuilder } from './item/';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -115,6 +115,7 @@ const AlertsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const AlertsRequestBuilderNavigationMetadata: Record<Exclude<keyof AlertsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byAlertId: {
         requestsMetadata: AlertItemRequestBuilderRequestsMetadata,
+        navigationMetadata: AlertItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["alert%2Did"],
     },
     count: {

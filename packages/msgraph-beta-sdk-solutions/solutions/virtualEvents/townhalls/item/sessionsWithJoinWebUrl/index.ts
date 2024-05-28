@@ -19,7 +19,7 @@ export interface SessionsWithJoinWebUrlRequestBuilder extends BaseRequestBuilder
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Sessions for the virtual event.
+     * The sessions for the virtual event.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface SessionsWithJoinWebUrlRequestBuilder extends BaseRequestBuilder
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Sessions for the virtual event.
+     * The sessions for the virtual event.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface SessionsWithJoinWebUrlRequestBuilder extends BaseRequestBuilder
      toPatchRequestInformation(body: VirtualEventSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Sessions for the virtual event.
+ * The sessions for the virtual event.
  */
 export interface SessionsWithJoinWebUrlRequestBuilderGetQueryParameters {
     /**
