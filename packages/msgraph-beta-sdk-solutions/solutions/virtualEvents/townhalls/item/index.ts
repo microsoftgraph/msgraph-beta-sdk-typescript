@@ -41,7 +41,7 @@ export interface VirtualEventTownhallItemRequestBuilder extends BaseRequestBuild
      */
      get(requestConfiguration?: RequestConfiguration<VirtualEventTownhallItemRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventTownhall | undefined>;
     /**
-     * Update the properties of a virtualEventTownhall object.
+     * Update the properties of a vvirtualEventTownhall object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventTownhall>}
@@ -68,7 +68,7 @@ export interface VirtualEventTownhallItemRequestBuilder extends BaseRequestBuild
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VirtualEventTownhallItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a virtualEventTownhall object.
+     * Update the properties of a vvirtualEventTownhall object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

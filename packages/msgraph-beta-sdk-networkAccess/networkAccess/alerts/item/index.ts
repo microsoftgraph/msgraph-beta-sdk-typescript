@@ -6,12 +6,18 @@ import { createAlertFromDiscriminatorValue, serializeAlert, type Alert } from '@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the alerts property of the microsoft.graph.networkaccess.networkAccessRoot entity.
  */
 export interface AlertItemRequestBuilder extends BaseRequestBuilder<AlertItemRequestBuilder> {
+    /**
+     * Provides operations to manage the policy property of the microsoft.graph.networkaccess.alert entity.
+     */
+    get policy(): PolicyRequestBuilder;
     /**
      * Delete navigation property alerts for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -76,6 +82,14 @@ export const AlertItemRequestBuilderUriTemplate = "{+baseurl}/networkAccess/aler
 const AlertItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const AlertItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AlertItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    policy: {
+        requestsMetadata: PolicyRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

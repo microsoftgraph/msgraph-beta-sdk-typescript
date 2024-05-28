@@ -25,9 +25,29 @@ export interface Alert extends Entity, Parsable {
      */
     description?: string;
     /**
+     * The detectionTechnology property
+     */
+    detectionTechnology?: string;
+    /**
+     * The displayName property
+     */
+    displayName?: string;
+    /**
+     * The policy property
+     */
+    policy?: FilteringPolicy;
+    /**
      * The relatedResources property
      */
     relatedResources?: RelatedResource[];
+    /**
+     * The severity property
+     */
+    severity?: ThreatSeverity;
+    /**
+     * The vendorName property
+     */
+    vendorName?: string;
 }
 export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -915,6 +935,14 @@ export function createRelatedDeviceFromDiscriminatorValue(parseNode: ParseNode |
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedMalware}
+ */
+export function createRelatedMalwareFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedMalware;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedProcess}
  */
 export function createRelatedProcessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -944,6 +972,8 @@ export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode
                     return deserializeIntoRelatedDestination;
                 case "#microsoft.graph.networkaccess.relatedDevice":
                     return deserializeIntoRelatedDevice;
+                case "#microsoft.graph.networkaccess.relatedMalware":
+                    return deserializeIntoRelatedMalware;
                 case "#microsoft.graph.networkaccess.relatedProcess":
                     return deserializeIntoRelatedProcess;
                 case "#microsoft.graph.networkaccess.relatedRemoteNetwork":
@@ -1274,7 +1304,12 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
         "alertType": n => { alert.alertType = n.getEnumValue<AlertType>(AlertTypeObject); },
         "creationDateTime": n => { alert.creationDateTime = n.getDateValue(); },
         "description": n => { alert.description = n.getStringValue(); },
+        "detectionTechnology": n => { alert.detectionTechnology = n.getStringValue(); },
+        "displayName": n => { alert.displayName = n.getStringValue(); },
+        "policy": n => { alert.policy = n.getObjectValue<FilteringPolicy>(createFilteringPolicyFromDiscriminatorValue); },
         "relatedResources": n => { alert.relatedResources = n.getCollectionOfObjectValues<RelatedResource>(createRelatedResourceFromDiscriminatorValue); },
+        "severity": n => { alert.severity = n.getEnumValue<ThreatSeverity>(ThreatSeverityObject); },
+        "vendorName": n => { alert.vendorName = n.getStringValue(); },
     }
 }
 /**
@@ -2137,6 +2172,16 @@ export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevic
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMalware> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedMalware),
+        "name": n => { relatedMalware.name = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoRelatedProcess(relatedProcess: Partial<RelatedProcess> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedProcess),
@@ -2401,9 +2446,13 @@ export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Reco
     return {
         "backingStoreEnabled": n => { user.backingStoreEnabled = true; },
         "displayName": n => { user.displayName = n.getStringValue(); },
+        "firstAccessDateTime": n => { user.firstAccessDateTime = n.getDateValue(); },
         "lastAccessDateTime": n => { user.lastAccessDateTime = n.getDateValue(); },
         "@odata.type": n => { user.odataType = n.getStringValue(); },
+        "totalBytesReceived": n => { user.totalBytesReceived = n.getNumberValue(); },
+        "totalBytesSent": n => { user.totalBytesSent = n.getNumberValue(); },
         "trafficType": n => { user.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
+        "transactionCount": n => { user.transactionCount = n.getNumberValue(); },
         "userId": n => { user.userId = n.getStringValue(); },
         "userPrincipalName": n => { user.userPrincipalName = n.getStringValue(); },
         "userType": n => { user.userType = n.getEnumValue<UserType>(UserTypeObject); },
@@ -3455,6 +3504,12 @@ export interface RelatedDevice extends Parsable, RelatedResource {
      */
     deviceId?: string;
 }
+export interface RelatedMalware extends Parsable, RelatedResource {
+    /**
+     * The name property
+     */
+    name?: string;
+}
 export interface RelatedProcess extends Parsable, RelatedResource {
     /**
      * The isSuspicious property
@@ -3636,7 +3691,12 @@ export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert
     writer.writeEnumValue<AlertType>("alertType", alert.alertType);
     writer.writeDateValue("creationDateTime", alert.creationDateTime);
     writer.writeStringValue("description", alert.description);
+    writer.writeStringValue("detectionTechnology", alert.detectionTechnology);
+    writer.writeStringValue("displayName", alert.displayName);
+    writer.writeObjectValue<FilteringPolicy>("policy", alert.policy, serializeFilteringPolicy);
     writer.writeCollectionOfObjectValues<RelatedResource>("relatedResources", alert.relatedResources, serializeRelatedResource);
+    writer.writeEnumValue<ThreatSeverity>("severity", alert.severity);
+    writer.writeStringValue("vendorName", alert.vendorName);
 }
 /**
  * Serializes information the current object
@@ -4364,6 +4424,14 @@ export function serializeRelatedDevice(writer: SerializationWriter, relatedDevic
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedMalware)
+    writer.writeStringValue("name", relatedMalware.name);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeRelatedProcess(writer: SerializationWriter, relatedProcess: Partial<RelatedProcess> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedProcess)
     writer.writeBooleanValue("isSuspicious", relatedProcess.isSuspicious);
@@ -4582,9 +4650,13 @@ export function serializeUsageProfilingPoint(writer: SerializationWriter, usageP
  */
 export function serializeUser(writer: SerializationWriter, user: Partial<User> | undefined = {}) : void {
     writer.writeStringValue("displayName", user.displayName);
+    writer.writeDateValue("firstAccessDateTime", user.firstAccessDateTime);
     writer.writeDateValue("lastAccessDateTime", user.lastAccessDateTime);
     writer.writeStringValue("@odata.type", user.odataType);
+    writer.writeNumberValue("totalBytesReceived", user.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", user.totalBytesSent);
     writer.writeEnumValue<TrafficType>("trafficType", user.trafficType);
+    writer.writeNumberValue("transactionCount", user.transactionCount);
     writer.writeStringValue("userId", user.userId);
     writer.writeStringValue("userPrincipalName", user.userPrincipalName);
     writer.writeEnumValue<UserType>("userType", user.userType);
@@ -4679,6 +4751,7 @@ export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedMode
      */
     validFromDateTime?: Date;
 }
+export type ThreatSeverity = (typeof ThreatSeverityObject)[keyof typeof ThreatSeverityObject];
 export type TrafficForwardingType = (typeof TrafficForwardingTypeObject)[keyof typeof TrafficForwardingTypeObject];
 export type TrafficType = (typeof TrafficTypeObject)[keyof typeof TrafficTypeObject];
 export interface TransactionSummary extends AdditionalDataHolder, BackedModel, Parsable {
@@ -4816,6 +4889,10 @@ export interface User extends AdditionalDataHolder, BackedModel, Parsable {
      */
     displayName?: string;
     /**
+     * The firstAccessDateTime property
+     */
+    firstAccessDateTime?: Date;
+    /**
      * The date and time of the most recent access.
      */
     lastAccessDateTime?: Date;
@@ -4824,9 +4901,21 @@ export interface User extends AdditionalDataHolder, BackedModel, Parsable {
      */
     odataType?: string;
     /**
+     * The totalBytesReceived property
+     */
+    totalBytesReceived?: number;
+    /**
+     * The totalBytesSent property
+     */
+    totalBytesSent?: number;
+    /**
      * The trafficType property
      */
     trafficType?: TrafficType;
+    /**
+     * The transactionCount property
+     */
+    transactionCount?: number;
     /**
      * The ID for the user.
      */
@@ -4906,6 +4995,7 @@ export const AlertTypeObject = {
     ThreatIntelligenceTransactions: "threatIntelligenceTransactions",
     UnknownFutureValue: "unknownFutureValue",
     WebContentBlocked: "webContentBlocked",
+    Malware: "malware",
 } as const;
 export const BandwidthCapacityInMbpsObject = {
     Mbps250: "mbps250",
@@ -5113,6 +5203,14 @@ export const RemoteNetworkStatusObject = {
 export const StatusObject = {
     Enabled: "enabled",
     Disabled: "disabled",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const ThreatSeverityObject = {
+    Informational: "informational",
+    Low: "low",
+    Medium: "medium",
+    High: "high",
+    Critical: "critical",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const TrafficForwardingTypeObject = {

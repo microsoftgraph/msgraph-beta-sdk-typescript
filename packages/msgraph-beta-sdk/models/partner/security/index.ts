@@ -204,7 +204,7 @@ export interface PartnerSecurityAlert extends Entity, Parsable {
      */
     activityLogs?: ActivityLog[];
     /**
-     * A bag of name-value pairs that contain additional details about an alert.
+     * A bag of name-value pairs that contain more details about an alert.
      */
     additionalDetails?: AdditionalDataDictionary;
     /**
@@ -212,7 +212,7 @@ export interface PartnerSecurityAlert extends Entity, Parsable {
      */
     affectedResources?: AffectedResource[];
     /**
-     * The type of vulnerability that impacts the customer due to this alert.
+     * The type of vulnerability that impacts the customer due to this alert. For more information, see Security alerts reference guide.
      */
     alertType?: string;
     /**
@@ -240,11 +240,11 @@ export interface PartnerSecurityAlert extends Entity, Parsable {
      */
     displayName?: string;
     /**
-     * Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  subscription.
+     * Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
     firstObservedDateTime?: Date;
     /**
-     * Indicates whehter an alert is a test alert.
+     * Indicates whether an alert is a test alert.
      */
     isTest?: boolean;
     /**

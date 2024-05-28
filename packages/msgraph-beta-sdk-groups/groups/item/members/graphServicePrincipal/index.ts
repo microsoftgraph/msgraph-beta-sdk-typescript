@@ -19,7 +19,7 @@ export interface GraphServicePrincipalRequestBuilder extends BaseRequestBuilder<
      */
     get count(): CountRequestBuilder;
     /**
-     * Get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation is not transitive.
+     * Get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn't transitive.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipalCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -27,14 +27,14 @@ export interface GraphServicePrincipalRequestBuilder extends BaseRequestBuilder<
      */
      get(requestConfiguration?: RequestConfiguration<GraphServicePrincipalRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipalCollectionResponse | undefined>;
     /**
-     * Get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation is not transitive.
+     * Get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn't transitive.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphServicePrincipalRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation is not transitive.
+ * Get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn't transitive.
  */
 export interface GraphServicePrincipalRequestBuilderGetQueryParameters {
     /**
