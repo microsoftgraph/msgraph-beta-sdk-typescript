@@ -54,6 +54,8 @@ import { OwnedObjectsRequestBuilderNavigationMetadata, OwnedObjectsRequestBuilde
 // @ts-ignore
 import { OwnersRequestBuilderNavigationMetadata, OwnersRequestBuilderRequestsMetadata, type OwnersRequestBuilder } from './owners/';
 // @ts-ignore
+import { PermissionGrantPreApprovalPoliciesRequestBuilderNavigationMetadata, PermissionGrantPreApprovalPoliciesRequestBuilderRequestsMetadata, type PermissionGrantPreApprovalPoliciesRequestBuilder } from './permissionGrantPreApprovalPolicies/';
+// @ts-ignore
 import { RemoteDesktopSecurityConfigurationRequestBuilderNavigationMetadata, RemoteDesktopSecurityConfigurationRequestBuilderRequestsMetadata, type RemoteDesktopSecurityConfigurationRequestBuilder } from './remoteDesktopSecurityConfiguration/';
 // @ts-ignore
 import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/';
@@ -166,6 +168,10 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      * Provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.
      */
     get owners(): OwnersRequestBuilder;
+    /**
+     * Provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.servicePrincipal entity.
+     */
+    get permissionGrantPreApprovalPolicies(): PermissionGrantPreApprovalPoliciesRequestBuilder;
     /**
      * Provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.
      */
@@ -357,6 +363,10 @@ export const ServicePrincipalItemRequestBuilderNavigationMetadata: Record<Exclud
     owners: {
         requestsMetadata: OwnersRequestBuilderRequestsMetadata,
         navigationMetadata: OwnersRequestBuilderNavigationMetadata,
+    },
+    permissionGrantPreApprovalPolicies: {
+        requestsMetadata: PermissionGrantPreApprovalPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: PermissionGrantPreApprovalPoliciesRequestBuilderNavigationMetadata,
     },
     remoteDesktopSecurityConfiguration: {
         requestsMetadata: RemoteDesktopSecurityConfigurationRequestBuilderRequestsMetadata,

@@ -29,11 +29,12 @@ export interface AdditionalSourcesRequestBuilder extends BaseRequestBuilder<Addi
      */
      byDataSourceId(dataSourceId: string) : DataSourceItemRequestBuilder;
     /**
-     * Adds an additional source to the sourceCollection.
+     * Get a list of additional dataSource objects associated with a source collection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DataSourceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-additionalsources?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AdditionalSourcesRequestBuilderGetQueryParameters> | undefined) : Promise<DataSourceCollectionResponse | undefined>;
     /**
@@ -46,7 +47,7 @@ export interface AdditionalSourcesRequestBuilder extends BaseRequestBuilder<Addi
      */
      post(body: DataSource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DataSource | undefined>;
     /**
-     * Adds an additional source to the sourceCollection.
+     * Get a list of additional dataSource objects associated with a source collection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
@@ -62,7 +63,7 @@ export interface AdditionalSourcesRequestBuilder extends BaseRequestBuilder<Addi
      toPostRequestInformation(body: DataSource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Adds an additional source to the sourceCollection.
+ * Get a list of additional dataSource objects associated with a source collection.
  */
 export interface AdditionalSourcesRequestBuilderGetQueryParameters {
     /**

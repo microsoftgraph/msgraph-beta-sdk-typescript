@@ -19,10 +19,11 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      */
      delete(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : Promise<void>;
     /**
-     * When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+     * List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<StringCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RefRequestBuilderGetQueryParameters> | undefined) : Promise<StringCollectionResponse | undefined>;
     /**
@@ -39,7 +40,7 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<RefRequestBuilderDeleteQueryParameters> | undefined) : RequestInformation;
     /**
-     * When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+     * List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -62,7 +63,7 @@ export interface RefRequestBuilderDeleteQueryParameters {
     id?: string;
 }
 /**
- * When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+ * List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
  */
 export interface RefRequestBuilderGetQueryParameters {
     /**

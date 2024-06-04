@@ -52,6 +52,8 @@ import { MobileDeviceManagementPoliciesRequestBuilderNavigationMetadata, MobileD
 // @ts-ignore
 import { PermissionGrantPoliciesRequestBuilderNavigationMetadata, PermissionGrantPoliciesRequestBuilderRequestsMetadata, type PermissionGrantPoliciesRequestBuilder } from './permissionGrantPolicies/';
 // @ts-ignore
+import { PermissionGrantPreApprovalPoliciesRequestBuilderNavigationMetadata, PermissionGrantPreApprovalPoliciesRequestBuilderRequestsMetadata, type PermissionGrantPreApprovalPoliciesRequestBuilder } from './permissionGrantPreApprovalPolicies/';
+// @ts-ignore
 import { RoleManagementPoliciesRequestBuilderNavigationMetadata, RoleManagementPoliciesRequestBuilderRequestsMetadata, type RoleManagementPoliciesRequestBuilder } from './roleManagementPolicies/';
 // @ts-ignore
 import { RoleManagementPolicyAssignmentsRequestBuilderNavigationMetadata, RoleManagementPolicyAssignmentsRequestBuilderRequestsMetadata, type RoleManagementPolicyAssignmentsRequestBuilder } from './roleManagementPolicyAssignments/';
@@ -160,6 +162,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
      */
     get permissionGrantPolicies(): PermissionGrantPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.policyRoot entity.
+     */
+    get permissionGrantPreApprovalPolicies(): PermissionGrantPreApprovalPoliciesRequestBuilder;
     /**
      * Provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
      */
@@ -318,6 +324,10 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
     permissionGrantPolicies: {
         requestsMetadata: PermissionGrantPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: PermissionGrantPoliciesRequestBuilderNavigationMetadata,
+    },
+    permissionGrantPreApprovalPolicies: {
+        requestsMetadata: PermissionGrantPreApprovalPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: PermissionGrantPreApprovalPoliciesRequestBuilderNavigationMetadata,
     },
     roleManagementPolicies: {
         requestsMetadata: RoleManagementPoliciesRequestBuilderRequestsMetadata,

@@ -16175,11 +16175,11 @@ export interface ThreatSubmission extends Entity, Parsable {
      */
     category?: SubmissionCategory;
     /**
-     * Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
+     * Specifies the source of the submission. The possible values are: microsoft, other, and unkownFutureValue.
      */
     clientSource?: SubmissionClientSource;
     /**
-     * Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
+     * Specifies the type of content being submitted. The possible values are: email, url, file, app, and unkownFutureValue.
      */
     contentType?: SubmissionContentType;
     /**
@@ -16195,11 +16195,11 @@ export interface ThreatSubmission extends Entity, Parsable {
      */
     result?: SubmissionResult;
     /**
-     * Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
+     * Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user, and unkownFutureValue.
      */
     source?: SubmissionSource;
     /**
-     * Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
+     * Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped, and unkownFutureValue.
      */
     status?: LongRunningOperationStatus;
     /**

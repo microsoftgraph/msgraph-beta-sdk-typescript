@@ -150,6 +150,8 @@ import { GetWindowsUpdateAlertSummaryReportRequestBuilderRequestsMetadata, type 
 // @ts-ignore
 import { GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata, type GetZebraFotaDeploymentReportRequestBuilder } from './getZebraFotaDeploymentReport/';
 // @ts-ignore
+import { RetrieveAssignedApplicationsReportRequestBuilderRequestsMetadata, type RetrieveAssignedApplicationsReportRequestBuilder } from './retrieveAssignedApplicationsReport/';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -445,6 +447,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
     get getZebraFotaDeploymentReport(): GetZebraFotaDeploymentReportRequestBuilder;
     /**
+     * Provides operations to call the retrieveAssignedApplicationsReport method.
+     */
+    get retrieveAssignedApplicationsReport(): RetrieveAssignedApplicationsReportRequestBuilder;
+    /**
      * Delete navigation property reports for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -730,6 +736,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     getZebraFotaDeploymentReport: {
         requestsMetadata: GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata,
+    },
+    retrieveAssignedApplicationsReport: {
+        requestsMetadata: RetrieveAssignedApplicationsReportRequestBuilderRequestsMetadata,
     },
 };
 /**

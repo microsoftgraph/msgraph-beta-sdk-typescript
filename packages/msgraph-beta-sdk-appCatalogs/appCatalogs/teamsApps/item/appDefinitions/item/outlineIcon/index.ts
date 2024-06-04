@@ -25,10 +25,11 @@ export interface OutlineIconRequestBuilder extends BaseRequestBuilder<OutlineIco
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The outline version of the Teams app's icon.
+     * Retrieve a Teams app icon associated with a specific definition of an app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppIcon>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamsappicon-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<OutlineIconRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsAppIcon | undefined>;
     /**
@@ -46,7 +47,7 @@ export interface OutlineIconRequestBuilder extends BaseRequestBuilder<OutlineIco
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The outline version of the Teams app's icon.
+     * Retrieve a Teams app icon associated with a specific definition of an app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +61,7 @@ export interface OutlineIconRequestBuilder extends BaseRequestBuilder<OutlineIco
      toPatchRequestInformation(body: TeamsAppIcon, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The outline version of the Teams app's icon.
+ * Retrieve a Teams app icon associated with a specific definition of an app.
  */
 export interface OutlineIconRequestBuilderGetQueryParameters {
     /**

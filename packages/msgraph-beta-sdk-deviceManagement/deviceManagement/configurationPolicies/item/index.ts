@@ -8,15 +8,15 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AssignRequestBuilderRequestsMetadata, type AssignRequestBuilder } from './assign/';
 // @ts-ignore
-import { AssignJustInTimeConfigurationRequestBuilderRequestsMetadata, type AssignJustInTimeConfigurationRequestBuilder } from './assignJustInTimeConfiguration/';
-// @ts-ignore
 import { AssignmentsRequestBuilderNavigationMetadata, AssignmentsRequestBuilderRequestsMetadata, type AssignmentsRequestBuilder } from './assignments/';
+// @ts-ignore
+import { ClearEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata, type ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder } from './clearEnrollmentTimeDeviceMembershipTarget/';
 // @ts-ignore
 import { CreateCopyRequestBuilderRequestsMetadata, type CreateCopyRequestBuilder } from './createCopy/';
 // @ts-ignore
 import { ReorderRequestBuilderRequestsMetadata, type ReorderRequestBuilder } from './reorder/';
 // @ts-ignore
-import { RetrieveJustInTimeConfigurationRequestBuilderRequestsMetadata, type RetrieveJustInTimeConfigurationRequestBuilder } from './retrieveJustInTimeConfiguration/';
+import { RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata, type RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder } from './retrieveEnrollmentTimeDeviceMembershipTarget/';
 // @ts-ignore
 import { RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderRequestsMetadata, type RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder } from './retrieveLatestUpgradeDefaultBaselinePolicy/';
 // @ts-ignore
@@ -33,13 +33,13 @@ export interface DeviceManagementConfigurationPolicyItemRequestBuilder extends B
      */
     get assign(): AssignRequestBuilder;
     /**
-     * Provides operations to call the assignJustInTimeConfiguration method.
-     */
-    get assignJustInTimeConfiguration(): AssignJustInTimeConfigurationRequestBuilder;
-    /**
      * Provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
      */
     get assignments(): AssignmentsRequestBuilder;
+    /**
+     * Provides operations to call the clearEnrollmentTimeDeviceMembershipTarget method.
+     */
+    get clearEnrollmentTimeDeviceMembershipTarget(): ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder;
     /**
      * Provides operations to call the createCopy method.
      */
@@ -49,9 +49,9 @@ export interface DeviceManagementConfigurationPolicyItemRequestBuilder extends B
      */
     get reorder(): ReorderRequestBuilder;
     /**
-     * Provides operations to call the retrieveJustInTimeConfiguration method.
+     * Provides operations to call the retrieveEnrollmentTimeDeviceMembershipTarget method.
      */
-    get retrieveJustInTimeConfiguration(): RetrieveJustInTimeConfigurationRequestBuilder;
+    get retrieveEnrollmentTimeDeviceMembershipTarget(): RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder;
     /**
      * Provides operations to call the retrieveLatestUpgradeDefaultBaselinePolicy method.
      */
@@ -132,12 +132,12 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderNavigationMeta
     assign: {
         requestsMetadata: AssignRequestBuilderRequestsMetadata,
     },
-    assignJustInTimeConfiguration: {
-        requestsMetadata: AssignJustInTimeConfigurationRequestBuilderRequestsMetadata,
-    },
     assignments: {
         requestsMetadata: AssignmentsRequestBuilderRequestsMetadata,
         navigationMetadata: AssignmentsRequestBuilderNavigationMetadata,
+    },
+    clearEnrollmentTimeDeviceMembershipTarget: {
+        requestsMetadata: ClearEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata,
     },
     createCopy: {
         requestsMetadata: CreateCopyRequestBuilderRequestsMetadata,
@@ -145,8 +145,8 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderNavigationMeta
     reorder: {
         requestsMetadata: ReorderRequestBuilderRequestsMetadata,
     },
-    retrieveJustInTimeConfiguration: {
-        requestsMetadata: RetrieveJustInTimeConfigurationRequestBuilderRequestsMetadata,
+    retrieveEnrollmentTimeDeviceMembershipTarget: {
+        requestsMetadata: RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata,
     },
     retrieveLatestUpgradeDefaultBaselinePolicy: {
         requestsMetadata: RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderRequestsMetadata,

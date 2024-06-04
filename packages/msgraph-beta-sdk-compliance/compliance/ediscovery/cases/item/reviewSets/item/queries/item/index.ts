@@ -20,45 +20,48 @@ export interface ReviewSetQueryItemRequestBuilder extends BaseRequestBuilder<Rev
      */
     get microsoftGraphEdiscoveryApplyTags(): MicrosoftGraphEdiscoveryApplyTagsRequestBuilder;
     /**
-     * Delete navigation property queries for compliance
+     * Delete a reviewSetQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get queries from compliance
+     * Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReviewSetQuery>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ReviewSetQueryItemRequestBuilderGetQueryParameters> | undefined) : Promise<ReviewSetQuery | undefined>;
     /**
-     * Update the navigation property queries in compliance
+     * Update the properties of an eDiscovery reviewSetQuery.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReviewSetQuery>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ReviewSetQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ReviewSetQuery | undefined>;
     /**
-     * Delete navigation property queries for compliance
+     * Delete a reviewSetQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get queries from compliance
+     * Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReviewSetQueryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property queries in compliance
+     * Update the properties of an eDiscovery reviewSetQuery.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -67,7 +70,7 @@ export interface ReviewSetQueryItemRequestBuilder extends BaseRequestBuilder<Rev
      toPatchRequestInformation(body: ReviewSetQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get queries from compliance
+ * Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
  */
 export interface ReviewSetQueryItemRequestBuilderGetQueryParameters {
     /**

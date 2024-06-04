@@ -37,14 +37,15 @@ export interface GetPasswordSingleSignOnCredentialsPostResponse extends BaseColl
  */
 export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRequestBuilder<GetPasswordSingleSignOnCredentialsRequestBuilder> {
     /**
-     * Invoke action getPasswordSingleSignOnCredentials
+     * Get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetPasswordSingleSignOnCredentialsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetPasswordSingleSignOnCredentialsPostResponse | undefined>;
     /**
-     * Invoke action getPasswordSingleSignOnCredentials
+     * Get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

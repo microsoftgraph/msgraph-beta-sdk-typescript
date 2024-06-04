@@ -51,6 +51,10 @@ export interface ConversationItemRequestBuilder extends BaseRequestBuilder<Conve
  */
 export interface ConversationItemRequestBuilderGetQueryParameters {
     /**
+     * Expand related entities
+     */
+    expand?: string[];
+    /**
      * Select properties to be returned
      */
     select?: string[];
@@ -58,11 +62,12 @@ export interface ConversationItemRequestBuilderGetQueryParameters {
 /**
  * Uri template for the request builder.
  */
-export const ConversationItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24select}";
+export const ConversationItemRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24expand,%24select}";
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const ConversationItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
+    "expand": "%24expand",
     "select": "%24select",
 };
 /**

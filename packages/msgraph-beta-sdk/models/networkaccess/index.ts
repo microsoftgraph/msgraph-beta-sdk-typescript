@@ -982,6 +982,10 @@ export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode
                     return deserializeIntoRelatedTenant;
                 case "#microsoft.graph.networkaccess.relatedThreatIntelligence":
                     return deserializeIntoRelatedThreatIntelligence;
+                case "#microsoft.graph.networkaccess.relatedToken":
+                    return deserializeIntoRelatedToken;
+                case "#microsoft.graph.networkaccess.relatedUser":
+                    return deserializeIntoRelatedUser;
                 case "#microsoft.graph.networkaccess.relatedWebCategory":
                     return deserializeIntoRelatedWebCategory;
             }
@@ -1004,6 +1008,22 @@ export function createRelatedTenantFromDiscriminatorValue(parseNode: ParseNode |
  */
 export function createRelatedThreatIntelligenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedThreatIntelligence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedToken}
+ */
+export function createRelatedTokenFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedToken;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedUser}
+ */
+export function createRelatedUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedUser;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1864,6 +1884,8 @@ export function deserializeIntoHeaders(headers: Partial<Headers> | undefined = {
 export function deserializeIntoInternetAccessForwardingRule(internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(internetAccessForwardingRule),
+        "ports": n => { internetAccessForwardingRule.ports = n.getCollectionOfPrimitiveValues<string>(); },
+        "protocol": n => { internetAccessForwardingRule.protocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
     }
 }
 /**
@@ -2175,6 +2197,7 @@ export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevic
 export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMalware> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedMalware),
+        "category": n => { relatedMalware.category = n.getEnumValue<MalwareCategory>(MalwareCategoryObject); },
         "name": n => { relatedMalware.name = n.getStringValue(); },
     }
 }
@@ -2227,6 +2250,27 @@ export function deserializeIntoRelatedThreatIntelligence(relatedThreatIntelligen
     return {
         ...deserializeIntoRelatedResource(relatedThreatIntelligence),
         "threatCount": n => { relatedThreatIntelligence.threatCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedToken(relatedToken: Partial<RelatedToken> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedToken),
+        "uniqueTokenIdentifier": n => { relatedToken.uniqueTokenIdentifier = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoRelatedUser(relatedUser: Partial<RelatedUser> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedUser),
+        "userId": n => { relatedUser.userId = n.getStringValue(); },
+        "userPrincipalName": n => { relatedUser.userPrincipalName = n.getStringValue(); },
     }
 }
 /**
@@ -2987,6 +3031,14 @@ export interface Headers extends AdditionalDataHolder, BackedModel, Parsable {
 export type IkeEncryption = (typeof IkeEncryptionObject)[keyof typeof IkeEncryptionObject];
 export type IkeIntegrity = (typeof IkeIntegrityObject)[keyof typeof IkeIntegrityObject];
 export interface InternetAccessForwardingRule extends ForwardingRule, Parsable {
+    /**
+     * The ports property
+     */
+    ports?: string[];
+    /**
+     * The protocol property
+     */
+    protocol?: NetworkingProtocol;
 }
 export interface IpAddress extends Parsable, RuleDestination {
     /**
@@ -3066,6 +3118,7 @@ export interface M365ForwardingRule extends ForwardingRule, Parsable {
      */
     protocol?: NetworkingProtocol;
 }
+export type MalwareCategory = (typeof MalwareCategoryObject)[keyof typeof MalwareCategoryObject];
 export interface NetworkAccessRoot extends Entity, Parsable {
     /**
      * The alerts property
@@ -3506,6 +3559,10 @@ export interface RelatedDevice extends Parsable, RelatedResource {
 }
 export interface RelatedMalware extends Parsable, RelatedResource {
     /**
+     * The category property
+     */
+    category?: MalwareCategory;
+    /**
      * The name property
      */
     name?: string;
@@ -3551,6 +3608,22 @@ export interface RelatedThreatIntelligence extends Parsable, RelatedResource {
      * The threatCount property
      */
     threatCount?: number;
+}
+export interface RelatedToken extends Parsable, RelatedResource {
+    /**
+     * The uniqueTokenIdentifier property
+     */
+    uniqueTokenIdentifier?: string;
+}
+export interface RelatedUser extends Parsable, RelatedResource {
+    /**
+     * The userId property
+     */
+    userId?: string;
+    /**
+     * The userPrincipalName property
+     */
+    userPrincipalName?: string;
 }
 export interface RelatedWebCategory extends Parsable, RelatedResource {
     /**
@@ -4161,6 +4234,8 @@ export function serializeHeaders(writer: SerializationWriter, headers: Partial<H
  */
 export function serializeInternetAccessForwardingRule(writer: SerializationWriter, internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined = {}) : void {
     serializeForwardingRule(writer, internetAccessForwardingRule)
+    writer.writeCollectionOfPrimitiveValues<string>("ports", internetAccessForwardingRule.ports);
+    writer.writeEnumValue<NetworkingProtocol>("protocol", internetAccessForwardingRule.protocol);
 }
 /**
  * Serializes information the current object
@@ -4426,6 +4501,7 @@ export function serializeRelatedDevice(writer: SerializationWriter, relatedDevic
  */
 export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedMalware)
+    writer.writeEnumValue<MalwareCategory>("category", relatedMalware.category);
     writer.writeStringValue("name", relatedMalware.name);
 }
 /**
@@ -4468,6 +4544,23 @@ export function serializeRelatedTenant(writer: SerializationWriter, relatedTenan
 export function serializeRelatedThreatIntelligence(writer: SerializationWriter, relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedThreatIntelligence)
     writer.writeNumberValue("threatCount", relatedThreatIntelligence.threatCount);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedToken(writer: SerializationWriter, relatedToken: Partial<RelatedToken> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedToken)
+    writer.writeStringValue("uniqueTokenIdentifier", relatedToken.uniqueTokenIdentifier);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeRelatedUser(writer: SerializationWriter, relatedUser: Partial<RelatedUser> | undefined = {}) : void {
+    serializeRelatedResource(writer, relatedUser)
+    writer.writeStringValue("userId", relatedUser.userId);
+    writer.writeStringValue("userPrincipalName", relatedUser.userPrincipalName);
 }
 /**
  * Serializes information the current object
@@ -5092,6 +5185,49 @@ export const IpSecIntegrityObject = {
     GcmAes192: "gcmAes192",
     GcmAes256: "gcmAes256",
     Sha256: "sha256",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const MalwareCategoryObject = {
+    Adware: "adware",
+    Backdoor: "backdoor",
+    Behavior: "behavior",
+    Bot: "bot",
+    BrowserModifier: "browserModifier",
+    Constructor: "constructor",
+    Cryptojacking: "cryptojacking",
+    Ddos: "ddos",
+    Dropper: "dropper",
+    DropperMalware: "dropperMalware",
+    Exploit: "exploit",
+    FilelessMalware: "filelessMalware",
+    HackTool: "hackTool",
+    HybridMalware: "hybridMalware",
+    Joke: "joke",
+    Keylogger: "keylogger",
+    Misleading: "misleading",
+    MonitoringTool: "monitoringTool",
+    PolymorphicMalware: "polymorphicMalware",
+    PasswordStealer: "passwordStealer",
+    Program: "program",
+    Ransomware: "ransomware",
+    RemoteAccess: "remoteAccess",
+    Rogue: "rogue",
+    Rootkit: "rootkit",
+    SettingsModifier: "settingsModifier",
+    SoftwareBundler: "softwareBundler",
+    Spammer: "spammer",
+    Spoofer: "spoofer",
+    Spyware: "spyware",
+    Tool: "tool",
+    Trojan: "trojan",
+    TrojanClicker: "trojanClicker",
+    TrojanDownloader: "trojanDownloader",
+    TrojanNotifier: "trojanNotifier",
+    TrojanProxy: "trojanProxy",
+    TrojanSpy: "trojanSpy",
+    Virus: "virus",
+    WiperMalware: "wiperMalware",
+    Worm: "worm",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const NetworkDestinationTypeObject = {

@@ -78,6 +78,10 @@ export interface OutlookTaskItemRequestBuilder extends BaseRequestBuilder<Outloo
  */
 export interface OutlookTaskItemRequestBuilderGetQueryParameters {
     /**
+     * Expand related entities
+     */
+    expand?: string[];
+    /**
      * Select properties to be returned
      */
     select?: string[];
@@ -85,11 +89,12 @@ export interface OutlookTaskItemRequestBuilderGetQueryParameters {
 /**
  * Uri template for the request builder.
  */
-export const OutlookTaskItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}{?%24select}";
+export const OutlookTaskItemRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}{?%24expand,%24select}";
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
 const OutlookTaskItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
+    "expand": "%24expand",
     "select": "%24select",
 };
 /**

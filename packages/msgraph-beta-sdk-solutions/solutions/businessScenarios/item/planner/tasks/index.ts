@@ -27,28 +27,30 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      */
      byBusinessScenarioTaskId(businessScenarioTaskId: string) : BusinessScenarioTaskItemRequestBuilder;
     /**
-     * The Planner tasks for the scenario.
+     * Get a list of the businessScenarioTask objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TasksRequestBuilderGetQueryParameters> | undefined) : Promise<BusinessScenarioTaskCollectionResponse | undefined>;
     /**
-     * Create new navigation property to tasks for solutions
+     * Create a new businessScenarioTask object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-beta|Find more info here}
      */
      post(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenarioTask | undefined>;
     /**
-     * The Planner tasks for the scenario.
+     * Get a list of the businessScenarioTask objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TasksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to tasks for solutions
+     * Create a new businessScenarioTask object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      toPostRequestInformation(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The Planner tasks for the scenario.
+ * Get a list of the businessScenarioTask objects and their properties.
  */
 export interface TasksRequestBuilderGetQueryParameters {
     /**

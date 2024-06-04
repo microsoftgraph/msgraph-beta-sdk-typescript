@@ -19,18 +19,20 @@ export interface TaskConfigurationRequestBuilder extends BaseRequestBuilder<Task
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The configuration of Planner tasks that will be created for the scenario.
+     * Read the properties and relationships of a plannerTaskConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerTaskConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerTaskConfiguration | undefined>;
     /**
-     * Update the navigation property taskConfiguration in solutions
+     * Update the properties of a plannerTaskConfiguration object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerTaskConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: PlannerTaskConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerTaskConfiguration | undefined>;
     /**
@@ -40,13 +42,13 @@ export interface TaskConfigurationRequestBuilder extends BaseRequestBuilder<Task
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The configuration of Planner tasks that will be created for the scenario.
+     * Read the properties and relationships of a plannerTaskConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property taskConfiguration in solutions
+     * Update the properties of a plannerTaskConfiguration object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +56,7 @@ export interface TaskConfigurationRequestBuilder extends BaseRequestBuilder<Task
      toPatchRequestInformation(body: PlannerTaskConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The configuration of Planner tasks that will be created for the scenario.
+ * Read the properties and relationships of a plannerTaskConfiguration object.
  */
 export interface TaskConfigurationRequestBuilderGetQueryParameters {
     /**

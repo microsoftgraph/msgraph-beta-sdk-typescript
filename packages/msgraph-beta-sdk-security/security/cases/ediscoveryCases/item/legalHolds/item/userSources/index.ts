@@ -34,11 +34,12 @@ export interface UserSourcesRequestBuilder extends BaseRequestBuilder<UserSource
      */
      get(requestConfiguration?: RequestConfiguration<UserSourcesRequestBuilderGetQueryParameters> | undefined) : Promise<UserSourceCollectionResponse | undefined>;
     /**
-     * Create new navigation property to userSources for security
+     * Create a new userSource object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserSource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-post-usersources?view=graph-rest-beta|Find more info here}
      */
      post(body: UserSource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserSource | undefined>;
     /**
@@ -48,7 +49,7 @@ export interface UserSourcesRequestBuilder extends BaseRequestBuilder<UserSource
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserSourcesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to userSources for security
+     * Create a new userSource object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

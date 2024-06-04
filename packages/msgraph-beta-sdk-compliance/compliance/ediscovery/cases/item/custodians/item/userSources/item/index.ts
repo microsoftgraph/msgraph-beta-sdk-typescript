@@ -13,18 +13,20 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface UserSourceItemRequestBuilder extends BaseRequestBuilder<UserSourceItemRequestBuilder> {
     /**
-     * Delete navigation property userSources for compliance
+     * Delete a userSource object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-usersource-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+     * Read the properties and relationships of a userSource object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserSource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-usersource-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UserSourceItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserSource | undefined>;
     /**
@@ -37,14 +39,14 @@ export interface UserSourceItemRequestBuilder extends BaseRequestBuilder<UserSou
      */
      patch(body: UserSource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserSource | undefined>;
     /**
-     * Delete navigation property userSources for compliance
+     * Delete a userSource object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+     * Read the properties and relationships of a userSource object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
@@ -60,7 +62,7 @@ export interface UserSourceItemRequestBuilder extends BaseRequestBuilder<UserSou
      toPatchRequestInformation(body: UserSource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+ * Read the properties and relationships of a userSource object.
  */
 export interface UserSourceItemRequestBuilderGetQueryParameters {
     /**

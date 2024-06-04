@@ -16,6 +16,8 @@ import { PromoteRequestBuilderRequestsMetadata, type PromoteRequestBuilder } fro
 // @ts-ignore
 import { PromoteToInitialRequestBuilderRequestsMetadata, type PromoteToInitialRequestBuilder } from './promoteToInitial/';
 // @ts-ignore
+import { RootDomainRequestBuilderRequestsMetadata, type RootDomainRequestBuilder } from './rootDomain/';
+// @ts-ignore
 import { ServiceConfigurationRecordsRequestBuilderNavigationMetadata, ServiceConfigurationRecordsRequestBuilderRequestsMetadata, type ServiceConfigurationRecordsRequestBuilder } from './serviceConfigurationRecords/';
 // @ts-ignore
 import { SharedEmailDomainInvitationsRequestBuilderNavigationMetadata, SharedEmailDomainInvitationsRequestBuilderRequestsMetadata, type SharedEmailDomainInvitationsRequestBuilder } from './sharedEmailDomainInvitations/';
@@ -50,6 +52,10 @@ export interface DomainItemRequestBuilder extends BaseRequestBuilder<DomainItemR
      * Provides operations to call the promoteToInitial method.
      */
     get promoteToInitial(): PromoteToInitialRequestBuilder;
+    /**
+     * Provides operations to manage the rootDomain property of the microsoft.graph.domain entity.
+     */
+    get rootDomain(): RootDomainRequestBuilder;
     /**
      * Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
      */
@@ -154,6 +160,9 @@ export const DomainItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Do
     },
     promoteToInitial: {
         requestsMetadata: PromoteToInitialRequestBuilderRequestsMetadata,
+    },
+    rootDomain: {
+        requestsMetadata: RootDomainRequestBuilderRequestsMetadata,
     },
     serviceConfigurationRecords: {
         requestsMetadata: ServiceConfigurationRecordsRequestBuilderRequestsMetadata,

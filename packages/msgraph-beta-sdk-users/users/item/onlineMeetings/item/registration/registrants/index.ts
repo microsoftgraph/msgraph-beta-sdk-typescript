@@ -34,11 +34,12 @@ export interface RegistrantsRequestBuilder extends BaseRequestBuilder<Registrant
      */
      get(requestConfiguration?: RequestConfiguration<RegistrantsRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingRegistrantBaseCollectionResponse | undefined>;
     /**
-     * Create new navigation property to registrants for users
+     * Enroll a meeting registrant in an online meeting that has meeting registration enabled on behalf of the registrant. This operation has two scenarios: In either scenario, the registrant will receive an email notification that contains their registration information.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingRegistrantBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/meetingregistration-post-registrants?view=graph-rest-beta|Find more info here}
      */
      post(body: MeetingRegistrantBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MeetingRegistrantBase | undefined>;
     /**
@@ -48,7 +49,7 @@ export interface RegistrantsRequestBuilder extends BaseRequestBuilder<Registrant
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RegistrantsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to registrants for users
+     * Enroll a meeting registrant in an online meeting that has meeting registration enabled on behalf of the registrant. This operation has two scenarios: In either scenario, the registrant will receive an email notification that contains their registration information.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

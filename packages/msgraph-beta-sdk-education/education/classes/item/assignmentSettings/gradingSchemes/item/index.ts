@@ -13,16 +13,18 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface EducationGradingSchemeItemRequestBuilder extends BaseRequestBuilder<EducationGradingSchemeItemRequestBuilder> {
     /**
-     * Delete navigation property gradingSchemes for education
+     * Delete an educationGradingScheme object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationgradingscheme-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get gradingSchemes from education
+     * Read the properties and relationships of an educationGradingScheme object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationGradingScheme>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationgradingscheme-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<EducationGradingSchemeItemRequestBuilderGetQueryParameters> | undefined) : Promise<EducationGradingScheme | undefined>;
     /**
@@ -34,13 +36,13 @@ export interface EducationGradingSchemeItemRequestBuilder extends BaseRequestBui
      */
      patch(body: EducationGradingScheme, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationGradingScheme | undefined>;
     /**
-     * Delete navigation property gradingSchemes for education
+     * Delete an educationGradingScheme object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get gradingSchemes from education
+     * Read the properties and relationships of an educationGradingScheme object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +56,7 @@ export interface EducationGradingSchemeItemRequestBuilder extends BaseRequestBui
      toPatchRequestInformation(body: EducationGradingScheme, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get gradingSchemes from education
+ * Read the properties and relationships of an educationGradingScheme object.
  */
 export interface EducationGradingSchemeItemRequestBuilderGetQueryParameters {
     /**
