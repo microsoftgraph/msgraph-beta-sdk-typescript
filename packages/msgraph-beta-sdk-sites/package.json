@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-sites",
-  "version": "1.0.0-preview.19",
+  "version": "1.0.0-preview.20",
   "description": "Sites fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
