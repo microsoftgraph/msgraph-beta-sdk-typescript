@@ -13,9 +13,10 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MeetingRegistrantBaseItemRequestBuilder extends BaseRequestBuilder<MeetingRegistrantBaseItemRequestBuilder> {
     /**
-     * Delete navigation property registrants for users
+     * Cancel an onlineMeeting registration for a meetingRegistrant on behalf of the registrant. Only use this method when the allowedRegistrant property of the meetingRegistration object has a value of organization and the registrant's delegated permission was used to enroll. When the allowedRegistrant value is everyone, registrants can only use the link in the email they receive to cancel their registration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/meetingregistrant-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -34,7 +35,7 @@ export interface MeetingRegistrantBaseItemRequestBuilder extends BaseRequestBuil
      */
      patch(body: MeetingRegistrantBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MeetingRegistrantBase | undefined>;
     /**
-     * Delete navigation property registrants for users
+     * Cancel an onlineMeeting registration for a meetingRegistrant on behalf of the registrant. Only use this method when the allowedRegistrant property of the meetingRegistration object has a value of organization and the registrant's delegated permission was used to enroll. When the allowedRegistrant value is everyone, registrants can only use the link in the email they receive to cancel their registration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

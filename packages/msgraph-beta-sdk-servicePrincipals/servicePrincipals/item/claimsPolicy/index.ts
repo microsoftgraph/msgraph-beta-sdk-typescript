@@ -27,12 +27,12 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      */
      get(requestConfiguration?: RequestConfiguration<ClaimsPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<CustomClaimsPolicy | undefined>;
     /**
-     * Update a customClaimsPolicy object.
+     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomClaimsPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomClaimsPolicy | undefined>;
     /**
@@ -48,7 +48,7 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ClaimsPolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update a customClaimsPolicy object.
+     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

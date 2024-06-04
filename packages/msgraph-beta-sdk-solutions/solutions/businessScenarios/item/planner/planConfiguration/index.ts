@@ -25,18 +25,20 @@ export interface PlanConfigurationRequestBuilder extends BaseRequestBuilder<Plan
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The configuration of Planner plans that will be created for the scenario.
+     * Read the properties and relationships of a plannerPlanConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PlanConfigurationRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanConfiguration | undefined>;
     /**
-     * Update the navigation property planConfiguration in solutions
+     * Update the properties of a plannerPlanConfiguration object for a businessScenario.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: PlannerPlanConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerPlanConfiguration | undefined>;
     /**
@@ -46,13 +48,13 @@ export interface PlanConfigurationRequestBuilder extends BaseRequestBuilder<Plan
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The configuration of Planner plans that will be created for the scenario.
+     * Read the properties and relationships of a plannerPlanConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlanConfigurationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property planConfiguration in solutions
+     * Update the properties of a plannerPlanConfiguration object for a businessScenario.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +62,7 @@ export interface PlanConfigurationRequestBuilder extends BaseRequestBuilder<Plan
      toPatchRequestInformation(body: PlannerPlanConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The configuration of Planner plans that will be created for the scenario.
+ * Read the properties and relationships of a plannerPlanConfiguration object.
  */
 export interface PlanConfigurationRequestBuilderGetQueryParameters {
     /**

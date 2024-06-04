@@ -27,28 +27,30 @@ export interface LocalizationsRequestBuilder extends BaseRequestBuilder<Localiza
      */
      byPlannerPlanConfigurationLocalizationId(plannerPlanConfigurationLocalizationId: string) : PlannerPlanConfigurationLocalizationItemRequestBuilder;
     /**
-     * Localized names for the plan configuration.
+     * Get a list of the plannerPlanConfigurationLocalization objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfigurationLocalizationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanConfigurationLocalizationCollectionResponse | undefined>;
     /**
-     * Create new navigation property to localizations for solutions
+     * Create a new plannerPlanConfigurationLocalization object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfigurationLocalization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-beta|Find more info here}
      */
      post(body: PlannerPlanConfigurationLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerPlanConfigurationLocalization | undefined>;
     /**
-     * Localized names for the plan configuration.
+     * Get a list of the plannerPlanConfigurationLocalization objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to localizations for solutions
+     * Create a new plannerPlanConfigurationLocalization object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface LocalizationsRequestBuilder extends BaseRequestBuilder<Localiza
      toPostRequestInformation(body: PlannerPlanConfigurationLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Localized names for the plan configuration.
+ * Get a list of the plannerPlanConfigurationLocalization objects and their properties.
  */
 export interface LocalizationsRequestBuilderGetQueryParameters {
     /**

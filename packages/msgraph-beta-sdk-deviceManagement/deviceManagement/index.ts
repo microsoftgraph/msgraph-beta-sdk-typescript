@@ -120,6 +120,8 @@ import { EnableLegacyPcManagementRequestBuilderRequestsMetadata, type EnableLega
 // @ts-ignore
 import { EnableUnlicensedAdminstratorsRequestBuilderRequestsMetadata, type EnableUnlicensedAdminstratorsRequestBuilder } from './enableUnlicensedAdminstrators/';
 // @ts-ignore
+import { EndpointPrivilegeManagementProvisioningStatusRequestBuilderRequestsMetadata, type EndpointPrivilegeManagementProvisioningStatusRequestBuilder } from './endpointPrivilegeManagementProvisioningStatus/';
+// @ts-ignore
 import { EvaluateAssignmentFilterRequestBuilderRequestsMetadata, type EvaluateAssignmentFilterRequestBuilder } from './evaluateAssignmentFilter/';
 // @ts-ignore
 import { ExchangeConnectorsRequestBuilderNavigationMetadata, ExchangeConnectorsRequestBuilderRequestsMetadata, type ExchangeConnectorsRequestBuilder } from './exchangeConnectors/';
@@ -161,6 +163,8 @@ import { GroupPolicyObjectFilesRequestBuilderNavigationMetadata, GroupPolicyObje
 import { GroupPolicyUploadedDefinitionFilesRequestBuilderNavigationMetadata, GroupPolicyUploadedDefinitionFilesRequestBuilderRequestsMetadata, type GroupPolicyUploadedDefinitionFilesRequestBuilder } from './groupPolicyUploadedDefinitionFiles/';
 // @ts-ignore
 import { HardwareConfigurationsRequestBuilderNavigationMetadata, HardwareConfigurationsRequestBuilderRequestsMetadata, type HardwareConfigurationsRequestBuilder } from './hardwareConfigurations/';
+// @ts-ignore
+import { HardwarePasswordDetailsRequestBuilderNavigationMetadata, HardwarePasswordDetailsRequestBuilderRequestsMetadata, type HardwarePasswordDetailsRequestBuilder } from './hardwarePasswordDetails/';
 // @ts-ignore
 import { HardwarePasswordInfoRequestBuilderNavigationMetadata, HardwarePasswordInfoRequestBuilderRequestsMetadata, type HardwarePasswordInfoRequestBuilder } from './hardwarePasswordInfo/';
 // @ts-ignore
@@ -367,6 +371,8 @@ import { type WindowsInformationProtectionAppLearningSummariesRequestBuilder, Wi
 import { type WindowsInformationProtectionNetworkLearningSummariesRequestBuilder, WindowsInformationProtectionNetworkLearningSummariesRequestBuilderNavigationMetadata, WindowsInformationProtectionNetworkLearningSummariesRequestBuilderRequestsMetadata } from './windowsInformationProtectionNetworkLearningSummaries/';
 // @ts-ignore
 import { type WindowsMalwareInformationRequestBuilder, WindowsMalwareInformationRequestBuilderNavigationMetadata, WindowsMalwareInformationRequestBuilderRequestsMetadata } from './windowsMalwareInformation/';
+// @ts-ignore
+import { type WindowsQualityUpdatePoliciesRequestBuilder, WindowsQualityUpdatePoliciesRequestBuilderNavigationMetadata, WindowsQualityUpdatePoliciesRequestBuilderRequestsMetadata } from './windowsQualityUpdatePolicies/';
 // @ts-ignore
 import { type WindowsQualityUpdateProfilesRequestBuilder, WindowsQualityUpdateProfilesRequestBuilderNavigationMetadata, WindowsQualityUpdateProfilesRequestBuilderRequestsMetadata } from './windowsQualityUpdateProfiles/';
 // @ts-ignore
@@ -613,6 +619,10 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      */
     get enableUnlicensedAdminstrators(): EnableUnlicensedAdminstratorsRequestBuilder;
     /**
+     * Provides operations to manage the endpointPrivilegeManagementProvisioningStatus property of the microsoft.graph.deviceManagement entity.
+     */
+    get endpointPrivilegeManagementProvisioningStatus(): EndpointPrivilegeManagementProvisioningStatusRequestBuilder;
+    /**
      * Provides operations to call the evaluateAssignmentFilter method.
      */
     get evaluateAssignmentFilter(): EvaluateAssignmentFilterRequestBuilder;
@@ -680,6 +690,10 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      * Provides operations to manage the hardwareConfigurations property of the microsoft.graph.deviceManagement entity.
      */
     get hardwareConfigurations(): HardwareConfigurationsRequestBuilder;
+    /**
+     * Provides operations to manage the hardwarePasswordDetails property of the microsoft.graph.deviceManagement entity.
+     */
+    get hardwarePasswordDetails(): HardwarePasswordDetailsRequestBuilder;
     /**
      * Provides operations to manage the hardwarePasswordInfo property of the microsoft.graph.deviceManagement entity.
      */
@@ -1085,6 +1099,10 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      */
     get windowsMalwareInformation(): WindowsMalwareInformationRequestBuilder;
     /**
+     * Provides operations to manage the windowsQualityUpdatePolicies property of the microsoft.graph.deviceManagement entity.
+     */
+    get windowsQualityUpdatePolicies(): WindowsQualityUpdatePoliciesRequestBuilder;
+    /**
      * Provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
      */
     get windowsQualityUpdateProfiles(): WindowsQualityUpdateProfilesRequestBuilder;
@@ -1436,6 +1454,9 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     enableUnlicensedAdminstrators: {
         requestsMetadata: EnableUnlicensedAdminstratorsRequestBuilderRequestsMetadata,
     },
+    endpointPrivilegeManagementProvisioningStatus: {
+        requestsMetadata: EndpointPrivilegeManagementProvisioningStatusRequestBuilderRequestsMetadata,
+    },
     evaluateAssignmentFilter: {
         requestsMetadata: EvaluateAssignmentFilterRequestBuilderRequestsMetadata,
     },
@@ -1497,6 +1518,10 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     hardwareConfigurations: {
         requestsMetadata: HardwareConfigurationsRequestBuilderRequestsMetadata,
         navigationMetadata: HardwareConfigurationsRequestBuilderNavigationMetadata,
+    },
+    hardwarePasswordDetails: {
+        requestsMetadata: HardwarePasswordDetailsRequestBuilderRequestsMetadata,
+        navigationMetadata: HardwarePasswordDetailsRequestBuilderNavigationMetadata,
     },
     hardwarePasswordInfo: {
         requestsMetadata: HardwarePasswordInfoRequestBuilderRequestsMetadata,
@@ -1891,6 +1916,10 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     windowsMalwareInformation: {
         requestsMetadata: WindowsMalwareInformationRequestBuilderRequestsMetadata,
         navigationMetadata: WindowsMalwareInformationRequestBuilderNavigationMetadata,
+    },
+    windowsQualityUpdatePolicies: {
+        requestsMetadata: WindowsQualityUpdatePoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: WindowsQualityUpdatePoliciesRequestBuilderNavigationMetadata,
     },
     windowsQualityUpdateProfiles: {
         requestsMetadata: WindowsQualityUpdateProfilesRequestBuilderRequestsMetadata,

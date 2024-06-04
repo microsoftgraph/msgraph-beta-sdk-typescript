@@ -18,6 +18,10 @@ export interface CopyPostRequestBody extends AdditionalDataHolder, BackedModel, 
      */
     backingStoreEnabled?: boolean;
     /**
+     * The childrenOnly property
+     */
+    childrenOnly?: boolean;
+    /**
      * The name property
      */
     name?: string;
@@ -31,7 +35,7 @@ export interface CopyPostRequestBody extends AdditionalDataHolder, BackedModel, 
  */
 export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilder> {
     /**
-     * Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.
+     * Asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveItem>}
@@ -40,7 +44,7 @@ export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilde
      */
      post(body: CopyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveItem | undefined>;
     /**
-     * Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.
+     * Asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -62,6 +66,7 @@ export function createCopyPostRequestBodyFromDiscriminatorValue(parseNode: Parse
 export function deserializeIntoCopyPostRequestBody(copyPostRequestBody: Partial<CopyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { copyPostRequestBody.backingStoreEnabled = true; },
+        "childrenOnly": n => { copyPostRequestBody.childrenOnly = n.getBooleanValue(); },
         "name": n => { copyPostRequestBody.name = n.getStringValue(); },
         "parentReference": n => { copyPostRequestBody.parentReference = n.getObjectValue<ItemReference>(createItemReferenceFromDiscriminatorValue); },
     }
@@ -71,6 +76,7 @@ export function deserializeIntoCopyPostRequestBody(copyPostRequestBody: Partial<
  * @param writer Serialization writer to use to serialize this model
  */
 export function serializeCopyPostRequestBody(writer: SerializationWriter, copyPostRequestBody: Partial<CopyPostRequestBody> | undefined = {}) : void {
+    writer.writeBooleanValue("childrenOnly", copyPostRequestBody.childrenOnly);
     writer.writeStringValue("name", copyPostRequestBody.name);
     writer.writeObjectValue<ItemReference>("parentReference", copyPostRequestBody.parentReference, serializeItemReference);
     writer.writeAdditionalData(copyPostRequestBody.additionalData);

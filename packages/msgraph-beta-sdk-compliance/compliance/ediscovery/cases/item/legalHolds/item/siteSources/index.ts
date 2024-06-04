@@ -29,31 +29,33 @@ export interface SiteSourcesRequestBuilder extends BaseRequestBuilder<SiteSource
      */
      bySiteSourceId(siteSourceId: string) : SiteSourceItemRequestBuilder;
     /**
-     * Data source entity for SharePoint sites associated with the legal hold.
+     * Get the list of siteSource objecs associated with a legal hold.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteSourceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-legalhold-list-sitesources?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteSourcesRequestBuilderGetQueryParameters> | undefined) : Promise<SiteSourceCollectionResponse | undefined>;
     /**
-     * Create new navigation property to siteSources for compliance
+     * Adds a siteSource to a legalHold object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteSource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-legalhold-post-sitesources?view=graph-rest-beta|Find more info here}
      */
      post(body: SiteSource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteSource | undefined>;
     /**
-     * Data source entity for SharePoint sites associated with the legal hold.
+     * Get the list of siteSource objecs associated with a legal hold.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteSourcesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to siteSources for compliance
+     * Adds a siteSource to a legalHold object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -62,7 +64,7 @@ export interface SiteSourcesRequestBuilder extends BaseRequestBuilder<SiteSource
      toPostRequestInformation(body: SiteSource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Data source entity for SharePoint sites associated with the legal hold.
+ * Get the list of siteSource objecs associated with a legal hold.
  */
 export interface SiteSourcesRequestBuilderGetQueryParameters {
     /**

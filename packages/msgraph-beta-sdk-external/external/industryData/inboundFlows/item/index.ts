@@ -25,43 +25,43 @@ export interface InboundFlowItemRequestBuilder extends BaseRequestBuilder<Inboun
      */
     get year(): YearRequestBuilder;
     /**
-     * Delete an inboundFileFlow object.
+     * Delete an inboundFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an inboundFlow object.
+     * Read the properties and relationships of an inboundFileFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InboundFlow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InboundFlowItemRequestBuilderGetQueryParameters> | undefined) : Promise<InboundFlow | undefined>;
     /**
-     * Update the properties of an inboundFileFlow object.
+     * Update the properties of an inboundFlow object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InboundFlow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InboundFlow | undefined>;
     /**
-     * Delete an inboundFileFlow object.
+     * Delete an inboundFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an inboundFlow object.
+     * Read the properties and relationships of an inboundFileFlow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InboundFlowItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an inboundFileFlow object.
+     * Update the properties of an inboundFlow object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -69,7 +69,7 @@ export interface InboundFlowItemRequestBuilder extends BaseRequestBuilder<Inboun
      toPatchRequestInformation(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an inboundFlow object.
+ * Read the properties and relationships of an inboundFileFlow object.
  */
 export interface InboundFlowItemRequestBuilderGetQueryParameters {
     /**

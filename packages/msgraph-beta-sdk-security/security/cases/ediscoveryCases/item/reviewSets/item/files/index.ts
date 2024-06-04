@@ -27,10 +27,11 @@ export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuil
      */
      byEdiscoveryFileId(ediscoveryFileId: string) : EdiscoveryFileItemRequestBuilder;
     /**
-     * Represents files within the review set.
+     * Get a list of the ediscoveryFile objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EdiscoveryFileCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-list-files?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FilesRequestBuilderGetQueryParameters> | undefined) : Promise<EdiscoveryFileCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuil
      */
      post(body: EdiscoveryFile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EdiscoveryFile | undefined>;
     /**
-     * Represents files within the review set.
+     * Get a list of the ediscoveryFile objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuil
      toPostRequestInformation(body: EdiscoveryFile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represents files within the review set.
+ * Get a list of the ediscoveryFile objects and their properties.
  */
 export interface FilesRequestBuilderGetQueryParameters {
     /**

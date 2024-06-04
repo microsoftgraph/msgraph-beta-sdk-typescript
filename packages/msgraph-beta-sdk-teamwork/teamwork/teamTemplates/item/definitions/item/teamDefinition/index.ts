@@ -139,10 +139,11 @@ export interface TeamDefinitionRequestBuilder extends BaseRequestBuilder<TeamDef
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+     * Get the properties of the team associated with a teamTemplateDefinition object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Team>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TeamDefinitionRequestBuilderGetQueryParameters> | undefined) : Promise<Team | undefined>;
     /**
@@ -160,7 +161,7 @@ export interface TeamDefinitionRequestBuilder extends BaseRequestBuilder<TeamDef
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+     * Get the properties of the team associated with a teamTemplateDefinition object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -174,7 +175,7 @@ export interface TeamDefinitionRequestBuilder extends BaseRequestBuilder<TeamDef
      toPatchRequestInformation(body: Team, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+ * Get the properties of the team associated with a teamTemplateDefinition object.
  */
 export interface TeamDefinitionRequestBuilderGetQueryParameters {
     /**

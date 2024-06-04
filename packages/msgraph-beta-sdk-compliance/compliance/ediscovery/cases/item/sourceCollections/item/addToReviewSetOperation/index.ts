@@ -13,15 +13,16 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface AddToReviewSetOperationRequestBuilder extends BaseRequestBuilder<AddToReviewSetOperationRequestBuilder> {
     /**
-     * Adds the results of the sourceCollection to the specified reviewSet.
+     * Get the last addToReviewSetOperation object associated with a source collection. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AddToReviewSetOperation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AddToReviewSetOperationRequestBuilderGetQueryParameters> | undefined) : Promise<AddToReviewSetOperation | undefined>;
     /**
-     * Adds the results of the sourceCollection to the specified reviewSet.
+     * Get the last addToReviewSetOperation object associated with a source collection. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
@@ -29,7 +30,7 @@ export interface AddToReviewSetOperationRequestBuilder extends BaseRequestBuilde
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AddToReviewSetOperationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Adds the results of the sourceCollection to the specified reviewSet.
+ * Get the last addToReviewSetOperation object associated with a source collection. 
  */
 export interface AddToReviewSetOperationRequestBuilderGetQueryParameters {
     /**

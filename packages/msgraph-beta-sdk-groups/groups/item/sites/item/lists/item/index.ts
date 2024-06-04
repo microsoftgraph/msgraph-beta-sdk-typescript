@@ -22,6 +22,8 @@ import { LastModifiedByUserRequestBuilderNavigationMetadata, LastModifiedByUserR
 // @ts-ignore
 import { OperationsRequestBuilderNavigationMetadata, OperationsRequestBuilderRequestsMetadata, type OperationsRequestBuilder } from './operations/';
 // @ts-ignore
+import { PermissionsRequestBuilderNavigationMetadata, PermissionsRequestBuilderRequestsMetadata, type PermissionsRequestBuilder } from './permissions/';
+// @ts-ignore
 import { SubscriptionsRequestBuilderNavigationMetadata, SubscriptionsRequestBuilderRequestsMetadata, type SubscriptionsRequestBuilder } from './subscriptions/';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -62,6 +64,10 @@ export interface ListItemRequestBuilder extends BaseRequestBuilder<ListItemReque
      * Provides operations to manage the operations property of the microsoft.graph.list entity.
      */
     get operations(): OperationsRequestBuilder;
+    /**
+     * Provides operations to manage the permissions property of the microsoft.graph.list entity.
+     */
+    get permissions(): PermissionsRequestBuilder;
     /**
      * Provides operations to manage the subscriptions property of the microsoft.graph.list entity.
      */
@@ -164,6 +170,10 @@ export const ListItemRequestBuilderNavigationMetadata: Record<Exclude<keyof List
     operations: {
         requestsMetadata: OperationsRequestBuilderRequestsMetadata,
         navigationMetadata: OperationsRequestBuilderNavigationMetadata,
+    },
+    permissions: {
+        requestsMetadata: PermissionsRequestBuilderRequestsMetadata,
+        navigationMetadata: PermissionsRequestBuilderNavigationMetadata,
     },
     subscriptions: {
         requestsMetadata: SubscriptionsRequestBuilderRequestsMetadata,

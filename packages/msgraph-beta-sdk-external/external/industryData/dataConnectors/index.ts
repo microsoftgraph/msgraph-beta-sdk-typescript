@@ -35,12 +35,12 @@ export interface DataConnectorsRequestBuilder extends BaseRequestBuilder<DataCon
      */
      get(requestConfiguration?: RequestConfiguration<DataConnectorsRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataConnectorCollectionResponse | undefined>;
     /**
-     * Create a new azureDataLakeConnector object.
+     * Create a new industryDataConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IndustryDataConnector>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-beta|Find more info here}
      */
      post(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
@@ -50,7 +50,7 @@ export interface DataConnectorsRequestBuilder extends BaseRequestBuilder<DataCon
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DataConnectorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new azureDataLakeConnector object.
+     * Create a new industryDataConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

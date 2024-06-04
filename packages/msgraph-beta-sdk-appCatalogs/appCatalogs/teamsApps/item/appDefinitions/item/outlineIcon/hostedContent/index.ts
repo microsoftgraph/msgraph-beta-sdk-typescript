@@ -25,10 +25,11 @@ export interface HostedContentRequestBuilder extends BaseRequestBuilder<HostedCo
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The contents of the app icon if the icon is hosted within the Teams infrastructure.
+     * Retrieve the hosted content in an app's icon.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkHostedContent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworkhostedcontent-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<HostedContentRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkHostedContent | undefined>;
     /**
@@ -46,7 +47,7 @@ export interface HostedContentRequestBuilder extends BaseRequestBuilder<HostedCo
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The contents of the app icon if the icon is hosted within the Teams infrastructure.
+     * Retrieve the hosted content in an app's icon.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +61,7 @@ export interface HostedContentRequestBuilder extends BaseRequestBuilder<HostedCo
      toPatchRequestInformation(body: TeamworkHostedContent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The contents of the app icon if the icon is hosted within the Teams infrastructure.
+ * Retrieve the hosted content in an app's icon.
  */
 export interface HostedContentRequestBuilderGetQueryParameters {
     /**

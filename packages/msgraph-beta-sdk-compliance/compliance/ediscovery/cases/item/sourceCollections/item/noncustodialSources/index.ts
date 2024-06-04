@@ -29,15 +29,16 @@ export interface NoncustodialSourcesRequestBuilder extends BaseRequestBuilder<No
      */
      byNoncustodialDataSourceId(noncustodialDataSourceId: string) : NoncustodialDataSourceItemRequestBuilder;
     /**
-     * noncustodialDataSource sources that are included in the sourceCollection
+     * Get a list of noncustodialDataSource associated with a sourceCollection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<NoncustodialDataSourceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-noncustodialsources?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<NoncustodialSourcesRequestBuilderGetQueryParameters> | undefined) : Promise<NoncustodialDataSourceCollectionResponse | undefined>;
     /**
-     * noncustodialDataSource sources that are included in the sourceCollection
+     * Get a list of noncustodialDataSource associated with a sourceCollection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
@@ -45,7 +46,7 @@ export interface NoncustodialSourcesRequestBuilder extends BaseRequestBuilder<No
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NoncustodialSourcesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * noncustodialDataSource sources that are included in the sourceCollection
+ * Get a list of noncustodialDataSource associated with a sourceCollection.
  */
 export interface NoncustodialSourcesRequestBuilderGetQueryParameters {
     /**

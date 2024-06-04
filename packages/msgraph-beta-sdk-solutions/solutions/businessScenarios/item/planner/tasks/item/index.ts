@@ -37,40 +37,43 @@ export interface BusinessScenarioTaskItemRequestBuilder extends BaseRequestBuild
      */
     get progressTaskBoardFormat(): ProgressTaskBoardFormatRequestBuilder;
     /**
-     * Delete navigation property tasks for solutions
+     * Delete a businessScenarioTask object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The Planner tasks for the scenario.
+     * Read the properties and relationships of a businessScenarioTask object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<BusinessScenarioTask | undefined>;
     /**
-     * Update the navigation property tasks in solutions
+     * Update the properties of a businessScenarioTask object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenarioTask | undefined>;
     /**
-     * Delete navigation property tasks for solutions
+     * Delete a businessScenarioTask object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The Planner tasks for the scenario.
+     * Read the properties and relationships of a businessScenarioTask object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property tasks in solutions
+     * Update the properties of a businessScenarioTask object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -78,7 +81,7 @@ export interface BusinessScenarioTaskItemRequestBuilder extends BaseRequestBuild
      toPatchRequestInformation(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The Planner tasks for the scenario.
+ * Read the properties and relationships of a businessScenarioTask object.
  */
 export interface BusinessScenarioTaskItemRequestBuilderGetQueryParameters {
     /**

@@ -27,28 +27,30 @@ export interface IncludeApplicationsRequestBuilder extends BaseRequestBuilder<In
      */
      byAuthenticationConditionApplicationAppId(authenticationConditionApplicationAppId: string) : AuthenticationConditionApplicationAppItemRequestBuilder;
     /**
-     * Get includeApplications from identity
+     * List the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuthenticationConditionApplicationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationconditionsapplications-list-includeapplications?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<IncludeApplicationsRequestBuilderGetQueryParameters> | undefined) : Promise<AuthenticationConditionApplicationCollectionResponse | undefined>;
     /**
-     * Create new navigation property to includeApplications for identity
+     * Add or link an application to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This enables the authentication experience that's defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuthenticationConditionApplication>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationconditionsapplications-post-includeapplications?view=graph-rest-beta|Find more info here}
      */
      post(body: AuthenticationConditionApplication, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuthenticationConditionApplication | undefined>;
     /**
-     * Get includeApplications from identity
+     * List the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IncludeApplicationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to includeApplications for identity
+     * Add or link an application to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This enables the authentication experience that's defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface IncludeApplicationsRequestBuilder extends BaseRequestBuilder<In
      toPostRequestInformation(body: AuthenticationConditionApplication, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get includeApplications from identity
+ * List the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled.
  */
 export interface IncludeApplicationsRequestBuilderGetQueryParameters {
     /**

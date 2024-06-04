@@ -43,10 +43,11 @@ export interface EdiscoveryFileItemRequestBuilder extends BaseRequestBuilder<Edi
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Represents files within the review set.
+     * Read the properties and relationships of an ediscoveryFile object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EdiscoveryFile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-ediscoveryfile-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<EdiscoveryFileItemRequestBuilderGetQueryParameters> | undefined) : Promise<EdiscoveryFile | undefined>;
     /**
@@ -64,7 +65,7 @@ export interface EdiscoveryFileItemRequestBuilder extends BaseRequestBuilder<Edi
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Represents files within the review set.
+     * Read the properties and relationships of an ediscoveryFile object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -78,7 +79,7 @@ export interface EdiscoveryFileItemRequestBuilder extends BaseRequestBuilder<Edi
      toPatchRequestInformation(body: EdiscoveryFile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represents files within the review set.
+ * Read the properties and relationships of an ediscoveryFile object.
  */
 export interface EdiscoveryFileItemRequestBuilderGetQueryParameters {
     /**

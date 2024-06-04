@@ -13,40 +13,43 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface PlannerPlanConfigurationLocalizationItemRequestBuilder extends BaseRequestBuilder<PlannerPlanConfigurationLocalizationItemRequestBuilder> {
     /**
-     * Delete navigation property localizations for solutions
+     * Delete a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Localized names for the plan configuration.
+     * Read the properties and relationships of a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfigurationLocalization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanConfigurationLocalization | undefined>;
     /**
-     * Update the navigation property localizations in solutions
+     * Update the properties of a plannerPlanConfigurationLocalization object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfigurationLocalization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: PlannerPlanConfigurationLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerPlanConfigurationLocalization | undefined>;
     /**
-     * Delete navigation property localizations for solutions
+     * Delete a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Localized names for the plan configuration.
+     * Read the properties and relationships of a plannerPlanConfigurationLocalization object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property localizations in solutions
+     * Update the properties of a plannerPlanConfigurationLocalization object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +57,7 @@ export interface PlannerPlanConfigurationLocalizationItemRequestBuilder extends 
      toPatchRequestInformation(body: PlannerPlanConfigurationLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Localized names for the plan configuration.
+ * Read the properties and relationships of a plannerPlanConfigurationLocalization object.
  */
 export interface PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters {
     /**

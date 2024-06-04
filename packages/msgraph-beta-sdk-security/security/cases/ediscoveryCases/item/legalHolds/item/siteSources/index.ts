@@ -34,11 +34,12 @@ export interface SiteSourcesRequestBuilder extends BaseRequestBuilder<SiteSource
      */
      get(requestConfiguration?: RequestConfiguration<SiteSourcesRequestBuilderGetQueryParameters> | undefined) : Promise<SiteSourceCollectionResponse | undefined>;
     /**
-     * Create new navigation property to siteSources for security
+     * Create a new siteSource object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteSource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-post-sitesources?view=graph-rest-beta|Find more info here}
      */
      post(body: SiteSource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteSource | undefined>;
     /**
@@ -48,7 +49,7 @@ export interface SiteSourcesRequestBuilder extends BaseRequestBuilder<SiteSource
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteSourcesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to siteSources for security
+     * Create a new siteSource object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

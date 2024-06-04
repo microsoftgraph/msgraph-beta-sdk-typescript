@@ -13,9 +13,10 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface AuthenticationConditionApplicationAppItemRequestBuilder extends BaseRequestBuilder<AuthenticationConditionApplicationAppItemRequestBuilder> {
     /**
-     * Delete navigation property includeApplications for identity
+     * Remove or unlink an application from an external identities self-service sign-up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This disables the authentication experience that's defined by the user flow for the application.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationconditionapplication-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -34,7 +35,7 @@ export interface AuthenticationConditionApplicationAppItemRequestBuilder extends
      */
      patch(body: AuthenticationConditionApplication, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuthenticationConditionApplication | undefined>;
     /**
-     * Delete navigation property includeApplications for identity
+     * Remove or unlink an application from an external identities self-service sign-up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This disables the authentication experience that's defined by the user flow for the application.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

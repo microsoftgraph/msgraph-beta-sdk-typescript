@@ -29,15 +29,16 @@ export interface CustodianSourcesRequestBuilder extends BaseRequestBuilder<Custo
      */
      byDataSourceId(dataSourceId: string) : DataSourceItemRequestBuilder;
     /**
-     * Custodian sources that are included in the sourceCollection.
+     * Get the list of dataSource objects associated with a source collection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DataSourceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @see {@link https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-custodiansources?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustodianSourcesRequestBuilderGetQueryParameters> | undefined) : Promise<DataSourceCollectionResponse | undefined>;
     /**
-     * Custodian sources that are included in the sourceCollection.
+     * Get the list of dataSource objects associated with a source collection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
@@ -45,7 +46,7 @@ export interface CustodianSourcesRequestBuilder extends BaseRequestBuilder<Custo
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustodianSourcesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Custodian sources that are included in the sourceCollection.
+ * Get the list of dataSource objects associated with a source collection.
  */
 export interface CustodianSourcesRequestBuilderGetQueryParameters {
     /**

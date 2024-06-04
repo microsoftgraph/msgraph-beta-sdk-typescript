@@ -27,10 +27,11 @@ export interface SubmissionsRequestBuilder extends BaseRequestBuilder<Submission
      */
      byEducationSubmissionId(educationSubmissionId: string) : EducationSubmissionItemRequestBuilder;
     /**
-     * Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+     * List all the submission objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they're associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSubmissionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SubmissionsRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSubmissionCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface SubmissionsRequestBuilder extends BaseRequestBuilder<Submission
      */
      post(body: EducationSubmission, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSubmission | undefined>;
     /**
-     * Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+     * List all the submission objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they're associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface SubmissionsRequestBuilder extends BaseRequestBuilder<Submission
      toPostRequestInformation(body: EducationSubmission, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+ * List all the submission objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they're associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.
  */
 export interface SubmissionsRequestBuilderGetQueryParameters {
     /**

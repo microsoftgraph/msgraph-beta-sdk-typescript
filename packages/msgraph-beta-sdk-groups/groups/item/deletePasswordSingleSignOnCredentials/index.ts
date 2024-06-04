@@ -33,14 +33,15 @@ export interface DeletePasswordSingleSignOnCredentialsPostRequestBody extends Ad
  */
 export interface DeletePasswordSingleSignOnCredentialsRequestBuilder extends BaseRequestBuilder<DeletePasswordSingleSignOnCredentialsRequestBuilder> {
     /**
-     * Invoke action deletePasswordSingleSignOnCredentials
+     * Delete the password-based single sign-on credentials for a given group to a given service principal.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/group-deletepasswordsinglesignoncredentials?view=graph-rest-beta|Find more info here}
      */
      post(body: DeletePasswordSingleSignOnCredentialsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action deletePasswordSingleSignOnCredentials
+     * Delete the password-based single sign-on credentials for a given group to a given service principal.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
