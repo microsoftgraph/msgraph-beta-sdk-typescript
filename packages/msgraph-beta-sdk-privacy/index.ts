@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { PrivacyRequestBuilder } from "./privacy";
-import { PrivacyServiceClientNavigationMetadata } from "./privacyServiceClient";
+import { PrivacyServiceClientNavigationMetadata } from "./privacyServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(PrivacyServiceClientNavigationMetadata);
-export * from "./privacyServiceClient";
+export * from "./privacyServiceClient.js";

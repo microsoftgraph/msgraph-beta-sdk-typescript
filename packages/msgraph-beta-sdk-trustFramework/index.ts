@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { TrustFrameworkRequestBuilder } from "./trustFramework";
-import { TrustFrameworkServiceClientNavigationMetadata } from "./trustFrameworkServiceClient";
+import { TrustFrameworkServiceClientNavigationMetadata } from "./trustFrameworkServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(TrustFrameworkServiceClientNavigationMetadata);
-export * from "./trustFrameworkServiceClient";
+export * from "./trustFrameworkServiceClient.js";

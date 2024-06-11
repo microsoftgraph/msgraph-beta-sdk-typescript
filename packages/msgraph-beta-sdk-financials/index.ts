@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { FinancialsRequestBuilder } from "./financials";
-import { FinancialsServiceClientNavigationMetadata } from "./financialsServiceClient";
+import { FinancialsServiceClientNavigationMetadata } from "./financialsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(FinancialsServiceClientNavigationMetadata);
-export * from "./financialsServiceClient";
+export * from "./financialsServiceClient.js";

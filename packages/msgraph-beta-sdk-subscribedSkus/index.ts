@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { SubscribedSkusRequestBuilder } from "./subscribedSkus";
-import { SubscribedSkusServiceClientNavigationMetadata } from "./subscribedSkusServiceClient";
+import { SubscribedSkusServiceClientNavigationMetadata } from "./subscribedSkusServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(SubscribedSkusServiceClientNavigationMetadata);
-export * from "./subscribedSkusServiceClient";
+export * from "./subscribedSkusServiceClient.js";

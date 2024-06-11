@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { AuthenticationMethodsPolicyRequestBuilder } from "./authenticationMethodsPolicy";
-import { AuthenticationMethodsPolicyServiceClientNavigationMetadata } from "./authenticationMethodsPolicyServiceClient";
+import { AuthenticationMethodsPolicyServiceClientNavigationMetadata } from "./authenticationMethodsPolicyServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(AuthenticationMethodsPolicyServiceClientNavigationMetadata);
-export * from "./authenticationMethodsPolicyServiceClient";
+export * from "./authenticationMethodsPolicyServiceClient.js";

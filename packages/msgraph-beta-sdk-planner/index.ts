@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { PlannerRequestBuilder } from "./planner";
-import { PlannerServiceClientNavigationMetadata } from "./plannerServiceClient";
+import { PlannerServiceClientNavigationMetadata } from "./plannerServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(PlannerServiceClientNavigationMetadata);
-export * from "./plannerServiceClient";
+export * from "./plannerServiceClient.js";

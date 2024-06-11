@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { BusinessFlowTemplatesRequestBuilder } from "./businessFlowTemplates";
-import { BusinessFlowTemplatesServiceClientNavigationMetadata } from "./businessFlowTemplatesServiceClient";
+import { BusinessFlowTemplatesServiceClientNavigationMetadata } from "./businessFlowTemplatesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(BusinessFlowTemplatesServiceClientNavigationMetadata);
-export * from "./businessFlowTemplatesServiceClient";
+export * from "./businessFlowTemplatesServiceClient.js";

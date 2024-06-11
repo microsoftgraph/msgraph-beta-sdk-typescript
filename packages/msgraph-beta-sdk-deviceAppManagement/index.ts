@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { DeviceAppManagementRequestBuilder } from "./deviceAppManagement";
-import { DeviceAppManagementServiceClientNavigationMetadata } from "./deviceAppManagementServiceClient";
+import { DeviceAppManagementServiceClientNavigationMetadata } from "./deviceAppManagementServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(DeviceAppManagementServiceClientNavigationMetadata);
-export * from "./deviceAppManagementServiceClient";
+export * from "./deviceAppManagementServiceClient.js";

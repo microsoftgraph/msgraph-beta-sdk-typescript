@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { OrganizationRequestBuilder } from "./organization";
-import { OrganizationServiceClientNavigationMetadata } from "./organizationServiceClient";
+import { OrganizationServiceClientNavigationMetadata } from "./organizationServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(OrganizationServiceClientNavigationMetadata);
-export * from "./organizationServiceClient";
+export * from "./organizationServiceClient.js";

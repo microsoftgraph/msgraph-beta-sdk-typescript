@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { OnPremisesPublishingProfilesRequestBuilder } from "./onPremisesPublishingProfiles";
-import { OnPremisesPublishingProfilesServiceClientNavigationMetadata } from "./onPremisesPublishingProfilesServiceClient";
+import { OnPremisesPublishingProfilesServiceClientNavigationMetadata } from "./onPremisesPublishingProfilesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(OnPremisesPublishingProfilesServiceClientNavigationMetadata);
-export * from "./onPremisesPublishingProfilesServiceClient";
+export * from "./onPremisesPublishingProfilesServiceClient.js";

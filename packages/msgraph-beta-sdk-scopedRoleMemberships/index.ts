@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { ScopedRoleMembershipsRequestBuilder } from "./scopedRoleMemberships";
-import { ScopedRoleMembershipsServiceClientNavigationMetadata } from "./scopedRoleMembershipsServiceClient";
+import { ScopedRoleMembershipsServiceClientNavigationMetadata } from "./scopedRoleMembershipsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(ScopedRoleMembershipsServiceClientNavigationMetadata);
-export * from "./scopedRoleMembershipsServiceClient";
+export * from "./scopedRoleMembershipsServiceClient.js";

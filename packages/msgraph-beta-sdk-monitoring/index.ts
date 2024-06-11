@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { MonitoringRequestBuilder } from "./monitoring";
-import { MonitoringServiceClientNavigationMetadata } from "./monitoringServiceClient";
+import { MonitoringServiceClientNavigationMetadata } from "./monitoringServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(MonitoringServiceClientNavigationMetadata);
-export * from "./monitoringServiceClient";
+export * from "./monitoringServiceClient.js";

@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { MessageEventsRequestBuilder } from "./messageEvents";
-import { MessageEventsServiceClientNavigationMetadata } from "./messageEventsServiceClient";
+import { MessageEventsServiceClientNavigationMetadata } from "./messageEventsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(MessageEventsServiceClientNavigationMetadata);
-export * from "./messageEventsServiceClient";
+export * from "./messageEventsServiceClient.js";

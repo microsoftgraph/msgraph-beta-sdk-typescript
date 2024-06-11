@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { AdministrativeUnitsRequestBuilder } from "./administrativeUnits";
-import { AdministrativeUnitsServiceClientNavigationMetadata } from "./administrativeUnitsServiceClient";
+import { AdministrativeUnitsServiceClientNavigationMetadata } from "./administrativeUnitsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(AdministrativeUnitsServiceClientNavigationMetadata);
-export * from "./administrativeUnitsServiceClient";
+export * from "./administrativeUnitsServiceClient.js";

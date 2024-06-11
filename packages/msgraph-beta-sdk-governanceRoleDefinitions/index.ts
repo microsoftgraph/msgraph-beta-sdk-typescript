@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { GovernanceRoleDefinitionsRequestBuilder } from "./governanceRoleDefinitions";
-import { GovernanceRoleDefinitionsServiceClientNavigationMetadata } from "./governanceRoleDefinitionsServiceClient";
+import { GovernanceRoleDefinitionsServiceClientNavigationMetadata } from "./governanceRoleDefinitionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(GovernanceRoleDefinitionsServiceClientNavigationMetadata);
-export * from "./governanceRoleDefinitionsServiceClient";
+export * from "./governanceRoleDefinitionsServiceClient.js";

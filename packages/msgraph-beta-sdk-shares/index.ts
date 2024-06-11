@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { SharesRequestBuilder } from "./shares";
-import { SharesServiceClientNavigationMetadata } from "./sharesServiceClient";
+import { SharesServiceClientNavigationMetadata } from "./sharesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(SharesServiceClientNavigationMetadata);
-export * from "./sharesServiceClient";
+export * from "./sharesServiceClient.js";

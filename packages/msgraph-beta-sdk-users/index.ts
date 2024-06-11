@@ -2,7 +2,7 @@ import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { UsersRequestBuilder } from "./users";
 import type { UserItemRequestBuilder } from "./users/item";
-import { UsersServiceClientNavigationMetadata } from "./usersServiceClient";
+import { UsersServiceClientNavigationMetadata } from "./usersServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -17,4 +17,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(UsersServiceClientNavigationMetadata);
-export * from "./usersServiceClient";
+export * from "./usersServiceClient.js";

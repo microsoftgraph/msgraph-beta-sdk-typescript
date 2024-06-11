@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { GovernanceResourcesRequestBuilder } from "./governanceResources";
-import { GovernanceResourcesServiceClientNavigationMetadata } from "./governanceResourcesServiceClient";
+import { GovernanceResourcesServiceClientNavigationMetadata } from "./governanceResourcesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(GovernanceResourcesServiceClientNavigationMetadata);
-export * from "./governanceResourcesServiceClient";
+export * from "./governanceResourcesServiceClient.js";

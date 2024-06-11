@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { SettingsRequestBuilder } from "./settings";
-import { SettingsServiceClientNavigationMetadata } from "./settingsServiceClient";
+import { SettingsServiceClientNavigationMetadata } from "./settingsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(SettingsServiceClientNavigationMetadata);
-export * from "./settingsServiceClient";
+export * from "./settingsServiceClient.js";

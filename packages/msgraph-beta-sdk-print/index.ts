@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { PrintRequestBuilder } from "./print";
-import { PrintServiceClientNavigationMetadata } from "./printServiceClient";
+import { PrintServiceClientNavigationMetadata } from "./printServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(PrintServiceClientNavigationMetadata);
-export * from "./printServiceClient";
+export * from "./printServiceClient.js";

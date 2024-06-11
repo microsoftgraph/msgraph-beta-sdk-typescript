@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { IdentityProvidersRequestBuilder } from "./identityProviders";
-import { IdentityProvidersServiceClientNavigationMetadata } from "./identityProvidersServiceClient";
+import { IdentityProvidersServiceClientNavigationMetadata } from "./identityProvidersServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(IdentityProvidersServiceClientNavigationMetadata);
-export * from "./identityProvidersServiceClient";
+export * from "./identityProvidersServiceClient.js";

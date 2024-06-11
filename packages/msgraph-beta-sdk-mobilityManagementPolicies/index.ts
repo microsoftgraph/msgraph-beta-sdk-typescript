@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { MobilityManagementPoliciesRequestBuilder } from "./mobilityManagementPolicies";
-import { MobilityManagementPoliciesServiceClientNavigationMetadata } from "./mobilityManagementPoliciesServiceClient";
+import { MobilityManagementPoliciesServiceClientNavigationMetadata } from "./mobilityManagementPoliciesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(MobilityManagementPoliciesServiceClientNavigationMetadata);
-export * from "./mobilityManagementPoliciesServiceClient";
+export * from "./mobilityManagementPoliciesServiceClient.js";

@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { DirectoryObjectsRequestBuilder } from "./directoryObjects";
-import { DirectoryObjectsServiceClientNavigationMetadata } from "./directoryObjectsServiceClient";
+import { DirectoryObjectsServiceClientNavigationMetadata } from "./directoryObjectsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(DirectoryObjectsServiceClientNavigationMetadata);
-export * from "./directoryObjectsServiceClient";
+export * from "./directoryObjectsServiceClient.js";

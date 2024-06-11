@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { PrivilegedAccessRequestBuilder } from "./privilegedAccess";
-import { PrivilegedAccessServiceClientNavigationMetadata } from "./privilegedAccessServiceClient";
+import { PrivilegedAccessServiceClientNavigationMetadata } from "./privilegedAccessServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(PrivilegedAccessServiceClientNavigationMetadata);
-export * from "./privilegedAccessServiceClient";
+export * from "./privilegedAccessServiceClient.js";

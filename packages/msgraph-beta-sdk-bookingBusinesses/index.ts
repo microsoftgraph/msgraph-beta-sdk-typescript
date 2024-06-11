@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { BookingBusinessesRequestBuilder } from "./bookingBusinesses";
-import { BookingBusinessesServiceClientNavigationMetadata } from "./bookingBusinessesServiceClient";
+import { BookingBusinessesServiceClientNavigationMetadata } from "./bookingBusinessesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(BookingBusinessesServiceClientNavigationMetadata);
-export * from "./bookingBusinessesServiceClient";
+export * from "./bookingBusinessesServiceClient.js";

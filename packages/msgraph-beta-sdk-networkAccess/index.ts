@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { NetworkAccessRequestBuilder } from "./networkAccess";
-import { NetworkAccessServiceClientNavigationMetadata } from "./networkAccessServiceClient";
+import { NetworkAccessServiceClientNavigationMetadata } from "./networkAccessServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(NetworkAccessServiceClientNavigationMetadata);
-export * from "./networkAccessServiceClient";
+export * from "./networkAccessServiceClient.js";

@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { DeviceLocalCredentialsRequestBuilder } from "./deviceLocalCredentials";
-import { DeviceLocalCredentialsServiceClientNavigationMetadata } from "./deviceLocalCredentialsServiceClient";
+import { DeviceLocalCredentialsServiceClientNavigationMetadata } from "./deviceLocalCredentialsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(DeviceLocalCredentialsServiceClientNavigationMetadata);
-export * from "./deviceLocalCredentialsServiceClient";
+export * from "./deviceLocalCredentialsServiceClient.js";

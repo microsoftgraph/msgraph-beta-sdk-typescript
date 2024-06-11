@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { PrivilegedSignupStatusRequestBuilder } from "./privilegedSignupStatus";
-import { PrivilegedSignupStatusServiceClientNavigationMetadata } from "./privilegedSignupStatusServiceClient";
+import { PrivilegedSignupStatusServiceClientNavigationMetadata } from "./privilegedSignupStatusServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(PrivilegedSignupStatusServiceClientNavigationMetadata);
-export * from "./privilegedSignupStatusServiceClient";
+export * from "./privilegedSignupStatusServiceClient.js";

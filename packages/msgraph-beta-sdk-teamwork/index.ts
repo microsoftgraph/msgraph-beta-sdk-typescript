@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
 import type { TeamworkRequestBuilder } from "./teamwork";
-import { TeamworkServiceClientNavigationMetadata } from "./teamworkServiceClient";
+import { TeamworkServiceClientNavigationMetadata } from "./teamworkServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(TeamworkServiceClientNavigationMetadata);
-export * from "./teamworkServiceClient";
+export * from "./teamworkServiceClient.js";
