@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AuthenticationMethodConfigurationsRequestBuilder } from "./authenticationMethodConfigurations";
-import { AuthenticationMethodConfigurationsServiceClientNavigationMetadata } from "./authenticationMethodConfigurationsServiceClient";
+import type { AuthenticationMethodConfigurationsRequestBuilder } from "./authenticationMethodConfigurations/index.js";
+import { AuthenticationMethodConfigurationsServiceClientNavigationMetadata } from "./authenticationMethodConfigurationsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(AuthenticationMethodConfigurationsServiceClientNavigationMetadata);
-export * from "./authenticationMethodConfigurationsServiceClient";
+export * from "./authenticationMethodConfigurationsServiceClient.js";

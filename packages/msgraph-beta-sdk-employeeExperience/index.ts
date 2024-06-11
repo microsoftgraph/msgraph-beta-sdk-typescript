@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { EmployeeExperienceRequestBuilder } from "./employeeExperience";
-import { EmployeeExperienceServiceClientNavigationMetadata } from "./employeeExperienceServiceClient";
+import type { EmployeeExperienceRequestBuilder } from "./employeeExperience/index.js";
+import { EmployeeExperienceServiceClientNavigationMetadata } from "./employeeExperienceServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(EmployeeExperienceServiceClientNavigationMetadata);
-export * from "./employeeExperienceServiceClient";
+export * from "./employeeExperienceServiceClient.js";

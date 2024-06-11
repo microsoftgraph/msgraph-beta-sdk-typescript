@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ComplianceRequestBuilder } from "./compliance";
-import { ComplianceServiceClientNavigationMetadata } from "./complianceServiceClient";
+import type { ComplianceRequestBuilder } from "./compliance/index.js";
+import { ComplianceServiceClientNavigationMetadata } from "./complianceServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(ComplianceServiceClientNavigationMetadata);
-export * from "./complianceServiceClient";
+export * from "./complianceServiceClient.js";

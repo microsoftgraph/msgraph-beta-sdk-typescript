@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { Oauth2PermissionGrantsRequestBuilder } from "./oauth2PermissionGrants";
-import { Oauth2PermissionGrantsServiceClientNavigationMetadata } from "./oauth2PermissionGrantsServiceClient";
+import type { Oauth2PermissionGrantsRequestBuilder } from "./oauth2PermissionGrants/index.js";
+import { Oauth2PermissionGrantsServiceClientNavigationMetadata } from "./oauth2PermissionGrantsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(Oauth2PermissionGrantsServiceClientNavigationMetadata);
-export * from "./oauth2PermissionGrantsServiceClient";
+export * from "./oauth2PermissionGrantsServiceClient.js";

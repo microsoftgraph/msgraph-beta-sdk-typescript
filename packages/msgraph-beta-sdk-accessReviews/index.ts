@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AccessReviewsRequestBuilder } from "./accessReviews";
-import { AccessReviewsServiceClientNavigationMetadata } from "./accessReviewsServiceClient";
+import type { AccessReviewsRequestBuilder } from "./accessReviews/index.js";
+import { AccessReviewsServiceClientNavigationMetadata } from "./accessReviewsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(AccessReviewsServiceClientNavigationMetadata);
-export * from "./accessReviewsServiceClient";
+export * from "./accessReviewsServiceClient.js";

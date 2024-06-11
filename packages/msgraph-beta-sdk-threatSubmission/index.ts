@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ThreatSubmissionRequestBuilder } from "./threatSubmission";
-import { ThreatSubmissionServiceClientNavigationMetadata } from "./threatSubmissionServiceClient";
+import type { ThreatSubmissionRequestBuilder } from "./threatSubmission/index.js";
+import { ThreatSubmissionServiceClientNavigationMetadata } from "./threatSubmissionServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(ThreatSubmissionServiceClientNavigationMetadata);
-export * from "./threatSubmissionServiceClient";
+export * from "./threatSubmissionServiceClient.js";

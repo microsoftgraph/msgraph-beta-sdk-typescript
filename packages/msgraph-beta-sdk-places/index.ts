@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { PlacesRequestBuilder } from "./places";
-import { PlacesServiceClientNavigationMetadata } from "./placesServiceClient";
+import type { PlacesRequestBuilder } from "./places/index.js";
+import { PlacesServiceClientNavigationMetadata } from "./placesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(PlacesServiceClientNavigationMetadata);
-export * from "./placesServiceClient";
+export * from "./placesServiceClient.js";

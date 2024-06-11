@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { GroupLifecyclePoliciesRequestBuilder } from "./groupLifecyclePolicies";
-import { GroupLifecyclePoliciesServiceClientNavigationMetadata } from "./groupLifecyclePoliciesServiceClient";
+import type { GroupLifecyclePoliciesRequestBuilder } from "./groupLifecyclePolicies/index.js";
+import { GroupLifecyclePoliciesServiceClientNavigationMetadata } from "./groupLifecyclePoliciesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(GroupLifecyclePoliciesServiceClientNavigationMetadata);
-export * from "./groupLifecyclePoliciesServiceClient";
+export * from "./groupLifecyclePoliciesServiceClient.js";

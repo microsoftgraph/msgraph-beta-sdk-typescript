@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { SearchRequestBuilder } from "./search";
-import { SearchServiceClientNavigationMetadata } from "./searchServiceClient";
+import type { SearchRequestBuilder } from "./search/index.js";
+import { SearchServiceClientNavigationMetadata } from "./searchServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(SearchServiceClientNavigationMetadata);
-export * from "./searchServiceClient";
+export * from "./searchServiceClient.js";

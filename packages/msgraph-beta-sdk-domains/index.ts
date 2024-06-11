@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DomainsRequestBuilder } from "./domains";
-import { DomainsServiceClientNavigationMetadata } from "./domainsServiceClient";
+import type { DomainsRequestBuilder } from "./domains/index.js";
+import { DomainsServiceClientNavigationMetadata } from "./domainsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(DomainsServiceClientNavigationMetadata);
-export * from "./domainsServiceClient";
+export * from "./domainsServiceClient.js";

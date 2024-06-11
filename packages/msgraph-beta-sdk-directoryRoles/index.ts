@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DirectoryRolesRequestBuilder } from "./directoryRoles";
-import { DirectoryRolesServiceClientNavigationMetadata } from "./directoryRolesServiceClient";
+import type { DirectoryRolesRequestBuilder } from "./directoryRoles/index.js";
+import { DirectoryRolesServiceClientNavigationMetadata } from "./directoryRolesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(DirectoryRolesServiceClientNavigationMetadata);
-export * from "./directoryRolesServiceClient";
+export * from "./directoryRolesServiceClient.js";

@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppCatalogsRequestBuilder } from "./appCatalogs";
-import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient";
+import type { AppCatalogsRequestBuilder } from "./appCatalogs/index.js";
+import { AppCatalogsServiceClientNavigationMetadata } from "./appCatalogsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(AppCatalogsServiceClientNavigationMetadata);
-export * from "./appCatalogsServiceClient";
+export * from "./appCatalogsServiceClient.js";

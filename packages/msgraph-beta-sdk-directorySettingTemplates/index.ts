@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DirectorySettingTemplatesRequestBuilder } from "./directorySettingTemplates";
-import { DirectorySettingTemplatesServiceClientNavigationMetadata } from "./directorySettingTemplatesServiceClient";
+import type { DirectorySettingTemplatesRequestBuilder } from "./directorySettingTemplates/index.js";
+import { DirectorySettingTemplatesServiceClientNavigationMetadata } from "./directorySettingTemplatesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(DirectorySettingTemplatesServiceClientNavigationMetadata);
-export * from "./directorySettingTemplatesServiceClient";
+export * from "./directorySettingTemplatesServiceClient.js";

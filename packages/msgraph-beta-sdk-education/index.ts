@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { EducationRequestBuilder } from "./education";
-import { EducationServiceClientNavigationMetadata } from "./educationServiceClient";
+import type { EducationRequestBuilder } from "./education/index.js";
+import { EducationServiceClientNavigationMetadata } from "./educationServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(EducationServiceClientNavigationMetadata);
-export * from "./educationServiceClient";
+export * from "./educationServiceClient.js";

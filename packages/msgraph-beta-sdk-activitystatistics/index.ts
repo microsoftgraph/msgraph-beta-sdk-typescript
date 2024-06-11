@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ActivitystatisticsRequestBuilder } from "./activitystatistics";
-import { ActivitystatisticsServiceClientNavigationMetadata } from "./activitystatisticsServiceClient";
+import type { ActivitystatisticsRequestBuilder } from "./activitystatistics/index.js";
+import { ActivitystatisticsServiceClientNavigationMetadata } from "./activitystatisticsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(ActivitystatisticsServiceClientNavigationMetadata);
-export * from "./activitystatisticsServiceClient";
+export * from "./activitystatisticsServiceClient.js";

@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { RiskyUsersRequestBuilder } from "./riskyUsers";
-import { RiskyUsersServiceClientNavigationMetadata } from "./riskyUsersServiceClient";
+import type { RiskyUsersRequestBuilder } from "./riskyUsers/index.js";
+import { RiskyUsersServiceClientNavigationMetadata } from "./riskyUsersServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(RiskyUsersServiceClientNavigationMetadata);
-export * from "./riskyUsersServiceClient";
+export * from "./riskyUsersServiceClient.js";

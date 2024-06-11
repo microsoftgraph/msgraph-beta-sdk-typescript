@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { FilterOperatorsRequestBuilder } from "./filterOperators";
-import { FilterOperatorsServiceClientNavigationMetadata } from "./filterOperatorsServiceClient";
+import type { FilterOperatorsRequestBuilder } from "./filterOperators/index.js";
+import { FilterOperatorsServiceClientNavigationMetadata } from "./filterOperatorsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(FilterOperatorsServiceClientNavigationMetadata);
-export * from "./filterOperatorsServiceClient";
+export * from "./filterOperatorsServiceClient.js";

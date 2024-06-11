@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { GroupsRequestBuilder } from "./groups";
-import { GroupsServiceClientNavigationMetadata } from "./groupsServiceClient";
+import type { GroupsRequestBuilder } from "./groups/index.js";
+import { GroupsServiceClientNavigationMetadata } from "./groupsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(GroupsServiceClientNavigationMetadata);
-export * from "./groupsServiceClient";
+export * from "./groupsServiceClient.js";

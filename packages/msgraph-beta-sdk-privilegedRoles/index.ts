@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { PrivilegedRolesRequestBuilder } from "./privilegedRoles";
-import { PrivilegedRolesServiceClientNavigationMetadata } from "./privilegedRolesServiceClient";
+import type { PrivilegedRolesRequestBuilder } from "./privilegedRoles/index.js";
+import { PrivilegedRolesServiceClientNavigationMetadata } from "./privilegedRolesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(PrivilegedRolesServiceClientNavigationMetadata);
-export * from "./privilegedRolesServiceClient";
+export * from "./privilegedRolesServiceClient.js";

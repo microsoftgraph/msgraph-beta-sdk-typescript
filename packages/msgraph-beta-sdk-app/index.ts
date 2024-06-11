@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppRequestBuilder } from "./app";
-import { AppServiceClientNavigationMetadata } from "./appServiceClient";
+import type { AppRequestBuilder } from "./app/index.js";
+import { AppServiceClientNavigationMetadata } from "./appServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(AppServiceClientNavigationMetadata);
-export * from "./appServiceClient";
+export * from "./appServiceClient.js";

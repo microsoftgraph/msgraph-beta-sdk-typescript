@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { SubscriptionsRequestBuilder } from "./subscriptions";
-import { SubscriptionsServiceClientNavigationMetadata } from "./subscriptionsServiceClient";
+import type { SubscriptionsRequestBuilder } from "./subscriptions/index.js";
+import { SubscriptionsServiceClientNavigationMetadata } from "./subscriptionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(SubscriptionsServiceClientNavigationMetadata);
-export * from "./subscriptionsServiceClient";
+export * from "./subscriptionsServiceClient.js";

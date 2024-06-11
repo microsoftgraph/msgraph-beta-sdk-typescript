@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { SchemaExtensionsRequestBuilder } from "./schemaExtensions";
-import { SchemaExtensionsServiceClientNavigationMetadata } from "./schemaExtensionsServiceClient";
+import type { SchemaExtensionsRequestBuilder } from "./schemaExtensions/index.js";
+import { SchemaExtensionsServiceClientNavigationMetadata } from "./schemaExtensionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(SchemaExtensionsServiceClientNavigationMetadata);
-export * from "./schemaExtensionsServiceClient";
+export * from "./schemaExtensionsServiceClient.js";

@@ -1,2 +1,2 @@
-export * from "./graphBetaServiceClient";
-export * from "./graphBetaRequestAdapter";
+export * from "./graphBetaServiceClient.js";
+export * from "./graphBetaRequestAdapter.js";

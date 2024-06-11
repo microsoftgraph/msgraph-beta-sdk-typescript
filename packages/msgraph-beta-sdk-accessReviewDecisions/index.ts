@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AccessReviewDecisionsRequestBuilder } from "./accessReviewDecisions";
-import { AccessReviewDecisionsServiceClientNavigationMetadata } from "./accessReviewDecisionsServiceClient";
+import type { AccessReviewDecisionsRequestBuilder } from "./accessReviewDecisions/index.js";
+import { AccessReviewDecisionsServiceClientNavigationMetadata } from "./accessReviewDecisionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(AccessReviewDecisionsServiceClientNavigationMetadata);
-export * from "./accessReviewDecisionsServiceClient";
+export * from "./accessReviewDecisionsServiceClient.js";

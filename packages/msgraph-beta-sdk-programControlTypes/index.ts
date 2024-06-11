@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ProgramControlTypesRequestBuilder } from "./programControlTypes";
-import { ProgramControlTypesServiceClientNavigationMetadata } from "./programControlTypesServiceClient";
+import type { ProgramControlTypesRequestBuilder } from "./programControlTypes/index.js";
+import { ProgramControlTypesServiceClientNavigationMetadata } from "./programControlTypesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(ProgramControlTypesServiceClientNavigationMetadata);
-export * from "./programControlTypesServiceClient";
+export * from "./programControlTypesServiceClient.js";

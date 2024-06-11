@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ApplicationTemplatesRequestBuilder } from "./applicationTemplates";
-import { ApplicationTemplatesServiceClientNavigationMetadata } from "./applicationTemplatesServiceClient";
+import type { ApplicationTemplatesRequestBuilder } from "./applicationTemplates/index.js";
+import { ApplicationTemplatesServiceClientNavigationMetadata } from "./applicationTemplatesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(ApplicationTemplatesServiceClientNavigationMetadata);
-export * from "./applicationTemplatesServiceClient";
+export * from "./applicationTemplatesServiceClient.js";

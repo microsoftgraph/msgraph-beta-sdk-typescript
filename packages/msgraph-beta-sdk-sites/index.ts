@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { SitesRequestBuilder } from "./sites";
-import { SitesServiceClientNavigationMetadata } from "./sitesServiceClient";
+import type { SitesRequestBuilder } from "./sites/index.js";
+import { SitesServiceClientNavigationMetadata } from "./sitesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(SitesServiceClientNavigationMetadata);
-export * from "./sitesServiceClient";
+export * from "./sitesServiceClient.js";

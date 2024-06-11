@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ApprovalWorkflowProvidersRequestBuilder } from "./approvalWorkflowProviders";
-import { ApprovalWorkflowProvidersServiceClientNavigationMetadata } from "./approvalWorkflowProvidersServiceClient";
+import type { ApprovalWorkflowProvidersRequestBuilder } from "./approvalWorkflowProviders/index.js";
+import { ApprovalWorkflowProvidersServiceClientNavigationMetadata } from "./approvalWorkflowProvidersServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(ApprovalWorkflowProvidersServiceClientNavigationMetadata);
-export * from "./approvalWorkflowProvidersServiceClient";
+export * from "./approvalWorkflowProvidersServiceClient.js";

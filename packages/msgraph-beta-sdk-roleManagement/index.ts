@@ -1,7 +1,7 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { RoleManagementRequestBuilder } from "./roleManagement";
-import { RoleManagementServiceClientNavigationMetadata } from "./roleManagementServiceClient";
+import type { RoleManagementRequestBuilder } from "./roleManagement/index.js";
+import { RoleManagementServiceClientNavigationMetadata } from "./roleManagementServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
   interface GraphBetaServiceClient {
@@ -12,4 +12,4 @@ declare module "@microsoft/msgraph-beta-sdk" {
   }
 }
 extendGraphBetaServiceClient(RoleManagementServiceClientNavigationMetadata);
-export * from "./roleManagementServiceClient";
+export * from "./roleManagementServiceClient.js";
