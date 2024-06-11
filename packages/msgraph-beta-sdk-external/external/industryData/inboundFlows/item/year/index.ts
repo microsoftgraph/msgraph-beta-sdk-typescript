@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface YearRequestBuilder extends BaseRequestBuilder<YearRequestBuilder> {
     /**
-     * The year that the data brought in via this flow applies to.
+     * The year associated to the data that this flow brings in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<YearTimePeriodDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<YearRequestBuilderGetQueryParameters> | undefined) : Promise<YearTimePeriodDefinition | undefined>;
     /**
-     * The year that the data brought in via this flow applies to.
+     * The year associated to the data that this flow brings in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<YearRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The year that the data brought in via this flow applies to.
+ * The year associated to the data that this flow brings in.
  */
 export interface YearRequestBuilderGetQueryParameters {
     /**

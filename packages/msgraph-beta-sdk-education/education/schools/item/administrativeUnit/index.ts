@@ -17,7 +17,7 @@ export interface AdministrativeUnitRequestBuilder extends BaseRequestBuilder<Adm
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AdministrativeUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/educationschool-get-administrativeUnit?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/educationschool-get-administrativeunit?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AdministrativeUnitRequestBuilderGetQueryParameters> | undefined) : Promise<AdministrativeUnit | undefined>;
     /**

@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DataConnectorRequestBuilder extends BaseRequestBuilder<DataConnectorRequestBuilder> {
     /**
-     * The data connector in the context of which this flow pulls in data from a source system.
+     * The data connector to the source system from where this flow gets its data.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IndustryDataConnector>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DataConnectorRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
-     * The data connector in the context of which this flow pulls in data from a source system.
+     * The data connector to the source system from where this flow gets its data.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DataConnectorRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The data connector in the context of which this flow pulls in data from a source system.
+ * The data connector to the source system from where this flow gets its data.
  */
 export interface DataConnectorRequestBuilderGetQueryParameters {
     /**

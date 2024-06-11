@@ -19,11 +19,11 @@ export interface FederatedTokenValidationPolicyRequestBuilder extends BaseReques
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get a list of the federatedTokenValidationPolicy objects and their properties.
+     * Read the properties and relationships of a federatedTokenValidationPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FederatedTokenValidationPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<FederatedTokenValidationPolicy | undefined>;
     /**
@@ -42,7 +42,7 @@ export interface FederatedTokenValidationPolicyRequestBuilder extends BaseReques
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get a list of the federatedTokenValidationPolicy objects and their properties.
+     * Read the properties and relationships of a federatedTokenValidationPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface FederatedTokenValidationPolicyRequestBuilder extends BaseReques
      toPatchRequestInformation(body: FederatedTokenValidationPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the federatedTokenValidationPolicy objects and their properties.
+ * Read the properties and relationships of a federatedTokenValidationPolicy object.
  */
 export interface FederatedTokenValidationPolicyRequestBuilderGetQueryParameters {
     /**

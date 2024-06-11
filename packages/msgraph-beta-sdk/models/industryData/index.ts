@@ -126,7 +126,26 @@ export interface AggregatedInboundStatistics extends AdditionalDataHolder, Backe
      */
     warnings?: number;
 }
+export interface ApiDataConnector extends IndustryDataConnector, Parsable {
+    /**
+     * The apiFormat property
+     */
+    apiFormat?: ApiFormat;
+    /**
+     * The base URL, including the scheme, host, and path for the API, with or without a trailing '/'. For example, 'https://example.com/ims/oneRoster/v1p1'
+     */
+    baseUrl?: string;
+    /**
+     * The credential property
+     */
+    credential?: Credential;
+}
+export type ApiFormat = (typeof ApiFormatObject)[keyof typeof ApiFormatObject];
 export interface AzureDataLakeConnector extends FileDataConnector, Parsable {
+    /**
+     * The file format that external systems can upload using this connector.
+     */
+    fileFormat?: FileFormatReferenceValue;
 }
 export interface BasicFilter extends Filter, Parsable {
     /**
@@ -213,6 +232,25 @@ export function createAggregatedInboundStatisticsFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApiDataConnector}
+ */
+export function createApiDataConnectorFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.industryData.oneRosterApiDataConnector":
+                    return deserializeIntoOneRosterApiDataConnector;
+            }
+        }
+    }
+    return deserializeIntoApiDataConnector;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AzureDataLakeConnector}
  */
 export function createAzureDataLakeConnectorFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -245,6 +283,29 @@ export function createClassGroupProvisioningFlowFromDiscriminatorValue(parseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Credential}
+ */
+export function createCredentialFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.industryData.oAuth1ClientCredential":
+                    return deserializeIntoOAuth1ClientCredential;
+                case "#microsoft.graph.industryData.oAuth2ClientCredential":
+                    return deserializeIntoOAuth2ClientCredential;
+                case "#microsoft.graph.industryData.oAuthClientCredential":
+                    return deserializeIntoOAuthClientCredential;
+            }
+        }
+    }
+    return deserializeIntoCredential;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnrollmentMappings}
  */
 export function createEnrollmentMappingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -268,6 +329,14 @@ export function createFileDataConnectorFromDiscriminatorValue(parseNode: ParseNo
         }
     }
     return deserializeIntoFileDataConnector;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {FileFormatReferenceValue}
+ */
+export function createFileFormatReferenceValueFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFileFormatReferenceValue;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -315,6 +384,14 @@ export function createInboundActivityResultsFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {InboundApiFlow}
+ */
+export function createInboundApiFlowFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoInboundApiFlow;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InboundFileFlow}
  */
 export function createInboundFileFlowFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
@@ -348,6 +425,8 @@ export function createInboundFlowFromDiscriminatorValue(parseNode: ParseNode | u
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.industryData.inboundApiFlow":
+                    return deserializeIntoInboundApiFlow;
                 case "#microsoft.graph.industryData.inboundFileFlow":
                     return deserializeIntoInboundFileFlow;
             }
@@ -367,6 +446,8 @@ export function createIndustryDataActivityFromDiscriminatorValue(parseNode: Pars
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.industryData.inboundApiFlow":
+                    return deserializeIntoInboundApiFlow;
                 case "#microsoft.graph.industryData.inboundFileFlow":
                     return deserializeIntoInboundFileFlow;
                 case "#microsoft.graph.industryData.inboundFlow":
@@ -415,10 +496,14 @@ export function createIndustryDataConnectorFromDiscriminatorValue(parseNode: Par
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.industryData.apiDataConnector":
+                    return deserializeIntoApiDataConnector;
                 case "#microsoft.graph.industryData.azureDataLakeConnector":
                     return deserializeIntoAzureDataLakeConnector;
                 case "#microsoft.graph.industryData.fileDataConnector":
                     return deserializeIntoFileDataConnector;
+                case "#microsoft.graph.industryData.oneRosterApiDataConnector":
+                    return deserializeIntoOneRosterApiDataConnector;
             }
         }
     }
@@ -500,6 +585,51 @@ export function createIndustryDataRunRoleCountMetricFromDiscriminatorValue(parse
  */
 export function createIndustryDataRunStatisticsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIndustryDataRunStatistics;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OAuth1ClientCredential}
+ */
+export function createOAuth1ClientCredentialFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOAuth1ClientCredential;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OAuth2ClientCredential}
+ */
+export function createOAuth2ClientCredentialFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOAuth2ClientCredential;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OAuthClientCredential}
+ */
+export function createOAuthClientCredentialFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.industryData.oAuth1ClientCredential":
+                    return deserializeIntoOAuth1ClientCredential;
+                case "#microsoft.graph.industryData.oAuth2ClientCredential":
+                    return deserializeIntoOAuth2ClientCredential;
+            }
+        }
+    }
+    return deserializeIntoOAuthClientCredential;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OneRosterApiDataConnector}
+ */
+export function createOneRosterApiDataConnectorFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOneRosterApiDataConnector;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -605,6 +735,8 @@ export function createReferenceValueFromDiscriminatorValue(parseNode: ParseNode 
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.industryData.fileFormatReferenceValue":
+                    return deserializeIntoFileFormatReferenceValue;
                 case "#microsoft.graph.industryData.identifierTypeReferenceValue":
                     return deserializeIntoIdentifierTypeReferenceValue;
                 case "#microsoft.graph.industryData.roleReferenceValue":
@@ -783,6 +915,32 @@ export function createYearTimePeriodDefinitionCollectionResponseFromDiscriminato
 export function createYearTimePeriodDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoYearTimePeriodDefinition;
 }
+export interface Credential extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean;
+    /**
+     * The name of the credential.
+     */
+    displayName?: string;
+    /**
+     * Indicates whether the credential provided is valid based on the last data connector validate operation.
+     */
+    isValid?: boolean;
+    /**
+     * The time that the credential was last successfully validated by the data connector validate operation.
+     */
+    lastValidDateTime?: Date;
+    /**
+     * The OdataType property
+     */
+    odataType?: string;
+}
 /**
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
@@ -851,9 +1009,22 @@ export function deserializeIntoAggregatedInboundStatistics(aggregatedInboundStat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoApiDataConnector(apiDataConnector: Partial<ApiDataConnector> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoIndustryDataConnector(apiDataConnector),
+        "apiFormat": n => { apiDataConnector.apiFormat = n.getEnumValue<ApiFormat>(ApiFormatObject); },
+        "baseUrl": n => { apiDataConnector.baseUrl = n.getStringValue(); },
+        "credential": n => { apiDataConnector.credential = n.getObjectValue<Credential>(createCredentialFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoAzureDataLakeConnector(azureDataLakeConnector: Partial<AzureDataLakeConnector> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoFileDataConnector(azureDataLakeConnector),
+        "fileFormat": n => { azureDataLakeConnector.fileFormat = n.getObjectValue<FileFormatReferenceValue>(createFileFormatReferenceValueFromDiscriminatorValue); },
     }
 }
 /**
@@ -894,6 +1065,19 @@ export function deserializeIntoClassGroupProvisioningFlow(classGroupProvisioning
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoCredential(credential: Partial<Credential> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { credential.backingStoreEnabled = true; },
+        "displayName": n => { credential.displayName = n.getStringValue(); },
+        "isValid": n => { credential.isValid = n.getBooleanValue(); },
+        "lastValidDateTime": n => { credential.lastValidDateTime = n.getDateValue(); },
+        "@odata.type": n => { credential.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoEnrollmentMappings(enrollmentMappings: Partial<EnrollmentMappings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { enrollmentMappings.backingStoreEnabled = true; },
@@ -909,6 +1093,15 @@ export function deserializeIntoEnrollmentMappings(enrollmentMappings: Partial<En
 export function deserializeIntoFileDataConnector(fileDataConnector: Partial<FileDataConnector> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoIndustryDataConnector(fileDataConnector),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoFileFormatReferenceValue(fileFormatReferenceValue: Partial<FileFormatReferenceValue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoReferenceValue(fileFormatReferenceValue),
     }
 }
 /**
@@ -955,6 +1148,15 @@ export function deserializeIntoInboundActivityResults(inboundActivityResults: Pa
         "people": n => { inboundActivityResults.people = n.getObjectValue<IndustryDataRunEntityCountMetric>(createIndustryDataRunEntityCountMetricFromDiscriminatorValue); },
         "unmatchedPeopleByRole": n => { inboundActivityResults.unmatchedPeopleByRole = n.getCollectionOfObjectValues<IndustryDataRunRoleCountMetric>(createIndustryDataRunRoleCountMetricFromDiscriminatorValue); },
         "warnings": n => { inboundActivityResults.warnings = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoInboundApiFlow(inboundApiFlow: Partial<InboundApiFlow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoInboundFlow(inboundApiFlow),
     }
 }
 /**
@@ -1153,6 +1355,50 @@ export function deserializeIntoIndustryDataRunStatistics(industryDataRunStatisti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+export function deserializeIntoOAuth1ClientCredential(oAuth1ClientCredential: Partial<OAuth1ClientCredential> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoOAuthClientCredential(oAuth1ClientCredential),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoOAuth2ClientCredential(oAuth2ClientCredential: Partial<OAuth2ClientCredential> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoOAuthClientCredential(oAuth2ClientCredential),
+        "scope": n => { oAuth2ClientCredential.scope = n.getStringValue(); },
+        "tokenUrl": n => { oAuth2ClientCredential.tokenUrl = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoOAuthClientCredential(oAuthClientCredential: Partial<OAuthClientCredential> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCredential(oAuthClientCredential),
+        "clientId": n => { oAuthClientCredential.clientId = n.getStringValue(); },
+        "clientSecret": n => { oAuthClientCredential.clientSecret = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+export function deserializeIntoOneRosterApiDataConnector(oneRosterApiDataConnector: Partial<OneRosterApiDataConnector> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoApiDataConnector(oneRosterApiDataConnector),
+        "apiVersion": n => { oneRosterApiDataConnector.apiVersion = n.getStringValue(); },
+        "isContactsEnabled": n => { oneRosterApiDataConnector.isContactsEnabled = n.getBooleanValue(); },
+        "isDemographicsEnabled": n => { oneRosterApiDataConnector.isDemographicsEnabled = n.getBooleanValue(); },
+        "isFlagsEnabled": n => { oneRosterApiDataConnector.isFlagsEnabled = n.getBooleanValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
 export function deserializeIntoOutboundFlowActivity(outboundFlowActivity: Partial<OutboundFlowActivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoIndustryDataRunActivity(outboundFlowActivity),
@@ -1223,6 +1469,7 @@ export function deserializeIntoReferenceDefinition(referenceDefinition: Partial<
         ...deserializeIntoEntity(referenceDefinition),
         "code": n => { referenceDefinition.code = n.getStringValue(); },
         "createdDateTime": n => { referenceDefinition.createdDateTime = n.getDateValue(); },
+        "displayName": n => { referenceDefinition.displayName = n.getStringValue(); },
         "isDisabled": n => { referenceDefinition.isDisabled = n.getBooleanValue(); },
         "lastModifiedDateTime": n => { referenceDefinition.lastModifiedDateTime = n.getDateValue(); },
         "referenceType": n => { referenceDefinition.referenceType = n.getStringValue(); },
@@ -1483,6 +1730,8 @@ export interface EnrollmentMappings extends AdditionalDataHolder, BackedModel, P
 }
 export interface FileDataConnector extends IndustryDataConnector, Parsable {
 }
+export interface FileFormatReferenceValue extends Parsable, ReferenceValue {
+}
 export interface FileValidateOperation extends Parsable, ValidateOperation {
     /**
      * Set of files validated by the validate operation.
@@ -1539,6 +1788,8 @@ export interface InboundActivityResults extends IndustryDataActivityStatistics, 
      * Number of warnings encountered while processing the inbound flow.
      */
     warnings?: number;
+}
+export interface InboundApiFlow extends InboundFlow, Parsable {
 }
 export type InboundDomain = (typeof InboundDomainObject)[keyof typeof InboundDomainObject];
 export interface InboundFileFlow extends InboundFlow, Parsable {
@@ -1799,6 +2050,46 @@ export interface IndustryDataRunStatistics extends AdditionalDataHolder, BackedM
     status?: IndustryDataRunStatus;
 }
 export type IndustryDataRunStatus = (typeof IndustryDataRunStatusObject)[keyof typeof IndustryDataRunStatusObject];
+export interface OAuth1ClientCredential extends OAuthClientCredential, Parsable {
+}
+export interface OAuth2ClientCredential extends OAuthClientCredential, Parsable {
+    /**
+     * The OAuth scope that is provided to the authentication process.
+     */
+    scope?: string;
+    /**
+     * The URL with which to retrieve the token after authentication happens.
+     */
+    tokenUrl?: string;
+}
+export interface OAuthClientCredential extends Credential, Parsable {
+    /**
+     * The client identifier of the application that is authenticating.
+     */
+    clientId?: string;
+    /**
+     * The client secret that is used to authenticate (write-only).
+     */
+    clientSecret?: string;
+}
+export interface OneRosterApiDataConnector extends ApiDataConnector, Parsable {
+    /**
+     * The API version of the OneRoster source. Example: 1.1, 1.2
+     */
+    apiVersion?: string;
+    /**
+     * Indicates whether the user specified to import optional contacts data.
+     */
+    isContactsEnabled?: boolean;
+    /**
+     * Indicates whether the user specified to import optional demographics data.
+     */
+    isDemographicsEnabled?: boolean;
+    /**
+     * Indicates whether the user specified to import optional flags data.
+     */
+    isFlagsEnabled?: boolean;
+}
 export interface OutboundFlowActivity extends IndustryDataRunActivity, Parsable {
 }
 export interface OutboundProvisioningFlowSet extends Entity, Parsable {
@@ -1874,7 +2165,11 @@ export interface ReferenceDefinition extends Entity, Parsable {
      */
     createdDateTime?: Date;
     /**
-     * Indicates whether the definition has been disabled.
+     * A human-readable representation of the reference code value for display in a user interface.
+     */
+    displayName?: string;
+    /**
+     * Indicates whether the definition is disabled.
      */
     isDisabled?: boolean;
     /**
@@ -1886,7 +2181,7 @@ export interface ReferenceDefinition extends Entity, Parsable {
      */
     referenceType?: string;
     /**
-     * The ordering index to present the definitions within a type consistently in user interfaces.
+     * The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
      */
     sortIndex?: number;
     /**
@@ -2020,8 +2315,19 @@ export function serializeAggregatedInboundStatistics(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeApiDataConnector(writer: SerializationWriter, apiDataConnector: Partial<ApiDataConnector> | undefined = {}) : void {
+    serializeIndustryDataConnector(writer, apiDataConnector)
+    writer.writeEnumValue<ApiFormat>("apiFormat", apiDataConnector.apiFormat);
+    writer.writeStringValue("baseUrl", apiDataConnector.baseUrl);
+    writer.writeObjectValue<Credential>("credential", apiDataConnector.credential, serializeCredential);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeAzureDataLakeConnector(writer: SerializationWriter, azureDataLakeConnector: Partial<AzureDataLakeConnector> | undefined = {}) : void {
     serializeFileDataConnector(writer, azureDataLakeConnector)
+    writer.writeObjectValue<FileFormatReferenceValue>("fileFormat", azureDataLakeConnector.fileFormat, serializeFileFormatReferenceValue);
 }
 /**
  * Serializes information the current object
@@ -2056,6 +2362,15 @@ export function serializeClassGroupProvisioningFlow(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeCredential(writer: SerializationWriter, credential: Partial<Credential> | undefined = {}) : void {
+    writer.writeStringValue("displayName", credential.displayName);
+    writer.writeStringValue("@odata.type", credential.odataType);
+    writer.writeAdditionalData(credential.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeEnrollmentMappings(writer: SerializationWriter, enrollmentMappings: Partial<EnrollmentMappings> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<SectionRoleReferenceValue>("memberEnrollmentMappings", enrollmentMappings.memberEnrollmentMappings, serializeSectionRoleReferenceValue);
     writer.writeStringValue("@odata.type", enrollmentMappings.odataType);
@@ -2068,6 +2383,13 @@ export function serializeEnrollmentMappings(writer: SerializationWriter, enrollm
  */
 export function serializeFileDataConnector(writer: SerializationWriter, fileDataConnector: Partial<FileDataConnector> | undefined = {}) : void {
     serializeIndustryDataConnector(writer, fileDataConnector)
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeFileFormatReferenceValue(writer: SerializationWriter, fileFormatReferenceValue: Partial<FileFormatReferenceValue> | undefined = {}) : void {
+    serializeReferenceValue(writer, fileFormatReferenceValue)
 }
 /**
  * Serializes information the current object
@@ -2097,6 +2419,13 @@ export function serializeIdentifierTypeReferenceValue(writer: SerializationWrite
  */
 export function serializeInboundActivityResults(writer: SerializationWriter, inboundActivityResults: Partial<InboundActivityResults> | undefined = {}) : void {
     serializeIndustryDataActivityStatistics(writer, inboundActivityResults)
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeInboundApiFlow(writer: SerializationWriter, inboundApiFlow: Partial<InboundApiFlow> | undefined = {}) : void {
+    serializeInboundFlow(writer, inboundApiFlow)
 }
 /**
  * Serializes information the current object
@@ -2246,6 +2575,42 @@ export function serializeIndustryDataRunStatistics(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+export function serializeOAuth1ClientCredential(writer: SerializationWriter, oAuth1ClientCredential: Partial<OAuth1ClientCredential> | undefined = {}) : void {
+    serializeOAuthClientCredential(writer, oAuth1ClientCredential)
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeOAuth2ClientCredential(writer: SerializationWriter, oAuth2ClientCredential: Partial<OAuth2ClientCredential> | undefined = {}) : void {
+    serializeOAuthClientCredential(writer, oAuth2ClientCredential)
+    writer.writeStringValue("scope", oAuth2ClientCredential.scope);
+    writer.writeStringValue("tokenUrl", oAuth2ClientCredential.tokenUrl);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeOAuthClientCredential(writer: SerializationWriter, oAuthClientCredential: Partial<OAuthClientCredential> | undefined = {}) : void {
+    serializeCredential(writer, oAuthClientCredential)
+    writer.writeStringValue("clientId", oAuthClientCredential.clientId);
+    writer.writeStringValue("clientSecret", oAuthClientCredential.clientSecret);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+export function serializeOneRosterApiDataConnector(writer: SerializationWriter, oneRosterApiDataConnector: Partial<OneRosterApiDataConnector> | undefined = {}) : void {
+    serializeApiDataConnector(writer, oneRosterApiDataConnector)
+    writer.writeStringValue("apiVersion", oneRosterApiDataConnector.apiVersion);
+    writer.writeBooleanValue("isContactsEnabled", oneRosterApiDataConnector.isContactsEnabled);
+    writer.writeBooleanValue("isDemographicsEnabled", oneRosterApiDataConnector.isDemographicsEnabled);
+    writer.writeBooleanValue("isFlagsEnabled", oneRosterApiDataConnector.isFlagsEnabled);
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
 export function serializeOutboundFlowActivity(writer: SerializationWriter, outboundFlowActivity: Partial<OutboundFlowActivity> | undefined = {}) : void {
     serializeIndustryDataRunActivity(writer, outboundFlowActivity)
 }
@@ -2297,6 +2662,7 @@ export function serializeProvisioningFlowCollectionResponse(writer: Serializatio
 export function serializeReferenceDefinition(writer: SerializationWriter, referenceDefinition: Partial<ReferenceDefinition> | undefined = {}) : void {
     serializeEntity(writer, referenceDefinition)
     writer.writeStringValue("code", referenceDefinition.code);
+    writer.writeStringValue("displayName", referenceDefinition.displayName);
     writer.writeBooleanValue("isDisabled", referenceDefinition.isDisabled);
     writer.writeStringValue("referenceType", referenceDefinition.referenceType);
     writer.writeNumberValue("sortIndex", referenceDefinition.sortIndex);
@@ -2675,6 +3041,10 @@ export const AdditionalClassGroupAttributesObject = {
 export const AdditionalUserAttributesObject = {
     UserGradeLevel: "userGradeLevel",
     UserNumber: "userNumber",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const ApiFormatObject = {
+    OneRoster: "oneRoster",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const FilterOptionsObject = {

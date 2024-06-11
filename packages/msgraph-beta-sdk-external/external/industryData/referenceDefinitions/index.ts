@@ -35,11 +35,12 @@ export interface ReferenceDefinitionsRequestBuilder extends BaseRequestBuilder<R
      */
      get(requestConfiguration?: RequestConfiguration<ReferenceDefinitionsRequestBuilderGetQueryParameters> | undefined) : Promise<ReferenceDefinitionCollectionResponse | undefined>;
     /**
-     * Create new navigation property to referenceDefinitions for external
+     * Create a new referenceDefinition object. referenceDefinition objects associate incoming data with standardized reference types values for validation. You can extend the following reference types with other codes that better align with your source data.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReferenceDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-referencedefinition-post?view=graph-rest-beta|Find more info here}
      */
      post(body: ReferenceDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ReferenceDefinition | undefined>;
     /**
@@ -49,7 +50,7 @@ export interface ReferenceDefinitionsRequestBuilder extends BaseRequestBuilder<R
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReferenceDefinitionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to referenceDefinitions for external
+     * Create a new referenceDefinition object. referenceDefinition objects associate incoming data with standardized reference types values for validation. You can extend the following reference types with other codes that better align with your source data.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

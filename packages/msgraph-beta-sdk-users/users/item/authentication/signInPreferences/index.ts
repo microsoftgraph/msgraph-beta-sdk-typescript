@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<SignInPreferencesRequestBuilder> {
     /**
-     * Read the properties of a user's authentication method states. Use this API to retrieve the following information:
+     * Read the properties of a user's authentication states. Use this API to retrieve the following information:
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SignInPreferences>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -30,7 +30,7 @@ export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<Sign
      */
      patch(body: SignInPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SignInPreferences | undefined>;
     /**
-     * Read the properties of a user's authentication method states. Use this API to retrieve the following information:
+     * Read the properties of a user's authentication states. Use this API to retrieve the following information:
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -44,7 +44,7 @@ export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<Sign
      toPatchRequestInformation(body: SignInPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties of a user's authentication method states. Use this API to retrieve the following information:
+ * Read the properties of a user's authentication states. Use this API to retrieve the following information:
  */
 export interface SignInPreferencesRequestBuilderGetQueryParameters {
     /**
