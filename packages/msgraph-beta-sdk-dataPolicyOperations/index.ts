@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DataPolicyOperationsRequestBuilder } from "./dataPolicyOperations";
+import type { DataPolicyOperationsRequestBuilder } from "./dataPolicyOperations/index.js";
 import { DataPolicyOperationsServiceClientNavigationMetadata } from "./dataPolicyOperationsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

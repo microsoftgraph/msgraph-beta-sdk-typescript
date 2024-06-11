@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { PrivacyRequestBuilder } from "./privacy";
+import type { PrivacyRequestBuilder } from "./privacy/index.js";
 import { PrivacyServiceClientNavigationMetadata } from "./privacyServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AgreementsRequestBuilder } from "./agreements";
+import type { AgreementsRequestBuilder } from "./agreements/index.js";
 import { AgreementsServiceClientNavigationMetadata } from "./agreementsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

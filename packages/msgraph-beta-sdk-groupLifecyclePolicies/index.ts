@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { GroupLifecyclePoliciesRequestBuilder } from "./groupLifecyclePolicies";
+import type { GroupLifecyclePoliciesRequestBuilder } from "./groupLifecyclePolicies/index.js";
 import { GroupLifecyclePoliciesServiceClientNavigationMetadata } from "./groupLifecyclePoliciesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

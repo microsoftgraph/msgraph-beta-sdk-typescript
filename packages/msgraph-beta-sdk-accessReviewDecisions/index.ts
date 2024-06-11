@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AccessReviewDecisionsRequestBuilder } from "./accessReviewDecisions";
+import type { AccessReviewDecisionsRequestBuilder } from "./accessReviewDecisions/index.js";
 import { AccessReviewDecisionsServiceClientNavigationMetadata } from "./accessReviewDecisionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

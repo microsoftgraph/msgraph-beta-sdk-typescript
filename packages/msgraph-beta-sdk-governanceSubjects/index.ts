@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { GovernanceSubjectsRequestBuilder } from "./governanceSubjects";
+import type { GovernanceSubjectsRequestBuilder } from "./governanceSubjects/index.js";
 import { GovernanceSubjectsServiceClientNavigationMetadata } from "./governanceSubjectsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

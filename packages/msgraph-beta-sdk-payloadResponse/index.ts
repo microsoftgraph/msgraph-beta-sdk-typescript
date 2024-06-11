@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { PayloadResponseRequestBuilder } from "./payloadResponse";
+import type { PayloadResponseRequestBuilder } from "./payloadResponse/index.js";
 import { PayloadResponseServiceClientNavigationMetadata } from "./payloadResponseServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

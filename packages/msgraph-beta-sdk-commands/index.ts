@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { CommandsRequestBuilder } from "./commands";
+import type { CommandsRequestBuilder } from "./commands/index.js";
 import { CommandsServiceClientNavigationMetadata } from "./commandsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

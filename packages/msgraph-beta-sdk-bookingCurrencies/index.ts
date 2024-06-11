@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { BookingCurrenciesRequestBuilder } from "./bookingCurrencies";
+import type { BookingCurrenciesRequestBuilder } from "./bookingCurrencies/index.js";
 import { BookingCurrenciesServiceClientNavigationMetadata } from "./bookingCurrenciesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

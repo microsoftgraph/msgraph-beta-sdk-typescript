@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ProgramControlsRequestBuilder } from "./programControls";
+import type { ProgramControlsRequestBuilder } from "./programControls/index.js";
 import { ProgramControlsServiceClientNavigationMetadata } from "./programControlsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

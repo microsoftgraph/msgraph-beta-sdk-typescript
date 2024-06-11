@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { IdentityRequestBuilder } from "./identity";
+import type { IdentityRequestBuilder } from "./identity/index.js";
 import { IdentityServiceClientNavigationMetadata } from "./identityServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { SolutionsRequestBuilder } from "./solutions";
+import type { SolutionsRequestBuilder } from "./solutions/index.js";
 import { SolutionsServiceClientNavigationMetadata } from "./solutionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

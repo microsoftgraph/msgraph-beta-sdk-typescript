@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { PoliciesRequestBuilder } from "./policies";
+import type { PoliciesRequestBuilder } from "./policies/index.js";
 import { PoliciesServiceClientNavigationMetadata } from "./policiesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

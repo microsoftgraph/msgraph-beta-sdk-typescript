@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { PrivilegedRoleAssignmentsRequestBuilder } from "./privilegedRoleAssignments";
+import type { PrivilegedRoleAssignmentsRequestBuilder } from "./privilegedRoleAssignments/index.js";
 import { PrivilegedRoleAssignmentsServiceClientNavigationMetadata } from "./privilegedRoleAssignmentsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppRequestBuilder } from "./app";
+import type { AppRequestBuilder } from "./app/index.js";
 import { AppServiceClientNavigationMetadata } from "./appServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DataClassificationRequestBuilder } from "./dataClassification";
+import type { DataClassificationRequestBuilder } from "./dataClassification/index.js";
 import { DataClassificationServiceClientNavigationMetadata } from "./dataClassificationServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

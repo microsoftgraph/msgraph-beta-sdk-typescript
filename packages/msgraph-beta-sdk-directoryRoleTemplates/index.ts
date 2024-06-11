@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DirectoryRoleTemplatesRequestBuilder } from "./directoryRoleTemplates";
+import type { DirectoryRoleTemplatesRequestBuilder } from "./directoryRoleTemplates/index.js";
 import { DirectoryRoleTemplatesServiceClientNavigationMetadata } from "./directoryRoleTemplatesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { RiskDetectionsRequestBuilder } from "./riskDetections";
+import type { RiskDetectionsRequestBuilder } from "./riskDetections/index.js";
 import { RiskDetectionsServiceClientNavigationMetadata } from "./riskDetectionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

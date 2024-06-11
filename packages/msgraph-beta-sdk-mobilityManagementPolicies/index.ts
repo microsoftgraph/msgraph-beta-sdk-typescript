@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { MobilityManagementPoliciesRequestBuilder } from "./mobilityManagementPolicies";
+import type { MobilityManagementPoliciesRequestBuilder } from "./mobilityManagementPolicies/index.js";
 import { MobilityManagementPoliciesServiceClientNavigationMetadata } from "./mobilityManagementPoliciesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

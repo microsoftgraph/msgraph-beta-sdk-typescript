@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ContactsRequestBuilder } from "./contacts";
+import type { ContactsRequestBuilder } from "./contacts/index.js";
 import { ContactsServiceClientNavigationMetadata } from "./contactsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

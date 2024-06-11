@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AppRoleAssignmentsRequestBuilder } from "./appRoleAssignments";
+import type { AppRoleAssignmentsRequestBuilder } from "./appRoleAssignments/index.js";
 import { AppRoleAssignmentsServiceClientNavigationMetadata } from "./appRoleAssignmentsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

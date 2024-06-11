@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { TermStoreRequestBuilder } from "./termStore";
+import type { TermStoreRequestBuilder } from "./termStore/index.js";
 import { TermStoreServiceClientNavigationMetadata } from "./termStoreServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

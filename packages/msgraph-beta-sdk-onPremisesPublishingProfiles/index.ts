@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { OnPremisesPublishingProfilesRequestBuilder } from "./onPremisesPublishingProfiles";
+import type { OnPremisesPublishingProfilesRequestBuilder } from "./onPremisesPublishingProfiles/index.js";
 import { OnPremisesPublishingProfilesServiceClientNavigationMetadata } from "./onPremisesPublishingProfilesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

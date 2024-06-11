@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DirectoryRequestBuilder } from "./directory";
+import type { DirectoryRequestBuilder } from "./directory/index.js";
 import { DirectoryServiceClientNavigationMetadata } from "./directoryServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

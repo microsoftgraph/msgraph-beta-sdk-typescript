@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { GovernanceRoleAssignmentRequestsRequestBuilder } from "./governanceRoleAssignmentRequests";
+import type { GovernanceRoleAssignmentRequestsRequestBuilder } from "./governanceRoleAssignmentRequests/index.js";
 import { GovernanceRoleAssignmentRequestsServiceClientNavigationMetadata } from "./governanceRoleAssignmentRequestsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

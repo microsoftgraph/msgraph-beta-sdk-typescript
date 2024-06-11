@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { TenantRelationshipsRequestBuilder } from "./tenantRelationships";
+import type { TenantRelationshipsRequestBuilder } from "./tenantRelationships/index.js";
 import { TenantRelationshipsServiceClientNavigationMetadata } from "./tenantRelationshipsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

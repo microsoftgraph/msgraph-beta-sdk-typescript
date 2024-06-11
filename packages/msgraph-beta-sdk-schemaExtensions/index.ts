@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { SchemaExtensionsRequestBuilder } from "./schemaExtensions";
+import type { SchemaExtensionsRequestBuilder } from "./schemaExtensions/index.js";
 import { SchemaExtensionsServiceClientNavigationMetadata } from "./schemaExtensionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

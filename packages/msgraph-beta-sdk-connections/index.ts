@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ConnectionsRequestBuilder } from "./connections";
+import type { ConnectionsRequestBuilder } from "./connections/index.js";
 import { ConnectionsServiceClientNavigationMetadata } from "./connectionsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

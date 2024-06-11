@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { MessageTracesRequestBuilder } from "./messageTraces";
+import type { MessageTracesRequestBuilder } from "./messageTraces/index.js";
 import { MessageTracesServiceClientNavigationMetadata } from "./messageTracesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

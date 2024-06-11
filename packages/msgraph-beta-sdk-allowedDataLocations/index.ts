@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AllowedDataLocationsRequestBuilder } from "./allowedDataLocations";
+import type { AllowedDataLocationsRequestBuilder } from "./allowedDataLocations/index.js";
 import { AllowedDataLocationsServiceClientNavigationMetadata } from "./allowedDataLocationsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

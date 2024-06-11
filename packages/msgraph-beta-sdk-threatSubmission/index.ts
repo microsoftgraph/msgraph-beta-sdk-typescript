@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ThreatSubmissionRequestBuilder } from "./threatSubmission";
+import type { ThreatSubmissionRequestBuilder } from "./threatSubmission/index.js";
 import { ThreatSubmissionServiceClientNavigationMetadata } from "./threatSubmissionServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

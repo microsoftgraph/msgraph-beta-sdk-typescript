@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { FinancialsRequestBuilder } from "./financials";
+import type { FinancialsRequestBuilder } from "./financials/index.js";
 import { FinancialsServiceClientNavigationMetadata } from "./financialsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

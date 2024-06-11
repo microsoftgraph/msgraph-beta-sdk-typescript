@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { TeamTemplateDefinitionRequestBuilder } from "./teamTemplateDefinition";
+import type { TeamTemplateDefinitionRequestBuilder } from "./teamTemplateDefinition/index.js";
 import { TeamTemplateDefinitionServiceClientNavigationMetadata } from "./teamTemplateDefinitionServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

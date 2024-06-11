@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { AdminRequestBuilder } from "./admin";
+import type { AdminRequestBuilder } from "./admin/index.js";
 import { AdminServiceClientNavigationMetadata } from "./adminServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

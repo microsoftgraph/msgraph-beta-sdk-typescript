@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DrivesRequestBuilder } from "./drives";
+import type { DrivesRequestBuilder } from "./drives/index.js";
 import { DrivesServiceClientNavigationMetadata } from "./drivesServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

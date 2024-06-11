@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { PrivilegedOperationEventsRequestBuilder } from "./privilegedOperationEvents";
+import type { PrivilegedOperationEventsRequestBuilder } from "./privilegedOperationEvents/index.js";
 import { PrivilegedOperationEventsServiceClientNavigationMetadata } from "./privilegedOperationEventsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

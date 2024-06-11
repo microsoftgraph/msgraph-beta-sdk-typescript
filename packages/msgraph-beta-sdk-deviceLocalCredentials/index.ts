@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { DeviceLocalCredentialsRequestBuilder } from "./deviceLocalCredentials";
+import type { DeviceLocalCredentialsRequestBuilder } from "./deviceLocalCredentials/index.js";
 import { DeviceLocalCredentialsServiceClientNavigationMetadata } from "./deviceLocalCredentialsServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {

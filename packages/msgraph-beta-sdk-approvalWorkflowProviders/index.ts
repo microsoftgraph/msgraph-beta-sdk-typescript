@@ -1,6 +1,6 @@
 import { extendGraphBetaServiceClient } from "@microsoft/msgraph-beta-sdk";
 
-import type { ApprovalWorkflowProvidersRequestBuilder } from "./approvalWorkflowProviders";
+import type { ApprovalWorkflowProvidersRequestBuilder } from "./approvalWorkflowProviders/index.js";
 import { ApprovalWorkflowProvidersServiceClientNavigationMetadata } from "./approvalWorkflowProvidersServiceClient.js";
 
 declare module "@microsoft/msgraph-beta-sdk" {
