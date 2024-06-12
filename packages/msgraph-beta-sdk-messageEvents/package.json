@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-messageevents",
-  "version": "1.0.0-preview.20",
+  "version": "1.0.0-preview.21",
   "description": "MessageEvents fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",

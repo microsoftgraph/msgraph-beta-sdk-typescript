@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-administrativeunits",
-  "version": "1.0.0-preview.20",
+  "version": "1.0.0-preview.21",
   "description": "AdministrativeUnits fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
