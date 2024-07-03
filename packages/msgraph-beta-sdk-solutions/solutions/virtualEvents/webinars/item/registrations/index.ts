@@ -35,11 +35,12 @@ export interface RegistrationsRequestBuilder extends BaseRequestBuilder<Registra
      */
      get(requestConfiguration?: RequestConfiguration<RegistrationsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventRegistrationCollectionResponse | undefined>;
     /**
-     * Create new navigation property to registrations for solutions
+     * Create a registration record for a registrant of a webinar. This method registers the person for the webinar. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-beta|Find more info here}
      */
      post(body: VirtualEventRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventRegistration | undefined>;
     /**
@@ -49,7 +50,7 @@ export interface RegistrationsRequestBuilder extends BaseRequestBuilder<Registra
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RegistrationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to registrations for solutions
+     * Create a registration record for a registrant of a webinar. This method registers the person for the webinar. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

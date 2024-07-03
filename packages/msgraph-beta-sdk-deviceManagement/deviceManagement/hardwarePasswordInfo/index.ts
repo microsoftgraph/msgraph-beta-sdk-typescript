@@ -27,7 +27,7 @@ export interface HardwarePasswordInfoRequestBuilder extends BaseRequestBuilder<H
      */
      byHardwarePasswordInfoId(hardwarePasswordInfoId: string) : HardwarePasswordInfoItemRequestBuilder;
     /**
-     * The hardware password info for this account.
+     * Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwarePasswordInfoCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface HardwarePasswordInfoRequestBuilder extends BaseRequestBuilder<H
      */
      post(body: HardwarePasswordInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HardwarePasswordInfo | undefined>;
     /**
-     * The hardware password info for this account.
+     * Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface HardwarePasswordInfoRequestBuilder extends BaseRequestBuilder<H
      toPostRequestInformation(body: HardwarePasswordInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The hardware password info for this account.
+ * Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
  */
 export interface HardwarePasswordInfoRequestBuilderGetQueryParameters {
     /**

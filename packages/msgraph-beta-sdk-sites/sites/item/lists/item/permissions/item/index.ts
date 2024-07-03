@@ -31,7 +31,7 @@ export interface PermissionItemRequestBuilder extends BaseRequestBuilder<Permiss
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get permissions from sites
+     * The set of permissions for the item. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Permission>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface PermissionItemRequestBuilder extends BaseRequestBuilder<Permiss
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get permissions from sites
+     * The set of permissions for the item. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface PermissionItemRequestBuilder extends BaseRequestBuilder<Permiss
      toPatchRequestInformation(body: Permission, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get permissions from sites
+ * The set of permissions for the item. Read-only. Nullable.
  */
 export interface PermissionItemRequestBuilderGetQueryParameters {
     /**
