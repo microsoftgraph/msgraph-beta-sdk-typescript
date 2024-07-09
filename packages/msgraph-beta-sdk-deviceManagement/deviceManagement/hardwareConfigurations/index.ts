@@ -27,7 +27,7 @@ export interface HardwareConfigurationsRequestBuilder extends BaseRequestBuilder
      */
      byHardwareConfigurationId(hardwareConfigurationId: string) : HardwareConfigurationItemRequestBuilder;
     /**
-     * The hardware configurations for this account.
+     * BIOS configuration and other settings provides customers the ability to configure hardware/bios settings on the enrolled Windows 10/11 Entra ID joined devices by uploading a configuration file generated with their OEM tool (e.g. Dell Command tool). A BIOS configuration policy can be assigned to multiple devices, allowing admins to remotely control a device's hardware properties (e.g. enable Secure Boot) from the Intune Portal. Supported for Dell only at this time.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareConfigurationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface HardwareConfigurationsRequestBuilder extends BaseRequestBuilder
      */
      post(body: HardwareConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HardwareConfiguration | undefined>;
     /**
-     * The hardware configurations for this account.
+     * BIOS configuration and other settings provides customers the ability to configure hardware/bios settings on the enrolled Windows 10/11 Entra ID joined devices by uploading a configuration file generated with their OEM tool (e.g. Dell Command tool). A BIOS configuration policy can be assigned to multiple devices, allowing admins to remotely control a device's hardware properties (e.g. enable Secure Boot) from the Intune Portal. Supported for Dell only at this time.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface HardwareConfigurationsRequestBuilder extends BaseRequestBuilder
      toPostRequestInformation(body: HardwareConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The hardware configurations for this account.
+ * BIOS configuration and other settings provides customers the ability to configure hardware/bios settings on the enrolled Windows 10/11 Entra ID joined devices by uploading a configuration file generated with their OEM tool (e.g. Dell Command tool). A BIOS configuration policy can be assigned to multiple devices, allowing admins to remotely control a device's hardware properties (e.g. enable Secure Boot) from the Intune Portal. Supported for Dell only at this time.
  */
 export interface HardwareConfigurationsRequestBuilderGetQueryParameters {
     /**

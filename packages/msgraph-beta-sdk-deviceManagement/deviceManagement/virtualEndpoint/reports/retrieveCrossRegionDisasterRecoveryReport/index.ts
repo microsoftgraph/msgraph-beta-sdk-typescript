@@ -73,15 +73,16 @@ export interface RetrieveCrossRegionDisasterRecoveryReportPostRequestBody extend
  */
 export interface RetrieveCrossRegionDisasterRecoveryReportRequestBuilder extends BaseRequestBuilder<RetrieveCrossRegionDisasterRecoveryReportRequestBuilder> {
     /**
-     * Invoke action retrieveCrossRegionDisasterRecoveryReport
+     * Retrieve the Windows 365 cross-region disaster recovery report, including CloudPcId, UserId, DeviceId, CloudPCDeviceDisplayName, UserPrincipalName, IsCrossRegionEnabled, CrossRegionHealthStatus, LicenseType, DisasterRecoveryStatus, CurrentRestorePointDateTime, and ActivationExpirationDateTime.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-retrievecrossregiondisasterrecoveryreport?view=graph-rest-beta|Find more info here}
      */
      post(body: RetrieveCrossRegionDisasterRecoveryReportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
-     * Invoke action retrieveCrossRegionDisasterRecoveryReport
+     * Retrieve the Windows 365 cross-region disaster recovery report, including CloudPcId, UserId, DeviceId, CloudPCDeviceDisplayName, UserPrincipalName, IsCrossRegionEnabled, CrossRegionHealthStatus, LicenseType, DisasterRecoveryStatus, CurrentRestorePointDateTime, and ActivationExpirationDateTime.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

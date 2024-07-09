@@ -27,21 +27,22 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      */
      byVirtualEventSessionId(virtualEventSessionId: string) : VirtualEventSessionItemRequestBuilder;
     /**
-     * Get sessions from solutions
+     * Get a list of sessions that a registrant registered for in a webinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualeventregistration-list-sessions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SessionsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventSessionCollectionResponse | undefined>;
     /**
-     * Get sessions from solutions
+     * Get a list of sessions that a registrant registered for in a webinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get sessions from solutions
+ * Get a list of sessions that a registrant registered for in a webinar.
  */
 export interface SessionsRequestBuilderGetQueryParameters {
     /**

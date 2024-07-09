@@ -27,11 +27,11 @@ export interface SecureScoresRequestBuilder extends BaseRequestBuilder<SecureSco
      */
      bySecureScoreId(secureScoreId: string) : SecureScoreItemRequestBuilder;
     /**
-     * Retrieve the properties and relationships of a secureScores object.
+     * Retrieve the properties and relationships of a secureScore object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecureScoreCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/securescores-list?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/security-list-securescores?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SecureScoresRequestBuilderGetQueryParameters> | undefined) : Promise<SecureScoreCollectionResponse | undefined>;
     /**
@@ -43,7 +43,7 @@ export interface SecureScoresRequestBuilder extends BaseRequestBuilder<SecureSco
      */
      post(body: SecureScore, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SecureScore | undefined>;
     /**
-     * Retrieve the properties and relationships of a secureScores object.
+     * Retrieve the properties and relationships of a secureScore object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface SecureScoresRequestBuilder extends BaseRequestBuilder<SecureSco
      toPostRequestInformation(body: SecureScore, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties and relationships of a secureScores object.
+ * Retrieve the properties and relationships of a secureScore object.
  */
 export interface SecureScoresRequestBuilderGetQueryParameters {
     /**

@@ -9620,7 +9620,7 @@ export interface FilePlanDepartment extends FilePlanDescriptorBase, Parsable {
 }
 export interface FilePlanDescriptor extends Entity, Parsable {
     /**
-     * The authority property
+     * Represents the file plan descriptor of type authority applied to a particular retention label.
      */
     authority?: FilePlanAuthority;
     /**
@@ -9628,7 +9628,7 @@ export interface FilePlanDescriptor extends Entity, Parsable {
      */
     authorityTemplate?: AuthorityTemplate;
     /**
-     * The category property
+     * Represents the file plan descriptor of type category applied to a particular retention label.
      */
     category?: FilePlanAppliedCategory;
     /**
@@ -9636,7 +9636,7 @@ export interface FilePlanDescriptor extends Entity, Parsable {
      */
     categoryTemplate?: CategoryTemplate;
     /**
-     * The citation property
+     * Represents the file plan descriptor of type citation applied to a particular retention label.
      */
     citation?: FilePlanCitation;
     /**
@@ -9644,7 +9644,7 @@ export interface FilePlanDescriptor extends Entity, Parsable {
      */
     citationTemplate?: CitationTemplate;
     /**
-     * The department property
+     * Represents the file plan descriptor of type department applied to a particular retention label.
      */
     department?: FilePlanDepartment;
     /**
@@ -9652,7 +9652,7 @@ export interface FilePlanDescriptor extends Entity, Parsable {
      */
     departmentTemplate?: DepartmentTemplate;
     /**
-     * The filePlanReference property
+     * Represents the file plan descriptor of type filePlanReference applied to a particular retention label.
      */
     filePlanReference?: FilePlanReference;
     /**
@@ -10542,11 +10542,11 @@ export interface Incident extends Entity, Parsable {
      */
     lastUpdateDateTime?: Date;
     /**
-     * A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
+     * A rich text string that represents the actions that are reccomnded to take in order to resolve the incident.
      */
     recommendedActions?: string;
     /**
-     * List of hunting Kusto Query Language (KQL) queries related to the incident
+     * List of hunting Kusto Query Language (KQL) queries related to the incident.
      */
     recommendedHuntingQueries?: RecommendedHuntingQuery[];
     /**
@@ -15744,7 +15744,7 @@ export interface SslCertificate extends Artifact, Parsable {
      */
     lastSeenDateTime?: Date;
     /**
-     * The hosts related with this sslCertificate.
+     * The host resources related with this sslCertificate.
      */
     relatedHosts?: Host[];
     /**
@@ -15901,7 +15901,7 @@ export interface SubmissionAdminReview extends AdditionalDataHolder, BackedModel
      */
     reviewDateTime?: Date;
     /**
-     * Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, and unknownFutureValue.
+     * Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, unknownFutureValue, beingAnalyzed, notSubmittedToMicrosoft, phishingSimulation, allowedDueToOrganizationOverride, blockedDueToOrganizationOverride, allowedDueToUserOverride, blockedDueToUserOverride, itemNotfound, threatsFound, noThreatsFound, domainImpersonation, userImpersonation, brandImpersonation, authenticationFailure, spoofedBlocked, spoofedAllowed, bulk, and reasonLostInTransit. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: beingAnalyzed, notSubmittedToMicrosoft, phishingSimulation, allowedDueToOrganizationOverride, blockedDueToOrganizationOverride, allowedDueToUserOverride, blockedDueToUserOverride, itemNotfound, threatsFound, noThreatsFound, domainImpersonation, userImpersonation, brandImpersonation, authenticationFailure, spoofedBlocked, spoofedAllowed, bulk, and reasonLostInTransit.
      */
     reviewResult?: SubmissionResultCategory;
 }
@@ -15978,7 +15978,7 @@ export interface SubmissionResult extends AdditionalDataHolder, BackedModel, Par
      */
     backingStoreEnabled?: boolean;
     /**
-     * The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.
+     * The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, unknownFutureValue, beingAnalyzed, notSubmittedToMicrosoft, phishingSimulation, allowedDueToOrganizationOverride, blockedDueToOrganizationOverride, allowedDueToUserOverride, blockedDueToUserOverride, itemNotfound, threatsFound, noThreatsFound, domainImpersonation, userImpersonation, brandImpersonation, authenticationFailure, spoofedBlocked, spoofedAllowed, bulk, and reasonLostInTransit. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: beingAnalyzed, notSubmittedToMicrosoft, phishingSimulation, allowedDueToOrganizationOverride, blockedDueToOrganizationOverride, allowedDueToUserOverride, blockedDueToUserOverride, itemNotfound, threatsFound, noThreatsFound, domainImpersonation, userImpersonation, brandImpersonation, authenticationFailure, spoofedBlocked, spoofedAllowed, bulk, and reasonLostInTransit.
      */
     category?: SubmissionResultCategory;
     /**

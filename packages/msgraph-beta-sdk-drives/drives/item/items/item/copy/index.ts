@@ -35,7 +35,7 @@ export interface CopyPostRequestBody extends AdditionalDataHolder, BackedModel, 
  */
 export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilder> {
     /**
-     * Asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name.
+     * Asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name. After the request is acknowledged, it enters a queue. The actual copying, including any subitems, occurs at an undetermined time. Progress is reported until the operation is completed by monitoring the progress.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveItem>}
@@ -44,7 +44,7 @@ export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilde
      */
      post(body: CopyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveItem | undefined>;
     /**
-     * Asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name.
+     * Asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name. After the request is acknowledged, it enters a queue. The actual copying, including any subitems, occurs at an undetermined time. Progress is reported until the operation is completed by monitoring the progress.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
