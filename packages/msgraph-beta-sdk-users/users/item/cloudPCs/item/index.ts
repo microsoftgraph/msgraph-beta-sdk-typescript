@@ -18,8 +18,6 @@ import { GetCloudPcLaunchInfoRequestBuilderRequestsMetadata, type GetCloudPcLaun
 // @ts-ignore
 import { GetFrontlineCloudPcAccessStateRequestBuilderRequestsMetadata, type GetFrontlineCloudPcAccessStateRequestBuilder } from './getFrontlineCloudPcAccessState/index.js';
 // @ts-ignore
-import { GetShiftWorkCloudPcAccessStateRequestBuilderRequestsMetadata, type GetShiftWorkCloudPcAccessStateRequestBuilder } from './getShiftWorkCloudPcAccessState/index.js';
-// @ts-ignore
 import { GetSupportedCloudPcRemoteActionsRequestBuilderRequestsMetadata, type GetSupportedCloudPcRemoteActionsRequestBuilder } from './getSupportedCloudPcRemoteActions/index.js';
 // @ts-ignore
 import { PowerOffRequestBuilderRequestsMetadata, type PowerOffRequestBuilder } from './powerOff/index.js';
@@ -35,6 +33,8 @@ import { ReprovisionRequestBuilderRequestsMetadata, type ReprovisionRequestBuild
 import { ResizeRequestBuilderRequestsMetadata, type ResizeRequestBuilder } from './resize/index.js';
 // @ts-ignore
 import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
+// @ts-ignore
+import { RetrieveCloudPCRemoteActionResultsRequestBuilderRequestsMetadata, type RetrieveCloudPCRemoteActionResultsRequestBuilder } from './retrieveCloudPCRemoteActionResults/index.js';
 // @ts-ignore
 import { RetrieveReviewStatusRequestBuilderRequestsMetadata, type RetrieveReviewStatusRequestBuilder } from './retrieveReviewStatus/index.js';
 // @ts-ignore
@@ -79,10 +79,6 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      */
     get getFrontlineCloudPcAccessState(): GetFrontlineCloudPcAccessStateRequestBuilder;
     /**
-     * Provides operations to call the getShiftWorkCloudPcAccessState method.
-     */
-    get getShiftWorkCloudPcAccessState(): GetShiftWorkCloudPcAccessStateRequestBuilder;
-    /**
      * Provides operations to call the getSupportedCloudPcRemoteActions method.
      */
     get getSupportedCloudPcRemoteActions(): GetSupportedCloudPcRemoteActionsRequestBuilder;
@@ -114,6 +110,10 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * Provides operations to call the restore method.
      */
     get restore(): RestoreRequestBuilder;
+    /**
+     * Provides operations to call the retrieveCloudPCRemoteActionResults method.
+     */
+    get retrieveCloudPCRemoteActionResults(): RetrieveCloudPCRemoteActionResultsRequestBuilder;
     /**
      * Provides operations to call the retrieveReviewStatus method.
      */
@@ -225,9 +225,6 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     getFrontlineCloudPcAccessState: {
         requestsMetadata: GetFrontlineCloudPcAccessStateRequestBuilderRequestsMetadata,
     },
-    getShiftWorkCloudPcAccessState: {
-        requestsMetadata: GetShiftWorkCloudPcAccessStateRequestBuilderRequestsMetadata,
-    },
     getSupportedCloudPcRemoteActions: {
         requestsMetadata: GetSupportedCloudPcRemoteActionsRequestBuilderRequestsMetadata,
     },
@@ -251,6 +248,9 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     },
     restore: {
         requestsMetadata: RestoreRequestBuilderRequestsMetadata,
+    },
+    retrieveCloudPCRemoteActionResults: {
+        requestsMetadata: RetrieveCloudPCRemoteActionResultsRequestBuilderRequestsMetadata,
     },
     retrieveReviewStatus: {
         requestsMetadata: RetrieveReviewStatusRequestBuilderRequestsMetadata,

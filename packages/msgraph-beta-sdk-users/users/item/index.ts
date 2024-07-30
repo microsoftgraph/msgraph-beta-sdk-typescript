@@ -206,6 +206,8 @@ import { ServiceProvisioningErrorsRequestBuilderNavigationMetadata, ServiceProvi
 // @ts-ignore
 import { SettingsRequestBuilderNavigationMetadata, SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
+import { SolutionsRequestBuilderNavigationMetadata, SolutionsRequestBuilderRequestsMetadata, type SolutionsRequestBuilder } from './solutions/index.js';
+// @ts-ignore
 import { SponsorsRequestBuilderNavigationMetadata, SponsorsRequestBuilderRequestsMetadata, type SponsorsRequestBuilder } from './sponsors/index.js';
 // @ts-ignore
 import { TeamworkRequestBuilderNavigationMetadata, TeamworkRequestBuilderRequestsMetadata, type TeamworkRequestBuilder } from './teamwork/index.js';
@@ -617,6 +619,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
     get settings(): SettingsRequestBuilder;
     /**
+     * Provides operations to manage the solutions property of the microsoft.graph.user entity.
+     */
+    get solutions(): SolutionsRequestBuilder;
+    /**
      * Provides operations to manage the sponsors property of the microsoft.graph.user entity.
      */
     get sponsors(): SponsorsRequestBuilder;
@@ -679,7 +685,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      appRoleAssignedResourcesWithAppId(appId: string | undefined) : AppRoleAssignedResourcesWithAppIdRequestBuilder;
     /**
-     * Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+     * Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-beta|Find more info here}
@@ -719,7 +725,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      onlineMeetingsWithJoinWebUrl(joinWebUrl: string | undefined) : OnlineMeetingsWithJoinWebUrlRequestBuilder;
     /**
-     * Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
+     * Update the properties of a user object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
@@ -735,7 +741,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      reminderViewWithStartDateTimeWithEndDateTime(endDateTime: string | undefined, startDateTime: string | undefined) : ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
-     * Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+     * Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -747,7 +753,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
+     * Update the properties of a user object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -1144,6 +1150,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,
         navigationMetadata: SettingsRequestBuilderNavigationMetadata,
+    },
+    solutions: {
+        requestsMetadata: SolutionsRequestBuilderRequestsMetadata,
+        navigationMetadata: SolutionsRequestBuilderNavigationMetadata,
     },
     sponsors: {
         requestsMetadata: SponsorsRequestBuilderRequestsMetadata,

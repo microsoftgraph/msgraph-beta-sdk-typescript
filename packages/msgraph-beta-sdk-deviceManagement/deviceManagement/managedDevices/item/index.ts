@@ -12,6 +12,8 @@ import { AssignmentFilterEvaluationStatusDetailsRequestBuilderNavigationMetadata
 // @ts-ignore
 import { BypassActivationLockRequestBuilderRequestsMetadata, type BypassActivationLockRequestBuilder } from './bypassActivationLock/index.js';
 // @ts-ignore
+import { ChangeAssignmentsRequestBuilderRequestsMetadata, type ChangeAssignmentsRequestBuilder } from './changeAssignments/index.js';
+// @ts-ignore
 import { CleanWindowsDeviceRequestBuilderRequestsMetadata, type CleanWindowsDeviceRequestBuilder } from './cleanWindowsDevice/index.js';
 // @ts-ignore
 import { CreateDeviceLogCollectionRequestRequestBuilderRequestsMetadata, type CreateDeviceLogCollectionRequestRequestBuilder } from './createDeviceLogCollectionRequest/index.js';
@@ -140,6 +142,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the bypassActivationLock method.
      */
     get bypassActivationLock(): BypassActivationLockRequestBuilder;
+    /**
+     * Provides operations to call the changeAssignments method.
+     */
+    get changeAssignments(): ChangeAssignmentsRequestBuilder;
     /**
      * Provides operations to call the cleanWindowsDevice method.
      */
@@ -438,6 +444,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     bypassActivationLock: {
         requestsMetadata: BypassActivationLockRequestBuilderRequestsMetadata,
+    },
+    changeAssignments: {
+        requestsMetadata: ChangeAssignmentsRequestBuilderRequestsMetadata,
     },
     cleanWindowsDevice: {
         requestsMetadata: CleanWindowsDeviceRequestBuilderRequestsMetadata,

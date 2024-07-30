@@ -27,10 +27,11 @@ export interface CommunitiesRequestBuilder extends BaseRequestBuilder<Communitie
      */
      byCommunityId(communityId: string) : CommunityItemRequestBuilder;
     /**
-     * Read the properties and relationships of a community object.
+     * Get a list of the Viva Engage community objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CommunityCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/employeeexperience-list-communities?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CommunitiesRequestBuilderGetQueryParameters> | undefined) : Promise<CommunityCollectionResponse | undefined>;
     /**
@@ -43,7 +44,7 @@ export interface CommunitiesRequestBuilder extends BaseRequestBuilder<Communitie
      */
      post(body: Community, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Community | undefined>;
     /**
-     * Read the properties and relationships of a community object.
+     * Get a list of the Viva Engage community objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +58,7 @@ export interface CommunitiesRequestBuilder extends BaseRequestBuilder<Communitie
      toPostRequestInformation(body: Community, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a community object.
+ * Get a list of the Viva Engage community objects and their properties.
  */
 export interface CommunitiesRequestBuilderGetQueryParameters {
     /**

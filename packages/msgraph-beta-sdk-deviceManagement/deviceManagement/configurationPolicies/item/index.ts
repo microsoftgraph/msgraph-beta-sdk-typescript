@@ -20,6 +20,8 @@ import { RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetad
 // @ts-ignore
 import { RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderRequestsMetadata, type RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder } from './retrieveLatestUpgradeDefaultBaselinePolicy/index.js';
 // @ts-ignore
+import { SetEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata, type SetEnrollmentTimeDeviceMembershipTargetRequestBuilder } from './setEnrollmentTimeDeviceMembershipTarget/index.js';
+// @ts-ignore
 import { SettingsRequestBuilderNavigationMetadata, SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -56,6 +58,10 @@ export interface DeviceManagementConfigurationPolicyItemRequestBuilder extends B
      * Provides operations to call the retrieveLatestUpgradeDefaultBaselinePolicy method.
      */
     get retrieveLatestUpgradeDefaultBaselinePolicy(): RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder;
+    /**
+     * Provides operations to call the setEnrollmentTimeDeviceMembershipTarget method.
+     */
+    get setEnrollmentTimeDeviceMembershipTarget(): SetEnrollmentTimeDeviceMembershipTargetRequestBuilder;
     /**
      * Provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
      */
@@ -150,6 +156,9 @@ export const DeviceManagementConfigurationPolicyItemRequestBuilderNavigationMeta
     },
     retrieveLatestUpgradeDefaultBaselinePolicy: {
         requestsMetadata: RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderRequestsMetadata,
+    },
+    setEnrollmentTimeDeviceMembershipTarget: {
+        requestsMetadata: SetEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata,
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,

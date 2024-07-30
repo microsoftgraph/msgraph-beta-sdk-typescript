@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { PresentersRequestBuilderNavigationMetadata, PresentersRequestBuilderRequestsMetadata, type PresentersRequestBuilder } from './presenters/index.js';
 // @ts-ignore
-import { RegistrationConfigurationRequestBuilderRequestsMetadata, type RegistrationConfigurationRequestBuilder } from './registrationConfiguration/index.js';
+import { RegistrationConfigurationRequestBuilderNavigationMetadata, RegistrationConfigurationRequestBuilderRequestsMetadata, type RegistrationConfigurationRequestBuilder } from './registrationConfiguration/index.js';
 // @ts-ignore
 import { RegistrationsRequestBuilderNavigationMetadata, RegistrationsRequestBuilderRequestsMetadata, type RegistrationsRequestBuilder } from './registrations/index.js';
 // @ts-ignore
@@ -148,6 +148,7 @@ export const VirtualEventWebinarItemRequestBuilderNavigationMetadata: Record<Exc
     },
     registrationConfiguration: {
         requestsMetadata: RegistrationConfigurationRequestBuilderRequestsMetadata,
+        navigationMetadata: RegistrationConfigurationRequestBuilderNavigationMetadata,
     },
     registrations: {
         requestsMetadata: RegistrationsRequestBuilderRequestsMetadata,
