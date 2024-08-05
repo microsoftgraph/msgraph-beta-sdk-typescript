@@ -188,6 +188,8 @@ import { ManagedDeviceOverviewRequestBuilderRequestsMetadata, type ManagedDevice
 // @ts-ignore
 import { ManagedDevicesRequestBuilderNavigationMetadata, ManagedDevicesRequestBuilderRequestsMetadata, type ManagedDevicesRequestBuilder } from './managedDevices/index.js';
 // @ts-ignore
+import { ManagedDeviceWindowsOSImagesRequestBuilderNavigationMetadata, ManagedDeviceWindowsOSImagesRequestBuilderRequestsMetadata, type ManagedDeviceWindowsOSImagesRequestBuilder } from './managedDeviceWindowsOSImages/index.js';
+// @ts-ignore
 import { MicrosoftTunnelConfigurationsRequestBuilderNavigationMetadata, MicrosoftTunnelConfigurationsRequestBuilderRequestsMetadata, type MicrosoftTunnelConfigurationsRequestBuilder } from './microsoftTunnelConfigurations/index.js';
 // @ts-ignore
 import { MicrosoftTunnelHealthThresholdsRequestBuilderNavigationMetadata, MicrosoftTunnelHealthThresholdsRequestBuilderRequestsMetadata, type MicrosoftTunnelHealthThresholdsRequestBuilder } from './microsoftTunnelHealthThresholds/index.js';
@@ -738,6 +740,10 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      * Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
      */
     get managedDevices(): ManagedDevicesRequestBuilder;
+    /**
+     * Provides operations to manage the managedDeviceWindowsOSImages property of the microsoft.graph.deviceManagement entity.
+     */
+    get managedDeviceWindowsOSImages(): ManagedDeviceWindowsOSImagesRequestBuilder;
     /**
      * Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
      */
@@ -1565,6 +1571,10 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     managedDevices: {
         requestsMetadata: ManagedDevicesRequestBuilderRequestsMetadata,
         navigationMetadata: ManagedDevicesRequestBuilderNavigationMetadata,
+    },
+    managedDeviceWindowsOSImages: {
+        requestsMetadata: ManagedDeviceWindowsOSImagesRequestBuilderRequestsMetadata,
+        navigationMetadata: ManagedDeviceWindowsOSImagesRequestBuilderNavigationMetadata,
     },
     microsoftTunnelConfigurations: {
         requestsMetadata: MicrosoftTunnelConfigurationsRequestBuilderRequestsMetadata,

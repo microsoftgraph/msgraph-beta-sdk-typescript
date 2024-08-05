@@ -38,8 +38,6 @@ import { RetrieveTenantEncryptionSettingRequestBuilderRequestsMetadata, type Ret
 // @ts-ignore
 import { ServicePlansRequestBuilderNavigationMetadata, ServicePlansRequestBuilderRequestsMetadata, type ServicePlansRequestBuilder } from './servicePlans/index.js';
 // @ts-ignore
-import { SharedUseServicePlansRequestBuilderNavigationMetadata, SharedUseServicePlansRequestBuilderRequestsMetadata, type SharedUseServicePlansRequestBuilder } from './sharedUseServicePlans/index.js';
-// @ts-ignore
 import { SnapshotsRequestBuilderNavigationMetadata, SnapshotsRequestBuilderRequestsMetadata, type SnapshotsRequestBuilder } from './snapshots/index.js';
 // @ts-ignore
 import { SupportedRegionsRequestBuilderNavigationMetadata, SupportedRegionsRequestBuilderRequestsMetadata, type SupportedRegionsRequestBuilder } from './supportedRegions/index.js';
@@ -116,10 +114,6 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.
      */
     get servicePlans(): ServicePlansRequestBuilder;
-    /**
-     * Provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.
-     */
-    get sharedUseServicePlans(): SharedUseServicePlansRequestBuilder;
     /**
      * Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -259,10 +253,6 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     servicePlans: {
         requestsMetadata: ServicePlansRequestBuilderRequestsMetadata,
         navigationMetadata: ServicePlansRequestBuilderNavigationMetadata,
-    },
-    sharedUseServicePlans: {
-        requestsMetadata: SharedUseServicePlansRequestBuilderRequestsMetadata,
-        navigationMetadata: SharedUseServicePlansRequestBuilderNavigationMetadata,
     },
     snapshots: {
         requestsMetadata: SnapshotsRequestBuilderRequestsMetadata,

@@ -37,10 +37,10 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
     get microsoftGraphWindowsUpdatesRemoveMembersById(): MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder;
     /**
-     * Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+     * Delete an updatableAsset object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -60,7 +60,7 @@ export interface UpdatableAssetItemRequestBuilder extends BaseRequestBuilder<Upd
      */
      patch(body: UpdatableAsset, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UpdatableAsset | undefined>;
     /**
-     * Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+     * Delete an updatableAsset object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

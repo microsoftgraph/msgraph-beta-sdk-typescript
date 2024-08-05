@@ -10,9 +10,13 @@ import { AnalyticsRequestBuilderNavigationMetadata, AnalyticsRequestBuilderReque
 // @ts-ignore
 import { ColumnsRequestBuilderNavigationMetadata, ColumnsRequestBuilderRequestsMetadata, type ColumnsRequestBuilder } from './columns/index.js';
 // @ts-ignore
+import { ContentModelsRequestBuilderNavigationMetadata, ContentModelsRequestBuilderRequestsMetadata, type ContentModelsRequestBuilder } from './contentModels/index.js';
+// @ts-ignore
 import { ContentTypesRequestBuilderNavigationMetadata, ContentTypesRequestBuilderRequestsMetadata, type ContentTypesRequestBuilder } from './contentTypes/index.js';
 // @ts-ignore
 import { CreatedByUserRequestBuilderNavigationMetadata, CreatedByUserRequestBuilderRequestsMetadata, type CreatedByUserRequestBuilder } from './createdByUser/index.js';
+// @ts-ignore
+import { DocumentProcessingJobsRequestBuilderNavigationMetadata, DocumentProcessingJobsRequestBuilderRequestsMetadata, type DocumentProcessingJobsRequestBuilder } from './documentProcessingJobs/index.js';
 // @ts-ignore
 import { DriveRequestBuilderRequestsMetadata, type DriveRequestBuilder } from './drive/index.js';
 // @ts-ignore
@@ -63,6 +67,10 @@ export interface SiteItemRequestBuilder extends BaseRequestBuilder<SiteItemReque
      */
     get columns(): ColumnsRequestBuilder;
     /**
+     * Provides operations to manage the contentModels property of the microsoft.graph.site entity.
+     */
+    get contentModels(): ContentModelsRequestBuilder;
+    /**
      * Provides operations to manage the contentTypes property of the microsoft.graph.site entity.
      */
     get contentTypes(): ContentTypesRequestBuilder;
@@ -70,6 +78,10 @@ export interface SiteItemRequestBuilder extends BaseRequestBuilder<SiteItemReque
      * Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
      */
     get createdByUser(): CreatedByUserRequestBuilder;
+    /**
+     * Provides operations to manage the documentProcessingJobs property of the microsoft.graph.site entity.
+     */
+    get documentProcessingJobs(): DocumentProcessingJobsRequestBuilder;
     /**
      * Provides operations to manage the drive property of the microsoft.graph.site entity.
      */
@@ -222,6 +234,10 @@ export const SiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Site
         requestsMetadata: ColumnsRequestBuilderRequestsMetadata,
         navigationMetadata: ColumnsRequestBuilderNavigationMetadata,
     },
+    contentModels: {
+        requestsMetadata: ContentModelsRequestBuilderRequestsMetadata,
+        navigationMetadata: ContentModelsRequestBuilderNavigationMetadata,
+    },
     contentTypes: {
         requestsMetadata: ContentTypesRequestBuilderRequestsMetadata,
         navigationMetadata: ContentTypesRequestBuilderNavigationMetadata,
@@ -229,6 +245,10 @@ export const SiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Site
     createdByUser: {
         requestsMetadata: CreatedByUserRequestBuilderRequestsMetadata,
         navigationMetadata: CreatedByUserRequestBuilderNavigationMetadata,
+    },
+    documentProcessingJobs: {
+        requestsMetadata: DocumentProcessingJobsRequestBuilderRequestsMetadata,
+        navigationMetadata: DocumentProcessingJobsRequestBuilderNavigationMetadata,
     },
     drive: {
         requestsMetadata: DriveRequestBuilderRequestsMetadata,

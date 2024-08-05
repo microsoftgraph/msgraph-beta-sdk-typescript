@@ -10,9 +10,13 @@ import { AnalyticsRequestBuilderRequestsMetadata, type AnalyticsRequestBuilder }
 // @ts-ignore
 import { ColumnsRequestBuilderRequestsMetadata, type ColumnsRequestBuilder } from './columns/index.js';
 // @ts-ignore
+import { ContentModelsRequestBuilderRequestsMetadata, type ContentModelsRequestBuilder } from './contentModels/index.js';
+// @ts-ignore
 import { ContentTypesRequestBuilderRequestsMetadata, type ContentTypesRequestBuilder } from './contentTypes/index.js';
 // @ts-ignore
 import { CreatedByUserRequestBuilderRequestsMetadata, type CreatedByUserRequestBuilder } from './createdByUser/index.js';
+// @ts-ignore
+import { DocumentProcessingJobsRequestBuilderRequestsMetadata, type DocumentProcessingJobsRequestBuilder } from './documentProcessingJobs/index.js';
 // @ts-ignore
 import { DriveRequestBuilderRequestsMetadata, type DriveRequestBuilder } from './drive/index.js';
 // @ts-ignore
@@ -23,8 +27,6 @@ import { ExternalColumnsRequestBuilderRequestsMetadata, type ExternalColumnsRequ
 import { GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderRequestsMetadata, type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder } from './getActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval/index.js';
 // @ts-ignore
 import { GetApplicableContentTypesForListWithListIdRequestBuilderRequestsMetadata, type GetApplicableContentTypesForListWithListIdRequestBuilder } from './getApplicableContentTypesForListWithListId/index.js';
-// @ts-ignore
-import { GetByPathWithPath1RequestBuilderNavigationMetadata, GetByPathWithPath1RequestBuilderRequestsMetadata, type GetByPathWithPath1RequestBuilder } from './getByPathWithPath1/index.js';
 // @ts-ignore
 import { InformationProtectionRequestBuilderRequestsMetadata, type InformationProtectionRequestBuilder } from './informationProtection/index.js';
 // @ts-ignore
@@ -63,6 +65,10 @@ export interface GetByPathWithPathRequestBuilder extends BaseRequestBuilder<GetB
      */
     get columns(): ColumnsRequestBuilder;
     /**
+     * Provides operations to manage the contentModels property of the microsoft.graph.site entity.
+     */
+    get contentModels(): ContentModelsRequestBuilder;
+    /**
      * Provides operations to manage the contentTypes property of the microsoft.graph.site entity.
      */
     get contentTypes(): ContentTypesRequestBuilder;
@@ -70,6 +76,10 @@ export interface GetByPathWithPathRequestBuilder extends BaseRequestBuilder<GetB
      * Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
      */
     get createdByUser(): CreatedByUserRequestBuilder;
+    /**
+     * Provides operations to manage the documentProcessingJobs property of the microsoft.graph.site entity.
+     */
+    get documentProcessingJobs(): DocumentProcessingJobsRequestBuilder;
     /**
      * Provides operations to manage the drive property of the microsoft.graph.site entity.
      */
@@ -148,12 +158,6 @@ export interface GetByPathWithPathRequestBuilder extends BaseRequestBuilder<GetB
      */
      getApplicableContentTypesForListWithListId(listId: string | undefined) : GetApplicableContentTypesForListWithListIdRequestBuilder;
     /**
-     * Provides operations to call the getByPath method.
-     * @param path1 Usage: path='{path1}'
-     * @returns {GetByPathWithPath1RequestBuilder}
-     */
-     getByPathWithPath1(path1: string | undefined) : GetByPathWithPath1RequestBuilder;
-    /**
      * Invoke function getByPath
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -174,21 +178,23 @@ export const GetByPathWithPathRequestBuilderNavigationMetadata: Record<Exclude<k
     getApplicableContentTypesForListWithListId: {
         requestsMetadata: GetApplicableContentTypesForListWithListIdRequestBuilderRequestsMetadata,
     },
-    getByPathWithPath1: {
-        requestsMetadata: GetByPathWithPath1RequestBuilderRequestsMetadata,
-        navigationMetadata: GetByPathWithPath1RequestBuilderNavigationMetadata,
-    },
     analytics: {
         requestsMetadata: AnalyticsRequestBuilderRequestsMetadata,
     },
     columns: {
         requestsMetadata: ColumnsRequestBuilderRequestsMetadata,
     },
+    contentModels: {
+        requestsMetadata: ContentModelsRequestBuilderRequestsMetadata,
+    },
     contentTypes: {
         requestsMetadata: ContentTypesRequestBuilderRequestsMetadata,
     },
     createdByUser: {
         requestsMetadata: CreatedByUserRequestBuilderRequestsMetadata,
+    },
+    documentProcessingJobs: {
+        requestsMetadata: DocumentProcessingJobsRequestBuilderRequestsMetadata,
     },
     drive: {
         requestsMetadata: DriveRequestBuilderRequestsMetadata,

@@ -5132,6 +5132,7 @@ export const DeviceVendorObject = {
     VmWareSdWan: "vmWareSdWan",
     Versa: "versa",
     Other: "other",
+    CiscoCatalyst: "ciscoCatalyst",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const DhGroupObject = {
