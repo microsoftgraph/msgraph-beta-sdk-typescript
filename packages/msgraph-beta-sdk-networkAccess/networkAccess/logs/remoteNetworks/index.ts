@@ -27,11 +27,10 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      */
      byRemoteNetworkHealthEventId(remoteNetworkHealthEventId: string) : RemoteNetworkHealthEventItemRequestBuilder;
     /**
-     * Retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
+     * A collection of remote network health events.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RemoteNetworkHealthEventCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-remotenetworkhealthstatusevent-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RemoteNetworksRequestBuilderGetQueryParameters> | undefined) : Promise<RemoteNetworkHealthEventCollectionResponse | undefined>;
     /**
@@ -43,7 +42,7 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      */
      post(body: RemoteNetworkHealthEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RemoteNetworkHealthEvent | undefined>;
     /**
-     * Retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
+     * A collection of remote network health events.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +56,7 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      toPostRequestInformation(body: RemoteNetworkHealthEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
+ * A collection of remote network health events.
  */
 export interface RemoteNetworksRequestBuilderGetQueryParameters {
     /**

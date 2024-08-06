@@ -2251,7 +2251,7 @@ export interface SecurityGroupCreationOptions extends AdditionalDataHolder, Back
      */
     createBasedOnOrgPlusRoleGroup?: boolean;
     /**
-     * A boolean choice indicating whether the security group should be created based on the role group
+     * A Boolean choice indicating whether the security group should be created based on the role group
      */
     createBasedOnRoleGroup?: boolean;
     /**
@@ -2979,7 +2979,7 @@ export interface UserMatchTargetReferenceValue extends Parsable, ReferenceValue 
 }
 export interface UserProvisioningFlow extends Parsable, ProvisioningFlow {
     /**
-     * A boolean choice indicating whether unmatched users should be created or ignored.
+     * A Boolean choice indicating whether unmatched users should be created or ignored.
      */
     createUnmatchedUsers?: boolean;
     /**

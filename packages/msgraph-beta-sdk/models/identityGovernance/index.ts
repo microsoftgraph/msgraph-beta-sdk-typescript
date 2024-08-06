@@ -1776,7 +1776,7 @@ export interface Task extends Entity, Parsable {
      */
     category?: LifecycleTaskCategory[];
     /**
-     * A boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
+     * A Boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
      */
     continueOnError?: boolean;
     /**
@@ -1792,7 +1792,7 @@ export interface Task extends Entity, Parsable {
      */
     executionSequence?: number;
     /**
-     * A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+     * A Boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
      */
     isEnabled?: boolean;
     /**
