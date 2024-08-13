@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetEncryptionReportForDevicesPostRequestBody}
  */
+// @ts-ignore
 export function createGetEncryptionReportForDevicesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEncryptionReportForDevicesPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetEncryptionReportForDevicesPostRequestBodyFromDiscrimina
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetEncryptionReportForDevicesPostRequestBody(getEncryptionReportForDevicesPostRequestBody: Partial<GetEncryptionReportForDevicesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getEncryptionReportForDevicesPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetEncryptionReportForDevicesRequestBuilder extends BaseRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetEncryptionReportForDevicesPostRequestBody(writer: SerializationWriter, getEncryptionReportForDevicesPostRequestBody: Partial<GetEncryptionReportForDevicesPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getEncryptionReportForDevicesPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getEncryptionReportForDevicesPostRequestBody.groupBy);

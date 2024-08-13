@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetOffice365GroupsActivityStorageWithPeriodGetResponse}
  */
+// @ts-ignore
 export function createGetOffice365GroupsActivityStorageWithPeriodGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOffice365GroupsActivityStorageWithPeriodGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetOffice365GroupsActivityStorageWithPeriodGetResponseFrom
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetOffice365GroupsActivityStorageWithPeriodGetResponse(getOffice365GroupsActivityStorageWithPeriodGetResponse: Partial<GetOffice365GroupsActivityStorageWithPeriodGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getOffice365GroupsActivityStorageWithPeriodGetResponse),
@@ -91,6 +93,7 @@ export interface GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetQue
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetOffice365GroupsActivityStorageWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityStorageWithPeriodGetResponse: Partial<GetOffice365GroupsActivityStorageWithPeriodGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityStorageWithPeriodGetResponse)
     writer.writeCollectionOfObjectValues<Office365GroupsActivityStorage>("value", getOffice365GroupsActivityStorageWithPeriodGetResponse.value, serializeOffice365GroupsActivityStorage);

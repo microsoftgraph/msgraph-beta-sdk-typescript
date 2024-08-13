@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateDeviceProfileAssignmentPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateDeviceProfileAssignmentPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateDeviceProfileAssignmentPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createUpdateDeviceProfileAssignmentPostRequestBodyFromDiscrimina
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateDeviceProfileAssignmentPostRequestBody(updateDeviceProfileAssignmentPostRequestBody: Partial<UpdateDeviceProfileAssignmentPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateDeviceProfileAssignmentPostRequestBody.backingStoreEnabled = true; },
@@ -28,6 +30,7 @@ export function deserializeIntoUpdateDeviceProfileAssignmentPostRequestBody(upda
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateDeviceProfileAssignmentPostRequestBody(writer: SerializationWriter, updateDeviceProfileAssignmentPostRequestBody: Partial<UpdateDeviceProfileAssignmentPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("deviceIds", updateDeviceProfileAssignmentPostRequestBody.deviceIds);
     writer.writeAdditionalData(updateDeviceProfileAssignmentPostRequestBody.additionalData);

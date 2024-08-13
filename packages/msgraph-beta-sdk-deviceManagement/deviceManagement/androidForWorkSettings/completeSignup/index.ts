@@ -44,6 +44,7 @@ export interface CompleteSignupRequestBuilder extends BaseRequestBuilder<Complet
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CompleteSignupPostRequestBody}
  */
+// @ts-ignore
 export function createCompleteSignupPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCompleteSignupPostRequestBody;
 }
@@ -51,6 +52,7 @@ export function createCompleteSignupPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCompleteSignupPostRequestBody(completeSignupPostRequestBody: Partial<CompleteSignupPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { completeSignupPostRequestBody.backingStoreEnabled = true; },
@@ -61,6 +63,7 @@ export function deserializeIntoCompleteSignupPostRequestBody(completeSignupPostR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCompleteSignupPostRequestBody(writer: SerializationWriter, completeSignupPostRequestBody: Partial<CompleteSignupPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("enterpriseToken", completeSignupPostRequestBody.enterpriseToken);
     writer.writeAdditionalData(completeSignupPostRequestBody.additionalData);

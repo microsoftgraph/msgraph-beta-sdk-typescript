@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetDeviceStatusSummaryByCompliancePolicySettingsReportPost
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody(getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody: Partial<GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.backingStoreEnabled = true; },
@@ -97,6 +99,7 @@ export interface GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody(writer: SerializationWriter, getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody: Partial<GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.groupBy);

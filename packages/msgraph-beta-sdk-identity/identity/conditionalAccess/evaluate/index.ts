@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluatePostRequestBody}
  */
+// @ts-ignore
 export function createEvaluatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluatePostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createEvaluatePostRequestBodyFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluatePostResponse}
  */
+// @ts-ignore
 export function createEvaluatePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluatePostResponse;
 }
@@ -28,6 +30,7 @@ export function createEvaluatePostResponseFromDiscriminatorValue(parseNode: Pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluatePostRequestBody(evaluatePostRequestBody: Partial<EvaluatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "appliedPoliciesOnly": n => { evaluatePostRequestBody.appliedPoliciesOnly = n.getBooleanValue(); },
@@ -41,6 +44,7 @@ export function deserializeIntoEvaluatePostRequestBody(evaluatePostRequestBody: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluatePostResponse(evaluatePostResponse: Partial<EvaluatePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(evaluatePostResponse),
@@ -103,6 +107,7 @@ export interface EvaluateRequestBuilder extends BaseRequestBuilder<EvaluateReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluatePostRequestBody(writer: SerializationWriter, evaluatePostRequestBody: Partial<EvaluatePostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("appliedPoliciesOnly", evaluatePostRequestBody.appliedPoliciesOnly);
     writer.writeObjectValue<ConditionalAccessContext>("conditionalAccessContext", evaluatePostRequestBody.conditionalAccessContext, serializeConditionalAccessContext);
@@ -114,6 +119,7 @@ export function serializeEvaluatePostRequestBody(writer: SerializationWriter, ev
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluatePostResponse(writer: SerializationWriter, evaluatePostResponse: Partial<EvaluatePostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, evaluatePostResponse)
     writer.writeCollectionOfObjectValues<ConditionalAccessWhatIfPolicy>("value", evaluatePostResponse.value, serializeConditionalAccessWhatIfPolicy);

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PostponePostRequestBody}
  */
+// @ts-ignore
 export function createPostponePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPostponePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createPostponePostRequestBodyFromDiscriminatorValue(parseNode: P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPostponePostRequestBody(postponePostRequestBody: Partial<PostponePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { postponePostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export interface PostponeRequestBuilder extends BaseRequestBuilder<PostponeReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePostponePostRequestBody(writer: SerializationWriter, postponePostRequestBody: Partial<PostponePostRequestBody> | undefined = {}) : void {
     writer.writeDateValue("postponeUntilDateTime", postponePostRequestBody.postponeUntilDateTime);
     writer.writeAdditionalData(postponePostRequestBody.additionalData);

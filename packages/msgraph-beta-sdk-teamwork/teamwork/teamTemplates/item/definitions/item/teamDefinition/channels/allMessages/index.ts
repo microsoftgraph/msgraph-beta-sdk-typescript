@@ -74,6 +74,7 @@ export interface AllMessagesRequestBuilderGetQueryParameters {
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AllMessagesGetResponse}
  */
+// @ts-ignore
 export function createAllMessagesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAllMessagesGetResponse;
 }
@@ -81,6 +82,7 @@ export function createAllMessagesGetResponseFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAllMessagesGetResponse(allMessagesGetResponse: Partial<AllMessagesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(allMessagesGetResponse),
@@ -91,6 +93,7 @@ export function deserializeIntoAllMessagesGetResponse(allMessagesGetResponse: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAllMessagesGetResponse(writer: SerializationWriter, allMessagesGetResponse: Partial<AllMessagesGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, allMessagesGetResponse)
     writer.writeCollectionOfObjectValues<ChatMessage>("value", allMessagesGetResponse.value, serializeChatMessage);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetEncryptionPublicKeyGetResponse}
  */
+// @ts-ignore
 export function createGetEncryptionPublicKeyGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEncryptionPublicKeyGetResponse;
 }
@@ -18,6 +19,7 @@ export function createGetEncryptionPublicKeyGetResponseFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetEncryptionPublicKeyGetResponse(getEncryptionPublicKeyGetResponse: Partial<GetEncryptionPublicKeyGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getEncryptionPublicKeyGetResponse.backingStoreEnabled = true; },
@@ -60,6 +62,7 @@ export interface GetEncryptionPublicKeyRequestBuilder extends BaseRequestBuilder
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetEncryptionPublicKeyGetResponse(writer: SerializationWriter, getEncryptionPublicKeyGetResponse: Partial<GetEncryptionPublicKeyGetResponse> | undefined = {}) : void {
     writer.writeStringValue("value", getEncryptionPublicKeyGetResponse.value);
     writer.writeAdditionalData(getEncryptionPublicKeyGetResponse.additionalData);

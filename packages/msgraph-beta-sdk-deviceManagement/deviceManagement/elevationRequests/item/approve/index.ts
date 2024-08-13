@@ -47,6 +47,7 @@ export interface ApproveRequestBuilder extends BaseRequestBuilder<ApproveRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApprovePostRequestBody}
  */
+// @ts-ignore
 export function createApprovePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApprovePostRequestBody;
 }
@@ -54,6 +55,7 @@ export function createApprovePostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { approvePostRequestBody.backingStoreEnabled = true; },
@@ -64,6 +66,7 @@ export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeApprovePostRequestBody(writer: SerializationWriter, approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("reviewerJustification", approvePostRequestBody.reviewerJustification);
     writer.writeAdditionalData(approvePostRequestBody.additionalData);

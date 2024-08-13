@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SendCustomNotificationToCompanyPortalPostRequestBody}
  */
+// @ts-ignore
 export function createSendCustomNotificationToCompanyPortalPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSendCustomNotificationToCompanyPortalPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createSendCustomNotificationToCompanyPortalPostRequestBodyFromDi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSendCustomNotificationToCompanyPortalPostRequestBody(sendCustomNotificationToCompanyPortalPostRequestBody: Partial<SendCustomNotificationToCompanyPortalPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { sendCustomNotificationToCompanyPortalPostRequestBody.backingStoreEnabled = true; },
@@ -66,6 +68,7 @@ export interface SendCustomNotificationToCompanyPortalRequestBuilder extends Bas
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSendCustomNotificationToCompanyPortalPostRequestBody(writer: SerializationWriter, sendCustomNotificationToCompanyPortalPostRequestBody: Partial<SendCustomNotificationToCompanyPortalPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("notificationBody", sendCustomNotificationToCompanyPortalPostRequestBody.notificationBody);
     writer.writeStringValue("notificationTitle", sendCustomNotificationToCompanyPortalPostRequestBody.notificationTitle);

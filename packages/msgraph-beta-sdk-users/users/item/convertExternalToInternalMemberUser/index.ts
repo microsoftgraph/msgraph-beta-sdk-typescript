@@ -56,6 +56,7 @@ export interface ConvertExternalToInternalMemberUserRequestBuilder extends BaseR
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConvertExternalToInternalMemberUserPostRequestBody}
  */
+// @ts-ignore
 export function createConvertExternalToInternalMemberUserPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConvertExternalToInternalMemberUserPostRequestBody;
 }
@@ -63,6 +64,7 @@ export function createConvertExternalToInternalMemberUserPostRequestBodyFromDisc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConvertExternalToInternalMemberUserPostRequestBody(convertExternalToInternalMemberUserPostRequestBody: Partial<ConvertExternalToInternalMemberUserPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { convertExternalToInternalMemberUserPostRequestBody.backingStoreEnabled = true; },
@@ -75,6 +77,7 @@ export function deserializeIntoConvertExternalToInternalMemberUserPostRequestBod
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConvertExternalToInternalMemberUserPostRequestBody(writer: SerializationWriter, convertExternalToInternalMemberUserPostRequestBody: Partial<ConvertExternalToInternalMemberUserPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("mail", convertExternalToInternalMemberUserPostRequestBody.mail);
     writer.writeObjectValue<PasswordProfile>("passwordProfile", convertExternalToInternalMemberUserPostRequestBody.passwordProfile, serializePasswordProfile);

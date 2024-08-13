@@ -47,6 +47,7 @@ export interface ChangeDeploymentStatusPostRequestBody extends AdditionalDataHol
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ChangeDeploymentStatusPostRequestBody}
  */
+// @ts-ignore
 export function createChangeDeploymentStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangeDeploymentStatusPostRequestBody;
 }
@@ -54,6 +55,7 @@ export function createChangeDeploymentStatusPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoChangeDeploymentStatusPostRequestBody(changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { changeDeploymentStatusPostRequestBody.backingStoreEnabled = true; },
@@ -89,6 +91,7 @@ export interface MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeChangeDeploymentStatusPostRequestBody(writer: SerializationWriter, changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("managementActionId", changeDeploymentStatusPostRequestBody.managementActionId);
     writer.writeStringValue("managementTemplateId", changeDeploymentStatusPostRequestBody.managementTemplateId);

@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FindByCatalogIdWithCatalogIDGetResponse}
  */
+// @ts-ignore
 export function createFindByCatalogIdWithCatalogIDGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFindByCatalogIdWithCatalogIDGetResponse;
 }
@@ -22,6 +23,7 @@ export function createFindByCatalogIdWithCatalogIDGetResponseFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFindByCatalogIdWithCatalogIDGetResponse(findByCatalogIdWithCatalogIDGetResponse: Partial<FindByCatalogIdWithCatalogIDGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(findByCatalogIdWithCatalogIDGetResponse),
@@ -93,6 +95,7 @@ export interface MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFindByCatalogIdWithCatalogIDGetResponse(writer: SerializationWriter, findByCatalogIdWithCatalogIDGetResponse: Partial<FindByCatalogIdWithCatalogIDGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, findByCatalogIdWithCatalogIDGetResponse)
     writer.writeCollectionOfObjectValues<Product>("value", findByCatalogIdWithCatalogIDGetResponse.value, serializeProduct);

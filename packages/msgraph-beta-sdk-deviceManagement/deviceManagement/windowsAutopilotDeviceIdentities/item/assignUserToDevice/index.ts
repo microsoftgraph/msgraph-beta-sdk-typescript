@@ -48,6 +48,7 @@ export interface AssignUserToDeviceRequestBuilder extends BaseRequestBuilder<Ass
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssignUserToDevicePostRequestBody}
  */
+// @ts-ignore
 export function createAssignUserToDevicePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignUserToDevicePostRequestBody;
 }
@@ -55,6 +56,7 @@ export function createAssignUserToDevicePostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssignUserToDevicePostRequestBody(assignUserToDevicePostRequestBody: Partial<AssignUserToDevicePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addressableUserName": n => { assignUserToDevicePostRequestBody.addressableUserName = n.getStringValue(); },
@@ -66,6 +68,7 @@ export function deserializeIntoAssignUserToDevicePostRequestBody(assignUserToDev
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAssignUserToDevicePostRequestBody(writer: SerializationWriter, assignUserToDevicePostRequestBody: Partial<AssignUserToDevicePostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("addressableUserName", assignUserToDevicePostRequestBody.addressableUserName);
     writer.writeStringValue("userPrincipalName", assignUserToDevicePostRequestBody.userPrincipalName);

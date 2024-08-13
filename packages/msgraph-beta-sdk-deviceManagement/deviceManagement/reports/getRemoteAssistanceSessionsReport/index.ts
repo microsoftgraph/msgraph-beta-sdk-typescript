@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetRemoteAssistanceSessionsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetRemoteAssistanceSessionsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetRemoteAssistanceSessionsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetRemoteAssistanceSessionsReportPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetRemoteAssistanceSessionsReportPostRequestBody(getRemoteAssistanceSessionsReportPostRequestBody: Partial<GetRemoteAssistanceSessionsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getRemoteAssistanceSessionsReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetRemoteAssistanceSessionsReportRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetRemoteAssistanceSessionsReportPostRequestBody(writer: SerializationWriter, getRemoteAssistanceSessionsReportPostRequestBody: Partial<GetRemoteAssistanceSessionsReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getRemoteAssistanceSessionsReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRemoteAssistanceSessionsReportPostRequestBody.groupBy);

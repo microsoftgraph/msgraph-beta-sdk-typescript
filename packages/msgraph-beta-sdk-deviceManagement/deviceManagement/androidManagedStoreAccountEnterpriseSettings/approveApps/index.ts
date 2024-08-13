@@ -48,6 +48,7 @@ export interface ApproveAppsRequestBuilder extends BaseRequestBuilder<ApproveApp
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApproveAppsPostRequestBody}
  */
+// @ts-ignore
 export function createApproveAppsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApproveAppsPostRequestBody;
 }
@@ -55,6 +56,7 @@ export function createApproveAppsPostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApproveAppsPostRequestBody(approveAppsPostRequestBody: Partial<ApproveAppsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "approveAllPermissions": n => { approveAppsPostRequestBody.approveAllPermissions = n.getBooleanValue(); },
@@ -66,6 +68,7 @@ export function deserializeIntoApproveAppsPostRequestBody(approveAppsPostRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeApproveAppsPostRequestBody(writer: SerializationWriter, approveAppsPostRequestBody: Partial<ApproveAppsPostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("approveAllPermissions", approveAppsPostRequestBody.approveAllPermissions);
     writer.writeCollectionOfPrimitiveValues<string>("packageIds", approveAppsPostRequestBody.packageIds);

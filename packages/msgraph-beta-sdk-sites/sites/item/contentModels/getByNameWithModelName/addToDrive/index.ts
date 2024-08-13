@@ -48,6 +48,7 @@ export interface AddToDriveRequestBuilder extends BaseRequestBuilder<AddToDriveR
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddToDrivePostRequestBody}
  */
+// @ts-ignore
 export function createAddToDrivePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddToDrivePostRequestBody;
 }
@@ -55,6 +56,7 @@ export function createAddToDrivePostRequestBodyFromDiscriminatorValue(parseNode:
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAddToDrivePostRequestBody(addToDrivePostRequestBody: Partial<AddToDrivePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addToDrivePostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export function deserializeIntoAddToDrivePostRequestBody(addToDrivePostRequestBo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAddToDrivePostRequestBody(writer: SerializationWriter, addToDrivePostRequestBody: Partial<AddToDrivePostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("driveId", addToDrivePostRequestBody.driveId);
     writer.writeAdditionalData(addToDrivePostRequestBody.additionalData);

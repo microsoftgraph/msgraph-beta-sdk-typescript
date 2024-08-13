@@ -27,6 +27,7 @@ export interface AddUserInputLogPostRequestBody extends AdditionalDataHolder, Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddUserInputLogPostRequestBody}
  */
+// @ts-ignore
 export function createAddUserInputLogPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddUserInputLogPostRequestBody;
 }
@@ -34,6 +35,7 @@ export function createAddUserInputLogPostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAddUserInputLogPostRequestBody(addUserInputLogPostRequestBody: Partial<AddUserInputLogPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addUserInputLogPostRequestBody.backingStoreEnabled = true; },
@@ -64,6 +66,7 @@ export interface MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilder exten
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAddUserInputLogPostRequestBody(writer: SerializationWriter, addUserInputLogPostRequestBody: Partial<AddUserInputLogPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("logInformation", addUserInputLogPostRequestBody.logInformation);
     writer.writeAdditionalData(addUserInputLogPostRequestBody.additionalData);

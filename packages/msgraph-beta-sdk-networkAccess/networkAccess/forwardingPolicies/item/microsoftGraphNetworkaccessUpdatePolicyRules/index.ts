@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdatePolicyRulesPostRequestBody}
  */
+// @ts-ignore
 export function createUpdatePolicyRulesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdatePolicyRulesPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdatePolicyRulesPostRequestBodyFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdatePolicyRulesPostRequestBody(updatePolicyRulesPostRequestBody: Partial<UpdatePolicyRulesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updatePolicyRulesPostRequestBody.backingStoreEnabled = true; },
@@ -50,6 +52,7 @@ export interface MicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilder exte
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdatePolicyRulesPostRequestBody(writer: SerializationWriter, updatePolicyRulesPostRequestBody: Partial<UpdatePolicyRulesPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<PolicyRuleDelta>("rules", updatePolicyRulesPostRequestBody.rules, serializePolicyRuleDelta);
     writer.writeAdditionalData(updatePolicyRulesPostRequestBody.additionalData);

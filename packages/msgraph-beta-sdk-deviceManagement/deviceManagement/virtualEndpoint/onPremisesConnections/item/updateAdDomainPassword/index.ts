@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateAdDomainPasswordPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateAdDomainPasswordPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAdDomainPasswordPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createUpdateAdDomainPasswordPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateAdDomainPasswordPostRequestBody(updateAdDomainPasswordPostRequestBody: Partial<UpdateAdDomainPasswordPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "adDomainPassword": n => { updateAdDomainPasswordPostRequestBody.adDomainPassword = n.getStringValue(); },
@@ -28,6 +30,7 @@ export function deserializeIntoUpdateAdDomainPasswordPostRequestBody(updateAdDom
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateAdDomainPasswordPostRequestBody(writer: SerializationWriter, updateAdDomainPasswordPostRequestBody: Partial<UpdateAdDomainPasswordPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("adDomainPassword", updateAdDomainPasswordPostRequestBody.adDomainPassword);
     writer.writeAdditionalData(updateAdDomainPasswordPostRequestBody.additionalData);

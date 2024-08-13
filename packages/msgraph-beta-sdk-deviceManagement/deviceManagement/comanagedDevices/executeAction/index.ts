@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExecuteActionPostRequestBody}
  */
+// @ts-ignore
 export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExecuteActionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExecuteActionPostRequestBody(executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionName": n => { executeActionPostRequestBody.actionName = n.getEnumValue<ManagedDeviceRemoteAction>(ManagedDeviceRemoteActionObject); },
@@ -114,6 +116,7 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined = {}) : void {
     writer.writeEnumValue<ManagedDeviceRemoteAction>("actionName", executeActionPostRequestBody.actionName);
     writer.writeStringValue("carrierUrl", executeActionPostRequestBody.carrierUrl);

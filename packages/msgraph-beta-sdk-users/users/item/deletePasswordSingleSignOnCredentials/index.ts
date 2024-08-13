@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeletePasswordSingleSignOnCredentialsPostRequestBody}
  */
+// @ts-ignore
 export function createDeletePasswordSingleSignOnCredentialsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeletePasswordSingleSignOnCredentialsPostRequestBody;
 }
@@ -52,6 +53,7 @@ export interface DeletePasswordSingleSignOnCredentialsRequestBuilder extends Bas
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeletePasswordSingleSignOnCredentialsPostRequestBody(deletePasswordSingleSignOnCredentialsPostRequestBody: Partial<DeletePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deletePasswordSingleSignOnCredentialsPostRequestBody.backingStoreEnabled = true; },
@@ -62,6 +64,7 @@ export function deserializeIntoDeletePasswordSingleSignOnCredentialsPostRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeletePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, deletePasswordSingleSignOnCredentialsPostRequestBody: Partial<DeletePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("id", deletePasswordSingleSignOnCredentialsPostRequestBody.id);
     writer.writeAdditionalData(deletePasswordSingleSignOnCredentialsPostRequestBody.additionalData);

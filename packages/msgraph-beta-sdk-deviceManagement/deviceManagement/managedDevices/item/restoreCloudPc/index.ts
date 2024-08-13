@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RestoreCloudPcPostRequestBody}
  */
+// @ts-ignore
 export function createRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRestoreCloudPcPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRestoreCloudPcPostRequestBody(restoreCloudPcPostRequestBody: Partial<RestoreCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { restoreCloudPcPostRequestBody.backingStoreEnabled = true; },
@@ -64,6 +66,7 @@ export interface RestoreCloudPcRequestBuilder extends BaseRequestBuilder<Restore
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRestoreCloudPcPostRequestBody(writer: SerializationWriter, restoreCloudPcPostRequestBody: Partial<RestoreCloudPcPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("cloudPcSnapshotId", restoreCloudPcPostRequestBody.cloudPcSnapshotId);
     writer.writeAdditionalData(restoreCloudPcPostRequestBody.additionalData);

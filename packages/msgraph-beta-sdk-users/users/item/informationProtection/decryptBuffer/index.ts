@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DecryptBufferPostRequestBody}
  */
+// @ts-ignore
 export function createDecryptBufferPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDecryptBufferPostRequestBody;
 }
@@ -60,6 +61,7 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { decryptBufferPostRequestBody.backingStoreEnabled = true; },
@@ -71,6 +73,7 @@ export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDecryptBufferPostRequestBody(writer: SerializationWriter, decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
     writer.writeStringValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPlatformSupportedPropertiesWithPlatformGetResponse}
  */
+// @ts-ignore
 export function createGetPlatformSupportedPropertiesWithPlatformGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPlatformSupportedPropertiesWithPlatformGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetPlatformSupportedPropertiesWithPlatformGetResponseFromD
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPlatformSupportedPropertiesWithPlatformGetResponse(getPlatformSupportedPropertiesWithPlatformGetResponse: Partial<GetPlatformSupportedPropertiesWithPlatformGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getPlatformSupportedPropertiesWithPlatformGetResponse),
@@ -79,6 +81,7 @@ export interface GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetQuer
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetPlatformSupportedPropertiesWithPlatformGetResponse(writer: SerializationWriter, getPlatformSupportedPropertiesWithPlatformGetResponse: Partial<GetPlatformSupportedPropertiesWithPlatformGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getPlatformSupportedPropertiesWithPlatformGetResponse)
     writer.writeCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", getPlatformSupportedPropertiesWithPlatformGetResponse.value, serializeAssignmentFilterSupportedProperty);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetMobileApplicationManagementAppConfigurationReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetMobileApplicationManagementAppConfigurationReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetMobileApplicationManagementAppConfigurationReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetMobileApplicationManagementAppConfigurationReportPostRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetMobileApplicationManagementAppConfigurationReportPostRequestBody(getMobileApplicationManagementAppConfigurationReportPostRequestBody: Partial<GetMobileApplicationManagementAppConfigurationReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getMobileApplicationManagementAppConfigurationReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetMobileApplicationManagementAppConfigurationReportRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetMobileApplicationManagementAppConfigurationReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppConfigurationReportPostRequestBody: Partial<GetMobileApplicationManagementAppConfigurationReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getMobileApplicationManagementAppConfigurationReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppConfigurationReportPostRequestBody.groupBy);

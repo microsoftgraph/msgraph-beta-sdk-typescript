@@ -65,6 +65,7 @@ export interface ApproveRequestBuilder extends BaseRequestBuilder<ApproveRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApprovePostRequestBody}
  */
+// @ts-ignore
 export function createApprovePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApprovePostRequestBody;
 }
@@ -73,6 +74,7 @@ export function createApprovePostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApprovePostResponse}
  */
+// @ts-ignore
 export function createApprovePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApprovePostResponse;
 }
@@ -80,6 +82,7 @@ export function createApprovePostResponseFromDiscriminatorValue(parseNode: Parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "approvalSource": n => { approvePostRequestBody.approvalSource = n.getEnumValue<OperationApprovalSource>(OperationApprovalSourceObject); },
@@ -91,6 +94,7 @@ export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApprovePostResponse(approvePostResponse: Partial<ApprovePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { approvePostResponse.backingStoreEnabled = true; },
@@ -101,6 +105,7 @@ export function deserializeIntoApprovePostResponse(approvePostResponse: Partial<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeApprovePostRequestBody(writer: SerializationWriter, approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined = {}) : void {
     writer.writeEnumValue<OperationApprovalSource>("approvalSource", approvePostRequestBody.approvalSource);
     writer.writeStringValue("justification", approvePostRequestBody.justification);
@@ -110,6 +115,7 @@ export function serializeApprovePostRequestBody(writer: SerializationWriter, app
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeApprovePostResponse(writer: SerializationWriter, approvePostResponse: Partial<ApprovePostResponse> | undefined = {}) : void {
     writer.writeStringValue("value", approvePostResponse.value);
     writer.writeAdditionalData(approvePostResponse.additionalData);

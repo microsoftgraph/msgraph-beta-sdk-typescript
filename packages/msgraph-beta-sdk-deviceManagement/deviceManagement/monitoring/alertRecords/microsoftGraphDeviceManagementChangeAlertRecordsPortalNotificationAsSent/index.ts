@@ -25,6 +25,7 @@ export interface ChangeAlertRecordsPortalNotificationAsSentPostRequestBody exten
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ChangeAlertRecordsPortalNotificationAsSentPostRequestBody}
  */
+// @ts-ignore
 export function createChangeAlertRecordsPortalNotificationAsSentPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangeAlertRecordsPortalNotificationAsSentPostRequestBody;
 }
@@ -32,6 +33,7 @@ export function createChangeAlertRecordsPortalNotificationAsSentPostRequestBodyF
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoChangeAlertRecordsPortalNotificationAsSentPostRequestBody(changeAlertRecordsPortalNotificationAsSentPostRequestBody: Partial<ChangeAlertRecordsPortalNotificationAsSentPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "alertRecordIds": n => { changeAlertRecordsPortalNotificationAsSentPostRequestBody.alertRecordIds = n.getCollectionOfPrimitiveValues<string>(); },
@@ -61,6 +63,7 @@ export interface MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeChangeAlertRecordsPortalNotificationAsSentPostRequestBody(writer: SerializationWriter, changeAlertRecordsPortalNotificationAsSentPostRequestBody: Partial<ChangeAlertRecordsPortalNotificationAsSentPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("alertRecordIds", changeAlertRecordsPortalNotificationAsSentPostRequestBody.alertRecordIds);
     writer.writeAdditionalData(changeAlertRecordsPortalNotificationAsSentPostRequestBody.additionalData);

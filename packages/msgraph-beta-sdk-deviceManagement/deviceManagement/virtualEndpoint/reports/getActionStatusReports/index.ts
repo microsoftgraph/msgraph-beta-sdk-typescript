@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetActionStatusReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetActionStatusReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetActionStatusReportsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetActionStatusReportsPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetActionStatusReportsPostRequestBody(getActionStatusReportsPostRequestBody: Partial<GetActionStatusReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getActionStatusReportsPostRequestBody.backingStoreEnabled = true; },
@@ -93,6 +95,7 @@ export interface GetActionStatusReportsRequestBuilder extends BaseRequestBuilder
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetActionStatusReportsPostRequestBody(writer: SerializationWriter, getActionStatusReportsPostRequestBody: Partial<GetActionStatusReportsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getActionStatusReportsPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getActionStatusReportsPostRequestBody.groupBy);

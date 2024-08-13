@@ -43,6 +43,7 @@ export interface ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder extends
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ClearEnrollmentTimeDeviceMembershipTargetPostResponse}
  */
+// @ts-ignore
 export function createClearEnrollmentTimeDeviceMembershipTargetPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoClearEnrollmentTimeDeviceMembershipTargetPostResponse;
 }
@@ -50,6 +51,7 @@ export function createClearEnrollmentTimeDeviceMembershipTargetPostResponseFromD
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoClearEnrollmentTimeDeviceMembershipTargetPostResponse(clearEnrollmentTimeDeviceMembershipTargetPostResponse: Partial<ClearEnrollmentTimeDeviceMembershipTargetPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { clearEnrollmentTimeDeviceMembershipTargetPostResponse.backingStoreEnabled = true; },
@@ -60,6 +62,7 @@ export function deserializeIntoClearEnrollmentTimeDeviceMembershipTargetPostResp
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeClearEnrollmentTimeDeviceMembershipTargetPostResponse(writer: SerializationWriter, clearEnrollmentTimeDeviceMembershipTargetPostResponse: Partial<ClearEnrollmentTimeDeviceMembershipTargetPostResponse> | undefined = {}) : void {
     writer.writeBooleanValue("value", clearEnrollmentTimeDeviceMembershipTargetPostResponse.value);
     writer.writeAdditionalData(clearEnrollmentTimeDeviceMembershipTargetPostResponse.additionalData);

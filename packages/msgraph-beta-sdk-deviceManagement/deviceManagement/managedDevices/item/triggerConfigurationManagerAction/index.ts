@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TriggerConfigurationManagerActionPostRequestBody}
  */
+// @ts-ignore
 export function createTriggerConfigurationManagerActionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTriggerConfigurationManagerActionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createTriggerConfigurationManagerActionPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTriggerConfigurationManagerActionPostRequestBody(triggerConfigurationManagerActionPostRequestBody: Partial<TriggerConfigurationManagerActionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { triggerConfigurationManagerActionPostRequestBody.backingStoreEnabled = true; },
@@ -30,6 +32,7 @@ export function deserializeIntoTriggerConfigurationManagerActionPostRequestBody(
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTriggerConfigurationManagerActionPostRequestBody(writer: SerializationWriter, triggerConfigurationManagerActionPostRequestBody: Partial<TriggerConfigurationManagerActionPostRequestBody> | undefined = {}) : void {
     writer.writeObjectValue<ConfigurationManagerAction>("configurationManagerAction", triggerConfigurationManagerActionPostRequestBody.configurationManagerAction, serializeConfigurationManagerAction);
     writer.writeAdditionalData(triggerConfigurationManagerActionPostRequestBody.additionalData);

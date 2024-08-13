@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeprovisionPostRequestBody}
  */
+// @ts-ignore
 export function createDeprovisionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeprovisionPostRequestBody;
 }
@@ -51,6 +52,7 @@ export interface DeprovisionRequestBuilder extends BaseRequestBuilder<Deprovisio
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeprovisionPostRequestBody(deprovisionPostRequestBody: Partial<DeprovisionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deprovisionPostRequestBody.backingStoreEnabled = true; },
@@ -61,6 +63,7 @@ export function deserializeIntoDeprovisionPostRequestBody(deprovisionPostRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeprovisionPostRequestBody(writer: SerializationWriter, deprovisionPostRequestBody: Partial<DeprovisionPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("deprovisionReason", deprovisionPostRequestBody.deprovisionReason);
     writer.writeAdditionalData(deprovisionPostRequestBody.additionalData);

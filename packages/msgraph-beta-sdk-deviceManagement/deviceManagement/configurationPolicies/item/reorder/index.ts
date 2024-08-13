@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReorderPostRequestBody}
  */
+// @ts-ignore
 export function createReorderPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReorderPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createReorderPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReorderPostRequestBody(reorderPostRequestBody: Partial<ReorderPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { reorderPostRequestBody.backingStoreEnabled = true; },
@@ -61,6 +63,7 @@ export interface ReorderRequestBuilder extends BaseRequestBuilder<ReorderRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeReorderPostRequestBody(writer: SerializationWriter, reorderPostRequestBody: Partial<ReorderPostRequestBody> | undefined = {}) : void {
     writer.writeNumberValue("priority", reorderPostRequestBody.priority);
     writer.writeAdditionalData(reorderPostRequestBody.additionalData);

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetTimesOffGetResponse}
  */
+// @ts-ignore
 export function createGetTimesOffGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetTimesOffGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetTimesOffGetResponseFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetTimesOffGetResponse(getTimesOffGetResponse: Partial<GetTimesOffGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getTimesOffGetResponse),
@@ -92,6 +94,7 @@ export interface GetTimesOffRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetTimesOffGetResponse(writer: SerializationWriter, getTimesOffGetResponse: Partial<GetTimesOffGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getTimesOffGetResponse)
     writer.writeCollectionOfObjectValues<TimeOff>("value", getTimesOffGetResponse.value, serializeTimeOff);

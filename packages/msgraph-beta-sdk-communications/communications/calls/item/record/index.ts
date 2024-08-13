@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RecordPostRequestBody}
  */
+// @ts-ignore
 export function createRecordPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRecordPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRecordPostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRecordPostRequestBody(recordPostRequestBody: Partial<RecordPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { recordPostRequestBody.backingStoreEnabled = true; },
@@ -104,6 +106,7 @@ export interface RecordRequestBuilder extends BaseRequestBuilder<RecordRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRecordPostRequestBody(writer: SerializationWriter, recordPostRequestBody: Partial<RecordPostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("bargeInAllowed", recordPostRequestBody.bargeInAllowed);
     writer.writeStringValue("clientContext", recordPostRequestBody.clientContext);

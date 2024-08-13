@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EndBreakPostRequestBody}
  */
+// @ts-ignore
 export function createEndBreakPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEndBreakPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createEndBreakPostRequestBodyFromDiscriminatorValue(parseNode: P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEndBreakPostRequestBody(endBreakPostRequestBody: Partial<EndBreakPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "atApprovedLocation": n => { endBreakPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
@@ -70,6 +72,7 @@ export interface EndBreakRequestBuilder extends BaseRequestBuilder<EndBreakReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEndBreakPostRequestBody(writer: SerializationWriter, endBreakPostRequestBody: Partial<EndBreakPostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("atApprovedLocation", endBreakPostRequestBody.atApprovedLocation);
     writer.writeObjectValue<ItemBody>("notes", endBreakPostRequestBody.notes, serializeItemBody);

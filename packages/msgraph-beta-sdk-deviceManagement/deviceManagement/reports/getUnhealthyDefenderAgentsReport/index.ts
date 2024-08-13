@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetUnhealthyDefenderAgentsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetUnhealthyDefenderAgentsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetUnhealthyDefenderAgentsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetUnhealthyDefenderAgentsReportPostRequestBodyFromDiscrim
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetUnhealthyDefenderAgentsReportPostRequestBody(getUnhealthyDefenderAgentsReportPostRequestBody: Partial<GetUnhealthyDefenderAgentsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getUnhealthyDefenderAgentsReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetUnhealthyDefenderAgentsReportRequestBuilder extends BaseRequ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetUnhealthyDefenderAgentsReportPostRequestBody(writer: SerializationWriter, getUnhealthyDefenderAgentsReportPostRequestBody: Partial<GetUnhealthyDefenderAgentsReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getUnhealthyDefenderAgentsReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getUnhealthyDefenderAgentsReportPostRequestBody.groupBy);

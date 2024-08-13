@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetStorageAccountsWithSubscriptionIdGetResponse}
  */
+// @ts-ignore
 export function createGetStorageAccountsWithSubscriptionIdGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetStorageAccountsWithSubscriptionIdGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetStorageAccountsWithSubscriptionIdGetResponseFromDiscrim
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetStorageAccountsWithSubscriptionIdGetResponse(getStorageAccountsWithSubscriptionIdGetResponse: Partial<GetStorageAccountsWithSubscriptionIdGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getStorageAccountsWithSubscriptionIdGetResponse),
@@ -80,6 +82,7 @@ export interface GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParam
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetStorageAccountsWithSubscriptionIdGetResponse(writer: SerializationWriter, getStorageAccountsWithSubscriptionIdGetResponse: Partial<GetStorageAccountsWithSubscriptionIdGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getStorageAccountsWithSubscriptionIdGetResponse)
     writer.writeCollectionOfObjectValues<CloudPcForensicStorageAccount>("value", getStorageAccountsWithSubscriptionIdGetResponse.value, serializeCloudPcForensicStorageAccount);

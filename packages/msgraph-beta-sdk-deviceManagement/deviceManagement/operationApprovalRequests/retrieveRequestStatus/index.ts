@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveRequestStatusPostRequestBody}
  */
+// @ts-ignore
 export function createRetrieveRequestStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveRequestStatusPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRetrieveRequestStatusPostRequestBodyFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveRequestStatusPostRequestBody(retrieveRequestStatusPostRequestBody: Partial<RetrieveRequestStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retrieveRequestStatusPostRequestBody.backingStoreEnabled = true; },
@@ -69,6 +71,7 @@ export interface RetrieveRequestStatusRequestBuilder extends BaseRequestBuilder<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRetrieveRequestStatusPostRequestBody(writer: SerializationWriter, retrieveRequestStatusPostRequestBody: Partial<RetrieveRequestStatusPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("entityId", retrieveRequestStatusPostRequestBody.entityId);
     writer.writeStringValue("entityType", retrieveRequestStatusPostRequestBody.entityType);

@@ -62,6 +62,7 @@ export interface CompareWithTemplateIdRequestBuilderGetQueryParameters {
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CompareWithTemplateIdGetResponse}
  */
+// @ts-ignore
 export function createCompareWithTemplateIdGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCompareWithTemplateIdGetResponse;
 }
@@ -69,6 +70,7 @@ export function createCompareWithTemplateIdGetResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCompareWithTemplateIdGetResponse(compareWithTemplateIdGetResponse: Partial<CompareWithTemplateIdGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(compareWithTemplateIdGetResponse),
@@ -79,6 +81,7 @@ export function deserializeIntoCompareWithTemplateIdGetResponse(compareWithTempl
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCompareWithTemplateIdGetResponse(writer: SerializationWriter, compareWithTemplateIdGetResponse: Partial<CompareWithTemplateIdGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, compareWithTemplateIdGetResponse)
     writer.writeCollectionOfObjectValues<DeviceManagementSettingComparison>("value", compareWithTemplateIdGetResponse.value, serializeDeviceManagementSettingComparison);

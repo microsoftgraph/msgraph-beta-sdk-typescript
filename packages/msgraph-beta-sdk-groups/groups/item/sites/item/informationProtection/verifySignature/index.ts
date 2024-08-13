@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {VerifySignaturePostRequestBody}
  */
+// @ts-ignore
 export function createVerifySignaturePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoVerifySignaturePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createVerifySignaturePostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoVerifySignaturePostRequestBody(verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { verifySignaturePostRequestBody.backingStoreEnabled = true; },
@@ -32,6 +34,7 @@ export function deserializeIntoVerifySignaturePostRequestBody(verifySignaturePos
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeVerifySignaturePostRequestBody(writer: SerializationWriter, verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("digest", verifySignaturePostRequestBody.digest);
     writer.writeStringValue("signature", verifySignaturePostRequestBody.signature);

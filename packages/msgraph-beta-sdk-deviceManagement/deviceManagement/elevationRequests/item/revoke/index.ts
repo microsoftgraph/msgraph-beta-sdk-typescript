@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RevokePostRequestBody}
  */
+// @ts-ignore
 export function createRevokePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRevokePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRevokePostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRevokePostRequestBody(revokePostRequestBody: Partial<RevokePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { revokePostRequestBody.backingStoreEnabled = true; },
@@ -64,6 +66,7 @@ export interface RevokeRequestBuilder extends BaseRequestBuilder<RevokeRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRevokePostRequestBody(writer: SerializationWriter, revokePostRequestBody: Partial<RevokePostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("reviewerJustification", revokePostRequestBody.reviewerJustification);
     writer.writeAdditionalData(revokePostRequestBody.additionalData);

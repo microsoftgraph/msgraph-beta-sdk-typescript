@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SignDigestPostRequestBody}
  */
+// @ts-ignore
 export function createSignDigestPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSignDigestPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSignDigestPostRequestBodyFromDiscriminatorValue(parseNode:
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { signDigestPostRequestBody.backingStoreEnabled = true; },
@@ -30,6 +32,7 @@ export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSignDigestPostRequestBody(writer: SerializationWriter, signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("digest", signDigestPostRequestBody.digest);
     writer.writeAdditionalData(signDigestPostRequestBody.additionalData);

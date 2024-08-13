@@ -56,6 +56,7 @@ export interface ClockInRequestBuilder extends BaseRequestBuilder<ClockInRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ClockInPostRequestBody}
  */
+// @ts-ignore
 export function createClockInPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoClockInPostRequestBody;
 }
@@ -63,6 +64,7 @@ export function createClockInPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoClockInPostRequestBody(clockInPostRequestBody: Partial<ClockInPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "atApprovedLocation": n => { clockInPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
@@ -75,6 +77,7 @@ export function deserializeIntoClockInPostRequestBody(clockInPostRequestBody: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeClockInPostRequestBody(writer: SerializationWriter, clockInPostRequestBody: Partial<ClockInPostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("atApprovedLocation", clockInPostRequestBody.atApprovedLocation);
     writer.writeObjectValue<ItemBody>("notes", clockInPostRequestBody.notes, serializeItemBody);

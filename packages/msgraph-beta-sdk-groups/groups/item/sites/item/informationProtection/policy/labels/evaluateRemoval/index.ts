@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateRemovalPostRequestBody}
  */
+// @ts-ignore
 export function createEvaluateRemovalPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateRemovalPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createEvaluateRemovalPostRequestBodyFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateRemovalPostResponse}
  */
+// @ts-ignore
 export function createEvaluateRemovalPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateRemovalPostResponse;
 }
@@ -28,6 +30,7 @@ export function createEvaluateRemovalPostResponseFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateRemovalPostRequestBody(evaluateRemovalPostRequestBody: Partial<EvaluateRemovalPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { evaluateRemovalPostRequestBody.backingStoreEnabled = true; },
@@ -39,6 +42,7 @@ export function deserializeIntoEvaluateRemovalPostRequestBody(evaluateRemovalPos
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateRemovalPostResponse(evaluateRemovalPostResponse: Partial<EvaluateRemovalPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(evaluateRemovalPostResponse),
@@ -96,6 +100,7 @@ export interface EvaluateRemovalRequestBuilder extends BaseRequestBuilder<Evalua
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluateRemovalPostRequestBody(writer: SerializationWriter, evaluateRemovalPostRequestBody: Partial<EvaluateRemovalPostRequestBody> | undefined = {}) : void {
     writer.writeObjectValue<ContentInfo>("contentInfo", evaluateRemovalPostRequestBody.contentInfo, serializeContentInfo);
     writer.writeObjectValue<DowngradeJustification>("downgradeJustification", evaluateRemovalPostRequestBody.downgradeJustification, serializeDowngradeJustification);
@@ -105,6 +110,7 @@ export function serializeEvaluateRemovalPostRequestBody(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluateRemovalPostResponse(writer: SerializationWriter, evaluateRemovalPostResponse: Partial<EvaluateRemovalPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, evaluateRemovalPostResponse)
     writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateRemovalPostResponse.value, serializeInformationProtectionAction);

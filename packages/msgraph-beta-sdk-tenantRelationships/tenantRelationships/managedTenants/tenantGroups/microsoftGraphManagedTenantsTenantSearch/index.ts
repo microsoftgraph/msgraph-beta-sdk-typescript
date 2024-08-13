@@ -15,6 +15,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantSearchPostRequestBody}
  */
+// @ts-ignore
 export function createTenantSearchPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantSearchPostRequestBody;
 }
@@ -23,6 +24,7 @@ export function createTenantSearchPostRequestBodyFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantSearchPostResponse}
  */
+// @ts-ignore
 export function createTenantSearchPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantSearchPostResponse;
 }
@@ -30,6 +32,7 @@ export function createTenantSearchPostResponseFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantSearchPostRequestBody(tenantSearchPostRequestBody: Partial<TenantSearchPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantSearchPostRequestBody.backingStoreEnabled = true; },
@@ -40,6 +43,7 @@ export function deserializeIntoTenantSearchPostRequestBody(tenantSearchPostReque
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantSearchPostResponse(tenantSearchPostResponse: Partial<TenantSearchPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantSearchPostResponse),
@@ -70,6 +74,7 @@ export interface MicrosoftGraphManagedTenantsTenantSearchRequestBuilder extends 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantSearchPostRequestBody(writer: SerializationWriter, tenantSearchPostRequestBody: Partial<TenantSearchPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("tenantId", tenantSearchPostRequestBody.tenantId);
     writer.writeAdditionalData(tenantSearchPostRequestBody.additionalData);
@@ -78,6 +83,7 @@ export function serializeTenantSearchPostRequestBody(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantSearchPostResponse(writer: SerializationWriter, tenantSearchPostResponse: Partial<TenantSearchPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, tenantSearchPostResponse)
     writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantSearchPostResponse.value, serializeTenantGroup);

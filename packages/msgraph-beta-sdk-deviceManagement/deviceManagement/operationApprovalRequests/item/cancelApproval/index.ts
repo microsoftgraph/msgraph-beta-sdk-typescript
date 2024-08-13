@@ -65,6 +65,7 @@ export interface CancelApprovalRequestBuilder extends BaseRequestBuilder<CancelA
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CancelApprovalPostRequestBody}
  */
+// @ts-ignore
 export function createCancelApprovalPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCancelApprovalPostRequestBody;
 }
@@ -73,6 +74,7 @@ export function createCancelApprovalPostRequestBodyFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CancelApprovalPostResponse}
  */
+// @ts-ignore
 export function createCancelApprovalPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCancelApprovalPostResponse;
 }
@@ -80,6 +82,7 @@ export function createCancelApprovalPostResponseFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCancelApprovalPostRequestBody(cancelApprovalPostRequestBody: Partial<CancelApprovalPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "approvalSource": n => { cancelApprovalPostRequestBody.approvalSource = n.getEnumValue<OperationApprovalSource>(OperationApprovalSourceObject); },
@@ -91,6 +94,7 @@ export function deserializeIntoCancelApprovalPostRequestBody(cancelApprovalPostR
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCancelApprovalPostResponse(cancelApprovalPostResponse: Partial<CancelApprovalPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cancelApprovalPostResponse.backingStoreEnabled = true; },
@@ -101,6 +105,7 @@ export function deserializeIntoCancelApprovalPostResponse(cancelApprovalPostResp
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCancelApprovalPostRequestBody(writer: SerializationWriter, cancelApprovalPostRequestBody: Partial<CancelApprovalPostRequestBody> | undefined = {}) : void {
     writer.writeEnumValue<OperationApprovalSource>("approvalSource", cancelApprovalPostRequestBody.approvalSource);
     writer.writeStringValue("justification", cancelApprovalPostRequestBody.justification);
@@ -110,6 +115,7 @@ export function serializeCancelApprovalPostRequestBody(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCancelApprovalPostResponse(writer: SerializationWriter, cancelApprovalPostResponse: Partial<CancelApprovalPostResponse> | undefined = {}) : void {
     writer.writeStringValue("value", cancelApprovalPostResponse.value);
     writer.writeAdditionalData(cancelApprovalPostResponse.additionalData);

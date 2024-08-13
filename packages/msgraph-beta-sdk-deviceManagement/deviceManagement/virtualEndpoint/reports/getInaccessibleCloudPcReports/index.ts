@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetInaccessibleCloudPcReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetInaccessibleCloudPcReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetInaccessibleCloudPcReportsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetInaccessibleCloudPcReportsPostRequestBodyFromDiscrimina
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetInaccessibleCloudPcReportsPostRequestBody(getInaccessibleCloudPcReportsPostRequestBody: Partial<GetInaccessibleCloudPcReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getInaccessibleCloudPcReportsPostRequestBody.backingStoreEnabled = true; },
@@ -100,6 +102,7 @@ export interface GetInaccessibleCloudPcReportsRequestBuilder extends BaseRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetInaccessibleCloudPcReportsPostRequestBody(writer: SerializationWriter, getInaccessibleCloudPcReportsPostRequestBody: Partial<GetInaccessibleCloudPcReportsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getInaccessibleCloudPcReportsPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getInaccessibleCloudPcReportsPostRequestBody.groupBy);

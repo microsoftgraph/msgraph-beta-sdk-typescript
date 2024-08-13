@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetTargetedUsersAndDevicesPostRequestBody}
  */
+// @ts-ignore
 export function createGetTargetedUsersAndDevicesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetTargetedUsersAndDevicesPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createGetTargetedUsersAndDevicesPostRequestBodyFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetTargetedUsersAndDevicesPostResponse}
  */
+// @ts-ignore
 export function createGetTargetedUsersAndDevicesPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetTargetedUsersAndDevicesPostResponse;
 }
@@ -28,6 +30,7 @@ export function createGetTargetedUsersAndDevicesPostResponseFromDiscriminatorVal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetTargetedUsersAndDevicesPostRequestBody(getTargetedUsersAndDevicesPostRequestBody: Partial<GetTargetedUsersAndDevicesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getTargetedUsersAndDevicesPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoGetTargetedUsersAndDevicesPostRequestBody(getTarg
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetTargetedUsersAndDevicesPostResponse(getTargetedUsersAndDevicesPostResponse: Partial<GetTargetedUsersAndDevicesPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getTargetedUsersAndDevicesPostResponse),
@@ -88,6 +92,7 @@ export interface GetTargetedUsersAndDevicesRequestBuilder extends BaseRequestBui
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetTargetedUsersAndDevicesPostRequestBody(writer: SerializationWriter, getTargetedUsersAndDevicesPostRequestBody: Partial<GetTargetedUsersAndDevicesPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("deviceConfigurationIds", getTargetedUsersAndDevicesPostRequestBody.deviceConfigurationIds);
     writer.writeAdditionalData(getTargetedUsersAndDevicesPostRequestBody.additionalData);
@@ -96,6 +101,7 @@ export function serializeGetTargetedUsersAndDevicesPostRequestBody(writer: Seria
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetTargetedUsersAndDevicesPostResponse(writer: SerializationWriter, getTargetedUsersAndDevicesPostResponse: Partial<GetTargetedUsersAndDevicesPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getTargetedUsersAndDevicesPostResponse)
     writer.writeCollectionOfObjectValues<DeviceConfigurationTargetedUserAndDevice>("value", getTargetedUsersAndDevicesPostResponse.value, serializeDeviceConfigurationTargetedUserAndDevice);

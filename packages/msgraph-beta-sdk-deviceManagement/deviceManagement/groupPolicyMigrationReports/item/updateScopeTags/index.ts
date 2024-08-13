@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateScopeTagsPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateScopeTagsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateScopeTagsPostRequestBody;
 }
@@ -19,6 +20,7 @@ export function createUpdateScopeTagsPostRequestBodyFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateScopeTagsPostResponse}
  */
+// @ts-ignore
 export function createUpdateScopeTagsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateScopeTagsPostResponse;
 }
@@ -26,6 +28,7 @@ export function createUpdateScopeTagsPostResponseFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateScopeTagsPostRequestBody(updateScopeTagsPostRequestBody: Partial<UpdateScopeTagsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateScopeTagsPostRequestBody.backingStoreEnabled = true; },
@@ -36,6 +39,7 @@ export function deserializeIntoUpdateScopeTagsPostRequestBody(updateScopeTagsPos
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateScopeTagsPostResponse(updateScopeTagsPostResponse: Partial<UpdateScopeTagsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateScopeTagsPostResponse.backingStoreEnabled = true; },
@@ -46,6 +50,7 @@ export function deserializeIntoUpdateScopeTagsPostResponse(updateScopeTagsPostRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateScopeTagsPostRequestBody(writer: SerializationWriter, updateScopeTagsPostRequestBody: Partial<UpdateScopeTagsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("roleScopeTagIds", updateScopeTagsPostRequestBody.roleScopeTagIds);
     writer.writeAdditionalData(updateScopeTagsPostRequestBody.additionalData);
@@ -54,6 +59,7 @@ export function serializeUpdateScopeTagsPostRequestBody(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateScopeTagsPostResponse(writer: SerializationWriter, updateScopeTagsPostResponse: Partial<UpdateScopeTagsPostResponse> | undefined = {}) : void {
     writer.writeStringValue("value", updateScopeTagsPostResponse.value);
     writer.writeAdditionalData(updateScopeTagsPostResponse.additionalData);

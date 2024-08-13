@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAppliedDrivesGetResponse}
  */
+// @ts-ignore
 export function createGetAppliedDrivesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAppliedDrivesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetAppliedDrivesGetResponseFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAppliedDrivesGetResponse(getAppliedDrivesGetResponse: Partial<GetAppliedDrivesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getAppliedDrivesGetResponse),
@@ -80,6 +82,7 @@ export interface GetAppliedDrivesRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetAppliedDrivesGetResponse(writer: SerializationWriter, getAppliedDrivesGetResponse: Partial<GetAppliedDrivesGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getAppliedDrivesGetResponse)
     writer.writeCollectionOfObjectValues<ContentModelUsage>("value", getAppliedDrivesGetResponse.value, serializeContentModelUsage);

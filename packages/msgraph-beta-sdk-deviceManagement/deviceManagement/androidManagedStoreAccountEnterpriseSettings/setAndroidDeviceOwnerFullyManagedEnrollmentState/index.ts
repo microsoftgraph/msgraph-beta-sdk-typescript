@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody}
  */
+// @ts-ignore
 export function createSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostReques
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody(setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody: Partial<SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.backingStoreEnabled = true; },
@@ -28,6 +30,7 @@ export function deserializeIntoSetAndroidDeviceOwnerFullyManagedEnrollmentStateP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody(writer: SerializationWriter, setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody: Partial<SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("enabled", setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.enabled);
     writer.writeAdditionalData(setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.additionalData);

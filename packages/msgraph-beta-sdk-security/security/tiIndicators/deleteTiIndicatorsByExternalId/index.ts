@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeleteTiIndicatorsByExternalIdPostRequestBody}
  */
+// @ts-ignore
 export function createDeleteTiIndicatorsByExternalIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeleteTiIndicatorsByExternalIdPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createDeleteTiIndicatorsByExternalIdPostRequestBodyFromDiscrimin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeleteTiIndicatorsByExternalIdPostResponse}
  */
+// @ts-ignore
 export function createDeleteTiIndicatorsByExternalIdPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeleteTiIndicatorsByExternalIdPostResponse;
 }
@@ -71,6 +73,7 @@ export interface DeleteTiIndicatorsByExternalIdRequestBuilder extends BaseReques
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeleteTiIndicatorsByExternalIdPostRequestBody(deleteTiIndicatorsByExternalIdPostRequestBody: Partial<DeleteTiIndicatorsByExternalIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deleteTiIndicatorsByExternalIdPostRequestBody.backingStoreEnabled = true; },
@@ -81,6 +84,7 @@ export function deserializeIntoDeleteTiIndicatorsByExternalIdPostRequestBody(del
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeleteTiIndicatorsByExternalIdPostResponse(deleteTiIndicatorsByExternalIdPostResponse: Partial<DeleteTiIndicatorsByExternalIdPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deleteTiIndicatorsByExternalIdPostResponse),
@@ -91,6 +95,7 @@ export function deserializeIntoDeleteTiIndicatorsByExternalIdPostResponse(delete
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeleteTiIndicatorsByExternalIdPostRequestBody(writer: SerializationWriter, deleteTiIndicatorsByExternalIdPostRequestBody: Partial<DeleteTiIndicatorsByExternalIdPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("value", deleteTiIndicatorsByExternalIdPostRequestBody.value);
     writer.writeAdditionalData(deleteTiIndicatorsByExternalIdPostRequestBody.additionalData);
@@ -99,6 +104,7 @@ export function serializeDeleteTiIndicatorsByExternalIdPostRequestBody(writer: S
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeleteTiIndicatorsByExternalIdPostResponse(writer: SerializationWriter, deleteTiIndicatorsByExternalIdPostResponse: Partial<DeleteTiIndicatorsByExternalIdPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, deleteTiIndicatorsByExternalIdPostResponse)
     writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsByExternalIdPostResponse.value, serializeResultInfo);

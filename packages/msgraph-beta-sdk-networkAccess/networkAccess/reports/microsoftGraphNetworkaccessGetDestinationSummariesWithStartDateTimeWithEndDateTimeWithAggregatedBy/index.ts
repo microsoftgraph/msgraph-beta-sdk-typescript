@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse}
  */
+// @ts-ignore
 export function createGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse;
 }
@@ -22,6 +23,7 @@ export function createGetDestinationSummariesWithStartDateTimeWithEndDateTimeWit
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse(getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse: Partial<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse),
@@ -81,6 +83,7 @@ export interface MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDate
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse(writer: SerializationWriter, getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse: Partial<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse)
     writer.writeCollectionOfObjectValues<DestinationSummary>("value", getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse.value, serializeDestinationSummary);

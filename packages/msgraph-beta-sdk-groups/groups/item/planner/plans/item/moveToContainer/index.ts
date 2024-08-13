@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MoveToContainerPostRequestBody}
  */
+// @ts-ignore
 export function createMoveToContainerPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMoveToContainerPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createMoveToContainerPostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMoveToContainerPostRequestBody(moveToContainerPostRequestBody: Partial<MoveToContainerPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { moveToContainerPostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export interface MoveToContainerRequestBuilder extends BaseRequestBuilder<MoveTo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeMoveToContainerPostRequestBody(writer: SerializationWriter, moveToContainerPostRequestBody: Partial<MoveToContainerPostRequestBody> | undefined = {}) : void {
     writer.writeObjectValue<PlannerPlanContainer>("container", moveToContainerPostRequestBody.container, serializePlannerPlanContainer);
     writer.writeAdditionalData(moveToContainerPostRequestBody.additionalData);

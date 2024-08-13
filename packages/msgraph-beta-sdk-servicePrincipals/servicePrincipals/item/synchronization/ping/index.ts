@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PingGetResponse}
  */
+// @ts-ignore
 export function createPingGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPingGetResponse;
 }
@@ -18,6 +19,7 @@ export function createPingGetResponseFromDiscriminatorValue(parseNode: ParseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPingGetResponse(pingGetResponse: Partial<PingGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { pingGetResponse.backingStoreEnabled = true; },
@@ -60,6 +62,7 @@ export interface PingRequestBuilder extends BaseRequestBuilder<PingRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePingGetResponse(writer: SerializationWriter, pingGetResponse: Partial<PingGetResponse> | undefined = {}) : void {
     writer.writeStringValue("value", pingGetResponse.value);
     writer.writeAdditionalData(pingGetResponse.additionalData);

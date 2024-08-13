@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostR
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBui
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(writer: SerializationWriter, getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.groupBy);

@@ -44,6 +44,7 @@ export interface AddAppsRequestBuilder extends BaseRequestBuilder<AddAppsRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddAppsPostRequestBody}
  */
+// @ts-ignore
 export function createAddAppsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddAppsPostRequestBody;
 }
@@ -51,6 +52,7 @@ export function createAddAppsPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAddAppsPostRequestBody(addAppsPostRequestBody: Partial<AddAppsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addAppsPostRequestBody.backingStoreEnabled = true; },
@@ -61,6 +63,7 @@ export function deserializeIntoAddAppsPostRequestBody(addAppsPostRequestBody: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAddAppsPostRequestBody(writer: SerializationWriter, addAppsPostRequestBody: Partial<AddAppsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("productIds", addAppsPostRequestBody.productIds);
     writer.writeAdditionalData(addAppsPostRequestBody.additionalData);

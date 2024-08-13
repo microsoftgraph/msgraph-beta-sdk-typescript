@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetFailedMobileAppsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetFailedMobileAppsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetFailedMobileAppsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetFailedMobileAppsReportPostRequestBodyFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetFailedMobileAppsReportPostRequestBody(getFailedMobileAppsReportPostRequestBody: Partial<GetFailedMobileAppsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getFailedMobileAppsReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetFailedMobileAppsReportRequestBuilder extends BaseRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetFailedMobileAppsReportPostRequestBody(writer: SerializationWriter, getFailedMobileAppsReportPostRequestBody: Partial<GetFailedMobileAppsReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getFailedMobileAppsReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFailedMobileAppsReportPostRequestBody.groupBy);

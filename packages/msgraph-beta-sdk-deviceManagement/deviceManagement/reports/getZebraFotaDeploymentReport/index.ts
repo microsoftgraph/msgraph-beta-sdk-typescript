@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetZebraFotaDeploymentReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetZebraFotaDeploymentReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetZebraFotaDeploymentReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetZebraFotaDeploymentReportPostRequestBodyFromDiscriminat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetZebraFotaDeploymentReportPostRequestBody(getZebraFotaDeploymentReportPostRequestBody: Partial<GetZebraFotaDeploymentReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getZebraFotaDeploymentReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetZebraFotaDeploymentReportRequestBuilder extends BaseRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetZebraFotaDeploymentReportPostRequestBody(writer: SerializationWriter, getZebraFotaDeploymentReportPostRequestBody: Partial<GetZebraFotaDeploymentReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getZebraFotaDeploymentReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getZebraFotaDeploymentReportPostRequestBody.groupBy);

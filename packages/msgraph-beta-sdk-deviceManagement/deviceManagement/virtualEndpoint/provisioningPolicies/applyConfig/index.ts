@@ -51,6 +51,7 @@ export interface ApplyConfigRequestBuilder extends BaseRequestBuilder<ApplyConfi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplyConfigPostRequestBody}
  */
+// @ts-ignore
 export function createApplyConfigPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplyConfigPostRequestBody;
 }
@@ -58,6 +59,7 @@ export function createApplyConfigPostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApplyConfigPostRequestBody(applyConfigPostRequestBody: Partial<ApplyConfigPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applyConfigPostRequestBody.backingStoreEnabled = true; },
@@ -69,6 +71,7 @@ export function deserializeIntoApplyConfigPostRequestBody(applyConfigPostRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeApplyConfigPostRequestBody(writer: SerializationWriter, applyConfigPostRequestBody: Partial<ApplyConfigPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", applyConfigPostRequestBody.cloudPcIds);
     writer.writeEnumValue<CloudPcPolicySettingType[]>("policySettings", applyConfigPostRequestBody.policySettings);

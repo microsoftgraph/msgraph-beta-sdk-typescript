@@ -445,6 +445,7 @@ export interface ConditionalAccessPolicyCoverageCollectionResponse extends BaseC
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AggregatedPolicyComplianceCollectionResponse}
  */
+// @ts-ignore
 export function createAggregatedPolicyComplianceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAggregatedPolicyComplianceCollectionResponse;
 }
@@ -453,6 +454,7 @@ export function createAggregatedPolicyComplianceCollectionResponseFromDiscrimina
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AggregatedPolicyCompliance}
  */
+// @ts-ignore
 export function createAggregatedPolicyComplianceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAggregatedPolicyCompliance;
 }
@@ -461,6 +463,7 @@ export function createAggregatedPolicyComplianceFromDiscriminatorValue(parseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertData}
  */
+// @ts-ignore
 export function createAlertDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertData;
 }
@@ -469,6 +472,7 @@ export function createAlertDataFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertDataReferenceString}
  */
+// @ts-ignore
 export function createAlertDataReferenceStringFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertDataReferenceString;
 }
@@ -477,6 +481,7 @@ export function createAlertDataReferenceStringFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertLogContent}
  */
+// @ts-ignore
 export function createAlertLogContentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertLogContent;
 }
@@ -485,6 +490,7 @@ export function createAlertLogContentFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertRuleDefinitionTemplate}
  */
+// @ts-ignore
 export function createAlertRuleDefinitionTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRuleDefinitionTemplate;
 }
@@ -493,6 +499,7 @@ export function createAlertRuleDefinitionTemplateFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AppPerformanceCollectionResponse}
  */
+// @ts-ignore
 export function createAppPerformanceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAppPerformanceCollectionResponse;
 }
@@ -501,6 +508,7 @@ export function createAppPerformanceCollectionResponseFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AppPerformance}
  */
+// @ts-ignore
 export function createAppPerformanceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAppPerformance;
 }
@@ -509,6 +517,7 @@ export function createAppPerformanceFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AuditEventCollectionResponse}
  */
+// @ts-ignore
 export function createAuditEventCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuditEventCollectionResponse;
 }
@@ -517,6 +526,7 @@ export function createAuditEventCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AuditEvent}
  */
+// @ts-ignore
 export function createAuditEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuditEvent;
 }
@@ -525,6 +535,7 @@ export function createAuditEventFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcConnectionCollectionResponse}
  */
+// @ts-ignore
 export function createCloudPcConnectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcConnectionCollectionResponse;
 }
@@ -533,6 +544,7 @@ export function createCloudPcConnectionCollectionResponseFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcConnection}
  */
+// @ts-ignore
 export function createCloudPcConnectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcConnection;
 }
@@ -541,6 +553,7 @@ export function createCloudPcConnectionFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcDeviceCollectionResponse}
  */
+// @ts-ignore
 export function createCloudPcDeviceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcDeviceCollectionResponse;
 }
@@ -549,6 +562,7 @@ export function createCloudPcDeviceCollectionResponseFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcDevice}
  */
+// @ts-ignore
 export function createCloudPcDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcDevice;
 }
@@ -557,6 +571,7 @@ export function createCloudPcDeviceFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcOverviewCollectionResponse}
  */
+// @ts-ignore
 export function createCloudPcOverviewCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcOverviewCollectionResponse;
 }
@@ -565,6 +580,7 @@ export function createCloudPcOverviewCollectionResponseFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcOverview}
  */
+// @ts-ignore
 export function createCloudPcOverviewFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcOverview;
 }
@@ -573,6 +589,7 @@ export function createCloudPcOverviewFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicyCoverageCollectionResponse}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyCoverageCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCoverageCollectionResponse;
 }
@@ -581,6 +598,7 @@ export function createConditionalAccessPolicyCoverageCollectionResponseFromDiscr
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicyCoverage}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyCoverageFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCoverage;
 }
@@ -589,6 +607,7 @@ export function createConditionalAccessPolicyCoverageFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CredentialUserRegistrationsSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createCredentialUserRegistrationsSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCredentialUserRegistrationsSummaryCollectionResponse;
 }
@@ -597,6 +616,7 @@ export function createCredentialUserRegistrationsSummaryCollectionResponseFromDi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CredentialUserRegistrationsSummary}
  */
+// @ts-ignore
 export function createCredentialUserRegistrationsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCredentialUserRegistrationsSummary;
 }
@@ -605,6 +625,7 @@ export function createCredentialUserRegistrationsSummaryFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceAppPerformanceCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceAppPerformanceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceAppPerformanceCollectionResponse;
 }
@@ -613,6 +634,7 @@ export function createDeviceAppPerformanceCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceAppPerformance}
  */
+// @ts-ignore
 export function createDeviceAppPerformanceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceAppPerformance;
 }
@@ -621,6 +643,7 @@ export function createDeviceAppPerformanceFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceCompliancePolicySettingStateSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceCompliancePolicySettingStateSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceCompliancePolicySettingStateSummaryCollectionResponse;
 }
@@ -629,6 +652,7 @@ export function createDeviceCompliancePolicySettingStateSummaryCollectionRespons
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceCompliancePolicySettingStateSummary}
  */
+// @ts-ignore
 export function createDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceCompliancePolicySettingStateSummary;
 }
@@ -637,6 +661,7 @@ export function createDeviceCompliancePolicySettingStateSummaryFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceHealthStatusCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceHealthStatusCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceHealthStatusCollectionResponse;
 }
@@ -645,6 +670,7 @@ export function createDeviceHealthStatusCollectionResponseFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceHealthStatus}
  */
+// @ts-ignore
 export function createDeviceHealthStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceHealthStatus;
 }
@@ -653,6 +679,7 @@ export function createDeviceHealthStatusFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Email}
  */
+// @ts-ignore
 export function createEmailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEmail;
 }
@@ -661,6 +688,7 @@ export function createEmailFromDiscriminatorValue(parseNode: ParseNode | undefin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GraphAPIErrorDetails}
  */
+// @ts-ignore
 export function createGraphAPIErrorDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGraphAPIErrorDetails;
 }
@@ -669,6 +697,7 @@ export function createGraphAPIErrorDetailsFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceComplianceCollectionResponse}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceCollectionResponse;
 }
@@ -677,6 +706,7 @@ export function createManagedDeviceComplianceCollectionResponseFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceCompliance}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceCompliance;
 }
@@ -685,6 +715,7 @@ export function createManagedDeviceComplianceFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceComplianceTrendCollectionResponse}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceTrendCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceTrendCollectionResponse;
 }
@@ -693,6 +724,7 @@ export function createManagedDeviceComplianceTrendCollectionResponseFromDiscrimi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceComplianceTrend}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceTrendFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceTrend;
 }
@@ -701,6 +733,7 @@ export function createManagedDeviceComplianceTrendFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertCollectionResponse;
 }
@@ -709,6 +742,7 @@ export function createManagedTenantAlertCollectionResponseFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlert}
  */
+// @ts-ignore
 export function createManagedTenantAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlert;
 }
@@ -717,6 +751,7 @@ export function createManagedTenantAlertFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertLogCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertLogCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertLogCollectionResponse;
 }
@@ -725,6 +760,7 @@ export function createManagedTenantAlertLogCollectionResponseFromDiscriminatorVa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertLog}
  */
+// @ts-ignore
 export function createManagedTenantAlertLogFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertLog;
 }
@@ -733,6 +769,7 @@ export function createManagedTenantAlertLogFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRuleCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleCollectionResponse;
 }
@@ -741,6 +778,7 @@ export function createManagedTenantAlertRuleCollectionResponseFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRuleDefinitionCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleDefinitionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleDefinitionCollectionResponse;
 }
@@ -749,6 +787,7 @@ export function createManagedTenantAlertRuleDefinitionCollectionResponseFromDisc
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRuleDefinition}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleDefinition;
 }
@@ -757,6 +796,7 @@ export function createManagedTenantAlertRuleDefinitionFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRule}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRule;
 }
@@ -765,6 +805,7 @@ export function createManagedTenantAlertRuleFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantApiNotificationCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantApiNotificationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantApiNotificationCollectionResponse;
 }
@@ -773,6 +814,7 @@ export function createManagedTenantApiNotificationCollectionResponseFromDiscrimi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantApiNotification}
  */
+// @ts-ignore
 export function createManagedTenantApiNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantApiNotification;
 }
@@ -781,6 +823,7 @@ export function createManagedTenantApiNotificationFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantEmailNotificationCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantEmailNotificationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantEmailNotificationCollectionResponse;
 }
@@ -789,6 +832,7 @@ export function createManagedTenantEmailNotificationCollectionResponseFromDiscri
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantEmailNotification}
  */
+// @ts-ignore
 export function createManagedTenantEmailNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantEmailNotification;
 }
@@ -797,6 +841,7 @@ export function createManagedTenantEmailNotificationFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenant}
  */
+// @ts-ignore
 export function createManagedTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenant;
 }
@@ -805,6 +850,7 @@ export function createManagedTenantFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantTicketingEndpointCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantTicketingEndpointCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantTicketingEndpointCollectionResponse;
 }
@@ -813,6 +859,7 @@ export function createManagedTenantTicketingEndpointCollectionResponseFromDiscri
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantTicketingEndpoint}
  */
+// @ts-ignore
 export function createManagedTenantTicketingEndpointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantTicketingEndpoint;
 }
@@ -821,6 +868,7 @@ export function createManagedTenantTicketingEndpointFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionCollectionResponse}
  */
+// @ts-ignore
 export function createManagementActionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionCollectionResponse;
 }
@@ -829,6 +877,7 @@ export function createManagementActionCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionDeploymentStatus}
  */
+// @ts-ignore
 export function createManagementActionDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionDeploymentStatus;
 }
@@ -837,6 +886,7 @@ export function createManagementActionDeploymentStatusFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementAction}
  */
+// @ts-ignore
 export function createManagementActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementAction;
 }
@@ -845,6 +895,7 @@ export function createManagementActionFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionInfo}
  */
+// @ts-ignore
 export function createManagementActionInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionInfo;
 }
@@ -853,6 +904,7 @@ export function createManagementActionInfoFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionTenantDeploymentStatusCollectionResponse}
  */
+// @ts-ignore
 export function createManagementActionTenantDeploymentStatusCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionTenantDeploymentStatusCollectionResponse;
 }
@@ -861,6 +913,7 @@ export function createManagementActionTenantDeploymentStatusCollectionResponseFr
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionTenantDeploymentStatus}
  */
+// @ts-ignore
 export function createManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionTenantDeploymentStatus;
 }
@@ -869,6 +922,7 @@ export function createManagementActionTenantDeploymentStatusFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementIntentCollectionResponse}
  */
+// @ts-ignore
 export function createManagementIntentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntentCollectionResponse;
 }
@@ -877,6 +931,7 @@ export function createManagementIntentCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementIntent}
  */
+// @ts-ignore
 export function createManagementIntentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntent;
 }
@@ -885,6 +940,7 @@ export function createManagementIntentFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementIntentInfo}
  */
+// @ts-ignore
 export function createManagementIntentInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntentInfo;
 }
@@ -893,6 +949,7 @@ export function createManagementIntentInfoFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionCollectionResponse;
 }
@@ -901,6 +958,7 @@ export function createManagementTemplateCollectionCollectionResponseFromDiscrimi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollection}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollection;
 }
@@ -909,6 +967,7 @@ export function createManagementTemplateCollectionFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionResponse;
 }
@@ -917,6 +976,7 @@ export function createManagementTemplateCollectionResponseFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionTenantSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionTenantSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionTenantSummaryCollectionResponse;
 }
@@ -925,6 +985,7 @@ export function createManagementTemplateCollectionTenantSummaryCollectionRespons
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionTenantSummary}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionTenantSummary;
 }
@@ -933,6 +994,7 @@ export function createManagementTemplateCollectionTenantSummaryFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateDetailedInfo}
  */
+// @ts-ignore
 export function createManagementTemplateDetailedInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateDetailedInfo;
 }
@@ -941,6 +1003,7 @@ export function createManagementTemplateDetailedInfoFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplate}
  */
+// @ts-ignore
 export function createManagementTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplate;
 }
@@ -949,6 +1012,7 @@ export function createManagementTemplateFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepCollectionResponse;
 }
@@ -957,6 +1021,7 @@ export function createManagementTemplateStepCollectionResponseFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepDeploymentCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepDeploymentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepDeploymentCollectionResponse;
 }
@@ -965,6 +1030,7 @@ export function createManagementTemplateStepDeploymentCollectionResponseFromDisc
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepDeployment}
  */
+// @ts-ignore
 export function createManagementTemplateStepDeploymentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepDeployment;
 }
@@ -973,6 +1039,7 @@ export function createManagementTemplateStepDeploymentFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStep}
  */
+// @ts-ignore
 export function createManagementTemplateStepFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStep;
 }
@@ -981,6 +1048,7 @@ export function createManagementTemplateStepFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepTenantSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepTenantSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepTenantSummaryCollectionResponse;
 }
@@ -989,6 +1057,7 @@ export function createManagementTemplateStepTenantSummaryCollectionResponseFromD
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepTenantSummary}
  */
+// @ts-ignore
 export function createManagementTemplateStepTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepTenantSummary;
 }
@@ -997,6 +1066,7 @@ export function createManagementTemplateStepTenantSummaryFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepVersionCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepVersionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepVersionCollectionResponse;
 }
@@ -1005,6 +1075,7 @@ export function createManagementTemplateStepVersionCollectionResponseFromDiscrim
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepVersion}
  */
+// @ts-ignore
 export function createManagementTemplateStepVersionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepVersion;
 }
@@ -1013,6 +1084,7 @@ export function createManagementTemplateStepVersionFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MyRoleCollectionResponse}
  */
+// @ts-ignore
 export function createMyRoleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyRoleCollectionResponse;
 }
@@ -1021,6 +1093,7 @@ export function createMyRoleCollectionResponseFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MyRole}
  */
+// @ts-ignore
 export function createMyRoleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyRole;
 }
@@ -1029,6 +1102,7 @@ export function createMyRoleFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NotificationTarget}
  */
+// @ts-ignore
 export function createNotificationTargetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationTarget;
 }
@@ -1037,6 +1111,7 @@ export function createNotificationTargetFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RoleAssignment}
  */
+// @ts-ignore
 export function createRoleAssignmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRoleAssignment;
 }
@@ -1045,6 +1120,7 @@ export function createRoleAssignmentFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RoleDefinition}
  */
+// @ts-ignore
 export function createRoleDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRoleDefinition;
 }
@@ -1053,6 +1129,7 @@ export function createRoleDefinitionFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Setting}
  */
+// @ts-ignore
 export function createSettingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetting;
 }
@@ -1061,6 +1138,7 @@ export function createSettingFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TemplateParameter}
  */
+// @ts-ignore
 export function createTemplateParameterFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTemplateParameter;
 }
@@ -1069,6 +1147,7 @@ export function createTemplateParameterFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantCollectionResponse}
  */
+// @ts-ignore
 export function createTenantCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCollectionResponse;
 }
@@ -1077,6 +1156,7 @@ export function createTenantCollectionResponseFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantContactInformation}
  */
+// @ts-ignore
 export function createTenantContactInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantContactInformation;
 }
@@ -1085,6 +1165,7 @@ export function createTenantContactInformationFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantContract}
  */
+// @ts-ignore
 export function createTenantContractFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantContract;
 }
@@ -1093,6 +1174,7 @@ export function createTenantContractFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantCustomizedInformationCollectionResponse}
  */
+// @ts-ignore
 export function createTenantCustomizedInformationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCustomizedInformationCollectionResponse;
 }
@@ -1101,6 +1183,7 @@ export function createTenantCustomizedInformationCollectionResponseFromDiscrimin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantCustomizedInformation}
  */
+// @ts-ignore
 export function createTenantCustomizedInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCustomizedInformation;
 }
@@ -1109,6 +1192,7 @@ export function createTenantCustomizedInformationFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantDetailedInformationCollectionResponse}
  */
+// @ts-ignore
 export function createTenantDetailedInformationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantDetailedInformationCollectionResponse;
 }
@@ -1117,6 +1201,7 @@ export function createTenantDetailedInformationCollectionResponseFromDiscriminat
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantDetailedInformation}
  */
+// @ts-ignore
 export function createTenantDetailedInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantDetailedInformation;
 }
@@ -1125,6 +1210,7 @@ export function createTenantDetailedInformationFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Tenant}
  */
+// @ts-ignore
 export function createTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenant;
 }
@@ -1133,6 +1219,7 @@ export function createTenantFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantGroupCollectionResponse}
  */
+// @ts-ignore
 export function createTenantGroupCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantGroupCollectionResponse;
 }
@@ -1141,6 +1228,7 @@ export function createTenantGroupCollectionResponseFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantGroup}
  */
+// @ts-ignore
 export function createTenantGroupFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantGroup;
 }
@@ -1149,6 +1237,7 @@ export function createTenantGroupFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantInfo}
  */
+// @ts-ignore
 export function createTenantInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantInfo;
 }
@@ -1157,6 +1246,7 @@ export function createTenantInfoFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantStatusInformation}
  */
+// @ts-ignore
 export function createTenantStatusInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantStatusInformation;
 }
@@ -1165,6 +1255,7 @@ export function createTenantStatusInformationFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantTagCollectionResponse}
  */
+// @ts-ignore
 export function createTenantTagCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantTagCollectionResponse;
 }
@@ -1173,6 +1264,7 @@ export function createTenantTagCollectionResponseFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantTag}
  */
+// @ts-ignore
 export function createTenantTagFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantTag;
 }
@@ -1181,6 +1273,7 @@ export function createTenantTagFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsDeviceMalwareStateCollectionResponse}
  */
+// @ts-ignore
 export function createWindowsDeviceMalwareStateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsDeviceMalwareStateCollectionResponse;
 }
@@ -1189,6 +1282,7 @@ export function createWindowsDeviceMalwareStateCollectionResponseFromDiscriminat
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsDeviceMalwareState}
  */
+// @ts-ignore
 export function createWindowsDeviceMalwareStateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsDeviceMalwareState;
 }
@@ -1197,6 +1291,7 @@ export function createWindowsDeviceMalwareStateFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsProtectionStateCollectionResponse}
  */
+// @ts-ignore
 export function createWindowsProtectionStateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsProtectionStateCollectionResponse;
 }
@@ -1205,6 +1300,7 @@ export function createWindowsProtectionStateCollectionResponseFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsProtectionState}
  */
+// @ts-ignore
 export function createWindowsProtectionStateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsProtectionState;
 }
@@ -1213,6 +1309,7 @@ export function createWindowsProtectionStateFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkloadActionDeploymentStatus}
  */
+// @ts-ignore
 export function createWorkloadActionDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadActionDeploymentStatus;
 }
@@ -1221,6 +1318,7 @@ export function createWorkloadActionDeploymentStatusFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkloadAction}
  */
+// @ts-ignore
 export function createWorkloadActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadAction;
 }
@@ -1229,6 +1327,7 @@ export function createWorkloadActionFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkloadStatus}
  */
+// @ts-ignore
 export function createWorkloadStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadStatus;
 }
@@ -1293,6 +1392,7 @@ export type DelegatedPrivilegeStatus = (typeof DelegatedPrivilegeStatusObject)[k
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAggregatedPolicyCompliance(aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(aggregatedPolicyCompliance),
@@ -1313,6 +1413,7 @@ export function deserializeIntoAggregatedPolicyCompliance(aggregatedPolicyCompli
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAggregatedPolicyComplianceCollectionResponse(aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(aggregatedPolicyComplianceCollectionResponse),
@@ -1323,6 +1424,7 @@ export function deserializeIntoAggregatedPolicyComplianceCollectionResponse(aggr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertData(alertData: Partial<AlertData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertData.backingStoreEnabled = true; },
@@ -1334,6 +1436,7 @@ export function deserializeIntoAlertData(alertData: Partial<AlertData> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertDataReferenceString(alertDataReferenceString: Partial<AlertDataReferenceString> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertDataReferenceString.backingStoreEnabled = true; },
@@ -1345,6 +1448,7 @@ export function deserializeIntoAlertDataReferenceString(alertDataReferenceString
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLogContent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertLogContent.backingStoreEnabled = true; },
@@ -1356,6 +1460,7 @@ export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLog
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertRuleDefinitionTemplate.backingStoreEnabled = true; },
@@ -1367,6 +1472,7 @@ export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAppPerformance(appPerformance: Partial<AppPerformance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(appPerformance),
@@ -1386,6 +1492,7 @@ export function deserializeIntoAppPerformance(appPerformance: Partial<AppPerform
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAppPerformanceCollectionResponse(appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(appPerformanceCollectionResponse),
@@ -1396,6 +1503,7 @@ export function deserializeIntoAppPerformanceCollectionResponse(appPerformanceCo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAuditEvent(auditEvent: Partial<AuditEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(auditEvent),
@@ -1418,6 +1526,7 @@ export function deserializeIntoAuditEvent(auditEvent: Partial<AuditEvent> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAuditEventCollectionResponse(auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(auditEventCollectionResponse),
@@ -1428,6 +1537,7 @@ export function deserializeIntoAuditEventCollectionResponse(auditEventCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcConnection(cloudPcConnection: Partial<CloudPcConnection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(cloudPcConnection),
@@ -1442,6 +1552,7 @@ export function deserializeIntoCloudPcConnection(cloudPcConnection: Partial<Clou
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcConnectionCollectionResponse(cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(cloudPcConnectionCollectionResponse),
@@ -1452,6 +1563,7 @@ export function deserializeIntoCloudPcConnectionCollectionResponse(cloudPcConnec
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcDevice(cloudPcDevice: Partial<CloudPcDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(cloudPcDevice),
@@ -1473,6 +1585,7 @@ export function deserializeIntoCloudPcDevice(cloudPcDevice: Partial<CloudPcDevic
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcDeviceCollectionResponse(cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(cloudPcDeviceCollectionResponse),
@@ -1483,6 +1596,7 @@ export function deserializeIntoCloudPcDeviceCollectionResponse(cloudPcDeviceColl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcOverview(cloudPcOverview: Partial<CloudPcOverview> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(cloudPcOverview),
@@ -1513,6 +1627,7 @@ export function deserializeIntoCloudPcOverview(cloudPcOverview: Partial<CloudPcO
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcOverviewCollectionResponse(cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(cloudPcOverviewCollectionResponse),
@@ -1523,6 +1638,7 @@ export function deserializeIntoCloudPcOverviewCollectionResponse(cloudPcOverview
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicyCoverage(conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(conditionalAccessPolicyCoverage),
@@ -1536,6 +1652,7 @@ export function deserializeIntoConditionalAccessPolicyCoverage(conditionalAccess
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicyCoverageCollectionResponse(conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(conditionalAccessPolicyCoverageCollectionResponse),
@@ -1546,6 +1663,7 @@ export function deserializeIntoConditionalAccessPolicyCoverageCollectionResponse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCredentialUserRegistrationsSummary(credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(credentialUserRegistrationsSummary),
@@ -1567,6 +1685,7 @@ export function deserializeIntoCredentialUserRegistrationsSummary(credentialUser
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCredentialUserRegistrationsSummaryCollectionResponse(credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(credentialUserRegistrationsSummaryCollectionResponse),
@@ -1577,6 +1696,7 @@ export function deserializeIntoCredentialUserRegistrationsSummaryCollectionRespo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceAppPerformance(deviceAppPerformance: Partial<DeviceAppPerformance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceAppPerformance),
@@ -1602,6 +1722,7 @@ export function deserializeIntoDeviceAppPerformance(deviceAppPerformance: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceAppPerformanceCollectionResponse(deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceAppPerformanceCollectionResponse),
@@ -1612,6 +1733,7 @@ export function deserializeIntoDeviceAppPerformanceCollectionResponse(deviceAppP
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceCompliancePolicySettingStateSummary(deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceCompliancePolicySettingStateSummary),
@@ -1634,6 +1756,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummary(deviceC
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceCompliancePolicySettingStateSummaryCollectionResponse(deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceCompliancePolicySettingStateSummaryCollectionResponse),
@@ -1644,6 +1767,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummaryCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceHealthStatus(deviceHealthStatus: Partial<DeviceHealthStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceHealthStatus),
@@ -1668,6 +1792,7 @@ export function deserializeIntoDeviceHealthStatus(deviceHealthStatus: Partial<De
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceHealthStatusCollectionResponse(deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceHealthStatusCollectionResponse),
@@ -1678,6 +1803,7 @@ export function deserializeIntoDeviceHealthStatusCollectionResponse(deviceHealth
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEmail(email: Partial<Email> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { email.backingStoreEnabled = true; },
@@ -1689,6 +1815,7 @@ export function deserializeIntoEmail(email: Partial<Email> | undefined = {}) : R
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGraphAPIErrorDetails(graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { graphAPIErrorDetails.backingStoreEnabled = true; },
@@ -1701,6 +1828,7 @@ export function deserializeIntoGraphAPIErrorDetails(graphAPIErrorDetails: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceCompliance(managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedDeviceCompliance),
@@ -1724,6 +1852,7 @@ export function deserializeIntoManagedDeviceCompliance(managedDeviceCompliance: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceComplianceCollectionResponse(managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedDeviceComplianceCollectionResponse),
@@ -1734,6 +1863,7 @@ export function deserializeIntoManagedDeviceComplianceCollectionResponse(managed
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceComplianceTrend(managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedDeviceComplianceTrend),
@@ -1752,6 +1882,7 @@ export function deserializeIntoManagedDeviceComplianceTrend(managedDeviceComplia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceComplianceTrendCollectionResponse(managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedDeviceComplianceTrendCollectionResponse),
@@ -1762,6 +1893,7 @@ export function deserializeIntoManagedDeviceComplianceTrendCollectionResponse(ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenant(managedTenant: Partial<ManagedTenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenant),
@@ -1808,6 +1940,7 @@ export function deserializeIntoManagedTenant(managedTenant: Partial<ManagedTenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlert(managedTenantAlert: Partial<ManagedTenantAlert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlert),
@@ -1836,6 +1969,7 @@ export function deserializeIntoManagedTenantAlert(managedTenantAlert: Partial<Ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertCollectionResponse(managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertCollectionResponse),
@@ -1846,6 +1980,7 @@ export function deserializeIntoManagedTenantAlertCollectionResponse(managedTenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertLog(managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlertLog),
@@ -1861,6 +1996,7 @@ export function deserializeIntoManagedTenantAlertLog(managedTenantAlertLog: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertLogCollectionResponse(managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertLogCollectionResponse),
@@ -1871,6 +2007,7 @@ export function deserializeIntoManagedTenantAlertLogCollectionResponse(managedTe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRule(managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlertRule),
@@ -1895,6 +2032,7 @@ export function deserializeIntoManagedTenantAlertRule(managedTenantAlertRule: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertRuleCollectionResponse),
@@ -1905,6 +2043,7 @@ export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedT
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlertRuleDefinition),
@@ -1921,6 +2060,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAle
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRuleDefinitionCollectionResponse(managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertRuleDefinitionCollectionResponse),
@@ -1931,6 +2071,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinitionCollectionRespons
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantApiNotification(managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantApiNotification),
@@ -1949,6 +2090,7 @@ export function deserializeIntoManagedTenantApiNotification(managedTenantApiNoti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantApiNotificationCollectionResponse(managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantApiNotificationCollectionResponse),
@@ -1959,6 +2101,7 @@ export function deserializeIntoManagedTenantApiNotificationCollectionResponse(ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantEmailNotification(managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantEmailNotification),
@@ -1976,6 +2119,7 @@ export function deserializeIntoManagedTenantEmailNotification(managedTenantEmail
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantEmailNotificationCollectionResponse(managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantEmailNotificationCollectionResponse),
@@ -1986,6 +2130,7 @@ export function deserializeIntoManagedTenantEmailNotificationCollectionResponse(
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantTicketingEndpoint(managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantTicketingEndpoint),
@@ -2002,6 +2147,7 @@ export function deserializeIntoManagedTenantTicketingEndpoint(managedTenantTicke
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantTicketingEndpointCollectionResponse(managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantTicketingEndpointCollectionResponse),
@@ -2012,6 +2158,7 @@ export function deserializeIntoManagedTenantTicketingEndpointCollectionResponse(
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementAction(managementAction: Partial<ManagementAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementAction),
@@ -2027,6 +2174,7 @@ export function deserializeIntoManagementAction(managementAction: Partial<Manage
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionCollectionResponse(managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementActionCollectionResponse),
@@ -2037,6 +2185,7 @@ export function deserializeIntoManagementActionCollectionResponse(managementActi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionDeploymentStatus(managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementActionDeploymentStatus.backingStoreEnabled = true; },
@@ -2052,6 +2201,7 @@ export function deserializeIntoManagementActionDeploymentStatus(managementAction
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionInfo(managementActionInfo: Partial<ManagementActionInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementActionInfo.backingStoreEnabled = true; },
@@ -2065,6 +2215,7 @@ export function deserializeIntoManagementActionInfo(managementActionInfo: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionTenantDeploymentStatus(managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementActionTenantDeploymentStatus),
@@ -2077,6 +2228,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatus(management
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionTenantDeploymentStatusCollectionResponse(managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementActionTenantDeploymentStatusCollectionResponse),
@@ -2087,6 +2239,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatusCollectionR
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementIntent(managementIntent: Partial<ManagementIntent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementIntent),
@@ -2099,6 +2252,7 @@ export function deserializeIntoManagementIntent(managementIntent: Partial<Manage
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementIntentCollectionResponse(managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementIntentCollectionResponse),
@@ -2109,6 +2263,7 @@ export function deserializeIntoManagementIntentCollectionResponse(managementInte
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementIntentInfo(managementIntentInfo: Partial<ManagementIntentInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementIntentInfo.backingStoreEnabled = true; },
@@ -2122,6 +2277,7 @@ export function deserializeIntoManagementIntentInfo(managementIntentInfo: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplate(managementTemplate: Partial<ManagementTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplate),
@@ -2147,6 +2303,7 @@ export function deserializeIntoManagementTemplate(managementTemplate: Partial<Ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollection(managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateCollection),
@@ -2163,6 +2320,7 @@ export function deserializeIntoManagementTemplateCollection(managementTemplateCo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionCollectionResponse(managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateCollectionCollectionResponse),
@@ -2173,6 +2331,7 @@ export function deserializeIntoManagementTemplateCollectionCollectionResponse(ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionResponse(managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateCollectionResponse),
@@ -2183,6 +2342,7 @@ export function deserializeIntoManagementTemplateCollectionResponse(managementTe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionTenantSummary(managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateCollectionTenantSummary),
@@ -2211,6 +2371,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummary(managem
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionTenantSummaryCollectionResponse(managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateCollectionTenantSummaryCollectionResponse),
@@ -2221,6 +2382,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummaryCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateDetailedInfo(managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementTemplateDetailedInfo.backingStoreEnabled = true; },
@@ -2235,6 +2397,7 @@ export function deserializeIntoManagementTemplateDetailedInfo(managementTemplate
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStep(managementTemplateStep: Partial<ManagementTemplateStep> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStep),
@@ -2258,6 +2421,7 @@ export function deserializeIntoManagementTemplateStep(managementTemplateStep: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepCollectionResponse(managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepCollectionResponse),
@@ -2268,6 +2432,7 @@ export function deserializeIntoManagementTemplateStepCollectionResponse(manageme
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepDeployment(managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStepDeployment),
@@ -2285,6 +2450,7 @@ export function deserializeIntoManagementTemplateStepDeployment(managementTempla
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepDeploymentCollectionResponse(managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepDeploymentCollectionResponse),
@@ -2295,6 +2461,7 @@ export function deserializeIntoManagementTemplateStepDeploymentCollectionRespons
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepTenantSummary(managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStepTenantSummary),
@@ -2319,6 +2486,7 @@ export function deserializeIntoManagementTemplateStepTenantSummary(managementTem
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResponse(managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepTenantSummaryCollectionResponse),
@@ -2329,6 +2497,7 @@ export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResp
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepVersion(managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStepVersion),
@@ -2349,6 +2518,7 @@ export function deserializeIntoManagementTemplateStepVersion(managementTemplateS
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepVersionCollectionResponse(managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepVersionCollectionResponse),
@@ -2359,6 +2529,7 @@ export function deserializeIntoManagementTemplateStepVersionCollectionResponse(m
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMyRole(myRole: Partial<MyRole> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignments": n => { myRole.assignments = n.getCollectionOfObjectValues<RoleAssignment>(createRoleAssignmentFromDiscriminatorValue); },
@@ -2371,6 +2542,7 @@ export function deserializeIntoMyRole(myRole: Partial<MyRole> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMyRoleCollectionResponse(myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(myRoleCollectionResponse),
@@ -2381,6 +2553,7 @@ export function deserializeIntoMyRoleCollectionResponse(myRoleCollectionResponse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNotificationTarget(notificationTarget: Partial<NotificationTarget> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { notificationTarget.backingStoreEnabled = true; },
@@ -2392,6 +2565,7 @@ export function deserializeIntoNotificationTarget(notificationTarget: Partial<No
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRoleAssignment(roleAssignment: Partial<RoleAssignment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignmentType": n => { roleAssignment.assignmentType = n.getEnumValue<DelegatedPrivilegeStatus>(DelegatedPrivilegeStatusObject); },
@@ -2404,6 +2578,7 @@ export function deserializeIntoRoleAssignment(roleAssignment: Partial<RoleAssign
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRoleDefinition(roleDefinition: Partial<RoleDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { roleDefinition.backingStoreEnabled = true; },
@@ -2417,6 +2592,7 @@ export function deserializeIntoRoleDefinition(roleDefinition: Partial<RoleDefini
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetting(setting: Partial<Setting> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setting.backingStoreEnabled = true; },
@@ -2432,6 +2608,7 @@ export function deserializeIntoSetting(setting: Partial<Setting> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTemplateParameter(templateParameter: Partial<TemplateParameter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { templateParameter.backingStoreEnabled = true; },
@@ -2447,6 +2624,7 @@ export function deserializeIntoTemplateParameter(templateParameter: Partial<Temp
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenant(tenant: Partial<Tenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenant),
@@ -2462,6 +2640,7 @@ export function deserializeIntoTenant(tenant: Partial<Tenant> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantCollectionResponse(tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantCollectionResponse),
@@ -2472,6 +2651,7 @@ export function deserializeIntoTenantCollectionResponse(tenantCollectionResponse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantContactInformation(tenantContactInformation: Partial<TenantContactInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantContactInformation.backingStoreEnabled = true; },
@@ -2487,6 +2667,7 @@ export function deserializeIntoTenantContactInformation(tenantContactInformation
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantContract(tenantContract: Partial<TenantContract> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantContract.backingStoreEnabled = true; },
@@ -2500,6 +2681,7 @@ export function deserializeIntoTenantContract(tenantContract: Partial<TenantCont
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantCustomizedInformation),
@@ -2519,6 +2701,7 @@ export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInfor
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantCustomizedInformationCollectionResponse(tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantCustomizedInformationCollectionResponse),
@@ -2529,6 +2712,7 @@ export function deserializeIntoTenantCustomizedInformationCollectionResponse(ten
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantDetailedInformation(tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantDetailedInformation),
@@ -2548,6 +2732,7 @@ export function deserializeIntoTenantDetailedInformation(tenantDetailedInformati
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantDetailedInformationCollectionResponse(tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantDetailedInformationCollectionResponse),
@@ -2558,6 +2743,7 @@ export function deserializeIntoTenantDetailedInformationCollectionResponse(tenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantGroup),
@@ -2572,6 +2758,7 @@ export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantGroupCollectionResponse(tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantGroupCollectionResponse),
@@ -2582,6 +2769,7 @@ export function deserializeIntoTenantGroupCollectionResponse(tenantGroupCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantInfo(tenantInfo: Partial<TenantInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantInfo.backingStoreEnabled = true; },
@@ -2593,6 +2781,7 @@ export function deserializeIntoTenantInfo(tenantInfo: Partial<TenantInfo> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantStatusInformation(tenantStatusInformation: Partial<TenantStatusInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantStatusInformation.backingStoreEnabled = true; },
@@ -2612,6 +2801,7 @@ export function deserializeIntoTenantStatusInformation(tenantStatusInformation: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantTag(tenantTag: Partial<TenantTag> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantTag),
@@ -2629,6 +2819,7 @@ export function deserializeIntoTenantTag(tenantTag: Partial<TenantTag> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantTagCollectionResponse(tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantTagCollectionResponse),
@@ -2639,6 +2830,7 @@ export function deserializeIntoTenantTagCollectionResponse(tenantTagCollectionRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsDeviceMalwareState(windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(windowsDeviceMalwareState),
@@ -2664,6 +2856,7 @@ export function deserializeIntoWindowsDeviceMalwareState(windowsDeviceMalwareSta
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsDeviceMalwareStateCollectionResponse(windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(windowsDeviceMalwareStateCollectionResponse),
@@ -2674,6 +2867,7 @@ export function deserializeIntoWindowsDeviceMalwareStateCollectionResponse(windo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsProtectionState(windowsProtectionState: Partial<WindowsProtectionState> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(windowsProtectionState),
@@ -2708,6 +2902,7 @@ export function deserializeIntoWindowsProtectionState(windowsProtectionState: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsProtectionStateCollectionResponse(windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(windowsProtectionStateCollectionResponse),
@@ -2718,6 +2913,7 @@ export function deserializeIntoWindowsProtectionStateCollectionResponse(windowsP
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionId": n => { workloadAction.actionId = n.getStringValue(); },
@@ -2735,6 +2931,7 @@ export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionId": n => { workloadActionDeploymentStatus.actionId = n.getStringValue(); },
@@ -2753,6 +2950,7 @@ export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDepl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkloadStatus(workloadStatus: Partial<WorkloadStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { workloadStatus.backingStoreEnabled = true; },
@@ -4309,6 +4507,7 @@ export interface RoleDefinition extends AdditionalDataHolder, BackedModel, Parsa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAggregatedPolicyCompliance(writer: SerializationWriter, aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined = {}) : void {
     serializeEntity(writer, aggregatedPolicyCompliance)
     writer.writeStringValue("compliancePolicyId", aggregatedPolicyCompliance.compliancePolicyId);
@@ -4327,6 +4526,7 @@ export function serializeAggregatedPolicyCompliance(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAggregatedPolicyComplianceCollectionResponse(writer: SerializationWriter, aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, aggregatedPolicyComplianceCollectionResponse)
     writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("value", aggregatedPolicyComplianceCollectionResponse.value, serializeAggregatedPolicyCompliance);
@@ -4335,6 +4535,7 @@ export function serializeAggregatedPolicyComplianceCollectionResponse(writer: Se
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAlertData(writer: SerializationWriter, alertData: Partial<AlertData> | undefined = {}) : void {
     writer.writeStringValue("displayName", alertData.displayName);
     writer.writeStringValue("@odata.type", alertData.odataType);
@@ -4344,6 +4545,7 @@ export function serializeAlertData(writer: SerializationWriter, alertData: Parti
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAlertDataReferenceString(writer: SerializationWriter, alertDataReferenceString: Partial<AlertDataReferenceString> | undefined = {}) : void {
     writer.writeStringValue("displayName", alertDataReferenceString.displayName);
     writer.writeStringValue("@odata.type", alertDataReferenceString.odataType);
@@ -4353,6 +4555,7 @@ export function serializeAlertDataReferenceString(writer: SerializationWriter, a
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAlertLogContent(writer: SerializationWriter, alertLogContent: Partial<AlertLogContent> | undefined = {}) : void {
     writer.writeStringValue("displayName", alertLogContent.displayName);
     writer.writeStringValue("@odata.type", alertLogContent.odataType);
@@ -4362,6 +4565,7 @@ export function serializeAlertLogContent(writer: SerializationWriter, alertLogCo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAlertRuleDefinitionTemplate(writer: SerializationWriter, alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined = {}) : void {
     writer.writeEnumValue<AlertSeverity>("defaultSeverity", alertRuleDefinitionTemplate.defaultSeverity);
     writer.writeStringValue("@odata.type", alertRuleDefinitionTemplate.odataType);
@@ -4371,6 +4575,7 @@ export function serializeAlertRuleDefinitionTemplate(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAppPerformance(writer: SerializationWriter, appPerformance: Partial<AppPerformance> | undefined = {}) : void {
     serializeEntity(writer, appPerformance)
     writer.writeStringValue("appFriendlyName", appPerformance.appFriendlyName);
@@ -4388,6 +4593,7 @@ export function serializeAppPerformance(writer: SerializationWriter, appPerforma
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAppPerformanceCollectionResponse(writer: SerializationWriter, appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, appPerformanceCollectionResponse)
     writer.writeCollectionOfObjectValues<AppPerformance>("value", appPerformanceCollectionResponse.value, serializeAppPerformance);
@@ -4396,6 +4602,7 @@ export function serializeAppPerformanceCollectionResponse(writer: SerializationW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAuditEvent(writer: SerializationWriter, auditEvent: Partial<AuditEvent> | undefined = {}) : void {
     serializeEntity(writer, auditEvent)
     writer.writeStringValue("activity", auditEvent.activity);
@@ -4416,6 +4623,7 @@ export function serializeAuditEvent(writer: SerializationWriter, auditEvent: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAuditEventCollectionResponse(writer: SerializationWriter, auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, auditEventCollectionResponse)
     writer.writeCollectionOfObjectValues<AuditEvent>("value", auditEventCollectionResponse.value, serializeAuditEvent);
@@ -4424,6 +4632,7 @@ export function serializeAuditEventCollectionResponse(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCloudPcConnection(writer: SerializationWriter, cloudPcConnection: Partial<CloudPcConnection> | undefined = {}) : void {
     serializeEntity(writer, cloudPcConnection)
     writer.writeStringValue("displayName", cloudPcConnection.displayName);
@@ -4436,6 +4645,7 @@ export function serializeCloudPcConnection(writer: SerializationWriter, cloudPcC
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCloudPcConnectionCollectionResponse(writer: SerializationWriter, cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, cloudPcConnectionCollectionResponse)
     writer.writeCollectionOfObjectValues<CloudPcConnection>("value", cloudPcConnectionCollectionResponse.value, serializeCloudPcConnection);
@@ -4444,6 +4654,7 @@ export function serializeCloudPcConnectionCollectionResponse(writer: Serializati
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCloudPcDevice(writer: SerializationWriter, cloudPcDevice: Partial<CloudPcDevice> | undefined = {}) : void {
     serializeEntity(writer, cloudPcDevice)
     writer.writeStringValue("cloudPcStatus", cloudPcDevice.cloudPcStatus);
@@ -4463,6 +4674,7 @@ export function serializeCloudPcDevice(writer: SerializationWriter, cloudPcDevic
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCloudPcDeviceCollectionResponse(writer: SerializationWriter, cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, cloudPcDeviceCollectionResponse)
     writer.writeCollectionOfObjectValues<CloudPcDevice>("value", cloudPcDeviceCollectionResponse.value, serializeCloudPcDevice);
@@ -4471,6 +4683,7 @@ export function serializeCloudPcDeviceCollectionResponse(writer: SerializationWr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCloudPcOverview(writer: SerializationWriter, cloudPcOverview: Partial<CloudPcOverview> | undefined = {}) : void {
     serializeEntity(writer, cloudPcOverview)
     writer.writeNumberValue("frontlineLicensesCount", cloudPcOverview.frontlineLicensesCount);
@@ -4499,6 +4712,7 @@ export function serializeCloudPcOverview(writer: SerializationWriter, cloudPcOve
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCloudPcOverviewCollectionResponse(writer: SerializationWriter, cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, cloudPcOverviewCollectionResponse)
     writer.writeCollectionOfObjectValues<CloudPcOverview>("value", cloudPcOverviewCollectionResponse.value, serializeCloudPcOverview);
@@ -4507,6 +4721,7 @@ export function serializeCloudPcOverviewCollectionResponse(writer: Serialization
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConditionalAccessPolicyCoverage(writer: SerializationWriter, conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined = {}) : void {
     serializeEntity(writer, conditionalAccessPolicyCoverage)
     writer.writeStringValue("conditionalAccessPolicyState", conditionalAccessPolicyCoverage.conditionalAccessPolicyState);
@@ -4518,6 +4733,7 @@ export function serializeConditionalAccessPolicyCoverage(writer: SerializationWr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConditionalAccessPolicyCoverageCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCoverageCollectionResponse)
     writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("value", conditionalAccessPolicyCoverageCollectionResponse.value, serializeConditionalAccessPolicyCoverage);
@@ -4526,6 +4742,7 @@ export function serializeConditionalAccessPolicyCoverageCollectionResponse(write
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCredentialUserRegistrationsSummary(writer: SerializationWriter, credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined = {}) : void {
     serializeEntity(writer, credentialUserRegistrationsSummary)
     writer.writeDateValue("lastRefreshedDateTime", credentialUserRegistrationsSummary.lastRefreshedDateTime);
@@ -4545,6 +4762,7 @@ export function serializeCredentialUserRegistrationsSummary(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCredentialUserRegistrationsSummaryCollectionResponse(writer: SerializationWriter, credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, credentialUserRegistrationsSummaryCollectionResponse)
     writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("value", credentialUserRegistrationsSummaryCollectionResponse.value, serializeCredentialUserRegistrationsSummary);
@@ -4553,6 +4771,7 @@ export function serializeCredentialUserRegistrationsSummaryCollectionResponse(wr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceAppPerformance(writer: SerializationWriter, deviceAppPerformance: Partial<DeviceAppPerformance> | undefined = {}) : void {
     serializeEntity(writer, deviceAppPerformance)
     writer.writeStringValue("appFriendlyName", deviceAppPerformance.appFriendlyName);
@@ -4576,6 +4795,7 @@ export function serializeDeviceAppPerformance(writer: SerializationWriter, devic
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceAppPerformanceCollectionResponse(writer: SerializationWriter, deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, deviceAppPerformanceCollectionResponse)
     writer.writeCollectionOfObjectValues<DeviceAppPerformance>("value", deviceAppPerformanceCollectionResponse.value, serializeDeviceAppPerformance);
@@ -4584,6 +4804,7 @@ export function serializeDeviceAppPerformanceCollectionResponse(writer: Serializ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceCompliancePolicySettingStateSummary(writer: SerializationWriter, deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined = {}) : void {
     serializeEntity(writer, deviceCompliancePolicySettingStateSummary)
     writer.writeNumberValue("conflictDeviceCount", deviceCompliancePolicySettingStateSummary.conflictDeviceCount);
@@ -4604,6 +4825,7 @@ export function serializeDeviceCompliancePolicySettingStateSummary(writer: Seria
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceCompliancePolicySettingStateSummaryCollectionResponse(writer: SerializationWriter, deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, deviceCompliancePolicySettingStateSummaryCollectionResponse)
     writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("value", deviceCompliancePolicySettingStateSummaryCollectionResponse.value, serializeDeviceCompliancePolicySettingStateSummary);
@@ -4612,6 +4834,7 @@ export function serializeDeviceCompliancePolicySettingStateSummaryCollectionResp
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceHealthStatus(writer: SerializationWriter, deviceHealthStatus: Partial<DeviceHealthStatus> | undefined = {}) : void {
     serializeEntity(writer, deviceHealthStatus)
     writer.writeNumberValue("blueScreenCount", deviceHealthStatus.blueScreenCount);
@@ -4634,6 +4857,7 @@ export function serializeDeviceHealthStatus(writer: SerializationWriter, deviceH
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceHealthStatusCollectionResponse(writer: SerializationWriter, deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, deviceHealthStatusCollectionResponse)
     writer.writeCollectionOfObjectValues<DeviceHealthStatus>("value", deviceHealthStatusCollectionResponse.value, serializeDeviceHealthStatus);
@@ -4642,6 +4866,7 @@ export function serializeDeviceHealthStatusCollectionResponse(writer: Serializat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEmail(writer: SerializationWriter, email: Partial<Email> | undefined = {}) : void {
     writer.writeStringValue("emailAddress", email.emailAddress);
     writer.writeStringValue("@odata.type", email.odataType);
@@ -4651,6 +4876,7 @@ export function serializeEmail(writer: SerializationWriter, email: Partial<Email
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGraphAPIErrorDetails(writer: SerializationWriter, graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined = {}) : void {
     writer.writeStringValue("code", graphAPIErrorDetails.code);
     writer.writeStringValue("message", graphAPIErrorDetails.message);
@@ -4661,6 +4887,7 @@ export function serializeGraphAPIErrorDetails(writer: SerializationWriter, graph
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedDeviceCompliance(writer: SerializationWriter, managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined = {}) : void {
     serializeEntity(writer, managedDeviceCompliance)
     writer.writeStringValue("complianceStatus", managedDeviceCompliance.complianceStatus);
@@ -4682,6 +4909,7 @@ export function serializeManagedDeviceCompliance(writer: SerializationWriter, ma
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedDeviceComplianceCollectionResponse(writer: SerializationWriter, managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("value", managedDeviceComplianceCollectionResponse.value, serializeManagedDeviceCompliance);
@@ -4690,6 +4918,7 @@ export function serializeManagedDeviceComplianceCollectionResponse(writer: Seria
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedDeviceComplianceTrend(writer: SerializationWriter, managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined = {}) : void {
     serializeEntity(writer, managedDeviceComplianceTrend)
     writer.writeNumberValue("compliantDeviceCount", managedDeviceComplianceTrend.compliantDeviceCount);
@@ -4706,6 +4935,7 @@ export function serializeManagedDeviceComplianceTrend(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedDeviceComplianceTrendCollectionResponse(writer: SerializationWriter, managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceTrendCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("value", managedDeviceComplianceTrendCollectionResponse.value, serializeManagedDeviceComplianceTrend);
@@ -4714,6 +4944,7 @@ export function serializeManagedDeviceComplianceTrendCollectionResponse(writer: 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenant(writer: SerializationWriter, managedTenant: Partial<ManagedTenant> | undefined = {}) : void {
     serializeEntity(writer, managedTenant)
     writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("aggregatedPolicyCompliances", managedTenant.aggregatedPolicyCompliances, serializeAggregatedPolicyCompliance);
@@ -4758,6 +4989,7 @@ export function serializeManagedTenant(writer: SerializationWriter, managedTenan
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlert(writer: SerializationWriter, managedTenantAlert: Partial<ManagedTenantAlert> | undefined = {}) : void {
     serializeEntity(writer, managedTenantAlert)
     writer.writeObjectValue<AlertData>("alertData", managedTenantAlert.alertData, serializeAlertData);
@@ -4784,6 +5016,7 @@ export function serializeManagedTenantAlert(writer: SerializationWriter, managed
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlertCollectionResponse(writer: SerializationWriter, managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedTenantAlert>("value", managedTenantAlertCollectionResponse.value, serializeManagedTenantAlert);
@@ -4792,6 +5025,7 @@ export function serializeManagedTenantAlertCollectionResponse(writer: Serializat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlertLog(writer: SerializationWriter, managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined = {}) : void {
     serializeEntity(writer, managedTenantAlertLog)
     writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantAlertLog.alert, serializeManagedTenantAlert);
@@ -4805,6 +5039,7 @@ export function serializeManagedTenantAlertLog(writer: SerializationWriter, mana
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlertLogCollectionResponse(writer: SerializationWriter, managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertLogCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("value", managedTenantAlertLogCollectionResponse.value, serializeManagedTenantAlertLog);
@@ -4813,6 +5048,7 @@ export function serializeManagedTenantAlertLogCollectionResponse(writer: Seriali
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlertRule(writer: SerializationWriter, managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined = {}) : void {
     serializeEntity(writer, managedTenantAlertRule)
     writer.writeStringValue("alertDisplayName", managedTenantAlertRule.alertDisplayName);
@@ -4835,6 +5071,7 @@ export function serializeManagedTenantAlertRule(writer: SerializationWriter, man
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlertRuleCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("value", managedTenantAlertRuleCollectionResponse.value, serializeManagedTenantAlertRule);
@@ -4843,6 +5080,7 @@ export function serializeManagedTenantAlertRuleCollectionResponse(writer: Serial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlertRuleDefinition(writer: SerializationWriter, managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined = {}) : void {
     serializeEntity(writer, managedTenantAlertRuleDefinition)
     writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("alertRules", managedTenantAlertRuleDefinition.alertRules, serializeManagedTenantAlertRule);
@@ -4857,6 +5095,7 @@ export function serializeManagedTenantAlertRuleDefinition(writer: SerializationW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantAlertRuleDefinitionCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleDefinitionCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("value", managedTenantAlertRuleDefinitionCollectionResponse.value, serializeManagedTenantAlertRuleDefinition);
@@ -4865,6 +5104,7 @@ export function serializeManagedTenantAlertRuleDefinitionCollectionResponse(writ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantApiNotification(writer: SerializationWriter, managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined = {}) : void {
     serializeEntity(writer, managedTenantApiNotification)
     writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantApiNotification.alert, serializeManagedTenantAlert);
@@ -4881,6 +5121,7 @@ export function serializeManagedTenantApiNotification(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantApiNotificationCollectionResponse(writer: SerializationWriter, managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedTenantApiNotificationCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("value", managedTenantApiNotificationCollectionResponse.value, serializeManagedTenantApiNotification);
@@ -4889,6 +5130,7 @@ export function serializeManagedTenantApiNotificationCollectionResponse(writer: 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantEmailNotification(writer: SerializationWriter, managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined = {}) : void {
     serializeEntity(writer, managedTenantEmailNotification)
     writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantEmailNotification.alert, serializeManagedTenantAlert);
@@ -4904,6 +5146,7 @@ export function serializeManagedTenantEmailNotification(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantEmailNotificationCollectionResponse(writer: SerializationWriter, managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedTenantEmailNotificationCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("value", managedTenantEmailNotificationCollectionResponse.value, serializeManagedTenantEmailNotification);
@@ -4912,6 +5155,7 @@ export function serializeManagedTenantEmailNotificationCollectionResponse(writer
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantTicketingEndpoint(writer: SerializationWriter, managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined = {}) : void {
     serializeEntity(writer, managedTenantTicketingEndpoint)
     writer.writeStringValue("createdByUserId", managedTenantTicketingEndpoint.createdByUserId);
@@ -4926,6 +5170,7 @@ export function serializeManagedTenantTicketingEndpoint(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagedTenantTicketingEndpointCollectionResponse(writer: SerializationWriter, managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managedTenantTicketingEndpointCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("value", managedTenantTicketingEndpointCollectionResponse.value, serializeManagedTenantTicketingEndpoint);
@@ -4934,6 +5179,7 @@ export function serializeManagedTenantTicketingEndpointCollectionResponse(writer
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementAction(writer: SerializationWriter, managementAction: Partial<ManagementAction> | undefined = {}) : void {
     serializeEntity(writer, managementAction)
     writer.writeEnumValue<ManagementCategory>("category", managementAction.category);
@@ -4947,6 +5193,7 @@ export function serializeManagementAction(writer: SerializationWriter, managemen
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementActionCollectionResponse(writer: SerializationWriter, managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementActionCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementAction>("value", managementActionCollectionResponse.value, serializeManagementAction);
@@ -4955,6 +5202,7 @@ export function serializeManagementActionCollectionResponse(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementActionDeploymentStatus(writer: SerializationWriter, managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined = {}) : void {
     writer.writeStringValue("managementActionId", managementActionDeploymentStatus.managementActionId);
     writer.writeStringValue("managementTemplateId", managementActionDeploymentStatus.managementTemplateId);
@@ -4968,6 +5216,7 @@ export function serializeManagementActionDeploymentStatus(writer: SerializationW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementActionInfo(writer: SerializationWriter, managementActionInfo: Partial<ManagementActionInfo> | undefined = {}) : void {
     writer.writeStringValue("managementActionId", managementActionInfo.managementActionId);
     writer.writeStringValue("managementTemplateId", managementActionInfo.managementTemplateId);
@@ -4979,6 +5228,7 @@ export function serializeManagementActionInfo(writer: SerializationWriter, manag
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementActionTenantDeploymentStatus(writer: SerializationWriter, managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined = {}) : void {
     serializeEntity(writer, managementActionTenantDeploymentStatus)
     writer.writeCollectionOfObjectValues<ManagementActionDeploymentStatus>("statuses", managementActionTenantDeploymentStatus.statuses, serializeManagementActionDeploymentStatus);
@@ -4989,6 +5239,7 @@ export function serializeManagementActionTenantDeploymentStatus(writer: Serializ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementActionTenantDeploymentStatusCollectionResponse(writer: SerializationWriter, managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementActionTenantDeploymentStatusCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("value", managementActionTenantDeploymentStatusCollectionResponse.value, serializeManagementActionTenantDeploymentStatus);
@@ -4997,6 +5248,7 @@ export function serializeManagementActionTenantDeploymentStatusCollectionRespons
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementIntent(writer: SerializationWriter, managementIntent: Partial<ManagementIntent> | undefined = {}) : void {
     serializeEntity(writer, managementIntent)
     writer.writeStringValue("displayName", managementIntent.displayName);
@@ -5007,6 +5259,7 @@ export function serializeManagementIntent(writer: SerializationWriter, managemen
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementIntentCollectionResponse(writer: SerializationWriter, managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementIntentCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementIntent>("value", managementIntentCollectionResponse.value, serializeManagementIntent);
@@ -5015,6 +5268,7 @@ export function serializeManagementIntentCollectionResponse(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementIntentInfo(writer: SerializationWriter, managementIntentInfo: Partial<ManagementIntentInfo> | undefined = {}) : void {
     writer.writeStringValue("managementIntentDisplayName", managementIntentInfo.managementIntentDisplayName);
     writer.writeStringValue("managementIntentId", managementIntentInfo.managementIntentId);
@@ -5026,6 +5280,7 @@ export function serializeManagementIntentInfo(writer: SerializationWriter, manag
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplate(writer: SerializationWriter, managementTemplate: Partial<ManagementTemplate> | undefined = {}) : void {
     serializeEntity(writer, managementTemplate)
     writer.writeEnumValue<ManagementCategory>("category", managementTemplate.category);
@@ -5049,6 +5304,7 @@ export function serializeManagementTemplate(writer: SerializationWriter, managem
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateCollection(writer: SerializationWriter, managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined = {}) : void {
     serializeEntity(writer, managementTemplateCollection)
     writer.writeStringValue("createdByUserId", managementTemplateCollection.createdByUserId);
@@ -5063,6 +5319,7 @@ export function serializeManagementTemplateCollection(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateCollectionCollectionResponse(writer: SerializationWriter, managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("value", managementTemplateCollectionCollectionResponse.value, serializeManagementTemplateCollection);
@@ -5071,6 +5328,7 @@ export function serializeManagementTemplateCollectionCollectionResponse(writer: 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateCollectionResponse(writer: SerializationWriter, managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementTemplate>("value", managementTemplateCollectionResponse.value, serializeManagementTemplate);
@@ -5079,6 +5337,7 @@ export function serializeManagementTemplateCollectionResponse(writer: Serializat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateCollectionTenantSummary(writer: SerializationWriter, managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined = {}) : void {
     serializeEntity(writer, managementTemplateCollectionTenantSummary)
     writer.writeNumberValue("completeStepsCount", managementTemplateCollectionTenantSummary.completeStepsCount);
@@ -5105,6 +5364,7 @@ export function serializeManagementTemplateCollectionTenantSummary(writer: Seria
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateCollectionTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionTenantSummaryCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("value", managementTemplateCollectionTenantSummaryCollectionResponse.value, serializeManagementTemplateCollectionTenantSummary);
@@ -5113,6 +5373,7 @@ export function serializeManagementTemplateCollectionTenantSummaryCollectionResp
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateDetailedInfo(writer: SerializationWriter, managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined = {}) : void {
     writer.writeEnumValue<ManagementCategory>("category", managementTemplateDetailedInfo.category);
     writer.writeStringValue("displayName", managementTemplateDetailedInfo.displayName);
@@ -5125,6 +5386,7 @@ export function serializeManagementTemplateDetailedInfo(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStep(writer: SerializationWriter, managementTemplateStep: Partial<ManagementTemplateStep> | undefined = {}) : void {
     serializeEntity(writer, managementTemplateStep)
     writer.writeObjectValue<ManagementTemplateStepVersion>("acceptedVersion", managementTemplateStep.acceptedVersion, serializeManagementTemplateStepVersion);
@@ -5146,6 +5408,7 @@ export function serializeManagementTemplateStep(writer: SerializationWriter, man
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStepCollectionResponse(writer: SerializationWriter, managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementTemplateStep>("value", managementTemplateStepCollectionResponse.value, serializeManagementTemplateStep);
@@ -5154,6 +5417,7 @@ export function serializeManagementTemplateStepCollectionResponse(writer: Serial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStepDeployment(writer: SerializationWriter, managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined = {}) : void {
     serializeEntity(writer, managementTemplateStepDeployment)
     writer.writeStringValue("createdByUserId", managementTemplateStepDeployment.createdByUserId);
@@ -5169,6 +5433,7 @@ export function serializeManagementTemplateStepDeployment(writer: SerializationW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStepDeploymentCollectionResponse(writer: SerializationWriter, managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepDeploymentCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("value", managementTemplateStepDeploymentCollectionResponse.value, serializeManagementTemplateStepDeployment);
@@ -5177,6 +5442,7 @@ export function serializeManagementTemplateStepDeploymentCollectionResponse(writ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStepTenantSummary(writer: SerializationWriter, managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined = {}) : void {
     serializeEntity(writer, managementTemplateStepTenantSummary)
     writer.writeNumberValue("assignedTenantsCount", managementTemplateStepTenantSummary.assignedTenantsCount);
@@ -5199,6 +5465,7 @@ export function serializeManagementTemplateStepTenantSummary(writer: Serializati
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStepTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepTenantSummaryCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("value", managementTemplateStepTenantSummaryCollectionResponse.value, serializeManagementTemplateStepTenantSummary);
@@ -5207,6 +5474,7 @@ export function serializeManagementTemplateStepTenantSummaryCollectionResponse(w
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStepVersion(writer: SerializationWriter, managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined = {}) : void {
     serializeEntity(writer, managementTemplateStepVersion)
     writer.writeObjectValue<ManagementTemplateStep>("acceptedFor", managementTemplateStepVersion.acceptedFor, serializeManagementTemplateStep);
@@ -5225,6 +5493,7 @@ export function serializeManagementTemplateStepVersion(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeManagementTemplateStepVersionCollectionResponse(writer: SerializationWriter, managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepVersionCollectionResponse)
     writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("value", managementTemplateStepVersionCollectionResponse.value, serializeManagementTemplateStepVersion);
@@ -5233,6 +5502,7 @@ export function serializeManagementTemplateStepVersionCollectionResponse(writer:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeMyRole(writer: SerializationWriter, myRole: Partial<MyRole> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<RoleAssignment>("assignments", myRole.assignments, serializeRoleAssignment);
     writer.writeStringValue("@odata.type", myRole.odataType);
@@ -5243,6 +5513,7 @@ export function serializeMyRole(writer: SerializationWriter, myRole: Partial<MyR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeMyRoleCollectionResponse(writer: SerializationWriter, myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, myRoleCollectionResponse)
     writer.writeCollectionOfObjectValues<MyRole>("value", myRoleCollectionResponse.value, serializeMyRole);
@@ -5251,6 +5522,7 @@ export function serializeMyRoleCollectionResponse(writer: SerializationWriter, m
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeNotificationTarget(writer: SerializationWriter, notificationTarget: Partial<NotificationTarget> | undefined = {}) : void {
     writer.writeStringValue("displayName", notificationTarget.displayName);
     writer.writeStringValue("@odata.type", notificationTarget.odataType);
@@ -5260,6 +5532,7 @@ export function serializeNotificationTarget(writer: SerializationWriter, notific
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRoleAssignment(writer: SerializationWriter, roleAssignment: Partial<RoleAssignment> | undefined = {}) : void {
     writer.writeEnumValue<DelegatedPrivilegeStatus>("assignmentType", roleAssignment.assignmentType);
     writer.writeStringValue("@odata.type", roleAssignment.odataType);
@@ -5270,6 +5543,7 @@ export function serializeRoleAssignment(writer: SerializationWriter, roleAssignm
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRoleDefinition(writer: SerializationWriter, roleDefinition: Partial<RoleDefinition> | undefined = {}) : void {
     writer.writeStringValue("description", roleDefinition.description);
     writer.writeStringValue("displayName", roleDefinition.displayName);
@@ -5281,6 +5555,7 @@ export function serializeRoleDefinition(writer: SerializationWriter, roleDefinit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSetting(writer: SerializationWriter, setting: Partial<Setting> | undefined = {}) : void {
     writer.writeStringValue("displayName", setting.displayName);
     writer.writeStringValue("jsonValue", setting.jsonValue);
@@ -5294,6 +5569,7 @@ export function serializeSetting(writer: SerializationWriter, setting: Partial<S
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTemplateParameter(writer: SerializationWriter, templateParameter: Partial<TemplateParameter> | undefined = {}) : void {
     writer.writeStringValue("description", templateParameter.description);
     writer.writeStringValue("displayName", templateParameter.displayName);
@@ -5307,6 +5583,7 @@ export function serializeTemplateParameter(writer: SerializationWriter, template
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenant(writer: SerializationWriter, tenant: Partial<Tenant> | undefined = {}) : void {
     serializeEntity(writer, tenant)
     writer.writeObjectValue<TenantContract>("contract", tenant.contract, serializeTenantContract);
@@ -5320,6 +5597,7 @@ export function serializeTenant(writer: SerializationWriter, tenant: Partial<Ten
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantCollectionResponse(writer: SerializationWriter, tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, tenantCollectionResponse)
     writer.writeCollectionOfObjectValues<Tenant>("value", tenantCollectionResponse.value, serializeTenant);
@@ -5328,6 +5606,7 @@ export function serializeTenantCollectionResponse(writer: SerializationWriter, t
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantContactInformation(writer: SerializationWriter, tenantContactInformation: Partial<TenantContactInformation> | undefined = {}) : void {
     writer.writeStringValue("email", tenantContactInformation.email);
     writer.writeStringValue("name", tenantContactInformation.name);
@@ -5341,6 +5620,7 @@ export function serializeTenantContactInformation(writer: SerializationWriter, t
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantContract(writer: SerializationWriter, tenantContract: Partial<TenantContract> | undefined = {}) : void {
     writer.writeNumberValue("contractType", tenantContract.contractType);
     writer.writeStringValue("defaultDomainName", tenantContract.defaultDomainName);
@@ -5352,6 +5632,7 @@ export function serializeTenantContract(writer: SerializationWriter, tenantContr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantCustomizedInformation(writer: SerializationWriter, tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined = {}) : void {
     serializeEntity(writer, tenantCustomizedInformation)
     writer.writeStringValue("businessRelationship", tenantCustomizedInformation.businessRelationship);
@@ -5369,6 +5650,7 @@ export function serializeTenantCustomizedInformation(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantCustomizedInformationCollectionResponse(writer: SerializationWriter, tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, tenantCustomizedInformationCollectionResponse)
     writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("value", tenantCustomizedInformationCollectionResponse.value, serializeTenantCustomizedInformation);
@@ -5377,6 +5659,7 @@ export function serializeTenantCustomizedInformationCollectionResponse(writer: S
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantDetailedInformation(writer: SerializationWriter, tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined = {}) : void {
     serializeEntity(writer, tenantDetailedInformation)
     writer.writeStringValue("city", tenantDetailedInformation.city);
@@ -5394,6 +5677,7 @@ export function serializeTenantDetailedInformation(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantDetailedInformationCollectionResponse(writer: SerializationWriter, tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, tenantDetailedInformationCollectionResponse)
     writer.writeCollectionOfObjectValues<TenantDetailedInformation>("value", tenantDetailedInformationCollectionResponse.value, serializeTenantDetailedInformation);
@@ -5402,6 +5686,7 @@ export function serializeTenantDetailedInformationCollectionResponse(writer: Ser
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantGroup(writer: SerializationWriter, tenantGroup: Partial<TenantGroup> | undefined = {}) : void {
     serializeEntity(writer, tenantGroup)
     writer.writeBooleanValue("allTenantsIncluded", tenantGroup.allTenantsIncluded);
@@ -5414,6 +5699,7 @@ export function serializeTenantGroup(writer: SerializationWriter, tenantGroup: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantGroupCollectionResponse(writer: SerializationWriter, tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, tenantGroupCollectionResponse)
     writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantGroupCollectionResponse.value, serializeTenantGroup);
@@ -5422,6 +5708,7 @@ export function serializeTenantGroupCollectionResponse(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantInfo(writer: SerializationWriter, tenantInfo: Partial<TenantInfo> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", tenantInfo.odataType);
     writer.writeStringValue("tenantId", tenantInfo.tenantId);
@@ -5431,6 +5718,7 @@ export function serializeTenantInfo(writer: SerializationWriter, tenantInfo: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantStatusInformation(writer: SerializationWriter, tenantStatusInformation: Partial<TenantStatusInformation> | undefined = {}) : void {
     writer.writeEnumValue<DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", tenantStatusInformation.delegatedPrivilegeStatus);
     writer.writeDateValue("lastDelegatedPrivilegeRefreshDateTime", tenantStatusInformation.lastDelegatedPrivilegeRefreshDateTime);
@@ -5448,6 +5736,7 @@ export function serializeTenantStatusInformation(writer: SerializationWriter, te
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantTag(writer: SerializationWriter, tenantTag: Partial<TenantTag> | undefined = {}) : void {
     serializeEntity(writer, tenantTag)
     writer.writeStringValue("createdByUserId", tenantTag.createdByUserId);
@@ -5463,6 +5752,7 @@ export function serializeTenantTag(writer: SerializationWriter, tenantTag: Parti
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantTagCollectionResponse(writer: SerializationWriter, tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, tenantTagCollectionResponse)
     writer.writeCollectionOfObjectValues<TenantTag>("value", tenantTagCollectionResponse.value, serializeTenantTag);
@@ -5471,6 +5761,7 @@ export function serializeTenantTagCollectionResponse(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWindowsDeviceMalwareState(writer: SerializationWriter, windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined = {}) : void {
     serializeEntity(writer, windowsDeviceMalwareState)
     writer.writeStringValue("additionalInformationUrl", windowsDeviceMalwareState.additionalInformationUrl);
@@ -5494,6 +5785,7 @@ export function serializeWindowsDeviceMalwareState(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWindowsDeviceMalwareStateCollectionResponse(writer: SerializationWriter, windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, windowsDeviceMalwareStateCollectionResponse)
     writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("value", windowsDeviceMalwareStateCollectionResponse.value, serializeWindowsDeviceMalwareState);
@@ -5502,6 +5794,7 @@ export function serializeWindowsDeviceMalwareStateCollectionResponse(writer: Ser
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWindowsProtectionState(writer: SerializationWriter, windowsProtectionState: Partial<WindowsProtectionState> | undefined = {}) : void {
     serializeEntity(writer, windowsProtectionState)
     writer.writeStringValue("antiMalwareVersion", windowsProtectionState.antiMalwareVersion);
@@ -5534,6 +5827,7 @@ export function serializeWindowsProtectionState(writer: SerializationWriter, win
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWindowsProtectionStateCollectionResponse(writer: SerializationWriter, windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, windowsProtectionStateCollectionResponse)
     writer.writeCollectionOfObjectValues<WindowsProtectionState>("value", windowsProtectionStateCollectionResponse.value, serializeWindowsProtectionState);
@@ -5542,6 +5836,7 @@ export function serializeWindowsProtectionStateCollectionResponse(writer: Serial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkloadAction(writer: SerializationWriter, workloadAction: Partial<WorkloadAction> | undefined = {}) : void {
     writer.writeStringValue("actionId", workloadAction.actionId);
     writer.writeEnumValue<WorkloadActionCategory>("category", workloadAction.category);
@@ -5557,6 +5852,7 @@ export function serializeWorkloadAction(writer: SerializationWriter, workloadAct
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkloadActionDeploymentStatus(writer: SerializationWriter, workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined = {}) : void {
     writer.writeStringValue("actionId", workloadActionDeploymentStatus.actionId);
     writer.writeStringValue("deployedPolicyId", workloadActionDeploymentStatus.deployedPolicyId);
@@ -5573,6 +5869,7 @@ export function serializeWorkloadActionDeploymentStatus(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkloadStatus(writer: SerializationWriter, workloadStatus: Partial<WorkloadStatus> | undefined = {}) : void {
     writer.writeStringValue("displayName", workloadStatus.displayName);
     writer.writeStringValue("@odata.type", workloadStatus.odataType);

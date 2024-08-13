@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateDefinitionValuesPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateDefinitionValuesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateDefinitionValuesPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateDefinitionValuesPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateDefinitionValuesPostRequestBody(updateDefinitionValuesPostRequestBody: Partial<UpdateDefinitionValuesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "added": n => { updateDefinitionValuesPostRequestBody.added = n.getCollectionOfObjectValues<GroupPolicyDefinitionValue>(createGroupPolicyDefinitionValueFromDiscriminatorValue); },
@@ -32,6 +34,7 @@ export function deserializeIntoUpdateDefinitionValuesPostRequestBody(updateDefin
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateDefinitionValuesPostRequestBody(writer: SerializationWriter, updateDefinitionValuesPostRequestBody: Partial<UpdateDefinitionValuesPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<GroupPolicyDefinitionValue>("added", updateDefinitionValuesPostRequestBody.added, serializeGroupPolicyDefinitionValue);
     writer.writeCollectionOfPrimitiveValues<string>("deletedIds", updateDefinitionValuesPostRequestBody.deletedIds);

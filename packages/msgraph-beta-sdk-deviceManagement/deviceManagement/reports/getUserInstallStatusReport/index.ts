@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetUserInstallStatusReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetUserInstallStatusReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetUserInstallStatusReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetUserInstallStatusReportPostRequestBodyFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetUserInstallStatusReportPostRequestBody(getUserInstallStatusReportPostRequestBody: Partial<GetUserInstallStatusReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getUserInstallStatusReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetUserInstallStatusReportRequestBuilder extends BaseRequestBui
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetUserInstallStatusReportPostRequestBody(writer: SerializationWriter, getUserInstallStatusReportPostRequestBody: Partial<GetUserInstallStatusReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getUserInstallStatusReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getUserInstallStatusReportPostRequestBody.groupBy);

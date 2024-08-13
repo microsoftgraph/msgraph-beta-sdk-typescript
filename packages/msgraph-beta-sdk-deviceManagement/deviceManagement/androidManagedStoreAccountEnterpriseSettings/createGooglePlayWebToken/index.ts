@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateGooglePlayWebTokenPostRequestBody}
  */
+// @ts-ignore
 export function createCreateGooglePlayWebTokenPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateGooglePlayWebTokenPostRequestBody;
 }
@@ -19,6 +20,7 @@ export function createCreateGooglePlayWebTokenPostRequestBodyFromDiscriminatorVa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateGooglePlayWebTokenPostResponse}
  */
+// @ts-ignore
 export function createCreateGooglePlayWebTokenPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateGooglePlayWebTokenPostResponse;
 }
@@ -74,6 +76,7 @@ export interface CreateGooglePlayWebTokenRequestBuilder extends BaseRequestBuild
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateGooglePlayWebTokenPostRequestBody(createGooglePlayWebTokenPostRequestBody: Partial<CreateGooglePlayWebTokenPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createGooglePlayWebTokenPostRequestBody.backingStoreEnabled = true; },
@@ -84,6 +87,7 @@ export function deserializeIntoCreateGooglePlayWebTokenPostRequestBody(createGoo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateGooglePlayWebTokenPostResponse(createGooglePlayWebTokenPostResponse: Partial<CreateGooglePlayWebTokenPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createGooglePlayWebTokenPostResponse.backingStoreEnabled = true; },
@@ -94,6 +98,7 @@ export function deserializeIntoCreateGooglePlayWebTokenPostResponse(createGoogle
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCreateGooglePlayWebTokenPostRequestBody(writer: SerializationWriter, createGooglePlayWebTokenPostRequestBody: Partial<CreateGooglePlayWebTokenPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("parentUri", createGooglePlayWebTokenPostRequestBody.parentUri);
     writer.writeAdditionalData(createGooglePlayWebTokenPostRequestBody.additionalData);
@@ -102,6 +107,7 @@ export function serializeCreateGooglePlayWebTokenPostRequestBody(writer: Seriali
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCreateGooglePlayWebTokenPostResponse(writer: SerializationWriter, createGooglePlayWebTokenPostResponse: Partial<CreateGooglePlayWebTokenPostResponse> | undefined = {}) : void {
     writer.writeStringValue("value", createGooglePlayWebTokenPostResponse.value);
     writer.writeAdditionalData(createGooglePlayWebTokenPostResponse.additionalData);

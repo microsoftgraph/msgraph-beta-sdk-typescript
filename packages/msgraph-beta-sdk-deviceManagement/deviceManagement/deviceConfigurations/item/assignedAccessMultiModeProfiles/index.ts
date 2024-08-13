@@ -46,6 +46,7 @@ export interface AssignedAccessMultiModeProfilesRequestBuilder extends BaseReque
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssignedAccessMultiModeProfilesPostRequestBody}
  */
+// @ts-ignore
 export function createAssignedAccessMultiModeProfilesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignedAccessMultiModeProfilesPostRequestBody;
 }
@@ -53,6 +54,7 @@ export function createAssignedAccessMultiModeProfilesPostRequestBodyFromDiscrimi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssignedAccessMultiModeProfilesPostRequestBody(assignedAccessMultiModeProfilesPostRequestBody: Partial<AssignedAccessMultiModeProfilesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignedAccessMultiModeProfiles": n => { assignedAccessMultiModeProfilesPostRequestBody.assignedAccessMultiModeProfiles = n.getCollectionOfObjectValues<WindowsAssignedAccessProfile>(createWindowsAssignedAccessProfileFromDiscriminatorValue); },
@@ -63,6 +65,7 @@ export function deserializeIntoAssignedAccessMultiModeProfilesPostRequestBody(as
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAssignedAccessMultiModeProfilesPostRequestBody(writer: SerializationWriter, assignedAccessMultiModeProfilesPostRequestBody: Partial<AssignedAccessMultiModeProfilesPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<WindowsAssignedAccessProfile>("assignedAccessMultiModeProfiles", assignedAccessMultiModeProfilesPostRequestBody.assignedAccessMultiModeProfiles, serializeWindowsAssignedAccessProfile);
     writer.writeAdditionalData(assignedAccessMultiModeProfilesPostRequestBody.additionalData);

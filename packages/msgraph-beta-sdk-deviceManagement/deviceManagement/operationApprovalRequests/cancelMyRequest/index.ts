@@ -44,6 +44,7 @@ export interface CancelMyRequestRequestBuilder extends BaseRequestBuilder<Cancel
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CancelMyRequestPostRequestBody}
  */
+// @ts-ignore
 export function createCancelMyRequestPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCancelMyRequestPostRequestBody;
 }
@@ -51,6 +52,7 @@ export function createCancelMyRequestPostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCancelMyRequestPostRequestBody(cancelMyRequestPostRequestBody: Partial<CancelMyRequestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cancelMyRequestPostRequestBody.backingStoreEnabled = true; },
@@ -61,6 +63,7 @@ export function deserializeIntoCancelMyRequestPostRequestBody(cancelMyRequestPos
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCancelMyRequestPostRequestBody(writer: SerializationWriter, cancelMyRequestPostRequestBody: Partial<CancelMyRequestPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("id", cancelMyRequestPostRequestBody.id);
     writer.writeAdditionalData(cancelMyRequestPostRequestBody.additionalData);

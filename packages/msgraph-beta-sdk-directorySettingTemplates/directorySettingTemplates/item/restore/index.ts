@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RestorePostRequestBody}
  */
+// @ts-ignore
 export function createRestorePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRestorePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRestorePostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRestorePostRequestBody(restorePostRequestBody: Partial<RestorePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "autoReconcileProxyConflict": n => { restorePostRequestBody.autoReconcileProxyConflict = n.getBooleanValue(); },
@@ -65,6 +67,7 @@ export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRestorePostRequestBody(writer: SerializationWriter, restorePostRequestBody: Partial<RestorePostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("autoReconcileProxyConflict", restorePostRequestBody.autoReconcileProxyConflict);
     writer.writeAdditionalData(restorePostRequestBody.additionalData);

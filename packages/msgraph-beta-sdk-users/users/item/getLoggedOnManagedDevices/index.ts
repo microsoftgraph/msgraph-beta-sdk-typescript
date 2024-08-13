@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetLoggedOnManagedDevicesGetResponse}
  */
+// @ts-ignore
 export function createGetLoggedOnManagedDevicesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetLoggedOnManagedDevicesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetLoggedOnManagedDevicesGetResponseFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetLoggedOnManagedDevicesGetResponse(getLoggedOnManagedDevicesGetResponse: Partial<GetLoggedOnManagedDevicesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getLoggedOnManagedDevicesGetResponse),
@@ -91,6 +93,7 @@ export interface GetLoggedOnManagedDevicesRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetLoggedOnManagedDevicesGetResponse(writer: SerializationWriter, getLoggedOnManagedDevicesGetResponse: Partial<GetLoggedOnManagedDevicesGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getLoggedOnManagedDevicesGetResponse)
     writer.writeCollectionOfObjectValues<ManagedDevice>("value", getLoggedOnManagedDevicesGetResponse.value, serializeManagedDevice);

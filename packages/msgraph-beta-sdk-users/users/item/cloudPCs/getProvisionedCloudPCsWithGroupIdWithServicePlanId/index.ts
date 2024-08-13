@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse}
  */
+// @ts-ignore
 export function createGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetRespo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse: Partial<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse),
@@ -92,6 +94,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(writer: SerializationWriter, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse: Partial<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse)
     writer.writeCollectionOfObjectValues<CloudPC>("value", getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.value, serializeCloudPC);

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetNonCompliantSettingsGetResponse}
  */
+// @ts-ignore
 export function createGetNonCompliantSettingsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetNonCompliantSettingsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetNonCompliantSettingsGetResponseFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetNonCompliantSettingsGetResponse(getNonCompliantSettingsGetResponse: Partial<GetNonCompliantSettingsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getNonCompliantSettingsGetResponse),
@@ -79,6 +81,7 @@ export interface GetNonCompliantSettingsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetNonCompliantSettingsGetResponse(writer: SerializationWriter, getNonCompliantSettingsGetResponse: Partial<GetNonCompliantSettingsGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getNonCompliantSettingsGetResponse)
     writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingState>("value", getNonCompliantSettingsGetResponse.value, serializeDeviceCompliancePolicySettingState);

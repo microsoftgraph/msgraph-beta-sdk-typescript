@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateAudienceByIdPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAudienceByIdPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateAudienceByIdPostRequestBody(updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addExclusions": n => { updateAudienceByIdPostRequestBody.addExclusions = n.getCollectionOfPrimitiveValues<string>(); },
@@ -52,6 +54,7 @@ export interface MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder ex
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateAudienceByIdPostRequestBody(writer: SerializationWriter, updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("addExclusions", updateAudienceByIdPostRequestBody.addExclusions);
     writer.writeCollectionOfPrimitiveValues<string>("addMembers", updateAudienceByIdPostRequestBody.addMembers);

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExportResultPostRequestBody}
  */
+// @ts-ignore
 export function createExportResultPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExportResultPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createExportResultPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExportResultPostRequestBody(exportResultPostRequestBody: Partial<ExportResultPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "additionalOptions": n => { exportResultPostRequestBody.additionalOptions = n.getCollectionOfEnumValues<AdditionalOptions>(AdditionalOptionsObject); },
@@ -93,6 +95,7 @@ export interface MicrosoftGraphSecurityExportResultRequestBuilder extends BaseRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeExportResultPostRequestBody(writer: SerializationWriter, exportResultPostRequestBody: Partial<ExportResultPostRequestBody> | undefined = {}) : void {
     writer.writeEnumValue<AdditionalOptions[]>("additionalOptions", exportResultPostRequestBody.additionalOptions);
     writer.writeStringValue("description", exportResultPostRequestBody.description);

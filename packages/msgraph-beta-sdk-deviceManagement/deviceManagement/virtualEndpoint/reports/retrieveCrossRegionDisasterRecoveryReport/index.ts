@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveCrossRegionDisasterRecoveryReportPostRequestBody}
  */
+// @ts-ignore
 export function createRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyFr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.backingStoreEnabled = true; },
@@ -93,6 +95,7 @@ export interface RetrieveCrossRegionDisasterRecoveryReportRequestBuilder extends
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(writer: SerializationWriter, retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.groupBy);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveWin32CatalogAppsUpdateReportPostRequestBody}
  */
+// @ts-ignore
 export function createRetrieveWin32CatalogAppsUpdateReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveWin32CatalogAppsUpdateReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRetrieveWin32CatalogAppsUpdateReportPostRequestBodyFromDis
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveWin32CatalogAppsUpdateReportPostRequestBody(retrieveWin32CatalogAppsUpdateReportPostRequestBody: Partial<RetrieveWin32CatalogAppsUpdateReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retrieveWin32CatalogAppsUpdateReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface RetrieveWin32CatalogAppsUpdateReportRequestBuilder extends Base
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRetrieveWin32CatalogAppsUpdateReportPostRequestBody(writer: SerializationWriter, retrieveWin32CatalogAppsUpdateReportPostRequestBody: Partial<RetrieveWin32CatalogAppsUpdateReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", retrieveWin32CatalogAppsUpdateReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.groupBy);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetConnectionQualityReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetConnectionQualityReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetConnectionQualityReportsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetConnectionQualityReportsPostRequestBodyFromDiscriminato
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetConnectionQualityReportsPostRequestBody(getConnectionQualityReportsPostRequestBody: Partial<GetConnectionQualityReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getConnectionQualityReportsPostRequestBody.backingStoreEnabled = true; },
@@ -93,6 +95,7 @@ export interface GetConnectionQualityReportsRequestBuilder extends BaseRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetConnectionQualityReportsPostRequestBody(writer: SerializationWriter, getConnectionQualityReportsPostRequestBody: Partial<GetConnectionQualityReportsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getConnectionQualityReportsPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConnectionQualityReportsPostRequestBody.groupBy);

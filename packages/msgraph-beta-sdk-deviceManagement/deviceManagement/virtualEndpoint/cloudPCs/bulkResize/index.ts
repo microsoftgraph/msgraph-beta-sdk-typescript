@@ -60,6 +60,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkResizePostRequestBody}
  */
+// @ts-ignore
 export function createBulkResizePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkResizePostRequestBody;
 }
@@ -68,6 +69,7 @@ export function createBulkResizePostRequestBodyFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkResizePostResponse}
  */
+// @ts-ignore
 export function createBulkResizePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkResizePostResponse;
 }
@@ -75,6 +77,7 @@ export function createBulkResizePostResponseFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkResizePostRequestBody(bulkResizePostRequestBody: Partial<BulkResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { bulkResizePostRequestBody.backingStoreEnabled = true; },
@@ -86,6 +89,7 @@ export function deserializeIntoBulkResizePostRequestBody(bulkResizePostRequestBo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkResizePostResponse(bulkResizePostResponse: Partial<BulkResizePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(bulkResizePostResponse),
@@ -96,6 +100,7 @@ export function deserializeIntoBulkResizePostResponse(bulkResizePostResponse: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeBulkResizePostRequestBody(writer: SerializationWriter, bulkResizePostRequestBody: Partial<BulkResizePostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", bulkResizePostRequestBody.cloudPcIds);
     writer.writeStringValue("targetServicePlanId", bulkResizePostRequestBody.targetServicePlanId);
@@ -105,6 +110,7 @@ export function serializeBulkResizePostRequestBody(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeBulkResizePostResponse(writer: SerializationWriter, bulkResizePostResponse: Partial<BulkResizePostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, bulkResizePostResponse)
     writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", bulkResizePostResponse.value, serializeCloudPcRemoteActionResult);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DisconnectPostResponse}
  */
+// @ts-ignore
 export function createDisconnectPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDisconnectPostResponse;
 }
@@ -18,6 +19,7 @@ export function createDisconnectPostResponseFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDisconnectPostResponse(disconnectPostResponse: Partial<DisconnectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { disconnectPostResponse.backingStoreEnabled = true; },
@@ -60,6 +62,7 @@ export interface DisconnectRequestBuilder extends BaseRequestBuilder<DisconnectR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDisconnectPostResponse(writer: SerializationWriter, disconnectPostResponse: Partial<DisconnectPostResponse> | undefined = {}) : void {
     writer.writeBooleanValue("value", disconnectPostResponse.value);
     writer.writeAdditionalData(disconnectPostResponse.additionalData);

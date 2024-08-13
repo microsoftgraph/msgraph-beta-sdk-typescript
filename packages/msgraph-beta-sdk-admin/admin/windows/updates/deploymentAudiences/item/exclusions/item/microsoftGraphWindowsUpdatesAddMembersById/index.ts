@@ -29,6 +29,7 @@ export interface AddMembersByIdPostRequestBody extends AdditionalDataHolder, Bac
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddMembersByIdPostRequestBody}
  */
+// @ts-ignore
 export function createAddMembersByIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddMembersByIdPostRequestBody;
 }
@@ -36,6 +37,7 @@ export function createAddMembersByIdPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAddMembersByIdPostRequestBody(addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addMembersByIdPostRequestBody.backingStoreEnabled = true; },
@@ -67,6 +69,7 @@ export interface MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder extend
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAddMembersByIdPostRequestBody(writer: SerializationWriter, addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("ids", addMembersByIdPostRequestBody.ids);
     writer.writeStringValue("memberEntityType", addMembersByIdPostRequestBody.memberEntityType);

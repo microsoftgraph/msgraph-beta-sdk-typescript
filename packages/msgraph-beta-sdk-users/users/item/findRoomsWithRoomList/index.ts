@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FindRoomsWithRoomListGetResponse}
  */
+// @ts-ignore
 export function createFindRoomsWithRoomListGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFindRoomsWithRoomListGetResponse;
 }
@@ -20,6 +21,7 @@ export function createFindRoomsWithRoomListGetResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFindRoomsWithRoomListGetResponse(findRoomsWithRoomListGetResponse: Partial<FindRoomsWithRoomListGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(findRoomsWithRoomListGetResponse),
@@ -79,6 +81,7 @@ export interface FindRoomsWithRoomListRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFindRoomsWithRoomListGetResponse(writer: SerializationWriter, findRoomsWithRoomListGetResponse: Partial<FindRoomsWithRoomListGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, findRoomsWithRoomListGetResponse)
     writer.writeCollectionOfObjectValues<EmailAddress>("value", findRoomsWithRoomListGetResponse.value, serializeEmailAddress);

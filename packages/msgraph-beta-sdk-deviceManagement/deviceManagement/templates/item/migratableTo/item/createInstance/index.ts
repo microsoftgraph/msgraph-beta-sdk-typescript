@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateInstancePostRequestBody}
  */
+// @ts-ignore
 export function createCreateInstancePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateInstancePostRequestBody;
 }
@@ -66,6 +67,7 @@ export interface CreateInstanceRequestBuilder extends BaseRequestBuilder<CreateI
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateInstancePostRequestBody(createInstancePostRequestBody: Partial<CreateInstancePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createInstancePostRequestBody.backingStoreEnabled = true; },
@@ -79,6 +81,7 @@ export function deserializeIntoCreateInstancePostRequestBody(createInstancePostR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCreateInstancePostRequestBody(writer: SerializationWriter, createInstancePostRequestBody: Partial<CreateInstancePostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("description", createInstancePostRequestBody.description);
     writer.writeStringValue("displayName", createInstancePostRequestBody.displayName);

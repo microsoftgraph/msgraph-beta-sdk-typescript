@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAllCertificatesReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetAllCertificatesReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAllCertificatesReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetAllCertificatesReportPostRequestBodyFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAllCertificatesReportPostRequestBody(getAllCertificatesReportPostRequestBody: Partial<GetAllCertificatesReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getAllCertificatesReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetAllCertificatesReportRequestBuilder extends BaseRequestBuild
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetAllCertificatesReportPostRequestBody(writer: SerializationWriter, getAllCertificatesReportPostRequestBody: Partial<GetAllCertificatesReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getAllCertificatesReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getAllCertificatesReportPostRequestBody.groupBy);

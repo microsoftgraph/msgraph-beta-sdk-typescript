@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {QueryByPlatformTypePostRequestBody}
  */
+// @ts-ignore
 export function createQueryByPlatformTypePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQueryByPlatformTypePostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createQueryByPlatformTypePostRequestBodyFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {QueryByPlatformTypePostResponse}
  */
+// @ts-ignore
 export function createQueryByPlatformTypePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoQueryByPlatformTypePostResponse;
 }
@@ -28,6 +30,7 @@ export function createQueryByPlatformTypePostResponseFromDiscriminatorValue(pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoQueryByPlatformTypePostRequestBody(queryByPlatformTypePostRequestBody: Partial<QueryByPlatformTypePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { queryByPlatformTypePostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoQueryByPlatformTypePostRequestBody(queryByPlatfor
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoQueryByPlatformTypePostResponse(queryByPlatformTypePostResponse: Partial<QueryByPlatformTypePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(queryByPlatformTypePostResponse),
@@ -88,6 +92,7 @@ export interface QueryByPlatformTypeRequestBuilder extends BaseRequestBuilder<Qu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeQueryByPlatformTypePostRequestBody(writer: SerializationWriter, queryByPlatformTypePostRequestBody: Partial<QueryByPlatformTypePostRequestBody> | undefined = {}) : void {
     writer.writeEnumValue<PolicyPlatformType>("platformType", queryByPlatformTypePostRequestBody.platformType);
     writer.writeAdditionalData(queryByPlatformTypePostRequestBody.additionalData);
@@ -96,6 +101,7 @@ export function serializeQueryByPlatformTypePostRequestBody(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeQueryByPlatformTypePostResponse(writer: SerializationWriter, queryByPlatformTypePostResponse: Partial<QueryByPlatformTypePostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, queryByPlatformTypePostResponse)
     writer.writeCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>("value", queryByPlatformTypePostResponse.value, serializeDeviceManagementResourceAccessProfileBase);

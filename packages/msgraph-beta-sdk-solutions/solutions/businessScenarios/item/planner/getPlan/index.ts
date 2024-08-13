@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPlanPostRequestBody}
  */
+// @ts-ignore
 export function createGetPlanPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPlanPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetPlanPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPlanPostRequestBody(getPlanPostRequestBody: Partial<GetPlanPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getPlanPostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export interface GetPlanRequestBuilder extends BaseRequestBuilder<GetPlanRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetPlanPostRequestBody(writer: SerializationWriter, getPlanPostRequestBody: Partial<GetPlanPostRequestBody> | undefined = {}) : void {
     writer.writeObjectValue<BusinessScenarioTaskTargetBase>("target", getPlanPostRequestBody.target, serializeBusinessScenarioTaskTargetBase);
     writer.writeAdditionalData(getPlanPostRequestBody.additionalData);

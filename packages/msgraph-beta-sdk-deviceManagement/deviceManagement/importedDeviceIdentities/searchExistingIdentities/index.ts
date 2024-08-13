@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SearchExistingIdentitiesPostRequestBody}
  */
+// @ts-ignore
 export function createSearchExistingIdentitiesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSearchExistingIdentitiesPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createSearchExistingIdentitiesPostRequestBodyFromDiscriminatorVa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SearchExistingIdentitiesPostResponse}
  */
+// @ts-ignore
 export function createSearchExistingIdentitiesPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSearchExistingIdentitiesPostResponse;
 }
@@ -28,6 +30,7 @@ export function createSearchExistingIdentitiesPostResponseFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSearchExistingIdentitiesPostRequestBody(searchExistingIdentitiesPostRequestBody: Partial<SearchExistingIdentitiesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { searchExistingIdentitiesPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoSearchExistingIdentitiesPostRequestBody(searchExi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSearchExistingIdentitiesPostResponse(searchExistingIdentitiesPostResponse: Partial<SearchExistingIdentitiesPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(searchExistingIdentitiesPostResponse),
@@ -88,6 +92,7 @@ export interface SearchExistingIdentitiesRequestBuilder extends BaseRequestBuild
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSearchExistingIdentitiesPostRequestBody(writer: SerializationWriter, searchExistingIdentitiesPostRequestBody: Partial<SearchExistingIdentitiesPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("importedDeviceIdentities", searchExistingIdentitiesPostRequestBody.importedDeviceIdentities, serializeImportedDeviceIdentity);
     writer.writeAdditionalData(searchExistingIdentitiesPostRequestBody.additionalData);
@@ -96,6 +101,7 @@ export function serializeSearchExistingIdentitiesPostRequestBody(writer: Seriali
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSearchExistingIdentitiesPostResponse(writer: SerializationWriter, searchExistingIdentitiesPostResponse: Partial<SearchExistingIdentitiesPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, searchExistingIdentitiesPostResponse)
     writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("value", searchExistingIdentitiesPostResponse.value, serializeImportedDeviceIdentity);

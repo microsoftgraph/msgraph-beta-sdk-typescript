@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateIndexPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateIndexPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateIndexPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createUpdateIndexPostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateIndexPostRequestBody(updateIndexPostRequestBody: Partial<UpdateIndexPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateIndexPostRequestBody.backingStoreEnabled = true; },
@@ -48,6 +50,7 @@ export interface MicrosoftGraphSecurityUpdateIndexRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateIndexPostRequestBody(writer: SerializationWriter, updateIndexPostRequestBody: Partial<UpdateIndexPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("ids", updateIndexPostRequestBody.ids);
     writer.writeAdditionalData(updateIndexPostRequestBody.additionalData);

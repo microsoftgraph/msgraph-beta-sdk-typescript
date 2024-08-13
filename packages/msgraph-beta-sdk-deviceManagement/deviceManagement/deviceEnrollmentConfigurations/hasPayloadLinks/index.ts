@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {HasPayloadLinksPostRequestBody}
  */
+// @ts-ignore
 export function createHasPayloadLinksPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHasPayloadLinksPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createHasPayloadLinksPostRequestBodyFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {HasPayloadLinksPostResponse}
  */
+// @ts-ignore
 export function createHasPayloadLinksPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHasPayloadLinksPostResponse;
 }
@@ -28,6 +30,7 @@ export function createHasPayloadLinksPostResponseFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoHasPayloadLinksPostRequestBody(hasPayloadLinksPostRequestBody: Partial<HasPayloadLinksPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { hasPayloadLinksPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoHasPayloadLinksPostRequestBody(hasPayloadLinksPos
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoHasPayloadLinksPostResponse(hasPayloadLinksPostResponse: Partial<HasPayloadLinksPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(hasPayloadLinksPostResponse),
@@ -88,6 +92,7 @@ export interface HasPayloadLinksRequestBuilder extends BaseRequestBuilder<HasPay
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeHasPayloadLinksPostRequestBody(writer: SerializationWriter, hasPayloadLinksPostRequestBody: Partial<HasPayloadLinksPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("payloadIds", hasPayloadLinksPostRequestBody.payloadIds);
     writer.writeAdditionalData(hasPayloadLinksPostRequestBody.additionalData);
@@ -96,6 +101,7 @@ export function serializeHasPayloadLinksPostRequestBody(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeHasPayloadLinksPostResponse(writer: SerializationWriter, hasPayloadLinksPostResponse: Partial<HasPayloadLinksPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, hasPayloadLinksPostResponse)
     writer.writeCollectionOfObjectValues<HasPayloadLinkResultItem>("value", hasPayloadLinksPostResponse.value, serializeHasPayloadLinkResultItem);

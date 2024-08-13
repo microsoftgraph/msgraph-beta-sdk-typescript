@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateTiIndicatorsPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateTiIndicatorsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateTiIndicatorsPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createUpdateTiIndicatorsPostRequestBodyFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateTiIndicatorsPostResponse}
  */
+// @ts-ignore
 export function createUpdateTiIndicatorsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateTiIndicatorsPostResponse;
 }
@@ -28,6 +30,7 @@ export function createUpdateTiIndicatorsPostResponseFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateTiIndicatorsPostRequestBody(updateTiIndicatorsPostRequestBody: Partial<UpdateTiIndicatorsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateTiIndicatorsPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoUpdateTiIndicatorsPostRequestBody(updateTiIndicat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateTiIndicatorsPostResponse(updateTiIndicatorsPostResponse: Partial<UpdateTiIndicatorsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(updateTiIndicatorsPostResponse),
@@ -48,6 +52,7 @@ export function deserializeIntoUpdateTiIndicatorsPostResponse(updateTiIndicators
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateTiIndicatorsPostRequestBody(writer: SerializationWriter, updateTiIndicatorsPostRequestBody: Partial<UpdateTiIndicatorsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<TiIndicator>("value", updateTiIndicatorsPostRequestBody.value, serializeTiIndicator);
     writer.writeAdditionalData(updateTiIndicatorsPostRequestBody.additionalData);
@@ -56,6 +61,7 @@ export function serializeUpdateTiIndicatorsPostRequestBody(writer: Serialization
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateTiIndicatorsPostResponse(writer: SerializationWriter, updateTiIndicatorsPostResponse: Partial<UpdateTiIndicatorsPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, updateTiIndicatorsPostResponse)
     writer.writeCollectionOfObjectValues<TiIndicator>("value", updateTiIndicatorsPostResponse.value, serializeTiIndicator);

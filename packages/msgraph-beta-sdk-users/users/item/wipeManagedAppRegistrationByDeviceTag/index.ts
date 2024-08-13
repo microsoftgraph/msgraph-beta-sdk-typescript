@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WipeManagedAppRegistrationByDeviceTagPostRequestBody}
  */
+// @ts-ignore
 export function createWipeManagedAppRegistrationByDeviceTagPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWipeManagedAppRegistrationByDeviceTagPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createWipeManagedAppRegistrationByDeviceTagPostRequestBodyFromDi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWipeManagedAppRegistrationByDeviceTagPostRequestBody(wipeManagedAppRegistrationByDeviceTagPostRequestBody: Partial<WipeManagedAppRegistrationByDeviceTagPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { wipeManagedAppRegistrationByDeviceTagPostRequestBody.backingStoreEnabled = true; },
@@ -28,6 +30,7 @@ export function deserializeIntoWipeManagedAppRegistrationByDeviceTagPostRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWipeManagedAppRegistrationByDeviceTagPostRequestBody(writer: SerializationWriter, wipeManagedAppRegistrationByDeviceTagPostRequestBody: Partial<WipeManagedAppRegistrationByDeviceTagPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("deviceTag", wipeManagedAppRegistrationByDeviceTagPostRequestBody.deviceTag);
     writer.writeAdditionalData(wipeManagedAppRegistrationByDeviceTagPostRequestBody.additionalData);

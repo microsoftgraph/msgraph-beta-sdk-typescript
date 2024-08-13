@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdatePostRequestBody}
  */
+// @ts-ignore
 export function createUpdatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdatePostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdatePostRequestBody(updatePostRequestBody: Partial<UpdatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addedPolicySetItems": n => { updatePostRequestBody.addedPolicySetItems = n.getCollectionOfObjectValues<PolicySetItem>(createPolicySetItemFromDiscriminatorValue); },
@@ -33,6 +35,7 @@ export function deserializeIntoUpdatePostRequestBody(updatePostRequestBody: Part
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdatePostRequestBody(writer: SerializationWriter, updatePostRequestBody: Partial<UpdatePostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<PolicySetItem>("addedPolicySetItems", updatePostRequestBody.addedPolicySetItems, serializePolicySetItem);
     writer.writeCollectionOfObjectValues<PolicySetAssignment>("assignments", updatePostRequestBody.assignments, serializePolicySetAssignment);

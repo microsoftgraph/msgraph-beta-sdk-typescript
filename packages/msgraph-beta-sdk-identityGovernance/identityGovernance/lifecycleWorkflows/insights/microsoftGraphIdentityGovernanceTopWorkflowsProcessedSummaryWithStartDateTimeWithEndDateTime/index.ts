@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse}
  */
+// @ts-ignore
 export function createTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse;
 }
@@ -22,6 +23,7 @@ export function createTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse(topWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse: Partial<TopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(topWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse),
@@ -76,6 +78,7 @@ export interface MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, topWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse: Partial<TopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, topWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse)
     writer.writeCollectionOfObjectValues<TopWorkflowsInsightsSummary>("value", topWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse.value, serializeTopWorkflowsInsightsSummary);

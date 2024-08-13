@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateRequestPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateRequestPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateRequestPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateRequestPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateRequestPostRequestBody(updateRequestPostRequestBody: Partial<UpdateRequestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignmentState": n => { updateRequestPostRequestBody.assignmentState = n.getStringValue(); },
@@ -33,6 +35,7 @@ export function deserializeIntoUpdateRequestPostRequestBody(updateRequestPostReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateRequestPostRequestBody(writer: SerializationWriter, updateRequestPostRequestBody: Partial<UpdateRequestPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("assignmentState", updateRequestPostRequestBody.assignmentState);
     writer.writeStringValue("decision", updateRequestPostRequestBody.decision);

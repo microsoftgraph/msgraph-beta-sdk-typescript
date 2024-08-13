@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveApprovableOperationsGetResponse}
  */
+// @ts-ignore
 export function createRetrieveApprovableOperationsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveApprovableOperationsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createRetrieveApprovableOperationsGetResponseFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveApprovableOperationsGetResponse(retrieveApprovableOperationsGetResponse: Partial<RetrieveApprovableOperationsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(retrieveApprovableOperationsGetResponse),
@@ -79,6 +81,7 @@ export interface RetrieveApprovableOperationsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRetrieveApprovableOperationsGetResponse(writer: SerializationWriter, retrieveApprovableOperationsGetResponse: Partial<RetrieveApprovableOperationsGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, retrieveApprovableOperationsGetResponse)
     writer.writeCollectionOfObjectValues<OperationApprovalPolicySet>("value", retrieveApprovableOperationsGetResponse.value, serializeOperationApprovalPolicySet);

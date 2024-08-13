@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnrollAssetsPostRequestBody}
  */
+// @ts-ignore
 export function createEnrollAssetsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnrollAssetsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createEnrollAssetsPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEnrollAssetsPostRequestBody(enrollAssetsPostRequestBody: Partial<EnrollAssetsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assets": n => { enrollAssetsPostRequestBody.assets = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
@@ -68,6 +70,7 @@ export interface MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder extends 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEnrollAssetsPostRequestBody(writer: SerializationWriter, enrollAssetsPostRequestBody: Partial<EnrollAssetsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", enrollAssetsPostRequestBody.assets, serializeUpdatableAsset);
     writer.writeEnumValue<UpdateCategory>("updateCategory", enrollAssetsPostRequestBody.updateCategory);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetMobileApplicationManagementAppRegistrationSummaryReport
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody: Partial<GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetMobileApplicationManagementAppRegistrationSummaryReportReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody: Partial<GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.groupBy);

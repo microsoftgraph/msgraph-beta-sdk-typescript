@@ -292,6 +292,7 @@ export type ConnectivityState = (typeof ConnectivityStateObject)[keyof typeof Co
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertAction}
  */
+// @ts-ignore
 export function createAlertActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertAction;
 }
@@ -300,6 +301,7 @@ export function createAlertActionFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertCollectionResponse}
  */
+// @ts-ignore
 export function createAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertCollectionResponse;
 }
@@ -308,6 +310,7 @@ export function createAlertCollectionResponseFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Alert}
  */
+// @ts-ignore
 export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlert;
 }
@@ -316,6 +319,7 @@ export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplicationSnapshot}
  */
+// @ts-ignore
 export function createApplicationSnapshotFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplicationSnapshot;
 }
@@ -324,6 +328,7 @@ export function createApplicationSnapshotFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssociatedBranch}
  */
+// @ts-ignore
 export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssociatedBranch;
 }
@@ -332,6 +337,7 @@ export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Association}
  */
+// @ts-ignore
 export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -351,6 +357,7 @@ export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BgpConfiguration}
  */
+// @ts-ignore
 export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBgpConfiguration;
 }
@@ -359,6 +366,7 @@ export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BranchConnectivityConfiguration}
  */
+// @ts-ignore
 export function createBranchConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchConnectivityConfiguration;
 }
@@ -367,6 +375,7 @@ export function createBranchConnectivityConfigurationFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BranchSiteCollectionResponse}
  */
+// @ts-ignore
 export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSiteCollectionResponse;
 }
@@ -375,6 +384,7 @@ export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BranchSite}
  */
+// @ts-ignore
 export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSite;
 }
@@ -383,6 +393,7 @@ export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicyCollectionResponse}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCollectionResponse;
 }
@@ -391,6 +402,7 @@ export function createConditionalAccessPolicyCollectionResponseFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicy}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicy;
 }
@@ -399,6 +411,7 @@ export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessSettings}
  */
+// @ts-ignore
 export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessSettings;
 }
@@ -407,6 +420,7 @@ export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConnectivityConfigurationLinkCollectionResponse}
  */
+// @ts-ignore
 export function createConnectivityConfigurationLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivityConfigurationLinkCollectionResponse;
 }
@@ -415,6 +429,7 @@ export function createConnectivityConfigurationLinkCollectionResponseFromDiscrim
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConnectivityConfigurationLink}
  */
+// @ts-ignore
 export function createConnectivityConfigurationLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivityConfigurationLink;
 }
@@ -423,6 +438,7 @@ export function createConnectivityConfigurationLinkFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Connectivity}
  */
+// @ts-ignore
 export function createConnectivityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivity;
 }
@@ -431,6 +447,7 @@ export function createConnectivityFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CrossTenantAccess}
  */
+// @ts-ignore
 export function createCrossTenantAccessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantAccess;
 }
@@ -439,6 +456,7 @@ export function createCrossTenantAccessFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CrossTenantAccessSettings}
  */
+// @ts-ignore
 export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantAccessSettings;
 }
@@ -447,6 +465,7 @@ export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CrossTenantSummary}
  */
+// @ts-ignore
 export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantSummary;
 }
@@ -455,6 +474,7 @@ export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Destination}
  */
+// @ts-ignore
 export function createDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDestination;
 }
@@ -463,6 +483,7 @@ export function createDestinationFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DestinationSummary}
  */
+// @ts-ignore
 export function createDestinationSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDestinationSummary;
 }
@@ -471,6 +492,7 @@ export function createDestinationSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Device}
  */
+// @ts-ignore
 export function createDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDevice;
 }
@@ -479,6 +501,7 @@ export function createDeviceFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceLinkCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceLinkCollectionResponse;
 }
@@ -487,6 +510,7 @@ export function createDeviceLinkCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceLink}
  */
+// @ts-ignore
 export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceLink;
 }
@@ -495,6 +519,7 @@ export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceUsageSummary}
  */
+// @ts-ignore
 export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceUsageSummary;
 }
@@ -503,6 +528,7 @@ export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DiscoveredApplicationSegmentReport}
  */
+// @ts-ignore
 export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDiscoveredApplicationSegmentReport;
 }
@@ -511,6 +537,7 @@ export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnrichedAuditLogs}
  */
+// @ts-ignore
 export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnrichedAuditLogs;
 }
@@ -519,6 +546,7 @@ export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnrichedAuditLogsSettings}
  */
+// @ts-ignore
 export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnrichedAuditLogsSettings;
 }
@@ -527,6 +555,7 @@ export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EntitiesSummary}
  */
+// @ts-ignore
 export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEntitiesSummary;
 }
@@ -535,6 +564,7 @@ export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringPolicyCollectionResponse}
  */
+// @ts-ignore
 export function createFilteringPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicyCollectionResponse;
 }
@@ -543,6 +573,7 @@ export function createFilteringPolicyCollectionResponseFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringPolicy}
  */
+// @ts-ignore
 export function createFilteringPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicy;
 }
@@ -551,6 +582,7 @@ export function createFilteringPolicyFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringPolicyLink}
  */
+// @ts-ignore
 export function createFilteringPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicyLink;
 }
@@ -559,6 +591,7 @@ export function createFilteringPolicyLinkFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringProfileCollectionResponse}
  */
+// @ts-ignore
 export function createFilteringProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringProfileCollectionResponse;
 }
@@ -567,6 +600,7 @@ export function createFilteringProfileCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringProfile}
  */
+// @ts-ignore
 export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringProfile;
 }
@@ -575,6 +609,7 @@ export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringRule}
  */
+// @ts-ignore
 export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -596,6 +631,7 @@ export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingOptions}
  */
+// @ts-ignore
 export function createForwardingOptionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingOptions;
 }
@@ -604,6 +640,7 @@ export function createForwardingOptionsFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingPolicyCollectionResponse}
  */
+// @ts-ignore
 export function createForwardingPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicyCollectionResponse;
 }
@@ -612,6 +649,7 @@ export function createForwardingPolicyCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingPolicy}
  */
+// @ts-ignore
 export function createForwardingPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicy;
 }
@@ -620,6 +658,7 @@ export function createForwardingPolicyFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingPolicyLink}
  */
+// @ts-ignore
 export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicyLink;
 }
@@ -628,6 +667,7 @@ export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingProfileCollectionResponse}
  */
+// @ts-ignore
 export function createForwardingProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingProfileCollectionResponse;
 }
@@ -636,6 +676,7 @@ export function createForwardingProfileCollectionResponseFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingProfile}
  */
+// @ts-ignore
 export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingProfile;
 }
@@ -644,6 +685,7 @@ export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingRule}
  */
+// @ts-ignore
 export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -667,6 +709,7 @@ export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FqdnFilteringRule}
  */
+// @ts-ignore
 export function createFqdnFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFqdnFilteringRule;
 }
@@ -675,6 +718,7 @@ export function createFqdnFilteringRuleFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Fqdn}
  */
+// @ts-ignore
 export function createFqdnFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFqdn;
 }
@@ -683,6 +727,7 @@ export function createFqdnFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Headers}
  */
+// @ts-ignore
 export function createHeadersFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHeaders;
 }
@@ -691,6 +736,7 @@ export function createHeadersFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InternetAccessForwardingRule}
  */
+// @ts-ignore
 export function createInternetAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInternetAccessForwardingRule;
 }
@@ -699,6 +745,7 @@ export function createInternetAccessForwardingRuleFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpAddress}
  */
+// @ts-ignore
 export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpAddress;
 }
@@ -707,6 +754,7 @@ export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpRange}
  */
+// @ts-ignore
 export function createIpRangeFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpRange;
 }
@@ -715,6 +763,7 @@ export function createIpRangeFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpSubnet}
  */
+// @ts-ignore
 export function createIpSubnetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpSubnet;
 }
@@ -723,6 +772,7 @@ export function createIpSubnetFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LocalConnectivityConfiguration}
  */
+// @ts-ignore
 export function createLocalConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLocalConnectivityConfiguration;
 }
@@ -731,6 +781,7 @@ export function createLocalConnectivityConfigurationFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Logs}
  */
+// @ts-ignore
 export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLogs;
 }
@@ -739,6 +790,7 @@ export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {M365ForwardingRule}
  */
+// @ts-ignore
 export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoM365ForwardingRule;
 }
@@ -747,6 +799,7 @@ export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NetworkAccessRoot}
  */
+// @ts-ignore
 export function createNetworkAccessRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessRoot;
 }
@@ -755,6 +808,7 @@ export function createNetworkAccessRootFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NetworkAccessTrafficCollectionResponse}
  */
+// @ts-ignore
 export function createNetworkAccessTrafficCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessTrafficCollectionResponse;
 }
@@ -763,6 +817,7 @@ export function createNetworkAccessTrafficCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NetworkAccessTraffic}
  */
+// @ts-ignore
 export function createNetworkAccessTrafficFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessTraffic;
 }
@@ -771,6 +826,7 @@ export function createNetworkAccessTrafficFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PeerConnectivityConfiguration}
  */
+// @ts-ignore
 export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPeerConnectivityConfiguration;
 }
@@ -779,6 +835,7 @@ export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Policy}
  */
+// @ts-ignore
 export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -800,6 +857,7 @@ export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyLinkCollectionResponse}
  */
+// @ts-ignore
 export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyLinkCollectionResponse;
 }
@@ -808,6 +866,7 @@ export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyLink}
  */
+// @ts-ignore
 export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -829,6 +888,7 @@ export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyRuleCollectionResponse}
  */
+// @ts-ignore
 export function createPolicyRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyRuleCollectionResponse;
 }
@@ -837,6 +897,7 @@ export function createPolicyRuleCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyRuleDelta}
  */
+// @ts-ignore
 export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyRuleDelta;
 }
@@ -845,6 +906,7 @@ export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyRule}
  */
+// @ts-ignore
 export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -876,6 +938,7 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PrivateAccessDetails}
  */
+// @ts-ignore
 export function createPrivateAccessDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPrivateAccessDetails;
 }
@@ -884,6 +947,7 @@ export function createPrivateAccessDetailsFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PrivateAccessForwardingRule}
  */
+// @ts-ignore
 export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPrivateAccessForwardingRule;
 }
@@ -892,6 +956,7 @@ export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Profile}
  */
+// @ts-ignore
 export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -913,6 +978,7 @@ export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RedundancyConfiguration}
  */
+// @ts-ignore
 export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRedundancyConfiguration;
 }
@@ -921,6 +987,7 @@ export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedDestination}
  */
+// @ts-ignore
 export function createRelatedDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedDestination;
 }
@@ -929,6 +996,7 @@ export function createRelatedDestinationFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedDevice}
  */
+// @ts-ignore
 export function createRelatedDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedDevice;
 }
@@ -937,6 +1005,7 @@ export function createRelatedDeviceFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedMalware}
  */
+// @ts-ignore
 export function createRelatedMalwareFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedMalware;
 }
@@ -945,6 +1014,7 @@ export function createRelatedMalwareFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedProcess}
  */
+// @ts-ignore
 export function createRelatedProcessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedProcess;
 }
@@ -953,6 +1023,7 @@ export function createRelatedProcessFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedRemoteNetwork}
  */
+// @ts-ignore
 export function createRelatedRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedRemoteNetwork;
 }
@@ -961,6 +1032,7 @@ export function createRelatedRemoteNetworkFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedResource}
  */
+// @ts-ignore
 export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -998,6 +1070,7 @@ export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedTenant}
  */
+// @ts-ignore
 export function createRelatedTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedTenant;
 }
@@ -1006,6 +1079,7 @@ export function createRelatedTenantFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedThreatIntelligence}
  */
+// @ts-ignore
 export function createRelatedThreatIntelligenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedThreatIntelligence;
 }
@@ -1014,6 +1088,7 @@ export function createRelatedThreatIntelligenceFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedToken}
  */
+// @ts-ignore
 export function createRelatedTokenFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedToken;
 }
@@ -1022,6 +1097,7 @@ export function createRelatedTokenFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedUser}
  */
+// @ts-ignore
 export function createRelatedUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedUser;
 }
@@ -1030,6 +1106,7 @@ export function createRelatedUserFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedWebCategory}
  */
+// @ts-ignore
 export function createRelatedWebCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedWebCategory;
 }
@@ -1038,6 +1115,7 @@ export function createRelatedWebCategoryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkCollectionResponse}
  */
+// @ts-ignore
 export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkCollectionResponse;
 }
@@ -1046,6 +1124,7 @@ export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkConnectivityConfiguration}
  */
+// @ts-ignore
 export function createRemoteNetworkConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkConnectivityConfiguration;
 }
@@ -1054,6 +1133,7 @@ export function createRemoteNetworkConnectivityConfigurationFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetwork}
  */
+// @ts-ignore
 export function createRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetwork;
 }
@@ -1062,6 +1142,7 @@ export function createRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkHealthEventCollectionResponse}
  */
+// @ts-ignore
 export function createRemoteNetworkHealthEventCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkHealthEventCollectionResponse;
 }
@@ -1070,6 +1151,7 @@ export function createRemoteNetworkHealthEventCollectionResponseFromDiscriminato
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkHealthEvent}
  */
+// @ts-ignore
 export function createRemoteNetworkHealthEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkHealthEvent;
 }
@@ -1078,6 +1160,7 @@ export function createRemoteNetworkHealthEventFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Reports}
  */
+// @ts-ignore
 export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReports;
 }
@@ -1086,6 +1169,7 @@ export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RuleDestination}
  */
+// @ts-ignore
 export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -1115,6 +1199,7 @@ export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Settings}
  */
+// @ts-ignore
 export function createSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSettings;
 }
@@ -1123,6 +1208,7 @@ export function createSettingsFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantStatus}
  */
+// @ts-ignore
 export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantStatus;
 }
@@ -1131,6 +1217,7 @@ export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ThirdPartyTokenDetails}
  */
+// @ts-ignore
 export function createThirdPartyTokenDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoThirdPartyTokenDetails;
 }
@@ -1139,6 +1226,7 @@ export function createThirdPartyTokenDetailsFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TransactionSummary}
  */
+// @ts-ignore
 export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTransactionSummary;
 }
@@ -1147,6 +1235,7 @@ export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TunnelConfiguration}
  */
+// @ts-ignore
 export function createTunnelConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -1168,6 +1257,7 @@ export function createTunnelConfigurationFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TunnelConfigurationIKEv2Custom}
  */
+// @ts-ignore
 export function createTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTunnelConfigurationIKEv2Custom;
 }
@@ -1176,6 +1266,7 @@ export function createTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TunnelConfigurationIKEv2Default}
  */
+// @ts-ignore
 export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTunnelConfigurationIKEv2Default;
 }
@@ -1184,6 +1275,7 @@ export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Url}
  */
+// @ts-ignore
 export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUrl;
 }
@@ -1192,6 +1284,7 @@ export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UsageProfilingPoint}
  */
+// @ts-ignore
 export function createUsageProfilingPointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUsageProfilingPoint;
 }
@@ -1200,6 +1293,7 @@ export function createUsageProfilingPointFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {User}
  */
+// @ts-ignore
 export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUser;
 }
@@ -1208,6 +1302,7 @@ export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WebCategoriesSummary}
  */
+// @ts-ignore
 export function createWebCategoriesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategoriesSummary;
 }
@@ -1216,6 +1311,7 @@ export function createWebCategoriesSummaryFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WebCategoryFilteringRule}
  */
+// @ts-ignore
 export function createWebCategoryFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategoryFilteringRule;
 }
@@ -1224,6 +1320,7 @@ export function createWebCategoryFilteringRuleFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WebCategory}
  */
+// @ts-ignore
 export function createWebCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategory;
 }
@@ -1317,6 +1414,7 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(alert),
@@ -1336,6 +1434,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionLink": n => { alertAction.actionLink = n.getStringValue(); },
@@ -1348,6 +1447,7 @@ export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertCollectionResponse(alertCollectionResponse: Partial<AlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(alertCollectionResponse),
@@ -1358,6 +1458,7 @@ export function deserializeIntoAlertCollectionResponse(alertCollectionResponse: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApplicationSnapshot(applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "appId": n => { applicationSnapshot.appId = n.getStringValue(); },
@@ -1369,6 +1470,7 @@ export function deserializeIntoApplicationSnapshot(applicationSnapshot: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssociatedBranch(associatedBranch: Partial<AssociatedBranch> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAssociation(associatedBranch),
@@ -1379,6 +1481,7 @@ export function deserializeIntoAssociatedBranch(associatedBranch: Partial<Associ
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssociation(association: Partial<Association> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { association.backingStoreEnabled = true; },
@@ -1389,6 +1492,7 @@ export function deserializeIntoAssociation(association: Partial<Association> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBgpConfiguration(bgpConfiguration: Partial<BgpConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "asn": n => { bgpConfiguration.asn = n.getNumberValue(); },
@@ -1403,6 +1507,7 @@ export function deserializeIntoBgpConfiguration(bgpConfiguration: Partial<BgpCon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBranchConnectivityConfiguration(branchConnectivityConfiguration: Partial<BranchConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { branchConnectivityConfiguration.backingStoreEnabled = true; },
@@ -1416,6 +1521,7 @@ export function deserializeIntoBranchConnectivityConfiguration(branchConnectivit
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBranchSite(branchSite: Partial<BranchSite> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(branchSite),
@@ -1435,6 +1541,7 @@ export function deserializeIntoBranchSite(branchSite: Partial<BranchSite> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBranchSiteCollectionResponse(branchSiteCollectionResponse: Partial<BranchSiteCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(branchSiteCollectionResponse),
@@ -1445,6 +1552,7 @@ export function deserializeIntoBranchSiteCollectionResponse(branchSiteCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicy(conditionalAccessPolicy: Partial<ConditionalAccessPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(conditionalAccessPolicy),
@@ -1458,6 +1566,7 @@ export function deserializeIntoConditionalAccessPolicy(conditionalAccessPolicy: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicyCollectionResponse(conditionalAccessPolicyCollectionResponse: Partial<ConditionalAccessPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(conditionalAccessPolicyCollectionResponse),
@@ -1468,6 +1577,7 @@ export function deserializeIntoConditionalAccessPolicyCollectionResponse(conditi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessSettings(conditionalAccessSettings: Partial<ConditionalAccessSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(conditionalAccessSettings),
@@ -1478,6 +1588,7 @@ export function deserializeIntoConditionalAccessSettings(conditionalAccessSettin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectivity(connectivity: Partial<Connectivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectivity),
@@ -1490,6 +1601,7 @@ export function deserializeIntoConnectivity(connectivity: Partial<Connectivity> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectivityConfigurationLink(connectivityConfigurationLink: Partial<ConnectivityConfigurationLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectivityConfigurationLink),
@@ -1502,6 +1614,7 @@ export function deserializeIntoConnectivityConfigurationLink(connectivityConfigu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectivityConfigurationLinkCollectionResponse(connectivityConfigurationLinkCollectionResponse: Partial<ConnectivityConfigurationLinkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(connectivityConfigurationLinkCollectionResponse),
@@ -1512,6 +1625,7 @@ export function deserializeIntoConnectivityConfigurationLinkCollectionResponse(c
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCrossTenantAccess(crossTenantAccess: Partial<CrossTenantAccess> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { crossTenantAccess.backingStoreEnabled = true; },
@@ -1529,6 +1643,7 @@ export function deserializeIntoCrossTenantAccess(crossTenantAccess: Partial<Cros
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCrossTenantAccessSettings(crossTenantAccessSettings: Partial<CrossTenantAccessSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(crossTenantAccessSettings),
@@ -1539,6 +1654,7 @@ export function deserializeIntoCrossTenantAccessSettings(crossTenantAccessSettin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCrossTenantSummary(crossTenantSummary: Partial<CrossTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "authTransactionCount": n => { crossTenantSummary.authTransactionCount = n.getNumberValue(); },
@@ -1555,6 +1671,7 @@ export function deserializeIntoCrossTenantSummary(crossTenantSummary: Partial<Cr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDestination(destination: Partial<Destination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { destination.backingStoreEnabled = true; },
@@ -1578,6 +1695,7 @@ export function deserializeIntoDestination(destination: Partial<Destination> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDestinationSummary(destinationSummary: Partial<DestinationSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { destinationSummary.backingStoreEnabled = true; },
@@ -1591,6 +1709,7 @@ export function deserializeIntoDestinationSummary(destinationSummary: Partial<De
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDevice(device: Partial<Device> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { device.backingStoreEnabled = true; },
@@ -1607,6 +1726,7 @@ export function deserializeIntoDevice(device: Partial<Device> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceLink(deviceLink: Partial<DeviceLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceLink),
@@ -1624,6 +1744,7 @@ export function deserializeIntoDeviceLink(deviceLink: Partial<DeviceLink> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceLinkCollectionResponse(deviceLinkCollectionResponse: Partial<DeviceLinkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceLinkCollectionResponse),
@@ -1634,6 +1755,7 @@ export function deserializeIntoDeviceLinkCollectionResponse(deviceLinkCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceUsageSummary(deviceUsageSummary: Partial<DeviceUsageSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "activeDeviceCount": n => { deviceUsageSummary.activeDeviceCount = n.getNumberValue(); },
@@ -1647,6 +1769,7 @@ export function deserializeIntoDeviceUsageSummary(deviceUsageSummary: Partial<De
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "accessType": n => { discoveredApplicationSegmentReport.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
@@ -1670,6 +1793,7 @@ export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredAppl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEnrichedAuditLogs(enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(enrichedAuditLogs),
@@ -1682,6 +1806,7 @@ export function deserializeIntoEnrichedAuditLogs(enrichedAuditLogs: Partial<Enri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEnrichedAuditLogsSettings(enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { enrichedAuditLogsSettings.backingStoreEnabled = true; },
@@ -1693,6 +1818,7 @@ export function deserializeIntoEnrichedAuditLogsSettings(enrichedAuditLogsSettin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEntitiesSummary(entitiesSummary: Partial<EntitiesSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { entitiesSummary.backingStoreEnabled = true; },
@@ -1707,6 +1833,7 @@ export function deserializeIntoEntitiesSummary(entitiesSummary: Partial<Entities
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringPolicy(filteringPolicy: Partial<FilteringPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicy(filteringPolicy),
@@ -1719,6 +1846,7 @@ export function deserializeIntoFilteringPolicy(filteringPolicy: Partial<Filterin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringPolicyCollectionResponse(filteringPolicyCollectionResponse: Partial<FilteringPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(filteringPolicyCollectionResponse),
@@ -1729,6 +1857,7 @@ export function deserializeIntoFilteringPolicyCollectionResponse(filteringPolicy
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringPolicyLink(filteringPolicyLink: Partial<FilteringPolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyLink(filteringPolicyLink),
@@ -1742,6 +1871,7 @@ export function deserializeIntoFilteringPolicyLink(filteringPolicyLink: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringProfile(filteringProfile: Partial<FilteringProfile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoProfile(filteringProfile),
@@ -1754,6 +1884,7 @@ export function deserializeIntoFilteringProfile(filteringProfile: Partial<Filter
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringProfileCollectionResponse(filteringProfileCollectionResponse: Partial<FilteringProfileCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(filteringProfileCollectionResponse),
@@ -1764,6 +1895,7 @@ export function deserializeIntoFilteringProfileCollectionResponse(filteringProfi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringRule(filteringRule: Partial<FilteringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyRule(filteringRule),
@@ -1775,6 +1907,7 @@ export function deserializeIntoFilteringRule(filteringRule: Partial<FilteringRul
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingOptions(forwardingOptions: Partial<ForwardingOptions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(forwardingOptions),
@@ -1785,6 +1918,7 @@ export function deserializeIntoForwardingOptions(forwardingOptions: Partial<Forw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingPolicy(forwardingPolicy: Partial<ForwardingPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicy(forwardingPolicy),
@@ -1795,6 +1929,7 @@ export function deserializeIntoForwardingPolicy(forwardingPolicy: Partial<Forwar
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingPolicyCollectionResponse(forwardingPolicyCollectionResponse: Partial<ForwardingPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(forwardingPolicyCollectionResponse),
@@ -1805,6 +1940,7 @@ export function deserializeIntoForwardingPolicyCollectionResponse(forwardingPoli
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingPolicyLink(forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyLink(forwardingPolicyLink),
@@ -1814,6 +1950,7 @@ export function deserializeIntoForwardingPolicyLink(forwardingPolicyLink: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingProfile(forwardingProfile: Partial<ForwardingProfile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoProfile(forwardingProfile),
@@ -1827,6 +1964,7 @@ export function deserializeIntoForwardingProfile(forwardingProfile: Partial<Forw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingProfileCollectionResponse(forwardingProfileCollectionResponse: Partial<ForwardingProfileCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(forwardingProfileCollectionResponse),
@@ -1837,6 +1975,7 @@ export function deserializeIntoForwardingProfileCollectionResponse(forwardingPro
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingRule(forwardingRule: Partial<ForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyRule(forwardingRule),
@@ -1849,6 +1988,7 @@ export function deserializeIntoForwardingRule(forwardingRule: Partial<Forwarding
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFqdn(fqdn: Partial<Fqdn> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(fqdn),
@@ -1859,6 +1999,7 @@ export function deserializeIntoFqdn(fqdn: Partial<Fqdn> | undefined = {}) : Reco
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFqdnFilteringRule(fqdnFilteringRule: Partial<FqdnFilteringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoFilteringRule(fqdnFilteringRule),
@@ -1868,6 +2009,7 @@ export function deserializeIntoFqdnFilteringRule(fqdnFilteringRule: Partial<Fqdn
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoHeaders(headers: Partial<Headers> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { headers.backingStoreEnabled = true; },
@@ -1881,6 +2023,7 @@ export function deserializeIntoHeaders(headers: Partial<Headers> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoInternetAccessForwardingRule(internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(internetAccessForwardingRule),
@@ -1892,6 +2035,7 @@ export function deserializeIntoInternetAccessForwardingRule(internetAccessForwar
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(ipAddress),
@@ -1902,6 +2046,7 @@ export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(ipRange),
@@ -1913,6 +2058,7 @@ export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIpSubnet(ipSubnet: Partial<IpSubnet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(ipSubnet),
@@ -1923,6 +2069,7 @@ export function deserializeIntoIpSubnet(ipSubnet: Partial<IpSubnet> | undefined 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLocalConnectivityConfiguration(localConnectivityConfiguration: Partial<LocalConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "asn": n => { localConnectivityConfiguration.asn = n.getNumberValue(); },
@@ -1937,6 +2084,7 @@ export function deserializeIntoLocalConnectivityConfiguration(localConnectivityC
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLogs(logs: Partial<Logs> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(logs),
@@ -1948,6 +2096,7 @@ export function deserializeIntoLogs(logs: Partial<Logs> | undefined = {}) : Reco
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M365ForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(m365ForwardingRule),
@@ -1960,6 +2109,7 @@ export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M3
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<NetworkAccessRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(networkAccessRoot),
@@ -1979,6 +2129,7 @@ export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<Netw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "action": n => { networkAccessTraffic.action = n.getEnumValue<FilteringPolicyAction>(FilteringPolicyActionObject); },
@@ -2028,6 +2179,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNetworkAccessTrafficCollectionResponse(networkAccessTrafficCollectionResponse: Partial<NetworkAccessTrafficCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(networkAccessTrafficCollectionResponse),
@@ -2038,6 +2190,7 @@ export function deserializeIntoNetworkAccessTrafficCollectionResponse(networkAcc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPeerConnectivityConfiguration(peerConnectivityConfiguration: Partial<PeerConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "asn": n => { peerConnectivityConfiguration.asn = n.getNumberValue(); },
@@ -2051,6 +2204,7 @@ export function deserializeIntoPeerConnectivityConfiguration(peerConnectivityCon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicy(policy: Partial<Policy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policy),
@@ -2064,6 +2218,7 @@ export function deserializeIntoPolicy(policy: Partial<Policy> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyLink(policyLink: Partial<PolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policyLink),
@@ -2076,6 +2231,7 @@ export function deserializeIntoPolicyLink(policyLink: Partial<PolicyLink> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyLinkCollectionResponse(policyLinkCollectionResponse: Partial<PolicyLinkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(policyLinkCollectionResponse),
@@ -2086,6 +2242,7 @@ export function deserializeIntoPolicyLinkCollectionResponse(policyLinkCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyRule(policyRule: Partial<PolicyRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policyRule),
@@ -2096,6 +2253,7 @@ export function deserializeIntoPolicyRule(policyRule: Partial<PolicyRule> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyRuleCollectionResponse(policyRuleCollectionResponse: Partial<PolicyRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(policyRuleCollectionResponse),
@@ -2106,6 +2264,7 @@ export function deserializeIntoPolicyRuleCollectionResponse(policyRuleCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyRuleDelta(policyRuleDelta: Partial<PolicyRuleDelta> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "action": n => { policyRuleDelta.action = n.getEnumValue<ForwardingRuleAction>(ForwardingRuleActionObject); },
@@ -2118,6 +2277,7 @@ export function deserializeIntoPolicyRuleDelta(policyRuleDelta: Partial<PolicyRu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPrivateAccessDetails(privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "accessType": n => { privateAccessDetails.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
@@ -2135,6 +2295,7 @@ export function deserializeIntoPrivateAccessDetails(privateAccessDetails: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPrivateAccessForwardingRule(privateAccessForwardingRule: Partial<PrivateAccessForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(privateAccessForwardingRule),
@@ -2144,6 +2305,7 @@ export function deserializeIntoPrivateAccessForwardingRule(privateAccessForwardi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoProfile(profile: Partial<Profile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(profile),
@@ -2159,6 +2321,7 @@ export function deserializeIntoProfile(profile: Partial<Profile> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRedundancyConfiguration(redundancyConfiguration: Partial<RedundancyConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { redundancyConfiguration.backingStoreEnabled = true; },
@@ -2171,6 +2334,7 @@ export function deserializeIntoRedundancyConfiguration(redundancyConfiguration: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedDestination(relatedDestination: Partial<RelatedDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedDestination),
@@ -2184,6 +2348,7 @@ export function deserializeIntoRelatedDestination(relatedDestination: Partial<Re
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedDevice),
@@ -2194,6 +2359,7 @@ export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevic
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMalware> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedMalware),
@@ -2205,6 +2371,7 @@ export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedProcess(relatedProcess: Partial<RelatedProcess> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedProcess),
@@ -2216,6 +2383,7 @@ export function deserializeIntoRelatedProcess(relatedProcess: Partial<RelatedPro
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedRemoteNetwork(relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedRemoteNetwork),
@@ -2226,6 +2394,7 @@ export function deserializeIntoRelatedRemoteNetwork(relatedRemoteNetwork: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedResource(relatedResource: Partial<RelatedResource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { relatedResource.backingStoreEnabled = true; },
@@ -2236,6 +2405,7 @@ export function deserializeIntoRelatedResource(relatedResource: Partial<RelatedR
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedTenant(relatedTenant: Partial<RelatedTenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedTenant),
@@ -2246,6 +2416,7 @@ export function deserializeIntoRelatedTenant(relatedTenant: Partial<RelatedTenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedThreatIntelligence(relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedThreatIntelligence),
@@ -2256,6 +2427,7 @@ export function deserializeIntoRelatedThreatIntelligence(relatedThreatIntelligen
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedToken(relatedToken: Partial<RelatedToken> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedToken),
@@ -2266,6 +2438,7 @@ export function deserializeIntoRelatedToken(relatedToken: Partial<RelatedToken> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedUser(relatedUser: Partial<RelatedUser> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedUser),
@@ -2277,6 +2450,7 @@ export function deserializeIntoRelatedUser(relatedUser: Partial<RelatedUser> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedWebCategory(relatedWebCategory: Partial<RelatedWebCategory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedWebCategory),
@@ -2287,6 +2461,7 @@ export function deserializeIntoRelatedWebCategory(relatedWebCategory: Partial<Re
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetwork(remoteNetwork: Partial<RemoteNetwork> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(remoteNetwork),
@@ -2303,6 +2478,7 @@ export function deserializeIntoRemoteNetwork(remoteNetwork: Partial<RemoteNetwor
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkCollectionResponse(remoteNetworkCollectionResponse: Partial<RemoteNetworkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(remoteNetworkCollectionResponse),
@@ -2313,6 +2489,7 @@ export function deserializeIntoRemoteNetworkCollectionResponse(remoteNetworkColl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkConnectivityConfiguration(remoteNetworkConnectivityConfiguration: Partial<RemoteNetworkConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { remoteNetworkConnectivityConfiguration.backingStoreEnabled = true; },
@@ -2326,6 +2503,7 @@ export function deserializeIntoRemoteNetworkConnectivityConfiguration(remoteNetw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkHealthEvent(remoteNetworkHealthEvent: Partial<RemoteNetworkHealthEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(remoteNetworkHealthEvent),
@@ -2344,6 +2522,7 @@ export function deserializeIntoRemoteNetworkHealthEvent(remoteNetworkHealthEvent
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkHealthEventCollectionResponse(remoteNetworkHealthEventCollectionResponse: Partial<RemoteNetworkHealthEventCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(remoteNetworkHealthEventCollectionResponse),
@@ -2354,6 +2533,7 @@ export function deserializeIntoRemoteNetworkHealthEventCollectionResponse(remote
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReports(reports: Partial<Reports> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(reports),
@@ -2363,6 +2543,7 @@ export function deserializeIntoReports(reports: Partial<Reports> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRuleDestination(ruleDestination: Partial<RuleDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { ruleDestination.backingStoreEnabled = true; },
@@ -2373,6 +2554,7 @@ export function deserializeIntoRuleDestination(ruleDestination: Partial<RuleDest
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSettings(settings: Partial<Settings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(settings),
@@ -2386,6 +2568,7 @@ export function deserializeIntoSettings(settings: Partial<Settings> | undefined 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantStatus),
@@ -2397,6 +2580,7 @@ export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoThirdPartyTokenDetails(thirdPartyTokenDetails: Partial<ThirdPartyTokenDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { thirdPartyTokenDetails.backingStoreEnabled = true; },
@@ -2411,6 +2595,7 @@ export function deserializeIntoThirdPartyTokenDetails(thirdPartyTokenDetails: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTransactionSummary(transactionSummary: Partial<TransactionSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { transactionSummary.backingStoreEnabled = true; },
@@ -2424,6 +2609,7 @@ export function deserializeIntoTransactionSummary(transactionSummary: Partial<Tr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTunnelConfiguration(tunnelConfiguration: Partial<TunnelConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tunnelConfiguration.backingStoreEnabled = true; },
@@ -2436,6 +2622,7 @@ export function deserializeIntoTunnelConfiguration(tunnelConfiguration: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTunnelConfigurationIKEv2Custom(tunnelConfigurationIKEv2Custom: Partial<TunnelConfigurationIKEv2Custom> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoTunnelConfiguration(tunnelConfigurationIKEv2Custom),
@@ -2452,6 +2639,7 @@ export function deserializeIntoTunnelConfigurationIKEv2Custom(tunnelConfiguratio
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTunnelConfigurationIKEv2Default(tunnelConfigurationIKEv2Default: Partial<TunnelConfigurationIKEv2Default> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoTunnelConfiguration(tunnelConfigurationIKEv2Default),
@@ -2461,6 +2649,7 @@ export function deserializeIntoTunnelConfigurationIKEv2Default(tunnelConfigurati
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUrl(url: Partial<Url> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(url),
@@ -2471,6 +2660,7 @@ export function deserializeIntoUrl(url: Partial<Url> | undefined = {}) : Record<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUsageProfilingPoint(usageProfilingPoint: Partial<UsageProfilingPoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { usageProfilingPoint.backingStoreEnabled = true; },
@@ -2486,6 +2676,7 @@ export function deserializeIntoUsageProfilingPoint(usageProfilingPoint: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { user.backingStoreEnabled = true; },
@@ -2506,6 +2697,7 @@ export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Reco
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWebCategoriesSummary(webCategoriesSummary: Partial<WebCategoriesSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "action": n => { webCategoriesSummary.action = n.getEnumValue<FilteringPolicyAction>(FilteringPolicyActionObject); },
@@ -2521,6 +2713,7 @@ export function deserializeIntoWebCategoriesSummary(webCategoriesSummary: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWebCategory(webCategory: Partial<WebCategory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(webCategory),
@@ -2533,6 +2726,7 @@ export function deserializeIntoWebCategory(webCategory: Partial<WebCategory> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWebCategoryFilteringRule(webCategoryFilteringRule: Partial<WebCategoryFilteringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoFilteringRule(webCategoryFilteringRule),
@@ -3758,6 +3952,7 @@ export interface RuleDestination extends AdditionalDataHolder, BackedModel, Pars
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined = {}) : void {
     serializeEntity(writer, alert)
     writer.writeCollectionOfObjectValues<AlertAction>("actions", alert.actions, serializeAlertAction);
@@ -3775,6 +3970,7 @@ export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAlertAction(writer: SerializationWriter, alertAction: Partial<AlertAction> | undefined = {}) : void {
     writer.writeStringValue("actionLink", alertAction.actionLink);
     writer.writeStringValue("actionText", alertAction.actionText);
@@ -3785,6 +3981,7 @@ export function serializeAlertAction(writer: SerializationWriter, alertAction: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse)
     writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
@@ -3793,6 +3990,7 @@ export function serializeAlertCollectionResponse(writer: SerializationWriter, al
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeApplicationSnapshot(writer: SerializationWriter, applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : void {
     writer.writeStringValue("appId", applicationSnapshot.appId);
     writer.writeStringValue("@odata.type", applicationSnapshot.odataType);
@@ -3802,6 +4000,7 @@ export function serializeApplicationSnapshot(writer: SerializationWriter, applic
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAssociatedBranch(writer: SerializationWriter, associatedBranch: Partial<AssociatedBranch> | undefined = {}) : void {
     serializeAssociation(writer, associatedBranch)
     writer.writeStringValue("branchId", associatedBranch.branchId);
@@ -3810,6 +4009,7 @@ export function serializeAssociatedBranch(writer: SerializationWriter, associate
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAssociation(writer: SerializationWriter, association: Partial<Association> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", association.odataType);
     writer.writeAdditionalData(association.additionalData);
@@ -3818,6 +4018,7 @@ export function serializeAssociation(writer: SerializationWriter, association: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfiguration: Partial<BgpConfiguration> | undefined = {}) : void {
     writer.writeNumberValue("asn", bgpConfiguration.asn);
     writer.writeStringValue("ipAddress", bgpConfiguration.ipAddress);
@@ -3830,6 +4031,7 @@ export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfig
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeBranchConnectivityConfiguration(writer: SerializationWriter, branchConnectivityConfiguration: Partial<BranchConnectivityConfiguration> | undefined = {}) : void {
     writer.writeStringValue("branchId", branchConnectivityConfiguration.branchId);
     writer.writeStringValue("branchName", branchConnectivityConfiguration.branchName);
@@ -3841,6 +4043,7 @@ export function serializeBranchConnectivityConfiguration(writer: SerializationWr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeBranchSite(writer: SerializationWriter, branchSite: Partial<BranchSite> | undefined = {}) : void {
     serializeEntity(writer, branchSite)
     writer.writeNumberValue("bandwidthCapacity", branchSite.bandwidthCapacity);
@@ -3858,6 +4061,7 @@ export function serializeBranchSite(writer: SerializationWriter, branchSite: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeBranchSiteCollectionResponse(writer: SerializationWriter, branchSiteCollectionResponse: Partial<BranchSiteCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, branchSiteCollectionResponse)
     writer.writeCollectionOfObjectValues<BranchSite>("value", branchSiteCollectionResponse.value, serializeBranchSite);
@@ -3866,6 +4070,7 @@ export function serializeBranchSiteCollectionResponse(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConditionalAccessPolicy(writer: SerializationWriter, conditionalAccessPolicy: Partial<ConditionalAccessPolicy> | undefined = {}) : void {
     serializeEntity(writer, conditionalAccessPolicy)
     writer.writeDateValue("createdDateTime", conditionalAccessPolicy.createdDateTime);
@@ -3877,6 +4082,7 @@ export function serializeConditionalAccessPolicy(writer: SerializationWriter, co
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConditionalAccessPolicyCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCollectionResponse: Partial<ConditionalAccessPolicyCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCollectionResponse)
     writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("value", conditionalAccessPolicyCollectionResponse.value, serializeConditionalAccessPolicy);
@@ -3885,6 +4091,7 @@ export function serializeConditionalAccessPolicyCollectionResponse(writer: Seria
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConditionalAccessSettings(writer: SerializationWriter, conditionalAccessSettings: Partial<ConditionalAccessSettings> | undefined = {}) : void {
     serializeEntity(writer, conditionalAccessSettings)
     writer.writeEnumValue<Status>("signalingStatus", conditionalAccessSettings.signalingStatus);
@@ -3893,6 +4100,7 @@ export function serializeConditionalAccessSettings(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConnectivity(writer: SerializationWriter, connectivity: Partial<Connectivity> | undefined = {}) : void {
     serializeEntity(writer, connectivity)
     writer.writeCollectionOfObjectValues<BranchSite>("branches", connectivity.branches, serializeBranchSite);
@@ -3903,6 +4111,7 @@ export function serializeConnectivity(writer: SerializationWriter, connectivity:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConnectivityConfigurationLink(writer: SerializationWriter, connectivityConfigurationLink: Partial<ConnectivityConfigurationLink> | undefined = {}) : void {
     serializeEntity(writer, connectivityConfigurationLink)
     writer.writeStringValue("displayName", connectivityConfigurationLink.displayName);
@@ -3913,6 +4122,7 @@ export function serializeConnectivityConfigurationLink(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConnectivityConfigurationLinkCollectionResponse(writer: SerializationWriter, connectivityConfigurationLinkCollectionResponse: Partial<ConnectivityConfigurationLinkCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, connectivityConfigurationLinkCollectionResponse)
     writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("value", connectivityConfigurationLinkCollectionResponse.value, serializeConnectivityConfigurationLink);
@@ -3921,6 +4131,7 @@ export function serializeConnectivityConfigurationLinkCollectionResponse(writer:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCrossTenantAccess(writer: SerializationWriter, crossTenantAccess: Partial<CrossTenantAccess> | undefined = {}) : void {
     writer.writeNumberValue("deviceCount", crossTenantAccess.deviceCount);
     writer.writeDateValue("lastAccessDateTime", crossTenantAccess.lastAccessDateTime);
@@ -3936,6 +4147,7 @@ export function serializeCrossTenantAccess(writer: SerializationWriter, crossTen
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCrossTenantAccessSettings(writer: SerializationWriter, crossTenantAccessSettings: Partial<CrossTenantAccessSettings> | undefined = {}) : void {
     serializeEntity(writer, crossTenantAccessSettings)
     writer.writeEnumValue<Status>("networkPacketTaggingStatus", crossTenantAccessSettings.networkPacketTaggingStatus);
@@ -3944,6 +4156,7 @@ export function serializeCrossTenantAccessSettings(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCrossTenantSummary(writer: SerializationWriter, crossTenantSummary: Partial<CrossTenantSummary> | undefined = {}) : void {
     writer.writeNumberValue("authTransactionCount", crossTenantSummary.authTransactionCount);
     writer.writeNumberValue("deviceCount", crossTenantSummary.deviceCount);
@@ -3958,6 +4171,7 @@ export function serializeCrossTenantSummary(writer: SerializationWriter, crossTe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDestination(writer: SerializationWriter, destination: Partial<Destination> | undefined = {}) : void {
     writer.writeNumberValue("deviceCount", destination.deviceCount);
     writer.writeDateValue("firstAccessDateTime", destination.firstAccessDateTime);
@@ -3979,6 +4193,7 @@ export function serializeDestination(writer: SerializationWriter, destination: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDestinationSummary(writer: SerializationWriter, destinationSummary: Partial<DestinationSummary> | undefined = {}) : void {
     writer.writeNumberValue("count", destinationSummary.count);
     writer.writeStringValue("destination", destinationSummary.destination);
@@ -3990,6 +4205,7 @@ export function serializeDestinationSummary(writer: SerializationWriter, destina
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDevice(writer: SerializationWriter, device: Partial<Device> | undefined = {}) : void {
     writer.writeStringValue("deviceId", device.deviceId);
     writer.writeStringValue("displayName", device.displayName);
@@ -4004,6 +4220,7 @@ export function serializeDevice(writer: SerializationWriter, device: Partial<Dev
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceLink(writer: SerializationWriter, deviceLink: Partial<DeviceLink> | undefined = {}) : void {
     serializeEntity(writer, deviceLink)
     writer.writeEnumValue<BandwidthCapacityInMbps>("bandwidthCapacityInMbps", deviceLink.bandwidthCapacityInMbps);
@@ -4019,6 +4236,7 @@ export function serializeDeviceLink(writer: SerializationWriter, deviceLink: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceLinkCollectionResponse(writer: SerializationWriter, deviceLinkCollectionResponse: Partial<DeviceLinkCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, deviceLinkCollectionResponse)
     writer.writeCollectionOfObjectValues<DeviceLink>("value", deviceLinkCollectionResponse.value, serializeDeviceLink);
@@ -4027,6 +4245,7 @@ export function serializeDeviceLinkCollectionResponse(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDeviceUsageSummary(writer: SerializationWriter, deviceUsageSummary: Partial<DeviceUsageSummary> | undefined = {}) : void {
     writer.writeNumberValue("activeDeviceCount", deviceUsageSummary.activeDeviceCount);
     writer.writeNumberValue("inactiveDeviceCount", deviceUsageSummary.inactiveDeviceCount);
@@ -4038,6 +4257,7 @@ export function serializeDeviceUsageSummary(writer: SerializationWriter, deviceU
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDiscoveredApplicationSegmentReport(writer: SerializationWriter, discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined = {}) : void {
     writer.writeEnumValue<AccessType>("accessType", discoveredApplicationSegmentReport.accessType);
     writer.writeNumberValue("deviceCount", discoveredApplicationSegmentReport.deviceCount);
@@ -4059,6 +4279,7 @@ export function serializeDiscoveredApplicationSegmentReport(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEnrichedAuditLogs(writer: SerializationWriter, enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined = {}) : void {
     serializeEntity(writer, enrichedAuditLogs)
     writer.writeObjectValue<EnrichedAuditLogsSettings>("exchange", enrichedAuditLogs.exchange, serializeEnrichedAuditLogsSettings);
@@ -4069,6 +4290,7 @@ export function serializeEnrichedAuditLogs(writer: SerializationWriter, enriched
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEnrichedAuditLogsSettings(writer: SerializationWriter, enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", enrichedAuditLogsSettings.odataType);
     writer.writeEnumValue<Status>("status", enrichedAuditLogsSettings.status);
@@ -4078,6 +4300,7 @@ export function serializeEnrichedAuditLogsSettings(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEntitiesSummary(writer: SerializationWriter, entitiesSummary: Partial<EntitiesSummary> | undefined = {}) : void {
     writer.writeNumberValue("deviceCount", entitiesSummary.deviceCount);
     writer.writeStringValue("@odata.type", entitiesSummary.odataType);
@@ -4090,6 +4313,7 @@ export function serializeEntitiesSummary(writer: SerializationWriter, entitiesSu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFilteringPolicy(writer: SerializationWriter, filteringPolicy: Partial<FilteringPolicy> | undefined = {}) : void {
     serializePolicy(writer, filteringPolicy)
     writer.writeEnumValue<FilteringPolicyAction>("action", filteringPolicy.action);
@@ -4100,6 +4324,7 @@ export function serializeFilteringPolicy(writer: SerializationWriter, filteringP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFilteringPolicyCollectionResponse(writer: SerializationWriter, filteringPolicyCollectionResponse: Partial<FilteringPolicyCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, filteringPolicyCollectionResponse)
     writer.writeCollectionOfObjectValues<FilteringPolicy>("value", filteringPolicyCollectionResponse.value, serializeFilteringPolicy);
@@ -4108,6 +4333,7 @@ export function serializeFilteringPolicyCollectionResponse(writer: Serialization
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFilteringPolicyLink(writer: SerializationWriter, filteringPolicyLink: Partial<FilteringPolicyLink> | undefined = {}) : void {
     serializePolicyLink(writer, filteringPolicyLink)
     writer.writeDateValue("createdDateTime", filteringPolicyLink.createdDateTime);
@@ -4119,6 +4345,7 @@ export function serializeFilteringPolicyLink(writer: SerializationWriter, filter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFilteringProfile(writer: SerializationWriter, filteringProfile: Partial<FilteringProfile> | undefined = {}) : void {
     serializeProfile(writer, filteringProfile)
     writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", filteringProfile.conditionalAccessPolicies, serializeConditionalAccessPolicy);
@@ -4129,6 +4356,7 @@ export function serializeFilteringProfile(writer: SerializationWriter, filtering
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFilteringProfileCollectionResponse(writer: SerializationWriter, filteringProfileCollectionResponse: Partial<FilteringProfileCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, filteringProfileCollectionResponse)
     writer.writeCollectionOfObjectValues<FilteringProfile>("value", filteringProfileCollectionResponse.value, serializeFilteringProfile);
@@ -4137,6 +4365,7 @@ export function serializeFilteringProfileCollectionResponse(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFilteringRule(writer: SerializationWriter, filteringRule: Partial<FilteringRule> | undefined = {}) : void {
     serializePolicyRule(writer, filteringRule)
     writer.writeCollectionOfObjectValues<RuleDestination>("destinations", filteringRule.destinations, serializeRuleDestination);
@@ -4146,6 +4375,7 @@ export function serializeFilteringRule(writer: SerializationWriter, filteringRul
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeForwardingOptions(writer: SerializationWriter, forwardingOptions: Partial<ForwardingOptions> | undefined = {}) : void {
     serializeEntity(writer, forwardingOptions)
     writer.writeEnumValue<Status>("skipDnsLookupState", forwardingOptions.skipDnsLookupState);
@@ -4154,6 +4384,7 @@ export function serializeForwardingOptions(writer: SerializationWriter, forwardi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeForwardingPolicy(writer: SerializationWriter, forwardingPolicy: Partial<ForwardingPolicy> | undefined = {}) : void {
     serializePolicy(writer, forwardingPolicy)
     writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingPolicy.trafficForwardingType);
@@ -4162,6 +4393,7 @@ export function serializeForwardingPolicy(writer: SerializationWriter, forwardin
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeForwardingPolicyCollectionResponse(writer: SerializationWriter, forwardingPolicyCollectionResponse: Partial<ForwardingPolicyCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, forwardingPolicyCollectionResponse)
     writer.writeCollectionOfObjectValues<ForwardingPolicy>("value", forwardingPolicyCollectionResponse.value, serializeForwardingPolicy);
@@ -4170,6 +4402,7 @@ export function serializeForwardingPolicyCollectionResponse(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeForwardingPolicyLink(writer: SerializationWriter, forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined = {}) : void {
     serializePolicyLink(writer, forwardingPolicyLink)
 }
@@ -4177,6 +4410,7 @@ export function serializeForwardingPolicyLink(writer: SerializationWriter, forwa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeForwardingProfile(writer: SerializationWriter, forwardingProfile: Partial<ForwardingProfile> | undefined = {}) : void {
     serializeProfile(writer, forwardingProfile)
     writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
@@ -4188,6 +4422,7 @@ export function serializeForwardingProfile(writer: SerializationWriter, forwardi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeForwardingProfileCollectionResponse(writer: SerializationWriter, forwardingProfileCollectionResponse: Partial<ForwardingProfileCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, forwardingProfileCollectionResponse)
     writer.writeCollectionOfObjectValues<ForwardingProfile>("value", forwardingProfileCollectionResponse.value, serializeForwardingProfile);
@@ -4196,6 +4431,7 @@ export function serializeForwardingProfileCollectionResponse(writer: Serializati
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeForwardingRule(writer: SerializationWriter, forwardingRule: Partial<ForwardingRule> | undefined = {}) : void {
     serializePolicyRule(writer, forwardingRule)
     writer.writeEnumValue<ForwardingRuleAction>("action", forwardingRule.action);
@@ -4206,6 +4442,7 @@ export function serializeForwardingRule(writer: SerializationWriter, forwardingR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFqdn(writer: SerializationWriter, fqdn: Partial<Fqdn> | undefined = {}) : void {
     serializeRuleDestination(writer, fqdn)
     writer.writeStringValue("value", fqdn.value);
@@ -4214,6 +4451,7 @@ export function serializeFqdn(writer: SerializationWriter, fqdn: Partial<Fqdn> |
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeFqdnFilteringRule(writer: SerializationWriter, fqdnFilteringRule: Partial<FqdnFilteringRule> | undefined = {}) : void {
     serializeFilteringRule(writer, fqdnFilteringRule)
 }
@@ -4221,6 +4459,7 @@ export function serializeFqdnFilteringRule(writer: SerializationWriter, fqdnFilt
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeHeaders(writer: SerializationWriter, headers: Partial<Headers> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", headers.odataType);
     writer.writeStringValue("origin", headers.origin);
@@ -4232,6 +4471,7 @@ export function serializeHeaders(writer: SerializationWriter, headers: Partial<H
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeInternetAccessForwardingRule(writer: SerializationWriter, internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined = {}) : void {
     serializeForwardingRule(writer, internetAccessForwardingRule)
     writer.writeCollectionOfPrimitiveValues<string>("ports", internetAccessForwardingRule.ports);
@@ -4241,6 +4481,7 @@ export function serializeInternetAccessForwardingRule(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeIpAddress(writer: SerializationWriter, ipAddress: Partial<IpAddress> | undefined = {}) : void {
     serializeRuleDestination(writer, ipAddress)
     writer.writeStringValue("value", ipAddress.value);
@@ -4249,6 +4490,7 @@ export function serializeIpAddress(writer: SerializationWriter, ipAddress: Parti
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<IpRange> | undefined = {}) : void {
     serializeRuleDestination(writer, ipRange)
     writer.writeStringValue("beginAddress", ipRange.beginAddress);
@@ -4258,6 +4500,7 @@ export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<I
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial<IpSubnet> | undefined = {}) : void {
     serializeRuleDestination(writer, ipSubnet)
     writer.writeStringValue("value", ipSubnet.value);
@@ -4266,6 +4509,7 @@ export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeLocalConnectivityConfiguration(writer: SerializationWriter, localConnectivityConfiguration: Partial<LocalConnectivityConfiguration> | undefined = {}) : void {
     writer.writeNumberValue("asn", localConnectivityConfiguration.asn);
     writer.writeStringValue("bgpAddress", localConnectivityConfiguration.bgpAddress);
@@ -4278,6 +4522,7 @@ export function serializeLocalConnectivityConfiguration(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeLogs(writer: SerializationWriter, logs: Partial<Logs> | undefined = {}) : void {
     serializeEntity(writer, logs)
     writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", logs.remoteNetworks, serializeRemoteNetworkHealthEvent);
@@ -4287,6 +4532,7 @@ export function serializeLogs(writer: SerializationWriter, logs: Partial<Logs> |
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeM365ForwardingRule(writer: SerializationWriter, m365ForwardingRule: Partial<M365ForwardingRule> | undefined = {}) : void {
     serializeForwardingRule(writer, m365ForwardingRule)
     writer.writeEnumValue<ForwardingCategory>("category", m365ForwardingRule.category);
@@ -4297,6 +4543,7 @@ export function serializeM365ForwardingRule(writer: SerializationWriter, m365For
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeNetworkAccessRoot(writer: SerializationWriter, networkAccessRoot: Partial<NetworkAccessRoot> | undefined = {}) : void {
     serializeEntity(writer, networkAccessRoot)
     writer.writeCollectionOfObjectValues<Alert>("alerts", networkAccessRoot.alerts, serializeAlert);
@@ -4314,6 +4561,7 @@ export function serializeNetworkAccessRoot(writer: SerializationWriter, networkA
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeNetworkAccessTraffic(writer: SerializationWriter, networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined = {}) : void {
     writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
     writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
@@ -4361,6 +4609,7 @@ export function serializeNetworkAccessTraffic(writer: SerializationWriter, netwo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeNetworkAccessTrafficCollectionResponse(writer: SerializationWriter, networkAccessTrafficCollectionResponse: Partial<NetworkAccessTrafficCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, networkAccessTrafficCollectionResponse)
     writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("value", networkAccessTrafficCollectionResponse.value, serializeNetworkAccessTraffic);
@@ -4369,6 +4618,7 @@ export function serializeNetworkAccessTrafficCollectionResponse(writer: Serializ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePeerConnectivityConfiguration(writer: SerializationWriter, peerConnectivityConfiguration: Partial<PeerConnectivityConfiguration> | undefined = {}) : void {
     writer.writeNumberValue("asn", peerConnectivityConfiguration.asn);
     writer.writeStringValue("bgpAddress", peerConnectivityConfiguration.bgpAddress);
@@ -4380,6 +4630,7 @@ export function serializePeerConnectivityConfiguration(writer: SerializationWrit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePolicy(writer: SerializationWriter, policy: Partial<Policy> | undefined = {}) : void {
     serializeEntity(writer, policy)
     writer.writeStringValue("description", policy.description);
@@ -4391,6 +4642,7 @@ export function serializePolicy(writer: SerializationWriter, policy: Partial<Pol
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePolicyLink(writer: SerializationWriter, policyLink: Partial<PolicyLink> | undefined = {}) : void {
     serializeEntity(writer, policyLink)
     writer.writeObjectValue<Policy>("policy", policyLink.policy, serializePolicy);
@@ -4401,6 +4653,7 @@ export function serializePolicyLink(writer: SerializationWriter, policyLink: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePolicyLinkCollectionResponse(writer: SerializationWriter, policyLinkCollectionResponse: Partial<PolicyLinkCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, policyLinkCollectionResponse)
     writer.writeCollectionOfObjectValues<PolicyLink>("value", policyLinkCollectionResponse.value, serializePolicyLink);
@@ -4409,6 +4662,7 @@ export function serializePolicyLinkCollectionResponse(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePolicyRule(writer: SerializationWriter, policyRule: Partial<PolicyRule> | undefined = {}) : void {
     serializeEntity(writer, policyRule)
     writer.writeStringValue("name", policyRule.name);
@@ -4417,6 +4671,7 @@ export function serializePolicyRule(writer: SerializationWriter, policyRule: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePolicyRuleCollectionResponse(writer: SerializationWriter, policyRuleCollectionResponse: Partial<PolicyRuleCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, policyRuleCollectionResponse)
     writer.writeCollectionOfObjectValues<PolicyRule>("value", policyRuleCollectionResponse.value, serializePolicyRule);
@@ -4425,6 +4680,7 @@ export function serializePolicyRuleCollectionResponse(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePolicyRuleDelta(writer: SerializationWriter, policyRuleDelta: Partial<PolicyRuleDelta> | undefined = {}) : void {
     writer.writeEnumValue<ForwardingRuleAction>("action", policyRuleDelta.action);
     writer.writeStringValue("@odata.type", policyRuleDelta.odataType);
@@ -4435,6 +4691,7 @@ export function serializePolicyRuleDelta(writer: SerializationWriter, policyRule
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePrivateAccessDetails(writer: SerializationWriter, privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : void {
     writer.writeEnumValue<AccessType>("accessType", privateAccessDetails.accessType);
     writer.writeEnumValue<ConnectionStatus>("connectionStatus", privateAccessDetails.connectionStatus);
@@ -4450,6 +4707,7 @@ export function serializePrivateAccessDetails(writer: SerializationWriter, priva
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePrivateAccessForwardingRule(writer: SerializationWriter, privateAccessForwardingRule: Partial<PrivateAccessForwardingRule> | undefined = {}) : void {
     serializeForwardingRule(writer, privateAccessForwardingRule)
 }
@@ -4457,6 +4715,7 @@ export function serializePrivateAccessForwardingRule(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeProfile(writer: SerializationWriter, profile: Partial<Profile> | undefined = {}) : void {
     serializeEntity(writer, profile)
     writer.writeStringValue("description", profile.description);
@@ -4470,6 +4729,7 @@ export function serializeProfile(writer: SerializationWriter, profile: Partial<P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRedundancyConfiguration(writer: SerializationWriter, redundancyConfiguration: Partial<RedundancyConfiguration> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", redundancyConfiguration.odataType);
     writer.writeEnumValue<RedundancyTier>("redundancyTier", redundancyConfiguration.redundancyTier);
@@ -4480,6 +4740,7 @@ export function serializeRedundancyConfiguration(writer: SerializationWriter, re
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedDestination(writer: SerializationWriter, relatedDestination: Partial<RelatedDestination> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedDestination)
     writer.writeStringValue("fqdn", relatedDestination.fqdn);
@@ -4491,6 +4752,7 @@ export function serializeRelatedDestination(writer: SerializationWriter, related
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedDevice(writer: SerializationWriter, relatedDevice: Partial<RelatedDevice> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedDevice)
     writer.writeStringValue("deviceId", relatedDevice.deviceId);
@@ -4499,6 +4761,7 @@ export function serializeRelatedDevice(writer: SerializationWriter, relatedDevic
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedMalware)
     writer.writeEnumValue<MalwareCategory>("category", relatedMalware.category);
@@ -4508,6 +4771,7 @@ export function serializeRelatedMalware(writer: SerializationWriter, relatedMalw
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedProcess(writer: SerializationWriter, relatedProcess: Partial<RelatedProcess> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedProcess)
     writer.writeBooleanValue("isSuspicious", relatedProcess.isSuspicious);
@@ -4517,6 +4781,7 @@ export function serializeRelatedProcess(writer: SerializationWriter, relatedProc
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedRemoteNetwork)
     writer.writeStringValue("remoteNetworkId", relatedRemoteNetwork.remoteNetworkId);
@@ -4525,6 +4790,7 @@ export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedResource(writer: SerializationWriter, relatedResource: Partial<RelatedResource> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", relatedResource.odataType);
     writer.writeAdditionalData(relatedResource.additionalData);
@@ -4533,6 +4799,7 @@ export function serializeRelatedResource(writer: SerializationWriter, relatedRes
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedTenant(writer: SerializationWriter, relatedTenant: Partial<RelatedTenant> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedTenant)
     writer.writeStringValue("tenantId", relatedTenant.tenantId);
@@ -4541,6 +4808,7 @@ export function serializeRelatedTenant(writer: SerializationWriter, relatedTenan
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedThreatIntelligence(writer: SerializationWriter, relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedThreatIntelligence)
     writer.writeNumberValue("threatCount", relatedThreatIntelligence.threatCount);
@@ -4549,6 +4817,7 @@ export function serializeRelatedThreatIntelligence(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedToken(writer: SerializationWriter, relatedToken: Partial<RelatedToken> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedToken)
     writer.writeStringValue("uniqueTokenIdentifier", relatedToken.uniqueTokenIdentifier);
@@ -4557,6 +4826,7 @@ export function serializeRelatedToken(writer: SerializationWriter, relatedToken:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedUser(writer: SerializationWriter, relatedUser: Partial<RelatedUser> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedUser)
     writer.writeStringValue("userId", relatedUser.userId);
@@ -4566,6 +4836,7 @@ export function serializeRelatedUser(writer: SerializationWriter, relatedUser: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRelatedWebCategory(writer: SerializationWriter, relatedWebCategory: Partial<RelatedWebCategory> | undefined = {}) : void {
     serializeRelatedResource(writer, relatedWebCategory)
     writer.writeStringValue("webCategoryName", relatedWebCategory.webCategoryName);
@@ -4574,6 +4845,7 @@ export function serializeRelatedWebCategory(writer: SerializationWriter, related
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRemoteNetwork(writer: SerializationWriter, remoteNetwork: Partial<RemoteNetwork> | undefined = {}) : void {
     serializeEntity(writer, remoteNetwork)
     writer.writeObjectValue<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", remoteNetwork.connectivityConfiguration, serializeRemoteNetworkConnectivityConfiguration);
@@ -4588,6 +4860,7 @@ export function serializeRemoteNetwork(writer: SerializationWriter, remoteNetwor
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRemoteNetworkCollectionResponse(writer: SerializationWriter, remoteNetworkCollectionResponse: Partial<RemoteNetworkCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkCollectionResponse)
     writer.writeCollectionOfObjectValues<RemoteNetwork>("value", remoteNetworkCollectionResponse.value, serializeRemoteNetwork);
@@ -4596,6 +4869,7 @@ export function serializeRemoteNetworkCollectionResponse(writer: SerializationWr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRemoteNetworkConnectivityConfiguration(writer: SerializationWriter, remoteNetworkConnectivityConfiguration: Partial<RemoteNetworkConnectivityConfiguration> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", remoteNetworkConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
     writer.writeStringValue("@odata.type", remoteNetworkConnectivityConfiguration.odataType);
@@ -4607,6 +4881,7 @@ export function serializeRemoteNetworkConnectivityConfiguration(writer: Serializ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRemoteNetworkHealthEvent(writer: SerializationWriter, remoteNetworkHealthEvent: Partial<RemoteNetworkHealthEvent> | undefined = {}) : void {
     serializeEntity(writer, remoteNetworkHealthEvent)
     writer.writeNumberValue("bgpRoutesAdvertisedCount", remoteNetworkHealthEvent.bgpRoutesAdvertisedCount);
@@ -4623,6 +4898,7 @@ export function serializeRemoteNetworkHealthEvent(writer: SerializationWriter, r
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRemoteNetworkHealthEventCollectionResponse(writer: SerializationWriter, remoteNetworkHealthEventCollectionResponse: Partial<RemoteNetworkHealthEventCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkHealthEventCollectionResponse)
     writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("value", remoteNetworkHealthEventCollectionResponse.value, serializeRemoteNetworkHealthEvent);
@@ -4631,6 +4907,7 @@ export function serializeRemoteNetworkHealthEventCollectionResponse(writer: Seri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeReports(writer: SerializationWriter, reports: Partial<Reports> | undefined = {}) : void {
     serializeEntity(writer, reports)
 }
@@ -4638,6 +4915,7 @@ export function serializeReports(writer: SerializationWriter, reports: Partial<R
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRuleDestination(writer: SerializationWriter, ruleDestination: Partial<RuleDestination> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", ruleDestination.odataType);
     writer.writeAdditionalData(ruleDestination.additionalData);
@@ -4646,6 +4924,7 @@ export function serializeRuleDestination(writer: SerializationWriter, ruleDestin
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSettings(writer: SerializationWriter, settings: Partial<Settings> | undefined = {}) : void {
     serializeEntity(writer, settings)
     writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
@@ -4657,6 +4936,7 @@ export function serializeSettings(writer: SerializationWriter, settings: Partial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTenantStatus(writer: SerializationWriter, tenantStatus: Partial<TenantStatus> | undefined = {}) : void {
     serializeEntity(writer, tenantStatus)
     writer.writeStringValue("onboardingErrorMessage", tenantStatus.onboardingErrorMessage);
@@ -4666,6 +4946,7 @@ export function serializeTenantStatus(writer: SerializationWriter, tenantStatus:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeThirdPartyTokenDetails(writer: SerializationWriter, thirdPartyTokenDetails: Partial<ThirdPartyTokenDetails> | undefined = {}) : void {
     writer.writeDateValue("expirationDateTime", thirdPartyTokenDetails.expirationDateTime);
     writer.writeDateValue("issuedAtDateTime", thirdPartyTokenDetails.issuedAtDateTime);
@@ -4678,6 +4959,7 @@ export function serializeThirdPartyTokenDetails(writer: SerializationWriter, thi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTransactionSummary(writer: SerializationWriter, transactionSummary: Partial<TransactionSummary> | undefined = {}) : void {
     writer.writeNumberValue("blockedCount", transactionSummary.blockedCount);
     writer.writeStringValue("@odata.type", transactionSummary.odataType);
@@ -4689,6 +4971,7 @@ export function serializeTransactionSummary(writer: SerializationWriter, transac
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTunnelConfiguration(writer: SerializationWriter, tunnelConfiguration: Partial<TunnelConfiguration> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", tunnelConfiguration.odataType);
     writer.writeStringValue("preSharedKey", tunnelConfiguration.preSharedKey);
@@ -4699,6 +4982,7 @@ export function serializeTunnelConfiguration(writer: SerializationWriter, tunnel
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTunnelConfigurationIKEv2Custom(writer: SerializationWriter, tunnelConfigurationIKEv2Custom: Partial<TunnelConfigurationIKEv2Custom> | undefined = {}) : void {
     serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Custom)
     writer.writeEnumValue<DhGroup>("dhGroup", tunnelConfigurationIKEv2Custom.dhGroup);
@@ -4713,6 +4997,7 @@ export function serializeTunnelConfigurationIKEv2Custom(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTunnelConfigurationIKEv2Default(writer: SerializationWriter, tunnelConfigurationIKEv2Default: Partial<TunnelConfigurationIKEv2Default> | undefined = {}) : void {
     serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Default)
 }
@@ -4720,6 +5005,7 @@ export function serializeTunnelConfigurationIKEv2Default(writer: SerializationWr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | undefined = {}) : void {
     serializeRuleDestination(writer, url)
     writer.writeStringValue("value", url.value);
@@ -4728,6 +5014,7 @@ export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | un
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUsageProfilingPoint(writer: SerializationWriter, usageProfilingPoint: Partial<UsageProfilingPoint> | undefined = {}) : void {
     writer.writeNumberValue("internetAccessTrafficCount", usageProfilingPoint.internetAccessTrafficCount);
     writer.writeNumberValue("microsoft365AccessTrafficCount", usageProfilingPoint.microsoft365AccessTrafficCount);
@@ -4741,6 +5028,7 @@ export function serializeUsageProfilingPoint(writer: SerializationWriter, usageP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUser(writer: SerializationWriter, user: Partial<User> | undefined = {}) : void {
     writer.writeStringValue("displayName", user.displayName);
     writer.writeDateValue("firstAccessDateTime", user.firstAccessDateTime);
@@ -4759,6 +5047,7 @@ export function serializeUser(writer: SerializationWriter, user: Partial<User> |
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWebCategoriesSummary(writer: SerializationWriter, webCategoriesSummary: Partial<WebCategoriesSummary> | undefined = {}) : void {
     writer.writeEnumValue<FilteringPolicyAction>("action", webCategoriesSummary.action);
     writer.writeNumberValue("deviceCount", webCategoriesSummary.deviceCount);
@@ -4772,6 +5061,7 @@ export function serializeWebCategoriesSummary(writer: SerializationWriter, webCa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWebCategory(writer: SerializationWriter, webCategory: Partial<WebCategory> | undefined = {}) : void {
     serializeRuleDestination(writer, webCategory)
     writer.writeStringValue("displayName", webCategory.displayName);
@@ -4782,6 +5072,7 @@ export function serializeWebCategory(writer: SerializationWriter, webCategory: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWebCategoryFilteringRule(writer: SerializationWriter, webCategoryFilteringRule: Partial<WebCategoryFilteringRule> | undefined = {}) : void {
     serializeFilteringRule(writer, webCategoryFilteringRule)
 }

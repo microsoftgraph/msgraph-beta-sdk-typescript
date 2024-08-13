@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAllElevationRequestsPostResponse}
  */
+// @ts-ignore
 export function createGetAllElevationRequestsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAllElevationRequestsPostResponse;
 }
@@ -20,6 +21,7 @@ export function createGetAllElevationRequestsPostResponseFromDiscriminatorValue(
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAllElevationRequestsPostResponse(getAllElevationRequestsPostResponse: Partial<GetAllElevationRequestsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getAllElevationRequestsPostResponse),
@@ -54,6 +56,7 @@ export interface GetAllElevationRequestsRequestBuilder extends BaseRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetAllElevationRequestsPostResponse(writer: SerializationWriter, getAllElevationRequestsPostResponse: Partial<GetAllElevationRequestsPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getAllElevationRequestsPostResponse)
     writer.writeCollectionOfObjectValues<PrivilegeManagementElevationRequest>("value", getAllElevationRequestsPostResponse.value, serializePrivilegeManagementElevationRequest);

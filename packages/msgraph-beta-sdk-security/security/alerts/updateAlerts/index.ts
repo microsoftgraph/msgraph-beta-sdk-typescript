@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateAlertsPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateAlertsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAlertsPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createUpdateAlertsPostRequestBodyFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateAlertsPostResponse}
  */
+// @ts-ignore
 export function createUpdateAlertsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAlertsPostResponse;
 }
@@ -28,6 +30,7 @@ export function createUpdateAlertsPostResponseFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateAlertsPostRequestBody(updateAlertsPostRequestBody: Partial<UpdateAlertsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateAlertsPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoUpdateAlertsPostRequestBody(updateAlertsPostReque
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateAlertsPostResponse(updateAlertsPostResponse: Partial<UpdateAlertsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(updateAlertsPostResponse),
@@ -48,6 +52,7 @@ export function deserializeIntoUpdateAlertsPostResponse(updateAlertsPostResponse
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateAlertsPostRequestBody(writer: SerializationWriter, updateAlertsPostRequestBody: Partial<UpdateAlertsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<Alert>("value", updateAlertsPostRequestBody.value, serializeAlert);
     writer.writeAdditionalData(updateAlertsPostRequestBody.additionalData);
@@ -56,6 +61,7 @@ export function serializeUpdateAlertsPostRequestBody(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateAlertsPostResponse(writer: SerializationWriter, updateAlertsPostResponse: Partial<UpdateAlertsPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, updateAlertsPostResponse)
     writer.writeCollectionOfObjectValues<Alert>("value", updateAlertsPostResponse.value, serializeAlert);

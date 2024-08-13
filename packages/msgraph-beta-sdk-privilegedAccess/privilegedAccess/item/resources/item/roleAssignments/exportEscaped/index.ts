@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExportGetResponse}
  */
+// @ts-ignore
 export function createExportGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExportGetResponse;
 }
@@ -20,6 +21,7 @@ export function createExportGetResponseFromDiscriminatorValue(parseNode: ParseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExportGetResponse(exportGetResponse: Partial<ExportGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(exportGetResponse),
@@ -79,6 +81,7 @@ export interface ExportRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeExportGetResponse(writer: SerializationWriter, exportGetResponse: Partial<ExportGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, exportGetResponse)
     writer.writeCollectionOfPrimitiveValues<string>("value", exportGetResponse.value);

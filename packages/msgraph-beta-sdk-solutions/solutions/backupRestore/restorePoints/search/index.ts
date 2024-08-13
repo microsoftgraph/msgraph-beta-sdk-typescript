@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SearchPostRequestBody}
  */
+// @ts-ignore
 export function createSearchPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSearchPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSearchPostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSearchPostRequestBody(searchPostRequestBody: Partial<SearchPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { searchPostRequestBody.backingStoreEnabled = true; },
@@ -80,6 +82,7 @@ export interface SearchRequestBuilder extends BaseRequestBuilder<SearchRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSearchPostRequestBody(writer: SerializationWriter, searchPostRequestBody: Partial<SearchPostRequestBody> | undefined = {}) : void {
     writer.writeObjectValue<TimePeriod>("protectionTimePeriod", searchPostRequestBody.protectionTimePeriod, serializeTimePeriod);
     writer.writeCollectionOfPrimitiveValues<string>("protectionUnitIds", searchPostRequestBody.protectionUnitIds);

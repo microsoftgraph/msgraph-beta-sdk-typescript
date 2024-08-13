@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RevokeGrantsPostRequestBody}
  */
+// @ts-ignore
 export function createRevokeGrantsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRevokeGrantsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRevokeGrantsPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRevokeGrantsPostRequestBody(revokeGrantsPostRequestBody: Partial<RevokeGrantsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { revokeGrantsPostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export interface RevokeGrantsRequestBuilder extends BaseRequestBuilder<RevokeGra
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRevokeGrantsPostRequestBody(writer: SerializationWriter, revokeGrantsPostRequestBody: Partial<RevokeGrantsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<DriveRecipient>("grantees", revokeGrantsPostRequestBody.grantees, serializeDriveRecipient);
     writer.writeAdditionalData(revokeGrantsPostRequestBody.additionalData);

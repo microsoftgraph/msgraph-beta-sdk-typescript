@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetUserOwnedObjectsPostRequestBody}
  */
+// @ts-ignore
 export function createGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetUserOwnedObjectsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetUserOwnedObjectsPostRequestBody(getUserOwnedObjectsPostRequestBody: Partial<GetUserOwnedObjectsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getUserOwnedObjectsPostRequestBody.backingStoreEnabled = true; },
@@ -70,6 +72,7 @@ export interface GetUserOwnedObjectsRequestBuilder extends BaseRequestBuilder<Ge
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetUserOwnedObjectsPostRequestBody(writer: SerializationWriter, getUserOwnedObjectsPostRequestBody: Partial<GetUserOwnedObjectsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("type", getUserOwnedObjectsPostRequestBody.type);
     writer.writeStringValue("userId", getUserOwnedObjectsPostRequestBody.userId);

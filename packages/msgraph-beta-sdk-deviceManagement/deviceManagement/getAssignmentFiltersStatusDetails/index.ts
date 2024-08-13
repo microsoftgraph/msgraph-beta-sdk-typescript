@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAssignmentFiltersStatusDetailsPostRequestBody}
  */
+// @ts-ignore
 export function createGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody(getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignmentFilterIds": n => { getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds = n.getCollectionOfPrimitiveValues<string>(); },
@@ -89,6 +91,7 @@ export interface GetAssignmentFiltersStatusDetailsRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetAssignmentFiltersStatusDetailsPostRequestBody(writer: SerializationWriter, getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("assignmentFilterIds", getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds);
     writer.writeStringValue("managedDeviceId", getAssignmentFiltersStatusDetailsPostRequestBody.managedDeviceId);

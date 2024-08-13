@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCloudPcPerformanceReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetCloudPcPerformanceReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcPerformanceReportPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetCloudPcPerformanceReportPostRequestBodyFromDiscriminato
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCloudPcPerformanceReportPostRequestBody(getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getCloudPcPerformanceReportPostRequestBody.backingStoreEnabled = true; },
@@ -99,6 +101,7 @@ export interface GetCloudPcPerformanceReportRequestBuilder extends BaseRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetCloudPcPerformanceReportPostRequestBody(writer: SerializationWriter, getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getCloudPcPerformanceReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcPerformanceReportPostRequestBody.groupBy);

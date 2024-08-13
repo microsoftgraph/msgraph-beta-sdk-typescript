@@ -65,6 +65,7 @@ export interface AffectedResource extends AdditionalDataHolder, BackedModel, Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ActivityLog}
  */
+// @ts-ignore
 export function createActivityLogFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoActivityLog;
 }
@@ -73,6 +74,7 @@ export function createActivityLogFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AdditionalDataDictionary}
  */
+// @ts-ignore
 export function createAdditionalDataDictionaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAdditionalDataDictionary;
 }
@@ -81,6 +83,7 @@ export function createAdditionalDataDictionaryFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AffectedResource}
  */
+// @ts-ignore
 export function createAffectedResourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAffectedResource;
 }
@@ -89,6 +92,7 @@ export function createAffectedResourceFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PartnerSecurityAlertCollectionResponse}
  */
+// @ts-ignore
 export function createPartnerSecurityAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPartnerSecurityAlertCollectionResponse;
 }
@@ -97,6 +101,7 @@ export function createPartnerSecurityAlertCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PartnerSecurityAlert}
  */
+// @ts-ignore
 export function createPartnerSecurityAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPartnerSecurityAlert;
 }
@@ -105,6 +110,7 @@ export function createPartnerSecurityAlertFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PartnerSecurity}
  */
+// @ts-ignore
 export function createPartnerSecurityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPartnerSecurity;
 }
@@ -112,6 +118,7 @@ export function createPartnerSecurityFromDiscriminatorValue(parseNode: ParseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoActivityLog(activityLog: Partial<ActivityLog> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { activityLog.backingStoreEnabled = true; },
@@ -126,6 +133,7 @@ export function deserializeIntoActivityLog(activityLog: Partial<ActivityLog> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAdditionalDataDictionary(additionalDataDictionary: Partial<AdditionalDataDictionary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDictionary(additionalDataDictionary),
@@ -135,6 +143,7 @@ export function deserializeIntoAdditionalDataDictionary(additionalDataDictionary
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAffectedResource(affectedResource: Partial<AffectedResource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { affectedResource.backingStoreEnabled = true; },
@@ -147,6 +156,7 @@ export function deserializeIntoAffectedResource(affectedResource: Partial<Affect
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPartnerSecurity(partnerSecurity: Partial<PartnerSecurity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(partnerSecurity),
@@ -157,6 +167,7 @@ export function deserializeIntoPartnerSecurity(partnerSecurity: Partial<PartnerS
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPartnerSecurityAlert(partnerSecurityAlert: Partial<PartnerSecurityAlert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(partnerSecurityAlert),
@@ -186,6 +197,7 @@ export function deserializeIntoPartnerSecurityAlert(partnerSecurityAlert: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPartnerSecurityAlertCollectionResponse(partnerSecurityAlertCollectionResponse: Partial<PartnerSecurityAlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(partnerSecurityAlertCollectionResponse),
@@ -294,6 +306,7 @@ export type SecurityAlertStatus = (typeof SecurityAlertStatusObject)[keyof typeo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeActivityLog(writer: SerializationWriter, activityLog: Partial<ActivityLog> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", activityLog.odataType);
     writer.writeEnumValue<SecurityAlertStatus>("statusFrom", activityLog.statusFrom);
@@ -306,6 +319,7 @@ export function serializeActivityLog(writer: SerializationWriter, activityLog: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAdditionalDataDictionary(writer: SerializationWriter, additionalDataDictionary: Partial<AdditionalDataDictionary> | undefined = {}) : void {
     serializeDictionary(writer, additionalDataDictionary)
 }
@@ -313,6 +327,7 @@ export function serializeAdditionalDataDictionary(writer: SerializationWriter, a
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAffectedResource(writer: SerializationWriter, affectedResource: Partial<AffectedResource> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", affectedResource.odataType);
     writer.writeStringValue("resourceId", affectedResource.resourceId);
@@ -323,6 +338,7 @@ export function serializeAffectedResource(writer: SerializationWriter, affectedR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePartnerSecurity(writer: SerializationWriter, partnerSecurity: Partial<PartnerSecurity> | undefined = {}) : void {
     serializeEntity(writer, partnerSecurity)
     writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("securityAlerts", partnerSecurity.securityAlerts, serializePartnerSecurityAlert);
@@ -331,6 +347,7 @@ export function serializePartnerSecurity(writer: SerializationWriter, partnerSec
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePartnerSecurityAlert(writer: SerializationWriter, partnerSecurityAlert: Partial<PartnerSecurityAlert> | undefined = {}) : void {
     serializeEntity(writer, partnerSecurityAlert)
     writer.writeCollectionOfObjectValues<ActivityLog>("activityLogs", partnerSecurityAlert.activityLogs, serializeActivityLog);
@@ -358,6 +375,7 @@ export function serializePartnerSecurityAlert(writer: SerializationWriter, partn
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializePartnerSecurityAlertCollectionResponse(writer: SerializationWriter, partnerSecurityAlertCollectionResponse: Partial<PartnerSecurityAlertCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, partnerSecurityAlertCollectionResponse)
     writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("value", partnerSecurityAlertCollectionResponse.value, serializePartnerSecurityAlert);

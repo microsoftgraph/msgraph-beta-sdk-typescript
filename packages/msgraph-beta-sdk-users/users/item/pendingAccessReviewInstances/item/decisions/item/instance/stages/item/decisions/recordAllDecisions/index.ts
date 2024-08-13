@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RecordAllDecisionsPostRequestBody}
  */
+// @ts-ignore
 export function createRecordAllDecisionsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRecordAllDecisionsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRecordAllDecisionsPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRecordAllDecisionsPostRequestBody(recordAllDecisionsPostRequestBody: Partial<RecordAllDecisionsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { recordAllDecisionsPostRequestBody.backingStoreEnabled = true; },
@@ -77,6 +79,7 @@ export interface RecordAllDecisionsRequestBuilder extends BaseRequestBuilder<Rec
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRecordAllDecisionsPostRequestBody(writer: SerializationWriter, recordAllDecisionsPostRequestBody: Partial<RecordAllDecisionsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("decision", recordAllDecisionsPostRequestBody.decision);
     writer.writeStringValue("justification", recordAllDecisionsPostRequestBody.justification);

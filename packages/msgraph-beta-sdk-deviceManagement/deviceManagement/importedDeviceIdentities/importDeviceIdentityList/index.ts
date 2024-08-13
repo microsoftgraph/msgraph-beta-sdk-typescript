@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ImportDeviceIdentityListPostRequestBody}
  */
+// @ts-ignore
 export function createImportDeviceIdentityListPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportDeviceIdentityListPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createImportDeviceIdentityListPostRequestBodyFromDiscriminatorVa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ImportDeviceIdentityListPostResponse}
  */
+// @ts-ignore
 export function createImportDeviceIdentityListPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportDeviceIdentityListPostResponse;
 }
@@ -28,6 +30,7 @@ export function createImportDeviceIdentityListPostResponseFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoImportDeviceIdentityListPostRequestBody(importDeviceIdentityListPostRequestBody: Partial<ImportDeviceIdentityListPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { importDeviceIdentityListPostRequestBody.backingStoreEnabled = true; },
@@ -39,6 +42,7 @@ export function deserializeIntoImportDeviceIdentityListPostRequestBody(importDev
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoImportDeviceIdentityListPostResponse(importDeviceIdentityListPostResponse: Partial<ImportDeviceIdentityListPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(importDeviceIdentityListPostResponse),
@@ -93,6 +97,7 @@ export interface ImportDeviceIdentityListRequestBuilder extends BaseRequestBuild
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeImportDeviceIdentityListPostRequestBody(writer: SerializationWriter, importDeviceIdentityListPostRequestBody: Partial<ImportDeviceIdentityListPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("importedDeviceIdentities", importDeviceIdentityListPostRequestBody.importedDeviceIdentities, serializeImportedDeviceIdentity);
     writer.writeBooleanValue("overwriteImportedDeviceIdentities", importDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
@@ -102,6 +107,7 @@ export function serializeImportDeviceIdentityListPostRequestBody(writer: Seriali
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeImportDeviceIdentityListPostResponse(writer: SerializationWriter, importDeviceIdentityListPostResponse: Partial<ImportDeviceIdentityListPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, importDeviceIdentityListPostResponse)
     writer.writeCollectionOfObjectValues<ImportedDeviceIdentityResult>("value", importDeviceIdentityListPostResponse.value, serializeImportedDeviceIdentityResult);

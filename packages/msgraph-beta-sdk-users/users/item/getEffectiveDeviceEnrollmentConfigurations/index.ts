@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetEffectiveDeviceEnrollmentConfigurationsGetResponse}
  */
+// @ts-ignore
 export function createGetEffectiveDeviceEnrollmentConfigurationsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEffectiveDeviceEnrollmentConfigurationsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetEffectiveDeviceEnrollmentConfigurationsGetResponseFromD
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetEffectiveDeviceEnrollmentConfigurationsGetResponse(getEffectiveDeviceEnrollmentConfigurationsGetResponse: Partial<GetEffectiveDeviceEnrollmentConfigurationsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getEffectiveDeviceEnrollmentConfigurationsGetResponse),
@@ -91,6 +93,7 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQuer
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetEffectiveDeviceEnrollmentConfigurationsGetResponse(writer: SerializationWriter, getEffectiveDeviceEnrollmentConfigurationsGetResponse: Partial<GetEffectiveDeviceEnrollmentConfigurationsGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getEffectiveDeviceEnrollmentConfigurationsGetResponse)
     writer.writeCollectionOfObjectValues<DeviceEnrollmentConfiguration>("value", getEffectiveDeviceEnrollmentConfigurationsGetResponse.value, serializeDeviceEnrollmentConfiguration);

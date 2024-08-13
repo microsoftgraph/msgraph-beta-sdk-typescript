@@ -15,6 +15,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateClassificationResultsPostRequestBody}
  */
+// @ts-ignore
 export function createEvaluateClassificationResultsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateClassificationResultsPostRequestBody;
 }
@@ -23,6 +24,7 @@ export function createEvaluateClassificationResultsPostRequestBodyFromDiscrimina
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateClassificationResultsPostResponse}
  */
+// @ts-ignore
 export function createEvaluateClassificationResultsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateClassificationResultsPostResponse;
 }
@@ -30,6 +32,7 @@ export function createEvaluateClassificationResultsPostResponseFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateClassificationResultsPostRequestBody(evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { evaluateClassificationResultsPostRequestBody.backingStoreEnabled = true; },
@@ -41,6 +44,7 @@ export function deserializeIntoEvaluateClassificationResultsPostRequestBody(eval
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateClassificationResultsPostResponse(evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(evaluateClassificationResultsPostResponse),
@@ -96,6 +100,7 @@ export interface MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuild
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluateClassificationResultsPostRequestBody(writer: SerializationWriter, evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<ClassificationResult>("classificationResults", evaluateClassificationResultsPostRequestBody.classificationResults, serializeClassificationResult);
     writer.writeObjectValue<ContentInfo>("contentInfo", evaluateClassificationResultsPostRequestBody.contentInfo, serializeContentInfo);
@@ -105,6 +110,7 @@ export function serializeEvaluateClassificationResultsPostRequestBody(writer: Se
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluateClassificationResultsPostResponse(writer: SerializationWriter, evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, evaluateClassificationResultsPostResponse)
     writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateClassificationResultsPostResponse.value, serializeInformationProtectionAction);

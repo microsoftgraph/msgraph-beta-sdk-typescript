@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {OverrideComplianceStatePostRequestBody}
  */
+// @ts-ignore
 export function createOverrideComplianceStatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoOverrideComplianceStatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createOverrideComplianceStatePostRequestBodyFromDiscriminatorVal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoOverrideComplianceStatePostRequestBody(overrideComplianceStatePostRequestBody: Partial<OverrideComplianceStatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { overrideComplianceStatePostRequestBody.backingStoreEnabled = true; },
@@ -68,6 +70,7 @@ export interface OverrideComplianceStateRequestBuilder extends BaseRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeOverrideComplianceStatePostRequestBody(writer: SerializationWriter, overrideComplianceStatePostRequestBody: Partial<OverrideComplianceStatePostRequestBody> | undefined = {}) : void {
     writer.writeEnumValue<AdministratorConfiguredDeviceComplianceState>("complianceState", overrideComplianceStatePostRequestBody.complianceState);
     writer.writeStringValue("remediationUrl", overrideComplianceStatePostRequestBody.remediationUrl);

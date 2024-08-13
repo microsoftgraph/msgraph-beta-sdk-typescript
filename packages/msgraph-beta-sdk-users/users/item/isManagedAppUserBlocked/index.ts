@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IsManagedAppUserBlockedGetResponse}
  */
+// @ts-ignore
 export function createIsManagedAppUserBlockedGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIsManagedAppUserBlockedGetResponse;
 }
@@ -18,6 +19,7 @@ export function createIsManagedAppUserBlockedGetResponseFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIsManagedAppUserBlockedGetResponse(isManagedAppUserBlockedGetResponse: Partial<IsManagedAppUserBlockedGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { isManagedAppUserBlockedGetResponse.backingStoreEnabled = true; },
@@ -60,6 +62,7 @@ export interface IsManagedAppUserBlockedRequestBuilder extends BaseRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeIsManagedAppUserBlockedGetResponse(writer: SerializationWriter, isManagedAppUserBlockedGetResponse: Partial<IsManagedAppUserBlockedGetResponse> | undefined = {}) : void {
     writer.writeBooleanValue("value", isManagedAppUserBlockedGetResponse.value);
     writer.writeAdditionalData(isManagedAppUserBlockedGetResponse.additionalData);

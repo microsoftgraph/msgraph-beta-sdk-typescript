@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetSupportedPropertiesGetResponse}
  */
+// @ts-ignore
 export function createGetSupportedPropertiesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSupportedPropertiesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetSupportedPropertiesGetResponseFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetSupportedPropertiesGetResponse(getSupportedPropertiesGetResponse: Partial<GetSupportedPropertiesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getSupportedPropertiesGetResponse),
@@ -79,6 +81,7 @@ export interface GetSupportedPropertiesRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetSupportedPropertiesGetResponse(writer: SerializationWriter, getSupportedPropertiesGetResponse: Partial<GetSupportedPropertiesGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getSupportedPropertiesGetResponse)
     writer.writeCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", getSupportedPropertiesGetResponse.value, serializeAssignmentFilterSupportedProperty);

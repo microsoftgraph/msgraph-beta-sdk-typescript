@@ -51,6 +51,7 @@ export interface ConnectRequestBuilder extends BaseRequestBuilder<ConnectRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConnectPostRequestBody}
  */
+// @ts-ignore
 export function createConnectPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectPostRequestBody;
 }
@@ -58,6 +59,7 @@ export function createConnectPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectPostRequestBody(connectPostRequestBody: Partial<ConnectPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { connectPostRequestBody.backingStoreEnabled = true; },
@@ -69,6 +71,7 @@ export function deserializeIntoConnectPostRequestBody(connectPostRequestBody: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeConnectPostRequestBody(writer: SerializationWriter, connectPostRequestBody: Partial<ConnectPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("ownerAccessToken", connectPostRequestBody.ownerAccessToken);
     writer.writeStringValue("ownerUserPrincipalName", connectPostRequestBody.ownerUserPrincipalName);

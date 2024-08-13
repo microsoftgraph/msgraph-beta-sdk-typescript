@@ -43,6 +43,7 @@ export interface ApproveFotaAppsRequestBuilder extends BaseRequestBuilder<Approv
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApproveFotaAppsPostResponse}
  */
+// @ts-ignore
 export function createApproveFotaAppsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApproveFotaAppsPostResponse;
 }
@@ -50,6 +51,7 @@ export function createApproveFotaAppsPostResponseFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApproveFotaAppsPostResponse(approveFotaAppsPostResponse: Partial<ApproveFotaAppsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { approveFotaAppsPostResponse.backingStoreEnabled = true; },
@@ -60,6 +62,7 @@ export function deserializeIntoApproveFotaAppsPostResponse(approveFotaAppsPostRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeApproveFotaAppsPostResponse(writer: SerializationWriter, approveFotaAppsPostResponse: Partial<ApproveFotaAppsPostResponse> | undefined = {}) : void {
     writer.writeBooleanValue("value", approveFotaAppsPostResponse.value);
     writer.writeAdditionalData(approveFotaAppsPostResponse.additionalData);

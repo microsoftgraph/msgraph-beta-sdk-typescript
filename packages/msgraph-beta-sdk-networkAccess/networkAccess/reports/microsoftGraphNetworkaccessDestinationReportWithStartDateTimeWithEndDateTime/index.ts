@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DestinationReportWithStartDateTimeWithEndDateTimeGetResponse}
  */
+// @ts-ignore
 export function createDestinationReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDestinationReportWithStartDateTimeWithEndDateTimeGetResponse;
 }
@@ -22,6 +23,7 @@ export function createDestinationReportWithStartDateTimeWithEndDateTimeGetRespon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDestinationReportWithStartDateTimeWithEndDateTimeGetResponse(destinationReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<DestinationReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(destinationReportWithStartDateTimeWithEndDateTimeGetResponse),
@@ -81,6 +83,7 @@ export interface MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeDestinationReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, destinationReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<DestinationReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, destinationReportWithStartDateTimeWithEndDateTimeGetResponse)
     writer.writeCollectionOfObjectValues<Destination>("value", destinationReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeDestination);

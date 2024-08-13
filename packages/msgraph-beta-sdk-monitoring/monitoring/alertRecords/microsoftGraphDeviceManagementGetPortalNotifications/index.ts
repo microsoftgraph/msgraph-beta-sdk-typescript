@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPortalNotificationsGetResponse}
  */
+// @ts-ignore
 export function createGetPortalNotificationsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPortalNotificationsGetResponse;
 }
@@ -22,6 +23,7 @@ export function createGetPortalNotificationsGetResponseFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPortalNotificationsGetResponse(getPortalNotificationsGetResponse: Partial<GetPortalNotificationsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getPortalNotificationsGetResponse),
@@ -81,6 +83,7 @@ export interface MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetPortalNotificationsGetResponse(writer: SerializationWriter, getPortalNotificationsGetResponse: Partial<GetPortalNotificationsGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getPortalNotificationsGetResponse)
     writer.writeCollectionOfObjectValues<PortalNotification>("value", getPortalNotificationsGetResponse.value, serializePortalNotification);

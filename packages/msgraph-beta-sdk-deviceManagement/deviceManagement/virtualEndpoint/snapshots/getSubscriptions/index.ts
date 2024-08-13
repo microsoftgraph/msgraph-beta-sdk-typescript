@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetSubscriptionsGetResponse}
  */
+// @ts-ignore
 export function createGetSubscriptionsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSubscriptionsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetSubscriptionsGetResponseFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetSubscriptionsGetResponse(getSubscriptionsGetResponse: Partial<GetSubscriptionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getSubscriptionsGetResponse),
@@ -80,6 +82,7 @@ export interface GetSubscriptionsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetSubscriptionsGetResponse(writer: SerializationWriter, getSubscriptionsGetResponse: Partial<GetSubscriptionsGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getSubscriptionsGetResponse)
     writer.writeCollectionOfObjectValues<CloudPcSubscription>("value", getSubscriptionsGetResponse.value, serializeCloudPcSubscription);

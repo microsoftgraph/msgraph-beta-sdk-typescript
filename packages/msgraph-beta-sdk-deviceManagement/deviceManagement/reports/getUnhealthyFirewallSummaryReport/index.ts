@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetUnhealthyFirewallSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetUnhealthyFirewallSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetUnhealthyFirewallSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetUnhealthyFirewallSummaryReportPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetUnhealthyFirewallSummaryReportPostRequestBody(getUnhealthyFirewallSummaryReportPostRequestBody: Partial<GetUnhealthyFirewallSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getUnhealthyFirewallSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetUnhealthyFirewallSummaryReportRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetUnhealthyFirewallSummaryReportPostRequestBody(writer: SerializationWriter, getUnhealthyFirewallSummaryReportPostRequestBody: Partial<GetUnhealthyFirewallSummaryReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getUnhealthyFirewallSummaryReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getUnhealthyFirewallSummaryReportPostRequestBody.groupBy);

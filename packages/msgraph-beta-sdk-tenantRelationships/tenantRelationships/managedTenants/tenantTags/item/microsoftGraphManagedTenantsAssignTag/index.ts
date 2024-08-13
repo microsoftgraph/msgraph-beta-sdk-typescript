@@ -27,6 +27,7 @@ export interface AssignTagPostRequestBody extends AdditionalDataHolder, BackedMo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssignTagPostRequestBody}
  */
+// @ts-ignore
 export function createAssignTagPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignTagPostRequestBody;
 }
@@ -34,6 +35,7 @@ export function createAssignTagPostRequestBodyFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssignTagPostRequestBody(assignTagPostRequestBody: Partial<AssignTagPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { assignTagPostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export interface MicrosoftGraphManagedTenantsAssignTagRequestBuilder extends Bas
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAssignTagPostRequestBody(writer: SerializationWriter, assignTagPostRequestBody: Partial<AssignTagPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("tenantIds", assignTagPostRequestBody.tenantIds);
     writer.writeAdditionalData(assignTagPostRequestBody.additionalData);

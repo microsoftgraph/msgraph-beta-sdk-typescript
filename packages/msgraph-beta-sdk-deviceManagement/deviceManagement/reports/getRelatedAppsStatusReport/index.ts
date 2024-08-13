@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetRelatedAppsStatusReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetRelatedAppsStatusReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetRelatedAppsStatusReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetRelatedAppsStatusReportPostRequestBodyFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetRelatedAppsStatusReportPostRequestBody(getRelatedAppsStatusReportPostRequestBody: Partial<GetRelatedAppsStatusReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getRelatedAppsStatusReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetRelatedAppsStatusReportRequestBuilder extends BaseRequestBui
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetRelatedAppsStatusReportPostRequestBody(writer: SerializationWriter, getRelatedAppsStatusReportPostRequestBody: Partial<GetRelatedAppsStatusReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getRelatedAppsStatusReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRelatedAppsStatusReportPostRequestBody.groupBy);

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ValidateBulkResizePostRequestBody}
  */
+// @ts-ignore
 export function createValidateBulkResizePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateBulkResizePostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createValidateBulkResizePostRequestBodyFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ValidateBulkResizePostResponse}
  */
+// @ts-ignore
 export function createValidateBulkResizePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateBulkResizePostResponse;
 }
@@ -28,6 +30,7 @@ export function createValidateBulkResizePostResponseFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoValidateBulkResizePostRequestBody(validateBulkResizePostRequestBody: Partial<ValidateBulkResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validateBulkResizePostRequestBody.backingStoreEnabled = true; },
@@ -39,6 +42,7 @@ export function deserializeIntoValidateBulkResizePostRequestBody(validateBulkRes
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoValidateBulkResizePostResponse(validateBulkResizePostResponse: Partial<ValidateBulkResizePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(validateBulkResizePostResponse),
@@ -49,6 +53,7 @@ export function deserializeIntoValidateBulkResizePostResponse(validateBulkResize
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeValidateBulkResizePostRequestBody(writer: SerializationWriter, validateBulkResizePostRequestBody: Partial<ValidateBulkResizePostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", validateBulkResizePostRequestBody.cloudPcIds);
     writer.writeStringValue("targetServicePlanId", validateBulkResizePostRequestBody.targetServicePlanId);
@@ -58,6 +63,7 @@ export function serializeValidateBulkResizePostRequestBody(writer: Serialization
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeValidateBulkResizePostResponse(writer: SerializationWriter, validateBulkResizePostResponse: Partial<ValidateBulkResizePostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, validateBulkResizePostResponse)
     writer.writeCollectionOfObjectValues<CloudPcResizeValidationResult>("value", validateBulkResizePostResponse.value, serializeCloudPcResizeValidationResult);

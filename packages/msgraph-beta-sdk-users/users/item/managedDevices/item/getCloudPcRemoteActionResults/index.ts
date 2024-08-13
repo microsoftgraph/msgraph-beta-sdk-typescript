@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCloudPcRemoteActionResultsGetResponse}
  */
+// @ts-ignore
 export function createGetCloudPcRemoteActionResultsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcRemoteActionResultsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetCloudPcRemoteActionResultsGetResponseFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCloudPcRemoteActionResultsGetResponse(getCloudPcRemoteActionResultsGetResponse: Partial<GetCloudPcRemoteActionResultsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getCloudPcRemoteActionResultsGetResponse),
@@ -82,6 +84,7 @@ export interface GetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetCloudPcRemoteActionResultsGetResponse(writer: SerializationWriter, getCloudPcRemoteActionResultsGetResponse: Partial<GetCloudPcRemoteActionResultsGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getCloudPcRemoteActionResultsGetResponse)
     writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", getCloudPcRemoteActionResultsGetResponse.value, serializeCloudPcRemoteActionResult);

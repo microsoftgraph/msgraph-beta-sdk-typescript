@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoveMembersPostRequestBody}
  */
+// @ts-ignore
 export function createRemoveMembersPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoveMembersPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRemoveMembersPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoveMembersPostRequestBody(removeMembersPostRequestBody: Partial<RemoveMembersPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assets": n => { removeMembersPostRequestBody.assets = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
@@ -64,6 +66,7 @@ export interface RemoveMembersPostRequestBody extends AdditionalDataHolder, Back
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRemoveMembersPostRequestBody(writer: SerializationWriter, removeMembersPostRequestBody: Partial<RemoveMembersPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", removeMembersPostRequestBody.assets, serializeUpdatableAsset);
     writer.writeAdditionalData(removeMembersPostRequestBody.additionalData);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ValidateXmlPostRequestBody}
  */
+// @ts-ignore
 export function createValidateXmlPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateXmlPostRequestBody;
 }
@@ -19,6 +20,7 @@ export function createValidateXmlPostRequestBodyFromDiscriminatorValue(parseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ValidateXmlPostResponse}
  */
+// @ts-ignore
 export function createValidateXmlPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateXmlPostResponse;
 }
@@ -26,6 +28,7 @@ export function createValidateXmlPostResponseFromDiscriminatorValue(parseNode: P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoValidateXmlPostRequestBody(validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validateXmlPostRequestBody.backingStoreEnabled = true; },
@@ -36,6 +39,7 @@ export function deserializeIntoValidateXmlPostRequestBody(validateXmlPostRequest
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoValidateXmlPostResponse(validateXmlPostResponse: Partial<ValidateXmlPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validateXmlPostResponse.backingStoreEnabled = true; },
@@ -46,6 +50,7 @@ export function deserializeIntoValidateXmlPostResponse(validateXmlPostResponse: 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeValidateXmlPostRequestBody(writer: SerializationWriter, validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("officeConfigurationXml", validateXmlPostRequestBody.officeConfigurationXml);
     writer.writeAdditionalData(validateXmlPostRequestBody.additionalData);
@@ -54,6 +59,7 @@ export function serializeValidateXmlPostRequestBody(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeValidateXmlPostResponse(writer: SerializationWriter, validateXmlPostResponse: Partial<ValidateXmlPostResponse> | undefined = {}) : void {
     writer.writeStringValue("value", validateXmlPostResponse.value);
     writer.writeAdditionalData(validateXmlPostResponse.additionalData);

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveScopedPermissionsGetResponse}
  */
+// @ts-ignore
 export function createRetrieveScopedPermissionsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveScopedPermissionsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createRetrieveScopedPermissionsGetResponseFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveScopedPermissionsGetResponse(retrieveScopedPermissionsGetResponse: Partial<RetrieveScopedPermissionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(retrieveScopedPermissionsGetResponse),
@@ -80,6 +82,7 @@ export interface RetrieveScopedPermissionsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRetrieveScopedPermissionsGetResponse(writer: SerializationWriter, retrieveScopedPermissionsGetResponse: Partial<RetrieveScopedPermissionsGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, retrieveScopedPermissionsGetResponse)
     writer.writeCollectionOfObjectValues<CloudPcScopedPermission>("value", retrieveScopedPermissionsGetResponse.value, serializeCloudPcScopedPermission);

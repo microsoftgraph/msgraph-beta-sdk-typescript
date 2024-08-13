@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetWindowsQualityUpdateAlertSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetWindowsQualityUpdateAlertSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetWindowsQualityUpdateAlertSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetWindowsQualityUpdateAlertSummaryReportPostRequestBodyFr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetWindowsQualityUpdateAlertSummaryReportPostRequestBody(getWindowsQualityUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getWindowsQualityUpdateAlertSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetWindowsQualityUpdateAlertSummaryReportRequestBuilder extends
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetWindowsQualityUpdateAlertSummaryReportPostRequestBody(writer: SerializationWriter, getWindowsQualityUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertSummaryReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.groupBy);

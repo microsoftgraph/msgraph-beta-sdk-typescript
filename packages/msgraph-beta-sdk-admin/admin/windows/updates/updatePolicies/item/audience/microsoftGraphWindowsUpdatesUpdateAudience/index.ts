@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateAudiencePostRequestBody}
  */
+// @ts-ignore
 export function createUpdateAudiencePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAudiencePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateAudiencePostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateAudiencePostRequestBody(updateAudiencePostRequestBody: Partial<UpdateAudiencePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addExclusions": n => { updateAudiencePostRequestBody.addExclusions = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
@@ -53,6 +55,7 @@ export interface MicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder extend
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUpdateAudiencePostRequestBody(writer: SerializationWriter, updateAudiencePostRequestBody: Partial<UpdateAudiencePostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<UpdatableAsset>("addExclusions", updateAudiencePostRequestBody.addExclusions, serializeUpdatableAsset);
     writer.writeCollectionOfObjectValues<UpdatableAsset>("addMembers", updateAudiencePostRequestBody.addMembers, serializeUpdatableAsset);

@@ -17,6 +17,7 @@ export interface AttributeChangeTrigger extends Parsable, WorkflowExecutionTrigg
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AttributeChangeTrigger}
  */
+// @ts-ignore
 export function createAttributeChangeTriggerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAttributeChangeTrigger;
 }
@@ -25,6 +26,7 @@ export function createAttributeChangeTriggerFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustomTaskExtensionCallbackConfiguration}
  */
+// @ts-ignore
 export function createCustomTaskExtensionCallbackConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustomTaskExtensionCallbackConfiguration;
 }
@@ -33,6 +35,7 @@ export function createCustomTaskExtensionCallbackConfigurationFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustomTaskExtensionCallbackData}
  */
+// @ts-ignore
 export function createCustomTaskExtensionCallbackDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustomTaskExtensionCallbackData;
 }
@@ -41,6 +44,7 @@ export function createCustomTaskExtensionCallbackDataFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustomTaskExtensionCalloutData}
  */
+// @ts-ignore
 export function createCustomTaskExtensionCalloutDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustomTaskExtensionCalloutData;
 }
@@ -49,6 +53,7 @@ export function createCustomTaskExtensionCalloutDataFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustomTaskExtensionCollectionResponse}
  */
+// @ts-ignore
 export function createCustomTaskExtensionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustomTaskExtensionCollectionResponse;
 }
@@ -57,6 +62,7 @@ export function createCustomTaskExtensionCollectionResponseFromDiscriminatorValu
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustomTaskExtension}
  */
+// @ts-ignore
 export function createCustomTaskExtensionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustomTaskExtension;
 }
@@ -65,6 +71,7 @@ export function createCustomTaskExtensionFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GroupBasedSubjectSet}
  */
+// @ts-ignore
 export function createGroupBasedSubjectSetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGroupBasedSubjectSet;
 }
@@ -73,6 +80,7 @@ export function createGroupBasedSubjectSetFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Insights}
  */
+// @ts-ignore
 export function createInsightsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInsights;
 }
@@ -81,6 +89,7 @@ export function createInsightsFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LifecycleManagementSettings}
  */
+// @ts-ignore
 export function createLifecycleManagementSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLifecycleManagementSettings;
 }
@@ -89,6 +98,7 @@ export function createLifecycleManagementSettingsFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LifecycleWorkflowsContainer}
  */
+// @ts-ignore
 export function createLifecycleWorkflowsContainerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLifecycleWorkflowsContainer;
 }
@@ -97,6 +107,7 @@ export function createLifecycleWorkflowsContainerFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MembershipChangeTrigger}
  */
+// @ts-ignore
 export function createMembershipChangeTriggerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMembershipChangeTrigger;
 }
@@ -105,6 +116,7 @@ export function createMembershipChangeTriggerFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {OnDemandExecutionOnly}
  */
+// @ts-ignore
 export function createOnDemandExecutionOnlyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoOnDemandExecutionOnly;
 }
@@ -113,6 +125,7 @@ export function createOnDemandExecutionOnlyFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Parameter}
  */
+// @ts-ignore
 export function createParameterFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoParameter;
 }
@@ -121,6 +134,7 @@ export function createParameterFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RuleBasedSubjectSet}
  */
+// @ts-ignore
 export function createRuleBasedSubjectSetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRuleBasedSubjectSet;
 }
@@ -129,6 +143,7 @@ export function createRuleBasedSubjectSetFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RunCollectionResponse}
  */
+// @ts-ignore
 export function createRunCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRunCollectionResponse;
 }
@@ -137,6 +152,7 @@ export function createRunCollectionResponseFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Run}
  */
+// @ts-ignore
 export function createRunFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRun;
 }
@@ -145,6 +161,7 @@ export function createRunFromDiscriminatorValue(parseNode: ParseNode | undefined
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RunSummary}
  */
+// @ts-ignore
 export function createRunSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRunSummary;
 }
@@ -153,6 +170,7 @@ export function createRunSummaryFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskCollectionResponse}
  */
+// @ts-ignore
 export function createTaskCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskCollectionResponse;
 }
@@ -161,6 +179,7 @@ export function createTaskCollectionResponseFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskDefinitionCollectionResponse}
  */
+// @ts-ignore
 export function createTaskDefinitionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskDefinitionCollectionResponse;
 }
@@ -169,6 +188,7 @@ export function createTaskDefinitionCollectionResponseFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskDefinition}
  */
+// @ts-ignore
 export function createTaskDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskDefinition;
 }
@@ -177,6 +197,7 @@ export function createTaskDefinitionFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Task}
  */
+// @ts-ignore
 export function createTaskFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTask;
 }
@@ -185,6 +206,7 @@ export function createTaskFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskProcessingResultCollectionResponse}
  */
+// @ts-ignore
 export function createTaskProcessingResultCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskProcessingResultCollectionResponse;
 }
@@ -193,6 +215,7 @@ export function createTaskProcessingResultCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskProcessingResult}
  */
+// @ts-ignore
 export function createTaskProcessingResultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskProcessingResult;
 }
@@ -201,6 +224,7 @@ export function createTaskProcessingResultFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskReportCollectionResponse}
  */
+// @ts-ignore
 export function createTaskReportCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskReportCollectionResponse;
 }
@@ -209,6 +233,7 @@ export function createTaskReportCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskReport}
  */
+// @ts-ignore
 export function createTaskReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskReport;
 }
@@ -217,6 +242,7 @@ export function createTaskReportFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TaskReportSummary}
  */
+// @ts-ignore
 export function createTaskReportSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTaskReportSummary;
 }
@@ -225,6 +251,7 @@ export function createTaskReportSummaryFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TimeBasedAttributeTrigger}
  */
+// @ts-ignore
 export function createTimeBasedAttributeTriggerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTimeBasedAttributeTrigger;
 }
@@ -233,6 +260,7 @@ export function createTimeBasedAttributeTriggerFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TopTasksInsightsSummary}
  */
+// @ts-ignore
 export function createTopTasksInsightsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTopTasksInsightsSummary;
 }
@@ -241,6 +269,7 @@ export function createTopTasksInsightsSummaryFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TopWorkflowsInsightsSummary}
  */
+// @ts-ignore
 export function createTopWorkflowsInsightsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTopWorkflowsInsightsSummary;
 }
@@ -249,6 +278,7 @@ export function createTopWorkflowsInsightsSummaryFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TriggerAndScopeBasedConditions}
  */
+// @ts-ignore
 export function createTriggerAndScopeBasedConditionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTriggerAndScopeBasedConditions;
 }
@@ -257,6 +287,7 @@ export function createTriggerAndScopeBasedConditionsFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TriggerAttribute}
  */
+// @ts-ignore
 export function createTriggerAttributeFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTriggerAttribute;
 }
@@ -265,6 +296,7 @@ export function createTriggerAttributeFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UserProcessingResultCollectionResponse}
  */
+// @ts-ignore
 export function createUserProcessingResultCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUserProcessingResultCollectionResponse;
 }
@@ -273,6 +305,7 @@ export function createUserProcessingResultCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UserProcessingResult}
  */
+// @ts-ignore
 export function createUserProcessingResultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUserProcessingResult;
 }
@@ -281,6 +314,7 @@ export function createUserProcessingResultFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UserSummary}
  */
+// @ts-ignore
 export function createUserSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUserSummary;
 }
@@ -289,6 +323,7 @@ export function createUserSummaryFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowBase}
  */
+// @ts-ignore
 export function createWorkflowBaseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -310,6 +345,7 @@ export function createWorkflowBaseFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowCollectionResponse}
  */
+// @ts-ignore
 export function createWorkflowCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflowCollectionResponse;
 }
@@ -318,6 +354,7 @@ export function createWorkflowCollectionResponseFromDiscriminatorValue(parseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowExecutionConditions}
  */
+// @ts-ignore
 export function createWorkflowExecutionConditionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -339,6 +376,7 @@ export function createWorkflowExecutionConditionsFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowExecutionTrigger}
  */
+// @ts-ignore
 export function createWorkflowExecutionTriggerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -362,6 +400,7 @@ export function createWorkflowExecutionTriggerFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Workflow}
  */
+// @ts-ignore
 export function createWorkflowFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflow;
 }
@@ -370,6 +409,7 @@ export function createWorkflowFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowsInsightsByCategory}
  */
+// @ts-ignore
 export function createWorkflowsInsightsByCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflowsInsightsByCategory;
 }
@@ -378,6 +418,7 @@ export function createWorkflowsInsightsByCategoryFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowsInsightsSummary}
  */
+// @ts-ignore
 export function createWorkflowsInsightsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflowsInsightsSummary;
 }
@@ -386,6 +427,7 @@ export function createWorkflowsInsightsSummaryFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowTemplateCollectionResponse}
  */
+// @ts-ignore
 export function createWorkflowTemplateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflowTemplateCollectionResponse;
 }
@@ -394,6 +436,7 @@ export function createWorkflowTemplateCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowTemplate}
  */
+// @ts-ignore
 export function createWorkflowTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflowTemplate;
 }
@@ -402,6 +445,7 @@ export function createWorkflowTemplateFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowVersionCollectionResponse}
  */
+// @ts-ignore
 export function createWorkflowVersionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflowVersionCollectionResponse;
 }
@@ -410,6 +454,7 @@ export function createWorkflowVersionCollectionResponseFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkflowVersion}
  */
+// @ts-ignore
 export function createWorkflowVersionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkflowVersion;
 }
@@ -476,6 +521,7 @@ export type CustomTaskExtensionOperationStatus = (typeof CustomTaskExtensionOper
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAttributeChangeTrigger(attributeChangeTrigger: Partial<AttributeChangeTrigger> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowExecutionTrigger(attributeChangeTrigger),
@@ -486,6 +532,7 @@ export function deserializeIntoAttributeChangeTrigger(attributeChangeTrigger: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCustomTaskExtension(customTaskExtension: Partial<CustomTaskExtension> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCustomCalloutExtension(customTaskExtension),
@@ -500,6 +547,7 @@ export function deserializeIntoCustomTaskExtension(customTaskExtension: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCustomTaskExtensionCallbackConfiguration(customTaskExtensionCallbackConfiguration: Partial<CustomTaskExtensionCallbackConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCustomExtensionCallbackConfiguration(customTaskExtensionCallbackConfiguration),
@@ -510,6 +558,7 @@ export function deserializeIntoCustomTaskExtensionCallbackConfiguration(customTa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCustomTaskExtensionCallbackData(customTaskExtensionCallbackData: Partial<CustomTaskExtensionCallbackData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCustomExtensionData(customTaskExtensionCallbackData),
@@ -520,6 +569,7 @@ export function deserializeIntoCustomTaskExtensionCallbackData(customTaskExtensi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCustomTaskExtensionCalloutData(customTaskExtensionCalloutData: Partial<CustomTaskExtensionCalloutData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCustomExtensionData(customTaskExtensionCalloutData),
@@ -533,6 +583,7 @@ export function deserializeIntoCustomTaskExtensionCalloutData(customTaskExtensio
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCustomTaskExtensionCollectionResponse(customTaskExtensionCollectionResponse: Partial<CustomTaskExtensionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(customTaskExtensionCollectionResponse),
@@ -543,6 +594,7 @@ export function deserializeIntoCustomTaskExtensionCollectionResponse(customTaskE
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGroupBasedSubjectSet(groupBasedSubjectSet: Partial<GroupBasedSubjectSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSubjectSet(groupBasedSubjectSet),
@@ -553,6 +605,7 @@ export function deserializeIntoGroupBasedSubjectSet(groupBasedSubjectSet: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoInsights(insights: Partial<Insights> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(insights),
@@ -562,6 +615,7 @@ export function deserializeIntoInsights(insights: Partial<Insights> | undefined 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLifecycleManagementSettings(lifecycleManagementSettings: Partial<LifecycleManagementSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(lifecycleManagementSettings),
@@ -573,6 +627,7 @@ export function deserializeIntoLifecycleManagementSettings(lifecycleManagementSe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLifecycleWorkflowsContainer(lifecycleWorkflowsContainer: Partial<LifecycleWorkflowsContainer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(lifecycleWorkflowsContainer),
@@ -589,6 +644,7 @@ export function deserializeIntoLifecycleWorkflowsContainer(lifecycleWorkflowsCon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMembershipChangeTrigger(membershipChangeTrigger: Partial<MembershipChangeTrigger> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowExecutionTrigger(membershipChangeTrigger),
@@ -599,6 +655,7 @@ export function deserializeIntoMembershipChangeTrigger(membershipChangeTrigger: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoOnDemandExecutionOnly(onDemandExecutionOnly: Partial<OnDemandExecutionOnly> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowExecutionConditions(onDemandExecutionOnly),
@@ -608,6 +665,7 @@ export function deserializeIntoOnDemandExecutionOnly(onDemandExecutionOnly: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoParameter(parameter: Partial<Parameter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { parameter.backingStoreEnabled = true; },
@@ -621,6 +679,7 @@ export function deserializeIntoParameter(parameter: Partial<Parameter> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRuleBasedSubjectSet(ruleBasedSubjectSet: Partial<RuleBasedSubjectSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoSubjectSet(ruleBasedSubjectSet),
@@ -631,6 +690,7 @@ export function deserializeIntoRuleBasedSubjectSet(ruleBasedSubjectSet: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRun(run: Partial<Run> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(run),
@@ -654,6 +714,7 @@ export function deserializeIntoRun(run: Partial<Run> | undefined = {}) : Record<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRunCollectionResponse(runCollectionResponse: Partial<RunCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(runCollectionResponse),
@@ -664,6 +725,7 @@ export function deserializeIntoRunCollectionResponse(runCollectionResponse: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRunSummary(runSummary: Partial<RunSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { runSummary.backingStoreEnabled = true; },
@@ -680,6 +742,7 @@ export function deserializeIntoRunSummary(runSummary: Partial<RunSummary> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTask(task: Partial<Task> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(task),
@@ -698,6 +761,7 @@ export function deserializeIntoTask(task: Partial<Task> | undefined = {}) : Reco
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskCollectionResponse(taskCollectionResponse: Partial<TaskCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(taskCollectionResponse),
@@ -708,6 +772,7 @@ export function deserializeIntoTaskCollectionResponse(taskCollectionResponse: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskDefinition(taskDefinition: Partial<TaskDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(taskDefinition),
@@ -723,6 +788,7 @@ export function deserializeIntoTaskDefinition(taskDefinition: Partial<TaskDefini
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskDefinitionCollectionResponse(taskDefinitionCollectionResponse: Partial<TaskDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(taskDefinitionCollectionResponse),
@@ -733,6 +799,7 @@ export function deserializeIntoTaskDefinitionCollectionResponse(taskDefinitionCo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskProcessingResult(taskProcessingResult: Partial<TaskProcessingResult> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(taskProcessingResult),
@@ -749,6 +816,7 @@ export function deserializeIntoTaskProcessingResult(taskProcessingResult: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskProcessingResultCollectionResponse(taskProcessingResultCollectionResponse: Partial<TaskProcessingResultCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(taskProcessingResultCollectionResponse),
@@ -759,6 +827,7 @@ export function deserializeIntoTaskProcessingResultCollectionResponse(taskProces
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskReport(taskReport: Partial<TaskReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(taskReport),
@@ -780,6 +849,7 @@ export function deserializeIntoTaskReport(taskReport: Partial<TaskReport> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskReportCollectionResponse(taskReportCollectionResponse: Partial<TaskReportCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(taskReportCollectionResponse),
@@ -790,6 +860,7 @@ export function deserializeIntoTaskReportCollectionResponse(taskReportCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTaskReportSummary(taskReportSummary: Partial<TaskReportSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { taskReportSummary.backingStoreEnabled = true; },
@@ -804,6 +875,7 @@ export function deserializeIntoTaskReportSummary(taskReportSummary: Partial<Task
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTimeBasedAttributeTrigger(timeBasedAttributeTrigger: Partial<TimeBasedAttributeTrigger> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowExecutionTrigger(timeBasedAttributeTrigger),
@@ -815,6 +887,7 @@ export function deserializeIntoTimeBasedAttributeTrigger(timeBasedAttributeTrigg
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTopTasksInsightsSummary(topTasksInsightsSummary: Partial<TopTasksInsightsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { topTasksInsightsSummary.backingStoreEnabled = true; },
@@ -833,6 +906,7 @@ export function deserializeIntoTopTasksInsightsSummary(topTasksInsightsSummary: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTopWorkflowsInsightsSummary(topWorkflowsInsightsSummary: Partial<TopWorkflowsInsightsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { topWorkflowsInsightsSummary.backingStoreEnabled = true; },
@@ -853,6 +927,7 @@ export function deserializeIntoTopWorkflowsInsightsSummary(topWorkflowsInsightsS
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTriggerAndScopeBasedConditions(triggerAndScopeBasedConditions: Partial<TriggerAndScopeBasedConditions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowExecutionConditions(triggerAndScopeBasedConditions),
@@ -864,6 +939,7 @@ export function deserializeIntoTriggerAndScopeBasedConditions(triggerAndScopeBas
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTriggerAttribute(triggerAttribute: Partial<TriggerAttribute> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { triggerAttribute.backingStoreEnabled = true; },
@@ -875,6 +951,7 @@ export function deserializeIntoTriggerAttribute(triggerAttribute: Partial<Trigge
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUserProcessingResult(userProcessingResult: Partial<UserProcessingResult> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(userProcessingResult),
@@ -895,6 +972,7 @@ export function deserializeIntoUserProcessingResult(userProcessingResult: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUserProcessingResultCollectionResponse(userProcessingResultCollectionResponse: Partial<UserProcessingResultCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(userProcessingResultCollectionResponse),
@@ -905,6 +983,7 @@ export function deserializeIntoUserProcessingResultCollectionResponse(userProces
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUserSummary(userSummary: Partial<UserSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { userSummary.backingStoreEnabled = true; },
@@ -920,6 +999,7 @@ export function deserializeIntoUserSummary(userSummary: Partial<UserSummary> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflow(workflow: Partial<Workflow> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowBase(workflow),
@@ -938,6 +1018,7 @@ export function deserializeIntoWorkflow(workflow: Partial<Workflow> | undefined 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowBase(workflowBase: Partial<WorkflowBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { workflowBase.backingStoreEnabled = true; },
@@ -959,6 +1040,7 @@ export function deserializeIntoWorkflowBase(workflowBase: Partial<WorkflowBase> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowCollectionResponse(workflowCollectionResponse: Partial<WorkflowCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(workflowCollectionResponse),
@@ -969,6 +1051,7 @@ export function deserializeIntoWorkflowCollectionResponse(workflowCollectionResp
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowExecutionConditions(workflowExecutionConditions: Partial<WorkflowExecutionConditions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { workflowExecutionConditions.backingStoreEnabled = true; },
@@ -979,6 +1062,7 @@ export function deserializeIntoWorkflowExecutionConditions(workflowExecutionCond
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowExecutionTrigger(workflowExecutionTrigger: Partial<WorkflowExecutionTrigger> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { workflowExecutionTrigger.backingStoreEnabled = true; },
@@ -989,6 +1073,7 @@ export function deserializeIntoWorkflowExecutionTrigger(workflowExecutionTrigger
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowsInsightsByCategory(workflowsInsightsByCategory: Partial<WorkflowsInsightsByCategory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { workflowsInsightsByCategory.backingStoreEnabled = true; },
@@ -1008,6 +1093,7 @@ export function deserializeIntoWorkflowsInsightsByCategory(workflowsInsightsByCa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowsInsightsSummary(workflowsInsightsSummary: Partial<WorkflowsInsightsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { workflowsInsightsSummary.backingStoreEnabled = true; },
@@ -1027,6 +1113,7 @@ export function deserializeIntoWorkflowsInsightsSummary(workflowsInsightsSummary
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowTemplate(workflowTemplate: Partial<WorkflowTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(workflowTemplate),
@@ -1041,6 +1128,7 @@ export function deserializeIntoWorkflowTemplate(workflowTemplate: Partial<Workfl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowTemplateCollectionResponse(workflowTemplateCollectionResponse: Partial<WorkflowTemplateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(workflowTemplateCollectionResponse),
@@ -1051,6 +1139,7 @@ export function deserializeIntoWorkflowTemplateCollectionResponse(workflowTempla
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowVersion(workflowVersion: Partial<WorkflowVersion> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWorkflowBase(workflowVersion),
@@ -1061,6 +1150,7 @@ export function deserializeIntoWorkflowVersion(workflowVersion: Partial<Workflow
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkflowVersionCollectionResponse(workflowVersionCollectionResponse: Partial<WorkflowVersionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(workflowVersionCollectionResponse),
@@ -1265,6 +1355,7 @@ export interface RunSummary extends AdditionalDataHolder, BackedModel, Parsable 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeAttributeChangeTrigger(writer: SerializationWriter, attributeChangeTrigger: Partial<AttributeChangeTrigger> | undefined = {}) : void {
     serializeWorkflowExecutionTrigger(writer, attributeChangeTrigger)
     writer.writeCollectionOfObjectValues<TriggerAttribute>("triggerAttributes", attributeChangeTrigger.triggerAttributes, serializeTriggerAttribute);
@@ -1273,6 +1364,7 @@ export function serializeAttributeChangeTrigger(writer: SerializationWriter, att
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCustomTaskExtension(writer: SerializationWriter, customTaskExtension: Partial<CustomTaskExtension> | undefined = {}) : void {
     serializeCustomCalloutExtension(writer, customTaskExtension)
     writer.writeObjectValue<CustomExtensionCallbackConfiguration>("callbackConfiguration", customTaskExtension.callbackConfiguration, serializeCustomExtensionCallbackConfiguration);
@@ -1285,6 +1377,7 @@ export function serializeCustomTaskExtension(writer: SerializationWriter, custom
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCustomTaskExtensionCallbackConfiguration(writer: SerializationWriter, customTaskExtensionCallbackConfiguration: Partial<CustomTaskExtensionCallbackConfiguration> | undefined = {}) : void {
     serializeCustomExtensionCallbackConfiguration(writer, customTaskExtensionCallbackConfiguration)
     writer.writeCollectionOfObjectValues<Application>("authorizedApps", customTaskExtensionCallbackConfiguration.authorizedApps, serializeApplication);
@@ -1293,6 +1386,7 @@ export function serializeCustomTaskExtensionCallbackConfiguration(writer: Serial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCustomTaskExtensionCallbackData(writer: SerializationWriter, customTaskExtensionCallbackData: Partial<CustomTaskExtensionCallbackData> | undefined = {}) : void {
     serializeCustomExtensionData(writer, customTaskExtensionCallbackData)
     writer.writeEnumValue<CustomTaskExtensionOperationStatus>("operationStatus", customTaskExtensionCallbackData.operationStatus);
@@ -1301,6 +1395,7 @@ export function serializeCustomTaskExtensionCallbackData(writer: SerializationWr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCustomTaskExtensionCalloutData(writer: SerializationWriter, customTaskExtensionCalloutData: Partial<CustomTaskExtensionCalloutData> | undefined = {}) : void {
     serializeCustomExtensionData(writer, customTaskExtensionCalloutData)
     writer.writeObjectValue<User>("subject", customTaskExtensionCalloutData.subject, serializeUser);
@@ -1312,6 +1407,7 @@ export function serializeCustomTaskExtensionCalloutData(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCustomTaskExtensionCollectionResponse(writer: SerializationWriter, customTaskExtensionCollectionResponse: Partial<CustomTaskExtensionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, customTaskExtensionCollectionResponse)
     writer.writeCollectionOfObjectValues<CustomTaskExtension>("value", customTaskExtensionCollectionResponse.value, serializeCustomTaskExtension);
@@ -1320,6 +1416,7 @@ export function serializeCustomTaskExtensionCollectionResponse(writer: Serializa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGroupBasedSubjectSet(writer: SerializationWriter, groupBasedSubjectSet: Partial<GroupBasedSubjectSet> | undefined = {}) : void {
     serializeSubjectSet(writer, groupBasedSubjectSet)
     writer.writeCollectionOfObjectValues<Group>("groups", groupBasedSubjectSet.groups, serializeGroup);
@@ -1328,6 +1425,7 @@ export function serializeGroupBasedSubjectSet(writer: SerializationWriter, group
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeInsights(writer: SerializationWriter, insights: Partial<Insights> | undefined = {}) : void {
     serializeEntity(writer, insights)
 }
@@ -1335,6 +1433,7 @@ export function serializeInsights(writer: SerializationWriter, insights: Partial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeLifecycleManagementSettings(writer: SerializationWriter, lifecycleManagementSettings: Partial<LifecycleManagementSettings> | undefined = {}) : void {
     serializeEntity(writer, lifecycleManagementSettings)
     writer.writeObjectValue<EmailSettings>("emailSettings", lifecycleManagementSettings.emailSettings, serializeEmailSettings);
@@ -1344,6 +1443,7 @@ export function serializeLifecycleManagementSettings(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeLifecycleWorkflowsContainer(writer: SerializationWriter, lifecycleWorkflowsContainer: Partial<LifecycleWorkflowsContainer> | undefined = {}) : void {
     serializeEntity(writer, lifecycleWorkflowsContainer)
     writer.writeCollectionOfObjectValues<CustomTaskExtension>("customTaskExtensions", lifecycleWorkflowsContainer.customTaskExtensions, serializeCustomTaskExtension);
@@ -1358,6 +1458,7 @@ export function serializeLifecycleWorkflowsContainer(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeMembershipChangeTrigger(writer: SerializationWriter, membershipChangeTrigger: Partial<MembershipChangeTrigger> | undefined = {}) : void {
     serializeWorkflowExecutionTrigger(writer, membershipChangeTrigger)
     writer.writeEnumValue<MembershipChangeType>("changeType", membershipChangeTrigger.changeType);
@@ -1366,6 +1467,7 @@ export function serializeMembershipChangeTrigger(writer: SerializationWriter, me
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeOnDemandExecutionOnly(writer: SerializationWriter, onDemandExecutionOnly: Partial<OnDemandExecutionOnly> | undefined = {}) : void {
     serializeWorkflowExecutionConditions(writer, onDemandExecutionOnly)
 }
@@ -1373,6 +1475,7 @@ export function serializeOnDemandExecutionOnly(writer: SerializationWriter, onDe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeParameter(writer: SerializationWriter, parameter: Partial<Parameter> | undefined = {}) : void {
     writer.writeStringValue("name", parameter.name);
     writer.writeStringValue("@odata.type", parameter.odataType);
@@ -1384,6 +1487,7 @@ export function serializeParameter(writer: SerializationWriter, parameter: Parti
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRuleBasedSubjectSet(writer: SerializationWriter, ruleBasedSubjectSet: Partial<RuleBasedSubjectSet> | undefined = {}) : void {
     serializeSubjectSet(writer, ruleBasedSubjectSet)
     writer.writeStringValue("rule", ruleBasedSubjectSet.rule);
@@ -1392,6 +1496,7 @@ export function serializeRuleBasedSubjectSet(writer: SerializationWriter, ruleBa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRun(writer: SerializationWriter, run: Partial<Run> | undefined = {}) : void {
     serializeEntity(writer, run)
     writer.writeDateValue("completedDateTime", run.completedDateTime);
@@ -1413,6 +1518,7 @@ export function serializeRun(writer: SerializationWriter, run: Partial<Run> | un
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRunCollectionResponse(writer: SerializationWriter, runCollectionResponse: Partial<RunCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, runCollectionResponse)
     writer.writeCollectionOfObjectValues<Run>("value", runCollectionResponse.value, serializeRun);
@@ -1421,6 +1527,7 @@ export function serializeRunCollectionResponse(writer: SerializationWriter, runC
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRunSummary(writer: SerializationWriter, runSummary: Partial<RunSummary> | undefined = {}) : void {
     writer.writeNumberValue("failedRuns", runSummary.failedRuns);
     writer.writeNumberValue("failedTasks", runSummary.failedTasks);
@@ -1435,6 +1542,7 @@ export function serializeRunSummary(writer: SerializationWriter, runSummary: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTask(writer: SerializationWriter, task: Partial<Task> | undefined = {}) : void {
     serializeEntity(writer, task)
     writer.writeCollectionOfObjectValues<KeyValuePair>("arguments", task.arguments, serializeKeyValuePair);
@@ -1451,6 +1559,7 @@ export function serializeTask(writer: SerializationWriter, task: Partial<Task> |
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskCollectionResponse(writer: SerializationWriter, taskCollectionResponse: Partial<TaskCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, taskCollectionResponse)
     writer.writeCollectionOfObjectValues<Task>("value", taskCollectionResponse.value, serializeTask);
@@ -1459,6 +1568,7 @@ export function serializeTaskCollectionResponse(writer: SerializationWriter, tas
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskDefinition(writer: SerializationWriter, taskDefinition: Partial<TaskDefinition> | undefined = {}) : void {
     serializeEntity(writer, taskDefinition)
     writer.writeEnumValue<LifecycleTaskCategory[]>("category", taskDefinition.category);
@@ -1472,6 +1582,7 @@ export function serializeTaskDefinition(writer: SerializationWriter, taskDefinit
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskDefinitionCollectionResponse(writer: SerializationWriter, taskDefinitionCollectionResponse: Partial<TaskDefinitionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, taskDefinitionCollectionResponse)
     writer.writeCollectionOfObjectValues<TaskDefinition>("value", taskDefinitionCollectionResponse.value, serializeTaskDefinition);
@@ -1480,6 +1591,7 @@ export function serializeTaskDefinitionCollectionResponse(writer: SerializationW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskProcessingResult(writer: SerializationWriter, taskProcessingResult: Partial<TaskProcessingResult> | undefined = {}) : void {
     serializeEntity(writer, taskProcessingResult)
     writer.writeDateValue("completedDateTime", taskProcessingResult.completedDateTime);
@@ -1494,6 +1606,7 @@ export function serializeTaskProcessingResult(writer: SerializationWriter, taskP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskProcessingResultCollectionResponse(writer: SerializationWriter, taskProcessingResultCollectionResponse: Partial<TaskProcessingResultCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, taskProcessingResultCollectionResponse)
     writer.writeCollectionOfObjectValues<TaskProcessingResult>("value", taskProcessingResultCollectionResponse.value, serializeTaskProcessingResult);
@@ -1502,6 +1615,7 @@ export function serializeTaskProcessingResultCollectionResponse(writer: Serializ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskReport(writer: SerializationWriter, taskReport: Partial<TaskReport> | undefined = {}) : void {
     serializeEntity(writer, taskReport)
     writer.writeDateValue("completedDateTime", taskReport.completedDateTime);
@@ -1521,6 +1635,7 @@ export function serializeTaskReport(writer: SerializationWriter, taskReport: Par
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskReportCollectionResponse(writer: SerializationWriter, taskReportCollectionResponse: Partial<TaskReportCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, taskReportCollectionResponse)
     writer.writeCollectionOfObjectValues<TaskReport>("value", taskReportCollectionResponse.value, serializeTaskReport);
@@ -1529,6 +1644,7 @@ export function serializeTaskReportCollectionResponse(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTaskReportSummary(writer: SerializationWriter, taskReportSummary: Partial<TaskReportSummary> | undefined = {}) : void {
     writer.writeNumberValue("failedTasks", taskReportSummary.failedTasks);
     writer.writeStringValue("@odata.type", taskReportSummary.odataType);
@@ -1541,6 +1657,7 @@ export function serializeTaskReportSummary(writer: SerializationWriter, taskRepo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTimeBasedAttributeTrigger(writer: SerializationWriter, timeBasedAttributeTrigger: Partial<TimeBasedAttributeTrigger> | undefined = {}) : void {
     serializeWorkflowExecutionTrigger(writer, timeBasedAttributeTrigger)
     writer.writeNumberValue("offsetInDays", timeBasedAttributeTrigger.offsetInDays);
@@ -1550,6 +1667,7 @@ export function serializeTimeBasedAttributeTrigger(writer: SerializationWriter, 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTopTasksInsightsSummary(writer: SerializationWriter, topTasksInsightsSummary: Partial<TopTasksInsightsSummary> | undefined = {}) : void {
     writer.writeNumberValue("failedTasks", topTasksInsightsSummary.failedTasks);
     writer.writeNumberValue("failedUsers", topTasksInsightsSummary.failedUsers);
@@ -1566,6 +1684,7 @@ export function serializeTopTasksInsightsSummary(writer: SerializationWriter, to
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTopWorkflowsInsightsSummary(writer: SerializationWriter, topWorkflowsInsightsSummary: Partial<TopWorkflowsInsightsSummary> | undefined = {}) : void {
     writer.writeNumberValue("failedRuns", topWorkflowsInsightsSummary.failedRuns);
     writer.writeNumberValue("failedUsers", topWorkflowsInsightsSummary.failedUsers);
@@ -1584,6 +1703,7 @@ export function serializeTopWorkflowsInsightsSummary(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTriggerAndScopeBasedConditions(writer: SerializationWriter, triggerAndScopeBasedConditions: Partial<TriggerAndScopeBasedConditions> | undefined = {}) : void {
     serializeWorkflowExecutionConditions(writer, triggerAndScopeBasedConditions)
     writer.writeObjectValue<SubjectSet>("scope", triggerAndScopeBasedConditions.scope, serializeSubjectSet);
@@ -1593,6 +1713,7 @@ export function serializeTriggerAndScopeBasedConditions(writer: SerializationWri
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeTriggerAttribute(writer: SerializationWriter, triggerAttribute: Partial<TriggerAttribute> | undefined = {}) : void {
     writer.writeStringValue("name", triggerAttribute.name);
     writer.writeStringValue("@odata.type", triggerAttribute.odataType);
@@ -1602,6 +1723,7 @@ export function serializeTriggerAttribute(writer: SerializationWriter, triggerAt
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUserProcessingResult(writer: SerializationWriter, userProcessingResult: Partial<UserProcessingResult> | undefined = {}) : void {
     serializeEntity(writer, userProcessingResult)
     writer.writeDateValue("completedDateTime", userProcessingResult.completedDateTime);
@@ -1620,6 +1742,7 @@ export function serializeUserProcessingResult(writer: SerializationWriter, userP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUserProcessingResultCollectionResponse(writer: SerializationWriter, userProcessingResultCollectionResponse: Partial<UserProcessingResultCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, userProcessingResultCollectionResponse)
     writer.writeCollectionOfObjectValues<UserProcessingResult>("value", userProcessingResultCollectionResponse.value, serializeUserProcessingResult);
@@ -1628,6 +1751,7 @@ export function serializeUserProcessingResultCollectionResponse(writer: Serializ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeUserSummary(writer: SerializationWriter, userSummary: Partial<UserSummary> | undefined = {}) : void {
     writer.writeNumberValue("failedTasks", userSummary.failedTasks);
     writer.writeNumberValue("failedUsers", userSummary.failedUsers);
@@ -1641,6 +1765,7 @@ export function serializeUserSummary(writer: SerializationWriter, userSummary: P
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflow(writer: SerializationWriter, workflow: Partial<Workflow> | undefined = {}) : void {
     serializeWorkflowBase(writer, workflow)
     writer.writeDateValue("deletedDateTime", workflow.deletedDateTime);
@@ -1657,6 +1782,7 @@ export function serializeWorkflow(writer: SerializationWriter, workflow: Partial
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowBase(writer: SerializationWriter, workflowBase: Partial<WorkflowBase> | undefined = {}) : void {
     writer.writeEnumValue<LifecycleWorkflowCategory>("category", workflowBase.category);
     writer.writeObjectValue<User>("createdBy", workflowBase.createdBy, serializeUser);
@@ -1676,6 +1802,7 @@ export function serializeWorkflowBase(writer: SerializationWriter, workflowBase:
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowCollectionResponse(writer: SerializationWriter, workflowCollectionResponse: Partial<WorkflowCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, workflowCollectionResponse)
     writer.writeCollectionOfObjectValues<Workflow>("value", workflowCollectionResponse.value, serializeWorkflow);
@@ -1684,6 +1811,7 @@ export function serializeWorkflowCollectionResponse(writer: SerializationWriter,
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowExecutionConditions(writer: SerializationWriter, workflowExecutionConditions: Partial<WorkflowExecutionConditions> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", workflowExecutionConditions.odataType);
     writer.writeAdditionalData(workflowExecutionConditions.additionalData);
@@ -1692,6 +1820,7 @@ export function serializeWorkflowExecutionConditions(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowExecutionTrigger(writer: SerializationWriter, workflowExecutionTrigger: Partial<WorkflowExecutionTrigger> | undefined = {}) : void {
     writer.writeStringValue("@odata.type", workflowExecutionTrigger.odataType);
     writer.writeAdditionalData(workflowExecutionTrigger.additionalData);
@@ -1700,6 +1829,7 @@ export function serializeWorkflowExecutionTrigger(writer: SerializationWriter, w
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowsInsightsByCategory(writer: SerializationWriter, workflowsInsightsByCategory: Partial<WorkflowsInsightsByCategory> | undefined = {}) : void {
     writer.writeNumberValue("failedJoinerRuns", workflowsInsightsByCategory.failedJoinerRuns);
     writer.writeNumberValue("failedLeaverRuns", workflowsInsightsByCategory.failedLeaverRuns);
@@ -1717,6 +1847,7 @@ export function serializeWorkflowsInsightsByCategory(writer: SerializationWriter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowsInsightsSummary(writer: SerializationWriter, workflowsInsightsSummary: Partial<WorkflowsInsightsSummary> | undefined = {}) : void {
     writer.writeNumberValue("failedRuns", workflowsInsightsSummary.failedRuns);
     writer.writeNumberValue("failedTasks", workflowsInsightsSummary.failedTasks);
@@ -1734,6 +1865,7 @@ export function serializeWorkflowsInsightsSummary(writer: SerializationWriter, w
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowTemplate(writer: SerializationWriter, workflowTemplate: Partial<WorkflowTemplate> | undefined = {}) : void {
     serializeEntity(writer, workflowTemplate)
     writer.writeEnumValue<LifecycleWorkflowCategory>("category", workflowTemplate.category);
@@ -1746,6 +1878,7 @@ export function serializeWorkflowTemplate(writer: SerializationWriter, workflowT
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowTemplateCollectionResponse(writer: SerializationWriter, workflowTemplateCollectionResponse: Partial<WorkflowTemplateCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, workflowTemplateCollectionResponse)
     writer.writeCollectionOfObjectValues<WorkflowTemplate>("value", workflowTemplateCollectionResponse.value, serializeWorkflowTemplate);
@@ -1754,6 +1887,7 @@ export function serializeWorkflowTemplateCollectionResponse(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowVersion(writer: SerializationWriter, workflowVersion: Partial<WorkflowVersion> | undefined = {}) : void {
     serializeWorkflowBase(writer, workflowVersion)
     writer.writeNumberValue("versionNumber", workflowVersion.versionNumber);
@@ -1762,6 +1896,7 @@ export function serializeWorkflowVersion(writer: SerializationWriter, workflowVe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeWorkflowVersionCollectionResponse(writer: SerializationWriter, workflowVersionCollectionResponse: Partial<WorkflowVersionCollectionResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, workflowVersionCollectionResponse)
     writer.writeCollectionOfObjectValues<WorkflowVersion>("value", workflowVersionCollectionResponse.value, serializeWorkflowVersion);
@@ -1776,7 +1911,7 @@ export interface Task extends Entity, Parsable {
      */
     category?: LifecycleTaskCategory[];
     /**
-     * A boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
+     * A Boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
      */
     continueOnError?: boolean;
     /**
@@ -1792,7 +1927,7 @@ export interface Task extends Entity, Parsable {
      */
     executionSequence?: number;
     /**
-     * A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+     * A Boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
      */
     isEnabled?: boolean;
     /**

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RegisterPostRequestBody}
  */
+// @ts-ignore
 export function createRegisterPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRegisterPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRegisterPostRequestBodyFromDiscriminatorValue(parseNode: P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRegisterPostRequestBody(registerPostRequestBody: Partial<RegisterPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { registerPostRequestBody.backingStoreEnabled = true; },
@@ -61,6 +63,7 @@ export interface RegisterRequestBuilder extends BaseRequestBuilder<RegisterReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRegisterPostRequestBody(writer: SerializationWriter, registerPostRequestBody: Partial<RegisterPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("externalId", registerPostRequestBody.externalId);
     writer.writeAdditionalData(registerPostRequestBody.additionalData);

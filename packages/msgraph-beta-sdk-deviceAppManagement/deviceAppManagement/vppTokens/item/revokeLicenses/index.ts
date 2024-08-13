@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RevokeLicensesPostRequestBody}
  */
+// @ts-ignore
 export function createRevokeLicensesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRevokeLicensesPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRevokeLicensesPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRevokeLicensesPostRequestBody(revokeLicensesPostRequestBody: Partial<RevokeLicensesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { revokeLicensesPostRequestBody.backingStoreEnabled = true; },
@@ -66,6 +68,7 @@ export interface RevokeLicensesRequestBuilder extends BaseRequestBuilder<RevokeL
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRevokeLicensesPostRequestBody(writer: SerializationWriter, revokeLicensesPostRequestBody: Partial<RevokeLicensesPostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("notifyManagedDevices", revokeLicensesPostRequestBody.notifyManagedDevices);
     writer.writeBooleanValue("revokeUntrackedLicenses", revokeLicensesPostRequestBody.revokeUntrackedLicenses);

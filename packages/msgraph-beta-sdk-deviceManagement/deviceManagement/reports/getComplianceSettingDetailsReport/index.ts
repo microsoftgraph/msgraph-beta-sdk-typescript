@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetComplianceSettingDetailsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetComplianceSettingDetailsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetComplianceSettingDetailsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetComplianceSettingDetailsReportPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetComplianceSettingDetailsReportPostRequestBody(getComplianceSettingDetailsReportPostRequestBody: Partial<GetComplianceSettingDetailsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getComplianceSettingDetailsReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetComplianceSettingDetailsReportRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetComplianceSettingDetailsReportPostRequestBody(writer: SerializationWriter, getComplianceSettingDetailsReportPostRequestBody: Partial<GetComplianceSettingDetailsReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getComplianceSettingDetailsReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getComplianceSettingDetailsReportPostRequestBody.groupBy);

@@ -47,6 +47,7 @@ export interface ChangeUserAccountTypeRequestBuilder extends BaseRequestBuilder<
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ChangeUserAccountTypePostRequestBody}
  */
+// @ts-ignore
 export function createChangeUserAccountTypePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangeUserAccountTypePostRequestBody;
 }
@@ -54,6 +55,7 @@ export function createChangeUserAccountTypePostRequestBodyFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoChangeUserAccountTypePostRequestBody(changeUserAccountTypePostRequestBody: Partial<ChangeUserAccountTypePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { changeUserAccountTypePostRequestBody.backingStoreEnabled = true; },
@@ -64,6 +66,7 @@ export function deserializeIntoChangeUserAccountTypePostRequestBody(changeUserAc
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeChangeUserAccountTypePostRequestBody(writer: SerializationWriter, changeUserAccountTypePostRequestBody: Partial<ChangeUserAccountTypePostRequestBody> | undefined = {}) : void {
     writer.writeEnumValue<CloudPcUserAccountType>("userAccountType", changeUserAccountTypePostRequestBody.userAccountType);
     writer.writeAdditionalData(changeUserAccountTypePostRequestBody.additionalData);

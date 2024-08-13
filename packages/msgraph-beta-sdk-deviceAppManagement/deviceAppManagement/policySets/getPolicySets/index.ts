@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPolicySetsPostRequestBody}
  */
+// @ts-ignore
 export function createGetPolicySetsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPolicySetsPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createGetPolicySetsPostRequestBodyFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPolicySetsPostResponse}
  */
+// @ts-ignore
 export function createGetPolicySetsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPolicySetsPostResponse;
 }
@@ -28,6 +30,7 @@ export function createGetPolicySetsPostResponseFromDiscriminatorValue(parseNode:
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPolicySetsPostRequestBody(getPolicySetsPostRequestBody: Partial<GetPolicySetsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getPolicySetsPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoGetPolicySetsPostRequestBody(getPolicySetsPostReq
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPolicySetsPostResponse(getPolicySetsPostResponse: Partial<GetPolicySetsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getPolicySetsPostResponse),
@@ -88,6 +92,7 @@ export interface GetPolicySetsRequestBuilder extends BaseRequestBuilder<GetPolic
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetPolicySetsPostRequestBody(writer: SerializationWriter, getPolicySetsPostRequestBody: Partial<GetPolicySetsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfPrimitiveValues<string>("policySetIds", getPolicySetsPostRequestBody.policySetIds);
     writer.writeAdditionalData(getPolicySetsPostRequestBody.additionalData);
@@ -96,6 +101,7 @@ export function serializeGetPolicySetsPostRequestBody(writer: SerializationWrite
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetPolicySetsPostResponse(writer: SerializationWriter, getPolicySetsPostResponse: Partial<GetPolicySetsPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getPolicySetsPostResponse)
     writer.writeCollectionOfObjectValues<PolicySet>("value", getPolicySetsPostResponse.value, serializePolicySet);

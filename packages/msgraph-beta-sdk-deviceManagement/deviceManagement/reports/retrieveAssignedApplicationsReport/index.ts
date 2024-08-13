@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveAssignedApplicationsReportPostRequestBody}
  */
+// @ts-ignore
 export function createRetrieveAssignedApplicationsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveAssignedApplicationsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRetrieveAssignedApplicationsReportPostRequestBodyFromDiscr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveAssignedApplicationsReportPostRequestBody(retrieveAssignedApplicationsReportPostRequestBody: Partial<RetrieveAssignedApplicationsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retrieveAssignedApplicationsReportPostRequestBody.backingStoreEnabled = true; },
@@ -92,6 +94,7 @@ export interface RetrieveAssignedApplicationsReportRequestBuilder extends BaseRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeRetrieveAssignedApplicationsReportPostRequestBody(writer: SerializationWriter, retrieveAssignedApplicationsReportPostRequestBody: Partial<RetrieveAssignedApplicationsReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", retrieveAssignedApplicationsReportPostRequestBody.filter);
     writer.writeStringValue("groupby", retrieveAssignedApplicationsReportPostRequestBody.groupby);

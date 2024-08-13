@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDeviceConfigurationPolicySettingsSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetDeviceConfigurationPolicySettingsSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDeviceConfigurationPolicySettingsSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetDeviceConfigurationPolicySettingsSummaryReportPostReque
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDeviceConfigurationPolicySettingsSummaryReportPostRequestBody(getDeviceConfigurationPolicySettingsSummaryReportPostRequestBody: Partial<GetDeviceConfigurationPolicySettingsSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getDeviceConfigurationPolicySettingsSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetDeviceConfigurationPolicySettingsSummaryReportPostRequestBody(writer: SerializationWriter, getDeviceConfigurationPolicySettingsSummaryReportPostRequestBody: Partial<GetDeviceConfigurationPolicySettingsSummaryReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getDeviceConfigurationPolicySettingsSummaryReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceConfigurationPolicySettingsSummaryReportPostRequestBody.groupBy);

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateDeviceLogCollectionRequestPostRequestBody}
  */
+// @ts-ignore
 export function createCreateDeviceLogCollectionRequestPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateDeviceLogCollectionRequestPostRequestBody;
 }
@@ -54,6 +55,7 @@ export interface CreateDeviceLogCollectionRequestRequestBuilder extends BaseRequ
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateDeviceLogCollectionRequestPostRequestBody(createDeviceLogCollectionRequestPostRequestBody: Partial<CreateDeviceLogCollectionRequestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createDeviceLogCollectionRequestPostRequestBody.backingStoreEnabled = true; },
@@ -64,6 +66,7 @@ export function deserializeIntoCreateDeviceLogCollectionRequestPostRequestBody(c
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeCreateDeviceLogCollectionRequestPostRequestBody(writer: SerializationWriter, createDeviceLogCollectionRequestPostRequestBody: Partial<CreateDeviceLogCollectionRequestPostRequestBody> | undefined = {}) : void {
     writer.writeObjectValue<DeviceLogCollectionRequest>("templateType", createDeviceLogCollectionRequestPostRequestBody.templateType, serializeDeviceLogCollectionRequest);
     writer.writeAdditionalData(createDeviceLogCollectionRequestPostRequestBody.additionalData);

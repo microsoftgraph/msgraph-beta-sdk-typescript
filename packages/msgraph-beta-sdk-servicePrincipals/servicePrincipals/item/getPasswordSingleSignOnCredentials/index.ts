@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPasswordSingleSignOnCredentialsPostRequestBody}
  */
+// @ts-ignore
 export function createGetPasswordSingleSignOnCredentialsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPasswordSingleSignOnCredentialsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetPasswordSingleSignOnCredentialsPostRequestBodyFromDiscr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPasswordSingleSignOnCredentialsPostRequestBody(getPasswordSingleSignOnCredentialsPostRequestBody: Partial<GetPasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getPasswordSingleSignOnCredentialsPostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetPasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, getPasswordSingleSignOnCredentialsPostRequestBody: Partial<GetPasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("id", getPasswordSingleSignOnCredentialsPostRequestBody.id);
     writer.writeAdditionalData(getPasswordSingleSignOnCredentialsPostRequestBody.additionalData);

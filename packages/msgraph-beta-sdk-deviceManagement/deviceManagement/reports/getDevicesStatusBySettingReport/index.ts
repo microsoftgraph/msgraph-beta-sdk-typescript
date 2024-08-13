@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDevicesStatusBySettingReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetDevicesStatusBySettingReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDevicesStatusBySettingReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetDevicesStatusBySettingReportPostRequestBodyFromDiscrimi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDevicesStatusBySettingReportPostRequestBody(getDevicesStatusBySettingReportPostRequestBody: Partial<GetDevicesStatusBySettingReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getDevicesStatusBySettingReportPostRequestBody.backingStoreEnabled = true; },
@@ -97,6 +99,7 @@ export interface GetDevicesStatusBySettingReportRequestBuilder extends BaseReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetDevicesStatusBySettingReportPostRequestBody(writer: SerializationWriter, getDevicesStatusBySettingReportPostRequestBody: Partial<GetDevicesStatusBySettingReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getDevicesStatusBySettingReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDevicesStatusBySettingReportPostRequestBody.groupBy);

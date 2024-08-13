@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetScheduledActionsPostRequestBody}
  */
+// @ts-ignore
 export function createSetScheduledActionsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetScheduledActionsPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createSetScheduledActionsPostRequestBodyFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetScheduledActionsPostResponse}
  */
+// @ts-ignore
 export function createSetScheduledActionsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetScheduledActionsPostResponse;
 }
@@ -28,6 +30,7 @@ export function createSetScheduledActionsPostResponseFromDiscriminatorValue(pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetScheduledActionsPostRequestBody(setScheduledActionsPostRequestBody: Partial<SetScheduledActionsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setScheduledActionsPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoSetScheduledActionsPostRequestBody(setScheduledAc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetScheduledActionsPostResponse(setScheduledActionsPostResponse: Partial<SetScheduledActionsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(setScheduledActionsPostResponse),
@@ -48,6 +52,7 @@ export function deserializeIntoSetScheduledActionsPostResponse(setScheduledActio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSetScheduledActionsPostRequestBody(writer: SerializationWriter, setScheduledActionsPostRequestBody: Partial<SetScheduledActionsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>("scheduledActions", setScheduledActionsPostRequestBody.scheduledActions, serializeDeviceManagementComplianceScheduledActionForRule);
     writer.writeAdditionalData(setScheduledActionsPostRequestBody.additionalData);
@@ -56,6 +61,7 @@ export function serializeSetScheduledActionsPostRequestBody(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeSetScheduledActionsPostResponse(writer: SerializationWriter, setScheduledActionsPostResponse: Partial<SetScheduledActionsPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, setScheduledActionsPostResponse)
     writer.writeCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>("value", setScheduledActionsPostResponse.value, serializeDeviceManagementComplianceScheduledActionForRule);

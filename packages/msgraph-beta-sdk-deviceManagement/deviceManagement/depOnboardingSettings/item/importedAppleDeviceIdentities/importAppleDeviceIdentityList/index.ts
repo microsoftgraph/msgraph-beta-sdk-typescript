@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ImportAppleDeviceIdentityListPostRequestBody}
  */
+// @ts-ignore
 export function createImportAppleDeviceIdentityListPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportAppleDeviceIdentityListPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createImportAppleDeviceIdentityListPostRequestBodyFromDiscrimina
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ImportAppleDeviceIdentityListPostResponse}
  */
+// @ts-ignore
 export function createImportAppleDeviceIdentityListPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportAppleDeviceIdentityListPostResponse;
 }
@@ -28,6 +30,7 @@ export function createImportAppleDeviceIdentityListPostResponseFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoImportAppleDeviceIdentityListPostRequestBody(importAppleDeviceIdentityListPostRequestBody: Partial<ImportAppleDeviceIdentityListPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { importAppleDeviceIdentityListPostRequestBody.backingStoreEnabled = true; },
@@ -39,6 +42,7 @@ export function deserializeIntoImportAppleDeviceIdentityListPostRequestBody(impo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoImportAppleDeviceIdentityListPostResponse(importAppleDeviceIdentityListPostResponse: Partial<ImportAppleDeviceIdentityListPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(importAppleDeviceIdentityListPostResponse),
@@ -93,6 +97,7 @@ export interface ImportAppleDeviceIdentityListRequestBuilder extends BaseRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeImportAppleDeviceIdentityListPostRequestBody(writer: SerializationWriter, importAppleDeviceIdentityListPostRequestBody: Partial<ImportAppleDeviceIdentityListPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentity>("importedAppleDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.importedAppleDeviceIdentities, serializeImportedAppleDeviceIdentity);
     writer.writeBooleanValue("overwriteImportedDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
@@ -102,6 +107,7 @@ export function serializeImportAppleDeviceIdentityListPostRequestBody(writer: Se
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeImportAppleDeviceIdentityListPostResponse(writer: SerializationWriter, importAppleDeviceIdentityListPostResponse: Partial<ImportAppleDeviceIdentityListPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, importAppleDeviceIdentityListPostResponse)
     writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>("value", importAppleDeviceIdentityListPostResponse.value, serializeImportedAppleDeviceIdentityResult);

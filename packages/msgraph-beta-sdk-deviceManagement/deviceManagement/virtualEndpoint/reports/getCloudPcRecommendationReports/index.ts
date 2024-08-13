@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCloudPcRecommendationReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetCloudPcRecommendationReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcRecommendationReportsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetCloudPcRecommendationReportsPostRequestBodyFromDiscrimi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCloudPcRecommendationReportsPostRequestBody(getCloudPcRecommendationReportsPostRequestBody: Partial<GetCloudPcRecommendationReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getCloudPcRecommendationReportsPostRequestBody.backingStoreEnabled = true; },
@@ -100,6 +102,7 @@ export interface GetCloudPcRecommendationReportsRequestBuilder extends BaseReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetCloudPcRecommendationReportsPostRequestBody(writer: SerializationWriter, getCloudPcRecommendationReportsPostRequestBody: Partial<GetCloudPcRecommendationReportsPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getCloudPcRecommendationReportsPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcRecommendationReportsPostRequestBody.groupBy);

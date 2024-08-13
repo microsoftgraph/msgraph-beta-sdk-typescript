@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MarkAsNotJunkPostRequestBody}
  */
+// @ts-ignore
 export function createMarkAsNotJunkPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMarkAsNotJunkPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createMarkAsNotJunkPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMarkAsNotJunkPostRequestBody(markAsNotJunkPostRequestBody: Partial<MarkAsNotJunkPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { markAsNotJunkPostRequestBody.backingStoreEnabled = true; },
@@ -65,6 +67,7 @@ export interface MarkAsNotJunkRequestBuilder extends BaseRequestBuilder<MarkAsNo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeMarkAsNotJunkPostRequestBody(writer: SerializationWriter, markAsNotJunkPostRequestBody: Partial<MarkAsNotJunkPostRequestBody> | undefined = {}) : void {
     writer.writeBooleanValue("MoveToInbox", markAsNotJunkPostRequestBody.moveToInbox);
     writer.writeAdditionalData(markAsNotJunkPostRequestBody.additionalData);

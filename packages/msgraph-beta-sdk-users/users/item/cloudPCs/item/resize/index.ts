@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ResizePostRequestBody}
  */
+// @ts-ignore
 export function createResizePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoResizePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createResizePostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoResizePostRequestBody(resizePostRequestBody: Partial<ResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { resizePostRequestBody.backingStoreEnabled = true; },
@@ -62,6 +64,7 @@ export interface ResizeRequestBuilder extends BaseRequestBuilder<ResizeRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeResizePostRequestBody(writer: SerializationWriter, resizePostRequestBody: Partial<ResizePostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("targetServicePlanId", resizePostRequestBody.targetServicePlanId);
     writer.writeAdditionalData(resizePostRequestBody.additionalData);

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(getWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(writer: SerializationWriter, getWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.groupBy);

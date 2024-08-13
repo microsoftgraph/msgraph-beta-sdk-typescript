@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse}
  */
+// @ts-ignore
 export function createGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse;
 }
@@ -22,6 +23,7 @@ export function createGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiv
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse(getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse: Partial<GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse),
@@ -98,6 +100,7 @@ export interface MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysIn
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse(writer: SerializationWriter, getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse: Partial<GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse)
     writer.writeCollectionOfObjectValues<KnownIssue>("value", getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse.value, serializeKnownIssue);

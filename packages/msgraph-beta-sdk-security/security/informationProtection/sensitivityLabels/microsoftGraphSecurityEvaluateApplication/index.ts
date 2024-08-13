@@ -15,6 +15,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateApplicationPostRequestBody}
  */
+// @ts-ignore
 export function createEvaluateApplicationPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateApplicationPostRequestBody;
 }
@@ -23,6 +24,7 @@ export function createEvaluateApplicationPostRequestBodyFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateApplicationPostResponse}
  */
+// @ts-ignore
 export function createEvaluateApplicationPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateApplicationPostResponse;
 }
@@ -30,6 +32,7 @@ export function createEvaluateApplicationPostResponseFromDiscriminatorValue(pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateApplicationPostRequestBody(evaluateApplicationPostRequestBody: Partial<EvaluateApplicationPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { evaluateApplicationPostRequestBody.backingStoreEnabled = true; },
@@ -41,6 +44,7 @@ export function deserializeIntoEvaluateApplicationPostRequestBody(evaluateApplic
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateApplicationPostResponse(evaluateApplicationPostResponse: Partial<EvaluateApplicationPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(evaluateApplicationPostResponse),
@@ -96,6 +100,7 @@ export interface MicrosoftGraphSecurityEvaluateApplicationRequestBuilder extends
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluateApplicationPostRequestBody(writer: SerializationWriter, evaluateApplicationPostRequestBody: Partial<EvaluateApplicationPostRequestBody> | undefined = {}) : void {
     writer.writeObjectValue<ContentInfo>("contentInfo", evaluateApplicationPostRequestBody.contentInfo, serializeContentInfo);
     writer.writeObjectValue<LabelingOptions>("labelingOptions", evaluateApplicationPostRequestBody.labelingOptions, serializeLabelingOptions);
@@ -105,6 +110,7 @@ export function serializeEvaluateApplicationPostRequestBody(writer: Serializatio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeEvaluateApplicationPostResponse(writer: SerializationWriter, evaluateApplicationPostResponse: Partial<EvaluateApplicationPostResponse> | undefined = {}) : void {
     serializeBaseCollectionPaginationCountResponse(writer, evaluateApplicationPostResponse)
     writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateApplicationPostResponse.value, serializeInformationProtectionAction);

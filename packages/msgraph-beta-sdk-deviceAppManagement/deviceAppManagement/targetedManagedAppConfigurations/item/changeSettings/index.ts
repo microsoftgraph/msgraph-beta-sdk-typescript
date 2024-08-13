@@ -46,6 +46,7 @@ export interface ChangeSettingsRequestBuilder extends BaseRequestBuilder<ChangeS
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ChangeSettingsPostRequestBody}
  */
+// @ts-ignore
 export function createChangeSettingsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangeSettingsPostRequestBody;
 }
@@ -53,6 +54,7 @@ export function createChangeSettingsPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoChangeSettingsPostRequestBody(changeSettingsPostRequestBody: Partial<ChangeSettingsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { changeSettingsPostRequestBody.backingStoreEnabled = true; },
@@ -63,6 +65,7 @@ export function deserializeIntoChangeSettingsPostRequestBody(changeSettingsPostR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeChangeSettingsPostRequestBody(writer: SerializationWriter, changeSettingsPostRequestBody: Partial<ChangeSettingsPostRequestBody> | undefined = {}) : void {
     writer.writeCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", changeSettingsPostRequestBody.settings, serializeDeviceManagementConfigurationSetting);
     writer.writeAdditionalData(changeSettingsPostRequestBody.additionalData);

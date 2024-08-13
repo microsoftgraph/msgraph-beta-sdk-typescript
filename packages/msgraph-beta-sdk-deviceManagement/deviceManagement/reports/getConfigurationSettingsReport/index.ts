@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetConfigurationSettingsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetConfigurationSettingsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetConfigurationSettingsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetConfigurationSettingsReportPostRequestBodyFromDiscrimin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetConfigurationSettingsReportPostRequestBody(getConfigurationSettingsReportPostRequestBody: Partial<GetConfigurationSettingsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getConfigurationSettingsReportPostRequestBody.backingStoreEnabled = true; },
@@ -102,6 +104,7 @@ export interface GetConfigurationSettingsReportRequestBuilder extends BaseReques
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
+// @ts-ignore
 export function serializeGetConfigurationSettingsReportPostRequestBody(writer: SerializationWriter, getConfigurationSettingsReportPostRequestBody: Partial<GetConfigurationSettingsReportPostRequestBody> | undefined = {}) : void {
     writer.writeStringValue("filter", getConfigurationSettingsReportPostRequestBody.filter);
     writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigurationSettingsReportPostRequestBody.groupBy);
