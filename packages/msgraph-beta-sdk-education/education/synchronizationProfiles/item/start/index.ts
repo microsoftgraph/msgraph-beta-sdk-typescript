@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {StartPostResponse}
  */
+// @ts-ignore
 export function createStartPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoStartPostResponse;
 }
@@ -20,6 +21,7 @@ export function createStartPostResponseFromDiscriminatorValue(parseNode: ParseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoStartPostResponse(startPostResponse: Partial<StartPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(startPostResponse),
@@ -30,15 +32,18 @@ export function deserializeIntoStartPostResponse(startPostResponse: Partial<Star
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeStartPostResponse(writer: SerializationWriter, startPostResponse: Partial<StartPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, startPostResponse)
-    writer.writeCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>("value", startPostResponse.value, serializeEducationFileSynchronizationVerificationMessage);
+// @ts-ignore
+export function serializeStartPostResponse(writer: SerializationWriter, startPostResponse: Partial<StartPostResponse> | undefined | null = {}) : void {
+    if (startPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, startPostResponse)
+        writer.writeCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>("value", startPostResponse.value, serializeEducationFileSynchronizationVerificationMessage);
+    }
 }
 export interface StartPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: EducationFileSynchronizationVerificationMessage[];
+    value?: EducationFileSynchronizationVerificationMessage[] | null;
 }
 /**
  * Provides operations to call the start method.
@@ -49,6 +54,7 @@ export interface StartRequestBuilder extends BaseRequestBuilder<StartRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<StartPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<StartPostResponse | undefined>;
@@ -56,6 +62,7 @@ export interface StartRequestBuilder extends BaseRequestBuilder<StartRequestBuil
      * Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

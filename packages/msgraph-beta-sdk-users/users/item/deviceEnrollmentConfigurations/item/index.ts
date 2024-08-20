@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DeviceEnrollmentConfigurationItemRequestBuilder extends BaseRequestBuilder<DeviceEnrollmentConfigurationItemRequestBuilder> {
     /**
      * Provides operations to call the assign method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get assign(): AssignRequestBuilder;
     /**
      * Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get assignments(): AssignmentsRequestBuilder;
     /**
      * Provides operations to call the setPriority method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setPriority(): SetPriorityRequestBuilder;
     /**
      * Delete navigation property deviceEnrollmentConfigurations for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface DeviceEnrollmentConfigurationItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceEnrollmentConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceEnrollmentConfiguration | undefined>;
     /**
@@ -49,18 +54,21 @@ export interface DeviceEnrollmentConfigurationItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceEnrollmentConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: DeviceEnrollmentConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceEnrollmentConfiguration | undefined>;
     /**
      * Delete navigation property deviceEnrollmentConfigurations for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get enrollment configurations targeted to the user
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -68,6 +76,7 @@ export interface DeviceEnrollmentConfigurationItemRequestBuilder extends BaseReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: DeviceEnrollmentConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

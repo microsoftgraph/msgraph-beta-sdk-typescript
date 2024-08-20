@@ -12,7 +12,7 @@ export interface AppDiagnosticsWithUpnGetResponse extends BaseCollectionPaginati
     /**
      * The value property
      */
-    value?: PowerliftIncidentMetadata[];
+    value?: PowerliftIncidentMetadata[] | null;
 }
 /**
  * Provides operations to call the appDiagnostics method.
@@ -23,12 +23,14 @@ export interface AppDiagnosticsWithUpnRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppDiagnosticsWithUpnGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters> | undefined) : Promise<AppDiagnosticsWithUpnGetResponse | undefined>;
     /**
      * Invoke function appDiagnostics
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -62,6 +64,7 @@ export interface AppDiagnosticsWithUpnRequestBuilderGetQueryParameters {
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AppDiagnosticsWithUpnGetResponse}
  */
+// @ts-ignore
 export function createAppDiagnosticsWithUpnGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAppDiagnosticsWithUpnGetResponse;
 }
@@ -69,6 +72,7 @@ export function createAppDiagnosticsWithUpnGetResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAppDiagnosticsWithUpnGetResponse(appDiagnosticsWithUpnGetResponse: Partial<AppDiagnosticsWithUpnGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(appDiagnosticsWithUpnGetResponse),
@@ -79,9 +83,12 @@ export function deserializeIntoAppDiagnosticsWithUpnGetResponse(appDiagnosticsWi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAppDiagnosticsWithUpnGetResponse(writer: SerializationWriter, appDiagnosticsWithUpnGetResponse: Partial<AppDiagnosticsWithUpnGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, appDiagnosticsWithUpnGetResponse)
-    writer.writeCollectionOfObjectValues<PowerliftIncidentMetadata>("value", appDiagnosticsWithUpnGetResponse.value, serializePowerliftIncidentMetadata);
+// @ts-ignore
+export function serializeAppDiagnosticsWithUpnGetResponse(writer: SerializationWriter, appDiagnosticsWithUpnGetResponse: Partial<AppDiagnosticsWithUpnGetResponse> | undefined | null = {}) : void {
+    if (appDiagnosticsWithUpnGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, appDiagnosticsWithUpnGetResponse)
+        writer.writeCollectionOfObjectValues<PowerliftIncidentMetadata>("value", appDiagnosticsWithUpnGetResponse.value, serializePowerliftIncidentMetadata);
+    }
 }
 /**
  * Uri template for the request builder.

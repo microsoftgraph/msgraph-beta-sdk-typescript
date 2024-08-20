@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateGlobalScriptPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateGlobalScriptPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateGlobalScriptPostRequestBody;
 }
@@ -19,6 +20,7 @@ export function createUpdateGlobalScriptPostRequestBodyFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateGlobalScriptPostResponse}
  */
+// @ts-ignore
 export function createUpdateGlobalScriptPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateGlobalScriptPostResponse;
 }
@@ -26,6 +28,7 @@ export function createUpdateGlobalScriptPostResponseFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateGlobalScriptPostRequestBody(updateGlobalScriptPostRequestBody: Partial<UpdateGlobalScriptPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateGlobalScriptPostRequestBody.backingStoreEnabled = true; },
@@ -36,6 +39,7 @@ export function deserializeIntoUpdateGlobalScriptPostRequestBody(updateGlobalScr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateGlobalScriptPostResponse(updateGlobalScriptPostResponse: Partial<UpdateGlobalScriptPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateGlobalScriptPostResponse.backingStoreEnabled = true; },
@@ -46,17 +50,23 @@ export function deserializeIntoUpdateGlobalScriptPostResponse(updateGlobalScript
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateGlobalScriptPostRequestBody(writer: SerializationWriter, updateGlobalScriptPostRequestBody: Partial<UpdateGlobalScriptPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("version", updateGlobalScriptPostRequestBody.version);
-    writer.writeAdditionalData(updateGlobalScriptPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateGlobalScriptPostRequestBody(writer: SerializationWriter, updateGlobalScriptPostRequestBody: Partial<UpdateGlobalScriptPostRequestBody> | undefined | null = {}) : void {
+    if (updateGlobalScriptPostRequestBody) {
+        writer.writeStringValue("version", updateGlobalScriptPostRequestBody.version);
+        writer.writeAdditionalData(updateGlobalScriptPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateGlobalScriptPostResponse(writer: SerializationWriter, updateGlobalScriptPostResponse: Partial<UpdateGlobalScriptPostResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", updateGlobalScriptPostResponse.value);
-    writer.writeAdditionalData(updateGlobalScriptPostResponse.additionalData);
+// @ts-ignore
+export function serializeUpdateGlobalScriptPostResponse(writer: SerializationWriter, updateGlobalScriptPostResponse: Partial<UpdateGlobalScriptPostResponse> | undefined | null = {}) : void {
+    if (updateGlobalScriptPostResponse) {
+        writer.writeStringValue("value", updateGlobalScriptPostResponse.value);
+        writer.writeAdditionalData(updateGlobalScriptPostResponse.additionalData);
+    }
 }
 export interface UpdateGlobalScriptPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -66,11 +76,11 @@ export interface UpdateGlobalScriptPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The version property
      */
-    version?: string;
+    version?: string | null;
 }
 export interface UpdateGlobalScriptPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -80,11 +90,11 @@ export interface UpdateGlobalScriptPostResponse extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the updateGlobalScript method.

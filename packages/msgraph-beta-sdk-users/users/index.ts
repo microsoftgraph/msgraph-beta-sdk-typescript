@@ -30,36 +30,44 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to call the getByIds method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getByIds(): GetByIdsRequestBuilder;
     /**
      * Provides operations to call the getManagedAppBlockedUsers method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getManagedAppBlockedUsers(): GetManagedAppBlockedUsersRequestBuilder;
     /**
      * Provides operations to call the getUserOwnedObjects method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getUserOwnedObjects(): GetUserOwnedObjectsRequestBuilder;
     /**
      * Provides operations to call the validatePassword method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get validatePassword(): ValidatePasswordRequestBuilder;
     /**
      * Provides operations to call the validateProperties method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get validateProperties(): ValidatePropertiesRequestBuilder;
     /**
      * Provides operations to manage the collection of user entities.
      * @param userId The unique identifier of user
      * @returns {UserItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byUserId(userId: string) : UserItemRequestBuilder;
     /**
@@ -67,6 +75,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UsersRequestBuilderGetQueryParameters> | undefined) : Promise<UserCollectionResponse | undefined>;
@@ -76,6 +85,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-beta|Find more info here}
      */
      post(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<User | undefined>;
@@ -83,6 +93,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      * Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UsersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -90,6 +101,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

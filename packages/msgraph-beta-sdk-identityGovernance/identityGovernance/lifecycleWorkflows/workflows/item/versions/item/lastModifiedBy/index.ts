@@ -18,10 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LastModifiedByRequestBuilder extends BaseRequestBuilder<LastModifiedByRequestBuilder> {
     /**
      * The mailboxSettings property
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mailboxSettings(): MailboxSettingsRequestBuilder;
     /**
      * The serviceProvisioningErrors property
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
@@ -29,12 +31,14 @@ export interface LastModifiedByRequestBuilder extends BaseRequestBuilder<LastMod
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<LastModifiedByRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
     /**
      * The user who last modified the workflow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LastModifiedByRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

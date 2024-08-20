@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AttachmentsRequestBuilder extends BaseRequestBuilder<AttachmentsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the createUploadSession method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createUploadSession(): CreateUploadSessionRequestBuilder;
     /**
      * Provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
      * @param attachmentBaseId The unique identifier of attachmentBase
      * @returns {AttachmentBaseItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAttachmentBaseId(attachmentBaseId: string) : AttachmentBaseItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AttachmentBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters> | undefined) : Promise<AttachmentBaseCollectionResponse | undefined>;
     /**
@@ -45,12 +49,14 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AttachmentBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AttachmentBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AttachmentBase | undefined>;
     /**
      * A collection of file attachments for the task.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,6 +64,7 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AttachmentBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RecordPostRequestBody}
  */
+// @ts-ignore
 export function createRecordPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRecordPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRecordPostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRecordPostRequestBody(recordPostRequestBody: Partial<RecordPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { recordPostRequestBody.backingStoreEnabled = true; },
@@ -42,43 +44,43 @@ export interface RecordPostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The bargeInAllowed property
      */
-    bargeInAllowed?: boolean;
+    bargeInAllowed?: boolean | null;
     /**
      * The clientContext property
      */
-    clientContext?: string;
+    clientContext?: string | null;
     /**
      * The initialSilenceTimeoutInSeconds property
      */
-    initialSilenceTimeoutInSeconds?: number;
+    initialSilenceTimeoutInSeconds?: number | null;
     /**
      * The maxRecordDurationInSeconds property
      */
-    maxRecordDurationInSeconds?: number;
+    maxRecordDurationInSeconds?: number | null;
     /**
      * The maxSilenceTimeoutInSeconds property
      */
-    maxSilenceTimeoutInSeconds?: number;
+    maxSilenceTimeoutInSeconds?: number | null;
     /**
      * The playBeep property
      */
-    playBeep?: boolean;
+    playBeep?: boolean | null;
     /**
      * The prompts property
      */
-    prompts?: Prompt[];
+    prompts?: Prompt[] | null;
     /**
      * The stopTones property
      */
-    stopTones?: string[];
+    stopTones?: string[] | null;
     /**
      * The streamWhileRecording property
      */
-    streamWhileRecording?: boolean;
+    streamWhileRecording?: boolean | null;
 }
 /**
  * Provides operations to call the record method.
@@ -104,17 +106,20 @@ export interface RecordRequestBuilder extends BaseRequestBuilder<RecordRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRecordPostRequestBody(writer: SerializationWriter, recordPostRequestBody: Partial<RecordPostRequestBody> | undefined = {}) : void {
-    writer.writeBooleanValue("bargeInAllowed", recordPostRequestBody.bargeInAllowed);
-    writer.writeStringValue("clientContext", recordPostRequestBody.clientContext);
-    writer.writeNumberValue("initialSilenceTimeoutInSeconds", recordPostRequestBody.initialSilenceTimeoutInSeconds);
-    writer.writeNumberValue("maxRecordDurationInSeconds", recordPostRequestBody.maxRecordDurationInSeconds);
-    writer.writeNumberValue("maxSilenceTimeoutInSeconds", recordPostRequestBody.maxSilenceTimeoutInSeconds);
-    writer.writeBooleanValue("playBeep", recordPostRequestBody.playBeep);
-    writer.writeCollectionOfObjectValues<Prompt>("prompts", recordPostRequestBody.prompts, serializePrompt);
-    writer.writeCollectionOfPrimitiveValues<string>("stopTones", recordPostRequestBody.stopTones);
-    writer.writeBooleanValue("streamWhileRecording", recordPostRequestBody.streamWhileRecording);
-    writer.writeAdditionalData(recordPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRecordPostRequestBody(writer: SerializationWriter, recordPostRequestBody: Partial<RecordPostRequestBody> | undefined | null = {}) : void {
+    if (recordPostRequestBody) {
+        writer.writeBooleanValue("bargeInAllowed", recordPostRequestBody.bargeInAllowed);
+        writer.writeStringValue("clientContext", recordPostRequestBody.clientContext);
+        writer.writeNumberValue("initialSilenceTimeoutInSeconds", recordPostRequestBody.initialSilenceTimeoutInSeconds);
+        writer.writeNumberValue("maxRecordDurationInSeconds", recordPostRequestBody.maxRecordDurationInSeconds);
+        writer.writeNumberValue("maxSilenceTimeoutInSeconds", recordPostRequestBody.maxSilenceTimeoutInSeconds);
+        writer.writeBooleanValue("playBeep", recordPostRequestBody.playBeep);
+        writer.writeCollectionOfObjectValues<Prompt>("prompts", recordPostRequestBody.prompts, serializePrompt);
+        writer.writeCollectionOfPrimitiveValues<string>("stopTones", recordPostRequestBody.stopTones);
+        writer.writeBooleanValue("streamWhileRecording", recordPostRequestBody.streamWhileRecording);
+        writer.writeAdditionalData(recordPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

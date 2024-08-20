@@ -20,18 +20,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PendingAccessReviewInstancesRequestBuilder extends BaseRequestBuilder<PendingAccessReviewInstancesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
      * @param accessReviewInstanceId The unique identifier of accessReviewInstance
      * @returns {AccessReviewInstanceItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAccessReviewInstanceId(accessReviewInstanceId: string) : AccessReviewInstanceItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -39,6 +42,7 @@ export interface PendingAccessReviewInstancesRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewInstanceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PendingAccessReviewInstancesRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewInstanceCollectionResponse | undefined>;
     /**
@@ -47,12 +51,14 @@ export interface PendingAccessReviewInstancesRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewInstance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AccessReviewInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewInstance | undefined>;
     /**
      * Navigation property to get a list of access reviews pending approval by the reviewer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PendingAccessReviewInstancesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -60,6 +66,7 @@ export interface PendingAccessReviewInstancesRequestBuilder extends BaseRequestB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AccessReviewInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

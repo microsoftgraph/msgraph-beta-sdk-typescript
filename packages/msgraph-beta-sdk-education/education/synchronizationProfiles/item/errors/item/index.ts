@@ -16,6 +16,7 @@ export interface EducationSynchronizationErrorItemRequestBuilder extends BaseReq
      * Delete navigation property errors for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface EducationSynchronizationErrorItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationError>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      get(requestConfiguration?: RequestConfiguration<EducationSynchronizationErrorItemRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationError | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface EducationSynchronizationErrorItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationError>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      patch(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationError | undefined>;
     /**
      * Delete navigation property errors for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * All errors associated with this synchronization profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EducationSynchronizationErrorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface EducationSynchronizationErrorItemRequestBuilder extends BaseReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toPatchRequestInformation(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

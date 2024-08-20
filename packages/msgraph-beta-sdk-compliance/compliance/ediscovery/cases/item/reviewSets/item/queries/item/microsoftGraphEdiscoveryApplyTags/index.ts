@@ -16,21 +16,22 @@ export interface ApplyTagsPostRequestBody extends AdditionalDataHolder, BackedMo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The tagsToAdd property
      */
-    tagsToAdd?: Tag[];
+    tagsToAdd?: Tag[] | null;
     /**
      * The tagsToRemove property
      */
-    tagsToRemove?: Tag[];
+    tagsToRemove?: Tag[] | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplyTagsPostRequestBody}
  */
+// @ts-ignore
 export function createApplyTagsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplyTagsPostRequestBody;
 }
@@ -38,6 +39,7 @@ export function createApplyTagsPostRequestBodyFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApplyTagsPostRequestBody(applyTagsPostRequestBody: Partial<ApplyTagsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applyTagsPostRequestBody.backingStoreEnabled = true; },
@@ -71,10 +73,13 @@ export interface MicrosoftGraphEdiscoveryApplyTagsRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeApplyTagsPostRequestBody(writer: SerializationWriter, applyTagsPostRequestBody: Partial<ApplyTagsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<Tag>("tagsToAdd", applyTagsPostRequestBody.tagsToAdd, serializeTag);
-    writer.writeCollectionOfObjectValues<Tag>("tagsToRemove", applyTagsPostRequestBody.tagsToRemove, serializeTag);
-    writer.writeAdditionalData(applyTagsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeApplyTagsPostRequestBody(writer: SerializationWriter, applyTagsPostRequestBody: Partial<ApplyTagsPostRequestBody> | undefined | null = {}) : void {
+    if (applyTagsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<Tag>("tagsToAdd", applyTagsPostRequestBody.tagsToAdd, serializeTag);
+        writer.writeCollectionOfObjectValues<Tag>("tagsToRemove", applyTagsPostRequestBody.tagsToRemove, serializeTag);
+        writer.writeAdditionalData(applyTagsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -40,60 +40,74 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AuthenticationRequestBuilder extends BaseRequestBuilder<AuthenticationRequestBuilder> {
     /**
      * Provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get emailMethods(): EmailMethodsRequestBuilder;
     /**
      * Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get fido2Methods(): Fido2MethodsRequestBuilder;
     /**
      * Provides operations to manage the methods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get methods(): MethodsRequestBuilder;
     /**
      * Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get microsoftAuthenticatorMethods(): MicrosoftAuthenticatorMethodsRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get operations(): OperationsRequestBuilder;
     /**
      * Provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get passwordlessMicrosoftAuthenticatorMethods(): PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder;
     /**
      * Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get passwordMethods(): PasswordMethodsRequestBuilder;
     /**
      * Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get phoneMethods(): PhoneMethodsRequestBuilder;
     /**
      * Provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get platformCredentialMethods(): PlatformCredentialMethodsRequestBuilder;
     /**
      * The signInPreferences property
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get signInPreferences(): SignInPreferencesRequestBuilder;
     /**
      * Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get softwareOathMethods(): SoftwareOathMethodsRequestBuilder;
     /**
      * Provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get temporaryAccessPassMethods(): TemporaryAccessPassMethodsRequestBuilder;
     /**
      * Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get windowsHelloForBusinessMethods(): WindowsHelloForBusinessMethodsRequestBuilder;
     /**
      * Delete navigation property authentication for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -101,6 +115,7 @@ export interface AuthenticationRequestBuilder extends BaseRequestBuilder<Authent
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Authentication>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AuthenticationRequestBuilderGetQueryParameters> | undefined) : Promise<Authentication | undefined>;
     /**
@@ -109,18 +124,21 @@ export interface AuthenticationRequestBuilder extends BaseRequestBuilder<Authent
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Authentication>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Authentication, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Authentication | undefined>;
     /**
      * Delete navigation property authentication for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The authentication methods that are supported for the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuthenticationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -128,6 +146,7 @@ export interface AuthenticationRequestBuilder extends BaseRequestBuilder<Authent
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Authentication, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MakePermanentPostRequestBody}
  */
+// @ts-ignore
 export function createMakePermanentPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMakePermanentPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createMakePermanentPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMakePermanentPostRequestBody(makePermanentPostRequestBody: Partial<MakePermanentPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { makePermanentPostRequestBody.backingStoreEnabled = true; },
@@ -36,19 +38,19 @@ export interface MakePermanentPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The reason property
      */
-    reason?: string;
+    reason?: string | null;
     /**
      * The ticketNumber property
      */
-    ticketNumber?: string;
+    ticketNumber?: string | null;
     /**
      * The ticketSystem property
      */
-    ticketSystem?: string;
+    ticketSystem?: string | null;
 }
 /**
  * Provides operations to call the makePermanent method.
@@ -74,11 +76,14 @@ export interface MakePermanentRequestBuilder extends BaseRequestBuilder<MakePerm
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMakePermanentPostRequestBody(writer: SerializationWriter, makePermanentPostRequestBody: Partial<MakePermanentPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("reason", makePermanentPostRequestBody.reason);
-    writer.writeStringValue("ticketNumber", makePermanentPostRequestBody.ticketNumber);
-    writer.writeStringValue("ticketSystem", makePermanentPostRequestBody.ticketSystem);
-    writer.writeAdditionalData(makePermanentPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeMakePermanentPostRequestBody(writer: SerializationWriter, makePermanentPostRequestBody: Partial<MakePermanentPostRequestBody> | undefined | null = {}) : void {
+    if (makePermanentPostRequestBody) {
+        writer.writeStringValue("reason", makePermanentPostRequestBody.reason);
+        writer.writeStringValue("ticketNumber", makePermanentPostRequestBody.ticketNumber);
+        writer.writeStringValue("ticketSystem", makePermanentPostRequestBody.ticketSystem);
+        writer.writeAdditionalData(makePermanentPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

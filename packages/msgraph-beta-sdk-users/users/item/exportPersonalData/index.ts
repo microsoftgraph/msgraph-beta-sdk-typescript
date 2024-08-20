@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExportPersonalDataPostRequestBody}
  */
+// @ts-ignore
 export function createExportPersonalDataPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExportPersonalDataPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createExportPersonalDataPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExportPersonalDataPostRequestBody(exportPersonalDataPostRequestBody: Partial<ExportPersonalDataPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { exportPersonalDataPostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface ExportPersonalDataPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The storageLocation property
      */
-    storageLocation?: string;
+    storageLocation?: string | null;
 }
 /**
  * Provides operations to call the exportPersonalData method.
@@ -47,6 +49,7 @@ export interface ExportPersonalDataRequestBuilder extends BaseRequestBuilder<Exp
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-beta|Find more info here}
      */
      post(body: ExportPersonalDataPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -55,6 +58,7 @@ export interface ExportPersonalDataRequestBuilder extends BaseRequestBuilder<Exp
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ExportPersonalDataPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,9 +66,12 @@ export interface ExportPersonalDataRequestBuilder extends BaseRequestBuilder<Exp
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExportPersonalDataPostRequestBody(writer: SerializationWriter, exportPersonalDataPostRequestBody: Partial<ExportPersonalDataPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("storageLocation", exportPersonalDataPostRequestBody.storageLocation);
-    writer.writeAdditionalData(exportPersonalDataPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeExportPersonalDataPostRequestBody(writer: SerializationWriter, exportPersonalDataPostRequestBody: Partial<ExportPersonalDataPostRequestBody> | undefined | null = {}) : void {
+    if (exportPersonalDataPostRequestBody) {
+        writer.writeStringValue("storageLocation", exportPersonalDataPostRequestBody.storageLocation);
+        writer.writeAdditionalData(exportPersonalDataPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RestorePostRequestBody}
  */
+// @ts-ignore
 export function createRestorePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRestorePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRestorePostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRestorePostRequestBody(restorePostRequestBody: Partial<RestorePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "autoReconcileProxyConflict": n => { restorePostRequestBody.autoReconcileProxyConflict = n.getBooleanValue(); },
@@ -34,11 +36,11 @@ export interface RestorePostRequestBody extends AdditionalDataHolder, BackedMode
     /**
      * The autoReconcileProxyConflict property
      */
-    autoReconcileProxyConflict?: boolean;
+    autoReconcileProxyConflict?: boolean | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
 }
 /**
  * Provides operations to call the restore method.
@@ -50,6 +52,7 @@ export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta|Find more info here}
      */
      post(body: RestorePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DirectoryObject | undefined>;
@@ -58,6 +61,7 @@ export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: RestorePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -65,9 +69,12 @@ export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRestorePostRequestBody(writer: SerializationWriter, restorePostRequestBody: Partial<RestorePostRequestBody> | undefined = {}) : void {
-    writer.writeBooleanValue("autoReconcileProxyConflict", restorePostRequestBody.autoReconcileProxyConflict);
-    writer.writeAdditionalData(restorePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRestorePostRequestBody(writer: SerializationWriter, restorePostRequestBody: Partial<RestorePostRequestBody> | undefined | null = {}) : void {
+    if (restorePostRequestBody) {
+        writer.writeBooleanValue("autoReconcileProxyConflict", restorePostRequestBody.autoReconcileProxyConflict);
+        writer.writeAdditionalData(restorePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

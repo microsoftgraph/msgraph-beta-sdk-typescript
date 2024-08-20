@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetLoggedOnManagedDevicesGetResponse}
  */
+// @ts-ignore
 export function createGetLoggedOnManagedDevicesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetLoggedOnManagedDevicesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetLoggedOnManagedDevicesGetResponseFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetLoggedOnManagedDevicesGetResponse(getLoggedOnManagedDevicesGetResponse: Partial<GetLoggedOnManagedDevicesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getLoggedOnManagedDevicesGetResponse),
@@ -30,7 +32,7 @@ export interface GetLoggedOnManagedDevicesGetResponse extends BaseCollectionPagi
     /**
      * The value property
      */
-    value?: ManagedDevice[];
+    value?: ManagedDevice[] | null;
 }
 /**
  * Provides operations to call the getLoggedOnManagedDevices method.
@@ -41,12 +43,14 @@ export interface GetLoggedOnManagedDevicesRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetLoggedOnManagedDevicesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetLoggedOnManagedDevicesRequestBuilderGetQueryParameters> | undefined) : Promise<GetLoggedOnManagedDevicesGetResponse | undefined>;
     /**
      * Invoke function getLoggedOnManagedDevices
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetLoggedOnManagedDevicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -91,9 +95,12 @@ export interface GetLoggedOnManagedDevicesRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetLoggedOnManagedDevicesGetResponse(writer: SerializationWriter, getLoggedOnManagedDevicesGetResponse: Partial<GetLoggedOnManagedDevicesGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getLoggedOnManagedDevicesGetResponse)
-    writer.writeCollectionOfObjectValues<ManagedDevice>("value", getLoggedOnManagedDevicesGetResponse.value, serializeManagedDevice);
+// @ts-ignore
+export function serializeGetLoggedOnManagedDevicesGetResponse(writer: SerializationWriter, getLoggedOnManagedDevicesGetResponse: Partial<GetLoggedOnManagedDevicesGetResponse> | undefined | null = {}) : void {
+    if (getLoggedOnManagedDevicesGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getLoggedOnManagedDevicesGetResponse)
+        writer.writeCollectionOfObjectValues<ManagedDevice>("value", getLoggedOnManagedDevicesGetResponse.value, serializeManagedDevice);
+    }
 }
 /**
  * Uri template for the request builder.

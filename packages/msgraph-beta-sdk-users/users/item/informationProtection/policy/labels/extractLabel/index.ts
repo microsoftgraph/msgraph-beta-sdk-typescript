@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExtractLabelPostRequestBody}
  */
+// @ts-ignore
 export function createExtractLabelPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExtractLabelPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createExtractLabelPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExtractLabelPostRequestBody(extractLabelPostRequestBody: Partial<ExtractLabelPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { extractLabelPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface ExtractLabelPostRequestBody extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The contentInfo property
      */
-    contentInfo?: ContentInfo;
+    contentInfo?: ContentInfo | null;
 }
 /**
  * Provides operations to call the extractLabel method.
@@ -50,7 +52,7 @@ export interface ExtractLabelRequestBuilder extends BaseRequestBuilder<ExtractLa
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InformationProtectionContentLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-beta|Find more info here}
      */
      post(body: ExtractLabelPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InformationProtectionContentLabel | undefined>;
@@ -59,7 +61,7 @@ export interface ExtractLabelRequestBuilder extends BaseRequestBuilder<ExtractLa
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ExtractLabelPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -67,9 +69,12 @@ export interface ExtractLabelRequestBuilder extends BaseRequestBuilder<ExtractLa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExtractLabelPostRequestBody(writer: SerializationWriter, extractLabelPostRequestBody: Partial<ExtractLabelPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<ContentInfo>("contentInfo", extractLabelPostRequestBody.contentInfo, serializeContentInfo);
-    writer.writeAdditionalData(extractLabelPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeExtractLabelPostRequestBody(writer: SerializationWriter, extractLabelPostRequestBody: Partial<ExtractLabelPostRequestBody> | undefined | null = {}) : void {
+    if (extractLabelPostRequestBody) {
+        writer.writeObjectValue<ContentInfo>("contentInfo", extractLabelPostRequestBody.contentInfo, serializeContentInfo);
+        writer.writeAdditionalData(extractLabelPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

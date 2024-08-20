@@ -14,11 +14,11 @@ export interface CancelPostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The Comment property
      */
-    comment?: string;
+    comment?: string | null;
 }
 /**
  * Provides operations to call the cancel method.
@@ -29,6 +29,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta|Find more info here}
      */
      post(body: CancelPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -37,6 +38,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CancelPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -45,6 +47,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CancelPostRequestBody}
  */
+// @ts-ignore
 export function createCancelPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCancelPostRequestBody;
 }
@@ -52,6 +55,7 @@ export function createCancelPostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCancelPostRequestBody(cancelPostRequestBody: Partial<CancelPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cancelPostRequestBody.backingStoreEnabled = true; },
@@ -62,9 +66,12 @@ export function deserializeIntoCancelPostRequestBody(cancelPostRequestBody: Part
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCancelPostRequestBody(writer: SerializationWriter, cancelPostRequestBody: Partial<CancelPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("Comment", cancelPostRequestBody.comment);
-    writer.writeAdditionalData(cancelPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCancelPostRequestBody(writer: SerializationWriter, cancelPostRequestBody: Partial<CancelPostRequestBody> | undefined | null = {}) : void {
+    if (cancelPostRequestBody) {
+        writer.writeStringValue("Comment", cancelPostRequestBody.comment);
+        writer.writeAdditionalData(cancelPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCloudPcConnectivityHistoryGetResponse}
  */
+// @ts-ignore
 export function createGetCloudPcConnectivityHistoryGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcConnectivityHistoryGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetCloudPcConnectivityHistoryGetResponseFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCloudPcConnectivityHistoryGetResponse(getCloudPcConnectivityHistoryGetResponse: Partial<GetCloudPcConnectivityHistoryGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getCloudPcConnectivityHistoryGetResponse),
@@ -30,7 +32,7 @@ export interface GetCloudPcConnectivityHistoryGetResponse extends BaseCollection
     /**
      * The value property
      */
-    value?: CloudPcConnectivityEvent[];
+    value?: CloudPcConnectivityEvent[] | null;
 }
 /**
  * Provides operations to call the getCloudPcConnectivityHistory method.
@@ -80,9 +82,12 @@ export interface GetCloudPcConnectivityHistoryRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetCloudPcConnectivityHistoryGetResponse(writer: SerializationWriter, getCloudPcConnectivityHistoryGetResponse: Partial<GetCloudPcConnectivityHistoryGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getCloudPcConnectivityHistoryGetResponse)
-    writer.writeCollectionOfObjectValues<CloudPcConnectivityEvent>("value", getCloudPcConnectivityHistoryGetResponse.value, serializeCloudPcConnectivityEvent);
+// @ts-ignore
+export function serializeGetCloudPcConnectivityHistoryGetResponse(writer: SerializationWriter, getCloudPcConnectivityHistoryGetResponse: Partial<GetCloudPcConnectivityHistoryGetResponse> | undefined | null = {}) : void {
+    if (getCloudPcConnectivityHistoryGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getCloudPcConnectivityHistoryGetResponse)
+        writer.writeCollectionOfObjectValues<CloudPcConnectivityEvent>("value", getCloudPcConnectivityHistoryGetResponse.value, serializeCloudPcConnectivityEvent);
+    }
 }
 /**
  * Uri template for the request builder.

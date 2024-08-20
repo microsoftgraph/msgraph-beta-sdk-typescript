@@ -14,33 +14,35 @@ export interface ChangePasswordPostRequestBody extends AdditionalDataHolder, Bac
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The currentPassword property
      */
-    currentPassword?: string;
+    currentPassword?: string | null;
     /**
      * The newPassword property
      */
-    newPassword?: string;
+    newPassword?: string | null;
 }
 /**
  * Provides operations to call the changePassword method.
  */
 export interface ChangePasswordRequestBuilder extends BaseRequestBuilder<ChangePasswordRequestBuilder> {
     /**
-     * Enable the user to update their password. Any user can update their password without belonging to any administrator role.
+     * Update the signed-in user's password. Any user can update their password without belonging to any administrator role.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-beta|Find more info here}
      */
      post(body: ChangePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Enable the user to update their password. Any user can update their password without belonging to any administrator role.
+     * Update the signed-in user's password. Any user can update their password without belonging to any administrator role.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ChangePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -49,6 +51,7 @@ export interface ChangePasswordRequestBuilder extends BaseRequestBuilder<ChangeP
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ChangePasswordPostRequestBody}
  */
+// @ts-ignore
 export function createChangePasswordPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangePasswordPostRequestBody;
 }
@@ -56,6 +59,7 @@ export function createChangePasswordPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoChangePasswordPostRequestBody(changePasswordPostRequestBody: Partial<ChangePasswordPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { changePasswordPostRequestBody.backingStoreEnabled = true; },
@@ -67,10 +71,13 @@ export function deserializeIntoChangePasswordPostRequestBody(changePasswordPostR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeChangePasswordPostRequestBody(writer: SerializationWriter, changePasswordPostRequestBody: Partial<ChangePasswordPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("currentPassword", changePasswordPostRequestBody.currentPassword);
-    writer.writeStringValue("newPassword", changePasswordPostRequestBody.newPassword);
-    writer.writeAdditionalData(changePasswordPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeChangePasswordPostRequestBody(writer: SerializationWriter, changePasswordPostRequestBody: Partial<ChangePasswordPostRequestBody> | undefined | null = {}) : void {
+    if (changePasswordPostRequestBody) {
+        writer.writeStringValue("currentPassword", changePasswordPostRequestBody.currentPassword);
+        writer.writeStringValue("newPassword", changePasswordPostRequestBody.newPassword);
+        writer.writeAdditionalData(changePasswordPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

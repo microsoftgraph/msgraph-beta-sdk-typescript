@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExecuteActionPostRequestBody}
  */
+// @ts-ignore
 export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExecuteActionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExecuteActionPostRequestBody(executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionName": n => { executeActionPostRequestBody.actionName = n.getEnumValue<DriverApprovalAction>(DriverApprovalActionObject); },
@@ -32,7 +34,7 @@ export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, Back
     /**
      * An enum type to represent approval actions of single or list of drivers.
      */
-    actionName?: DriverApprovalAction;
+    actionName?: DriverApprovalAction | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -40,15 +42,15 @@ export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deploymentDate property
      */
-    deploymentDate?: Date;
+    deploymentDate?: Date | null;
     /**
      * The driverIds property
      */
-    driverIds?: string[];
+    driverIds?: string[] | null;
 }
 /**
  * Provides operations to call the executeAction method.
@@ -74,11 +76,14 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined = {}) : void {
-    writer.writeEnumValue<DriverApprovalAction>("actionName", executeActionPostRequestBody.actionName);
-    writer.writeDateValue("deploymentDate", executeActionPostRequestBody.deploymentDate);
-    writer.writeCollectionOfPrimitiveValues<string>("driverIds", executeActionPostRequestBody.driverIds);
-    writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined | null = {}) : void {
+    if (executeActionPostRequestBody) {
+        writer.writeEnumValue<DriverApprovalAction>("actionName", executeActionPostRequestBody.actionName);
+        writer.writeDateValue("deploymentDate", executeActionPostRequestBody.deploymentDate);
+        writer.writeCollectionOfPrimitiveValues<string>("driverIds", executeActionPostRequestBody.driverIds);
+        writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ImportOffice365DeviceConfigurationPoliciesPostResponse}
  */
+// @ts-ignore
 export function createImportOffice365DeviceConfigurationPoliciesPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportOffice365DeviceConfigurationPoliciesPostResponse;
 }
@@ -20,6 +21,7 @@ export function createImportOffice365DeviceConfigurationPoliciesPostResponseFrom
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoImportOffice365DeviceConfigurationPoliciesPostResponse(importOffice365DeviceConfigurationPoliciesPostResponse: Partial<ImportOffice365DeviceConfigurationPoliciesPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(importOffice365DeviceConfigurationPoliciesPostResponse),
@@ -30,7 +32,7 @@ export interface ImportOffice365DeviceConfigurationPoliciesPostResponse extends 
     /**
      * The value property
      */
-    value?: DeviceManagementIntent[];
+    value?: DeviceManagementIntent[] | null;
 }
 /**
  * Provides operations to call the importOffice365DeviceConfigurationPolicies method.
@@ -54,9 +56,12 @@ export interface ImportOffice365DeviceConfigurationPoliciesRequestBuilder extend
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeImportOffice365DeviceConfigurationPoliciesPostResponse(writer: SerializationWriter, importOffice365DeviceConfigurationPoliciesPostResponse: Partial<ImportOffice365DeviceConfigurationPoliciesPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, importOffice365DeviceConfigurationPoliciesPostResponse)
-    writer.writeCollectionOfObjectValues<DeviceManagementIntent>("value", importOffice365DeviceConfigurationPoliciesPostResponse.value, serializeDeviceManagementIntent);
+// @ts-ignore
+export function serializeImportOffice365DeviceConfigurationPoliciesPostResponse(writer: SerializationWriter, importOffice365DeviceConfigurationPoliciesPostResponse: Partial<ImportOffice365DeviceConfigurationPoliciesPostResponse> | undefined | null = {}) : void {
+    if (importOffice365DeviceConfigurationPoliciesPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, importOffice365DeviceConfigurationPoliciesPostResponse)
+        writer.writeCollectionOfObjectValues<DeviceManagementIntent>("value", importOffice365DeviceConfigurationPoliciesPostResponse.value, serializeDeviceManagementIntent);
+    }
 }
 /**
  * Uri template for the request builder.

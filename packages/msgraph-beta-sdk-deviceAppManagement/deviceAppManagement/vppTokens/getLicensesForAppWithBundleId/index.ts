@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetLicensesForAppWithBundleIdGetResponse}
  */
+// @ts-ignore
 export function createGetLicensesForAppWithBundleIdGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetLicensesForAppWithBundleIdGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetLicensesForAppWithBundleIdGetResponseFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetLicensesForAppWithBundleIdGetResponse(getLicensesForAppWithBundleIdGetResponse: Partial<GetLicensesForAppWithBundleIdGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getLicensesForAppWithBundleIdGetResponse),
@@ -30,7 +32,7 @@ export interface GetLicensesForAppWithBundleIdGetResponse extends BaseCollection
     /**
      * The value property
      */
-    value?: VppTokenLicenseSummary[];
+    value?: VppTokenLicenseSummary[] | null;
 }
 /**
  * Provides operations to call the getLicensesForApp method.
@@ -79,9 +81,12 @@ export interface GetLicensesForAppWithBundleIdRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetLicensesForAppWithBundleIdGetResponse(writer: SerializationWriter, getLicensesForAppWithBundleIdGetResponse: Partial<GetLicensesForAppWithBundleIdGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getLicensesForAppWithBundleIdGetResponse)
-    writer.writeCollectionOfObjectValues<VppTokenLicenseSummary>("value", getLicensesForAppWithBundleIdGetResponse.value, serializeVppTokenLicenseSummary);
+// @ts-ignore
+export function serializeGetLicensesForAppWithBundleIdGetResponse(writer: SerializationWriter, getLicensesForAppWithBundleIdGetResponse: Partial<GetLicensesForAppWithBundleIdGetResponse> | undefined | null = {}) : void {
+    if (getLicensesForAppWithBundleIdGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getLicensesForAppWithBundleIdGetResponse)
+        writer.writeCollectionOfObjectValues<VppTokenLicenseSummary>("value", getLicensesForAppWithBundleIdGetResponse.value, serializeVppTokenLicenseSummary);
+    }
 }
 /**
  * Uri template for the request builder.

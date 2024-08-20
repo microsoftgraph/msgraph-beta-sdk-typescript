@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetTotalAggregatedRemoteConnectionReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetTotalAggregatedRemoteConnectionReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetTotalAggregatedRemoteConnectionReportsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetTotalAggregatedRemoteConnectionReportsPostRequestBodyFr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetTotalAggregatedRemoteConnectionReportsPostRequestBody(getTotalAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetTotalAggregatedRemoteConnectionReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.backingStoreEnabled = true; },
@@ -38,35 +40,35 @@ export interface GetTotalAggregatedRemoteConnectionReportsPostRequestBody extend
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getTotalAggregatedRemoteConnectionReports method.
@@ -93,15 +95,18 @@ export interface GetTotalAggregatedRemoteConnectionReportsRequestBuilder extends
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetTotalAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getTotalAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetTotalAggregatedRemoteConnectionReportsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getTotalAggregatedRemoteConnectionReportsPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
-    writer.writeStringValue("search", getTotalAggregatedRemoteConnectionReportsPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getTotalAggregatedRemoteConnectionReportsPostRequestBody.select);
-    writer.writeNumberValue("skip", getTotalAggregatedRemoteConnectionReportsPostRequestBody.skip);
-    writer.writeNumberValue("top", getTotalAggregatedRemoteConnectionReportsPostRequestBody.top);
-    writer.writeAdditionalData(getTotalAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetTotalAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getTotalAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetTotalAggregatedRemoteConnectionReportsPostRequestBody> | undefined | null = {}) : void {
+    if (getTotalAggregatedRemoteConnectionReportsPostRequestBody) {
+        writer.writeStringValue("filter", getTotalAggregatedRemoteConnectionReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
+        writer.writeStringValue("search", getTotalAggregatedRemoteConnectionReportsPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getTotalAggregatedRemoteConnectionReportsPostRequestBody.select);
+        writer.writeNumberValue("skip", getTotalAggregatedRemoteConnectionReportsPostRequestBody.skip);
+        writer.writeNumberValue("top", getTotalAggregatedRemoteConnectionReportsPostRequestBody.top);
+        writer.writeAdditionalData(getTotalAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

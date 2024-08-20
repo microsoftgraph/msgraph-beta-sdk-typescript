@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TriggerConfigurationManagerActionPostRequestBody}
  */
+// @ts-ignore
 export function createTriggerConfigurationManagerActionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTriggerConfigurationManagerActionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createTriggerConfigurationManagerActionPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTriggerConfigurationManagerActionPostRequestBody(triggerConfigurationManagerActionPostRequestBody: Partial<TriggerConfigurationManagerActionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { triggerConfigurationManagerActionPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoTriggerConfigurationManagerActionPostRequestBody(
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTriggerConfigurationManagerActionPostRequestBody(writer: SerializationWriter, triggerConfigurationManagerActionPostRequestBody: Partial<TriggerConfigurationManagerActionPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<ConfigurationManagerAction>("configurationManagerAction", triggerConfigurationManagerActionPostRequestBody.configurationManagerAction, serializeConfigurationManagerAction);
-    writer.writeAdditionalData(triggerConfigurationManagerActionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeTriggerConfigurationManagerActionPostRequestBody(writer: SerializationWriter, triggerConfigurationManagerActionPostRequestBody: Partial<TriggerConfigurationManagerActionPostRequestBody> | undefined | null = {}) : void {
+    if (triggerConfigurationManagerActionPostRequestBody) {
+        writer.writeObjectValue<ConfigurationManagerAction>("configurationManagerAction", triggerConfigurationManagerActionPostRequestBody.configurationManagerAction, serializeConfigurationManagerAction);
+        writer.writeAdditionalData(triggerConfigurationManagerActionPostRequestBody.additionalData);
+    }
 }
 export interface TriggerConfigurationManagerActionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface TriggerConfigurationManagerActionPostRequestBody extends Additi
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Parameter for action triggerConfigurationManagerAction
      */
-    configurationManagerAction?: ConfigurationManagerAction;
+    configurationManagerAction?: ConfigurationManagerAction | null;
 }
 /**
  * Provides operations to call the triggerConfigurationManagerAction method.
@@ -57,6 +62,7 @@ export interface TriggerConfigurationManagerActionRequestBuilder extends BaseReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: TriggerConfigurationManagerActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -64,6 +70,7 @@ export interface TriggerConfigurationManagerActionRequestBuilder extends BaseReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: TriggerConfigurationManagerActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

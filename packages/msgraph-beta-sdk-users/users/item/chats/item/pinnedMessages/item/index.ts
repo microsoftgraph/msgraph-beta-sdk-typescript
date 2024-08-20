@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PinnedChatMessageInfoItemRequestBuilder extends BaseRequestBuilder<PinnedChatMessageInfoItemRequestBuilder> {
     /**
      * Provides operations to manage the message property of the microsoft.graph.pinnedChatMessageInfo entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get message(): MessageRequestBuilder;
     /**
      * Delete navigation property pinnedMessages for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface PinnedChatMessageInfoItemRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PinnedChatMessageInfo>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PinnedChatMessageInfoItemRequestBuilderGetQueryParameters> | undefined) : Promise<PinnedChatMessageInfo | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface PinnedChatMessageInfoItemRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PinnedChatMessageInfo>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: PinnedChatMessageInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PinnedChatMessageInfo | undefined>;
     /**
      * Delete navigation property pinnedMessages for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of all the pinned messages in the chat. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PinnedChatMessageInfoItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface PinnedChatMessageInfoItemRequestBuilder extends BaseRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PinnedChatMessageInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

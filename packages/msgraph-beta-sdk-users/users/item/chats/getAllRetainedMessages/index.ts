@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAllRetainedMessagesGetResponse}
  */
+// @ts-ignore
 export function createGetAllRetainedMessagesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAllRetainedMessagesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetAllRetainedMessagesGetResponseFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAllRetainedMessagesGetResponse(getAllRetainedMessagesGetResponse: Partial<GetAllRetainedMessagesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getAllRetainedMessagesGetResponse),
@@ -30,7 +32,7 @@ export interface GetAllRetainedMessagesGetResponse extends BaseCollectionPaginat
     /**
      * The value property
      */
-    value?: ChatMessage[];
+    value?: ChatMessage[] | null;
 }
 /**
  * Provides operations to call the getAllRetainedMessages method.
@@ -41,6 +43,7 @@ export interface GetAllRetainedMessagesRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetAllRetainedMessagesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetAllRetainedMessagesRequestBuilderGetQueryParameters> | undefined) : Promise<GetAllRetainedMessagesGetResponse | undefined>;
@@ -48,6 +51,7 @@ export interface GetAllRetainedMessagesRequestBuilder extends BaseRequestBuilder
      * Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetAllRetainedMessagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -92,9 +96,12 @@ export interface GetAllRetainedMessagesRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetAllRetainedMessagesGetResponse(writer: SerializationWriter, getAllRetainedMessagesGetResponse: Partial<GetAllRetainedMessagesGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getAllRetainedMessagesGetResponse)
-    writer.writeCollectionOfObjectValues<ChatMessage>("value", getAllRetainedMessagesGetResponse.value, serializeChatMessage);
+// @ts-ignore
+export function serializeGetAllRetainedMessagesGetResponse(writer: SerializationWriter, getAllRetainedMessagesGetResponse: Partial<GetAllRetainedMessagesGetResponse> | undefined | null = {}) : void {
+    if (getAllRetainedMessagesGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getAllRetainedMessagesGetResponse)
+        writer.writeCollectionOfObjectValues<ChatMessage>("value", getAllRetainedMessagesGetResponse.value, serializeChatMessage);
+    }
 }
 /**
  * Uri template for the request builder.

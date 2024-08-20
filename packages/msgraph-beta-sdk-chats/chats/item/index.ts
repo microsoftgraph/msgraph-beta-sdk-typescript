@@ -6,6 +6,8 @@ import { createChatFromDiscriminatorValue, serializeChat, type Chat } from '@mic
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { CompleteMigrationRequestBuilderRequestsMetadata, type CompleteMigrationRequestBuilder } from './completeMigration/index.js';
+// @ts-ignore
 import { HideForUserRequestBuilderRequestsMetadata, type HideForUserRequestBuilder } from './hideForUser/index.js';
 // @ts-ignore
 import { InstalledAppsRequestBuilderNavigationMetadata, InstalledAppsRequestBuilderRequestsMetadata, type InstalledAppsRequestBuilder } from './installedApps/index.js';
@@ -40,6 +42,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the collection of chat entities.
  */
 export interface ChatItemRequestBuilder extends BaseRequestBuilder<ChatItemRequestBuilder> {
+    /**
+     * Provides operations to call the completeMigration method.
+     */
+    get completeMigration(): CompleteMigrationRequestBuilder;
     /**
      * Provides operations to call the hideForUser method.
      */
@@ -168,6 +174,9 @@ const ChatItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the navigation properties in the request builder.
  */
 export const ChatItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ChatItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    completeMigration: {
+        requestsMetadata: CompleteMigrationRequestBuilderRequestsMetadata,
+    },
     hideForUser: {
         requestsMetadata: HideForUserRequestBuilderRequestsMetadata,
     },

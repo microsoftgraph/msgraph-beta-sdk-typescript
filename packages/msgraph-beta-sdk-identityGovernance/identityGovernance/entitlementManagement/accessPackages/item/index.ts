@@ -14,6 +14,8 @@ import { AccessPackageResourceRoleScopesRequestBuilderNavigationMetadata, Access
 // @ts-ignore
 import { AccessPackagesIncompatibleWithRequestBuilderNavigationMetadata, AccessPackagesIncompatibleWithRequestBuilderRequestsMetadata, type AccessPackagesIncompatibleWithRequestBuilder } from './accessPackagesIncompatibleWith/index.js';
 // @ts-ignore
+import { AccessPackagesIncompatibleWithWithUniqueNameRequestBuilderRequestsMetadata, type AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder } from './accessPackagesIncompatibleWithWithUniqueName/index.js';
+// @ts-ignore
 import { GetApplicablePolicyRequirementsRequestBuilderRequestsMetadata, type GetApplicablePolicyRequirementsRequestBuilder } from './getApplicablePolicyRequirements/index.js';
 // @ts-ignore
 import { IncompatibleAccessPackagesRequestBuilderNavigationMetadata, IncompatibleAccessPackagesRequestBuilderRequestsMetadata, type IncompatibleAccessPackagesRequestBuilder } from './incompatibleAccessPackages/index.js';
@@ -61,6 +63,12 @@ export interface AccessPackageItemRequestBuilder extends BaseRequestBuilder<Acce
      */
     get moveToCatalog(): MoveToCatalogRequestBuilder;
     /**
+     * Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+     * @param uniqueName Alternate key of accessPackage
+     * @returns {AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder}
+     */
+     accessPackagesIncompatibleWithWithUniqueName(uniqueName: string | undefined) : AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder;
+    /**
      * Delete an accessPackage object. You can't delete an access package if it has any accessPackageAssignment. To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'. For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -68,11 +76,11 @@ export interface AccessPackageItemRequestBuilder extends BaseRequestBuilder<Acce
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Retrieve the properties and relationships of an accessPackage object.
+     * Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/accesspackage-list-accesspackageresourcerolescopes?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackage | undefined>;
     /**
@@ -91,7 +99,7 @@ export interface AccessPackageItemRequestBuilder extends BaseRequestBuilder<Acce
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Retrieve the properties and relationships of an accessPackage object.
+     * Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -105,7 +113,7 @@ export interface AccessPackageItemRequestBuilder extends BaseRequestBuilder<Acce
      toPatchRequestInformation(body: AccessPackage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties and relationships of an accessPackage object.
+ * Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
  */
 export interface AccessPackageItemRequestBuilderGetQueryParameters {
     /**
@@ -132,6 +140,9 @@ const AccessPackageItemRequestBuilderGetQueryParametersMapper: Record<string, st
  * Metadata for all the navigation properties in the request builder.
  */
 export const AccessPackageItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AccessPackageItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    accessPackagesIncompatibleWithWithUniqueName: {
+        requestsMetadata: AccessPackagesIncompatibleWithWithUniqueNameRequestBuilderRequestsMetadata,
+    },
     accessPackageAssignmentPolicies: {
         requestsMetadata: AccessPackageAssignmentPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackageAssignmentPoliciesRequestBuilderNavigationMetadata,

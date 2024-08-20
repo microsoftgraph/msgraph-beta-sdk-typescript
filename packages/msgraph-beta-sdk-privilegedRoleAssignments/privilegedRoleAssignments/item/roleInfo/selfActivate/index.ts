@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SelfActivatePostRequestBody}
  */
+// @ts-ignore
 export function createSelfActivatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSelfActivatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSelfActivatePostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSelfActivatePostRequestBody(selfActivatePostRequestBody: Partial<SelfActivatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { selfActivatePostRequestBody.backingStoreEnabled = true; },
@@ -37,23 +39,23 @@ export interface SelfActivatePostRequestBody extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The duration property
      */
-    duration?: string;
+    duration?: string | null;
     /**
      * The reason property
      */
-    reason?: string;
+    reason?: string | null;
     /**
      * The ticketNumber property
      */
-    ticketNumber?: string;
+    ticketNumber?: string | null;
     /**
      * The ticketSystem property
      */
-    ticketSystem?: string;
+    ticketSystem?: string | null;
 }
 /**
  * Provides operations to call the selfActivate method.
@@ -79,12 +81,15 @@ export interface SelfActivateRequestBuilder extends BaseRequestBuilder<SelfActiv
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSelfActivatePostRequestBody(writer: SerializationWriter, selfActivatePostRequestBody: Partial<SelfActivatePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("duration", selfActivatePostRequestBody.duration);
-    writer.writeStringValue("reason", selfActivatePostRequestBody.reason);
-    writer.writeStringValue("ticketNumber", selfActivatePostRequestBody.ticketNumber);
-    writer.writeStringValue("ticketSystem", selfActivatePostRequestBody.ticketSystem);
-    writer.writeAdditionalData(selfActivatePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSelfActivatePostRequestBody(writer: SerializationWriter, selfActivatePostRequestBody: Partial<SelfActivatePostRequestBody> | undefined | null = {}) : void {
+    if (selfActivatePostRequestBody) {
+        writer.writeStringValue("duration", selfActivatePostRequestBody.duration);
+        writer.writeStringValue("reason", selfActivatePostRequestBody.reason);
+        writer.writeStringValue("ticketNumber", selfActivatePostRequestBody.ticketNumber);
+        writer.writeStringValue("ticketSystem", selfActivatePostRequestBody.ticketSystem);
+        writer.writeAdditionalData(selfActivatePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -16,6 +16,7 @@ export interface ShiftPreferencesRequestBuilder extends BaseRequestBuilder<Shift
      * Delete navigation property shiftPreferences for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface ShiftPreferencesRequestBuilder extends BaseRequestBuilder<Shift
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ShiftPreferences>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ShiftPreferencesRequestBuilderGetQueryParameters> | undefined) : Promise<ShiftPreferences | undefined>;
@@ -32,6 +34,7 @@ export interface ShiftPreferencesRequestBuilder extends BaseRequestBuilder<Shift
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ShiftPreferences>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-beta|Find more info here}
      */
      patch(body: ShiftPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ShiftPreferences | undefined>;
@@ -39,12 +42,14 @@ export interface ShiftPreferencesRequestBuilder extends BaseRequestBuilder<Shift
      * Delete navigation property shiftPreferences for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of a shiftPreferences object by ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ShiftPreferencesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ShiftPreferencesRequestBuilder extends BaseRequestBuilder<Shift
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ShiftPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

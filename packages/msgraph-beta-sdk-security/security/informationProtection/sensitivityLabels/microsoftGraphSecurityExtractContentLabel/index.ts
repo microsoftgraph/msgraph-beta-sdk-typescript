@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExtractContentLabelPostRequestBody}
  */
+// @ts-ignore
 export function createExtractContentLabelPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExtractContentLabelPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createExtractContentLabelPostRequestBodyFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExtractContentLabelPostRequestBody(extractContentLabelPostRequestBody: Partial<ExtractContentLabelPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { extractContentLabelPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface ExtractContentLabelPostRequestBody extends AdditionalDataHolder
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The contentInfo property
      */
-    contentInfo?: ContentInfo;
+    contentInfo?: ContentInfo | null;
 }
 /**
  * Provides operations to call the extractContentLabel method.
@@ -65,9 +67,12 @@ export interface MicrosoftGraphSecurityExtractContentLabelRequestBuilder extends
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExtractContentLabelPostRequestBody(writer: SerializationWriter, extractContentLabelPostRequestBody: Partial<ExtractContentLabelPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<ContentInfo>("contentInfo", extractContentLabelPostRequestBody.contentInfo, serializeContentInfo);
-    writer.writeAdditionalData(extractContentLabelPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeExtractContentLabelPostRequestBody(writer: SerializationWriter, extractContentLabelPostRequestBody: Partial<ExtractContentLabelPostRequestBody> | undefined | null = {}) : void {
+    if (extractContentLabelPostRequestBody) {
+        writer.writeObjectValue<ContentInfo>("contentInfo", extractContentLabelPostRequestBody.contentInfo, serializeContentInfo);
+        writer.writeAdditionalData(extractContentLabelPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MicrosoftAuthenticatorMethodsRequestBuilder extends BaseRequestBuilder<MicrosoftAuthenticatorMethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
      * @param microsoftAuthenticatorAuthenticationMethodId The unique identifier of microsoftAuthenticatorAuthenticationMethod
      * @returns {MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byMicrosoftAuthenticatorAuthenticationMethodId(microsoftAuthenticatorAuthenticationMethodId: string) : MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface MicrosoftAuthenticatorMethodsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface MicrosoftAuthenticatorMethodsRequestBuilder extends BaseRequest
      * Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

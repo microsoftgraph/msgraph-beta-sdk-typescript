@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserConsentRequestItemRequestBuilder extends BaseRequestBuilder<UserConsentRequestItemRequestBuilder> {
     /**
      * Provides operations to manage the approval property of the microsoft.graph.userConsentRequest entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get approval(): ApprovalRequestBuilder;
     /**
      * Delete navigation property userConsentRequests for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface UserConsentRequestItemRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConsentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<UserConsentRequestItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserConsentRequest | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface UserConsentRequestItemRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConsentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserConsentRequest | undefined>;
     /**
      * Delete navigation property userConsentRequests for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A list of pending user consent requests. Supports $filter (eq).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserConsentRequestItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface UserConsentRequestItemRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

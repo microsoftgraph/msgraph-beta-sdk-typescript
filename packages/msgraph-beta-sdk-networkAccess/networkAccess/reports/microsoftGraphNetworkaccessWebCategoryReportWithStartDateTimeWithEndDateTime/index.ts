@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse}
  */
+// @ts-ignore
 export function createWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse;
 }
@@ -22,6 +23,7 @@ export function createWebCategoryReportWithStartDateTimeWithEndDateTimeGetRespon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse(webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse),
@@ -75,15 +77,18 @@ export interface MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse)
-    writer.writeCollectionOfObjectValues<WebCategoriesSummary>("value", webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeWebCategoriesSummary);
+// @ts-ignore
+export function serializeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
+    if (webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse)
+        writer.writeCollectionOfObjectValues<WebCategoriesSummary>("value", webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeWebCategoriesSummary);
+    }
 }
 export interface WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: WebCategoriesSummary[];
+    value?: WebCategoriesSummary[] | null;
 }
 /**
  * Uri template for the request builder.

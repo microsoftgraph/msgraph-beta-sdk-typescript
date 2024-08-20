@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetEnrollmentConfigurationPoliciesByDevicePostRequestBody}
  */
+// @ts-ignore
 export function createGetEnrollmentConfigurationPoliciesByDevicePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEnrollmentConfigurationPoliciesByDevicePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetEnrollmentConfigurationPoliciesByDevicePostRequestBodyF
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetEnrollmentConfigurationPoliciesByDevicePostRequestBody(getEnrollmentConfigurationPoliciesByDevicePostRequestBody: Partial<GetEnrollmentConfigurationPoliciesByDevicePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.backingStoreEnabled = true; },
@@ -39,39 +41,39 @@ export interface GetEnrollmentConfigurationPoliciesByDevicePostRequestBody exten
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getEnrollmentConfigurationPoliciesByDevice method.
@@ -97,16 +99,19 @@ export interface GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder extend
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetEnrollmentConfigurationPoliciesByDevicePostRequestBody(writer: SerializationWriter, getEnrollmentConfigurationPoliciesByDevicePostRequestBody: Partial<GetEnrollmentConfigurationPoliciesByDevicePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.groupBy);
-    writer.writeStringValue("name", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.orderBy);
-    writer.writeStringValue("search", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.select);
-    writer.writeNumberValue("skip", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.skip);
-    writer.writeNumberValue("top", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.top);
-    writer.writeAdditionalData(getEnrollmentConfigurationPoliciesByDevicePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetEnrollmentConfigurationPoliciesByDevicePostRequestBody(writer: SerializationWriter, getEnrollmentConfigurationPoliciesByDevicePostRequestBody: Partial<GetEnrollmentConfigurationPoliciesByDevicePostRequestBody> | undefined | null = {}) : void {
+    if (getEnrollmentConfigurationPoliciesByDevicePostRequestBody) {
+        writer.writeStringValue("filter", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.groupBy);
+        writer.writeStringValue("name", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.orderBy);
+        writer.writeStringValue("search", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.select);
+        writer.writeNumberValue("skip", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.skip);
+        writer.writeNumberValue("top", getEnrollmentConfigurationPoliciesByDevicePostRequestBody.top);
+        writer.writeAdditionalData(getEnrollmentConfigurationPoliciesByDevicePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

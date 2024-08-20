@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilterByCurrentUserWithOnGetResponse}
  */
+// @ts-ignore
 export function createFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilterByCurrentUserWithOnGetResponse;
 }
@@ -20,6 +21,7 @@ export function createFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilterByCurrentUserWithOnGetResponse(filterByCurrentUserWithOnGetResponse: Partial<FilterByCurrentUserWithOnGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(filterByCurrentUserWithOnGetResponse),
@@ -30,7 +32,7 @@ export interface FilterByCurrentUserWithOnGetResponse extends BaseCollectionPagi
     /**
      * The value property
      */
-    value?: UserConsentRequest[];
+    value?: UserConsentRequest[] | null;
 }
 /**
  * Provides operations to call the filterByCurrentUser method.
@@ -41,6 +43,7 @@ export interface FilterByCurrentUserWithOnRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FilterByCurrentUserWithOnGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/userconsentrequest-filterbycurrentuser?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FilterByCurrentUserWithOnRequestBuilderGetQueryParameters> | undefined) : Promise<FilterByCurrentUserWithOnGetResponse | undefined>;
@@ -48,6 +51,7 @@ export interface FilterByCurrentUserWithOnRequestBuilder extends BaseRequestBuil
      * Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FilterByCurrentUserWithOnRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -92,9 +96,12 @@ export interface FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFilterByCurrentUserWithOnGetResponse(writer: SerializationWriter, filterByCurrentUserWithOnGetResponse: Partial<FilterByCurrentUserWithOnGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, filterByCurrentUserWithOnGetResponse)
-    writer.writeCollectionOfObjectValues<UserConsentRequest>("value", filterByCurrentUserWithOnGetResponse.value, serializeUserConsentRequest);
+// @ts-ignore
+export function serializeFilterByCurrentUserWithOnGetResponse(writer: SerializationWriter, filterByCurrentUserWithOnGetResponse: Partial<FilterByCurrentUserWithOnGetResponse> | undefined | null = {}) : void {
+    if (filterByCurrentUserWithOnGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, filterByCurrentUserWithOnGetResponse)
+        writer.writeCollectionOfObjectValues<UserConsentRequest>("value", filterByCurrentUserWithOnGetResponse.value, serializeUserConsentRequest);
+    }
 }
 /**
  * Uri template for the request builder.

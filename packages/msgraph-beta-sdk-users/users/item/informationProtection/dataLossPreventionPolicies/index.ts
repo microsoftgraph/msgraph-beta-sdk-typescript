@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DataLossPreventionPoliciesRequestBuilder extends BaseRequestBuilder<DataLossPreventionPoliciesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the evaluate method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get evaluate(): EvaluateRequestBuilder;
     /**
      * Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
      * @param dataLossPreventionPolicyId The unique identifier of dataLossPreventionPolicy
      * @returns {DataLossPreventionPolicyItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byDataLossPreventionPolicyId(dataLossPreventionPolicyId: string) : DataLossPreventionPolicyItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface DataLossPreventionPoliciesRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DataLossPreventionPolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DataLossPreventionPoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<DataLossPreventionPolicyCollectionResponse | undefined>;
     /**
@@ -45,12 +49,14 @@ export interface DataLossPreventionPoliciesRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DataLossPreventionPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: DataLossPreventionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DataLossPreventionPolicy | undefined>;
     /**
      * Get dataLossPreventionPolicies from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DataLossPreventionPoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,6 +64,7 @@ export interface DataLossPreventionPoliciesRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: DataLossPreventionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetOpenShiftsGetResponse}
  */
+// @ts-ignore
 export function createGetOpenShiftsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOpenShiftsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetOpenShiftsGetResponseFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetOpenShiftsGetResponse(getOpenShiftsGetResponse: Partial<GetOpenShiftsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getOpenShiftsGetResponse),
@@ -30,7 +32,7 @@ export interface GetOpenShiftsGetResponse extends BaseCollectionPaginationCountR
     /**
      * The value property
      */
-    value?: OpenShift[];
+    value?: OpenShift[] | null;
 }
 /**
  * Provides operations to call the getOpenShifts method.
@@ -92,9 +94,12 @@ export interface GetOpenShiftsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetOpenShiftsGetResponse(writer: SerializationWriter, getOpenShiftsGetResponse: Partial<GetOpenShiftsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getOpenShiftsGetResponse)
-    writer.writeCollectionOfObjectValues<OpenShift>("value", getOpenShiftsGetResponse.value, serializeOpenShift);
+// @ts-ignore
+export function serializeGetOpenShiftsGetResponse(writer: SerializationWriter, getOpenShiftsGetResponse: Partial<GetOpenShiftsGetResponse> | undefined | null = {}) : void {
+    if (getOpenShiftsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getOpenShiftsGetResponse)
+        writer.writeCollectionOfObjectValues<OpenShift>("value", getOpenShiftsGetResponse.value, serializeOpenShift);
+    }
 }
 /**
  * Uri template for the request builder.

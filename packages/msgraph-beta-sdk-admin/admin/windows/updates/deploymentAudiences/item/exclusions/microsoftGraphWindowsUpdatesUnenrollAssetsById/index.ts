@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UnenrollAssetsByIdPostRequestBody}
  */
+// @ts-ignore
 export function createUnenrollAssetsByIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnenrollAssetsByIdPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUnenrollAssetsByIdPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUnenrollAssetsByIdPostRequestBody(unenrollAssetsByIdPostRequestBody: Partial<UnenrollAssetsByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unenrollAssetsByIdPostRequestBody.backingStoreEnabled = true; },
@@ -51,11 +53,14 @@ export interface MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder ex
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUnenrollAssetsByIdPostRequestBody(writer: SerializationWriter, unenrollAssetsByIdPostRequestBody: Partial<UnenrollAssetsByIdPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("ids", unenrollAssetsByIdPostRequestBody.ids);
-    writer.writeStringValue("memberEntityType", unenrollAssetsByIdPostRequestBody.memberEntityType);
-    writer.writeEnumValue<UpdateCategory>("updateCategory", unenrollAssetsByIdPostRequestBody.updateCategory);
-    writer.writeAdditionalData(unenrollAssetsByIdPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUnenrollAssetsByIdPostRequestBody(writer: SerializationWriter, unenrollAssetsByIdPostRequestBody: Partial<UnenrollAssetsByIdPostRequestBody> | undefined | null = {}) : void {
+    if (unenrollAssetsByIdPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("ids", unenrollAssetsByIdPostRequestBody.ids);
+        writer.writeStringValue("memberEntityType", unenrollAssetsByIdPostRequestBody.memberEntityType);
+        writer.writeEnumValue<UpdateCategory>("updateCategory", unenrollAssetsByIdPostRequestBody.updateCategory);
+        writer.writeAdditionalData(unenrollAssetsByIdPostRequestBody.additionalData);
+    }
 }
 export interface UnenrollAssetsByIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -65,19 +70,19 @@ export interface UnenrollAssetsByIdPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The ids property
      */
-    ids?: string[];
+    ids?: string[] | null;
     /**
      * The memberEntityType property
      */
-    memberEntityType?: string;
+    memberEntityType?: string | null;
     /**
      * The updateCategory property
      */
-    updateCategory?: UpdateCategory;
+    updateCategory?: UpdateCategory | null;
 }
 /**
  * Uri template for the request builder.

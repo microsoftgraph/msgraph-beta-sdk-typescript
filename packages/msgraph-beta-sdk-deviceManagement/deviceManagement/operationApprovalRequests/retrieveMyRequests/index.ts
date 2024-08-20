@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveMyRequestsGetResponse}
  */
+// @ts-ignore
 export function createRetrieveMyRequestsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveMyRequestsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createRetrieveMyRequestsGetResponseFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveMyRequestsGetResponse(retrieveMyRequestsGetResponse: Partial<RetrieveMyRequestsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(retrieveMyRequestsGetResponse),
@@ -30,7 +32,7 @@ export interface RetrieveMyRequestsGetResponse extends BaseCollectionPaginationC
     /**
      * The value property
      */
-    value?: OperationApprovalRequest[];
+    value?: OperationApprovalRequest[] | null;
 }
 /**
  * Provides operations to call the retrieveMyRequests method.
@@ -91,9 +93,12 @@ export interface RetrieveMyRequestsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRetrieveMyRequestsGetResponse(writer: SerializationWriter, retrieveMyRequestsGetResponse: Partial<RetrieveMyRequestsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, retrieveMyRequestsGetResponse)
-    writer.writeCollectionOfObjectValues<OperationApprovalRequest>("value", retrieveMyRequestsGetResponse.value, serializeOperationApprovalRequest);
+// @ts-ignore
+export function serializeRetrieveMyRequestsGetResponse(writer: SerializationWriter, retrieveMyRequestsGetResponse: Partial<RetrieveMyRequestsGetResponse> | undefined | null = {}) : void {
+    if (retrieveMyRequestsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, retrieveMyRequestsGetResponse)
+        writer.writeCollectionOfObjectValues<OperationApprovalRequest>("value", retrieveMyRequestsGetResponse.value, serializeOperationApprovalRequest);
+    }
 }
 /**
  * Uri template for the request builder.

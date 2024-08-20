@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ManagerRequestBuilder extends BaseRequestBuilder<ManagerRequestBuilder> {
     /**
      * Provides operations to manage the collection of user entities.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get ref(): RefRequestBuilder;
     /**
@@ -23,6 +24,7 @@ export interface ManagerRequestBuilder extends BaseRequestBuilder<ManagerRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ManagerRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObject | undefined>;
@@ -30,6 +32,7 @@ export interface ManagerRequestBuilder extends BaseRequestBuilder<ManagerRequest
      * Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagerRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

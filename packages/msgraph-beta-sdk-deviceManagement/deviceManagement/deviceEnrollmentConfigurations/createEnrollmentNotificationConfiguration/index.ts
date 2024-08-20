@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateEnrollmentNotificationConfigurationPostRequestBody}
  */
+// @ts-ignore
 export function createCreateEnrollmentNotificationConfigurationPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateEnrollmentNotificationConfigurationPostRequestBody;
 }
@@ -24,11 +25,11 @@ export interface CreateEnrollmentNotificationConfigurationPostRequestBody extend
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceEnrollmentNotificationConfigurations property
      */
-    deviceEnrollmentNotificationConfigurations?: DeviceEnrollmentConfiguration[];
+    deviceEnrollmentNotificationConfigurations?: DeviceEnrollmentConfiguration[] | null;
 }
 /**
  * Provides operations to call the createEnrollmentNotificationConfiguration method.
@@ -53,6 +54,7 @@ export interface CreateEnrollmentNotificationConfigurationRequestBuilder extends
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateEnrollmentNotificationConfigurationPostRequestBody(createEnrollmentNotificationConfigurationPostRequestBody: Partial<CreateEnrollmentNotificationConfigurationPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createEnrollmentNotificationConfigurationPostRequestBody.backingStoreEnabled = true; },
@@ -63,9 +65,12 @@ export function deserializeIntoCreateEnrollmentNotificationConfigurationPostRequ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreateEnrollmentNotificationConfigurationPostRequestBody(writer: SerializationWriter, createEnrollmentNotificationConfigurationPostRequestBody: Partial<CreateEnrollmentNotificationConfigurationPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<DeviceEnrollmentConfiguration>("deviceEnrollmentNotificationConfigurations", createEnrollmentNotificationConfigurationPostRequestBody.deviceEnrollmentNotificationConfigurations, serializeDeviceEnrollmentConfiguration);
-    writer.writeAdditionalData(createEnrollmentNotificationConfigurationPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCreateEnrollmentNotificationConfigurationPostRequestBody(writer: SerializationWriter, createEnrollmentNotificationConfigurationPostRequestBody: Partial<CreateEnrollmentNotificationConfigurationPostRequestBody> | undefined | null = {}) : void {
+    if (createEnrollmentNotificationConfigurationPostRequestBody) {
+        writer.writeCollectionOfObjectValues<DeviceEnrollmentConfiguration>("deviceEnrollmentNotificationConfigurations", createEnrollmentNotificationConfigurationPostRequestBody.deviceEnrollmentNotificationConfigurations, serializeDeviceEnrollmentConfiguration);
+        writer.writeAdditionalData(createEnrollmentNotificationConfigurationPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

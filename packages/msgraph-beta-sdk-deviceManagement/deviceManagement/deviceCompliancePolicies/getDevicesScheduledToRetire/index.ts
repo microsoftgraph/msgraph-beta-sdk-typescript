@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDevicesScheduledToRetireGetResponse}
  */
+// @ts-ignore
 export function createGetDevicesScheduledToRetireGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDevicesScheduledToRetireGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetDevicesScheduledToRetireGetResponseFromDiscriminatorVal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDevicesScheduledToRetireGetResponse(getDevicesScheduledToRetireGetResponse: Partial<GetDevicesScheduledToRetireGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getDevicesScheduledToRetireGetResponse),
@@ -30,7 +32,7 @@ export interface GetDevicesScheduledToRetireGetResponse extends BaseCollectionPa
     /**
      * The value property
      */
-    value?: RetireScheduledManagedDevice[];
+    value?: RetireScheduledManagedDevice[] | null;
 }
 /**
  * Provides operations to call the getDevicesScheduledToRetire method.
@@ -79,9 +81,12 @@ export interface GetDevicesScheduledToRetireRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetDevicesScheduledToRetireGetResponse(writer: SerializationWriter, getDevicesScheduledToRetireGetResponse: Partial<GetDevicesScheduledToRetireGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getDevicesScheduledToRetireGetResponse)
-    writer.writeCollectionOfObjectValues<RetireScheduledManagedDevice>("value", getDevicesScheduledToRetireGetResponse.value, serializeRetireScheduledManagedDevice);
+// @ts-ignore
+export function serializeGetDevicesScheduledToRetireGetResponse(writer: SerializationWriter, getDevicesScheduledToRetireGetResponse: Partial<GetDevicesScheduledToRetireGetResponse> | undefined | null = {}) : void {
+    if (getDevicesScheduledToRetireGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getDevicesScheduledToRetireGetResponse)
+        writer.writeCollectionOfObjectValues<RetireScheduledManagedDevice>("value", getDevicesScheduledToRetireGetResponse.value, serializeRetireScheduledManagedDevice);
+    }
 }
 /**
  * Uri template for the request builder.

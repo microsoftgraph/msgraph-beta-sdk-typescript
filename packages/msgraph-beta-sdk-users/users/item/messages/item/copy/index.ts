@@ -16,11 +16,11 @@ export interface CopyPostRequestBody extends AdditionalDataHolder, BackedModel, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The DestinationId property
      */
-    destinationId?: string;
+    destinationId?: string | null;
 }
 /**
  * Provides operations to call the copy method.
@@ -32,6 +32,7 @@ export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Message>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-beta|Find more info here}
      */
      post(body: CopyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Message | undefined>;
@@ -40,6 +41,7 @@ export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CopyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -48,6 +50,7 @@ export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CopyPostRequestBody}
  */
+// @ts-ignore
 export function createCopyPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCopyPostRequestBody;
 }
@@ -55,6 +58,7 @@ export function createCopyPostRequestBodyFromDiscriminatorValue(parseNode: Parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCopyPostRequestBody(copyPostRequestBody: Partial<CopyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { copyPostRequestBody.backingStoreEnabled = true; },
@@ -65,9 +69,12 @@ export function deserializeIntoCopyPostRequestBody(copyPostRequestBody: Partial<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCopyPostRequestBody(writer: SerializationWriter, copyPostRequestBody: Partial<CopyPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("DestinationId", copyPostRequestBody.destinationId);
-    writer.writeAdditionalData(copyPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCopyPostRequestBody(writer: SerializationWriter, copyPostRequestBody: Partial<CopyPostRequestBody> | undefined | null = {}) : void {
+    if (copyPostRequestBody) {
+        writer.writeStringValue("DestinationId", copyPostRequestBody.destinationId);
+        writer.writeAdditionalData(copyPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type DateOnly, type Parsable, type ParsableFac
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetOffice365GroupsActivityDetailWithDateGetResponse}
  */
+// @ts-ignore
 export function createGetOffice365GroupsActivityDetailWithDateGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOffice365GroupsActivityDetailWithDateGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetOffice365GroupsActivityDetailWithDateGetResponseFromDis
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetOffice365GroupsActivityDetailWithDateGetResponse(getOffice365GroupsActivityDetailWithDateGetResponse: Partial<GetOffice365GroupsActivityDetailWithDateGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getOffice365GroupsActivityDetailWithDateGetResponse),
@@ -30,7 +32,7 @@ export interface GetOffice365GroupsActivityDetailWithDateGetResponse extends Bas
     /**
      * The value property
      */
-    value?: Office365GroupsActivityDetail[];
+    value?: Office365GroupsActivityDetail[] | null;
 }
 /**
  * Provides operations to call the getOffice365GroupsActivityDetail method.
@@ -91,9 +93,12 @@ export interface GetOffice365GroupsActivityDetailWithDateRequestBuilderGetQueryP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetOffice365GroupsActivityDetailWithDateGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithDateGetResponse: Partial<GetOffice365GroupsActivityDetailWithDateGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithDateGetResponse)
-    writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithDateGetResponse.value, serializeOffice365GroupsActivityDetail);
+// @ts-ignore
+export function serializeGetOffice365GroupsActivityDetailWithDateGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithDateGetResponse: Partial<GetOffice365GroupsActivityDetailWithDateGetResponse> | undefined | null = {}) : void {
+    if (getOffice365GroupsActivityDetailWithDateGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithDateGetResponse)
+        writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithDateGetResponse.value, serializeOffice365GroupsActivityDetail);
+    }
 }
 /**
  * Uri template for the request builder.

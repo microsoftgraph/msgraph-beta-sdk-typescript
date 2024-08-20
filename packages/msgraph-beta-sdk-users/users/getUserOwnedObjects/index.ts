@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetUserOwnedObjectsPostRequestBody}
  */
+// @ts-ignore
 export function createGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetUserOwnedObjectsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetUserOwnedObjectsPostRequestBody(getUserOwnedObjectsPostRequestBody: Partial<GetUserOwnedObjectsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getUserOwnedObjectsPostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface GetUserOwnedObjectsPostRequestBody extends AdditionalDataHolder
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The type property
      */
-    type?: string;
+    type?: string | null;
     /**
      * The userId property
      */
-    userId?: string;
+    userId?: string | null;
 }
 /**
  * Provides operations to call the getUserOwnedObjects method.
@@ -55,6 +57,7 @@ export interface GetUserOwnedObjectsRequestBuilder extends BaseRequestBuilder<Ge
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta|Find more info here}
      */
      post(body: GetUserOwnedObjectsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DirectoryObject | undefined>;
@@ -63,6 +66,7 @@ export interface GetUserOwnedObjectsRequestBuilder extends BaseRequestBuilder<Ge
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: GetUserOwnedObjectsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -70,10 +74,13 @@ export interface GetUserOwnedObjectsRequestBuilder extends BaseRequestBuilder<Ge
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetUserOwnedObjectsPostRequestBody(writer: SerializationWriter, getUserOwnedObjectsPostRequestBody: Partial<GetUserOwnedObjectsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("type", getUserOwnedObjectsPostRequestBody.type);
-    writer.writeStringValue("userId", getUserOwnedObjectsPostRequestBody.userId);
-    writer.writeAdditionalData(getUserOwnedObjectsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetUserOwnedObjectsPostRequestBody(writer: SerializationWriter, getUserOwnedObjectsPostRequestBody: Partial<GetUserOwnedObjectsPostRequestBody> | undefined | null = {}) : void {
+    if (getUserOwnedObjectsPostRequestBody) {
+        writer.writeStringValue("type", getUserOwnedObjectsPostRequestBody.type);
+        writer.writeStringValue("userId", getUserOwnedObjectsPostRequestBody.userId);
+        writer.writeAdditionalData(getUserOwnedObjectsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

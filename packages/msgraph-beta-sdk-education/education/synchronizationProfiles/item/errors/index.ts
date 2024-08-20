@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ErrorsRequestBuilder extends BaseRequestBuilder<ErrorsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
      * @param educationSynchronizationErrorId The unique identifier of educationSynchronizationError
      * @returns {EducationSynchronizationErrorItemRequestBuilder}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      byEducationSynchronizationErrorId(educationSynchronizationErrorId: string) : EducationSynchronizationErrorItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ErrorsRequestBuilder extends BaseRequestBuilder<ErrorsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationErrorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ErrorsRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationErrorCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface ErrorsRequestBuilder extends BaseRequestBuilder<ErrorsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationError>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      post(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationError | undefined>;
     /**
      * Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ErrorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface ErrorsRequestBuilder extends BaseRequestBuilder<ErrorsRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toPostRequestInformation(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

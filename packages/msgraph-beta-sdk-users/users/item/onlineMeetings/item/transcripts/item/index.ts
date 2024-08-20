@@ -18,16 +18,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CallTranscriptItemRequestBuilder extends BaseRequestBuilder<CallTranscriptItemRequestBuilder> {
     /**
      * Provides operations to manage the media for the user entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get content(): ContentRequestBuilder;
     /**
      * Provides operations to manage the media for the user entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get metadataContent(): MetadataContentRequestBuilder;
     /**
      * Delete navigation property transcripts for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -35,6 +38,7 @@ export interface CallTranscriptItemRequestBuilder extends BaseRequestBuilder<Cal
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CallTranscript>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CallTranscriptItemRequestBuilderGetQueryParameters> | undefined) : Promise<CallTranscript | undefined>;
@@ -44,18 +48,21 @@ export interface CallTranscriptItemRequestBuilder extends BaseRequestBuilder<Cal
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CallTranscript>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: CallTranscript, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CallTranscript | undefined>;
     /**
      * Delete navigation property transcripts for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CallTranscriptItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -63,6 +70,7 @@ export interface CallTranscriptItemRequestBuilder extends BaseRequestBuilder<Cal
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: CallTranscript, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

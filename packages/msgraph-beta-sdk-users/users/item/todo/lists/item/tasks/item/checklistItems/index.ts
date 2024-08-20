@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ChecklistItemsRequestBuilder extends BaseRequestBuilder<ChecklistItemsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
      * @param checklistItemId The unique identifier of checklistItem
      * @returns {ChecklistItemItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byChecklistItemId(checklistItemId: string) : ChecklistItemItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ChecklistItemsRequestBuilder extends BaseRequestBuilder<Checkli
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChecklistItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ChecklistItemsRequestBuilderGetQueryParameters> | undefined) : Promise<ChecklistItemCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface ChecklistItemsRequestBuilder extends BaseRequestBuilder<Checkli
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChecklistItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ChecklistItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChecklistItem | undefined>;
     /**
      * A collection of smaller subtasks linked to the more complex parent task.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChecklistItemsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ChecklistItemsRequestBuilder extends BaseRequestBuilder<Checkli
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ChecklistItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

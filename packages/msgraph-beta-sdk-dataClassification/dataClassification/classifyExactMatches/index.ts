@@ -16,23 +16,23 @@ export interface ClassifyExactMatchesPostRequestBody extends AdditionalDataHolde
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The contentClassifications property
      */
-    contentClassifications?: ContentClassification[];
+    contentClassifications?: ContentClassification[] | null;
     /**
      * The sensitiveTypeIds property
      */
-    sensitiveTypeIds?: string[];
+    sensitiveTypeIds?: string[] | null;
     /**
      * The text property
      */
-    text?: string;
+    text?: string | null;
     /**
      * The timeoutInMs property
      */
-    timeoutInMs?: string;
+    timeoutInMs?: string | null;
 }
 /**
  * Provides operations to call the classifyExactMatches method.
@@ -59,6 +59,7 @@ export interface ClassifyExactMatchesRequestBuilder extends BaseRequestBuilder<C
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ClassifyExactMatchesPostRequestBody}
  */
+// @ts-ignore
 export function createClassifyExactMatchesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoClassifyExactMatchesPostRequestBody;
 }
@@ -66,6 +67,7 @@ export function createClassifyExactMatchesPostRequestBodyFromDiscriminatorValue(
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoClassifyExactMatchesPostRequestBody(classifyExactMatchesPostRequestBody: Partial<ClassifyExactMatchesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { classifyExactMatchesPostRequestBody.backingStoreEnabled = true; },
@@ -79,12 +81,15 @@ export function deserializeIntoClassifyExactMatchesPostRequestBody(classifyExact
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeClassifyExactMatchesPostRequestBody(writer: SerializationWriter, classifyExactMatchesPostRequestBody: Partial<ClassifyExactMatchesPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<ContentClassification>("contentClassifications", classifyExactMatchesPostRequestBody.contentClassifications, serializeContentClassification);
-    writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyExactMatchesPostRequestBody.sensitiveTypeIds);
-    writer.writeStringValue("text", classifyExactMatchesPostRequestBody.text);
-    writer.writeStringValue("timeoutInMs", classifyExactMatchesPostRequestBody.timeoutInMs);
-    writer.writeAdditionalData(classifyExactMatchesPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeClassifyExactMatchesPostRequestBody(writer: SerializationWriter, classifyExactMatchesPostRequestBody: Partial<ClassifyExactMatchesPostRequestBody> | undefined | null = {}) : void {
+    if (classifyExactMatchesPostRequestBody) {
+        writer.writeCollectionOfObjectValues<ContentClassification>("contentClassifications", classifyExactMatchesPostRequestBody.contentClassifications, serializeContentClassification);
+        writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyExactMatchesPostRequestBody.sensitiveTypeIds);
+        writer.writeStringValue("text", classifyExactMatchesPostRequestBody.text);
+        writer.writeStringValue("timeoutInMs", classifyExactMatchesPostRequestBody.timeoutInMs);
+        writer.writeAdditionalData(classifyExactMatchesPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

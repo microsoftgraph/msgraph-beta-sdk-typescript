@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ValidateFilterPostRequestBody}
  */
+// @ts-ignore
 export function createValidateFilterPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateFilterPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createValidateFilterPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoValidateFilterPostRequestBody(validateFilterPostRequestBody: Partial<ValidateFilterPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validateFilterPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoValidateFilterPostRequestBody(validateFilterPostR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeValidateFilterPostRequestBody(writer: SerializationWriter, validateFilterPostRequestBody: Partial<ValidateFilterPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter", validateFilterPostRequestBody.deviceAndAppManagementAssignmentFilter, serializeDeviceAndAppManagementAssignmentFilter);
-    writer.writeAdditionalData(validateFilterPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeValidateFilterPostRequestBody(writer: SerializationWriter, validateFilterPostRequestBody: Partial<ValidateFilterPostRequestBody> | undefined | null = {}) : void {
+    if (validateFilterPostRequestBody) {
+        writer.writeObjectValue<DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter", validateFilterPostRequestBody.deviceAndAppManagementAssignmentFilter, serializeDeviceAndAppManagementAssignmentFilter);
+        writer.writeAdditionalData(validateFilterPostRequestBody.additionalData);
+    }
 }
 export interface ValidateFilterPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface ValidateFilterPostRequestBody extends AdditionalDataHolder, Bac
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceAndAppManagementAssignmentFilter property
      */
-    deviceAndAppManagementAssignmentFilter?: DeviceAndAppManagementAssignmentFilter;
+    deviceAndAppManagementAssignmentFilter?: DeviceAndAppManagementAssignmentFilter | null;
 }
 /**
  * Provides operations to call the validateFilter method.

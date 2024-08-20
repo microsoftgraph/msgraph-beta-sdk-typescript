@@ -18,16 +18,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ContactItemRequestBuilder extends BaseRequestBuilder<ContactItemRequestBuilder> {
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.contact entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to manage the photo property of the microsoft.graph.contact entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get photo(): PhotoRequestBuilder;
     /**
      * Delete navigation property contacts for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -35,6 +38,7 @@ export interface ContactItemRequestBuilder extends BaseRequestBuilder<ContactIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Contact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ContactItemRequestBuilderGetQueryParameters> | undefined) : Promise<Contact | undefined>;
     /**
@@ -43,18 +47,21 @@ export interface ContactItemRequestBuilder extends BaseRequestBuilder<ContactIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Contact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Contact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Contact | undefined>;
     /**
      * Delete navigation property contacts for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The contacts in the folder. Navigation property. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContactItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,6 +69,7 @@ export interface ContactItemRequestBuilder extends BaseRequestBuilder<ContactIte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Contact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

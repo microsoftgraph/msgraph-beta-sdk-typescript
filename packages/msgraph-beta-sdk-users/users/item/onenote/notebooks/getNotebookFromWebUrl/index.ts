@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetNotebookFromWebUrlPostRequestBody}
  */
+// @ts-ignore
 export function createGetNotebookFromWebUrlPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetNotebookFromWebUrlPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetNotebookFromWebUrlPostRequestBodyFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetNotebookFromWebUrlPostRequestBody(getNotebookFromWebUrlPostRequestBody: Partial<GetNotebookFromWebUrlPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getNotebookFromWebUrlPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface GetNotebookFromWebUrlPostRequestBody extends AdditionalDataHold
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The webUrl property
      */
-    webUrl?: string;
+    webUrl?: string | null;
 }
 /**
  * Provides operations to call the getNotebookFromWebUrl method.
@@ -50,6 +52,7 @@ export interface GetNotebookFromWebUrlRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CopyNotebookModel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-beta|Find more info here}
      */
      post(body: GetNotebookFromWebUrlPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CopyNotebookModel | undefined>;
@@ -58,6 +61,7 @@ export interface GetNotebookFromWebUrlRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: GetNotebookFromWebUrlPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -65,9 +69,12 @@ export interface GetNotebookFromWebUrlRequestBuilder extends BaseRequestBuilder<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetNotebookFromWebUrlPostRequestBody(writer: SerializationWriter, getNotebookFromWebUrlPostRequestBody: Partial<GetNotebookFromWebUrlPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("webUrl", getNotebookFromWebUrlPostRequestBody.webUrl);
-    writer.writeAdditionalData(getNotebookFromWebUrlPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetNotebookFromWebUrlPostRequestBody(writer: SerializationWriter, getNotebookFromWebUrlPostRequestBody: Partial<GetNotebookFromWebUrlPostRequestBody> | undefined | null = {}) : void {
+    if (getNotebookFromWebUrlPostRequestBody) {
+        writer.writeStringValue("webUrl", getNotebookFromWebUrlPostRequestBody.webUrl);
+        writer.writeAdditionalData(getNotebookFromWebUrlPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

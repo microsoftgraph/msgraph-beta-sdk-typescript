@@ -16,37 +16,38 @@ export interface ApplyPostRequestBody extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The excludeGroups property
      */
-    excludeGroups?: string[];
+    excludeGroups?: string[] | null;
     /**
      * The includeAllUsers property
      */
-    includeAllUsers?: boolean;
+    includeAllUsers?: boolean | null;
     /**
      * The includeGroups property
      */
-    includeGroups?: string[];
+    includeGroups?: string[] | null;
     /**
      * The managementTemplateId property
      */
-    managementTemplateId?: string;
+    managementTemplateId?: string | null;
     /**
      * The tenantGroupId property
      */
-    tenantGroupId?: string;
+    tenantGroupId?: string | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplyPostRequestBody}
  */
+// @ts-ignore
 export function createApplyPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplyPostRequestBody;
 }
@@ -54,6 +55,7 @@ export function createApplyPostRequestBodyFromDiscriminatorValue(parseNode: Pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applyPostRequestBody.backingStoreEnabled = true; },
@@ -90,14 +92,17 @@ export interface MicrosoftGraphManagedTenantsApplyRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeApplyPostRequestBody(writer: SerializationWriter, applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", applyPostRequestBody.excludeGroups);
-    writer.writeBooleanValue("includeAllUsers", applyPostRequestBody.includeAllUsers);
-    writer.writeCollectionOfPrimitiveValues<string>("includeGroups", applyPostRequestBody.includeGroups);
-    writer.writeStringValue("managementTemplateId", applyPostRequestBody.managementTemplateId);
-    writer.writeStringValue("tenantGroupId", applyPostRequestBody.tenantGroupId);
-    writer.writeStringValue("tenantId", applyPostRequestBody.tenantId);
-    writer.writeAdditionalData(applyPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeApplyPostRequestBody(writer: SerializationWriter, applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined | null = {}) : void {
+    if (applyPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", applyPostRequestBody.excludeGroups);
+        writer.writeBooleanValue("includeAllUsers", applyPostRequestBody.includeAllUsers);
+        writer.writeCollectionOfPrimitiveValues<string>("includeGroups", applyPostRequestBody.includeGroups);
+        writer.writeStringValue("managementTemplateId", applyPostRequestBody.managementTemplateId);
+        writer.writeStringValue("tenantGroupId", applyPostRequestBody.tenantGroupId);
+        writer.writeStringValue("tenantId", applyPostRequestBody.tenantId);
+        writer.writeAdditionalData(applyPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetManagedDevicesWithAppFailuresGetResponse}
  */
+// @ts-ignore
 export function createGetManagedDevicesWithAppFailuresGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetManagedDevicesWithAppFailuresGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetManagedDevicesWithAppFailuresGetResponseFromDiscriminat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetManagedDevicesWithAppFailuresGetResponse(getManagedDevicesWithAppFailuresGetResponse: Partial<GetManagedDevicesWithAppFailuresGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getManagedDevicesWithAppFailuresGetResponse),
@@ -30,7 +32,7 @@ export interface GetManagedDevicesWithAppFailuresGetResponse extends BaseCollect
     /**
      * The value property
      */
-    value?: string[];
+    value?: string[] | null;
 }
 /**
  * Provides operations to call the getManagedDevicesWithAppFailures method.
@@ -41,12 +43,14 @@ export interface GetManagedDevicesWithAppFailuresRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetManagedDevicesWithAppFailuresGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetManagedDevicesWithAppFailuresRequestBuilderGetQueryParameters> | undefined) : Promise<GetManagedDevicesWithAppFailuresGetResponse | undefined>;
     /**
      * Retrieves the list of devices with failed apps
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetManagedDevicesWithAppFailuresRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -79,9 +83,12 @@ export interface GetManagedDevicesWithAppFailuresRequestBuilderGetQueryParameter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetManagedDevicesWithAppFailuresGetResponse(writer: SerializationWriter, getManagedDevicesWithAppFailuresGetResponse: Partial<GetManagedDevicesWithAppFailuresGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getManagedDevicesWithAppFailuresGetResponse)
-    writer.writeCollectionOfPrimitiveValues<string>("value", getManagedDevicesWithAppFailuresGetResponse.value);
+// @ts-ignore
+export function serializeGetManagedDevicesWithAppFailuresGetResponse(writer: SerializationWriter, getManagedDevicesWithAppFailuresGetResponse: Partial<GetManagedDevicesWithAppFailuresGetResponse> | undefined | null = {}) : void {
+    if (getManagedDevicesWithAppFailuresGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getManagedDevicesWithAppFailuresGetResponse)
+        writer.writeCollectionOfPrimitiveValues<string>("value", getManagedDevicesWithAppFailuresGetResponse.value);
+    }
 }
 /**
  * Uri template for the request builder.

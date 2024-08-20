@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {StartBreakPostRequestBody}
  */
+// @ts-ignore
 export function createStartBreakPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoStartBreakPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createStartBreakPostRequestBodyFromDiscriminatorValue(parseNode:
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoStartBreakPostRequestBody(startBreakPostRequestBody: Partial<StartBreakPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "atApprovedLocation": n => { startBreakPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
@@ -31,10 +33,13 @@ export function deserializeIntoStartBreakPostRequestBody(startBreakPostRequestBo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeStartBreakPostRequestBody(writer: SerializationWriter, startBreakPostRequestBody: Partial<StartBreakPostRequestBody> | undefined = {}) : void {
-    writer.writeBooleanValue("atApprovedLocation", startBreakPostRequestBody.atApprovedLocation);
-    writer.writeObjectValue<ItemBody>("notes", startBreakPostRequestBody.notes, serializeItemBody);
-    writer.writeAdditionalData(startBreakPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeStartBreakPostRequestBody(writer: SerializationWriter, startBreakPostRequestBody: Partial<StartBreakPostRequestBody> | undefined | null = {}) : void {
+    if (startBreakPostRequestBody) {
+        writer.writeBooleanValue("atApprovedLocation", startBreakPostRequestBody.atApprovedLocation);
+        writer.writeObjectValue<ItemBody>("notes", startBreakPostRequestBody.notes, serializeItemBody);
+        writer.writeAdditionalData(startBreakPostRequestBody.additionalData);
+    }
 }
 export interface StartBreakPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -44,15 +49,15 @@ export interface StartBreakPostRequestBody extends AdditionalDataHolder, BackedM
     /**
      * The atApprovedLocation property
      */
-    atApprovedLocation?: boolean;
+    atApprovedLocation?: boolean | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The notes property
      */
-    notes?: ItemBody;
+    notes?: ItemBody | null;
 }
 /**
  * Provides operations to call the startBreak method.

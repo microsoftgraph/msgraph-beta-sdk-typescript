@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDeviceStatusByCompliancePolicySettingReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetDeviceStatusByCompliancePolicySettingReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDeviceStatusByCompliancePolicySettingReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetDeviceStatusByCompliancePolicySettingReportPostRequestB
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDeviceStatusByCompliancePolicySettingReportPostRequestBody(getDeviceStatusByCompliancePolicySettingReportPostRequestBody: Partial<GetDeviceStatusByCompliancePolicySettingReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getDeviceStatusByCompliancePolicySettingReportPostRequestBody.backingStoreEnabled = true; },
@@ -39,39 +41,39 @@ export interface GetDeviceStatusByCompliancePolicySettingReportPostRequestBody e
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getDeviceStatusByCompliancePolicySettingReport method.
@@ -97,16 +99,19 @@ export interface GetDeviceStatusByCompliancePolicySettingReportRequestBuilder ex
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetDeviceStatusByCompliancePolicySettingReportPostRequestBody(writer: SerializationWriter, getDeviceStatusByCompliancePolicySettingReportPostRequestBody: Partial<GetDeviceStatusByCompliancePolicySettingReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.top);
-    writer.writeAdditionalData(getDeviceStatusByCompliancePolicySettingReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetDeviceStatusByCompliancePolicySettingReportPostRequestBody(writer: SerializationWriter, getDeviceStatusByCompliancePolicySettingReportPostRequestBody: Partial<GetDeviceStatusByCompliancePolicySettingReportPostRequestBody> | undefined | null = {}) : void {
+    if (getDeviceStatusByCompliancePolicySettingReportPostRequestBody) {
+        writer.writeStringValue("filter", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getDeviceStatusByCompliancePolicySettingReportPostRequestBody.top);
+        writer.writeAdditionalData(getDeviceStatusByCompliancePolicySettingReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

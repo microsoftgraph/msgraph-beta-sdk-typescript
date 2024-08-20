@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDailyAggregatedRemoteConnectionReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetDailyAggregatedRemoteConnectionReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDailyAggregatedRemoteConnectionReportsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetDailyAggregatedRemoteConnectionReportsPostRequestBodyFr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDailyAggregatedRemoteConnectionReportsPostRequestBody(getDailyAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetDailyAggregatedRemoteConnectionReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getDailyAggregatedRemoteConnectionReportsPostRequestBody.backingStoreEnabled = true; },
@@ -38,35 +40,35 @@ export interface GetDailyAggregatedRemoteConnectionReportsPostRequestBody extend
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getDailyAggregatedRemoteConnectionReports method.
@@ -93,15 +95,18 @@ export interface GetDailyAggregatedRemoteConnectionReportsRequestBuilder extends
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetDailyAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getDailyAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetDailyAggregatedRemoteConnectionReportsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getDailyAggregatedRemoteConnectionReportsPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
-    writer.writeStringValue("search", getDailyAggregatedRemoteConnectionReportsPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getDailyAggregatedRemoteConnectionReportsPostRequestBody.select);
-    writer.writeNumberValue("skip", getDailyAggregatedRemoteConnectionReportsPostRequestBody.skip);
-    writer.writeNumberValue("top", getDailyAggregatedRemoteConnectionReportsPostRequestBody.top);
-    writer.writeAdditionalData(getDailyAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetDailyAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getDailyAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetDailyAggregatedRemoteConnectionReportsPostRequestBody> | undefined | null = {}) : void {
+    if (getDailyAggregatedRemoteConnectionReportsPostRequestBody) {
+        writer.writeStringValue("filter", getDailyAggregatedRemoteConnectionReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
+        writer.writeStringValue("search", getDailyAggregatedRemoteConnectionReportsPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getDailyAggregatedRemoteConnectionReportsPostRequestBody.select);
+        writer.writeNumberValue("skip", getDailyAggregatedRemoteConnectionReportsPostRequestBody.skip);
+        writer.writeNumberValue("top", getDailyAggregatedRemoteConnectionReportsPostRequestBody.top);
+        writer.writeAdditionalData(getDailyAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

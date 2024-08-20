@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserScopeTeamsAppInstallationItemRequestBuilder extends BaseRequestBuilder<UserScopeTeamsAppInstallationItemRequestBuilder> {
     /**
      * Provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get chat(): ChatRequestBuilder;
     /**
      * Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get teamsApp(): TeamsAppRequestBuilder;
     /**
      * Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get teamsAppDefinition(): TeamsAppDefinitionRequestBuilder;
     /**
      * Uninstall an app from the personal scope of the specified user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -42,6 +46,7 @@ export interface UserScopeTeamsAppInstallationItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserScopeTeamsAppInstallation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserScopeTeamsAppInstallation | undefined>;
@@ -51,18 +56,21 @@ export interface UserScopeTeamsAppInstallationItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserScopeTeamsAppInstallation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserScopeTeamsAppInstallation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserScopeTeamsAppInstallation | undefined>;
     /**
      * Uninstall an app from the personal scope of the specified user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the app installed in the personal scope of the specified user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -70,6 +78,7 @@ export interface UserScopeTeamsAppInstallationItemRequestBuilder extends BaseReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserScopeTeamsAppInstallation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -10,53 +10,53 @@ export interface AggregatedPolicyCompliance extends Entity, Parsable {
     /**
      * Identifier for the device compliance policy. Optional. Read-only.
      */
-    compliancePolicyId?: string;
+    compliancePolicyId?: string | null;
     /**
      * Name of the device compliance policy. Optional. Read-only.
      */
-    compliancePolicyName?: string;
+    compliancePolicyName?: string | null;
     /**
      * Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
      */
-    compliancePolicyPlatform?: string;
+    compliancePolicyPlatform?: string | null;
     /**
      * The type of compliance policy. Optional. Read-only.
      */
-    compliancePolicyType?: string;
+    compliancePolicyType?: string | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The number of devices that are in a compliant status. Optional. Read-only.
      */
-    numberOfCompliantDevices?: number;
+    numberOfCompliantDevices?: number | null;
     /**
      * The number of devices that are in an error status. Optional. Read-only.
      */
-    numberOfErrorDevices?: number;
+    numberOfErrorDevices?: number | null;
     /**
      * The number of device that are in a non-compliant status. Optional. Read-only.
      */
-    numberOfNonCompliantDevices?: number;
+    numberOfNonCompliantDevices?: number | null;
     /**
      * The date and time the device policy was last modified. Optional. Read-only.
      */
-    policyModifiedDateTime?: Date;
+    policyModifiedDateTime?: Date | null;
     /**
      * The display name for the managed tenant. Optional. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface AggregatedPolicyComplianceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: AggregatedPolicyCompliance[];
+    value?: AggregatedPolicyCompliance[] | null;
 }
 export interface AlertData extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -66,15 +66,15 @@ export interface AlertData extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface AlertDataReferenceString extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -84,15 +84,15 @@ export interface AlertDataReferenceString extends AdditionalDataHolder, BackedMo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface AlertLogContent extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -102,15 +102,15 @@ export interface AlertLogContent extends AdditionalDataHolder, BackedModel, Pars
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface AlertRuleDefinitionTemplate extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -120,15 +120,15 @@ export interface AlertRuleDefinitionTemplate extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The defaultSeverity property
      */
-    defaultSeverity?: AlertSeverity;
+    defaultSeverity?: AlertSeverity | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export type AlertSeverity = (typeof AlertSeverityObject)[keyof typeof AlertSeverityObject];
 export type AlertStatus = (typeof AlertStatusObject)[keyof typeof AlertStatusObject];
@@ -136,315 +136,316 @@ export interface AppPerformance extends Entity, Parsable {
     /**
      * The appFriendlyName property
      */
-    appFriendlyName?: string;
+    appFriendlyName?: string | null;
     /**
      * The appName property
      */
-    appName?: string;
+    appName?: string | null;
     /**
      * The appPublisher property
      */
-    appPublisher?: string;
+    appPublisher?: string | null;
     /**
      * The lastUpdatedDateTime property
      */
-    lastUpdatedDateTime?: Date;
+    lastUpdatedDateTime?: Date | null;
     /**
      * The meanTimeToFailureInMinutes property
      */
-    meanTimeToFailureInMinutes?: number;
+    meanTimeToFailureInMinutes?: number | null;
     /**
      * The tenantDisplayName property
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The totalActiveDeviceCount property
      */
-    totalActiveDeviceCount?: number;
+    totalActiveDeviceCount?: number | null;
     /**
      * The totalAppCrashCount property
      */
-    totalAppCrashCount?: number;
+    totalAppCrashCount?: number | null;
     /**
      * The totalAppFreezeCount property
      */
-    totalAppFreezeCount?: number;
+    totalAppFreezeCount?: number | null;
 }
 export interface AppPerformanceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: AppPerformance[];
+    value?: AppPerformance[] | null;
 }
 export interface AuditEvent extends Entity, Parsable {
     /**
      * A string that uniquely represents the operation that occurred. Required. Read-only.
      */
-    activity?: string;
+    activity?: string | null;
     /**
      * The time when the activity occurred. Required. Read-only.
      */
-    activityDateTime?: Date;
+    activityDateTime?: Date | null;
     /**
      * The identifier of the activity request that made the audit event. Required. Read-only.
      */
-    activityId?: string;
+    activityId?: string | null;
     /**
      * A category that represents a logical grouping of activities. Required. Read-only.
      */
-    category?: string;
+    category?: string | null;
     /**
      * The HTTP verb that was used when making the API request. Required. Read-only.
      */
-    httpVerb?: string;
+    httpVerb?: string | null;
     /**
      * The identifier of the app that was used to make the request. Required. Read-only.
      */
-    initiatedByAppId?: string;
+    initiatedByAppId?: string | null;
     /**
      * The UPN of the user who initiated the activity. Required. Read-only.
      */
-    initiatedByUpn?: string;
+    initiatedByUpn?: string | null;
     /**
      * The identifier of the user who initiated the activity. Required. Read-only.
      */
-    initiatedByUserId?: string;
+    initiatedByUserId?: string | null;
     /**
      * The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
      */
-    ipAddress?: string;
+    ipAddress?: string | null;
     /**
      * The raw HTTP request body. Some sensitive information may be removed.
      */
-    requestBody?: string;
+    requestBody?: string | null;
     /**
      * The raw HTTP request URL. Required. Read-only.
      */
-    requestUrl?: string;
+    requestUrl?: string | null;
     /**
      * The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
      */
-    tenantIds?: string;
+    tenantIds?: string | null;
     /**
      * The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
      */
-    tenantNames?: string;
+    tenantNames?: string | null;
 }
 export interface AuditEventCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: AuditEvent[];
+    value?: AuditEvent[] | null;
 }
 export interface CloudPcConnection extends Entity, Parsable {
     /**
      * The display name of the cloud PC connection. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
      */
-    healthCheckStatus?: string;
+    healthCheckStatus?: string | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The display name for the managed tenant. Required. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface CloudPcConnectionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CloudPcConnection[];
+    value?: CloudPcConnection[] | null;
 }
 export interface CloudPcDevice extends Entity, Parsable {
     /**
      * The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
      */
-    cloudPcStatus?: string;
+    cloudPcStatus?: string | null;
     /**
      * The specification of the cloud PC device. Required. Read-only.
      */
-    deviceSpecification?: string;
+    deviceSpecification?: string | null;
     /**
      * The display name  of the cloud PC device. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The managed device identifier of the cloud PC device. Optional. Read-only.
      */
-    managedDeviceId?: string;
+    managedDeviceId?: string | null;
     /**
      * The managed device display name of the cloud PC device. Optional. Read-only.
      */
-    managedDeviceName?: string;
+    managedDeviceName?: string | null;
     /**
      * The provisioning policy identifier for the cloud PC device. Required. Read-only.
      */
-    provisioningPolicyId?: string;
+    provisioningPolicyId?: string | null;
     /**
      * The service plan name of the cloud PC device. Required. Read-only.
      */
-    servicePlanName?: string;
+    servicePlanName?: string | null;
     /**
      * The service plan type of the cloud PC device. Required. Read-only.
      */
-    servicePlanType?: string;
+    servicePlanType?: string | null;
     /**
      * The display name for the managed tenant. Required. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.
      */
-    userPrincipalName?: string;
+    userPrincipalName?: string | null;
 }
 export interface CloudPcDeviceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CloudPcDevice[];
+    value?: CloudPcDevice[] | null;
 }
 export interface CloudPcOverview extends Entity, Parsable {
     /**
      * The total number of cloud PC devices that have the Frontline SKU. Optional. Read-only.
      */
-    frontlineLicensesCount?: number;
+    frontlineLicensesCount?: number | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The number of cloud PC connections that have a status of failed. Optional. Read-only.
      */
-    numberOfCloudPcConnectionStatusFailed?: number;
+    numberOfCloudPcConnectionStatusFailed?: number | null;
     /**
      * The number of cloud PC connections that have a status of passed. Optional. Read-only.
      */
-    numberOfCloudPcConnectionStatusPassed?: number;
+    numberOfCloudPcConnectionStatusPassed?: number | null;
     /**
      * The number of cloud PC connections that have a status of pending. Optional. Read-only.
      */
-    numberOfCloudPcConnectionStatusPending?: number;
+    numberOfCloudPcConnectionStatusPending?: number | null;
     /**
      * The number of cloud PC connections that have a status of running. Optional. Read-only.
      */
-    numberOfCloudPcConnectionStatusRunning?: number;
+    numberOfCloudPcConnectionStatusRunning?: number | null;
     /**
      * The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
      */
-    numberOfCloudPcConnectionStatusUnkownFutureValue?: number;
+    numberOfCloudPcConnectionStatusUnkownFutureValue?: number | null;
     /**
      * The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
      */
-    numberOfCloudPcStatusDeprovisioning?: number;
+    numberOfCloudPcStatusDeprovisioning?: number | null;
     /**
      * The number of cloud PCs that have a status of failed. Optional. Read-only.
      */
-    numberOfCloudPcStatusFailed?: number;
+    numberOfCloudPcStatusFailed?: number | null;
     /**
      * The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
      */
-    numberOfCloudPcStatusInGracePeriod?: number;
+    numberOfCloudPcStatusInGracePeriod?: number | null;
     /**
      * The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
      */
-    numberOfCloudPcStatusNotProvisioned?: number;
+    numberOfCloudPcStatusNotProvisioned?: number | null;
     /**
      * The number of cloud PCs that have a status of provisioned. Optional. Read-only.
      */
-    numberOfCloudPcStatusProvisioned?: number;
+    numberOfCloudPcStatusProvisioned?: number | null;
     /**
      * The number of cloud PCs that have a status of provisioning. Optional. Read-only.
      */
-    numberOfCloudPcStatusProvisioning?: number;
+    numberOfCloudPcStatusProvisioning?: number | null;
     /**
      * The number of cloud PCs that have a status of unknown. Optional. Read-only.
      */
-    numberOfCloudPcStatusUnknown?: number;
+    numberOfCloudPcStatusUnknown?: number | null;
     /**
      * The number of cloud PCs that have a status of upgrading. Optional. Read-only.
      */
-    numberOfCloudPcStatusUpgrading?: number;
+    numberOfCloudPcStatusUpgrading?: number | null;
     /**
      * The display name for the managed tenant. Optional. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
      */
-    totalBusinessLicenses?: number;
+    totalBusinessLicenses?: number | null;
     /**
      * The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
      */
-    totalCloudPcConnectionStatus?: number;
+    totalCloudPcConnectionStatus?: number | null;
     /**
      * The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
      */
-    totalCloudPcStatus?: number;
+    totalCloudPcStatus?: number | null;
     /**
      * The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
      */
-    totalEnterpriseLicenses?: number;
+    totalEnterpriseLicenses?: number | null;
 }
 export interface CloudPcOverviewCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CloudPcOverview[];
+    value?: CloudPcOverview[] | null;
 }
 export interface ConditionalAccessPolicyCoverage extends Entity, Parsable {
     /**
      * The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
      */
-    conditionalAccessPolicyState?: string;
+    conditionalAccessPolicyState?: string | null;
     /**
      * The date and time the conditional access policy was last modified. Required. Read-only.
      */
-    latestPolicyModifiedDateTime?: Date;
+    latestPolicyModifiedDateTime?: Date | null;
     /**
      * A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
      */
-    requiresDeviceCompliance?: boolean;
+    requiresDeviceCompliance?: boolean | null;
     /**
      * The display name for the managed tenant. Required. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
 }
 export interface ConditionalAccessPolicyCoverageCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ConditionalAccessPolicyCoverage[];
+    value?: ConditionalAccessPolicyCoverage[] | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AggregatedPolicyComplianceCollectionResponse}
  */
+// @ts-ignore
 export function createAggregatedPolicyComplianceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAggregatedPolicyComplianceCollectionResponse;
 }
@@ -453,6 +454,7 @@ export function createAggregatedPolicyComplianceCollectionResponseFromDiscrimina
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AggregatedPolicyCompliance}
  */
+// @ts-ignore
 export function createAggregatedPolicyComplianceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAggregatedPolicyCompliance;
 }
@@ -461,6 +463,7 @@ export function createAggregatedPolicyComplianceFromDiscriminatorValue(parseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertData}
  */
+// @ts-ignore
 export function createAlertDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertData;
 }
@@ -469,6 +472,7 @@ export function createAlertDataFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertDataReferenceString}
  */
+// @ts-ignore
 export function createAlertDataReferenceStringFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertDataReferenceString;
 }
@@ -477,6 +481,7 @@ export function createAlertDataReferenceStringFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertLogContent}
  */
+// @ts-ignore
 export function createAlertLogContentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertLogContent;
 }
@@ -485,6 +490,7 @@ export function createAlertLogContentFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertRuleDefinitionTemplate}
  */
+// @ts-ignore
 export function createAlertRuleDefinitionTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRuleDefinitionTemplate;
 }
@@ -493,6 +499,7 @@ export function createAlertRuleDefinitionTemplateFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AppPerformanceCollectionResponse}
  */
+// @ts-ignore
 export function createAppPerformanceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAppPerformanceCollectionResponse;
 }
@@ -501,6 +508,7 @@ export function createAppPerformanceCollectionResponseFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AppPerformance}
  */
+// @ts-ignore
 export function createAppPerformanceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAppPerformance;
 }
@@ -509,6 +517,7 @@ export function createAppPerformanceFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AuditEventCollectionResponse}
  */
+// @ts-ignore
 export function createAuditEventCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuditEventCollectionResponse;
 }
@@ -517,6 +526,7 @@ export function createAuditEventCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AuditEvent}
  */
+// @ts-ignore
 export function createAuditEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuditEvent;
 }
@@ -525,6 +535,7 @@ export function createAuditEventFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcConnectionCollectionResponse}
  */
+// @ts-ignore
 export function createCloudPcConnectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcConnectionCollectionResponse;
 }
@@ -533,6 +544,7 @@ export function createCloudPcConnectionCollectionResponseFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcConnection}
  */
+// @ts-ignore
 export function createCloudPcConnectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcConnection;
 }
@@ -541,6 +553,7 @@ export function createCloudPcConnectionFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcDeviceCollectionResponse}
  */
+// @ts-ignore
 export function createCloudPcDeviceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcDeviceCollectionResponse;
 }
@@ -549,6 +562,7 @@ export function createCloudPcDeviceCollectionResponseFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcDevice}
  */
+// @ts-ignore
 export function createCloudPcDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcDevice;
 }
@@ -557,6 +571,7 @@ export function createCloudPcDeviceFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcOverviewCollectionResponse}
  */
+// @ts-ignore
 export function createCloudPcOverviewCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcOverviewCollectionResponse;
 }
@@ -565,6 +580,7 @@ export function createCloudPcOverviewCollectionResponseFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudPcOverview}
  */
+// @ts-ignore
 export function createCloudPcOverviewFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudPcOverview;
 }
@@ -573,6 +589,7 @@ export function createCloudPcOverviewFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicyCoverageCollectionResponse}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyCoverageCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCoverageCollectionResponse;
 }
@@ -581,6 +598,7 @@ export function createConditionalAccessPolicyCoverageCollectionResponseFromDiscr
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicyCoverage}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyCoverageFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCoverage;
 }
@@ -589,6 +607,7 @@ export function createConditionalAccessPolicyCoverageFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CredentialUserRegistrationsSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createCredentialUserRegistrationsSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCredentialUserRegistrationsSummaryCollectionResponse;
 }
@@ -597,6 +616,7 @@ export function createCredentialUserRegistrationsSummaryCollectionResponseFromDi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CredentialUserRegistrationsSummary}
  */
+// @ts-ignore
 export function createCredentialUserRegistrationsSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCredentialUserRegistrationsSummary;
 }
@@ -605,6 +625,7 @@ export function createCredentialUserRegistrationsSummaryFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceAppPerformanceCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceAppPerformanceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceAppPerformanceCollectionResponse;
 }
@@ -613,6 +634,7 @@ export function createDeviceAppPerformanceCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceAppPerformance}
  */
+// @ts-ignore
 export function createDeviceAppPerformanceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceAppPerformance;
 }
@@ -621,6 +643,7 @@ export function createDeviceAppPerformanceFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceCompliancePolicySettingStateSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceCompliancePolicySettingStateSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceCompliancePolicySettingStateSummaryCollectionResponse;
 }
@@ -629,6 +652,7 @@ export function createDeviceCompliancePolicySettingStateSummaryCollectionRespons
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceCompliancePolicySettingStateSummary}
  */
+// @ts-ignore
 export function createDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceCompliancePolicySettingStateSummary;
 }
@@ -637,6 +661,7 @@ export function createDeviceCompliancePolicySettingStateSummaryFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceHealthStatusCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceHealthStatusCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceHealthStatusCollectionResponse;
 }
@@ -645,6 +670,7 @@ export function createDeviceHealthStatusCollectionResponseFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceHealthStatus}
  */
+// @ts-ignore
 export function createDeviceHealthStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceHealthStatus;
 }
@@ -653,6 +679,7 @@ export function createDeviceHealthStatusFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Email}
  */
+// @ts-ignore
 export function createEmailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEmail;
 }
@@ -661,6 +688,7 @@ export function createEmailFromDiscriminatorValue(parseNode: ParseNode | undefin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GraphAPIErrorDetails}
  */
+// @ts-ignore
 export function createGraphAPIErrorDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGraphAPIErrorDetails;
 }
@@ -669,6 +697,7 @@ export function createGraphAPIErrorDetailsFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceComplianceCollectionResponse}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceCollectionResponse;
 }
@@ -677,6 +706,7 @@ export function createManagedDeviceComplianceCollectionResponseFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceCompliance}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceCompliance;
 }
@@ -685,6 +715,7 @@ export function createManagedDeviceComplianceFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceComplianceTrendCollectionResponse}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceTrendCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceTrendCollectionResponse;
 }
@@ -693,6 +724,7 @@ export function createManagedDeviceComplianceTrendCollectionResponseFromDiscrimi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedDeviceComplianceTrend}
  */
+// @ts-ignore
 export function createManagedDeviceComplianceTrendFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedDeviceComplianceTrend;
 }
@@ -701,6 +733,7 @@ export function createManagedDeviceComplianceTrendFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertCollectionResponse;
 }
@@ -709,6 +742,7 @@ export function createManagedTenantAlertCollectionResponseFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlert}
  */
+// @ts-ignore
 export function createManagedTenantAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlert;
 }
@@ -717,6 +751,7 @@ export function createManagedTenantAlertFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertLogCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertLogCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertLogCollectionResponse;
 }
@@ -725,6 +760,7 @@ export function createManagedTenantAlertLogCollectionResponseFromDiscriminatorVa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertLog}
  */
+// @ts-ignore
 export function createManagedTenantAlertLogFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertLog;
 }
@@ -733,6 +769,7 @@ export function createManagedTenantAlertLogFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRuleCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleCollectionResponse;
 }
@@ -741,6 +778,7 @@ export function createManagedTenantAlertRuleCollectionResponseFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRuleDefinitionCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleDefinitionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleDefinitionCollectionResponse;
 }
@@ -749,6 +787,7 @@ export function createManagedTenantAlertRuleDefinitionCollectionResponseFromDisc
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRuleDefinition}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRuleDefinition;
 }
@@ -757,6 +796,7 @@ export function createManagedTenantAlertRuleDefinitionFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantAlertRule}
  */
+// @ts-ignore
 export function createManagedTenantAlertRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantAlertRule;
 }
@@ -765,6 +805,7 @@ export function createManagedTenantAlertRuleFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantApiNotificationCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantApiNotificationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantApiNotificationCollectionResponse;
 }
@@ -773,6 +814,7 @@ export function createManagedTenantApiNotificationCollectionResponseFromDiscrimi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantApiNotification}
  */
+// @ts-ignore
 export function createManagedTenantApiNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantApiNotification;
 }
@@ -781,6 +823,7 @@ export function createManagedTenantApiNotificationFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantEmailNotificationCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantEmailNotificationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantEmailNotificationCollectionResponse;
 }
@@ -789,6 +832,7 @@ export function createManagedTenantEmailNotificationCollectionResponseFromDiscri
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantEmailNotification}
  */
+// @ts-ignore
 export function createManagedTenantEmailNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantEmailNotification;
 }
@@ -797,6 +841,7 @@ export function createManagedTenantEmailNotificationFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenant}
  */
+// @ts-ignore
 export function createManagedTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenant;
 }
@@ -805,6 +850,7 @@ export function createManagedTenantFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantTicketingEndpointCollectionResponse}
  */
+// @ts-ignore
 export function createManagedTenantTicketingEndpointCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantTicketingEndpointCollectionResponse;
 }
@@ -813,6 +859,7 @@ export function createManagedTenantTicketingEndpointCollectionResponseFromDiscri
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagedTenantTicketingEndpoint}
  */
+// @ts-ignore
 export function createManagedTenantTicketingEndpointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagedTenantTicketingEndpoint;
 }
@@ -821,6 +868,7 @@ export function createManagedTenantTicketingEndpointFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionCollectionResponse}
  */
+// @ts-ignore
 export function createManagementActionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionCollectionResponse;
 }
@@ -829,6 +877,7 @@ export function createManagementActionCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionDeploymentStatus}
  */
+// @ts-ignore
 export function createManagementActionDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionDeploymentStatus;
 }
@@ -837,6 +886,7 @@ export function createManagementActionDeploymentStatusFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementAction}
  */
+// @ts-ignore
 export function createManagementActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementAction;
 }
@@ -845,6 +895,7 @@ export function createManagementActionFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionInfo}
  */
+// @ts-ignore
 export function createManagementActionInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionInfo;
 }
@@ -853,6 +904,7 @@ export function createManagementActionInfoFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionTenantDeploymentStatusCollectionResponse}
  */
+// @ts-ignore
 export function createManagementActionTenantDeploymentStatusCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionTenantDeploymentStatusCollectionResponse;
 }
@@ -861,6 +913,7 @@ export function createManagementActionTenantDeploymentStatusCollectionResponseFr
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementActionTenantDeploymentStatus}
  */
+// @ts-ignore
 export function createManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementActionTenantDeploymentStatus;
 }
@@ -869,6 +922,7 @@ export function createManagementActionTenantDeploymentStatusFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementIntentCollectionResponse}
  */
+// @ts-ignore
 export function createManagementIntentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntentCollectionResponse;
 }
@@ -877,6 +931,7 @@ export function createManagementIntentCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementIntent}
  */
+// @ts-ignore
 export function createManagementIntentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntent;
 }
@@ -885,6 +940,7 @@ export function createManagementIntentFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementIntentInfo}
  */
+// @ts-ignore
 export function createManagementIntentInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementIntentInfo;
 }
@@ -893,6 +949,7 @@ export function createManagementIntentInfoFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionCollectionResponse;
 }
@@ -901,6 +958,7 @@ export function createManagementTemplateCollectionCollectionResponseFromDiscrimi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollection}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollection;
 }
@@ -909,6 +967,7 @@ export function createManagementTemplateCollectionFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionResponse;
 }
@@ -917,6 +976,7 @@ export function createManagementTemplateCollectionResponseFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionTenantSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionTenantSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionTenantSummaryCollectionResponse;
 }
@@ -925,6 +985,7 @@ export function createManagementTemplateCollectionTenantSummaryCollectionRespons
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateCollectionTenantSummary}
  */
+// @ts-ignore
 export function createManagementTemplateCollectionTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateCollectionTenantSummary;
 }
@@ -933,6 +994,7 @@ export function createManagementTemplateCollectionTenantSummaryFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateDetailedInfo}
  */
+// @ts-ignore
 export function createManagementTemplateDetailedInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateDetailedInfo;
 }
@@ -941,6 +1003,7 @@ export function createManagementTemplateDetailedInfoFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplate}
  */
+// @ts-ignore
 export function createManagementTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplate;
 }
@@ -949,6 +1012,7 @@ export function createManagementTemplateFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepCollectionResponse;
 }
@@ -957,6 +1021,7 @@ export function createManagementTemplateStepCollectionResponseFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepDeploymentCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepDeploymentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepDeploymentCollectionResponse;
 }
@@ -965,6 +1030,7 @@ export function createManagementTemplateStepDeploymentCollectionResponseFromDisc
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepDeployment}
  */
+// @ts-ignore
 export function createManagementTemplateStepDeploymentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepDeployment;
 }
@@ -973,6 +1039,7 @@ export function createManagementTemplateStepDeploymentFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStep}
  */
+// @ts-ignore
 export function createManagementTemplateStepFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStep;
 }
@@ -981,6 +1048,7 @@ export function createManagementTemplateStepFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepTenantSummaryCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepTenantSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepTenantSummaryCollectionResponse;
 }
@@ -989,6 +1057,7 @@ export function createManagementTemplateStepTenantSummaryCollectionResponseFromD
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepTenantSummary}
  */
+// @ts-ignore
 export function createManagementTemplateStepTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepTenantSummary;
 }
@@ -997,6 +1066,7 @@ export function createManagementTemplateStepTenantSummaryFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepVersionCollectionResponse}
  */
+// @ts-ignore
 export function createManagementTemplateStepVersionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepVersionCollectionResponse;
 }
@@ -1005,6 +1075,7 @@ export function createManagementTemplateStepVersionCollectionResponseFromDiscrim
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ManagementTemplateStepVersion}
  */
+// @ts-ignore
 export function createManagementTemplateStepVersionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoManagementTemplateStepVersion;
 }
@@ -1013,6 +1084,7 @@ export function createManagementTemplateStepVersionFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MyRoleCollectionResponse}
  */
+// @ts-ignore
 export function createMyRoleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyRoleCollectionResponse;
 }
@@ -1021,6 +1093,7 @@ export function createMyRoleCollectionResponseFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MyRole}
  */
+// @ts-ignore
 export function createMyRoleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyRole;
 }
@@ -1029,6 +1102,7 @@ export function createMyRoleFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NotificationTarget}
  */
+// @ts-ignore
 export function createNotificationTargetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationTarget;
 }
@@ -1037,6 +1111,7 @@ export function createNotificationTargetFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RoleAssignment}
  */
+// @ts-ignore
 export function createRoleAssignmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRoleAssignment;
 }
@@ -1045,6 +1120,7 @@ export function createRoleAssignmentFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RoleDefinition}
  */
+// @ts-ignore
 export function createRoleDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRoleDefinition;
 }
@@ -1053,6 +1129,7 @@ export function createRoleDefinitionFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Setting}
  */
+// @ts-ignore
 export function createSettingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetting;
 }
@@ -1061,6 +1138,7 @@ export function createSettingFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TemplateParameter}
  */
+// @ts-ignore
 export function createTemplateParameterFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTemplateParameter;
 }
@@ -1069,6 +1147,7 @@ export function createTemplateParameterFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantCollectionResponse}
  */
+// @ts-ignore
 export function createTenantCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCollectionResponse;
 }
@@ -1077,6 +1156,7 @@ export function createTenantCollectionResponseFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantContactInformation}
  */
+// @ts-ignore
 export function createTenantContactInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantContactInformation;
 }
@@ -1085,6 +1165,7 @@ export function createTenantContactInformationFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantContract}
  */
+// @ts-ignore
 export function createTenantContractFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantContract;
 }
@@ -1093,6 +1174,7 @@ export function createTenantContractFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantCustomizedInformationCollectionResponse}
  */
+// @ts-ignore
 export function createTenantCustomizedInformationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCustomizedInformationCollectionResponse;
 }
@@ -1101,6 +1183,7 @@ export function createTenantCustomizedInformationCollectionResponseFromDiscrimin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantCustomizedInformation}
  */
+// @ts-ignore
 export function createTenantCustomizedInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantCustomizedInformation;
 }
@@ -1109,6 +1192,7 @@ export function createTenantCustomizedInformationFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantDetailedInformationCollectionResponse}
  */
+// @ts-ignore
 export function createTenantDetailedInformationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantDetailedInformationCollectionResponse;
 }
@@ -1117,6 +1201,7 @@ export function createTenantDetailedInformationCollectionResponseFromDiscriminat
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantDetailedInformation}
  */
+// @ts-ignore
 export function createTenantDetailedInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantDetailedInformation;
 }
@@ -1125,6 +1210,7 @@ export function createTenantDetailedInformationFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Tenant}
  */
+// @ts-ignore
 export function createTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenant;
 }
@@ -1133,6 +1219,7 @@ export function createTenantFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantGroupCollectionResponse}
  */
+// @ts-ignore
 export function createTenantGroupCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantGroupCollectionResponse;
 }
@@ -1141,6 +1228,7 @@ export function createTenantGroupCollectionResponseFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantGroup}
  */
+// @ts-ignore
 export function createTenantGroupFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantGroup;
 }
@@ -1149,6 +1237,7 @@ export function createTenantGroupFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantInfo}
  */
+// @ts-ignore
 export function createTenantInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantInfo;
 }
@@ -1157,6 +1246,7 @@ export function createTenantInfoFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantStatusInformation}
  */
+// @ts-ignore
 export function createTenantStatusInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantStatusInformation;
 }
@@ -1165,6 +1255,7 @@ export function createTenantStatusInformationFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantTagCollectionResponse}
  */
+// @ts-ignore
 export function createTenantTagCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantTagCollectionResponse;
 }
@@ -1173,6 +1264,7 @@ export function createTenantTagCollectionResponseFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantTag}
  */
+// @ts-ignore
 export function createTenantTagFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantTag;
 }
@@ -1181,6 +1273,7 @@ export function createTenantTagFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsDeviceMalwareStateCollectionResponse}
  */
+// @ts-ignore
 export function createWindowsDeviceMalwareStateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsDeviceMalwareStateCollectionResponse;
 }
@@ -1189,6 +1282,7 @@ export function createWindowsDeviceMalwareStateCollectionResponseFromDiscriminat
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsDeviceMalwareState}
  */
+// @ts-ignore
 export function createWindowsDeviceMalwareStateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsDeviceMalwareState;
 }
@@ -1197,6 +1291,7 @@ export function createWindowsDeviceMalwareStateFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsProtectionStateCollectionResponse}
  */
+// @ts-ignore
 export function createWindowsProtectionStateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsProtectionStateCollectionResponse;
 }
@@ -1205,6 +1300,7 @@ export function createWindowsProtectionStateCollectionResponseFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsProtectionState}
  */
+// @ts-ignore
 export function createWindowsProtectionStateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsProtectionState;
 }
@@ -1213,6 +1309,7 @@ export function createWindowsProtectionStateFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkloadActionDeploymentStatus}
  */
+// @ts-ignore
 export function createWorkloadActionDeploymentStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadActionDeploymentStatus;
 }
@@ -1221,6 +1318,7 @@ export function createWorkloadActionDeploymentStatusFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkloadAction}
  */
+// @ts-ignore
 export function createWorkloadActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadAction;
 }
@@ -1229,6 +1327,7 @@ export function createWorkloadActionFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WorkloadStatus}
  */
+// @ts-ignore
 export function createWorkloadStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkloadStatus;
 }
@@ -1236,63 +1335,64 @@ export interface CredentialUserRegistrationsSummary extends Entity, Parsable {
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The number of users that are capable of performing multi-factor authentication or self service password reset. Optional. Read-only.
      */
-    mfaAndSsprCapableUserCount?: number;
+    mfaAndSsprCapableUserCount?: number | null;
     /**
      * The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.
      */
-    mfaConditionalAccessPolicyState?: string;
+    mfaConditionalAccessPolicyState?: string | null;
     /**
      * The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.
      */
-    mfaExcludedUserCount?: number;
+    mfaExcludedUserCount?: number | null;
     /**
      * The number of users registered for multi-factor authentication. Optional. Read-only.
      */
-    mfaRegisteredUserCount?: number;
+    mfaRegisteredUserCount?: number | null;
     /**
      * A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.
      */
-    securityDefaultsEnabled?: boolean;
+    securityDefaultsEnabled?: boolean | null;
     /**
      * The number of users enabled for self service password reset. Optional. Read-only.
      */
-    ssprEnabledUserCount?: number;
+    ssprEnabledUserCount?: number | null;
     /**
      * The number of users registered for self service password reset. Optional. Read-only.
      */
-    ssprRegisteredUserCount?: number;
+    ssprRegisteredUserCount?: number | null;
     /**
      * The display name for the managed tenant. Required. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
      */
-    tenantLicenseType?: string;
+    tenantLicenseType?: string | null;
     /**
      * The total number of users in the given managed tenant. Optional. Read-only.
      */
-    totalUserCount?: number;
+    totalUserCount?: number | null;
 }
 export interface CredentialUserRegistrationsSummaryCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CredentialUserRegistrationsSummary[];
+    value?: CredentialUserRegistrationsSummary[] | null;
 }
 export type DelegatedPrivilegeStatus = (typeof DelegatedPrivilegeStatusObject)[keyof typeof DelegatedPrivilegeStatusObject];
 /**
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAggregatedPolicyCompliance(aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(aggregatedPolicyCompliance),
@@ -1313,6 +1413,7 @@ export function deserializeIntoAggregatedPolicyCompliance(aggregatedPolicyCompli
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAggregatedPolicyComplianceCollectionResponse(aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(aggregatedPolicyComplianceCollectionResponse),
@@ -1323,6 +1424,7 @@ export function deserializeIntoAggregatedPolicyComplianceCollectionResponse(aggr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertData(alertData: Partial<AlertData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertData.backingStoreEnabled = true; },
@@ -1334,6 +1436,7 @@ export function deserializeIntoAlertData(alertData: Partial<AlertData> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertDataReferenceString(alertDataReferenceString: Partial<AlertDataReferenceString> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertDataReferenceString.backingStoreEnabled = true; },
@@ -1345,6 +1448,7 @@ export function deserializeIntoAlertDataReferenceString(alertDataReferenceString
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLogContent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertLogContent.backingStoreEnabled = true; },
@@ -1356,6 +1460,7 @@ export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLog
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { alertRuleDefinitionTemplate.backingStoreEnabled = true; },
@@ -1367,6 +1472,7 @@ export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAppPerformance(appPerformance: Partial<AppPerformance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(appPerformance),
@@ -1386,6 +1492,7 @@ export function deserializeIntoAppPerformance(appPerformance: Partial<AppPerform
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAppPerformanceCollectionResponse(appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(appPerformanceCollectionResponse),
@@ -1396,6 +1503,7 @@ export function deserializeIntoAppPerformanceCollectionResponse(appPerformanceCo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAuditEvent(auditEvent: Partial<AuditEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(auditEvent),
@@ -1418,6 +1526,7 @@ export function deserializeIntoAuditEvent(auditEvent: Partial<AuditEvent> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAuditEventCollectionResponse(auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(auditEventCollectionResponse),
@@ -1428,6 +1537,7 @@ export function deserializeIntoAuditEventCollectionResponse(auditEventCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcConnection(cloudPcConnection: Partial<CloudPcConnection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(cloudPcConnection),
@@ -1442,6 +1552,7 @@ export function deserializeIntoCloudPcConnection(cloudPcConnection: Partial<Clou
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcConnectionCollectionResponse(cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(cloudPcConnectionCollectionResponse),
@@ -1452,6 +1563,7 @@ export function deserializeIntoCloudPcConnectionCollectionResponse(cloudPcConnec
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcDevice(cloudPcDevice: Partial<CloudPcDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(cloudPcDevice),
@@ -1473,6 +1585,7 @@ export function deserializeIntoCloudPcDevice(cloudPcDevice: Partial<CloudPcDevic
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcDeviceCollectionResponse(cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(cloudPcDeviceCollectionResponse),
@@ -1483,6 +1596,7 @@ export function deserializeIntoCloudPcDeviceCollectionResponse(cloudPcDeviceColl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcOverview(cloudPcOverview: Partial<CloudPcOverview> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(cloudPcOverview),
@@ -1513,6 +1627,7 @@ export function deserializeIntoCloudPcOverview(cloudPcOverview: Partial<CloudPcO
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCloudPcOverviewCollectionResponse(cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(cloudPcOverviewCollectionResponse),
@@ -1523,6 +1638,7 @@ export function deserializeIntoCloudPcOverviewCollectionResponse(cloudPcOverview
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicyCoverage(conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(conditionalAccessPolicyCoverage),
@@ -1536,6 +1652,7 @@ export function deserializeIntoConditionalAccessPolicyCoverage(conditionalAccess
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicyCoverageCollectionResponse(conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(conditionalAccessPolicyCoverageCollectionResponse),
@@ -1546,6 +1663,7 @@ export function deserializeIntoConditionalAccessPolicyCoverageCollectionResponse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCredentialUserRegistrationsSummary(credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(credentialUserRegistrationsSummary),
@@ -1567,6 +1685,7 @@ export function deserializeIntoCredentialUserRegistrationsSummary(credentialUser
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCredentialUserRegistrationsSummaryCollectionResponse(credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(credentialUserRegistrationsSummaryCollectionResponse),
@@ -1577,6 +1696,7 @@ export function deserializeIntoCredentialUserRegistrationsSummaryCollectionRespo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceAppPerformance(deviceAppPerformance: Partial<DeviceAppPerformance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceAppPerformance),
@@ -1602,6 +1722,7 @@ export function deserializeIntoDeviceAppPerformance(deviceAppPerformance: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceAppPerformanceCollectionResponse(deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceAppPerformanceCollectionResponse),
@@ -1612,6 +1733,7 @@ export function deserializeIntoDeviceAppPerformanceCollectionResponse(deviceAppP
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceCompliancePolicySettingStateSummary(deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceCompliancePolicySettingStateSummary),
@@ -1634,6 +1756,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummary(deviceC
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceCompliancePolicySettingStateSummaryCollectionResponse(deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceCompliancePolicySettingStateSummaryCollectionResponse),
@@ -1644,6 +1767,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummaryCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceHealthStatus(deviceHealthStatus: Partial<DeviceHealthStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceHealthStatus),
@@ -1668,6 +1792,7 @@ export function deserializeIntoDeviceHealthStatus(deviceHealthStatus: Partial<De
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceHealthStatusCollectionResponse(deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceHealthStatusCollectionResponse),
@@ -1678,6 +1803,7 @@ export function deserializeIntoDeviceHealthStatusCollectionResponse(deviceHealth
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEmail(email: Partial<Email> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { email.backingStoreEnabled = true; },
@@ -1689,6 +1815,7 @@ export function deserializeIntoEmail(email: Partial<Email> | undefined = {}) : R
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGraphAPIErrorDetails(graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { graphAPIErrorDetails.backingStoreEnabled = true; },
@@ -1701,6 +1828,7 @@ export function deserializeIntoGraphAPIErrorDetails(graphAPIErrorDetails: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceCompliance(managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedDeviceCompliance),
@@ -1724,6 +1852,7 @@ export function deserializeIntoManagedDeviceCompliance(managedDeviceCompliance: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceComplianceCollectionResponse(managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedDeviceComplianceCollectionResponse),
@@ -1734,6 +1863,7 @@ export function deserializeIntoManagedDeviceComplianceCollectionResponse(managed
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceComplianceTrend(managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedDeviceComplianceTrend),
@@ -1752,6 +1882,7 @@ export function deserializeIntoManagedDeviceComplianceTrend(managedDeviceComplia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedDeviceComplianceTrendCollectionResponse(managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedDeviceComplianceTrendCollectionResponse),
@@ -1762,6 +1893,7 @@ export function deserializeIntoManagedDeviceComplianceTrendCollectionResponse(ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenant(managedTenant: Partial<ManagedTenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenant),
@@ -1808,6 +1940,7 @@ export function deserializeIntoManagedTenant(managedTenant: Partial<ManagedTenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlert(managedTenantAlert: Partial<ManagedTenantAlert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlert),
@@ -1836,6 +1969,7 @@ export function deserializeIntoManagedTenantAlert(managedTenantAlert: Partial<Ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertCollectionResponse(managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertCollectionResponse),
@@ -1846,6 +1980,7 @@ export function deserializeIntoManagedTenantAlertCollectionResponse(managedTenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertLog(managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlertLog),
@@ -1861,6 +1996,7 @@ export function deserializeIntoManagedTenantAlertLog(managedTenantAlertLog: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertLogCollectionResponse(managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertLogCollectionResponse),
@@ -1871,6 +2007,7 @@ export function deserializeIntoManagedTenantAlertLogCollectionResponse(managedTe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRule(managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlertRule),
@@ -1895,6 +2032,7 @@ export function deserializeIntoManagedTenantAlertRule(managedTenantAlertRule: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertRuleCollectionResponse),
@@ -1905,6 +2043,7 @@ export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedT
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlertRuleDefinition),
@@ -1921,6 +2060,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAle
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantAlertRuleDefinitionCollectionResponse(managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantAlertRuleDefinitionCollectionResponse),
@@ -1931,6 +2071,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinitionCollectionRespons
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantApiNotification(managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantApiNotification),
@@ -1949,6 +2090,7 @@ export function deserializeIntoManagedTenantApiNotification(managedTenantApiNoti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantApiNotificationCollectionResponse(managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantApiNotificationCollectionResponse),
@@ -1959,6 +2101,7 @@ export function deserializeIntoManagedTenantApiNotificationCollectionResponse(ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantEmailNotification(managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantEmailNotification),
@@ -1976,6 +2119,7 @@ export function deserializeIntoManagedTenantEmailNotification(managedTenantEmail
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantEmailNotificationCollectionResponse(managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantEmailNotificationCollectionResponse),
@@ -1986,6 +2130,7 @@ export function deserializeIntoManagedTenantEmailNotificationCollectionResponse(
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantTicketingEndpoint(managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantTicketingEndpoint),
@@ -2002,6 +2147,7 @@ export function deserializeIntoManagedTenantTicketingEndpoint(managedTenantTicke
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagedTenantTicketingEndpointCollectionResponse(managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managedTenantTicketingEndpointCollectionResponse),
@@ -2012,6 +2158,7 @@ export function deserializeIntoManagedTenantTicketingEndpointCollectionResponse(
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementAction(managementAction: Partial<ManagementAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementAction),
@@ -2027,6 +2174,7 @@ export function deserializeIntoManagementAction(managementAction: Partial<Manage
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionCollectionResponse(managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementActionCollectionResponse),
@@ -2037,6 +2185,7 @@ export function deserializeIntoManagementActionCollectionResponse(managementActi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionDeploymentStatus(managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementActionDeploymentStatus.backingStoreEnabled = true; },
@@ -2052,6 +2201,7 @@ export function deserializeIntoManagementActionDeploymentStatus(managementAction
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionInfo(managementActionInfo: Partial<ManagementActionInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementActionInfo.backingStoreEnabled = true; },
@@ -2065,6 +2215,7 @@ export function deserializeIntoManagementActionInfo(managementActionInfo: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionTenantDeploymentStatus(managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementActionTenantDeploymentStatus),
@@ -2077,6 +2228,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatus(management
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementActionTenantDeploymentStatusCollectionResponse(managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementActionTenantDeploymentStatusCollectionResponse),
@@ -2087,6 +2239,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatusCollectionR
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementIntent(managementIntent: Partial<ManagementIntent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementIntent),
@@ -2099,6 +2252,7 @@ export function deserializeIntoManagementIntent(managementIntent: Partial<Manage
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementIntentCollectionResponse(managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementIntentCollectionResponse),
@@ -2109,6 +2263,7 @@ export function deserializeIntoManagementIntentCollectionResponse(managementInte
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementIntentInfo(managementIntentInfo: Partial<ManagementIntentInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementIntentInfo.backingStoreEnabled = true; },
@@ -2122,6 +2277,7 @@ export function deserializeIntoManagementIntentInfo(managementIntentInfo: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplate(managementTemplate: Partial<ManagementTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplate),
@@ -2147,6 +2303,7 @@ export function deserializeIntoManagementTemplate(managementTemplate: Partial<Ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollection(managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateCollection),
@@ -2163,6 +2320,7 @@ export function deserializeIntoManagementTemplateCollection(managementTemplateCo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionCollectionResponse(managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateCollectionCollectionResponse),
@@ -2173,6 +2331,7 @@ export function deserializeIntoManagementTemplateCollectionCollectionResponse(ma
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionResponse(managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateCollectionResponse),
@@ -2183,6 +2342,7 @@ export function deserializeIntoManagementTemplateCollectionResponse(managementTe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionTenantSummary(managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateCollectionTenantSummary),
@@ -2211,6 +2371,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummary(managem
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateCollectionTenantSummaryCollectionResponse(managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateCollectionTenantSummaryCollectionResponse),
@@ -2221,6 +2382,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummaryCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateDetailedInfo(managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { managementTemplateDetailedInfo.backingStoreEnabled = true; },
@@ -2235,6 +2397,7 @@ export function deserializeIntoManagementTemplateDetailedInfo(managementTemplate
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStep(managementTemplateStep: Partial<ManagementTemplateStep> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStep),
@@ -2258,6 +2421,7 @@ export function deserializeIntoManagementTemplateStep(managementTemplateStep: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepCollectionResponse(managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepCollectionResponse),
@@ -2268,6 +2432,7 @@ export function deserializeIntoManagementTemplateStepCollectionResponse(manageme
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepDeployment(managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStepDeployment),
@@ -2285,6 +2450,7 @@ export function deserializeIntoManagementTemplateStepDeployment(managementTempla
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepDeploymentCollectionResponse(managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepDeploymentCollectionResponse),
@@ -2295,6 +2461,7 @@ export function deserializeIntoManagementTemplateStepDeploymentCollectionRespons
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepTenantSummary(managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStepTenantSummary),
@@ -2319,6 +2486,7 @@ export function deserializeIntoManagementTemplateStepTenantSummary(managementTem
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResponse(managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepTenantSummaryCollectionResponse),
@@ -2329,6 +2497,7 @@ export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResp
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepVersion(managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStepVersion),
@@ -2349,6 +2518,7 @@ export function deserializeIntoManagementTemplateStepVersion(managementTemplateS
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoManagementTemplateStepVersionCollectionResponse(managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(managementTemplateStepVersionCollectionResponse),
@@ -2359,6 +2529,7 @@ export function deserializeIntoManagementTemplateStepVersionCollectionResponse(m
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMyRole(myRole: Partial<MyRole> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignments": n => { myRole.assignments = n.getCollectionOfObjectValues<RoleAssignment>(createRoleAssignmentFromDiscriminatorValue); },
@@ -2371,6 +2542,7 @@ export function deserializeIntoMyRole(myRole: Partial<MyRole> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMyRoleCollectionResponse(myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(myRoleCollectionResponse),
@@ -2381,6 +2553,7 @@ export function deserializeIntoMyRoleCollectionResponse(myRoleCollectionResponse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNotificationTarget(notificationTarget: Partial<NotificationTarget> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { notificationTarget.backingStoreEnabled = true; },
@@ -2392,6 +2565,7 @@ export function deserializeIntoNotificationTarget(notificationTarget: Partial<No
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRoleAssignment(roleAssignment: Partial<RoleAssignment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignmentType": n => { roleAssignment.assignmentType = n.getEnumValue<DelegatedPrivilegeStatus>(DelegatedPrivilegeStatusObject); },
@@ -2404,6 +2578,7 @@ export function deserializeIntoRoleAssignment(roleAssignment: Partial<RoleAssign
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRoleDefinition(roleDefinition: Partial<RoleDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { roleDefinition.backingStoreEnabled = true; },
@@ -2417,6 +2592,7 @@ export function deserializeIntoRoleDefinition(roleDefinition: Partial<RoleDefini
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetting(setting: Partial<Setting> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setting.backingStoreEnabled = true; },
@@ -2432,6 +2608,7 @@ export function deserializeIntoSetting(setting: Partial<Setting> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTemplateParameter(templateParameter: Partial<TemplateParameter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { templateParameter.backingStoreEnabled = true; },
@@ -2447,6 +2624,7 @@ export function deserializeIntoTemplateParameter(templateParameter: Partial<Temp
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenant(tenant: Partial<Tenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenant),
@@ -2462,6 +2640,7 @@ export function deserializeIntoTenant(tenant: Partial<Tenant> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantCollectionResponse(tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantCollectionResponse),
@@ -2472,6 +2651,7 @@ export function deserializeIntoTenantCollectionResponse(tenantCollectionResponse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantContactInformation(tenantContactInformation: Partial<TenantContactInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantContactInformation.backingStoreEnabled = true; },
@@ -2487,6 +2667,7 @@ export function deserializeIntoTenantContactInformation(tenantContactInformation
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantContract(tenantContract: Partial<TenantContract> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantContract.backingStoreEnabled = true; },
@@ -2500,6 +2681,7 @@ export function deserializeIntoTenantContract(tenantContract: Partial<TenantCont
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantCustomizedInformation),
@@ -2519,6 +2701,7 @@ export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInfor
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantCustomizedInformationCollectionResponse(tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantCustomizedInformationCollectionResponse),
@@ -2529,6 +2712,7 @@ export function deserializeIntoTenantCustomizedInformationCollectionResponse(ten
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantDetailedInformation(tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantDetailedInformation),
@@ -2548,6 +2732,7 @@ export function deserializeIntoTenantDetailedInformation(tenantDetailedInformati
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantDetailedInformationCollectionResponse(tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantDetailedInformationCollectionResponse),
@@ -2558,6 +2743,7 @@ export function deserializeIntoTenantDetailedInformationCollectionResponse(tenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantGroup),
@@ -2572,6 +2758,7 @@ export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantGroupCollectionResponse(tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantGroupCollectionResponse),
@@ -2582,6 +2769,7 @@ export function deserializeIntoTenantGroupCollectionResponse(tenantGroupCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantInfo(tenantInfo: Partial<TenantInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantInfo.backingStoreEnabled = true; },
@@ -2593,6 +2781,7 @@ export function deserializeIntoTenantInfo(tenantInfo: Partial<TenantInfo> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantStatusInformation(tenantStatusInformation: Partial<TenantStatusInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tenantStatusInformation.backingStoreEnabled = true; },
@@ -2612,6 +2801,7 @@ export function deserializeIntoTenantStatusInformation(tenantStatusInformation: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantTag(tenantTag: Partial<TenantTag> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantTag),
@@ -2629,6 +2819,7 @@ export function deserializeIntoTenantTag(tenantTag: Partial<TenantTag> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantTagCollectionResponse(tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tenantTagCollectionResponse),
@@ -2639,6 +2830,7 @@ export function deserializeIntoTenantTagCollectionResponse(tenantTagCollectionRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsDeviceMalwareState(windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(windowsDeviceMalwareState),
@@ -2664,6 +2856,7 @@ export function deserializeIntoWindowsDeviceMalwareState(windowsDeviceMalwareSta
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsDeviceMalwareStateCollectionResponse(windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(windowsDeviceMalwareStateCollectionResponse),
@@ -2674,6 +2867,7 @@ export function deserializeIntoWindowsDeviceMalwareStateCollectionResponse(windo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsProtectionState(windowsProtectionState: Partial<WindowsProtectionState> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(windowsProtectionState),
@@ -2708,6 +2902,7 @@ export function deserializeIntoWindowsProtectionState(windowsProtectionState: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsProtectionStateCollectionResponse(windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(windowsProtectionStateCollectionResponse),
@@ -2718,6 +2913,7 @@ export function deserializeIntoWindowsProtectionStateCollectionResponse(windowsP
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionId": n => { workloadAction.actionId = n.getStringValue(); },
@@ -2735,6 +2931,7 @@ export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionId": n => { workloadActionDeploymentStatus.actionId = n.getStringValue(); },
@@ -2753,6 +2950,7 @@ export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDepl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWorkloadStatus(workloadStatus: Partial<WorkloadStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { workloadStatus.backingStoreEnabled = true; },
@@ -2767,201 +2965,201 @@ export interface DeviceAppPerformance extends Entity, Parsable {
     /**
      * The appFriendlyName property
      */
-    appFriendlyName?: string;
+    appFriendlyName?: string | null;
     /**
      * The appName property
      */
-    appName?: string;
+    appName?: string | null;
     /**
      * The appPublisher property
      */
-    appPublisher?: string;
+    appPublisher?: string | null;
     /**
      * The appVersion property
      */
-    appVersion?: string;
+    appVersion?: string | null;
     /**
      * The deviceId property
      */
-    deviceId?: string;
+    deviceId?: string | null;
     /**
      * The deviceManufacturer property
      */
-    deviceManufacturer?: string;
+    deviceManufacturer?: string | null;
     /**
      * The deviceModel property
      */
-    deviceModel?: string;
+    deviceModel?: string | null;
     /**
      * The deviceName property
      */
-    deviceName?: string;
+    deviceName?: string | null;
     /**
      * The healthStatus property
      */
-    healthStatus?: string;
+    healthStatus?: string | null;
     /**
      * The isLatestUsedVersion property
      */
-    isLatestUsedVersion?: number;
+    isLatestUsedVersion?: number | null;
     /**
      * The isMostUsedVersion property
      */
-    isMostUsedVersion?: number;
+    isMostUsedVersion?: number | null;
     /**
      * The lastUpdatedDateTime property
      */
-    lastUpdatedDateTime?: Date;
+    lastUpdatedDateTime?: Date | null;
     /**
      * The tenantDisplayName property
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The totalAppCrashCount property
      */
-    totalAppCrashCount?: number;
+    totalAppCrashCount?: number | null;
     /**
      * The totalAppFreezeCount property
      */
-    totalAppFreezeCount?: number;
+    totalAppFreezeCount?: number | null;
 }
 export interface DeviceAppPerformanceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: DeviceAppPerformance[];
+    value?: DeviceAppPerformance[] | null;
 }
 export interface DeviceCompliancePolicySettingStateSummary extends Entity, Parsable {
     /**
      * The number of devices in a conflict state. Optional. Read-only.
      */
-    conflictDeviceCount?: number;
+    conflictDeviceCount?: number | null;
     /**
      * The number of devices in an error state. Optional. Read-only.
      */
-    errorDeviceCount?: number;
+    errorDeviceCount?: number | null;
     /**
      * The number of devices in a failed state. Optional. Read-only.
      */
-    failedDeviceCount?: number;
+    failedDeviceCount?: number | null;
     /**
      * The identifer for the Microsoft Intune account. Required. Read-only.
      */
-    intuneAccountId?: string;
+    intuneAccountId?: string | null;
     /**
      * The identifier for the Intune setting. Optional. Read-only.
      */
-    intuneSettingId?: string;
+    intuneSettingId?: string | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The number of devices in a not applicable state. Optional. Read-only.
      */
-    notApplicableDeviceCount?: number;
+    notApplicableDeviceCount?: number | null;
     /**
      * The number of devices in a pending state. Optional. Read-only.
      */
-    pendingDeviceCount?: number;
+    pendingDeviceCount?: number | null;
     /**
      * The type for the device compliance policy. Optional. Read-only.
      */
-    policyType?: string;
+    policyType?: string | null;
     /**
      * The name for the setting within the device compliance policy. Optional. Read-only.
      */
-    settingName?: string;
+    settingName?: string | null;
     /**
      * The number of devices in a succeeded state. Optional. Read-only.
      */
-    succeededDeviceCount?: number;
+    succeededDeviceCount?: number | null;
     /**
      * The display name for the managed tenant. Required. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface DeviceCompliancePolicySettingStateSummaryCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: DeviceCompliancePolicySettingStateSummary[];
+    value?: DeviceCompliancePolicySettingStateSummary[] | null;
 }
 export interface DeviceHealthStatus extends Entity, Parsable {
     /**
      * The blueScreenCount property
      */
-    blueScreenCount?: number;
+    blueScreenCount?: number | null;
     /**
      * The bootTotalDurationInSeconds property
      */
-    bootTotalDurationInSeconds?: number;
+    bootTotalDurationInSeconds?: number | null;
     /**
      * The deviceId property
      */
-    deviceId?: string;
+    deviceId?: string | null;
     /**
      * The deviceMake property
      */
-    deviceMake?: string;
+    deviceMake?: string | null;
     /**
      * The deviceModel property
      */
-    deviceModel?: string;
+    deviceModel?: string | null;
     /**
      * The deviceName property
      */
-    deviceName?: string;
+    deviceName?: string | null;
     /**
      * The healthStatus property
      */
-    healthStatus?: string;
+    healthStatus?: string | null;
     /**
      * The lastUpdatedDateTime property
      */
-    lastUpdatedDateTime?: Date;
+    lastUpdatedDateTime?: Date | null;
     /**
      * The osVersion property
      */
-    osVersion?: string;
+    osVersion?: string | null;
     /**
      * The primaryDiskType property
      */
-    primaryDiskType?: string;
+    primaryDiskType?: string | null;
     /**
      * The restartCount property
      */
-    restartCount?: number;
+    restartCount?: number | null;
     /**
      * The startupPerformanceScore property
      */
-    startupPerformanceScore?: number;
+    startupPerformanceScore?: number | null;
     /**
      * The tenantDisplayName property
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The topProcesses property
      */
-    topProcesses?: string;
+    topProcesses?: string | null;
 }
 export interface DeviceHealthStatusCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: DeviceHealthStatus[];
+    value?: DeviceHealthStatus[] | null;
 }
 export interface Email extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2971,15 +3169,15 @@ export interface Email extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The emailAddress property
      */
-    emailAddress?: string;
+    emailAddress?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface GraphAPIErrorDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2989,649 +3187,649 @@ export interface GraphAPIErrorDetails extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The code property
      */
-    code?: string;
+    code?: string | null;
     /**
      * The message property
      */
-    message?: string;
+    message?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface ManagedDeviceCompliance extends Entity, Parsable {
     /**
      * Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
      */
-    complianceStatus?: string;
+    complianceStatus?: string | null;
     /**
      * Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
      */
-    deviceType?: string;
+    deviceType?: string | null;
     /**
      * The date and time when the grace period will expire. Optional. Read-only.
      */
-    inGracePeriodUntilDateTime?: Date;
+    inGracePeriodUntilDateTime?: Date | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
      */
-    lastSyncDateTime?: Date;
+    lastSyncDateTime?: Date | null;
     /**
      * The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
      */
-    managedDeviceId?: string;
+    managedDeviceId?: string | null;
     /**
      * The display name for the managed device. Optional. Read-only.
      */
-    managedDeviceName?: string;
+    managedDeviceName?: string | null;
     /**
      * The manufacture for the device. Optional. Read-only.
      */
-    manufacturer?: string;
+    manufacturer?: string | null;
     /**
      * The model for the device. Optional. Read-only.
      */
-    model?: string;
+    model?: string | null;
     /**
      * The description of the operating system for the managed device. Optional. Read-only.
      */
-    osDescription?: string;
+    osDescription?: string | null;
     /**
      * The version of the operating system for the managed device. Optional. Read-only.
      */
-    osVersion?: string;
+    osVersion?: string | null;
     /**
      * The type of owner for the managed device. Optional. Read-only.
      */
-    ownerType?: string;
+    ownerType?: string | null;
     /**
      * The display name for the managed tenant. Optional. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface ManagedDeviceComplianceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedDeviceCompliance[];
+    value?: ManagedDeviceCompliance[] | null;
 }
 export interface ManagedDeviceComplianceTrend extends Entity, Parsable {
     /**
      * The number of devices with a compliant status. Required. Read-only.
      */
-    compliantDeviceCount?: number;
+    compliantDeviceCount?: number | null;
     /**
      * The number of devices manged by Configuration Manager. Required. Read-only.
      */
-    configManagerDeviceCount?: number;
+    configManagerDeviceCount?: number | null;
     /**
      * The date and time compliance snapshot was performed. Required. Read-only.
      */
-    countDateTime?: string;
+    countDateTime?: string | null;
     /**
      * The number of devices with an error status. Required. Read-only.
      */
-    errorDeviceCount?: number;
+    errorDeviceCount?: number | null;
     /**
      * The number of devices that are in a grace period status. Required. Read-only.
      */
-    inGracePeriodDeviceCount?: number;
+    inGracePeriodDeviceCount?: number | null;
     /**
      * The number of devices that are in a non-compliant status. Required. Read-only.
      */
-    noncompliantDeviceCount?: number;
+    noncompliantDeviceCount?: number | null;
     /**
      * The display name for the managed tenant. Optional. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The number of devices in an unknown status. Required. Read-only.
      */
-    unknownDeviceCount?: number;
+    unknownDeviceCount?: number | null;
 }
 export interface ManagedDeviceComplianceTrendCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedDeviceComplianceTrend[];
+    value?: ManagedDeviceComplianceTrend[] | null;
 }
 export interface ManagedTenant extends Entity, Parsable {
     /**
      * Aggregate view of device compliance policies across managed tenants.
      */
-    aggregatedPolicyCompliances?: AggregatedPolicyCompliance[];
+    aggregatedPolicyCompliances?: AggregatedPolicyCompliance[] | null;
     /**
      * The appPerformances property
      */
-    appPerformances?: AppPerformance[];
+    appPerformances?: AppPerformance[] | null;
     /**
      * The collection of audit events across managed tenants.
      */
-    auditEvents?: AuditEvent[];
+    auditEvents?: AuditEvent[] | null;
     /**
      * The collection of cloud PC connections across managed tenants.
      */
-    cloudPcConnections?: CloudPcConnection[];
+    cloudPcConnections?: CloudPcConnection[] | null;
     /**
      * The collection of cloud PC devices across managed tenants.
      */
-    cloudPcDevices?: CloudPcDevice[];
+    cloudPcDevices?: CloudPcDevice[] | null;
     /**
      * Overview of cloud PC information across managed tenants.
      */
-    cloudPcsOverview?: CloudPcOverview[];
+    cloudPcsOverview?: CloudPcOverview[] | null;
     /**
      * Aggregate view of conditional access policy coverage across managed tenants.
      */
-    conditionalAccessPolicyCoverages?: ConditionalAccessPolicyCoverage[];
+    conditionalAccessPolicyCoverages?: ConditionalAccessPolicyCoverage[] | null;
     /**
      * Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
      */
-    credentialUserRegistrationsSummaries?: CredentialUserRegistrationsSummary[];
+    credentialUserRegistrationsSummaries?: CredentialUserRegistrationsSummary[] | null;
     /**
      * The deviceAppPerformances property
      */
-    deviceAppPerformances?: DeviceAppPerformance[];
+    deviceAppPerformances?: DeviceAppPerformance[] | null;
     /**
      * Summary information for device compliance policy setting states across managed tenants.
      */
-    deviceCompliancePolicySettingStateSummaries?: DeviceCompliancePolicySettingStateSummary[];
+    deviceCompliancePolicySettingStateSummaries?: DeviceCompliancePolicySettingStateSummary[] | null;
     /**
      * The deviceHealthStatuses property
      */
-    deviceHealthStatuses?: DeviceHealthStatus[];
+    deviceHealthStatuses?: DeviceHealthStatus[] | null;
     /**
      * The collection of compliance for managed devices across managed tenants.
      */
-    managedDeviceCompliances?: ManagedDeviceCompliance[];
+    managedDeviceCompliances?: ManagedDeviceCompliance[] | null;
     /**
      * Trend insights for device compliance across managed tenants.
      */
-    managedDeviceComplianceTrends?: ManagedDeviceComplianceTrend[];
+    managedDeviceComplianceTrends?: ManagedDeviceComplianceTrend[] | null;
     /**
      * The managedTenantAlertLogs property
      */
-    managedTenantAlertLogs?: ManagedTenantAlertLog[];
+    managedTenantAlertLogs?: ManagedTenantAlertLog[] | null;
     /**
      * The managedTenantAlertRuleDefinitions property
      */
-    managedTenantAlertRuleDefinitions?: ManagedTenantAlertRuleDefinition[];
+    managedTenantAlertRuleDefinitions?: ManagedTenantAlertRuleDefinition[] | null;
     /**
      * The managedTenantAlertRules property
      */
-    managedTenantAlertRules?: ManagedTenantAlertRule[];
+    managedTenantAlertRules?: ManagedTenantAlertRule[] | null;
     /**
      * The managedTenantAlerts property
      */
-    managedTenantAlerts?: ManagedTenantAlert[];
+    managedTenantAlerts?: ManagedTenantAlert[] | null;
     /**
      * The managedTenantApiNotifications property
      */
-    managedTenantApiNotifications?: ManagedTenantApiNotification[];
+    managedTenantApiNotifications?: ManagedTenantApiNotification[] | null;
     /**
      * The managedTenantEmailNotifications property
      */
-    managedTenantEmailNotifications?: ManagedTenantEmailNotification[];
+    managedTenantEmailNotifications?: ManagedTenantEmailNotification[] | null;
     /**
      * The managedTenantTicketingEndpoints property
      */
-    managedTenantTicketingEndpoints?: ManagedTenantTicketingEndpoint[];
+    managedTenantTicketingEndpoints?: ManagedTenantTicketingEndpoint[] | null;
     /**
      * The collection of baseline management actions across managed tenants.
      */
-    managementActions?: ManagementAction[];
+    managementActions?: ManagementAction[] | null;
     /**
      * The tenant level status of management actions across managed tenants.
      */
-    managementActionTenantDeploymentStatuses?: ManagementActionTenantDeploymentStatus[];
+    managementActionTenantDeploymentStatuses?: ManagementActionTenantDeploymentStatus[] | null;
     /**
      * The collection of baseline management intents across managed tenants.
      */
-    managementIntents?: ManagementIntent[];
+    managementIntents?: ManagementIntent[] | null;
     /**
      * The managementTemplateCollections property
      */
-    managementTemplateCollections?: ManagementTemplateCollection[];
+    managementTemplateCollections?: ManagementTemplateCollection[] | null;
     /**
      * The managementTemplateCollectionTenantSummaries property
      */
-    managementTemplateCollectionTenantSummaries?: ManagementTemplateCollectionTenantSummary[];
+    managementTemplateCollectionTenantSummaries?: ManagementTemplateCollectionTenantSummary[] | null;
     /**
      * The collection of baseline management templates across managed tenants.
      */
-    managementTemplates?: ManagementTemplate[];
+    managementTemplates?: ManagementTemplate[] | null;
     /**
      * The managementTemplateSteps property
      */
-    managementTemplateSteps?: ManagementTemplateStep[];
+    managementTemplateSteps?: ManagementTemplateStep[] | null;
     /**
      * The managementTemplateStepTenantSummaries property
      */
-    managementTemplateStepTenantSummaries?: ManagementTemplateStepTenantSummary[];
+    managementTemplateStepTenantSummaries?: ManagementTemplateStepTenantSummary[] | null;
     /**
      * The managementTemplateStepVersions property
      */
-    managementTemplateStepVersions?: ManagementTemplateStepVersion[];
+    managementTemplateStepVersions?: ManagementTemplateStepVersion[] | null;
     /**
      * The collection of role assignments to a signed-in user for a managed tenant.
      */
-    myRoles?: MyRole[];
+    myRoles?: MyRole[] | null;
     /**
      * The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
      */
-    tenantGroups?: TenantGroup[];
+    tenantGroups?: TenantGroup[] | null;
     /**
      * The collection of tenants associated with the managing entity.
      */
-    tenants?: Tenant[];
+    tenants?: Tenant[] | null;
     /**
      * The collection of tenant level customized information across managed tenants.
      */
-    tenantsCustomizedInformation?: TenantCustomizedInformation[];
+    tenantsCustomizedInformation?: TenantCustomizedInformation[] | null;
     /**
      * The collection tenant level detailed information across managed tenants.
      */
-    tenantsDetailedInformation?: TenantDetailedInformation[];
+    tenantsDetailedInformation?: TenantDetailedInformation[] | null;
     /**
      * The collection of tenant tags across managed tenants.
      */
-    tenantTags?: TenantTag[];
+    tenantTags?: TenantTag[] | null;
     /**
      * The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
      */
-    windowsDeviceMalwareStates?: WindowsDeviceMalwareState[];
+    windowsDeviceMalwareStates?: WindowsDeviceMalwareState[] | null;
     /**
      * The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
      */
-    windowsProtectionStates?: WindowsProtectionState[];
+    windowsProtectionStates?: WindowsProtectionState[] | null;
 }
 export interface ManagedTenantAlert extends Entity, Parsable {
     /**
      * The alertData property
      */
-    alertData?: AlertData;
+    alertData?: AlertData | null;
     /**
      * The alertDataReferenceStrings property
      */
-    alertDataReferenceStrings?: AlertDataReferenceString[];
+    alertDataReferenceStrings?: AlertDataReferenceString[] | null;
     /**
      * The alertLogs property
      */
-    alertLogs?: ManagedTenantAlertLog[];
+    alertLogs?: ManagedTenantAlertLog[] | null;
     /**
      * The alertRule property
      */
-    alertRule?: ManagedTenantAlertRule;
+    alertRule?: ManagedTenantAlertRule | null;
     /**
      * The alertRuleDisplayName property
      */
-    alertRuleDisplayName?: string;
+    alertRuleDisplayName?: string | null;
     /**
      * The apiNotifications property
      */
-    apiNotifications?: ManagedTenantApiNotification[];
+    apiNotifications?: ManagedTenantApiNotification[] | null;
     /**
      * The assignedToUserId property
      */
-    assignedToUserId?: string;
+    assignedToUserId?: string | null;
     /**
      * The correlationCount property
      */
-    correlationCount?: number;
+    correlationCount?: number | null;
     /**
      * The correlationId property
      */
-    correlationId?: string;
+    correlationId?: string | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The emailNotifications property
      */
-    emailNotifications?: ManagedTenantEmailNotification[];
+    emailNotifications?: ManagedTenantEmailNotification[] | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The message property
      */
-    message?: string;
+    message?: string | null;
     /**
      * The severity property
      */
-    severity?: AlertSeverity;
+    severity?: AlertSeverity | null;
     /**
      * The status property
      */
-    status?: AlertStatus;
+    status?: AlertStatus | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The title property
      */
-    title?: string;
+    title?: string | null;
 }
 export interface ManagedTenantAlertCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedTenantAlert[];
+    value?: ManagedTenantAlert[] | null;
 }
 export interface ManagedTenantAlertLog extends Entity, Parsable {
     /**
      * The alert property
      */
-    alert?: ManagedTenantAlert;
+    alert?: ManagedTenantAlert | null;
     /**
      * The content property
      */
-    content?: AlertLogContent;
+    content?: AlertLogContent | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
 }
 export interface ManagedTenantAlertLogCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedTenantAlertLog[];
+    value?: ManagedTenantAlertLog[] | null;
 }
 export interface ManagedTenantAlertRule extends Entity, Parsable {
     /**
      * The alertDisplayName property
      */
-    alertDisplayName?: string;
+    alertDisplayName?: string | null;
     /**
      * The alerts property
      */
-    alerts?: ManagedTenantAlert[];
+    alerts?: ManagedTenantAlert[] | null;
     /**
      * The alertTTL property
      */
-    alertTTL?: number;
+    alertTTL?: number | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The description property
      */
-    description?: string;
+    description?: string | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The lastRunDateTime property
      */
-    lastRunDateTime?: Date;
+    lastRunDateTime?: Date | null;
     /**
      * The notificationFinalDestinations property
      */
-    notificationFinalDestinations?: NotificationDestination[];
+    notificationFinalDestinations?: NotificationDestination[] | null;
     /**
      * The ruleDefinition property
      */
-    ruleDefinition?: ManagedTenantAlertRuleDefinition;
+    ruleDefinition?: ManagedTenantAlertRuleDefinition | null;
     /**
      * The severity property
      */
-    severity?: AlertSeverity;
+    severity?: AlertSeverity | null;
     /**
      * The targets property
      */
-    targets?: NotificationTarget[];
+    targets?: NotificationTarget[] | null;
     /**
      * The tenantIds property
      */
-    tenantIds?: TenantInfo[];
+    tenantIds?: TenantInfo[] | null;
 }
 export interface ManagedTenantAlertRuleCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedTenantAlertRule[];
+    value?: ManagedTenantAlertRule[] | null;
 }
 export interface ManagedTenantAlertRuleDefinition extends Entity, Parsable {
     /**
      * The alertRules property
      */
-    alertRules?: ManagedTenantAlertRule[];
+    alertRules?: ManagedTenantAlertRule[] | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The definitionTemplate property
      */
-    definitionTemplate?: AlertRuleDefinitionTemplate;
+    definitionTemplate?: AlertRuleDefinitionTemplate | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
 }
 export interface ManagedTenantAlertRuleDefinitionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedTenantAlertRuleDefinition[];
+    value?: ManagedTenantAlertRuleDefinition[] | null;
 }
 export interface ManagedTenantApiNotification extends Entity, Parsable {
     /**
      * The alert property
      */
-    alert?: ManagedTenantAlert;
+    alert?: ManagedTenantAlert | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The isAcknowledged property
      */
-    isAcknowledged?: boolean;
+    isAcknowledged?: boolean | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The message property
      */
-    message?: string;
+    message?: string | null;
     /**
      * The title property
      */
-    title?: string;
+    title?: string | null;
     /**
      * The userId property
      */
-    userId?: string;
+    userId?: string | null;
 }
 export interface ManagedTenantApiNotificationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedTenantApiNotification[];
+    value?: ManagedTenantApiNotification[] | null;
 }
 export interface ManagedTenantEmailNotification extends Entity, Parsable {
     /**
      * The alert property
      */
-    alert?: ManagedTenantAlert;
+    alert?: ManagedTenantAlert | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The emailAddresses property
      */
-    emailAddresses?: Email[];
+    emailAddresses?: Email[] | null;
     /**
      * The emailBody property
      */
-    emailBody?: string;
+    emailBody?: string | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The subject property
      */
-    subject?: string;
+    subject?: string | null;
 }
 export interface ManagedTenantEmailNotificationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedTenantEmailNotification[];
+    value?: ManagedTenantEmailNotification[] | null;
 }
 export interface ManagedTenantTicketingEndpoint extends Entity, Parsable {
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The emailAddress property
      */
-    emailAddress?: string;
+    emailAddress?: string | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The phoneNumber property
      */
-    phoneNumber?: string;
+    phoneNumber?: string | null;
 }
 export interface ManagedTenantTicketingEndpointCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagedTenantTicketingEndpoint[];
+    value?: ManagedTenantTicketingEndpoint[] | null;
 }
 export interface ManagementAction extends Entity, Parsable {
     /**
      * The category property
      */
-    category?: ManagementCategory;
+    category?: ManagementCategory | null;
     /**
      * The description for the management action. Optional. Read-only.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name for the management action. Optional. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The reference for the management template used to generate the management action. Required. Read-only.
      */
-    referenceTemplateId?: string;
+    referenceTemplateId?: string | null;
     /**
      * The referenceTemplateVersion property
      */
-    referenceTemplateVersion?: number;
+    referenceTemplateVersion?: number | null;
     /**
      * The collection of workload actions associated with the management action. Required. Read-only.
      */
-    workloadActions?: WorkloadAction[];
+    workloadActions?: WorkloadAction[] | null;
 }
 export interface ManagementActionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementAction[];
+    value?: ManagementAction[] | null;
 }
 export interface ManagementActionDeploymentStatus extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3641,31 +3839,31 @@ export interface ManagementActionDeploymentStatus extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The identifier for the management action. Required. Read-only.
      */
-    managementActionId?: string;
+    managementActionId?: string | null;
     /**
      * The management template identifier that was used to generate the management action. Required. Read-only.
      */
-    managementTemplateId?: string;
+    managementTemplateId?: string | null;
     /**
      * The managementTemplateVersion property
      */
-    managementTemplateVersion?: number;
+    managementTemplateVersion?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The status property
      */
-    status?: ManagementActionStatus;
+    status?: ManagementActionStatus | null;
     /**
      * The collection of workload action deployment statues for the given management action. Optional.
      */
-    workloadActionDeploymentStatuses?: WorkloadActionDeploymentStatus[];
+    workloadActionDeploymentStatuses?: WorkloadActionDeploymentStatus[] | null;
 }
 export interface ManagementActionInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3675,65 +3873,65 @@ export interface ManagementActionInfo extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The identifier for the management action. Required. Read-only.
      */
-    managementActionId?: string;
+    managementActionId?: string | null;
     /**
      * The identifier for the management template. Required. Read-only.
      */
-    managementTemplateId?: string;
+    managementTemplateId?: string | null;
     /**
      * The managementTemplateVersion property
      */
-    managementTemplateVersion?: number;
+    managementTemplateVersion?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export type ManagementActionStatus = (typeof ManagementActionStatusObject)[keyof typeof ManagementActionStatusObject];
 export interface ManagementActionTenantDeploymentStatus extends Entity, Parsable {
     /**
      * The collection of deployment status for each instance of a management action. Optional.
      */
-    statuses?: ManagementActionDeploymentStatus[];
+    statuses?: ManagementActionDeploymentStatus[] | null;
     /**
      * The identifier for the tenant group that is associated with the management action. Required. Read-only.
      */
-    tenantGroupId?: string;
+    tenantGroupId?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface ManagementActionTenantDeploymentStatusCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementActionTenantDeploymentStatus[];
+    value?: ManagementActionTenantDeploymentStatus[] | null;
 }
 export type ManagementCategory = (typeof ManagementCategoryObject)[keyof typeof ManagementCategoryObject];
 export interface ManagementIntent extends Entity, Parsable {
     /**
      * The display name for the management intent. Optional. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * A flag indicating whether the management intent is global. Required. Read-only.
      */
-    isGlobal?: boolean;
+    isGlobal?: boolean | null;
     /**
      * The collection of management templates associated with the management intent. Optional. Read-only.
      */
-    managementTemplates?: ManagementTemplateDetailedInfo[];
+    managementTemplates?: ManagementTemplateDetailedInfo[] | null;
 }
 export interface ManagementIntentCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementIntent[];
+    value?: ManagementIntent[] | null;
 }
 export interface ManagementIntentInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3743,23 +3941,23 @@ export interface ManagementIntentInfo extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The display name for the management intent. Optional. Read-only.
      */
-    managementIntentDisplayName?: string;
+    managementIntentDisplayName?: string | null;
     /**
      * The identifier for the management intent. Required. Read-only.
      */
-    managementIntentId?: string;
+    managementIntentId?: string | null;
     /**
      * The collection of management template information associated with the management intent. Optional. Read-only.
      */
-    managementTemplates?: ManagementTemplateDetailedInfo[];
+    managementTemplates?: ManagementTemplateDetailedInfo[] | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export type ManagementParameterValueType = (typeof ManagementParameterValueTypeObject)[keyof typeof ManagementParameterValueTypeObject];
 export type ManagementProvider = (typeof ManagementProviderObject)[keyof typeof ManagementProviderObject];
@@ -3767,193 +3965,193 @@ export interface ManagementTemplate extends Entity, Parsable {
     /**
      * The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
      */
-    category?: ManagementCategory;
+    category?: ManagementCategory | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The description for the management template. Optional. Read-only.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name for the management template. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The informationLinks property
      */
-    informationLinks?: ActionUrl[];
+    informationLinks?: ActionUrl[] | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The managementTemplateCollections property
      */
-    managementTemplateCollections?: ManagementTemplateCollection[];
+    managementTemplateCollections?: ManagementTemplateCollection[] | null;
     /**
      * The managementTemplateSteps property
      */
-    managementTemplateSteps?: ManagementTemplateStep[];
+    managementTemplateSteps?: ManagementTemplateStep[] | null;
     /**
      * The collection of parameters used by the management template. Optional. Read-only.
      */
-    parameters?: TemplateParameter[];
+    parameters?: TemplateParameter[] | null;
     /**
      * The priority property
      */
-    priority?: number;
+    priority?: number | null;
     /**
      * The provider property
      */
-    provider?: ManagementProvider;
+    provider?: ManagementProvider | null;
     /**
      * The userImpact property
      */
-    userImpact?: string;
+    userImpact?: string | null;
     /**
      * The version property
      */
-    version?: number;
+    version?: number | null;
     /**
      * The collection of workload actions associated with the management template. Optional. Read-only.
      */
-    workloadActions?: WorkloadAction[];
+    workloadActions?: WorkloadAction[] | null;
 }
 export interface ManagementTemplateCollection extends Entity, Parsable {
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The description property
      */
-    description?: string;
+    description?: string | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The managementTemplates property
      */
-    managementTemplates?: ManagementTemplate[];
+    managementTemplates?: ManagementTemplate[] | null;
 }
 export interface ManagementTemplateCollectionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementTemplateCollection[];
+    value?: ManagementTemplateCollection[] | null;
 }
 export interface ManagementTemplateCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementTemplate[];
+    value?: ManagementTemplate[] | null;
 }
 export interface ManagementTemplateCollectionTenantSummary extends Entity, Parsable {
     /**
      * The completeStepsCount property
      */
-    completeStepsCount?: number;
+    completeStepsCount?: number | null;
     /**
      * The completeUsersCount property
      */
-    completeUsersCount?: number;
+    completeUsersCount?: number | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The dismissedStepsCount property
      */
-    dismissedStepsCount?: number;
+    dismissedStepsCount?: number | null;
     /**
      * The excludedUsersCount property
      */
-    excludedUsersCount?: number;
+    excludedUsersCount?: number | null;
     /**
      * The excludedUsersDistinctCount property
      */
-    excludedUsersDistinctCount?: number;
+    excludedUsersDistinctCount?: number | null;
     /**
      * The incompleteStepsCount property
      */
-    incompleteStepsCount?: number;
+    incompleteStepsCount?: number | null;
     /**
      * The incompleteUsersCount property
      */
-    incompleteUsersCount?: number;
+    incompleteUsersCount?: number | null;
     /**
      * The ineligibleStepsCount property
      */
-    ineligibleStepsCount?: number;
+    ineligibleStepsCount?: number | null;
     /**
      * The isComplete property
      */
-    isComplete?: boolean;
+    isComplete?: boolean | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The managementTemplateCollectionDisplayName property
      */
-    managementTemplateCollectionDisplayName?: string;
+    managementTemplateCollectionDisplayName?: string | null;
     /**
      * The managementTemplateCollectionId property
      */
-    managementTemplateCollectionId?: string;
+    managementTemplateCollectionId?: string | null;
     /**
      * The regressedStepsCount property
      */
-    regressedStepsCount?: number;
+    regressedStepsCount?: number | null;
     /**
      * The regressedUsersCount property
      */
-    regressedUsersCount?: number;
+    regressedUsersCount?: number | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The unlicensedUsersCount property
      */
-    unlicensedUsersCount?: number;
+    unlicensedUsersCount?: number | null;
 }
 export interface ManagementTemplateCollectionTenantSummaryCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementTemplateCollectionTenantSummary[];
+    value?: ManagementTemplateCollectionTenantSummary[] | null;
 }
 export type ManagementTemplateDeploymentStatus = (typeof ManagementTemplateDeploymentStatusObject)[keyof typeof ManagementTemplateDeploymentStatusObject];
 export interface ManagementTemplateDetailedInfo extends AdditionalDataHolder, BackedModel, Parsable {
@@ -3964,251 +4162,251 @@ export interface ManagementTemplateDetailedInfo extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The category property
      */
-    category?: ManagementCategory;
+    category?: ManagementCategory | null;
     /**
      * The display name for the management template. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The unique identifier for the management template. Required. Read-only.
      */
-    managementTemplateId?: string;
+    managementTemplateId?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The version property
      */
-    version?: number;
+    version?: number | null;
 }
 export interface ManagementTemplateStep extends Entity, Parsable {
     /**
      * The acceptedVersion property
      */
-    acceptedVersion?: ManagementTemplateStepVersion;
+    acceptedVersion?: ManagementTemplateStepVersion | null;
     /**
      * The category property
      */
-    category?: ManagementCategory;
+    category?: ManagementCategory | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The description property
      */
-    description?: string;
+    description?: string | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The informationLinks property
      */
-    informationLinks?: ActionUrl[];
+    informationLinks?: ActionUrl[] | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The managementTemplate property
      */
-    managementTemplate?: ManagementTemplate;
+    managementTemplate?: ManagementTemplate | null;
     /**
      * The portalLink property
      */
-    portalLink?: ActionUrl;
+    portalLink?: ActionUrl | null;
     /**
      * The priority property
      */
-    priority?: number;
+    priority?: number | null;
     /**
      * The userImpact property
      */
-    userImpact?: string;
+    userImpact?: string | null;
     /**
      * The versions property
      */
-    versions?: ManagementTemplateStepVersion[];
+    versions?: ManagementTemplateStepVersion[] | null;
 }
 export interface ManagementTemplateStepCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementTemplateStep[];
+    value?: ManagementTemplateStep[] | null;
 }
 export interface ManagementTemplateStepDeployment extends Entity, Parsable {
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The error property
      */
-    errorEscaped?: GraphAPIErrorDetails;
+    errorEscaped?: GraphAPIErrorDetails | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The status property
      */
-    status?: ManagementTemplateDeploymentStatus;
+    status?: ManagementTemplateDeploymentStatus | null;
     /**
      * The templateStepVersion property
      */
-    templateStepVersion?: ManagementTemplateStepVersion;
+    templateStepVersion?: ManagementTemplateStepVersion | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface ManagementTemplateStepDeploymentCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementTemplateStepDeployment[];
+    value?: ManagementTemplateStepDeployment[] | null;
 }
 export interface ManagementTemplateStepTenantSummary extends Entity, Parsable {
     /**
      * The assignedTenantsCount property
      */
-    assignedTenantsCount?: number;
+    assignedTenantsCount?: number | null;
     /**
      * The compliantTenantsCount property
      */
-    compliantTenantsCount?: number;
+    compliantTenantsCount?: number | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The dismissedTenantsCount property
      */
-    dismissedTenantsCount?: number;
+    dismissedTenantsCount?: number | null;
     /**
      * The ineligibleTenantsCount property
      */
-    ineligibleTenantsCount?: number;
+    ineligibleTenantsCount?: number | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The managementTemplateCollectionDisplayName property
      */
-    managementTemplateCollectionDisplayName?: string;
+    managementTemplateCollectionDisplayName?: string | null;
     /**
      * The managementTemplateCollectionId property
      */
-    managementTemplateCollectionId?: string;
+    managementTemplateCollectionId?: string | null;
     /**
      * The managementTemplateDisplayName property
      */
-    managementTemplateDisplayName?: string;
+    managementTemplateDisplayName?: string | null;
     /**
      * The managementTemplateId property
      */
-    managementTemplateId?: string;
+    managementTemplateId?: string | null;
     /**
      * The managementTemplateStepDisplayName property
      */
-    managementTemplateStepDisplayName?: string;
+    managementTemplateStepDisplayName?: string | null;
     /**
      * The managementTemplateStepId property
      */
-    managementTemplateStepId?: string;
+    managementTemplateStepId?: string | null;
     /**
      * The notCompliantTenantsCount property
      */
-    notCompliantTenantsCount?: number;
+    notCompliantTenantsCount?: number | null;
 }
 export interface ManagementTemplateStepTenantSummaryCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementTemplateStepTenantSummary[];
+    value?: ManagementTemplateStepTenantSummary[] | null;
 }
 export interface ManagementTemplateStepVersion extends Entity, Parsable {
     /**
      * The acceptedFor property
      */
-    acceptedFor?: ManagementTemplateStep;
+    acceptedFor?: ManagementTemplateStep | null;
     /**
      * The contentMarkdown property
      */
-    contentMarkdown?: string;
+    contentMarkdown?: string | null;
     /**
      * The createdByUserId property
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The createdDateTime property
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The deployments property
      */
-    deployments?: ManagementTemplateStepDeployment[];
+    deployments?: ManagementTemplateStepDeployment[] | null;
     /**
      * The lastActionByUserId property
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The lastActionDateTime property
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The templateStep property
      */
-    templateStep?: ManagementTemplateStep;
+    templateStep?: ManagementTemplateStep | null;
     /**
      * The version property
      */
-    version?: number;
+    version?: number | null;
     /**
      * The versionInformation property
      */
-    versionInformation?: string;
+    versionInformation?: string | null;
 }
 export interface ManagementTemplateStepVersionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ManagementTemplateStepVersion[];
+    value?: ManagementTemplateStepVersion[] | null;
 }
 export interface MyRole extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4218,25 +4416,25 @@ export interface MyRole extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * A collection of role assignments for the managed tenant.
      */
-    assignments?: RoleAssignment[];
+    assignments?: RoleAssignment[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface MyRoleCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: MyRole[];
+    value?: MyRole[] | null;
 }
 export type NotificationDestination = (typeof NotificationDestinationObject)[keyof typeof NotificationDestinationObject];
 export interface NotificationTarget extends AdditionalDataHolder, BackedModel, Parsable {
@@ -4247,15 +4445,15 @@ export interface NotificationTarget extends AdditionalDataHolder, BackedModel, P
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface RoleAssignment extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4265,19 +4463,19 @@ export interface RoleAssignment extends AdditionalDataHolder, BackedModel, Parsa
     /**
      * The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
      */
-    assignmentType?: DelegatedPrivilegeStatus;
+    assignmentType?: DelegatedPrivilegeStatus | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The collection of roles assigned.
      */
-    roles?: RoleDefinition[];
+    roles?: RoleDefinition[] | null;
 }
 export interface RoleDefinition extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4287,1299 +4485,1596 @@ export interface RoleDefinition extends AdditionalDataHolder, BackedModel, Parsa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The description for the role.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name for the role assignment.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The unique identifier for the template.
      */
-    templateId?: string;
+    templateId?: string | null;
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAggregatedPolicyCompliance(writer: SerializationWriter, aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined = {}) : void {
-    serializeEntity(writer, aggregatedPolicyCompliance)
-    writer.writeStringValue("compliancePolicyId", aggregatedPolicyCompliance.compliancePolicyId);
-    writer.writeStringValue("compliancePolicyName", aggregatedPolicyCompliance.compliancePolicyName);
-    writer.writeStringValue("compliancePolicyPlatform", aggregatedPolicyCompliance.compliancePolicyPlatform);
-    writer.writeStringValue("compliancePolicyType", aggregatedPolicyCompliance.compliancePolicyType);
-    writer.writeDateValue("lastRefreshedDateTime", aggregatedPolicyCompliance.lastRefreshedDateTime);
-    writer.writeNumberValue("numberOfCompliantDevices", aggregatedPolicyCompliance.numberOfCompliantDevices);
-    writer.writeNumberValue("numberOfErrorDevices", aggregatedPolicyCompliance.numberOfErrorDevices);
-    writer.writeNumberValue("numberOfNonCompliantDevices", aggregatedPolicyCompliance.numberOfNonCompliantDevices);
-    writer.writeDateValue("policyModifiedDateTime", aggregatedPolicyCompliance.policyModifiedDateTime);
-    writer.writeStringValue("tenantDisplayName", aggregatedPolicyCompliance.tenantDisplayName);
-    writer.writeStringValue("tenantId", aggregatedPolicyCompliance.tenantId);
+// @ts-ignore
+export function serializeAggregatedPolicyCompliance(writer: SerializationWriter, aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined | null = {}) : void {
+    if (aggregatedPolicyCompliance) {
+        serializeEntity(writer, aggregatedPolicyCompliance)
+        writer.writeStringValue("compliancePolicyId", aggregatedPolicyCompliance.compliancePolicyId);
+        writer.writeStringValue("compliancePolicyName", aggregatedPolicyCompliance.compliancePolicyName);
+        writer.writeStringValue("compliancePolicyPlatform", aggregatedPolicyCompliance.compliancePolicyPlatform);
+        writer.writeStringValue("compliancePolicyType", aggregatedPolicyCompliance.compliancePolicyType);
+        writer.writeDateValue("lastRefreshedDateTime", aggregatedPolicyCompliance.lastRefreshedDateTime);
+        writer.writeNumberValue("numberOfCompliantDevices", aggregatedPolicyCompliance.numberOfCompliantDevices);
+        writer.writeNumberValue("numberOfErrorDevices", aggregatedPolicyCompliance.numberOfErrorDevices);
+        writer.writeNumberValue("numberOfNonCompliantDevices", aggregatedPolicyCompliance.numberOfNonCompliantDevices);
+        writer.writeDateValue("policyModifiedDateTime", aggregatedPolicyCompliance.policyModifiedDateTime);
+        writer.writeStringValue("tenantDisplayName", aggregatedPolicyCompliance.tenantDisplayName);
+        writer.writeStringValue("tenantId", aggregatedPolicyCompliance.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAggregatedPolicyComplianceCollectionResponse(writer: SerializationWriter, aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, aggregatedPolicyComplianceCollectionResponse)
-    writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("value", aggregatedPolicyComplianceCollectionResponse.value, serializeAggregatedPolicyCompliance);
+// @ts-ignore
+export function serializeAggregatedPolicyComplianceCollectionResponse(writer: SerializationWriter, aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined | null = {}) : void {
+    if (aggregatedPolicyComplianceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, aggregatedPolicyComplianceCollectionResponse)
+        writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("value", aggregatedPolicyComplianceCollectionResponse.value, serializeAggregatedPolicyCompliance);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertData(writer: SerializationWriter, alertData: Partial<AlertData> | undefined = {}) : void {
-    writer.writeStringValue("displayName", alertData.displayName);
-    writer.writeStringValue("@odata.type", alertData.odataType);
-    writer.writeAdditionalData(alertData.additionalData);
+// @ts-ignore
+export function serializeAlertData(writer: SerializationWriter, alertData: Partial<AlertData> | undefined | null = {}) : void {
+    if (alertData) {
+        writer.writeStringValue("displayName", alertData.displayName);
+        writer.writeStringValue("@odata.type", alertData.odataType);
+        writer.writeAdditionalData(alertData.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertDataReferenceString(writer: SerializationWriter, alertDataReferenceString: Partial<AlertDataReferenceString> | undefined = {}) : void {
-    writer.writeStringValue("displayName", alertDataReferenceString.displayName);
-    writer.writeStringValue("@odata.type", alertDataReferenceString.odataType);
-    writer.writeAdditionalData(alertDataReferenceString.additionalData);
+// @ts-ignore
+export function serializeAlertDataReferenceString(writer: SerializationWriter, alertDataReferenceString: Partial<AlertDataReferenceString> | undefined | null = {}) : void {
+    if (alertDataReferenceString) {
+        writer.writeStringValue("displayName", alertDataReferenceString.displayName);
+        writer.writeStringValue("@odata.type", alertDataReferenceString.odataType);
+        writer.writeAdditionalData(alertDataReferenceString.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertLogContent(writer: SerializationWriter, alertLogContent: Partial<AlertLogContent> | undefined = {}) : void {
-    writer.writeStringValue("displayName", alertLogContent.displayName);
-    writer.writeStringValue("@odata.type", alertLogContent.odataType);
-    writer.writeAdditionalData(alertLogContent.additionalData);
+// @ts-ignore
+export function serializeAlertLogContent(writer: SerializationWriter, alertLogContent: Partial<AlertLogContent> | undefined | null = {}) : void {
+    if (alertLogContent) {
+        writer.writeStringValue("displayName", alertLogContent.displayName);
+        writer.writeStringValue("@odata.type", alertLogContent.odataType);
+        writer.writeAdditionalData(alertLogContent.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertRuleDefinitionTemplate(writer: SerializationWriter, alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined = {}) : void {
-    writer.writeEnumValue<AlertSeverity>("defaultSeverity", alertRuleDefinitionTemplate.defaultSeverity);
-    writer.writeStringValue("@odata.type", alertRuleDefinitionTemplate.odataType);
-    writer.writeAdditionalData(alertRuleDefinitionTemplate.additionalData);
+// @ts-ignore
+export function serializeAlertRuleDefinitionTemplate(writer: SerializationWriter, alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined | null = {}) : void {
+    if (alertRuleDefinitionTemplate) {
+        writer.writeEnumValue<AlertSeverity>("defaultSeverity", alertRuleDefinitionTemplate.defaultSeverity);
+        writer.writeStringValue("@odata.type", alertRuleDefinitionTemplate.odataType);
+        writer.writeAdditionalData(alertRuleDefinitionTemplate.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAppPerformance(writer: SerializationWriter, appPerformance: Partial<AppPerformance> | undefined = {}) : void {
-    serializeEntity(writer, appPerformance)
-    writer.writeStringValue("appFriendlyName", appPerformance.appFriendlyName);
-    writer.writeStringValue("appName", appPerformance.appName);
-    writer.writeStringValue("appPublisher", appPerformance.appPublisher);
-    writer.writeDateValue("lastUpdatedDateTime", appPerformance.lastUpdatedDateTime);
-    writer.writeNumberValue("meanTimeToFailureInMinutes", appPerformance.meanTimeToFailureInMinutes);
-    writer.writeStringValue("tenantDisplayName", appPerformance.tenantDisplayName);
-    writer.writeStringValue("tenantId", appPerformance.tenantId);
-    writer.writeNumberValue("totalActiveDeviceCount", appPerformance.totalActiveDeviceCount);
-    writer.writeNumberValue("totalAppCrashCount", appPerformance.totalAppCrashCount);
-    writer.writeNumberValue("totalAppFreezeCount", appPerformance.totalAppFreezeCount);
+// @ts-ignore
+export function serializeAppPerformance(writer: SerializationWriter, appPerformance: Partial<AppPerformance> | undefined | null = {}) : void {
+    if (appPerformance) {
+        serializeEntity(writer, appPerformance)
+        writer.writeStringValue("appFriendlyName", appPerformance.appFriendlyName);
+        writer.writeStringValue("appName", appPerformance.appName);
+        writer.writeStringValue("appPublisher", appPerformance.appPublisher);
+        writer.writeDateValue("lastUpdatedDateTime", appPerformance.lastUpdatedDateTime);
+        writer.writeNumberValue("meanTimeToFailureInMinutes", appPerformance.meanTimeToFailureInMinutes);
+        writer.writeStringValue("tenantDisplayName", appPerformance.tenantDisplayName);
+        writer.writeStringValue("tenantId", appPerformance.tenantId);
+        writer.writeNumberValue("totalActiveDeviceCount", appPerformance.totalActiveDeviceCount);
+        writer.writeNumberValue("totalAppCrashCount", appPerformance.totalAppCrashCount);
+        writer.writeNumberValue("totalAppFreezeCount", appPerformance.totalAppFreezeCount);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAppPerformanceCollectionResponse(writer: SerializationWriter, appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, appPerformanceCollectionResponse)
-    writer.writeCollectionOfObjectValues<AppPerformance>("value", appPerformanceCollectionResponse.value, serializeAppPerformance);
+// @ts-ignore
+export function serializeAppPerformanceCollectionResponse(writer: SerializationWriter, appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined | null = {}) : void {
+    if (appPerformanceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, appPerformanceCollectionResponse)
+        writer.writeCollectionOfObjectValues<AppPerformance>("value", appPerformanceCollectionResponse.value, serializeAppPerformance);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAuditEvent(writer: SerializationWriter, auditEvent: Partial<AuditEvent> | undefined = {}) : void {
-    serializeEntity(writer, auditEvent)
-    writer.writeStringValue("activity", auditEvent.activity);
-    writer.writeDateValue("activityDateTime", auditEvent.activityDateTime);
-    writer.writeStringValue("activityId", auditEvent.activityId);
-    writer.writeStringValue("category", auditEvent.category);
-    writer.writeStringValue("httpVerb", auditEvent.httpVerb);
-    writer.writeStringValue("initiatedByAppId", auditEvent.initiatedByAppId);
-    writer.writeStringValue("initiatedByUpn", auditEvent.initiatedByUpn);
-    writer.writeStringValue("initiatedByUserId", auditEvent.initiatedByUserId);
-    writer.writeStringValue("ipAddress", auditEvent.ipAddress);
-    writer.writeStringValue("requestBody", auditEvent.requestBody);
-    writer.writeStringValue("requestUrl", auditEvent.requestUrl);
-    writer.writeStringValue("tenantIds", auditEvent.tenantIds);
-    writer.writeStringValue("tenantNames", auditEvent.tenantNames);
+// @ts-ignore
+export function serializeAuditEvent(writer: SerializationWriter, auditEvent: Partial<AuditEvent> | undefined | null = {}) : void {
+    if (auditEvent) {
+        serializeEntity(writer, auditEvent)
+        writer.writeStringValue("activity", auditEvent.activity);
+        writer.writeDateValue("activityDateTime", auditEvent.activityDateTime);
+        writer.writeStringValue("activityId", auditEvent.activityId);
+        writer.writeStringValue("category", auditEvent.category);
+        writer.writeStringValue("httpVerb", auditEvent.httpVerb);
+        writer.writeStringValue("initiatedByAppId", auditEvent.initiatedByAppId);
+        writer.writeStringValue("initiatedByUpn", auditEvent.initiatedByUpn);
+        writer.writeStringValue("initiatedByUserId", auditEvent.initiatedByUserId);
+        writer.writeStringValue("ipAddress", auditEvent.ipAddress);
+        writer.writeStringValue("requestBody", auditEvent.requestBody);
+        writer.writeStringValue("requestUrl", auditEvent.requestUrl);
+        writer.writeStringValue("tenantIds", auditEvent.tenantIds);
+        writer.writeStringValue("tenantNames", auditEvent.tenantNames);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAuditEventCollectionResponse(writer: SerializationWriter, auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, auditEventCollectionResponse)
-    writer.writeCollectionOfObjectValues<AuditEvent>("value", auditEventCollectionResponse.value, serializeAuditEvent);
+// @ts-ignore
+export function serializeAuditEventCollectionResponse(writer: SerializationWriter, auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined | null = {}) : void {
+    if (auditEventCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, auditEventCollectionResponse)
+        writer.writeCollectionOfObjectValues<AuditEvent>("value", auditEventCollectionResponse.value, serializeAuditEvent);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCloudPcConnection(writer: SerializationWriter, cloudPcConnection: Partial<CloudPcConnection> | undefined = {}) : void {
-    serializeEntity(writer, cloudPcConnection)
-    writer.writeStringValue("displayName", cloudPcConnection.displayName);
-    writer.writeStringValue("healthCheckStatus", cloudPcConnection.healthCheckStatus);
-    writer.writeDateValue("lastRefreshedDateTime", cloudPcConnection.lastRefreshedDateTime);
-    writer.writeStringValue("tenantDisplayName", cloudPcConnection.tenantDisplayName);
-    writer.writeStringValue("tenantId", cloudPcConnection.tenantId);
+// @ts-ignore
+export function serializeCloudPcConnection(writer: SerializationWriter, cloudPcConnection: Partial<CloudPcConnection> | undefined | null = {}) : void {
+    if (cloudPcConnection) {
+        serializeEntity(writer, cloudPcConnection)
+        writer.writeStringValue("displayName", cloudPcConnection.displayName);
+        writer.writeStringValue("healthCheckStatus", cloudPcConnection.healthCheckStatus);
+        writer.writeDateValue("lastRefreshedDateTime", cloudPcConnection.lastRefreshedDateTime);
+        writer.writeStringValue("tenantDisplayName", cloudPcConnection.tenantDisplayName);
+        writer.writeStringValue("tenantId", cloudPcConnection.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCloudPcConnectionCollectionResponse(writer: SerializationWriter, cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, cloudPcConnectionCollectionResponse)
-    writer.writeCollectionOfObjectValues<CloudPcConnection>("value", cloudPcConnectionCollectionResponse.value, serializeCloudPcConnection);
+// @ts-ignore
+export function serializeCloudPcConnectionCollectionResponse(writer: SerializationWriter, cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined | null = {}) : void {
+    if (cloudPcConnectionCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, cloudPcConnectionCollectionResponse)
+        writer.writeCollectionOfObjectValues<CloudPcConnection>("value", cloudPcConnectionCollectionResponse.value, serializeCloudPcConnection);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCloudPcDevice(writer: SerializationWriter, cloudPcDevice: Partial<CloudPcDevice> | undefined = {}) : void {
-    serializeEntity(writer, cloudPcDevice)
-    writer.writeStringValue("cloudPcStatus", cloudPcDevice.cloudPcStatus);
-    writer.writeStringValue("deviceSpecification", cloudPcDevice.deviceSpecification);
-    writer.writeStringValue("displayName", cloudPcDevice.displayName);
-    writer.writeDateValue("lastRefreshedDateTime", cloudPcDevice.lastRefreshedDateTime);
-    writer.writeStringValue("managedDeviceId", cloudPcDevice.managedDeviceId);
-    writer.writeStringValue("managedDeviceName", cloudPcDevice.managedDeviceName);
-    writer.writeStringValue("provisioningPolicyId", cloudPcDevice.provisioningPolicyId);
-    writer.writeStringValue("servicePlanName", cloudPcDevice.servicePlanName);
-    writer.writeStringValue("servicePlanType", cloudPcDevice.servicePlanType);
-    writer.writeStringValue("tenantDisplayName", cloudPcDevice.tenantDisplayName);
-    writer.writeStringValue("tenantId", cloudPcDevice.tenantId);
-    writer.writeStringValue("userPrincipalName", cloudPcDevice.userPrincipalName);
+// @ts-ignore
+export function serializeCloudPcDevice(writer: SerializationWriter, cloudPcDevice: Partial<CloudPcDevice> | undefined | null = {}) : void {
+    if (cloudPcDevice) {
+        serializeEntity(writer, cloudPcDevice)
+        writer.writeStringValue("cloudPcStatus", cloudPcDevice.cloudPcStatus);
+        writer.writeStringValue("deviceSpecification", cloudPcDevice.deviceSpecification);
+        writer.writeStringValue("displayName", cloudPcDevice.displayName);
+        writer.writeDateValue("lastRefreshedDateTime", cloudPcDevice.lastRefreshedDateTime);
+        writer.writeStringValue("managedDeviceId", cloudPcDevice.managedDeviceId);
+        writer.writeStringValue("managedDeviceName", cloudPcDevice.managedDeviceName);
+        writer.writeStringValue("provisioningPolicyId", cloudPcDevice.provisioningPolicyId);
+        writer.writeStringValue("servicePlanName", cloudPcDevice.servicePlanName);
+        writer.writeStringValue("servicePlanType", cloudPcDevice.servicePlanType);
+        writer.writeStringValue("tenantDisplayName", cloudPcDevice.tenantDisplayName);
+        writer.writeStringValue("tenantId", cloudPcDevice.tenantId);
+        writer.writeStringValue("userPrincipalName", cloudPcDevice.userPrincipalName);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCloudPcDeviceCollectionResponse(writer: SerializationWriter, cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, cloudPcDeviceCollectionResponse)
-    writer.writeCollectionOfObjectValues<CloudPcDevice>("value", cloudPcDeviceCollectionResponse.value, serializeCloudPcDevice);
+// @ts-ignore
+export function serializeCloudPcDeviceCollectionResponse(writer: SerializationWriter, cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined | null = {}) : void {
+    if (cloudPcDeviceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, cloudPcDeviceCollectionResponse)
+        writer.writeCollectionOfObjectValues<CloudPcDevice>("value", cloudPcDeviceCollectionResponse.value, serializeCloudPcDevice);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCloudPcOverview(writer: SerializationWriter, cloudPcOverview: Partial<CloudPcOverview> | undefined = {}) : void {
-    serializeEntity(writer, cloudPcOverview)
-    writer.writeNumberValue("frontlineLicensesCount", cloudPcOverview.frontlineLicensesCount);
-    writer.writeDateValue("lastRefreshedDateTime", cloudPcOverview.lastRefreshedDateTime);
-    writer.writeNumberValue("numberOfCloudPcConnectionStatusFailed", cloudPcOverview.numberOfCloudPcConnectionStatusFailed);
-    writer.writeNumberValue("numberOfCloudPcConnectionStatusPassed", cloudPcOverview.numberOfCloudPcConnectionStatusPassed);
-    writer.writeNumberValue("numberOfCloudPcConnectionStatusPending", cloudPcOverview.numberOfCloudPcConnectionStatusPending);
-    writer.writeNumberValue("numberOfCloudPcConnectionStatusRunning", cloudPcOverview.numberOfCloudPcConnectionStatusRunning);
-    writer.writeNumberValue("numberOfCloudPcConnectionStatusUnkownFutureValue", cloudPcOverview.numberOfCloudPcConnectionStatusUnkownFutureValue);
-    writer.writeNumberValue("numberOfCloudPcStatusDeprovisioning", cloudPcOverview.numberOfCloudPcStatusDeprovisioning);
-    writer.writeNumberValue("numberOfCloudPcStatusFailed", cloudPcOverview.numberOfCloudPcStatusFailed);
-    writer.writeNumberValue("numberOfCloudPcStatusInGracePeriod", cloudPcOverview.numberOfCloudPcStatusInGracePeriod);
-    writer.writeNumberValue("numberOfCloudPcStatusNotProvisioned", cloudPcOverview.numberOfCloudPcStatusNotProvisioned);
-    writer.writeNumberValue("numberOfCloudPcStatusProvisioned", cloudPcOverview.numberOfCloudPcStatusProvisioned);
-    writer.writeNumberValue("numberOfCloudPcStatusProvisioning", cloudPcOverview.numberOfCloudPcStatusProvisioning);
-    writer.writeNumberValue("numberOfCloudPcStatusUnknown", cloudPcOverview.numberOfCloudPcStatusUnknown);
-    writer.writeNumberValue("numberOfCloudPcStatusUpgrading", cloudPcOverview.numberOfCloudPcStatusUpgrading);
-    writer.writeStringValue("tenantDisplayName", cloudPcOverview.tenantDisplayName);
-    writer.writeStringValue("tenantId", cloudPcOverview.tenantId);
-    writer.writeNumberValue("totalBusinessLicenses", cloudPcOverview.totalBusinessLicenses);
-    writer.writeNumberValue("totalCloudPcConnectionStatus", cloudPcOverview.totalCloudPcConnectionStatus);
-    writer.writeNumberValue("totalCloudPcStatus", cloudPcOverview.totalCloudPcStatus);
-    writer.writeNumberValue("totalEnterpriseLicenses", cloudPcOverview.totalEnterpriseLicenses);
+// @ts-ignore
+export function serializeCloudPcOverview(writer: SerializationWriter, cloudPcOverview: Partial<CloudPcOverview> | undefined | null = {}) : void {
+    if (cloudPcOverview) {
+        serializeEntity(writer, cloudPcOverview)
+        writer.writeNumberValue("frontlineLicensesCount", cloudPcOverview.frontlineLicensesCount);
+        writer.writeDateValue("lastRefreshedDateTime", cloudPcOverview.lastRefreshedDateTime);
+        writer.writeNumberValue("numberOfCloudPcConnectionStatusFailed", cloudPcOverview.numberOfCloudPcConnectionStatusFailed);
+        writer.writeNumberValue("numberOfCloudPcConnectionStatusPassed", cloudPcOverview.numberOfCloudPcConnectionStatusPassed);
+        writer.writeNumberValue("numberOfCloudPcConnectionStatusPending", cloudPcOverview.numberOfCloudPcConnectionStatusPending);
+        writer.writeNumberValue("numberOfCloudPcConnectionStatusRunning", cloudPcOverview.numberOfCloudPcConnectionStatusRunning);
+        writer.writeNumberValue("numberOfCloudPcConnectionStatusUnkownFutureValue", cloudPcOverview.numberOfCloudPcConnectionStatusUnkownFutureValue);
+        writer.writeNumberValue("numberOfCloudPcStatusDeprovisioning", cloudPcOverview.numberOfCloudPcStatusDeprovisioning);
+        writer.writeNumberValue("numberOfCloudPcStatusFailed", cloudPcOverview.numberOfCloudPcStatusFailed);
+        writer.writeNumberValue("numberOfCloudPcStatusInGracePeriod", cloudPcOverview.numberOfCloudPcStatusInGracePeriod);
+        writer.writeNumberValue("numberOfCloudPcStatusNotProvisioned", cloudPcOverview.numberOfCloudPcStatusNotProvisioned);
+        writer.writeNumberValue("numberOfCloudPcStatusProvisioned", cloudPcOverview.numberOfCloudPcStatusProvisioned);
+        writer.writeNumberValue("numberOfCloudPcStatusProvisioning", cloudPcOverview.numberOfCloudPcStatusProvisioning);
+        writer.writeNumberValue("numberOfCloudPcStatusUnknown", cloudPcOverview.numberOfCloudPcStatusUnknown);
+        writer.writeNumberValue("numberOfCloudPcStatusUpgrading", cloudPcOverview.numberOfCloudPcStatusUpgrading);
+        writer.writeStringValue("tenantDisplayName", cloudPcOverview.tenantDisplayName);
+        writer.writeStringValue("tenantId", cloudPcOverview.tenantId);
+        writer.writeNumberValue("totalBusinessLicenses", cloudPcOverview.totalBusinessLicenses);
+        writer.writeNumberValue("totalCloudPcConnectionStatus", cloudPcOverview.totalCloudPcConnectionStatus);
+        writer.writeNumberValue("totalCloudPcStatus", cloudPcOverview.totalCloudPcStatus);
+        writer.writeNumberValue("totalEnterpriseLicenses", cloudPcOverview.totalEnterpriseLicenses);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCloudPcOverviewCollectionResponse(writer: SerializationWriter, cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, cloudPcOverviewCollectionResponse)
-    writer.writeCollectionOfObjectValues<CloudPcOverview>("value", cloudPcOverviewCollectionResponse.value, serializeCloudPcOverview);
+// @ts-ignore
+export function serializeCloudPcOverviewCollectionResponse(writer: SerializationWriter, cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined | null = {}) : void {
+    if (cloudPcOverviewCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, cloudPcOverviewCollectionResponse)
+        writer.writeCollectionOfObjectValues<CloudPcOverview>("value", cloudPcOverviewCollectionResponse.value, serializeCloudPcOverview);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConditionalAccessPolicyCoverage(writer: SerializationWriter, conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined = {}) : void {
-    serializeEntity(writer, conditionalAccessPolicyCoverage)
-    writer.writeStringValue("conditionalAccessPolicyState", conditionalAccessPolicyCoverage.conditionalAccessPolicyState);
-    writer.writeDateValue("latestPolicyModifiedDateTime", conditionalAccessPolicyCoverage.latestPolicyModifiedDateTime);
-    writer.writeBooleanValue("requiresDeviceCompliance", conditionalAccessPolicyCoverage.requiresDeviceCompliance);
-    writer.writeStringValue("tenantDisplayName", conditionalAccessPolicyCoverage.tenantDisplayName);
+// @ts-ignore
+export function serializeConditionalAccessPolicyCoverage(writer: SerializationWriter, conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined | null = {}) : void {
+    if (conditionalAccessPolicyCoverage) {
+        serializeEntity(writer, conditionalAccessPolicyCoverage)
+        writer.writeStringValue("conditionalAccessPolicyState", conditionalAccessPolicyCoverage.conditionalAccessPolicyState);
+        writer.writeDateValue("latestPolicyModifiedDateTime", conditionalAccessPolicyCoverage.latestPolicyModifiedDateTime);
+        writer.writeBooleanValue("requiresDeviceCompliance", conditionalAccessPolicyCoverage.requiresDeviceCompliance);
+        writer.writeStringValue("tenantDisplayName", conditionalAccessPolicyCoverage.tenantDisplayName);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConditionalAccessPolicyCoverageCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCoverageCollectionResponse)
-    writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("value", conditionalAccessPolicyCoverageCollectionResponse.value, serializeConditionalAccessPolicyCoverage);
+// @ts-ignore
+export function serializeConditionalAccessPolicyCoverageCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined | null = {}) : void {
+    if (conditionalAccessPolicyCoverageCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCoverageCollectionResponse)
+        writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("value", conditionalAccessPolicyCoverageCollectionResponse.value, serializeConditionalAccessPolicyCoverage);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCredentialUserRegistrationsSummary(writer: SerializationWriter, credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined = {}) : void {
-    serializeEntity(writer, credentialUserRegistrationsSummary)
-    writer.writeDateValue("lastRefreshedDateTime", credentialUserRegistrationsSummary.lastRefreshedDateTime);
-    writer.writeNumberValue("mfaAndSsprCapableUserCount", credentialUserRegistrationsSummary.mfaAndSsprCapableUserCount);
-    writer.writeStringValue("mfaConditionalAccessPolicyState", credentialUserRegistrationsSummary.mfaConditionalAccessPolicyState);
-    writer.writeNumberValue("mfaExcludedUserCount", credentialUserRegistrationsSummary.mfaExcludedUserCount);
-    writer.writeNumberValue("mfaRegisteredUserCount", credentialUserRegistrationsSummary.mfaRegisteredUserCount);
-    writer.writeBooleanValue("securityDefaultsEnabled", credentialUserRegistrationsSummary.securityDefaultsEnabled);
-    writer.writeNumberValue("ssprEnabledUserCount", credentialUserRegistrationsSummary.ssprEnabledUserCount);
-    writer.writeNumberValue("ssprRegisteredUserCount", credentialUserRegistrationsSummary.ssprRegisteredUserCount);
-    writer.writeStringValue("tenantDisplayName", credentialUserRegistrationsSummary.tenantDisplayName);
-    writer.writeStringValue("tenantId", credentialUserRegistrationsSummary.tenantId);
-    writer.writeStringValue("tenantLicenseType", credentialUserRegistrationsSummary.tenantLicenseType);
-    writer.writeNumberValue("totalUserCount", credentialUserRegistrationsSummary.totalUserCount);
+// @ts-ignore
+export function serializeCredentialUserRegistrationsSummary(writer: SerializationWriter, credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined | null = {}) : void {
+    if (credentialUserRegistrationsSummary) {
+        serializeEntity(writer, credentialUserRegistrationsSummary)
+        writer.writeDateValue("lastRefreshedDateTime", credentialUserRegistrationsSummary.lastRefreshedDateTime);
+        writer.writeNumberValue("mfaAndSsprCapableUserCount", credentialUserRegistrationsSummary.mfaAndSsprCapableUserCount);
+        writer.writeStringValue("mfaConditionalAccessPolicyState", credentialUserRegistrationsSummary.mfaConditionalAccessPolicyState);
+        writer.writeNumberValue("mfaExcludedUserCount", credentialUserRegistrationsSummary.mfaExcludedUserCount);
+        writer.writeNumberValue("mfaRegisteredUserCount", credentialUserRegistrationsSummary.mfaRegisteredUserCount);
+        writer.writeBooleanValue("securityDefaultsEnabled", credentialUserRegistrationsSummary.securityDefaultsEnabled);
+        writer.writeNumberValue("ssprEnabledUserCount", credentialUserRegistrationsSummary.ssprEnabledUserCount);
+        writer.writeNumberValue("ssprRegisteredUserCount", credentialUserRegistrationsSummary.ssprRegisteredUserCount);
+        writer.writeStringValue("tenantDisplayName", credentialUserRegistrationsSummary.tenantDisplayName);
+        writer.writeStringValue("tenantId", credentialUserRegistrationsSummary.tenantId);
+        writer.writeStringValue("tenantLicenseType", credentialUserRegistrationsSummary.tenantLicenseType);
+        writer.writeNumberValue("totalUserCount", credentialUserRegistrationsSummary.totalUserCount);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCredentialUserRegistrationsSummaryCollectionResponse(writer: SerializationWriter, credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, credentialUserRegistrationsSummaryCollectionResponse)
-    writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("value", credentialUserRegistrationsSummaryCollectionResponse.value, serializeCredentialUserRegistrationsSummary);
+// @ts-ignore
+export function serializeCredentialUserRegistrationsSummaryCollectionResponse(writer: SerializationWriter, credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined | null = {}) : void {
+    if (credentialUserRegistrationsSummaryCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, credentialUserRegistrationsSummaryCollectionResponse)
+        writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("value", credentialUserRegistrationsSummaryCollectionResponse.value, serializeCredentialUserRegistrationsSummary);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceAppPerformance(writer: SerializationWriter, deviceAppPerformance: Partial<DeviceAppPerformance> | undefined = {}) : void {
-    serializeEntity(writer, deviceAppPerformance)
-    writer.writeStringValue("appFriendlyName", deviceAppPerformance.appFriendlyName);
-    writer.writeStringValue("appName", deviceAppPerformance.appName);
-    writer.writeStringValue("appPublisher", deviceAppPerformance.appPublisher);
-    writer.writeStringValue("appVersion", deviceAppPerformance.appVersion);
-    writer.writeStringValue("deviceId", deviceAppPerformance.deviceId);
-    writer.writeStringValue("deviceManufacturer", deviceAppPerformance.deviceManufacturer);
-    writer.writeStringValue("deviceModel", deviceAppPerformance.deviceModel);
-    writer.writeStringValue("deviceName", deviceAppPerformance.deviceName);
-    writer.writeStringValue("healthStatus", deviceAppPerformance.healthStatus);
-    writer.writeNumberValue("isLatestUsedVersion", deviceAppPerformance.isLatestUsedVersion);
-    writer.writeNumberValue("isMostUsedVersion", deviceAppPerformance.isMostUsedVersion);
-    writer.writeDateValue("lastUpdatedDateTime", deviceAppPerformance.lastUpdatedDateTime);
-    writer.writeStringValue("tenantDisplayName", deviceAppPerformance.tenantDisplayName);
-    writer.writeStringValue("tenantId", deviceAppPerformance.tenantId);
-    writer.writeNumberValue("totalAppCrashCount", deviceAppPerformance.totalAppCrashCount);
-    writer.writeNumberValue("totalAppFreezeCount", deviceAppPerformance.totalAppFreezeCount);
+// @ts-ignore
+export function serializeDeviceAppPerformance(writer: SerializationWriter, deviceAppPerformance: Partial<DeviceAppPerformance> | undefined | null = {}) : void {
+    if (deviceAppPerformance) {
+        serializeEntity(writer, deviceAppPerformance)
+        writer.writeStringValue("appFriendlyName", deviceAppPerformance.appFriendlyName);
+        writer.writeStringValue("appName", deviceAppPerformance.appName);
+        writer.writeStringValue("appPublisher", deviceAppPerformance.appPublisher);
+        writer.writeStringValue("appVersion", deviceAppPerformance.appVersion);
+        writer.writeStringValue("deviceId", deviceAppPerformance.deviceId);
+        writer.writeStringValue("deviceManufacturer", deviceAppPerformance.deviceManufacturer);
+        writer.writeStringValue("deviceModel", deviceAppPerformance.deviceModel);
+        writer.writeStringValue("deviceName", deviceAppPerformance.deviceName);
+        writer.writeStringValue("healthStatus", deviceAppPerformance.healthStatus);
+        writer.writeNumberValue("isLatestUsedVersion", deviceAppPerformance.isLatestUsedVersion);
+        writer.writeNumberValue("isMostUsedVersion", deviceAppPerformance.isMostUsedVersion);
+        writer.writeDateValue("lastUpdatedDateTime", deviceAppPerformance.lastUpdatedDateTime);
+        writer.writeStringValue("tenantDisplayName", deviceAppPerformance.tenantDisplayName);
+        writer.writeStringValue("tenantId", deviceAppPerformance.tenantId);
+        writer.writeNumberValue("totalAppCrashCount", deviceAppPerformance.totalAppCrashCount);
+        writer.writeNumberValue("totalAppFreezeCount", deviceAppPerformance.totalAppFreezeCount);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceAppPerformanceCollectionResponse(writer: SerializationWriter, deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, deviceAppPerformanceCollectionResponse)
-    writer.writeCollectionOfObjectValues<DeviceAppPerformance>("value", deviceAppPerformanceCollectionResponse.value, serializeDeviceAppPerformance);
+// @ts-ignore
+export function serializeDeviceAppPerformanceCollectionResponse(writer: SerializationWriter, deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined | null = {}) : void {
+    if (deviceAppPerformanceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, deviceAppPerformanceCollectionResponse)
+        writer.writeCollectionOfObjectValues<DeviceAppPerformance>("value", deviceAppPerformanceCollectionResponse.value, serializeDeviceAppPerformance);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceCompliancePolicySettingStateSummary(writer: SerializationWriter, deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined = {}) : void {
-    serializeEntity(writer, deviceCompliancePolicySettingStateSummary)
-    writer.writeNumberValue("conflictDeviceCount", deviceCompliancePolicySettingStateSummary.conflictDeviceCount);
-    writer.writeNumberValue("errorDeviceCount", deviceCompliancePolicySettingStateSummary.errorDeviceCount);
-    writer.writeNumberValue("failedDeviceCount", deviceCompliancePolicySettingStateSummary.failedDeviceCount);
-    writer.writeStringValue("intuneAccountId", deviceCompliancePolicySettingStateSummary.intuneAccountId);
-    writer.writeStringValue("intuneSettingId", deviceCompliancePolicySettingStateSummary.intuneSettingId);
-    writer.writeDateValue("lastRefreshedDateTime", deviceCompliancePolicySettingStateSummary.lastRefreshedDateTime);
-    writer.writeNumberValue("notApplicableDeviceCount", deviceCompliancePolicySettingStateSummary.notApplicableDeviceCount);
-    writer.writeNumberValue("pendingDeviceCount", deviceCompliancePolicySettingStateSummary.pendingDeviceCount);
-    writer.writeStringValue("policyType", deviceCompliancePolicySettingStateSummary.policyType);
-    writer.writeStringValue("settingName", deviceCompliancePolicySettingStateSummary.settingName);
-    writer.writeNumberValue("succeededDeviceCount", deviceCompliancePolicySettingStateSummary.succeededDeviceCount);
-    writer.writeStringValue("tenantDisplayName", deviceCompliancePolicySettingStateSummary.tenantDisplayName);
-    writer.writeStringValue("tenantId", deviceCompliancePolicySettingStateSummary.tenantId);
+// @ts-ignore
+export function serializeDeviceCompliancePolicySettingStateSummary(writer: SerializationWriter, deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined | null = {}) : void {
+    if (deviceCompliancePolicySettingStateSummary) {
+        serializeEntity(writer, deviceCompliancePolicySettingStateSummary)
+        writer.writeNumberValue("conflictDeviceCount", deviceCompliancePolicySettingStateSummary.conflictDeviceCount);
+        writer.writeNumberValue("errorDeviceCount", deviceCompliancePolicySettingStateSummary.errorDeviceCount);
+        writer.writeNumberValue("failedDeviceCount", deviceCompliancePolicySettingStateSummary.failedDeviceCount);
+        writer.writeStringValue("intuneAccountId", deviceCompliancePolicySettingStateSummary.intuneAccountId);
+        writer.writeStringValue("intuneSettingId", deviceCompliancePolicySettingStateSummary.intuneSettingId);
+        writer.writeDateValue("lastRefreshedDateTime", deviceCompliancePolicySettingStateSummary.lastRefreshedDateTime);
+        writer.writeNumberValue("notApplicableDeviceCount", deviceCompliancePolicySettingStateSummary.notApplicableDeviceCount);
+        writer.writeNumberValue("pendingDeviceCount", deviceCompliancePolicySettingStateSummary.pendingDeviceCount);
+        writer.writeStringValue("policyType", deviceCompliancePolicySettingStateSummary.policyType);
+        writer.writeStringValue("settingName", deviceCompliancePolicySettingStateSummary.settingName);
+        writer.writeNumberValue("succeededDeviceCount", deviceCompliancePolicySettingStateSummary.succeededDeviceCount);
+        writer.writeStringValue("tenantDisplayName", deviceCompliancePolicySettingStateSummary.tenantDisplayName);
+        writer.writeStringValue("tenantId", deviceCompliancePolicySettingStateSummary.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceCompliancePolicySettingStateSummaryCollectionResponse(writer: SerializationWriter, deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, deviceCompliancePolicySettingStateSummaryCollectionResponse)
-    writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("value", deviceCompliancePolicySettingStateSummaryCollectionResponse.value, serializeDeviceCompliancePolicySettingStateSummary);
+// @ts-ignore
+export function serializeDeviceCompliancePolicySettingStateSummaryCollectionResponse(writer: SerializationWriter, deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined | null = {}) : void {
+    if (deviceCompliancePolicySettingStateSummaryCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, deviceCompliancePolicySettingStateSummaryCollectionResponse)
+        writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("value", deviceCompliancePolicySettingStateSummaryCollectionResponse.value, serializeDeviceCompliancePolicySettingStateSummary);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceHealthStatus(writer: SerializationWriter, deviceHealthStatus: Partial<DeviceHealthStatus> | undefined = {}) : void {
-    serializeEntity(writer, deviceHealthStatus)
-    writer.writeNumberValue("blueScreenCount", deviceHealthStatus.blueScreenCount);
-    writer.writeNumberValue("bootTotalDurationInSeconds", deviceHealthStatus.bootTotalDurationInSeconds);
-    writer.writeStringValue("deviceId", deviceHealthStatus.deviceId);
-    writer.writeStringValue("deviceMake", deviceHealthStatus.deviceMake);
-    writer.writeStringValue("deviceModel", deviceHealthStatus.deviceModel);
-    writer.writeStringValue("deviceName", deviceHealthStatus.deviceName);
-    writer.writeStringValue("healthStatus", deviceHealthStatus.healthStatus);
-    writer.writeDateValue("lastUpdatedDateTime", deviceHealthStatus.lastUpdatedDateTime);
-    writer.writeStringValue("osVersion", deviceHealthStatus.osVersion);
-    writer.writeStringValue("primaryDiskType", deviceHealthStatus.primaryDiskType);
-    writer.writeNumberValue("restartCount", deviceHealthStatus.restartCount);
-    writer.writeNumberValue("startupPerformanceScore", deviceHealthStatus.startupPerformanceScore);
-    writer.writeStringValue("tenantDisplayName", deviceHealthStatus.tenantDisplayName);
-    writer.writeStringValue("tenantId", deviceHealthStatus.tenantId);
-    writer.writeStringValue("topProcesses", deviceHealthStatus.topProcesses);
+// @ts-ignore
+export function serializeDeviceHealthStatus(writer: SerializationWriter, deviceHealthStatus: Partial<DeviceHealthStatus> | undefined | null = {}) : void {
+    if (deviceHealthStatus) {
+        serializeEntity(writer, deviceHealthStatus)
+        writer.writeNumberValue("blueScreenCount", deviceHealthStatus.blueScreenCount);
+        writer.writeNumberValue("bootTotalDurationInSeconds", deviceHealthStatus.bootTotalDurationInSeconds);
+        writer.writeStringValue("deviceId", deviceHealthStatus.deviceId);
+        writer.writeStringValue("deviceMake", deviceHealthStatus.deviceMake);
+        writer.writeStringValue("deviceModel", deviceHealthStatus.deviceModel);
+        writer.writeStringValue("deviceName", deviceHealthStatus.deviceName);
+        writer.writeStringValue("healthStatus", deviceHealthStatus.healthStatus);
+        writer.writeDateValue("lastUpdatedDateTime", deviceHealthStatus.lastUpdatedDateTime);
+        writer.writeStringValue("osVersion", deviceHealthStatus.osVersion);
+        writer.writeStringValue("primaryDiskType", deviceHealthStatus.primaryDiskType);
+        writer.writeNumberValue("restartCount", deviceHealthStatus.restartCount);
+        writer.writeNumberValue("startupPerformanceScore", deviceHealthStatus.startupPerformanceScore);
+        writer.writeStringValue("tenantDisplayName", deviceHealthStatus.tenantDisplayName);
+        writer.writeStringValue("tenantId", deviceHealthStatus.tenantId);
+        writer.writeStringValue("topProcesses", deviceHealthStatus.topProcesses);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceHealthStatusCollectionResponse(writer: SerializationWriter, deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, deviceHealthStatusCollectionResponse)
-    writer.writeCollectionOfObjectValues<DeviceHealthStatus>("value", deviceHealthStatusCollectionResponse.value, serializeDeviceHealthStatus);
+// @ts-ignore
+export function serializeDeviceHealthStatusCollectionResponse(writer: SerializationWriter, deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined | null = {}) : void {
+    if (deviceHealthStatusCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, deviceHealthStatusCollectionResponse)
+        writer.writeCollectionOfObjectValues<DeviceHealthStatus>("value", deviceHealthStatusCollectionResponse.value, serializeDeviceHealthStatus);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEmail(writer: SerializationWriter, email: Partial<Email> | undefined = {}) : void {
-    writer.writeStringValue("emailAddress", email.emailAddress);
-    writer.writeStringValue("@odata.type", email.odataType);
-    writer.writeAdditionalData(email.additionalData);
+// @ts-ignore
+export function serializeEmail(writer: SerializationWriter, email: Partial<Email> | undefined | null = {}) : void {
+    if (email) {
+        writer.writeStringValue("emailAddress", email.emailAddress);
+        writer.writeStringValue("@odata.type", email.odataType);
+        writer.writeAdditionalData(email.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGraphAPIErrorDetails(writer: SerializationWriter, graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined = {}) : void {
-    writer.writeStringValue("code", graphAPIErrorDetails.code);
-    writer.writeStringValue("message", graphAPIErrorDetails.message);
-    writer.writeStringValue("@odata.type", graphAPIErrorDetails.odataType);
-    writer.writeAdditionalData(graphAPIErrorDetails.additionalData);
+// @ts-ignore
+export function serializeGraphAPIErrorDetails(writer: SerializationWriter, graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined | null = {}) : void {
+    if (graphAPIErrorDetails) {
+        writer.writeStringValue("code", graphAPIErrorDetails.code);
+        writer.writeStringValue("message", graphAPIErrorDetails.message);
+        writer.writeStringValue("@odata.type", graphAPIErrorDetails.odataType);
+        writer.writeAdditionalData(graphAPIErrorDetails.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedDeviceCompliance(writer: SerializationWriter, managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined = {}) : void {
-    serializeEntity(writer, managedDeviceCompliance)
-    writer.writeStringValue("complianceStatus", managedDeviceCompliance.complianceStatus);
-    writer.writeStringValue("deviceType", managedDeviceCompliance.deviceType);
-    writer.writeDateValue("inGracePeriodUntilDateTime", managedDeviceCompliance.inGracePeriodUntilDateTime);
-    writer.writeDateValue("lastRefreshedDateTime", managedDeviceCompliance.lastRefreshedDateTime);
-    writer.writeDateValue("lastSyncDateTime", managedDeviceCompliance.lastSyncDateTime);
-    writer.writeStringValue("managedDeviceId", managedDeviceCompliance.managedDeviceId);
-    writer.writeStringValue("managedDeviceName", managedDeviceCompliance.managedDeviceName);
-    writer.writeStringValue("manufacturer", managedDeviceCompliance.manufacturer);
-    writer.writeStringValue("model", managedDeviceCompliance.model);
-    writer.writeStringValue("osDescription", managedDeviceCompliance.osDescription);
-    writer.writeStringValue("osVersion", managedDeviceCompliance.osVersion);
-    writer.writeStringValue("ownerType", managedDeviceCompliance.ownerType);
-    writer.writeStringValue("tenantDisplayName", managedDeviceCompliance.tenantDisplayName);
-    writer.writeStringValue("tenantId", managedDeviceCompliance.tenantId);
+// @ts-ignore
+export function serializeManagedDeviceCompliance(writer: SerializationWriter, managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined | null = {}) : void {
+    if (managedDeviceCompliance) {
+        serializeEntity(writer, managedDeviceCompliance)
+        writer.writeStringValue("complianceStatus", managedDeviceCompliance.complianceStatus);
+        writer.writeStringValue("deviceType", managedDeviceCompliance.deviceType);
+        writer.writeDateValue("inGracePeriodUntilDateTime", managedDeviceCompliance.inGracePeriodUntilDateTime);
+        writer.writeDateValue("lastRefreshedDateTime", managedDeviceCompliance.lastRefreshedDateTime);
+        writer.writeDateValue("lastSyncDateTime", managedDeviceCompliance.lastSyncDateTime);
+        writer.writeStringValue("managedDeviceId", managedDeviceCompliance.managedDeviceId);
+        writer.writeStringValue("managedDeviceName", managedDeviceCompliance.managedDeviceName);
+        writer.writeStringValue("manufacturer", managedDeviceCompliance.manufacturer);
+        writer.writeStringValue("model", managedDeviceCompliance.model);
+        writer.writeStringValue("osDescription", managedDeviceCompliance.osDescription);
+        writer.writeStringValue("osVersion", managedDeviceCompliance.osVersion);
+        writer.writeStringValue("ownerType", managedDeviceCompliance.ownerType);
+        writer.writeStringValue("tenantDisplayName", managedDeviceCompliance.tenantDisplayName);
+        writer.writeStringValue("tenantId", managedDeviceCompliance.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedDeviceComplianceCollectionResponse(writer: SerializationWriter, managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("value", managedDeviceComplianceCollectionResponse.value, serializeManagedDeviceCompliance);
+// @ts-ignore
+export function serializeManagedDeviceComplianceCollectionResponse(writer: SerializationWriter, managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined | null = {}) : void {
+    if (managedDeviceComplianceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("value", managedDeviceComplianceCollectionResponse.value, serializeManagedDeviceCompliance);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedDeviceComplianceTrend(writer: SerializationWriter, managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined = {}) : void {
-    serializeEntity(writer, managedDeviceComplianceTrend)
-    writer.writeNumberValue("compliantDeviceCount", managedDeviceComplianceTrend.compliantDeviceCount);
-    writer.writeNumberValue("configManagerDeviceCount", managedDeviceComplianceTrend.configManagerDeviceCount);
-    writer.writeStringValue("countDateTime", managedDeviceComplianceTrend.countDateTime);
-    writer.writeNumberValue("errorDeviceCount", managedDeviceComplianceTrend.errorDeviceCount);
-    writer.writeNumberValue("inGracePeriodDeviceCount", managedDeviceComplianceTrend.inGracePeriodDeviceCount);
-    writer.writeNumberValue("noncompliantDeviceCount", managedDeviceComplianceTrend.noncompliantDeviceCount);
-    writer.writeStringValue("tenantDisplayName", managedDeviceComplianceTrend.tenantDisplayName);
-    writer.writeStringValue("tenantId", managedDeviceComplianceTrend.tenantId);
-    writer.writeNumberValue("unknownDeviceCount", managedDeviceComplianceTrend.unknownDeviceCount);
+// @ts-ignore
+export function serializeManagedDeviceComplianceTrend(writer: SerializationWriter, managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined | null = {}) : void {
+    if (managedDeviceComplianceTrend) {
+        serializeEntity(writer, managedDeviceComplianceTrend)
+        writer.writeNumberValue("compliantDeviceCount", managedDeviceComplianceTrend.compliantDeviceCount);
+        writer.writeNumberValue("configManagerDeviceCount", managedDeviceComplianceTrend.configManagerDeviceCount);
+        writer.writeStringValue("countDateTime", managedDeviceComplianceTrend.countDateTime);
+        writer.writeNumberValue("errorDeviceCount", managedDeviceComplianceTrend.errorDeviceCount);
+        writer.writeNumberValue("inGracePeriodDeviceCount", managedDeviceComplianceTrend.inGracePeriodDeviceCount);
+        writer.writeNumberValue("noncompliantDeviceCount", managedDeviceComplianceTrend.noncompliantDeviceCount);
+        writer.writeStringValue("tenantDisplayName", managedDeviceComplianceTrend.tenantDisplayName);
+        writer.writeStringValue("tenantId", managedDeviceComplianceTrend.tenantId);
+        writer.writeNumberValue("unknownDeviceCount", managedDeviceComplianceTrend.unknownDeviceCount);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedDeviceComplianceTrendCollectionResponse(writer: SerializationWriter, managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceTrendCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("value", managedDeviceComplianceTrendCollectionResponse.value, serializeManagedDeviceComplianceTrend);
+// @ts-ignore
+export function serializeManagedDeviceComplianceTrendCollectionResponse(writer: SerializationWriter, managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined | null = {}) : void {
+    if (managedDeviceComplianceTrendCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceTrendCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("value", managedDeviceComplianceTrendCollectionResponse.value, serializeManagedDeviceComplianceTrend);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenant(writer: SerializationWriter, managedTenant: Partial<ManagedTenant> | undefined = {}) : void {
-    serializeEntity(writer, managedTenant)
-    writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("aggregatedPolicyCompliances", managedTenant.aggregatedPolicyCompliances, serializeAggregatedPolicyCompliance);
-    writer.writeCollectionOfObjectValues<AppPerformance>("appPerformances", managedTenant.appPerformances, serializeAppPerformance);
-    writer.writeCollectionOfObjectValues<AuditEvent>("auditEvents", managedTenant.auditEvents, serializeAuditEvent);
-    writer.writeCollectionOfObjectValues<CloudPcConnection>("cloudPcConnections", managedTenant.cloudPcConnections, serializeCloudPcConnection);
-    writer.writeCollectionOfObjectValues<CloudPcDevice>("cloudPcDevices", managedTenant.cloudPcDevices, serializeCloudPcDevice);
-    writer.writeCollectionOfObjectValues<CloudPcOverview>("cloudPcsOverview", managedTenant.cloudPcsOverview, serializeCloudPcOverview);
-    writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("conditionalAccessPolicyCoverages", managedTenant.conditionalAccessPolicyCoverages, serializeConditionalAccessPolicyCoverage);
-    writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("credentialUserRegistrationsSummaries", managedTenant.credentialUserRegistrationsSummaries, serializeCredentialUserRegistrationsSummary);
-    writer.writeCollectionOfObjectValues<DeviceAppPerformance>("deviceAppPerformances", managedTenant.deviceAppPerformances, serializeDeviceAppPerformance);
-    writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("deviceCompliancePolicySettingStateSummaries", managedTenant.deviceCompliancePolicySettingStateSummaries, serializeDeviceCompliancePolicySettingStateSummary);
-    writer.writeCollectionOfObjectValues<DeviceHealthStatus>("deviceHealthStatuses", managedTenant.deviceHealthStatuses, serializeDeviceHealthStatus);
-    writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("managedDeviceCompliances", managedTenant.managedDeviceCompliances, serializeManagedDeviceCompliance);
-    writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("managedDeviceComplianceTrends", managedTenant.managedDeviceComplianceTrends, serializeManagedDeviceComplianceTrend);
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("managedTenantAlertLogs", managedTenant.managedTenantAlertLogs, serializeManagedTenantAlertLog);
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("managedTenantAlertRuleDefinitions", managedTenant.managedTenantAlertRuleDefinitions, serializeManagedTenantAlertRuleDefinition);
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("managedTenantAlertRules", managedTenant.managedTenantAlertRules, serializeManagedTenantAlertRule);
-    writer.writeCollectionOfObjectValues<ManagedTenantAlert>("managedTenantAlerts", managedTenant.managedTenantAlerts, serializeManagedTenantAlert);
-    writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("managedTenantApiNotifications", managedTenant.managedTenantApiNotifications, serializeManagedTenantApiNotification);
-    writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("managedTenantEmailNotifications", managedTenant.managedTenantEmailNotifications, serializeManagedTenantEmailNotification);
-    writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("managedTenantTicketingEndpoints", managedTenant.managedTenantTicketingEndpoints, serializeManagedTenantTicketingEndpoint);
-    writer.writeCollectionOfObjectValues<ManagementAction>("managementActions", managedTenant.managementActions, serializeManagementAction);
-    writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("managementActionTenantDeploymentStatuses", managedTenant.managementActionTenantDeploymentStatuses, serializeManagementActionTenantDeploymentStatus);
-    writer.writeCollectionOfObjectValues<ManagementIntent>("managementIntents", managedTenant.managementIntents, serializeManagementIntent);
-    writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managedTenant.managementTemplateCollections, serializeManagementTemplateCollection);
-    writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("managementTemplateCollectionTenantSummaries", managedTenant.managementTemplateCollectionTenantSummaries, serializeManagementTemplateCollectionTenantSummary);
-    writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managedTenant.managementTemplates, serializeManagementTemplate);
-    writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managedTenant.managementTemplateSteps, serializeManagementTemplateStep);
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("managementTemplateStepTenantSummaries", managedTenant.managementTemplateStepTenantSummaries, serializeManagementTemplateStepTenantSummary);
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("managementTemplateStepVersions", managedTenant.managementTemplateStepVersions, serializeManagementTemplateStepVersion);
-    writer.writeCollectionOfObjectValues<MyRole>("myRoles", managedTenant.myRoles, serializeMyRole);
-    writer.writeCollectionOfObjectValues<TenantGroup>("tenantGroups", managedTenant.tenantGroups, serializeTenantGroup);
-    writer.writeCollectionOfObjectValues<Tenant>("tenants", managedTenant.tenants, serializeTenant);
-    writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("tenantsCustomizedInformation", managedTenant.tenantsCustomizedInformation, serializeTenantCustomizedInformation);
-    writer.writeCollectionOfObjectValues<TenantDetailedInformation>("tenantsDetailedInformation", managedTenant.tenantsDetailedInformation, serializeTenantDetailedInformation);
-    writer.writeCollectionOfObjectValues<TenantTag>("tenantTags", managedTenant.tenantTags, serializeTenantTag);
-    writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("windowsDeviceMalwareStates", managedTenant.windowsDeviceMalwareStates, serializeWindowsDeviceMalwareState);
-    writer.writeCollectionOfObjectValues<WindowsProtectionState>("windowsProtectionStates", managedTenant.windowsProtectionStates, serializeWindowsProtectionState);
+// @ts-ignore
+export function serializeManagedTenant(writer: SerializationWriter, managedTenant: Partial<ManagedTenant> | undefined | null = {}) : void {
+    if (managedTenant) {
+        serializeEntity(writer, managedTenant)
+        writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("aggregatedPolicyCompliances", managedTenant.aggregatedPolicyCompliances, serializeAggregatedPolicyCompliance);
+        writer.writeCollectionOfObjectValues<AppPerformance>("appPerformances", managedTenant.appPerformances, serializeAppPerformance);
+        writer.writeCollectionOfObjectValues<AuditEvent>("auditEvents", managedTenant.auditEvents, serializeAuditEvent);
+        writer.writeCollectionOfObjectValues<CloudPcConnection>("cloudPcConnections", managedTenant.cloudPcConnections, serializeCloudPcConnection);
+        writer.writeCollectionOfObjectValues<CloudPcDevice>("cloudPcDevices", managedTenant.cloudPcDevices, serializeCloudPcDevice);
+        writer.writeCollectionOfObjectValues<CloudPcOverview>("cloudPcsOverview", managedTenant.cloudPcsOverview, serializeCloudPcOverview);
+        writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("conditionalAccessPolicyCoverages", managedTenant.conditionalAccessPolicyCoverages, serializeConditionalAccessPolicyCoverage);
+        writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("credentialUserRegistrationsSummaries", managedTenant.credentialUserRegistrationsSummaries, serializeCredentialUserRegistrationsSummary);
+        writer.writeCollectionOfObjectValues<DeviceAppPerformance>("deviceAppPerformances", managedTenant.deviceAppPerformances, serializeDeviceAppPerformance);
+        writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("deviceCompliancePolicySettingStateSummaries", managedTenant.deviceCompliancePolicySettingStateSummaries, serializeDeviceCompliancePolicySettingStateSummary);
+        writer.writeCollectionOfObjectValues<DeviceHealthStatus>("deviceHealthStatuses", managedTenant.deviceHealthStatuses, serializeDeviceHealthStatus);
+        writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("managedDeviceCompliances", managedTenant.managedDeviceCompliances, serializeManagedDeviceCompliance);
+        writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("managedDeviceComplianceTrends", managedTenant.managedDeviceComplianceTrends, serializeManagedDeviceComplianceTrend);
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("managedTenantAlertLogs", managedTenant.managedTenantAlertLogs, serializeManagedTenantAlertLog);
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("managedTenantAlertRuleDefinitions", managedTenant.managedTenantAlertRuleDefinitions, serializeManagedTenantAlertRuleDefinition);
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("managedTenantAlertRules", managedTenant.managedTenantAlertRules, serializeManagedTenantAlertRule);
+        writer.writeCollectionOfObjectValues<ManagedTenantAlert>("managedTenantAlerts", managedTenant.managedTenantAlerts, serializeManagedTenantAlert);
+        writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("managedTenantApiNotifications", managedTenant.managedTenantApiNotifications, serializeManagedTenantApiNotification);
+        writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("managedTenantEmailNotifications", managedTenant.managedTenantEmailNotifications, serializeManagedTenantEmailNotification);
+        writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("managedTenantTicketingEndpoints", managedTenant.managedTenantTicketingEndpoints, serializeManagedTenantTicketingEndpoint);
+        writer.writeCollectionOfObjectValues<ManagementAction>("managementActions", managedTenant.managementActions, serializeManagementAction);
+        writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("managementActionTenantDeploymentStatuses", managedTenant.managementActionTenantDeploymentStatuses, serializeManagementActionTenantDeploymentStatus);
+        writer.writeCollectionOfObjectValues<ManagementIntent>("managementIntents", managedTenant.managementIntents, serializeManagementIntent);
+        writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managedTenant.managementTemplateCollections, serializeManagementTemplateCollection);
+        writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("managementTemplateCollectionTenantSummaries", managedTenant.managementTemplateCollectionTenantSummaries, serializeManagementTemplateCollectionTenantSummary);
+        writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managedTenant.managementTemplates, serializeManagementTemplate);
+        writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managedTenant.managementTemplateSteps, serializeManagementTemplateStep);
+        writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("managementTemplateStepTenantSummaries", managedTenant.managementTemplateStepTenantSummaries, serializeManagementTemplateStepTenantSummary);
+        writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("managementTemplateStepVersions", managedTenant.managementTemplateStepVersions, serializeManagementTemplateStepVersion);
+        writer.writeCollectionOfObjectValues<MyRole>("myRoles", managedTenant.myRoles, serializeMyRole);
+        writer.writeCollectionOfObjectValues<TenantGroup>("tenantGroups", managedTenant.tenantGroups, serializeTenantGroup);
+        writer.writeCollectionOfObjectValues<Tenant>("tenants", managedTenant.tenants, serializeTenant);
+        writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("tenantsCustomizedInformation", managedTenant.tenantsCustomizedInformation, serializeTenantCustomizedInformation);
+        writer.writeCollectionOfObjectValues<TenantDetailedInformation>("tenantsDetailedInformation", managedTenant.tenantsDetailedInformation, serializeTenantDetailedInformation);
+        writer.writeCollectionOfObjectValues<TenantTag>("tenantTags", managedTenant.tenantTags, serializeTenantTag);
+        writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("windowsDeviceMalwareStates", managedTenant.windowsDeviceMalwareStates, serializeWindowsDeviceMalwareState);
+        writer.writeCollectionOfObjectValues<WindowsProtectionState>("windowsProtectionStates", managedTenant.windowsProtectionStates, serializeWindowsProtectionState);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlert(writer: SerializationWriter, managedTenantAlert: Partial<ManagedTenantAlert> | undefined = {}) : void {
-    serializeEntity(writer, managedTenantAlert)
-    writer.writeObjectValue<AlertData>("alertData", managedTenantAlert.alertData, serializeAlertData);
-    writer.writeCollectionOfObjectValues<AlertDataReferenceString>("alertDataReferenceStrings", managedTenantAlert.alertDataReferenceStrings, serializeAlertDataReferenceString);
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("alertLogs", managedTenantAlert.alertLogs, serializeManagedTenantAlertLog);
-    writer.writeObjectValue<ManagedTenantAlertRule>("alertRule", managedTenantAlert.alertRule, serializeManagedTenantAlertRule);
-    writer.writeStringValue("alertRuleDisplayName", managedTenantAlert.alertRuleDisplayName);
-    writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("apiNotifications", managedTenantAlert.apiNotifications, serializeManagedTenantApiNotification);
-    writer.writeStringValue("assignedToUserId", managedTenantAlert.assignedToUserId);
-    writer.writeNumberValue("correlationCount", managedTenantAlert.correlationCount);
-    writer.writeStringValue("correlationId", managedTenantAlert.correlationId);
-    writer.writeStringValue("createdByUserId", managedTenantAlert.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantAlert.createdDateTime);
-    writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("emailNotifications", managedTenantAlert.emailNotifications, serializeManagedTenantEmailNotification);
-    writer.writeStringValue("lastActionByUserId", managedTenantAlert.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantAlert.lastActionDateTime);
-    writer.writeStringValue("message", managedTenantAlert.message);
-    writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlert.severity);
-    writer.writeEnumValue<AlertStatus>("status", managedTenantAlert.status);
-    writer.writeStringValue("tenantId", managedTenantAlert.tenantId);
-    writer.writeStringValue("title", managedTenantAlert.title);
+// @ts-ignore
+export function serializeManagedTenantAlert(writer: SerializationWriter, managedTenantAlert: Partial<ManagedTenantAlert> | undefined | null = {}) : void {
+    if (managedTenantAlert) {
+        serializeEntity(writer, managedTenantAlert)
+        writer.writeObjectValue<AlertData>("alertData", managedTenantAlert.alertData, serializeAlertData);
+        writer.writeCollectionOfObjectValues<AlertDataReferenceString>("alertDataReferenceStrings", managedTenantAlert.alertDataReferenceStrings, serializeAlertDataReferenceString);
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("alertLogs", managedTenantAlert.alertLogs, serializeManagedTenantAlertLog);
+        writer.writeObjectValue<ManagedTenantAlertRule>("alertRule", managedTenantAlert.alertRule, serializeManagedTenantAlertRule);
+        writer.writeStringValue("alertRuleDisplayName", managedTenantAlert.alertRuleDisplayName);
+        writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("apiNotifications", managedTenantAlert.apiNotifications, serializeManagedTenantApiNotification);
+        writer.writeStringValue("assignedToUserId", managedTenantAlert.assignedToUserId);
+        writer.writeNumberValue("correlationCount", managedTenantAlert.correlationCount);
+        writer.writeStringValue("correlationId", managedTenantAlert.correlationId);
+        writer.writeStringValue("createdByUserId", managedTenantAlert.createdByUserId);
+        writer.writeDateValue("createdDateTime", managedTenantAlert.createdDateTime);
+        writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("emailNotifications", managedTenantAlert.emailNotifications, serializeManagedTenantEmailNotification);
+        writer.writeStringValue("lastActionByUserId", managedTenantAlert.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managedTenantAlert.lastActionDateTime);
+        writer.writeStringValue("message", managedTenantAlert.message);
+        writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlert.severity);
+        writer.writeEnumValue<AlertStatus>("status", managedTenantAlert.status);
+        writer.writeStringValue("tenantId", managedTenantAlert.tenantId);
+        writer.writeStringValue("title", managedTenantAlert.title);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlertCollectionResponse(writer: SerializationWriter, managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedTenantAlert>("value", managedTenantAlertCollectionResponse.value, serializeManagedTenantAlert);
+// @ts-ignore
+export function serializeManagedTenantAlertCollectionResponse(writer: SerializationWriter, managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined | null = {}) : void {
+    if (managedTenantAlertCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedTenantAlert>("value", managedTenantAlertCollectionResponse.value, serializeManagedTenantAlert);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlertLog(writer: SerializationWriter, managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined = {}) : void {
-    serializeEntity(writer, managedTenantAlertLog)
-    writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantAlertLog.alert, serializeManagedTenantAlert);
-    writer.writeObjectValue<AlertLogContent>("content", managedTenantAlertLog.content, serializeAlertLogContent);
-    writer.writeStringValue("createdByUserId", managedTenantAlertLog.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantAlertLog.createdDateTime);
-    writer.writeStringValue("lastActionByUserId", managedTenantAlertLog.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantAlertLog.lastActionDateTime);
+// @ts-ignore
+export function serializeManagedTenantAlertLog(writer: SerializationWriter, managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined | null = {}) : void {
+    if (managedTenantAlertLog) {
+        serializeEntity(writer, managedTenantAlertLog)
+        writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantAlertLog.alert, serializeManagedTenantAlert);
+        writer.writeObjectValue<AlertLogContent>("content", managedTenantAlertLog.content, serializeAlertLogContent);
+        writer.writeStringValue("createdByUserId", managedTenantAlertLog.createdByUserId);
+        writer.writeDateValue("createdDateTime", managedTenantAlertLog.createdDateTime);
+        writer.writeStringValue("lastActionByUserId", managedTenantAlertLog.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managedTenantAlertLog.lastActionDateTime);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlertLogCollectionResponse(writer: SerializationWriter, managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertLogCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("value", managedTenantAlertLogCollectionResponse.value, serializeManagedTenantAlertLog);
+// @ts-ignore
+export function serializeManagedTenantAlertLogCollectionResponse(writer: SerializationWriter, managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined | null = {}) : void {
+    if (managedTenantAlertLogCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertLogCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("value", managedTenantAlertLogCollectionResponse.value, serializeManagedTenantAlertLog);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlertRule(writer: SerializationWriter, managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined = {}) : void {
-    serializeEntity(writer, managedTenantAlertRule)
-    writer.writeStringValue("alertDisplayName", managedTenantAlertRule.alertDisplayName);
-    writer.writeCollectionOfObjectValues<ManagedTenantAlert>("alerts", managedTenantAlertRule.alerts, serializeManagedTenantAlert);
-    writer.writeNumberValue("alertTTL", managedTenantAlertRule.alertTTL);
-    writer.writeStringValue("createdByUserId", managedTenantAlertRule.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantAlertRule.createdDateTime);
-    writer.writeStringValue("description", managedTenantAlertRule.description);
-    writer.writeStringValue("displayName", managedTenantAlertRule.displayName);
-    writer.writeStringValue("lastActionByUserId", managedTenantAlertRule.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantAlertRule.lastActionDateTime);
-    writer.writeDateValue("lastRunDateTime", managedTenantAlertRule.lastRunDateTime);
-    writer.writeEnumValue<NotificationDestination[]>("notificationFinalDestinations", managedTenantAlertRule.notificationFinalDestinations);
-    writer.writeObjectValue<ManagedTenantAlertRuleDefinition>("ruleDefinition", managedTenantAlertRule.ruleDefinition, serializeManagedTenantAlertRuleDefinition);
-    writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlertRule.severity);
-    writer.writeCollectionOfObjectValues<NotificationTarget>("targets", managedTenantAlertRule.targets, serializeNotificationTarget);
-    writer.writeCollectionOfObjectValues<TenantInfo>("tenantIds", managedTenantAlertRule.tenantIds, serializeTenantInfo);
+// @ts-ignore
+export function serializeManagedTenantAlertRule(writer: SerializationWriter, managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined | null = {}) : void {
+    if (managedTenantAlertRule) {
+        serializeEntity(writer, managedTenantAlertRule)
+        writer.writeStringValue("alertDisplayName", managedTenantAlertRule.alertDisplayName);
+        writer.writeCollectionOfObjectValues<ManagedTenantAlert>("alerts", managedTenantAlertRule.alerts, serializeManagedTenantAlert);
+        writer.writeNumberValue("alertTTL", managedTenantAlertRule.alertTTL);
+        writer.writeStringValue("createdByUserId", managedTenantAlertRule.createdByUserId);
+        writer.writeDateValue("createdDateTime", managedTenantAlertRule.createdDateTime);
+        writer.writeStringValue("description", managedTenantAlertRule.description);
+        writer.writeStringValue("displayName", managedTenantAlertRule.displayName);
+        writer.writeStringValue("lastActionByUserId", managedTenantAlertRule.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managedTenantAlertRule.lastActionDateTime);
+        writer.writeDateValue("lastRunDateTime", managedTenantAlertRule.lastRunDateTime);
+        writer.writeEnumValue<NotificationDestination[]>("notificationFinalDestinations", managedTenantAlertRule.notificationFinalDestinations);
+        writer.writeObjectValue<ManagedTenantAlertRuleDefinition>("ruleDefinition", managedTenantAlertRule.ruleDefinition, serializeManagedTenantAlertRuleDefinition);
+        writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlertRule.severity);
+        writer.writeCollectionOfObjectValues<NotificationTarget>("targets", managedTenantAlertRule.targets, serializeNotificationTarget);
+        writer.writeCollectionOfObjectValues<TenantInfo>("tenantIds", managedTenantAlertRule.tenantIds, serializeTenantInfo);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlertRuleCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("value", managedTenantAlertRuleCollectionResponse.value, serializeManagedTenantAlertRule);
+// @ts-ignore
+export function serializeManagedTenantAlertRuleCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined | null = {}) : void {
+    if (managedTenantAlertRuleCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("value", managedTenantAlertRuleCollectionResponse.value, serializeManagedTenantAlertRule);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlertRuleDefinition(writer: SerializationWriter, managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined = {}) : void {
-    serializeEntity(writer, managedTenantAlertRuleDefinition)
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("alertRules", managedTenantAlertRuleDefinition.alertRules, serializeManagedTenantAlertRule);
-    writer.writeStringValue("createdByUserId", managedTenantAlertRuleDefinition.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantAlertRuleDefinition.createdDateTime);
-    writer.writeObjectValue<AlertRuleDefinitionTemplate>("definitionTemplate", managedTenantAlertRuleDefinition.definitionTemplate, serializeAlertRuleDefinitionTemplate);
-    writer.writeStringValue("displayName", managedTenantAlertRuleDefinition.displayName);
-    writer.writeStringValue("lastActionByUserId", managedTenantAlertRuleDefinition.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantAlertRuleDefinition.lastActionDateTime);
+// @ts-ignore
+export function serializeManagedTenantAlertRuleDefinition(writer: SerializationWriter, managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined | null = {}) : void {
+    if (managedTenantAlertRuleDefinition) {
+        serializeEntity(writer, managedTenantAlertRuleDefinition)
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("alertRules", managedTenantAlertRuleDefinition.alertRules, serializeManagedTenantAlertRule);
+        writer.writeStringValue("createdByUserId", managedTenantAlertRuleDefinition.createdByUserId);
+        writer.writeDateValue("createdDateTime", managedTenantAlertRuleDefinition.createdDateTime);
+        writer.writeObjectValue<AlertRuleDefinitionTemplate>("definitionTemplate", managedTenantAlertRuleDefinition.definitionTemplate, serializeAlertRuleDefinitionTemplate);
+        writer.writeStringValue("displayName", managedTenantAlertRuleDefinition.displayName);
+        writer.writeStringValue("lastActionByUserId", managedTenantAlertRuleDefinition.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managedTenantAlertRuleDefinition.lastActionDateTime);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantAlertRuleDefinitionCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleDefinitionCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("value", managedTenantAlertRuleDefinitionCollectionResponse.value, serializeManagedTenantAlertRuleDefinition);
+// @ts-ignore
+export function serializeManagedTenantAlertRuleDefinitionCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined | null = {}) : void {
+    if (managedTenantAlertRuleDefinitionCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleDefinitionCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("value", managedTenantAlertRuleDefinitionCollectionResponse.value, serializeManagedTenantAlertRuleDefinition);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantApiNotification(writer: SerializationWriter, managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined = {}) : void {
-    serializeEntity(writer, managedTenantApiNotification)
-    writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantApiNotification.alert, serializeManagedTenantAlert);
-    writer.writeStringValue("createdByUserId", managedTenantApiNotification.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantApiNotification.createdDateTime);
-    writer.writeBooleanValue("isAcknowledged", managedTenantApiNotification.isAcknowledged);
-    writer.writeStringValue("lastActionByUserId", managedTenantApiNotification.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantApiNotification.lastActionDateTime);
-    writer.writeStringValue("message", managedTenantApiNotification.message);
-    writer.writeStringValue("title", managedTenantApiNotification.title);
-    writer.writeStringValue("userId", managedTenantApiNotification.userId);
+// @ts-ignore
+export function serializeManagedTenantApiNotification(writer: SerializationWriter, managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined | null = {}) : void {
+    if (managedTenantApiNotification) {
+        serializeEntity(writer, managedTenantApiNotification)
+        writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantApiNotification.alert, serializeManagedTenantAlert);
+        writer.writeStringValue("createdByUserId", managedTenantApiNotification.createdByUserId);
+        writer.writeDateValue("createdDateTime", managedTenantApiNotification.createdDateTime);
+        writer.writeBooleanValue("isAcknowledged", managedTenantApiNotification.isAcknowledged);
+        writer.writeStringValue("lastActionByUserId", managedTenantApiNotification.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managedTenantApiNotification.lastActionDateTime);
+        writer.writeStringValue("message", managedTenantApiNotification.message);
+        writer.writeStringValue("title", managedTenantApiNotification.title);
+        writer.writeStringValue("userId", managedTenantApiNotification.userId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantApiNotificationCollectionResponse(writer: SerializationWriter, managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedTenantApiNotificationCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("value", managedTenantApiNotificationCollectionResponse.value, serializeManagedTenantApiNotification);
+// @ts-ignore
+export function serializeManagedTenantApiNotificationCollectionResponse(writer: SerializationWriter, managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined | null = {}) : void {
+    if (managedTenantApiNotificationCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedTenantApiNotificationCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("value", managedTenantApiNotificationCollectionResponse.value, serializeManagedTenantApiNotification);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantEmailNotification(writer: SerializationWriter, managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined = {}) : void {
-    serializeEntity(writer, managedTenantEmailNotification)
-    writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantEmailNotification.alert, serializeManagedTenantAlert);
-    writer.writeStringValue("createdByUserId", managedTenantEmailNotification.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantEmailNotification.createdDateTime);
-    writer.writeCollectionOfObjectValues<Email>("emailAddresses", managedTenantEmailNotification.emailAddresses, serializeEmail);
-    writer.writeStringValue("emailBody", managedTenantEmailNotification.emailBody);
-    writer.writeStringValue("lastActionByUserId", managedTenantEmailNotification.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantEmailNotification.lastActionDateTime);
-    writer.writeStringValue("subject", managedTenantEmailNotification.subject);
+// @ts-ignore
+export function serializeManagedTenantEmailNotification(writer: SerializationWriter, managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined | null = {}) : void {
+    if (managedTenantEmailNotification) {
+        serializeEntity(writer, managedTenantEmailNotification)
+        writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantEmailNotification.alert, serializeManagedTenantAlert);
+        writer.writeStringValue("createdByUserId", managedTenantEmailNotification.createdByUserId);
+        writer.writeDateValue("createdDateTime", managedTenantEmailNotification.createdDateTime);
+        writer.writeCollectionOfObjectValues<Email>("emailAddresses", managedTenantEmailNotification.emailAddresses, serializeEmail);
+        writer.writeStringValue("emailBody", managedTenantEmailNotification.emailBody);
+        writer.writeStringValue("lastActionByUserId", managedTenantEmailNotification.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managedTenantEmailNotification.lastActionDateTime);
+        writer.writeStringValue("subject", managedTenantEmailNotification.subject);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantEmailNotificationCollectionResponse(writer: SerializationWriter, managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedTenantEmailNotificationCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("value", managedTenantEmailNotificationCollectionResponse.value, serializeManagedTenantEmailNotification);
+// @ts-ignore
+export function serializeManagedTenantEmailNotificationCollectionResponse(writer: SerializationWriter, managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined | null = {}) : void {
+    if (managedTenantEmailNotificationCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedTenantEmailNotificationCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("value", managedTenantEmailNotificationCollectionResponse.value, serializeManagedTenantEmailNotification);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantTicketingEndpoint(writer: SerializationWriter, managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined = {}) : void {
-    serializeEntity(writer, managedTenantTicketingEndpoint)
-    writer.writeStringValue("createdByUserId", managedTenantTicketingEndpoint.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantTicketingEndpoint.createdDateTime);
-    writer.writeStringValue("displayName", managedTenantTicketingEndpoint.displayName);
-    writer.writeStringValue("emailAddress", managedTenantTicketingEndpoint.emailAddress);
-    writer.writeStringValue("lastActionByUserId", managedTenantTicketingEndpoint.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantTicketingEndpoint.lastActionDateTime);
-    writer.writeStringValue("phoneNumber", managedTenantTicketingEndpoint.phoneNumber);
+// @ts-ignore
+export function serializeManagedTenantTicketingEndpoint(writer: SerializationWriter, managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined | null = {}) : void {
+    if (managedTenantTicketingEndpoint) {
+        serializeEntity(writer, managedTenantTicketingEndpoint)
+        writer.writeStringValue("createdByUserId", managedTenantTicketingEndpoint.createdByUserId);
+        writer.writeDateValue("createdDateTime", managedTenantTicketingEndpoint.createdDateTime);
+        writer.writeStringValue("displayName", managedTenantTicketingEndpoint.displayName);
+        writer.writeStringValue("emailAddress", managedTenantTicketingEndpoint.emailAddress);
+        writer.writeStringValue("lastActionByUserId", managedTenantTicketingEndpoint.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managedTenantTicketingEndpoint.lastActionDateTime);
+        writer.writeStringValue("phoneNumber", managedTenantTicketingEndpoint.phoneNumber);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagedTenantTicketingEndpointCollectionResponse(writer: SerializationWriter, managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managedTenantTicketingEndpointCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("value", managedTenantTicketingEndpointCollectionResponse.value, serializeManagedTenantTicketingEndpoint);
+// @ts-ignore
+export function serializeManagedTenantTicketingEndpointCollectionResponse(writer: SerializationWriter, managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined | null = {}) : void {
+    if (managedTenantTicketingEndpointCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managedTenantTicketingEndpointCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("value", managedTenantTicketingEndpointCollectionResponse.value, serializeManagedTenantTicketingEndpoint);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementAction(writer: SerializationWriter, managementAction: Partial<ManagementAction> | undefined = {}) : void {
-    serializeEntity(writer, managementAction)
-    writer.writeEnumValue<ManagementCategory>("category", managementAction.category);
-    writer.writeStringValue("description", managementAction.description);
-    writer.writeStringValue("displayName", managementAction.displayName);
-    writer.writeStringValue("referenceTemplateId", managementAction.referenceTemplateId);
-    writer.writeNumberValue("referenceTemplateVersion", managementAction.referenceTemplateVersion);
-    writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementAction.workloadActions, serializeWorkloadAction);
+// @ts-ignore
+export function serializeManagementAction(writer: SerializationWriter, managementAction: Partial<ManagementAction> | undefined | null = {}) : void {
+    if (managementAction) {
+        serializeEntity(writer, managementAction)
+        writer.writeEnumValue<ManagementCategory>("category", managementAction.category);
+        writer.writeStringValue("description", managementAction.description);
+        writer.writeStringValue("displayName", managementAction.displayName);
+        writer.writeStringValue("referenceTemplateId", managementAction.referenceTemplateId);
+        writer.writeNumberValue("referenceTemplateVersion", managementAction.referenceTemplateVersion);
+        writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementAction.workloadActions, serializeWorkloadAction);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementActionCollectionResponse(writer: SerializationWriter, managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementActionCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementAction>("value", managementActionCollectionResponse.value, serializeManagementAction);
+// @ts-ignore
+export function serializeManagementActionCollectionResponse(writer: SerializationWriter, managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined | null = {}) : void {
+    if (managementActionCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementActionCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementAction>("value", managementActionCollectionResponse.value, serializeManagementAction);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementActionDeploymentStatus(writer: SerializationWriter, managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined = {}) : void {
-    writer.writeStringValue("managementActionId", managementActionDeploymentStatus.managementActionId);
-    writer.writeStringValue("managementTemplateId", managementActionDeploymentStatus.managementTemplateId);
-    writer.writeNumberValue("managementTemplateVersion", managementActionDeploymentStatus.managementTemplateVersion);
-    writer.writeStringValue("@odata.type", managementActionDeploymentStatus.odataType);
-    writer.writeEnumValue<ManagementActionStatus>("status", managementActionDeploymentStatus.status);
-    writer.writeCollectionOfObjectValues<WorkloadActionDeploymentStatus>("workloadActionDeploymentStatuses", managementActionDeploymentStatus.workloadActionDeploymentStatuses, serializeWorkloadActionDeploymentStatus);
-    writer.writeAdditionalData(managementActionDeploymentStatus.additionalData);
+// @ts-ignore
+export function serializeManagementActionDeploymentStatus(writer: SerializationWriter, managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined | null = {}) : void {
+    if (managementActionDeploymentStatus) {
+        writer.writeStringValue("managementActionId", managementActionDeploymentStatus.managementActionId);
+        writer.writeStringValue("managementTemplateId", managementActionDeploymentStatus.managementTemplateId);
+        writer.writeNumberValue("managementTemplateVersion", managementActionDeploymentStatus.managementTemplateVersion);
+        writer.writeStringValue("@odata.type", managementActionDeploymentStatus.odataType);
+        writer.writeEnumValue<ManagementActionStatus>("status", managementActionDeploymentStatus.status);
+        writer.writeCollectionOfObjectValues<WorkloadActionDeploymentStatus>("workloadActionDeploymentStatuses", managementActionDeploymentStatus.workloadActionDeploymentStatuses, serializeWorkloadActionDeploymentStatus);
+        writer.writeAdditionalData(managementActionDeploymentStatus.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementActionInfo(writer: SerializationWriter, managementActionInfo: Partial<ManagementActionInfo> | undefined = {}) : void {
-    writer.writeStringValue("managementActionId", managementActionInfo.managementActionId);
-    writer.writeStringValue("managementTemplateId", managementActionInfo.managementTemplateId);
-    writer.writeNumberValue("managementTemplateVersion", managementActionInfo.managementTemplateVersion);
-    writer.writeStringValue("@odata.type", managementActionInfo.odataType);
-    writer.writeAdditionalData(managementActionInfo.additionalData);
+// @ts-ignore
+export function serializeManagementActionInfo(writer: SerializationWriter, managementActionInfo: Partial<ManagementActionInfo> | undefined | null = {}) : void {
+    if (managementActionInfo) {
+        writer.writeStringValue("managementActionId", managementActionInfo.managementActionId);
+        writer.writeStringValue("managementTemplateId", managementActionInfo.managementTemplateId);
+        writer.writeNumberValue("managementTemplateVersion", managementActionInfo.managementTemplateVersion);
+        writer.writeStringValue("@odata.type", managementActionInfo.odataType);
+        writer.writeAdditionalData(managementActionInfo.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementActionTenantDeploymentStatus(writer: SerializationWriter, managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined = {}) : void {
-    serializeEntity(writer, managementActionTenantDeploymentStatus)
-    writer.writeCollectionOfObjectValues<ManagementActionDeploymentStatus>("statuses", managementActionTenantDeploymentStatus.statuses, serializeManagementActionDeploymentStatus);
-    writer.writeStringValue("tenantGroupId", managementActionTenantDeploymentStatus.tenantGroupId);
-    writer.writeStringValue("tenantId", managementActionTenantDeploymentStatus.tenantId);
+// @ts-ignore
+export function serializeManagementActionTenantDeploymentStatus(writer: SerializationWriter, managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined | null = {}) : void {
+    if (managementActionTenantDeploymentStatus) {
+        serializeEntity(writer, managementActionTenantDeploymentStatus)
+        writer.writeCollectionOfObjectValues<ManagementActionDeploymentStatus>("statuses", managementActionTenantDeploymentStatus.statuses, serializeManagementActionDeploymentStatus);
+        writer.writeStringValue("tenantGroupId", managementActionTenantDeploymentStatus.tenantGroupId);
+        writer.writeStringValue("tenantId", managementActionTenantDeploymentStatus.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementActionTenantDeploymentStatusCollectionResponse(writer: SerializationWriter, managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementActionTenantDeploymentStatusCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("value", managementActionTenantDeploymentStatusCollectionResponse.value, serializeManagementActionTenantDeploymentStatus);
+// @ts-ignore
+export function serializeManagementActionTenantDeploymentStatusCollectionResponse(writer: SerializationWriter, managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined | null = {}) : void {
+    if (managementActionTenantDeploymentStatusCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementActionTenantDeploymentStatusCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("value", managementActionTenantDeploymentStatusCollectionResponse.value, serializeManagementActionTenantDeploymentStatus);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementIntent(writer: SerializationWriter, managementIntent: Partial<ManagementIntent> | undefined = {}) : void {
-    serializeEntity(writer, managementIntent)
-    writer.writeStringValue("displayName", managementIntent.displayName);
-    writer.writeBooleanValue("isGlobal", managementIntent.isGlobal);
-    writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntent.managementTemplates, serializeManagementTemplateDetailedInfo);
+// @ts-ignore
+export function serializeManagementIntent(writer: SerializationWriter, managementIntent: Partial<ManagementIntent> | undefined | null = {}) : void {
+    if (managementIntent) {
+        serializeEntity(writer, managementIntent)
+        writer.writeStringValue("displayName", managementIntent.displayName);
+        writer.writeBooleanValue("isGlobal", managementIntent.isGlobal);
+        writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntent.managementTemplates, serializeManagementTemplateDetailedInfo);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementIntentCollectionResponse(writer: SerializationWriter, managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementIntentCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementIntent>("value", managementIntentCollectionResponse.value, serializeManagementIntent);
+// @ts-ignore
+export function serializeManagementIntentCollectionResponse(writer: SerializationWriter, managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined | null = {}) : void {
+    if (managementIntentCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementIntentCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementIntent>("value", managementIntentCollectionResponse.value, serializeManagementIntent);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementIntentInfo(writer: SerializationWriter, managementIntentInfo: Partial<ManagementIntentInfo> | undefined = {}) : void {
-    writer.writeStringValue("managementIntentDisplayName", managementIntentInfo.managementIntentDisplayName);
-    writer.writeStringValue("managementIntentId", managementIntentInfo.managementIntentId);
-    writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntentInfo.managementTemplates, serializeManagementTemplateDetailedInfo);
-    writer.writeStringValue("@odata.type", managementIntentInfo.odataType);
-    writer.writeAdditionalData(managementIntentInfo.additionalData);
+// @ts-ignore
+export function serializeManagementIntentInfo(writer: SerializationWriter, managementIntentInfo: Partial<ManagementIntentInfo> | undefined | null = {}) : void {
+    if (managementIntentInfo) {
+        writer.writeStringValue("managementIntentDisplayName", managementIntentInfo.managementIntentDisplayName);
+        writer.writeStringValue("managementIntentId", managementIntentInfo.managementIntentId);
+        writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntentInfo.managementTemplates, serializeManagementTemplateDetailedInfo);
+        writer.writeStringValue("@odata.type", managementIntentInfo.odataType);
+        writer.writeAdditionalData(managementIntentInfo.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplate(writer: SerializationWriter, managementTemplate: Partial<ManagementTemplate> | undefined = {}) : void {
-    serializeEntity(writer, managementTemplate)
-    writer.writeEnumValue<ManagementCategory>("category", managementTemplate.category);
-    writer.writeStringValue("createdByUserId", managementTemplate.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplate.createdDateTime);
-    writer.writeStringValue("description", managementTemplate.description);
-    writer.writeStringValue("displayName", managementTemplate.displayName);
-    writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplate.informationLinks, serializeActionUrl);
-    writer.writeStringValue("lastActionByUserId", managementTemplate.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplate.lastActionDateTime);
-    writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managementTemplate.managementTemplateCollections, serializeManagementTemplateCollection);
-    writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managementTemplate.managementTemplateSteps, serializeManagementTemplateStep);
-    writer.writeCollectionOfObjectValues<TemplateParameter>("parameters", managementTemplate.parameters, serializeTemplateParameter);
-    writer.writeNumberValue("priority", managementTemplate.priority);
-    writer.writeEnumValue<ManagementProvider>("provider", managementTemplate.provider);
-    writer.writeStringValue("userImpact", managementTemplate.userImpact);
-    writer.writeNumberValue("version", managementTemplate.version);
-    writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementTemplate.workloadActions, serializeWorkloadAction);
+// @ts-ignore
+export function serializeManagementTemplate(writer: SerializationWriter, managementTemplate: Partial<ManagementTemplate> | undefined | null = {}) : void {
+    if (managementTemplate) {
+        serializeEntity(writer, managementTemplate)
+        writer.writeEnumValue<ManagementCategory>("category", managementTemplate.category);
+        writer.writeStringValue("createdByUserId", managementTemplate.createdByUserId);
+        writer.writeDateValue("createdDateTime", managementTemplate.createdDateTime);
+        writer.writeStringValue("description", managementTemplate.description);
+        writer.writeStringValue("displayName", managementTemplate.displayName);
+        writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplate.informationLinks, serializeActionUrl);
+        writer.writeStringValue("lastActionByUserId", managementTemplate.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managementTemplate.lastActionDateTime);
+        writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managementTemplate.managementTemplateCollections, serializeManagementTemplateCollection);
+        writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managementTemplate.managementTemplateSteps, serializeManagementTemplateStep);
+        writer.writeCollectionOfObjectValues<TemplateParameter>("parameters", managementTemplate.parameters, serializeTemplateParameter);
+        writer.writeNumberValue("priority", managementTemplate.priority);
+        writer.writeEnumValue<ManagementProvider>("provider", managementTemplate.provider);
+        writer.writeStringValue("userImpact", managementTemplate.userImpact);
+        writer.writeNumberValue("version", managementTemplate.version);
+        writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementTemplate.workloadActions, serializeWorkloadAction);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateCollection(writer: SerializationWriter, managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined = {}) : void {
-    serializeEntity(writer, managementTemplateCollection)
-    writer.writeStringValue("createdByUserId", managementTemplateCollection.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplateCollection.createdDateTime);
-    writer.writeStringValue("description", managementTemplateCollection.description);
-    writer.writeStringValue("displayName", managementTemplateCollection.displayName);
-    writer.writeStringValue("lastActionByUserId", managementTemplateCollection.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplateCollection.lastActionDateTime);
-    writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managementTemplateCollection.managementTemplates, serializeManagementTemplate);
+// @ts-ignore
+export function serializeManagementTemplateCollection(writer: SerializationWriter, managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined | null = {}) : void {
+    if (managementTemplateCollection) {
+        serializeEntity(writer, managementTemplateCollection)
+        writer.writeStringValue("createdByUserId", managementTemplateCollection.createdByUserId);
+        writer.writeDateValue("createdDateTime", managementTemplateCollection.createdDateTime);
+        writer.writeStringValue("description", managementTemplateCollection.description);
+        writer.writeStringValue("displayName", managementTemplateCollection.displayName);
+        writer.writeStringValue("lastActionByUserId", managementTemplateCollection.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managementTemplateCollection.lastActionDateTime);
+        writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managementTemplateCollection.managementTemplates, serializeManagementTemplate);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateCollectionCollectionResponse(writer: SerializationWriter, managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("value", managementTemplateCollectionCollectionResponse.value, serializeManagementTemplateCollection);
+// @ts-ignore
+export function serializeManagementTemplateCollectionCollectionResponse(writer: SerializationWriter, managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined | null = {}) : void {
+    if (managementTemplateCollectionCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("value", managementTemplateCollectionCollectionResponse.value, serializeManagementTemplateCollection);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateCollectionResponse(writer: SerializationWriter, managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementTemplate>("value", managementTemplateCollectionResponse.value, serializeManagementTemplate);
+// @ts-ignore
+export function serializeManagementTemplateCollectionResponse(writer: SerializationWriter, managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined | null = {}) : void {
+    if (managementTemplateCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementTemplate>("value", managementTemplateCollectionResponse.value, serializeManagementTemplate);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateCollectionTenantSummary(writer: SerializationWriter, managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined = {}) : void {
-    serializeEntity(writer, managementTemplateCollectionTenantSummary)
-    writer.writeNumberValue("completeStepsCount", managementTemplateCollectionTenantSummary.completeStepsCount);
-    writer.writeNumberValue("completeUsersCount", managementTemplateCollectionTenantSummary.completeUsersCount);
-    writer.writeStringValue("createdByUserId", managementTemplateCollectionTenantSummary.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplateCollectionTenantSummary.createdDateTime);
-    writer.writeNumberValue("dismissedStepsCount", managementTemplateCollectionTenantSummary.dismissedStepsCount);
-    writer.writeNumberValue("excludedUsersCount", managementTemplateCollectionTenantSummary.excludedUsersCount);
-    writer.writeNumberValue("excludedUsersDistinctCount", managementTemplateCollectionTenantSummary.excludedUsersDistinctCount);
-    writer.writeNumberValue("incompleteStepsCount", managementTemplateCollectionTenantSummary.incompleteStepsCount);
-    writer.writeNumberValue("incompleteUsersCount", managementTemplateCollectionTenantSummary.incompleteUsersCount);
-    writer.writeNumberValue("ineligibleStepsCount", managementTemplateCollectionTenantSummary.ineligibleStepsCount);
-    writer.writeBooleanValue("isComplete", managementTemplateCollectionTenantSummary.isComplete);
-    writer.writeStringValue("lastActionByUserId", managementTemplateCollectionTenantSummary.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplateCollectionTenantSummary.lastActionDateTime);
-    writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateCollectionTenantSummary.managementTemplateCollectionDisplayName);
-    writer.writeStringValue("managementTemplateCollectionId", managementTemplateCollectionTenantSummary.managementTemplateCollectionId);
-    writer.writeNumberValue("regressedStepsCount", managementTemplateCollectionTenantSummary.regressedStepsCount);
-    writer.writeNumberValue("regressedUsersCount", managementTemplateCollectionTenantSummary.regressedUsersCount);
-    writer.writeStringValue("tenantId", managementTemplateCollectionTenantSummary.tenantId);
-    writer.writeNumberValue("unlicensedUsersCount", managementTemplateCollectionTenantSummary.unlicensedUsersCount);
+// @ts-ignore
+export function serializeManagementTemplateCollectionTenantSummary(writer: SerializationWriter, managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined | null = {}) : void {
+    if (managementTemplateCollectionTenantSummary) {
+        serializeEntity(writer, managementTemplateCollectionTenantSummary)
+        writer.writeNumberValue("completeStepsCount", managementTemplateCollectionTenantSummary.completeStepsCount);
+        writer.writeNumberValue("completeUsersCount", managementTemplateCollectionTenantSummary.completeUsersCount);
+        writer.writeStringValue("createdByUserId", managementTemplateCollectionTenantSummary.createdByUserId);
+        writer.writeDateValue("createdDateTime", managementTemplateCollectionTenantSummary.createdDateTime);
+        writer.writeNumberValue("dismissedStepsCount", managementTemplateCollectionTenantSummary.dismissedStepsCount);
+        writer.writeNumberValue("excludedUsersCount", managementTemplateCollectionTenantSummary.excludedUsersCount);
+        writer.writeNumberValue("excludedUsersDistinctCount", managementTemplateCollectionTenantSummary.excludedUsersDistinctCount);
+        writer.writeNumberValue("incompleteStepsCount", managementTemplateCollectionTenantSummary.incompleteStepsCount);
+        writer.writeNumberValue("incompleteUsersCount", managementTemplateCollectionTenantSummary.incompleteUsersCount);
+        writer.writeNumberValue("ineligibleStepsCount", managementTemplateCollectionTenantSummary.ineligibleStepsCount);
+        writer.writeBooleanValue("isComplete", managementTemplateCollectionTenantSummary.isComplete);
+        writer.writeStringValue("lastActionByUserId", managementTemplateCollectionTenantSummary.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managementTemplateCollectionTenantSummary.lastActionDateTime);
+        writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateCollectionTenantSummary.managementTemplateCollectionDisplayName);
+        writer.writeStringValue("managementTemplateCollectionId", managementTemplateCollectionTenantSummary.managementTemplateCollectionId);
+        writer.writeNumberValue("regressedStepsCount", managementTemplateCollectionTenantSummary.regressedStepsCount);
+        writer.writeNumberValue("regressedUsersCount", managementTemplateCollectionTenantSummary.regressedUsersCount);
+        writer.writeStringValue("tenantId", managementTemplateCollectionTenantSummary.tenantId);
+        writer.writeNumberValue("unlicensedUsersCount", managementTemplateCollectionTenantSummary.unlicensedUsersCount);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateCollectionTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionTenantSummaryCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("value", managementTemplateCollectionTenantSummaryCollectionResponse.value, serializeManagementTemplateCollectionTenantSummary);
+// @ts-ignore
+export function serializeManagementTemplateCollectionTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined | null = {}) : void {
+    if (managementTemplateCollectionTenantSummaryCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionTenantSummaryCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("value", managementTemplateCollectionTenantSummaryCollectionResponse.value, serializeManagementTemplateCollectionTenantSummary);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateDetailedInfo(writer: SerializationWriter, managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined = {}) : void {
-    writer.writeEnumValue<ManagementCategory>("category", managementTemplateDetailedInfo.category);
-    writer.writeStringValue("displayName", managementTemplateDetailedInfo.displayName);
-    writer.writeStringValue("managementTemplateId", managementTemplateDetailedInfo.managementTemplateId);
-    writer.writeStringValue("@odata.type", managementTemplateDetailedInfo.odataType);
-    writer.writeNumberValue("version", managementTemplateDetailedInfo.version);
-    writer.writeAdditionalData(managementTemplateDetailedInfo.additionalData);
+// @ts-ignore
+export function serializeManagementTemplateDetailedInfo(writer: SerializationWriter, managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined | null = {}) : void {
+    if (managementTemplateDetailedInfo) {
+        writer.writeEnumValue<ManagementCategory>("category", managementTemplateDetailedInfo.category);
+        writer.writeStringValue("displayName", managementTemplateDetailedInfo.displayName);
+        writer.writeStringValue("managementTemplateId", managementTemplateDetailedInfo.managementTemplateId);
+        writer.writeStringValue("@odata.type", managementTemplateDetailedInfo.odataType);
+        writer.writeNumberValue("version", managementTemplateDetailedInfo.version);
+        writer.writeAdditionalData(managementTemplateDetailedInfo.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStep(writer: SerializationWriter, managementTemplateStep: Partial<ManagementTemplateStep> | undefined = {}) : void {
-    serializeEntity(writer, managementTemplateStep)
-    writer.writeObjectValue<ManagementTemplateStepVersion>("acceptedVersion", managementTemplateStep.acceptedVersion, serializeManagementTemplateStepVersion);
-    writer.writeEnumValue<ManagementCategory>("category", managementTemplateStep.category);
-    writer.writeStringValue("createdByUserId", managementTemplateStep.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplateStep.createdDateTime);
-    writer.writeStringValue("description", managementTemplateStep.description);
-    writer.writeStringValue("displayName", managementTemplateStep.displayName);
-    writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplateStep.informationLinks, serializeActionUrl);
-    writer.writeStringValue("lastActionByUserId", managementTemplateStep.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplateStep.lastActionDateTime);
-    writer.writeObjectValue<ManagementTemplate>("managementTemplate", managementTemplateStep.managementTemplate, serializeManagementTemplate);
-    writer.writeObjectValue<ActionUrl>("portalLink", managementTemplateStep.portalLink, serializeActionUrl);
-    writer.writeNumberValue("priority", managementTemplateStep.priority);
-    writer.writeStringValue("userImpact", managementTemplateStep.userImpact);
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", managementTemplateStep.versions, serializeManagementTemplateStepVersion);
+// @ts-ignore
+export function serializeManagementTemplateStep(writer: SerializationWriter, managementTemplateStep: Partial<ManagementTemplateStep> | undefined | null = {}) : void {
+    if (managementTemplateStep) {
+        serializeEntity(writer, managementTemplateStep)
+        writer.writeObjectValue<ManagementTemplateStepVersion>("acceptedVersion", managementTemplateStep.acceptedVersion, serializeManagementTemplateStepVersion);
+        writer.writeEnumValue<ManagementCategory>("category", managementTemplateStep.category);
+        writer.writeStringValue("createdByUserId", managementTemplateStep.createdByUserId);
+        writer.writeDateValue("createdDateTime", managementTemplateStep.createdDateTime);
+        writer.writeStringValue("description", managementTemplateStep.description);
+        writer.writeStringValue("displayName", managementTemplateStep.displayName);
+        writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplateStep.informationLinks, serializeActionUrl);
+        writer.writeStringValue("lastActionByUserId", managementTemplateStep.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managementTemplateStep.lastActionDateTime);
+        writer.writeObjectValue<ManagementTemplate>("managementTemplate", managementTemplateStep.managementTemplate, serializeManagementTemplate);
+        writer.writeObjectValue<ActionUrl>("portalLink", managementTemplateStep.portalLink, serializeActionUrl);
+        writer.writeNumberValue("priority", managementTemplateStep.priority);
+        writer.writeStringValue("userImpact", managementTemplateStep.userImpact);
+        writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", managementTemplateStep.versions, serializeManagementTemplateStepVersion);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStepCollectionResponse(writer: SerializationWriter, managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementTemplateStep>("value", managementTemplateStepCollectionResponse.value, serializeManagementTemplateStep);
+// @ts-ignore
+export function serializeManagementTemplateStepCollectionResponse(writer: SerializationWriter, managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined | null = {}) : void {
+    if (managementTemplateStepCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementTemplateStep>("value", managementTemplateStepCollectionResponse.value, serializeManagementTemplateStep);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStepDeployment(writer: SerializationWriter, managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined = {}) : void {
-    serializeEntity(writer, managementTemplateStepDeployment)
-    writer.writeStringValue("createdByUserId", managementTemplateStepDeployment.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplateStepDeployment.createdDateTime);
-    writer.writeObjectValue<GraphAPIErrorDetails>("error", managementTemplateStepDeployment.errorEscaped, serializeGraphAPIErrorDetails);
-    writer.writeStringValue("lastActionByUserId", managementTemplateStepDeployment.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplateStepDeployment.lastActionDateTime);
-    writer.writeEnumValue<ManagementTemplateDeploymentStatus>("status", managementTemplateStepDeployment.status);
-    writer.writeObjectValue<ManagementTemplateStepVersion>("templateStepVersion", managementTemplateStepDeployment.templateStepVersion, serializeManagementTemplateStepVersion);
-    writer.writeStringValue("tenantId", managementTemplateStepDeployment.tenantId);
+// @ts-ignore
+export function serializeManagementTemplateStepDeployment(writer: SerializationWriter, managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined | null = {}) : void {
+    if (managementTemplateStepDeployment) {
+        serializeEntity(writer, managementTemplateStepDeployment)
+        writer.writeStringValue("createdByUserId", managementTemplateStepDeployment.createdByUserId);
+        writer.writeDateValue("createdDateTime", managementTemplateStepDeployment.createdDateTime);
+        writer.writeObjectValue<GraphAPIErrorDetails>("error", managementTemplateStepDeployment.errorEscaped, serializeGraphAPIErrorDetails);
+        writer.writeStringValue("lastActionByUserId", managementTemplateStepDeployment.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managementTemplateStepDeployment.lastActionDateTime);
+        writer.writeEnumValue<ManagementTemplateDeploymentStatus>("status", managementTemplateStepDeployment.status);
+        writer.writeObjectValue<ManagementTemplateStepVersion>("templateStepVersion", managementTemplateStepDeployment.templateStepVersion, serializeManagementTemplateStepVersion);
+        writer.writeStringValue("tenantId", managementTemplateStepDeployment.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStepDeploymentCollectionResponse(writer: SerializationWriter, managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepDeploymentCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("value", managementTemplateStepDeploymentCollectionResponse.value, serializeManagementTemplateStepDeployment);
+// @ts-ignore
+export function serializeManagementTemplateStepDeploymentCollectionResponse(writer: SerializationWriter, managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined | null = {}) : void {
+    if (managementTemplateStepDeploymentCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepDeploymentCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("value", managementTemplateStepDeploymentCollectionResponse.value, serializeManagementTemplateStepDeployment);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStepTenantSummary(writer: SerializationWriter, managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined = {}) : void {
-    serializeEntity(writer, managementTemplateStepTenantSummary)
-    writer.writeNumberValue("assignedTenantsCount", managementTemplateStepTenantSummary.assignedTenantsCount);
-    writer.writeNumberValue("compliantTenantsCount", managementTemplateStepTenantSummary.compliantTenantsCount);
-    writer.writeStringValue("createdByUserId", managementTemplateStepTenantSummary.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplateStepTenantSummary.createdDateTime);
-    writer.writeNumberValue("dismissedTenantsCount", managementTemplateStepTenantSummary.dismissedTenantsCount);
-    writer.writeNumberValue("ineligibleTenantsCount", managementTemplateStepTenantSummary.ineligibleTenantsCount);
-    writer.writeStringValue("lastActionByUserId", managementTemplateStepTenantSummary.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplateStepTenantSummary.lastActionDateTime);
-    writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateStepTenantSummary.managementTemplateCollectionDisplayName);
-    writer.writeStringValue("managementTemplateCollectionId", managementTemplateStepTenantSummary.managementTemplateCollectionId);
-    writer.writeStringValue("managementTemplateDisplayName", managementTemplateStepTenantSummary.managementTemplateDisplayName);
-    writer.writeStringValue("managementTemplateId", managementTemplateStepTenantSummary.managementTemplateId);
-    writer.writeStringValue("managementTemplateStepDisplayName", managementTemplateStepTenantSummary.managementTemplateStepDisplayName);
-    writer.writeStringValue("managementTemplateStepId", managementTemplateStepTenantSummary.managementTemplateStepId);
-    writer.writeNumberValue("notCompliantTenantsCount", managementTemplateStepTenantSummary.notCompliantTenantsCount);
+// @ts-ignore
+export function serializeManagementTemplateStepTenantSummary(writer: SerializationWriter, managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined | null = {}) : void {
+    if (managementTemplateStepTenantSummary) {
+        serializeEntity(writer, managementTemplateStepTenantSummary)
+        writer.writeNumberValue("assignedTenantsCount", managementTemplateStepTenantSummary.assignedTenantsCount);
+        writer.writeNumberValue("compliantTenantsCount", managementTemplateStepTenantSummary.compliantTenantsCount);
+        writer.writeStringValue("createdByUserId", managementTemplateStepTenantSummary.createdByUserId);
+        writer.writeDateValue("createdDateTime", managementTemplateStepTenantSummary.createdDateTime);
+        writer.writeNumberValue("dismissedTenantsCount", managementTemplateStepTenantSummary.dismissedTenantsCount);
+        writer.writeNumberValue("ineligibleTenantsCount", managementTemplateStepTenantSummary.ineligibleTenantsCount);
+        writer.writeStringValue("lastActionByUserId", managementTemplateStepTenantSummary.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managementTemplateStepTenantSummary.lastActionDateTime);
+        writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateStepTenantSummary.managementTemplateCollectionDisplayName);
+        writer.writeStringValue("managementTemplateCollectionId", managementTemplateStepTenantSummary.managementTemplateCollectionId);
+        writer.writeStringValue("managementTemplateDisplayName", managementTemplateStepTenantSummary.managementTemplateDisplayName);
+        writer.writeStringValue("managementTemplateId", managementTemplateStepTenantSummary.managementTemplateId);
+        writer.writeStringValue("managementTemplateStepDisplayName", managementTemplateStepTenantSummary.managementTemplateStepDisplayName);
+        writer.writeStringValue("managementTemplateStepId", managementTemplateStepTenantSummary.managementTemplateStepId);
+        writer.writeNumberValue("notCompliantTenantsCount", managementTemplateStepTenantSummary.notCompliantTenantsCount);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStepTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepTenantSummaryCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("value", managementTemplateStepTenantSummaryCollectionResponse.value, serializeManagementTemplateStepTenantSummary);
+// @ts-ignore
+export function serializeManagementTemplateStepTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined | null = {}) : void {
+    if (managementTemplateStepTenantSummaryCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepTenantSummaryCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("value", managementTemplateStepTenantSummaryCollectionResponse.value, serializeManagementTemplateStepTenantSummary);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStepVersion(writer: SerializationWriter, managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined = {}) : void {
-    serializeEntity(writer, managementTemplateStepVersion)
-    writer.writeObjectValue<ManagementTemplateStep>("acceptedFor", managementTemplateStepVersion.acceptedFor, serializeManagementTemplateStep);
-    writer.writeStringValue("contentMarkdown", managementTemplateStepVersion.contentMarkdown);
-    writer.writeStringValue("createdByUserId", managementTemplateStepVersion.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplateStepVersion.createdDateTime);
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("deployments", managementTemplateStepVersion.deployments, serializeManagementTemplateStepDeployment);
-    writer.writeStringValue("lastActionByUserId", managementTemplateStepVersion.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplateStepVersion.lastActionDateTime);
-    writer.writeStringValue("name", managementTemplateStepVersion.name);
-    writer.writeObjectValue<ManagementTemplateStep>("templateStep", managementTemplateStepVersion.templateStep, serializeManagementTemplateStep);
-    writer.writeNumberValue("version", managementTemplateStepVersion.version);
-    writer.writeStringValue("versionInformation", managementTemplateStepVersion.versionInformation);
+// @ts-ignore
+export function serializeManagementTemplateStepVersion(writer: SerializationWriter, managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined | null = {}) : void {
+    if (managementTemplateStepVersion) {
+        serializeEntity(writer, managementTemplateStepVersion)
+        writer.writeObjectValue<ManagementTemplateStep>("acceptedFor", managementTemplateStepVersion.acceptedFor, serializeManagementTemplateStep);
+        writer.writeStringValue("contentMarkdown", managementTemplateStepVersion.contentMarkdown);
+        writer.writeStringValue("createdByUserId", managementTemplateStepVersion.createdByUserId);
+        writer.writeDateValue("createdDateTime", managementTemplateStepVersion.createdDateTime);
+        writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("deployments", managementTemplateStepVersion.deployments, serializeManagementTemplateStepDeployment);
+        writer.writeStringValue("lastActionByUserId", managementTemplateStepVersion.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", managementTemplateStepVersion.lastActionDateTime);
+        writer.writeStringValue("name", managementTemplateStepVersion.name);
+        writer.writeObjectValue<ManagementTemplateStep>("templateStep", managementTemplateStepVersion.templateStep, serializeManagementTemplateStep);
+        writer.writeNumberValue("version", managementTemplateStepVersion.version);
+        writer.writeStringValue("versionInformation", managementTemplateStepVersion.versionInformation);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeManagementTemplateStepVersionCollectionResponse(writer: SerializationWriter, managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepVersionCollectionResponse)
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("value", managementTemplateStepVersionCollectionResponse.value, serializeManagementTemplateStepVersion);
+// @ts-ignore
+export function serializeManagementTemplateStepVersionCollectionResponse(writer: SerializationWriter, managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined | null = {}) : void {
+    if (managementTemplateStepVersionCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepVersionCollectionResponse)
+        writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("value", managementTemplateStepVersionCollectionResponse.value, serializeManagementTemplateStepVersion);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMyRole(writer: SerializationWriter, myRole: Partial<MyRole> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<RoleAssignment>("assignments", myRole.assignments, serializeRoleAssignment);
-    writer.writeStringValue("@odata.type", myRole.odataType);
-    writer.writeStringValue("tenantId", myRole.tenantId);
-    writer.writeAdditionalData(myRole.additionalData);
+// @ts-ignore
+export function serializeMyRole(writer: SerializationWriter, myRole: Partial<MyRole> | undefined | null = {}) : void {
+    if (myRole) {
+        writer.writeCollectionOfObjectValues<RoleAssignment>("assignments", myRole.assignments, serializeRoleAssignment);
+        writer.writeStringValue("@odata.type", myRole.odataType);
+        writer.writeStringValue("tenantId", myRole.tenantId);
+        writer.writeAdditionalData(myRole.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMyRoleCollectionResponse(writer: SerializationWriter, myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, myRoleCollectionResponse)
-    writer.writeCollectionOfObjectValues<MyRole>("value", myRoleCollectionResponse.value, serializeMyRole);
+// @ts-ignore
+export function serializeMyRoleCollectionResponse(writer: SerializationWriter, myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined | null = {}) : void {
+    if (myRoleCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, myRoleCollectionResponse)
+        writer.writeCollectionOfObjectValues<MyRole>("value", myRoleCollectionResponse.value, serializeMyRole);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNotificationTarget(writer: SerializationWriter, notificationTarget: Partial<NotificationTarget> | undefined = {}) : void {
-    writer.writeStringValue("displayName", notificationTarget.displayName);
-    writer.writeStringValue("@odata.type", notificationTarget.odataType);
-    writer.writeAdditionalData(notificationTarget.additionalData);
+// @ts-ignore
+export function serializeNotificationTarget(writer: SerializationWriter, notificationTarget: Partial<NotificationTarget> | undefined | null = {}) : void {
+    if (notificationTarget) {
+        writer.writeStringValue("displayName", notificationTarget.displayName);
+        writer.writeStringValue("@odata.type", notificationTarget.odataType);
+        writer.writeAdditionalData(notificationTarget.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRoleAssignment(writer: SerializationWriter, roleAssignment: Partial<RoleAssignment> | undefined = {}) : void {
-    writer.writeEnumValue<DelegatedPrivilegeStatus>("assignmentType", roleAssignment.assignmentType);
-    writer.writeStringValue("@odata.type", roleAssignment.odataType);
-    writer.writeCollectionOfObjectValues<RoleDefinition>("roles", roleAssignment.roles, serializeRoleDefinition);
-    writer.writeAdditionalData(roleAssignment.additionalData);
+// @ts-ignore
+export function serializeRoleAssignment(writer: SerializationWriter, roleAssignment: Partial<RoleAssignment> | undefined | null = {}) : void {
+    if (roleAssignment) {
+        writer.writeEnumValue<DelegatedPrivilegeStatus>("assignmentType", roleAssignment.assignmentType);
+        writer.writeStringValue("@odata.type", roleAssignment.odataType);
+        writer.writeCollectionOfObjectValues<RoleDefinition>("roles", roleAssignment.roles, serializeRoleDefinition);
+        writer.writeAdditionalData(roleAssignment.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRoleDefinition(writer: SerializationWriter, roleDefinition: Partial<RoleDefinition> | undefined = {}) : void {
-    writer.writeStringValue("description", roleDefinition.description);
-    writer.writeStringValue("displayName", roleDefinition.displayName);
-    writer.writeStringValue("@odata.type", roleDefinition.odataType);
-    writer.writeStringValue("templateId", roleDefinition.templateId);
-    writer.writeAdditionalData(roleDefinition.additionalData);
+// @ts-ignore
+export function serializeRoleDefinition(writer: SerializationWriter, roleDefinition: Partial<RoleDefinition> | undefined | null = {}) : void {
+    if (roleDefinition) {
+        writer.writeStringValue("description", roleDefinition.description);
+        writer.writeStringValue("displayName", roleDefinition.displayName);
+        writer.writeStringValue("@odata.type", roleDefinition.odataType);
+        writer.writeStringValue("templateId", roleDefinition.templateId);
+        writer.writeAdditionalData(roleDefinition.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSetting(writer: SerializationWriter, setting: Partial<Setting> | undefined = {}) : void {
-    writer.writeStringValue("displayName", setting.displayName);
-    writer.writeStringValue("jsonValue", setting.jsonValue);
-    writer.writeStringValue("@odata.type", setting.odataType);
-    writer.writeBooleanValue("overwriteAllowed", setting.overwriteAllowed);
-    writer.writeStringValue("settingId", setting.settingId);
-    writer.writeEnumValue<ManagementParameterValueType>("valueType", setting.valueType);
-    writer.writeAdditionalData(setting.additionalData);
+// @ts-ignore
+export function serializeSetting(writer: SerializationWriter, setting: Partial<Setting> | undefined | null = {}) : void {
+    if (setting) {
+        writer.writeStringValue("displayName", setting.displayName);
+        writer.writeStringValue("jsonValue", setting.jsonValue);
+        writer.writeStringValue("@odata.type", setting.odataType);
+        writer.writeBooleanValue("overwriteAllowed", setting.overwriteAllowed);
+        writer.writeStringValue("settingId", setting.settingId);
+        writer.writeEnumValue<ManagementParameterValueType>("valueType", setting.valueType);
+        writer.writeAdditionalData(setting.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTemplateParameter(writer: SerializationWriter, templateParameter: Partial<TemplateParameter> | undefined = {}) : void {
-    writer.writeStringValue("description", templateParameter.description);
-    writer.writeStringValue("displayName", templateParameter.displayName);
-    writer.writeStringValue("jsonAllowedValues", templateParameter.jsonAllowedValues);
-    writer.writeStringValue("jsonDefaultValue", templateParameter.jsonDefaultValue);
-    writer.writeStringValue("@odata.type", templateParameter.odataType);
-    writer.writeEnumValue<ManagementParameterValueType>("valueType", templateParameter.valueType);
-    writer.writeAdditionalData(templateParameter.additionalData);
+// @ts-ignore
+export function serializeTemplateParameter(writer: SerializationWriter, templateParameter: Partial<TemplateParameter> | undefined | null = {}) : void {
+    if (templateParameter) {
+        writer.writeStringValue("description", templateParameter.description);
+        writer.writeStringValue("displayName", templateParameter.displayName);
+        writer.writeStringValue("jsonAllowedValues", templateParameter.jsonAllowedValues);
+        writer.writeStringValue("jsonDefaultValue", templateParameter.jsonDefaultValue);
+        writer.writeStringValue("@odata.type", templateParameter.odataType);
+        writer.writeEnumValue<ManagementParameterValueType>("valueType", templateParameter.valueType);
+        writer.writeAdditionalData(templateParameter.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenant(writer: SerializationWriter, tenant: Partial<Tenant> | undefined = {}) : void {
-    serializeEntity(writer, tenant)
-    writer.writeObjectValue<TenantContract>("contract", tenant.contract, serializeTenantContract);
-    writer.writeDateValue("createdDateTime", tenant.createdDateTime);
-    writer.writeStringValue("displayName", tenant.displayName);
-    writer.writeDateValue("lastUpdatedDateTime", tenant.lastUpdatedDateTime);
-    writer.writeStringValue("tenantId", tenant.tenantId);
-    writer.writeObjectValue<TenantStatusInformation>("tenantStatusInformation", tenant.tenantStatusInformation, serializeTenantStatusInformation);
+// @ts-ignore
+export function serializeTenant(writer: SerializationWriter, tenant: Partial<Tenant> | undefined | null = {}) : void {
+    if (tenant) {
+        serializeEntity(writer, tenant)
+        writer.writeObjectValue<TenantContract>("contract", tenant.contract, serializeTenantContract);
+        writer.writeDateValue("createdDateTime", tenant.createdDateTime);
+        writer.writeStringValue("displayName", tenant.displayName);
+        writer.writeDateValue("lastUpdatedDateTime", tenant.lastUpdatedDateTime);
+        writer.writeStringValue("tenantId", tenant.tenantId);
+        writer.writeObjectValue<TenantStatusInformation>("tenantStatusInformation", tenant.tenantStatusInformation, serializeTenantStatusInformation);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantCollectionResponse(writer: SerializationWriter, tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, tenantCollectionResponse)
-    writer.writeCollectionOfObjectValues<Tenant>("value", tenantCollectionResponse.value, serializeTenant);
+// @ts-ignore
+export function serializeTenantCollectionResponse(writer: SerializationWriter, tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined | null = {}) : void {
+    if (tenantCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, tenantCollectionResponse)
+        writer.writeCollectionOfObjectValues<Tenant>("value", tenantCollectionResponse.value, serializeTenant);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantContactInformation(writer: SerializationWriter, tenantContactInformation: Partial<TenantContactInformation> | undefined = {}) : void {
-    writer.writeStringValue("email", tenantContactInformation.email);
-    writer.writeStringValue("name", tenantContactInformation.name);
-    writer.writeStringValue("notes", tenantContactInformation.notes);
-    writer.writeStringValue("@odata.type", tenantContactInformation.odataType);
-    writer.writeStringValue("phone", tenantContactInformation.phone);
-    writer.writeStringValue("title", tenantContactInformation.title);
-    writer.writeAdditionalData(tenantContactInformation.additionalData);
+// @ts-ignore
+export function serializeTenantContactInformation(writer: SerializationWriter, tenantContactInformation: Partial<TenantContactInformation> | undefined | null = {}) : void {
+    if (tenantContactInformation) {
+        writer.writeStringValue("email", tenantContactInformation.email);
+        writer.writeStringValue("name", tenantContactInformation.name);
+        writer.writeStringValue("notes", tenantContactInformation.notes);
+        writer.writeStringValue("@odata.type", tenantContactInformation.odataType);
+        writer.writeStringValue("phone", tenantContactInformation.phone);
+        writer.writeStringValue("title", tenantContactInformation.title);
+        writer.writeAdditionalData(tenantContactInformation.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantContract(writer: SerializationWriter, tenantContract: Partial<TenantContract> | undefined = {}) : void {
-    writer.writeNumberValue("contractType", tenantContract.contractType);
-    writer.writeStringValue("defaultDomainName", tenantContract.defaultDomainName);
-    writer.writeStringValue("displayName", tenantContract.displayName);
-    writer.writeStringValue("@odata.type", tenantContract.odataType);
-    writer.writeAdditionalData(tenantContract.additionalData);
+// @ts-ignore
+export function serializeTenantContract(writer: SerializationWriter, tenantContract: Partial<TenantContract> | undefined | null = {}) : void {
+    if (tenantContract) {
+        writer.writeNumberValue("contractType", tenantContract.contractType);
+        writer.writeStringValue("defaultDomainName", tenantContract.defaultDomainName);
+        writer.writeStringValue("displayName", tenantContract.displayName);
+        writer.writeStringValue("@odata.type", tenantContract.odataType);
+        writer.writeAdditionalData(tenantContract.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantCustomizedInformation(writer: SerializationWriter, tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined = {}) : void {
-    serializeEntity(writer, tenantCustomizedInformation)
-    writer.writeStringValue("businessRelationship", tenantCustomizedInformation.businessRelationship);
-    writer.writeCollectionOfPrimitiveValues<string>("complianceRequirements", tenantCustomizedInformation.complianceRequirements);
-    writer.writeCollectionOfObjectValues<TenantContactInformation>("contacts", tenantCustomizedInformation.contacts, serializeTenantContactInformation);
-    writer.writeStringValue("displayName", tenantCustomizedInformation.displayName);
-    writer.writeCollectionOfPrimitiveValues<string>("managedServicesPlans", tenantCustomizedInformation.managedServicesPlans);
-    writer.writeStringValue("note", tenantCustomizedInformation.note);
-    writer.writeDateValue("noteLastModifiedDateTime", tenantCustomizedInformation.noteLastModifiedDateTime);
-    writer.writeCollectionOfPrimitiveValues<string>("partnerRelationshipManagerUserIds", tenantCustomizedInformation.partnerRelationshipManagerUserIds);
-    writer.writeStringValue("tenantId", tenantCustomizedInformation.tenantId);
-    writer.writeStringValue("website", tenantCustomizedInformation.website);
+// @ts-ignore
+export function serializeTenantCustomizedInformation(writer: SerializationWriter, tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined | null = {}) : void {
+    if (tenantCustomizedInformation) {
+        serializeEntity(writer, tenantCustomizedInformation)
+        writer.writeStringValue("businessRelationship", tenantCustomizedInformation.businessRelationship);
+        writer.writeCollectionOfPrimitiveValues<string>("complianceRequirements", tenantCustomizedInformation.complianceRequirements);
+        writer.writeCollectionOfObjectValues<TenantContactInformation>("contacts", tenantCustomizedInformation.contacts, serializeTenantContactInformation);
+        writer.writeStringValue("displayName", tenantCustomizedInformation.displayName);
+        writer.writeCollectionOfPrimitiveValues<string>("managedServicesPlans", tenantCustomizedInformation.managedServicesPlans);
+        writer.writeStringValue("note", tenantCustomizedInformation.note);
+        writer.writeDateValue("noteLastModifiedDateTime", tenantCustomizedInformation.noteLastModifiedDateTime);
+        writer.writeCollectionOfPrimitiveValues<string>("partnerRelationshipManagerUserIds", tenantCustomizedInformation.partnerRelationshipManagerUserIds);
+        writer.writeStringValue("tenantId", tenantCustomizedInformation.tenantId);
+        writer.writeStringValue("website", tenantCustomizedInformation.website);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantCustomizedInformationCollectionResponse(writer: SerializationWriter, tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, tenantCustomizedInformationCollectionResponse)
-    writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("value", tenantCustomizedInformationCollectionResponse.value, serializeTenantCustomizedInformation);
+// @ts-ignore
+export function serializeTenantCustomizedInformationCollectionResponse(writer: SerializationWriter, tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined | null = {}) : void {
+    if (tenantCustomizedInformationCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, tenantCustomizedInformationCollectionResponse)
+        writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("value", tenantCustomizedInformationCollectionResponse.value, serializeTenantCustomizedInformation);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantDetailedInformation(writer: SerializationWriter, tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined = {}) : void {
-    serializeEntity(writer, tenantDetailedInformation)
-    writer.writeStringValue("city", tenantDetailedInformation.city);
-    writer.writeStringValue("countryCode", tenantDetailedInformation.countryCode);
-    writer.writeStringValue("countryName", tenantDetailedInformation.countryName);
-    writer.writeStringValue("defaultDomainName", tenantDetailedInformation.defaultDomainName);
-    writer.writeStringValue("displayName", tenantDetailedInformation.displayName);
-    writer.writeStringValue("industryName", tenantDetailedInformation.industryName);
-    writer.writeStringValue("region", tenantDetailedInformation.region);
-    writer.writeStringValue("segmentName", tenantDetailedInformation.segmentName);
-    writer.writeStringValue("tenantId", tenantDetailedInformation.tenantId);
-    writer.writeStringValue("verticalName", tenantDetailedInformation.verticalName);
+// @ts-ignore
+export function serializeTenantDetailedInformation(writer: SerializationWriter, tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined | null = {}) : void {
+    if (tenantDetailedInformation) {
+        serializeEntity(writer, tenantDetailedInformation)
+        writer.writeStringValue("city", tenantDetailedInformation.city);
+        writer.writeStringValue("countryCode", tenantDetailedInformation.countryCode);
+        writer.writeStringValue("countryName", tenantDetailedInformation.countryName);
+        writer.writeStringValue("defaultDomainName", tenantDetailedInformation.defaultDomainName);
+        writer.writeStringValue("displayName", tenantDetailedInformation.displayName);
+        writer.writeStringValue("industryName", tenantDetailedInformation.industryName);
+        writer.writeStringValue("region", tenantDetailedInformation.region);
+        writer.writeStringValue("segmentName", tenantDetailedInformation.segmentName);
+        writer.writeStringValue("tenantId", tenantDetailedInformation.tenantId);
+        writer.writeStringValue("verticalName", tenantDetailedInformation.verticalName);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantDetailedInformationCollectionResponse(writer: SerializationWriter, tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, tenantDetailedInformationCollectionResponse)
-    writer.writeCollectionOfObjectValues<TenantDetailedInformation>("value", tenantDetailedInformationCollectionResponse.value, serializeTenantDetailedInformation);
+// @ts-ignore
+export function serializeTenantDetailedInformationCollectionResponse(writer: SerializationWriter, tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined | null = {}) : void {
+    if (tenantDetailedInformationCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, tenantDetailedInformationCollectionResponse)
+        writer.writeCollectionOfObjectValues<TenantDetailedInformation>("value", tenantDetailedInformationCollectionResponse.value, serializeTenantDetailedInformation);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantGroup(writer: SerializationWriter, tenantGroup: Partial<TenantGroup> | undefined = {}) : void {
-    serializeEntity(writer, tenantGroup)
-    writer.writeBooleanValue("allTenantsIncluded", tenantGroup.allTenantsIncluded);
-    writer.writeStringValue("displayName", tenantGroup.displayName);
-    writer.writeCollectionOfObjectValues<ManagementActionInfo>("managementActions", tenantGroup.managementActions, serializeManagementActionInfo);
-    writer.writeCollectionOfObjectValues<ManagementIntentInfo>("managementIntents", tenantGroup.managementIntents, serializeManagementIntentInfo);
-    writer.writeCollectionOfPrimitiveValues<string>("tenantIds", tenantGroup.tenantIds);
+// @ts-ignore
+export function serializeTenantGroup(writer: SerializationWriter, tenantGroup: Partial<TenantGroup> | undefined | null = {}) : void {
+    if (tenantGroup) {
+        serializeEntity(writer, tenantGroup)
+        writer.writeBooleanValue("allTenantsIncluded", tenantGroup.allTenantsIncluded);
+        writer.writeStringValue("displayName", tenantGroup.displayName);
+        writer.writeCollectionOfObjectValues<ManagementActionInfo>("managementActions", tenantGroup.managementActions, serializeManagementActionInfo);
+        writer.writeCollectionOfObjectValues<ManagementIntentInfo>("managementIntents", tenantGroup.managementIntents, serializeManagementIntentInfo);
+        writer.writeCollectionOfPrimitiveValues<string>("tenantIds", tenantGroup.tenantIds);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantGroupCollectionResponse(writer: SerializationWriter, tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, tenantGroupCollectionResponse)
-    writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantGroupCollectionResponse.value, serializeTenantGroup);
+// @ts-ignore
+export function serializeTenantGroupCollectionResponse(writer: SerializationWriter, tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined | null = {}) : void {
+    if (tenantGroupCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, tenantGroupCollectionResponse)
+        writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantGroupCollectionResponse.value, serializeTenantGroup);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantInfo(writer: SerializationWriter, tenantInfo: Partial<TenantInfo> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", tenantInfo.odataType);
-    writer.writeStringValue("tenantId", tenantInfo.tenantId);
-    writer.writeAdditionalData(tenantInfo.additionalData);
+// @ts-ignore
+export function serializeTenantInfo(writer: SerializationWriter, tenantInfo: Partial<TenantInfo> | undefined | null = {}) : void {
+    if (tenantInfo) {
+        writer.writeStringValue("@odata.type", tenantInfo.odataType);
+        writer.writeStringValue("tenantId", tenantInfo.tenantId);
+        writer.writeAdditionalData(tenantInfo.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantStatusInformation(writer: SerializationWriter, tenantStatusInformation: Partial<TenantStatusInformation> | undefined = {}) : void {
-    writer.writeEnumValue<DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", tenantStatusInformation.delegatedPrivilegeStatus);
-    writer.writeDateValue("lastDelegatedPrivilegeRefreshDateTime", tenantStatusInformation.lastDelegatedPrivilegeRefreshDateTime);
-    writer.writeStringValue("@odata.type", tenantStatusInformation.odataType);
-    writer.writeStringValue("offboardedByUserId", tenantStatusInformation.offboardedByUserId);
-    writer.writeDateValue("offboardedDateTime", tenantStatusInformation.offboardedDateTime);
-    writer.writeStringValue("onboardedByUserId", tenantStatusInformation.onboardedByUserId);
-    writer.writeDateValue("onboardedDateTime", tenantStatusInformation.onboardedDateTime);
-    writer.writeEnumValue<TenantOnboardingStatus>("onboardingStatus", tenantStatusInformation.onboardingStatus);
-    writer.writeEnumValue<TenantOnboardingEligibilityReason>("tenantOnboardingEligibilityReason", tenantStatusInformation.tenantOnboardingEligibilityReason);
-    writer.writeCollectionOfObjectValues<WorkloadStatus>("workloadStatuses", tenantStatusInformation.workloadStatuses, serializeWorkloadStatus);
-    writer.writeAdditionalData(tenantStatusInformation.additionalData);
+// @ts-ignore
+export function serializeTenantStatusInformation(writer: SerializationWriter, tenantStatusInformation: Partial<TenantStatusInformation> | undefined | null = {}) : void {
+    if (tenantStatusInformation) {
+        writer.writeEnumValue<DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", tenantStatusInformation.delegatedPrivilegeStatus);
+        writer.writeDateValue("lastDelegatedPrivilegeRefreshDateTime", tenantStatusInformation.lastDelegatedPrivilegeRefreshDateTime);
+        writer.writeStringValue("@odata.type", tenantStatusInformation.odataType);
+        writer.writeStringValue("offboardedByUserId", tenantStatusInformation.offboardedByUserId);
+        writer.writeDateValue("offboardedDateTime", tenantStatusInformation.offboardedDateTime);
+        writer.writeStringValue("onboardedByUserId", tenantStatusInformation.onboardedByUserId);
+        writer.writeDateValue("onboardedDateTime", tenantStatusInformation.onboardedDateTime);
+        writer.writeEnumValue<TenantOnboardingStatus>("onboardingStatus", tenantStatusInformation.onboardingStatus);
+        writer.writeEnumValue<TenantOnboardingEligibilityReason>("tenantOnboardingEligibilityReason", tenantStatusInformation.tenantOnboardingEligibilityReason);
+        writer.writeCollectionOfObjectValues<WorkloadStatus>("workloadStatuses", tenantStatusInformation.workloadStatuses, serializeWorkloadStatus);
+        writer.writeAdditionalData(tenantStatusInformation.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantTag(writer: SerializationWriter, tenantTag: Partial<TenantTag> | undefined = {}) : void {
-    serializeEntity(writer, tenantTag)
-    writer.writeStringValue("createdByUserId", tenantTag.createdByUserId);
-    writer.writeDateValue("createdDateTime", tenantTag.createdDateTime);
-    writer.writeDateValue("deletedDateTime", tenantTag.deletedDateTime);
-    writer.writeStringValue("description", tenantTag.description);
-    writer.writeStringValue("displayName", tenantTag.displayName);
-    writer.writeStringValue("lastActionByUserId", tenantTag.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", tenantTag.lastActionDateTime);
-    writer.writeCollectionOfObjectValues<TenantInfo>("tenants", tenantTag.tenants, serializeTenantInfo);
+// @ts-ignore
+export function serializeTenantTag(writer: SerializationWriter, tenantTag: Partial<TenantTag> | undefined | null = {}) : void {
+    if (tenantTag) {
+        serializeEntity(writer, tenantTag)
+        writer.writeStringValue("createdByUserId", tenantTag.createdByUserId);
+        writer.writeDateValue("createdDateTime", tenantTag.createdDateTime);
+        writer.writeDateValue("deletedDateTime", tenantTag.deletedDateTime);
+        writer.writeStringValue("description", tenantTag.description);
+        writer.writeStringValue("displayName", tenantTag.displayName);
+        writer.writeStringValue("lastActionByUserId", tenantTag.lastActionByUserId);
+        writer.writeDateValue("lastActionDateTime", tenantTag.lastActionDateTime);
+        writer.writeCollectionOfObjectValues<TenantInfo>("tenants", tenantTag.tenants, serializeTenantInfo);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantTagCollectionResponse(writer: SerializationWriter, tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, tenantTagCollectionResponse)
-    writer.writeCollectionOfObjectValues<TenantTag>("value", tenantTagCollectionResponse.value, serializeTenantTag);
+// @ts-ignore
+export function serializeTenantTagCollectionResponse(writer: SerializationWriter, tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined | null = {}) : void {
+    if (tenantTagCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, tenantTagCollectionResponse)
+        writer.writeCollectionOfObjectValues<TenantTag>("value", tenantTagCollectionResponse.value, serializeTenantTag);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWindowsDeviceMalwareState(writer: SerializationWriter, windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined = {}) : void {
-    serializeEntity(writer, windowsDeviceMalwareState)
-    writer.writeStringValue("additionalInformationUrl", windowsDeviceMalwareState.additionalInformationUrl);
-    writer.writeNumberValue("detectionCount", windowsDeviceMalwareState.detectionCount);
-    writer.writeBooleanValue("deviceDeleted", windowsDeviceMalwareState.deviceDeleted);
-    writer.writeDateValue("initialDetectionDateTime", windowsDeviceMalwareState.initialDetectionDateTime);
-    writer.writeDateValue("lastRefreshedDateTime", windowsDeviceMalwareState.lastRefreshedDateTime);
-    writer.writeDateValue("lastStateChangeDateTime", windowsDeviceMalwareState.lastStateChangeDateTime);
-    writer.writeStringValue("malwareCategory", windowsDeviceMalwareState.malwareCategory);
-    writer.writeStringValue("malwareDisplayName", windowsDeviceMalwareState.malwareDisplayName);
-    writer.writeStringValue("malwareExecutionState", windowsDeviceMalwareState.malwareExecutionState);
-    writer.writeStringValue("malwareId", windowsDeviceMalwareState.malwareId);
-    writer.writeStringValue("malwareSeverity", windowsDeviceMalwareState.malwareSeverity);
-    writer.writeStringValue("malwareThreatState", windowsDeviceMalwareState.malwareThreatState);
-    writer.writeStringValue("managedDeviceId", windowsDeviceMalwareState.managedDeviceId);
-    writer.writeStringValue("managedDeviceName", windowsDeviceMalwareState.managedDeviceName);
-    writer.writeStringValue("tenantDisplayName", windowsDeviceMalwareState.tenantDisplayName);
-    writer.writeStringValue("tenantId", windowsDeviceMalwareState.tenantId);
+// @ts-ignore
+export function serializeWindowsDeviceMalwareState(writer: SerializationWriter, windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined | null = {}) : void {
+    if (windowsDeviceMalwareState) {
+        serializeEntity(writer, windowsDeviceMalwareState)
+        writer.writeStringValue("additionalInformationUrl", windowsDeviceMalwareState.additionalInformationUrl);
+        writer.writeNumberValue("detectionCount", windowsDeviceMalwareState.detectionCount);
+        writer.writeBooleanValue("deviceDeleted", windowsDeviceMalwareState.deviceDeleted);
+        writer.writeDateValue("initialDetectionDateTime", windowsDeviceMalwareState.initialDetectionDateTime);
+        writer.writeDateValue("lastRefreshedDateTime", windowsDeviceMalwareState.lastRefreshedDateTime);
+        writer.writeDateValue("lastStateChangeDateTime", windowsDeviceMalwareState.lastStateChangeDateTime);
+        writer.writeStringValue("malwareCategory", windowsDeviceMalwareState.malwareCategory);
+        writer.writeStringValue("malwareDisplayName", windowsDeviceMalwareState.malwareDisplayName);
+        writer.writeStringValue("malwareExecutionState", windowsDeviceMalwareState.malwareExecutionState);
+        writer.writeStringValue("malwareId", windowsDeviceMalwareState.malwareId);
+        writer.writeStringValue("malwareSeverity", windowsDeviceMalwareState.malwareSeverity);
+        writer.writeStringValue("malwareThreatState", windowsDeviceMalwareState.malwareThreatState);
+        writer.writeStringValue("managedDeviceId", windowsDeviceMalwareState.managedDeviceId);
+        writer.writeStringValue("managedDeviceName", windowsDeviceMalwareState.managedDeviceName);
+        writer.writeStringValue("tenantDisplayName", windowsDeviceMalwareState.tenantDisplayName);
+        writer.writeStringValue("tenantId", windowsDeviceMalwareState.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWindowsDeviceMalwareStateCollectionResponse(writer: SerializationWriter, windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, windowsDeviceMalwareStateCollectionResponse)
-    writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("value", windowsDeviceMalwareStateCollectionResponse.value, serializeWindowsDeviceMalwareState);
+// @ts-ignore
+export function serializeWindowsDeviceMalwareStateCollectionResponse(writer: SerializationWriter, windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined | null = {}) : void {
+    if (windowsDeviceMalwareStateCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, windowsDeviceMalwareStateCollectionResponse)
+        writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("value", windowsDeviceMalwareStateCollectionResponse.value, serializeWindowsDeviceMalwareState);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWindowsProtectionState(writer: SerializationWriter, windowsProtectionState: Partial<WindowsProtectionState> | undefined = {}) : void {
-    serializeEntity(writer, windowsProtectionState)
-    writer.writeStringValue("antiMalwareVersion", windowsProtectionState.antiMalwareVersion);
-    writer.writeBooleanValue("attentionRequired", windowsProtectionState.attentionRequired);
-    writer.writeBooleanValue("deviceDeleted", windowsProtectionState.deviceDeleted);
-    writer.writeDateValue("devicePropertyRefreshDateTime", windowsProtectionState.devicePropertyRefreshDateTime);
-    writer.writeStringValue("engineVersion", windowsProtectionState.engineVersion);
-    writer.writeBooleanValue("fullScanOverdue", windowsProtectionState.fullScanOverdue);
-    writer.writeBooleanValue("fullScanRequired", windowsProtectionState.fullScanRequired);
-    writer.writeDateValue("lastFullScanDateTime", windowsProtectionState.lastFullScanDateTime);
-    writer.writeStringValue("lastFullScanSignatureVersion", windowsProtectionState.lastFullScanSignatureVersion);
-    writer.writeDateValue("lastQuickScanDateTime", windowsProtectionState.lastQuickScanDateTime);
-    writer.writeStringValue("lastQuickScanSignatureVersion", windowsProtectionState.lastQuickScanSignatureVersion);
-    writer.writeDateValue("lastRefreshedDateTime", windowsProtectionState.lastRefreshedDateTime);
-    writer.writeDateValue("lastReportedDateTime", windowsProtectionState.lastReportedDateTime);
-    writer.writeBooleanValue("malwareProtectionEnabled", windowsProtectionState.malwareProtectionEnabled);
-    writer.writeStringValue("managedDeviceHealthState", windowsProtectionState.managedDeviceHealthState);
-    writer.writeStringValue("managedDeviceId", windowsProtectionState.managedDeviceId);
-    writer.writeStringValue("managedDeviceName", windowsProtectionState.managedDeviceName);
-    writer.writeBooleanValue("networkInspectionSystemEnabled", windowsProtectionState.networkInspectionSystemEnabled);
-    writer.writeBooleanValue("quickScanOverdue", windowsProtectionState.quickScanOverdue);
-    writer.writeBooleanValue("realTimeProtectionEnabled", windowsProtectionState.realTimeProtectionEnabled);
-    writer.writeBooleanValue("rebootRequired", windowsProtectionState.rebootRequired);
-    writer.writeBooleanValue("signatureUpdateOverdue", windowsProtectionState.signatureUpdateOverdue);
-    writer.writeStringValue("signatureVersion", windowsProtectionState.signatureVersion);
-    writer.writeStringValue("tenantDisplayName", windowsProtectionState.tenantDisplayName);
-    writer.writeStringValue("tenantId", windowsProtectionState.tenantId);
+// @ts-ignore
+export function serializeWindowsProtectionState(writer: SerializationWriter, windowsProtectionState: Partial<WindowsProtectionState> | undefined | null = {}) : void {
+    if (windowsProtectionState) {
+        serializeEntity(writer, windowsProtectionState)
+        writer.writeStringValue("antiMalwareVersion", windowsProtectionState.antiMalwareVersion);
+        writer.writeBooleanValue("attentionRequired", windowsProtectionState.attentionRequired);
+        writer.writeBooleanValue("deviceDeleted", windowsProtectionState.deviceDeleted);
+        writer.writeDateValue("devicePropertyRefreshDateTime", windowsProtectionState.devicePropertyRefreshDateTime);
+        writer.writeStringValue("engineVersion", windowsProtectionState.engineVersion);
+        writer.writeBooleanValue("fullScanOverdue", windowsProtectionState.fullScanOverdue);
+        writer.writeBooleanValue("fullScanRequired", windowsProtectionState.fullScanRequired);
+        writer.writeDateValue("lastFullScanDateTime", windowsProtectionState.lastFullScanDateTime);
+        writer.writeStringValue("lastFullScanSignatureVersion", windowsProtectionState.lastFullScanSignatureVersion);
+        writer.writeDateValue("lastQuickScanDateTime", windowsProtectionState.lastQuickScanDateTime);
+        writer.writeStringValue("lastQuickScanSignatureVersion", windowsProtectionState.lastQuickScanSignatureVersion);
+        writer.writeDateValue("lastRefreshedDateTime", windowsProtectionState.lastRefreshedDateTime);
+        writer.writeDateValue("lastReportedDateTime", windowsProtectionState.lastReportedDateTime);
+        writer.writeBooleanValue("malwareProtectionEnabled", windowsProtectionState.malwareProtectionEnabled);
+        writer.writeStringValue("managedDeviceHealthState", windowsProtectionState.managedDeviceHealthState);
+        writer.writeStringValue("managedDeviceId", windowsProtectionState.managedDeviceId);
+        writer.writeStringValue("managedDeviceName", windowsProtectionState.managedDeviceName);
+        writer.writeBooleanValue("networkInspectionSystemEnabled", windowsProtectionState.networkInspectionSystemEnabled);
+        writer.writeBooleanValue("quickScanOverdue", windowsProtectionState.quickScanOverdue);
+        writer.writeBooleanValue("realTimeProtectionEnabled", windowsProtectionState.realTimeProtectionEnabled);
+        writer.writeBooleanValue("rebootRequired", windowsProtectionState.rebootRequired);
+        writer.writeBooleanValue("signatureUpdateOverdue", windowsProtectionState.signatureUpdateOverdue);
+        writer.writeStringValue("signatureVersion", windowsProtectionState.signatureVersion);
+        writer.writeStringValue("tenantDisplayName", windowsProtectionState.tenantDisplayName);
+        writer.writeStringValue("tenantId", windowsProtectionState.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWindowsProtectionStateCollectionResponse(writer: SerializationWriter, windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, windowsProtectionStateCollectionResponse)
-    writer.writeCollectionOfObjectValues<WindowsProtectionState>("value", windowsProtectionStateCollectionResponse.value, serializeWindowsProtectionState);
+// @ts-ignore
+export function serializeWindowsProtectionStateCollectionResponse(writer: SerializationWriter, windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined | null = {}) : void {
+    if (windowsProtectionStateCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, windowsProtectionStateCollectionResponse)
+        writer.writeCollectionOfObjectValues<WindowsProtectionState>("value", windowsProtectionStateCollectionResponse.value, serializeWindowsProtectionState);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWorkloadAction(writer: SerializationWriter, workloadAction: Partial<WorkloadAction> | undefined = {}) : void {
-    writer.writeStringValue("actionId", workloadAction.actionId);
-    writer.writeEnumValue<WorkloadActionCategory>("category", workloadAction.category);
-    writer.writeStringValue("description", workloadAction.description);
-    writer.writeStringValue("displayName", workloadAction.displayName);
-    writer.writeCollectionOfPrimitiveValues<string>("licenses", workloadAction.licenses);
-    writer.writeStringValue("@odata.type", workloadAction.odataType);
-    writer.writeStringValue("service", workloadAction.service);
-    writer.writeCollectionOfObjectValues<Setting>("settings", workloadAction.settings, serializeSetting);
-    writer.writeAdditionalData(workloadAction.additionalData);
+// @ts-ignore
+export function serializeWorkloadAction(writer: SerializationWriter, workloadAction: Partial<WorkloadAction> | undefined | null = {}) : void {
+    if (workloadAction) {
+        writer.writeStringValue("actionId", workloadAction.actionId);
+        writer.writeEnumValue<WorkloadActionCategory>("category", workloadAction.category);
+        writer.writeStringValue("description", workloadAction.description);
+        writer.writeStringValue("displayName", workloadAction.displayName);
+        writer.writeCollectionOfPrimitiveValues<string>("licenses", workloadAction.licenses);
+        writer.writeStringValue("@odata.type", workloadAction.odataType);
+        writer.writeStringValue("service", workloadAction.service);
+        writer.writeCollectionOfObjectValues<Setting>("settings", workloadAction.settings, serializeSetting);
+        writer.writeAdditionalData(workloadAction.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWorkloadActionDeploymentStatus(writer: SerializationWriter, workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined = {}) : void {
-    writer.writeStringValue("actionId", workloadActionDeploymentStatus.actionId);
-    writer.writeStringValue("deployedPolicyId", workloadActionDeploymentStatus.deployedPolicyId);
-    writer.writeObjectValue<GenericError>("error", workloadActionDeploymentStatus.errorEscaped, serializeGenericError);
-    writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", workloadActionDeploymentStatus.excludeGroups);
-    writer.writeBooleanValue("includeAllUsers", workloadActionDeploymentStatus.includeAllUsers);
-    writer.writeCollectionOfPrimitiveValues<string>("includeGroups", workloadActionDeploymentStatus.includeGroups);
-    writer.writeDateValue("lastDeploymentDateTime", workloadActionDeploymentStatus.lastDeploymentDateTime);
-    writer.writeStringValue("@odata.type", workloadActionDeploymentStatus.odataType);
-    writer.writeEnumValue<WorkloadActionStatus>("status", workloadActionDeploymentStatus.status);
-    writer.writeAdditionalData(workloadActionDeploymentStatus.additionalData);
+// @ts-ignore
+export function serializeWorkloadActionDeploymentStatus(writer: SerializationWriter, workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined | null = {}) : void {
+    if (workloadActionDeploymentStatus) {
+        writer.writeStringValue("actionId", workloadActionDeploymentStatus.actionId);
+        writer.writeStringValue("deployedPolicyId", workloadActionDeploymentStatus.deployedPolicyId);
+        writer.writeObjectValue<GenericError>("error", workloadActionDeploymentStatus.errorEscaped, serializeGenericError);
+        writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", workloadActionDeploymentStatus.excludeGroups);
+        writer.writeBooleanValue("includeAllUsers", workloadActionDeploymentStatus.includeAllUsers);
+        writer.writeCollectionOfPrimitiveValues<string>("includeGroups", workloadActionDeploymentStatus.includeGroups);
+        writer.writeDateValue("lastDeploymentDateTime", workloadActionDeploymentStatus.lastDeploymentDateTime);
+        writer.writeStringValue("@odata.type", workloadActionDeploymentStatus.odataType);
+        writer.writeEnumValue<WorkloadActionStatus>("status", workloadActionDeploymentStatus.status);
+        writer.writeAdditionalData(workloadActionDeploymentStatus.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWorkloadStatus(writer: SerializationWriter, workloadStatus: Partial<WorkloadStatus> | undefined = {}) : void {
-    writer.writeStringValue("displayName", workloadStatus.displayName);
-    writer.writeStringValue("@odata.type", workloadStatus.odataType);
-    writer.writeDateValue("offboardedDateTime", workloadStatus.offboardedDateTime);
-    writer.writeDateValue("onboardedDateTime", workloadStatus.onboardedDateTime);
-    writer.writeEnumValue<WorkloadOnboardingStatus>("onboardingStatus", workloadStatus.onboardingStatus);
-    writer.writeAdditionalData(workloadStatus.additionalData);
+// @ts-ignore
+export function serializeWorkloadStatus(writer: SerializationWriter, workloadStatus: Partial<WorkloadStatus> | undefined | null = {}) : void {
+    if (workloadStatus) {
+        writer.writeStringValue("displayName", workloadStatus.displayName);
+        writer.writeStringValue("@odata.type", workloadStatus.odataType);
+        writer.writeDateValue("offboardedDateTime", workloadStatus.offboardedDateTime);
+        writer.writeDateValue("onboardedDateTime", workloadStatus.onboardedDateTime);
+        writer.writeEnumValue<WorkloadOnboardingStatus>("onboardingStatus", workloadStatus.onboardingStatus);
+        writer.writeAdditionalData(workloadStatus.additionalData);
+    }
 }
 export interface Setting extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -5589,31 +6084,31 @@ export interface Setting extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The display name for the setting. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The value for the setting serialized as string of JSON. Required. Read-only.
      */
-    jsonValue?: string;
+    jsonValue?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
      */
-    overwriteAllowed?: boolean;
+    overwriteAllowed?: boolean | null;
     /**
      * The settingId property
      */
-    settingId?: string;
+    settingId?: string | null;
     /**
      * The valueType property
      */
-    valueType?: ManagementParameterValueType;
+    valueType?: ManagementParameterValueType | null;
 }
 export interface TemplateParameter extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -5623,63 +6118,63 @@ export interface TemplateParameter extends AdditionalDataHolder, BackedModel, Pa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The description for the template parameter. Optional. Read-only.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name for the template parameter. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
      */
-    jsonAllowedValues?: string;
+    jsonAllowedValues?: string | null;
     /**
      * The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
      */
-    jsonDefaultValue?: string;
+    jsonDefaultValue?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The valueType property
      */
-    valueType?: ManagementParameterValueType;
+    valueType?: ManagementParameterValueType | null;
 }
 export interface Tenant extends Entity, Parsable {
     /**
      * The relationship details for the tenant with the managing entity.
      */
-    contract?: TenantContract;
+    contract?: TenantContract | null;
     /**
      * The date and time the tenant was created in the multi-tenant management platform. Optional. Read-only.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The display name for the tenant. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
      */
-    lastUpdatedDateTime?: Date;
+    lastUpdatedDateTime?: Date | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The onboarding status information for the tenant. Optional. Read-only.
      */
-    tenantStatusInformation?: TenantStatusInformation;
+    tenantStatusInformation?: TenantStatusInformation | null;
 }
 export interface TenantCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: Tenant[];
+    value?: Tenant[] | null;
 }
 export interface TenantContactInformation extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -5689,31 +6184,31 @@ export interface TenantContactInformation extends AdditionalDataHolder, BackedMo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The email address for the contact. Optional
      */
-    email?: string;
+    email?: string | null;
     /**
      * The name for the contact. Required.
      */
-    name?: string;
+    name?: string | null;
     /**
      * The notes associated with the contact. Optional
      */
-    notes?: string;
+    notes?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The phone number for the contact. Optional.
      */
-    phone?: string;
+    phone?: string | null;
     /**
      * The title for the contact. Required.
      */
-    title?: string;
+    title?: string | null;
 }
 export interface TenantContract extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -5723,147 +6218,147 @@ export interface TenantContract extends AdditionalDataHolder, BackedModel, Parsa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
      */
-    contractType?: number;
+    contractType?: number | null;
     /**
      * The default domain name for the tenant. Required. Read-only.
      */
-    defaultDomainName?: string;
+    defaultDomainName?: string | null;
     /**
      * The display name for the tenant. Optional. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface TenantCustomizedInformation extends Entity, Parsable {
     /**
      * Describes the relationship between the Managed Services Provider and the managed tenant; for example, Managed, Co-managed, Licensing. The maximum length is 250 characters. Optional.
      */
-    businessRelationship?: string;
+    businessRelationship?: string | null;
     /**
      * Contains the compliance requirements for the customer tenant; for example, HIPPA, NIST, CMMC. The maximum length is 250 characters per compliance requirement. Optional.
      */
-    complianceRequirements?: string[];
+    complianceRequirements?: string[] | null;
     /**
      * The collection of contacts for the managed tenant. Optional.
      */
-    contacts?: TenantContactInformation[];
+    contacts?: TenantContactInformation[] | null;
     /**
      * The display name for the managed tenant. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * This is the Managed Services Plans for the customer tenant that the Managed Services Provider manages. The maximum length is 250 characters per managed service plan. Optional.
      */
-    managedServicesPlans?: string[];
+    managedServicesPlans?: string[] | null;
     /**
      * A field for the Managed Services Provider technician to input custom text to share notes between technicians within the Managed Service Providers. The maximum length is 5000 characters. Optional.
      */
-    note?: string;
+    note?: string | null;
     /**
      * The date on which the note field of this entity was last modified. Optional.
      */
-    noteLastModifiedDateTime?: Date;
+    noteLastModifiedDateTime?: Date | null;
     /**
      * The list of Entra user IDs for users in the Managed Services Provider that manage the relationship with the managed tenant. Optional.
      */
-    partnerRelationshipManagerUserIds?: string[];
+    partnerRelationshipManagerUserIds?: string[] | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The website for the managed tenant. Required.
      */
-    website?: string;
+    website?: string | null;
 }
 export interface TenantCustomizedInformationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: TenantCustomizedInformation[];
+    value?: TenantCustomizedInformation[] | null;
 }
 export interface TenantDetailedInformation extends Entity, Parsable {
     /**
      * The city where the managed tenant is located. Optional. Read-only.
      */
-    city?: string;
+    city?: string | null;
     /**
      * The code for the country where the managed tenant is located. Optional. Read-only.
      */
-    countryCode?: string;
+    countryCode?: string | null;
     /**
      * The name for the country where the managed tenant is located. Optional. Read-only.
      */
-    countryName?: string;
+    countryName?: string | null;
     /**
      * The default domain name for the managed tenant. Optional. Read-only.
      */
-    defaultDomainName?: string;
+    defaultDomainName?: string | null;
     /**
      * The display name for the managed tenant.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The business industry associated with the managed tenant. Optional. Read-only.
      */
-    industryName?: string;
+    industryName?: string | null;
     /**
      * The region where the managed tenant is located. Optional. Read-only.
      */
-    region?: string;
+    region?: string | null;
     /**
      * The business segment associated with the managed tenant. Optional. Read-only.
      */
-    segmentName?: string;
+    segmentName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant.
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The vertical associated with the managed tenant. Optional. Read-only.
      */
-    verticalName?: string;
+    verticalName?: string | null;
 }
 export interface TenantDetailedInformationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: TenantDetailedInformation[];
+    value?: TenantDetailedInformation[] | null;
 }
 export interface TenantGroup extends Entity, Parsable {
     /**
      * A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
      */
-    allTenantsIncluded?: boolean;
+    allTenantsIncluded?: boolean | null;
     /**
      * The display name for the tenant group. Optional. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The collection of management action associated with the tenant group. Optional. Read-only.
      */
-    managementActions?: ManagementActionInfo[];
+    managementActions?: ManagementActionInfo[] | null;
     /**
      * The collection of management intents associated with the tenant group. Optional. Read-only.
      */
-    managementIntents?: ManagementIntentInfo[];
+    managementIntents?: ManagementIntentInfo[] | null;
     /**
      * The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
      */
-    tenantIds?: string[];
+    tenantIds?: string[] | null;
 }
 export interface TenantGroupCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: TenantGroup[];
+    value?: TenantGroup[] | null;
 }
 export interface TenantInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -5873,15 +6368,15 @@ export interface TenantInfo extends AdditionalDataHolder, BackedModel, Parsable 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export type TenantOnboardingEligibilityReason = (typeof TenantOnboardingEligibilityReasonObject)[keyof typeof TenantOnboardingEligibilityReasonObject];
 export type TenantOnboardingStatus = (typeof TenantOnboardingStatusObject)[keyof typeof TenantOnboardingStatusObject];
@@ -5893,273 +6388,273 @@ export interface TenantStatusInformation extends AdditionalDataHolder, BackedMod
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
      */
-    delegatedPrivilegeStatus?: DelegatedPrivilegeStatus;
+    delegatedPrivilegeStatus?: DelegatedPrivilegeStatus | null;
     /**
      * The date and time the delegated admin privileges status was updated. Optional. Read-only.
      */
-    lastDelegatedPrivilegeRefreshDateTime?: Date;
+    lastDelegatedPrivilegeRefreshDateTime?: Date | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The identifier for the account that offboarded the managed tenant. Optional. Read-only.
      */
-    offboardedByUserId?: string;
+    offboardedByUserId?: string | null;
     /**
      * The date and time when the managed tenant was offboarded. Optional. Read-only.
      */
-    offboardedDateTime?: Date;
+    offboardedDateTime?: Date | null;
     /**
      * The identifier for the account that onboarded the managed tenant. Optional. Read-only.
      */
-    onboardedByUserId?: string;
+    onboardedByUserId?: string | null;
     /**
      * The date and time when the managed tenant was onboarded. Optional. Read-only.
      */
-    onboardedDateTime?: Date;
+    onboardedDateTime?: Date | null;
     /**
      * The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
      */
-    onboardingStatus?: TenantOnboardingStatus;
+    onboardingStatus?: TenantOnboardingStatus | null;
     /**
      * Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
      */
-    tenantOnboardingEligibilityReason?: TenantOnboardingEligibilityReason;
+    tenantOnboardingEligibilityReason?: TenantOnboardingEligibilityReason | null;
     /**
      * The collection of workload statues for the managed tenant. Optional. Read-only.
      */
-    workloadStatuses?: WorkloadStatus[];
+    workloadStatuses?: WorkloadStatus[] | null;
 }
 export interface TenantTag extends Entity, Parsable {
     /**
      * The identifier for the account that created the tenant tag. Required. Read-only.
      */
-    createdByUserId?: string;
+    createdByUserId?: string | null;
     /**
      * The date and time when the tenant tag was created. Required. Read-only.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The date and time when the tenant tag was deleted. Required. Read-only.
      */
-    deletedDateTime?: Date;
+    deletedDateTime?: Date | null;
     /**
      * The description for the tenant tag. Optional. Read-only.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name for the tenant tag. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The identifier for the account that lasted on the tenant tag. Optional. Read-only.
      */
-    lastActionByUserId?: string;
+    lastActionByUserId?: string | null;
     /**
      * The date and time the last action was performed against the tenant tag. Optional. Read-only.
      */
-    lastActionDateTime?: Date;
+    lastActionDateTime?: Date | null;
     /**
      * The collection of managed tenants associated with the tenant tag. Optional.
      */
-    tenants?: TenantInfo[];
+    tenants?: TenantInfo[] | null;
 }
 export interface TenantTagCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: TenantTag[];
+    value?: TenantTag[] | null;
 }
 export interface WindowsDeviceMalwareState extends Entity, Parsable {
     /**
      * The additional information URL for the discovered malware. Optional. Read-only.
      */
-    additionalInformationUrl?: string;
+    additionalInformationUrl?: string | null;
     /**
      * The number of times the piece of malware has been detected. Optional. Read-only.
      */
-    detectionCount?: number;
+    detectionCount?: number | null;
     /**
      * A flag indicating whether the device has been deleted. Optional. Read-only.
      */
-    deviceDeleted?: boolean;
+    deviceDeleted?: boolean | null;
     /**
      * The date and time the piece of malware was initially detected. Optional. Read-only.
      */
-    initialDetectionDateTime?: Date;
+    initialDetectionDateTime?: Date | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The date and time the malware state was last changed. Optional. Read-only.
      */
-    lastStateChangeDateTime?: Date;
+    lastStateChangeDateTime?: Date | null;
     /**
      * The category for the detected malware. Optional. Read-only.
      */
-    malwareCategory?: string;
+    malwareCategory?: string | null;
     /**
      * The display name for the detected malware. Optional. Read-only.
      */
-    malwareDisplayName?: string;
+    malwareDisplayName?: string | null;
     /**
      * The execution state for the detected malware. Optional. Read-only.
      */
-    malwareExecutionState?: string;
+    malwareExecutionState?: string | null;
     /**
      * The unique identifier for the detected malware. Optional. Read-only.
      */
-    malwareId?: string;
+    malwareId?: string | null;
     /**
      * The severity for the detected malware. Optional. Read-only.
      */
-    malwareSeverity?: string;
+    malwareSeverity?: string | null;
     /**
      * The threat state for the detected malware. Optional. Read-only.
      */
-    malwareThreatState?: string;
+    malwareThreatState?: string | null;
     /**
      * The identifier for the managed device where the malware was detected. Optional. Read-only.
      */
-    managedDeviceId?: string;
+    managedDeviceId?: string | null;
     /**
      * The display name for the managed device where the malware was detected. Optional. Read-only.
      */
-    managedDeviceName?: string;
+    managedDeviceName?: string | null;
     /**
      * The display name for the managed tenant. Optional. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface WindowsDeviceMalwareStateCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: WindowsDeviceMalwareState[];
+    value?: WindowsDeviceMalwareState[] | null;
 }
 export interface WindowsProtectionState extends Entity, Parsable {
     /**
      * The anti-malware version for the managed device. Optional. Read-only.
      */
-    antiMalwareVersion?: string;
+    antiMalwareVersion?: string | null;
     /**
      * A flag indicating whether attention is required for the managed device. Optional. Read-only.
      */
-    attentionRequired?: boolean;
+    attentionRequired?: boolean | null;
     /**
      * A flag indicating whether the managed device has been deleted. Optional. Read-only.
      */
-    deviceDeleted?: boolean;
+    deviceDeleted?: boolean | null;
     /**
      * The date and time the device property has been refreshed. Optional. Read-only.
      */
-    devicePropertyRefreshDateTime?: Date;
+    devicePropertyRefreshDateTime?: Date | null;
     /**
      * The anti-virus engine version for the managed device. Optional. Read-only.
      */
-    engineVersion?: string;
+    engineVersion?: string | null;
     /**
      * A flag indicating whether quick scan is overdue for the managed device. Optional. Read-only.
      */
-    fullScanOverdue?: boolean;
+    fullScanOverdue?: boolean | null;
     /**
      * A flag indicating whether full scan is overdue for the managed device. Optional. Read-only.
      */
-    fullScanRequired?: boolean;
+    fullScanRequired?: boolean | null;
     /**
      * The date and time a full scan was completed. Optional. Read-only.
      */
-    lastFullScanDateTime?: Date;
+    lastFullScanDateTime?: Date | null;
     /**
      * The version anti-malware version used to perform the last full scan. Optional. Read-only.
      */
-    lastFullScanSignatureVersion?: string;
+    lastFullScanSignatureVersion?: string | null;
     /**
      * The date and time a quick scan was completed. Optional. Read-only.
      */
-    lastQuickScanDateTime?: Date;
+    lastQuickScanDateTime?: Date | null;
     /**
      * The version anti-malware version used to perform the last full scan. Optional. Read-only.
      */
-    lastQuickScanSignatureVersion?: string;
+    lastQuickScanSignatureVersion?: string | null;
     /**
      * Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
      */
-    lastRefreshedDateTime?: Date;
+    lastRefreshedDateTime?: Date | null;
     /**
      * The date and time the protection state was last reported for the managed device. Optional. Read-only.
      */
-    lastReportedDateTime?: Date;
+    lastReportedDateTime?: Date | null;
     /**
      * A flag indicating whether malware protection is enabled for the managed device. Optional. Read-only.
      */
-    malwareProtectionEnabled?: boolean;
+    malwareProtectionEnabled?: boolean | null;
     /**
      * The health state for the managed device. Optional. Read-only.
      */
-    managedDeviceHealthState?: string;
+    managedDeviceHealthState?: string | null;
     /**
      * The unique identifier for the managed device. Optional. Read-only.
      */
-    managedDeviceId?: string;
+    managedDeviceId?: string | null;
     /**
      * The display name for the managed device. Optional. Read-only.
      */
-    managedDeviceName?: string;
+    managedDeviceName?: string | null;
     /**
      * A flag indicating whether the network inspection system is enabled. Optional. Read-only.
      */
-    networkInspectionSystemEnabled?: boolean;
+    networkInspectionSystemEnabled?: boolean | null;
     /**
      * A flag indicating weather a quick scan is overdue. Optional. Read-only.
      */
-    quickScanOverdue?: boolean;
+    quickScanOverdue?: boolean | null;
     /**
      * A flag indicating whether real time protection is enabled. Optional. Read-only.
      */
-    realTimeProtectionEnabled?: boolean;
+    realTimeProtectionEnabled?: boolean | null;
     /**
      * A flag indicating whether a reboot is required. Optional. Read-only.
      */
-    rebootRequired?: boolean;
+    rebootRequired?: boolean | null;
     /**
      * A flag indicating whether an signature update is overdue. Optional. Read-only.
      */
-    signatureUpdateOverdue?: boolean;
+    signatureUpdateOverdue?: boolean | null;
     /**
      * The signature version for the managed device. Optional. Read-only.
      */
-    signatureVersion?: string;
+    signatureVersion?: string | null;
     /**
      * The display name for the managed tenant. Optional. Read-only.
      */
-    tenantDisplayName?: string;
+    tenantDisplayName?: string | null;
     /**
      * The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface WindowsProtectionStateCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: WindowsProtectionState[];
+    value?: WindowsProtectionState[] | null;
 }
 export interface WorkloadAction extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The unique identifier for the workload action. Required. Read-only.
      */
-    actionId?: string;
+    actionId?: string | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -6167,42 +6662,42 @@ export interface WorkloadAction extends AdditionalDataHolder, BackedModel, Parsa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
      */
-    category?: WorkloadActionCategory;
+    category?: WorkloadActionCategory | null;
     /**
      * The description for the workload action. Optional. Read-only.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name for the workload action. Optional. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The licenses property
      */
-    licenses?: string[];
+    licenses?: string[] | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The service associated with workload action. Optional. Read-only.
      */
-    service?: string;
+    service?: string | null;
     /**
      * The collection of settings associated with the workload action. Optional. Read-only.
      */
-    settings?: Setting[];
+    settings?: Setting[] | null;
 }
 export type WorkloadActionCategory = (typeof WorkloadActionCategoryObject)[keyof typeof WorkloadActionCategoryObject];
 export interface WorkloadActionDeploymentStatus extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The unique identifier for the workload action. Required. Read-only.
      */
-    actionId?: string;
+    actionId?: string | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -6210,39 +6705,39 @@ export interface WorkloadActionDeploymentStatus extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The identifier of any policy that was created by applying the workload action. Optional. Read-only.
      */
-    deployedPolicyId?: string;
+    deployedPolicyId?: string | null;
     /**
      * The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
      */
-    errorEscaped?: GenericError;
+    errorEscaped?: GenericError | null;
     /**
      * The excludeGroups property
      */
-    excludeGroups?: string[];
+    excludeGroups?: string[] | null;
     /**
      * The includeAllUsers property
      */
-    includeAllUsers?: boolean;
+    includeAllUsers?: boolean | null;
     /**
      * The includeGroups property
      */
-    includeGroups?: string[];
+    includeGroups?: string[] | null;
     /**
      * The date and time the workload action was last deployed. Optional.
      */
-    lastDeploymentDateTime?: Date;
+    lastDeploymentDateTime?: Date | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The status property
      */
-    status?: WorkloadActionStatus;
+    status?: WorkloadActionStatus | null;
 }
 export type WorkloadActionStatus = (typeof WorkloadActionStatusObject)[keyof typeof WorkloadActionStatusObject];
 export type WorkloadOnboardingStatus = (typeof WorkloadOnboardingStatusObject)[keyof typeof WorkloadOnboardingStatusObject];
@@ -6254,27 +6749,27 @@ export interface WorkloadStatus extends AdditionalDataHolder, BackedModel, Parsa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The display name for the workload. Required. Read-only.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The date and time the workload was offboarded. Optional. Read-only.
      */
-    offboardedDateTime?: Date;
+    offboardedDateTime?: Date | null;
     /**
      * The date and time the workload was onboarded. Optional. Read-only.
      */
-    onboardedDateTime?: Date;
+    onboardedDateTime?: Date | null;
     /**
      * The onboardingStatus property
      */
-    onboardingStatus?: WorkloadOnboardingStatus;
+    onboardingStatus?: WorkloadOnboardingStatus | null;
 }
 export const AlertSeverityObject = {
     Unknown: "unknown",

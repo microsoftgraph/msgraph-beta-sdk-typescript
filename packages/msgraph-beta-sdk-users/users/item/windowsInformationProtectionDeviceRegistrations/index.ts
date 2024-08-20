@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WindowsInformationProtectionDeviceRegistrationsRequestBuilder extends BaseRequestBuilder<WindowsInformationProtectionDeviceRegistrationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
      * @param windowsInformationProtectionDeviceRegistrationId The unique identifier of windowsInformationProtectionDeviceRegistration
      * @returns {WindowsInformationProtectionDeviceRegistrationItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byWindowsInformationProtectionDeviceRegistrationId(windowsInformationProtectionDeviceRegistrationId: string) : WindowsInformationProtectionDeviceRegistrationItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface WindowsInformationProtectionDeviceRegistrationsRequestBuilder e
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsInformationProtectionDeviceRegistrationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsInformationProtectionDeviceRegistrationCollectionResponse | undefined>;
     /**
      * Zero or more WIP device registrations that belong to the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -132,244 +132,304 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<ManagedDeviceItemRequestBuilder> {
     /**
      * Provides operations to call the activateDeviceEsim method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get activateDeviceEsim(): ActivateDeviceEsimRequestBuilder;
     /**
      * Provides operations to manage the assignmentFilterEvaluationStatusDetails property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get assignmentFilterEvaluationStatusDetails(): AssignmentFilterEvaluationStatusDetailsRequestBuilder;
     /**
      * Provides operations to call the bypassActivationLock method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get bypassActivationLock(): BypassActivationLockRequestBuilder;
     /**
      * Provides operations to call the changeAssignments method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get changeAssignments(): ChangeAssignmentsRequestBuilder;
     /**
      * Provides operations to call the cleanWindowsDevice method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get cleanWindowsDevice(): CleanWindowsDeviceRequestBuilder;
     /**
      * Provides operations to call the createDeviceLogCollectionRequest method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createDeviceLogCollectionRequest(): CreateDeviceLogCollectionRequestRequestBuilder;
     /**
      * Provides operations to call the deleteUserFromSharedAppleDevice method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deleteUserFromSharedAppleDevice(): DeleteUserFromSharedAppleDeviceRequestBuilder;
     /**
      * Provides operations to call the deprovision method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deprovision(): DeprovisionRequestBuilder;
     /**
      * Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get detectedApps(): DetectedAppsRequestBuilder;
     /**
      * Provides operations to manage the deviceCategory property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deviceCategory(): DeviceCategoryRequestBuilder;
     /**
      * Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deviceCompliancePolicyStates(): DeviceCompliancePolicyStatesRequestBuilder;
     /**
      * Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deviceConfigurationStates(): DeviceConfigurationStatesRequestBuilder;
     /**
      * Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deviceHealthScriptStates(): DeviceHealthScriptStatesRequestBuilder;
     /**
      * Provides operations to call the disable method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get disable(): DisableRequestBuilder;
     /**
      * Provides operations to call the disableLostMode method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get disableLostMode(): DisableLostModeRequestBuilder;
     /**
      * Provides operations to call the enableLostMode method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get enableLostMode(): EnableLostModeRequestBuilder;
     /**
      * Provides operations to call the enrollNowAction method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get enrollNowAction(): EnrollNowActionRequestBuilder;
     /**
      * Provides operations to call the getCloudPcRemoteActionResults method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getCloudPcRemoteActionResults(): GetCloudPcRemoteActionResultsRequestBuilder;
     /**
      * Provides operations to call the getCloudPcReviewStatus method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getCloudPcReviewStatus(): GetCloudPcReviewStatusRequestBuilder;
     /**
      * Provides operations to call the getFileVaultKey method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getFileVaultKey(): GetFileVaultKeyRequestBuilder;
     /**
      * Provides operations to call the getNonCompliantSettings method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getNonCompliantSettings(): GetNonCompliantSettingsRequestBuilder;
     /**
      * Provides operations to call the initiateDeviceAttestation method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get initiateDeviceAttestation(): InitiateDeviceAttestationRequestBuilder;
     /**
      * Provides operations to call the initiateMobileDeviceManagementKeyRecovery method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get initiateMobileDeviceManagementKeyRecovery(): InitiateMobileDeviceManagementKeyRecoveryRequestBuilder;
     /**
      * Provides operations to call the initiateOnDemandProactiveRemediation method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get initiateOnDemandProactiveRemediation(): InitiateOnDemandProactiveRemediationRequestBuilder;
     /**
      * Provides operations to call the locateDevice method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get locateDevice(): LocateDeviceRequestBuilder;
     /**
      * Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get logCollectionRequests(): LogCollectionRequestsRequestBuilder;
     /**
      * Provides operations to call the logoutSharedAppleDeviceActiveUser method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get logoutSharedAppleDeviceActiveUser(): LogoutSharedAppleDeviceActiveUserRequestBuilder;
     /**
      * Provides operations to manage the managedDeviceMobileAppConfigurationStates property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get managedDeviceMobileAppConfigurationStates(): ManagedDeviceMobileAppConfigurationStatesRequestBuilder;
     /**
      * Provides operations to call the overrideComplianceState method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get overrideComplianceState(): OverrideComplianceStateRequestBuilder;
     /**
      * Provides operations to call the pauseConfigurationRefresh method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get pauseConfigurationRefresh(): PauseConfigurationRefreshRequestBuilder;
     /**
      * Provides operations to call the playLostModeSound method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get playLostModeSound(): PlayLostModeSoundRequestBuilder;
     /**
      * Provides operations to call the rebootNow method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get rebootNow(): RebootNowRequestBuilder;
     /**
      * Provides operations to call the recoverPasscode method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get recoverPasscode(): RecoverPasscodeRequestBuilder;
     /**
      * Provides operations to call the reenable method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get reenable(): ReenableRequestBuilder;
     /**
      * Provides operations to call the remoteLock method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get remoteLock(): RemoteLockRequestBuilder;
     /**
      * Provides operations to call the removeDeviceFirmwareConfigurationInterfaceManagement method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get removeDeviceFirmwareConfigurationInterfaceManagement(): RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder;
     /**
      * Provides operations to call the reprovisionCloudPc method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get reprovisionCloudPc(): ReprovisionCloudPcRequestBuilder;
     /**
      * Provides operations to call the requestRemoteAssistance method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get requestRemoteAssistance(): RequestRemoteAssistanceRequestBuilder;
     /**
      * Provides operations to call the resetPasscode method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resetPasscode(): ResetPasscodeRequestBuilder;
     /**
      * Provides operations to call the resizeCloudPc method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resizeCloudPc(): ResizeCloudPcRequestBuilder;
     /**
      * Provides operations to call the restoreCloudPc method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get restoreCloudPc(): RestoreCloudPcRequestBuilder;
     /**
      * Provides operations to call the retire method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get retire(): RetireRequestBuilder;
     /**
      * Provides operations to call the revokeAppleVppLicenses method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get revokeAppleVppLicenses(): RevokeAppleVppLicensesRequestBuilder;
     /**
      * Provides operations to call the rotateBitLockerKeys method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get rotateBitLockerKeys(): RotateBitLockerKeysRequestBuilder;
     /**
      * Provides operations to call the rotateFileVaultKey method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get rotateFileVaultKey(): RotateFileVaultKeyRequestBuilder;
     /**
      * Provides operations to call the rotateLocalAdminPassword method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get rotateLocalAdminPassword(): RotateLocalAdminPasswordRequestBuilder;
     /**
      * Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get securityBaselineStates(): SecurityBaselineStatesRequestBuilder;
     /**
      * Provides operations to call the sendCustomNotificationToCompanyPortal method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendCustomNotificationToCompanyPortal(): SendCustomNotificationToCompanyPortalRequestBuilder;
     /**
      * Provides operations to call the setCloudPcReviewStatus method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setCloudPcReviewStatus(): SetCloudPcReviewStatusRequestBuilder;
     /**
      * Provides operations to call the setDeviceName method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setDeviceName(): SetDeviceNameRequestBuilder;
     /**
      * Provides operations to call the shutDown method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get shutDown(): ShutDownRequestBuilder;
     /**
      * Provides operations to call the syncDevice method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get syncDevice(): SyncDeviceRequestBuilder;
     /**
      * Provides operations to call the triggerConfigurationManagerAction method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get triggerConfigurationManagerAction(): TriggerConfigurationManagerActionRequestBuilder;
     /**
      * Provides operations to call the updateWindowsDeviceAccount method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get updateWindowsDeviceAccount(): UpdateWindowsDeviceAccountRequestBuilder;
     /**
      * Provides operations to manage the users property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get users(): UsersRequestBuilder;
     /**
      * Provides operations to call the windowsDefenderScan method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get windowsDefenderScan(): WindowsDefenderScanRequestBuilder;
     /**
      * Provides operations to call the windowsDefenderUpdateSignatures method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get windowsDefenderUpdateSignatures(): WindowsDefenderUpdateSignaturesRequestBuilder;
     /**
      * Provides operations to manage the windowsProtectionState property of the microsoft.graph.managedDevice entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get windowsProtectionState(): WindowsProtectionStateRequestBuilder;
     /**
      * Provides operations to call the wipe method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get wipe(): WipeRequestBuilder;
     /**
      * Delete navigation property managedDevices for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -377,6 +437,7 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedDevice | undefined>;
     /**
@@ -385,18 +446,21 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ManagedDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedDevice | undefined>;
     /**
      * Delete navigation property managedDevices for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The managed devices associated with the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -404,6 +468,7 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ManagedDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

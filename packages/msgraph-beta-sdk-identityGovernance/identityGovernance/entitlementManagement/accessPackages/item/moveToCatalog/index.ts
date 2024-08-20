@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MoveToCatalogPostRequestBody}
  */
+// @ts-ignore
 export function createMoveToCatalogPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMoveToCatalogPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createMoveToCatalogPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMoveToCatalogPostRequestBody(moveToCatalogPostRequestBody: Partial<MoveToCatalogPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { moveToCatalogPostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface MoveToCatalogPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The catalogId property
      */
-    catalogId?: string;
+    catalogId?: string | null;
 }
 /**
  * Provides operations to call the moveToCatalog method.
@@ -62,9 +64,12 @@ export interface MoveToCatalogRequestBuilder extends BaseRequestBuilder<MoveToCa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMoveToCatalogPostRequestBody(writer: SerializationWriter, moveToCatalogPostRequestBody: Partial<MoveToCatalogPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("catalogId", moveToCatalogPostRequestBody.catalogId);
-    writer.writeAdditionalData(moveToCatalogPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeMoveToCatalogPostRequestBody(writer: SerializationWriter, moveToCatalogPostRequestBody: Partial<MoveToCatalogPostRequestBody> | undefined | null = {}) : void {
+    if (moveToCatalogPostRequestBody) {
+        writer.writeStringValue("catalogId", moveToCatalogPostRequestBody.catalogId);
+        writer.writeAdditionalData(moveToCatalogPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

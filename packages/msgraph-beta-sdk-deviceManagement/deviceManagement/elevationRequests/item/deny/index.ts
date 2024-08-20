@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DenyPostRequestBody}
  */
+// @ts-ignore
 export function createDenyPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDenyPostRequestBody;
 }
@@ -24,11 +25,11 @@ export interface DenyPostRequestBody extends AdditionalDataHolder, BackedModel, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The reviewerJustification property
      */
-    reviewerJustification?: string;
+    reviewerJustification?: string | null;
 }
 /**
  * Provides operations to call the deny method.
@@ -54,6 +55,7 @@ export interface DenyRequestBuilder extends BaseRequestBuilder<DenyRequestBuilde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDenyPostRequestBody(denyPostRequestBody: Partial<DenyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { denyPostRequestBody.backingStoreEnabled = true; },
@@ -64,9 +66,12 @@ export function deserializeIntoDenyPostRequestBody(denyPostRequestBody: Partial<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDenyPostRequestBody(writer: SerializationWriter, denyPostRequestBody: Partial<DenyPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("reviewerJustification", denyPostRequestBody.reviewerJustification);
-    writer.writeAdditionalData(denyPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeDenyPostRequestBody(writer: SerializationWriter, denyPostRequestBody: Partial<DenyPostRequestBody> | undefined | null = {}) : void {
+    if (denyPostRequestBody) {
+        writer.writeStringValue("reviewerJustification", denyPostRequestBody.reviewerJustification);
+        writer.writeAdditionalData(denyPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

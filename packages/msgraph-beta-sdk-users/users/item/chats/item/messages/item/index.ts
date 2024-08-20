@@ -26,32 +26,39 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ChatMessageItemRequestBuilder extends BaseRequestBuilder<ChatMessageItemRequestBuilder> {
     /**
      * Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get hostedContents(): HostedContentsRequestBuilder;
     /**
      * Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get replies(): RepliesRequestBuilder;
     /**
      * Provides operations to call the setReaction method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setReaction(): SetReactionRequestBuilder;
     /**
      * Provides operations to call the softDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get softDelete(): SoftDeleteRequestBuilder;
     /**
      * Provides operations to call the undoSoftDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get undoSoftDelete(): UndoSoftDeleteRequestBuilder;
     /**
      * Provides operations to call the unsetReaction method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get unsetReaction(): UnsetReactionRequestBuilder;
     /**
      * Delete navigation property messages for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -59,6 +66,7 @@ export interface ChatMessageItemRequestBuilder extends BaseRequestBuilder<ChatMe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ChatMessageItemRequestBuilderGetQueryParameters> | undefined) : Promise<ChatMessage | undefined>;
     /**
@@ -67,18 +75,21 @@ export interface ChatMessageItemRequestBuilder extends BaseRequestBuilder<ChatMe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChatMessage | undefined>;
     /**
      * Delete navigation property messages for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of all the messages in the chat. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChatMessageItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -86,6 +97,7 @@ export interface ChatMessageItemRequestBuilder extends BaseRequestBuilder<ChatMe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -14,21 +14,22 @@ export interface AddMembersByIdPostRequestBody extends AdditionalDataHolder, Bac
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The ids property
      */
-    ids?: string[];
+    ids?: string[] | null;
     /**
      * The memberEntityType property
      */
-    memberEntityType?: string;
+    memberEntityType?: string | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddMembersByIdPostRequestBody}
  */
+// @ts-ignore
 export function createAddMembersByIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddMembersByIdPostRequestBody;
 }
@@ -36,6 +37,7 @@ export function createAddMembersByIdPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAddMembersByIdPostRequestBody(addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addMembersByIdPostRequestBody.backingStoreEnabled = true; },
@@ -67,10 +69,13 @@ export interface MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder extend
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAddMembersByIdPostRequestBody(writer: SerializationWriter, addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("ids", addMembersByIdPostRequestBody.ids);
-    writer.writeStringValue("memberEntityType", addMembersByIdPostRequestBody.memberEntityType);
-    writer.writeAdditionalData(addMembersByIdPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeAddMembersByIdPostRequestBody(writer: SerializationWriter, addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined | null = {}) : void {
+    if (addMembersByIdPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("ids", addMembersByIdPostRequestBody.ids);
+        writer.writeStringValue("memberEntityType", addMembersByIdPostRequestBody.memberEntityType);
+        writer.writeAdditionalData(addMembersByIdPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

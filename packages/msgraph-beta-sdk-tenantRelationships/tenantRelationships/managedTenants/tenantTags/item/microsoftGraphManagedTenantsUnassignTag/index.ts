@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UnassignTagPostRequestBody}
  */
+// @ts-ignore
 export function createUnassignTagPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnassignTagPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUnassignTagPostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUnassignTagPostRequestBody(unassignTagPostRequestBody: Partial<UnassignTagPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unassignTagPostRequestBody.backingStoreEnabled = true; },
@@ -51,9 +53,12 @@ export interface MicrosoftGraphManagedTenantsUnassignTagRequestBuilder extends B
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUnassignTagPostRequestBody(writer: SerializationWriter, unassignTagPostRequestBody: Partial<UnassignTagPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("tenantIds", unassignTagPostRequestBody.tenantIds);
-    writer.writeAdditionalData(unassignTagPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUnassignTagPostRequestBody(writer: SerializationWriter, unassignTagPostRequestBody: Partial<UnassignTagPostRequestBody> | undefined | null = {}) : void {
+    if (unassignTagPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("tenantIds", unassignTagPostRequestBody.tenantIds);
+        writer.writeAdditionalData(unassignTagPostRequestBody.additionalData);
+    }
 }
 export interface UnassignTagPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -63,11 +68,11 @@ export interface UnassignTagPostRequestBody extends AdditionalDataHolder, Backed
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The tenantIds property
      */
-    tenantIds?: string[];
+    tenantIds?: string[] | null;
 }
 /**
  * Uri template for the request builder.

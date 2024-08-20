@@ -14,23 +14,23 @@ export interface BatchRecordDecisionsPostRequestBody extends AdditionalDataHolde
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The decision property
      */
-    decision?: string;
+    decision?: string | null;
     /**
      * The justification property
      */
-    justification?: string;
+    justification?: string | null;
     /**
      * The principalId property
      */
-    principalId?: string;
+    principalId?: string | null;
     /**
      * The resourceId property
      */
-    resourceId?: string;
+    resourceId?: string | null;
 }
 /**
  * Provides operations to call the batchRecordDecisions method.
@@ -41,6 +41,7 @@ export interface BatchRecordDecisionsRequestBuilder extends BaseRequestBuilder<B
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-beta|Find more info here}
      */
      post(body: BatchRecordDecisionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -49,6 +50,7 @@ export interface BatchRecordDecisionsRequestBuilder extends BaseRequestBuilder<B
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: BatchRecordDecisionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -57,6 +59,7 @@ export interface BatchRecordDecisionsRequestBuilder extends BaseRequestBuilder<B
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BatchRecordDecisionsPostRequestBody}
  */
+// @ts-ignore
 export function createBatchRecordDecisionsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBatchRecordDecisionsPostRequestBody;
 }
@@ -64,6 +67,7 @@ export function createBatchRecordDecisionsPostRequestBodyFromDiscriminatorValue(
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBatchRecordDecisionsPostRequestBody(batchRecordDecisionsPostRequestBody: Partial<BatchRecordDecisionsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { batchRecordDecisionsPostRequestBody.backingStoreEnabled = true; },
@@ -77,12 +81,15 @@ export function deserializeIntoBatchRecordDecisionsPostRequestBody(batchRecordDe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBatchRecordDecisionsPostRequestBody(writer: SerializationWriter, batchRecordDecisionsPostRequestBody: Partial<BatchRecordDecisionsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("decision", batchRecordDecisionsPostRequestBody.decision);
-    writer.writeStringValue("justification", batchRecordDecisionsPostRequestBody.justification);
-    writer.writeStringValue("principalId", batchRecordDecisionsPostRequestBody.principalId);
-    writer.writeStringValue("resourceId", batchRecordDecisionsPostRequestBody.resourceId);
-    writer.writeAdditionalData(batchRecordDecisionsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeBatchRecordDecisionsPostRequestBody(writer: SerializationWriter, batchRecordDecisionsPostRequestBody: Partial<BatchRecordDecisionsPostRequestBody> | undefined | null = {}) : void {
+    if (batchRecordDecisionsPostRequestBody) {
+        writer.writeStringValue("decision", batchRecordDecisionsPostRequestBody.decision);
+        writer.writeStringValue("justification", batchRecordDecisionsPostRequestBody.justification);
+        writer.writeStringValue("principalId", batchRecordDecisionsPostRequestBody.principalId);
+        writer.writeStringValue("resourceId", batchRecordDecisionsPostRequestBody.resourceId);
+        writer.writeAdditionalData(batchRecordDecisionsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

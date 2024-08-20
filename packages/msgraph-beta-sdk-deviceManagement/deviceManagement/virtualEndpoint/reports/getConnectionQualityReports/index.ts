@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetConnectionQualityReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetConnectionQualityReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetConnectionQualityReportsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetConnectionQualityReportsPostRequestBodyFromDiscriminato
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetConnectionQualityReportsPostRequestBody(getConnectionQualityReportsPostRequestBody: Partial<GetConnectionQualityReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getConnectionQualityReportsPostRequestBody.backingStoreEnabled = true; },
@@ -38,35 +40,35 @@ export interface GetConnectionQualityReportsPostRequestBody extends AdditionalDa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getConnectionQualityReports method.
@@ -93,15 +95,18 @@ export interface GetConnectionQualityReportsRequestBuilder extends BaseRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetConnectionQualityReportsPostRequestBody(writer: SerializationWriter, getConnectionQualityReportsPostRequestBody: Partial<GetConnectionQualityReportsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getConnectionQualityReportsPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConnectionQualityReportsPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConnectionQualityReportsPostRequestBody.orderBy);
-    writer.writeStringValue("search", getConnectionQualityReportsPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getConnectionQualityReportsPostRequestBody.select);
-    writer.writeNumberValue("skip", getConnectionQualityReportsPostRequestBody.skip);
-    writer.writeNumberValue("top", getConnectionQualityReportsPostRequestBody.top);
-    writer.writeAdditionalData(getConnectionQualityReportsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetConnectionQualityReportsPostRequestBody(writer: SerializationWriter, getConnectionQualityReportsPostRequestBody: Partial<GetConnectionQualityReportsPostRequestBody> | undefined | null = {}) : void {
+    if (getConnectionQualityReportsPostRequestBody) {
+        writer.writeStringValue("filter", getConnectionQualityReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConnectionQualityReportsPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConnectionQualityReportsPostRequestBody.orderBy);
+        writer.writeStringValue("search", getConnectionQualityReportsPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getConnectionQualityReportsPostRequestBody.select);
+        writer.writeNumberValue("skip", getConnectionQualityReportsPostRequestBody.skip);
+        writer.writeNumberValue("top", getConnectionQualityReportsPostRequestBody.top);
+        writer.writeAdditionalData(getConnectionQualityReportsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

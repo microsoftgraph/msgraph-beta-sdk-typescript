@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GenerateEncryptionPublicKeyPostResponse}
  */
+// @ts-ignore
 export function createGenerateEncryptionPublicKeyPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGenerateEncryptionPublicKeyPostResponse;
 }
@@ -18,6 +19,7 @@ export function createGenerateEncryptionPublicKeyPostResponseFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGenerateEncryptionPublicKeyPostResponse(generateEncryptionPublicKeyPostResponse: Partial<GenerateEncryptionPublicKeyPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { generateEncryptionPublicKeyPostResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface GenerateEncryptionPublicKeyPostResponse extends AdditionalDataH
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the generateEncryptionPublicKey method.
@@ -60,9 +62,12 @@ export interface GenerateEncryptionPublicKeyRequestBuilder extends BaseRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGenerateEncryptionPublicKeyPostResponse(writer: SerializationWriter, generateEncryptionPublicKeyPostResponse: Partial<GenerateEncryptionPublicKeyPostResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", generateEncryptionPublicKeyPostResponse.value);
-    writer.writeAdditionalData(generateEncryptionPublicKeyPostResponse.additionalData);
+// @ts-ignore
+export function serializeGenerateEncryptionPublicKeyPostResponse(writer: SerializationWriter, generateEncryptionPublicKeyPostResponse: Partial<GenerateEncryptionPublicKeyPostResponse> | undefined | null = {}) : void {
+    if (generateEncryptionPublicKeyPostResponse) {
+        writer.writeStringValue("value", generateEncryptionPublicKeyPostResponse.value);
+        writer.writeAdditionalData(generateEncryptionPublicKeyPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

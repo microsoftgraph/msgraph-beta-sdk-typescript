@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateMigrationReportPostRequestBody}
  */
+// @ts-ignore
 export function createCreateMigrationReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateMigrationReportPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createCreateMigrationReportPostRequestBodyFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateMigrationReportPostResponse}
  */
+// @ts-ignore
 export function createCreateMigrationReportPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateMigrationReportPostResponse;
 }
@@ -32,11 +34,11 @@ export interface CreateMigrationReportPostRequestBody extends AdditionalDataHold
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The groupPolicyObjectFile property
      */
-    groupPolicyObjectFile?: GroupPolicyObjectFile;
+    groupPolicyObjectFile?: GroupPolicyObjectFile | null;
 }
 export interface CreateMigrationReportPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -46,11 +48,11 @@ export interface CreateMigrationReportPostResponse extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the createMigrationReport method.
@@ -76,6 +78,7 @@ export interface CreateMigrationReportRequestBuilder extends BaseRequestBuilder<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateMigrationReportPostRequestBody(createMigrationReportPostRequestBody: Partial<CreateMigrationReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createMigrationReportPostRequestBody.backingStoreEnabled = true; },
@@ -86,6 +89,7 @@ export function deserializeIntoCreateMigrationReportPostRequestBody(createMigrat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateMigrationReportPostResponse(createMigrationReportPostResponse: Partial<CreateMigrationReportPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createMigrationReportPostResponse.backingStoreEnabled = true; },
@@ -96,17 +100,23 @@ export function deserializeIntoCreateMigrationReportPostResponse(createMigration
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreateMigrationReportPostRequestBody(writer: SerializationWriter, createMigrationReportPostRequestBody: Partial<CreateMigrationReportPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<GroupPolicyObjectFile>("groupPolicyObjectFile", createMigrationReportPostRequestBody.groupPolicyObjectFile, serializeGroupPolicyObjectFile);
-    writer.writeAdditionalData(createMigrationReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCreateMigrationReportPostRequestBody(writer: SerializationWriter, createMigrationReportPostRequestBody: Partial<CreateMigrationReportPostRequestBody> | undefined | null = {}) : void {
+    if (createMigrationReportPostRequestBody) {
+        writer.writeObjectValue<GroupPolicyObjectFile>("groupPolicyObjectFile", createMigrationReportPostRequestBody.groupPolicyObjectFile, serializeGroupPolicyObjectFile);
+        writer.writeAdditionalData(createMigrationReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreateMigrationReportPostResponse(writer: SerializationWriter, createMigrationReportPostResponse: Partial<CreateMigrationReportPostResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", createMigrationReportPostResponse.value);
-    writer.writeAdditionalData(createMigrationReportPostResponse.additionalData);
+// @ts-ignore
+export function serializeCreateMigrationReportPostResponse(writer: SerializationWriter, createMigrationReportPostResponse: Partial<CreateMigrationReportPostResponse> | undefined | null = {}) : void {
+    if (createMigrationReportPostResponse) {
+        writer.writeStringValue("value", createMigrationReportPostResponse.value);
+        writer.writeAdditionalData(createMigrationReportPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

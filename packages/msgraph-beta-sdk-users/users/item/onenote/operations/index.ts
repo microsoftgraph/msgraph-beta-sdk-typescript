@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.onenote entity.
      * @param onenoteOperationId The unique identifier of onenoteOperation
      * @returns {OnenoteOperationItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byOnenoteOperationId(onenoteOperationId: string) : OnenoteOperationItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteOperationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OperationsRequestBuilderGetQueryParameters> | undefined) : Promise<OnenoteOperationCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteOperation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: OnenoteOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnenoteOperation | undefined>;
     /**
      * The status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OperationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: OnenoteOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

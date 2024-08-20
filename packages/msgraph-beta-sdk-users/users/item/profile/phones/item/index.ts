@@ -16,6 +16,7 @@ export interface ItemPhoneItemRequestBuilder extends BaseRequestBuilder<ItemPhon
      * Delete an itemPhone object from the user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -24,6 +25,7 @@ export interface ItemPhoneItemRequestBuilder extends BaseRequestBuilder<ItemPhon
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPhone>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ItemPhoneItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemPhone | undefined>;
     /**
@@ -32,6 +34,7 @@ export interface ItemPhoneItemRequestBuilder extends BaseRequestBuilder<ItemPhon
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPhone>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ItemPhone, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemPhone | undefined>;
@@ -39,12 +42,14 @@ export interface ItemPhoneItemRequestBuilder extends BaseRequestBuilder<ItemPhon
      * Delete an itemPhone object from the user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents detailed information about phone numbers associated with a user in various services.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemPhoneItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ItemPhoneItemRequestBuilder extends BaseRequestBuilder<ItemPhon
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ItemPhone, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

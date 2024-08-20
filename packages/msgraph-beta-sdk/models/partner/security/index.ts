@@ -14,27 +14,27 @@ export interface ActivityLog extends AdditionalDataHolder, BackedModel, Parsable
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The statusFrom property
      */
-    statusFrom?: SecurityAlertStatus;
+    statusFrom?: SecurityAlertStatus | null;
     /**
      * The statusTo property
      */
-    statusTo?: SecurityAlertStatus;
+    statusTo?: SecurityAlertStatus | null;
     /**
      * The UPN of the partner user who did the status update activity. This attribute is set by the system.
      */
-    updatedBy?: string;
+    updatedBy?: string | null;
     /**
      * The date and time for the status update activity. This attribute is set by the system. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    updatedDateTime?: Date;
+    updatedDateTime?: Date | null;
 }
 export interface AdditionalDataDictionary extends Dictionary, Parsable {
 }
@@ -46,25 +46,26 @@ export interface AffectedResource extends AdditionalDataHolder, BackedModel, Par
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The resource path of the resource affected by the security alert.
      */
-    resourceId?: string;
+    resourceId?: string | null;
     /**
      * The type of resource.
      */
-    resourceType?: string;
+    resourceType?: string | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ActivityLog}
  */
+// @ts-ignore
 export function createActivityLogFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoActivityLog;
 }
@@ -73,6 +74,7 @@ export function createActivityLogFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AdditionalDataDictionary}
  */
+// @ts-ignore
 export function createAdditionalDataDictionaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAdditionalDataDictionary;
 }
@@ -81,6 +83,7 @@ export function createAdditionalDataDictionaryFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AffectedResource}
  */
+// @ts-ignore
 export function createAffectedResourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAffectedResource;
 }
@@ -89,6 +92,7 @@ export function createAffectedResourceFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PartnerSecurityAlertCollectionResponse}
  */
+// @ts-ignore
 export function createPartnerSecurityAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPartnerSecurityAlertCollectionResponse;
 }
@@ -97,6 +101,7 @@ export function createPartnerSecurityAlertCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PartnerSecurityAlert}
  */
+// @ts-ignore
 export function createPartnerSecurityAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPartnerSecurityAlert;
 }
@@ -105,6 +110,7 @@ export function createPartnerSecurityAlertFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PartnerSecurity}
  */
+// @ts-ignore
 export function createPartnerSecurityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPartnerSecurity;
 }
@@ -112,6 +118,7 @@ export function createPartnerSecurityFromDiscriminatorValue(parseNode: ParseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoActivityLog(activityLog: Partial<ActivityLog> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { activityLog.backingStoreEnabled = true; },
@@ -126,6 +133,7 @@ export function deserializeIntoActivityLog(activityLog: Partial<ActivityLog> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAdditionalDataDictionary(additionalDataDictionary: Partial<AdditionalDataDictionary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDictionary(additionalDataDictionary),
@@ -135,6 +143,7 @@ export function deserializeIntoAdditionalDataDictionary(additionalDataDictionary
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAffectedResource(affectedResource: Partial<AffectedResource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { affectedResource.backingStoreEnabled = true; },
@@ -147,6 +156,7 @@ export function deserializeIntoAffectedResource(affectedResource: Partial<Affect
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPartnerSecurity(partnerSecurity: Partial<PartnerSecurity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(partnerSecurity),
@@ -157,6 +167,7 @@ export function deserializeIntoPartnerSecurity(partnerSecurity: Partial<PartnerS
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPartnerSecurityAlert(partnerSecurityAlert: Partial<PartnerSecurityAlert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(partnerSecurityAlert),
@@ -186,6 +197,7 @@ export function deserializeIntoPartnerSecurityAlert(partnerSecurityAlert: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPartnerSecurityAlertCollectionResponse(partnerSecurityAlertCollectionResponse: Partial<PartnerSecurityAlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(partnerSecurityAlertCollectionResponse),
@@ -196,95 +208,95 @@ export interface PartnerSecurity extends Entity, Parsable {
     /**
      * The security alerts or a vulnerability of a CSP partner's customer that the partner must be made aware of for further action.
      */
-    securityAlerts?: PartnerSecurityAlert[];
+    securityAlerts?: PartnerSecurityAlert[] | null;
 }
 export interface PartnerSecurityAlert extends Entity, Parsable {
     /**
      * Represents the activity by a partner and includes details of state transitions, who performed them, and when they occurred.
      */
-    activityLogs?: ActivityLog[];
+    activityLogs?: ActivityLog[] | null;
     /**
      * A bag of name-value pairs that contain more details about an alert.
      */
-    additionalDetails?: AdditionalDataDictionary;
+    additionalDetails?: AdditionalDataDictionary | null;
     /**
      * Contains details of the resources affected by the security alert.
      */
-    affectedResources?: AffectedResource[];
+    affectedResources?: AffectedResource[] | null;
     /**
      * The type of vulnerability that impacts the customer due to this alert. For more information, see Security alerts reference guide.
      */
-    alertType?: string;
+    alertType?: string | null;
     /**
      * The modern offer category ID of the subscription.
      */
-    catalogOfferId?: string;
+    catalogOfferId?: string | null;
     /**
      * The confidenceLevel property
      */
-    confidenceLevel?: SecurityAlertConfidence;
+    confidenceLevel?: SecurityAlertConfidence | null;
     /**
      * The impacted customer tenant associated with the alert.
      */
-    customerTenantId?: string;
+    customerTenantId?: string | null;
     /**
      * The description for each alert.
      */
-    description?: string;
+    description?: string | null;
     /**
      * Time when the alert was detected or created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    detectedDateTime?: Date;
+    detectedDateTime?: Date | null;
     /**
      * The display name of the alert.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    firstObservedDateTime?: Date;
+    firstObservedDateTime?: Date | null;
     /**
      * Indicates whether an alert is a test alert.
      */
-    isTest?: boolean;
+    isTest?: boolean | null;
     /**
      * Time of the latest activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    lastObservedDateTime?: Date;
+    lastObservedDateTime?: Date | null;
     /**
      * The UPN of the partner user who resolved the alert.
      */
-    resolvedBy?: string;
+    resolvedBy?: string | null;
     /**
      * Time when the alert was resolved. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    resolvedOnDateTime?: Date;
+    resolvedOnDateTime?: Date | null;
     /**
      * The reason provided by the partner for addressing the alert. The possible values are: legitimate, ignore, fraud, unknownFutureValue.
      */
-    resolvedReason?: SecurityAlertResolvedReason;
+    resolvedReason?: SecurityAlertResolvedReason | null;
     /**
      * The severity property
      */
-    severity?: SecurityAlertSeverity;
+    severity?: SecurityAlertSeverity | null;
     /**
      * The status property
      */
-    status?: SecurityAlertStatus;
+    status?: SecurityAlertStatus | null;
     /**
      * The subscription associated with the alert for the customer.
      */
-    subscriptionId?: string;
+    subscriptionId?: string | null;
     /**
      * The value-added reseller tenant associated with the partner tenant and customer tenant.
      */
-    valueAddedResellerTenantId?: string;
+    valueAddedResellerTenantId?: string | null;
 }
 export interface PartnerSecurityAlertCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: PartnerSecurityAlert[];
+    value?: PartnerSecurityAlert[] | null;
 }
 export type SecurityAlertConfidence = (typeof SecurityAlertConfidenceObject)[keyof typeof SecurityAlertConfidenceObject];
 export type SecurityAlertResolvedReason = (typeof SecurityAlertResolvedReasonObject)[keyof typeof SecurityAlertResolvedReasonObject];
@@ -294,73 +306,91 @@ export type SecurityAlertStatus = (typeof SecurityAlertStatusObject)[keyof typeo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeActivityLog(writer: SerializationWriter, activityLog: Partial<ActivityLog> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", activityLog.odataType);
-    writer.writeEnumValue<SecurityAlertStatus>("statusFrom", activityLog.statusFrom);
-    writer.writeEnumValue<SecurityAlertStatus>("statusTo", activityLog.statusTo);
-    writer.writeStringValue("updatedBy", activityLog.updatedBy);
-    writer.writeDateValue("updatedDateTime", activityLog.updatedDateTime);
-    writer.writeAdditionalData(activityLog.additionalData);
+// @ts-ignore
+export function serializeActivityLog(writer: SerializationWriter, activityLog: Partial<ActivityLog> | undefined | null = {}) : void {
+    if (activityLog) {
+        writer.writeStringValue("@odata.type", activityLog.odataType);
+        writer.writeEnumValue<SecurityAlertStatus>("statusFrom", activityLog.statusFrom);
+        writer.writeEnumValue<SecurityAlertStatus>("statusTo", activityLog.statusTo);
+        writer.writeStringValue("updatedBy", activityLog.updatedBy);
+        writer.writeDateValue("updatedDateTime", activityLog.updatedDateTime);
+        writer.writeAdditionalData(activityLog.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAdditionalDataDictionary(writer: SerializationWriter, additionalDataDictionary: Partial<AdditionalDataDictionary> | undefined = {}) : void {
-    serializeDictionary(writer, additionalDataDictionary)
+// @ts-ignore
+export function serializeAdditionalDataDictionary(writer: SerializationWriter, additionalDataDictionary: Partial<AdditionalDataDictionary> | undefined | null = {}) : void {
+    if (additionalDataDictionary) {
+        serializeDictionary(writer, additionalDataDictionary)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAffectedResource(writer: SerializationWriter, affectedResource: Partial<AffectedResource> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", affectedResource.odataType);
-    writer.writeStringValue("resourceId", affectedResource.resourceId);
-    writer.writeStringValue("resourceType", affectedResource.resourceType);
-    writer.writeAdditionalData(affectedResource.additionalData);
+// @ts-ignore
+export function serializeAffectedResource(writer: SerializationWriter, affectedResource: Partial<AffectedResource> | undefined | null = {}) : void {
+    if (affectedResource) {
+        writer.writeStringValue("@odata.type", affectedResource.odataType);
+        writer.writeStringValue("resourceId", affectedResource.resourceId);
+        writer.writeStringValue("resourceType", affectedResource.resourceType);
+        writer.writeAdditionalData(affectedResource.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePartnerSecurity(writer: SerializationWriter, partnerSecurity: Partial<PartnerSecurity> | undefined = {}) : void {
-    serializeEntity(writer, partnerSecurity)
-    writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("securityAlerts", partnerSecurity.securityAlerts, serializePartnerSecurityAlert);
+// @ts-ignore
+export function serializePartnerSecurity(writer: SerializationWriter, partnerSecurity: Partial<PartnerSecurity> | undefined | null = {}) : void {
+    if (partnerSecurity) {
+        serializeEntity(writer, partnerSecurity)
+        writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("securityAlerts", partnerSecurity.securityAlerts, serializePartnerSecurityAlert);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePartnerSecurityAlert(writer: SerializationWriter, partnerSecurityAlert: Partial<PartnerSecurityAlert> | undefined = {}) : void {
-    serializeEntity(writer, partnerSecurityAlert)
-    writer.writeCollectionOfObjectValues<ActivityLog>("activityLogs", partnerSecurityAlert.activityLogs, serializeActivityLog);
-    writer.writeObjectValue<AdditionalDataDictionary>("additionalDetails", partnerSecurityAlert.additionalDetails, serializeAdditionalDataDictionary);
-    writer.writeCollectionOfObjectValues<AffectedResource>("affectedResources", partnerSecurityAlert.affectedResources, serializeAffectedResource);
-    writer.writeStringValue("alertType", partnerSecurityAlert.alertType);
-    writer.writeStringValue("catalogOfferId", partnerSecurityAlert.catalogOfferId);
-    writer.writeEnumValue<SecurityAlertConfidence>("confidenceLevel", partnerSecurityAlert.confidenceLevel);
-    writer.writeStringValue("customerTenantId", partnerSecurityAlert.customerTenantId);
-    writer.writeStringValue("description", partnerSecurityAlert.description);
-    writer.writeDateValue("detectedDateTime", partnerSecurityAlert.detectedDateTime);
-    writer.writeStringValue("displayName", partnerSecurityAlert.displayName);
-    writer.writeDateValue("firstObservedDateTime", partnerSecurityAlert.firstObservedDateTime);
-    writer.writeBooleanValue("isTest", partnerSecurityAlert.isTest);
-    writer.writeDateValue("lastObservedDateTime", partnerSecurityAlert.lastObservedDateTime);
-    writer.writeStringValue("resolvedBy", partnerSecurityAlert.resolvedBy);
-    writer.writeDateValue("resolvedOnDateTime", partnerSecurityAlert.resolvedOnDateTime);
-    writer.writeEnumValue<SecurityAlertResolvedReason>("resolvedReason", partnerSecurityAlert.resolvedReason);
-    writer.writeEnumValue<SecurityAlertSeverity>("severity", partnerSecurityAlert.severity);
-    writer.writeEnumValue<SecurityAlertStatus>("status", partnerSecurityAlert.status);
-    writer.writeStringValue("subscriptionId", partnerSecurityAlert.subscriptionId);
-    writer.writeStringValue("valueAddedResellerTenantId", partnerSecurityAlert.valueAddedResellerTenantId);
+// @ts-ignore
+export function serializePartnerSecurityAlert(writer: SerializationWriter, partnerSecurityAlert: Partial<PartnerSecurityAlert> | undefined | null = {}) : void {
+    if (partnerSecurityAlert) {
+        serializeEntity(writer, partnerSecurityAlert)
+        writer.writeCollectionOfObjectValues<ActivityLog>("activityLogs", partnerSecurityAlert.activityLogs, serializeActivityLog);
+        writer.writeObjectValue<AdditionalDataDictionary>("additionalDetails", partnerSecurityAlert.additionalDetails, serializeAdditionalDataDictionary);
+        writer.writeCollectionOfObjectValues<AffectedResource>("affectedResources", partnerSecurityAlert.affectedResources, serializeAffectedResource);
+        writer.writeStringValue("alertType", partnerSecurityAlert.alertType);
+        writer.writeStringValue("catalogOfferId", partnerSecurityAlert.catalogOfferId);
+        writer.writeEnumValue<SecurityAlertConfidence>("confidenceLevel", partnerSecurityAlert.confidenceLevel);
+        writer.writeStringValue("customerTenantId", partnerSecurityAlert.customerTenantId);
+        writer.writeStringValue("description", partnerSecurityAlert.description);
+        writer.writeDateValue("detectedDateTime", partnerSecurityAlert.detectedDateTime);
+        writer.writeStringValue("displayName", partnerSecurityAlert.displayName);
+        writer.writeDateValue("firstObservedDateTime", partnerSecurityAlert.firstObservedDateTime);
+        writer.writeBooleanValue("isTest", partnerSecurityAlert.isTest);
+        writer.writeDateValue("lastObservedDateTime", partnerSecurityAlert.lastObservedDateTime);
+        writer.writeStringValue("resolvedBy", partnerSecurityAlert.resolvedBy);
+        writer.writeDateValue("resolvedOnDateTime", partnerSecurityAlert.resolvedOnDateTime);
+        writer.writeEnumValue<SecurityAlertResolvedReason>("resolvedReason", partnerSecurityAlert.resolvedReason);
+        writer.writeEnumValue<SecurityAlertSeverity>("severity", partnerSecurityAlert.severity);
+        writer.writeEnumValue<SecurityAlertStatus>("status", partnerSecurityAlert.status);
+        writer.writeStringValue("subscriptionId", partnerSecurityAlert.subscriptionId);
+        writer.writeStringValue("valueAddedResellerTenantId", partnerSecurityAlert.valueAddedResellerTenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePartnerSecurityAlertCollectionResponse(writer: SerializationWriter, partnerSecurityAlertCollectionResponse: Partial<PartnerSecurityAlertCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, partnerSecurityAlertCollectionResponse)
-    writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("value", partnerSecurityAlertCollectionResponse.value, serializePartnerSecurityAlert);
+// @ts-ignore
+export function serializePartnerSecurityAlertCollectionResponse(writer: SerializationWriter, partnerSecurityAlertCollectionResponse: Partial<PartnerSecurityAlertCollectionResponse> | undefined | null = {}) : void {
+    if (partnerSecurityAlertCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, partnerSecurityAlertCollectionResponse)
+        writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("value", partnerSecurityAlertCollectionResponse.value, serializePartnerSecurityAlert);
+    }
 }
 export const SecurityAlertConfidenceObject = {
     Low: "low",

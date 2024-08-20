@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WindowsSettingItemRequestBuilder extends BaseRequestBuilder<WindowsSettingItemRequestBuilder> {
     /**
      * Provides operations to manage the instances property of the microsoft.graph.windowsSetting entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get instances(): InstancesRequestBuilder;
     /**
      * Delete navigation property windows for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface WindowsSettingItemRequestBuilder extends BaseRequestBuilder<Win
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsSetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WindowsSettingItemRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsSetting | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface WindowsSettingItemRequestBuilder extends BaseRequestBuilder<Win
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsSetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: WindowsSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsSetting | undefined>;
     /**
      * Delete navigation property windows for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The Windows settings of the user stored in the cloud.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsSettingItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface WindowsSettingItemRequestBuilder extends BaseRequestBuilder<Win
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: WindowsSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

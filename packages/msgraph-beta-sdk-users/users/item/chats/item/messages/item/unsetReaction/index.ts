@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UnsetReactionPostRequestBody}
  */
+// @ts-ignore
 export function createUnsetReactionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnsetReactionPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createUnsetReactionPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUnsetReactionPostRequestBody(unsetReactionPostRequestBody: Partial<UnsetReactionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unsetReactionPostRequestBody.backingStoreEnabled = true; },
@@ -28,9 +30,12 @@ export function deserializeIntoUnsetReactionPostRequestBody(unsetReactionPostReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUnsetReactionPostRequestBody(writer: SerializationWriter, unsetReactionPostRequestBody: Partial<UnsetReactionPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("reactionType", unsetReactionPostRequestBody.reactionType);
-    writer.writeAdditionalData(unsetReactionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUnsetReactionPostRequestBody(writer: SerializationWriter, unsetReactionPostRequestBody: Partial<UnsetReactionPostRequestBody> | undefined | null = {}) : void {
+    if (unsetReactionPostRequestBody) {
+        writer.writeStringValue("reactionType", unsetReactionPostRequestBody.reactionType);
+        writer.writeAdditionalData(unsetReactionPostRequestBody.additionalData);
+    }
 }
 export interface UnsetReactionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -40,11 +45,11 @@ export interface UnsetReactionPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The reactionType property
      */
-    reactionType?: string;
+    reactionType?: string | null;
 }
 /**
  * Provides operations to call the unsetReaction method.
@@ -55,6 +60,7 @@ export interface UnsetReactionRequestBuilder extends BaseRequestBuilder<UnsetRea
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: UnsetReactionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -62,6 +68,7 @@ export interface UnsetReactionRequestBuilder extends BaseRequestBuilder<UnsetRea
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UnsetReactionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

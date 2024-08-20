@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ImportResourceActionsPostRequestBody}
  */
+// @ts-ignore
 export function createImportResourceActionsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoImportResourceActionsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createImportResourceActionsPostRequestBodyFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoImportResourceActionsPostRequestBody(importResourceActionsPostRequestBody: Partial<ImportResourceActionsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { importResourceActionsPostRequestBody.backingStoreEnabled = true; },
@@ -36,19 +38,19 @@ export interface ImportResourceActionsPostRequestBody extends AdditionalDataHold
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The format property
      */
-    format?: string;
+    format?: string | null;
     /**
      * The overwriteResourceNamespace property
      */
-    overwriteResourceNamespace?: boolean;
+    overwriteResourceNamespace?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the importResourceActions method.
@@ -74,11 +76,14 @@ export interface ImportResourceActionsRequestBuilder extends BaseRequestBuilder<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeImportResourceActionsPostRequestBody(writer: SerializationWriter, importResourceActionsPostRequestBody: Partial<ImportResourceActionsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("format", importResourceActionsPostRequestBody.format);
-    writer.writeBooleanValue("overwriteResourceNamespace", importResourceActionsPostRequestBody.overwriteResourceNamespace);
-    writer.writeStringValue("value", importResourceActionsPostRequestBody.value);
-    writer.writeAdditionalData(importResourceActionsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeImportResourceActionsPostRequestBody(writer: SerializationWriter, importResourceActionsPostRequestBody: Partial<ImportResourceActionsPostRequestBody> | undefined | null = {}) : void {
+    if (importResourceActionsPostRequestBody) {
+        writer.writeStringValue("format", importResourceActionsPostRequestBody.format);
+        writer.writeBooleanValue("overwriteResourceNamespace", importResourceActionsPostRequestBody.overwriteResourceNamespace);
+        writer.writeStringValue("value", importResourceActionsPostRequestBody.value);
+        writer.writeAdditionalData(importResourceActionsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

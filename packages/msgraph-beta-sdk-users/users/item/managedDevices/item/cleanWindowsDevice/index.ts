@@ -14,11 +14,11 @@ export interface CleanWindowsDevicePostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The keepUserData property
      */
-    keepUserData?: boolean;
+    keepUserData?: boolean | null;
 }
 /**
  * Provides operations to call the cleanWindowsDevice method.
@@ -29,6 +29,7 @@ export interface CleanWindowsDeviceRequestBuilder extends BaseRequestBuilder<Cle
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: CleanWindowsDevicePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -36,6 +37,7 @@ export interface CleanWindowsDeviceRequestBuilder extends BaseRequestBuilder<Cle
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CleanWindowsDevicePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -44,6 +46,7 @@ export interface CleanWindowsDeviceRequestBuilder extends BaseRequestBuilder<Cle
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CleanWindowsDevicePostRequestBody}
  */
+// @ts-ignore
 export function createCleanWindowsDevicePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCleanWindowsDevicePostRequestBody;
 }
@@ -51,6 +54,7 @@ export function createCleanWindowsDevicePostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCleanWindowsDevicePostRequestBody(cleanWindowsDevicePostRequestBody: Partial<CleanWindowsDevicePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cleanWindowsDevicePostRequestBody.backingStoreEnabled = true; },
@@ -61,9 +65,12 @@ export function deserializeIntoCleanWindowsDevicePostRequestBody(cleanWindowsDev
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCleanWindowsDevicePostRequestBody(writer: SerializationWriter, cleanWindowsDevicePostRequestBody: Partial<CleanWindowsDevicePostRequestBody> | undefined = {}) : void {
-    writer.writeBooleanValue("keepUserData", cleanWindowsDevicePostRequestBody.keepUserData);
-    writer.writeAdditionalData(cleanWindowsDevicePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCleanWindowsDevicePostRequestBody(writer: SerializationWriter, cleanWindowsDevicePostRequestBody: Partial<CleanWindowsDevicePostRequestBody> | undefined | null = {}) : void {
+    if (cleanWindowsDevicePostRequestBody) {
+        writer.writeBooleanValue("keepUserData", cleanWindowsDevicePostRequestBody.keepUserData);
+        writer.writeAdditionalData(cleanWindowsDevicePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TeamworkRequestBuilder extends BaseRequestBuilder<TeamworkRequestBuilder> {
     /**
      * Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get associatedTeams(): AssociatedTeamsRequestBuilder;
     /**
      * Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get installedApps(): InstalledAppsRequestBuilder;
     /**
      * Provides operations to call the sendActivityNotification method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendActivityNotification(): SendActivityNotificationRequestBuilder;
     /**
      * Delete navigation property teamwork for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface TeamworkRequestBuilder extends BaseRequestBuilder<TeamworkReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserTeamwork>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/userteamwork-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TeamworkRequestBuilderGetQueryParameters> | undefined) : Promise<UserTeamwork | undefined>;
@@ -50,18 +55,21 @@ export interface TeamworkRequestBuilder extends BaseRequestBuilder<TeamworkReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserTeamwork>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserTeamwork, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserTeamwork | undefined>;
     /**
      * Delete navigation property teamwork for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamworkRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,6 +77,7 @@ export interface TeamworkRequestBuilder extends BaseRequestBuilder<TeamworkReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserTeamwork, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -16,11 +16,11 @@ export interface BulkReprovisionCloudPcPostRequestBody extends AdditionalDataHol
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The managedDeviceIds property
      */
-    managedDeviceIds?: string[];
+    managedDeviceIds?: string[] | null;
 }
 /**
  * Provides operations to call the bulkReprovisionCloudPc method.
@@ -50,6 +50,7 @@ export interface BulkReprovisionCloudPcRequestBuilder extends BaseRequestBuilder
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkReprovisionCloudPcPostRequestBody}
  */
+// @ts-ignore
 export function createBulkReprovisionCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkReprovisionCloudPcPostRequestBody;
 }
@@ -57,6 +58,7 @@ export function createBulkReprovisionCloudPcPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkReprovisionCloudPcPostRequestBody(bulkReprovisionCloudPcPostRequestBody: Partial<BulkReprovisionCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { bulkReprovisionCloudPcPostRequestBody.backingStoreEnabled = true; },
@@ -67,9 +69,12 @@ export function deserializeIntoBulkReprovisionCloudPcPostRequestBody(bulkReprovi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBulkReprovisionCloudPcPostRequestBody(writer: SerializationWriter, bulkReprovisionCloudPcPostRequestBody: Partial<BulkReprovisionCloudPcPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkReprovisionCloudPcPostRequestBody.managedDeviceIds);
-    writer.writeAdditionalData(bulkReprovisionCloudPcPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeBulkReprovisionCloudPcPostRequestBody(writer: SerializationWriter, bulkReprovisionCloudPcPostRequestBody: Partial<BulkReprovisionCloudPcPostRequestBody> | undefined | null = {}) : void {
+    if (bulkReprovisionCloudPcPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkReprovisionCloudPcPostRequestBody.managedDeviceIds);
+        writer.writeAdditionalData(bulkReprovisionCloudPcPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

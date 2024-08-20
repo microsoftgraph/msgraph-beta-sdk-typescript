@@ -16,15 +16,15 @@ export interface ConnectPostRequestBody extends AdditionalDataHolder, BackedMode
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The ownerAccessToken property
      */
-    ownerAccessToken?: string;
+    ownerAccessToken?: string | null;
     /**
      * The ownerUserPrincipalName property
      */
-    ownerUserPrincipalName?: string;
+    ownerUserPrincipalName?: string | null;
 }
 /**
  * Provides operations to call the connect method.
@@ -51,6 +51,7 @@ export interface ConnectRequestBuilder extends BaseRequestBuilder<ConnectRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConnectPostRequestBody}
  */
+// @ts-ignore
 export function createConnectPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectPostRequestBody;
 }
@@ -58,6 +59,7 @@ export function createConnectPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectPostRequestBody(connectPostRequestBody: Partial<ConnectPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { connectPostRequestBody.backingStoreEnabled = true; },
@@ -69,10 +71,13 @@ export function deserializeIntoConnectPostRequestBody(connectPostRequestBody: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectPostRequestBody(writer: SerializationWriter, connectPostRequestBody: Partial<ConnectPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("ownerAccessToken", connectPostRequestBody.ownerAccessToken);
-    writer.writeStringValue("ownerUserPrincipalName", connectPostRequestBody.ownerUserPrincipalName);
-    writer.writeAdditionalData(connectPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeConnectPostRequestBody(writer: SerializationWriter, connectPostRequestBody: Partial<ConnectPostRequestBody> | undefined | null = {}) : void {
+    if (connectPostRequestBody) {
+        writer.writeStringValue("ownerAccessToken", connectPostRequestBody.ownerAccessToken);
+        writer.writeStringValue("ownerUserPrincipalName", connectPostRequestBody.ownerUserPrincipalName);
+        writer.writeAdditionalData(connectPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

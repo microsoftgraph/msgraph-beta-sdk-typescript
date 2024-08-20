@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InitiateOnDemandProactiveRemediationPostRequestBody}
  */
+// @ts-ignore
 export function createInitiateOnDemandProactiveRemediationPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInitiateOnDemandProactiveRemediationPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createInitiateOnDemandProactiveRemediationPostRequestBodyFromDis
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoInitiateOnDemandProactiveRemediationPostRequestBody(initiateOnDemandProactiveRemediationPostRequestBody: Partial<InitiateOnDemandProactiveRemediationPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { initiateOnDemandProactiveRemediationPostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface InitiateOnDemandProactiveRemediationPostRequestBody extends Add
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The scriptPolicyId property
      */
-    scriptPolicyId?: string;
+    scriptPolicyId?: string | null;
 }
 /**
  * Provides operations to call the initiateOnDemandProactiveRemediation method.
@@ -61,9 +63,12 @@ export interface InitiateOnDemandProactiveRemediationRequestBuilder extends Base
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInitiateOnDemandProactiveRemediationPostRequestBody(writer: SerializationWriter, initiateOnDemandProactiveRemediationPostRequestBody: Partial<InitiateOnDemandProactiveRemediationPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("scriptPolicyId", initiateOnDemandProactiveRemediationPostRequestBody.scriptPolicyId);
-    writer.writeAdditionalData(initiateOnDemandProactiveRemediationPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeInitiateOnDemandProactiveRemediationPostRequestBody(writer: SerializationWriter, initiateOnDemandProactiveRemediationPostRequestBody: Partial<InitiateOnDemandProactiveRemediationPostRequestBody> | undefined | null = {}) : void {
+    if (initiateOnDemandProactiveRemediationPostRequestBody) {
+        writer.writeStringValue("scriptPolicyId", initiateOnDemandProactiveRemediationPostRequestBody.scriptPolicyId);
+        writer.writeAdditionalData(initiateOnDemandProactiveRemediationPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

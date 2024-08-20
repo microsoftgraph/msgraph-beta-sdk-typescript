@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetRelatedAppsStatusReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetRelatedAppsStatusReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetRelatedAppsStatusReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetRelatedAppsStatusReportPostRequestBodyFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetRelatedAppsStatusReportPostRequestBody(getRelatedAppsStatusReportPostRequestBody: Partial<GetRelatedAppsStatusReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getRelatedAppsStatusReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetRelatedAppsStatusReportPostRequestBody extends AdditionalDat
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getRelatedAppsStatusReport method.
@@ -102,17 +104,20 @@ export interface GetRelatedAppsStatusReportRequestBuilder extends BaseRequestBui
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetRelatedAppsStatusReportPostRequestBody(writer: SerializationWriter, getRelatedAppsStatusReportPostRequestBody: Partial<GetRelatedAppsStatusReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getRelatedAppsStatusReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRelatedAppsStatusReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getRelatedAppsStatusReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRelatedAppsStatusReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getRelatedAppsStatusReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getRelatedAppsStatusReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getRelatedAppsStatusReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getRelatedAppsStatusReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getRelatedAppsStatusReportPostRequestBody.top);
-    writer.writeAdditionalData(getRelatedAppsStatusReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetRelatedAppsStatusReportPostRequestBody(writer: SerializationWriter, getRelatedAppsStatusReportPostRequestBody: Partial<GetRelatedAppsStatusReportPostRequestBody> | undefined | null = {}) : void {
+    if (getRelatedAppsStatusReportPostRequestBody) {
+        writer.writeStringValue("filter", getRelatedAppsStatusReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRelatedAppsStatusReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getRelatedAppsStatusReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRelatedAppsStatusReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getRelatedAppsStatusReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getRelatedAppsStatusReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getRelatedAppsStatusReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getRelatedAppsStatusReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getRelatedAppsStatusReportPostRequestBody.top);
+        writer.writeAdditionalData(getRelatedAppsStatusReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

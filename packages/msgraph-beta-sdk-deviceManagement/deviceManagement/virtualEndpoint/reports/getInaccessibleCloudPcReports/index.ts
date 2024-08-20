@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetInaccessibleCloudPcReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetInaccessibleCloudPcReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetInaccessibleCloudPcReportsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetInaccessibleCloudPcReportsPostRequestBodyFromDiscrimina
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetInaccessibleCloudPcReportsPostRequestBody(getInaccessibleCloudPcReportsPostRequestBody: Partial<GetInaccessibleCloudPcReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getInaccessibleCloudPcReportsPostRequestBody.backingStoreEnabled = true; },
@@ -41,39 +43,39 @@ export interface GetInaccessibleCloudPcReportsPostRequestBody extends Additional
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The reportName property
      */
-    reportName?: CloudPCInaccessibleReportName;
+    reportName?: CloudPCInaccessibleReportName | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getInaccessibleCloudPcReports method.
@@ -100,16 +102,19 @@ export interface GetInaccessibleCloudPcReportsRequestBuilder extends BaseRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetInaccessibleCloudPcReportsPostRequestBody(writer: SerializationWriter, getInaccessibleCloudPcReportsPostRequestBody: Partial<GetInaccessibleCloudPcReportsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getInaccessibleCloudPcReportsPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getInaccessibleCloudPcReportsPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getInaccessibleCloudPcReportsPostRequestBody.orderBy);
-    writer.writeEnumValue<CloudPCInaccessibleReportName>("reportName", getInaccessibleCloudPcReportsPostRequestBody.reportName);
-    writer.writeStringValue("search", getInaccessibleCloudPcReportsPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getInaccessibleCloudPcReportsPostRequestBody.select);
-    writer.writeNumberValue("skip", getInaccessibleCloudPcReportsPostRequestBody.skip);
-    writer.writeNumberValue("top", getInaccessibleCloudPcReportsPostRequestBody.top);
-    writer.writeAdditionalData(getInaccessibleCloudPcReportsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetInaccessibleCloudPcReportsPostRequestBody(writer: SerializationWriter, getInaccessibleCloudPcReportsPostRequestBody: Partial<GetInaccessibleCloudPcReportsPostRequestBody> | undefined | null = {}) : void {
+    if (getInaccessibleCloudPcReportsPostRequestBody) {
+        writer.writeStringValue("filter", getInaccessibleCloudPcReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getInaccessibleCloudPcReportsPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getInaccessibleCloudPcReportsPostRequestBody.orderBy);
+        writer.writeEnumValue<CloudPCInaccessibleReportName>("reportName", getInaccessibleCloudPcReportsPostRequestBody.reportName);
+        writer.writeStringValue("search", getInaccessibleCloudPcReportsPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getInaccessibleCloudPcReportsPostRequestBody.select);
+        writer.writeNumberValue("skip", getInaccessibleCloudPcReportsPostRequestBody.skip);
+        writer.writeNumberValue("top", getInaccessibleCloudPcReportsPostRequestBody.top);
+        writer.writeAdditionalData(getInaccessibleCloudPcReportsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

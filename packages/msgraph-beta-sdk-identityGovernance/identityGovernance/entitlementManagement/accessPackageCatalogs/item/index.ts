@@ -16,6 +16,8 @@ import { AccessPackageResourceScopesRequestBuilderNavigationMetadata, AccessPack
 // @ts-ignore
 import { AccessPackagesRequestBuilderNavigationMetadata, AccessPackagesRequestBuilderRequestsMetadata, type AccessPackagesRequestBuilder } from './accessPackages/index.js';
 // @ts-ignore
+import { AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata, type AccessPackagesWithUniqueNameRequestBuilder } from './accessPackagesWithUniqueName/index.js';
+// @ts-ignore
 import { CustomAccessPackageWorkflowExtensionsRequestBuilderNavigationMetadata, CustomAccessPackageWorkflowExtensionsRequestBuilderRequestsMetadata, type CustomAccessPackageWorkflowExtensionsRequestBuilder } from './customAccessPackageWorkflowExtensions/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -54,6 +56,13 @@ export interface AccessPackageCatalogItemRequestBuilder extends BaseRequestBuild
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
      */
     get customAccessPackageWorkflowExtensions(): CustomAccessPackageWorkflowExtensionsRequestBuilder;
+    /**
+     * Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
+     * @param uniqueName Alternate key of accessPackage
+     * @returns {AccessPackagesWithUniqueNameRequestBuilder}
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     */
+     accessPackagesWithUniqueName(uniqueName: string | undefined) : AccessPackagesWithUniqueNameRequestBuilder;
     /**
      * Delete an accessPackageCatalog.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -132,6 +141,9 @@ const AccessPackageCatalogItemRequestBuilderGetQueryParametersMapper: Record<str
  * Metadata for all the navigation properties in the request builder.
  */
 export const AccessPackageCatalogItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AccessPackageCatalogItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    accessPackagesWithUniqueName: {
+        requestsMetadata: AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata,
+    },
     accessPackageCustomWorkflowExtensions: {
         requestsMetadata: AccessPackageCustomWorkflowExtensionsRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackageCustomWorkflowExtensionsRequestBuilderNavigationMetadata,

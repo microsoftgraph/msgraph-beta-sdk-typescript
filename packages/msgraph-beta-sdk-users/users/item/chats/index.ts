@@ -24,24 +24,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ChatsRequestBuilder extends BaseRequestBuilder<ChatsRequestBuilder> {
     /**
      * Provides operations to call the allMessages method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get allMessages(): AllMessagesRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the getAllMessages method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getAllMessages(): GetAllMessagesRequestBuilder;
     /**
      * Provides operations to call the getAllRetainedMessages method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getAllRetainedMessages(): GetAllRetainedMessagesRequestBuilder;
     /**
      * Provides operations to manage the chats property of the microsoft.graph.user entity.
      * @param chatId The unique identifier of chat
      * @returns {ChatItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byChatId(chatId: string) : ChatItemRequestBuilder;
     /**
@@ -49,6 +54,7 @@ export interface ChatsRequestBuilder extends BaseRequestBuilder<ChatsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/chat-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ChatsRequestBuilderGetQueryParameters> | undefined) : Promise<ChatCollectionResponse | undefined>;
@@ -58,12 +64,14 @@ export interface ChatsRequestBuilder extends BaseRequestBuilder<ChatsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Chat>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: Chat, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Chat | undefined>;
     /**
      * Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChatsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -71,6 +79,7 @@ export interface ChatsRequestBuilder extends BaseRequestBuilder<ChatsRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: Chat, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

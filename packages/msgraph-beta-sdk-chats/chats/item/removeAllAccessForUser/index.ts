@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoveAllAccessForUserPostRequestBody}
  */
+// @ts-ignore
 export function createRemoveAllAccessForUserPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoveAllAccessForUserPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createRemoveAllAccessForUserPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoveAllAccessForUserPostRequestBody(removeAllAccessForUserPostRequestBody: Partial<RemoveAllAccessForUserPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { removeAllAccessForUserPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface RemoveAllAccessForUserPostRequestBody extends AdditionalDataHol
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The user property
      */
-    user?: TeamworkUserIdentity;
+    user?: TeamworkUserIdentity | null;
 }
 /**
  * Provides operations to call the removeAllAccessForUser method.
@@ -64,9 +66,12 @@ export interface RemoveAllAccessForUserRequestBuilder extends BaseRequestBuilder
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoveAllAccessForUserPostRequestBody(writer: SerializationWriter, removeAllAccessForUserPostRequestBody: Partial<RemoveAllAccessForUserPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<TeamworkUserIdentity>("user", removeAllAccessForUserPostRequestBody.user, serializeTeamworkUserIdentity);
-    writer.writeAdditionalData(removeAllAccessForUserPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRemoveAllAccessForUserPostRequestBody(writer: SerializationWriter, removeAllAccessForUserPostRequestBody: Partial<RemoveAllAccessForUserPostRequestBody> | undefined | null = {}) : void {
+    if (removeAllAccessForUserPostRequestBody) {
+        writer.writeObjectValue<TeamworkUserIdentity>("user", removeAllAccessForUserPostRequestBody.user, serializeTeamworkUserIdentity);
+        writer.writeAdditionalData(removeAllAccessForUserPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

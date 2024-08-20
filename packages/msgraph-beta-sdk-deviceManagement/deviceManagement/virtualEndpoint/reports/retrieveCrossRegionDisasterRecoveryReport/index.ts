@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveCrossRegionDisasterRecoveryReportPostRequestBody}
  */
+// @ts-ignore
 export function createRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyFr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.backingStoreEnabled = true; },
@@ -38,35 +40,35 @@ export interface RetrieveCrossRegionDisasterRecoveryReportPostRequestBody extend
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
@@ -93,15 +95,18 @@ export interface RetrieveCrossRegionDisasterRecoveryReportRequestBuilder extends
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(writer: SerializationWriter, retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.select);
-    writer.writeNumberValue("skip", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.skip);
-    writer.writeNumberValue("top", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.top);
-    writer.writeAdditionalData(retrieveCrossRegionDisasterRecoveryReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(writer: SerializationWriter, retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined | null = {}) : void {
+    if (retrieveCrossRegionDisasterRecoveryReportPostRequestBody) {
+        writer.writeStringValue("filter", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.select);
+        writer.writeNumberValue("skip", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.skip);
+        writer.writeNumberValue("top", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.top);
+        writer.writeAdditionalData(retrieveCrossRegionDisasterRecoveryReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReprovisionPostRequestBody}
  */
+// @ts-ignore
 export function createReprovisionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReprovisionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createReprovisionPostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReprovisionPostRequestBody(reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { reprovisionPostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface ReprovisionPostRequestBody extends AdditionalDataHolder, Backed
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The osVersion property
      */
-    osVersion?: CloudPcOperatingSystem;
+    osVersion?: CloudPcOperatingSystem | null;
     /**
      * The userAccountType property
      */
-    userAccountType?: CloudPcUserAccountType;
+    userAccountType?: CloudPcUserAccountType | null;
 }
 /**
  * Provides operations to call the reprovision method.
@@ -54,6 +56,7 @@ export interface ReprovisionRequestBuilder extends BaseRequestBuilder<Reprovisio
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-beta|Find more info here}
      */
      post(body: ReprovisionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -62,6 +65,7 @@ export interface ReprovisionRequestBuilder extends BaseRequestBuilder<Reprovisio
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ReprovisionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -69,10 +73,13 @@ export interface ReprovisionRequestBuilder extends BaseRequestBuilder<Reprovisio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReprovisionPostRequestBody(writer: SerializationWriter, reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined = {}) : void {
-    writer.writeEnumValue<CloudPcOperatingSystem>("osVersion", reprovisionPostRequestBody.osVersion);
-    writer.writeEnumValue<CloudPcUserAccountType>("userAccountType", reprovisionPostRequestBody.userAccountType);
-    writer.writeAdditionalData(reprovisionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeReprovisionPostRequestBody(writer: SerializationWriter, reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined | null = {}) : void {
+    if (reprovisionPostRequestBody) {
+        writer.writeEnumValue<CloudPcOperatingSystem>("osVersion", reprovisionPostRequestBody.osVersion);
+        writer.writeEnumValue<CloudPcUserAccountType>("userAccountType", reprovisionPostRequestBody.userAccountType);
+        writer.writeAdditionalData(reprovisionPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

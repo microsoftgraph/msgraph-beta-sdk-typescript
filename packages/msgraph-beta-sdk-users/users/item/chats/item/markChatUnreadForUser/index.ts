@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MarkChatUnreadForUserPostRequestBody}
  */
+// @ts-ignore
 export function createMarkChatUnreadForUserPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMarkChatUnreadForUserPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createMarkChatUnreadForUserPostRequestBodyFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMarkChatUnreadForUserPostRequestBody(markChatUnreadForUserPostRequestBody: Partial<MarkChatUnreadForUserPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { markChatUnreadForUserPostRequestBody.backingStoreEnabled = true; },
@@ -36,19 +38,19 @@ export interface MarkChatUnreadForUserPostRequestBody extends AdditionalDataHold
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The lastMessageReadDateTime property
      */
-    lastMessageReadDateTime?: Date;
+    lastMessageReadDateTime?: Date | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The user property
      */
-    user?: TeamworkUserIdentity;
+    user?: TeamworkUserIdentity | null;
 }
 /**
  * Provides operations to call the markChatUnreadForUser method.
@@ -59,6 +61,7 @@ export interface MarkChatUnreadForUserRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-beta|Find more info here}
      */
      post(body: MarkChatUnreadForUserPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -67,6 +70,7 @@ export interface MarkChatUnreadForUserRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: MarkChatUnreadForUserPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -74,11 +78,14 @@ export interface MarkChatUnreadForUserRequestBuilder extends BaseRequestBuilder<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMarkChatUnreadForUserPostRequestBody(writer: SerializationWriter, markChatUnreadForUserPostRequestBody: Partial<MarkChatUnreadForUserPostRequestBody> | undefined = {}) : void {
-    writer.writeDateValue("lastMessageReadDateTime", markChatUnreadForUserPostRequestBody.lastMessageReadDateTime);
-    writer.writeStringValue("tenantId", markChatUnreadForUserPostRequestBody.tenantId);
-    writer.writeObjectValue<TeamworkUserIdentity>("user", markChatUnreadForUserPostRequestBody.user, serializeTeamworkUserIdentity);
-    writer.writeAdditionalData(markChatUnreadForUserPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeMarkChatUnreadForUserPostRequestBody(writer: SerializationWriter, markChatUnreadForUserPostRequestBody: Partial<MarkChatUnreadForUserPostRequestBody> | undefined | null = {}) : void {
+    if (markChatUnreadForUserPostRequestBody) {
+        writer.writeDateValue("lastMessageReadDateTime", markChatUnreadForUserPostRequestBody.lastMessageReadDateTime);
+        writer.writeStringValue("tenantId", markChatUnreadForUserPostRequestBody.tenantId);
+        writer.writeObjectValue<TeamworkUserIdentity>("user", markChatUnreadForUserPostRequestBody.user, serializeTeamworkUserIdentity);
+        writer.writeAdditionalData(markChatUnreadForUserPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

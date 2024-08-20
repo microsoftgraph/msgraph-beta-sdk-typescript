@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetMobileApplicationManagementAppConfigurationReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetMobileApplicationManagementAppConfigurationReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetMobileApplicationManagementAppConfigurationReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetMobileApplicationManagementAppConfigurationReportPostRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetMobileApplicationManagementAppConfigurationReportPostRequestBody(getMobileApplicationManagementAppConfigurationReportPostRequestBody: Partial<GetMobileApplicationManagementAppConfigurationReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getMobileApplicationManagementAppConfigurationReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetMobileApplicationManagementAppConfigurationReportPostRequest
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getMobileApplicationManagementAppConfigurationReport method.
@@ -102,17 +104,20 @@ export interface GetMobileApplicationManagementAppConfigurationReportRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetMobileApplicationManagementAppConfigurationReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppConfigurationReportPostRequestBody: Partial<GetMobileApplicationManagementAppConfigurationReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getMobileApplicationManagementAppConfigurationReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppConfigurationReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getMobileApplicationManagementAppConfigurationReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getMobileApplicationManagementAppConfigurationReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getMobileApplicationManagementAppConfigurationReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getMobileApplicationManagementAppConfigurationReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getMobileApplicationManagementAppConfigurationReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getMobileApplicationManagementAppConfigurationReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getMobileApplicationManagementAppConfigurationReportPostRequestBody.top);
-    writer.writeAdditionalData(getMobileApplicationManagementAppConfigurationReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetMobileApplicationManagementAppConfigurationReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppConfigurationReportPostRequestBody: Partial<GetMobileApplicationManagementAppConfigurationReportPostRequestBody> | undefined | null = {}) : void {
+    if (getMobileApplicationManagementAppConfigurationReportPostRequestBody) {
+        writer.writeStringValue("filter", getMobileApplicationManagementAppConfigurationReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppConfigurationReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getMobileApplicationManagementAppConfigurationReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getMobileApplicationManagementAppConfigurationReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getMobileApplicationManagementAppConfigurationReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getMobileApplicationManagementAppConfigurationReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getMobileApplicationManagementAppConfigurationReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getMobileApplicationManagementAppConfigurationReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getMobileApplicationManagementAppConfigurationReportPostRequestBody.top);
+        writer.writeAdditionalData(getMobileApplicationManagementAppConfigurationReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

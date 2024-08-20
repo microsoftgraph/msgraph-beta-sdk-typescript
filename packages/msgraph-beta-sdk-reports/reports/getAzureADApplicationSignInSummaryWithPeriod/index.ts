@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAzureADApplicationSignInSummaryWithPeriodGetResponse}
  */
+// @ts-ignore
 export function createGetAzureADApplicationSignInSummaryWithPeriodGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAzureADApplicationSignInSummaryWithPeriodGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetAzureADApplicationSignInSummaryWithPeriodGetResponseFro
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAzureADApplicationSignInSummaryWithPeriodGetResponse(getAzureADApplicationSignInSummaryWithPeriodGetResponse: Partial<GetAzureADApplicationSignInSummaryWithPeriodGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getAzureADApplicationSignInSummaryWithPeriodGetResponse),
@@ -30,7 +32,7 @@ export interface GetAzureADApplicationSignInSummaryWithPeriodGetResponse extends
     /**
      * The value property
      */
-    value?: ApplicationSignInSummary[];
+    value?: ApplicationSignInSummary[] | null;
 }
 /**
  * Provides operations to call the getAzureADApplicationSignInSummary method.
@@ -92,9 +94,12 @@ export interface GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetAzureADApplicationSignInSummaryWithPeriodGetResponse(writer: SerializationWriter, getAzureADApplicationSignInSummaryWithPeriodGetResponse: Partial<GetAzureADApplicationSignInSummaryWithPeriodGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getAzureADApplicationSignInSummaryWithPeriodGetResponse)
-    writer.writeCollectionOfObjectValues<ApplicationSignInSummary>("value", getAzureADApplicationSignInSummaryWithPeriodGetResponse.value, serializeApplicationSignInSummary);
+// @ts-ignore
+export function serializeGetAzureADApplicationSignInSummaryWithPeriodGetResponse(writer: SerializationWriter, getAzureADApplicationSignInSummaryWithPeriodGetResponse: Partial<GetAzureADApplicationSignInSummaryWithPeriodGetResponse> | undefined | null = {}) : void {
+    if (getAzureADApplicationSignInSummaryWithPeriodGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getAzureADApplicationSignInSummaryWithPeriodGetResponse)
+        writer.writeCollectionOfObjectValues<ApplicationSignInSummary>("value", getAzureADApplicationSignInSummaryWithPeriodGetResponse.value, serializeApplicationSignInSummary);
+    }
 }
 /**
  * Uri template for the request builder.

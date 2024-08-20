@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetShiftsGetResponse}
  */
+// @ts-ignore
 export function createGetShiftsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetShiftsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetShiftsGetResponseFromDiscriminatorValue(parseNode: Pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetShiftsGetResponse(getShiftsGetResponse: Partial<GetShiftsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getShiftsGetResponse),
@@ -30,7 +32,7 @@ export interface GetShiftsGetResponse extends BaseCollectionPaginationCountRespo
     /**
      * The value property
      */
-    value?: Shift[];
+    value?: Shift[] | null;
 }
 /**
  * Provides operations to call the getShifts method.
@@ -92,9 +94,12 @@ export interface GetShiftsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetShiftsGetResponse(writer: SerializationWriter, getShiftsGetResponse: Partial<GetShiftsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getShiftsGetResponse)
-    writer.writeCollectionOfObjectValues<Shift>("value", getShiftsGetResponse.value, serializeShift);
+// @ts-ignore
+export function serializeGetShiftsGetResponse(writer: SerializationWriter, getShiftsGetResponse: Partial<GetShiftsGetResponse> | undefined | null = {}) : void {
+    if (getShiftsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getShiftsGetResponse)
+        writer.writeCollectionOfObjectValues<Shift>("value", getShiftsGetResponse.value, serializeShift);
+    }
 }
 /**
  * Uri template for the request builder.

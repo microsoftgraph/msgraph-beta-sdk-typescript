@@ -16,11 +16,11 @@ export interface ChangeAssignmentsPostRequestBody extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceAssignmentItems property
      */
-    deviceAssignmentItems?: DeviceAssignmentItem[];
+    deviceAssignmentItems?: DeviceAssignmentItem[] | null;
 }
 /**
  * Provides operations to call the changeAssignments method.
@@ -46,6 +46,7 @@ export interface ChangeAssignmentsRequestBuilder extends BaseRequestBuilder<Chan
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ChangeAssignmentsPostRequestBody}
  */
+// @ts-ignore
 export function createChangeAssignmentsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangeAssignmentsPostRequestBody;
 }
@@ -53,6 +54,7 @@ export function createChangeAssignmentsPostRequestBodyFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoChangeAssignmentsPostRequestBody(changeAssignmentsPostRequestBody: Partial<ChangeAssignmentsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { changeAssignmentsPostRequestBody.backingStoreEnabled = true; },
@@ -63,9 +65,12 @@ export function deserializeIntoChangeAssignmentsPostRequestBody(changeAssignment
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeChangeAssignmentsPostRequestBody(writer: SerializationWriter, changeAssignmentsPostRequestBody: Partial<ChangeAssignmentsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<DeviceAssignmentItem>("deviceAssignmentItems", changeAssignmentsPostRequestBody.deviceAssignmentItems, serializeDeviceAssignmentItem);
-    writer.writeAdditionalData(changeAssignmentsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeChangeAssignmentsPostRequestBody(writer: SerializationWriter, changeAssignmentsPostRequestBody: Partial<ChangeAssignmentsPostRequestBody> | undefined | null = {}) : void {
+    if (changeAssignmentsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<DeviceAssignmentItem>("deviceAssignmentItems", changeAssignmentsPostRequestBody.deviceAssignmentItems, serializeDeviceAssignmentItem);
+        writer.writeAdditionalData(changeAssignmentsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

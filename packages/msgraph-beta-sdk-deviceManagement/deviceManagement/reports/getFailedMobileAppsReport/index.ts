@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetFailedMobileAppsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetFailedMobileAppsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetFailedMobileAppsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetFailedMobileAppsReportPostRequestBodyFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetFailedMobileAppsReportPostRequestBody(getFailedMobileAppsReportPostRequestBody: Partial<GetFailedMobileAppsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getFailedMobileAppsReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetFailedMobileAppsReportPostRequestBody extends AdditionalData
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getFailedMobileAppsReport method.
@@ -102,17 +104,20 @@ export interface GetFailedMobileAppsReportRequestBuilder extends BaseRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetFailedMobileAppsReportPostRequestBody(writer: SerializationWriter, getFailedMobileAppsReportPostRequestBody: Partial<GetFailedMobileAppsReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getFailedMobileAppsReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFailedMobileAppsReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getFailedMobileAppsReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFailedMobileAppsReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getFailedMobileAppsReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getFailedMobileAppsReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getFailedMobileAppsReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getFailedMobileAppsReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getFailedMobileAppsReportPostRequestBody.top);
-    writer.writeAdditionalData(getFailedMobileAppsReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetFailedMobileAppsReportPostRequestBody(writer: SerializationWriter, getFailedMobileAppsReportPostRequestBody: Partial<GetFailedMobileAppsReportPostRequestBody> | undefined | null = {}) : void {
+    if (getFailedMobileAppsReportPostRequestBody) {
+        writer.writeStringValue("filter", getFailedMobileAppsReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFailedMobileAppsReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getFailedMobileAppsReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFailedMobileAppsReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getFailedMobileAppsReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getFailedMobileAppsReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getFailedMobileAppsReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getFailedMobileAppsReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getFailedMobileAppsReportPostRequestBody.top);
+        writer.writeAdditionalData(getFailedMobileAppsReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

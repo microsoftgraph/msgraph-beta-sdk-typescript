@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetDevicesStatusBySettingReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetDevicesStatusBySettingReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetDevicesStatusBySettingReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetDevicesStatusBySettingReportPostRequestBodyFromDiscrimi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetDevicesStatusBySettingReportPostRequestBody(getDevicesStatusBySettingReportPostRequestBody: Partial<GetDevicesStatusBySettingReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getDevicesStatusBySettingReportPostRequestBody.backingStoreEnabled = true; },
@@ -39,39 +41,39 @@ export interface GetDevicesStatusBySettingReportPostRequestBody extends Addition
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getDevicesStatusBySettingReport method.
@@ -97,16 +99,19 @@ export interface GetDevicesStatusBySettingReportRequestBuilder extends BaseReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetDevicesStatusBySettingReportPostRequestBody(writer: SerializationWriter, getDevicesStatusBySettingReportPostRequestBody: Partial<GetDevicesStatusBySettingReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getDevicesStatusBySettingReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDevicesStatusBySettingReportPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDevicesStatusBySettingReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getDevicesStatusBySettingReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getDevicesStatusBySettingReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getDevicesStatusBySettingReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getDevicesStatusBySettingReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getDevicesStatusBySettingReportPostRequestBody.top);
-    writer.writeAdditionalData(getDevicesStatusBySettingReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetDevicesStatusBySettingReportPostRequestBody(writer: SerializationWriter, getDevicesStatusBySettingReportPostRequestBody: Partial<GetDevicesStatusBySettingReportPostRequestBody> | undefined | null = {}) : void {
+    if (getDevicesStatusBySettingReportPostRequestBody) {
+        writer.writeStringValue("filter", getDevicesStatusBySettingReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDevicesStatusBySettingReportPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDevicesStatusBySettingReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getDevicesStatusBySettingReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getDevicesStatusBySettingReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getDevicesStatusBySettingReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getDevicesStatusBySettingReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getDevicesStatusBySettingReportPostRequestBody.top);
+        writer.writeAdditionalData(getDevicesStatusBySettingReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

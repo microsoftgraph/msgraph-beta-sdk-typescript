@@ -16,15 +16,15 @@ export interface BulkSetCloudPcReviewStatusPostRequestBody extends AdditionalDat
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The managedDeviceIds property
      */
-    managedDeviceIds?: string[];
+    managedDeviceIds?: string[] | null;
     /**
      * The reviewStatus property
      */
-    reviewStatus?: CloudPcReviewStatus;
+    reviewStatus?: CloudPcReviewStatus | null;
 }
 /**
  * Provides operations to call the bulkSetCloudPcReviewStatus method.
@@ -52,6 +52,7 @@ export interface BulkSetCloudPcReviewStatusRequestBuilder extends BaseRequestBui
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkSetCloudPcReviewStatusPostRequestBody}
  */
+// @ts-ignore
 export function createBulkSetCloudPcReviewStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkSetCloudPcReviewStatusPostRequestBody;
 }
@@ -59,6 +60,7 @@ export function createBulkSetCloudPcReviewStatusPostRequestBodyFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkSetCloudPcReviewStatusPostRequestBody(bulkSetCloudPcReviewStatusPostRequestBody: Partial<BulkSetCloudPcReviewStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { bulkSetCloudPcReviewStatusPostRequestBody.backingStoreEnabled = true; },
@@ -70,10 +72,13 @@ export function deserializeIntoBulkSetCloudPcReviewStatusPostRequestBody(bulkSet
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBulkSetCloudPcReviewStatusPostRequestBody(writer: SerializationWriter, bulkSetCloudPcReviewStatusPostRequestBody: Partial<BulkSetCloudPcReviewStatusPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkSetCloudPcReviewStatusPostRequestBody.managedDeviceIds);
-    writer.writeObjectValue<CloudPcReviewStatus>("reviewStatus", bulkSetCloudPcReviewStatusPostRequestBody.reviewStatus, serializeCloudPcReviewStatus);
-    writer.writeAdditionalData(bulkSetCloudPcReviewStatusPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeBulkSetCloudPcReviewStatusPostRequestBody(writer: SerializationWriter, bulkSetCloudPcReviewStatusPostRequestBody: Partial<BulkSetCloudPcReviewStatusPostRequestBody> | undefined | null = {}) : void {
+    if (bulkSetCloudPcReviewStatusPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkSetCloudPcReviewStatusPostRequestBody.managedDeviceIds);
+        writer.writeObjectValue<CloudPcReviewStatus>("reviewStatus", bulkSetCloudPcReviewStatusPostRequestBody.reviewStatus, serializeCloudPcReviewStatus);
+        writer.writeAdditionalData(bulkSetCloudPcReviewStatusPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

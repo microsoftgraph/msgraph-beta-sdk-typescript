@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateDeviceLogCollectionRequestPostRequestBody}
  */
+// @ts-ignore
 export function createCreateDeviceLogCollectionRequestPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateDeviceLogCollectionRequestPostRequestBody;
 }
@@ -24,11 +25,11 @@ export interface CreateDeviceLogCollectionRequestPostRequestBody extends Additio
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The templateType property
      */
-    templateType?: DeviceLogCollectionRequest;
+    templateType?: DeviceLogCollectionRequest | null;
 }
 /**
  * Provides operations to call the createDeviceLogCollectionRequest method.
@@ -40,6 +41,7 @@ export interface CreateDeviceLogCollectionRequestRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceLogCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: CreateDeviceLogCollectionRequestPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceLogCollectionResponse | undefined>;
     /**
@@ -47,6 +49,7 @@ export interface CreateDeviceLogCollectionRequestRequestBuilder extends BaseRequ
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CreateDeviceLogCollectionRequestPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -54,6 +57,7 @@ export interface CreateDeviceLogCollectionRequestRequestBuilder extends BaseRequ
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateDeviceLogCollectionRequestPostRequestBody(createDeviceLogCollectionRequestPostRequestBody: Partial<CreateDeviceLogCollectionRequestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createDeviceLogCollectionRequestPostRequestBody.backingStoreEnabled = true; },
@@ -64,9 +68,12 @@ export function deserializeIntoCreateDeviceLogCollectionRequestPostRequestBody(c
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreateDeviceLogCollectionRequestPostRequestBody(writer: SerializationWriter, createDeviceLogCollectionRequestPostRequestBody: Partial<CreateDeviceLogCollectionRequestPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<DeviceLogCollectionRequest>("templateType", createDeviceLogCollectionRequestPostRequestBody.templateType, serializeDeviceLogCollectionRequest);
-    writer.writeAdditionalData(createDeviceLogCollectionRequestPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCreateDeviceLogCollectionRequestPostRequestBody(writer: SerializationWriter, createDeviceLogCollectionRequestPostRequestBody: Partial<CreateDeviceLogCollectionRequestPostRequestBody> | undefined | null = {}) : void {
+    if (createDeviceLogCollectionRequestPostRequestBody) {
+        writer.writeObjectValue<DeviceLogCollectionRequest>("templateType", createDeviceLogCollectionRequestPostRequestBody.templateType, serializeDeviceLogCollectionRequest);
+        writer.writeAdditionalData(createDeviceLogCollectionRequestPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

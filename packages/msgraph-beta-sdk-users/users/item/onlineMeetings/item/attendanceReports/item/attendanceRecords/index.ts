@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AttendanceRecordsRequestBuilder extends BaseRequestBuilder<AttendanceRecordsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
      * @param attendanceRecordId The unique identifier of attendanceRecord
      * @returns {AttendanceRecordItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAttendanceRecordId(attendanceRecordId: string) : AttendanceRecordItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface AttendanceRecordsRequestBuilder extends BaseRequestBuilder<Atte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AttendanceRecordCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AttendanceRecordsRequestBuilderGetQueryParameters> | undefined) : Promise<AttendanceRecordCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface AttendanceRecordsRequestBuilder extends BaseRequestBuilder<Atte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AttendanceRecord>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AttendanceRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AttendanceRecord | undefined>;
     /**
      * List of attendance records of an attendance report. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttendanceRecordsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface AttendanceRecordsRequestBuilder extends BaseRequestBuilder<Atte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AttendanceRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

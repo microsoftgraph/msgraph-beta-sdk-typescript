@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface HostedContentsRequestBuilder extends BaseRequestBuilder<HostedContentsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
      * @param chatMessageHostedContentId The unique identifier of chatMessageHostedContent
      * @returns {ChatMessageHostedContentItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byChatMessageHostedContentId(chatMessageHostedContentId: string) : ChatMessageHostedContentItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface HostedContentsRequestBuilder extends BaseRequestBuilder<HostedC
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessageHostedContentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<HostedContentsRequestBuilderGetQueryParameters> | undefined) : Promise<ChatMessageHostedContentCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface HostedContentsRequestBuilder extends BaseRequestBuilder<HostedC
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessageHostedContent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ChatMessageHostedContent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChatMessageHostedContent | undefined>;
     /**
      * Content in a message hosted by Microsoft Teams - for example, images or code snippets.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HostedContentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface HostedContentsRequestBuilder extends BaseRequestBuilder<HostedC
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ChatMessageHostedContent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

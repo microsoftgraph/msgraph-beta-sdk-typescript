@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface QuotaRequestBuilder extends BaseRequestBuilder<QuotaRequestBuilder> {
     /**
      * Provides operations to manage the services property of the microsoft.graph.unifiedStorageQuota entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get services(): ServicesRequestBuilder;
     /**
      * Delete navigation property quota for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface QuotaRequestBuilder extends BaseRequestBuilder<QuotaRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedStorageQuota>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/unifiedstoragequota-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<QuotaRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedStorageQuota | undefined>;
@@ -38,18 +41,21 @@ export interface QuotaRequestBuilder extends BaseRequestBuilder<QuotaRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedStorageQuota>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UnifiedStorageQuota, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedStorageQuota | undefined>;
     /**
      * Delete navigation property quota for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a unifiedStorageQuota object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<QuotaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,6 +63,7 @@ export interface QuotaRequestBuilder extends BaseRequestBuilder<QuotaRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UnifiedStorageQuota, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

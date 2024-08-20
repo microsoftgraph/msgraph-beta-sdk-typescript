@@ -33,7 +33,7 @@ export interface PlanConfigurationRequestBuilder extends BaseRequestBuilder<Plan
      */
      get(requestConfiguration?: RequestConfiguration<PlanConfigurationRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanConfiguration | undefined>;
     /**
-     * Update the properties of a plannerPlanConfiguration object for a businessScenario.
+     * Update the properties of a plannerPlanConfiguration object and its plannerPlanConfigurationLocalization collection for a businessScenario.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfiguration>}
@@ -54,7 +54,7 @@ export interface PlanConfigurationRequestBuilder extends BaseRequestBuilder<Plan
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlanConfigurationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a plannerPlanConfiguration object for a businessScenario.
+     * Update the properties of a plannerPlanConfiguration object and its plannerPlanConfigurationLocalization collection for a businessScenario.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

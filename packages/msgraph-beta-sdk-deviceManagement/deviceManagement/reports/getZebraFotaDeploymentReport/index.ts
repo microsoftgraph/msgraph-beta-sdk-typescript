@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetZebraFotaDeploymentReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetZebraFotaDeploymentReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetZebraFotaDeploymentReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetZebraFotaDeploymentReportPostRequestBodyFromDiscriminat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetZebraFotaDeploymentReportPostRequestBody(getZebraFotaDeploymentReportPostRequestBody: Partial<GetZebraFotaDeploymentReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getZebraFotaDeploymentReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetZebraFotaDeploymentReportPostRequestBody extends AdditionalD
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getZebraFotaDeploymentReport method.
@@ -102,17 +104,20 @@ export interface GetZebraFotaDeploymentReportRequestBuilder extends BaseRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetZebraFotaDeploymentReportPostRequestBody(writer: SerializationWriter, getZebraFotaDeploymentReportPostRequestBody: Partial<GetZebraFotaDeploymentReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getZebraFotaDeploymentReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getZebraFotaDeploymentReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getZebraFotaDeploymentReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getZebraFotaDeploymentReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getZebraFotaDeploymentReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getZebraFotaDeploymentReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getZebraFotaDeploymentReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getZebraFotaDeploymentReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getZebraFotaDeploymentReportPostRequestBody.top);
-    writer.writeAdditionalData(getZebraFotaDeploymentReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetZebraFotaDeploymentReportPostRequestBody(writer: SerializationWriter, getZebraFotaDeploymentReportPostRequestBody: Partial<GetZebraFotaDeploymentReportPostRequestBody> | undefined | null = {}) : void {
+    if (getZebraFotaDeploymentReportPostRequestBody) {
+        writer.writeStringValue("filter", getZebraFotaDeploymentReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getZebraFotaDeploymentReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getZebraFotaDeploymentReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getZebraFotaDeploymentReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getZebraFotaDeploymentReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getZebraFotaDeploymentReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getZebraFotaDeploymentReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getZebraFotaDeploymentReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getZebraFotaDeploymentReportPostRequestBody.top);
+        writer.writeAdditionalData(getZebraFotaDeploymentReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

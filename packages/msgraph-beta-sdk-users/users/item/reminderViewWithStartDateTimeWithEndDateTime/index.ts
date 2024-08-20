@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReminderViewWithStartDateTimeWithEndDateTimeGetResponse}
  */
+// @ts-ignore
 export function createReminderViewWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReminderViewWithStartDateTimeWithEndDateTimeGetResponse;
 }
@@ -20,6 +21,7 @@ export function createReminderViewWithStartDateTimeWithEndDateTimeGetResponseFro
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReminderViewWithStartDateTimeWithEndDateTimeGetResponse(reminderViewWithStartDateTimeWithEndDateTimeGetResponse: Partial<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(reminderViewWithStartDateTimeWithEndDateTimeGetResponse),
@@ -30,7 +32,7 @@ export interface ReminderViewWithStartDateTimeWithEndDateTimeGetResponse extends
     /**
      * The value property
      */
-    value?: Reminder[];
+    value?: Reminder[] | null;
 }
 /**
  * Provides operations to call the reminderView method.
@@ -41,6 +43,7 @@ export interface ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder exte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
@@ -48,6 +51,7 @@ export interface ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder exte
      * Return a list of event reminders in a user calendar within the specified start and end times.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,9 +84,12 @@ export interface ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReminderViewWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, reminderViewWithStartDateTimeWithEndDateTimeGetResponse: Partial<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, reminderViewWithStartDateTimeWithEndDateTimeGetResponse)
-    writer.writeCollectionOfObjectValues<Reminder>("value", reminderViewWithStartDateTimeWithEndDateTimeGetResponse.value, serializeReminder);
+// @ts-ignore
+export function serializeReminderViewWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, reminderViewWithStartDateTimeWithEndDateTimeGetResponse: Partial<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
+    if (reminderViewWithStartDateTimeWithEndDateTimeGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, reminderViewWithStartDateTimeWithEndDateTimeGetResponse)
+        writer.writeCollectionOfObjectValues<Reminder>("value", reminderViewWithStartDateTimeWithEndDateTimeGetResponse.value, serializeReminder);
+    }
 }
 /**
  * Uri template for the request builder.

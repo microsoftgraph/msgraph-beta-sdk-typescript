@@ -16,19 +16,19 @@ export interface ConvertExternalToInternalMemberUserPostRequestBody extends Addi
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The mail property
      */
-    mail?: string;
+    mail?: string | null;
     /**
      * The passwordProfile property
      */
-    passwordProfile?: PasswordProfile;
+    passwordProfile?: PasswordProfile | null;
     /**
      * The userPrincipalName property
      */
-    userPrincipalName?: string;
+    userPrincipalName?: string | null;
 }
 /**
  * Provides operations to call the convertExternalToInternalMemberUser method.
@@ -40,6 +40,7 @@ export interface ConvertExternalToInternalMemberUserRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConversionUserDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-convertexternaltointernalmemberuser?view=graph-rest-beta|Find more info here}
      */
      post(body: ConvertExternalToInternalMemberUserPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConversionUserDetails | undefined>;
@@ -48,6 +49,7 @@ export interface ConvertExternalToInternalMemberUserRequestBuilder extends BaseR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ConvertExternalToInternalMemberUserPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -56,6 +58,7 @@ export interface ConvertExternalToInternalMemberUserRequestBuilder extends BaseR
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConvertExternalToInternalMemberUserPostRequestBody}
  */
+// @ts-ignore
 export function createConvertExternalToInternalMemberUserPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConvertExternalToInternalMemberUserPostRequestBody;
 }
@@ -63,6 +66,7 @@ export function createConvertExternalToInternalMemberUserPostRequestBodyFromDisc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConvertExternalToInternalMemberUserPostRequestBody(convertExternalToInternalMemberUserPostRequestBody: Partial<ConvertExternalToInternalMemberUserPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { convertExternalToInternalMemberUserPostRequestBody.backingStoreEnabled = true; },
@@ -75,11 +79,14 @@ export function deserializeIntoConvertExternalToInternalMemberUserPostRequestBod
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConvertExternalToInternalMemberUserPostRequestBody(writer: SerializationWriter, convertExternalToInternalMemberUserPostRequestBody: Partial<ConvertExternalToInternalMemberUserPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("mail", convertExternalToInternalMemberUserPostRequestBody.mail);
-    writer.writeObjectValue<PasswordProfile>("passwordProfile", convertExternalToInternalMemberUserPostRequestBody.passwordProfile, serializePasswordProfile);
-    writer.writeStringValue("userPrincipalName", convertExternalToInternalMemberUserPostRequestBody.userPrincipalName);
-    writer.writeAdditionalData(convertExternalToInternalMemberUserPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeConvertExternalToInternalMemberUserPostRequestBody(writer: SerializationWriter, convertExternalToInternalMemberUserPostRequestBody: Partial<ConvertExternalToInternalMemberUserPostRequestBody> | undefined | null = {}) : void {
+    if (convertExternalToInternalMemberUserPostRequestBody) {
+        writer.writeStringValue("mail", convertExternalToInternalMemberUserPostRequestBody.mail);
+        writer.writeObjectValue<PasswordProfile>("passwordProfile", convertExternalToInternalMemberUserPostRequestBody.passwordProfile, serializePasswordProfile);
+        writer.writeStringValue("userPrincipalName", convertExternalToInternalMemberUserPostRequestBody.userPrincipalName);
+        writer.writeAdditionalData(convertExternalToInternalMemberUserPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

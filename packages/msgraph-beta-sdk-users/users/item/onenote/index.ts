@@ -26,32 +26,39 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OnenoteRequestBuilder extends BaseRequestBuilder<OnenoteRequestBuilder> {
     /**
      * Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get notebooks(): NotebooksRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.onenote entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get operations(): OperationsRequestBuilder;
     /**
      * Provides operations to manage the pages property of the microsoft.graph.onenote entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get pages(): PagesRequestBuilder;
     /**
      * Provides operations to manage the resources property of the microsoft.graph.onenote entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resources(): ResourcesRequestBuilder;
     /**
      * Provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sectionGroups(): SectionGroupsRequestBuilder;
     /**
      * Provides operations to manage the sections property of the microsoft.graph.onenote entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sections(): SectionsRequestBuilder;
     /**
      * Delete navigation property onenote for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -59,6 +66,7 @@ export interface OnenoteRequestBuilder extends BaseRequestBuilder<OnenoteRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Onenote>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OnenoteRequestBuilderGetQueryParameters> | undefined) : Promise<Onenote | undefined>;
     /**
@@ -67,18 +75,21 @@ export interface OnenoteRequestBuilder extends BaseRequestBuilder<OnenoteRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Onenote>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Onenote, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Onenote | undefined>;
     /**
      * Delete navigation property onenote for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get onenote from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OnenoteRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -86,6 +97,7 @@ export interface OnenoteRequestBuilder extends BaseRequestBuilder<OnenoteRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Onenote, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

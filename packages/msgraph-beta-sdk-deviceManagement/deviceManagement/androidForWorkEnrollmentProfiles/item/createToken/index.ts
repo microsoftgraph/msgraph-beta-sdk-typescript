@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateTokenPostRequestBody}
  */
+// @ts-ignore
 export function createCreateTokenPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateTokenPostRequestBody;
 }
@@ -22,11 +23,11 @@ export interface CreateTokenPostRequestBody extends AdditionalDataHolder, Backed
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The tokenValidityInSeconds property
      */
-    tokenValidityInSeconds?: number;
+    tokenValidityInSeconds?: number | null;
 }
 /**
  * Provides operations to call the createToken method.
@@ -51,6 +52,7 @@ export interface CreateTokenRequestBuilder extends BaseRequestBuilder<CreateToke
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateTokenPostRequestBody(createTokenPostRequestBody: Partial<CreateTokenPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createTokenPostRequestBody.backingStoreEnabled = true; },
@@ -61,9 +63,12 @@ export function deserializeIntoCreateTokenPostRequestBody(createTokenPostRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreateTokenPostRequestBody(writer: SerializationWriter, createTokenPostRequestBody: Partial<CreateTokenPostRequestBody> | undefined = {}) : void {
-    writer.writeNumberValue("tokenValidityInSeconds", createTokenPostRequestBody.tokenValidityInSeconds);
-    writer.writeAdditionalData(createTokenPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCreateTokenPostRequestBody(writer: SerializationWriter, createTokenPostRequestBody: Partial<CreateTokenPostRequestBody> | undefined | null = {}) : void {
+    if (createTokenPostRequestBody) {
+        writer.writeNumberValue("tokenValidityInSeconds", createTokenPostRequestBody.tokenValidityInSeconds);
+        writer.writeAdditionalData(createTokenPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

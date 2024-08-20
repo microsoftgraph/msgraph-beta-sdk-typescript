@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UploadNewVersionPostRequestBody}
  */
+// @ts-ignore
 export function createUploadNewVersionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadNewVersionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUploadNewVersionPostRequestBodyFromDiscriminatorValue(pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUploadNewVersionPostRequestBody(uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { uploadNewVersionPostRequestBody.backingStoreEnabled = true; },
@@ -31,10 +33,13 @@ export function deserializeIntoUploadNewVersionPostRequestBody(uploadNewVersionP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUploadNewVersionPostRequestBody(writer: SerializationWriter, uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("content", uploadNewVersionPostRequestBody.content);
-    writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", uploadNewVersionPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
-    writer.writeAdditionalData(uploadNewVersionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUploadNewVersionPostRequestBody(writer: SerializationWriter, uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined | null = {}) : void {
+    if (uploadNewVersionPostRequestBody) {
+        writer.writeStringValue("content", uploadNewVersionPostRequestBody.content);
+        writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", uploadNewVersionPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
+        writer.writeAdditionalData(uploadNewVersionPostRequestBody.additionalData);
+    }
 }
 export interface UploadNewVersionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -44,15 +49,15 @@ export interface UploadNewVersionPostRequestBody extends AdditionalDataHolder, B
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The content property
      */
-    content?: string;
+    content?: string | null;
     /**
      * The groupPolicyUploadedLanguageFiles property
      */
-    groupPolicyUploadedLanguageFiles?: GroupPolicyUploadedLanguageFile[];
+    groupPolicyUploadedLanguageFiles?: GroupPolicyUploadedLanguageFile[] | null;
 }
 /**
  * Provides operations to call the uploadNewVersion method.

@@ -14,19 +14,19 @@ export interface AssignResourceAccountToDevicePostRequestBody extends Additional
     /**
      * The addressableUserName property
      */
-    addressableUserName?: string;
+    addressableUserName?: string | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The resourceAccountName property
      */
-    resourceAccountName?: string;
+    resourceAccountName?: string | null;
     /**
      * The userPrincipalName property
      */
-    userPrincipalName?: string;
+    userPrincipalName?: string | null;
 }
 /**
  * Provides operations to call the assignResourceAccountToDevice method.
@@ -52,6 +52,7 @@ export interface AssignResourceAccountToDeviceRequestBuilder extends BaseRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssignResourceAccountToDevicePostRequestBody}
  */
+// @ts-ignore
 export function createAssignResourceAccountToDevicePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignResourceAccountToDevicePostRequestBody;
 }
@@ -59,6 +60,7 @@ export function createAssignResourceAccountToDevicePostRequestBodyFromDiscrimina
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssignResourceAccountToDevicePostRequestBody(assignResourceAccountToDevicePostRequestBody: Partial<AssignResourceAccountToDevicePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addressableUserName": n => { assignResourceAccountToDevicePostRequestBody.addressableUserName = n.getStringValue(); },
@@ -71,11 +73,14 @@ export function deserializeIntoAssignResourceAccountToDevicePostRequestBody(assi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAssignResourceAccountToDevicePostRequestBody(writer: SerializationWriter, assignResourceAccountToDevicePostRequestBody: Partial<AssignResourceAccountToDevicePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("addressableUserName", assignResourceAccountToDevicePostRequestBody.addressableUserName);
-    writer.writeStringValue("resourceAccountName", assignResourceAccountToDevicePostRequestBody.resourceAccountName);
-    writer.writeStringValue("userPrincipalName", assignResourceAccountToDevicePostRequestBody.userPrincipalName);
-    writer.writeAdditionalData(assignResourceAccountToDevicePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeAssignResourceAccountToDevicePostRequestBody(writer: SerializationWriter, assignResourceAccountToDevicePostRequestBody: Partial<AssignResourceAccountToDevicePostRequestBody> | undefined | null = {}) : void {
+    if (assignResourceAccountToDevicePostRequestBody) {
+        writer.writeStringValue("addressableUserName", assignResourceAccountToDevicePostRequestBody.addressableUserName);
+        writer.writeStringValue("resourceAccountName", assignResourceAccountToDevicePostRequestBody.resourceAccountName);
+        writer.writeStringValue("userPrincipalName", assignResourceAccountToDevicePostRequestBody.userPrincipalName);
+        writer.writeAdditionalData(assignResourceAccountToDevicePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

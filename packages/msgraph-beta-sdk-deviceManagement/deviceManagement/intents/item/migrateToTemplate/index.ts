@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MigrateToTemplatePostRequestBody}
  */
+// @ts-ignore
 export function createMigrateToTemplatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMigrateToTemplatePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createMigrateToTemplatePostRequestBodyFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMigrateToTemplatePostRequestBody(migrateToTemplatePostRequestBody: Partial<MigrateToTemplatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { migrateToTemplatePostRequestBody.backingStoreEnabled = true; },
@@ -33,15 +35,15 @@ export interface MigrateToTemplatePostRequestBody extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The newTemplateId property
      */
-    newTemplateId?: string;
+    newTemplateId?: string | null;
     /**
      * The preserveCustomValues property
      */
-    preserveCustomValues?: boolean;
+    preserveCustomValues?: boolean | null;
 }
 /**
  * Provides operations to call the migrateToTemplate method.
@@ -66,10 +68,13 @@ export interface MigrateToTemplateRequestBuilder extends BaseRequestBuilder<Migr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMigrateToTemplatePostRequestBody(writer: SerializationWriter, migrateToTemplatePostRequestBody: Partial<MigrateToTemplatePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("newTemplateId", migrateToTemplatePostRequestBody.newTemplateId);
-    writer.writeBooleanValue("preserveCustomValues", migrateToTemplatePostRequestBody.preserveCustomValues);
-    writer.writeAdditionalData(migrateToTemplatePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeMigrateToTemplatePostRequestBody(writer: SerializationWriter, migrateToTemplatePostRequestBody: Partial<MigrateToTemplatePostRequestBody> | undefined | null = {}) : void {
+    if (migrateToTemplatePostRequestBody) {
+        writer.writeStringValue("newTemplateId", migrateToTemplatePostRequestBody.newTemplateId);
+        writer.writeBooleanValue("preserveCustomValues", migrateToTemplatePostRequestBody.preserveCustomValues);
+        writer.writeAdditionalData(migrateToTemplatePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

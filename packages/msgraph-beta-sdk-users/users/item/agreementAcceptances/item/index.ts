@@ -17,12 +17,14 @@ export interface AgreementAcceptanceItemRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AgreementAcceptance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AgreementAcceptanceItemRequestBuilderGetQueryParameters> | undefined) : Promise<AgreementAcceptance | undefined>;
     /**
      * The user's terms of use acceptance statuses. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AgreementAcceptanceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

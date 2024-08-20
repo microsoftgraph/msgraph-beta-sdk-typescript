@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UploadUrlGetResponse}
  */
+// @ts-ignore
 export function createUploadUrlGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadUrlGetResponse;
 }
@@ -18,6 +19,7 @@ export function createUploadUrlGetResponseFromDiscriminatorValue(parseNode: Pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUploadUrlGetResponse(uploadUrlGetResponse: Partial<UploadUrlGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { uploadUrlGetResponse.backingStoreEnabled = true; },
@@ -28,9 +30,12 @@ export function deserializeIntoUploadUrlGetResponse(uploadUrlGetResponse: Partia
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUploadUrlGetResponse(writer: SerializationWriter, uploadUrlGetResponse: Partial<UploadUrlGetResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", uploadUrlGetResponse.value);
-    writer.writeAdditionalData(uploadUrlGetResponse.additionalData);
+// @ts-ignore
+export function serializeUploadUrlGetResponse(writer: SerializationWriter, uploadUrlGetResponse: Partial<UploadUrlGetResponse> | undefined | null = {}) : void {
+    if (uploadUrlGetResponse) {
+        writer.writeStringValue("value", uploadUrlGetResponse.value);
+        writer.writeAdditionalData(uploadUrlGetResponse.additionalData);
+    }
 }
 export interface UploadUrlGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -40,11 +45,11 @@ export interface UploadUrlGetResponse extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the uploadUrl method.
@@ -55,6 +60,7 @@ export interface UploadUrlRequestBuilder extends BaseRequestBuilder<UploadUrlReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UploadUrlGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-uploadurl?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UploadUrlGetResponse | undefined>;
@@ -62,6 +68,7 @@ export interface UploadUrlRequestBuilder extends BaseRequestBuilder<UploadUrlReq
      * Retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RejectPostRequestBody}
  */
+// @ts-ignore
 export function createRejectPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRejectPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createRejectPostRequestBodyFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RejectPostResponse}
  */
+// @ts-ignore
 export function createRejectPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRejectPostResponse;
 }
@@ -28,6 +30,7 @@ export function createRejectPostResponseFromDiscriminatorValue(parseNode: ParseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRejectPostRequestBody(rejectPostRequestBody: Partial<RejectPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "approvalSource": n => { rejectPostRequestBody.approvalSource = n.getEnumValue<OperationApprovalSource>(OperationApprovalSourceObject); },
@@ -39,6 +42,7 @@ export function deserializeIntoRejectPostRequestBody(rejectPostRequestBody: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRejectPostResponse(rejectPostResponse: Partial<RejectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { rejectPostResponse.backingStoreEnabled = true; },
@@ -53,15 +57,15 @@ export interface RejectPostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * The approvalSource property
      */
-    approvalSource?: OperationApprovalSource;
+    approvalSource?: OperationApprovalSource | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The justification property
      */
-    justification?: string;
+    justification?: string | null;
 }
 export interface RejectPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -71,11 +75,11 @@ export interface RejectPostResponse extends AdditionalDataHolder, BackedModel, P
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the reject method.
@@ -101,18 +105,24 @@ export interface RejectRequestBuilder extends BaseRequestBuilder<RejectRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRejectPostRequestBody(writer: SerializationWriter, rejectPostRequestBody: Partial<RejectPostRequestBody> | undefined = {}) : void {
-    writer.writeEnumValue<OperationApprovalSource>("approvalSource", rejectPostRequestBody.approvalSource);
-    writer.writeStringValue("justification", rejectPostRequestBody.justification);
-    writer.writeAdditionalData(rejectPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRejectPostRequestBody(writer: SerializationWriter, rejectPostRequestBody: Partial<RejectPostRequestBody> | undefined | null = {}) : void {
+    if (rejectPostRequestBody) {
+        writer.writeEnumValue<OperationApprovalSource>("approvalSource", rejectPostRequestBody.approvalSource);
+        writer.writeStringValue("justification", rejectPostRequestBody.justification);
+        writer.writeAdditionalData(rejectPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRejectPostResponse(writer: SerializationWriter, rejectPostResponse: Partial<RejectPostResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", rejectPostResponse.value);
-    writer.writeAdditionalData(rejectPostResponse.additionalData);
+// @ts-ignore
+export function serializeRejectPostResponse(writer: SerializationWriter, rejectPostResponse: Partial<RejectPostResponse> | undefined | null = {}) : void {
+    if (rejectPostResponse) {
+        writer.writeStringValue("value", rejectPostResponse.value);
+        writer.writeAdditionalData(rejectPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

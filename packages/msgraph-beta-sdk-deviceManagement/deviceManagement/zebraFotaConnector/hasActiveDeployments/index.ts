@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {HasActiveDeploymentsPostResponse}
  */
+// @ts-ignore
 export function createHasActiveDeploymentsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHasActiveDeploymentsPostResponse;
 }
@@ -18,6 +19,7 @@ export function createHasActiveDeploymentsPostResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoHasActiveDeploymentsPostResponse(hasActiveDeploymentsPostResponse: Partial<HasActiveDeploymentsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { hasActiveDeploymentsPostResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface HasActiveDeploymentsPostResponse extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the hasActiveDeployments method.
@@ -60,9 +62,12 @@ export interface HasActiveDeploymentsRequestBuilder extends BaseRequestBuilder<H
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeHasActiveDeploymentsPostResponse(writer: SerializationWriter, hasActiveDeploymentsPostResponse: Partial<HasActiveDeploymentsPostResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", hasActiveDeploymentsPostResponse.value);
-    writer.writeAdditionalData(hasActiveDeploymentsPostResponse.additionalData);
+// @ts-ignore
+export function serializeHasActiveDeploymentsPostResponse(writer: SerializationWriter, hasActiveDeploymentsPostResponse: Partial<HasActiveDeploymentsPostResponse> | undefined | null = {}) : void {
+    if (hasActiveDeploymentsPostResponse) {
+        writer.writeBooleanValue("value", hasActiveDeploymentsPostResponse.value);
+        writer.writeAdditionalData(hasActiveDeploymentsPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

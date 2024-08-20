@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TrendingRequestBuilder extends BaseRequestBuilder<TrendingRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
      * @param trendingId The unique identifier of trending
      * @returns {TrendingItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byTrendingId(trendingId: string) : TrendingItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface TrendingRequestBuilder extends BaseRequestBuilder<TrendingReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TrendingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<TrendingRequestBuilderGetQueryParameters> | undefined) : Promise<TrendingCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface TrendingRequestBuilder extends BaseRequestBuilder<TrendingReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Trending>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: Trending, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Trending | undefined>;
     /**
      * Access this property from the derived type itemInsights.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TrendingRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface TrendingRequestBuilder extends BaseRequestBuilder<TrendingReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: Trending, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

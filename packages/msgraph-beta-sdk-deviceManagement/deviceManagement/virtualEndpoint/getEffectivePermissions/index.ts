@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetEffectivePermissionsGetResponse}
  */
+// @ts-ignore
 export function createGetEffectivePermissionsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEffectivePermissionsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetEffectivePermissionsGetResponseFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetEffectivePermissionsGetResponse(getEffectivePermissionsGetResponse: Partial<GetEffectivePermissionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getEffectivePermissionsGetResponse),
@@ -30,7 +32,7 @@ export interface GetEffectivePermissionsGetResponse extends BaseCollectionPagina
     /**
      * The value property
      */
-    value?: string[];
+    value?: string[] | null;
 }
 /**
  * Provides operations to call the getEffectivePermissions method.
@@ -80,9 +82,12 @@ export interface GetEffectivePermissionsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetEffectivePermissionsGetResponse(writer: SerializationWriter, getEffectivePermissionsGetResponse: Partial<GetEffectivePermissionsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getEffectivePermissionsGetResponse)
-    writer.writeCollectionOfPrimitiveValues<string>("value", getEffectivePermissionsGetResponse.value);
+// @ts-ignore
+export function serializeGetEffectivePermissionsGetResponse(writer: SerializationWriter, getEffectivePermissionsGetResponse: Partial<GetEffectivePermissionsGetResponse> | undefined | null = {}) : void {
+    if (getEffectivePermissionsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getEffectivePermissionsGetResponse)
+        writer.writeCollectionOfPrimitiveValues<string>("value", getEffectivePermissionsGetResponse.value);
+    }
 }
 /**
  * Uri template for the request builder.

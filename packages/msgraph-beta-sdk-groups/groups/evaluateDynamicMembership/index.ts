@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateDynamicMembershipPostRequestBody}
  */
+// @ts-ignore
 export function createEvaluateDynamicMembershipPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateDynamicMembershipPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createEvaluateDynamicMembershipPostRequestBodyFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateDynamicMembershipPostRequestBody(evaluateDynamicMembershipPostRequestBody: Partial<EvaluateDynamicMembershipPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { evaluateDynamicMembershipPostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface EvaluateDynamicMembershipPostRequestBody extends AdditionalData
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The memberId property
      */
-    memberId?: string;
+    memberId?: string | null;
     /**
      * The membershipRule property
      */
-    membershipRule?: string;
+    membershipRule?: string | null;
 }
 /**
  * Provides operations to call the evaluateDynamicMembership method.
@@ -70,10 +72,13 @@ export interface EvaluateDynamicMembershipRequestBuilder extends BaseRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEvaluateDynamicMembershipPostRequestBody(writer: SerializationWriter, evaluateDynamicMembershipPostRequestBody: Partial<EvaluateDynamicMembershipPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("memberId", evaluateDynamicMembershipPostRequestBody.memberId);
-    writer.writeStringValue("membershipRule", evaluateDynamicMembershipPostRequestBody.membershipRule);
-    writer.writeAdditionalData(evaluateDynamicMembershipPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeEvaluateDynamicMembershipPostRequestBody(writer: SerializationWriter, evaluateDynamicMembershipPostRequestBody: Partial<EvaluateDynamicMembershipPostRequestBody> | undefined | null = {}) : void {
+    if (evaluateDynamicMembershipPostRequestBody) {
+        writer.writeStringValue("memberId", evaluateDynamicMembershipPostRequestBody.memberId);
+        writer.writeStringValue("membershipRule", evaluateDynamicMembershipPostRequestBody.membershipRule);
+        writer.writeAdditionalData(evaluateDynamicMembershipPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

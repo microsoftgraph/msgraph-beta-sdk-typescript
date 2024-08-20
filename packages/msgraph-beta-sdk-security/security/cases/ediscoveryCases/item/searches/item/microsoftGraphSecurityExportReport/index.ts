@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExportReportPostRequestBody}
  */
+// @ts-ignore
 export function createExportReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExportReportPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createExportReportPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExportReportPostRequestBody(exportReportPostRequestBody: Partial<ExportReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "additionalOptions": n => { exportReportPostRequestBody.additionalOptions = n.getCollectionOfEnumValues<AdditionalOptions>(AdditionalOptionsObject); },
@@ -38,27 +40,27 @@ export interface ExportReportPostRequestBody extends AdditionalDataHolder, Backe
     /**
      * The additionalOptions property
      */
-    additionalOptions?: AdditionalOptions[];
+    additionalOptions?: AdditionalOptions[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The description property
      */
-    description?: string;
+    description?: string | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The exportCriteria property
      */
-    exportCriteria?: ExportCriteria[];
+    exportCriteria?: ExportCriteria[] | null;
     /**
      * The exportLocation property
      */
-    exportLocation?: ExportLocation[];
+    exportLocation?: ExportLocation[] | null;
 }
 /**
  * Provides operations to call the exportReport method.
@@ -83,13 +85,16 @@ export interface MicrosoftGraphSecurityExportReportRequestBuilder extends BaseRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExportReportPostRequestBody(writer: SerializationWriter, exportReportPostRequestBody: Partial<ExportReportPostRequestBody> | undefined = {}) : void {
-    writer.writeEnumValue<AdditionalOptions[]>("additionalOptions", exportReportPostRequestBody.additionalOptions);
-    writer.writeStringValue("description", exportReportPostRequestBody.description);
-    writer.writeStringValue("displayName", exportReportPostRequestBody.displayName);
-    writer.writeEnumValue<ExportCriteria[]>("exportCriteria", exportReportPostRequestBody.exportCriteria);
-    writer.writeEnumValue<ExportLocation[]>("exportLocation", exportReportPostRequestBody.exportLocation);
-    writer.writeAdditionalData(exportReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeExportReportPostRequestBody(writer: SerializationWriter, exportReportPostRequestBody: Partial<ExportReportPostRequestBody> | undefined | null = {}) : void {
+    if (exportReportPostRequestBody) {
+        writer.writeEnumValue<AdditionalOptions[]>("additionalOptions", exportReportPostRequestBody.additionalOptions);
+        writer.writeStringValue("description", exportReportPostRequestBody.description);
+        writer.writeStringValue("displayName", exportReportPostRequestBody.displayName);
+        writer.writeEnumValue<ExportCriteria[]>("exportCriteria", exportReportPostRequestBody.exportCriteria);
+        writer.writeEnumValue<ExportLocation[]>("exportLocation", exportReportPostRequestBody.exportLocation);
+        writer.writeAdditionalData(exportReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

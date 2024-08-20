@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPasswordSingleSignOnCredentialsPostResponse}
  */
+// @ts-ignore
 export function createGetPasswordSingleSignOnCredentialsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPasswordSingleSignOnCredentialsPostResponse;
 }
@@ -20,6 +21,7 @@ export function createGetPasswordSingleSignOnCredentialsPostResponseFromDiscrimi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPasswordSingleSignOnCredentialsPostResponse(getPasswordSingleSignOnCredentialsPostResponse: Partial<GetPasswordSingleSignOnCredentialsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getPasswordSingleSignOnCredentialsPostResponse),
@@ -30,7 +32,7 @@ export interface GetPasswordSingleSignOnCredentialsPostResponse extends BaseColl
     /**
      * The value property
      */
-    value?: PasswordSingleSignOnCredentialSet[];
+    value?: PasswordSingleSignOnCredentialSet[] | null;
 }
 /**
  * Provides operations to call the getPasswordSingleSignOnCredentials method.
@@ -41,6 +43,7 @@ export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetPasswordSingleSignOnCredentialsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetPasswordSingleSignOnCredentialsPostResponse | undefined>;
@@ -48,6 +51,7 @@ export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRe
      * Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -55,9 +59,12 @@ export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetPasswordSingleSignOnCredentialsPostResponse(writer: SerializationWriter, getPasswordSingleSignOnCredentialsPostResponse: Partial<GetPasswordSingleSignOnCredentialsPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getPasswordSingleSignOnCredentialsPostResponse)
-    writer.writeCollectionOfObjectValues<PasswordSingleSignOnCredentialSet>("value", getPasswordSingleSignOnCredentialsPostResponse.value, serializePasswordSingleSignOnCredentialSet);
+// @ts-ignore
+export function serializeGetPasswordSingleSignOnCredentialsPostResponse(writer: SerializationWriter, getPasswordSingleSignOnCredentialsPostResponse: Partial<GetPasswordSingleSignOnCredentialsPostResponse> | undefined | null = {}) : void {
+    if (getPasswordSingleSignOnCredentialsPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getPasswordSingleSignOnCredentialsPostResponse)
+        writer.writeCollectionOfObjectValues<PasswordSingleSignOnCredentialSet>("value", getPasswordSingleSignOnCredentialsPostResponse.value, serializePasswordSingleSignOnCredentialSet);
+    }
 }
 /**
  * Uri template for the request builder.

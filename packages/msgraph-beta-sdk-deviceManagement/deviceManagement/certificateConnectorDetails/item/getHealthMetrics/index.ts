@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetHealthMetricsPostRequestBody}
  */
+// @ts-ignore
 export function createGetHealthMetricsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetHealthMetricsPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createGetHealthMetricsPostRequestBodyFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetHealthMetricsPostResponse}
  */
+// @ts-ignore
 export function createGetHealthMetricsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetHealthMetricsPostResponse;
 }
@@ -28,6 +30,7 @@ export function createGetHealthMetricsPostResponseFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetHealthMetricsPostRequestBody(getHealthMetricsPostRequestBody: Partial<GetHealthMetricsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getHealthMetricsPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoGetHealthMetricsPostRequestBody(getHealthMetricsP
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetHealthMetricsPostResponse(getHealthMetricsPostResponse: Partial<GetHealthMetricsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getHealthMetricsPostResponse),
@@ -52,17 +56,17 @@ export interface GetHealthMetricsPostRequestBody extends AdditionalDataHolder, B
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The metricNames property
      */
-    metricNames?: string[];
+    metricNames?: string[] | null;
 }
 export interface GetHealthMetricsPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: KeyLongValuePair[];
+    value?: KeyLongValuePair[] | null;
 }
 /**
  * Provides operations to call the getHealthMetrics method.
@@ -88,17 +92,23 @@ export interface GetHealthMetricsRequestBuilder extends BaseRequestBuilder<GetHe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetHealthMetricsPostRequestBody(writer: SerializationWriter, getHealthMetricsPostRequestBody: Partial<GetHealthMetricsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("metricNames", getHealthMetricsPostRequestBody.metricNames);
-    writer.writeAdditionalData(getHealthMetricsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetHealthMetricsPostRequestBody(writer: SerializationWriter, getHealthMetricsPostRequestBody: Partial<GetHealthMetricsPostRequestBody> | undefined | null = {}) : void {
+    if (getHealthMetricsPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("metricNames", getHealthMetricsPostRequestBody.metricNames);
+        writer.writeAdditionalData(getHealthMetricsPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetHealthMetricsPostResponse(writer: SerializationWriter, getHealthMetricsPostResponse: Partial<GetHealthMetricsPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricsPostResponse)
-    writer.writeCollectionOfObjectValues<KeyLongValuePair>("value", getHealthMetricsPostResponse.value, serializeKeyLongValuePair);
+// @ts-ignore
+export function serializeGetHealthMetricsPostResponse(writer: SerializationWriter, getHealthMetricsPostResponse: Partial<GetHealthMetricsPostResponse> | undefined | null = {}) : void {
+    if (getHealthMetricsPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricsPostResponse)
+        writer.writeCollectionOfObjectValues<KeyLongValuePair>("value", getHealthMetricsPostResponse.value, serializeKeyLongValuePair);
+    }
 }
 /**
  * Uri template for the request builder.

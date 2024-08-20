@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetManagedAppDiagnosticStatusesGetResponse}
  */
+// @ts-ignore
 export function createGetManagedAppDiagnosticStatusesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetManagedAppDiagnosticStatusesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetManagedAppDiagnosticStatusesGetResponseFromDiscriminato
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetManagedAppDiagnosticStatusesGetResponse(getManagedAppDiagnosticStatusesGetResponse: Partial<GetManagedAppDiagnosticStatusesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getManagedAppDiagnosticStatusesGetResponse),
@@ -30,7 +32,7 @@ export interface GetManagedAppDiagnosticStatusesGetResponse extends BaseCollecti
     /**
      * The value property
      */
-    value?: ManagedAppDiagnosticStatus[];
+    value?: ManagedAppDiagnosticStatus[] | null;
 }
 /**
  * Provides operations to call the getManagedAppDiagnosticStatuses method.
@@ -41,12 +43,14 @@ export interface GetManagedAppDiagnosticStatusesRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetManagedAppDiagnosticStatusesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters> | undefined) : Promise<GetManagedAppDiagnosticStatusesGetResponse | undefined>;
     /**
      * Gets diagnostics validation status for a given user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -79,9 +83,12 @@ export interface GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetManagedAppDiagnosticStatusesGetResponse(writer: SerializationWriter, getManagedAppDiagnosticStatusesGetResponse: Partial<GetManagedAppDiagnosticStatusesGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getManagedAppDiagnosticStatusesGetResponse)
-    writer.writeCollectionOfObjectValues<ManagedAppDiagnosticStatus>("value", getManagedAppDiagnosticStatusesGetResponse.value, serializeManagedAppDiagnosticStatus);
+// @ts-ignore
+export function serializeGetManagedAppDiagnosticStatusesGetResponse(writer: SerializationWriter, getManagedAppDiagnosticStatusesGetResponse: Partial<GetManagedAppDiagnosticStatusesGetResponse> | undefined | null = {}) : void {
+    if (getManagedAppDiagnosticStatusesGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getManagedAppDiagnosticStatusesGetResponse)
+        writer.writeCollectionOfObjectValues<ManagedAppDiagnosticStatus>("value", getManagedAppDiagnosticStatusesGetResponse.value, serializeManagedAppDiagnosticStatus);
+    }
 }
 /**
  * Uri template for the request builder.

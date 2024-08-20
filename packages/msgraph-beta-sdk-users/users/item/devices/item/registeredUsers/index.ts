@@ -26,22 +26,27 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RegisteredUsersRequestBuilder extends BaseRequestBuilder<RegisteredUsersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Casts the previous resource to endpoint.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphEndpoint(): GraphEndpointRequestBuilder;
     /**
      * Casts the previous resource to servicePrincipal.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphServicePrincipal(): GraphServicePrincipalRequestBuilder;
     /**
      * Casts the previous resource to user.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphUser(): GraphUserRequestBuilder;
     /**
      * Provides operations to manage the collection of user entities.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get ref(): RefRequestBuilder;
     /**
@@ -55,12 +60,14 @@ export interface RegisteredUsersRequestBuilder extends BaseRequestBuilder<Regist
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<RegisteredUsersRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
      * Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RegisteredUsersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

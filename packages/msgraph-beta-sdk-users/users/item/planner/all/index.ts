@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AllRequestBuilder extends BaseRequestBuilder<AllRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to manage the all property of the microsoft.graph.plannerUser entity.
      * @param plannerDeltaId The unique identifier of plannerDelta
      * @returns {PlannerDeltaItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPlannerDeltaId(plannerDeltaId: string) : PlannerDeltaItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface AllRequestBuilder extends BaseRequestBuilder<AllRequestBuilder>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerDeltaCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AllRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerDeltaCollectionResponse | undefined>;
     /**
@@ -45,12 +49,14 @@ export interface AllRequestBuilder extends BaseRequestBuilder<AllRequestBuilder>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerDelta>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: PlannerDelta, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerDelta | undefined>;
     /**
      * Get all from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AllRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,6 +64,7 @@ export interface AllRequestBuilder extends BaseRequestBuilder<AllRequestBuilder>
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: PlannerDelta, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

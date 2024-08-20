@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetEffectiveDeviceEnrollmentConfigurationsGetResponse}
  */
+// @ts-ignore
 export function createGetEffectiveDeviceEnrollmentConfigurationsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEffectiveDeviceEnrollmentConfigurationsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetEffectiveDeviceEnrollmentConfigurationsGetResponseFromD
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetEffectiveDeviceEnrollmentConfigurationsGetResponse(getEffectiveDeviceEnrollmentConfigurationsGetResponse: Partial<GetEffectiveDeviceEnrollmentConfigurationsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getEffectiveDeviceEnrollmentConfigurationsGetResponse),
@@ -30,7 +32,7 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsGetResponse extends B
     /**
      * The value property
      */
-    value?: DeviceEnrollmentConfiguration[];
+    value?: DeviceEnrollmentConfiguration[] | null;
 }
 /**
  * Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
@@ -41,12 +43,14 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder extend
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetEffectiveDeviceEnrollmentConfigurationsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters> | undefined) : Promise<GetEffectiveDeviceEnrollmentConfigurationsGetResponse | undefined>;
     /**
      * Invoke function getEffectiveDeviceEnrollmentConfigurations
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -91,9 +95,12 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQuer
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetEffectiveDeviceEnrollmentConfigurationsGetResponse(writer: SerializationWriter, getEffectiveDeviceEnrollmentConfigurationsGetResponse: Partial<GetEffectiveDeviceEnrollmentConfigurationsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getEffectiveDeviceEnrollmentConfigurationsGetResponse)
-    writer.writeCollectionOfObjectValues<DeviceEnrollmentConfiguration>("value", getEffectiveDeviceEnrollmentConfigurationsGetResponse.value, serializeDeviceEnrollmentConfiguration);
+// @ts-ignore
+export function serializeGetEffectiveDeviceEnrollmentConfigurationsGetResponse(writer: SerializationWriter, getEffectiveDeviceEnrollmentConfigurationsGetResponse: Partial<GetEffectiveDeviceEnrollmentConfigurationsGetResponse> | undefined | null = {}) : void {
+    if (getEffectiveDeviceEnrollmentConfigurationsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getEffectiveDeviceEnrollmentConfigurationsGetResponse)
+        writer.writeCollectionOfObjectValues<DeviceEnrollmentConfiguration>("value", getEffectiveDeviceEnrollmentConfigurationsGetResponse.value, serializeDeviceEnrollmentConfiguration);
+    }
 }
 /**
  * Uri template for the request builder.

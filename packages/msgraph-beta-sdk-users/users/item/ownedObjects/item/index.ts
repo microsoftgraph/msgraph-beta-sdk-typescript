@@ -20,14 +20,17 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DirectoryObjectItemRequestBuilder extends BaseRequestBuilder<DirectoryObjectItemRequestBuilder> {
     /**
      * Casts the previous resource to application.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphApplication(): GraphApplicationRequestBuilder;
     /**
      * Casts the previous resource to group.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphGroup(): GraphGroupRequestBuilder;
     /**
      * Casts the previous resource to servicePrincipal.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphServicePrincipal(): GraphServicePrincipalRequestBuilder;
     /**
@@ -35,12 +38,14 @@ export interface DirectoryObjectItemRequestBuilder extends BaseRequestBuilder<Di
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObject | undefined>;
     /**
      * Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

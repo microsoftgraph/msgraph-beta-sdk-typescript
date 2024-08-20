@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SendVirtualAppointmentSmsPostRequestBody}
  */
+// @ts-ignore
 export function createSendVirtualAppointmentSmsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSendVirtualAppointmentSmsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSendVirtualAppointmentSmsPostRequestBodyFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSendVirtualAppointmentSmsPostRequestBody(sendVirtualAppointmentSmsPostRequestBody: Partial<SendVirtualAppointmentSmsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "attendees": n => { sendVirtualAppointmentSmsPostRequestBody.attendees = n.getCollectionOfObjectValues<AttendeeNotificationInfo>(createAttendeeNotificationInfoFromDiscriminatorValue); },
@@ -35,15 +37,15 @@ export interface SendVirtualAppointmentSmsPostRequestBody extends AdditionalData
     /**
      * The attendees property
      */
-    attendees?: AttendeeNotificationInfo[];
+    attendees?: AttendeeNotificationInfo[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The messageType property
      */
-    messageType?: VirtualAppointmentMessageType;
+    messageType?: VirtualAppointmentMessageType | null;
 }
 /**
  * Provides operations to call the sendVirtualAppointmentSms method.
@@ -54,6 +56,7 @@ export interface SendVirtualAppointmentSmsRequestBuilder extends BaseRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta|Find more info here}
      */
      post(body: SendVirtualAppointmentSmsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -62,6 +65,7 @@ export interface SendVirtualAppointmentSmsRequestBuilder extends BaseRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SendVirtualAppointmentSmsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -69,10 +73,13 @@ export interface SendVirtualAppointmentSmsRequestBuilder extends BaseRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSendVirtualAppointmentSmsPostRequestBody(writer: SerializationWriter, sendVirtualAppointmentSmsPostRequestBody: Partial<SendVirtualAppointmentSmsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<AttendeeNotificationInfo>("attendees", sendVirtualAppointmentSmsPostRequestBody.attendees, serializeAttendeeNotificationInfo);
-    writer.writeEnumValue<VirtualAppointmentMessageType>("messageType", sendVirtualAppointmentSmsPostRequestBody.messageType);
-    writer.writeAdditionalData(sendVirtualAppointmentSmsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSendVirtualAppointmentSmsPostRequestBody(writer: SerializationWriter, sendVirtualAppointmentSmsPostRequestBody: Partial<SendVirtualAppointmentSmsPostRequestBody> | undefined | null = {}) : void {
+    if (sendVirtualAppointmentSmsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<AttendeeNotificationInfo>("attendees", sendVirtualAppointmentSmsPostRequestBody.attendees, serializeAttendeeNotificationInfo);
+        writer.writeEnumValue<VirtualAppointmentMessageType>("messageType", sendVirtualAppointmentSmsPostRequestBody.messageType);
+        writer.writeAdditionalData(sendVirtualAppointmentSmsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse}
  */
+// @ts-ignore
 export function createGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetRespo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse: Partial<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse),
@@ -30,7 +32,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse e
     /**
      * The value property
      */
-    value?: CloudPC[];
+    value?: CloudPC[] | null;
 }
 /**
  * Provides operations to call the getProvisionedCloudPCs method.
@@ -41,6 +43,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters> | undefined) : Promise<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse | undefined>;
@@ -48,6 +51,7 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
      * Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -92,9 +96,12 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(writer: SerializationWriter, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse: Partial<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse)
-    writer.writeCollectionOfObjectValues<CloudPC>("value", getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.value, serializeCloudPC);
+// @ts-ignore
+export function serializeGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(writer: SerializationWriter, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse: Partial<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> | undefined | null = {}) : void {
+    if (getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse)
+        writer.writeCollectionOfObjectValues<CloudPC>("value", getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.value, serializeCloudPC);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FindByMethodModeWithAuthenticationMethodModesGetResponse}
  */
+// @ts-ignore
 export function createFindByMethodModeWithAuthenticationMethodModesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFindByMethodModeWithAuthenticationMethodModesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createFindByMethodModeWithAuthenticationMethodModesGetResponseFr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFindByMethodModeWithAuthenticationMethodModesGetResponse(findByMethodModeWithAuthenticationMethodModesGetResponse: Partial<FindByMethodModeWithAuthenticationMethodModesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(findByMethodModeWithAuthenticationMethodModesGetResponse),
@@ -30,7 +32,7 @@ export interface FindByMethodModeWithAuthenticationMethodModesGetResponse extend
     /**
      * The value property
      */
-    value?: AuthenticationStrengthPolicy[];
+    value?: AuthenticationStrengthPolicy[] | null;
 }
 /**
  * Provides operations to call the findByMethodMode method.
@@ -94,9 +96,12 @@ export interface FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQ
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFindByMethodModeWithAuthenticationMethodModesGetResponse(writer: SerializationWriter, findByMethodModeWithAuthenticationMethodModesGetResponse: Partial<FindByMethodModeWithAuthenticationMethodModesGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, findByMethodModeWithAuthenticationMethodModesGetResponse)
-    writer.writeCollectionOfObjectValues<AuthenticationStrengthPolicy>("value", findByMethodModeWithAuthenticationMethodModesGetResponse.value, serializeAuthenticationStrengthPolicy);
+// @ts-ignore
+export function serializeFindByMethodModeWithAuthenticationMethodModesGetResponse(writer: SerializationWriter, findByMethodModeWithAuthenticationMethodModesGetResponse: Partial<FindByMethodModeWithAuthenticationMethodModesGetResponse> | undefined | null = {}) : void {
+    if (findByMethodModeWithAuthenticationMethodModesGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, findByMethodModeWithAuthenticationMethodModesGetResponse)
+        writer.writeCollectionOfObjectValues<AuthenticationStrengthPolicy>("value", findByMethodModeWithAuthenticationMethodModesGetResponse.value, serializeAuthenticationStrengthPolicy);
+    }
 }
 /**
  * Uri template for the request builder.

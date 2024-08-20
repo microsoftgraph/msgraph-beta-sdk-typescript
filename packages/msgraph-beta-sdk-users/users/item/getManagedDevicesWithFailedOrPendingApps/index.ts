@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetManagedDevicesWithFailedOrPendingAppsGetResponse}
  */
+// @ts-ignore
 export function createGetManagedDevicesWithFailedOrPendingAppsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetManagedDevicesWithFailedOrPendingAppsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetManagedDevicesWithFailedOrPendingAppsGetResponseFromDis
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetManagedDevicesWithFailedOrPendingAppsGetResponse(getManagedDevicesWithFailedOrPendingAppsGetResponse: Partial<GetManagedDevicesWithFailedOrPendingAppsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getManagedDevicesWithFailedOrPendingAppsGetResponse),
@@ -30,7 +32,7 @@ export interface GetManagedDevicesWithFailedOrPendingAppsGetResponse extends Bas
     /**
      * The value property
      */
-    value?: ManagedDeviceSummarizedAppState[];
+    value?: ManagedDeviceSummarizedAppState[] | null;
 }
 /**
  * Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.
@@ -41,12 +43,14 @@ export interface GetManagedDevicesWithFailedOrPendingAppsRequestBuilder extends 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetManagedDevicesWithFailedOrPendingAppsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters> | undefined) : Promise<GetManagedDevicesWithFailedOrPendingAppsGetResponse | undefined>;
     /**
      * Retrieves the list of devices with failed or pending apps
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -79,9 +83,12 @@ export interface GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetManagedDevicesWithFailedOrPendingAppsGetResponse(writer: SerializationWriter, getManagedDevicesWithFailedOrPendingAppsGetResponse: Partial<GetManagedDevicesWithFailedOrPendingAppsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getManagedDevicesWithFailedOrPendingAppsGetResponse)
-    writer.writeCollectionOfObjectValues<ManagedDeviceSummarizedAppState>("value", getManagedDevicesWithFailedOrPendingAppsGetResponse.value, serializeManagedDeviceSummarizedAppState);
+// @ts-ignore
+export function serializeGetManagedDevicesWithFailedOrPendingAppsGetResponse(writer: SerializationWriter, getManagedDevicesWithFailedOrPendingAppsGetResponse: Partial<GetManagedDevicesWithFailedOrPendingAppsGetResponse> | undefined | null = {}) : void {
+    if (getManagedDevicesWithFailedOrPendingAppsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getManagedDevicesWithFailedOrPendingAppsGetResponse)
+        writer.writeCollectionOfObjectValues<ManagedDeviceSummarizedAppState>("value", getManagedDevicesWithFailedOrPendingAppsGetResponse.value, serializeManagedDeviceSummarizedAppState);
+    }
 }
 /**
  * Uri template for the request builder.

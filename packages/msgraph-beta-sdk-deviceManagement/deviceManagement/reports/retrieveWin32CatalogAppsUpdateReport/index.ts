@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveWin32CatalogAppsUpdateReportPostRequestBody}
  */
+// @ts-ignore
 export function createRetrieveWin32CatalogAppsUpdateReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveWin32CatalogAppsUpdateReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRetrieveWin32CatalogAppsUpdateReportPostRequestBodyFromDis
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveWin32CatalogAppsUpdateReportPostRequestBody(retrieveWin32CatalogAppsUpdateReportPostRequestBody: Partial<RetrieveWin32CatalogAppsUpdateReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retrieveWin32CatalogAppsUpdateReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface RetrieveWin32CatalogAppsUpdateReportPostRequestBody extends Add
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the retrieveWin32CatalogAppsUpdateReport method.
@@ -102,17 +104,20 @@ export interface RetrieveWin32CatalogAppsUpdateReportRequestBuilder extends Base
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRetrieveWin32CatalogAppsUpdateReportPostRequestBody(writer: SerializationWriter, retrieveWin32CatalogAppsUpdateReportPostRequestBody: Partial<RetrieveWin32CatalogAppsUpdateReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", retrieveWin32CatalogAppsUpdateReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", retrieveWin32CatalogAppsUpdateReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", retrieveWin32CatalogAppsUpdateReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveWin32CatalogAppsUpdateReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", retrieveWin32CatalogAppsUpdateReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", retrieveWin32CatalogAppsUpdateReportPostRequestBody.skip);
-    writer.writeNumberValue("top", retrieveWin32CatalogAppsUpdateReportPostRequestBody.top);
-    writer.writeAdditionalData(retrieveWin32CatalogAppsUpdateReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRetrieveWin32CatalogAppsUpdateReportPostRequestBody(writer: SerializationWriter, retrieveWin32CatalogAppsUpdateReportPostRequestBody: Partial<RetrieveWin32CatalogAppsUpdateReportPostRequestBody> | undefined | null = {}) : void {
+    if (retrieveWin32CatalogAppsUpdateReportPostRequestBody) {
+        writer.writeStringValue("filter", retrieveWin32CatalogAppsUpdateReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", retrieveWin32CatalogAppsUpdateReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", retrieveWin32CatalogAppsUpdateReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveWin32CatalogAppsUpdateReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", retrieveWin32CatalogAppsUpdateReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", retrieveWin32CatalogAppsUpdateReportPostRequestBody.skip);
+        writer.writeNumberValue("top", retrieveWin32CatalogAppsUpdateReportPostRequestBody.top);
+        writer.writeAdditionalData(retrieveWin32CatalogAppsUpdateReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

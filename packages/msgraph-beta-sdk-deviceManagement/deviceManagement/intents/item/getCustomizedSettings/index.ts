@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCustomizedSettingsGetResponse}
  */
+// @ts-ignore
 export function createGetCustomizedSettingsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCustomizedSettingsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetCustomizedSettingsGetResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCustomizedSettingsGetResponse(getCustomizedSettingsGetResponse: Partial<GetCustomizedSettingsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getCustomizedSettingsGetResponse),
@@ -30,7 +32,7 @@ export interface GetCustomizedSettingsGetResponse extends BaseCollectionPaginati
     /**
      * The value property
      */
-    value?: DeviceManagementIntentCustomizedSetting[];
+    value?: DeviceManagementIntentCustomizedSetting[] | null;
 }
 /**
  * Provides operations to call the getCustomizedSettings method.
@@ -79,9 +81,12 @@ export interface GetCustomizedSettingsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetCustomizedSettingsGetResponse(writer: SerializationWriter, getCustomizedSettingsGetResponse: Partial<GetCustomizedSettingsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getCustomizedSettingsGetResponse)
-    writer.writeCollectionOfObjectValues<DeviceManagementIntentCustomizedSetting>("value", getCustomizedSettingsGetResponse.value, serializeDeviceManagementIntentCustomizedSetting);
+// @ts-ignore
+export function serializeGetCustomizedSettingsGetResponse(writer: SerializationWriter, getCustomizedSettingsGetResponse: Partial<GetCustomizedSettingsGetResponse> | undefined | null = {}) : void {
+    if (getCustomizedSettingsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getCustomizedSettingsGetResponse)
+        writer.writeCollectionOfObjectValues<DeviceManagementIntentCustomizedSetting>("value", getCustomizedSettingsGetResponse.value, serializeDeviceManagementIntentCustomizedSetting);
+    }
 }
 /**
  * Uri template for the request builder.

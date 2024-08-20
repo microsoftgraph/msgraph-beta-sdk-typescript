@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReprovisionPostRequestBody}
  */
+// @ts-ignore
 export function createReprovisionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReprovisionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createReprovisionPostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReprovisionPostRequestBody(reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { reprovisionPostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface ReprovisionPostRequestBody extends AdditionalDataHolder, Backed
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The osVersion property
      */
-    osVersion?: CloudPcOperatingSystem;
+    osVersion?: CloudPcOperatingSystem | null;
     /**
      * The userAccountType property
      */
-    userAccountType?: CloudPcUserAccountType;
+    userAccountType?: CloudPcUserAccountType | null;
 }
 /**
  * Provides operations to call the reprovision method.
@@ -69,10 +71,13 @@ export interface ReprovisionRequestBuilder extends BaseRequestBuilder<Reprovisio
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReprovisionPostRequestBody(writer: SerializationWriter, reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined = {}) : void {
-    writer.writeEnumValue<CloudPcOperatingSystem>("osVersion", reprovisionPostRequestBody.osVersion);
-    writer.writeEnumValue<CloudPcUserAccountType>("userAccountType", reprovisionPostRequestBody.userAccountType);
-    writer.writeAdditionalData(reprovisionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeReprovisionPostRequestBody(writer: SerializationWriter, reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined | null = {}) : void {
+    if (reprovisionPostRequestBody) {
+        writer.writeEnumValue<CloudPcOperatingSystem>("osVersion", reprovisionPostRequestBody.osVersion);
+        writer.writeEnumValue<CloudPcUserAccountType>("userAccountType", reprovisionPostRequestBody.userAccountType);
+        writer.writeAdditionalData(reprovisionPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

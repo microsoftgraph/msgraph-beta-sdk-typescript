@@ -24,24 +24,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OwnedObjectsRequestBuilder extends BaseRequestBuilder<OwnedObjectsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Casts the previous resource to application.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphApplication(): GraphApplicationRequestBuilder;
     /**
      * Casts the previous resource to group.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphGroup(): GraphGroupRequestBuilder;
     /**
      * Casts the previous resource to servicePrincipal.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphServicePrincipal(): GraphServicePrincipalRequestBuilder;
     /**
      * Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.
      * @param directoryObjectId The unique identifier of directoryObject
      * @returns {DirectoryObjectItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
@@ -49,12 +54,14 @@ export interface OwnedObjectsRequestBuilder extends BaseRequestBuilder<OwnedObje
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OwnedObjectsRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
      * Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OwnedObjectsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

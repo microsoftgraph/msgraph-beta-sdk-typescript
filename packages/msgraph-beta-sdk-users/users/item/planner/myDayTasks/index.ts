@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MyDayTasksRequestBuilder extends BaseRequestBuilder<MyDayTasksRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
      * @param plannerTaskId The unique identifier of plannerTask
      * @returns {PlannerTaskItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPlannerTaskId(plannerTaskId: string) : PlannerTaskItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface MyDayTasksRequestBuilder extends BaseRequestBuilder<MyDayTasksR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerTaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MyDayTasksRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerTaskCollectionResponse | undefined>;
     /**
      * Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MyDayTasksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -17,12 +17,14 @@ export interface ManagedAppRegistrationItemRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedAppRegistration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedAppRegistration | undefined>;
     /**
      * Zero or more managed app registrations that belong to the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

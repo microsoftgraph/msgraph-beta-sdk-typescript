@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse}
  */
+// @ts-ignore
 export function createGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse;
 }
@@ -22,6 +23,7 @@ export function createGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse(getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse: Partial<GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse),
@@ -32,7 +34,7 @@ export interface GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime
     /**
      * The value property
      */
-    value?: PstnOnlineMeetingDialoutReport[];
+    value?: PstnOnlineMeetingDialoutReport[] | null;
 }
 /**
  * Provides operations to call the getPstnOnlineMeetingDialoutReport method.
@@ -81,9 +83,12 @@ export interface MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithF
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse: Partial<GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse)
-    writer.writeCollectionOfObjectValues<PstnOnlineMeetingDialoutReport>("value", getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse.value, serializePstnOnlineMeetingDialoutReport);
+// @ts-ignore
+export function serializeGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse: Partial<GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse> | undefined | null = {}) : void {
+    if (getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse)
+        writer.writeCollectionOfObjectValues<PstnOnlineMeetingDialoutReport>("value", getPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse.value, serializePstnOnlineMeetingDialoutReport);
+    }
 }
 /**
  * Uri template for the request builder.

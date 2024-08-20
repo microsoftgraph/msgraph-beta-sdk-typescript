@@ -16,6 +16,7 @@ export interface ProfileStatusRequestBuilder extends BaseRequestBuilder<ProfileS
      * Delete navigation property profileStatus for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface ProfileStatusRequestBuilder extends BaseRequestBuilder<ProfileS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationProfileStatus>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ProfileStatusRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationProfileStatus | undefined>;
@@ -32,18 +34,21 @@ export interface ProfileStatusRequestBuilder extends BaseRequestBuilder<ProfileS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationProfileStatus>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      patch(body: EducationSynchronizationProfileStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationProfileStatus | undefined>;
     /**
      * Delete navigation property profileStatus for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProfileStatusRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -51,6 +56,7 @@ export interface ProfileStatusRequestBuilder extends BaseRequestBuilder<ProfileS
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toPatchRequestInformation(body: EducationSynchronizationProfileStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

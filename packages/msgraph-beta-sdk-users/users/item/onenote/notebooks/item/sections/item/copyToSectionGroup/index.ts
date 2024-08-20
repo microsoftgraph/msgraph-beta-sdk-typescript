@@ -16,27 +16,27 @@ export interface CopyToSectionGroupPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The groupId property
      */
-    groupId?: string;
+    groupId?: string | null;
     /**
      * The id property
      */
-    id?: string;
+    id?: string | null;
     /**
      * The renameAs property
      */
-    renameAs?: string;
+    renameAs?: string | null;
     /**
      * The siteCollectionId property
      */
-    siteCollectionId?: string;
+    siteCollectionId?: string | null;
     /**
      * The siteId property
      */
-    siteId?: string;
+    siteId?: string | null;
 }
 /**
  * Provides operations to call the copyToSectionGroup method.
@@ -48,6 +48,7 @@ export interface CopyToSectionGroupRequestBuilder extends BaseRequestBuilder<Cop
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteOperation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta|Find more info here}
      */
      post(body: CopyToSectionGroupPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnenoteOperation | undefined>;
@@ -56,6 +57,7 @@ export interface CopyToSectionGroupRequestBuilder extends BaseRequestBuilder<Cop
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CopyToSectionGroupPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +66,7 @@ export interface CopyToSectionGroupRequestBuilder extends BaseRequestBuilder<Cop
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CopyToSectionGroupPostRequestBody}
  */
+// @ts-ignore
 export function createCopyToSectionGroupPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCopyToSectionGroupPostRequestBody;
 }
@@ -71,6 +74,7 @@ export function createCopyToSectionGroupPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCopyToSectionGroupPostRequestBody(copyToSectionGroupPostRequestBody: Partial<CopyToSectionGroupPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { copyToSectionGroupPostRequestBody.backingStoreEnabled = true; },
@@ -85,13 +89,16 @@ export function deserializeIntoCopyToSectionGroupPostRequestBody(copyToSectionGr
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCopyToSectionGroupPostRequestBody(writer: SerializationWriter, copyToSectionGroupPostRequestBody: Partial<CopyToSectionGroupPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("groupId", copyToSectionGroupPostRequestBody.groupId);
-    writer.writeStringValue("id", copyToSectionGroupPostRequestBody.id);
-    writer.writeStringValue("renameAs", copyToSectionGroupPostRequestBody.renameAs);
-    writer.writeStringValue("siteCollectionId", copyToSectionGroupPostRequestBody.siteCollectionId);
-    writer.writeStringValue("siteId", copyToSectionGroupPostRequestBody.siteId);
-    writer.writeAdditionalData(copyToSectionGroupPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCopyToSectionGroupPostRequestBody(writer: SerializationWriter, copyToSectionGroupPostRequestBody: Partial<CopyToSectionGroupPostRequestBody> | undefined | null = {}) : void {
+    if (copyToSectionGroupPostRequestBody) {
+        writer.writeStringValue("groupId", copyToSectionGroupPostRequestBody.groupId);
+        writer.writeStringValue("id", copyToSectionGroupPostRequestBody.id);
+        writer.writeStringValue("renameAs", copyToSectionGroupPostRequestBody.renameAs);
+        writer.writeStringValue("siteCollectionId", copyToSectionGroupPostRequestBody.siteCollectionId);
+        writer.writeStringValue("siteId", copyToSectionGroupPostRequestBody.siteId);
+        writer.writeAdditionalData(copyToSectionGroupPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

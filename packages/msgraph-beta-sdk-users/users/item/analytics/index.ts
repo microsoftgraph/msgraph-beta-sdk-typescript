@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AnalyticsRequestBuilder extends BaseRequestBuilder<AnalyticsRequestBuilder> {
     /**
      * Provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get activityStatistics(): ActivityStatisticsRequestBuilder;
     /**
      * Delete navigation property analytics for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface AnalyticsRequestBuilder extends BaseRequestBuilder<AnalyticsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserAnalytics>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AnalyticsRequestBuilderGetQueryParameters> | undefined) : Promise<UserAnalytics | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface AnalyticsRequestBuilder extends BaseRequestBuilder<AnalyticsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserAnalytics>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserAnalytics, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserAnalytics | undefined>;
     /**
      * Delete navigation property analytics for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get analytics from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AnalyticsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface AnalyticsRequestBuilder extends BaseRequestBuilder<AnalyticsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserAnalytics, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

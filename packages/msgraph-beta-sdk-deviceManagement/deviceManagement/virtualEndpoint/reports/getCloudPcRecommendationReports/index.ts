@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCloudPcRecommendationReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetCloudPcRecommendationReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcRecommendationReportsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetCloudPcRecommendationReportsPostRequestBodyFromDiscrimi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCloudPcRecommendationReportsPostRequestBody(getCloudPcRecommendationReportsPostRequestBody: Partial<GetCloudPcRecommendationReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getCloudPcRecommendationReportsPostRequestBody.backingStoreEnabled = true; },
@@ -41,39 +43,39 @@ export interface GetCloudPcRecommendationReportsPostRequestBody extends Addition
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The reportName property
      */
-    reportName?: CloudPcReportName;
+    reportName?: CloudPcReportName | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getCloudPcRecommendationReports method.
@@ -100,16 +102,19 @@ export interface GetCloudPcRecommendationReportsRequestBuilder extends BaseReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetCloudPcRecommendationReportsPostRequestBody(writer: SerializationWriter, getCloudPcRecommendationReportsPostRequestBody: Partial<GetCloudPcRecommendationReportsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getCloudPcRecommendationReportsPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcRecommendationReportsPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCloudPcRecommendationReportsPostRequestBody.orderBy);
-    writer.writeEnumValue<CloudPcReportName>("reportName", getCloudPcRecommendationReportsPostRequestBody.reportName);
-    writer.writeStringValue("search", getCloudPcRecommendationReportsPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getCloudPcRecommendationReportsPostRequestBody.select);
-    writer.writeNumberValue("skip", getCloudPcRecommendationReportsPostRequestBody.skip);
-    writer.writeNumberValue("top", getCloudPcRecommendationReportsPostRequestBody.top);
-    writer.writeAdditionalData(getCloudPcRecommendationReportsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetCloudPcRecommendationReportsPostRequestBody(writer: SerializationWriter, getCloudPcRecommendationReportsPostRequestBody: Partial<GetCloudPcRecommendationReportsPostRequestBody> | undefined | null = {}) : void {
+    if (getCloudPcRecommendationReportsPostRequestBody) {
+        writer.writeStringValue("filter", getCloudPcRecommendationReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcRecommendationReportsPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCloudPcRecommendationReportsPostRequestBody.orderBy);
+        writer.writeEnumValue<CloudPcReportName>("reportName", getCloudPcRecommendationReportsPostRequestBody.reportName);
+        writer.writeStringValue("search", getCloudPcRecommendationReportsPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getCloudPcRecommendationReportsPostRequestBody.select);
+        writer.writeNumberValue("skip", getCloudPcRecommendationReportsPostRequestBody.skip);
+        writer.writeNumberValue("top", getCloudPcRecommendationReportsPostRequestBody.top);
+        writer.writeAdditionalData(getCloudPcRecommendationReportsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

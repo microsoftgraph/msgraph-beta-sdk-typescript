@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TriggerDeviceScopeActionPostRequestBody}
  */
+// @ts-ignore
 export function createTriggerDeviceScopeActionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTriggerDeviceScopeActionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createTriggerDeviceScopeActionPostRequestBodyFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTriggerDeviceScopeActionPostRequestBody(triggerDeviceScopeActionPostRequestBody: Partial<TriggerDeviceScopeActionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionName": n => { triggerDeviceScopeActionPostRequestBody.actionName = n.getStringValue(); },
@@ -31,16 +33,19 @@ export function deserializeIntoTriggerDeviceScopeActionPostRequestBody(triggerDe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTriggerDeviceScopeActionPostRequestBody(writer: SerializationWriter, triggerDeviceScopeActionPostRequestBody: Partial<TriggerDeviceScopeActionPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("actionName", triggerDeviceScopeActionPostRequestBody.actionName);
-    writer.writeStringValue("deviceScopeId", triggerDeviceScopeActionPostRequestBody.deviceScopeId);
-    writer.writeAdditionalData(triggerDeviceScopeActionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeTriggerDeviceScopeActionPostRequestBody(writer: SerializationWriter, triggerDeviceScopeActionPostRequestBody: Partial<TriggerDeviceScopeActionPostRequestBody> | undefined | null = {}) : void {
+    if (triggerDeviceScopeActionPostRequestBody) {
+        writer.writeStringValue("actionName", triggerDeviceScopeActionPostRequestBody.actionName);
+        writer.writeStringValue("deviceScopeId", triggerDeviceScopeActionPostRequestBody.deviceScopeId);
+        writer.writeAdditionalData(triggerDeviceScopeActionPostRequestBody.additionalData);
+    }
 }
 export interface TriggerDeviceScopeActionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
      */
-    actionName?: string;
+    actionName?: string | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -48,11 +53,11 @@ export interface TriggerDeviceScopeActionPostRequestBody extends AdditionalDataH
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceScopeId property
      */
-    deviceScopeId?: string;
+    deviceScopeId?: string | null;
 }
 /**
  * Provides operations to call the triggerDeviceScopeAction method.

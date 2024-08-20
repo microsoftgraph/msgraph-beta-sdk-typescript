@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetConfigurationSettingsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetConfigurationSettingsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetConfigurationSettingsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetConfigurationSettingsReportPostRequestBodyFromDiscrimin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetConfigurationSettingsReportPostRequestBody(getConfigurationSettingsReportPostRequestBody: Partial<GetConfigurationSettingsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getConfigurationSettingsReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetConfigurationSettingsReportPostRequestBody extends Additiona
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getConfigurationSettingsReport method.
@@ -102,17 +104,20 @@ export interface GetConfigurationSettingsReportRequestBuilder extends BaseReques
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetConfigurationSettingsReportPostRequestBody(writer: SerializationWriter, getConfigurationSettingsReportPostRequestBody: Partial<GetConfigurationSettingsReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getConfigurationSettingsReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigurationSettingsReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getConfigurationSettingsReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigurationSettingsReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getConfigurationSettingsReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getConfigurationSettingsReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getConfigurationSettingsReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getConfigurationSettingsReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getConfigurationSettingsReportPostRequestBody.top);
-    writer.writeAdditionalData(getConfigurationSettingsReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetConfigurationSettingsReportPostRequestBody(writer: SerializationWriter, getConfigurationSettingsReportPostRequestBody: Partial<GetConfigurationSettingsReportPostRequestBody> | undefined | null = {}) : void {
+    if (getConfigurationSettingsReportPostRequestBody) {
+        writer.writeStringValue("filter", getConfigurationSettingsReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigurationSettingsReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getConfigurationSettingsReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigurationSettingsReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getConfigurationSettingsReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getConfigurationSettingsReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getConfigurationSettingsReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getConfigurationSettingsReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getConfigurationSettingsReportPostRequestBody.top);
+        writer.writeAdditionalData(getConfigurationSettingsReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

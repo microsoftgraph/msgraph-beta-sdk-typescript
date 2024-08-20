@@ -16,6 +16,7 @@ export interface PersonAwardItemRequestBuilder extends BaseRequestBuilder<Person
      * Deletes a personAward object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -24,6 +25,7 @@ export interface PersonAwardItemRequestBuilder extends BaseRequestBuilder<Person
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAward>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PersonAwardItemRequestBuilderGetQueryParameters> | undefined) : Promise<PersonAward | undefined>;
     /**
@@ -32,6 +34,7 @@ export interface PersonAwardItemRequestBuilder extends BaseRequestBuilder<Person
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAward>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: PersonAward, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonAward | undefined>;
@@ -39,12 +42,14 @@ export interface PersonAwardItemRequestBuilder extends BaseRequestBuilder<Person
      * Deletes a personAward object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the details of awards or honors associated with a person.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PersonAwardItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface PersonAwardItemRequestBuilder extends BaseRequestBuilder<Person
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PersonAward, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

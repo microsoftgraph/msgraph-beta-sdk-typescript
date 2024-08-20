@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAppsInstallSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetAppsInstallSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAppsInstallSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetAppsInstallSummaryReportPostRequestBodyFromDiscriminato
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAppsInstallSummaryReportPostRequestBody(getAppsInstallSummaryReportPostRequestBody: Partial<GetAppsInstallSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getAppsInstallSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetAppsInstallSummaryReportPostRequestBody extends AdditionalDa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getAppsInstallSummaryReport method.
@@ -102,17 +104,20 @@ export interface GetAppsInstallSummaryReportRequestBuilder extends BaseRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetAppsInstallSummaryReportPostRequestBody(writer: SerializationWriter, getAppsInstallSummaryReportPostRequestBody: Partial<GetAppsInstallSummaryReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getAppsInstallSummaryReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getAppsInstallSummaryReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getAppsInstallSummaryReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getAppsInstallSummaryReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getAppsInstallSummaryReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getAppsInstallSummaryReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getAppsInstallSummaryReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getAppsInstallSummaryReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getAppsInstallSummaryReportPostRequestBody.top);
-    writer.writeAdditionalData(getAppsInstallSummaryReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetAppsInstallSummaryReportPostRequestBody(writer: SerializationWriter, getAppsInstallSummaryReportPostRequestBody: Partial<GetAppsInstallSummaryReportPostRequestBody> | undefined | null = {}) : void {
+    if (getAppsInstallSummaryReportPostRequestBody) {
+        writer.writeStringValue("filter", getAppsInstallSummaryReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getAppsInstallSummaryReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getAppsInstallSummaryReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getAppsInstallSummaryReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getAppsInstallSummaryReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getAppsInstallSummaryReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getAppsInstallSummaryReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getAppsInstallSummaryReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getAppsInstallSummaryReportPostRequestBody.top);
+        writer.writeAdditionalData(getAppsInstallSummaryReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

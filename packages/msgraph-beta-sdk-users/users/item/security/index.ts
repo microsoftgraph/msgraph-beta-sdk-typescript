@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityRequestBuilder> {
     /**
      * Provides operations to manage the informationProtection property of the microsoft.graph.security.security entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get informationProtection(): InformationProtectionRequestBuilder;
     /**
      * Delete navigation property security for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Security>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SecurityRequestBuilderGetQueryParameters> | undefined) : Promise<Security | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Security>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Security, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Security | undefined>;
     /**
      * Delete navigation property security for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get security from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SecurityRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Security, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

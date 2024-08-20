@@ -17,6 +17,7 @@ export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<Sign
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SignInPreferences>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/authentication-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SignInPreferencesRequestBuilderGetQueryParameters> | undefined) : Promise<SignInPreferences | undefined>;
@@ -26,6 +27,7 @@ export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<Sign
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SignInPreferences>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/authentication-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: SignInPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SignInPreferences | undefined>;
@@ -33,6 +35,7 @@ export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<Sign
      * Read the properties of a user's authentication states. Use this API to retrieve the following information:
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SignInPreferencesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -40,6 +43,7 @@ export interface SignInPreferencesRequestBuilder extends BaseRequestBuilder<Sign
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: SignInPreferences, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RecordDecisionsPostRequestBody}
  */
+// @ts-ignore
 export function createRecordDecisionsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRecordDecisionsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRecordDecisionsPostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRecordDecisionsPostRequestBody(recordDecisionsPostRequestBody: Partial<RecordDecisionsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { recordDecisionsPostRequestBody.backingStoreEnabled = true; },
@@ -33,15 +35,15 @@ export interface RecordDecisionsPostRequestBody extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The justification property
      */
-    justification?: string;
+    justification?: string | null;
     /**
      * The reviewResult property
      */
-    reviewResult?: string;
+    reviewResult?: string | null;
 }
 /**
  * Provides operations to call the recordDecisions method.
@@ -66,10 +68,13 @@ export interface RecordDecisionsRequestBuilder extends BaseRequestBuilder<Record
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRecordDecisionsPostRequestBody(writer: SerializationWriter, recordDecisionsPostRequestBody: Partial<RecordDecisionsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("justification", recordDecisionsPostRequestBody.justification);
-    writer.writeStringValue("reviewResult", recordDecisionsPostRequestBody.reviewResult);
-    writer.writeAdditionalData(recordDecisionsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRecordDecisionsPostRequestBody(writer: SerializationWriter, recordDecisionsPostRequestBody: Partial<RecordDecisionsPostRequestBody> | undefined | null = {}) : void {
+    if (recordDecisionsPostRequestBody) {
+        writer.writeStringValue("justification", recordDecisionsPostRequestBody.justification);
+        writer.writeStringValue("reviewResult", recordDecisionsPostRequestBody.reviewResult);
+        writer.writeAdditionalData(recordDecisionsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

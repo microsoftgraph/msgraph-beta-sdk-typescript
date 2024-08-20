@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MyGetResponse}
  */
+// @ts-ignore
 export function createMyGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyGetResponse;
 }
@@ -20,6 +21,7 @@ export function createMyGetResponseFromDiscriminatorValue(parseNode: ParseNode |
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMyGetResponse(myGetResponse: Partial<MyGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(myGetResponse),
@@ -30,7 +32,7 @@ export interface MyGetResponse extends BaseCollectionPaginationCountResponse, Pa
     /**
      * The value property
      */
-    value?: AccessPackageAssignmentResourceRole[];
+    value?: AccessPackageAssignmentResourceRole[] | null;
 }
 /**
  * Provides operations to call the My method.
@@ -91,9 +93,12 @@ export interface MyRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMyGetResponse(writer: SerializationWriter, myGetResponse: Partial<MyGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, myGetResponse)
-    writer.writeCollectionOfObjectValues<AccessPackageAssignmentResourceRole>("value", myGetResponse.value, serializeAccessPackageAssignmentResourceRole);
+// @ts-ignore
+export function serializeMyGetResponse(writer: SerializationWriter, myGetResponse: Partial<MyGetResponse> | undefined | null = {}) : void {
+    if (myGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, myGetResponse)
+        writer.writeCollectionOfObjectValues<AccessPackageAssignmentResourceRole>("value", myGetResponse.value, serializeAccessPackageAssignmentResourceRole);
+    }
 }
 /**
  * Uri template for the request builder.

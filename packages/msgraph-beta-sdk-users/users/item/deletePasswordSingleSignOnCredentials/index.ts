@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeletePasswordSingleSignOnCredentialsPostRequestBody}
  */
+// @ts-ignore
 export function createDeletePasswordSingleSignOnCredentialsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeletePasswordSingleSignOnCredentialsPostRequestBody;
 }
@@ -22,11 +23,11 @@ export interface DeletePasswordSingleSignOnCredentialsPostRequestBody extends Ad
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The id property
      */
-    id?: string;
+    id?: string | null;
 }
 /**
  * Provides operations to call the deletePasswordSingleSignOnCredentials method.
@@ -37,6 +38,7 @@ export interface DeletePasswordSingleSignOnCredentialsRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-deletepasswordsinglesignoncredentials?view=graph-rest-beta|Find more info here}
      */
      post(body: DeletePasswordSingleSignOnCredentialsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -45,6 +47,7 @@ export interface DeletePasswordSingleSignOnCredentialsRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: DeletePasswordSingleSignOnCredentialsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -52,6 +55,7 @@ export interface DeletePasswordSingleSignOnCredentialsRequestBuilder extends Bas
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeletePasswordSingleSignOnCredentialsPostRequestBody(deletePasswordSingleSignOnCredentialsPostRequestBody: Partial<DeletePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deletePasswordSingleSignOnCredentialsPostRequestBody.backingStoreEnabled = true; },
@@ -62,9 +66,12 @@ export function deserializeIntoDeletePasswordSingleSignOnCredentialsPostRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeletePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, deletePasswordSingleSignOnCredentialsPostRequestBody: Partial<DeletePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("id", deletePasswordSingleSignOnCredentialsPostRequestBody.id);
-    writer.writeAdditionalData(deletePasswordSingleSignOnCredentialsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeDeletePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, deletePasswordSingleSignOnCredentialsPostRequestBody: Partial<DeletePasswordSingleSignOnCredentialsPostRequestBody> | undefined | null = {}) : void {
+    if (deletePasswordSingleSignOnCredentialsPostRequestBody) {
+        writer.writeStringValue("id", deletePasswordSingleSignOnCredentialsPostRequestBody.id);
+        writer.writeAdditionalData(deletePasswordSingleSignOnCredentialsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PlatformCredentialAuthenticationMethodItemRequestBuilder extends BaseRequestBuilder<PlatformCredentialAuthenticationMethodItemRequestBuilder> {
     /**
      * Provides operations to manage the device property of the microsoft.graph.platformCredentialAuthenticationMethod entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get device(): DeviceRequestBuilder;
     /**
      * Delete a platformCredentialAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -30,18 +32,21 @@ export interface PlatformCredentialAuthenticationMethodItemRequestBuilder extend
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlatformCredentialAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlatformCredentialAuthenticationMethod | undefined>;
     /**
      * Delete a platformCredentialAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get platformCredentialMethods from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

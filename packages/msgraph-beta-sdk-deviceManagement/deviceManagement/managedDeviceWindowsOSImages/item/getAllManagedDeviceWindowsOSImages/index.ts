@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAllManagedDeviceWindowsOSImagesGetResponse}
  */
+// @ts-ignore
 export function createGetAllManagedDeviceWindowsOSImagesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAllManagedDeviceWindowsOSImagesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetAllManagedDeviceWindowsOSImagesGetResponseFromDiscrimin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAllManagedDeviceWindowsOSImagesGetResponse(getAllManagedDeviceWindowsOSImagesGetResponse: Partial<GetAllManagedDeviceWindowsOSImagesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getAllManagedDeviceWindowsOSImagesGetResponse),
@@ -30,7 +32,7 @@ export interface GetAllManagedDeviceWindowsOSImagesGetResponse extends BaseColle
     /**
      * The value property
      */
-    value?: ManagedDeviceWindowsOperatingSystemImage[];
+    value?: ManagedDeviceWindowsOperatingSystemImage[] | null;
 }
 /**
  * Provides operations to call the getAllManagedDeviceWindowsOSImages method.
@@ -91,9 +93,12 @@ export interface GetAllManagedDeviceWindowsOSImagesRequestBuilderGetQueryParamet
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetAllManagedDeviceWindowsOSImagesGetResponse(writer: SerializationWriter, getAllManagedDeviceWindowsOSImagesGetResponse: Partial<GetAllManagedDeviceWindowsOSImagesGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getAllManagedDeviceWindowsOSImagesGetResponse)
-    writer.writeCollectionOfObjectValues<ManagedDeviceWindowsOperatingSystemImage>("value", getAllManagedDeviceWindowsOSImagesGetResponse.value, serializeManagedDeviceWindowsOperatingSystemImage);
+// @ts-ignore
+export function serializeGetAllManagedDeviceWindowsOSImagesGetResponse(writer: SerializationWriter, getAllManagedDeviceWindowsOSImagesGetResponse: Partial<GetAllManagedDeviceWindowsOSImagesGetResponse> | undefined | null = {}) : void {
+    if (getAllManagedDeviceWindowsOSImagesGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getAllManagedDeviceWindowsOSImagesGetResponse)
+        writer.writeCollectionOfObjectValues<ManagedDeviceWindowsOperatingSystemImage>("value", getAllManagedDeviceWindowsOSImagesGetResponse.value, serializeManagedDeviceWindowsOperatingSystemImage);
+    }
 }
 /**
  * Uri template for the request builder.

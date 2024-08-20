@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PhotoRequestBuilder extends BaseRequestBuilder<PhotoRequestBuilder> {
     /**
      * Provides operations to manage the media for the user entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get content(): ContentRequestBuilder;
     /**
      * Delete navigation property photo for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface PhotoRequestBuilder extends BaseRequestBuilder<PhotoRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProfilePhoto>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PhotoRequestBuilderGetQueryParameters> | undefined) : Promise<ProfilePhoto | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface PhotoRequestBuilder extends BaseRequestBuilder<PhotoRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProfilePhoto>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ProfilePhoto, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProfilePhoto | undefined>;
     /**
      * Delete navigation property photo for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The user's profile photo. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PhotoRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface PhotoRequestBuilder extends BaseRequestBuilder<PhotoRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ProfilePhoto, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

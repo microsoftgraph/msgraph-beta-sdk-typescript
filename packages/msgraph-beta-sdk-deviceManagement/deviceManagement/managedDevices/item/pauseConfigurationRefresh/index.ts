@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PauseConfigurationRefreshPostRequestBody}
  */
+// @ts-ignore
 export function createPauseConfigurationRefreshPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPauseConfigurationRefreshPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createPauseConfigurationRefreshPostRequestBodyFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPauseConfigurationRefreshPostRequestBody(pauseConfigurationRefreshPostRequestBody: Partial<PauseConfigurationRefreshPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { pauseConfigurationRefreshPostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface PauseConfigurationRefreshPostRequestBody extends AdditionalData
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The pauseTimePeriodInMinutes property
      */
-    pauseTimePeriodInMinutes?: number;
+    pauseTimePeriodInMinutes?: number | null;
 }
 /**
  * Provides operations to call the pauseConfigurationRefresh method.
@@ -61,9 +63,12 @@ export interface PauseConfigurationRefreshRequestBuilder extends BaseRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePauseConfigurationRefreshPostRequestBody(writer: SerializationWriter, pauseConfigurationRefreshPostRequestBody: Partial<PauseConfigurationRefreshPostRequestBody> | undefined = {}) : void {
-    writer.writeNumberValue("pauseTimePeriodInMinutes", pauseConfigurationRefreshPostRequestBody.pauseTimePeriodInMinutes);
-    writer.writeAdditionalData(pauseConfigurationRefreshPostRequestBody.additionalData);
+// @ts-ignore
+export function serializePauseConfigurationRefreshPostRequestBody(writer: SerializationWriter, pauseConfigurationRefreshPostRequestBody: Partial<PauseConfigurationRefreshPostRequestBody> | undefined | null = {}) : void {
+    if (pauseConfigurationRefreshPostRequestBody) {
+        writer.writeNumberValue("pauseTimePeriodInMinutes", pauseConfigurationRefreshPostRequestBody.pauseTimePeriodInMinutes);
+        writer.writeAdditionalData(pauseConfigurationRefreshPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

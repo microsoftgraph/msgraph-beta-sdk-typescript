@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UploadSecretPostRequestBody}
  */
+// @ts-ignore
 export function createUploadSecretPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadSecretPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUploadSecretPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUploadSecretPostRequestBody(uploadSecretPostRequestBody: Partial<UploadSecretPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { uploadSecretPostRequestBody.backingStoreEnabled = true; },
@@ -33,12 +35,15 @@ export function deserializeIntoUploadSecretPostRequestBody(uploadSecretPostReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUploadSecretPostRequestBody(writer: SerializationWriter, uploadSecretPostRequestBody: Partial<UploadSecretPostRequestBody> | undefined = {}) : void {
-    writer.writeNumberValue("exp", uploadSecretPostRequestBody.exp);
-    writer.writeStringValue("k", uploadSecretPostRequestBody.k);
-    writer.writeNumberValue("nbf", uploadSecretPostRequestBody.nbf);
-    writer.writeStringValue("use", uploadSecretPostRequestBody.use);
-    writer.writeAdditionalData(uploadSecretPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUploadSecretPostRequestBody(writer: SerializationWriter, uploadSecretPostRequestBody: Partial<UploadSecretPostRequestBody> | undefined | null = {}) : void {
+    if (uploadSecretPostRequestBody) {
+        writer.writeNumberValue("exp", uploadSecretPostRequestBody.exp);
+        writer.writeStringValue("k", uploadSecretPostRequestBody.k);
+        writer.writeNumberValue("nbf", uploadSecretPostRequestBody.nbf);
+        writer.writeStringValue("use", uploadSecretPostRequestBody.use);
+        writer.writeAdditionalData(uploadSecretPostRequestBody.additionalData);
+    }
 }
 export interface UploadSecretPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -48,23 +53,23 @@ export interface UploadSecretPostRequestBody extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The exp property
      */
-    exp?: number;
+    exp?: number | null;
     /**
      * The k property
      */
-    k?: string;
+    k?: string | null;
     /**
      * The nbf property
      */
-    nbf?: number;
+    nbf?: number | null;
     /**
      * The use property
      */
-    use?: string;
+    use?: string | null;
 }
 /**
  * Provides operations to call the uploadSecret method.

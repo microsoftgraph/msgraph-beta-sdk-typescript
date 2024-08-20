@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateAssignmentFilterPostRequestBody}
  */
+// @ts-ignore
 export function createEvaluateAssignmentFilterPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateAssignmentFilterPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createEvaluateAssignmentFilterPostRequestBodyFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateAssignmentFilterPostRequestBody(evaluateAssignmentFilterPostRequestBody: Partial<EvaluateAssignmentFilterPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { evaluateAssignmentFilterPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface EvaluateAssignmentFilterPostRequestBody extends AdditionalDataH
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The data property
      */
-    data?: AssignmentFilterEvaluateRequest;
+    data?: AssignmentFilterEvaluateRequest | null;
 }
 /**
  * Provides operations to call the evaluateAssignmentFilter method.
@@ -64,9 +66,12 @@ export interface EvaluateAssignmentFilterRequestBuilder extends BaseRequestBuild
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEvaluateAssignmentFilterPostRequestBody(writer: SerializationWriter, evaluateAssignmentFilterPostRequestBody: Partial<EvaluateAssignmentFilterPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<AssignmentFilterEvaluateRequest>("data", evaluateAssignmentFilterPostRequestBody.data, serializeAssignmentFilterEvaluateRequest);
-    writer.writeAdditionalData(evaluateAssignmentFilterPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeEvaluateAssignmentFilterPostRequestBody(writer: SerializationWriter, evaluateAssignmentFilterPostRequestBody: Partial<EvaluateAssignmentFilterPostRequestBody> | undefined | null = {}) : void {
+    if (evaluateAssignmentFilterPostRequestBody) {
+        writer.writeObjectValue<AssignmentFilterEvaluateRequest>("data", evaluateAssignmentFilterPostRequestBody.data, serializeAssignmentFilterEvaluateRequest);
+        writer.writeAdditionalData(evaluateAssignmentFilterPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

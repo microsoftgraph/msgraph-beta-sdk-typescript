@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {VerifySignaturePostRequestBody}
  */
+// @ts-ignore
 export function createVerifySignaturePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoVerifySignaturePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createVerifySignaturePostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoVerifySignaturePostRequestBody(verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { verifySignaturePostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,14 @@ export function deserializeIntoVerifySignaturePostRequestBody(verifySignaturePos
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeVerifySignaturePostRequestBody(writer: SerializationWriter, verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("digest", verifySignaturePostRequestBody.digest);
-    writer.writeStringValue("signature", verifySignaturePostRequestBody.signature);
-    writer.writeStringValue("signingKeyId", verifySignaturePostRequestBody.signingKeyId);
-    writer.writeAdditionalData(verifySignaturePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeVerifySignaturePostRequestBody(writer: SerializationWriter, verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined | null = {}) : void {
+    if (verifySignaturePostRequestBody) {
+        writer.writeStringValue("digest", verifySignaturePostRequestBody.digest);
+        writer.writeStringValue("signature", verifySignaturePostRequestBody.signature);
+        writer.writeStringValue("signingKeyId", verifySignaturePostRequestBody.signingKeyId);
+        writer.writeAdditionalData(verifySignaturePostRequestBody.additionalData);
+    }
 }
 export interface VerifySignaturePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -46,19 +51,19 @@ export interface VerifySignaturePostRequestBody extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The digest property
      */
-    digest?: string;
+    digest?: string | null;
     /**
      * The signature property
      */
-    signature?: string;
+    signature?: string | null;
     /**
      * The signingKeyId property
      */
-    signingKeyId?: string;
+    signingKeyId?: string | null;
 }
 /**
  * Provides operations to call the verifySignature method.
@@ -70,7 +75,7 @@ export interface VerifySignatureRequestBuilder extends BaseRequestBuilder<Verify
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VerificationResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: VerifySignaturePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VerificationResult | undefined>;
     /**
@@ -78,7 +83,7 @@ export interface VerifySignatureRequestBuilder extends BaseRequestBuilder<Verify
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: VerifySignaturePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

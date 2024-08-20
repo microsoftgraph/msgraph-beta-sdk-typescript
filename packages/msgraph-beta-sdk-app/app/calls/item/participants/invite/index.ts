@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InvitePostRequestBody}
  */
+// @ts-ignore
 export function createInvitePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInvitePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createInvitePostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoInvitePostRequestBody(invitePostRequestBody: Partial<InvitePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { invitePostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface InvitePostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The clientContext property
      */
-    clientContext?: string;
+    clientContext?: string | null;
     /**
      * The participants property
      */
-    participants?: InvitationParticipantInfo[];
+    participants?: InvitationParticipantInfo[] | null;
 }
 /**
  * Provides operations to call the invite method.
@@ -70,10 +72,13 @@ export interface InviteRequestBuilder extends BaseRequestBuilder<InviteRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInvitePostRequestBody(writer: SerializationWriter, invitePostRequestBody: Partial<InvitePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("clientContext", invitePostRequestBody.clientContext);
-    writer.writeCollectionOfObjectValues<InvitationParticipantInfo>("participants", invitePostRequestBody.participants, serializeInvitationParticipantInfo);
-    writer.writeAdditionalData(invitePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeInvitePostRequestBody(writer: SerializationWriter, invitePostRequestBody: Partial<InvitePostRequestBody> | undefined | null = {}) : void {
+    if (invitePostRequestBody) {
+        writer.writeStringValue("clientContext", invitePostRequestBody.clientContext);
+        writer.writeCollectionOfObjectValues<InvitationParticipantInfo>("participants", invitePostRequestBody.participants, serializeInvitationParticipantInfo);
+        writer.writeAdditionalData(invitePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

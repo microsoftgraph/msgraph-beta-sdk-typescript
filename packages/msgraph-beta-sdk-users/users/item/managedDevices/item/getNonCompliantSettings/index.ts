@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetNonCompliantSettingsGetResponse}
  */
+// @ts-ignore
 export function createGetNonCompliantSettingsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetNonCompliantSettingsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetNonCompliantSettingsGetResponseFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetNonCompliantSettingsGetResponse(getNonCompliantSettingsGetResponse: Partial<GetNonCompliantSettingsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getNonCompliantSettingsGetResponse),
@@ -30,7 +32,7 @@ export interface GetNonCompliantSettingsGetResponse extends BaseCollectionPagina
     /**
      * The value property
      */
-    value?: DeviceCompliancePolicySettingState[];
+    value?: DeviceCompliancePolicySettingState[] | null;
 }
 /**
  * Provides operations to call the getNonCompliantSettings method.
@@ -41,12 +43,14 @@ export interface GetNonCompliantSettingsRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetNonCompliantSettingsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<GetNonCompliantSettingsGetResponse | undefined>;
     /**
      * Invoke function getNonCompliantSettings
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -79,9 +83,12 @@ export interface GetNonCompliantSettingsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetNonCompliantSettingsGetResponse(writer: SerializationWriter, getNonCompliantSettingsGetResponse: Partial<GetNonCompliantSettingsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getNonCompliantSettingsGetResponse)
-    writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingState>("value", getNonCompliantSettingsGetResponse.value, serializeDeviceCompliancePolicySettingState);
+// @ts-ignore
+export function serializeGetNonCompliantSettingsGetResponse(writer: SerializationWriter, getNonCompliantSettingsGetResponse: Partial<GetNonCompliantSettingsGetResponse> | undefined | null = {}) : void {
+    if (getNonCompliantSettingsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getNonCompliantSettingsGetResponse)
+        writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingState>("value", getNonCompliantSettingsGetResponse.value, serializeDeviceCompliancePolicySettingState);
+    }
 }
 /**
  * Uri template for the request builder.

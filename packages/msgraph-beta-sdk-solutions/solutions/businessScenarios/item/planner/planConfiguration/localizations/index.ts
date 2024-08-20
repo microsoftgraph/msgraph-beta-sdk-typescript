@@ -35,12 +35,11 @@ export interface LocalizationsRequestBuilder extends BaseRequestBuilder<Localiza
      */
      get(requestConfiguration?: RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanConfigurationLocalizationCollectionResponse | undefined>;
     /**
-     * Create a new plannerPlanConfigurationLocalization object.
+     * Create new navigation property to localizations for solutions
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanConfigurationLocalization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-beta|Find more info here}
      */
      post(body: PlannerPlanConfigurationLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerPlanConfigurationLocalization | undefined>;
     /**
@@ -50,7 +49,7 @@ export interface LocalizationsRequestBuilder extends BaseRequestBuilder<Localiza
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new plannerPlanConfigurationLocalization object.
+     * Create new navigation property to localizations for solutions
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

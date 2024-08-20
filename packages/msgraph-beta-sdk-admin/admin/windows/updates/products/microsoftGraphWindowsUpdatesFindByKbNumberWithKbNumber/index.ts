@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FindByKbNumberWithKbNumberGetResponse}
  */
+// @ts-ignore
 export function createFindByKbNumberWithKbNumberGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFindByKbNumberWithKbNumberGetResponse;
 }
@@ -22,6 +23,7 @@ export function createFindByKbNumberWithKbNumberGetResponseFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFindByKbNumberWithKbNumberGetResponse(findByKbNumberWithKbNumberGetResponse: Partial<FindByKbNumberWithKbNumberGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(findByKbNumberWithKbNumberGetResponse),
@@ -32,7 +34,7 @@ export interface FindByKbNumberWithKbNumberGetResponse extends BaseCollectionPag
     /**
      * The value property
      */
-    value?: Product[];
+    value?: Product[] | null;
 }
 /**
  * Provides operations to call the findByKbNumber method.
@@ -93,9 +95,12 @@ export interface MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFindByKbNumberWithKbNumberGetResponse(writer: SerializationWriter, findByKbNumberWithKbNumberGetResponse: Partial<FindByKbNumberWithKbNumberGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, findByKbNumberWithKbNumberGetResponse)
-    writer.writeCollectionOfObjectValues<Product>("value", findByKbNumberWithKbNumberGetResponse.value, serializeProduct);
+// @ts-ignore
+export function serializeFindByKbNumberWithKbNumberGetResponse(writer: SerializationWriter, findByKbNumberWithKbNumberGetResponse: Partial<FindByKbNumberWithKbNumberGetResponse> | undefined | null = {}) : void {
+    if (findByKbNumberWithKbNumberGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, findByKbNumberWithKbNumberGetResponse)
+        writer.writeCollectionOfObjectValues<Product>("value", findByKbNumberWithKbNumberGetResponse.value, serializeProduct);
+    }
 }
 /**
  * Uri template for the request builder.

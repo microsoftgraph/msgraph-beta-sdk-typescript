@@ -14,11 +14,11 @@ export interface ActivateDeviceEsimPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The carrierUrl property
      */
-    carrierUrl?: string;
+    carrierUrl?: string | null;
 }
 /**
  * Provides operations to call the activateDeviceEsim method.
@@ -29,6 +29,7 @@ export interface ActivateDeviceEsimRequestBuilder extends BaseRequestBuilder<Act
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ActivateDeviceEsimPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -36,6 +37,7 @@ export interface ActivateDeviceEsimRequestBuilder extends BaseRequestBuilder<Act
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ActivateDeviceEsimPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -44,6 +46,7 @@ export interface ActivateDeviceEsimRequestBuilder extends BaseRequestBuilder<Act
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ActivateDeviceEsimPostRequestBody}
  */
+// @ts-ignore
 export function createActivateDeviceEsimPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoActivateDeviceEsimPostRequestBody;
 }
@@ -51,6 +54,7 @@ export function createActivateDeviceEsimPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoActivateDeviceEsimPostRequestBody(activateDeviceEsimPostRequestBody: Partial<ActivateDeviceEsimPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { activateDeviceEsimPostRequestBody.backingStoreEnabled = true; },
@@ -61,9 +65,12 @@ export function deserializeIntoActivateDeviceEsimPostRequestBody(activateDeviceE
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeActivateDeviceEsimPostRequestBody(writer: SerializationWriter, activateDeviceEsimPostRequestBody: Partial<ActivateDeviceEsimPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("carrierUrl", activateDeviceEsimPostRequestBody.carrierUrl);
-    writer.writeAdditionalData(activateDeviceEsimPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeActivateDeviceEsimPostRequestBody(writer: SerializationWriter, activateDeviceEsimPostRequestBody: Partial<ActivateDeviceEsimPostRequestBody> | undefined | null = {}) : void {
+    if (activateDeviceEsimPostRequestBody) {
+        writer.writeStringValue("carrierUrl", activateDeviceEsimPostRequestBody.carrierUrl);
+        writer.writeAdditionalData(activateDeviceEsimPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

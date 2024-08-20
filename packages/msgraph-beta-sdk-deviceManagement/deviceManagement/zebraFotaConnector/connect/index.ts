@@ -14,11 +14,11 @@ export interface ConnectPostResponse extends AdditionalDataHolder, BackedModel, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the connect method.
@@ -43,6 +43,7 @@ export interface ConnectRequestBuilder extends BaseRequestBuilder<ConnectRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConnectPostResponse}
  */
+// @ts-ignore
 export function createConnectPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectPostResponse;
 }
@@ -50,6 +51,7 @@ export function createConnectPostResponseFromDiscriminatorValue(parseNode: Parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectPostResponse(connectPostResponse: Partial<ConnectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { connectPostResponse.backingStoreEnabled = true; },
@@ -60,9 +62,12 @@ export function deserializeIntoConnectPostResponse(connectPostResponse: Partial<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectPostResponse(writer: SerializationWriter, connectPostResponse: Partial<ConnectPostResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", connectPostResponse.value);
-    writer.writeAdditionalData(connectPostResponse.additionalData);
+// @ts-ignore
+export function serializeConnectPostResponse(writer: SerializationWriter, connectPostResponse: Partial<ConnectPostResponse> | undefined | null = {}) : void {
+    if (connectPostResponse) {
+        writer.writeBooleanValue("value", connectPostResponse.value);
+        writer.writeAdditionalData(connectPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

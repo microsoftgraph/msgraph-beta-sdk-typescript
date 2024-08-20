@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FindRoomsWithRoomListGetResponse}
  */
+// @ts-ignore
 export function createFindRoomsWithRoomListGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFindRoomsWithRoomListGetResponse;
 }
@@ -20,6 +21,7 @@ export function createFindRoomsWithRoomListGetResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFindRoomsWithRoomListGetResponse(findRoomsWithRoomListGetResponse: Partial<FindRoomsWithRoomListGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(findRoomsWithRoomListGetResponse),
@@ -30,7 +32,7 @@ export interface FindRoomsWithRoomListGetResponse extends BaseCollectionPaginati
     /**
      * The value property
      */
-    value?: EmailAddress[];
+    value?: EmailAddress[] | null;
 }
 /**
  * Provides operations to call the findRooms method.
@@ -41,12 +43,14 @@ export interface FindRoomsWithRoomListRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FindRoomsWithRoomListGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<FindRoomsWithRoomListRequestBuilderGetQueryParameters> | undefined) : Promise<FindRoomsWithRoomListGetResponse | undefined>;
     /**
      * Invoke function findRooms
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FindRoomsWithRoomListRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -79,9 +83,12 @@ export interface FindRoomsWithRoomListRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFindRoomsWithRoomListGetResponse(writer: SerializationWriter, findRoomsWithRoomListGetResponse: Partial<FindRoomsWithRoomListGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, findRoomsWithRoomListGetResponse)
-    writer.writeCollectionOfObjectValues<EmailAddress>("value", findRoomsWithRoomListGetResponse.value, serializeEmailAddress);
+// @ts-ignore
+export function serializeFindRoomsWithRoomListGetResponse(writer: SerializationWriter, findRoomsWithRoomListGetResponse: Partial<FindRoomsWithRoomListGetResponse> | undefined | null = {}) : void {
+    if (findRoomsWithRoomListGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, findRoomsWithRoomListGetResponse)
+        writer.writeCollectionOfObjectValues<EmailAddress>("value", findRoomsWithRoomListGetResponse.value, serializeEmailAddress);
+    }
 }
 /**
  * Uri template for the request builder.

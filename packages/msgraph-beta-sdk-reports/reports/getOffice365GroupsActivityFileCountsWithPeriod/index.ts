@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetOffice365GroupsActivityFileCountsWithPeriodGetResponse}
  */
+// @ts-ignore
 export function createGetOffice365GroupsActivityFileCountsWithPeriodGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOffice365GroupsActivityFileCountsWithPeriodGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetOffice365GroupsActivityFileCountsWithPeriodGetResponseF
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetOffice365GroupsActivityFileCountsWithPeriodGetResponse(getOffice365GroupsActivityFileCountsWithPeriodGetResponse: Partial<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getOffice365GroupsActivityFileCountsWithPeriodGetResponse),
@@ -30,7 +32,7 @@ export interface GetOffice365GroupsActivityFileCountsWithPeriodGetResponse exten
     /**
      * The value property
      */
-    value?: Office365GroupsActivityFileCounts[];
+    value?: Office365GroupsActivityFileCounts[] | null;
 }
 /**
  * Provides operations to call the getOffice365GroupsActivityFileCounts method.
@@ -91,9 +93,12 @@ export interface GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGet
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetOffice365GroupsActivityFileCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityFileCountsWithPeriodGetResponse: Partial<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityFileCountsWithPeriodGetResponse)
-    writer.writeCollectionOfObjectValues<Office365GroupsActivityFileCounts>("value", getOffice365GroupsActivityFileCountsWithPeriodGetResponse.value, serializeOffice365GroupsActivityFileCounts);
+// @ts-ignore
+export function serializeGetOffice365GroupsActivityFileCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityFileCountsWithPeriodGetResponse: Partial<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse> | undefined | null = {}) : void {
+    if (getOffice365GroupsActivityFileCountsWithPeriodGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityFileCountsWithPeriodGetResponse)
+        writer.writeCollectionOfObjectValues<Office365GroupsActivityFileCounts>("value", getOffice365GroupsActivityFileCountsWithPeriodGetResponse.value, serializeOffice365GroupsActivityFileCounts);
+    }
 }
 /**
  * Uri template for the request builder.

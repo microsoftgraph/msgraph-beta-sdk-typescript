@@ -36,46 +36,57 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EventItemRequestBuilder extends BaseRequestBuilder<EventItemRequestBuilder> {
     /**
      * Provides operations to call the accept method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get accept(): AcceptRequestBuilder;
     /**
      * Provides operations to manage the attachments property of the microsoft.graph.event entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get attachments(): AttachmentsRequestBuilder;
     /**
      * Provides operations to manage the calendar property of the microsoft.graph.event entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get calendar(): CalendarRequestBuilder;
     /**
      * Provides operations to call the cancel method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get cancel(): CancelRequestBuilder;
     /**
      * Provides operations to call the decline method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get decline(): DeclineRequestBuilder;
     /**
      * Provides operations to call the dismissReminder method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get dismissReminder(): DismissReminderRequestBuilder;
     /**
      * Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get exceptionOccurrences(): ExceptionOccurrencesRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.event entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to call the forward method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get forward(): ForwardRequestBuilder;
     /**
      * Provides operations to call the snoozeReminder method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get snoozeReminder(): SnoozeReminderRequestBuilder;
     /**
      * Provides operations to call the tentativelyAccept method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get tentativelyAccept(): TentativelyAcceptRequestBuilder;
     /**
@@ -83,12 +94,14 @@ export interface EventItemRequestBuilder extends BaseRequestBuilder<EventItemReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Event>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<EventItemRequestBuilderGetQueryParameters> | undefined) : Promise<Event | undefined>;
     /**
      * The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

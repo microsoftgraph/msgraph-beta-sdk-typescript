@@ -16,17 +16,18 @@ export interface AddMembersPostRequestBody extends AdditionalDataHolder, BackedM
     /**
      * The assets property
      */
-    assets?: UpdatableAsset[];
+    assets?: UpdatableAsset[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddMembersPostRequestBody}
  */
+// @ts-ignore
 export function createAddMembersPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddMembersPostRequestBody;
 }
@@ -34,6 +35,7 @@ export function createAddMembersPostRequestBodyFromDiscriminatorValue(parseNode:
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAddMembersPostRequestBody(addMembersPostRequestBody: Partial<AddMembersPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assets": n => { addMembersPostRequestBody.assets = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
@@ -64,9 +66,12 @@ export interface MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder extends Ba
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAddMembersPostRequestBody(writer: SerializationWriter, addMembersPostRequestBody: Partial<AddMembersPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", addMembersPostRequestBody.assets, serializeUpdatableAsset);
-    writer.writeAdditionalData(addMembersPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeAddMembersPostRequestBody(writer: SerializationWriter, addMembersPostRequestBody: Partial<AddMembersPostRequestBody> | undefined | null = {}) : void {
+    if (addMembersPostRequestBody) {
+        writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", addMembersPostRequestBody.assets, serializeUpdatableAsset);
+        writer.writeAdditionalData(addMembersPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

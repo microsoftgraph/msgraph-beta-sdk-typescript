@@ -46,72 +46,89 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MessageItemRequestBuilder extends BaseRequestBuilder<MessageItemRequestBuilder> {
     /**
      * Provides operations to manage the attachments property of the microsoft.graph.message entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get attachments(): AttachmentsRequestBuilder;
     /**
      * Provides operations to manage the media for the user entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get content(): ContentRequestBuilder;
     /**
      * Provides operations to call the copy method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get copy(): CopyRequestBuilder;
     /**
      * Provides operations to call the createForward method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createForward(): CreateForwardRequestBuilder;
     /**
      * Provides operations to call the createReply method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createReply(): CreateReplyRequestBuilder;
     /**
      * Provides operations to call the createReplyAll method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createReplyAll(): CreateReplyAllRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.message entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to call the forward method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get forward(): ForwardRequestBuilder;
     /**
      * Provides operations to call the markAsJunk method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get markAsJunk(): MarkAsJunkRequestBuilder;
     /**
      * Provides operations to call the markAsNotJunk method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get markAsNotJunk(): MarkAsNotJunkRequestBuilder;
     /**
      * Provides operations to manage the mentions property of the microsoft.graph.message entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mentions(): MentionsRequestBuilder;
     /**
      * Provides operations to call the move method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get move(): MoveRequestBuilder;
     /**
      * Provides operations to call the reply method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get reply(): ReplyRequestBuilder;
     /**
      * Provides operations to call the replyAll method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get replyAll(): ReplyAllRequestBuilder;
     /**
      * Provides operations to call the send method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get send(): SendRequestBuilder;
     /**
      * Provides operations to call the unsubscribe method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get unsubscribe(): UnsubscribeRequestBuilder;
     /**
      * Delete navigation property messages for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -119,6 +136,7 @@ export interface MessageItemRequestBuilder extends BaseRequestBuilder<MessageIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Message>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MessageItemRequestBuilderGetQueryParameters> | undefined) : Promise<Message | undefined>;
     /**
@@ -127,18 +145,21 @@ export interface MessageItemRequestBuilder extends BaseRequestBuilder<MessageIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Message>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Message, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Message | undefined>;
     /**
      * Delete navigation property messages for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The messages in a mailbox or folder. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MessageItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -146,6 +167,7 @@ export interface MessageItemRequestBuilder extends BaseRequestBuilder<MessageIte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Message, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

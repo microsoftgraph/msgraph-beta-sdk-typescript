@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IsSignedUpGetResponse}
  */
+// @ts-ignore
 export function createIsSignedUpGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIsSignedUpGetResponse;
 }
@@ -18,6 +19,7 @@ export function createIsSignedUpGetResponseFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIsSignedUpGetResponse(isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { isSignedUpGetResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface IsSignedUpGetResponse extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the isSignedUp method.
@@ -60,9 +62,12 @@ export interface IsSignedUpRequestBuilder extends BaseRequestBuilder<IsSignedUpR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIsSignedUpGetResponse(writer: SerializationWriter, isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", isSignedUpGetResponse.value);
-    writer.writeAdditionalData(isSignedUpGetResponse.additionalData);
+// @ts-ignore
+export function serializeIsSignedUpGetResponse(writer: SerializationWriter, isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined | null = {}) : void {
+    if (isSignedUpGetResponse) {
+        writer.writeBooleanValue("value", isSignedUpGetResponse.value);
+        writer.writeAdditionalData(isSignedUpGetResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.
