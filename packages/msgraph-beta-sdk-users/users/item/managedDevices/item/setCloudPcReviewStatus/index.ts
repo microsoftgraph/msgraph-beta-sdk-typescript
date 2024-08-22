@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetCloudPcReviewStatusPostRequestBody}
  */
+// @ts-ignore
 export function createSetCloudPcReviewStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetCloudPcReviewStatusPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSetCloudPcReviewStatusPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetCloudPcReviewStatusPostRequestBody(setCloudPcReviewStatusPostRequestBody: Partial<SetCloudPcReviewStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setCloudPcReviewStatusPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoSetCloudPcReviewStatusPostRequestBody(setCloudPcR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSetCloudPcReviewStatusPostRequestBody(writer: SerializationWriter, setCloudPcReviewStatusPostRequestBody: Partial<SetCloudPcReviewStatusPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<CloudPcReviewStatus>("reviewStatus", setCloudPcReviewStatusPostRequestBody.reviewStatus, serializeCloudPcReviewStatus);
-    writer.writeAdditionalData(setCloudPcReviewStatusPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSetCloudPcReviewStatusPostRequestBody(writer: SerializationWriter, setCloudPcReviewStatusPostRequestBody: Partial<SetCloudPcReviewStatusPostRequestBody> | undefined | null = {}) : void {
+    if (setCloudPcReviewStatusPostRequestBody) {
+        writer.writeObjectValue<CloudPcReviewStatus>("reviewStatus", setCloudPcReviewStatusPostRequestBody.reviewStatus, serializeCloudPcReviewStatus);
+        writer.writeAdditionalData(setCloudPcReviewStatusPostRequestBody.additionalData);
+    }
 }
 export interface SetCloudPcReviewStatusPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface SetCloudPcReviewStatusPostRequestBody extends AdditionalDataHol
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The reviewStatus property
      */
-    reviewStatus?: CloudPcReviewStatus;
+    reviewStatus?: CloudPcReviewStatus | null;
 }
 /**
  * Provides operations to call the setCloudPcReviewStatus method.
@@ -57,7 +62,7 @@ export interface SetCloudPcReviewStatusRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The setCloudPcReviewStatus API is deprecated and will stop returning data on Apr 30, 2024. Please use the new setReviewStatus API as of 2024-01/setCloudPcReviewStatus
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-beta|Find more info here}
      */
      post(body: SetCloudPcReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -66,7 +71,7 @@ export interface SetCloudPcReviewStatusRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The setCloudPcReviewStatus API is deprecated and will stop returning data on Apr 30, 2024. Please use the new setReviewStatus API as of 2024-01/setCloudPcReviewStatus
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SetCloudPcReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

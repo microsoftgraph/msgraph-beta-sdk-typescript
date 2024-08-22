@@ -11,53 +11,53 @@ export interface Alert extends Entity, Parsable {
     /**
      * The actions property
      */
-    actions?: AlertAction[];
+    actions?: AlertAction[] | null;
     /**
      * The alertType property
      */
-    alertType?: AlertType;
+    alertType?: AlertType | null;
     /**
      * The creationDateTime property
      */
-    creationDateTime?: Date;
+    creationDateTime?: Date | null;
     /**
      * The description property
      */
-    description?: string;
+    description?: string | null;
     /**
      * The detectionTechnology property
      */
-    detectionTechnology?: string;
+    detectionTechnology?: string | null;
     /**
      * The displayName property
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The policy property
      */
-    policy?: FilteringPolicy;
+    policy?: FilteringPolicy | null;
     /**
      * The relatedResources property
      */
-    relatedResources?: RelatedResource[];
+    relatedResources?: RelatedResource[] | null;
     /**
      * The severity property
      */
-    severity?: ThreatSeverity;
+    severity?: ThreatSeverity | null;
     /**
      * The vendorName property
      */
-    vendorName?: string;
+    vendorName?: string | null;
 }
 export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The actionLink property
      */
-    actionLink?: string;
+    actionLink?: string | null;
     /**
      * The actionText property
      */
-    actionText?: string;
+    actionText?: string | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -65,17 +65,17 @@ export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface AlertCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: Alert[];
+    value?: Alert[] | null;
 }
 export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
 export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
@@ -86,21 +86,21 @@ export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, 
     /**
      * The appId property
      */
-    appId?: string;
+    appId?: string | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface AssociatedBranch extends Association, Parsable {
     /**
      * Identifier for the branch.
      */
-    branchId?: string;
+    branchId?: string | null;
 }
 export interface Association extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -110,11 +110,11 @@ export interface Association extends AdditionalDataHolder, BackedModel, Parsable
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export type BandwidthCapacityInMbps = (typeof BandwidthCapacityInMbpsObject)[keyof typeof BandwidthCapacityInMbpsObject];
 export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
@@ -125,27 +125,27 @@ export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Par
     /**
      * Specifies the ASN of the BGP.
      */
-    asn?: number;
+    asn?: number | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Specifies the BGP IP address.
      */
-    ipAddress?: string;
+    ipAddress?: string | null;
     /**
      * Specifies the BGP IP address of peer (Microsoft, in this case).
      */
-    localIpAddress?: string;
+    localIpAddress?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * Specifies the BGP IP address of customer's on-premise VPN router configuration.
      */
-    peerIpAddress?: string;
+    peerIpAddress?: string | null;
 }
 export interface BranchConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -155,136 +155,136 @@ export interface BranchConnectivityConfiguration extends AdditionalDataHolder, B
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Unique identifier or a specific reference assigned to a branchSite. Key.
      */
-    branchId?: string;
+    branchId?: string | null;
     /**
      * Display name assigned to a branchSite.
      */
-    branchName?: string;
+    branchName?: string | null;
     /**
      * List of connectivity configurations for deviceLink objects.
      */
-    links?: ConnectivityConfigurationLink[];
+    links?: ConnectivityConfigurationLink[] | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface BranchSite extends Entity, Parsable {
     /**
      * Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
      */
-    bandwidthCapacity?: number;
+    bandwidthCapacity?: number | null;
     /**
      * Specifies the connectivity details of all device links associated with a branch.
      */
-    connectivityConfiguration?: BranchConnectivityConfiguration;
+    connectivityConfiguration?: BranchConnectivityConfiguration | null;
     /**
      * Determines the branch site status. The possible values are: pending, connected, inactive, error.
      */
-    connectivityState?: ConnectivityState;
+    connectivityState?: ConnectivityState | null;
     /**
      * The branch site is created in the specified country. DO NOT USE.
      */
-    country?: string;
+    country?: string | null;
     /**
      * Each unique CPE device associated with a branch is specified. Supports $expand.
      */
-    deviceLinks?: DeviceLink[];
+    deviceLinks?: DeviceLink[] | null;
     /**
      * Each forwarding profile associated with a branch site is specified. Supports $expand.
      */
-    forwardingProfiles?: ForwardingProfile[];
+    forwardingProfiles?: ForwardingProfile[] | null;
     /**
      * last modified time.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Name.
      */
-    name?: string;
+    name?: string | null;
     /**
      * The region property
      */
-    region?: Region;
+    region?: Region | null;
     /**
      * The branch version.
      */
-    version?: string;
+    version?: string | null;
 }
 export interface BranchSiteCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: BranchSite[];
+    value?: BranchSite[] | null;
 }
 export interface ConditionalAccessPolicy extends Entity, Parsable {
     /**
      * Indicates the date and time the conditional access policy was created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * Provides a summary of the conditional access policy.
      */
-    description?: string;
+    description?: string | null;
     /**
      * Represents the human-readable name or title assigned to the conditional access policy.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * Indicates the date and time when the conditional access policy was last modified.
      */
-    modifiedDateTime?: Date;
+    modifiedDateTime?: Date | null;
 }
 export interface ConditionalAccessPolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ConditionalAccessPolicy[];
+    value?: ConditionalAccessPolicy[] | null;
 }
 export interface ConditionalAccessSettings extends Entity, Parsable {
     /**
      * The signalingStatus property
      */
-    signalingStatus?: Status;
+    signalingStatus?: Status | null;
 }
 export type ConnectionStatus = (typeof ConnectionStatusObject)[keyof typeof ConnectionStatusObject];
 export interface Connectivity extends Entity, Parsable {
     /**
      * Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
      */
-    branches?: BranchSite[];
+    branches?: BranchSite[] | null;
     /**
      * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
      */
-    remoteNetworks?: RemoteNetwork[];
+    remoteNetworks?: RemoteNetwork[] | null;
     /**
      * The webCategories property
      */
-    webCategories?: WebCategory[];
+    webCategories?: WebCategory[] | null;
 }
 export interface ConnectivityConfigurationLink extends Entity, Parsable {
     /**
      * Specifies the name of the link.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * Specifies Microsoft's end of the tunnel configuration for a device link.
      */
-    localConfigurations?: LocalConnectivityConfiguration[];
+    localConfigurations?: LocalConnectivityConfiguration[] | null;
     /**
      * The peerConfiguration property
      */
-    peerConfiguration?: PeerConnectivityConfiguration;
+    peerConfiguration?: PeerConnectivityConfiguration | null;
 }
 export interface ConnectivityConfigurationLinkCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ConnectivityConfigurationLink[];
+    value?: ConnectivityConfigurationLink[] | null;
 }
 export type ConnectivityState = (typeof ConnectivityStateObject)[keyof typeof ConnectivityStateObject];
 /**
@@ -292,6 +292,7 @@ export type ConnectivityState = (typeof ConnectivityStateObject)[keyof typeof Co
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertAction}
  */
+// @ts-ignore
 export function createAlertActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertAction;
 }
@@ -300,6 +301,7 @@ export function createAlertActionFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertCollectionResponse}
  */
+// @ts-ignore
 export function createAlertCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertCollectionResponse;
 }
@@ -308,6 +310,7 @@ export function createAlertCollectionResponseFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Alert}
  */
+// @ts-ignore
 export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlert;
 }
@@ -316,6 +319,7 @@ export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefin
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplicationSnapshot}
  */
+// @ts-ignore
 export function createApplicationSnapshotFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoApplicationSnapshot;
 }
@@ -324,6 +328,7 @@ export function createApplicationSnapshotFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssociatedBranch}
  */
+// @ts-ignore
 export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssociatedBranch;
 }
@@ -332,6 +337,7 @@ export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Association}
  */
+// @ts-ignore
 export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -351,6 +357,7 @@ export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BgpConfiguration}
  */
+// @ts-ignore
 export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBgpConfiguration;
 }
@@ -359,6 +366,7 @@ export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BranchConnectivityConfiguration}
  */
+// @ts-ignore
 export function createBranchConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchConnectivityConfiguration;
 }
@@ -367,6 +375,7 @@ export function createBranchConnectivityConfigurationFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BranchSiteCollectionResponse}
  */
+// @ts-ignore
 export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSiteCollectionResponse;
 }
@@ -375,6 +384,7 @@ export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BranchSite}
  */
+// @ts-ignore
 export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSite;
 }
@@ -383,6 +393,7 @@ export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicyCollectionResponse}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicyCollectionResponse;
 }
@@ -391,6 +402,7 @@ export function createConditionalAccessPolicyCollectionResponseFromDiscriminator
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessPolicy}
  */
+// @ts-ignore
 export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessPolicy;
 }
@@ -399,6 +411,7 @@ export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConditionalAccessSettings}
  */
+// @ts-ignore
 export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessSettings;
 }
@@ -407,6 +420,7 @@ export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConnectivityConfigurationLinkCollectionResponse}
  */
+// @ts-ignore
 export function createConnectivityConfigurationLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivityConfigurationLinkCollectionResponse;
 }
@@ -415,6 +429,7 @@ export function createConnectivityConfigurationLinkCollectionResponseFromDiscrim
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConnectivityConfigurationLink}
  */
+// @ts-ignore
 export function createConnectivityConfigurationLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivityConfigurationLink;
 }
@@ -423,6 +438,7 @@ export function createConnectivityConfigurationLinkFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Connectivity}
  */
+// @ts-ignore
 export function createConnectivityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConnectivity;
 }
@@ -431,6 +447,7 @@ export function createConnectivityFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CrossTenantAccess}
  */
+// @ts-ignore
 export function createCrossTenantAccessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantAccess;
 }
@@ -439,6 +456,7 @@ export function createCrossTenantAccessFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CrossTenantAccessSettings}
  */
+// @ts-ignore
 export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantAccessSettings;
 }
@@ -447,6 +465,7 @@ export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CrossTenantSummary}
  */
+// @ts-ignore
 export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantSummary;
 }
@@ -455,6 +474,7 @@ export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Destination}
  */
+// @ts-ignore
 export function createDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDestination;
 }
@@ -463,6 +483,7 @@ export function createDestinationFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DestinationSummary}
  */
+// @ts-ignore
 export function createDestinationSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDestinationSummary;
 }
@@ -471,6 +492,7 @@ export function createDestinationSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Device}
  */
+// @ts-ignore
 export function createDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDevice;
 }
@@ -479,6 +501,7 @@ export function createDeviceFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceLinkCollectionResponse}
  */
+// @ts-ignore
 export function createDeviceLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceLinkCollectionResponse;
 }
@@ -487,6 +510,7 @@ export function createDeviceLinkCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceLink}
  */
+// @ts-ignore
 export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceLink;
 }
@@ -495,6 +519,7 @@ export function createDeviceLinkFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeviceUsageSummary}
  */
+// @ts-ignore
 export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeviceUsageSummary;
 }
@@ -503,6 +528,7 @@ export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DiscoveredApplicationSegmentReport}
  */
+// @ts-ignore
 export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDiscoveredApplicationSegmentReport;
 }
@@ -511,6 +537,7 @@ export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnrichedAuditLogs}
  */
+// @ts-ignore
 export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnrichedAuditLogs;
 }
@@ -519,6 +546,7 @@ export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnrichedAuditLogsSettings}
  */
+// @ts-ignore
 export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnrichedAuditLogsSettings;
 }
@@ -527,6 +555,7 @@ export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EntitiesSummary}
  */
+// @ts-ignore
 export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEntitiesSummary;
 }
@@ -535,6 +564,7 @@ export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringPolicyCollectionResponse}
  */
+// @ts-ignore
 export function createFilteringPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicyCollectionResponse;
 }
@@ -543,6 +573,7 @@ export function createFilteringPolicyCollectionResponseFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringPolicy}
  */
+// @ts-ignore
 export function createFilteringPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicy;
 }
@@ -551,6 +582,7 @@ export function createFilteringPolicyFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringPolicyLink}
  */
+// @ts-ignore
 export function createFilteringPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringPolicyLink;
 }
@@ -559,6 +591,7 @@ export function createFilteringPolicyLinkFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringProfileCollectionResponse}
  */
+// @ts-ignore
 export function createFilteringProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringProfileCollectionResponse;
 }
@@ -567,6 +600,7 @@ export function createFilteringProfileCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringProfile}
  */
+// @ts-ignore
 export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFilteringProfile;
 }
@@ -575,6 +609,7 @@ export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FilteringRule}
  */
+// @ts-ignore
 export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -596,6 +631,7 @@ export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingOptions}
  */
+// @ts-ignore
 export function createForwardingOptionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingOptions;
 }
@@ -604,6 +640,7 @@ export function createForwardingOptionsFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingPolicyCollectionResponse}
  */
+// @ts-ignore
 export function createForwardingPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicyCollectionResponse;
 }
@@ -612,6 +649,7 @@ export function createForwardingPolicyCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingPolicy}
  */
+// @ts-ignore
 export function createForwardingPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicy;
 }
@@ -620,6 +658,7 @@ export function createForwardingPolicyFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingPolicyLink}
  */
+// @ts-ignore
 export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingPolicyLink;
 }
@@ -628,6 +667,7 @@ export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingProfileCollectionResponse}
  */
+// @ts-ignore
 export function createForwardingProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingProfileCollectionResponse;
 }
@@ -636,6 +676,7 @@ export function createForwardingProfileCollectionResponseFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingProfile}
  */
+// @ts-ignore
 export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoForwardingProfile;
 }
@@ -644,6 +685,7 @@ export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingRule}
  */
+// @ts-ignore
 export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -667,6 +709,7 @@ export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {FqdnFilteringRule}
  */
+// @ts-ignore
 export function createFqdnFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFqdnFilteringRule;
 }
@@ -675,6 +718,7 @@ export function createFqdnFilteringRuleFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Fqdn}
  */
+// @ts-ignore
 export function createFqdnFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFqdn;
 }
@@ -683,6 +727,7 @@ export function createFqdnFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Headers}
  */
+// @ts-ignore
 export function createHeadersFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHeaders;
 }
@@ -691,6 +736,7 @@ export function createHeadersFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InternetAccessForwardingRule}
  */
+// @ts-ignore
 export function createInternetAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInternetAccessForwardingRule;
 }
@@ -699,6 +745,7 @@ export function createInternetAccessForwardingRuleFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpAddress}
  */
+// @ts-ignore
 export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpAddress;
 }
@@ -707,6 +754,7 @@ export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpRange}
  */
+// @ts-ignore
 export function createIpRangeFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpRange;
 }
@@ -715,6 +763,7 @@ export function createIpRangeFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpSubnet}
  */
+// @ts-ignore
 export function createIpSubnetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIpSubnet;
 }
@@ -723,6 +772,7 @@ export function createIpSubnetFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LocalConnectivityConfiguration}
  */
+// @ts-ignore
 export function createLocalConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLocalConnectivityConfiguration;
 }
@@ -731,6 +781,7 @@ export function createLocalConnectivityConfigurationFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Logs}
  */
+// @ts-ignore
 export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLogs;
 }
@@ -739,6 +790,7 @@ export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {M365ForwardingRule}
  */
+// @ts-ignore
 export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoM365ForwardingRule;
 }
@@ -747,6 +799,7 @@ export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NetworkAccessRoot}
  */
+// @ts-ignore
 export function createNetworkAccessRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessRoot;
 }
@@ -755,6 +808,7 @@ export function createNetworkAccessRootFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NetworkAccessTrafficCollectionResponse}
  */
+// @ts-ignore
 export function createNetworkAccessTrafficCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessTrafficCollectionResponse;
 }
@@ -763,6 +817,7 @@ export function createNetworkAccessTrafficCollectionResponseFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NetworkAccessTraffic}
  */
+// @ts-ignore
 export function createNetworkAccessTrafficFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNetworkAccessTraffic;
 }
@@ -771,6 +826,7 @@ export function createNetworkAccessTrafficFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PeerConnectivityConfiguration}
  */
+// @ts-ignore
 export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPeerConnectivityConfiguration;
 }
@@ -779,6 +835,7 @@ export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Policy}
  */
+// @ts-ignore
 export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -800,6 +857,7 @@ export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefi
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyLinkCollectionResponse}
  */
+// @ts-ignore
 export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyLinkCollectionResponse;
 }
@@ -808,6 +866,7 @@ export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyLink}
  */
+// @ts-ignore
 export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -829,6 +888,7 @@ export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyRuleCollectionResponse}
  */
+// @ts-ignore
 export function createPolicyRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyRuleCollectionResponse;
 }
@@ -837,6 +897,7 @@ export function createPolicyRuleCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyRuleDelta}
  */
+// @ts-ignore
 export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPolicyRuleDelta;
 }
@@ -845,6 +906,7 @@ export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyRule}
  */
+// @ts-ignore
 export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -876,6 +938,7 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PrivateAccessDetails}
  */
+// @ts-ignore
 export function createPrivateAccessDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPrivateAccessDetails;
 }
@@ -884,6 +947,7 @@ export function createPrivateAccessDetailsFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PrivateAccessForwardingRule}
  */
+// @ts-ignore
 export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPrivateAccessForwardingRule;
 }
@@ -892,6 +956,7 @@ export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Profile}
  */
+// @ts-ignore
 export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -913,6 +978,7 @@ export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RedundancyConfiguration}
  */
+// @ts-ignore
 export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRedundancyConfiguration;
 }
@@ -921,6 +987,7 @@ export function createRedundancyConfigurationFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedDestination}
  */
+// @ts-ignore
 export function createRelatedDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedDestination;
 }
@@ -929,6 +996,7 @@ export function createRelatedDestinationFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedDevice}
  */
+// @ts-ignore
 export function createRelatedDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedDevice;
 }
@@ -937,6 +1005,7 @@ export function createRelatedDeviceFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedMalware}
  */
+// @ts-ignore
 export function createRelatedMalwareFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedMalware;
 }
@@ -945,6 +1014,7 @@ export function createRelatedMalwareFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedProcess}
  */
+// @ts-ignore
 export function createRelatedProcessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedProcess;
 }
@@ -953,6 +1023,7 @@ export function createRelatedProcessFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedRemoteNetwork}
  */
+// @ts-ignore
 export function createRelatedRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedRemoteNetwork;
 }
@@ -961,6 +1032,7 @@ export function createRelatedRemoteNetworkFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedResource}
  */
+// @ts-ignore
 export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -998,6 +1070,7 @@ export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedTenant}
  */
+// @ts-ignore
 export function createRelatedTenantFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedTenant;
 }
@@ -1006,6 +1079,7 @@ export function createRelatedTenantFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedThreatIntelligence}
  */
+// @ts-ignore
 export function createRelatedThreatIntelligenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedThreatIntelligence;
 }
@@ -1014,6 +1088,7 @@ export function createRelatedThreatIntelligenceFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedToken}
  */
+// @ts-ignore
 export function createRelatedTokenFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedToken;
 }
@@ -1022,6 +1097,7 @@ export function createRelatedTokenFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedUser}
  */
+// @ts-ignore
 export function createRelatedUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedUser;
 }
@@ -1030,6 +1106,7 @@ export function createRelatedUserFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedWebCategory}
  */
+// @ts-ignore
 export function createRelatedWebCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedWebCategory;
 }
@@ -1038,6 +1115,7 @@ export function createRelatedWebCategoryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkCollectionResponse}
  */
+// @ts-ignore
 export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkCollectionResponse;
 }
@@ -1046,6 +1124,7 @@ export function createRemoteNetworkCollectionResponseFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkConnectivityConfiguration}
  */
+// @ts-ignore
 export function createRemoteNetworkConnectivityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkConnectivityConfiguration;
 }
@@ -1054,6 +1133,7 @@ export function createRemoteNetworkConnectivityConfigurationFromDiscriminatorVal
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetwork}
  */
+// @ts-ignore
 export function createRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetwork;
 }
@@ -1062,6 +1142,7 @@ export function createRemoteNetworkFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkHealthEventCollectionResponse}
  */
+// @ts-ignore
 export function createRemoteNetworkHealthEventCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkHealthEventCollectionResponse;
 }
@@ -1070,6 +1151,7 @@ export function createRemoteNetworkHealthEventCollectionResponseFromDiscriminato
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoteNetworkHealthEvent}
  */
+// @ts-ignore
 export function createRemoteNetworkHealthEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoteNetworkHealthEvent;
 }
@@ -1078,6 +1160,7 @@ export function createRemoteNetworkHealthEventFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Reports}
  */
+// @ts-ignore
 export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReports;
 }
@@ -1086,6 +1169,7 @@ export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undef
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RuleDestination}
  */
+// @ts-ignore
 export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -1115,6 +1199,7 @@ export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Settings}
  */
+// @ts-ignore
 export function createSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSettings;
 }
@@ -1123,6 +1208,7 @@ export function createSettingsFromDiscriminatorValue(parseNode: ParseNode | unde
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TenantStatus}
  */
+// @ts-ignore
 export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTenantStatus;
 }
@@ -1131,6 +1217,7 @@ export function createTenantStatusFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ThirdPartyTokenDetails}
  */
+// @ts-ignore
 export function createThirdPartyTokenDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoThirdPartyTokenDetails;
 }
@@ -1139,6 +1226,7 @@ export function createThirdPartyTokenDetailsFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TransactionSummary}
  */
+// @ts-ignore
 export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTransactionSummary;
 }
@@ -1147,6 +1235,7 @@ export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TunnelConfiguration}
  */
+// @ts-ignore
 export function createTunnelConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -1168,6 +1257,7 @@ export function createTunnelConfigurationFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TunnelConfigurationIKEv2Custom}
  */
+// @ts-ignore
 export function createTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTunnelConfigurationIKEv2Custom;
 }
@@ -1176,6 +1266,7 @@ export function createTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TunnelConfigurationIKEv2Default}
  */
+// @ts-ignore
 export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTunnelConfigurationIKEv2Default;
 }
@@ -1184,6 +1275,7 @@ export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Url}
  */
+// @ts-ignore
 export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUrl;
 }
@@ -1192,6 +1284,7 @@ export function createUrlFromDiscriminatorValue(parseNode: ParseNode | undefined
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UsageProfilingPoint}
  */
+// @ts-ignore
 export function createUsageProfilingPointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUsageProfilingPoint;
 }
@@ -1200,6 +1293,7 @@ export function createUsageProfilingPointFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {User}
  */
+// @ts-ignore
 export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUser;
 }
@@ -1208,6 +1302,7 @@ export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefine
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WebCategoriesSummary}
  */
+// @ts-ignore
 export function createWebCategoriesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategoriesSummary;
 }
@@ -1216,6 +1311,7 @@ export function createWebCategoriesSummaryFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WebCategoryFilteringRule}
  */
+// @ts-ignore
 export function createWebCategoryFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategoryFilteringRule;
 }
@@ -1224,6 +1320,7 @@ export function createWebCategoryFilteringRuleFromDiscriminatorValue(parseNode: 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WebCategory}
  */
+// @ts-ignore
 export function createWebCategoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWebCategory;
 }
@@ -1235,45 +1332,45 @@ export interface CrossTenantAccess extends AdditionalDataHolder, BackedModel, Pa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The number of devices that accessed the external tenant.
      */
-    deviceCount?: number;
+    deviceCount?: number | null;
     /**
      * The timestamp of the most recent access to the external tenant.
      */
-    lastAccessDateTime?: Date;
+    lastAccessDateTime?: Date | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The tenant ID of the external tenant.
      */
-    resourceTenantId?: string;
+    resourceTenantId?: string | null;
     /**
      * The name of the external tenant.
      */
-    resourceTenantName?: string;
+    resourceTenantName?: string | null;
     /**
      * The domain of the external tenant.
      */
-    resourceTenantPrimaryDomain?: string;
+    resourceTenantPrimaryDomain?: string | null;
     /**
      * The usageStatus property
      */
-    usageStatus?: UsageStatus;
+    usageStatus?: UsageStatus | null;
     /**
      * The number of users that accessed the external tenant.
      */
-    userCount?: number;
+    userCount?: number | null;
 }
 export interface CrossTenantAccessSettings extends Entity, Parsable {
     /**
      * The networkPacketTaggingStatus property
      */
-    networkPacketTaggingStatus?: Status;
+    networkPacketTaggingStatus?: Status | null;
 }
 export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1283,40 +1380,41 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
     /**
      * The total number of authentication sessions between startDateTime and endDateTime.
      */
-    authTransactionCount?: number;
+    authTransactionCount?: number | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The number of unique devices that performed cross-tenant access.
      */
-    deviceCount?: number;
+    deviceCount?: number | null;
     /**
      * The number of unique tenants that were accessed between endDateTime and discoveryPivotDateTime, but weren't accessed between discoveryPivotDateTime and startDateTime.
      */
-    newTenantCount?: number;
+    newTenantCount?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The number of tenants that are rarely used.
      */
-    rarelyUsedTenantCount?: number;
+    rarelyUsedTenantCount?: number | null;
     /**
      * The number of unique tenants that were accessed, not including the device's tenant.
      */
-    tenantCount?: number;
+    tenantCount?: number | null;
     /**
      * The number of unique users that performed cross-tenant access.
      */
-    userCount?: number;
+    userCount?: number | null;
 }
 /**
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(alert),
@@ -1336,6 +1434,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionLink": n => { alertAction.actionLink = n.getStringValue(); },
@@ -1348,6 +1447,7 @@ export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertCollectionResponse(alertCollectionResponse: Partial<AlertCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(alertCollectionResponse),
@@ -1358,6 +1458,7 @@ export function deserializeIntoAlertCollectionResponse(alertCollectionResponse: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoApplicationSnapshot(applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "appId": n => { applicationSnapshot.appId = n.getStringValue(); },
@@ -1369,6 +1470,7 @@ export function deserializeIntoApplicationSnapshot(applicationSnapshot: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssociatedBranch(associatedBranch: Partial<AssociatedBranch> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAssociation(associatedBranch),
@@ -1379,6 +1481,7 @@ export function deserializeIntoAssociatedBranch(associatedBranch: Partial<Associ
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssociation(association: Partial<Association> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { association.backingStoreEnabled = true; },
@@ -1389,6 +1492,7 @@ export function deserializeIntoAssociation(association: Partial<Association> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBgpConfiguration(bgpConfiguration: Partial<BgpConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "asn": n => { bgpConfiguration.asn = n.getNumberValue(); },
@@ -1403,6 +1507,7 @@ export function deserializeIntoBgpConfiguration(bgpConfiguration: Partial<BgpCon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBranchConnectivityConfiguration(branchConnectivityConfiguration: Partial<BranchConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { branchConnectivityConfiguration.backingStoreEnabled = true; },
@@ -1416,6 +1521,7 @@ export function deserializeIntoBranchConnectivityConfiguration(branchConnectivit
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBranchSite(branchSite: Partial<BranchSite> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(branchSite),
@@ -1435,6 +1541,7 @@ export function deserializeIntoBranchSite(branchSite: Partial<BranchSite> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBranchSiteCollectionResponse(branchSiteCollectionResponse: Partial<BranchSiteCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(branchSiteCollectionResponse),
@@ -1445,6 +1552,7 @@ export function deserializeIntoBranchSiteCollectionResponse(branchSiteCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicy(conditionalAccessPolicy: Partial<ConditionalAccessPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(conditionalAccessPolicy),
@@ -1458,6 +1566,7 @@ export function deserializeIntoConditionalAccessPolicy(conditionalAccessPolicy: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessPolicyCollectionResponse(conditionalAccessPolicyCollectionResponse: Partial<ConditionalAccessPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(conditionalAccessPolicyCollectionResponse),
@@ -1468,6 +1577,7 @@ export function deserializeIntoConditionalAccessPolicyCollectionResponse(conditi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConditionalAccessSettings(conditionalAccessSettings: Partial<ConditionalAccessSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(conditionalAccessSettings),
@@ -1478,6 +1588,7 @@ export function deserializeIntoConditionalAccessSettings(conditionalAccessSettin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectivity(connectivity: Partial<Connectivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectivity),
@@ -1490,6 +1601,7 @@ export function deserializeIntoConnectivity(connectivity: Partial<Connectivity> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectivityConfigurationLink(connectivityConfigurationLink: Partial<ConnectivityConfigurationLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectivityConfigurationLink),
@@ -1502,6 +1614,7 @@ export function deserializeIntoConnectivityConfigurationLink(connectivityConfigu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConnectivityConfigurationLinkCollectionResponse(connectivityConfigurationLinkCollectionResponse: Partial<ConnectivityConfigurationLinkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(connectivityConfigurationLinkCollectionResponse),
@@ -1512,6 +1625,7 @@ export function deserializeIntoConnectivityConfigurationLinkCollectionResponse(c
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCrossTenantAccess(crossTenantAccess: Partial<CrossTenantAccess> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { crossTenantAccess.backingStoreEnabled = true; },
@@ -1529,6 +1643,7 @@ export function deserializeIntoCrossTenantAccess(crossTenantAccess: Partial<Cros
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCrossTenantAccessSettings(crossTenantAccessSettings: Partial<CrossTenantAccessSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(crossTenantAccessSettings),
@@ -1539,6 +1654,7 @@ export function deserializeIntoCrossTenantAccessSettings(crossTenantAccessSettin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCrossTenantSummary(crossTenantSummary: Partial<CrossTenantSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "authTransactionCount": n => { crossTenantSummary.authTransactionCount = n.getNumberValue(); },
@@ -1555,6 +1671,7 @@ export function deserializeIntoCrossTenantSummary(crossTenantSummary: Partial<Cr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDestination(destination: Partial<Destination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { destination.backingStoreEnabled = true; },
@@ -1578,6 +1695,7 @@ export function deserializeIntoDestination(destination: Partial<Destination> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDestinationSummary(destinationSummary: Partial<DestinationSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { destinationSummary.backingStoreEnabled = true; },
@@ -1591,6 +1709,7 @@ export function deserializeIntoDestinationSummary(destinationSummary: Partial<De
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDevice(device: Partial<Device> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { device.backingStoreEnabled = true; },
@@ -1607,6 +1726,7 @@ export function deserializeIntoDevice(device: Partial<Device> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceLink(deviceLink: Partial<DeviceLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deviceLink),
@@ -1624,6 +1744,7 @@ export function deserializeIntoDeviceLink(deviceLink: Partial<DeviceLink> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceLinkCollectionResponse(deviceLinkCollectionResponse: Partial<DeviceLinkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deviceLinkCollectionResponse),
@@ -1634,6 +1755,7 @@ export function deserializeIntoDeviceLinkCollectionResponse(deviceLinkCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeviceUsageSummary(deviceUsageSummary: Partial<DeviceUsageSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "activeDeviceCount": n => { deviceUsageSummary.activeDeviceCount = n.getNumberValue(); },
@@ -1647,6 +1769,7 @@ export function deserializeIntoDeviceUsageSummary(deviceUsageSummary: Partial<De
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "accessType": n => { discoveredApplicationSegmentReport.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
@@ -1670,6 +1793,7 @@ export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredAppl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEnrichedAuditLogs(enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(enrichedAuditLogs),
@@ -1682,6 +1806,7 @@ export function deserializeIntoEnrichedAuditLogs(enrichedAuditLogs: Partial<Enri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEnrichedAuditLogsSettings(enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { enrichedAuditLogsSettings.backingStoreEnabled = true; },
@@ -1693,6 +1818,7 @@ export function deserializeIntoEnrichedAuditLogsSettings(enrichedAuditLogsSettin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEntitiesSummary(entitiesSummary: Partial<EntitiesSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { entitiesSummary.backingStoreEnabled = true; },
@@ -1707,6 +1833,7 @@ export function deserializeIntoEntitiesSummary(entitiesSummary: Partial<Entities
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringPolicy(filteringPolicy: Partial<FilteringPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicy(filteringPolicy),
@@ -1719,6 +1846,7 @@ export function deserializeIntoFilteringPolicy(filteringPolicy: Partial<Filterin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringPolicyCollectionResponse(filteringPolicyCollectionResponse: Partial<FilteringPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(filteringPolicyCollectionResponse),
@@ -1729,6 +1857,7 @@ export function deserializeIntoFilteringPolicyCollectionResponse(filteringPolicy
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringPolicyLink(filteringPolicyLink: Partial<FilteringPolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyLink(filteringPolicyLink),
@@ -1742,6 +1871,7 @@ export function deserializeIntoFilteringPolicyLink(filteringPolicyLink: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringProfile(filteringProfile: Partial<FilteringProfile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoProfile(filteringProfile),
@@ -1754,6 +1884,7 @@ export function deserializeIntoFilteringProfile(filteringProfile: Partial<Filter
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringProfileCollectionResponse(filteringProfileCollectionResponse: Partial<FilteringProfileCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(filteringProfileCollectionResponse),
@@ -1764,6 +1895,7 @@ export function deserializeIntoFilteringProfileCollectionResponse(filteringProfi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFilteringRule(filteringRule: Partial<FilteringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyRule(filteringRule),
@@ -1775,6 +1907,7 @@ export function deserializeIntoFilteringRule(filteringRule: Partial<FilteringRul
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingOptions(forwardingOptions: Partial<ForwardingOptions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(forwardingOptions),
@@ -1785,6 +1918,7 @@ export function deserializeIntoForwardingOptions(forwardingOptions: Partial<Forw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingPolicy(forwardingPolicy: Partial<ForwardingPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicy(forwardingPolicy),
@@ -1795,6 +1929,7 @@ export function deserializeIntoForwardingPolicy(forwardingPolicy: Partial<Forwar
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingPolicyCollectionResponse(forwardingPolicyCollectionResponse: Partial<ForwardingPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(forwardingPolicyCollectionResponse),
@@ -1805,6 +1940,7 @@ export function deserializeIntoForwardingPolicyCollectionResponse(forwardingPoli
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingPolicyLink(forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyLink(forwardingPolicyLink),
@@ -1814,6 +1950,7 @@ export function deserializeIntoForwardingPolicyLink(forwardingPolicyLink: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingProfile(forwardingProfile: Partial<ForwardingProfile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoProfile(forwardingProfile),
@@ -1827,6 +1964,7 @@ export function deserializeIntoForwardingProfile(forwardingProfile: Partial<Forw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingProfileCollectionResponse(forwardingProfileCollectionResponse: Partial<ForwardingProfileCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(forwardingProfileCollectionResponse),
@@ -1837,6 +1975,7 @@ export function deserializeIntoForwardingProfileCollectionResponse(forwardingPro
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoForwardingRule(forwardingRule: Partial<ForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyRule(forwardingRule),
@@ -1849,6 +1988,7 @@ export function deserializeIntoForwardingRule(forwardingRule: Partial<Forwarding
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFqdn(fqdn: Partial<Fqdn> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(fqdn),
@@ -1859,6 +1999,7 @@ export function deserializeIntoFqdn(fqdn: Partial<Fqdn> | undefined = {}) : Reco
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoFqdnFilteringRule(fqdnFilteringRule: Partial<FqdnFilteringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoFilteringRule(fqdnFilteringRule),
@@ -1868,6 +2009,7 @@ export function deserializeIntoFqdnFilteringRule(fqdnFilteringRule: Partial<Fqdn
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoHeaders(headers: Partial<Headers> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { headers.backingStoreEnabled = true; },
@@ -1881,6 +2023,7 @@ export function deserializeIntoHeaders(headers: Partial<Headers> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoInternetAccessForwardingRule(internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(internetAccessForwardingRule),
@@ -1892,6 +2035,7 @@ export function deserializeIntoInternetAccessForwardingRule(internetAccessForwar
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(ipAddress),
@@ -1902,6 +2046,7 @@ export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(ipRange),
@@ -1913,6 +2058,7 @@ export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIpSubnet(ipSubnet: Partial<IpSubnet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(ipSubnet),
@@ -1923,6 +2069,7 @@ export function deserializeIntoIpSubnet(ipSubnet: Partial<IpSubnet> | undefined 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLocalConnectivityConfiguration(localConnectivityConfiguration: Partial<LocalConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "asn": n => { localConnectivityConfiguration.asn = n.getNumberValue(); },
@@ -1937,6 +2084,7 @@ export function deserializeIntoLocalConnectivityConfiguration(localConnectivityC
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLogs(logs: Partial<Logs> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(logs),
@@ -1948,6 +2096,7 @@ export function deserializeIntoLogs(logs: Partial<Logs> | undefined = {}) : Reco
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M365ForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(m365ForwardingRule),
@@ -1960,6 +2109,7 @@ export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M3
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<NetworkAccessRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(networkAccessRoot),
@@ -1979,6 +2129,7 @@ export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<Netw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "action": n => { networkAccessTraffic.action = n.getEnumValue<FilteringPolicyAction>(FilteringPolicyActionObject); },
@@ -2028,6 +2179,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNetworkAccessTrafficCollectionResponse(networkAccessTrafficCollectionResponse: Partial<NetworkAccessTrafficCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(networkAccessTrafficCollectionResponse),
@@ -2038,6 +2190,7 @@ export function deserializeIntoNetworkAccessTrafficCollectionResponse(networkAcc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPeerConnectivityConfiguration(peerConnectivityConfiguration: Partial<PeerConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "asn": n => { peerConnectivityConfiguration.asn = n.getNumberValue(); },
@@ -2051,6 +2204,7 @@ export function deserializeIntoPeerConnectivityConfiguration(peerConnectivityCon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicy(policy: Partial<Policy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policy),
@@ -2064,6 +2218,7 @@ export function deserializeIntoPolicy(policy: Partial<Policy> | undefined = {}) 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyLink(policyLink: Partial<PolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policyLink),
@@ -2076,6 +2231,7 @@ export function deserializeIntoPolicyLink(policyLink: Partial<PolicyLink> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyLinkCollectionResponse(policyLinkCollectionResponse: Partial<PolicyLinkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(policyLinkCollectionResponse),
@@ -2086,6 +2242,7 @@ export function deserializeIntoPolicyLinkCollectionResponse(policyLinkCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyRule(policyRule: Partial<PolicyRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policyRule),
@@ -2096,6 +2253,7 @@ export function deserializeIntoPolicyRule(policyRule: Partial<PolicyRule> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyRuleCollectionResponse(policyRuleCollectionResponse: Partial<PolicyRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(policyRuleCollectionResponse),
@@ -2106,6 +2264,7 @@ export function deserializeIntoPolicyRuleCollectionResponse(policyRuleCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPolicyRuleDelta(policyRuleDelta: Partial<PolicyRuleDelta> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "action": n => { policyRuleDelta.action = n.getEnumValue<ForwardingRuleAction>(ForwardingRuleActionObject); },
@@ -2118,6 +2277,7 @@ export function deserializeIntoPolicyRuleDelta(policyRuleDelta: Partial<PolicyRu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPrivateAccessDetails(privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "accessType": n => { privateAccessDetails.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
@@ -2135,6 +2295,7 @@ export function deserializeIntoPrivateAccessDetails(privateAccessDetails: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPrivateAccessForwardingRule(privateAccessForwardingRule: Partial<PrivateAccessForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(privateAccessForwardingRule),
@@ -2144,6 +2305,7 @@ export function deserializeIntoPrivateAccessForwardingRule(privateAccessForwardi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoProfile(profile: Partial<Profile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(profile),
@@ -2159,6 +2321,7 @@ export function deserializeIntoProfile(profile: Partial<Profile> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRedundancyConfiguration(redundancyConfiguration: Partial<RedundancyConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { redundancyConfiguration.backingStoreEnabled = true; },
@@ -2171,6 +2334,7 @@ export function deserializeIntoRedundancyConfiguration(redundancyConfiguration: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedDestination(relatedDestination: Partial<RelatedDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedDestination),
@@ -2184,6 +2348,7 @@ export function deserializeIntoRelatedDestination(relatedDestination: Partial<Re
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedDevice),
@@ -2194,6 +2359,7 @@ export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevic
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMalware> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedMalware),
@@ -2205,6 +2371,7 @@ export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedProcess(relatedProcess: Partial<RelatedProcess> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedProcess),
@@ -2216,6 +2383,7 @@ export function deserializeIntoRelatedProcess(relatedProcess: Partial<RelatedPro
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedRemoteNetwork(relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedRemoteNetwork),
@@ -2226,6 +2394,7 @@ export function deserializeIntoRelatedRemoteNetwork(relatedRemoteNetwork: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedResource(relatedResource: Partial<RelatedResource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { relatedResource.backingStoreEnabled = true; },
@@ -2236,6 +2405,7 @@ export function deserializeIntoRelatedResource(relatedResource: Partial<RelatedR
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedTenant(relatedTenant: Partial<RelatedTenant> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedTenant),
@@ -2246,6 +2416,7 @@ export function deserializeIntoRelatedTenant(relatedTenant: Partial<RelatedTenan
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedThreatIntelligence(relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedThreatIntelligence),
@@ -2256,6 +2427,7 @@ export function deserializeIntoRelatedThreatIntelligence(relatedThreatIntelligen
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedToken(relatedToken: Partial<RelatedToken> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedToken),
@@ -2266,6 +2438,7 @@ export function deserializeIntoRelatedToken(relatedToken: Partial<RelatedToken> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedUser(relatedUser: Partial<RelatedUser> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedUser),
@@ -2277,6 +2450,7 @@ export function deserializeIntoRelatedUser(relatedUser: Partial<RelatedUser> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRelatedWebCategory(relatedWebCategory: Partial<RelatedWebCategory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedWebCategory),
@@ -2287,6 +2461,7 @@ export function deserializeIntoRelatedWebCategory(relatedWebCategory: Partial<Re
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetwork(remoteNetwork: Partial<RemoteNetwork> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(remoteNetwork),
@@ -2303,6 +2478,7 @@ export function deserializeIntoRemoteNetwork(remoteNetwork: Partial<RemoteNetwor
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkCollectionResponse(remoteNetworkCollectionResponse: Partial<RemoteNetworkCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(remoteNetworkCollectionResponse),
@@ -2313,6 +2489,7 @@ export function deserializeIntoRemoteNetworkCollectionResponse(remoteNetworkColl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkConnectivityConfiguration(remoteNetworkConnectivityConfiguration: Partial<RemoteNetworkConnectivityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { remoteNetworkConnectivityConfiguration.backingStoreEnabled = true; },
@@ -2326,6 +2503,7 @@ export function deserializeIntoRemoteNetworkConnectivityConfiguration(remoteNetw
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkHealthEvent(remoteNetworkHealthEvent: Partial<RemoteNetworkHealthEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(remoteNetworkHealthEvent),
@@ -2344,6 +2522,7 @@ export function deserializeIntoRemoteNetworkHealthEvent(remoteNetworkHealthEvent
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoteNetworkHealthEventCollectionResponse(remoteNetworkHealthEventCollectionResponse: Partial<RemoteNetworkHealthEventCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(remoteNetworkHealthEventCollectionResponse),
@@ -2354,6 +2533,7 @@ export function deserializeIntoRemoteNetworkHealthEventCollectionResponse(remote
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReports(reports: Partial<Reports> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(reports),
@@ -2363,6 +2543,7 @@ export function deserializeIntoReports(reports: Partial<Reports> | undefined = {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRuleDestination(ruleDestination: Partial<RuleDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { ruleDestination.backingStoreEnabled = true; },
@@ -2373,6 +2554,7 @@ export function deserializeIntoRuleDestination(ruleDestination: Partial<RuleDest
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSettings(settings: Partial<Settings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(settings),
@@ -2386,6 +2568,7 @@ export function deserializeIntoSettings(settings: Partial<Settings> | undefined 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantStatus),
@@ -2397,6 +2580,7 @@ export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoThirdPartyTokenDetails(thirdPartyTokenDetails: Partial<ThirdPartyTokenDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { thirdPartyTokenDetails.backingStoreEnabled = true; },
@@ -2411,6 +2595,7 @@ export function deserializeIntoThirdPartyTokenDetails(thirdPartyTokenDetails: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTransactionSummary(transactionSummary: Partial<TransactionSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { transactionSummary.backingStoreEnabled = true; },
@@ -2424,6 +2609,7 @@ export function deserializeIntoTransactionSummary(transactionSummary: Partial<Tr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTunnelConfiguration(tunnelConfiguration: Partial<TunnelConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { tunnelConfiguration.backingStoreEnabled = true; },
@@ -2436,6 +2622,7 @@ export function deserializeIntoTunnelConfiguration(tunnelConfiguration: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTunnelConfigurationIKEv2Custom(tunnelConfigurationIKEv2Custom: Partial<TunnelConfigurationIKEv2Custom> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoTunnelConfiguration(tunnelConfigurationIKEv2Custom),
@@ -2452,6 +2639,7 @@ export function deserializeIntoTunnelConfigurationIKEv2Custom(tunnelConfiguratio
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTunnelConfigurationIKEv2Default(tunnelConfigurationIKEv2Default: Partial<TunnelConfigurationIKEv2Default> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoTunnelConfiguration(tunnelConfigurationIKEv2Default),
@@ -2461,6 +2649,7 @@ export function deserializeIntoTunnelConfigurationIKEv2Default(tunnelConfigurati
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUrl(url: Partial<Url> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(url),
@@ -2471,6 +2660,7 @@ export function deserializeIntoUrl(url: Partial<Url> | undefined = {}) : Record<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUsageProfilingPoint(usageProfilingPoint: Partial<UsageProfilingPoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { usageProfilingPoint.backingStoreEnabled = true; },
@@ -2486,6 +2676,7 @@ export function deserializeIntoUsageProfilingPoint(usageProfilingPoint: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { user.backingStoreEnabled = true; },
@@ -2506,6 +2697,7 @@ export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Reco
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWebCategoriesSummary(webCategoriesSummary: Partial<WebCategoriesSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "action": n => { webCategoriesSummary.action = n.getEnumValue<FilteringPolicyAction>(FilteringPolicyActionObject); },
@@ -2521,6 +2713,7 @@ export function deserializeIntoWebCategoriesSummary(webCategoriesSummary: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWebCategory(webCategory: Partial<WebCategory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRuleDestination(webCategory),
@@ -2533,6 +2726,7 @@ export function deserializeIntoWebCategory(webCategory: Partial<WebCategory> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWebCategoryFilteringRule(webCategoryFilteringRule: Partial<WebCategoryFilteringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoFilteringRule(webCategoryFilteringRule),
@@ -2546,63 +2740,63 @@ export interface Destination extends AdditionalDataHolder, BackedModel, Parsable
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The number of unique devices that were seen.
      */
-    deviceCount?: number;
+    deviceCount?: number | null;
     /**
      * The firstAccessDateTime property
      */
-    firstAccessDateTime?: Date;
+    firstAccessDateTime?: Date | null;
     /**
      * The fully qualified domain name (FQDN) of the destination.
      */
-    fqdn?: string;
+    fqdn?: string | null;
     /**
      * The internet protocol (IP) used to access the destination.
      */
-    ip?: string;
+    ip?: string | null;
     /**
      * The most recent access DateTime.
      */
-    lastAccessDateTime?: Date;
+    lastAccessDateTime?: Date | null;
     /**
      * The networkingProtocol property
      */
-    networkingProtocol?: NetworkingProtocol;
+    networkingProtocol?: NetworkingProtocol | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The numeric identifier that is associated with a specific endpoint in a network.
      */
-    port?: number;
+    port?: number | null;
     /**
      * The threatCount property
      */
-    threatCount?: number;
+    threatCount?: number | null;
     /**
      * The totalBytesReceived property
      */
-    totalBytesReceived?: number;
+    totalBytesReceived?: number | null;
     /**
      * The totalBytesSent property
      */
-    totalBytesSent?: number;
+    totalBytesSent?: number | null;
     /**
      * The trafficType property
      */
-    trafficType?: TrafficType;
+    trafficType?: TrafficType | null;
     /**
      * The number of transactions.
      */
-    transactionCount?: number;
+    transactionCount?: number | null;
     /**
      * The number of unique Microsoft Entra ID users that were seen.
      */
-    userCount?: number;
+    userCount?: number | null;
 }
 export interface DestinationSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2612,23 +2806,23 @@ export interface DestinationSummary extends AdditionalDataHolder, BackedModel, P
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The number of the destinationSummary objects, aggregated by Global Secure Access service.
      */
-    count?: number;
+    count?: number | null;
     /**
      * The IP address or FQDN of the destination.
      */
-    destination?: string;
+    destination?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.
      */
-    trafficType?: TrafficType;
+    trafficType?: TrafficType | null;
 }
 export interface Device extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2638,82 +2832,82 @@ export interface Device extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * A unique device ID.
      */
-    deviceId?: string;
+    deviceId?: string | null;
     /**
      * The display name for the device.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * A value that indicates whether or not the device is compliant.
      */
-    isCompliant?: boolean;
+    isCompliant?: boolean | null;
     /**
      * The most recent access time for the device.
      */
-    lastAccessDateTime?: Date;
+    lastAccessDateTime?: Date | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The operating system on the device.
      */
-    operatingSystem?: string;
+    operatingSystem?: string | null;
     /**
      * The trafficType property
      */
-    trafficType?: TrafficType;
+    trafficType?: TrafficType | null;
 }
 export type DeviceCategory = (typeof DeviceCategoryObject)[keyof typeof DeviceCategoryObject];
 export interface DeviceLink extends Entity, Parsable {
     /**
      * Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
      */
-    bandwidthCapacityInMbps?: BandwidthCapacityInMbps;
+    bandwidthCapacityInMbps?: BandwidthCapacityInMbps | null;
     /**
      * The bgpConfiguration property
      */
-    bgpConfiguration?: BgpConfiguration;
+    bgpConfiguration?: BgpConfiguration | null;
     /**
      * The deviceVendor property
      */
-    deviceVendor?: DeviceVendor;
+    deviceVendor?: DeviceVendor | null;
     /**
      * The public IP address of your CPE (customer premise equipment) device.
      */
-    ipAddress?: string;
+    ipAddress?: string | null;
     /**
      * last modified time.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Name.
      */
-    name?: string;
+    name?: string | null;
     /**
      * The redundancyConfiguration property
      */
-    redundancyConfiguration?: RedundancyConfiguration;
+    redundancyConfiguration?: RedundancyConfiguration | null;
     /**
      * The tunnelConfiguration property
      */
-    tunnelConfiguration?: TunnelConfiguration;
+    tunnelConfiguration?: TunnelConfiguration | null;
 }
 export interface DeviceLinkCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: DeviceLink[];
+    value?: DeviceLink[] | null;
 }
 export interface DeviceUsageSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The number of distinct device IDs between the discovery pivot time and the end of the reporting period.
      */
-    activeDeviceCount?: number;
+    activeDeviceCount?: number | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -2721,19 +2915,19 @@ export interface DeviceUsageSummary extends AdditionalDataHolder, BackedModel, P
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The discovery pivot time and the end of the reporting period, but were seen between the start of the reporting period and the discovery pivot time.
      */
-    inactiveDeviceCount?: number;
+    inactiveDeviceCount?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The total number of distinct device IDs that were seen during the reporting period.
      */
-    totalDeviceCount?: number;
+    totalDeviceCount?: number | null;
 }
 export type DeviceVendor = (typeof DeviceVendorObject)[keyof typeof DeviceVendorObject];
 export type DhGroup = (typeof DhGroupObject)[keyof typeof DhGroupObject];
@@ -2741,7 +2935,7 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
     /**
      * The accessType property
      */
-    accessType?: AccessType;
+    accessType?: AccessType | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -2749,73 +2943,73 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceCount property
      */
-    deviceCount?: number;
+    deviceCount?: number | null;
     /**
      * The discoveredApplicationSegmentId property
      */
-    discoveredApplicationSegmentId?: string;
+    discoveredApplicationSegmentId?: string | null;
     /**
      * The firstAccessDateTime property
      */
-    firstAccessDateTime?: Date;
+    firstAccessDateTime?: Date | null;
     /**
      * The fqdn property
      */
-    fqdn?: string;
+    fqdn?: string | null;
     /**
      * The ip property
      */
-    ip?: string;
+    ip?: string | null;
     /**
      * The lastAccessDateTime property
      */
-    lastAccessDateTime?: Date;
+    lastAccessDateTime?: Date | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The port property
      */
-    port?: number;
+    port?: number | null;
     /**
      * The totalBytesReceived property
      */
-    totalBytesReceived?: number;
+    totalBytesReceived?: number | null;
     /**
      * The totalBytesSent property
      */
-    totalBytesSent?: number;
+    totalBytesSent?: number | null;
     /**
      * The transactionCount property
      */
-    transactionCount?: number;
+    transactionCount?: number | null;
     /**
      * The transportProtocol property
      */
-    transportProtocol?: NetworkingProtocol;
+    transportProtocol?: NetworkingProtocol | null;
     /**
      * The userCount property
      */
-    userCount?: number;
+    userCount?: number | null;
 }
 export interface EnrichedAuditLogs extends Entity, Parsable {
     /**
      * Exchange Online enriched audit logs settings.
      */
-    exchange?: EnrichedAuditLogsSettings;
+    exchange?: EnrichedAuditLogsSettings | null;
     /**
      * SharePoint Online enriched audit logs settings.
      */
-    sharepoint?: EnrichedAuditLogsSettings;
+    sharepoint?: EnrichedAuditLogsSettings | null;
     /**
      * Teams enriched audit logs settings.
      */
-    teams?: EnrichedAuditLogsSettings;
+    teams?: EnrichedAuditLogsSettings | null;
 }
 export interface EnrichedAuditLogsSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2825,15 +3019,15 @@ export interface EnrichedAuditLogsSettings extends AdditionalDataHolder, BackedM
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The status property
      */
-    status?: Status;
+    status?: Status | null;
 }
 export interface EntitiesSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2843,115 +3037,115 @@ export interface EntitiesSummary extends AdditionalDataHolder, BackedModel, Pars
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The number of unique devices that were seen.
      */
-    deviceCount?: number;
+    deviceCount?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The trafficType property
      */
-    trafficType?: TrafficType;
+    trafficType?: TrafficType | null;
     /**
      * The number of unique Microsoft Entra ID users that were seen.
      */
-    userCount?: number;
+    userCount?: number | null;
     /**
      * The number of unique target workloads/hosts that were seen.
      */
-    workloadCount?: number;
+    workloadCount?: number | null;
 }
 export interface FilteringPolicy extends Parsable, Policy {
     /**
      * The action property
      */
-    action?: FilteringPolicyAction;
+    action?: FilteringPolicyAction | null;
     /**
      * The date and time when the filtering Policy was originally created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The date and time when a particular profile was last modified or updated.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
 }
 export type FilteringPolicyAction = (typeof FilteringPolicyActionObject)[keyof typeof FilteringPolicyActionObject];
 export interface FilteringPolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: FilteringPolicy[];
+    value?: FilteringPolicy[] | null;
 }
 export interface FilteringPolicyLink extends Parsable, PolicyLink {
     /**
      * The date and time when the filtering Policy link was created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The date and time when the policy was most recently modified.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * The loggingState property
      */
-    loggingState?: Status;
+    loggingState?: Status | null;
     /**
      * Provides an integer priority level for each instance of a URL filtering policy linked to a profile. Required.
      */
-    priority?: number;
+    priority?: number | null;
 }
 export interface FilteringProfile extends Parsable, Profile {
     /**
      * A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.
      */
-    conditionalAccessPolicies?: ConditionalAccessPolicy[];
+    conditionalAccessPolicies?: ConditionalAccessPolicy[] | null;
     /**
      * The date and time when the filteringProfile was created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The priority used to order the profile for processing within a list.
      */
-    priority?: number;
+    priority?: number | null;
 }
 export interface FilteringProfileCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: FilteringProfile[];
+    value?: FilteringProfile[] | null;
 }
 export interface FilteringRule extends Parsable, PolicyRule {
     /**
      * Possible destinations and types of destinations accessed by the user in accordance with the network filtering policy, such as IP addresses and FQDNs/URLs.
      */
-    destinations?: RuleDestination[];
+    destinations?: RuleDestination[] | null;
     /**
      * The ruleType property
      */
-    ruleType?: NetworkDestinationType;
+    ruleType?: NetworkDestinationType | null;
 }
 export type ForwardingCategory = (typeof ForwardingCategoryObject)[keyof typeof ForwardingCategoryObject];
 export interface ForwardingOptions extends Entity, Parsable {
     /**
      * The skipDnsLookupState property
      */
-    skipDnsLookupState?: Status;
+    skipDnsLookupState?: Status | null;
 }
 export interface ForwardingPolicy extends Parsable, Policy {
     /**
      * The trafficForwardingType property
      */
-    trafficForwardingType?: TrafficForwardingType;
+    trafficForwardingType?: TrafficForwardingType | null;
 }
 export interface ForwardingPolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ForwardingPolicy[];
+    value?: ForwardingPolicy[] | null;
 }
 export interface ForwardingPolicyLink extends Parsable, PolicyLink {
 }
@@ -2959,46 +3153,46 @@ export interface ForwardingProfile extends Parsable, Profile {
     /**
      * Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
      */
-    associations?: Association[];
+    associations?: Association[] | null;
     /**
      * Profile priority.
      */
-    priority?: number;
+    priority?: number | null;
     /**
      * The servicePrincipal property
      */
-    servicePrincipal?: ServicePrincipal;
+    servicePrincipal?: ServicePrincipal | null;
     /**
      * The trafficForwardingType property
      */
-    trafficForwardingType?: TrafficForwardingType;
+    trafficForwardingType?: TrafficForwardingType | null;
 }
 export interface ForwardingProfileCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ForwardingProfile[];
+    value?: ForwardingProfile[] | null;
 }
 export interface ForwardingRule extends Parsable, PolicyRule {
     /**
      * The action property
      */
-    action?: ForwardingRuleAction;
+    action?: ForwardingRuleAction | null;
     /**
      * Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.
      */
-    destinations?: RuleDestination[];
+    destinations?: RuleDestination[] | null;
     /**
      * The ruleType property
      */
-    ruleType?: NetworkDestinationType;
+    ruleType?: NetworkDestinationType | null;
 }
 export type ForwardingRuleAction = (typeof ForwardingRuleActionObject)[keyof typeof ForwardingRuleActionObject];
 export interface Fqdn extends Parsable, RuleDestination {
     /**
      * Defines the FQDN used in a destination for a rule.
      */
-    value?: string;
+    value?: string | null;
 }
 export interface FqdnFilteringRule extends FilteringRule, Parsable {
 }
@@ -3010,23 +3204,23 @@ export interface Headers extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * Represents the origin or source from which the request is being made.
      */
-    origin?: string;
+    origin?: string | null;
     /**
      * Represents the referring URL or the URL of the web page that the current request originates from.
      */
-    referrer?: string;
+    referrer?: string | null;
     /**
      * Represents the information about the client original IP address when the request passes through one or more proxy servers or load balancers.
      */
-    xForwardedFor?: string;
+    xForwardedFor?: string | null;
 }
 export type IkeEncryption = (typeof IkeEncryptionObject)[keyof typeof IkeEncryptionObject];
 export type IkeIntegrity = (typeof IkeIntegrityObject)[keyof typeof IkeIntegrityObject];
@@ -3034,27 +3228,27 @@ export interface InternetAccessForwardingRule extends ForwardingRule, Parsable {
     /**
      * The ports property
      */
-    ports?: string[];
+    ports?: string[] | null;
     /**
      * The protocol property
      */
-    protocol?: NetworkingProtocol;
+    protocol?: NetworkingProtocol | null;
 }
 export interface IpAddress extends Parsable, RuleDestination {
     /**
      * Defines the IP address used in a destination for a rule.
      */
-    value?: string;
+    value?: string | null;
 }
 export interface IpRange extends Parsable, RuleDestination {
     /**
      * Specifies the starting IP address of the IP range.
      */
-    beginAddress?: string;
+    beginAddress?: string | null;
     /**
      * Specifies the ending IP address of the IP range.
      */
-    endAddress?: string;
+    endAddress?: string | null;
 }
 export type IpSecEncryption = (typeof IpSecEncryptionObject)[keyof typeof IpSecEncryptionObject];
 export type IpSecIntegrity = (typeof IpSecIntegrityObject)[keyof typeof IpSecIntegrityObject];
@@ -3062,7 +3256,7 @@ export interface IpSubnet extends Parsable, RuleDestination {
     /**
      * Defines the IP address of the subset used in a destination for a rule.
      */
-    value?: string;
+    value?: string | null;
 }
 export interface LocalConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3072,100 +3266,100 @@ export interface LocalConnectivityConfiguration extends AdditionalDataHolder, Ba
     /**
      * Specifies ASN of one end of IPSec tunnel (local or peer).
      */
-    asn?: number;
+    asn?: number | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Specifies BGP IPv4 address of one end of IPSec tunnel (local or peer).
      */
-    bgpAddress?: string;
+    bgpAddress?: string | null;
     /**
      * Specifies public IPv4 address of one end of IPSec tunnel (local or peer).
      */
-    endpoint?: string;
+    endpoint?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The region property
      */
-    region?: Region;
+    region?: Region | null;
 }
 export interface Logs extends Entity, Parsable {
     /**
      * A collection of remote network health events.
      */
-    remoteNetworks?: RemoteNetworkHealthEvent[];
+    remoteNetworks?: RemoteNetworkHealthEvent[] | null;
     /**
      * A network access traffic log entry that contains comprehensive information about network traffic events.
      */
-    traffic?: NetworkAccessTraffic[];
+    traffic?: NetworkAccessTraffic[] | null;
 }
 export interface M365ForwardingRule extends ForwardingRule, Parsable {
     /**
      * The category property
      */
-    category?: ForwardingCategory;
+    category?: ForwardingCategory | null;
     /**
      * The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
      */
-    ports?: string[];
+    ports?: string[] | null;
     /**
      * The protocol property
      */
-    protocol?: NetworkingProtocol;
+    protocol?: NetworkingProtocol | null;
 }
 export type MalwareCategory = (typeof MalwareCategoryObject)[keyof typeof MalwareCategoryObject];
 export interface NetworkAccessRoot extends Entity, Parsable {
     /**
      * The alerts property
      */
-    alerts?: Alert[];
+    alerts?: Alert[] | null;
     /**
      * Connectivity represents all the connectivity components in Global Secure Access.
      */
-    connectivity?: Connectivity;
+    connectivity?: Connectivity | null;
     /**
      * A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
      */
-    filteringPolicies?: FilteringPolicy[];
+    filteringPolicies?: FilteringPolicy[] | null;
     /**
      * A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
      */
-    filteringProfiles?: FilteringProfile[];
+    filteringProfiles?: FilteringProfile[] | null;
     /**
      * A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
      */
-    forwardingPolicies?: ForwardingPolicy[];
+    forwardingPolicies?: ForwardingPolicy[] | null;
     /**
      * A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
      */
-    forwardingProfiles?: ForwardingProfile[];
+    forwardingProfiles?: ForwardingProfile[] | null;
     /**
      * Represents network connections that are routed through Global Secure Access.
      */
-    logs?: Logs;
+    logs?: Logs | null;
     /**
      * Represents the status of the Global Secure Access services for the tenant.
      */
-    reports?: Reports;
+    reports?: Reports | null;
     /**
      * Global Secure Access settings.
      */
-    settings?: Settings;
+    settings?: Settings | null;
     /**
      * Represents the status of the Global Secure Access services for the tenant.
      */
-    tenantStatus?: TenantStatus;
+    tenantStatus?: TenantStatus | null;
 }
 export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Indicates what action to take based on filtering policies. The possible values are: block, allow.
      */
-    action?: FilteringPolicyAction;
+    action?: FilteringPolicyAction | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -3173,169 +3367,169 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
     /**
      * Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.
      */
-    agentVersion?: string;
+    agentVersion?: string | null;
     /**
      * The applicationSnapshot property
      */
-    applicationSnapshot?: ApplicationSnapshot;
+    applicationSnapshot?: ApplicationSnapshot | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.
      */
-    connectionId?: string;
+    connectionId?: string | null;
     /**
      * Represents the date and time when a network access traffic log entry was created. Supports $filter (eq) and $orderby.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The description property
      */
-    description?: string;
+    description?: string | null;
     /**
      * Represents the Fully Qualified Domain Name (FQDN) of the destination host or server in a network communication. Supports $filter (eq) and $orderby.
      */
-    destinationFQDN?: string;
+    destinationFQDN?: string | null;
     /**
      * Represents the IP address of the destination host or server in a network communication. Supports $filter (eq) and $orderby.
      */
-    destinationIp?: string;
+    destinationIp?: string | null;
     /**
      * Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
      */
-    destinationPort?: number;
+    destinationPort?: number | null;
     /**
      * The destinationUrl property
      */
-    destinationUrl?: string;
+    destinationUrl?: string | null;
     /**
      * The destinationWebCategory property
      */
-    destinationWebCategory?: WebCategory;
+    destinationWebCategory?: WebCategory | null;
     /**
      * Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
      */
-    deviceCategory?: DeviceCategory;
+    deviceCategory?: DeviceCategory | null;
     /**
      * Represents a unique identifier assigned to a device within a network infrastructure. Supports $filter (eq) and $orderby.
      */
-    deviceId?: string;
+    deviceId?: string | null;
     /**
      * Represents the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.
      */
-    deviceOperatingSystem?: string;
+    deviceOperatingSystem?: string | null;
     /**
      * Represents the version or release number of the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.
      */
-    deviceOperatingSystemVersion?: string;
+    deviceOperatingSystemVersion?: string | null;
     /**
      * The filteringProfileId property
      */
-    filteringProfileId?: string;
+    filteringProfileId?: string | null;
     /**
      * The filteringProfileName property
      */
-    filteringProfileName?: string;
+    filteringProfileName?: string | null;
     /**
      * Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.
      */
-    headers?: Headers;
+    headers?: Headers | null;
     /**
      * The initiatingProcessName property
      */
-    initiatingProcessName?: string;
+    initiatingProcessName?: string | null;
     /**
      * Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
      */
-    networkProtocol?: NetworkingProtocol;
+    networkProtocol?: NetworkingProtocol | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.
      */
-    policyId?: string;
+    policyId?: string | null;
     /**
      * The policyName property
      */
-    policyName?: string;
+    policyName?: string | null;
     /**
      * Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.
      */
-    policyRuleId?: string;
+    policyRuleId?: string | null;
     /**
      * The policyRuleName property
      */
-    policyRuleName?: string;
+    policyRuleName?: string | null;
     /**
      * The privateAccessDetails property
      */
-    privateAccessDetails?: PrivateAccessDetails;
+    privateAccessDetails?: PrivateAccessDetails | null;
     /**
      * Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
      */
-    receivedBytes?: number;
+    receivedBytes?: number | null;
     /**
      * The resourceTenantId property
      */
-    resourceTenantId?: string;
+    resourceTenantId?: string | null;
     /**
      * Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.
      */
-    sentBytes?: number;
+    sentBytes?: number | null;
     /**
      * Represents a unique identifier assigned to a session or connection within a network infrastructure. Supports $filter (eq) and $orderby.
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * Represents the source IP address in a network communication. Supports $filter (eq) and $orderby.
      */
-    sourceIp?: string;
+    sourceIp?: string | null;
     /**
      * Represents the network port number on the source host or device in a network communication. Supports $filter (eq) and $orderby.
      */
-    sourcePort?: number;
+    sourcePort?: number | null;
     /**
      * Represents a unique identifier assigned to a tenant within a network infrastructure. Supports $filter (eq) and $orderby.
      */
-    tenantId?: string;
+    tenantId?: string | null;
     /**
      * The threatType property
      */
-    threatType?: string;
+    threatType?: string | null;
     /**
      * The trafficType property
      */
-    trafficType?: TrafficType;
+    trafficType?: TrafficType | null;
     /**
      * Represents a unique identifier assigned to a specific transaction or operation. Key. Supports $filter (eq) and $orderby.
      */
-    transactionId?: string;
+    transactionId?: string | null;
     /**
      * Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
      */
-    transportProtocol?: NetworkingProtocol;
+    transportProtocol?: NetworkingProtocol | null;
     /**
      * Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.
      */
-    userId?: string;
+    userId?: string | null;
     /**
      * Represents the user principal name (UPN) associated with a user. Supports $filter (eq) and $orderby.
      */
-    userPrincipalName?: string;
+    userPrincipalName?: string | null;
     /**
      * The vendorNames property
      */
-    vendorNames?: string[];
+    vendorNames?: string[] | null;
 }
 export interface NetworkAccessTrafficCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: NetworkAccessTraffic[];
+    value?: NetworkAccessTraffic[] | null;
 }
 export type NetworkDestinationType = (typeof NetworkDestinationTypeObject)[keyof typeof NetworkDestinationTypeObject];
 export type NetworkingProtocol = (typeof NetworkingProtocolObject)[keyof typeof NetworkingProtocolObject];
@@ -3348,80 +3542,80 @@ export interface PeerConnectivityConfiguration extends AdditionalDataHolder, Bac
     /**
      * Specifies ASN of one end of IPSec tunnel (local or peer).
      */
-    asn?: number;
+    asn?: number | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Specifies BGP IPv4 address of one end of IPSec tunnel (local or peer).
      */
-    bgpAddress?: string;
+    bgpAddress?: string | null;
     /**
      * Specifies public IPv4 address of one end of IPSec tunnel (local or peer).
      */
-    endpoint?: string;
+    endpoint?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export type PfsGroup = (typeof PfsGroupObject)[keyof typeof PfsGroupObject];
 export interface Policy extends Entity, Parsable {
     /**
      * Description.
      */
-    description?: string;
+    description?: string | null;
     /**
      * Policy name.
      */
-    name?: string;
+    name?: string | null;
     /**
      * Represents the definition of the policy ruleset that makes up the core definition of a policy.
      */
-    policyRules?: PolicyRule[];
+    policyRules?: PolicyRule[] | null;
     /**
      * Version.
      */
-    version?: string;
+    version?: string | null;
 }
 export interface PolicyLink extends Entity, Parsable {
     /**
      * The policy property
      */
-    policy?: Policy;
+    policy?: Policy | null;
     /**
      * The state property
      */
-    state?: Status;
+    state?: Status | null;
     /**
      * Version.
      */
-    version?: string;
+    version?: string | null;
 }
 export interface PolicyLinkCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: PolicyLink[];
+    value?: PolicyLink[] | null;
 }
 export interface PolicyRule extends Entity, Parsable {
     /**
      * Name.
      */
-    name?: string;
+    name?: string | null;
 }
 export interface PolicyRuleCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: PolicyRule[];
+    value?: PolicyRule[] | null;
 }
 export interface PolicyRuleDelta extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The action property
      */
-    action?: ForwardingRuleAction;
+    action?: ForwardingRuleAction | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -3429,21 +3623,21 @@ export interface PolicyRuleDelta extends AdditionalDataHolder, BackedModel, Pars
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The identifier of the policy rule to update.
      */
-    ruleId?: string;
+    ruleId?: string | null;
 }
 export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The accessType property
      */
-    accessType?: AccessType;
+    accessType?: AccessType | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -3451,35 +3645,35 @@ export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The connectionStatus property
      */
-    connectionStatus?: ConnectionStatus;
+    connectionStatus?: ConnectionStatus | null;
     /**
      * The connectorId property
      */
-    connectorId?: string;
+    connectorId?: string | null;
     /**
      * The connectorIp property
      */
-    connectorIp?: string;
+    connectorIp?: string | null;
     /**
      * The connectorName property
      */
-    connectorName?: string;
+    connectorName?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The processingRegion property
      */
-    processingRegion?: string;
+    processingRegion?: string | null;
     /**
      * The thirdPartyTokenDetails property
      */
-    thirdPartyTokenDetails?: ThirdPartyTokenDetails;
+    thirdPartyTokenDetails?: ThirdPartyTokenDetails | null;
 }
 export interface PrivateAccessForwardingRule extends ForwardingRule, Parsable {
 }
@@ -3487,27 +3681,27 @@ export interface Profile extends Entity, Parsable {
     /**
      * Description.
      */
-    description?: string;
+    description?: string | null;
     /**
      * Profile last modified time.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Profile name.
      */
-    name?: string;
+    name?: string | null;
     /**
      * Traffic forwarding policies associated with this profile.
      */
-    policies?: PolicyLink[];
+    policies?: PolicyLink[] | null;
     /**
      * The state property
      */
-    state?: Status;
+    state?: Status | null;
     /**
      * Profile version.
      */
-    version?: string;
+    version?: string | null;
 }
 export interface RedundancyConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3517,19 +3711,19 @@ export interface RedundancyConfiguration extends AdditionalDataHolder, BackedMod
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The redundancyTier property
      */
-    redundancyTier?: RedundancyTier;
+    redundancyTier?: RedundancyTier | null;
     /**
      * Indicate the specific IP address used for establishing the Border Gateway Protocol (BGP) connection with Microsoft's network.
      */
-    zoneLocalIpAddress?: string;
+    zoneLocalIpAddress?: string | null;
 }
 export type RedundancyTier = (typeof RedundancyTierObject)[keyof typeof RedundancyTierObject];
 export type Region = (typeof RegionObject)[keyof typeof RegionObject];
@@ -3537,51 +3731,51 @@ export interface RelatedDestination extends Parsable, RelatedResource {
     /**
      * The fqdn property
      */
-    fqdn?: string;
+    fqdn?: string | null;
     /**
      * The ip property
      */
-    ip?: string;
+    ip?: string | null;
     /**
      * The networkingProtocol property
      */
-    networkingProtocol?: NetworkingProtocol;
+    networkingProtocol?: NetworkingProtocol | null;
     /**
      * The port property
      */
-    port?: number;
+    port?: number | null;
 }
 export interface RelatedDevice extends Parsable, RelatedResource {
     /**
      * The deviceId property
      */
-    deviceId?: string;
+    deviceId?: string | null;
 }
 export interface RelatedMalware extends Parsable, RelatedResource {
     /**
      * The category property
      */
-    category?: MalwareCategory;
+    category?: MalwareCategory | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
 }
 export interface RelatedProcess extends Parsable, RelatedResource {
     /**
      * The isSuspicious property
      */
-    isSuspicious?: boolean;
+    isSuspicious?: boolean | null;
     /**
      * The processName property
      */
-    processName?: string;
+    processName?: string | null;
 }
 export interface RelatedRemoteNetwork extends Parsable, RelatedResource {
     /**
      * The remoteNetworkId property
      */
-    remoteNetworkId?: string;
+    remoteNetworkId?: string | null;
 }
 export interface RelatedResource extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3591,81 +3785,81 @@ export interface RelatedResource extends AdditionalDataHolder, BackedModel, Pars
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export interface RelatedTenant extends Parsable, RelatedResource {
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 export interface RelatedThreatIntelligence extends Parsable, RelatedResource {
     /**
      * The threatCount property
      */
-    threatCount?: number;
+    threatCount?: number | null;
 }
 export interface RelatedToken extends Parsable, RelatedResource {
     /**
      * The uniqueTokenIdentifier property
      */
-    uniqueTokenIdentifier?: string;
+    uniqueTokenIdentifier?: string | null;
 }
 export interface RelatedUser extends Parsable, RelatedResource {
     /**
      * The userId property
      */
-    userId?: string;
+    userId?: string | null;
     /**
      * The userPrincipalName property
      */
-    userPrincipalName?: string;
+    userPrincipalName?: string | null;
 }
 export interface RelatedWebCategory extends Parsable, RelatedResource {
     /**
      * The webCategoryName property
      */
-    webCategoryName?: string;
+    webCategoryName?: string | null;
 }
 export interface RemoteNetwork extends Entity, Parsable {
     /**
      * Specifies the connectivity details of all device links associated with a remote network.
      */
-    connectivityConfiguration?: RemoteNetworkConnectivityConfiguration;
+    connectivityConfiguration?: RemoteNetworkConnectivityConfiguration | null;
     /**
      * Each unique CPE device associated with a remote network is specified. Supports $expand.
      */
-    deviceLinks?: DeviceLink[];
+    deviceLinks?: DeviceLink[] | null;
     /**
      * Each forwarding profile associated with a remote network is specified. Supports $expand and $select.
      */
-    forwardingProfiles?: ForwardingProfile[];
+    forwardingProfiles?: ForwardingProfile[] | null;
     /**
      * last modified time.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Name.
      */
-    name?: string;
+    name?: string | null;
     /**
      * The region property
      */
-    region?: Region;
+    region?: Region | null;
     /**
      * Remote network version.
      */
-    version?: string;
+    version?: string | null;
 }
 export interface RemoteNetworkCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: RemoteNetwork[];
+    value?: RemoteNetwork[] | null;
 }
 export interface RemoteNetworkConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3675,67 +3869,67 @@ export interface RemoteNetworkConnectivityConfiguration extends AdditionalDataHo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * List of connectivity configurations for deviceLink objects.
      */
-    links?: ConnectivityConfigurationLink[];
+    links?: ConnectivityConfigurationLink[] | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * Unique identifier or a specific reference assigned to a branchSite. Key.
      */
-    remoteNetworkId?: string;
+    remoteNetworkId?: string | null;
     /**
      * Display name assigned to a branchSite.
      */
-    remoteNetworkName?: string;
+    remoteNetworkName?: string | null;
 }
 export interface RemoteNetworkHealthEvent extends Entity, Parsable {
     /**
      * The number of BGP routes advertised through tunnel.
      */
-    bgpRoutesAdvertisedCount?: number;
+    bgpRoutesAdvertisedCount?: number | null;
     /**
      * The time of the original event generation in UTC. Supports $filter (ge, le) and $orderby.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The description of the event.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The IP address of the destination.
      */
-    destinationIp?: string;
+    destinationIp?: string | null;
     /**
      * The number of bytes sent from the destination to the source.
      */
-    receivedBytes?: number;
+    receivedBytes?: number | null;
     /**
      * A unique identifier for each remoteNetwork site. Supports $filter (eq).
      */
-    remoteNetworkId?: string;
+    remoteNetworkId?: string | null;
     /**
      * The number of bytes sent from the source to the destination for the connection or session.
      */
-    sentBytes?: number;
+    sentBytes?: number | null;
     /**
      * The public IP address.
      */
-    sourceIp?: string;
+    sourceIp?: string | null;
     /**
      * The status property
      */
-    status?: RemoteNetworkStatus;
+    status?: RemoteNetworkStatus | null;
 }
 export interface RemoteNetworkHealthEventCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: RemoteNetworkHealthEvent[];
+    value?: RemoteNetworkHealthEvent[] | null;
 }
 export type RemoteNetworkStatus = (typeof RemoteNetworkStatusObject)[keyof typeof RemoteNetworkStatusObject];
 export interface Reports extends Entity, Parsable {
@@ -3748,1071 +3942,1362 @@ export interface RuleDestination extends AdditionalDataHolder, BackedModel, Pars
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined = {}) : void {
-    serializeEntity(writer, alert)
-    writer.writeCollectionOfObjectValues<AlertAction>("actions", alert.actions, serializeAlertAction);
-    writer.writeEnumValue<AlertType>("alertType", alert.alertType);
-    writer.writeDateValue("creationDateTime", alert.creationDateTime);
-    writer.writeStringValue("description", alert.description);
-    writer.writeStringValue("detectionTechnology", alert.detectionTechnology);
-    writer.writeStringValue("displayName", alert.displayName);
-    writer.writeObjectValue<FilteringPolicy>("policy", alert.policy, serializeFilteringPolicy);
-    writer.writeCollectionOfObjectValues<RelatedResource>("relatedResources", alert.relatedResources, serializeRelatedResource);
-    writer.writeEnumValue<ThreatSeverity>("severity", alert.severity);
-    writer.writeStringValue("vendorName", alert.vendorName);
+// @ts-ignore
+export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined | null = {}) : void {
+    if (alert) {
+        serializeEntity(writer, alert)
+        writer.writeCollectionOfObjectValues<AlertAction>("actions", alert.actions, serializeAlertAction);
+        writer.writeEnumValue<AlertType>("alertType", alert.alertType);
+        writer.writeDateValue("creationDateTime", alert.creationDateTime);
+        writer.writeStringValue("description", alert.description);
+        writer.writeStringValue("detectionTechnology", alert.detectionTechnology);
+        writer.writeStringValue("displayName", alert.displayName);
+        writer.writeObjectValue<FilteringPolicy>("policy", alert.policy, serializeFilteringPolicy);
+        writer.writeCollectionOfObjectValues<RelatedResource>("relatedResources", alert.relatedResources, serializeRelatedResource);
+        writer.writeEnumValue<ThreatSeverity>("severity", alert.severity);
+        writer.writeStringValue("vendorName", alert.vendorName);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertAction(writer: SerializationWriter, alertAction: Partial<AlertAction> | undefined = {}) : void {
-    writer.writeStringValue("actionLink", alertAction.actionLink);
-    writer.writeStringValue("actionText", alertAction.actionText);
-    writer.writeStringValue("@odata.type", alertAction.odataType);
-    writer.writeAdditionalData(alertAction.additionalData);
+// @ts-ignore
+export function serializeAlertAction(writer: SerializationWriter, alertAction: Partial<AlertAction> | undefined | null = {}) : void {
+    if (alertAction) {
+        writer.writeStringValue("actionLink", alertAction.actionLink);
+        writer.writeStringValue("actionText", alertAction.actionText);
+        writer.writeStringValue("@odata.type", alertAction.odataType);
+        writer.writeAdditionalData(alertAction.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse)
-    writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
+// @ts-ignore
+export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined | null = {}) : void {
+    if (alertCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse)
+        writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeApplicationSnapshot(writer: SerializationWriter, applicationSnapshot: Partial<ApplicationSnapshot> | undefined = {}) : void {
-    writer.writeStringValue("appId", applicationSnapshot.appId);
-    writer.writeStringValue("@odata.type", applicationSnapshot.odataType);
-    writer.writeAdditionalData(applicationSnapshot.additionalData);
+// @ts-ignore
+export function serializeApplicationSnapshot(writer: SerializationWriter, applicationSnapshot: Partial<ApplicationSnapshot> | undefined | null = {}) : void {
+    if (applicationSnapshot) {
+        writer.writeStringValue("appId", applicationSnapshot.appId);
+        writer.writeStringValue("@odata.type", applicationSnapshot.odataType);
+        writer.writeAdditionalData(applicationSnapshot.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAssociatedBranch(writer: SerializationWriter, associatedBranch: Partial<AssociatedBranch> | undefined = {}) : void {
-    serializeAssociation(writer, associatedBranch)
-    writer.writeStringValue("branchId", associatedBranch.branchId);
+// @ts-ignore
+export function serializeAssociatedBranch(writer: SerializationWriter, associatedBranch: Partial<AssociatedBranch> | undefined | null = {}) : void {
+    if (associatedBranch) {
+        serializeAssociation(writer, associatedBranch)
+        writer.writeStringValue("branchId", associatedBranch.branchId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAssociation(writer: SerializationWriter, association: Partial<Association> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", association.odataType);
-    writer.writeAdditionalData(association.additionalData);
+// @ts-ignore
+export function serializeAssociation(writer: SerializationWriter, association: Partial<Association> | undefined | null = {}) : void {
+    if (association) {
+        writer.writeStringValue("@odata.type", association.odataType);
+        writer.writeAdditionalData(association.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfiguration: Partial<BgpConfiguration> | undefined = {}) : void {
-    writer.writeNumberValue("asn", bgpConfiguration.asn);
-    writer.writeStringValue("ipAddress", bgpConfiguration.ipAddress);
-    writer.writeStringValue("localIpAddress", bgpConfiguration.localIpAddress);
-    writer.writeStringValue("@odata.type", bgpConfiguration.odataType);
-    writer.writeStringValue("peerIpAddress", bgpConfiguration.peerIpAddress);
-    writer.writeAdditionalData(bgpConfiguration.additionalData);
+// @ts-ignore
+export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfiguration: Partial<BgpConfiguration> | undefined | null = {}) : void {
+    if (bgpConfiguration) {
+        writer.writeNumberValue("asn", bgpConfiguration.asn);
+        writer.writeStringValue("ipAddress", bgpConfiguration.ipAddress);
+        writer.writeStringValue("localIpAddress", bgpConfiguration.localIpAddress);
+        writer.writeStringValue("@odata.type", bgpConfiguration.odataType);
+        writer.writeStringValue("peerIpAddress", bgpConfiguration.peerIpAddress);
+        writer.writeAdditionalData(bgpConfiguration.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBranchConnectivityConfiguration(writer: SerializationWriter, branchConnectivityConfiguration: Partial<BranchConnectivityConfiguration> | undefined = {}) : void {
-    writer.writeStringValue("branchId", branchConnectivityConfiguration.branchId);
-    writer.writeStringValue("branchName", branchConnectivityConfiguration.branchName);
-    writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", branchConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
-    writer.writeStringValue("@odata.type", branchConnectivityConfiguration.odataType);
-    writer.writeAdditionalData(branchConnectivityConfiguration.additionalData);
+// @ts-ignore
+export function serializeBranchConnectivityConfiguration(writer: SerializationWriter, branchConnectivityConfiguration: Partial<BranchConnectivityConfiguration> | undefined | null = {}) : void {
+    if (branchConnectivityConfiguration) {
+        writer.writeStringValue("branchId", branchConnectivityConfiguration.branchId);
+        writer.writeStringValue("branchName", branchConnectivityConfiguration.branchName);
+        writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", branchConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
+        writer.writeStringValue("@odata.type", branchConnectivityConfiguration.odataType);
+        writer.writeAdditionalData(branchConnectivityConfiguration.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBranchSite(writer: SerializationWriter, branchSite: Partial<BranchSite> | undefined = {}) : void {
-    serializeEntity(writer, branchSite)
-    writer.writeNumberValue("bandwidthCapacity", branchSite.bandwidthCapacity);
-    writer.writeObjectValue<BranchConnectivityConfiguration>("connectivityConfiguration", branchSite.connectivityConfiguration, serializeBranchConnectivityConfiguration);
-    writer.writeEnumValue<ConnectivityState>("connectivityState", branchSite.connectivityState);
-    writer.writeStringValue("country", branchSite.country);
-    writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", branchSite.deviceLinks, serializeDeviceLink);
-    writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", branchSite.forwardingProfiles, serializeForwardingProfile);
-    writer.writeDateValue("lastModifiedDateTime", branchSite.lastModifiedDateTime);
-    writer.writeStringValue("name", branchSite.name);
-    writer.writeEnumValue<Region>("region", branchSite.region);
-    writer.writeStringValue("version", branchSite.version);
+// @ts-ignore
+export function serializeBranchSite(writer: SerializationWriter, branchSite: Partial<BranchSite> | undefined | null = {}) : void {
+    if (branchSite) {
+        serializeEntity(writer, branchSite)
+        writer.writeNumberValue("bandwidthCapacity", branchSite.bandwidthCapacity);
+        writer.writeObjectValue<BranchConnectivityConfiguration>("connectivityConfiguration", branchSite.connectivityConfiguration, serializeBranchConnectivityConfiguration);
+        writer.writeEnumValue<ConnectivityState>("connectivityState", branchSite.connectivityState);
+        writer.writeStringValue("country", branchSite.country);
+        writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", branchSite.deviceLinks, serializeDeviceLink);
+        writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", branchSite.forwardingProfiles, serializeForwardingProfile);
+        writer.writeDateValue("lastModifiedDateTime", branchSite.lastModifiedDateTime);
+        writer.writeStringValue("name", branchSite.name);
+        writer.writeEnumValue<Region>("region", branchSite.region);
+        writer.writeStringValue("version", branchSite.version);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBranchSiteCollectionResponse(writer: SerializationWriter, branchSiteCollectionResponse: Partial<BranchSiteCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, branchSiteCollectionResponse)
-    writer.writeCollectionOfObjectValues<BranchSite>("value", branchSiteCollectionResponse.value, serializeBranchSite);
+// @ts-ignore
+export function serializeBranchSiteCollectionResponse(writer: SerializationWriter, branchSiteCollectionResponse: Partial<BranchSiteCollectionResponse> | undefined | null = {}) : void {
+    if (branchSiteCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, branchSiteCollectionResponse)
+        writer.writeCollectionOfObjectValues<BranchSite>("value", branchSiteCollectionResponse.value, serializeBranchSite);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConditionalAccessPolicy(writer: SerializationWriter, conditionalAccessPolicy: Partial<ConditionalAccessPolicy> | undefined = {}) : void {
-    serializeEntity(writer, conditionalAccessPolicy)
-    writer.writeDateValue("createdDateTime", conditionalAccessPolicy.createdDateTime);
-    writer.writeStringValue("description", conditionalAccessPolicy.description);
-    writer.writeStringValue("displayName", conditionalAccessPolicy.displayName);
-    writer.writeDateValue("modifiedDateTime", conditionalAccessPolicy.modifiedDateTime);
+// @ts-ignore
+export function serializeConditionalAccessPolicy(writer: SerializationWriter, conditionalAccessPolicy: Partial<ConditionalAccessPolicy> | undefined | null = {}) : void {
+    if (conditionalAccessPolicy) {
+        serializeEntity(writer, conditionalAccessPolicy)
+        writer.writeDateValue("createdDateTime", conditionalAccessPolicy.createdDateTime);
+        writer.writeStringValue("description", conditionalAccessPolicy.description);
+        writer.writeStringValue("displayName", conditionalAccessPolicy.displayName);
+        writer.writeDateValue("modifiedDateTime", conditionalAccessPolicy.modifiedDateTime);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConditionalAccessPolicyCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCollectionResponse: Partial<ConditionalAccessPolicyCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCollectionResponse)
-    writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("value", conditionalAccessPolicyCollectionResponse.value, serializeConditionalAccessPolicy);
+// @ts-ignore
+export function serializeConditionalAccessPolicyCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCollectionResponse: Partial<ConditionalAccessPolicyCollectionResponse> | undefined | null = {}) : void {
+    if (conditionalAccessPolicyCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCollectionResponse)
+        writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("value", conditionalAccessPolicyCollectionResponse.value, serializeConditionalAccessPolicy);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConditionalAccessSettings(writer: SerializationWriter, conditionalAccessSettings: Partial<ConditionalAccessSettings> | undefined = {}) : void {
-    serializeEntity(writer, conditionalAccessSettings)
-    writer.writeEnumValue<Status>("signalingStatus", conditionalAccessSettings.signalingStatus);
+// @ts-ignore
+export function serializeConditionalAccessSettings(writer: SerializationWriter, conditionalAccessSettings: Partial<ConditionalAccessSettings> | undefined | null = {}) : void {
+    if (conditionalAccessSettings) {
+        serializeEntity(writer, conditionalAccessSettings)
+        writer.writeEnumValue<Status>("signalingStatus", conditionalAccessSettings.signalingStatus);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectivity(writer: SerializationWriter, connectivity: Partial<Connectivity> | undefined = {}) : void {
-    serializeEntity(writer, connectivity)
-    writer.writeCollectionOfObjectValues<BranchSite>("branches", connectivity.branches, serializeBranchSite);
-    writer.writeCollectionOfObjectValues<RemoteNetwork>("remoteNetworks", connectivity.remoteNetworks, serializeRemoteNetwork);
-    writer.writeCollectionOfObjectValues<WebCategory>("webCategories", connectivity.webCategories, serializeWebCategory);
+// @ts-ignore
+export function serializeConnectivity(writer: SerializationWriter, connectivity: Partial<Connectivity> | undefined | null = {}) : void {
+    if (connectivity) {
+        serializeEntity(writer, connectivity)
+        writer.writeCollectionOfObjectValues<BranchSite>("branches", connectivity.branches, serializeBranchSite);
+        writer.writeCollectionOfObjectValues<RemoteNetwork>("remoteNetworks", connectivity.remoteNetworks, serializeRemoteNetwork);
+        writer.writeCollectionOfObjectValues<WebCategory>("webCategories", connectivity.webCategories, serializeWebCategory);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectivityConfigurationLink(writer: SerializationWriter, connectivityConfigurationLink: Partial<ConnectivityConfigurationLink> | undefined = {}) : void {
-    serializeEntity(writer, connectivityConfigurationLink)
-    writer.writeStringValue("displayName", connectivityConfigurationLink.displayName);
-    writer.writeCollectionOfObjectValues<LocalConnectivityConfiguration>("localConfigurations", connectivityConfigurationLink.localConfigurations, serializeLocalConnectivityConfiguration);
-    writer.writeObjectValue<PeerConnectivityConfiguration>("peerConfiguration", connectivityConfigurationLink.peerConfiguration, serializePeerConnectivityConfiguration);
+// @ts-ignore
+export function serializeConnectivityConfigurationLink(writer: SerializationWriter, connectivityConfigurationLink: Partial<ConnectivityConfigurationLink> | undefined | null = {}) : void {
+    if (connectivityConfigurationLink) {
+        serializeEntity(writer, connectivityConfigurationLink)
+        writer.writeStringValue("displayName", connectivityConfigurationLink.displayName);
+        writer.writeCollectionOfObjectValues<LocalConnectivityConfiguration>("localConfigurations", connectivityConfigurationLink.localConfigurations, serializeLocalConnectivityConfiguration);
+        writer.writeObjectValue<PeerConnectivityConfiguration>("peerConfiguration", connectivityConfigurationLink.peerConfiguration, serializePeerConnectivityConfiguration);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConnectivityConfigurationLinkCollectionResponse(writer: SerializationWriter, connectivityConfigurationLinkCollectionResponse: Partial<ConnectivityConfigurationLinkCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, connectivityConfigurationLinkCollectionResponse)
-    writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("value", connectivityConfigurationLinkCollectionResponse.value, serializeConnectivityConfigurationLink);
+// @ts-ignore
+export function serializeConnectivityConfigurationLinkCollectionResponse(writer: SerializationWriter, connectivityConfigurationLinkCollectionResponse: Partial<ConnectivityConfigurationLinkCollectionResponse> | undefined | null = {}) : void {
+    if (connectivityConfigurationLinkCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, connectivityConfigurationLinkCollectionResponse)
+        writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("value", connectivityConfigurationLinkCollectionResponse.value, serializeConnectivityConfigurationLink);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCrossTenantAccess(writer: SerializationWriter, crossTenantAccess: Partial<CrossTenantAccess> | undefined = {}) : void {
-    writer.writeNumberValue("deviceCount", crossTenantAccess.deviceCount);
-    writer.writeDateValue("lastAccessDateTime", crossTenantAccess.lastAccessDateTime);
-    writer.writeStringValue("@odata.type", crossTenantAccess.odataType);
-    writer.writeStringValue("resourceTenantId", crossTenantAccess.resourceTenantId);
-    writer.writeStringValue("resourceTenantName", crossTenantAccess.resourceTenantName);
-    writer.writeStringValue("resourceTenantPrimaryDomain", crossTenantAccess.resourceTenantPrimaryDomain);
-    writer.writeEnumValue<UsageStatus>("usageStatus", crossTenantAccess.usageStatus);
-    writer.writeNumberValue("userCount", crossTenantAccess.userCount);
-    writer.writeAdditionalData(crossTenantAccess.additionalData);
+// @ts-ignore
+export function serializeCrossTenantAccess(writer: SerializationWriter, crossTenantAccess: Partial<CrossTenantAccess> | undefined | null = {}) : void {
+    if (crossTenantAccess) {
+        writer.writeNumberValue("deviceCount", crossTenantAccess.deviceCount);
+        writer.writeDateValue("lastAccessDateTime", crossTenantAccess.lastAccessDateTime);
+        writer.writeStringValue("@odata.type", crossTenantAccess.odataType);
+        writer.writeStringValue("resourceTenantId", crossTenantAccess.resourceTenantId);
+        writer.writeStringValue("resourceTenantName", crossTenantAccess.resourceTenantName);
+        writer.writeStringValue("resourceTenantPrimaryDomain", crossTenantAccess.resourceTenantPrimaryDomain);
+        writer.writeEnumValue<UsageStatus>("usageStatus", crossTenantAccess.usageStatus);
+        writer.writeNumberValue("userCount", crossTenantAccess.userCount);
+        writer.writeAdditionalData(crossTenantAccess.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCrossTenantAccessSettings(writer: SerializationWriter, crossTenantAccessSettings: Partial<CrossTenantAccessSettings> | undefined = {}) : void {
-    serializeEntity(writer, crossTenantAccessSettings)
-    writer.writeEnumValue<Status>("networkPacketTaggingStatus", crossTenantAccessSettings.networkPacketTaggingStatus);
+// @ts-ignore
+export function serializeCrossTenantAccessSettings(writer: SerializationWriter, crossTenantAccessSettings: Partial<CrossTenantAccessSettings> | undefined | null = {}) : void {
+    if (crossTenantAccessSettings) {
+        serializeEntity(writer, crossTenantAccessSettings)
+        writer.writeEnumValue<Status>("networkPacketTaggingStatus", crossTenantAccessSettings.networkPacketTaggingStatus);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCrossTenantSummary(writer: SerializationWriter, crossTenantSummary: Partial<CrossTenantSummary> | undefined = {}) : void {
-    writer.writeNumberValue("authTransactionCount", crossTenantSummary.authTransactionCount);
-    writer.writeNumberValue("deviceCount", crossTenantSummary.deviceCount);
-    writer.writeNumberValue("newTenantCount", crossTenantSummary.newTenantCount);
-    writer.writeStringValue("@odata.type", crossTenantSummary.odataType);
-    writer.writeNumberValue("rarelyUsedTenantCount", crossTenantSummary.rarelyUsedTenantCount);
-    writer.writeNumberValue("tenantCount", crossTenantSummary.tenantCount);
-    writer.writeNumberValue("userCount", crossTenantSummary.userCount);
-    writer.writeAdditionalData(crossTenantSummary.additionalData);
+// @ts-ignore
+export function serializeCrossTenantSummary(writer: SerializationWriter, crossTenantSummary: Partial<CrossTenantSummary> | undefined | null = {}) : void {
+    if (crossTenantSummary) {
+        writer.writeNumberValue("authTransactionCount", crossTenantSummary.authTransactionCount);
+        writer.writeNumberValue("deviceCount", crossTenantSummary.deviceCount);
+        writer.writeNumberValue("newTenantCount", crossTenantSummary.newTenantCount);
+        writer.writeStringValue("@odata.type", crossTenantSummary.odataType);
+        writer.writeNumberValue("rarelyUsedTenantCount", crossTenantSummary.rarelyUsedTenantCount);
+        writer.writeNumberValue("tenantCount", crossTenantSummary.tenantCount);
+        writer.writeNumberValue("userCount", crossTenantSummary.userCount);
+        writer.writeAdditionalData(crossTenantSummary.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDestination(writer: SerializationWriter, destination: Partial<Destination> | undefined = {}) : void {
-    writer.writeNumberValue("deviceCount", destination.deviceCount);
-    writer.writeDateValue("firstAccessDateTime", destination.firstAccessDateTime);
-    writer.writeStringValue("fqdn", destination.fqdn);
-    writer.writeStringValue("ip", destination.ip);
-    writer.writeDateValue("lastAccessDateTime", destination.lastAccessDateTime);
-    writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", destination.networkingProtocol);
-    writer.writeStringValue("@odata.type", destination.odataType);
-    writer.writeNumberValue("port", destination.port);
-    writer.writeNumberValue("threatCount", destination.threatCount);
-    writer.writeNumberValue("totalBytesReceived", destination.totalBytesReceived);
-    writer.writeNumberValue("totalBytesSent", destination.totalBytesSent);
-    writer.writeEnumValue<TrafficType>("trafficType", destination.trafficType);
-    writer.writeNumberValue("transactionCount", destination.transactionCount);
-    writer.writeNumberValue("userCount", destination.userCount);
-    writer.writeAdditionalData(destination.additionalData);
+// @ts-ignore
+export function serializeDestination(writer: SerializationWriter, destination: Partial<Destination> | undefined | null = {}) : void {
+    if (destination) {
+        writer.writeNumberValue("deviceCount", destination.deviceCount);
+        writer.writeDateValue("firstAccessDateTime", destination.firstAccessDateTime);
+        writer.writeStringValue("fqdn", destination.fqdn);
+        writer.writeStringValue("ip", destination.ip);
+        writer.writeDateValue("lastAccessDateTime", destination.lastAccessDateTime);
+        writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", destination.networkingProtocol);
+        writer.writeStringValue("@odata.type", destination.odataType);
+        writer.writeNumberValue("port", destination.port);
+        writer.writeNumberValue("threatCount", destination.threatCount);
+        writer.writeNumberValue("totalBytesReceived", destination.totalBytesReceived);
+        writer.writeNumberValue("totalBytesSent", destination.totalBytesSent);
+        writer.writeEnumValue<TrafficType>("trafficType", destination.trafficType);
+        writer.writeNumberValue("transactionCount", destination.transactionCount);
+        writer.writeNumberValue("userCount", destination.userCount);
+        writer.writeAdditionalData(destination.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDestinationSummary(writer: SerializationWriter, destinationSummary: Partial<DestinationSummary> | undefined = {}) : void {
-    writer.writeNumberValue("count", destinationSummary.count);
-    writer.writeStringValue("destination", destinationSummary.destination);
-    writer.writeStringValue("@odata.type", destinationSummary.odataType);
-    writer.writeEnumValue<TrafficType>("trafficType", destinationSummary.trafficType);
-    writer.writeAdditionalData(destinationSummary.additionalData);
+// @ts-ignore
+export function serializeDestinationSummary(writer: SerializationWriter, destinationSummary: Partial<DestinationSummary> | undefined | null = {}) : void {
+    if (destinationSummary) {
+        writer.writeNumberValue("count", destinationSummary.count);
+        writer.writeStringValue("destination", destinationSummary.destination);
+        writer.writeStringValue("@odata.type", destinationSummary.odataType);
+        writer.writeEnumValue<TrafficType>("trafficType", destinationSummary.trafficType);
+        writer.writeAdditionalData(destinationSummary.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDevice(writer: SerializationWriter, device: Partial<Device> | undefined = {}) : void {
-    writer.writeStringValue("deviceId", device.deviceId);
-    writer.writeStringValue("displayName", device.displayName);
-    writer.writeBooleanValue("isCompliant", device.isCompliant);
-    writer.writeDateValue("lastAccessDateTime", device.lastAccessDateTime);
-    writer.writeStringValue("@odata.type", device.odataType);
-    writer.writeStringValue("operatingSystem", device.operatingSystem);
-    writer.writeEnumValue<TrafficType>("trafficType", device.trafficType);
-    writer.writeAdditionalData(device.additionalData);
+// @ts-ignore
+export function serializeDevice(writer: SerializationWriter, device: Partial<Device> | undefined | null = {}) : void {
+    if (device) {
+        writer.writeStringValue("deviceId", device.deviceId);
+        writer.writeStringValue("displayName", device.displayName);
+        writer.writeBooleanValue("isCompliant", device.isCompliant);
+        writer.writeDateValue("lastAccessDateTime", device.lastAccessDateTime);
+        writer.writeStringValue("@odata.type", device.odataType);
+        writer.writeStringValue("operatingSystem", device.operatingSystem);
+        writer.writeEnumValue<TrafficType>("trafficType", device.trafficType);
+        writer.writeAdditionalData(device.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceLink(writer: SerializationWriter, deviceLink: Partial<DeviceLink> | undefined = {}) : void {
-    serializeEntity(writer, deviceLink)
-    writer.writeEnumValue<BandwidthCapacityInMbps>("bandwidthCapacityInMbps", deviceLink.bandwidthCapacityInMbps);
-    writer.writeObjectValue<BgpConfiguration>("bgpConfiguration", deviceLink.bgpConfiguration, serializeBgpConfiguration);
-    writer.writeEnumValue<DeviceVendor>("deviceVendor", deviceLink.deviceVendor);
-    writer.writeStringValue("ipAddress", deviceLink.ipAddress);
-    writer.writeDateValue("lastModifiedDateTime", deviceLink.lastModifiedDateTime);
-    writer.writeStringValue("name", deviceLink.name);
-    writer.writeObjectValue<RedundancyConfiguration>("redundancyConfiguration", deviceLink.redundancyConfiguration, serializeRedundancyConfiguration);
-    writer.writeObjectValue<TunnelConfiguration>("tunnelConfiguration", deviceLink.tunnelConfiguration, serializeTunnelConfiguration);
+// @ts-ignore
+export function serializeDeviceLink(writer: SerializationWriter, deviceLink: Partial<DeviceLink> | undefined | null = {}) : void {
+    if (deviceLink) {
+        serializeEntity(writer, deviceLink)
+        writer.writeEnumValue<BandwidthCapacityInMbps>("bandwidthCapacityInMbps", deviceLink.bandwidthCapacityInMbps);
+        writer.writeObjectValue<BgpConfiguration>("bgpConfiguration", deviceLink.bgpConfiguration, serializeBgpConfiguration);
+        writer.writeEnumValue<DeviceVendor>("deviceVendor", deviceLink.deviceVendor);
+        writer.writeStringValue("ipAddress", deviceLink.ipAddress);
+        writer.writeDateValue("lastModifiedDateTime", deviceLink.lastModifiedDateTime);
+        writer.writeStringValue("name", deviceLink.name);
+        writer.writeObjectValue<RedundancyConfiguration>("redundancyConfiguration", deviceLink.redundancyConfiguration, serializeRedundancyConfiguration);
+        writer.writeObjectValue<TunnelConfiguration>("tunnelConfiguration", deviceLink.tunnelConfiguration, serializeTunnelConfiguration);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceLinkCollectionResponse(writer: SerializationWriter, deviceLinkCollectionResponse: Partial<DeviceLinkCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, deviceLinkCollectionResponse)
-    writer.writeCollectionOfObjectValues<DeviceLink>("value", deviceLinkCollectionResponse.value, serializeDeviceLink);
+// @ts-ignore
+export function serializeDeviceLinkCollectionResponse(writer: SerializationWriter, deviceLinkCollectionResponse: Partial<DeviceLinkCollectionResponse> | undefined | null = {}) : void {
+    if (deviceLinkCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, deviceLinkCollectionResponse)
+        writer.writeCollectionOfObjectValues<DeviceLink>("value", deviceLinkCollectionResponse.value, serializeDeviceLink);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeviceUsageSummary(writer: SerializationWriter, deviceUsageSummary: Partial<DeviceUsageSummary> | undefined = {}) : void {
-    writer.writeNumberValue("activeDeviceCount", deviceUsageSummary.activeDeviceCount);
-    writer.writeNumberValue("inactiveDeviceCount", deviceUsageSummary.inactiveDeviceCount);
-    writer.writeStringValue("@odata.type", deviceUsageSummary.odataType);
-    writer.writeNumberValue("totalDeviceCount", deviceUsageSummary.totalDeviceCount);
-    writer.writeAdditionalData(deviceUsageSummary.additionalData);
+// @ts-ignore
+export function serializeDeviceUsageSummary(writer: SerializationWriter, deviceUsageSummary: Partial<DeviceUsageSummary> | undefined | null = {}) : void {
+    if (deviceUsageSummary) {
+        writer.writeNumberValue("activeDeviceCount", deviceUsageSummary.activeDeviceCount);
+        writer.writeNumberValue("inactiveDeviceCount", deviceUsageSummary.inactiveDeviceCount);
+        writer.writeStringValue("@odata.type", deviceUsageSummary.odataType);
+        writer.writeNumberValue("totalDeviceCount", deviceUsageSummary.totalDeviceCount);
+        writer.writeAdditionalData(deviceUsageSummary.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDiscoveredApplicationSegmentReport(writer: SerializationWriter, discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined = {}) : void {
-    writer.writeEnumValue<AccessType>("accessType", discoveredApplicationSegmentReport.accessType);
-    writer.writeNumberValue("deviceCount", discoveredApplicationSegmentReport.deviceCount);
-    writer.writeStringValue("discoveredApplicationSegmentId", discoveredApplicationSegmentReport.discoveredApplicationSegmentId);
-    writer.writeDateValue("firstAccessDateTime", discoveredApplicationSegmentReport.firstAccessDateTime);
-    writer.writeStringValue("fqdn", discoveredApplicationSegmentReport.fqdn);
-    writer.writeStringValue("ip", discoveredApplicationSegmentReport.ip);
-    writer.writeDateValue("lastAccessDateTime", discoveredApplicationSegmentReport.lastAccessDateTime);
-    writer.writeStringValue("@odata.type", discoveredApplicationSegmentReport.odataType);
-    writer.writeNumberValue("port", discoveredApplicationSegmentReport.port);
-    writer.writeNumberValue("totalBytesReceived", discoveredApplicationSegmentReport.totalBytesReceived);
-    writer.writeNumberValue("totalBytesSent", discoveredApplicationSegmentReport.totalBytesSent);
-    writer.writeNumberValue("transactionCount", discoveredApplicationSegmentReport.transactionCount);
-    writer.writeEnumValue<NetworkingProtocol>("transportProtocol", discoveredApplicationSegmentReport.transportProtocol);
-    writer.writeNumberValue("userCount", discoveredApplicationSegmentReport.userCount);
-    writer.writeAdditionalData(discoveredApplicationSegmentReport.additionalData);
+// @ts-ignore
+export function serializeDiscoveredApplicationSegmentReport(writer: SerializationWriter, discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined | null = {}) : void {
+    if (discoveredApplicationSegmentReport) {
+        writer.writeEnumValue<AccessType>("accessType", discoveredApplicationSegmentReport.accessType);
+        writer.writeNumberValue("deviceCount", discoveredApplicationSegmentReport.deviceCount);
+        writer.writeStringValue("discoveredApplicationSegmentId", discoveredApplicationSegmentReport.discoveredApplicationSegmentId);
+        writer.writeDateValue("firstAccessDateTime", discoveredApplicationSegmentReport.firstAccessDateTime);
+        writer.writeStringValue("fqdn", discoveredApplicationSegmentReport.fqdn);
+        writer.writeStringValue("ip", discoveredApplicationSegmentReport.ip);
+        writer.writeDateValue("lastAccessDateTime", discoveredApplicationSegmentReport.lastAccessDateTime);
+        writer.writeStringValue("@odata.type", discoveredApplicationSegmentReport.odataType);
+        writer.writeNumberValue("port", discoveredApplicationSegmentReport.port);
+        writer.writeNumberValue("totalBytesReceived", discoveredApplicationSegmentReport.totalBytesReceived);
+        writer.writeNumberValue("totalBytesSent", discoveredApplicationSegmentReport.totalBytesSent);
+        writer.writeNumberValue("transactionCount", discoveredApplicationSegmentReport.transactionCount);
+        writer.writeEnumValue<NetworkingProtocol>("transportProtocol", discoveredApplicationSegmentReport.transportProtocol);
+        writer.writeNumberValue("userCount", discoveredApplicationSegmentReport.userCount);
+        writer.writeAdditionalData(discoveredApplicationSegmentReport.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEnrichedAuditLogs(writer: SerializationWriter, enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined = {}) : void {
-    serializeEntity(writer, enrichedAuditLogs)
-    writer.writeObjectValue<EnrichedAuditLogsSettings>("exchange", enrichedAuditLogs.exchange, serializeEnrichedAuditLogsSettings);
-    writer.writeObjectValue<EnrichedAuditLogsSettings>("sharepoint", enrichedAuditLogs.sharepoint, serializeEnrichedAuditLogsSettings);
-    writer.writeObjectValue<EnrichedAuditLogsSettings>("teams", enrichedAuditLogs.teams, serializeEnrichedAuditLogsSettings);
+// @ts-ignore
+export function serializeEnrichedAuditLogs(writer: SerializationWriter, enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined | null = {}) : void {
+    if (enrichedAuditLogs) {
+        serializeEntity(writer, enrichedAuditLogs)
+        writer.writeObjectValue<EnrichedAuditLogsSettings>("exchange", enrichedAuditLogs.exchange, serializeEnrichedAuditLogsSettings);
+        writer.writeObjectValue<EnrichedAuditLogsSettings>("sharepoint", enrichedAuditLogs.sharepoint, serializeEnrichedAuditLogsSettings);
+        writer.writeObjectValue<EnrichedAuditLogsSettings>("teams", enrichedAuditLogs.teams, serializeEnrichedAuditLogsSettings);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEnrichedAuditLogsSettings(writer: SerializationWriter, enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", enrichedAuditLogsSettings.odataType);
-    writer.writeEnumValue<Status>("status", enrichedAuditLogsSettings.status);
-    writer.writeAdditionalData(enrichedAuditLogsSettings.additionalData);
+// @ts-ignore
+export function serializeEnrichedAuditLogsSettings(writer: SerializationWriter, enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined | null = {}) : void {
+    if (enrichedAuditLogsSettings) {
+        writer.writeStringValue("@odata.type", enrichedAuditLogsSettings.odataType);
+        writer.writeEnumValue<Status>("status", enrichedAuditLogsSettings.status);
+        writer.writeAdditionalData(enrichedAuditLogsSettings.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEntitiesSummary(writer: SerializationWriter, entitiesSummary: Partial<EntitiesSummary> | undefined = {}) : void {
-    writer.writeNumberValue("deviceCount", entitiesSummary.deviceCount);
-    writer.writeStringValue("@odata.type", entitiesSummary.odataType);
-    writer.writeEnumValue<TrafficType>("trafficType", entitiesSummary.trafficType);
-    writer.writeNumberValue("userCount", entitiesSummary.userCount);
-    writer.writeNumberValue("workloadCount", entitiesSummary.workloadCount);
-    writer.writeAdditionalData(entitiesSummary.additionalData);
+// @ts-ignore
+export function serializeEntitiesSummary(writer: SerializationWriter, entitiesSummary: Partial<EntitiesSummary> | undefined | null = {}) : void {
+    if (entitiesSummary) {
+        writer.writeNumberValue("deviceCount", entitiesSummary.deviceCount);
+        writer.writeStringValue("@odata.type", entitiesSummary.odataType);
+        writer.writeEnumValue<TrafficType>("trafficType", entitiesSummary.trafficType);
+        writer.writeNumberValue("userCount", entitiesSummary.userCount);
+        writer.writeNumberValue("workloadCount", entitiesSummary.workloadCount);
+        writer.writeAdditionalData(entitiesSummary.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFilteringPolicy(writer: SerializationWriter, filteringPolicy: Partial<FilteringPolicy> | undefined = {}) : void {
-    serializePolicy(writer, filteringPolicy)
-    writer.writeEnumValue<FilteringPolicyAction>("action", filteringPolicy.action);
-    writer.writeDateValue("createdDateTime", filteringPolicy.createdDateTime);
-    writer.writeDateValue("lastModifiedDateTime", filteringPolicy.lastModifiedDateTime);
+// @ts-ignore
+export function serializeFilteringPolicy(writer: SerializationWriter, filteringPolicy: Partial<FilteringPolicy> | undefined | null = {}) : void {
+    if (filteringPolicy) {
+        serializePolicy(writer, filteringPolicy)
+        writer.writeEnumValue<FilteringPolicyAction>("action", filteringPolicy.action);
+        writer.writeDateValue("createdDateTime", filteringPolicy.createdDateTime);
+        writer.writeDateValue("lastModifiedDateTime", filteringPolicy.lastModifiedDateTime);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFilteringPolicyCollectionResponse(writer: SerializationWriter, filteringPolicyCollectionResponse: Partial<FilteringPolicyCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, filteringPolicyCollectionResponse)
-    writer.writeCollectionOfObjectValues<FilteringPolicy>("value", filteringPolicyCollectionResponse.value, serializeFilteringPolicy);
+// @ts-ignore
+export function serializeFilteringPolicyCollectionResponse(writer: SerializationWriter, filteringPolicyCollectionResponse: Partial<FilteringPolicyCollectionResponse> | undefined | null = {}) : void {
+    if (filteringPolicyCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, filteringPolicyCollectionResponse)
+        writer.writeCollectionOfObjectValues<FilteringPolicy>("value", filteringPolicyCollectionResponse.value, serializeFilteringPolicy);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFilteringPolicyLink(writer: SerializationWriter, filteringPolicyLink: Partial<FilteringPolicyLink> | undefined = {}) : void {
-    serializePolicyLink(writer, filteringPolicyLink)
-    writer.writeDateValue("createdDateTime", filteringPolicyLink.createdDateTime);
-    writer.writeDateValue("lastModifiedDateTime", filteringPolicyLink.lastModifiedDateTime);
-    writer.writeEnumValue<Status>("loggingState", filteringPolicyLink.loggingState);
-    writer.writeNumberValue("priority", filteringPolicyLink.priority);
+// @ts-ignore
+export function serializeFilteringPolicyLink(writer: SerializationWriter, filteringPolicyLink: Partial<FilteringPolicyLink> | undefined | null = {}) : void {
+    if (filteringPolicyLink) {
+        serializePolicyLink(writer, filteringPolicyLink)
+        writer.writeDateValue("createdDateTime", filteringPolicyLink.createdDateTime);
+        writer.writeDateValue("lastModifiedDateTime", filteringPolicyLink.lastModifiedDateTime);
+        writer.writeEnumValue<Status>("loggingState", filteringPolicyLink.loggingState);
+        writer.writeNumberValue("priority", filteringPolicyLink.priority);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFilteringProfile(writer: SerializationWriter, filteringProfile: Partial<FilteringProfile> | undefined = {}) : void {
-    serializeProfile(writer, filteringProfile)
-    writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", filteringProfile.conditionalAccessPolicies, serializeConditionalAccessPolicy);
-    writer.writeDateValue("createdDateTime", filteringProfile.createdDateTime);
-    writer.writeNumberValue("priority", filteringProfile.priority);
+// @ts-ignore
+export function serializeFilteringProfile(writer: SerializationWriter, filteringProfile: Partial<FilteringProfile> | undefined | null = {}) : void {
+    if (filteringProfile) {
+        serializeProfile(writer, filteringProfile)
+        writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", filteringProfile.conditionalAccessPolicies, serializeConditionalAccessPolicy);
+        writer.writeDateValue("createdDateTime", filteringProfile.createdDateTime);
+        writer.writeNumberValue("priority", filteringProfile.priority);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFilteringProfileCollectionResponse(writer: SerializationWriter, filteringProfileCollectionResponse: Partial<FilteringProfileCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, filteringProfileCollectionResponse)
-    writer.writeCollectionOfObjectValues<FilteringProfile>("value", filteringProfileCollectionResponse.value, serializeFilteringProfile);
+// @ts-ignore
+export function serializeFilteringProfileCollectionResponse(writer: SerializationWriter, filteringProfileCollectionResponse: Partial<FilteringProfileCollectionResponse> | undefined | null = {}) : void {
+    if (filteringProfileCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, filteringProfileCollectionResponse)
+        writer.writeCollectionOfObjectValues<FilteringProfile>("value", filteringProfileCollectionResponse.value, serializeFilteringProfile);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFilteringRule(writer: SerializationWriter, filteringRule: Partial<FilteringRule> | undefined = {}) : void {
-    serializePolicyRule(writer, filteringRule)
-    writer.writeCollectionOfObjectValues<RuleDestination>("destinations", filteringRule.destinations, serializeRuleDestination);
-    writer.writeEnumValue<NetworkDestinationType>("ruleType", filteringRule.ruleType);
+// @ts-ignore
+export function serializeFilteringRule(writer: SerializationWriter, filteringRule: Partial<FilteringRule> | undefined | null = {}) : void {
+    if (filteringRule) {
+        serializePolicyRule(writer, filteringRule)
+        writer.writeCollectionOfObjectValues<RuleDestination>("destinations", filteringRule.destinations, serializeRuleDestination);
+        writer.writeEnumValue<NetworkDestinationType>("ruleType", filteringRule.ruleType);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeForwardingOptions(writer: SerializationWriter, forwardingOptions: Partial<ForwardingOptions> | undefined = {}) : void {
-    serializeEntity(writer, forwardingOptions)
-    writer.writeEnumValue<Status>("skipDnsLookupState", forwardingOptions.skipDnsLookupState);
+// @ts-ignore
+export function serializeForwardingOptions(writer: SerializationWriter, forwardingOptions: Partial<ForwardingOptions> | undefined | null = {}) : void {
+    if (forwardingOptions) {
+        serializeEntity(writer, forwardingOptions)
+        writer.writeEnumValue<Status>("skipDnsLookupState", forwardingOptions.skipDnsLookupState);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeForwardingPolicy(writer: SerializationWriter, forwardingPolicy: Partial<ForwardingPolicy> | undefined = {}) : void {
-    serializePolicy(writer, forwardingPolicy)
-    writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingPolicy.trafficForwardingType);
+// @ts-ignore
+export function serializeForwardingPolicy(writer: SerializationWriter, forwardingPolicy: Partial<ForwardingPolicy> | undefined | null = {}) : void {
+    if (forwardingPolicy) {
+        serializePolicy(writer, forwardingPolicy)
+        writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingPolicy.trafficForwardingType);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeForwardingPolicyCollectionResponse(writer: SerializationWriter, forwardingPolicyCollectionResponse: Partial<ForwardingPolicyCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, forwardingPolicyCollectionResponse)
-    writer.writeCollectionOfObjectValues<ForwardingPolicy>("value", forwardingPolicyCollectionResponse.value, serializeForwardingPolicy);
+// @ts-ignore
+export function serializeForwardingPolicyCollectionResponse(writer: SerializationWriter, forwardingPolicyCollectionResponse: Partial<ForwardingPolicyCollectionResponse> | undefined | null = {}) : void {
+    if (forwardingPolicyCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, forwardingPolicyCollectionResponse)
+        writer.writeCollectionOfObjectValues<ForwardingPolicy>("value", forwardingPolicyCollectionResponse.value, serializeForwardingPolicy);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeForwardingPolicyLink(writer: SerializationWriter, forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined = {}) : void {
-    serializePolicyLink(writer, forwardingPolicyLink)
+// @ts-ignore
+export function serializeForwardingPolicyLink(writer: SerializationWriter, forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined | null = {}) : void {
+    if (forwardingPolicyLink) {
+        serializePolicyLink(writer, forwardingPolicyLink)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeForwardingProfile(writer: SerializationWriter, forwardingProfile: Partial<ForwardingProfile> | undefined = {}) : void {
-    serializeProfile(writer, forwardingProfile)
-    writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
-    writer.writeNumberValue("priority", forwardingProfile.priority);
-    writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfile.servicePrincipal, serializeServicePrincipal);
-    writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfile.trafficForwardingType);
+// @ts-ignore
+export function serializeForwardingProfile(writer: SerializationWriter, forwardingProfile: Partial<ForwardingProfile> | undefined | null = {}) : void {
+    if (forwardingProfile) {
+        serializeProfile(writer, forwardingProfile)
+        writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
+        writer.writeNumberValue("priority", forwardingProfile.priority);
+        writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfile.servicePrincipal, serializeServicePrincipal);
+        writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfile.trafficForwardingType);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeForwardingProfileCollectionResponse(writer: SerializationWriter, forwardingProfileCollectionResponse: Partial<ForwardingProfileCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, forwardingProfileCollectionResponse)
-    writer.writeCollectionOfObjectValues<ForwardingProfile>("value", forwardingProfileCollectionResponse.value, serializeForwardingProfile);
+// @ts-ignore
+export function serializeForwardingProfileCollectionResponse(writer: SerializationWriter, forwardingProfileCollectionResponse: Partial<ForwardingProfileCollectionResponse> | undefined | null = {}) : void {
+    if (forwardingProfileCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, forwardingProfileCollectionResponse)
+        writer.writeCollectionOfObjectValues<ForwardingProfile>("value", forwardingProfileCollectionResponse.value, serializeForwardingProfile);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeForwardingRule(writer: SerializationWriter, forwardingRule: Partial<ForwardingRule> | undefined = {}) : void {
-    serializePolicyRule(writer, forwardingRule)
-    writer.writeEnumValue<ForwardingRuleAction>("action", forwardingRule.action);
-    writer.writeCollectionOfObjectValues<RuleDestination>("destinations", forwardingRule.destinations, serializeRuleDestination);
-    writer.writeEnumValue<NetworkDestinationType>("ruleType", forwardingRule.ruleType);
+// @ts-ignore
+export function serializeForwardingRule(writer: SerializationWriter, forwardingRule: Partial<ForwardingRule> | undefined | null = {}) : void {
+    if (forwardingRule) {
+        serializePolicyRule(writer, forwardingRule)
+        writer.writeEnumValue<ForwardingRuleAction>("action", forwardingRule.action);
+        writer.writeCollectionOfObjectValues<RuleDestination>("destinations", forwardingRule.destinations, serializeRuleDestination);
+        writer.writeEnumValue<NetworkDestinationType>("ruleType", forwardingRule.ruleType);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFqdn(writer: SerializationWriter, fqdn: Partial<Fqdn> | undefined = {}) : void {
-    serializeRuleDestination(writer, fqdn)
-    writer.writeStringValue("value", fqdn.value);
+// @ts-ignore
+export function serializeFqdn(writer: SerializationWriter, fqdn: Partial<Fqdn> | undefined | null = {}) : void {
+    if (fqdn) {
+        serializeRuleDestination(writer, fqdn)
+        writer.writeStringValue("value", fqdn.value);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeFqdnFilteringRule(writer: SerializationWriter, fqdnFilteringRule: Partial<FqdnFilteringRule> | undefined = {}) : void {
-    serializeFilteringRule(writer, fqdnFilteringRule)
+// @ts-ignore
+export function serializeFqdnFilteringRule(writer: SerializationWriter, fqdnFilteringRule: Partial<FqdnFilteringRule> | undefined | null = {}) : void {
+    if (fqdnFilteringRule) {
+        serializeFilteringRule(writer, fqdnFilteringRule)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeHeaders(writer: SerializationWriter, headers: Partial<Headers> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", headers.odataType);
-    writer.writeStringValue("origin", headers.origin);
-    writer.writeStringValue("referrer", headers.referrer);
-    writer.writeStringValue("xForwardedFor", headers.xForwardedFor);
-    writer.writeAdditionalData(headers.additionalData);
+// @ts-ignore
+export function serializeHeaders(writer: SerializationWriter, headers: Partial<Headers> | undefined | null = {}) : void {
+    if (headers) {
+        writer.writeStringValue("@odata.type", headers.odataType);
+        writer.writeStringValue("origin", headers.origin);
+        writer.writeStringValue("referrer", headers.referrer);
+        writer.writeStringValue("xForwardedFor", headers.xForwardedFor);
+        writer.writeAdditionalData(headers.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInternetAccessForwardingRule(writer: SerializationWriter, internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined = {}) : void {
-    serializeForwardingRule(writer, internetAccessForwardingRule)
-    writer.writeCollectionOfPrimitiveValues<string>("ports", internetAccessForwardingRule.ports);
-    writer.writeEnumValue<NetworkingProtocol>("protocol", internetAccessForwardingRule.protocol);
+// @ts-ignore
+export function serializeInternetAccessForwardingRule(writer: SerializationWriter, internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined | null = {}) : void {
+    if (internetAccessForwardingRule) {
+        serializeForwardingRule(writer, internetAccessForwardingRule)
+        writer.writeCollectionOfPrimitiveValues<string>("ports", internetAccessForwardingRule.ports);
+        writer.writeEnumValue<NetworkingProtocol>("protocol", internetAccessForwardingRule.protocol);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIpAddress(writer: SerializationWriter, ipAddress: Partial<IpAddress> | undefined = {}) : void {
-    serializeRuleDestination(writer, ipAddress)
-    writer.writeStringValue("value", ipAddress.value);
+// @ts-ignore
+export function serializeIpAddress(writer: SerializationWriter, ipAddress: Partial<IpAddress> | undefined | null = {}) : void {
+    if (ipAddress) {
+        serializeRuleDestination(writer, ipAddress)
+        writer.writeStringValue("value", ipAddress.value);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<IpRange> | undefined = {}) : void {
-    serializeRuleDestination(writer, ipRange)
-    writer.writeStringValue("beginAddress", ipRange.beginAddress);
-    writer.writeStringValue("endAddress", ipRange.endAddress);
+// @ts-ignore
+export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<IpRange> | undefined | null = {}) : void {
+    if (ipRange) {
+        serializeRuleDestination(writer, ipRange)
+        writer.writeStringValue("beginAddress", ipRange.beginAddress);
+        writer.writeStringValue("endAddress", ipRange.endAddress);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial<IpSubnet> | undefined = {}) : void {
-    serializeRuleDestination(writer, ipSubnet)
-    writer.writeStringValue("value", ipSubnet.value);
+// @ts-ignore
+export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial<IpSubnet> | undefined | null = {}) : void {
+    if (ipSubnet) {
+        serializeRuleDestination(writer, ipSubnet)
+        writer.writeStringValue("value", ipSubnet.value);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeLocalConnectivityConfiguration(writer: SerializationWriter, localConnectivityConfiguration: Partial<LocalConnectivityConfiguration> | undefined = {}) : void {
-    writer.writeNumberValue("asn", localConnectivityConfiguration.asn);
-    writer.writeStringValue("bgpAddress", localConnectivityConfiguration.bgpAddress);
-    writer.writeStringValue("endpoint", localConnectivityConfiguration.endpoint);
-    writer.writeStringValue("@odata.type", localConnectivityConfiguration.odataType);
-    writer.writeEnumValue<Region>("region", localConnectivityConfiguration.region);
-    writer.writeAdditionalData(localConnectivityConfiguration.additionalData);
+// @ts-ignore
+export function serializeLocalConnectivityConfiguration(writer: SerializationWriter, localConnectivityConfiguration: Partial<LocalConnectivityConfiguration> | undefined | null = {}) : void {
+    if (localConnectivityConfiguration) {
+        writer.writeNumberValue("asn", localConnectivityConfiguration.asn);
+        writer.writeStringValue("bgpAddress", localConnectivityConfiguration.bgpAddress);
+        writer.writeStringValue("endpoint", localConnectivityConfiguration.endpoint);
+        writer.writeStringValue("@odata.type", localConnectivityConfiguration.odataType);
+        writer.writeEnumValue<Region>("region", localConnectivityConfiguration.region);
+        writer.writeAdditionalData(localConnectivityConfiguration.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeLogs(writer: SerializationWriter, logs: Partial<Logs> | undefined = {}) : void {
-    serializeEntity(writer, logs)
-    writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", logs.remoteNetworks, serializeRemoteNetworkHealthEvent);
-    writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("traffic", logs.traffic, serializeNetworkAccessTraffic);
+// @ts-ignore
+export function serializeLogs(writer: SerializationWriter, logs: Partial<Logs> | undefined | null = {}) : void {
+    if (logs) {
+        serializeEntity(writer, logs)
+        writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", logs.remoteNetworks, serializeRemoteNetworkHealthEvent);
+        writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("traffic", logs.traffic, serializeNetworkAccessTraffic);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeM365ForwardingRule(writer: SerializationWriter, m365ForwardingRule: Partial<M365ForwardingRule> | undefined = {}) : void {
-    serializeForwardingRule(writer, m365ForwardingRule)
-    writer.writeEnumValue<ForwardingCategory>("category", m365ForwardingRule.category);
-    writer.writeCollectionOfPrimitiveValues<string>("ports", m365ForwardingRule.ports);
-    writer.writeEnumValue<NetworkingProtocol>("protocol", m365ForwardingRule.protocol);
+// @ts-ignore
+export function serializeM365ForwardingRule(writer: SerializationWriter, m365ForwardingRule: Partial<M365ForwardingRule> | undefined | null = {}) : void {
+    if (m365ForwardingRule) {
+        serializeForwardingRule(writer, m365ForwardingRule)
+        writer.writeEnumValue<ForwardingCategory>("category", m365ForwardingRule.category);
+        writer.writeCollectionOfPrimitiveValues<string>("ports", m365ForwardingRule.ports);
+        writer.writeEnumValue<NetworkingProtocol>("protocol", m365ForwardingRule.protocol);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNetworkAccessRoot(writer: SerializationWriter, networkAccessRoot: Partial<NetworkAccessRoot> | undefined = {}) : void {
-    serializeEntity(writer, networkAccessRoot)
-    writer.writeCollectionOfObjectValues<Alert>("alerts", networkAccessRoot.alerts, serializeAlert);
-    writer.writeObjectValue<Connectivity>("connectivity", networkAccessRoot.connectivity, serializeConnectivity);
-    writer.writeCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", networkAccessRoot.filteringPolicies, serializeFilteringPolicy);
-    writer.writeCollectionOfObjectValues<FilteringProfile>("filteringProfiles", networkAccessRoot.filteringProfiles, serializeFilteringProfile);
-    writer.writeCollectionOfObjectValues<ForwardingPolicy>("forwardingPolicies", networkAccessRoot.forwardingPolicies, serializeForwardingPolicy);
-    writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", networkAccessRoot.forwardingProfiles, serializeForwardingProfile);
-    writer.writeObjectValue<Logs>("logs", networkAccessRoot.logs, serializeLogs);
-    writer.writeObjectValue<Reports>("reports", networkAccessRoot.reports, serializeReports);
-    writer.writeObjectValue<Settings>("settings", networkAccessRoot.settings, serializeSettings);
-    writer.writeObjectValue<TenantStatus>("tenantStatus", networkAccessRoot.tenantStatus, serializeTenantStatus);
+// @ts-ignore
+export function serializeNetworkAccessRoot(writer: SerializationWriter, networkAccessRoot: Partial<NetworkAccessRoot> | undefined | null = {}) : void {
+    if (networkAccessRoot) {
+        serializeEntity(writer, networkAccessRoot)
+        writer.writeCollectionOfObjectValues<Alert>("alerts", networkAccessRoot.alerts, serializeAlert);
+        writer.writeObjectValue<Connectivity>("connectivity", networkAccessRoot.connectivity, serializeConnectivity);
+        writer.writeCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", networkAccessRoot.filteringPolicies, serializeFilteringPolicy);
+        writer.writeCollectionOfObjectValues<FilteringProfile>("filteringProfiles", networkAccessRoot.filteringProfiles, serializeFilteringProfile);
+        writer.writeCollectionOfObjectValues<ForwardingPolicy>("forwardingPolicies", networkAccessRoot.forwardingPolicies, serializeForwardingPolicy);
+        writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", networkAccessRoot.forwardingProfiles, serializeForwardingProfile);
+        writer.writeObjectValue<Logs>("logs", networkAccessRoot.logs, serializeLogs);
+        writer.writeObjectValue<Reports>("reports", networkAccessRoot.reports, serializeReports);
+        writer.writeObjectValue<Settings>("settings", networkAccessRoot.settings, serializeSettings);
+        writer.writeObjectValue<TenantStatus>("tenantStatus", networkAccessRoot.tenantStatus, serializeTenantStatus);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNetworkAccessTraffic(writer: SerializationWriter, networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined = {}) : void {
-    writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
-    writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
-    writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
-    writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
-    writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
-    writer.writeStringValue("description", networkAccessTraffic.description);
-    writer.writeStringValue("destinationFQDN", networkAccessTraffic.destinationFQDN);
-    writer.writeStringValue("destinationIp", networkAccessTraffic.destinationIp);
-    writer.writeNumberValue("destinationPort", networkAccessTraffic.destinationPort);
-    writer.writeStringValue("destinationUrl", networkAccessTraffic.destinationUrl);
-    writer.writeObjectValue<WebCategory>("destinationWebCategory", networkAccessTraffic.destinationWebCategory, serializeWebCategory);
-    writer.writeEnumValue<DeviceCategory>("deviceCategory", networkAccessTraffic.deviceCategory);
-    writer.writeStringValue("deviceId", networkAccessTraffic.deviceId);
-    writer.writeStringValue("deviceOperatingSystem", networkAccessTraffic.deviceOperatingSystem);
-    writer.writeStringValue("deviceOperatingSystemVersion", networkAccessTraffic.deviceOperatingSystemVersion);
-    writer.writeStringValue("filteringProfileId", networkAccessTraffic.filteringProfileId);
-    writer.writeStringValue("filteringProfileName", networkAccessTraffic.filteringProfileName);
-    writer.writeObjectValue<Headers>("headers", networkAccessTraffic.headers, serializeHeaders);
-    writer.writeStringValue("initiatingProcessName", networkAccessTraffic.initiatingProcessName);
-    writer.writeEnumValue<NetworkingProtocol>("networkProtocol", networkAccessTraffic.networkProtocol);
-    writer.writeStringValue("@odata.type", networkAccessTraffic.odataType);
-    writer.writeStringValue("policyId", networkAccessTraffic.policyId);
-    writer.writeStringValue("policyName", networkAccessTraffic.policyName);
-    writer.writeStringValue("policyRuleId", networkAccessTraffic.policyRuleId);
-    writer.writeStringValue("policyRuleName", networkAccessTraffic.policyRuleName);
-    writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", networkAccessTraffic.privateAccessDetails, serializePrivateAccessDetails);
-    writer.writeNumberValue("receivedBytes", networkAccessTraffic.receivedBytes);
-    writer.writeStringValue("resourceTenantId", networkAccessTraffic.resourceTenantId);
-    writer.writeNumberValue("sentBytes", networkAccessTraffic.sentBytes);
-    writer.writeStringValue("sessionId", networkAccessTraffic.sessionId);
-    writer.writeStringValue("sourceIp", networkAccessTraffic.sourceIp);
-    writer.writeNumberValue("sourcePort", networkAccessTraffic.sourcePort);
-    writer.writeStringValue("tenantId", networkAccessTraffic.tenantId);
-    writer.writeStringValue("threatType", networkAccessTraffic.threatType);
-    writer.writeEnumValue<TrafficType>("trafficType", networkAccessTraffic.trafficType);
-    writer.writeStringValue("transactionId", networkAccessTraffic.transactionId);
-    writer.writeEnumValue<NetworkingProtocol>("transportProtocol", networkAccessTraffic.transportProtocol);
-    writer.writeStringValue("userId", networkAccessTraffic.userId);
-    writer.writeStringValue("userPrincipalName", networkAccessTraffic.userPrincipalName);
-    writer.writeCollectionOfPrimitiveValues<string>("vendorNames", networkAccessTraffic.vendorNames);
-    writer.writeAdditionalData(networkAccessTraffic.additionalData);
+// @ts-ignore
+export function serializeNetworkAccessTraffic(writer: SerializationWriter, networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined | null = {}) : void {
+    if (networkAccessTraffic) {
+        writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
+        writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
+        writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
+        writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
+        writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
+        writer.writeStringValue("description", networkAccessTraffic.description);
+        writer.writeStringValue("destinationFQDN", networkAccessTraffic.destinationFQDN);
+        writer.writeStringValue("destinationIp", networkAccessTraffic.destinationIp);
+        writer.writeNumberValue("destinationPort", networkAccessTraffic.destinationPort);
+        writer.writeStringValue("destinationUrl", networkAccessTraffic.destinationUrl);
+        writer.writeObjectValue<WebCategory>("destinationWebCategory", networkAccessTraffic.destinationWebCategory, serializeWebCategory);
+        writer.writeEnumValue<DeviceCategory>("deviceCategory", networkAccessTraffic.deviceCategory);
+        writer.writeStringValue("deviceId", networkAccessTraffic.deviceId);
+        writer.writeStringValue("deviceOperatingSystem", networkAccessTraffic.deviceOperatingSystem);
+        writer.writeStringValue("deviceOperatingSystemVersion", networkAccessTraffic.deviceOperatingSystemVersion);
+        writer.writeStringValue("filteringProfileId", networkAccessTraffic.filteringProfileId);
+        writer.writeStringValue("filteringProfileName", networkAccessTraffic.filteringProfileName);
+        writer.writeObjectValue<Headers>("headers", networkAccessTraffic.headers, serializeHeaders);
+        writer.writeStringValue("initiatingProcessName", networkAccessTraffic.initiatingProcessName);
+        writer.writeEnumValue<NetworkingProtocol>("networkProtocol", networkAccessTraffic.networkProtocol);
+        writer.writeStringValue("@odata.type", networkAccessTraffic.odataType);
+        writer.writeStringValue("policyId", networkAccessTraffic.policyId);
+        writer.writeStringValue("policyName", networkAccessTraffic.policyName);
+        writer.writeStringValue("policyRuleId", networkAccessTraffic.policyRuleId);
+        writer.writeStringValue("policyRuleName", networkAccessTraffic.policyRuleName);
+        writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", networkAccessTraffic.privateAccessDetails, serializePrivateAccessDetails);
+        writer.writeNumberValue("receivedBytes", networkAccessTraffic.receivedBytes);
+        writer.writeStringValue("resourceTenantId", networkAccessTraffic.resourceTenantId);
+        writer.writeNumberValue("sentBytes", networkAccessTraffic.sentBytes);
+        writer.writeStringValue("sessionId", networkAccessTraffic.sessionId);
+        writer.writeStringValue("sourceIp", networkAccessTraffic.sourceIp);
+        writer.writeNumberValue("sourcePort", networkAccessTraffic.sourcePort);
+        writer.writeStringValue("tenantId", networkAccessTraffic.tenantId);
+        writer.writeStringValue("threatType", networkAccessTraffic.threatType);
+        writer.writeEnumValue<TrafficType>("trafficType", networkAccessTraffic.trafficType);
+        writer.writeStringValue("transactionId", networkAccessTraffic.transactionId);
+        writer.writeEnumValue<NetworkingProtocol>("transportProtocol", networkAccessTraffic.transportProtocol);
+        writer.writeStringValue("userId", networkAccessTraffic.userId);
+        writer.writeStringValue("userPrincipalName", networkAccessTraffic.userPrincipalName);
+        writer.writeCollectionOfPrimitiveValues<string>("vendorNames", networkAccessTraffic.vendorNames);
+        writer.writeAdditionalData(networkAccessTraffic.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNetworkAccessTrafficCollectionResponse(writer: SerializationWriter, networkAccessTrafficCollectionResponse: Partial<NetworkAccessTrafficCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, networkAccessTrafficCollectionResponse)
-    writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("value", networkAccessTrafficCollectionResponse.value, serializeNetworkAccessTraffic);
+// @ts-ignore
+export function serializeNetworkAccessTrafficCollectionResponse(writer: SerializationWriter, networkAccessTrafficCollectionResponse: Partial<NetworkAccessTrafficCollectionResponse> | undefined | null = {}) : void {
+    if (networkAccessTrafficCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, networkAccessTrafficCollectionResponse)
+        writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("value", networkAccessTrafficCollectionResponse.value, serializeNetworkAccessTraffic);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePeerConnectivityConfiguration(writer: SerializationWriter, peerConnectivityConfiguration: Partial<PeerConnectivityConfiguration> | undefined = {}) : void {
-    writer.writeNumberValue("asn", peerConnectivityConfiguration.asn);
-    writer.writeStringValue("bgpAddress", peerConnectivityConfiguration.bgpAddress);
-    writer.writeStringValue("endpoint", peerConnectivityConfiguration.endpoint);
-    writer.writeStringValue("@odata.type", peerConnectivityConfiguration.odataType);
-    writer.writeAdditionalData(peerConnectivityConfiguration.additionalData);
+// @ts-ignore
+export function serializePeerConnectivityConfiguration(writer: SerializationWriter, peerConnectivityConfiguration: Partial<PeerConnectivityConfiguration> | undefined | null = {}) : void {
+    if (peerConnectivityConfiguration) {
+        writer.writeNumberValue("asn", peerConnectivityConfiguration.asn);
+        writer.writeStringValue("bgpAddress", peerConnectivityConfiguration.bgpAddress);
+        writer.writeStringValue("endpoint", peerConnectivityConfiguration.endpoint);
+        writer.writeStringValue("@odata.type", peerConnectivityConfiguration.odataType);
+        writer.writeAdditionalData(peerConnectivityConfiguration.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePolicy(writer: SerializationWriter, policy: Partial<Policy> | undefined = {}) : void {
-    serializeEntity(writer, policy)
-    writer.writeStringValue("description", policy.description);
-    writer.writeStringValue("name", policy.name);
-    writer.writeCollectionOfObjectValues<PolicyRule>("policyRules", policy.policyRules, serializePolicyRule);
-    writer.writeStringValue("version", policy.version);
+// @ts-ignore
+export function serializePolicy(writer: SerializationWriter, policy: Partial<Policy> | undefined | null = {}) : void {
+    if (policy) {
+        serializeEntity(writer, policy)
+        writer.writeStringValue("description", policy.description);
+        writer.writeStringValue("name", policy.name);
+        writer.writeCollectionOfObjectValues<PolicyRule>("policyRules", policy.policyRules, serializePolicyRule);
+        writer.writeStringValue("version", policy.version);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePolicyLink(writer: SerializationWriter, policyLink: Partial<PolicyLink> | undefined = {}) : void {
-    serializeEntity(writer, policyLink)
-    writer.writeObjectValue<Policy>("policy", policyLink.policy, serializePolicy);
-    writer.writeEnumValue<Status>("state", policyLink.state);
-    writer.writeStringValue("version", policyLink.version);
+// @ts-ignore
+export function serializePolicyLink(writer: SerializationWriter, policyLink: Partial<PolicyLink> | undefined | null = {}) : void {
+    if (policyLink) {
+        serializeEntity(writer, policyLink)
+        writer.writeObjectValue<Policy>("policy", policyLink.policy, serializePolicy);
+        writer.writeEnumValue<Status>("state", policyLink.state);
+        writer.writeStringValue("version", policyLink.version);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePolicyLinkCollectionResponse(writer: SerializationWriter, policyLinkCollectionResponse: Partial<PolicyLinkCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, policyLinkCollectionResponse)
-    writer.writeCollectionOfObjectValues<PolicyLink>("value", policyLinkCollectionResponse.value, serializePolicyLink);
+// @ts-ignore
+export function serializePolicyLinkCollectionResponse(writer: SerializationWriter, policyLinkCollectionResponse: Partial<PolicyLinkCollectionResponse> | undefined | null = {}) : void {
+    if (policyLinkCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, policyLinkCollectionResponse)
+        writer.writeCollectionOfObjectValues<PolicyLink>("value", policyLinkCollectionResponse.value, serializePolicyLink);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePolicyRule(writer: SerializationWriter, policyRule: Partial<PolicyRule> | undefined = {}) : void {
-    serializeEntity(writer, policyRule)
-    writer.writeStringValue("name", policyRule.name);
+// @ts-ignore
+export function serializePolicyRule(writer: SerializationWriter, policyRule: Partial<PolicyRule> | undefined | null = {}) : void {
+    if (policyRule) {
+        serializeEntity(writer, policyRule)
+        writer.writeStringValue("name", policyRule.name);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePolicyRuleCollectionResponse(writer: SerializationWriter, policyRuleCollectionResponse: Partial<PolicyRuleCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, policyRuleCollectionResponse)
-    writer.writeCollectionOfObjectValues<PolicyRule>("value", policyRuleCollectionResponse.value, serializePolicyRule);
+// @ts-ignore
+export function serializePolicyRuleCollectionResponse(writer: SerializationWriter, policyRuleCollectionResponse: Partial<PolicyRuleCollectionResponse> | undefined | null = {}) : void {
+    if (policyRuleCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, policyRuleCollectionResponse)
+        writer.writeCollectionOfObjectValues<PolicyRule>("value", policyRuleCollectionResponse.value, serializePolicyRule);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePolicyRuleDelta(writer: SerializationWriter, policyRuleDelta: Partial<PolicyRuleDelta> | undefined = {}) : void {
-    writer.writeEnumValue<ForwardingRuleAction>("action", policyRuleDelta.action);
-    writer.writeStringValue("@odata.type", policyRuleDelta.odataType);
-    writer.writeStringValue("ruleId", policyRuleDelta.ruleId);
-    writer.writeAdditionalData(policyRuleDelta.additionalData);
+// @ts-ignore
+export function serializePolicyRuleDelta(writer: SerializationWriter, policyRuleDelta: Partial<PolicyRuleDelta> | undefined | null = {}) : void {
+    if (policyRuleDelta) {
+        writer.writeEnumValue<ForwardingRuleAction>("action", policyRuleDelta.action);
+        writer.writeStringValue("@odata.type", policyRuleDelta.odataType);
+        writer.writeStringValue("ruleId", policyRuleDelta.ruleId);
+        writer.writeAdditionalData(policyRuleDelta.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePrivateAccessDetails(writer: SerializationWriter, privateAccessDetails: Partial<PrivateAccessDetails> | undefined = {}) : void {
-    writer.writeEnumValue<AccessType>("accessType", privateAccessDetails.accessType);
-    writer.writeEnumValue<ConnectionStatus>("connectionStatus", privateAccessDetails.connectionStatus);
-    writer.writeStringValue("connectorId", privateAccessDetails.connectorId);
-    writer.writeStringValue("connectorIp", privateAccessDetails.connectorIp);
-    writer.writeStringValue("connectorName", privateAccessDetails.connectorName);
-    writer.writeStringValue("@odata.type", privateAccessDetails.odataType);
-    writer.writeStringValue("processingRegion", privateAccessDetails.processingRegion);
-    writer.writeObjectValue<ThirdPartyTokenDetails>("thirdPartyTokenDetails", privateAccessDetails.thirdPartyTokenDetails, serializeThirdPartyTokenDetails);
-    writer.writeAdditionalData(privateAccessDetails.additionalData);
+// @ts-ignore
+export function serializePrivateAccessDetails(writer: SerializationWriter, privateAccessDetails: Partial<PrivateAccessDetails> | undefined | null = {}) : void {
+    if (privateAccessDetails) {
+        writer.writeEnumValue<AccessType>("accessType", privateAccessDetails.accessType);
+        writer.writeEnumValue<ConnectionStatus>("connectionStatus", privateAccessDetails.connectionStatus);
+        writer.writeStringValue("connectorId", privateAccessDetails.connectorId);
+        writer.writeStringValue("connectorIp", privateAccessDetails.connectorIp);
+        writer.writeStringValue("connectorName", privateAccessDetails.connectorName);
+        writer.writeStringValue("@odata.type", privateAccessDetails.odataType);
+        writer.writeStringValue("processingRegion", privateAccessDetails.processingRegion);
+        writer.writeObjectValue<ThirdPartyTokenDetails>("thirdPartyTokenDetails", privateAccessDetails.thirdPartyTokenDetails, serializeThirdPartyTokenDetails);
+        writer.writeAdditionalData(privateAccessDetails.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePrivateAccessForwardingRule(writer: SerializationWriter, privateAccessForwardingRule: Partial<PrivateAccessForwardingRule> | undefined = {}) : void {
-    serializeForwardingRule(writer, privateAccessForwardingRule)
+// @ts-ignore
+export function serializePrivateAccessForwardingRule(writer: SerializationWriter, privateAccessForwardingRule: Partial<PrivateAccessForwardingRule> | undefined | null = {}) : void {
+    if (privateAccessForwardingRule) {
+        serializeForwardingRule(writer, privateAccessForwardingRule)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeProfile(writer: SerializationWriter, profile: Partial<Profile> | undefined = {}) : void {
-    serializeEntity(writer, profile)
-    writer.writeStringValue("description", profile.description);
-    writer.writeDateValue("lastModifiedDateTime", profile.lastModifiedDateTime);
-    writer.writeStringValue("name", profile.name);
-    writer.writeCollectionOfObjectValues<PolicyLink>("policies", profile.policies, serializePolicyLink);
-    writer.writeEnumValue<Status>("state", profile.state);
-    writer.writeStringValue("version", profile.version);
+// @ts-ignore
+export function serializeProfile(writer: SerializationWriter, profile: Partial<Profile> | undefined | null = {}) : void {
+    if (profile) {
+        serializeEntity(writer, profile)
+        writer.writeStringValue("description", profile.description);
+        writer.writeDateValue("lastModifiedDateTime", profile.lastModifiedDateTime);
+        writer.writeStringValue("name", profile.name);
+        writer.writeCollectionOfObjectValues<PolicyLink>("policies", profile.policies, serializePolicyLink);
+        writer.writeEnumValue<Status>("state", profile.state);
+        writer.writeStringValue("version", profile.version);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRedundancyConfiguration(writer: SerializationWriter, redundancyConfiguration: Partial<RedundancyConfiguration> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", redundancyConfiguration.odataType);
-    writer.writeEnumValue<RedundancyTier>("redundancyTier", redundancyConfiguration.redundancyTier);
-    writer.writeStringValue("zoneLocalIpAddress", redundancyConfiguration.zoneLocalIpAddress);
-    writer.writeAdditionalData(redundancyConfiguration.additionalData);
+// @ts-ignore
+export function serializeRedundancyConfiguration(writer: SerializationWriter, redundancyConfiguration: Partial<RedundancyConfiguration> | undefined | null = {}) : void {
+    if (redundancyConfiguration) {
+        writer.writeStringValue("@odata.type", redundancyConfiguration.odataType);
+        writer.writeEnumValue<RedundancyTier>("redundancyTier", redundancyConfiguration.redundancyTier);
+        writer.writeStringValue("zoneLocalIpAddress", redundancyConfiguration.zoneLocalIpAddress);
+        writer.writeAdditionalData(redundancyConfiguration.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedDestination(writer: SerializationWriter, relatedDestination: Partial<RelatedDestination> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedDestination)
-    writer.writeStringValue("fqdn", relatedDestination.fqdn);
-    writer.writeStringValue("ip", relatedDestination.ip);
-    writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", relatedDestination.networkingProtocol);
-    writer.writeNumberValue("port", relatedDestination.port);
+// @ts-ignore
+export function serializeRelatedDestination(writer: SerializationWriter, relatedDestination: Partial<RelatedDestination> | undefined | null = {}) : void {
+    if (relatedDestination) {
+        serializeRelatedResource(writer, relatedDestination)
+        writer.writeStringValue("fqdn", relatedDestination.fqdn);
+        writer.writeStringValue("ip", relatedDestination.ip);
+        writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", relatedDestination.networkingProtocol);
+        writer.writeNumberValue("port", relatedDestination.port);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedDevice(writer: SerializationWriter, relatedDevice: Partial<RelatedDevice> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedDevice)
-    writer.writeStringValue("deviceId", relatedDevice.deviceId);
+// @ts-ignore
+export function serializeRelatedDevice(writer: SerializationWriter, relatedDevice: Partial<RelatedDevice> | undefined | null = {}) : void {
+    if (relatedDevice) {
+        serializeRelatedResource(writer, relatedDevice)
+        writer.writeStringValue("deviceId", relatedDevice.deviceId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedMalware)
-    writer.writeEnumValue<MalwareCategory>("category", relatedMalware.category);
-    writer.writeStringValue("name", relatedMalware.name);
+// @ts-ignore
+export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined | null = {}) : void {
+    if (relatedMalware) {
+        serializeRelatedResource(writer, relatedMalware)
+        writer.writeEnumValue<MalwareCategory>("category", relatedMalware.category);
+        writer.writeStringValue("name", relatedMalware.name);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedProcess(writer: SerializationWriter, relatedProcess: Partial<RelatedProcess> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedProcess)
-    writer.writeBooleanValue("isSuspicious", relatedProcess.isSuspicious);
-    writer.writeStringValue("processName", relatedProcess.processName);
+// @ts-ignore
+export function serializeRelatedProcess(writer: SerializationWriter, relatedProcess: Partial<RelatedProcess> | undefined | null = {}) : void {
+    if (relatedProcess) {
+        serializeRelatedResource(writer, relatedProcess)
+        writer.writeBooleanValue("isSuspicious", relatedProcess.isSuspicious);
+        writer.writeStringValue("processName", relatedProcess.processName);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedRemoteNetwork)
-    writer.writeStringValue("remoteNetworkId", relatedRemoteNetwork.remoteNetworkId);
+// @ts-ignore
+export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined | null = {}) : void {
+    if (relatedRemoteNetwork) {
+        serializeRelatedResource(writer, relatedRemoteNetwork)
+        writer.writeStringValue("remoteNetworkId", relatedRemoteNetwork.remoteNetworkId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedResource(writer: SerializationWriter, relatedResource: Partial<RelatedResource> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", relatedResource.odataType);
-    writer.writeAdditionalData(relatedResource.additionalData);
+// @ts-ignore
+export function serializeRelatedResource(writer: SerializationWriter, relatedResource: Partial<RelatedResource> | undefined | null = {}) : void {
+    if (relatedResource) {
+        writer.writeStringValue("@odata.type", relatedResource.odataType);
+        writer.writeAdditionalData(relatedResource.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedTenant(writer: SerializationWriter, relatedTenant: Partial<RelatedTenant> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedTenant)
-    writer.writeStringValue("tenantId", relatedTenant.tenantId);
+// @ts-ignore
+export function serializeRelatedTenant(writer: SerializationWriter, relatedTenant: Partial<RelatedTenant> | undefined | null = {}) : void {
+    if (relatedTenant) {
+        serializeRelatedResource(writer, relatedTenant)
+        writer.writeStringValue("tenantId", relatedTenant.tenantId);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedThreatIntelligence(writer: SerializationWriter, relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedThreatIntelligence)
-    writer.writeNumberValue("threatCount", relatedThreatIntelligence.threatCount);
+// @ts-ignore
+export function serializeRelatedThreatIntelligence(writer: SerializationWriter, relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined | null = {}) : void {
+    if (relatedThreatIntelligence) {
+        serializeRelatedResource(writer, relatedThreatIntelligence)
+        writer.writeNumberValue("threatCount", relatedThreatIntelligence.threatCount);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedToken(writer: SerializationWriter, relatedToken: Partial<RelatedToken> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedToken)
-    writer.writeStringValue("uniqueTokenIdentifier", relatedToken.uniqueTokenIdentifier);
+// @ts-ignore
+export function serializeRelatedToken(writer: SerializationWriter, relatedToken: Partial<RelatedToken> | undefined | null = {}) : void {
+    if (relatedToken) {
+        serializeRelatedResource(writer, relatedToken)
+        writer.writeStringValue("uniqueTokenIdentifier", relatedToken.uniqueTokenIdentifier);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedUser(writer: SerializationWriter, relatedUser: Partial<RelatedUser> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedUser)
-    writer.writeStringValue("userId", relatedUser.userId);
-    writer.writeStringValue("userPrincipalName", relatedUser.userPrincipalName);
+// @ts-ignore
+export function serializeRelatedUser(writer: SerializationWriter, relatedUser: Partial<RelatedUser> | undefined | null = {}) : void {
+    if (relatedUser) {
+        serializeRelatedResource(writer, relatedUser)
+        writer.writeStringValue("userId", relatedUser.userId);
+        writer.writeStringValue("userPrincipalName", relatedUser.userPrincipalName);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRelatedWebCategory(writer: SerializationWriter, relatedWebCategory: Partial<RelatedWebCategory> | undefined = {}) : void {
-    serializeRelatedResource(writer, relatedWebCategory)
-    writer.writeStringValue("webCategoryName", relatedWebCategory.webCategoryName);
+// @ts-ignore
+export function serializeRelatedWebCategory(writer: SerializationWriter, relatedWebCategory: Partial<RelatedWebCategory> | undefined | null = {}) : void {
+    if (relatedWebCategory) {
+        serializeRelatedResource(writer, relatedWebCategory)
+        writer.writeStringValue("webCategoryName", relatedWebCategory.webCategoryName);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoteNetwork(writer: SerializationWriter, remoteNetwork: Partial<RemoteNetwork> | undefined = {}) : void {
-    serializeEntity(writer, remoteNetwork)
-    writer.writeObjectValue<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", remoteNetwork.connectivityConfiguration, serializeRemoteNetworkConnectivityConfiguration);
-    writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", remoteNetwork.deviceLinks, serializeDeviceLink);
-    writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", remoteNetwork.forwardingProfiles, serializeForwardingProfile);
-    writer.writeDateValue("lastModifiedDateTime", remoteNetwork.lastModifiedDateTime);
-    writer.writeStringValue("name", remoteNetwork.name);
-    writer.writeEnumValue<Region>("region", remoteNetwork.region);
-    writer.writeStringValue("version", remoteNetwork.version);
+// @ts-ignore
+export function serializeRemoteNetwork(writer: SerializationWriter, remoteNetwork: Partial<RemoteNetwork> | undefined | null = {}) : void {
+    if (remoteNetwork) {
+        serializeEntity(writer, remoteNetwork)
+        writer.writeObjectValue<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", remoteNetwork.connectivityConfiguration, serializeRemoteNetworkConnectivityConfiguration);
+        writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", remoteNetwork.deviceLinks, serializeDeviceLink);
+        writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", remoteNetwork.forwardingProfiles, serializeForwardingProfile);
+        writer.writeDateValue("lastModifiedDateTime", remoteNetwork.lastModifiedDateTime);
+        writer.writeStringValue("name", remoteNetwork.name);
+        writer.writeEnumValue<Region>("region", remoteNetwork.region);
+        writer.writeStringValue("version", remoteNetwork.version);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoteNetworkCollectionResponse(writer: SerializationWriter, remoteNetworkCollectionResponse: Partial<RemoteNetworkCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkCollectionResponse)
-    writer.writeCollectionOfObjectValues<RemoteNetwork>("value", remoteNetworkCollectionResponse.value, serializeRemoteNetwork);
+// @ts-ignore
+export function serializeRemoteNetworkCollectionResponse(writer: SerializationWriter, remoteNetworkCollectionResponse: Partial<RemoteNetworkCollectionResponse> | undefined | null = {}) : void {
+    if (remoteNetworkCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkCollectionResponse)
+        writer.writeCollectionOfObjectValues<RemoteNetwork>("value", remoteNetworkCollectionResponse.value, serializeRemoteNetwork);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoteNetworkConnectivityConfiguration(writer: SerializationWriter, remoteNetworkConnectivityConfiguration: Partial<RemoteNetworkConnectivityConfiguration> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", remoteNetworkConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
-    writer.writeStringValue("@odata.type", remoteNetworkConnectivityConfiguration.odataType);
-    writer.writeStringValue("remoteNetworkId", remoteNetworkConnectivityConfiguration.remoteNetworkId);
-    writer.writeStringValue("remoteNetworkName", remoteNetworkConnectivityConfiguration.remoteNetworkName);
-    writer.writeAdditionalData(remoteNetworkConnectivityConfiguration.additionalData);
+// @ts-ignore
+export function serializeRemoteNetworkConnectivityConfiguration(writer: SerializationWriter, remoteNetworkConnectivityConfiguration: Partial<RemoteNetworkConnectivityConfiguration> | undefined | null = {}) : void {
+    if (remoteNetworkConnectivityConfiguration) {
+        writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", remoteNetworkConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
+        writer.writeStringValue("@odata.type", remoteNetworkConnectivityConfiguration.odataType);
+        writer.writeStringValue("remoteNetworkId", remoteNetworkConnectivityConfiguration.remoteNetworkId);
+        writer.writeStringValue("remoteNetworkName", remoteNetworkConnectivityConfiguration.remoteNetworkName);
+        writer.writeAdditionalData(remoteNetworkConnectivityConfiguration.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoteNetworkHealthEvent(writer: SerializationWriter, remoteNetworkHealthEvent: Partial<RemoteNetworkHealthEvent> | undefined = {}) : void {
-    serializeEntity(writer, remoteNetworkHealthEvent)
-    writer.writeNumberValue("bgpRoutesAdvertisedCount", remoteNetworkHealthEvent.bgpRoutesAdvertisedCount);
-    writer.writeDateValue("createdDateTime", remoteNetworkHealthEvent.createdDateTime);
-    writer.writeStringValue("description", remoteNetworkHealthEvent.description);
-    writer.writeStringValue("destinationIp", remoteNetworkHealthEvent.destinationIp);
-    writer.writeNumberValue("receivedBytes", remoteNetworkHealthEvent.receivedBytes);
-    writer.writeStringValue("remoteNetworkId", remoteNetworkHealthEvent.remoteNetworkId);
-    writer.writeNumberValue("sentBytes", remoteNetworkHealthEvent.sentBytes);
-    writer.writeStringValue("sourceIp", remoteNetworkHealthEvent.sourceIp);
-    writer.writeEnumValue<RemoteNetworkStatus>("status", remoteNetworkHealthEvent.status);
+// @ts-ignore
+export function serializeRemoteNetworkHealthEvent(writer: SerializationWriter, remoteNetworkHealthEvent: Partial<RemoteNetworkHealthEvent> | undefined | null = {}) : void {
+    if (remoteNetworkHealthEvent) {
+        serializeEntity(writer, remoteNetworkHealthEvent)
+        writer.writeNumberValue("bgpRoutesAdvertisedCount", remoteNetworkHealthEvent.bgpRoutesAdvertisedCount);
+        writer.writeDateValue("createdDateTime", remoteNetworkHealthEvent.createdDateTime);
+        writer.writeStringValue("description", remoteNetworkHealthEvent.description);
+        writer.writeStringValue("destinationIp", remoteNetworkHealthEvent.destinationIp);
+        writer.writeNumberValue("receivedBytes", remoteNetworkHealthEvent.receivedBytes);
+        writer.writeStringValue("remoteNetworkId", remoteNetworkHealthEvent.remoteNetworkId);
+        writer.writeNumberValue("sentBytes", remoteNetworkHealthEvent.sentBytes);
+        writer.writeStringValue("sourceIp", remoteNetworkHealthEvent.sourceIp);
+        writer.writeEnumValue<RemoteNetworkStatus>("status", remoteNetworkHealthEvent.status);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoteNetworkHealthEventCollectionResponse(writer: SerializationWriter, remoteNetworkHealthEventCollectionResponse: Partial<RemoteNetworkHealthEventCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkHealthEventCollectionResponse)
-    writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("value", remoteNetworkHealthEventCollectionResponse.value, serializeRemoteNetworkHealthEvent);
+// @ts-ignore
+export function serializeRemoteNetworkHealthEventCollectionResponse(writer: SerializationWriter, remoteNetworkHealthEventCollectionResponse: Partial<RemoteNetworkHealthEventCollectionResponse> | undefined | null = {}) : void {
+    if (remoteNetworkHealthEventCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkHealthEventCollectionResponse)
+        writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("value", remoteNetworkHealthEventCollectionResponse.value, serializeRemoteNetworkHealthEvent);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReports(writer: SerializationWriter, reports: Partial<Reports> | undefined = {}) : void {
-    serializeEntity(writer, reports)
+// @ts-ignore
+export function serializeReports(writer: SerializationWriter, reports: Partial<Reports> | undefined | null = {}) : void {
+    if (reports) {
+        serializeEntity(writer, reports)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRuleDestination(writer: SerializationWriter, ruleDestination: Partial<RuleDestination> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", ruleDestination.odataType);
-    writer.writeAdditionalData(ruleDestination.additionalData);
+// @ts-ignore
+export function serializeRuleDestination(writer: SerializationWriter, ruleDestination: Partial<RuleDestination> | undefined | null = {}) : void {
+    if (ruleDestination) {
+        writer.writeStringValue("@odata.type", ruleDestination.odataType);
+        writer.writeAdditionalData(ruleDestination.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSettings(writer: SerializationWriter, settings: Partial<Settings> | undefined = {}) : void {
-    serializeEntity(writer, settings)
-    writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
-    writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
-    writer.writeObjectValue<EnrichedAuditLogs>("enrichedAuditLogs", settings.enrichedAuditLogs, serializeEnrichedAuditLogs);
-    writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
+// @ts-ignore
+export function serializeSettings(writer: SerializationWriter, settings: Partial<Settings> | undefined | null = {}) : void {
+    if (settings) {
+        serializeEntity(writer, settings)
+        writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
+        writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
+        writer.writeObjectValue<EnrichedAuditLogs>("enrichedAuditLogs", settings.enrichedAuditLogs, serializeEnrichedAuditLogs);
+        writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTenantStatus(writer: SerializationWriter, tenantStatus: Partial<TenantStatus> | undefined = {}) : void {
-    serializeEntity(writer, tenantStatus)
-    writer.writeStringValue("onboardingErrorMessage", tenantStatus.onboardingErrorMessage);
-    writer.writeEnumValue<OnboardingStatus>("onboardingStatus", tenantStatus.onboardingStatus);
+// @ts-ignore
+export function serializeTenantStatus(writer: SerializationWriter, tenantStatus: Partial<TenantStatus> | undefined | null = {}) : void {
+    if (tenantStatus) {
+        serializeEntity(writer, tenantStatus)
+        writer.writeStringValue("onboardingErrorMessage", tenantStatus.onboardingErrorMessage);
+        writer.writeEnumValue<OnboardingStatus>("onboardingStatus", tenantStatus.onboardingStatus);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeThirdPartyTokenDetails(writer: SerializationWriter, thirdPartyTokenDetails: Partial<ThirdPartyTokenDetails> | undefined = {}) : void {
-    writer.writeDateValue("expirationDateTime", thirdPartyTokenDetails.expirationDateTime);
-    writer.writeDateValue("issuedAtDateTime", thirdPartyTokenDetails.issuedAtDateTime);
-    writer.writeStringValue("@odata.type", thirdPartyTokenDetails.odataType);
-    writer.writeStringValue("uniqueTokenIdentifier", thirdPartyTokenDetails.uniqueTokenIdentifier);
-    writer.writeDateValue("validFromDateTime", thirdPartyTokenDetails.validFromDateTime);
-    writer.writeAdditionalData(thirdPartyTokenDetails.additionalData);
+// @ts-ignore
+export function serializeThirdPartyTokenDetails(writer: SerializationWriter, thirdPartyTokenDetails: Partial<ThirdPartyTokenDetails> | undefined | null = {}) : void {
+    if (thirdPartyTokenDetails) {
+        writer.writeDateValue("expirationDateTime", thirdPartyTokenDetails.expirationDateTime);
+        writer.writeDateValue("issuedAtDateTime", thirdPartyTokenDetails.issuedAtDateTime);
+        writer.writeStringValue("@odata.type", thirdPartyTokenDetails.odataType);
+        writer.writeStringValue("uniqueTokenIdentifier", thirdPartyTokenDetails.uniqueTokenIdentifier);
+        writer.writeDateValue("validFromDateTime", thirdPartyTokenDetails.validFromDateTime);
+        writer.writeAdditionalData(thirdPartyTokenDetails.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTransactionSummary(writer: SerializationWriter, transactionSummary: Partial<TransactionSummary> | undefined = {}) : void {
-    writer.writeNumberValue("blockedCount", transactionSummary.blockedCount);
-    writer.writeStringValue("@odata.type", transactionSummary.odataType);
-    writer.writeNumberValue("totalCount", transactionSummary.totalCount);
-    writer.writeEnumValue<TrafficType>("trafficType", transactionSummary.trafficType);
-    writer.writeAdditionalData(transactionSummary.additionalData);
+// @ts-ignore
+export function serializeTransactionSummary(writer: SerializationWriter, transactionSummary: Partial<TransactionSummary> | undefined | null = {}) : void {
+    if (transactionSummary) {
+        writer.writeNumberValue("blockedCount", transactionSummary.blockedCount);
+        writer.writeStringValue("@odata.type", transactionSummary.odataType);
+        writer.writeNumberValue("totalCount", transactionSummary.totalCount);
+        writer.writeEnumValue<TrafficType>("trafficType", transactionSummary.trafficType);
+        writer.writeAdditionalData(transactionSummary.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTunnelConfiguration(writer: SerializationWriter, tunnelConfiguration: Partial<TunnelConfiguration> | undefined = {}) : void {
-    writer.writeStringValue("@odata.type", tunnelConfiguration.odataType);
-    writer.writeStringValue("preSharedKey", tunnelConfiguration.preSharedKey);
-    writer.writeStringValue("zoneRedundancyPreSharedKey", tunnelConfiguration.zoneRedundancyPreSharedKey);
-    writer.writeAdditionalData(tunnelConfiguration.additionalData);
+// @ts-ignore
+export function serializeTunnelConfiguration(writer: SerializationWriter, tunnelConfiguration: Partial<TunnelConfiguration> | undefined | null = {}) : void {
+    if (tunnelConfiguration) {
+        writer.writeStringValue("@odata.type", tunnelConfiguration.odataType);
+        writer.writeStringValue("preSharedKey", tunnelConfiguration.preSharedKey);
+        writer.writeStringValue("zoneRedundancyPreSharedKey", tunnelConfiguration.zoneRedundancyPreSharedKey);
+        writer.writeAdditionalData(tunnelConfiguration.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTunnelConfigurationIKEv2Custom(writer: SerializationWriter, tunnelConfigurationIKEv2Custom: Partial<TunnelConfigurationIKEv2Custom> | undefined = {}) : void {
-    serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Custom)
-    writer.writeEnumValue<DhGroup>("dhGroup", tunnelConfigurationIKEv2Custom.dhGroup);
-    writer.writeEnumValue<IkeEncryption>("ikeEncryption", tunnelConfigurationIKEv2Custom.ikeEncryption);
-    writer.writeEnumValue<IkeIntegrity>("ikeIntegrity", tunnelConfigurationIKEv2Custom.ikeIntegrity);
-    writer.writeEnumValue<IpSecEncryption>("ipSecEncryption", tunnelConfigurationIKEv2Custom.ipSecEncryption);
-    writer.writeEnumValue<IpSecIntegrity>("ipSecIntegrity", tunnelConfigurationIKEv2Custom.ipSecIntegrity);
-    writer.writeEnumValue<PfsGroup>("pfsGroup", tunnelConfigurationIKEv2Custom.pfsGroup);
-    writer.writeNumberValue("saLifeTimeSeconds", tunnelConfigurationIKEv2Custom.saLifeTimeSeconds);
+// @ts-ignore
+export function serializeTunnelConfigurationIKEv2Custom(writer: SerializationWriter, tunnelConfigurationIKEv2Custom: Partial<TunnelConfigurationIKEv2Custom> | undefined | null = {}) : void {
+    if (tunnelConfigurationIKEv2Custom) {
+        serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Custom)
+        writer.writeEnumValue<DhGroup>("dhGroup", tunnelConfigurationIKEv2Custom.dhGroup);
+        writer.writeEnumValue<IkeEncryption>("ikeEncryption", tunnelConfigurationIKEv2Custom.ikeEncryption);
+        writer.writeEnumValue<IkeIntegrity>("ikeIntegrity", tunnelConfigurationIKEv2Custom.ikeIntegrity);
+        writer.writeEnumValue<IpSecEncryption>("ipSecEncryption", tunnelConfigurationIKEv2Custom.ipSecEncryption);
+        writer.writeEnumValue<IpSecIntegrity>("ipSecIntegrity", tunnelConfigurationIKEv2Custom.ipSecIntegrity);
+        writer.writeEnumValue<PfsGroup>("pfsGroup", tunnelConfigurationIKEv2Custom.pfsGroup);
+        writer.writeNumberValue("saLifeTimeSeconds", tunnelConfigurationIKEv2Custom.saLifeTimeSeconds);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTunnelConfigurationIKEv2Default(writer: SerializationWriter, tunnelConfigurationIKEv2Default: Partial<TunnelConfigurationIKEv2Default> | undefined = {}) : void {
-    serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Default)
+// @ts-ignore
+export function serializeTunnelConfigurationIKEv2Default(writer: SerializationWriter, tunnelConfigurationIKEv2Default: Partial<TunnelConfigurationIKEv2Default> | undefined | null = {}) : void {
+    if (tunnelConfigurationIKEv2Default) {
+        serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Default)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | undefined = {}) : void {
-    serializeRuleDestination(writer, url)
-    writer.writeStringValue("value", url.value);
+// @ts-ignore
+export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | undefined | null = {}) : void {
+    if (url) {
+        serializeRuleDestination(writer, url)
+        writer.writeStringValue("value", url.value);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUsageProfilingPoint(writer: SerializationWriter, usageProfilingPoint: Partial<UsageProfilingPoint> | undefined = {}) : void {
-    writer.writeNumberValue("internetAccessTrafficCount", usageProfilingPoint.internetAccessTrafficCount);
-    writer.writeNumberValue("microsoft365AccessTrafficCount", usageProfilingPoint.microsoft365AccessTrafficCount);
-    writer.writeStringValue("@odata.type", usageProfilingPoint.odataType);
-    writer.writeNumberValue("privateAccessTrafficCount", usageProfilingPoint.privateAccessTrafficCount);
-    writer.writeDateValue("timeStampDateTime", usageProfilingPoint.timeStampDateTime);
-    writer.writeNumberValue("totalTrafficCount", usageProfilingPoint.totalTrafficCount);
-    writer.writeAdditionalData(usageProfilingPoint.additionalData);
+// @ts-ignore
+export function serializeUsageProfilingPoint(writer: SerializationWriter, usageProfilingPoint: Partial<UsageProfilingPoint> | undefined | null = {}) : void {
+    if (usageProfilingPoint) {
+        writer.writeNumberValue("internetAccessTrafficCount", usageProfilingPoint.internetAccessTrafficCount);
+        writer.writeNumberValue("microsoft365AccessTrafficCount", usageProfilingPoint.microsoft365AccessTrafficCount);
+        writer.writeStringValue("@odata.type", usageProfilingPoint.odataType);
+        writer.writeNumberValue("privateAccessTrafficCount", usageProfilingPoint.privateAccessTrafficCount);
+        writer.writeDateValue("timeStampDateTime", usageProfilingPoint.timeStampDateTime);
+        writer.writeNumberValue("totalTrafficCount", usageProfilingPoint.totalTrafficCount);
+        writer.writeAdditionalData(usageProfilingPoint.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUser(writer: SerializationWriter, user: Partial<User> | undefined = {}) : void {
-    writer.writeStringValue("displayName", user.displayName);
-    writer.writeDateValue("firstAccessDateTime", user.firstAccessDateTime);
-    writer.writeDateValue("lastAccessDateTime", user.lastAccessDateTime);
-    writer.writeStringValue("@odata.type", user.odataType);
-    writer.writeNumberValue("totalBytesReceived", user.totalBytesReceived);
-    writer.writeNumberValue("totalBytesSent", user.totalBytesSent);
-    writer.writeEnumValue<TrafficType>("trafficType", user.trafficType);
-    writer.writeNumberValue("transactionCount", user.transactionCount);
-    writer.writeStringValue("userId", user.userId);
-    writer.writeStringValue("userPrincipalName", user.userPrincipalName);
-    writer.writeEnumValue<UserType>("userType", user.userType);
-    writer.writeAdditionalData(user.additionalData);
+// @ts-ignore
+export function serializeUser(writer: SerializationWriter, user: Partial<User> | undefined | null = {}) : void {
+    if (user) {
+        writer.writeStringValue("displayName", user.displayName);
+        writer.writeDateValue("firstAccessDateTime", user.firstAccessDateTime);
+        writer.writeDateValue("lastAccessDateTime", user.lastAccessDateTime);
+        writer.writeStringValue("@odata.type", user.odataType);
+        writer.writeNumberValue("totalBytesReceived", user.totalBytesReceived);
+        writer.writeNumberValue("totalBytesSent", user.totalBytesSent);
+        writer.writeEnumValue<TrafficType>("trafficType", user.trafficType);
+        writer.writeNumberValue("transactionCount", user.transactionCount);
+        writer.writeStringValue("userId", user.userId);
+        writer.writeStringValue("userPrincipalName", user.userPrincipalName);
+        writer.writeEnumValue<UserType>("userType", user.userType);
+        writer.writeAdditionalData(user.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWebCategoriesSummary(writer: SerializationWriter, webCategoriesSummary: Partial<WebCategoriesSummary> | undefined = {}) : void {
-    writer.writeEnumValue<FilteringPolicyAction>("action", webCategoriesSummary.action);
-    writer.writeNumberValue("deviceCount", webCategoriesSummary.deviceCount);
-    writer.writeStringValue("@odata.type", webCategoriesSummary.odataType);
-    writer.writeNumberValue("transactionCount", webCategoriesSummary.transactionCount);
-    writer.writeNumberValue("userCount", webCategoriesSummary.userCount);
-    writer.writeObjectValue<WebCategory>("webCategory", webCategoriesSummary.webCategory, serializeWebCategory);
-    writer.writeAdditionalData(webCategoriesSummary.additionalData);
+// @ts-ignore
+export function serializeWebCategoriesSummary(writer: SerializationWriter, webCategoriesSummary: Partial<WebCategoriesSummary> | undefined | null = {}) : void {
+    if (webCategoriesSummary) {
+        writer.writeEnumValue<FilteringPolicyAction>("action", webCategoriesSummary.action);
+        writer.writeNumberValue("deviceCount", webCategoriesSummary.deviceCount);
+        writer.writeStringValue("@odata.type", webCategoriesSummary.odataType);
+        writer.writeNumberValue("transactionCount", webCategoriesSummary.transactionCount);
+        writer.writeNumberValue("userCount", webCategoriesSummary.userCount);
+        writer.writeObjectValue<WebCategory>("webCategory", webCategoriesSummary.webCategory, serializeWebCategory);
+        writer.writeAdditionalData(webCategoriesSummary.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWebCategory(writer: SerializationWriter, webCategory: Partial<WebCategory> | undefined = {}) : void {
-    serializeRuleDestination(writer, webCategory)
-    writer.writeStringValue("displayName", webCategory.displayName);
-    writer.writeStringValue("group", webCategory.group);
-    writer.writeStringValue("name", webCategory.name);
+// @ts-ignore
+export function serializeWebCategory(writer: SerializationWriter, webCategory: Partial<WebCategory> | undefined | null = {}) : void {
+    if (webCategory) {
+        serializeRuleDestination(writer, webCategory)
+        writer.writeStringValue("displayName", webCategory.displayName);
+        writer.writeStringValue("group", webCategory.group);
+        writer.writeStringValue("name", webCategory.name);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWebCategoryFilteringRule(writer: SerializationWriter, webCategoryFilteringRule: Partial<WebCategoryFilteringRule> | undefined = {}) : void {
-    serializeFilteringRule(writer, webCategoryFilteringRule)
+// @ts-ignore
+export function serializeWebCategoryFilteringRule(writer: SerializationWriter, webCategoryFilteringRule: Partial<WebCategoryFilteringRule> | undefined | null = {}) : void {
+    if (webCategoryFilteringRule) {
+        serializeFilteringRule(writer, webCategoryFilteringRule)
+    }
 }
 export interface Settings extends Entity, Parsable {
     /**
      * The conditionalAccess property
      */
-    conditionalAccess?: ConditionalAccessSettings;
+    conditionalAccess?: ConditionalAccessSettings | null;
     /**
      * The crossTenantAccess property
      */
-    crossTenantAccess?: CrossTenantAccessSettings;
+    crossTenantAccess?: CrossTenantAccessSettings | null;
     /**
      * The enrichedAuditLogs property
      */
-    enrichedAuditLogs?: EnrichedAuditLogs;
+    enrichedAuditLogs?: EnrichedAuditLogs | null;
     /**
      * The forwardingOptions property
      */
-    forwardingOptions?: ForwardingOptions;
+    forwardingOptions?: ForwardingOptions | null;
 }
 export type Status = (typeof StatusObject)[keyof typeof StatusObject];
 export interface TenantStatus extends Entity, Parsable {
     /**
      * Reflects a message to the user if there's an error.
      */
-    onboardingErrorMessage?: string;
+    onboardingErrorMessage?: string | null;
     /**
      * The onboardingStatus property
      */
-    onboardingStatus?: OnboardingStatus;
+    onboardingStatus?: OnboardingStatus | null;
 }
 export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4822,27 +5307,27 @@ export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedMode
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The expirationDateTime property
      */
-    expirationDateTime?: Date;
+    expirationDateTime?: Date | null;
     /**
      * The issuedAtDateTime property
      */
-    issuedAtDateTime?: Date;
+    issuedAtDateTime?: Date | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The uniqueTokenIdentifier property
      */
-    uniqueTokenIdentifier?: string;
+    uniqueTokenIdentifier?: string | null;
     /**
      * The validFromDateTime property
      */
-    validFromDateTime?: Date;
+    validFromDateTime?: Date | null;
 }
 export type ThreatSeverity = (typeof ThreatSeverityObject)[keyof typeof ThreatSeverityObject];
 export type TrafficForwardingType = (typeof TrafficForwardingTypeObject)[keyof typeof TrafficForwardingTypeObject];
@@ -4855,23 +5340,23 @@ export interface TransactionSummary extends AdditionalDataHolder, BackedModel, P
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The number of transactions that were blocked.
      */
-    blockedCount?: number;
+    blockedCount?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The total number of transactions.
      */
-    totalCount?: number;
+    totalCount?: number | null;
     /**
      * The trafficType property
      */
-    trafficType?: TrafficType;
+    trafficType?: TrafficType | null;
 }
 export interface TunnelConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4881,49 +5366,49 @@ export interface TunnelConfiguration extends AdditionalDataHolder, BackedModel, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * A key to establish secure connection between the link and VPN tunnel on the edge.
      */
-    preSharedKey?: string;
+    preSharedKey?: string | null;
     /**
      * Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.
      */
-    zoneRedundancyPreSharedKey?: string;
+    zoneRedundancyPreSharedKey?: string | null;
 }
 export interface TunnelConfigurationIKEv2Custom extends Parsable, TunnelConfiguration {
     /**
      * The dhGroup property
      */
-    dhGroup?: DhGroup;
+    dhGroup?: DhGroup | null;
     /**
      * The ikeEncryption property
      */
-    ikeEncryption?: IkeEncryption;
+    ikeEncryption?: IkeEncryption | null;
     /**
      * The ikeIntegrity property
      */
-    ikeIntegrity?: IkeIntegrity;
+    ikeIntegrity?: IkeIntegrity | null;
     /**
      * The ipSecEncryption property
      */
-    ipSecEncryption?: IpSecEncryption;
+    ipSecEncryption?: IpSecEncryption | null;
     /**
      * The ipSecIntegrity property
      */
-    ipSecIntegrity?: IpSecIntegrity;
+    ipSecIntegrity?: IpSecIntegrity | null;
     /**
      * The pfsGroup property
      */
-    pfsGroup?: PfsGroup;
+    pfsGroup?: PfsGroup | null;
     /**
      * a standard specifiying Security Association lifetime with recommended values from an RFC standard.
      */
-    saLifeTimeSeconds?: number;
+    saLifeTimeSeconds?: number | null;
 }
 export interface TunnelConfigurationIKEv2Default extends Parsable, TunnelConfiguration {
 }
@@ -4931,7 +5416,7 @@ export interface Url extends Parsable, RuleDestination {
     /**
      * URL Address
      */
-    value?: string;
+    value?: string | null;
 }
 export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4941,31 +5426,31 @@ export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The internetAccessTrafficCount property
      */
-    internetAccessTrafficCount?: number;
+    internetAccessTrafficCount?: number | null;
     /**
      * The microsoft365AccessTrafficCount property
      */
-    microsoft365AccessTrafficCount?: number;
+    microsoft365AccessTrafficCount?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The privateAccessTrafficCount property
      */
-    privateAccessTrafficCount?: number;
+    privateAccessTrafficCount?: number | null;
     /**
      * The timeStampDateTime property
      */
-    timeStampDateTime?: Date;
+    timeStampDateTime?: Date | null;
     /**
      * The totalTrafficCount property
      */
-    totalTrafficCount?: number;
+    totalTrafficCount?: number | null;
 }
 export type UsageStatus = (typeof UsageStatusObject)[keyof typeof UsageStatusObject];
 export interface User extends AdditionalDataHolder, BackedModel, Parsable {
@@ -4976,58 +5461,58 @@ export interface User extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * User display Name.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The firstAccessDateTime property
      */
-    firstAccessDateTime?: Date;
+    firstAccessDateTime?: Date | null;
     /**
      * The date and time of the most recent access.
      */
-    lastAccessDateTime?: Date;
+    lastAccessDateTime?: Date | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The totalBytesReceived property
      */
-    totalBytesReceived?: number;
+    totalBytesReceived?: number | null;
     /**
      * The totalBytesSent property
      */
-    totalBytesSent?: number;
+    totalBytesSent?: number | null;
     /**
      * The trafficType property
      */
-    trafficType?: TrafficType;
+    trafficType?: TrafficType | null;
     /**
      * The transactionCount property
      */
-    transactionCount?: number;
+    transactionCount?: number | null;
     /**
      * The ID for the user.
      */
-    userId?: string;
+    userId?: string | null;
     /**
      * A unique identifier that is associated with a user in a system or directory. Typically, this value is an email address that is used for user authentication and identification.
      */
-    userPrincipalName?: string;
+    userPrincipalName?: string | null;
     /**
      * The userType property
      */
-    userType?: UserType;
+    userType?: UserType | null;
 }
 export type UserType = (typeof UserTypeObject)[keyof typeof UserTypeObject];
 export interface WebCategoriesSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The action property
      */
-    action?: FilteringPolicyAction;
+    action?: FilteringPolicyAction | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -5035,41 +5520,41 @@ export interface WebCategoriesSummary extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The number of unique devices that were seen.
      */
-    deviceCount?: number;
+    deviceCount?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The number of transactions that were seen.
      */
-    transactionCount?: number;
+    transactionCount?: number | null;
     /**
      * The number of unique Microsoft Entra ID users that were seen.
      */
-    userCount?: number;
+    userCount?: number | null;
     /**
      * The webCategory property
      */
-    webCategory?: WebCategory;
+    webCategory?: WebCategory | null;
 }
 export interface WebCategory extends Parsable, RuleDestination {
     /**
      * The display name for the web category.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The group or category to which the web category belongs.
      */
-    group?: string;
+    group?: string | null;
     /**
      * The unique name that is associated with the web category.
      */
-    name?: string;
+    name?: string | null;
 }
 export interface WebCategoryFilteringRule extends FilteringRule, Parsable {
 }

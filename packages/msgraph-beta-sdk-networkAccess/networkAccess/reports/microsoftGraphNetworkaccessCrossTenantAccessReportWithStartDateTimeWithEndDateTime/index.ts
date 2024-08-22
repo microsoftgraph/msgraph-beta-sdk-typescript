@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse}
  */
+// @ts-ignore
 export function createCrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse;
 }
@@ -22,12 +23,13 @@ export interface CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetRespo
     /**
      * The value property
      */
-    value?: CrossTenantAccess[];
+    value?: CrossTenantAccess[] | null;
 }
 /**
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse(crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse),
@@ -81,9 +83,12 @@ export interface MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDate
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse)
-    writer.writeCollectionOfObjectValues<CrossTenantAccess>("value", crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeCrossTenantAccess);
+// @ts-ignore
+export function serializeCrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
+    if (crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse)
+        writer.writeCollectionOfObjectValues<CrossTenantAccess>("value", crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeCrossTenantAccess);
+    }
 }
 /**
  * Uri template for the request builder.

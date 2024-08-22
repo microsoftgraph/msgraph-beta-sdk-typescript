@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetManagedAppPoliciesGetResponse}
  */
+// @ts-ignore
 export function createGetManagedAppPoliciesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetManagedAppPoliciesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetManagedAppPoliciesGetResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetManagedAppPoliciesGetResponse(getManagedAppPoliciesGetResponse: Partial<GetManagedAppPoliciesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getManagedAppPoliciesGetResponse),
@@ -30,7 +32,7 @@ export interface GetManagedAppPoliciesGetResponse extends BaseCollectionPaginati
     /**
      * The value property
      */
-    value?: ManagedAppPolicy[];
+    value?: ManagedAppPolicy[] | null;
 }
 /**
  * Provides operations to call the getManagedAppPolicies method.
@@ -41,12 +43,14 @@ export interface GetManagedAppPoliciesRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetManagedAppPoliciesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<GetManagedAppPoliciesGetResponse | undefined>;
     /**
      * Gets app restrictions for a given user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetManagedAppPoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -91,9 +95,12 @@ export interface GetManagedAppPoliciesRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetManagedAppPoliciesGetResponse(writer: SerializationWriter, getManagedAppPoliciesGetResponse: Partial<GetManagedAppPoliciesGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getManagedAppPoliciesGetResponse)
-    writer.writeCollectionOfObjectValues<ManagedAppPolicy>("value", getManagedAppPoliciesGetResponse.value, serializeManagedAppPolicy);
+// @ts-ignore
+export function serializeGetManagedAppPoliciesGetResponse(writer: SerializationWriter, getManagedAppPoliciesGetResponse: Partial<GetManagedAppPoliciesGetResponse> | undefined | null = {}) : void {
+    if (getManagedAppPoliciesGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getManagedAppPoliciesGetResponse)
+        writer.writeCollectionOfObjectValues<ManagedAppPolicy>("value", getManagedAppPoliciesGetResponse.value, serializeManagedAppPolicy);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetOffice365ServicesUserCountsWithPeriodGetResponse}
  */
+// @ts-ignore
 export function createGetOffice365ServicesUserCountsWithPeriodGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOffice365ServicesUserCountsWithPeriodGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetOffice365ServicesUserCountsWithPeriodGetResponseFromDis
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetOffice365ServicesUserCountsWithPeriodGetResponse(getOffice365ServicesUserCountsWithPeriodGetResponse: Partial<GetOffice365ServicesUserCountsWithPeriodGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getOffice365ServicesUserCountsWithPeriodGetResponse),
@@ -30,7 +32,7 @@ export interface GetOffice365ServicesUserCountsWithPeriodGetResponse extends Bas
     /**
      * The value property
      */
-    value?: Office365ServicesUserCounts[];
+    value?: Office365ServicesUserCounts[] | null;
 }
 /**
  * Provides operations to call the getOffice365ServicesUserCounts method.
@@ -91,9 +93,12 @@ export interface GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetOffice365ServicesUserCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365ServicesUserCountsWithPeriodGetResponse: Partial<GetOffice365ServicesUserCountsWithPeriodGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getOffice365ServicesUserCountsWithPeriodGetResponse)
-    writer.writeCollectionOfObjectValues<Office365ServicesUserCounts>("value", getOffice365ServicesUserCountsWithPeriodGetResponse.value, serializeOffice365ServicesUserCounts);
+// @ts-ignore
+export function serializeGetOffice365ServicesUserCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365ServicesUserCountsWithPeriodGetResponse: Partial<GetOffice365ServicesUserCountsWithPeriodGetResponse> | undefined | null = {}) : void {
+    if (getOffice365ServicesUserCountsWithPeriodGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getOffice365ServicesUserCountsWithPeriodGetResponse)
+        writer.writeCollectionOfObjectValues<Office365ServicesUserCounts>("value", getOffice365ServicesUserCountsWithPeriodGetResponse.value, serializeOffice365ServicesUserCounts);
+    }
 }
 /**
  * Uri template for the request builder.

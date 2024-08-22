@@ -16,27 +16,27 @@ export interface CopyNotebookPostRequestBody extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The groupId property
      */
-    groupId?: string;
+    groupId?: string | null;
     /**
      * The notebookFolder property
      */
-    notebookFolder?: string;
+    notebookFolder?: string | null;
     /**
      * The renameAs property
      */
-    renameAs?: string;
+    renameAs?: string | null;
     /**
      * The siteCollectionId property
      */
-    siteCollectionId?: string;
+    siteCollectionId?: string | null;
     /**
      * The siteId property
      */
-    siteId?: string;
+    siteId?: string | null;
 }
 /**
  * Provides operations to call the copyNotebook method.
@@ -48,6 +48,7 @@ export interface CopyNotebookRequestBuilder extends BaseRequestBuilder<CopyNoteb
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteOperation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-beta|Find more info here}
      */
      post(body: CopyNotebookPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnenoteOperation | undefined>;
@@ -56,6 +57,7 @@ export interface CopyNotebookRequestBuilder extends BaseRequestBuilder<CopyNoteb
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CopyNotebookPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,6 +66,7 @@ export interface CopyNotebookRequestBuilder extends BaseRequestBuilder<CopyNoteb
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CopyNotebookPostRequestBody}
  */
+// @ts-ignore
 export function createCopyNotebookPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCopyNotebookPostRequestBody;
 }
@@ -71,6 +74,7 @@ export function createCopyNotebookPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCopyNotebookPostRequestBody(copyNotebookPostRequestBody: Partial<CopyNotebookPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { copyNotebookPostRequestBody.backingStoreEnabled = true; },
@@ -85,13 +89,16 @@ export function deserializeIntoCopyNotebookPostRequestBody(copyNotebookPostReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCopyNotebookPostRequestBody(writer: SerializationWriter, copyNotebookPostRequestBody: Partial<CopyNotebookPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("groupId", copyNotebookPostRequestBody.groupId);
-    writer.writeStringValue("notebookFolder", copyNotebookPostRequestBody.notebookFolder);
-    writer.writeStringValue("renameAs", copyNotebookPostRequestBody.renameAs);
-    writer.writeStringValue("siteCollectionId", copyNotebookPostRequestBody.siteCollectionId);
-    writer.writeStringValue("siteId", copyNotebookPostRequestBody.siteId);
-    writer.writeAdditionalData(copyNotebookPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCopyNotebookPostRequestBody(writer: SerializationWriter, copyNotebookPostRequestBody: Partial<CopyNotebookPostRequestBody> | undefined | null = {}) : void {
+    if (copyNotebookPostRequestBody) {
+        writer.writeStringValue("groupId", copyNotebookPostRequestBody.groupId);
+        writer.writeStringValue("notebookFolder", copyNotebookPostRequestBody.notebookFolder);
+        writer.writeStringValue("renameAs", copyNotebookPostRequestBody.renameAs);
+        writer.writeStringValue("siteCollectionId", copyNotebookPostRequestBody.siteCollectionId);
+        writer.writeStringValue("siteId", copyNotebookPostRequestBody.siteId);
+        writer.writeAdditionalData(copyNotebookPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

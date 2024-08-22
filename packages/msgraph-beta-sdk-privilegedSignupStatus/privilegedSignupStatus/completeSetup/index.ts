@@ -16,17 +16,17 @@ export interface CompleteSetupPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The tenantSetupInfo property
      */
-    tenantSetupInfo?: TenantSetupInfo;
+    tenantSetupInfo?: TenantSetupInfo | null;
 }
 export interface CompleteSetupPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: RoleSuccessStatistics[];
+    value?: RoleSuccessStatistics[] | null;
 }
 /**
  * Provides operations to call the completeSetup method.
@@ -53,6 +53,7 @@ export interface CompleteSetupRequestBuilder extends BaseRequestBuilder<Complete
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CompleteSetupPostRequestBody}
  */
+// @ts-ignore
 export function createCompleteSetupPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCompleteSetupPostRequestBody;
 }
@@ -61,6 +62,7 @@ export function createCompleteSetupPostRequestBodyFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CompleteSetupPostResponse}
  */
+// @ts-ignore
 export function createCompleteSetupPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCompleteSetupPostResponse;
 }
@@ -68,6 +70,7 @@ export function createCompleteSetupPostResponseFromDiscriminatorValue(parseNode:
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCompleteSetupPostRequestBody(completeSetupPostRequestBody: Partial<CompleteSetupPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { completeSetupPostRequestBody.backingStoreEnabled = true; },
@@ -78,6 +81,7 @@ export function deserializeIntoCompleteSetupPostRequestBody(completeSetupPostReq
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCompleteSetupPostResponse(completeSetupPostResponse: Partial<CompleteSetupPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(completeSetupPostResponse),
@@ -88,17 +92,23 @@ export function deserializeIntoCompleteSetupPostResponse(completeSetupPostRespon
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCompleteSetupPostRequestBody(writer: SerializationWriter, completeSetupPostRequestBody: Partial<CompleteSetupPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<TenantSetupInfo>("tenantSetupInfo", completeSetupPostRequestBody.tenantSetupInfo, serializeTenantSetupInfo);
-    writer.writeAdditionalData(completeSetupPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCompleteSetupPostRequestBody(writer: SerializationWriter, completeSetupPostRequestBody: Partial<CompleteSetupPostRequestBody> | undefined | null = {}) : void {
+    if (completeSetupPostRequestBody) {
+        writer.writeObjectValue<TenantSetupInfo>("tenantSetupInfo", completeSetupPostRequestBody.tenantSetupInfo, serializeTenantSetupInfo);
+        writer.writeAdditionalData(completeSetupPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCompleteSetupPostResponse(writer: SerializationWriter, completeSetupPostResponse: Partial<CompleteSetupPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, completeSetupPostResponse)
-    writer.writeCollectionOfObjectValues<RoleSuccessStatistics>("value", completeSetupPostResponse.value, serializeRoleSuccessStatistics);
+// @ts-ignore
+export function serializeCompleteSetupPostResponse(writer: SerializationWriter, completeSetupPostResponse: Partial<CompleteSetupPostResponse> | undefined | null = {}) : void {
+    if (completeSetupPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, completeSetupPostResponse)
+        writer.writeCollectionOfObjectValues<RoleSuccessStatistics>("value", completeSetupPostResponse.value, serializeRoleSuccessStatistics);
+    }
 }
 /**
  * Uri template for the request builder.

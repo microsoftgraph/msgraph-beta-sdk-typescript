@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCloudPcPerformanceReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetCloudPcPerformanceReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcPerformanceReportPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetCloudPcPerformanceReportPostRequestBodyFromDiscriminato
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCloudPcPerformanceReportPostRequestBody(getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getCloudPcPerformanceReportPostRequestBody.backingStoreEnabled = true; },
@@ -41,39 +43,39 @@ export interface GetCloudPcPerformanceReportPostRequestBody extends AdditionalDa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The reportName property
      */
-    reportName?: CloudPCPerformanceReportName;
+    reportName?: CloudPCPerformanceReportName | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getCloudPcPerformanceReport method.
@@ -99,16 +101,19 @@ export interface GetCloudPcPerformanceReportRequestBuilder extends BaseRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetCloudPcPerformanceReportPostRequestBody(writer: SerializationWriter, getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getCloudPcPerformanceReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcPerformanceReportPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCloudPcPerformanceReportPostRequestBody.orderBy);
-    writer.writeEnumValue<CloudPCPerformanceReportName>("reportName", getCloudPcPerformanceReportPostRequestBody.reportName);
-    writer.writeStringValue("search", getCloudPcPerformanceReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getCloudPcPerformanceReportPostRequestBody.select);
-    writer.writeNumberValue("skip", getCloudPcPerformanceReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getCloudPcPerformanceReportPostRequestBody.top);
-    writer.writeAdditionalData(getCloudPcPerformanceReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetCloudPcPerformanceReportPostRequestBody(writer: SerializationWriter, getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined | null = {}) : void {
+    if (getCloudPcPerformanceReportPostRequestBody) {
+        writer.writeStringValue("filter", getCloudPcPerformanceReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcPerformanceReportPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCloudPcPerformanceReportPostRequestBody.orderBy);
+        writer.writeEnumValue<CloudPCPerformanceReportName>("reportName", getCloudPcPerformanceReportPostRequestBody.reportName);
+        writer.writeStringValue("search", getCloudPcPerformanceReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getCloudPcPerformanceReportPostRequestBody.select);
+        writer.writeNumberValue("skip", getCloudPcPerformanceReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getCloudPcPerformanceReportPostRequestBody.top);
+        writer.writeAdditionalData(getCloudPcPerformanceReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

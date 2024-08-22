@@ -6,6 +6,8 @@ import { createExchangeRestoreSessionFromDiscriminatorValue, serializeExchangeRe
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { GranularMailboxRestoreArtifactsRequestBuilderNavigationMetadata, GranularMailboxRestoreArtifactsRequestBuilderRequestsMetadata, type GranularMailboxRestoreArtifactsRequestBuilder } from './granularMailboxRestoreArtifacts/index.js';
+// @ts-ignore
 import { MailboxRestoreArtifactsRequestBuilderNavigationMetadata, MailboxRestoreArtifactsRequestBuilderRequestsMetadata, type MailboxRestoreArtifactsRequestBuilder } from './mailboxRestoreArtifacts/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the exchangeRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
  */
 export interface ExchangeRestoreSessionItemRequestBuilder extends BaseRequestBuilder<ExchangeRestoreSessionItemRequestBuilder> {
+    /**
+     * Provides operations to manage the granularMailboxRestoreArtifacts property of the microsoft.graph.exchangeRestoreSession entity.
+     */
+    get granularMailboxRestoreArtifacts(): GranularMailboxRestoreArtifactsRequestBuilder;
     /**
      * Provides operations to manage the mailboxRestoreArtifacts property of the microsoft.graph.exchangeRestoreSession entity.
      */
@@ -88,6 +94,10 @@ const ExchangeRestoreSessionItemRequestBuilderGetQueryParametersMapper: Record<s
  * Metadata for all the navigation properties in the request builder.
  */
 export const ExchangeRestoreSessionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ExchangeRestoreSessionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    granularMailboxRestoreArtifacts: {
+        requestsMetadata: GranularMailboxRestoreArtifactsRequestBuilderRequestsMetadata,
+        navigationMetadata: GranularMailboxRestoreArtifactsRequestBuilderNavigationMetadata,
+    },
     mailboxRestoreArtifacts: {
         requestsMetadata: MailboxRestoreArtifactsRequestBuilderRequestsMetadata,
         navigationMetadata: MailboxRestoreArtifactsRequestBuilderNavigationMetadata,

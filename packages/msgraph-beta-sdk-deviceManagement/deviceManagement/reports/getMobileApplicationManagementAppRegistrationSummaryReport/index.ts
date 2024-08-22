@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetMobileApplicationManagementAppRegistrationSummaryReport
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody: Partial<GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetMobileApplicationManagementAppRegistrationSummaryReportPostR
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getMobileApplicationManagementAppRegistrationSummaryReport method.
@@ -102,17 +104,20 @@ export interface GetMobileApplicationManagementAppRegistrationSummaryReportReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody: Partial<GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.top);
-    writer.writeAdditionalData(getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody: Partial<GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody> | undefined | null = {}) : void {
+    if (getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody) {
+        writer.writeStringValue("filter", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.top);
+        writer.writeAdditionalData(getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

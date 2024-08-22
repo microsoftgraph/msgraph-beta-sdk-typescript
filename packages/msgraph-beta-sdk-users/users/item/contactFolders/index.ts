@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ContactFoldersRequestBuilder extends BaseRequestBuilder<ContactFoldersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
      * @param contactFolderId The unique identifier of contactFolder
      * @returns {ContactFolderItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byContactFolderId(contactFolderId: string) : ContactFolderItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface ContactFoldersRequestBuilder extends BaseRequestBuilder<Contact
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContactFolderCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ContactFoldersRequestBuilderGetQueryParameters> | undefined) : Promise<ContactFolderCollectionResponse | undefined>;
     /**
@@ -45,12 +49,14 @@ export interface ContactFoldersRequestBuilder extends BaseRequestBuilder<Contact
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContactFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ContactFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ContactFolder | undefined>;
     /**
      * The user's contacts folders. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContactFoldersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,6 +64,7 @@ export interface ContactFoldersRequestBuilder extends BaseRequestBuilder<Contact
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ContactFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

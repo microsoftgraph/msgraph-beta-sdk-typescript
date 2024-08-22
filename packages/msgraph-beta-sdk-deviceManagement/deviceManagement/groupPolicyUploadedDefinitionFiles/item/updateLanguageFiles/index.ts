@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateLanguageFilesPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateLanguageFilesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateLanguageFilesPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateLanguageFilesPostRequestBodyFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateLanguageFilesPostRequestBody(updateLanguageFilesPostRequestBody: Partial<UpdateLanguageFilesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateLanguageFilesPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoUpdateLanguageFilesPostRequestBody(updateLanguage
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateLanguageFilesPostRequestBody(writer: SerializationWriter, updateLanguageFilesPostRequestBody: Partial<UpdateLanguageFilesPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", updateLanguageFilesPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
-    writer.writeAdditionalData(updateLanguageFilesPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateLanguageFilesPostRequestBody(writer: SerializationWriter, updateLanguageFilesPostRequestBody: Partial<UpdateLanguageFilesPostRequestBody> | undefined | null = {}) : void {
+    if (updateLanguageFilesPostRequestBody) {
+        writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", updateLanguageFilesPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
+        writer.writeAdditionalData(updateLanguageFilesPostRequestBody.additionalData);
+    }
 }
 export interface UpdateLanguageFilesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface UpdateLanguageFilesPostRequestBody extends AdditionalDataHolder
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The groupPolicyUploadedLanguageFiles property
      */
-    groupPolicyUploadedLanguageFiles?: GroupPolicyUploadedLanguageFile[];
+    groupPolicyUploadedLanguageFiles?: GroupPolicyUploadedLanguageFile[] | null;
 }
 /**
  * Provides operations to call the updateLanguageFiles method.

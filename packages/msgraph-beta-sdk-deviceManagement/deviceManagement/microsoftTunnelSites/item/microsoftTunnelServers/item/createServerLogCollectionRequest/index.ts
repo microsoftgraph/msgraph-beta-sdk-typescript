@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateServerLogCollectionRequestPostRequestBody}
  */
+// @ts-ignore
 export function createCreateServerLogCollectionRequestPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateServerLogCollectionRequestPostRequestBody;
 }
@@ -24,15 +25,15 @@ export interface CreateServerLogCollectionRequestPostRequestBody extends Additio
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The endDateTime property
      */
-    endDateTime?: Date;
+    endDateTime?: Date | null;
     /**
      * The startDateTime property
      */
-    startDateTime?: Date;
+    startDateTime?: Date | null;
 }
 /**
  * Provides operations to call the createServerLogCollectionRequest method.
@@ -58,6 +59,7 @@ export interface CreateServerLogCollectionRequestRequestBuilder extends BaseRequ
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateServerLogCollectionRequestPostRequestBody(createServerLogCollectionRequestPostRequestBody: Partial<CreateServerLogCollectionRequestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createServerLogCollectionRequestPostRequestBody.backingStoreEnabled = true; },
@@ -69,10 +71,13 @@ export function deserializeIntoCreateServerLogCollectionRequestPostRequestBody(c
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreateServerLogCollectionRequestPostRequestBody(writer: SerializationWriter, createServerLogCollectionRequestPostRequestBody: Partial<CreateServerLogCollectionRequestPostRequestBody> | undefined = {}) : void {
-    writer.writeDateValue("endDateTime", createServerLogCollectionRequestPostRequestBody.endDateTime);
-    writer.writeDateValue("startDateTime", createServerLogCollectionRequestPostRequestBody.startDateTime);
-    writer.writeAdditionalData(createServerLogCollectionRequestPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCreateServerLogCollectionRequestPostRequestBody(writer: SerializationWriter, createServerLogCollectionRequestPostRequestBody: Partial<CreateServerLogCollectionRequestPostRequestBody> | undefined | null = {}) : void {
+    if (createServerLogCollectionRequestPostRequestBody) {
+        writer.writeDateValue("endDateTime", createServerLogCollectionRequestPostRequestBody.endDateTime);
+        writer.writeDateValue("startDateTime", createServerLogCollectionRequestPostRequestBody.startDateTime);
+        writer.writeAdditionalData(createServerLogCollectionRequestPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

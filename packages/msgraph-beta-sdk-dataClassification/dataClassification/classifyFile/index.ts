@@ -16,15 +16,15 @@ export interface ClassifyFilePostRequestBody extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The file property
      */
-    file?: string;
+    file?: string | null;
     /**
      * The sensitiveTypeIds property
      */
-    sensitiveTypeIds?: string[];
+    sensitiveTypeIds?: string[] | null;
 }
 /**
  * Provides operations to call the classifyFile method.
@@ -51,6 +51,7 @@ export interface ClassifyFileRequestBuilder extends BaseRequestBuilder<ClassifyF
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ClassifyFilePostRequestBody}
  */
+// @ts-ignore
 export function createClassifyFilePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoClassifyFilePostRequestBody;
 }
@@ -58,6 +59,7 @@ export function createClassifyFilePostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoClassifyFilePostRequestBody(classifyFilePostRequestBody: Partial<ClassifyFilePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { classifyFilePostRequestBody.backingStoreEnabled = true; },
@@ -69,10 +71,13 @@ export function deserializeIntoClassifyFilePostRequestBody(classifyFilePostReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeClassifyFilePostRequestBody(writer: SerializationWriter, classifyFilePostRequestBody: Partial<ClassifyFilePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("file", classifyFilePostRequestBody.file);
-    writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyFilePostRequestBody.sensitiveTypeIds);
-    writer.writeAdditionalData(classifyFilePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeClassifyFilePostRequestBody(writer: SerializationWriter, classifyFilePostRequestBody: Partial<ClassifyFilePostRequestBody> | undefined | null = {}) : void {
+    if (classifyFilePostRequestBody) {
+        writer.writeStringValue("file", classifyFilePostRequestBody.file);
+        writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyFilePostRequestBody.sensitiveTypeIds);
+        writer.writeAdditionalData(classifyFilePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

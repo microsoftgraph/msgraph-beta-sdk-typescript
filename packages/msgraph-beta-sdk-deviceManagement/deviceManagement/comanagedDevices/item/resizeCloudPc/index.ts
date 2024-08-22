@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ResizeCloudPcPostRequestBody}
  */
+// @ts-ignore
 export function createResizeCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoResizeCloudPcPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createResizeCloudPcPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoResizeCloudPcPostRequestBody(resizeCloudPcPostRequestBody: Partial<ResizeCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { resizeCloudPcPostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface ResizeCloudPcPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The targetServicePlanId property
      */
-    targetServicePlanId?: string;
+    targetServicePlanId?: string | null;
 }
 /**
  * Provides operations to call the resizeCloudPc method.
@@ -64,9 +66,12 @@ export interface ResizeCloudPcRequestBuilder extends BaseRequestBuilder<ResizeCl
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeResizeCloudPcPostRequestBody(writer: SerializationWriter, resizeCloudPcPostRequestBody: Partial<ResizeCloudPcPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("targetServicePlanId", resizeCloudPcPostRequestBody.targetServicePlanId);
-    writer.writeAdditionalData(resizeCloudPcPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeResizeCloudPcPostRequestBody(writer: SerializationWriter, resizeCloudPcPostRequestBody: Partial<ResizeCloudPcPostRequestBody> | undefined | null = {}) : void {
+    if (resizeCloudPcPostRequestBody) {
+        writer.writeStringValue("targetServicePlanId", resizeCloudPcPostRequestBody.targetServicePlanId);
+        writer.writeAdditionalData(resizeCloudPcPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

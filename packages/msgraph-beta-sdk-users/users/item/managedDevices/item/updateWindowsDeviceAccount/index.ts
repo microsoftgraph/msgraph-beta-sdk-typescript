@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateWindowsDeviceAccountPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateWindowsDeviceAccountPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateWindowsDeviceAccountPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateWindowsDeviceAccountPostRequestBodyFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateWindowsDeviceAccountPostRequestBody(updateWindowsDeviceAccountPostRequestBody: Partial<UpdateWindowsDeviceAccountPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateWindowsDeviceAccountPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoUpdateWindowsDeviceAccountPostRequestBody(updateW
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateWindowsDeviceAccountPostRequestBody(writer: SerializationWriter, updateWindowsDeviceAccountPostRequestBody: Partial<UpdateWindowsDeviceAccountPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<UpdateWindowsDeviceAccountActionParameter>("updateWindowsDeviceAccountActionParameter", updateWindowsDeviceAccountPostRequestBody.updateWindowsDeviceAccountActionParameter, serializeUpdateWindowsDeviceAccountActionParameter);
-    writer.writeAdditionalData(updateWindowsDeviceAccountPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateWindowsDeviceAccountPostRequestBody(writer: SerializationWriter, updateWindowsDeviceAccountPostRequestBody: Partial<UpdateWindowsDeviceAccountPostRequestBody> | undefined | null = {}) : void {
+    if (updateWindowsDeviceAccountPostRequestBody) {
+        writer.writeObjectValue<UpdateWindowsDeviceAccountActionParameter>("updateWindowsDeviceAccountActionParameter", updateWindowsDeviceAccountPostRequestBody.updateWindowsDeviceAccountActionParameter, serializeUpdateWindowsDeviceAccountActionParameter);
+        writer.writeAdditionalData(updateWindowsDeviceAccountPostRequestBody.additionalData);
+    }
 }
 export interface UpdateWindowsDeviceAccountPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface UpdateWindowsDeviceAccountPostRequestBody extends AdditionalDat
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The updateWindowsDeviceAccountActionParameter property
      */
-    updateWindowsDeviceAccountActionParameter?: UpdateWindowsDeviceAccountActionParameter;
+    updateWindowsDeviceAccountActionParameter?: UpdateWindowsDeviceAccountActionParameter | null;
 }
 /**
  * Provides operations to call the updateWindowsDeviceAccount method.
@@ -57,6 +62,7 @@ export interface UpdateWindowsDeviceAccountRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: UpdateWindowsDeviceAccountPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -64,6 +70,7 @@ export interface UpdateWindowsDeviceAccountRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UpdateWindowsDeviceAccountPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

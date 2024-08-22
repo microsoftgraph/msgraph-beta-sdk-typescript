@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse}
  */
+// @ts-ignore
 export function createSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSummarizeDeviceResourcePerformanceWithSummarizeByGetResponse;
 }
@@ -20,6 +21,7 @@ export function createSummarizeDeviceResourcePerformanceWithSummarizeByGetRespon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSummarizeDeviceResourcePerformanceWithSummarizeByGetResponse(summarizeDeviceResourcePerformanceWithSummarizeByGetResponse: Partial<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(summarizeDeviceResourcePerformanceWithSummarizeByGetResponse),
@@ -30,15 +32,18 @@ export function deserializeIntoSummarizeDeviceResourcePerformanceWithSummarizeBy
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSummarizeDeviceResourcePerformanceWithSummarizeByGetResponse(writer: SerializationWriter, summarizeDeviceResourcePerformanceWithSummarizeByGetResponse: Partial<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, summarizeDeviceResourcePerformanceWithSummarizeByGetResponse)
-    writer.writeCollectionOfObjectValues<UserExperienceAnalyticsResourcePerformance>("value", summarizeDeviceResourcePerformanceWithSummarizeByGetResponse.value, serializeUserExperienceAnalyticsResourcePerformance);
+// @ts-ignore
+export function serializeSummarizeDeviceResourcePerformanceWithSummarizeByGetResponse(writer: SerializationWriter, summarizeDeviceResourcePerformanceWithSummarizeByGetResponse: Partial<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse> | undefined | null = {}) : void {
+    if (summarizeDeviceResourcePerformanceWithSummarizeByGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, summarizeDeviceResourcePerformanceWithSummarizeByGetResponse)
+        writer.writeCollectionOfObjectValues<UserExperienceAnalyticsResourcePerformance>("value", summarizeDeviceResourcePerformanceWithSummarizeByGetResponse.value, serializeUserExperienceAnalyticsResourcePerformance);
+    }
 }
 export interface SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: UserExperienceAnalyticsResourcePerformance[];
+    value?: UserExperienceAnalyticsResourcePerformance[] | null;
 }
 /**
  * Provides operations to call the summarizeDeviceResourcePerformance method.

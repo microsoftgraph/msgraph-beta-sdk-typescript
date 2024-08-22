@@ -16,15 +16,15 @@ export interface ClockOutPostRequestBody extends AdditionalDataHolder, BackedMod
     /**
      * The atApprovedLocation property
      */
-    atApprovedLocation?: boolean;
+    atApprovedLocation?: boolean | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The notes property
      */
-    notes?: ItemBody;
+    notes?: ItemBody | null;
 }
 /**
  * Provides operations to call the clockOut method.
@@ -52,6 +52,7 @@ export interface ClockOutRequestBuilder extends BaseRequestBuilder<ClockOutReque
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ClockOutPostRequestBody}
  */
+// @ts-ignore
 export function createClockOutPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoClockOutPostRequestBody;
 }
@@ -59,6 +60,7 @@ export function createClockOutPostRequestBodyFromDiscriminatorValue(parseNode: P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoClockOutPostRequestBody(clockOutPostRequestBody: Partial<ClockOutPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "atApprovedLocation": n => { clockOutPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
@@ -70,10 +72,13 @@ export function deserializeIntoClockOutPostRequestBody(clockOutPostRequestBody: 
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeClockOutPostRequestBody(writer: SerializationWriter, clockOutPostRequestBody: Partial<ClockOutPostRequestBody> | undefined = {}) : void {
-    writer.writeBooleanValue("atApprovedLocation", clockOutPostRequestBody.atApprovedLocation);
-    writer.writeObjectValue<ItemBody>("notes", clockOutPostRequestBody.notes, serializeItemBody);
-    writer.writeAdditionalData(clockOutPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeClockOutPostRequestBody(writer: SerializationWriter, clockOutPostRequestBody: Partial<ClockOutPostRequestBody> | undefined | null = {}) : void {
+    if (clockOutPostRequestBody) {
+        writer.writeBooleanValue("atApprovedLocation", clockOutPostRequestBody.atApprovedLocation);
+        writer.writeObjectValue<ItemBody>("notes", clockOutPostRequestBody.notes, serializeItemBody);
+        writer.writeAdditionalData(clockOutPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

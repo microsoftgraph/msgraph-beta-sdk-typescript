@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnableLostModePostRequestBody}
  */
+// @ts-ignore
 export function createEnableLostModePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnableLostModePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createEnableLostModePostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEnableLostModePostRequestBody(enableLostModePostRequestBody: Partial<EnableLostModePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { enableLostModePostRequestBody.backingStoreEnabled = true; },
@@ -34,19 +36,19 @@ export interface EnableLostModePostRequestBody extends AdditionalDataHolder, Bac
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The footer property
      */
-    footer?: string;
+    footer?: string | null;
     /**
      * The message property
      */
-    message?: string;
+    message?: string | null;
     /**
      * The phoneNumber property
      */
-    phoneNumber?: string;
+    phoneNumber?: string | null;
 }
 /**
  * Provides operations to call the enableLostMode method.
@@ -71,11 +73,14 @@ export interface EnableLostModeRequestBuilder extends BaseRequestBuilder<EnableL
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEnableLostModePostRequestBody(writer: SerializationWriter, enableLostModePostRequestBody: Partial<EnableLostModePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("footer", enableLostModePostRequestBody.footer);
-    writer.writeStringValue("message", enableLostModePostRequestBody.message);
-    writer.writeStringValue("phoneNumber", enableLostModePostRequestBody.phoneNumber);
-    writer.writeAdditionalData(enableLostModePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeEnableLostModePostRequestBody(writer: SerializationWriter, enableLostModePostRequestBody: Partial<EnableLostModePostRequestBody> | undefined | null = {}) : void {
+    if (enableLostModePostRequestBody) {
+        writer.writeStringValue("footer", enableLostModePostRequestBody.footer);
+        writer.writeStringValue("message", enableLostModePostRequestBody.message);
+        writer.writeStringValue("phoneNumber", enableLostModePostRequestBody.phoneNumber);
+        writer.writeAdditionalData(enableLostModePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

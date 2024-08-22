@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateClassificationResultsPostRequestBody}
  */
+// @ts-ignore
 export function createEvaluateClassificationResultsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateClassificationResultsPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createEvaluateClassificationResultsPostRequestBodyFromDiscrimina
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluateClassificationResultsPostResponse}
  */
+// @ts-ignore
 export function createEvaluateClassificationResultsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluateClassificationResultsPostResponse;
 }
@@ -28,6 +30,7 @@ export function createEvaluateClassificationResultsPostResponseFromDiscriminator
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateClassificationResultsPostRequestBody(evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { evaluateClassificationResultsPostRequestBody.backingStoreEnabled = true; },
@@ -39,6 +42,7 @@ export function deserializeIntoEvaluateClassificationResultsPostRequestBody(eval
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluateClassificationResultsPostResponse(evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(evaluateClassificationResultsPostResponse),
@@ -53,21 +57,21 @@ export interface EvaluateClassificationResultsPostRequestBody extends Additional
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The classificationResults property
      */
-    classificationResults?: ClassificationResult[];
+    classificationResults?: ClassificationResult[] | null;
     /**
      * The contentInfo property
      */
-    contentInfo?: ContentInfo;
+    contentInfo?: ContentInfo | null;
 }
 export interface EvaluateClassificationResultsPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: InformationProtectionAction[];
+    value?: InformationProtectionAction[] | null;
 }
 /**
  * Provides operations to call the evaluateClassificationResults method.
@@ -79,7 +83,7 @@ export interface EvaluateClassificationResultsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EvaluateClassificationResultsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta|Find more info here}
      */
      post(body: EvaluateClassificationResultsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EvaluateClassificationResultsPostResponse | undefined>;
@@ -88,7 +92,7 @@ export interface EvaluateClassificationResultsRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: EvaluateClassificationResultsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -96,18 +100,24 @@ export interface EvaluateClassificationResultsRequestBuilder extends BaseRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEvaluateClassificationResultsPostRequestBody(writer: SerializationWriter, evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<ClassificationResult>("classificationResults", evaluateClassificationResultsPostRequestBody.classificationResults, serializeClassificationResult);
-    writer.writeObjectValue<ContentInfo>("contentInfo", evaluateClassificationResultsPostRequestBody.contentInfo, serializeContentInfo);
-    writer.writeAdditionalData(evaluateClassificationResultsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeEvaluateClassificationResultsPostRequestBody(writer: SerializationWriter, evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined | null = {}) : void {
+    if (evaluateClassificationResultsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<ClassificationResult>("classificationResults", evaluateClassificationResultsPostRequestBody.classificationResults, serializeClassificationResult);
+        writer.writeObjectValue<ContentInfo>("contentInfo", evaluateClassificationResultsPostRequestBody.contentInfo, serializeContentInfo);
+        writer.writeAdditionalData(evaluateClassificationResultsPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEvaluateClassificationResultsPostResponse(writer: SerializationWriter, evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, evaluateClassificationResultsPostResponse)
-    writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateClassificationResultsPostResponse.value, serializeInformationProtectionAction);
+// @ts-ignore
+export function serializeEvaluateClassificationResultsPostResponse(writer: SerializationWriter, evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined | null = {}) : void {
+    if (evaluateClassificationResultsPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, evaluateClassificationResultsPostResponse)
+        writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateClassificationResultsPostResponse.value, serializeInformationProtectionAction);
+    }
 }
 /**
  * Uri template for the request builder.

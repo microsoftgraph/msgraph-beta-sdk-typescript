@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse}
  */
+// @ts-ignore
 export function createEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse;
 }
@@ -22,6 +23,7 @@ export function createEntitiesSummariesWithStartDateTimeWithEndDateTimeGetRespon
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse(entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse),
@@ -32,7 +34,7 @@ export interface EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse ex
     /**
      * The value property
      */
-    value?: EntitiesSummary[];
+    value?: EntitiesSummary[] | null;
 }
 /**
  * Provides operations to call the entitiesSummaries method.
@@ -82,9 +84,12 @@ export interface MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWi
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse)
-    writer.writeCollectionOfObjectValues<EntitiesSummary>("value", entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeEntitiesSummary);
+// @ts-ignore
+export function serializeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
+    if (entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse)
+        writer.writeCollectionOfObjectValues<EntitiesSummary>("value", entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeEntitiesSummary);
+    }
 }
 /**
  * Uri template for the request builder.

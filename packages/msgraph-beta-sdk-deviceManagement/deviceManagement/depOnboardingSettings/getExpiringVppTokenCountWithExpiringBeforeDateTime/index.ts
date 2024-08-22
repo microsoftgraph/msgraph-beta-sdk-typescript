@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse}
  */
+// @ts-ignore
 export function createGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse;
 }
@@ -18,6 +19,7 @@ export function createGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetRespo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse(getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse: Partial<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse e
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: number;
+    value?: number | null;
 }
 /**
  * Provides operations to call the getExpiringVppTokenCount method.
@@ -60,9 +62,12 @@ export interface GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse(writer: SerializationWriter, getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse: Partial<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse> | undefined = {}) : void {
-    writer.writeNumberValue("value", getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.value);
-    writer.writeAdditionalData(getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.additionalData);
+// @ts-ignore
+export function serializeGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse(writer: SerializationWriter, getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse: Partial<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse> | undefined | null = {}) : void {
+    if (getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse) {
+        writer.writeNumberValue("value", getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.value);
+        writer.writeAdditionalData(getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateRelationshipsPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateRelationshipsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateRelationshipsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateRelationshipsPostRequestBodyFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateRelationshipsPostRequestBody(updateRelationshipsPostRequestBody: Partial<UpdateRelationshipsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateRelationshipsPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoUpdateRelationshipsPostRequestBody(updateRelation
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateRelationshipsPostRequestBody(writer: SerializationWriter, updateRelationshipsPostRequestBody: Partial<UpdateRelationshipsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<MobileAppRelationship>("relationships", updateRelationshipsPostRequestBody.relationships, serializeMobileAppRelationship);
-    writer.writeAdditionalData(updateRelationshipsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateRelationshipsPostRequestBody(writer: SerializationWriter, updateRelationshipsPostRequestBody: Partial<UpdateRelationshipsPostRequestBody> | undefined | null = {}) : void {
+    if (updateRelationshipsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<MobileAppRelationship>("relationships", updateRelationshipsPostRequestBody.relationships, serializeMobileAppRelationship);
+        writer.writeAdditionalData(updateRelationshipsPostRequestBody.additionalData);
+    }
 }
 export interface UpdateRelationshipsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface UpdateRelationshipsPostRequestBody extends AdditionalDataHolder
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The relationships property
      */
-    relationships?: MobileAppRelationship[];
+    relationships?: MobileAppRelationship[] | null;
 }
 /**
  * Provides operations to call the updateRelationships method.

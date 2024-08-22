@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WipeManagedAppRegistrationByDeviceTagPostRequestBody}
  */
+// @ts-ignore
 export function createWipeManagedAppRegistrationByDeviceTagPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWipeManagedAppRegistrationByDeviceTagPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createWipeManagedAppRegistrationByDeviceTagPostRequestBodyFromDi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWipeManagedAppRegistrationByDeviceTagPostRequestBody(wipeManagedAppRegistrationByDeviceTagPostRequestBody: Partial<WipeManagedAppRegistrationByDeviceTagPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { wipeManagedAppRegistrationByDeviceTagPostRequestBody.backingStoreEnabled = true; },
@@ -28,9 +30,12 @@ export function deserializeIntoWipeManagedAppRegistrationByDeviceTagPostRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWipeManagedAppRegistrationByDeviceTagPostRequestBody(writer: SerializationWriter, wipeManagedAppRegistrationByDeviceTagPostRequestBody: Partial<WipeManagedAppRegistrationByDeviceTagPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("deviceTag", wipeManagedAppRegistrationByDeviceTagPostRequestBody.deviceTag);
-    writer.writeAdditionalData(wipeManagedAppRegistrationByDeviceTagPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeWipeManagedAppRegistrationByDeviceTagPostRequestBody(writer: SerializationWriter, wipeManagedAppRegistrationByDeviceTagPostRequestBody: Partial<WipeManagedAppRegistrationByDeviceTagPostRequestBody> | undefined | null = {}) : void {
+    if (wipeManagedAppRegistrationByDeviceTagPostRequestBody) {
+        writer.writeStringValue("deviceTag", wipeManagedAppRegistrationByDeviceTagPostRequestBody.deviceTag);
+        writer.writeAdditionalData(wipeManagedAppRegistrationByDeviceTagPostRequestBody.additionalData);
+    }
 }
 export interface WipeManagedAppRegistrationByDeviceTagPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -40,11 +45,11 @@ export interface WipeManagedAppRegistrationByDeviceTagPostRequestBody extends Ad
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceTag property
      */
-    deviceTag?: string;
+    deviceTag?: string | null;
 }
 /**
  * Provides operations to call the wipeManagedAppRegistrationByDeviceTag method.
@@ -55,6 +60,7 @@ export interface WipeManagedAppRegistrationByDeviceTagRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: WipeManagedAppRegistrationByDeviceTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -62,6 +68,7 @@ export interface WipeManagedAppRegistrationByDeviceTagRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: WipeManagedAppRegistrationByDeviceTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

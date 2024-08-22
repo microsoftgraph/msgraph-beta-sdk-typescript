@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UnarchivePostRequestBody}
  */
+// @ts-ignore
 export function createUnarchivePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnarchivePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createUnarchivePostRequestBodyFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUnarchivePostRequestBody(unarchivePostRequestBody: Partial<UnarchivePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unarchivePostRequestBody.backingStoreEnabled = true; },
@@ -28,9 +30,12 @@ export function deserializeIntoUnarchivePostRequestBody(unarchivePostRequestBody
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUnarchivePostRequestBody(writer: SerializationWriter, unarchivePostRequestBody: Partial<UnarchivePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("justification", unarchivePostRequestBody.justification);
-    writer.writeAdditionalData(unarchivePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUnarchivePostRequestBody(writer: SerializationWriter, unarchivePostRequestBody: Partial<UnarchivePostRequestBody> | undefined | null = {}) : void {
+    if (unarchivePostRequestBody) {
+        writer.writeStringValue("justification", unarchivePostRequestBody.justification);
+        writer.writeAdditionalData(unarchivePostRequestBody.additionalData);
+    }
 }
 export interface UnarchivePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -40,11 +45,11 @@ export interface UnarchivePostRequestBody extends AdditionalDataHolder, BackedMo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The justification property
      */
-    justification?: string;
+    justification?: string | null;
 }
 /**
  * Provides operations to call the unarchive method.
@@ -55,6 +60,7 @@ export interface UnarchiveRequestBuilder extends BaseRequestBuilder<UnarchiveReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta|Find more info here}
      */
      post(body: UnarchivePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -63,6 +69,7 @@ export interface UnarchiveRequestBuilder extends BaseRequestBuilder<UnarchiveReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UnarchivePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

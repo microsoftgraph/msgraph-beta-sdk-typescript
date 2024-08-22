@@ -18,23 +18,27 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WorkingTimeScheduleRequestBuilder extends BaseRequestBuilder<WorkingTimeScheduleRequestBuilder> {
     /**
      * Provides operations to call the endWorkingTime method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get endWorkingTime(): EndWorkingTimeRequestBuilder;
     /**
      * Provides operations to call the startWorkingTime method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get startWorkingTime(): StartWorkingTimeRequestBuilder;
     /**
      * Delete navigation property workingTimeSchedule for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get workingTimeSchedule from users
+     * The working time schedule entity associated with the solution.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkingTimeSchedule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WorkingTimeScheduleRequestBuilderGetQueryParameters> | undefined) : Promise<WorkingTimeSchedule | undefined>;
     /**
@@ -43,18 +47,21 @@ export interface WorkingTimeScheduleRequestBuilder extends BaseRequestBuilder<Wo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkingTimeSchedule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: WorkingTimeSchedule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WorkingTimeSchedule | undefined>;
     /**
      * Delete navigation property workingTimeSchedule for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get workingTimeSchedule from users
+     * The working time schedule entity associated with the solution.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WorkingTimeScheduleRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,11 +69,12 @@ export interface WorkingTimeScheduleRequestBuilder extends BaseRequestBuilder<Wo
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: WorkingTimeSchedule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get workingTimeSchedule from users
+ * The working time schedule entity associated with the solution.
  */
 export interface WorkingTimeScheduleRequestBuilderGetQueryParameters {
     /**

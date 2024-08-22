@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UploadPkcs12PostRequestBody}
  */
+// @ts-ignore
 export function createUploadPkcs12PostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadPkcs12PostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUploadPkcs12PostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUploadPkcs12PostRequestBody(uploadPkcs12PostRequestBody: Partial<UploadPkcs12PostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { uploadPkcs12PostRequestBody.backingStoreEnabled = true; },
@@ -31,10 +33,13 @@ export function deserializeIntoUploadPkcs12PostRequestBody(uploadPkcs12PostReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUploadPkcs12PostRequestBody(writer: SerializationWriter, uploadPkcs12PostRequestBody: Partial<UploadPkcs12PostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("key", uploadPkcs12PostRequestBody.key);
-    writer.writeStringValue("password", uploadPkcs12PostRequestBody.password);
-    writer.writeAdditionalData(uploadPkcs12PostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUploadPkcs12PostRequestBody(writer: SerializationWriter, uploadPkcs12PostRequestBody: Partial<UploadPkcs12PostRequestBody> | undefined | null = {}) : void {
+    if (uploadPkcs12PostRequestBody) {
+        writer.writeStringValue("key", uploadPkcs12PostRequestBody.key);
+        writer.writeStringValue("password", uploadPkcs12PostRequestBody.password);
+        writer.writeAdditionalData(uploadPkcs12PostRequestBody.additionalData);
+    }
 }
 export interface UploadPkcs12PostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -44,15 +49,15 @@ export interface UploadPkcs12PostRequestBody extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The key property
      */
-    key?: string;
+    key?: string | null;
     /**
      * The password property
      */
-    password?: string;
+    password?: string | null;
 }
 /**
  * Provides operations to call the uploadPkcs12 method.

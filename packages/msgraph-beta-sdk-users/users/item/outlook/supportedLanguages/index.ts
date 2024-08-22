@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SupportedLanguagesGetResponse}
  */
+// @ts-ignore
 export function createSupportedLanguagesGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSupportedLanguagesGetResponse;
 }
@@ -20,6 +21,7 @@ export function createSupportedLanguagesGetResponseFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSupportedLanguagesGetResponse(supportedLanguagesGetResponse: Partial<SupportedLanguagesGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(supportedLanguagesGetResponse),
@@ -30,15 +32,18 @@ export function deserializeIntoSupportedLanguagesGetResponse(supportedLanguagesG
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSupportedLanguagesGetResponse(writer: SerializationWriter, supportedLanguagesGetResponse: Partial<SupportedLanguagesGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, supportedLanguagesGetResponse)
-    writer.writeCollectionOfObjectValues<LocaleInfo>("value", supportedLanguagesGetResponse.value, serializeLocaleInfo);
+// @ts-ignore
+export function serializeSupportedLanguagesGetResponse(writer: SerializationWriter, supportedLanguagesGetResponse: Partial<SupportedLanguagesGetResponse> | undefined | null = {}) : void {
+    if (supportedLanguagesGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, supportedLanguagesGetResponse)
+        writer.writeCollectionOfObjectValues<LocaleInfo>("value", supportedLanguagesGetResponse.value, serializeLocaleInfo);
+    }
 }
 export interface SupportedLanguagesGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: LocaleInfo[];
+    value?: LocaleInfo[] | null;
 }
 /**
  * Provides operations to call the supportedLanguages method.
@@ -49,6 +54,7 @@ export interface SupportedLanguagesRequestBuilder extends BaseRequestBuilder<Sup
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SupportedLanguagesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SupportedLanguagesRequestBuilderGetQueryParameters> | undefined) : Promise<SupportedLanguagesGetResponse | undefined>;
@@ -56,6 +62,7 @@ export interface SupportedLanguagesRequestBuilder extends BaseRequestBuilder<Sup
      * Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user's mailbox settings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SupportedLanguagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

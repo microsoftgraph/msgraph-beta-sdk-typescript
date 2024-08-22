@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RenewGroupPostRequestBody}
  */
+// @ts-ignore
 export function createRenewGroupPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRenewGroupPostRequestBody;
 }
@@ -19,6 +20,7 @@ export function createRenewGroupPostRequestBodyFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RenewGroupPostResponse}
  */
+// @ts-ignore
 export function createRenewGroupPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRenewGroupPostResponse;
 }
@@ -26,6 +28,7 @@ export function createRenewGroupPostResponseFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRenewGroupPostRequestBody(renewGroupPostRequestBody: Partial<RenewGroupPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { renewGroupPostRequestBody.backingStoreEnabled = true; },
@@ -36,6 +39,7 @@ export function deserializeIntoRenewGroupPostRequestBody(renewGroupPostRequestBo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRenewGroupPostResponse(renewGroupPostResponse: Partial<RenewGroupPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { renewGroupPostResponse.backingStoreEnabled = true; },
@@ -50,11 +54,11 @@ export interface RenewGroupPostRequestBody extends AdditionalDataHolder, BackedM
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The groupId property
      */
-    groupId?: string;
+    groupId?: string | null;
 }
 export interface RenewGroupPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -64,11 +68,11 @@ export interface RenewGroupPostResponse extends AdditionalDataHolder, BackedMode
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the renewGroup method.
@@ -95,17 +99,23 @@ export interface RenewGroupRequestBuilder extends BaseRequestBuilder<RenewGroupR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRenewGroupPostRequestBody(writer: SerializationWriter, renewGroupPostRequestBody: Partial<RenewGroupPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("groupId", renewGroupPostRequestBody.groupId);
-    writer.writeAdditionalData(renewGroupPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRenewGroupPostRequestBody(writer: SerializationWriter, renewGroupPostRequestBody: Partial<RenewGroupPostRequestBody> | undefined | null = {}) : void {
+    if (renewGroupPostRequestBody) {
+        writer.writeStringValue("groupId", renewGroupPostRequestBody.groupId);
+        writer.writeAdditionalData(renewGroupPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRenewGroupPostResponse(writer: SerializationWriter, renewGroupPostResponse: Partial<RenewGroupPostResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", renewGroupPostResponse.value);
-    writer.writeAdditionalData(renewGroupPostResponse.additionalData);
+// @ts-ignore
+export function serializeRenewGroupPostResponse(writer: SerializationWriter, renewGroupPostResponse: Partial<RenewGroupPostResponse> | undefined | null = {}) : void {
+    if (renewGroupPostResponse) {
+        writer.writeBooleanValue("value", renewGroupPostResponse.value);
+        writer.writeAdditionalData(renewGroupPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

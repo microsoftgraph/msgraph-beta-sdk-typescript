@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCompliancePolicyDeviceSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetCompliancePolicyDeviceSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCompliancePolicyDeviceSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetCompliancePolicyDeviceSummaryReportPostRequestBodyFromD
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCompliancePolicyDeviceSummaryReportPostRequestBody(getCompliancePolicyDeviceSummaryReportPostRequestBody: Partial<GetCompliancePolicyDeviceSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getCompliancePolicyDeviceSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetCompliancePolicyDeviceSummaryReportPostRequestBody extends A
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getCompliancePolicyDeviceSummaryReport method.
@@ -102,17 +104,20 @@ export interface GetCompliancePolicyDeviceSummaryReportRequestBuilder extends Ba
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetCompliancePolicyDeviceSummaryReportPostRequestBody(writer: SerializationWriter, getCompliancePolicyDeviceSummaryReportPostRequestBody: Partial<GetCompliancePolicyDeviceSummaryReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getCompliancePolicyDeviceSummaryReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCompliancePolicyDeviceSummaryReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getCompliancePolicyDeviceSummaryReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCompliancePolicyDeviceSummaryReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getCompliancePolicyDeviceSummaryReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getCompliancePolicyDeviceSummaryReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getCompliancePolicyDeviceSummaryReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getCompliancePolicyDeviceSummaryReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getCompliancePolicyDeviceSummaryReportPostRequestBody.top);
-    writer.writeAdditionalData(getCompliancePolicyDeviceSummaryReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetCompliancePolicyDeviceSummaryReportPostRequestBody(writer: SerializationWriter, getCompliancePolicyDeviceSummaryReportPostRequestBody: Partial<GetCompliancePolicyDeviceSummaryReportPostRequestBody> | undefined | null = {}) : void {
+    if (getCompliancePolicyDeviceSummaryReportPostRequestBody) {
+        writer.writeStringValue("filter", getCompliancePolicyDeviceSummaryReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCompliancePolicyDeviceSummaryReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getCompliancePolicyDeviceSummaryReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCompliancePolicyDeviceSummaryReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getCompliancePolicyDeviceSummaryReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getCompliancePolicyDeviceSummaryReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getCompliancePolicyDeviceSummaryReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getCompliancePolicyDeviceSummaryReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getCompliancePolicyDeviceSummaryReportPostRequestBody.top);
+        writer.writeAdditionalData(getCompliancePolicyDeviceSummaryReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

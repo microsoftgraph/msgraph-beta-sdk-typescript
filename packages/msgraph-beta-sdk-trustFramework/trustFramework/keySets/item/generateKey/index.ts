@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GenerateKeyPostRequestBody}
  */
+// @ts-ignore
 export function createGenerateKeyPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGenerateKeyPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGenerateKeyPostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGenerateKeyPostRequestBody(generateKeyPostRequestBody: Partial<GenerateKeyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { generateKeyPostRequestBody.backingStoreEnabled = true; },
@@ -37,23 +39,23 @@ export interface GenerateKeyPostRequestBody extends AdditionalDataHolder, Backed
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The exp property
      */
-    exp?: number;
+    exp?: number | null;
     /**
      * The kty property
      */
-    kty?: string;
+    kty?: string | null;
     /**
      * The nbf property
      */
-    nbf?: number;
+    nbf?: number | null;
     /**
      * The use property
      */
-    use?: string;
+    use?: string | null;
 }
 /**
  * Provides operations to call the generateKey method.
@@ -80,12 +82,15 @@ export interface GenerateKeyRequestBuilder extends BaseRequestBuilder<GenerateKe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGenerateKeyPostRequestBody(writer: SerializationWriter, generateKeyPostRequestBody: Partial<GenerateKeyPostRequestBody> | undefined = {}) : void {
-    writer.writeNumberValue("exp", generateKeyPostRequestBody.exp);
-    writer.writeStringValue("kty", generateKeyPostRequestBody.kty);
-    writer.writeNumberValue("nbf", generateKeyPostRequestBody.nbf);
-    writer.writeStringValue("use", generateKeyPostRequestBody.use);
-    writer.writeAdditionalData(generateKeyPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGenerateKeyPostRequestBody(writer: SerializationWriter, generateKeyPostRequestBody: Partial<GenerateKeyPostRequestBody> | undefined | null = {}) : void {
+    if (generateKeyPostRequestBody) {
+        writer.writeNumberValue("exp", generateKeyPostRequestBody.exp);
+        writer.writeStringValue("kty", generateKeyPostRequestBody.kty);
+        writer.writeNumberValue("nbf", generateKeyPostRequestBody.nbf);
+        writer.writeStringValue("use", generateKeyPostRequestBody.use);
+        writer.writeAdditionalData(generateKeyPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

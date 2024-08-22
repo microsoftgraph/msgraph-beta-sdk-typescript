@@ -16,21 +16,21 @@ export interface BulkResizePostRequestBody extends AdditionalDataHolder, BackedM
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The cloudPcIds property
      */
-    cloudPcIds?: string[];
+    cloudPcIds?: string[] | null;
     /**
      * The targetServicePlanId property
      */
-    targetServicePlanId?: string;
+    targetServicePlanId?: string | null;
 }
 export interface BulkResizePostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CloudPcRemoteActionResult[];
+    value?: CloudPcRemoteActionResult[] | null;
 }
 /**
  * Provides operations to call the bulkResize method.
@@ -42,7 +42,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BulkResizePostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-beta|Find more info here}
      */
      post(body: BulkResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BulkResizePostResponse | undefined>;
@@ -51,7 +51,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: BulkResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -60,6 +60,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkResizePostRequestBody}
  */
+// @ts-ignore
 export function createBulkResizePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkResizePostRequestBody;
 }
@@ -68,6 +69,7 @@ export function createBulkResizePostRequestBodyFromDiscriminatorValue(parseNode:
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkResizePostResponse}
  */
+// @ts-ignore
 export function createBulkResizePostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkResizePostResponse;
 }
@@ -75,6 +77,7 @@ export function createBulkResizePostResponseFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkResizePostRequestBody(bulkResizePostRequestBody: Partial<BulkResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { bulkResizePostRequestBody.backingStoreEnabled = true; },
@@ -86,6 +89,7 @@ export function deserializeIntoBulkResizePostRequestBody(bulkResizePostRequestBo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkResizePostResponse(bulkResizePostResponse: Partial<BulkResizePostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(bulkResizePostResponse),
@@ -96,18 +100,24 @@ export function deserializeIntoBulkResizePostResponse(bulkResizePostResponse: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBulkResizePostRequestBody(writer: SerializationWriter, bulkResizePostRequestBody: Partial<BulkResizePostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", bulkResizePostRequestBody.cloudPcIds);
-    writer.writeStringValue("targetServicePlanId", bulkResizePostRequestBody.targetServicePlanId);
-    writer.writeAdditionalData(bulkResizePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeBulkResizePostRequestBody(writer: SerializationWriter, bulkResizePostRequestBody: Partial<BulkResizePostRequestBody> | undefined | null = {}) : void {
+    if (bulkResizePostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", bulkResizePostRequestBody.cloudPcIds);
+        writer.writeStringValue("targetServicePlanId", bulkResizePostRequestBody.targetServicePlanId);
+        writer.writeAdditionalData(bulkResizePostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBulkResizePostResponse(writer: SerializationWriter, bulkResizePostResponse: Partial<BulkResizePostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, bulkResizePostResponse)
-    writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", bulkResizePostResponse.value, serializeCloudPcRemoteActionResult);
+// @ts-ignore
+export function serializeBulkResizePostResponse(writer: SerializationWriter, bulkResizePostResponse: Partial<BulkResizePostResponse> | undefined | null = {}) : void {
+    if (bulkResizePostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, bulkResizePostResponse)
+        writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", bulkResizePostResponse.value, serializeCloudPcRemoteActionResult);
+    }
 }
 /**
  * Uri template for the request builder.

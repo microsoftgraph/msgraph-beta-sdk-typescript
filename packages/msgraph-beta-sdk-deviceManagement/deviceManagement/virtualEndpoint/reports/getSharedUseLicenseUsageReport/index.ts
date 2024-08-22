@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetSharedUseLicenseUsageReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetSharedUseLicenseUsageReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSharedUseLicenseUsageReportPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetSharedUseLicenseUsageReportPostRequestBodyFromDiscrimin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetSharedUseLicenseUsageReportPostRequestBody(getSharedUseLicenseUsageReportPostRequestBody: Partial<GetSharedUseLicenseUsageReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getSharedUseLicenseUsageReportPostRequestBody.backingStoreEnabled = true; },
@@ -41,39 +43,39 @@ export interface GetSharedUseLicenseUsageReportPostRequestBody extends Additiona
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The reportName property
      */
-    reportName?: CloudPcReportName;
+    reportName?: CloudPcReportName | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getSharedUseLicenseUsageReport method.
@@ -102,16 +104,19 @@ export interface GetSharedUseLicenseUsageReportRequestBuilder extends BaseReques
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetSharedUseLicenseUsageReportPostRequestBody(writer: SerializationWriter, getSharedUseLicenseUsageReportPostRequestBody: Partial<GetSharedUseLicenseUsageReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getSharedUseLicenseUsageReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getSharedUseLicenseUsageReportPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getSharedUseLicenseUsageReportPostRequestBody.orderBy);
-    writer.writeEnumValue<CloudPcReportName>("reportName", getSharedUseLicenseUsageReportPostRequestBody.reportName);
-    writer.writeStringValue("search", getSharedUseLicenseUsageReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getSharedUseLicenseUsageReportPostRequestBody.select);
-    writer.writeNumberValue("skip", getSharedUseLicenseUsageReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getSharedUseLicenseUsageReportPostRequestBody.top);
-    writer.writeAdditionalData(getSharedUseLicenseUsageReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetSharedUseLicenseUsageReportPostRequestBody(writer: SerializationWriter, getSharedUseLicenseUsageReportPostRequestBody: Partial<GetSharedUseLicenseUsageReportPostRequestBody> | undefined | null = {}) : void {
+    if (getSharedUseLicenseUsageReportPostRequestBody) {
+        writer.writeStringValue("filter", getSharedUseLicenseUsageReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getSharedUseLicenseUsageReportPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getSharedUseLicenseUsageReportPostRequestBody.orderBy);
+        writer.writeEnumValue<CloudPcReportName>("reportName", getSharedUseLicenseUsageReportPostRequestBody.reportName);
+        writer.writeStringValue("search", getSharedUseLicenseUsageReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getSharedUseLicenseUsageReportPostRequestBody.select);
+        writer.writeNumberValue("skip", getSharedUseLicenseUsageReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getSharedUseLicenseUsageReportPostRequestBody.top);
+        writer.writeAdditionalData(getSharedUseLicenseUsageReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

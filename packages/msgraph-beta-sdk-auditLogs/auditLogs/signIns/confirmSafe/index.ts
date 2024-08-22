@@ -14,11 +14,11 @@ export interface ConfirmSafePostRequestBody extends AdditionalDataHolder, Backed
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The requestIds property
      */
-    requestIds?: string[];
+    requestIds?: string[] | null;
 }
 /**
  * Provides operations to call the confirmSafe method.
@@ -45,6 +45,7 @@ export interface ConfirmSafeRequestBuilder extends BaseRequestBuilder<ConfirmSaf
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConfirmSafePostRequestBody}
  */
+// @ts-ignore
 export function createConfirmSafePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConfirmSafePostRequestBody;
 }
@@ -52,6 +53,7 @@ export function createConfirmSafePostRequestBodyFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoConfirmSafePostRequestBody(confirmSafePostRequestBody: Partial<ConfirmSafePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { confirmSafePostRequestBody.backingStoreEnabled = true; },
@@ -62,9 +64,12 @@ export function deserializeIntoConfirmSafePostRequestBody(confirmSafePostRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeConfirmSafePostRequestBody(writer: SerializationWriter, confirmSafePostRequestBody: Partial<ConfirmSafePostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("requestIds", confirmSafePostRequestBody.requestIds);
-    writer.writeAdditionalData(confirmSafePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeConfirmSafePostRequestBody(writer: SerializationWriter, confirmSafePostRequestBody: Partial<ConfirmSafePostRequestBody> | undefined | null = {}) : void {
+    if (confirmSafePostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("requestIds", confirmSafePostRequestBody.requestIds);
+        writer.writeAdditionalData(confirmSafePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

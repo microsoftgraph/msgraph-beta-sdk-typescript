@@ -15,111 +15,111 @@ export interface AlertImpact extends AdditionalDataHolder, BackedModel, Parsable
     /**
      * The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
      */
-    aggregationType?: AggregationType;
+    aggregationType?: AggregationType | null;
     /**
      * The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.
      */
-    alertImpactDetails?: KeyValuePair[];
+    alertImpactDetails?: KeyValuePair[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that six Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
      */
-    value?: number;
+    value?: number | null;
 }
 export interface AlertRecord extends Entity, Parsable {
     /**
      * The impact of the alert event. Consists of a list of key-value pair and a number followed by the aggregation type. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. 12 affectedCloudPcPercentage means 12% of Cloud PCs are affected. The list of key-value pair indicates the details of the alert impact.
      */
-    alertImpact?: AlertImpact;
+    alertImpact?: AlertImpact | null;
     /**
      * The corresponding ID of the alert rule.
      */
-    alertRuleId?: string;
+    alertRuleId?: string | null;
     /**
      * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
      */
-    alertRuleTemplate?: AlertRuleTemplate;
+    alertRuleTemplate?: AlertRuleTemplate | null;
     /**
      * The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    detectedDateTime?: Date;
+    detectedDateTime?: Date | null;
     /**
      * The display name of the alert record.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The date and time when the alert record was last updated. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    lastUpdatedDateTime?: Date;
+    lastUpdatedDateTime?: Date | null;
     /**
      * The date and time when the alert event was resolved. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
-    resolvedDateTime?: Date;
+    resolvedDateTime?: Date | null;
     /**
      * The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
      */
-    severity?: RuleSeverityType;
+    severity?: RuleSeverityType | null;
     /**
      * The status of the alert record. The possible values are: active, resolved, unknownFutureValue.
      */
-    status?: AlertStatusType;
+    status?: AlertStatusType | null;
 }
 export interface AlertRecordCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: AlertRecord[];
+    value?: AlertRecord[] | null;
 }
 export interface AlertRule extends Entity, Parsable {
     /**
      * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
      */
-    alertRuleTemplate?: AlertRuleTemplate;
+    alertRuleTemplate?: AlertRuleTemplate | null;
     /**
      * The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
      */
-    conditions?: RuleCondition[];
+    conditions?: RuleCondition[] | null;
     /**
      * The rule description.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name of the rule.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
      */
-    enabled?: boolean;
+    enabled?: boolean | null;
     /**
      * Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.
      */
-    isSystemRule?: boolean;
+    isSystemRule?: boolean | null;
     /**
      * The notification channels of the rule selected by the user.
      */
-    notificationChannels?: NotificationChannel[];
+    notificationChannels?: NotificationChannel[] | null;
     /**
      * The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
      */
-    severity?: RuleSeverityType;
+    severity?: RuleSeverityType | null;
     /**
      * The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.
      */
-    threshold?: RuleThreshold;
+    threshold?: RuleThreshold | null;
 }
 export interface AlertRuleCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: AlertRule[];
+    value?: AlertRule[] | null;
 }
 export type AlertRuleTemplate = (typeof AlertRuleTemplateObject)[keyof typeof AlertRuleTemplateObject];
 export type AlertStatusType = (typeof AlertStatusTypeObject)[keyof typeof AlertStatusTypeObject];
@@ -129,6 +129,7 @@ export type ConditionCategory = (typeof ConditionCategoryObject)[keyof typeof Co
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertImpact}
  */
+// @ts-ignore
 export function createAlertImpactFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertImpact;
 }
@@ -137,6 +138,7 @@ export function createAlertImpactFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertRecordCollectionResponse}
  */
+// @ts-ignore
 export function createAlertRecordCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRecordCollectionResponse;
 }
@@ -145,6 +147,7 @@ export function createAlertRecordCollectionResponseFromDiscriminatorValue(parseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertRecord}
  */
+// @ts-ignore
 export function createAlertRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRecord;
 }
@@ -153,6 +156,7 @@ export function createAlertRecordFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertRuleCollectionResponse}
  */
+// @ts-ignore
 export function createAlertRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRuleCollectionResponse;
 }
@@ -161,6 +165,7 @@ export function createAlertRuleCollectionResponseFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AlertRule}
  */
+// @ts-ignore
 export function createAlertRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertRule;
 }
@@ -169,6 +174,7 @@ export function createAlertRuleFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Monitoring}
  */
+// @ts-ignore
 export function createMonitoringFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMonitoring;
 }
@@ -177,6 +183,7 @@ export function createMonitoringFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NotificationChannel}
  */
+// @ts-ignore
 export function createNotificationChannelFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationChannel;
 }
@@ -185,6 +192,7 @@ export function createNotificationChannelFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NotificationReceiver}
  */
+// @ts-ignore
 export function createNotificationReceiverFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNotificationReceiver;
 }
@@ -193,6 +201,7 @@ export function createNotificationReceiverFromDiscriminatorValue(parseNode: Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PortalNotification}
  */
+// @ts-ignore
 export function createPortalNotificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPortalNotification;
 }
@@ -201,6 +210,7 @@ export function createPortalNotificationFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RuleCondition}
  */
+// @ts-ignore
 export function createRuleConditionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRuleCondition;
 }
@@ -209,6 +219,7 @@ export function createRuleConditionFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RuleThreshold}
  */
+// @ts-ignore
 export function createRuleThresholdFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRuleThreshold;
 }
@@ -216,6 +227,7 @@ export function createRuleThresholdFromDiscriminatorValue(parseNode: ParseNode |
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertImpact(alertImpact: Partial<AlertImpact> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "aggregationType": n => { alertImpact.aggregationType = n.getEnumValue<AggregationType>(AggregationTypeObject); },
@@ -229,6 +241,7 @@ export function deserializeIntoAlertImpact(alertImpact: Partial<AlertImpact> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertRecord(alertRecord: Partial<AlertRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(alertRecord),
@@ -247,6 +260,7 @@ export function deserializeIntoAlertRecord(alertRecord: Partial<AlertRecord> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertRecordCollectionResponse(alertRecordCollectionResponse: Partial<AlertRecordCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(alertRecordCollectionResponse),
@@ -257,6 +271,7 @@ export function deserializeIntoAlertRecordCollectionResponse(alertRecordCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertRule(alertRule: Partial<AlertRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(alertRule),
@@ -275,6 +290,7 @@ export function deserializeIntoAlertRule(alertRule: Partial<AlertRule> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAlertRuleCollectionResponse(alertRuleCollectionResponse: Partial<AlertRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(alertRuleCollectionResponse),
@@ -285,6 +301,7 @@ export function deserializeIntoAlertRuleCollectionResponse(alertRuleCollectionRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMonitoring(monitoring: Partial<Monitoring> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(monitoring),
@@ -296,6 +313,7 @@ export function deserializeIntoMonitoring(monitoring: Partial<Monitoring> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNotificationChannel(notificationChannel: Partial<NotificationChannel> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { notificationChannel.backingStoreEnabled = true; },
@@ -308,6 +326,7 @@ export function deserializeIntoNotificationChannel(notificationChannel: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNotificationReceiver(notificationReceiver: Partial<NotificationReceiver> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { notificationReceiver.backingStoreEnabled = true; },
@@ -320,6 +339,7 @@ export function deserializeIntoNotificationReceiver(notificationReceiver: Partia
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPortalNotification(portalNotification: Partial<PortalNotification> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "alertImpact": n => { portalNotification.alertImpact = n.getObjectValue<AlertImpact>(createAlertImpactFromDiscriminatorValue); },
@@ -338,6 +358,7 @@ export function deserializeIntoPortalNotification(portalNotification: Partial<Po
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRuleCondition(ruleCondition: Partial<RuleCondition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "aggregation": n => { ruleCondition.aggregation = n.getEnumValue<AggregationType>(AggregationTypeObject); },
@@ -353,6 +374,7 @@ export function deserializeIntoRuleCondition(ruleCondition: Partial<RuleConditio
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRuleThreshold(ruleThreshold: Partial<RuleThreshold> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "aggregation": n => { ruleThreshold.aggregation = n.getEnumValue<AggregationType>(AggregationTypeObject); },
@@ -366,11 +388,11 @@ export interface Monitoring extends Entity, Parsable {
     /**
      * The collection of records of alert events.
      */
-    alertRecords?: AlertRecord[];
+    alertRecords?: AlertRecord[] | null;
     /**
      * The collection of alert rules.
      */
-    alertRules?: AlertRule[];
+    alertRules?: AlertRule[] | null;
 }
 export interface NotificationChannel extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -380,19 +402,19 @@ export interface NotificationChannel extends AdditionalDataHolder, BackedModel, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
      */
-    notificationChannelType?: NotificationChannelType;
+    notificationChannelType?: NotificationChannelType | null;
     /**
      * Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
      */
-    notificationReceivers?: NotificationReceiver[];
+    notificationReceivers?: NotificationReceiver[] | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export type NotificationChannelType = (typeof NotificationChannelTypeObject)[keyof typeof NotificationChannelTypeObject];
 export interface NotificationReceiver extends AdditionalDataHolder, BackedModel, Parsable {
@@ -403,19 +425,19 @@ export interface NotificationReceiver extends AdditionalDataHolder, BackedModel,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
      */
-    contactInformation?: string;
+    contactInformation?: string | null;
     /**
      * Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
      */
-    locale?: string;
+    locale?: string | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
 }
 export type OperatorType = (typeof OperatorTypeObject)[keyof typeof OperatorTypeObject];
 export interface PortalNotification extends AdditionalDataHolder, BackedModel, Parsable {
@@ -426,43 +448,43 @@ export interface PortalNotification extends AdditionalDataHolder, BackedModel, P
     /**
      * The associated alert impact.
      */
-    alertImpact?: AlertImpact;
+    alertImpact?: AlertImpact | null;
     /**
      * The associated alert record ID.
      */
-    alertRecordId?: string;
+    alertRecordId?: string | null;
     /**
      * The associated alert rule ID.
      */
-    alertRuleId?: string;
+    alertRuleId?: string | null;
     /**
      * The associated alert rule name.
      */
-    alertRuleName?: string;
+    alertRuleName?: string | null;
     /**
      * The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
      */
-    alertRuleTemplate?: AlertRuleTemplate;
+    alertRuleTemplate?: AlertRuleTemplate | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The unique identifier for the portal notification.
      */
-    id?: string;
+    id?: string | null;
     /**
      * true if the portal notification has already been sent to the user; false otherwise.
      */
-    isPortalNotificationSent?: boolean;
+    isPortalNotificationSent?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
      */
-    severity?: RuleSeverityType;
+    severity?: RuleSeverityType | null;
 }
 export type RelationshipType = (typeof RelationshipTypeObject)[keyof typeof RelationshipTypeObject];
 export interface RuleCondition extends AdditionalDataHolder, BackedModel, Parsable {
@@ -473,31 +495,31 @@ export interface RuleCondition extends AdditionalDataHolder, BackedModel, Parsab
     /**
      * The built-in aggregation method for the rule condition. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
      */
-    aggregation?: AggregationType;
+    aggregation?: AggregationType | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The property that the rule condition monitors. Possible values are:  provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue.
      */
-    conditionCategory?: ConditionCategory;
+    conditionCategory?: ConditionCategory | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The built-in operator for the rule condition. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
      */
-    operator?: OperatorType;
+    operator?: OperatorType | null;
     /**
      * The relationship type.  Possible values are: and, or.
      */
-    relationshipType?: RelationshipType;
+    relationshipType?: RelationshipType | null;
     /**
      * The threshold value of the alert condition. The threshold value can be a number in string form or string like 'WestUS'.
      */
-    thresholdValue?: string;
+    thresholdValue?: string | null;
 }
 export type RuleSeverityType = (typeof RuleSeverityTypeObject)[keyof typeof RuleSeverityTypeObject];
 export interface RuleThreshold extends AdditionalDataHolder, BackedModel, Parsable {
@@ -508,151 +530,184 @@ export interface RuleThreshold extends AdditionalDataHolder, BackedModel, Parsab
     /**
      * Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
      */
-    aggregation?: AggregationType;
+    aggregation?: AggregationType | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
      */
-    operator?: OperatorType;
+    operator?: OperatorType | null;
     /**
      * The target threshold value.
      */
-    target?: number;
+    target?: number | null;
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertImpact(writer: SerializationWriter, alertImpact: Partial<AlertImpact> | undefined = {}) : void {
-    writer.writeEnumValue<AggregationType>("aggregationType", alertImpact.aggregationType);
-    writer.writeCollectionOfObjectValues<KeyValuePair>("alertImpactDetails", alertImpact.alertImpactDetails, serializeKeyValuePair);
-    writer.writeStringValue("@odata.type", alertImpact.odataType);
-    writer.writeNumberValue("value", alertImpact.value);
-    writer.writeAdditionalData(alertImpact.additionalData);
+// @ts-ignore
+export function serializeAlertImpact(writer: SerializationWriter, alertImpact: Partial<AlertImpact> | undefined | null = {}) : void {
+    if (alertImpact) {
+        writer.writeEnumValue<AggregationType>("aggregationType", alertImpact.aggregationType);
+        writer.writeCollectionOfObjectValues<KeyValuePair>("alertImpactDetails", alertImpact.alertImpactDetails, serializeKeyValuePair);
+        writer.writeStringValue("@odata.type", alertImpact.odataType);
+        writer.writeNumberValue("value", alertImpact.value);
+        writer.writeAdditionalData(alertImpact.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertRecord(writer: SerializationWriter, alertRecord: Partial<AlertRecord> | undefined = {}) : void {
-    serializeEntity(writer, alertRecord)
-    writer.writeObjectValue<AlertImpact>("alertImpact", alertRecord.alertImpact, serializeAlertImpact);
-    writer.writeStringValue("alertRuleId", alertRecord.alertRuleId);
-    writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRecord.alertRuleTemplate);
-    writer.writeDateValue("detectedDateTime", alertRecord.detectedDateTime);
-    writer.writeStringValue("displayName", alertRecord.displayName);
-    writer.writeDateValue("lastUpdatedDateTime", alertRecord.lastUpdatedDateTime);
-    writer.writeDateValue("resolvedDateTime", alertRecord.resolvedDateTime);
-    writer.writeEnumValue<RuleSeverityType>("severity", alertRecord.severity);
-    writer.writeEnumValue<AlertStatusType>("status", alertRecord.status);
+// @ts-ignore
+export function serializeAlertRecord(writer: SerializationWriter, alertRecord: Partial<AlertRecord> | undefined | null = {}) : void {
+    if (alertRecord) {
+        serializeEntity(writer, alertRecord)
+        writer.writeObjectValue<AlertImpact>("alertImpact", alertRecord.alertImpact, serializeAlertImpact);
+        writer.writeStringValue("alertRuleId", alertRecord.alertRuleId);
+        writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRecord.alertRuleTemplate);
+        writer.writeDateValue("detectedDateTime", alertRecord.detectedDateTime);
+        writer.writeStringValue("displayName", alertRecord.displayName);
+        writer.writeDateValue("lastUpdatedDateTime", alertRecord.lastUpdatedDateTime);
+        writer.writeDateValue("resolvedDateTime", alertRecord.resolvedDateTime);
+        writer.writeEnumValue<RuleSeverityType>("severity", alertRecord.severity);
+        writer.writeEnumValue<AlertStatusType>("status", alertRecord.status);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertRecordCollectionResponse(writer: SerializationWriter, alertRecordCollectionResponse: Partial<AlertRecordCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, alertRecordCollectionResponse)
-    writer.writeCollectionOfObjectValues<AlertRecord>("value", alertRecordCollectionResponse.value, serializeAlertRecord);
+// @ts-ignore
+export function serializeAlertRecordCollectionResponse(writer: SerializationWriter, alertRecordCollectionResponse: Partial<AlertRecordCollectionResponse> | undefined | null = {}) : void {
+    if (alertRecordCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, alertRecordCollectionResponse)
+        writer.writeCollectionOfObjectValues<AlertRecord>("value", alertRecordCollectionResponse.value, serializeAlertRecord);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertRule(writer: SerializationWriter, alertRule: Partial<AlertRule> | undefined = {}) : void {
-    serializeEntity(writer, alertRule)
-    writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRule.alertRuleTemplate);
-    writer.writeCollectionOfObjectValues<RuleCondition>("conditions", alertRule.conditions, serializeRuleCondition);
-    writer.writeStringValue("description", alertRule.description);
-    writer.writeStringValue("displayName", alertRule.displayName);
-    writer.writeBooleanValue("enabled", alertRule.enabled);
-    writer.writeBooleanValue("isSystemRule", alertRule.isSystemRule);
-    writer.writeCollectionOfObjectValues<NotificationChannel>("notificationChannels", alertRule.notificationChannels, serializeNotificationChannel);
-    writer.writeEnumValue<RuleSeverityType>("severity", alertRule.severity);
-    writer.writeObjectValue<RuleThreshold>("threshold", alertRule.threshold, serializeRuleThreshold);
+// @ts-ignore
+export function serializeAlertRule(writer: SerializationWriter, alertRule: Partial<AlertRule> | undefined | null = {}) : void {
+    if (alertRule) {
+        serializeEntity(writer, alertRule)
+        writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRule.alertRuleTemplate);
+        writer.writeCollectionOfObjectValues<RuleCondition>("conditions", alertRule.conditions, serializeRuleCondition);
+        writer.writeStringValue("description", alertRule.description);
+        writer.writeStringValue("displayName", alertRule.displayName);
+        writer.writeBooleanValue("enabled", alertRule.enabled);
+        writer.writeBooleanValue("isSystemRule", alertRule.isSystemRule);
+        writer.writeCollectionOfObjectValues<NotificationChannel>("notificationChannels", alertRule.notificationChannels, serializeNotificationChannel);
+        writer.writeEnumValue<RuleSeverityType>("severity", alertRule.severity);
+        writer.writeObjectValue<RuleThreshold>("threshold", alertRule.threshold, serializeRuleThreshold);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAlertRuleCollectionResponse(writer: SerializationWriter, alertRuleCollectionResponse: Partial<AlertRuleCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, alertRuleCollectionResponse)
-    writer.writeCollectionOfObjectValues<AlertRule>("value", alertRuleCollectionResponse.value, serializeAlertRule);
+// @ts-ignore
+export function serializeAlertRuleCollectionResponse(writer: SerializationWriter, alertRuleCollectionResponse: Partial<AlertRuleCollectionResponse> | undefined | null = {}) : void {
+    if (alertRuleCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, alertRuleCollectionResponse)
+        writer.writeCollectionOfObjectValues<AlertRule>("value", alertRuleCollectionResponse.value, serializeAlertRule);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMonitoring(writer: SerializationWriter, monitoring: Partial<Monitoring> | undefined = {}) : void {
-    serializeEntity(writer, monitoring)
-    writer.writeCollectionOfObjectValues<AlertRecord>("alertRecords", monitoring.alertRecords, serializeAlertRecord);
-    writer.writeCollectionOfObjectValues<AlertRule>("alertRules", monitoring.alertRules, serializeAlertRule);
+// @ts-ignore
+export function serializeMonitoring(writer: SerializationWriter, monitoring: Partial<Monitoring> | undefined | null = {}) : void {
+    if (monitoring) {
+        serializeEntity(writer, monitoring)
+        writer.writeCollectionOfObjectValues<AlertRecord>("alertRecords", monitoring.alertRecords, serializeAlertRecord);
+        writer.writeCollectionOfObjectValues<AlertRule>("alertRules", monitoring.alertRules, serializeAlertRule);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNotificationChannel(writer: SerializationWriter, notificationChannel: Partial<NotificationChannel> | undefined = {}) : void {
-    writer.writeEnumValue<NotificationChannelType>("notificationChannelType", notificationChannel.notificationChannelType);
-    writer.writeCollectionOfObjectValues<NotificationReceiver>("notificationReceivers", notificationChannel.notificationReceivers, serializeNotificationReceiver);
-    writer.writeStringValue("@odata.type", notificationChannel.odataType);
-    writer.writeAdditionalData(notificationChannel.additionalData);
+// @ts-ignore
+export function serializeNotificationChannel(writer: SerializationWriter, notificationChannel: Partial<NotificationChannel> | undefined | null = {}) : void {
+    if (notificationChannel) {
+        writer.writeEnumValue<NotificationChannelType>("notificationChannelType", notificationChannel.notificationChannelType);
+        writer.writeCollectionOfObjectValues<NotificationReceiver>("notificationReceivers", notificationChannel.notificationReceivers, serializeNotificationReceiver);
+        writer.writeStringValue("@odata.type", notificationChannel.odataType);
+        writer.writeAdditionalData(notificationChannel.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNotificationReceiver(writer: SerializationWriter, notificationReceiver: Partial<NotificationReceiver> | undefined = {}) : void {
-    writer.writeStringValue("contactInformation", notificationReceiver.contactInformation);
-    writer.writeStringValue("locale", notificationReceiver.locale);
-    writer.writeStringValue("@odata.type", notificationReceiver.odataType);
-    writer.writeAdditionalData(notificationReceiver.additionalData);
+// @ts-ignore
+export function serializeNotificationReceiver(writer: SerializationWriter, notificationReceiver: Partial<NotificationReceiver> | undefined | null = {}) : void {
+    if (notificationReceiver) {
+        writer.writeStringValue("contactInformation", notificationReceiver.contactInformation);
+        writer.writeStringValue("locale", notificationReceiver.locale);
+        writer.writeStringValue("@odata.type", notificationReceiver.odataType);
+        writer.writeAdditionalData(notificationReceiver.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePortalNotification(writer: SerializationWriter, portalNotification: Partial<PortalNotification> | undefined = {}) : void {
-    writer.writeObjectValue<AlertImpact>("alertImpact", portalNotification.alertImpact, serializeAlertImpact);
-    writer.writeStringValue("alertRecordId", portalNotification.alertRecordId);
-    writer.writeStringValue("alertRuleId", portalNotification.alertRuleId);
-    writer.writeStringValue("alertRuleName", portalNotification.alertRuleName);
-    writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", portalNotification.alertRuleTemplate);
-    writer.writeStringValue("id", portalNotification.id);
-    writer.writeBooleanValue("isPortalNotificationSent", portalNotification.isPortalNotificationSent);
-    writer.writeStringValue("@odata.type", portalNotification.odataType);
-    writer.writeEnumValue<RuleSeverityType>("severity", portalNotification.severity);
-    writer.writeAdditionalData(portalNotification.additionalData);
+// @ts-ignore
+export function serializePortalNotification(writer: SerializationWriter, portalNotification: Partial<PortalNotification> | undefined | null = {}) : void {
+    if (portalNotification) {
+        writer.writeObjectValue<AlertImpact>("alertImpact", portalNotification.alertImpact, serializeAlertImpact);
+        writer.writeStringValue("alertRecordId", portalNotification.alertRecordId);
+        writer.writeStringValue("alertRuleId", portalNotification.alertRuleId);
+        writer.writeStringValue("alertRuleName", portalNotification.alertRuleName);
+        writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", portalNotification.alertRuleTemplate);
+        writer.writeStringValue("id", portalNotification.id);
+        writer.writeBooleanValue("isPortalNotificationSent", portalNotification.isPortalNotificationSent);
+        writer.writeStringValue("@odata.type", portalNotification.odataType);
+        writer.writeEnumValue<RuleSeverityType>("severity", portalNotification.severity);
+        writer.writeAdditionalData(portalNotification.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRuleCondition(writer: SerializationWriter, ruleCondition: Partial<RuleCondition> | undefined = {}) : void {
-    writer.writeEnumValue<AggregationType>("aggregation", ruleCondition.aggregation);
-    writer.writeEnumValue<ConditionCategory>("conditionCategory", ruleCondition.conditionCategory);
-    writer.writeStringValue("@odata.type", ruleCondition.odataType);
-    writer.writeEnumValue<OperatorType>("operator", ruleCondition.operator);
-    writer.writeEnumValue<RelationshipType>("relationshipType", ruleCondition.relationshipType);
-    writer.writeStringValue("thresholdValue", ruleCondition.thresholdValue);
-    writer.writeAdditionalData(ruleCondition.additionalData);
+// @ts-ignore
+export function serializeRuleCondition(writer: SerializationWriter, ruleCondition: Partial<RuleCondition> | undefined | null = {}) : void {
+    if (ruleCondition) {
+        writer.writeEnumValue<AggregationType>("aggregation", ruleCondition.aggregation);
+        writer.writeEnumValue<ConditionCategory>("conditionCategory", ruleCondition.conditionCategory);
+        writer.writeStringValue("@odata.type", ruleCondition.odataType);
+        writer.writeEnumValue<OperatorType>("operator", ruleCondition.operator);
+        writer.writeEnumValue<RelationshipType>("relationshipType", ruleCondition.relationshipType);
+        writer.writeStringValue("thresholdValue", ruleCondition.thresholdValue);
+        writer.writeAdditionalData(ruleCondition.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRuleThreshold(writer: SerializationWriter, ruleThreshold: Partial<RuleThreshold> | undefined = {}) : void {
-    writer.writeEnumValue<AggregationType>("aggregation", ruleThreshold.aggregation);
-    writer.writeStringValue("@odata.type", ruleThreshold.odataType);
-    writer.writeEnumValue<OperatorType>("operator", ruleThreshold.operator);
-    writer.writeNumberValue("target", ruleThreshold.target);
-    writer.writeAdditionalData(ruleThreshold.additionalData);
+// @ts-ignore
+export function serializeRuleThreshold(writer: SerializationWriter, ruleThreshold: Partial<RuleThreshold> | undefined | null = {}) : void {
+    if (ruleThreshold) {
+        writer.writeEnumValue<AggregationType>("aggregation", ruleThreshold.aggregation);
+        writer.writeStringValue("@odata.type", ruleThreshold.odataType);
+        writer.writeEnumValue<OperatorType>("operator", ruleThreshold.operator);
+        writer.writeNumberValue("target", ruleThreshold.target);
+        writer.writeAdditionalData(ruleThreshold.additionalData);
+    }
 }
 export const AggregationTypeObject = {
     Count: "count",

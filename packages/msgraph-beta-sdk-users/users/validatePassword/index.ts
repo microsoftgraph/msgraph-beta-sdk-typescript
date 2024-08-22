@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ValidatePasswordPostRequestBody}
  */
+// @ts-ignore
 export function createValidatePasswordPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidatePasswordPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createValidatePasswordPostRequestBodyFromDiscriminatorValue(pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoValidatePasswordPostRequestBody(validatePasswordPostRequestBody: Partial<ValidatePasswordPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validatePasswordPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoValidatePasswordPostRequestBody(validatePasswordP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeValidatePasswordPostRequestBody(writer: SerializationWriter, validatePasswordPostRequestBody: Partial<ValidatePasswordPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("password", validatePasswordPostRequestBody.password);
-    writer.writeAdditionalData(validatePasswordPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeValidatePasswordPostRequestBody(writer: SerializationWriter, validatePasswordPostRequestBody: Partial<ValidatePasswordPostRequestBody> | undefined | null = {}) : void {
+    if (validatePasswordPostRequestBody) {
+        writer.writeStringValue("password", validatePasswordPostRequestBody.password);
+        writer.writeAdditionalData(validatePasswordPostRequestBody.additionalData);
+    }
 }
 export interface ValidatePasswordPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface ValidatePasswordPostRequestBody extends AdditionalDataHolder, B
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The password property
      */
-    password?: string;
+    password?: string | null;
 }
 /**
  * Provides operations to call the validatePassword method.
@@ -58,6 +63,7 @@ export interface ValidatePasswordRequestBuilder extends BaseRequestBuilder<Valid
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordValidationInformation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-validatepassword?view=graph-rest-beta|Find more info here}
      */
      post(body: ValidatePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordValidationInformation | undefined>;
@@ -66,6 +72,7 @@ export interface ValidatePasswordRequestBuilder extends BaseRequestBuilder<Valid
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ValidatePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

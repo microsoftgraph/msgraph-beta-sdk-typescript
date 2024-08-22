@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LearningCourseActivitiesRequestBuilder extends BaseRequestBuilder<LearningCourseActivitiesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
      * @param learningCourseActivityId The unique identifier of learningCourseActivity
      * @returns {LearningCourseActivityItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byLearningCourseActivityId(learningCourseActivityId: string) : LearningCourseActivityItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface LearningCourseActivitiesRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LearningCourseActivityCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/learningcourseactivity-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<LearningCourseActivitiesRequestBuilderGetQueryParameters> | undefined) : Promise<LearningCourseActivityCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface LearningCourseActivitiesRequestBuilder extends BaseRequestBuild
      * Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LearningCourseActivitiesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

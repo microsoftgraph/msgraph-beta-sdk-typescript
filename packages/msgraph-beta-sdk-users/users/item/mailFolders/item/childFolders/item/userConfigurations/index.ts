@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserConfigurationsRequestBuilder extends BaseRequestBuilder<UserConfigurationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
      * @param userConfigurationId The unique identifier of userConfiguration
      * @returns {UserConfigurationItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byUserConfigurationId(userConfigurationId: string) : UserConfigurationItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface UserConfigurationsRequestBuilder extends BaseRequestBuilder<Use
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConfigurationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<UserConfigurationsRequestBuilderGetQueryParameters> | undefined) : Promise<UserConfigurationCollectionResponse | undefined>;
     /**
      * Get userConfigurations from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserConfigurationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

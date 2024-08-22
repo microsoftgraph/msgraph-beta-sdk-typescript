@@ -22,22 +22,26 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DecisionsRequestBuilder extends BaseRequestBuilder<DecisionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the recordAllDecisions method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get recordAllDecisions(): RecordAllDecisionsRequestBuilder;
     /**
      * Provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
      * @param accessReviewInstanceDecisionItemId1 The unique identifier of accessReviewInstanceDecisionItem
      * @returns {AccessReviewInstanceDecisionItemItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAccessReviewInstanceDecisionItemId1(accessReviewInstanceDecisionItemId1: string) : AccessReviewInstanceDecisionItemItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -45,6 +49,7 @@ export interface DecisionsRequestBuilder extends BaseRequestBuilder<DecisionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewInstanceDecisionItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DecisionsRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewInstanceDecisionItemCollectionResponse | undefined>;
     /**
@@ -53,12 +58,14 @@ export interface DecisionsRequestBuilder extends BaseRequestBuilder<DecisionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewInstanceDecisionItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AccessReviewInstanceDecisionItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewInstanceDecisionItem | undefined>;
     /**
      * Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DecisionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -66,6 +73,7 @@ export interface DecisionsRequestBuilder extends BaseRequestBuilder<DecisionsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AccessReviewInstanceDecisionItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -14,11 +14,11 @@ export interface ArchivePostRequestBody extends AdditionalDataHolder, BackedMode
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The justification property
      */
-    justification?: string;
+    justification?: string | null;
 }
 /**
  * Provides operations to call the archive method.
@@ -29,6 +29,7 @@ export interface ArchiveRequestBuilder extends BaseRequestBuilder<ArchiveRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/plannerplan-archive?view=graph-rest-beta|Find more info here}
      */
      post(body: ArchivePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -37,6 +38,7 @@ export interface ArchiveRequestBuilder extends BaseRequestBuilder<ArchiveRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ArchivePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -45,6 +47,7 @@ export interface ArchiveRequestBuilder extends BaseRequestBuilder<ArchiveRequest
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ArchivePostRequestBody}
  */
+// @ts-ignore
 export function createArchivePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoArchivePostRequestBody;
 }
@@ -52,6 +55,7 @@ export function createArchivePostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoArchivePostRequestBody(archivePostRequestBody: Partial<ArchivePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { archivePostRequestBody.backingStoreEnabled = true; },
@@ -62,9 +66,12 @@ export function deserializeIntoArchivePostRequestBody(archivePostRequestBody: Pa
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeArchivePostRequestBody(writer: SerializationWriter, archivePostRequestBody: Partial<ArchivePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("justification", archivePostRequestBody.justification);
-    writer.writeAdditionalData(archivePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeArchivePostRequestBody(writer: SerializationWriter, archivePostRequestBody: Partial<ArchivePostRequestBody> | undefined | null = {}) : void {
+    if (archivePostRequestBody) {
+        writer.writeStringValue("justification", archivePostRequestBody.justification);
+        writer.writeAdditionalData(archivePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

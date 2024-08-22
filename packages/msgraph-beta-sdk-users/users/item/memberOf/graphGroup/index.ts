@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GraphGroupRequestBuilder extends BaseRequestBuilder<GraphGroupRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
@@ -23,6 +24,7 @@ export interface GraphGroupRequestBuilder extends BaseRequestBuilder<GraphGroupR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GroupCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GraphGroupRequestBuilderGetQueryParameters> | undefined) : Promise<GroupCollectionResponse | undefined>;
@@ -30,6 +32,7 @@ export interface GraphGroupRequestBuilder extends BaseRequestBuilder<GraphGroupR
      * Get groups, directory roles, and administrative units that the user is a direct member of. This operation isn't transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphGroupRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

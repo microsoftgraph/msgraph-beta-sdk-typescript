@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<EmployeeExperienceRequestBuilder> {
     /**
      * Provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get learningCourseActivities(): LearningCourseActivitiesRequestBuilder;
     /**
      * Delete navigation property employeeExperience for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,12 +33,14 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmployeeExperienceUser>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<EmployeeExperienceRequestBuilderGetQueryParameters> | undefined) : Promise<EmployeeExperienceUser | undefined>;
     /**
      * Provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
      * @param externalcourseActivityId Alternate key of learningCourseActivity
      * @returns {LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      learningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId: string | undefined) : LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder;
     /**
@@ -45,18 +49,21 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmployeeExperienceUser>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: EmployeeExperienceUser, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EmployeeExperienceUser | undefined>;
     /**
      * Delete navigation property employeeExperience for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get employeeExperience from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmployeeExperienceRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,6 +71,7 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: EmployeeExperienceUser, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

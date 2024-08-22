@@ -16,17 +16,18 @@ export interface AssignTagPostRequestBody extends AdditionalDataHolder, BackedMo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The tenantIds property
      */
-    tenantIds?: string[];
+    tenantIds?: string[] | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssignTagPostRequestBody}
  */
+// @ts-ignore
 export function createAssignTagPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignTagPostRequestBody;
 }
@@ -34,6 +35,7 @@ export function createAssignTagPostRequestBodyFromDiscriminatorValue(parseNode: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssignTagPostRequestBody(assignTagPostRequestBody: Partial<AssignTagPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { assignTagPostRequestBody.backingStoreEnabled = true; },
@@ -65,9 +67,12 @@ export interface MicrosoftGraphManagedTenantsAssignTagRequestBuilder extends Bas
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAssignTagPostRequestBody(writer: SerializationWriter, assignTagPostRequestBody: Partial<AssignTagPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("tenantIds", assignTagPostRequestBody.tenantIds);
-    writer.writeAdditionalData(assignTagPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeAssignTagPostRequestBody(writer: SerializationWriter, assignTagPostRequestBody: Partial<AssignTagPostRequestBody> | undefined | null = {}) : void {
+    if (assignTagPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("tenantIds", assignTagPostRequestBody.tenantIds);
+        writer.writeAdditionalData(assignTagPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

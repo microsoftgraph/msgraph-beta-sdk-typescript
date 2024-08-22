@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateStatusPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateStatusPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateStatusPostRequestBodyFromDiscriminatorValue(parseNod
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateStatusPostRequestBody(updateStatusPostRequestBody: Partial<UpdateStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateStatusPostRequestBody.backingStoreEnabled = true; },
@@ -31,10 +33,13 @@ export function deserializeIntoUpdateStatusPostRequestBody(updateStatusPostReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateStatusPostRequestBody(writer: SerializationWriter, updateStatusPostRequestBody: Partial<UpdateStatusPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("note", updateStatusPostRequestBody.note);
-    writer.writeEnumValue<DeviceAppManagementTaskStatus>("status", updateStatusPostRequestBody.status);
-    writer.writeAdditionalData(updateStatusPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateStatusPostRequestBody(writer: SerializationWriter, updateStatusPostRequestBody: Partial<UpdateStatusPostRequestBody> | undefined | null = {}) : void {
+    if (updateStatusPostRequestBody) {
+        writer.writeStringValue("note", updateStatusPostRequestBody.note);
+        writer.writeEnumValue<DeviceAppManagementTaskStatus>("status", updateStatusPostRequestBody.status);
+        writer.writeAdditionalData(updateStatusPostRequestBody.additionalData);
+    }
 }
 export interface UpdateStatusPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -44,15 +49,15 @@ export interface UpdateStatusPostRequestBody extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The note property
      */
-    note?: string;
+    note?: string | null;
     /**
      * Device app management task status.
      */
-    status?: DeviceAppManagementTaskStatus;
+    status?: DeviceAppManagementTaskStatus | null;
 }
 /**
  * Provides operations to call the updateStatus method.

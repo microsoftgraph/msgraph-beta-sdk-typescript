@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetComplianceSettingDetailsReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetComplianceSettingDetailsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetComplianceSettingDetailsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetComplianceSettingDetailsReportPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetComplianceSettingDetailsReportPostRequestBody(getComplianceSettingDetailsReportPostRequestBody: Partial<GetComplianceSettingDetailsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getComplianceSettingDetailsReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetComplianceSettingDetailsReportPostRequestBody extends Additi
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getComplianceSettingDetailsReport method.
@@ -102,17 +104,20 @@ export interface GetComplianceSettingDetailsReportRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetComplianceSettingDetailsReportPostRequestBody(writer: SerializationWriter, getComplianceSettingDetailsReportPostRequestBody: Partial<GetComplianceSettingDetailsReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getComplianceSettingDetailsReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getComplianceSettingDetailsReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getComplianceSettingDetailsReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getComplianceSettingDetailsReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getComplianceSettingDetailsReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getComplianceSettingDetailsReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getComplianceSettingDetailsReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getComplianceSettingDetailsReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getComplianceSettingDetailsReportPostRequestBody.top);
-    writer.writeAdditionalData(getComplianceSettingDetailsReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetComplianceSettingDetailsReportPostRequestBody(writer: SerializationWriter, getComplianceSettingDetailsReportPostRequestBody: Partial<GetComplianceSettingDetailsReportPostRequestBody> | undefined | null = {}) : void {
+    if (getComplianceSettingDetailsReportPostRequestBody) {
+        writer.writeStringValue("filter", getComplianceSettingDetailsReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getComplianceSettingDetailsReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getComplianceSettingDetailsReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getComplianceSettingDetailsReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getComplianceSettingDetailsReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getComplianceSettingDetailsReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getComplianceSettingDetailsReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getComplianceSettingDetailsReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getComplianceSettingDetailsReportPostRequestBody.top);
+        writer.writeAdditionalData(getComplianceSettingDetailsReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

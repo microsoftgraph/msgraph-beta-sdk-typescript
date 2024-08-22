@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DeviceManagementTroubleshootingEventsRequestBuilder extends BaseRequestBuilder<DeviceManagementTroubleshootingEventsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.
      * @param deviceManagementTroubleshootingEventId The unique identifier of deviceManagementTroubleshootingEvent
      * @returns {DeviceManagementTroubleshootingEventItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byDeviceManagementTroubleshootingEventId(deviceManagementTroubleshootingEventId: string) : DeviceManagementTroubleshootingEventItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DeviceManagementTroubleshootingEventsRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceManagementTroubleshootingEventCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DeviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementTroubleshootingEventCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface DeviceManagementTroubleshootingEventsRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceManagementTroubleshootingEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: DeviceManagementTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementTroubleshootingEvent | undefined>;
     /**
      * The list of troubleshooting events for this user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface DeviceManagementTroubleshootingEventsRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: DeviceManagementTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

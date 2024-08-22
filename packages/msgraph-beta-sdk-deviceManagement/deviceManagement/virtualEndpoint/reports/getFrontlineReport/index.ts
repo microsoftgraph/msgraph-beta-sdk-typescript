@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetFrontlineReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetFrontlineReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetFrontlineReportPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetFrontlineReportPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetFrontlineReportPostRequestBody(getFrontlineReportPostRequestBody: Partial<GetFrontlineReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getFrontlineReportPostRequestBody.backingStoreEnabled = true; },
@@ -41,39 +43,39 @@ export interface GetFrontlineReportPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The reportName property
      */
-    reportName?: CloudPcReportName;
+    reportName?: CloudPcReportName | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getFrontlineReport method.
@@ -100,16 +102,19 @@ export interface GetFrontlineReportRequestBuilder extends BaseRequestBuilder<Get
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetFrontlineReportPostRequestBody(writer: SerializationWriter, getFrontlineReportPostRequestBody: Partial<GetFrontlineReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getFrontlineReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFrontlineReportPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFrontlineReportPostRequestBody.orderBy);
-    writer.writeEnumValue<CloudPcReportName>("reportName", getFrontlineReportPostRequestBody.reportName);
-    writer.writeStringValue("search", getFrontlineReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getFrontlineReportPostRequestBody.select);
-    writer.writeNumberValue("skip", getFrontlineReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getFrontlineReportPostRequestBody.top);
-    writer.writeAdditionalData(getFrontlineReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetFrontlineReportPostRequestBody(writer: SerializationWriter, getFrontlineReportPostRequestBody: Partial<GetFrontlineReportPostRequestBody> | undefined | null = {}) : void {
+    if (getFrontlineReportPostRequestBody) {
+        writer.writeStringValue("filter", getFrontlineReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFrontlineReportPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFrontlineReportPostRequestBody.orderBy);
+        writer.writeEnumValue<CloudPcReportName>("reportName", getFrontlineReportPostRequestBody.reportName);
+        writer.writeStringValue("search", getFrontlineReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getFrontlineReportPostRequestBody.select);
+        writer.writeNumberValue("skip", getFrontlineReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getFrontlineReportPostRequestBody.top);
+        writer.writeAdditionalData(getFrontlineReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

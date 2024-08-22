@@ -17,12 +17,14 @@ export interface PasswordAuthenticationMethodItemRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : Promise<PasswordAuthenticationMethod | undefined>;
     /**
      * Represents the details of the password authentication method registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

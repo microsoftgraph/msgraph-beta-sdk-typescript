@@ -11,128 +11,128 @@ export interface AddToReviewSetOperation extends CaseOperation, Parsable {
     /**
      * The review set to which items matching the source collection query are added to.
      */
-    reviewSet?: ReviewSet;
+    reviewSet?: ReviewSet | null;
     /**
      * The sourceCollection that items are being added from.
      */
-    sourceCollection?: SourceCollection;
+    sourceCollection?: SourceCollection | null;
 }
 export type CaseAction = (typeof CaseActionObject)[keyof typeof CaseActionObject];
 export interface CaseCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CaseEscaped[];
+    value?: CaseEscaped[] | null;
 }
 export interface CaseEscaped extends Entity, Parsable {
     /**
      * The user who closed the case.
      */
-    closedBy?: IdentitySet;
+    closedBy?: IdentitySet | null;
     /**
      * The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
      */
-    closedDateTime?: Date;
+    closedDateTime?: Date | null;
     /**
      * The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * Returns a list of case custodian objects for this case.  Nullable.
      */
-    custodians?: Custodian[];
+    custodians?: Custodian[] | null;
     /**
      * The case description.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The case name.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The external case number for customer reference.
      */
-    externalId?: string;
+    externalId?: string | null;
     /**
      * The last user who modified the entity.
      */
-    lastModifiedBy?: IdentitySet;
+    lastModifiedBy?: IdentitySet | null;
     /**
      * The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Returns a list of case legalHold objects for this case.  Nullable.
      */
-    legalHolds?: LegalHold[];
+    legalHolds?: LegalHold[] | null;
     /**
      * Returns a list of case noncustodialDataSource objects for this case.  Nullable.
      */
-    noncustodialDataSources?: NoncustodialDataSource[];
+    noncustodialDataSources?: NoncustodialDataSource[] | null;
     /**
      * Returns a list of case operation objects for this case. Nullable.
      */
-    operations?: CaseOperation[];
+    operations?: CaseOperation[] | null;
     /**
      * Returns a list of reviewSet objects in the case. Read-only. Nullable.
      */
-    reviewSets?: ReviewSet[];
+    reviewSets?: ReviewSet[] | null;
     /**
      * The settings property
      */
-    settings?: CaseSettings;
+    settings?: CaseSettings | null;
     /**
      * Returns a list of sourceCollection objects associated with this case.
      */
-    sourceCollections?: SourceCollection[];
+    sourceCollections?: SourceCollection[] | null;
     /**
      * The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
      */
-    status?: CaseStatus;
+    status?: CaseStatus | null;
     /**
      * Returns a list of tag objects associated to this case.
      */
-    tags?: Tag[];
+    tags?: Tag[] | null;
 }
 export interface CaseExportOperation extends CaseOperation, Parsable {
     /**
      * The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
      */
-    azureBlobContainer?: string;
+    azureBlobContainer?: string | null;
     /**
      * The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
      */
-    azureBlobToken?: string;
+    azureBlobToken?: string | null;
     /**
      * The description provided for the export.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
      */
-    exportOptions?: ExportOptions[];
+    exportOptions?: ExportOptions[] | null;
     /**
      * The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
      */
-    exportStructure?: ExportFileStructure;
+    exportStructure?: ExportFileStructure | null;
     /**
      * The output folder ID.
      */
-    outputFolderId?: string;
+    outputFolderId?: string | null;
     /**
      * The name provided for the export.
      */
-    outputName?: string;
+    outputName?: string | null;
     /**
      * The review set the content is being exported from.
      */
-    reviewSet?: ReviewSet;
+    reviewSet?: ReviewSet | null;
 }
 export interface CaseExportOperationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CaseExportOperation[];
+    value?: CaseExportOperation[] | null;
 }
 export interface CaseHoldOperation extends CaseOperation, Parsable {
 }
@@ -142,52 +142,52 @@ export interface CaseOperation extends Entity, Parsable {
     /**
      * The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
      */
-    action?: CaseAction;
+    action?: CaseAction | null;
     /**
      * The date and time the operation was completed.
      */
-    completedDateTime?: Date;
+    completedDateTime?: Date | null;
     /**
      * The user that created the operation.
      */
-    createdBy?: IdentitySet;
+    createdBy?: IdentitySet | null;
     /**
      * The date and time the operation was created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The progress of the operation.
      */
-    percentProgress?: number;
+    percentProgress?: number | null;
     /**
      * Contains success and failure-specific result information.
      */
-    resultInfo?: ResultInfo;
+    resultInfo?: ResultInfo | null;
     /**
      * The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
      */
-    status?: CaseOperationStatus;
+    status?: CaseOperationStatus | null;
 }
 export interface CaseOperationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: CaseOperation[];
+    value?: CaseOperation[] | null;
 }
 export type CaseOperationStatus = (typeof CaseOperationStatusObject)[keyof typeof CaseOperationStatusObject];
 export interface CaseSettings extends Entity, Parsable {
     /**
      * The OCR (Optical Character Recognition) settings for the case.
      */
-    ocr?: OcrSettings;
+    ocr?: OcrSettings | null;
     /**
      * The redundancy (near duplicate and email threading) detection settings for the case.
      */
-    redundancyDetection?: RedundancyDetectionSettings;
+    redundancyDetection?: RedundancyDetectionSettings | null;
     /**
      * The article Modeling (Themes) settings for the case.
      */
-    topicModeling?: TopicModelingSettings;
+    topicModeling?: TopicModelingSettings | null;
 }
 export type CaseStatus = (typeof CaseStatusObject)[keyof typeof CaseStatusObject];
 export type ChildSelectability = (typeof ChildSelectabilityObject)[keyof typeof ChildSelectabilityObject];
@@ -196,6 +196,7 @@ export type ChildSelectability = (typeof ChildSelectabilityObject)[keyof typeof 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddToReviewSetOperation}
  */
+// @ts-ignore
 export function createAddToReviewSetOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddToReviewSetOperation;
 }
@@ -204,6 +205,7 @@ export function createAddToReviewSetOperationFromDiscriminatorValue(parseNode: P
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseCollectionResponse}
  */
+// @ts-ignore
 export function createCaseCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseCollectionResponse;
 }
@@ -212,6 +214,7 @@ export function createCaseCollectionResponseFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseEscaped}
  */
+// @ts-ignore
 export function createCaseEscapedFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseEscaped;
 }
@@ -220,6 +223,7 @@ export function createCaseEscapedFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseExportOperationCollectionResponse}
  */
+// @ts-ignore
 export function createCaseExportOperationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseExportOperationCollectionResponse;
 }
@@ -228,6 +232,7 @@ export function createCaseExportOperationCollectionResponseFromDiscriminatorValu
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseExportOperation}
  */
+// @ts-ignore
 export function createCaseExportOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseExportOperation;
 }
@@ -236,6 +241,7 @@ export function createCaseExportOperationFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseHoldOperation}
  */
+// @ts-ignore
 export function createCaseHoldOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseHoldOperation;
 }
@@ -244,6 +250,7 @@ export function createCaseHoldOperationFromDiscriminatorValue(parseNode: ParseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseIndexOperation}
  */
+// @ts-ignore
 export function createCaseIndexOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseIndexOperation;
 }
@@ -252,6 +259,7 @@ export function createCaseIndexOperationFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseOperationCollectionResponse}
  */
+// @ts-ignore
 export function createCaseOperationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseOperationCollectionResponse;
 }
@@ -260,6 +268,7 @@ export function createCaseOperationCollectionResponseFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseOperation}
  */
+// @ts-ignore
 export function createCaseOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -291,6 +300,7 @@ export function createCaseOperationFromDiscriminatorValue(parseNode: ParseNode |
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseSettings}
  */
+// @ts-ignore
 export function createCaseSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCaseSettings;
 }
@@ -299,6 +309,7 @@ export function createCaseSettingsFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustodianCollectionResponse}
  */
+// @ts-ignore
 export function createCustodianCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustodianCollectionResponse;
 }
@@ -307,6 +318,7 @@ export function createCustodianCollectionResponseFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Custodian}
  */
+// @ts-ignore
 export function createCustodianFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustodian;
 }
@@ -315,6 +327,7 @@ export function createCustodianFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DataSourceCollectionResponse}
  */
+// @ts-ignore
 export function createDataSourceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDataSourceCollectionResponse;
 }
@@ -323,6 +336,7 @@ export function createDataSourceCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DataSourceContainer}
  */
+// @ts-ignore
 export function createDataSourceContainerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -344,6 +358,7 @@ export function createDataSourceContainerFromDiscriminatorValue(parseNode: Parse
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DataSource}
  */
+// @ts-ignore
 export function createDataSourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
     const mappingValueNode = parseNode.getChildNode("@odata.type");
@@ -367,6 +382,7 @@ export function createDataSourceFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Ediscoveryroot}
  */
+// @ts-ignore
 export function createEdiscoveryrootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEdiscoveryroot;
 }
@@ -375,6 +391,7 @@ export function createEdiscoveryrootFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EstimateStatisticsOperation}
  */
+// @ts-ignore
 export function createEstimateStatisticsOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEstimateStatisticsOperation;
 }
@@ -383,6 +400,7 @@ export function createEstimateStatisticsOperationFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LegalHoldCollectionResponse}
  */
+// @ts-ignore
 export function createLegalHoldCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLegalHoldCollectionResponse;
 }
@@ -391,6 +409,7 @@ export function createLegalHoldCollectionResponseFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LegalHold}
  */
+// @ts-ignore
 export function createLegalHoldFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLegalHold;
 }
@@ -399,6 +418,7 @@ export function createLegalHoldFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NoncustodialDataSourceCollectionResponse}
  */
+// @ts-ignore
 export function createNoncustodialDataSourceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNoncustodialDataSourceCollectionResponse;
 }
@@ -407,6 +427,7 @@ export function createNoncustodialDataSourceCollectionResponseFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {NoncustodialDataSource}
  */
+// @ts-ignore
 export function createNoncustodialDataSourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoNoncustodialDataSource;
 }
@@ -415,6 +436,7 @@ export function createNoncustodialDataSourceFromDiscriminatorValue(parseNode: Pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {OcrSettings}
  */
+// @ts-ignore
 export function createOcrSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoOcrSettings;
 }
@@ -423,6 +445,7 @@ export function createOcrSettingsFromDiscriminatorValue(parseNode: ParseNode | u
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PurgeDataOperation}
  */
+// @ts-ignore
 export function createPurgeDataOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPurgeDataOperation;
 }
@@ -431,6 +454,7 @@ export function createPurgeDataOperationFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RedundancyDetectionSettings}
  */
+// @ts-ignore
 export function createRedundancyDetectionSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRedundancyDetectionSettings;
 }
@@ -439,6 +463,7 @@ export function createRedundancyDetectionSettingsFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReviewSetCollectionResponse}
  */
+// @ts-ignore
 export function createReviewSetCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReviewSetCollectionResponse;
 }
@@ -447,6 +472,7 @@ export function createReviewSetCollectionResponseFromDiscriminatorValue(parseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReviewSet}
  */
+// @ts-ignore
 export function createReviewSetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReviewSet;
 }
@@ -455,6 +481,7 @@ export function createReviewSetFromDiscriminatorValue(parseNode: ParseNode | und
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReviewSetQueryCollectionResponse}
  */
+// @ts-ignore
 export function createReviewSetQueryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReviewSetQueryCollectionResponse;
 }
@@ -463,6 +490,7 @@ export function createReviewSetQueryCollectionResponseFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ReviewSetQuery}
  */
+// @ts-ignore
 export function createReviewSetQueryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoReviewSetQuery;
 }
@@ -471,6 +499,7 @@ export function createReviewSetQueryFromDiscriminatorValue(parseNode: ParseNode 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SiteSourceCollectionResponse}
  */
+// @ts-ignore
 export function createSiteSourceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSiteSourceCollectionResponse;
 }
@@ -479,6 +508,7 @@ export function createSiteSourceCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SiteSource}
  */
+// @ts-ignore
 export function createSiteSourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSiteSource;
 }
@@ -487,6 +517,7 @@ export function createSiteSourceFromDiscriminatorValue(parseNode: ParseNode | un
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SourceCollectionCollectionResponse}
  */
+// @ts-ignore
 export function createSourceCollectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSourceCollectionCollectionResponse;
 }
@@ -495,6 +526,7 @@ export function createSourceCollectionCollectionResponseFromDiscriminatorValue(p
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SourceCollection}
  */
+// @ts-ignore
 export function createSourceCollectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSourceCollection;
 }
@@ -503,6 +535,7 @@ export function createSourceCollectionFromDiscriminatorValue(parseNode: ParseNod
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TagCollectionResponse}
  */
+// @ts-ignore
 export function createTagCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTagCollectionResponse;
 }
@@ -511,6 +544,7 @@ export function createTagCollectionResponseFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Tag}
  */
+// @ts-ignore
 export function createTagFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTag;
 }
@@ -519,6 +553,7 @@ export function createTagFromDiscriminatorValue(parseNode: ParseNode | undefined
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TagOperation}
  */
+// @ts-ignore
 export function createTagOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTagOperation;
 }
@@ -527,6 +562,7 @@ export function createTagOperationFromDiscriminatorValue(parseNode: ParseNode | 
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TopicModelingSettings}
  */
+// @ts-ignore
 export function createTopicModelingSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTopicModelingSettings;
 }
@@ -535,6 +571,7 @@ export function createTopicModelingSettingsFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UnifiedGroupSourceCollectionResponse}
  */
+// @ts-ignore
 export function createUnifiedGroupSourceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnifiedGroupSourceCollectionResponse;
 }
@@ -543,6 +580,7 @@ export function createUnifiedGroupSourceCollectionResponseFromDiscriminatorValue
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UnifiedGroupSource}
  */
+// @ts-ignore
 export function createUnifiedGroupSourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnifiedGroupSource;
 }
@@ -551,6 +589,7 @@ export function createUnifiedGroupSourceFromDiscriminatorValue(parseNode: ParseN
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UserSourceCollectionResponse}
  */
+// @ts-ignore
 export function createUserSourceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUserSourceCollectionResponse;
 }
@@ -559,6 +598,7 @@ export function createUserSourceCollectionResponseFromDiscriminatorValue(parseNo
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UserSource}
  */
+// @ts-ignore
 export function createUserSourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUserSource;
 }
@@ -566,87 +606,87 @@ export interface Custodian extends DataSourceContainer, Parsable {
     /**
      * Date and time the custodian acknowledged a hold notification.
      */
-    acknowledgedDateTime?: Date;
+    acknowledgedDateTime?: Date | null;
     /**
      * Identifies whether a custodian's sources were placed on hold during creation.
      */
-    applyHoldToSources?: boolean;
+    applyHoldToSources?: boolean | null;
     /**
      * Email address of the custodian.
      */
-    email?: string;
+    email?: string | null;
     /**
      * Data source entity for SharePoint sites associated with the custodian.
      */
-    siteSources?: SiteSource[];
+    siteSources?: SiteSource[] | null;
     /**
      * Data source entity for groups associated with the custodian.
      */
-    unifiedGroupSources?: UnifiedGroupSource[];
+    unifiedGroupSources?: UnifiedGroupSource[] | null;
     /**
      * Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
      */
-    userSources?: UserSource[];
+    userSources?: UserSource[] | null;
 }
 export interface CustodianCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: Custodian[];
+    value?: Custodian[] | null;
 }
 export interface DataSource extends Entity, Parsable {
     /**
      * The user who created the dataSource.
      */
-    createdBy?: IdentitySet;
+    createdBy?: IdentitySet | null;
     /**
      * The date and time the dataSource was created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The display name of the dataSource, and is the name of the SharePoint site.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The holdStatus property
      */
-    holdStatus?: DataSourceHoldStatus;
+    holdStatus?: DataSourceHoldStatus | null;
 }
 export interface DataSourceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: DataSource[];
+    value?: DataSource[] | null;
 }
 export interface DataSourceContainer extends Entity, Parsable {
     /**
      * Created date and time of the dataSourceContainer entity.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * Display name of the dataSourceContainer entity.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The holdStatus property
      */
-    holdStatus?: DataSourceHoldStatus;
+    holdStatus?: DataSourceHoldStatus | null;
     /**
      * The lastIndexOperation property
      */
-    lastIndexOperation?: CaseIndexOperation;
+    lastIndexOperation?: CaseIndexOperation | null;
     /**
      * Last modified date and time of the dataSourceContainer.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Date and time that the dataSourceContainer was released from the case.
      */
-    releasedDateTime?: Date;
+    releasedDateTime?: Date | null;
     /**
      * Latest status of the dataSourceContainer. Possible values are: Active, Released.
      */
-    status?: DataSourceContainerStatus;
+    status?: DataSourceContainerStatus | null;
 }
 export type DataSourceContainerStatus = (typeof DataSourceContainerStatusObject)[keyof typeof DataSourceContainerStatusObject];
 export type DataSourceHoldStatus = (typeof DataSourceHoldStatusObject)[keyof typeof DataSourceHoldStatusObject];
@@ -655,6 +695,7 @@ export type DataSourceScopes = (typeof DataSourceScopesObject)[keyof typeof Data
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAddToReviewSetOperation(addToReviewSetOperation: Partial<AddToReviewSetOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(addToReviewSetOperation),
@@ -666,6 +707,7 @@ export function deserializeIntoAddToReviewSetOperation(addToReviewSetOperation: 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseCollectionResponse(caseCollectionResponse: Partial<CaseCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(caseCollectionResponse),
@@ -676,6 +718,7 @@ export function deserializeIntoCaseCollectionResponse(caseCollectionResponse: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseEscaped(caseEscaped: Partial<CaseEscaped> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(caseEscaped),
@@ -702,6 +745,7 @@ export function deserializeIntoCaseEscaped(caseEscaped: Partial<CaseEscaped> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseExportOperation(caseExportOperation: Partial<CaseExportOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(caseExportOperation),
@@ -719,6 +763,7 @@ export function deserializeIntoCaseExportOperation(caseExportOperation: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseExportOperationCollectionResponse(caseExportOperationCollectionResponse: Partial<CaseExportOperationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(caseExportOperationCollectionResponse),
@@ -729,6 +774,7 @@ export function deserializeIntoCaseExportOperationCollectionResponse(caseExportO
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseHoldOperation(caseHoldOperation: Partial<CaseHoldOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(caseHoldOperation),
@@ -738,6 +784,7 @@ export function deserializeIntoCaseHoldOperation(caseHoldOperation: Partial<Case
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseIndexOperation(caseIndexOperation: Partial<CaseIndexOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(caseIndexOperation),
@@ -747,6 +794,7 @@ export function deserializeIntoCaseIndexOperation(caseIndexOperation: Partial<Ca
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseOperation(caseOperation: Partial<CaseOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(caseOperation),
@@ -763,6 +811,7 @@ export function deserializeIntoCaseOperation(caseOperation: Partial<CaseOperatio
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseOperationCollectionResponse(caseOperationCollectionResponse: Partial<CaseOperationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(caseOperationCollectionResponse),
@@ -773,6 +822,7 @@ export function deserializeIntoCaseOperationCollectionResponse(caseOperationColl
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCaseSettings(caseSettings: Partial<CaseSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(caseSettings),
@@ -785,6 +835,7 @@ export function deserializeIntoCaseSettings(caseSettings: Partial<CaseSettings> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCustodian(custodian: Partial<Custodian> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDataSourceContainer(custodian),
@@ -800,6 +851,7 @@ export function deserializeIntoCustodian(custodian: Partial<Custodian> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCustodianCollectionResponse(custodianCollectionResponse: Partial<CustodianCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(custodianCollectionResponse),
@@ -810,6 +862,7 @@ export function deserializeIntoCustodianCollectionResponse(custodianCollectionRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDataSource(dataSource: Partial<DataSource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(dataSource),
@@ -823,6 +876,7 @@ export function deserializeIntoDataSource(dataSource: Partial<DataSource> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDataSourceCollectionResponse(dataSourceCollectionResponse: Partial<DataSourceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(dataSourceCollectionResponse),
@@ -833,6 +887,7 @@ export function deserializeIntoDataSourceCollectionResponse(dataSourceCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDataSourceContainer(dataSourceContainer: Partial<DataSourceContainer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(dataSourceContainer),
@@ -849,6 +904,7 @@ export function deserializeIntoDataSourceContainer(dataSourceContainer: Partial<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEdiscoveryroot(ediscoveryroot: Partial<Ediscoveryroot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(ediscoveryroot),
@@ -859,6 +915,7 @@ export function deserializeIntoEdiscoveryroot(ediscoveryroot: Partial<Ediscovery
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEstimateStatisticsOperation(estimateStatisticsOperation: Partial<EstimateStatisticsOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(estimateStatisticsOperation),
@@ -875,6 +932,7 @@ export function deserializeIntoEstimateStatisticsOperation(estimateStatisticsOpe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLegalHold(legalHold: Partial<LegalHold> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(legalHold),
@@ -897,6 +955,7 @@ export function deserializeIntoLegalHold(legalHold: Partial<LegalHold> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLegalHoldCollectionResponse(legalHoldCollectionResponse: Partial<LegalHoldCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(legalHoldCollectionResponse),
@@ -907,6 +966,7 @@ export function deserializeIntoLegalHoldCollectionResponse(legalHoldCollectionRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNoncustodialDataSource(noncustodialDataSource: Partial<NoncustodialDataSource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDataSourceContainer(noncustodialDataSource),
@@ -918,6 +978,7 @@ export function deserializeIntoNoncustodialDataSource(noncustodialDataSource: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoNoncustodialDataSourceCollectionResponse(noncustodialDataSourceCollectionResponse: Partial<NoncustodialDataSourceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(noncustodialDataSourceCollectionResponse),
@@ -928,6 +989,7 @@ export function deserializeIntoNoncustodialDataSourceCollectionResponse(noncusto
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoOcrSettings(ocrSettings: Partial<OcrSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { ocrSettings.backingStoreEnabled = true; },
@@ -941,6 +1003,7 @@ export function deserializeIntoOcrSettings(ocrSettings: Partial<OcrSettings> | u
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPurgeDataOperation(purgeDataOperation: Partial<PurgeDataOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(purgeDataOperation),
@@ -950,6 +1013,7 @@ export function deserializeIntoPurgeDataOperation(purgeDataOperation: Partial<Pu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRedundancyDetectionSettings(redundancyDetectionSettings: Partial<RedundancyDetectionSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { redundancyDetectionSettings.backingStoreEnabled = true; },
@@ -964,6 +1028,7 @@ export function deserializeIntoRedundancyDetectionSettings(redundancyDetectionSe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReviewSet(reviewSet: Partial<ReviewSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(reviewSet),
@@ -977,6 +1042,7 @@ export function deserializeIntoReviewSet(reviewSet: Partial<ReviewSet> | undefin
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReviewSetCollectionResponse(reviewSetCollectionResponse: Partial<ReviewSetCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(reviewSetCollectionResponse),
@@ -987,6 +1053,7 @@ export function deserializeIntoReviewSetCollectionResponse(reviewSetCollectionRe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReviewSetQuery(reviewSetQuery: Partial<ReviewSetQuery> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(reviewSetQuery),
@@ -1002,6 +1069,7 @@ export function deserializeIntoReviewSetQuery(reviewSetQuery: Partial<ReviewSetQ
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoReviewSetQueryCollectionResponse(reviewSetQueryCollectionResponse: Partial<ReviewSetQueryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(reviewSetQueryCollectionResponse),
@@ -1012,6 +1080,7 @@ export function deserializeIntoReviewSetQueryCollectionResponse(reviewSetQueryCo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSiteSource(siteSource: Partial<SiteSource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDataSource(siteSource),
@@ -1022,6 +1091,7 @@ export function deserializeIntoSiteSource(siteSource: Partial<SiteSource> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSiteSourceCollectionResponse(siteSourceCollectionResponse: Partial<SiteSourceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(siteSourceCollectionResponse),
@@ -1032,6 +1102,7 @@ export function deserializeIntoSiteSourceCollectionResponse(siteSourceCollection
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSourceCollection(sourceCollection: Partial<SourceCollection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(sourceCollection),
@@ -1054,6 +1125,7 @@ export function deserializeIntoSourceCollection(sourceCollection: Partial<Source
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSourceCollectionCollectionResponse(sourceCollectionCollectionResponse: Partial<SourceCollectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(sourceCollectionCollectionResponse),
@@ -1064,6 +1136,7 @@ export function deserializeIntoSourceCollectionCollectionResponse(sourceCollecti
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTag(tag: Partial<Tag> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tag),
@@ -1080,6 +1153,7 @@ export function deserializeIntoTag(tag: Partial<Tag> | undefined = {}) : Record<
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTagCollectionResponse(tagCollectionResponse: Partial<TagCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(tagCollectionResponse),
@@ -1090,6 +1164,7 @@ export function deserializeIntoTagCollectionResponse(tagCollectionResponse: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTagOperation(tagOperation: Partial<TagOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(tagOperation),
@@ -1099,6 +1174,7 @@ export function deserializeIntoTagOperation(tagOperation: Partial<TagOperation> 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTopicModelingSettings(topicModelingSettings: Partial<TopicModelingSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { topicModelingSettings.backingStoreEnabled = true; },
@@ -1113,6 +1189,7 @@ export function deserializeIntoTopicModelingSettings(topicModelingSettings: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUnifiedGroupSource(unifiedGroupSource: Partial<UnifiedGroupSource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDataSource(unifiedGroupSource),
@@ -1124,6 +1201,7 @@ export function deserializeIntoUnifiedGroupSource(unifiedGroupSource: Partial<Un
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUnifiedGroupSourceCollectionResponse(unifiedGroupSourceCollectionResponse: Partial<UnifiedGroupSourceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(unifiedGroupSourceCollectionResponse),
@@ -1134,6 +1212,7 @@ export function deserializeIntoUnifiedGroupSourceCollectionResponse(unifiedGroup
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUserSource(userSource: Partial<UserSource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoDataSource(userSource),
@@ -1146,6 +1225,7 @@ export function deserializeIntoUserSource(userSource: Partial<UserSource> | unde
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUserSourceCollectionResponse(userSourceCollectionResponse: Partial<UserSourceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(userSourceCollectionResponse),
@@ -1156,37 +1236,37 @@ export interface Ediscoveryroot extends Entity, Parsable {
     /**
      * The cases property
      */
-    cases?: CaseEscaped[];
+    cases?: CaseEscaped[] | null;
 }
 export interface EstimateStatisticsOperation extends CaseOperation, Parsable {
     /**
      * The estimated count of items for the sourceCollection that matched the content query.
      */
-    indexedItemCount?: number;
+    indexedItemCount?: number | null;
     /**
      * The estimated size of items for the sourceCollection that matched the content query.
      */
-    indexedItemsSize?: number;
+    indexedItemsSize?: number | null;
     /**
      * The number of mailboxes that had search hits.
      */
-    mailboxCount?: number;
+    mailboxCount?: number | null;
     /**
      * The number of mailboxes that had search hits.
      */
-    siteCount?: number;
+    siteCount?: number | null;
     /**
      * eDiscovery collection, commonly known as a search.
      */
-    sourceCollection?: SourceCollection;
+    sourceCollection?: SourceCollection | null;
     /**
      * The estimated count of unindexed items for the collection.
      */
-    unindexedItemCount?: number;
+    unindexedItemCount?: number | null;
     /**
      * The estimated size of unindexed items for the collection.
      */
-    unindexedItemsSize?: number;
+    unindexedItemsSize?: number | null;
 }
 export type ExportFileStructure = (typeof ExportFileStructureObject)[keyof typeof ExportFileStructureObject];
 export type ExportOptions = (typeof ExportOptionsObject)[keyof typeof ExportOptionsObject];
@@ -1194,78 +1274,78 @@ export interface LegalHold extends Entity, Parsable {
     /**
      * KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
      */
-    contentQuery?: string;
+    contentQuery?: string | null;
     /**
      * The user who created the legal hold.
      */
-    createdBy?: IdentitySet;
+    createdBy?: IdentitySet | null;
     /**
      * The date and time the legal hold was created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The legal hold description.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name of the legal hold.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * Lists any errors that happened while placing the hold.
      */
-    errors?: string[];
+    errors?: string[] | null;
     /**
      * Indicates whether the hold is enabled and actively holding content.
      */
-    isEnabled?: boolean;
+    isEnabled?: boolean | null;
     /**
      * the user who last modified the legal hold.
      */
-    lastModifiedBy?: IdentitySet;
+    lastModifiedBy?: IdentitySet | null;
     /**
      * The date and time the legal hold was last modified.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Data source entity for SharePoint sites associated with the legal hold.
      */
-    siteSources?: SiteSource[];
+    siteSources?: SiteSource[] | null;
     /**
      * The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
      */
-    status?: LegalHoldStatus;
+    status?: LegalHoldStatus | null;
     /**
      * The unifiedGroupSources property
      */
-    unifiedGroupSources?: UnifiedGroupSource[];
+    unifiedGroupSources?: UnifiedGroupSource[] | null;
     /**
      * Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
      */
-    userSources?: UserSource[];
+    userSources?: UserSource[] | null;
 }
 export interface LegalHoldCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: LegalHold[];
+    value?: LegalHold[] | null;
 }
 export type LegalHoldStatus = (typeof LegalHoldStatusObject)[keyof typeof LegalHoldStatusObject];
 export interface NoncustodialDataSource extends DataSourceContainer, Parsable {
     /**
      * Indicates if hold is applied to noncustodial data source (such as mailbox or site).
      */
-    applyHoldToSource?: boolean;
+    applyHoldToSource?: boolean | null;
     /**
      * User source or SharePoint site data source as noncustodial data source.
      */
-    dataSource?: DataSource;
+    dataSource?: DataSource | null;
 }
 export interface NoncustodialDataSourceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: NoncustodialDataSource[];
+    value?: NoncustodialDataSource[] | null;
 }
 export interface OcrSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1275,23 +1355,23 @@ export interface OcrSettings extends AdditionalDataHolder, BackedModel, Parsable
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Indicates whether or not OCR is enabled for the case.
      */
-    isEnabled?: boolean;
+    isEnabled?: boolean | null;
     /**
      * Maximum image size that will be processed in KB).
      */
-    maxImageSize?: number;
+    maxImageSize?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
      */
-    timeout?: Duration;
+    timeout?: Duration | null;
 }
 export interface PurgeDataOperation extends CaseOperation, Parsable {
 }
@@ -1303,613 +1383,733 @@ export interface RedundancyDetectionSettings extends AdditionalDataHolder, Backe
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Indicates whether email threading and near duplicate detection are enabled.
      */
-    isEnabled?: boolean;
+    isEnabled?: boolean | null;
     /**
      * Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
      */
-    maxWords?: number;
+    maxWords?: number | null;
     /**
      * Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
      */
-    minWords?: number;
+    minWords?: number | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
      */
-    similarityThreshold?: number;
+    similarityThreshold?: number | null;
 }
 export interface ReviewSet extends Entity, Parsable {
     /**
      * The user who created the review set. Read-only.
      */
-    createdBy?: IdentitySet;
+    createdBy?: IdentitySet | null;
     /**
      * The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The review set name. The name is unique with a maximum limit of 64 characters.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The queries property
      */
-    queries?: ReviewSetQuery[];
+    queries?: ReviewSetQuery[] | null;
 }
 export interface ReviewSetCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ReviewSet[];
+    value?: ReviewSet[] | null;
 }
 export interface ReviewSetQuery extends Entity, Parsable {
     /**
      * The user who created the query.
      */
-    createdBy?: IdentitySet;
+    createdBy?: IdentitySet | null;
     /**
      * The time and date when the query was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * The name of the query.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The user who last modified the query.
      */
-    lastModifiedBy?: IdentitySet;
+    lastModifiedBy?: IdentitySet | null;
     /**
      * The date and time the query was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * The query string in KQL (Keyword Query Language) query. For details, see Document metadata fields in Advanced eDiscovery.  This field maps directly to the keywords condition.  You can refine searches by using fields listed in the searchable field name paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
      */
-    query?: string;
+    query?: string | null;
 }
 export interface ReviewSetQueryCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ReviewSetQuery[];
+    value?: ReviewSetQuery[] | null;
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAddToReviewSetOperation(writer: SerializationWriter, addToReviewSetOperation: Partial<AddToReviewSetOperation> | undefined = {}) : void {
-    serializeCaseOperation(writer, addToReviewSetOperation)
-    writer.writeObjectValue<ReviewSet>("reviewSet", addToReviewSetOperation.reviewSet, serializeReviewSet);
-    writer.writeObjectValue<SourceCollection>("sourceCollection", addToReviewSetOperation.sourceCollection, serializeSourceCollection);
+// @ts-ignore
+export function serializeAddToReviewSetOperation(writer: SerializationWriter, addToReviewSetOperation: Partial<AddToReviewSetOperation> | undefined | null = {}) : void {
+    if (addToReviewSetOperation) {
+        serializeCaseOperation(writer, addToReviewSetOperation)
+        writer.writeObjectValue<ReviewSet>("reviewSet", addToReviewSetOperation.reviewSet, serializeReviewSet);
+        writer.writeObjectValue<SourceCollection>("sourceCollection", addToReviewSetOperation.sourceCollection, serializeSourceCollection);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseCollectionResponse(writer: SerializationWriter, caseCollectionResponse: Partial<CaseCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, caseCollectionResponse)
-    writer.writeCollectionOfObjectValues<CaseEscaped>("value", caseCollectionResponse.value, serializeCaseEscaped);
+// @ts-ignore
+export function serializeCaseCollectionResponse(writer: SerializationWriter, caseCollectionResponse: Partial<CaseCollectionResponse> | undefined | null = {}) : void {
+    if (caseCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, caseCollectionResponse)
+        writer.writeCollectionOfObjectValues<CaseEscaped>("value", caseCollectionResponse.value, serializeCaseEscaped);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: Partial<CaseEscaped> | undefined = {}) : void {
-    serializeEntity(writer, caseEscaped)
-    writer.writeObjectValue<IdentitySet>("closedBy", caseEscaped.closedBy, serializeIdentitySet);
-    writer.writeDateValue("closedDateTime", caseEscaped.closedDateTime);
-    writer.writeDateValue("createdDateTime", caseEscaped.createdDateTime);
-    writer.writeCollectionOfObjectValues<Custodian>("custodians", caseEscaped.custodians, serializeCustodian);
-    writer.writeStringValue("description", caseEscaped.description);
-    writer.writeStringValue("displayName", caseEscaped.displayName);
-    writer.writeStringValue("externalId", caseEscaped.externalId);
-    writer.writeObjectValue<IdentitySet>("lastModifiedBy", caseEscaped.lastModifiedBy, serializeIdentitySet);
-    writer.writeDateValue("lastModifiedDateTime", caseEscaped.lastModifiedDateTime);
-    writer.writeCollectionOfObjectValues<LegalHold>("legalHolds", caseEscaped.legalHolds, serializeLegalHold);
-    writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialDataSources", caseEscaped.noncustodialDataSources, serializeNoncustodialDataSource);
-    writer.writeCollectionOfObjectValues<CaseOperation>("operations", caseEscaped.operations, serializeCaseOperation);
-    writer.writeCollectionOfObjectValues<ReviewSet>("reviewSets", caseEscaped.reviewSets, serializeReviewSet);
-    writer.writeObjectValue<CaseSettings>("settings", caseEscaped.settings, serializeCaseSettings);
-    writer.writeCollectionOfObjectValues<SourceCollection>("sourceCollections", caseEscaped.sourceCollections, serializeSourceCollection);
-    writer.writeEnumValue<CaseStatus>("status", caseEscaped.status);
-    writer.writeCollectionOfObjectValues<Tag>("tags", caseEscaped.tags, serializeTag);
+// @ts-ignore
+export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: Partial<CaseEscaped> | undefined | null = {}) : void {
+    if (caseEscaped) {
+        serializeEntity(writer, caseEscaped)
+        writer.writeObjectValue<IdentitySet>("closedBy", caseEscaped.closedBy, serializeIdentitySet);
+        writer.writeDateValue("closedDateTime", caseEscaped.closedDateTime);
+        writer.writeDateValue("createdDateTime", caseEscaped.createdDateTime);
+        writer.writeCollectionOfObjectValues<Custodian>("custodians", caseEscaped.custodians, serializeCustodian);
+        writer.writeStringValue("description", caseEscaped.description);
+        writer.writeStringValue("displayName", caseEscaped.displayName);
+        writer.writeStringValue("externalId", caseEscaped.externalId);
+        writer.writeObjectValue<IdentitySet>("lastModifiedBy", caseEscaped.lastModifiedBy, serializeIdentitySet);
+        writer.writeDateValue("lastModifiedDateTime", caseEscaped.lastModifiedDateTime);
+        writer.writeCollectionOfObjectValues<LegalHold>("legalHolds", caseEscaped.legalHolds, serializeLegalHold);
+        writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialDataSources", caseEscaped.noncustodialDataSources, serializeNoncustodialDataSource);
+        writer.writeCollectionOfObjectValues<CaseOperation>("operations", caseEscaped.operations, serializeCaseOperation);
+        writer.writeCollectionOfObjectValues<ReviewSet>("reviewSets", caseEscaped.reviewSets, serializeReviewSet);
+        writer.writeObjectValue<CaseSettings>("settings", caseEscaped.settings, serializeCaseSettings);
+        writer.writeCollectionOfObjectValues<SourceCollection>("sourceCollections", caseEscaped.sourceCollections, serializeSourceCollection);
+        writer.writeEnumValue<CaseStatus>("status", caseEscaped.status);
+        writer.writeCollectionOfObjectValues<Tag>("tags", caseEscaped.tags, serializeTag);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseExportOperation(writer: SerializationWriter, caseExportOperation: Partial<CaseExportOperation> | undefined = {}) : void {
-    serializeCaseOperation(writer, caseExportOperation)
-    writer.writeStringValue("azureBlobContainer", caseExportOperation.azureBlobContainer);
-    writer.writeStringValue("azureBlobToken", caseExportOperation.azureBlobToken);
-    writer.writeStringValue("description", caseExportOperation.description);
-    writer.writeEnumValue<ExportOptions[]>("exportOptions", caseExportOperation.exportOptions);
-    writer.writeEnumValue<ExportFileStructure>("exportStructure", caseExportOperation.exportStructure);
-    writer.writeStringValue("outputFolderId", caseExportOperation.outputFolderId);
-    writer.writeStringValue("outputName", caseExportOperation.outputName);
-    writer.writeObjectValue<ReviewSet>("reviewSet", caseExportOperation.reviewSet, serializeReviewSet);
+// @ts-ignore
+export function serializeCaseExportOperation(writer: SerializationWriter, caseExportOperation: Partial<CaseExportOperation> | undefined | null = {}) : void {
+    if (caseExportOperation) {
+        serializeCaseOperation(writer, caseExportOperation)
+        writer.writeStringValue("azureBlobContainer", caseExportOperation.azureBlobContainer);
+        writer.writeStringValue("azureBlobToken", caseExportOperation.azureBlobToken);
+        writer.writeStringValue("description", caseExportOperation.description);
+        writer.writeEnumValue<ExportOptions[]>("exportOptions", caseExportOperation.exportOptions);
+        writer.writeEnumValue<ExportFileStructure>("exportStructure", caseExportOperation.exportStructure);
+        writer.writeStringValue("outputFolderId", caseExportOperation.outputFolderId);
+        writer.writeStringValue("outputName", caseExportOperation.outputName);
+        writer.writeObjectValue<ReviewSet>("reviewSet", caseExportOperation.reviewSet, serializeReviewSet);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseExportOperationCollectionResponse(writer: SerializationWriter, caseExportOperationCollectionResponse: Partial<CaseExportOperationCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, caseExportOperationCollectionResponse)
-    writer.writeCollectionOfObjectValues<CaseExportOperation>("value", caseExportOperationCollectionResponse.value, serializeCaseExportOperation);
+// @ts-ignore
+export function serializeCaseExportOperationCollectionResponse(writer: SerializationWriter, caseExportOperationCollectionResponse: Partial<CaseExportOperationCollectionResponse> | undefined | null = {}) : void {
+    if (caseExportOperationCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, caseExportOperationCollectionResponse)
+        writer.writeCollectionOfObjectValues<CaseExportOperation>("value", caseExportOperationCollectionResponse.value, serializeCaseExportOperation);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseHoldOperation(writer: SerializationWriter, caseHoldOperation: Partial<CaseHoldOperation> | undefined = {}) : void {
-    serializeCaseOperation(writer, caseHoldOperation)
+// @ts-ignore
+export function serializeCaseHoldOperation(writer: SerializationWriter, caseHoldOperation: Partial<CaseHoldOperation> | undefined | null = {}) : void {
+    if (caseHoldOperation) {
+        serializeCaseOperation(writer, caseHoldOperation)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseIndexOperation(writer: SerializationWriter, caseIndexOperation: Partial<CaseIndexOperation> | undefined = {}) : void {
-    serializeCaseOperation(writer, caseIndexOperation)
+// @ts-ignore
+export function serializeCaseIndexOperation(writer: SerializationWriter, caseIndexOperation: Partial<CaseIndexOperation> | undefined | null = {}) : void {
+    if (caseIndexOperation) {
+        serializeCaseOperation(writer, caseIndexOperation)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseOperation(writer: SerializationWriter, caseOperation: Partial<CaseOperation> | undefined = {}) : void {
-    serializeEntity(writer, caseOperation)
-    writer.writeEnumValue<CaseAction>("action", caseOperation.action);
-    writer.writeDateValue("completedDateTime", caseOperation.completedDateTime);
-    writer.writeObjectValue<IdentitySet>("createdBy", caseOperation.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", caseOperation.createdDateTime);
-    writer.writeNumberValue("percentProgress", caseOperation.percentProgress);
-    writer.writeObjectValue<ResultInfo>("resultInfo", caseOperation.resultInfo, serializeResultInfo);
-    writer.writeEnumValue<CaseOperationStatus>("status", caseOperation.status);
+// @ts-ignore
+export function serializeCaseOperation(writer: SerializationWriter, caseOperation: Partial<CaseOperation> | undefined | null = {}) : void {
+    if (caseOperation) {
+        serializeEntity(writer, caseOperation)
+        writer.writeEnumValue<CaseAction>("action", caseOperation.action);
+        writer.writeDateValue("completedDateTime", caseOperation.completedDateTime);
+        writer.writeObjectValue<IdentitySet>("createdBy", caseOperation.createdBy, serializeIdentitySet);
+        writer.writeDateValue("createdDateTime", caseOperation.createdDateTime);
+        writer.writeNumberValue("percentProgress", caseOperation.percentProgress);
+        writer.writeObjectValue<ResultInfo>("resultInfo", caseOperation.resultInfo, serializeResultInfo);
+        writer.writeEnumValue<CaseOperationStatus>("status", caseOperation.status);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseOperationCollectionResponse(writer: SerializationWriter, caseOperationCollectionResponse: Partial<CaseOperationCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, caseOperationCollectionResponse)
-    writer.writeCollectionOfObjectValues<CaseOperation>("value", caseOperationCollectionResponse.value, serializeCaseOperation);
+// @ts-ignore
+export function serializeCaseOperationCollectionResponse(writer: SerializationWriter, caseOperationCollectionResponse: Partial<CaseOperationCollectionResponse> | undefined | null = {}) : void {
+    if (caseOperationCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, caseOperationCollectionResponse)
+        writer.writeCollectionOfObjectValues<CaseOperation>("value", caseOperationCollectionResponse.value, serializeCaseOperation);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCaseSettings(writer: SerializationWriter, caseSettings: Partial<CaseSettings> | undefined = {}) : void {
-    serializeEntity(writer, caseSettings)
-    writer.writeObjectValue<OcrSettings>("ocr", caseSettings.ocr, serializeOcrSettings);
-    writer.writeObjectValue<RedundancyDetectionSettings>("redundancyDetection", caseSettings.redundancyDetection, serializeRedundancyDetectionSettings);
-    writer.writeObjectValue<TopicModelingSettings>("topicModeling", caseSettings.topicModeling, serializeTopicModelingSettings);
+// @ts-ignore
+export function serializeCaseSettings(writer: SerializationWriter, caseSettings: Partial<CaseSettings> | undefined | null = {}) : void {
+    if (caseSettings) {
+        serializeEntity(writer, caseSettings)
+        writer.writeObjectValue<OcrSettings>("ocr", caseSettings.ocr, serializeOcrSettings);
+        writer.writeObjectValue<RedundancyDetectionSettings>("redundancyDetection", caseSettings.redundancyDetection, serializeRedundancyDetectionSettings);
+        writer.writeObjectValue<TopicModelingSettings>("topicModeling", caseSettings.topicModeling, serializeTopicModelingSettings);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCustodian(writer: SerializationWriter, custodian: Partial<Custodian> | undefined = {}) : void {
-    serializeDataSourceContainer(writer, custodian)
-    writer.writeDateValue("acknowledgedDateTime", custodian.acknowledgedDateTime);
-    writer.writeBooleanValue("applyHoldToSources", custodian.applyHoldToSources);
-    writer.writeStringValue("email", custodian.email);
-    writer.writeCollectionOfObjectValues<SiteSource>("siteSources", custodian.siteSources, serializeSiteSource);
-    writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", custodian.unifiedGroupSources, serializeUnifiedGroupSource);
-    writer.writeCollectionOfObjectValues<UserSource>("userSources", custodian.userSources, serializeUserSource);
+// @ts-ignore
+export function serializeCustodian(writer: SerializationWriter, custodian: Partial<Custodian> | undefined | null = {}) : void {
+    if (custodian) {
+        serializeDataSourceContainer(writer, custodian)
+        writer.writeDateValue("acknowledgedDateTime", custodian.acknowledgedDateTime);
+        writer.writeBooleanValue("applyHoldToSources", custodian.applyHoldToSources);
+        writer.writeStringValue("email", custodian.email);
+        writer.writeCollectionOfObjectValues<SiteSource>("siteSources", custodian.siteSources, serializeSiteSource);
+        writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", custodian.unifiedGroupSources, serializeUnifiedGroupSource);
+        writer.writeCollectionOfObjectValues<UserSource>("userSources", custodian.userSources, serializeUserSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCustodianCollectionResponse(writer: SerializationWriter, custodianCollectionResponse: Partial<CustodianCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, custodianCollectionResponse)
-    writer.writeCollectionOfObjectValues<Custodian>("value", custodianCollectionResponse.value, serializeCustodian);
+// @ts-ignore
+export function serializeCustodianCollectionResponse(writer: SerializationWriter, custodianCollectionResponse: Partial<CustodianCollectionResponse> | undefined | null = {}) : void {
+    if (custodianCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, custodianCollectionResponse)
+        writer.writeCollectionOfObjectValues<Custodian>("value", custodianCollectionResponse.value, serializeCustodian);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDataSource(writer: SerializationWriter, dataSource: Partial<DataSource> | undefined = {}) : void {
-    serializeEntity(writer, dataSource)
-    writer.writeObjectValue<IdentitySet>("createdBy", dataSource.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", dataSource.createdDateTime);
-    writer.writeStringValue("displayName", dataSource.displayName);
-    writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSource.holdStatus);
+// @ts-ignore
+export function serializeDataSource(writer: SerializationWriter, dataSource: Partial<DataSource> | undefined | null = {}) : void {
+    if (dataSource) {
+        serializeEntity(writer, dataSource)
+        writer.writeObjectValue<IdentitySet>("createdBy", dataSource.createdBy, serializeIdentitySet);
+        writer.writeDateValue("createdDateTime", dataSource.createdDateTime);
+        writer.writeStringValue("displayName", dataSource.displayName);
+        writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSource.holdStatus);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDataSourceCollectionResponse(writer: SerializationWriter, dataSourceCollectionResponse: Partial<DataSourceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, dataSourceCollectionResponse)
-    writer.writeCollectionOfObjectValues<DataSource>("value", dataSourceCollectionResponse.value, serializeDataSource);
+// @ts-ignore
+export function serializeDataSourceCollectionResponse(writer: SerializationWriter, dataSourceCollectionResponse: Partial<DataSourceCollectionResponse> | undefined | null = {}) : void {
+    if (dataSourceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, dataSourceCollectionResponse)
+        writer.writeCollectionOfObjectValues<DataSource>("value", dataSourceCollectionResponse.value, serializeDataSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDataSourceContainer(writer: SerializationWriter, dataSourceContainer: Partial<DataSourceContainer> | undefined = {}) : void {
-    serializeEntity(writer, dataSourceContainer)
-    writer.writeDateValue("createdDateTime", dataSourceContainer.createdDateTime);
-    writer.writeStringValue("displayName", dataSourceContainer.displayName);
-    writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSourceContainer.holdStatus);
-    writer.writeObjectValue<CaseIndexOperation>("lastIndexOperation", dataSourceContainer.lastIndexOperation, serializeCaseIndexOperation);
-    writer.writeDateValue("lastModifiedDateTime", dataSourceContainer.lastModifiedDateTime);
-    writer.writeDateValue("releasedDateTime", dataSourceContainer.releasedDateTime);
-    writer.writeEnumValue<DataSourceContainerStatus>("status", dataSourceContainer.status);
+// @ts-ignore
+export function serializeDataSourceContainer(writer: SerializationWriter, dataSourceContainer: Partial<DataSourceContainer> | undefined | null = {}) : void {
+    if (dataSourceContainer) {
+        serializeEntity(writer, dataSourceContainer)
+        writer.writeDateValue("createdDateTime", dataSourceContainer.createdDateTime);
+        writer.writeStringValue("displayName", dataSourceContainer.displayName);
+        writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSourceContainer.holdStatus);
+        writer.writeObjectValue<CaseIndexOperation>("lastIndexOperation", dataSourceContainer.lastIndexOperation, serializeCaseIndexOperation);
+        writer.writeDateValue("lastModifiedDateTime", dataSourceContainer.lastModifiedDateTime);
+        writer.writeDateValue("releasedDateTime", dataSourceContainer.releasedDateTime);
+        writer.writeEnumValue<DataSourceContainerStatus>("status", dataSourceContainer.status);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEdiscoveryroot(writer: SerializationWriter, ediscoveryroot: Partial<Ediscoveryroot> | undefined = {}) : void {
-    serializeEntity(writer, ediscoveryroot)
-    writer.writeCollectionOfObjectValues<CaseEscaped>("cases", ediscoveryroot.cases, serializeCaseEscaped);
+// @ts-ignore
+export function serializeEdiscoveryroot(writer: SerializationWriter, ediscoveryroot: Partial<Ediscoveryroot> | undefined | null = {}) : void {
+    if (ediscoveryroot) {
+        serializeEntity(writer, ediscoveryroot)
+        writer.writeCollectionOfObjectValues<CaseEscaped>("cases", ediscoveryroot.cases, serializeCaseEscaped);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEstimateStatisticsOperation(writer: SerializationWriter, estimateStatisticsOperation: Partial<EstimateStatisticsOperation> | undefined = {}) : void {
-    serializeCaseOperation(writer, estimateStatisticsOperation)
-    writer.writeNumberValue("indexedItemCount", estimateStatisticsOperation.indexedItemCount);
-    writer.writeNumberValue("indexedItemsSize", estimateStatisticsOperation.indexedItemsSize);
-    writer.writeNumberValue("mailboxCount", estimateStatisticsOperation.mailboxCount);
-    writer.writeNumberValue("siteCount", estimateStatisticsOperation.siteCount);
-    writer.writeObjectValue<SourceCollection>("sourceCollection", estimateStatisticsOperation.sourceCollection, serializeSourceCollection);
-    writer.writeNumberValue("unindexedItemCount", estimateStatisticsOperation.unindexedItemCount);
-    writer.writeNumberValue("unindexedItemsSize", estimateStatisticsOperation.unindexedItemsSize);
+// @ts-ignore
+export function serializeEstimateStatisticsOperation(writer: SerializationWriter, estimateStatisticsOperation: Partial<EstimateStatisticsOperation> | undefined | null = {}) : void {
+    if (estimateStatisticsOperation) {
+        serializeCaseOperation(writer, estimateStatisticsOperation)
+        writer.writeNumberValue("indexedItemCount", estimateStatisticsOperation.indexedItemCount);
+        writer.writeNumberValue("indexedItemsSize", estimateStatisticsOperation.indexedItemsSize);
+        writer.writeNumberValue("mailboxCount", estimateStatisticsOperation.mailboxCount);
+        writer.writeNumberValue("siteCount", estimateStatisticsOperation.siteCount);
+        writer.writeObjectValue<SourceCollection>("sourceCollection", estimateStatisticsOperation.sourceCollection, serializeSourceCollection);
+        writer.writeNumberValue("unindexedItemCount", estimateStatisticsOperation.unindexedItemCount);
+        writer.writeNumberValue("unindexedItemsSize", estimateStatisticsOperation.unindexedItemsSize);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeLegalHold(writer: SerializationWriter, legalHold: Partial<LegalHold> | undefined = {}) : void {
-    serializeEntity(writer, legalHold)
-    writer.writeStringValue("contentQuery", legalHold.contentQuery);
-    writer.writeObjectValue<IdentitySet>("createdBy", legalHold.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", legalHold.createdDateTime);
-    writer.writeStringValue("description", legalHold.description);
-    writer.writeStringValue("displayName", legalHold.displayName);
-    writer.writeCollectionOfPrimitiveValues<string>("errors", legalHold.errors);
-    writer.writeBooleanValue("isEnabled", legalHold.isEnabled);
-    writer.writeObjectValue<IdentitySet>("lastModifiedBy", legalHold.lastModifiedBy, serializeIdentitySet);
-    writer.writeDateValue("lastModifiedDateTime", legalHold.lastModifiedDateTime);
-    writer.writeCollectionOfObjectValues<SiteSource>("siteSources", legalHold.siteSources, serializeSiteSource);
-    writer.writeEnumValue<LegalHoldStatus>("status", legalHold.status);
-    writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", legalHold.unifiedGroupSources, serializeUnifiedGroupSource);
-    writer.writeCollectionOfObjectValues<UserSource>("userSources", legalHold.userSources, serializeUserSource);
+// @ts-ignore
+export function serializeLegalHold(writer: SerializationWriter, legalHold: Partial<LegalHold> | undefined | null = {}) : void {
+    if (legalHold) {
+        serializeEntity(writer, legalHold)
+        writer.writeStringValue("contentQuery", legalHold.contentQuery);
+        writer.writeObjectValue<IdentitySet>("createdBy", legalHold.createdBy, serializeIdentitySet);
+        writer.writeDateValue("createdDateTime", legalHold.createdDateTime);
+        writer.writeStringValue("description", legalHold.description);
+        writer.writeStringValue("displayName", legalHold.displayName);
+        writer.writeCollectionOfPrimitiveValues<string>("errors", legalHold.errors);
+        writer.writeBooleanValue("isEnabled", legalHold.isEnabled);
+        writer.writeObjectValue<IdentitySet>("lastModifiedBy", legalHold.lastModifiedBy, serializeIdentitySet);
+        writer.writeDateValue("lastModifiedDateTime", legalHold.lastModifiedDateTime);
+        writer.writeCollectionOfObjectValues<SiteSource>("siteSources", legalHold.siteSources, serializeSiteSource);
+        writer.writeEnumValue<LegalHoldStatus>("status", legalHold.status);
+        writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", legalHold.unifiedGroupSources, serializeUnifiedGroupSource);
+        writer.writeCollectionOfObjectValues<UserSource>("userSources", legalHold.userSources, serializeUserSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeLegalHoldCollectionResponse(writer: SerializationWriter, legalHoldCollectionResponse: Partial<LegalHoldCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, legalHoldCollectionResponse)
-    writer.writeCollectionOfObjectValues<LegalHold>("value", legalHoldCollectionResponse.value, serializeLegalHold);
+// @ts-ignore
+export function serializeLegalHoldCollectionResponse(writer: SerializationWriter, legalHoldCollectionResponse: Partial<LegalHoldCollectionResponse> | undefined | null = {}) : void {
+    if (legalHoldCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, legalHoldCollectionResponse)
+        writer.writeCollectionOfObjectValues<LegalHold>("value", legalHoldCollectionResponse.value, serializeLegalHold);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNoncustodialDataSource(writer: SerializationWriter, noncustodialDataSource: Partial<NoncustodialDataSource> | undefined = {}) : void {
-    serializeDataSourceContainer(writer, noncustodialDataSource)
-    writer.writeBooleanValue("applyHoldToSource", noncustodialDataSource.applyHoldToSource);
-    writer.writeObjectValue<DataSource>("dataSource", noncustodialDataSource.dataSource, serializeDataSource);
+// @ts-ignore
+export function serializeNoncustodialDataSource(writer: SerializationWriter, noncustodialDataSource: Partial<NoncustodialDataSource> | undefined | null = {}) : void {
+    if (noncustodialDataSource) {
+        serializeDataSourceContainer(writer, noncustodialDataSource)
+        writer.writeBooleanValue("applyHoldToSource", noncustodialDataSource.applyHoldToSource);
+        writer.writeObjectValue<DataSource>("dataSource", noncustodialDataSource.dataSource, serializeDataSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeNoncustodialDataSourceCollectionResponse(writer: SerializationWriter, noncustodialDataSourceCollectionResponse: Partial<NoncustodialDataSourceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, noncustodialDataSourceCollectionResponse)
-    writer.writeCollectionOfObjectValues<NoncustodialDataSource>("value", noncustodialDataSourceCollectionResponse.value, serializeNoncustodialDataSource);
+// @ts-ignore
+export function serializeNoncustodialDataSourceCollectionResponse(writer: SerializationWriter, noncustodialDataSourceCollectionResponse: Partial<NoncustodialDataSourceCollectionResponse> | undefined | null = {}) : void {
+    if (noncustodialDataSourceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, noncustodialDataSourceCollectionResponse)
+        writer.writeCollectionOfObjectValues<NoncustodialDataSource>("value", noncustodialDataSourceCollectionResponse.value, serializeNoncustodialDataSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeOcrSettings(writer: SerializationWriter, ocrSettings: Partial<OcrSettings> | undefined = {}) : void {
-    writer.writeBooleanValue("isEnabled", ocrSettings.isEnabled);
-    writer.writeNumberValue("maxImageSize", ocrSettings.maxImageSize);
-    writer.writeStringValue("@odata.type", ocrSettings.odataType);
-    writer.writeDurationValue("timeout", ocrSettings.timeout);
-    writer.writeAdditionalData(ocrSettings.additionalData);
+// @ts-ignore
+export function serializeOcrSettings(writer: SerializationWriter, ocrSettings: Partial<OcrSettings> | undefined | null = {}) : void {
+    if (ocrSettings) {
+        writer.writeBooleanValue("isEnabled", ocrSettings.isEnabled);
+        writer.writeNumberValue("maxImageSize", ocrSettings.maxImageSize);
+        writer.writeStringValue("@odata.type", ocrSettings.odataType);
+        writer.writeDurationValue("timeout", ocrSettings.timeout);
+        writer.writeAdditionalData(ocrSettings.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePurgeDataOperation(writer: SerializationWriter, purgeDataOperation: Partial<PurgeDataOperation> | undefined = {}) : void {
-    serializeCaseOperation(writer, purgeDataOperation)
+// @ts-ignore
+export function serializePurgeDataOperation(writer: SerializationWriter, purgeDataOperation: Partial<PurgeDataOperation> | undefined | null = {}) : void {
+    if (purgeDataOperation) {
+        serializeCaseOperation(writer, purgeDataOperation)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRedundancyDetectionSettings(writer: SerializationWriter, redundancyDetectionSettings: Partial<RedundancyDetectionSettings> | undefined = {}) : void {
-    writer.writeBooleanValue("isEnabled", redundancyDetectionSettings.isEnabled);
-    writer.writeNumberValue("maxWords", redundancyDetectionSettings.maxWords);
-    writer.writeNumberValue("minWords", redundancyDetectionSettings.minWords);
-    writer.writeStringValue("@odata.type", redundancyDetectionSettings.odataType);
-    writer.writeNumberValue("similarityThreshold", redundancyDetectionSettings.similarityThreshold);
-    writer.writeAdditionalData(redundancyDetectionSettings.additionalData);
+// @ts-ignore
+export function serializeRedundancyDetectionSettings(writer: SerializationWriter, redundancyDetectionSettings: Partial<RedundancyDetectionSettings> | undefined | null = {}) : void {
+    if (redundancyDetectionSettings) {
+        writer.writeBooleanValue("isEnabled", redundancyDetectionSettings.isEnabled);
+        writer.writeNumberValue("maxWords", redundancyDetectionSettings.maxWords);
+        writer.writeNumberValue("minWords", redundancyDetectionSettings.minWords);
+        writer.writeStringValue("@odata.type", redundancyDetectionSettings.odataType);
+        writer.writeNumberValue("similarityThreshold", redundancyDetectionSettings.similarityThreshold);
+        writer.writeAdditionalData(redundancyDetectionSettings.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReviewSet(writer: SerializationWriter, reviewSet: Partial<ReviewSet> | undefined = {}) : void {
-    serializeEntity(writer, reviewSet)
-    writer.writeObjectValue<IdentitySet>("createdBy", reviewSet.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", reviewSet.createdDateTime);
-    writer.writeStringValue("displayName", reviewSet.displayName);
-    writer.writeCollectionOfObjectValues<ReviewSetQuery>("queries", reviewSet.queries, serializeReviewSetQuery);
+// @ts-ignore
+export function serializeReviewSet(writer: SerializationWriter, reviewSet: Partial<ReviewSet> | undefined | null = {}) : void {
+    if (reviewSet) {
+        serializeEntity(writer, reviewSet)
+        writer.writeObjectValue<IdentitySet>("createdBy", reviewSet.createdBy, serializeIdentitySet);
+        writer.writeDateValue("createdDateTime", reviewSet.createdDateTime);
+        writer.writeStringValue("displayName", reviewSet.displayName);
+        writer.writeCollectionOfObjectValues<ReviewSetQuery>("queries", reviewSet.queries, serializeReviewSetQuery);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReviewSetCollectionResponse(writer: SerializationWriter, reviewSetCollectionResponse: Partial<ReviewSetCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, reviewSetCollectionResponse)
-    writer.writeCollectionOfObjectValues<ReviewSet>("value", reviewSetCollectionResponse.value, serializeReviewSet);
+// @ts-ignore
+export function serializeReviewSetCollectionResponse(writer: SerializationWriter, reviewSetCollectionResponse: Partial<ReviewSetCollectionResponse> | undefined | null = {}) : void {
+    if (reviewSetCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, reviewSetCollectionResponse)
+        writer.writeCollectionOfObjectValues<ReviewSet>("value", reviewSetCollectionResponse.value, serializeReviewSet);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReviewSetQuery(writer: SerializationWriter, reviewSetQuery: Partial<ReviewSetQuery> | undefined = {}) : void {
-    serializeEntity(writer, reviewSetQuery)
-    writer.writeObjectValue<IdentitySet>("createdBy", reviewSetQuery.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", reviewSetQuery.createdDateTime);
-    writer.writeStringValue("displayName", reviewSetQuery.displayName);
-    writer.writeObjectValue<IdentitySet>("lastModifiedBy", reviewSetQuery.lastModifiedBy, serializeIdentitySet);
-    writer.writeDateValue("lastModifiedDateTime", reviewSetQuery.lastModifiedDateTime);
-    writer.writeStringValue("query", reviewSetQuery.query);
+// @ts-ignore
+export function serializeReviewSetQuery(writer: SerializationWriter, reviewSetQuery: Partial<ReviewSetQuery> | undefined | null = {}) : void {
+    if (reviewSetQuery) {
+        serializeEntity(writer, reviewSetQuery)
+        writer.writeObjectValue<IdentitySet>("createdBy", reviewSetQuery.createdBy, serializeIdentitySet);
+        writer.writeDateValue("createdDateTime", reviewSetQuery.createdDateTime);
+        writer.writeStringValue("displayName", reviewSetQuery.displayName);
+        writer.writeObjectValue<IdentitySet>("lastModifiedBy", reviewSetQuery.lastModifiedBy, serializeIdentitySet);
+        writer.writeDateValue("lastModifiedDateTime", reviewSetQuery.lastModifiedDateTime);
+        writer.writeStringValue("query", reviewSetQuery.query);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeReviewSetQueryCollectionResponse(writer: SerializationWriter, reviewSetQueryCollectionResponse: Partial<ReviewSetQueryCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, reviewSetQueryCollectionResponse)
-    writer.writeCollectionOfObjectValues<ReviewSetQuery>("value", reviewSetQueryCollectionResponse.value, serializeReviewSetQuery);
+// @ts-ignore
+export function serializeReviewSetQueryCollectionResponse(writer: SerializationWriter, reviewSetQueryCollectionResponse: Partial<ReviewSetQueryCollectionResponse> | undefined | null = {}) : void {
+    if (reviewSetQueryCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, reviewSetQueryCollectionResponse)
+        writer.writeCollectionOfObjectValues<ReviewSetQuery>("value", reviewSetQueryCollectionResponse.value, serializeReviewSetQuery);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSiteSource(writer: SerializationWriter, siteSource: Partial<SiteSource> | undefined = {}) : void {
-    serializeDataSource(writer, siteSource)
-    writer.writeObjectValue<Site>("site", siteSource.site, serializeSite);
+// @ts-ignore
+export function serializeSiteSource(writer: SerializationWriter, siteSource: Partial<SiteSource> | undefined | null = {}) : void {
+    if (siteSource) {
+        serializeDataSource(writer, siteSource)
+        writer.writeObjectValue<Site>("site", siteSource.site, serializeSite);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSiteSourceCollectionResponse(writer: SerializationWriter, siteSourceCollectionResponse: Partial<SiteSourceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, siteSourceCollectionResponse)
-    writer.writeCollectionOfObjectValues<SiteSource>("value", siteSourceCollectionResponse.value, serializeSiteSource);
+// @ts-ignore
+export function serializeSiteSourceCollectionResponse(writer: SerializationWriter, siteSourceCollectionResponse: Partial<SiteSourceCollectionResponse> | undefined | null = {}) : void {
+    if (siteSourceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, siteSourceCollectionResponse)
+        writer.writeCollectionOfObjectValues<SiteSource>("value", siteSourceCollectionResponse.value, serializeSiteSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSourceCollection(writer: SerializationWriter, sourceCollection: Partial<SourceCollection> | undefined = {}) : void {
-    serializeEntity(writer, sourceCollection)
-    writer.writeCollectionOfObjectValues<DataSource>("additionalSources", sourceCollection.additionalSources, serializeDataSource);
-    writer.writeObjectValue<AddToReviewSetOperation>("addToReviewSetOperation", sourceCollection.addToReviewSetOperation, serializeAddToReviewSetOperation);
-    writer.writeStringValue("contentQuery", sourceCollection.contentQuery);
-    writer.writeObjectValue<IdentitySet>("createdBy", sourceCollection.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", sourceCollection.createdDateTime);
-    writer.writeCollectionOfObjectValues<DataSource>("custodianSources", sourceCollection.custodianSources, serializeDataSource);
-    writer.writeEnumValue<DataSourceScopes[]>("dataSourceScopes", sourceCollection.dataSourceScopes);
-    writer.writeStringValue("description", sourceCollection.description);
-    writer.writeStringValue("displayName", sourceCollection.displayName);
-    writer.writeObjectValue<EstimateStatisticsOperation>("lastEstimateStatisticsOperation", sourceCollection.lastEstimateStatisticsOperation, serializeEstimateStatisticsOperation);
-    writer.writeObjectValue<IdentitySet>("lastModifiedBy", sourceCollection.lastModifiedBy, serializeIdentitySet);
-    writer.writeDateValue("lastModifiedDateTime", sourceCollection.lastModifiedDateTime);
-    writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialSources", sourceCollection.noncustodialSources, serializeNoncustodialDataSource);
+// @ts-ignore
+export function serializeSourceCollection(writer: SerializationWriter, sourceCollection: Partial<SourceCollection> | undefined | null = {}) : void {
+    if (sourceCollection) {
+        serializeEntity(writer, sourceCollection)
+        writer.writeCollectionOfObjectValues<DataSource>("additionalSources", sourceCollection.additionalSources, serializeDataSource);
+        writer.writeObjectValue<AddToReviewSetOperation>("addToReviewSetOperation", sourceCollection.addToReviewSetOperation, serializeAddToReviewSetOperation);
+        writer.writeStringValue("contentQuery", sourceCollection.contentQuery);
+        writer.writeObjectValue<IdentitySet>("createdBy", sourceCollection.createdBy, serializeIdentitySet);
+        writer.writeDateValue("createdDateTime", sourceCollection.createdDateTime);
+        writer.writeCollectionOfObjectValues<DataSource>("custodianSources", sourceCollection.custodianSources, serializeDataSource);
+        writer.writeEnumValue<DataSourceScopes[]>("dataSourceScopes", sourceCollection.dataSourceScopes);
+        writer.writeStringValue("description", sourceCollection.description);
+        writer.writeStringValue("displayName", sourceCollection.displayName);
+        writer.writeObjectValue<EstimateStatisticsOperation>("lastEstimateStatisticsOperation", sourceCollection.lastEstimateStatisticsOperation, serializeEstimateStatisticsOperation);
+        writer.writeObjectValue<IdentitySet>("lastModifiedBy", sourceCollection.lastModifiedBy, serializeIdentitySet);
+        writer.writeDateValue("lastModifiedDateTime", sourceCollection.lastModifiedDateTime);
+        writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialSources", sourceCollection.noncustodialSources, serializeNoncustodialDataSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSourceCollectionCollectionResponse(writer: SerializationWriter, sourceCollectionCollectionResponse: Partial<SourceCollectionCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, sourceCollectionCollectionResponse)
-    writer.writeCollectionOfObjectValues<SourceCollection>("value", sourceCollectionCollectionResponse.value, serializeSourceCollection);
+// @ts-ignore
+export function serializeSourceCollectionCollectionResponse(writer: SerializationWriter, sourceCollectionCollectionResponse: Partial<SourceCollectionCollectionResponse> | undefined | null = {}) : void {
+    if (sourceCollectionCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, sourceCollectionCollectionResponse)
+        writer.writeCollectionOfObjectValues<SourceCollection>("value", sourceCollectionCollectionResponse.value, serializeSourceCollection);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTag(writer: SerializationWriter, tag: Partial<Tag> | undefined = {}) : void {
-    serializeEntity(writer, tag)
-    writer.writeEnumValue<ChildSelectability>("childSelectability", tag.childSelectability);
-    writer.writeCollectionOfObjectValues<Tag>("childTags", tag.childTags, serializeTag);
-    writer.writeObjectValue<IdentitySet>("createdBy", tag.createdBy, serializeIdentitySet);
-    writer.writeStringValue("description", tag.description);
-    writer.writeStringValue("displayName", tag.displayName);
-    writer.writeDateValue("lastModifiedDateTime", tag.lastModifiedDateTime);
-    writer.writeObjectValue<Tag>("parent", tag.parent, serializeTag);
+// @ts-ignore
+export function serializeTag(writer: SerializationWriter, tag: Partial<Tag> | undefined | null = {}) : void {
+    if (tag) {
+        serializeEntity(writer, tag)
+        writer.writeEnumValue<ChildSelectability>("childSelectability", tag.childSelectability);
+        writer.writeCollectionOfObjectValues<Tag>("childTags", tag.childTags, serializeTag);
+        writer.writeObjectValue<IdentitySet>("createdBy", tag.createdBy, serializeIdentitySet);
+        writer.writeStringValue("description", tag.description);
+        writer.writeStringValue("displayName", tag.displayName);
+        writer.writeDateValue("lastModifiedDateTime", tag.lastModifiedDateTime);
+        writer.writeObjectValue<Tag>("parent", tag.parent, serializeTag);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTagCollectionResponse(writer: SerializationWriter, tagCollectionResponse: Partial<TagCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, tagCollectionResponse)
-    writer.writeCollectionOfObjectValues<Tag>("value", tagCollectionResponse.value, serializeTag);
+// @ts-ignore
+export function serializeTagCollectionResponse(writer: SerializationWriter, tagCollectionResponse: Partial<TagCollectionResponse> | undefined | null = {}) : void {
+    if (tagCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, tagCollectionResponse)
+        writer.writeCollectionOfObjectValues<Tag>("value", tagCollectionResponse.value, serializeTag);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTagOperation(writer: SerializationWriter, tagOperation: Partial<TagOperation> | undefined = {}) : void {
-    serializeCaseOperation(writer, tagOperation)
+// @ts-ignore
+export function serializeTagOperation(writer: SerializationWriter, tagOperation: Partial<TagOperation> | undefined | null = {}) : void {
+    if (tagOperation) {
+        serializeCaseOperation(writer, tagOperation)
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTopicModelingSettings(writer: SerializationWriter, topicModelingSettings: Partial<TopicModelingSettings> | undefined = {}) : void {
-    writer.writeBooleanValue("dynamicallyAdjustTopicCount", topicModelingSettings.dynamicallyAdjustTopicCount);
-    writer.writeBooleanValue("ignoreNumbers", topicModelingSettings.ignoreNumbers);
-    writer.writeBooleanValue("isEnabled", topicModelingSettings.isEnabled);
-    writer.writeStringValue("@odata.type", topicModelingSettings.odataType);
-    writer.writeNumberValue("topicCount", topicModelingSettings.topicCount);
-    writer.writeAdditionalData(topicModelingSettings.additionalData);
+// @ts-ignore
+export function serializeTopicModelingSettings(writer: SerializationWriter, topicModelingSettings: Partial<TopicModelingSettings> | undefined | null = {}) : void {
+    if (topicModelingSettings) {
+        writer.writeBooleanValue("dynamicallyAdjustTopicCount", topicModelingSettings.dynamicallyAdjustTopicCount);
+        writer.writeBooleanValue("ignoreNumbers", topicModelingSettings.ignoreNumbers);
+        writer.writeBooleanValue("isEnabled", topicModelingSettings.isEnabled);
+        writer.writeStringValue("@odata.type", topicModelingSettings.odataType);
+        writer.writeNumberValue("topicCount", topicModelingSettings.topicCount);
+        writer.writeAdditionalData(topicModelingSettings.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUnifiedGroupSource(writer: SerializationWriter, unifiedGroupSource: Partial<UnifiedGroupSource> | undefined = {}) : void {
-    serializeDataSource(writer, unifiedGroupSource)
-    writer.writeObjectValue<Group>("group", unifiedGroupSource.group, serializeGroup);
-    writer.writeEnumValue<SourceType[]>("includedSources", unifiedGroupSource.includedSources);
+// @ts-ignore
+export function serializeUnifiedGroupSource(writer: SerializationWriter, unifiedGroupSource: Partial<UnifiedGroupSource> | undefined | null = {}) : void {
+    if (unifiedGroupSource) {
+        serializeDataSource(writer, unifiedGroupSource)
+        writer.writeObjectValue<Group>("group", unifiedGroupSource.group, serializeGroup);
+        writer.writeEnumValue<SourceType[]>("includedSources", unifiedGroupSource.includedSources);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUnifiedGroupSourceCollectionResponse(writer: SerializationWriter, unifiedGroupSourceCollectionResponse: Partial<UnifiedGroupSourceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, unifiedGroupSourceCollectionResponse)
-    writer.writeCollectionOfObjectValues<UnifiedGroupSource>("value", unifiedGroupSourceCollectionResponse.value, serializeUnifiedGroupSource);
+// @ts-ignore
+export function serializeUnifiedGroupSourceCollectionResponse(writer: SerializationWriter, unifiedGroupSourceCollectionResponse: Partial<UnifiedGroupSourceCollectionResponse> | undefined | null = {}) : void {
+    if (unifiedGroupSourceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, unifiedGroupSourceCollectionResponse)
+        writer.writeCollectionOfObjectValues<UnifiedGroupSource>("value", unifiedGroupSourceCollectionResponse.value, serializeUnifiedGroupSource);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUserSource(writer: SerializationWriter, userSource: Partial<UserSource> | undefined = {}) : void {
-    serializeDataSource(writer, userSource)
-    writer.writeStringValue("email", userSource.email);
-    writer.writeEnumValue<SourceType[]>("includedSources", userSource.includedSources);
-    writer.writeStringValue("siteWebUrl", userSource.siteWebUrl);
+// @ts-ignore
+export function serializeUserSource(writer: SerializationWriter, userSource: Partial<UserSource> | undefined | null = {}) : void {
+    if (userSource) {
+        serializeDataSource(writer, userSource)
+        writer.writeStringValue("email", userSource.email);
+        writer.writeEnumValue<SourceType[]>("includedSources", userSource.includedSources);
+        writer.writeStringValue("siteWebUrl", userSource.siteWebUrl);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUserSourceCollectionResponse(writer: SerializationWriter, userSourceCollectionResponse: Partial<UserSourceCollectionResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, userSourceCollectionResponse)
-    writer.writeCollectionOfObjectValues<UserSource>("value", userSourceCollectionResponse.value, serializeUserSource);
+// @ts-ignore
+export function serializeUserSourceCollectionResponse(writer: SerializationWriter, userSourceCollectionResponse: Partial<UserSourceCollectionResponse> | undefined | null = {}) : void {
+    if (userSourceCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, userSourceCollectionResponse)
+        writer.writeCollectionOfObjectValues<UserSource>("value", userSourceCollectionResponse.value, serializeUserSource);
+    }
 }
 export interface SiteSource extends DataSource, Parsable {
     /**
      * The site property
      */
-    site?: Site;
+    site?: Site | null;
 }
 export interface SiteSourceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: SiteSource[];
+    value?: SiteSource[] | null;
 }
 export interface SourceCollection extends Entity, Parsable {
     /**
      * Adds an additional source to the sourceCollection.
      */
-    additionalSources?: DataSource[];
+    additionalSources?: DataSource[] | null;
     /**
      * Adds the results of the sourceCollection to the specified reviewSet.
      */
-    addToReviewSetOperation?: AddToReviewSetOperation;
+    addToReviewSetOperation?: AddToReviewSetOperation | null;
     /**
      * The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
      */
-    contentQuery?: string;
+    contentQuery?: string | null;
     /**
      * The user who created the sourceCollection.
      */
-    createdBy?: IdentitySet;
+    createdBy?: IdentitySet | null;
     /**
      * The date and time the sourceCollection was created.
      */
-    createdDateTime?: Date;
+    createdDateTime?: Date | null;
     /**
      * Custodian sources that are included in the sourceCollection.
      */
-    custodianSources?: DataSource[];
+    custodianSources?: DataSource[] | null;
     /**
      * When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
      */
-    dataSourceScopes?: DataSourceScopes[];
+    dataSourceScopes?: DataSourceScopes[] | null;
     /**
      * The description of the sourceCollection.
      */
-    description?: string;
+    description?: string | null;
     /**
      * The display name of the sourceCollection.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The last estimate operation associated with the sourceCollection.
      */
-    lastEstimateStatisticsOperation?: EstimateStatisticsOperation;
+    lastEstimateStatisticsOperation?: EstimateStatisticsOperation | null;
     /**
      * The last user who modified the sourceCollection.
      */
-    lastModifiedBy?: IdentitySet;
+    lastModifiedBy?: IdentitySet | null;
     /**
      * The last date and time the sourceCollection was modified.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * noncustodialDataSource sources that are included in the sourceCollection
      */
-    noncustodialSources?: NoncustodialDataSource[];
+    noncustodialSources?: NoncustodialDataSource[] | null;
 }
 export interface SourceCollectionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: SourceCollection[];
+    value?: SourceCollection[] | null;
 }
 export type SourceType = (typeof SourceTypeObject)[keyof typeof SourceTypeObject];
 export interface Tag extends Entity, Parsable {
     /**
      * Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
      */
-    childSelectability?: ChildSelectability;
+    childSelectability?: ChildSelectability | null;
     /**
      * Returns the tags that are a child of a tag.
      */
-    childTags?: Tag[];
+    childTags?: Tag[] | null;
     /**
      * The user who created the tag.
      */
-    createdBy?: IdentitySet;
+    createdBy?: IdentitySet | null;
     /**
      * The description for the tag.
      */
-    description?: string;
+    description?: string | null;
     /**
      * Display name of the tag.
      */
-    displayName?: string;
+    displayName?: string | null;
     /**
      * The date and time the tag was last modified.
      */
-    lastModifiedDateTime?: Date;
+    lastModifiedDateTime?: Date | null;
     /**
      * Returns the parent tag of the specified tag.
      */
-    parent?: Tag;
+    parent?: Tag | null;
 }
 export interface TagCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: Tag[];
+    value?: Tag[] | null;
 }
 export interface TagOperation extends CaseOperation, Parsable {
 }
@@ -1921,63 +2121,63 @@ export interface TopicModelingSettings extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * To learn more, see Adjust maximum number of themes dynamically.
      */
-    dynamicallyAdjustTopicCount?: boolean;
+    dynamicallyAdjustTopicCount?: boolean | null;
     /**
      * To learn more, see Include numbers in themes.
      */
-    ignoreNumbers?: boolean;
+    ignoreNumbers?: boolean | null;
     /**
      * Indicates whether themes are enabled for the case.
      */
-    isEnabled?: boolean;
+    isEnabled?: boolean | null;
     /**
      * The OdataType property
      */
-    odataType?: string;
+    odataType?: string | null;
     /**
      * To learn more, see Maximum number of themes.
      */
-    topicCount?: number;
+    topicCount?: number | null;
 }
 export interface UnifiedGroupSource extends DataSource, Parsable {
     /**
      * The group property
      */
-    group?: Group;
+    group?: Group | null;
     /**
      * Specifies which sources are included in this group. Possible values are: mailbox, site.
      */
-    includedSources?: SourceType[];
+    includedSources?: SourceType[] | null;
 }
 export interface UnifiedGroupSourceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: UnifiedGroupSource[];
+    value?: UnifiedGroupSource[] | null;
 }
 export interface UserSource extends DataSource, Parsable {
     /**
      * Email address of the user's mailbox.
      */
-    email?: string;
+    email?: string | null;
     /**
      * Specifies which sources are included in this group. Possible values are: mailbox, site.
      */
-    includedSources?: SourceType[];
+    includedSources?: SourceType[] | null;
     /**
      * The URL of the user's OneDrive for Business site. Read-only.
      */
-    siteWebUrl?: string;
+    siteWebUrl?: string | null;
 }
 export interface UserSourceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: UserSource[];
+    value?: UserSource[] | null;
 }
 export const AdditionalDataOptionsObject = {
     AllVersions: "allVersions",

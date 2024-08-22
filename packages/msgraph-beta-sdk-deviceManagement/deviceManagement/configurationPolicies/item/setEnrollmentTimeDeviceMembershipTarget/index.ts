@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetEnrollmentTimeDeviceMembershipTargetPostRequestBody}
  */
+// @ts-ignore
 export function createSetEnrollmentTimeDeviceMembershipTargetPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetEnrollmentTimeDeviceMembershipTargetPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSetEnrollmentTimeDeviceMembershipTargetPostRequestBodyFrom
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetEnrollmentTimeDeviceMembershipTargetPostRequestBody(setEnrollmentTimeDeviceMembershipTargetPostRequestBody: Partial<SetEnrollmentTimeDeviceMembershipTargetPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setEnrollmentTimeDeviceMembershipTargetPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoSetEnrollmentTimeDeviceMembershipTargetPostReques
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSetEnrollmentTimeDeviceMembershipTargetPostRequestBody(writer: SerializationWriter, setEnrollmentTimeDeviceMembershipTargetPostRequestBody: Partial<SetEnrollmentTimeDeviceMembershipTargetPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<EnrollmentTimeDeviceMembershipTarget>("enrollmentTimeDeviceMembershipTargets", setEnrollmentTimeDeviceMembershipTargetPostRequestBody.enrollmentTimeDeviceMembershipTargets, serializeEnrollmentTimeDeviceMembershipTarget);
-    writer.writeAdditionalData(setEnrollmentTimeDeviceMembershipTargetPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSetEnrollmentTimeDeviceMembershipTargetPostRequestBody(writer: SerializationWriter, setEnrollmentTimeDeviceMembershipTargetPostRequestBody: Partial<SetEnrollmentTimeDeviceMembershipTargetPostRequestBody> | undefined | null = {}) : void {
+    if (setEnrollmentTimeDeviceMembershipTargetPostRequestBody) {
+        writer.writeCollectionOfObjectValues<EnrollmentTimeDeviceMembershipTarget>("enrollmentTimeDeviceMembershipTargets", setEnrollmentTimeDeviceMembershipTargetPostRequestBody.enrollmentTimeDeviceMembershipTargets, serializeEnrollmentTimeDeviceMembershipTarget);
+        writer.writeAdditionalData(setEnrollmentTimeDeviceMembershipTargetPostRequestBody.additionalData);
+    }
 }
 export interface SetEnrollmentTimeDeviceMembershipTargetPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface SetEnrollmentTimeDeviceMembershipTargetPostRequestBody extends 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The enrollmentTimeDeviceMembershipTargets property
      */
-    enrollmentTimeDeviceMembershipTargets?: EnrollmentTimeDeviceMembershipTarget[];
+    enrollmentTimeDeviceMembershipTargets?: EnrollmentTimeDeviceMembershipTarget[] | null;
 }
 /**
  * Provides operations to call the setEnrollmentTimeDeviceMembershipTarget method.

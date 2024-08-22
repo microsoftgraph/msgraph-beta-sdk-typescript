@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AddressesRequestBuilder extends BaseRequestBuilder<AddressesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the addresses property of the microsoft.graph.profile entity.
      * @param itemAddressId The unique identifier of itemAddress
      * @returns {ItemAddressItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byItemAddressId(itemAddressId: string) : ItemAddressItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface AddressesRequestBuilder extends BaseRequestBuilder<AddressesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemAddressCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AddressesRequestBuilderGetQueryParameters> | undefined) : Promise<ItemAddressCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface AddressesRequestBuilder extends BaseRequestBuilder<AddressesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemAddress>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ItemAddress, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemAddress | undefined>;
     /**
      * Represents details of addresses associated with the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AddressesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface AddressesRequestBuilder extends BaseRequestBuilder<AddressesReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ItemAddress, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

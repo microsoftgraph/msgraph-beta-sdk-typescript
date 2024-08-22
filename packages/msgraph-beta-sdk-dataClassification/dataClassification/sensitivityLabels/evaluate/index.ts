@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EvaluatePostRequestBody}
  */
+// @ts-ignore
 export function createEvaluatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEvaluatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createEvaluatePostRequestBodyFromDiscriminatorValue(parseNode: P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEvaluatePostRequestBody(evaluatePostRequestBody: Partial<EvaluatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { evaluatePostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface EvaluatePostRequestBody extends AdditionalDataHolder, BackedMod
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The currentLabel property
      */
-    currentLabel?: CurrentLabel;
+    currentLabel?: CurrentLabel | null;
     /**
      * The discoveredSensitiveTypes property
      */
-    discoveredSensitiveTypes?: DiscoveredSensitiveType[];
+    discoveredSensitiveTypes?: DiscoveredSensitiveType[] | null;
 }
 /**
  * Provides operations to call the evaluate method.
@@ -69,10 +71,13 @@ export interface EvaluateRequestBuilder extends BaseRequestBuilder<EvaluateReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEvaluatePostRequestBody(writer: SerializationWriter, evaluatePostRequestBody: Partial<EvaluatePostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<CurrentLabel>("currentLabel", evaluatePostRequestBody.currentLabel, serializeCurrentLabel);
-    writer.writeCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", evaluatePostRequestBody.discoveredSensitiveTypes, serializeDiscoveredSensitiveType);
-    writer.writeAdditionalData(evaluatePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeEvaluatePostRequestBody(writer: SerializationWriter, evaluatePostRequestBody: Partial<EvaluatePostRequestBody> | undefined | null = {}) : void {
+    if (evaluatePostRequestBody) {
+        writer.writeObjectValue<CurrentLabel>("currentLabel", evaluatePostRequestBody.currentLabel, serializeCurrentLabel);
+        writer.writeCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", evaluatePostRequestBody.discoveredSensitiveTypes, serializeDiscoveredSensitiveType);
+        writer.writeAdditionalData(evaluatePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

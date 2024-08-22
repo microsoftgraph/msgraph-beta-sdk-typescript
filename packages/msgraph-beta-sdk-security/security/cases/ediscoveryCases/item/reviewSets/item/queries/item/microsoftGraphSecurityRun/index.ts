@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RunGetResponse}
  */
+// @ts-ignore
 export function createRunGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRunGetResponse;
 }
@@ -22,6 +23,7 @@ export function createRunGetResponseFromDiscriminatorValue(parseNode: ParseNode 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRunGetResponse(runGetResponse: Partial<RunGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(runGetResponse),
@@ -88,15 +90,18 @@ export interface RunGetResponse extends BaseCollectionPaginationCountResponse, P
     /**
      * The value property
      */
-    value?: EdiscoveryFile[];
+    value?: EdiscoveryFile[] | null;
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRunGetResponse(writer: SerializationWriter, runGetResponse: Partial<RunGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, runGetResponse)
-    writer.writeCollectionOfObjectValues<EdiscoveryFile>("value", runGetResponse.value, serializeEdiscoveryFile);
+// @ts-ignore
+export function serializeRunGetResponse(writer: SerializationWriter, runGetResponse: Partial<RunGetResponse> | undefined | null = {}) : void {
+    if (runGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, runGetResponse)
+        writer.writeCollectionOfObjectValues<EdiscoveryFile>("value", runGetResponse.value, serializeEdiscoveryFile);
+    }
 }
 /**
  * Uri template for the request builder.

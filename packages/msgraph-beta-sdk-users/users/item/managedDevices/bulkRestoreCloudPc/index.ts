@@ -16,19 +16,19 @@ export interface BulkRestoreCloudPcPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The managedDeviceIds property
      */
-    managedDeviceIds?: string[];
+    managedDeviceIds?: string[] | null;
     /**
      * The restorePointDateTime property
      */
-    restorePointDateTime?: Date;
+    restorePointDateTime?: Date | null;
     /**
      * The timeRange property
      */
-    timeRange?: RestoreTimeRange;
+    timeRange?: RestoreTimeRange | null;
 }
 /**
  * Provides operations to call the bulkRestoreCloudPc method.
@@ -40,7 +40,7 @@ export interface BulkRestoreCloudPcRequestBuilder extends BaseRequestBuilder<Bul
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcBulkRemoteActionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The bulkRestoreCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkRestoreCloudPc
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-beta|Find more info here}
      */
      post(body: BulkRestoreCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcBulkRemoteActionResult | undefined>;
@@ -49,7 +49,7 @@ export interface BulkRestoreCloudPcRequestBuilder extends BaseRequestBuilder<Bul
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The bulkRestoreCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkRestoreCloudPc
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: BulkRestoreCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -58,6 +58,7 @@ export interface BulkRestoreCloudPcRequestBuilder extends BaseRequestBuilder<Bul
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkRestoreCloudPcPostRequestBody}
  */
+// @ts-ignore
 export function createBulkRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkRestoreCloudPcPostRequestBody;
 }
@@ -65,6 +66,7 @@ export function createBulkRestoreCloudPcPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkRestoreCloudPcPostRequestBody(bulkRestoreCloudPcPostRequestBody: Partial<BulkRestoreCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { bulkRestoreCloudPcPostRequestBody.backingStoreEnabled = true; },
@@ -77,11 +79,14 @@ export function deserializeIntoBulkRestoreCloudPcPostRequestBody(bulkRestoreClou
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBulkRestoreCloudPcPostRequestBody(writer: SerializationWriter, bulkRestoreCloudPcPostRequestBody: Partial<BulkRestoreCloudPcPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkRestoreCloudPcPostRequestBody.managedDeviceIds);
-    writer.writeDateValue("restorePointDateTime", bulkRestoreCloudPcPostRequestBody.restorePointDateTime);
-    writer.writeEnumValue<RestoreTimeRange>("timeRange", bulkRestoreCloudPcPostRequestBody.timeRange);
-    writer.writeAdditionalData(bulkRestoreCloudPcPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeBulkRestoreCloudPcPostRequestBody(writer: SerializationWriter, bulkRestoreCloudPcPostRequestBody: Partial<BulkRestoreCloudPcPostRequestBody> | undefined | null = {}) : void {
+    if (bulkRestoreCloudPcPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkRestoreCloudPcPostRequestBody.managedDeviceIds);
+        writer.writeDateValue("restorePointDateTime", bulkRestoreCloudPcPostRequestBody.restorePointDateTime);
+        writer.writeEnumValue<RestoreTimeRange>("timeRange", bulkRestoreCloudPcPostRequestBody.timeRange);
+        writer.writeAdditionalData(bulkRestoreCloudPcPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

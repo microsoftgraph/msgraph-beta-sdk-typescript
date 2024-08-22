@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UsedInsightItemRequestBuilder extends BaseRequestBuilder<UsedInsightItemRequestBuilder> {
     /**
      * Provides operations to manage the resource property of the microsoft.graph.usedInsight entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resource(): ResourceRequestBuilder;
     /**
      * Delete navigation property used for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface UsedInsightItemRequestBuilder extends BaseRequestBuilder<UsedIn
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UsedInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<UsedInsightItemRequestBuilderGetQueryParameters> | undefined) : Promise<UsedInsight | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface UsedInsightItemRequestBuilder extends BaseRequestBuilder<UsedIn
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UsedInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UsedInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UsedInsight | undefined>;
     /**
      * Delete navigation property used for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Access this property from the derived type itemInsights.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UsedInsightItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface UsedInsightItemRequestBuilder extends BaseRequestBuilder<UsedIn
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UsedInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

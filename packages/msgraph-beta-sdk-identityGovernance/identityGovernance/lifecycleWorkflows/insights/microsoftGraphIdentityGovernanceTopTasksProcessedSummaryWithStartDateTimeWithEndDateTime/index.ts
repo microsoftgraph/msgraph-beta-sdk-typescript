@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse}
  */
+// @ts-ignore
 export function createTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse;
 }
@@ -22,6 +23,7 @@ export function createTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGe
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse(topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse: Partial<TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse),
@@ -76,15 +78,18 @@ export interface MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithSta
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse: Partial<TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse)
-    writer.writeCollectionOfObjectValues<TopTasksInsightsSummary>("value", topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse.value, serializeTopTasksInsightsSummary);
+// @ts-ignore
+export function serializeTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse: Partial<TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
+    if (topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse)
+        writer.writeCollectionOfObjectValues<TopTasksInsightsSummary>("value", topTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse.value, serializeTopTasksInsightsSummary);
+    }
 }
 export interface TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: TopTasksInsightsSummary[];
+    value?: TopTasksInsightsSummary[] | null;
 }
 /**
  * Uri template for the request builder.

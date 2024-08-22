@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MuteAllPostRequestBody}
  */
+// @ts-ignore
 export function createMuteAllPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMuteAllPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createMuteAllPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMuteAllPostRequestBody(muteAllPostRequestBody: Partial<MuteAllPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { muteAllPostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface MuteAllPostRequestBody extends AdditionalDataHolder, BackedMode
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The clientContext property
      */
-    clientContext?: string;
+    clientContext?: string | null;
     /**
      * The participants property
      */
-    participants?: string[];
+    participants?: string[] | null;
 }
 /**
  * Provides operations to call the muteAll method.
@@ -70,10 +72,13 @@ export interface MuteAllRequestBuilder extends BaseRequestBuilder<MuteAllRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMuteAllPostRequestBody(writer: SerializationWriter, muteAllPostRequestBody: Partial<MuteAllPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("clientContext", muteAllPostRequestBody.clientContext);
-    writer.writeCollectionOfPrimitiveValues<string>("participants", muteAllPostRequestBody.participants);
-    writer.writeAdditionalData(muteAllPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeMuteAllPostRequestBody(writer: SerializationWriter, muteAllPostRequestBody: Partial<MuteAllPostRequestBody> | undefined | null = {}) : void {
+    if (muteAllPostRequestBody) {
+        writer.writeStringValue("clientContext", muteAllPostRequestBody.clientContext);
+        writer.writeCollectionOfPrimitiveValues<string>("participants", muteAllPostRequestBody.participants);
+        writer.writeAdditionalData(muteAllPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

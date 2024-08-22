@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TaskGroupsRequestBuilder extends BaseRequestBuilder<TaskGroupsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
      * @param outlookTaskGroupId The unique identifier of outlookTaskGroup
      * @returns {OutlookTaskGroupItemRequestBuilder}
-     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byOutlookTaskGroupId(outlookTaskGroupId: string) : OutlookTaskGroupItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface TaskGroupsRequestBuilder extends BaseRequestBuilder<TaskGroupsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OutlookTaskGroupCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<TaskGroupsRequestBuilderGetQueryParameters> | undefined) : Promise<OutlookTaskGroupCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface TaskGroupsRequestBuilder extends BaseRequestBuilder<TaskGroupsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OutlookTaskGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: OutlookTaskGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OutlookTaskGroup | undefined>;
     /**
      * The user's Outlook task groups. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskGroupsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface TaskGroupsRequestBuilder extends BaseRequestBuilder<TaskGroupsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: OutlookTaskGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

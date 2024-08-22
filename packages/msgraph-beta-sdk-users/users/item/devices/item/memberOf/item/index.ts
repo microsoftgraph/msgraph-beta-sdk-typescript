@@ -18,10 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DirectoryObjectItemRequestBuilder extends BaseRequestBuilder<DirectoryObjectItemRequestBuilder> {
     /**
      * Casts the previous resource to administrativeUnit.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphAdministrativeUnit(): GraphAdministrativeUnitRequestBuilder;
     /**
      * Casts the previous resource to group.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphGroup(): GraphGroupRequestBuilder;
     /**
@@ -29,12 +31,14 @@ export interface DirectoryObjectItemRequestBuilder extends BaseRequestBuilder<Di
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObject | undefined>;
     /**
      * Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

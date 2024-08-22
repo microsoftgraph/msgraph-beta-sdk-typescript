@@ -16,37 +16,38 @@ export interface ChangeDeploymentStatusPostRequestBody extends AdditionalDataHol
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The managementActionId property
      */
-    managementActionId?: string;
+    managementActionId?: string | null;
     /**
      * The managementTemplateId property
      */
-    managementTemplateId?: string;
+    managementTemplateId?: string | null;
     /**
      * The managementTemplateVersion property
      */
-    managementTemplateVersion?: number;
+    managementTemplateVersion?: number | null;
     /**
      * The status property
      */
-    status?: string;
+    status?: string | null;
     /**
      * The tenantGroupId property
      */
-    tenantGroupId?: string;
+    tenantGroupId?: string | null;
     /**
      * The tenantId property
      */
-    tenantId?: string;
+    tenantId?: string | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ChangeDeploymentStatusPostRequestBody}
  */
+// @ts-ignore
 export function createChangeDeploymentStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoChangeDeploymentStatusPostRequestBody;
 }
@@ -54,6 +55,7 @@ export function createChangeDeploymentStatusPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoChangeDeploymentStatusPostRequestBody(changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { changeDeploymentStatusPostRequestBody.backingStoreEnabled = true; },
@@ -89,14 +91,17 @@ export interface MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeChangeDeploymentStatusPostRequestBody(writer: SerializationWriter, changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("managementActionId", changeDeploymentStatusPostRequestBody.managementActionId);
-    writer.writeStringValue("managementTemplateId", changeDeploymentStatusPostRequestBody.managementTemplateId);
-    writer.writeNumberValue("managementTemplateVersion", changeDeploymentStatusPostRequestBody.managementTemplateVersion);
-    writer.writeStringValue("status", changeDeploymentStatusPostRequestBody.status);
-    writer.writeStringValue("tenantGroupId", changeDeploymentStatusPostRequestBody.tenantGroupId);
-    writer.writeStringValue("tenantId", changeDeploymentStatusPostRequestBody.tenantId);
-    writer.writeAdditionalData(changeDeploymentStatusPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeChangeDeploymentStatusPostRequestBody(writer: SerializationWriter, changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined | null = {}) : void {
+    if (changeDeploymentStatusPostRequestBody) {
+        writer.writeStringValue("managementActionId", changeDeploymentStatusPostRequestBody.managementActionId);
+        writer.writeStringValue("managementTemplateId", changeDeploymentStatusPostRequestBody.managementTemplateId);
+        writer.writeNumberValue("managementTemplateVersion", changeDeploymentStatusPostRequestBody.managementTemplateVersion);
+        writer.writeStringValue("status", changeDeploymentStatusPostRequestBody.status);
+        writer.writeStringValue("tenantGroupId", changeDeploymentStatusPostRequestBody.tenantGroupId);
+        writer.writeStringValue("tenantId", changeDeploymentStatusPostRequestBody.tenantId);
+        writer.writeAdditionalData(changeDeploymentStatusPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

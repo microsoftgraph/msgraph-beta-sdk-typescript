@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TrendingItemRequestBuilder extends BaseRequestBuilder<TrendingItemRequestBuilder> {
     /**
      * Provides operations to manage the resource property of the microsoft.graph.trending entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resource(): ResourceRequestBuilder;
     /**
      * Delete navigation property trending for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface TrendingItemRequestBuilder extends BaseRequestBuilder<TrendingI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Trending>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<TrendingItemRequestBuilderGetQueryParameters> | undefined) : Promise<Trending | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface TrendingItemRequestBuilder extends BaseRequestBuilder<TrendingI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Trending>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Trending, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Trending | undefined>;
     /**
      * Delete navigation property trending for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Access this property from the derived type itemInsights.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TrendingItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface TrendingItemRequestBuilder extends BaseRequestBuilder<TrendingI
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Trending, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

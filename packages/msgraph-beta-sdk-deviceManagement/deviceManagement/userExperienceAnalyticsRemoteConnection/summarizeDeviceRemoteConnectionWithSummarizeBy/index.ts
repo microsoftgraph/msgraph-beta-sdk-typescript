@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse}
  */
+// @ts-ignore
 export function createSummarizeDeviceRemoteConnectionWithSummarizeByGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse;
 }
@@ -20,6 +21,7 @@ export function createSummarizeDeviceRemoteConnectionWithSummarizeByGetResponseF
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse(summarizeDeviceRemoteConnectionWithSummarizeByGetResponse: Partial<SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(summarizeDeviceRemoteConnectionWithSummarizeByGetResponse),
@@ -30,15 +32,18 @@ export function deserializeIntoSummarizeDeviceRemoteConnectionWithSummarizeByGet
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse(writer: SerializationWriter, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse: Partial<SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse)
-    writer.writeCollectionOfObjectValues<UserExperienceAnalyticsRemoteConnection>("value", summarizeDeviceRemoteConnectionWithSummarizeByGetResponse.value, serializeUserExperienceAnalyticsRemoteConnection);
+// @ts-ignore
+export function serializeSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse(writer: SerializationWriter, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse: Partial<SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse> | undefined | null = {}) : void {
+    if (summarizeDeviceRemoteConnectionWithSummarizeByGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse)
+        writer.writeCollectionOfObjectValues<UserExperienceAnalyticsRemoteConnection>("value", summarizeDeviceRemoteConnectionWithSummarizeByGetResponse.value, serializeUserExperienceAnalyticsRemoteConnection);
+    }
 }
 export interface SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: UserExperienceAnalyticsRemoteConnection[];
+    value?: UserExperienceAnalyticsRemoteConnection[] | null;
 }
 /**
  * Provides operations to call the summarizeDeviceRemoteConnection method.

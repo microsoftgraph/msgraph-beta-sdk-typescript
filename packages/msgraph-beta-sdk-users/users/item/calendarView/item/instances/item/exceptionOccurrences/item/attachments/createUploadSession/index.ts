@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreateUploadSessionPostRequestBody}
  */
+// @ts-ignore
 export function createCreateUploadSessionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreateUploadSessionPostRequestBody;
 }
@@ -24,11 +25,11 @@ export interface CreateUploadSessionPostRequestBody extends AdditionalDataHolder
     /**
      * The AttachmentItem property
      */
-    attachmentItem?: AttachmentItem;
+    attachmentItem?: AttachmentItem | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
 }
 /**
  * Provides operations to call the createUploadSession method.
@@ -40,6 +41,7 @@ export interface CreateUploadSessionRequestBuilder extends BaseRequestBuilder<Cr
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UploadSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta|Find more info here}
      */
      post(body: CreateUploadSessionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UploadSession | undefined>;
@@ -48,6 +50,7 @@ export interface CreateUploadSessionRequestBuilder extends BaseRequestBuilder<Cr
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CreateUploadSessionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -55,6 +58,7 @@ export interface CreateUploadSessionRequestBuilder extends BaseRequestBuilder<Cr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreateUploadSessionPostRequestBody(createUploadSessionPostRequestBody: Partial<CreateUploadSessionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "AttachmentItem": n => { createUploadSessionPostRequestBody.attachmentItem = n.getObjectValue<AttachmentItem>(createAttachmentItemFromDiscriminatorValue); },
@@ -65,9 +69,12 @@ export function deserializeIntoCreateUploadSessionPostRequestBody(createUploadSe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreateUploadSessionPostRequestBody(writer: SerializationWriter, createUploadSessionPostRequestBody: Partial<CreateUploadSessionPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<AttachmentItem>("AttachmentItem", createUploadSessionPostRequestBody.attachmentItem, serializeAttachmentItem);
-    writer.writeAdditionalData(createUploadSessionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCreateUploadSessionPostRequestBody(writer: SerializationWriter, createUploadSessionPostRequestBody: Partial<CreateUploadSessionPostRequestBody> | undefined | null = {}) : void {
+    if (createUploadSessionPostRequestBody) {
+        writer.writeObjectValue<AttachmentItem>("AttachmentItem", createUploadSessionPostRequestBody.attachmentItem, serializeAttachmentItem);
+        writer.writeAdditionalData(createUploadSessionPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

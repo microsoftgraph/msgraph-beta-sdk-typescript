@@ -20,18 +20,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<UserConsentRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
      * @param userConsentRequestId The unique identifier of userConsentRequest
      * @returns {UserConsentRequestItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byUserConsentRequestId(userConsentRequestId: string) : UserConsentRequestItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -39,6 +42,7 @@ export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<Us
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConsentRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<UserConsentRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<UserConsentRequestCollectionResponse | undefined>;
     /**
@@ -47,12 +51,14 @@ export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<Us
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConsentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: UserConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserConsentRequest | undefined>;
     /**
      * A list of pending user consent requests. Supports $filter (eq).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserConsentRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -60,6 +66,7 @@ export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<Us
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UserConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

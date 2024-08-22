@@ -28,36 +28,44 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequestBuilder> {
     /**
      * Provides operations to manage the all property of the microsoft.graph.plannerUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get all(): AllRequestBuilder;
     /**
      * Provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get favoritePlans(): FavoritePlansRequestBuilder;
     /**
      * Provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get myDayTasks(): MyDayTasksRequestBuilder;
     /**
      * Provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get plans(): PlansRequestBuilder;
     /**
      * Provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get recentPlans(): RecentPlansRequestBuilder;
     /**
      * Provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get rosterPlans(): RosterPlansRequestBuilder;
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get tasks(): TasksRequestBuilder;
     /**
      * Delete navigation property planner for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -65,6 +73,7 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerUser>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerUser | undefined>;
     /**
@@ -73,18 +82,21 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerUser>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: PlannerUser, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerUser | undefined>;
     /**
      * Delete navigation property planner for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Selective Planner services available to the user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -92,6 +104,7 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PlannerUser, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

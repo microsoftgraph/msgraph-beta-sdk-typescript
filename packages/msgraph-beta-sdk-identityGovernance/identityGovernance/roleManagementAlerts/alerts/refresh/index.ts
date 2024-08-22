@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RefreshPostRequestBody}
  */
+// @ts-ignore
 export function createRefreshPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRefreshPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRefreshPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRefreshPostRequestBody(refreshPostRequestBody: Partial<RefreshPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { refreshPostRequestBody.backingStoreEnabled = true; },
@@ -33,15 +35,15 @@ export interface RefreshPostRequestBody extends AdditionalDataHolder, BackedMode
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The scopeId property
      */
-    scopeId?: string;
+    scopeId?: string | null;
     /**
      * The scopeType property
      */
-    scopeType?: string;
+    scopeType?: string | null;
 }
 /**
  * Provides operations to call the refresh method.
@@ -67,10 +69,13 @@ export interface RefreshRequestBuilder extends BaseRequestBuilder<RefreshRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRefreshPostRequestBody(writer: SerializationWriter, refreshPostRequestBody: Partial<RefreshPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("scopeId", refreshPostRequestBody.scopeId);
-    writer.writeStringValue("scopeType", refreshPostRequestBody.scopeType);
-    writer.writeAdditionalData(refreshPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRefreshPostRequestBody(writer: SerializationWriter, refreshPostRequestBody: Partial<RefreshPostRequestBody> | undefined | null = {}) : void {
+    if (refreshPostRequestBody) {
+        writer.writeStringValue("scopeId", refreshPostRequestBody.scopeId);
+        writer.writeStringValue("scopeType", refreshPostRequestBody.scopeType);
+        writer.writeAdditionalData(refreshPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SkillsRequestBuilder extends BaseRequestBuilder<SkillsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the skills property of the microsoft.graph.profile entity.
      * @param skillProficiencyId The unique identifier of skillProficiency
      * @returns {SkillProficiencyItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      bySkillProficiencyId(skillProficiencyId: string) : SkillProficiencyItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SkillsRequestBuilder extends BaseRequestBuilder<SkillsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SkillProficiencyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SkillsRequestBuilderGetQueryParameters> | undefined) : Promise<SkillProficiencyCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface SkillsRequestBuilder extends BaseRequestBuilder<SkillsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SkillProficiency>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: SkillProficiency, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SkillProficiency | undefined>;
     /**
      * Represents detailed information about skills associated with a user in various services.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SkillsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface SkillsRequestBuilder extends BaseRequestBuilder<SkillsRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SkillProficiency, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

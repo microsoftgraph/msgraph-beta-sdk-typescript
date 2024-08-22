@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetRoleScopeTagsByResourceWithResourceGetResponse}
  */
+// @ts-ignore
 export function createGetRoleScopeTagsByResourceWithResourceGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetRoleScopeTagsByResourceWithResourceGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetRoleScopeTagsByResourceWithResourceGetResponseFromDiscr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetRoleScopeTagsByResourceWithResourceGetResponse(getRoleScopeTagsByResourceWithResourceGetResponse: Partial<GetRoleScopeTagsByResourceWithResourceGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getRoleScopeTagsByResourceWithResourceGetResponse),
@@ -30,7 +32,7 @@ export interface GetRoleScopeTagsByResourceWithResourceGetResponse extends BaseC
     /**
      * The value property
      */
-    value?: RoleScopeTag[];
+    value?: RoleScopeTag[] | null;
 }
 /**
  * Provides operations to call the getRoleScopeTagsByResource method.
@@ -91,9 +93,12 @@ export interface GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryPar
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetRoleScopeTagsByResourceWithResourceGetResponse(writer: SerializationWriter, getRoleScopeTagsByResourceWithResourceGetResponse: Partial<GetRoleScopeTagsByResourceWithResourceGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByResourceWithResourceGetResponse)
-    writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByResourceWithResourceGetResponse.value, serializeRoleScopeTag);
+// @ts-ignore
+export function serializeGetRoleScopeTagsByResourceWithResourceGetResponse(writer: SerializationWriter, getRoleScopeTagsByResourceWithResourceGetResponse: Partial<GetRoleScopeTagsByResourceWithResourceGetResponse> | undefined | null = {}) : void {
+    if (getRoleScopeTagsByResourceWithResourceGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByResourceWithResourceGetResponse)
+        writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByResourceWithResourceGetResponse.value, serializeRoleScopeTag);
+    }
 }
 /**
  * Uri template for the request builder.

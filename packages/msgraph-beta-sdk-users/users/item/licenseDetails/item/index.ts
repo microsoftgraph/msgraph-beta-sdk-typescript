@@ -16,6 +16,7 @@ export interface LicenseDetailsItemRequestBuilder extends BaseRequestBuilder<Lic
      * Delete navigation property licenseDetails for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface LicenseDetailsItemRequestBuilder extends BaseRequestBuilder<Lic
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LicenseDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<LicenseDetailsItemRequestBuilderGetQueryParameters> | undefined) : Promise<LicenseDetails | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface LicenseDetailsItemRequestBuilder extends BaseRequestBuilder<Lic
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LicenseDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: LicenseDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LicenseDetails | undefined>;
     /**
      * Delete navigation property licenseDetails for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get licenseDetails from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LicenseDetailsItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface LicenseDetailsItemRequestBuilder extends BaseRequestBuilder<Lic
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: LicenseDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

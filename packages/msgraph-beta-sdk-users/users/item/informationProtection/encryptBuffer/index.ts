@@ -15,6 +15,7 @@ import { type Guid } from 'guid-typescript';
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EncryptBufferPostRequestBody}
  */
+// @ts-ignore
 export function createEncryptBufferPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEncryptBufferPostRequestBody;
 }
@@ -22,6 +23,7 @@ export function createEncryptBufferPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEncryptBufferPostRequestBody(encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { encryptBufferPostRequestBody.backingStoreEnabled = true; },
@@ -37,15 +39,15 @@ export interface EncryptBufferPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The buffer property
      */
-    buffer?: string;
+    buffer?: string | null;
     /**
      * The labelId property
      */
-    labelId?: Guid;
+    labelId?: Guid | null;
 }
 /**
  * Provides operations to call the encryptBuffer method.
@@ -57,7 +59,7 @@ export interface EncryptBufferRequestBuilder extends BaseRequestBuilder<EncryptB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BufferEncryptionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: EncryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BufferEncryptionResult | undefined>;
     /**
@@ -65,7 +67,7 @@ export interface EncryptBufferRequestBuilder extends BaseRequestBuilder<EncryptB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: EncryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -73,10 +75,13 @@ export interface EncryptBufferRequestBuilder extends BaseRequestBuilder<EncryptB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEncryptBufferPostRequestBody(writer: SerializationWriter, encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("buffer", encryptBufferPostRequestBody.buffer);
-    writer.writeGuidValue("labelId", encryptBufferPostRequestBody.labelId);
-    writer.writeAdditionalData(encryptBufferPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeEncryptBufferPostRequestBody(writer: SerializationWriter, encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined | null = {}) : void {
+    if (encryptBufferPostRequestBody) {
+        writer.writeStringValue("buffer", encryptBufferPostRequestBody.buffer);
+        writer.writeGuidValue("labelId", encryptBufferPostRequestBody.labelId);
+        writer.writeAdditionalData(encryptBufferPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

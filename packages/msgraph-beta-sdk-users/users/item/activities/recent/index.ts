@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RecentGetResponse}
  */
+// @ts-ignore
 export function createRecentGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRecentGetResponse;
 }
@@ -20,6 +21,7 @@ export function createRecentGetResponseFromDiscriminatorValue(parseNode: ParseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRecentGetResponse(recentGetResponse: Partial<RecentGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(recentGetResponse),
@@ -30,7 +32,7 @@ export interface RecentGetResponse extends BaseCollectionPaginationCountResponse
     /**
      * The value property
      */
-    value?: UserActivity[];
+    value?: UserActivity[] | null;
 }
 /**
  * Provides operations to call the recent method.
@@ -41,12 +43,14 @@ export interface RecentRequestBuilder extends BaseRequestBuilder<RecentRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RecentGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<RecentRequestBuilderGetQueryParameters> | undefined) : Promise<RecentGetResponse | undefined>;
     /**
      * Invoke function recent
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RecentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -91,9 +95,12 @@ export interface RecentRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRecentGetResponse(writer: SerializationWriter, recentGetResponse: Partial<RecentGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, recentGetResponse)
-    writer.writeCollectionOfObjectValues<UserActivity>("value", recentGetResponse.value, serializeUserActivity);
+// @ts-ignore
+export function serializeRecentGetResponse(writer: SerializationWriter, recentGetResponse: Partial<RecentGetResponse> | undefined | null = {}) : void {
+    if (recentGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, recentGetResponse)
+        writer.writeCollectionOfObjectValues<UserActivity>("value", recentGetResponse.value, serializeUserActivity);
+    }
 }
 /**
  * Uri template for the request builder.

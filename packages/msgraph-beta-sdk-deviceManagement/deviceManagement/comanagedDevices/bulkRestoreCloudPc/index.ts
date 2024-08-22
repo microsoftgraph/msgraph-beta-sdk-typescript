@@ -16,19 +16,19 @@ export interface BulkRestoreCloudPcPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The managedDeviceIds property
      */
-    managedDeviceIds?: string[];
+    managedDeviceIds?: string[] | null;
     /**
      * The restorePointDateTime property
      */
-    restorePointDateTime?: Date;
+    restorePointDateTime?: Date | null;
     /**
      * The timeRange property
      */
-    timeRange?: RestoreTimeRange;
+    timeRange?: RestoreTimeRange | null;
 }
 /**
  * Provides operations to call the bulkRestoreCloudPc method.
@@ -58,6 +58,7 @@ export interface BulkRestoreCloudPcRequestBuilder extends BaseRequestBuilder<Bul
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BulkRestoreCloudPcPostRequestBody}
  */
+// @ts-ignore
 export function createBulkRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBulkRestoreCloudPcPostRequestBody;
 }
@@ -65,6 +66,7 @@ export function createBulkRestoreCloudPcPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoBulkRestoreCloudPcPostRequestBody(bulkRestoreCloudPcPostRequestBody: Partial<BulkRestoreCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { bulkRestoreCloudPcPostRequestBody.backingStoreEnabled = true; },
@@ -77,11 +79,14 @@ export function deserializeIntoBulkRestoreCloudPcPostRequestBody(bulkRestoreClou
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeBulkRestoreCloudPcPostRequestBody(writer: SerializationWriter, bulkRestoreCloudPcPostRequestBody: Partial<BulkRestoreCloudPcPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkRestoreCloudPcPostRequestBody.managedDeviceIds);
-    writer.writeDateValue("restorePointDateTime", bulkRestoreCloudPcPostRequestBody.restorePointDateTime);
-    writer.writeEnumValue<RestoreTimeRange>("timeRange", bulkRestoreCloudPcPostRequestBody.timeRange);
-    writer.writeAdditionalData(bulkRestoreCloudPcPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeBulkRestoreCloudPcPostRequestBody(writer: SerializationWriter, bulkRestoreCloudPcPostRequestBody: Partial<BulkRestoreCloudPcPostRequestBody> | undefined | null = {}) : void {
+    if (bulkRestoreCloudPcPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", bulkRestoreCloudPcPostRequestBody.managedDeviceIds);
+        writer.writeDateValue("restorePointDateTime", bulkRestoreCloudPcPostRequestBody.restorePointDateTime);
+        writer.writeEnumValue<RestoreTimeRange>("timeRange", bulkRestoreCloudPcPostRequestBody.timeRange);
+        writer.writeAdditionalData(bulkRestoreCloudPcPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

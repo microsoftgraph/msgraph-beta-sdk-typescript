@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SendMailPostRequestBody}
  */
+// @ts-ignore
 export function createSendMailPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSendMailPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSendMailPostRequestBodyFromDiscriminatorValue(parseNode: P
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSendMailPostRequestBody(sendMailPostRequestBody: Partial<SendMailPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { sendMailPostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface SendMailPostRequestBody extends AdditionalDataHolder, BackedMod
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The Message property
      */
-    message?: Message;
+    message?: Message | null;
     /**
      * The SaveToSentItems property
      */
-    saveToSentItems?: boolean;
+    saveToSentItems?: boolean | null;
 }
 /**
  * Provides operations to call the sendMail method.
@@ -54,6 +56,7 @@ export interface SendMailRequestBuilder extends BaseRequestBuilder<SendMailReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-sendmail?view=graph-rest-beta|Find more info here}
      */
      post(body: SendMailPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -62,6 +65,7 @@ export interface SendMailRequestBuilder extends BaseRequestBuilder<SendMailReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SendMailPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -69,10 +73,13 @@ export interface SendMailRequestBuilder extends BaseRequestBuilder<SendMailReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSendMailPostRequestBody(writer: SerializationWriter, sendMailPostRequestBody: Partial<SendMailPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<Message>("Message", sendMailPostRequestBody.message, serializeMessage);
-    writer.writeBooleanValue("SaveToSentItems", sendMailPostRequestBody.saveToSentItems);
-    writer.writeAdditionalData(sendMailPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSendMailPostRequestBody(writer: SerializationWriter, sendMailPostRequestBody: Partial<SendMailPostRequestBody> | undefined | null = {}) : void {
+    if (sendMailPostRequestBody) {
+        writer.writeObjectValue<Message>("Message", sendMailPostRequestBody.message, serializeMessage);
+        writer.writeBooleanValue("SaveToSentItems", sendMailPostRequestBody.saveToSentItems);
+        writer.writeAdditionalData(sendMailPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

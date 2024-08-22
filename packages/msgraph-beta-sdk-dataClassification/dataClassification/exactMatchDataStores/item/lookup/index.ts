@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LookupPostRequestBody}
  */
+// @ts-ignore
 export function createLookupPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLookupPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createLookupPostRequestBodyFromDiscriminatorValue(parseNode: Par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LookupPostResponse}
  */
+// @ts-ignore
 export function createLookupPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLookupPostResponse;
 }
@@ -28,6 +30,7 @@ export function createLookupPostResponseFromDiscriminatorValue(parseNode: ParseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLookupPostRequestBody(lookupPostRequestBody: Partial<LookupPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { lookupPostRequestBody.backingStoreEnabled = true; },
@@ -40,6 +43,7 @@ export function deserializeIntoLookupPostRequestBody(lookupPostRequestBody: Part
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoLookupPostResponse(lookupPostResponse: Partial<LookupPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(lookupPostResponse),
@@ -54,25 +58,25 @@ export interface LookupPostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The key property
      */
-    key?: string;
+    key?: string | null;
     /**
      * The resultColumnNames property
      */
-    resultColumnNames?: string[];
+    resultColumnNames?: string[] | null;
     /**
      * The values property
      */
-    values?: string[];
+    values?: string[] | null;
 }
 export interface LookupPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: string[];
+    value?: string[] | null;
 }
 /**
  * Provides operations to call the lookup method.
@@ -98,19 +102,25 @@ export interface LookupRequestBuilder extends BaseRequestBuilder<LookupRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeLookupPostRequestBody(writer: SerializationWriter, lookupPostRequestBody: Partial<LookupPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("key", lookupPostRequestBody.key);
-    writer.writeCollectionOfPrimitiveValues<string>("resultColumnNames", lookupPostRequestBody.resultColumnNames);
-    writer.writeCollectionOfPrimitiveValues<string>("values", lookupPostRequestBody.values);
-    writer.writeAdditionalData(lookupPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeLookupPostRequestBody(writer: SerializationWriter, lookupPostRequestBody: Partial<LookupPostRequestBody> | undefined | null = {}) : void {
+    if (lookupPostRequestBody) {
+        writer.writeStringValue("key", lookupPostRequestBody.key);
+        writer.writeCollectionOfPrimitiveValues<string>("resultColumnNames", lookupPostRequestBody.resultColumnNames);
+        writer.writeCollectionOfPrimitiveValues<string>("values", lookupPostRequestBody.values);
+        writer.writeAdditionalData(lookupPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeLookupPostResponse(writer: SerializationWriter, lookupPostResponse: Partial<LookupPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, lookupPostResponse)
-    writer.writeCollectionOfPrimitiveValues<string>("value", lookupPostResponse.value);
+// @ts-ignore
+export function serializeLookupPostResponse(writer: SerializationWriter, lookupPostResponse: Partial<LookupPostResponse> | undefined | null = {}) : void {
+    if (lookupPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, lookupPostResponse)
+        writer.writeCollectionOfPrimitiveValues<string>("value", lookupPostResponse.value);
+    }
 }
 /**
  * Uri template for the request builder.

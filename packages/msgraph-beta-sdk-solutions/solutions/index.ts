@@ -6,6 +6,8 @@ import { createSolutionsRootFromDiscriminatorValue, serializeSolutionsRoot, type
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ApprovalRequestBuilderNavigationMetadata, ApprovalRequestBuilderRequestsMetadata, type ApprovalRequestBuilder } from './approval/index.js';
+// @ts-ignore
 import { BackupRestoreRequestBuilderNavigationMetadata, BackupRestoreRequestBuilderRequestsMetadata, type BackupRestoreRequestBuilder } from './backupRestore/index.js';
 // @ts-ignore
 import { BookingBusinessesRequestBuilderNavigationMetadata, BookingBusinessesRequestBuilderRequestsMetadata, type BookingBusinessesRequestBuilder } from './bookingBusinesses/index.js';
@@ -24,6 +26,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the solutionsRoot singleton.
  */
 export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsRequestBuilder> {
+    /**
+     * Provides operations to manage the approval property of the microsoft.graph.solutionsRoot entity.
+     */
+    get approval(): ApprovalRequestBuilder;
     /**
      * Provides operations to manage the backupRestore property of the microsoft.graph.solutionsRoot entity.
      */
@@ -109,6 +115,10 @@ const SolutionsRequestBuilderGetQueryParametersMapper: Record<string, string> = 
 export const SolutionsRequestBuilderNavigationMetadata: Record<Exclude<keyof SolutionsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     businessScenariosWithUniqueName: {
         requestsMetadata: BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata,
+    },
+    approval: {
+        requestsMetadata: ApprovalRequestBuilderRequestsMetadata,
+        navigationMetadata: ApprovalRequestBuilderNavigationMetadata,
     },
     backupRestore: {
         requestsMetadata: BackupRestoreRequestBuilderRequestsMetadata,

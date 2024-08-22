@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PasswordMethodsRequestBuilder extends BaseRequestBuilder<PasswordMethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
      * @param passwordAuthenticationMethodId The unique identifier of passwordAuthenticationMethod
      * @returns {PasswordAuthenticationMethodItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPasswordAuthenticationMethodId(passwordAuthenticationMethodId: string) : PasswordAuthenticationMethodItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface PasswordMethodsRequestBuilder extends BaseRequestBuilder<Passwo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PasswordMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<PasswordAuthenticationMethodCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface PasswordMethodsRequestBuilder extends BaseRequestBuilder<Passwo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: PasswordAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordAuthenticationMethod | undefined>;
     /**
      * Represents the details of the password authentication method registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PasswordMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface PasswordMethodsRequestBuilder extends BaseRequestBuilder<Passwo
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: PasswordAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

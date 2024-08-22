@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateSettingsPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateSettingsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateSettingsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateSettingsPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateSettingsPostRequestBody(updateSettingsPostRequestBody: Partial<UpdateSettingsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateSettingsPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoUpdateSettingsPostRequestBody(updateSettingsPostR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateSettingsPostRequestBody(writer: SerializationWriter, updateSettingsPostRequestBody: Partial<UpdateSettingsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", updateSettingsPostRequestBody.settings, serializeDeviceManagementSettingInstance);
-    writer.writeAdditionalData(updateSettingsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateSettingsPostRequestBody(writer: SerializationWriter, updateSettingsPostRequestBody: Partial<UpdateSettingsPostRequestBody> | undefined | null = {}) : void {
+    if (updateSettingsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", updateSettingsPostRequestBody.settings, serializeDeviceManagementSettingInstance);
+        writer.writeAdditionalData(updateSettingsPostRequestBody.additionalData);
+    }
 }
 export interface UpdateSettingsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface UpdateSettingsPostRequestBody extends AdditionalDataHolder, Bac
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The settings property
      */
-    settings?: DeviceManagementSettingInstance[];
+    settings?: DeviceManagementSettingInstance[] | null;
 }
 /**
  * Provides operations to call the updateSettings method.

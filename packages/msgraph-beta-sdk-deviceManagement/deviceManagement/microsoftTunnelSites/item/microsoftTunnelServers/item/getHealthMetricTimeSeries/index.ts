@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetHealthMetricTimeSeriesPostRequestBody}
  */
+// @ts-ignore
 export function createGetHealthMetricTimeSeriesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetHealthMetricTimeSeriesPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createGetHealthMetricTimeSeriesPostRequestBodyFromDiscriminatorV
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetHealthMetricTimeSeriesPostResponse}
  */
+// @ts-ignore
 export function createGetHealthMetricTimeSeriesPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetHealthMetricTimeSeriesPostResponse;
 }
@@ -28,6 +30,7 @@ export function createGetHealthMetricTimeSeriesPostResponseFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetHealthMetricTimeSeriesPostRequestBody(getHealthMetricTimeSeriesPostRequestBody: Partial<GetHealthMetricTimeSeriesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getHealthMetricTimeSeriesPostRequestBody.backingStoreEnabled = true; },
@@ -40,6 +43,7 @@ export function deserializeIntoGetHealthMetricTimeSeriesPostRequestBody(getHealt
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetHealthMetricTimeSeriesPostResponse(getHealthMetricTimeSeriesPostResponse: Partial<GetHealthMetricTimeSeriesPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getHealthMetricTimeSeriesPostResponse),
@@ -54,25 +58,25 @@ export interface GetHealthMetricTimeSeriesPostRequestBody extends AdditionalData
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The endDateTime property
      */
-    endDateTime?: Date;
+    endDateTime?: Date | null;
     /**
      * The metricName property
      */
-    metricName?: string;
+    metricName?: string | null;
     /**
      * The startDateTime property
      */
-    startDateTime?: Date;
+    startDateTime?: Date | null;
 }
 export interface GetHealthMetricTimeSeriesPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: MetricTimeSeriesDataPoint[];
+    value?: MetricTimeSeriesDataPoint[] | null;
 }
 /**
  * Provides operations to call the getHealthMetricTimeSeries method.
@@ -98,19 +102,25 @@ export interface GetHealthMetricTimeSeriesRequestBuilder extends BaseRequestBuil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetHealthMetricTimeSeriesPostRequestBody(writer: SerializationWriter, getHealthMetricTimeSeriesPostRequestBody: Partial<GetHealthMetricTimeSeriesPostRequestBody> | undefined = {}) : void {
-    writer.writeDateValue("endDateTime", getHealthMetricTimeSeriesPostRequestBody.endDateTime);
-    writer.writeStringValue("metricName", getHealthMetricTimeSeriesPostRequestBody.metricName);
-    writer.writeDateValue("startDateTime", getHealthMetricTimeSeriesPostRequestBody.startDateTime);
-    writer.writeAdditionalData(getHealthMetricTimeSeriesPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetHealthMetricTimeSeriesPostRequestBody(writer: SerializationWriter, getHealthMetricTimeSeriesPostRequestBody: Partial<GetHealthMetricTimeSeriesPostRequestBody> | undefined | null = {}) : void {
+    if (getHealthMetricTimeSeriesPostRequestBody) {
+        writer.writeDateValue("endDateTime", getHealthMetricTimeSeriesPostRequestBody.endDateTime);
+        writer.writeStringValue("metricName", getHealthMetricTimeSeriesPostRequestBody.metricName);
+        writer.writeDateValue("startDateTime", getHealthMetricTimeSeriesPostRequestBody.startDateTime);
+        writer.writeAdditionalData(getHealthMetricTimeSeriesPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetHealthMetricTimeSeriesPostResponse(writer: SerializationWriter, getHealthMetricTimeSeriesPostResponse: Partial<GetHealthMetricTimeSeriesPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricTimeSeriesPostResponse)
-    writer.writeCollectionOfObjectValues<MetricTimeSeriesDataPoint>("value", getHealthMetricTimeSeriesPostResponse.value, serializeMetricTimeSeriesDataPoint);
+// @ts-ignore
+export function serializeGetHealthMetricTimeSeriesPostResponse(writer: SerializationWriter, getHealthMetricTimeSeriesPostResponse: Partial<GetHealthMetricTimeSeriesPostResponse> | undefined | null = {}) : void {
+    if (getHealthMetricTimeSeriesPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricTimeSeriesPostResponse)
+        writer.writeCollectionOfObjectValues<MetricTimeSeriesDataPoint>("value", getHealthMetricTimeSeriesPostResponse.value, serializeMetricTimeSeriesDataPoint);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface HistoryItemsRequestBuilder extends BaseRequestBuilder<HistoryItemsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
      * @param activityHistoryItemId The unique identifier of activityHistoryItem
      * @returns {ActivityHistoryItemItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byActivityHistoryItemId(activityHistoryItemId: string) : ActivityHistoryItemItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface HistoryItemsRequestBuilder extends BaseRequestBuilder<HistoryIt
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityHistoryItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<HistoryItemsRequestBuilderGetQueryParameters> | undefined) : Promise<ActivityHistoryItemCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface HistoryItemsRequestBuilder extends BaseRequestBuilder<HistoryIt
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityHistoryItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ActivityHistoryItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ActivityHistoryItem | undefined>;
     /**
      * Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HistoryItemsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface HistoryItemsRequestBuilder extends BaseRequestBuilder<HistoryIt
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ActivityHistoryItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EmailMethodsRequestBuilder extends BaseRequestBuilder<EmailMethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
      * @param emailAuthenticationMethodId The unique identifier of emailAuthenticationMethod
      * @returns {EmailAuthenticationMethodItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byEmailAuthenticationMethodId(emailAuthenticationMethodId: string) : EmailAuthenticationMethodItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface EmailMethodsRequestBuilder extends BaseRequestBuilder<EmailMeth
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmailAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<EmailMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<EmailAuthenticationMethodCollectionResponse | undefined>;
     /**
@@ -39,6 +42,7 @@ export interface EmailMethodsRequestBuilder extends BaseRequestBuilder<EmailMeth
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmailAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-beta|Find more info here}
      */
      post(body: EmailAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EmailAuthenticationMethod | undefined>;
@@ -46,6 +50,7 @@ export interface EmailMethodsRequestBuilder extends BaseRequestBuilder<EmailMeth
      * Represents the email addresses registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmailMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface EmailMethodsRequestBuilder extends BaseRequestBuilder<EmailMeth
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: EmailAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

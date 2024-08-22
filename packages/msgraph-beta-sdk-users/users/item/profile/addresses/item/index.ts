@@ -16,6 +16,7 @@ export interface ItemAddressItemRequestBuilder extends BaseRequestBuilder<ItemAd
      * Deletes an itemAddress object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -24,6 +25,7 @@ export interface ItemAddressItemRequestBuilder extends BaseRequestBuilder<ItemAd
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemAddress>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ItemAddressItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemAddress | undefined>;
     /**
@@ -32,6 +34,7 @@ export interface ItemAddressItemRequestBuilder extends BaseRequestBuilder<ItemAd
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemAddress>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ItemAddress, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemAddress | undefined>;
@@ -39,12 +42,14 @@ export interface ItemAddressItemRequestBuilder extends BaseRequestBuilder<ItemAd
      * Deletes an itemAddress object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents details of addresses associated with the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemAddressItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ItemAddressItemRequestBuilder extends BaseRequestBuilder<ItemAd
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ItemAddress, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

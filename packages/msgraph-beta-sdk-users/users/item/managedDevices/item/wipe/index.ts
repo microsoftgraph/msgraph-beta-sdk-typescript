@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WipePostRequestBody}
  */
+// @ts-ignore
 export function createWipePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWipePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createWipePostRequestBodyFromDiscriminatorValue(parseNode: Parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWipePostRequestBody(wipePostRequestBody: Partial<WipePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { wipePostRequestBody.backingStoreEnabled = true; },
@@ -35,14 +37,17 @@ export function deserializeIntoWipePostRequestBody(wipePostRequestBody: Partial<
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWipePostRequestBody(writer: SerializationWriter, wipePostRequestBody: Partial<WipePostRequestBody> | undefined = {}) : void {
-    writer.writeBooleanValue("keepEnrollmentData", wipePostRequestBody.keepEnrollmentData);
-    writer.writeBooleanValue("keepUserData", wipePostRequestBody.keepUserData);
-    writer.writeStringValue("macOsUnlockCode", wipePostRequestBody.macOsUnlockCode);
-    writer.writeEnumValue<ObliterationBehavior>("obliterationBehavior", wipePostRequestBody.obliterationBehavior);
-    writer.writeBooleanValue("persistEsimDataPlan", wipePostRequestBody.persistEsimDataPlan);
-    writer.writeBooleanValue("useProtectedWipe", wipePostRequestBody.useProtectedWipe);
-    writer.writeAdditionalData(wipePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeWipePostRequestBody(writer: SerializationWriter, wipePostRequestBody: Partial<WipePostRequestBody> | undefined | null = {}) : void {
+    if (wipePostRequestBody) {
+        writer.writeBooleanValue("keepEnrollmentData", wipePostRequestBody.keepEnrollmentData);
+        writer.writeBooleanValue("keepUserData", wipePostRequestBody.keepUserData);
+        writer.writeStringValue("macOsUnlockCode", wipePostRequestBody.macOsUnlockCode);
+        writer.writeEnumValue<ObliterationBehavior>("obliterationBehavior", wipePostRequestBody.obliterationBehavior);
+        writer.writeBooleanValue("persistEsimDataPlan", wipePostRequestBody.persistEsimDataPlan);
+        writer.writeBooleanValue("useProtectedWipe", wipePostRequestBody.useProtectedWipe);
+        writer.writeAdditionalData(wipePostRequestBody.additionalData);
+    }
 }
 export interface WipePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -52,31 +57,31 @@ export interface WipePostRequestBody extends AdditionalDataHolder, BackedModel, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The keepEnrollmentData property
      */
-    keepEnrollmentData?: boolean;
+    keepEnrollmentData?: boolean | null;
     /**
      * The keepUserData property
      */
-    keepUserData?: boolean;
+    keepUserData?: boolean | null;
     /**
      * The macOsUnlockCode property
      */
-    macOsUnlockCode?: string;
+    macOsUnlockCode?: string | null;
     /**
      * The obliterationBehavior property
      */
-    obliterationBehavior?: ObliterationBehavior;
+    obliterationBehavior?: ObliterationBehavior | null;
     /**
      * The persistEsimDataPlan property
      */
-    persistEsimDataPlan?: boolean;
+    persistEsimDataPlan?: boolean | null;
     /**
      * The useProtectedWipe property
      */
-    useProtectedWipe?: boolean;
+    useProtectedWipe?: boolean | null;
 }
 /**
  * Provides operations to call the wipe method.
@@ -87,6 +92,7 @@ export interface WipeRequestBuilder extends BaseRequestBuilder<WipeRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: WipePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -94,6 +100,7 @@ export interface WipeRequestBuilder extends BaseRequestBuilder<WipeRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: WipePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

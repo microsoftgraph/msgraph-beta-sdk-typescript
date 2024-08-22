@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MoveToContainerPostRequestBody}
  */
+// @ts-ignore
 export function createMoveToContainerPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMoveToContainerPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createMoveToContainerPostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMoveToContainerPostRequestBody(moveToContainerPostRequestBody: Partial<MoveToContainerPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { moveToContainerPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface MoveToContainerPostRequestBody extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The container property
      */
-    container?: PlannerPlanContainer;
+    container?: PlannerPlanContainer | null;
 }
 /**
  * Provides operations to call the moveToContainer method.
@@ -50,6 +52,7 @@ export interface MoveToContainerRequestBuilder extends BaseRequestBuilder<MoveTo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlan>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-beta|Find more info here}
      */
      post(body: MoveToContainerPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerPlan | undefined>;
@@ -58,6 +61,7 @@ export interface MoveToContainerRequestBuilder extends BaseRequestBuilder<MoveTo
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: MoveToContainerPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -65,9 +69,12 @@ export interface MoveToContainerRequestBuilder extends BaseRequestBuilder<MoveTo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMoveToContainerPostRequestBody(writer: SerializationWriter, moveToContainerPostRequestBody: Partial<MoveToContainerPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<PlannerPlanContainer>("container", moveToContainerPostRequestBody.container, serializePlannerPlanContainer);
-    writer.writeAdditionalData(moveToContainerPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeMoveToContainerPostRequestBody(writer: SerializationWriter, moveToContainerPostRequestBody: Partial<MoveToContainerPostRequestBody> | undefined | null = {}) : void {
+    if (moveToContainerPostRequestBody) {
+        writer.writeObjectValue<PlannerPlanContainer>("container", moveToContainerPostRequestBody.container, serializePlannerPlanContainer);
+        writer.writeAdditionalData(moveToContainerPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

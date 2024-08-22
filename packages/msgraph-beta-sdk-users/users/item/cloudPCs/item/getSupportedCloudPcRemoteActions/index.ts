@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetSupportedCloudPcRemoteActionsGetResponse}
  */
+// @ts-ignore
 export function createGetSupportedCloudPcRemoteActionsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSupportedCloudPcRemoteActionsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetSupportedCloudPcRemoteActionsGetResponseFromDiscriminat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetSupportedCloudPcRemoteActionsGetResponse(getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getSupportedCloudPcRemoteActionsGetResponse),
@@ -30,7 +32,7 @@ export interface GetSupportedCloudPcRemoteActionsGetResponse extends BaseCollect
     /**
      * The value property
      */
-    value?: CloudPcRemoteActionCapability[];
+    value?: CloudPcRemoteActionCapability[] | null;
 }
 /**
  * Provides operations to call the getSupportedCloudPcRemoteActions method.
@@ -41,6 +43,7 @@ export interface GetSupportedCloudPcRemoteActionsRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetSupportedCloudPcRemoteActionsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters> | undefined) : Promise<GetSupportedCloudPcRemoteActionsGetResponse | undefined>;
@@ -48,6 +51,7 @@ export interface GetSupportedCloudPcRemoteActionsRequestBuilder extends BaseRequ
      * Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -80,9 +84,12 @@ export interface GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetSupportedCloudPcRemoteActionsGetResponse(writer: SerializationWriter, getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getSupportedCloudPcRemoteActionsGetResponse)
-    writer.writeCollectionOfObjectValues<CloudPcRemoteActionCapability>("value", getSupportedCloudPcRemoteActionsGetResponse.value, serializeCloudPcRemoteActionCapability);
+// @ts-ignore
+export function serializeGetSupportedCloudPcRemoteActionsGetResponse(writer: SerializationWriter, getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined | null = {}) : void {
+    if (getSupportedCloudPcRemoteActionsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getSupportedCloudPcRemoteActionsGetResponse)
+        writer.writeCollectionOfObjectValues<CloudPcRemoteActionCapability>("value", getSupportedCloudPcRemoteActionsGetResponse.value, serializeCloudPcRemoteActionCapability);
+    }
 }
 /**
  * Uri template for the request builder.

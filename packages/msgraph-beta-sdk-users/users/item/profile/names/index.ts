@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface NamesRequestBuilder extends BaseRequestBuilder<NamesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the names property of the microsoft.graph.profile entity.
      * @param personNameId The unique identifier of personName
      * @returns {PersonNameItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPersonNameId(personNameId: string) : PersonNameItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface NamesRequestBuilder extends BaseRequestBuilder<NamesRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonNameCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<NamesRequestBuilderGetQueryParameters> | undefined) : Promise<PersonNameCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface NamesRequestBuilder extends BaseRequestBuilder<NamesRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonName>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: PersonName, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonName | undefined>;
     /**
      * Represents the names a user has added to their profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NamesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface NamesRequestBuilder extends BaseRequestBuilder<NamesRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: PersonName, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

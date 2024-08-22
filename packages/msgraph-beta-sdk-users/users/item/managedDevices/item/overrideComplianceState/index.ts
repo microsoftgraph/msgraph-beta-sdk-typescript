@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {OverrideComplianceStatePostRequestBody}
  */
+// @ts-ignore
 export function createOverrideComplianceStatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoOverrideComplianceStatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createOverrideComplianceStatePostRequestBodyFromDiscriminatorVal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoOverrideComplianceStatePostRequestBody(overrideComplianceStatePostRequestBody: Partial<OverrideComplianceStatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { overrideComplianceStatePostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface OverrideComplianceStatePostRequestBody extends AdditionalDataHo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * Administrator configured device compliance state Enum
      */
-    complianceState?: AdministratorConfiguredDeviceComplianceState;
+    complianceState?: AdministratorConfiguredDeviceComplianceState | null;
     /**
      * The remediationUrl property
      */
-    remediationUrl?: string;
+    remediationUrl?: string | null;
 }
 /**
  * Provides operations to call the overrideComplianceState method.
@@ -54,6 +56,7 @@ export interface OverrideComplianceStateRequestBuilder extends BaseRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: OverrideComplianceStatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -61,6 +64,7 @@ export interface OverrideComplianceStateRequestBuilder extends BaseRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: OverrideComplianceStatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -68,10 +72,13 @@ export interface OverrideComplianceStateRequestBuilder extends BaseRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeOverrideComplianceStatePostRequestBody(writer: SerializationWriter, overrideComplianceStatePostRequestBody: Partial<OverrideComplianceStatePostRequestBody> | undefined = {}) : void {
-    writer.writeEnumValue<AdministratorConfiguredDeviceComplianceState>("complianceState", overrideComplianceStatePostRequestBody.complianceState);
-    writer.writeStringValue("remediationUrl", overrideComplianceStatePostRequestBody.remediationUrl);
-    writer.writeAdditionalData(overrideComplianceStatePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeOverrideComplianceStatePostRequestBody(writer: SerializationWriter, overrideComplianceStatePostRequestBody: Partial<OverrideComplianceStatePostRequestBody> | undefined | null = {}) : void {
+    if (overrideComplianceStatePostRequestBody) {
+        writer.writeEnumValue<AdministratorConfiguredDeviceComplianceState>("complianceState", overrideComplianceStatePostRequestBody.complianceState);
+        writer.writeStringValue("remediationUrl", overrideComplianceStatePostRequestBody.remediationUrl);
+        writer.writeAdditionalData(overrideComplianceStatePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeltaGetResponse}
  */
+// @ts-ignore
 export function createDeltaGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeltaGetResponse;
 }
@@ -20,7 +21,7 @@ export interface DeltaGetResponse extends BaseDeltaFunctionResponse, Parsable {
     /**
      * The value property
      */
-    value?: MailFolder[];
+    value?: MailFolder[] | null;
 }
 /**
  * Provides operations to call the delta method.
@@ -31,6 +32,7 @@ export interface DeltaRequestBuilder extends BaseRequestBuilder<DeltaRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeltaGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DeltaRequestBuilderGetQueryParameters> | undefined) : Promise<DeltaGetResponse | undefined>;
@@ -38,6 +40,7 @@ export interface DeltaRequestBuilder extends BaseRequestBuilder<DeltaRequestBuil
      * Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls,you can query for incremental changes in the mail folders. This allows you to maintain and synchronizea local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeltaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -82,6 +85,7 @@ export interface DeltaRequestBuilderGetQueryParameters {
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeltaGetResponse(deltaGetResponse: Partial<DeltaGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseDeltaFunctionResponse(deltaGetResponse),
@@ -92,9 +96,12 @@ export function deserializeIntoDeltaGetResponse(deltaGetResponse: Partial<DeltaG
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeltaGetResponse(writer: SerializationWriter, deltaGetResponse: Partial<DeltaGetResponse> | undefined = {}) : void {
-    serializeBaseDeltaFunctionResponse(writer, deltaGetResponse)
-    writer.writeCollectionOfObjectValues<MailFolder>("value", deltaGetResponse.value, serializeMailFolder);
+// @ts-ignore
+export function serializeDeltaGetResponse(writer: SerializationWriter, deltaGetResponse: Partial<DeltaGetResponse> | undefined | null = {}) : void {
+    if (deltaGetResponse) {
+        serializeBaseDeltaFunctionResponse(writer, deltaGetResponse)
+        writer.writeCollectionOfObjectValues<MailFolder>("value", deltaGetResponse.value, serializeMailFolder);
+    }
 }
 /**
  * Uri template for the request builder.

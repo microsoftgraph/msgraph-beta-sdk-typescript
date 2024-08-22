@@ -16,6 +16,7 @@ export interface PersonWebsiteItemRequestBuilder extends BaseRequestBuilder<Pers
      * Delete navigation property websites for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface PersonWebsiteItemRequestBuilder extends BaseRequestBuilder<Pers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonWebsite>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PersonWebsiteItemRequestBuilderGetQueryParameters> | undefined) : Promise<PersonWebsite | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface PersonWebsiteItemRequestBuilder extends BaseRequestBuilder<Pers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonWebsite>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: PersonWebsite, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonWebsite | undefined>;
     /**
      * Delete navigation property websites for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents detailed information about websites associated with a user in various services.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PersonWebsiteItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface PersonWebsiteItemRequestBuilder extends BaseRequestBuilder<Pers
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PersonWebsite, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

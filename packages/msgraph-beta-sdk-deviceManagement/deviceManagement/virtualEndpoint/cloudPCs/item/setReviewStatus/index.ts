@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetReviewStatusPostRequestBody}
  */
+// @ts-ignore
 export function createSetReviewStatusPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetReviewStatusPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSetReviewStatusPostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetReviewStatusPostRequestBody(setReviewStatusPostRequestBody: Partial<SetReviewStatusPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setReviewStatusPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoSetReviewStatusPostRequestBody(setReviewStatusPos
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSetReviewStatusPostRequestBody(writer: SerializationWriter, setReviewStatusPostRequestBody: Partial<SetReviewStatusPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<CloudPcReviewStatus>("reviewStatus", setReviewStatusPostRequestBody.reviewStatus, serializeCloudPcReviewStatus);
-    writer.writeAdditionalData(setReviewStatusPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSetReviewStatusPostRequestBody(writer: SerializationWriter, setReviewStatusPostRequestBody: Partial<SetReviewStatusPostRequestBody> | undefined | null = {}) : void {
+    if (setReviewStatusPostRequestBody) {
+        writer.writeObjectValue<CloudPcReviewStatus>("reviewStatus", setReviewStatusPostRequestBody.reviewStatus, serializeCloudPcReviewStatus);
+        writer.writeAdditionalData(setReviewStatusPostRequestBody.additionalData);
+    }
 }
 export interface SetReviewStatusPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface SetReviewStatusPostRequestBody extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The reviewStatus property
      */
-    reviewStatus?: CloudPcReviewStatus;
+    reviewStatus?: CloudPcReviewStatus | null;
 }
 /**
  * Provides operations to call the setReviewStatus method.

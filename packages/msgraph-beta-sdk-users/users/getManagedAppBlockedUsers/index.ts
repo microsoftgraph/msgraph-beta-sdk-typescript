@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetManagedAppBlockedUsersGetResponse}
  */
+// @ts-ignore
 export function createGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetManagedAppBlockedUsersGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetManagedAppBlockedUsersGetResponse(getManagedAppBlockedUsersGetResponse: Partial<GetManagedAppBlockedUsersGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getManagedAppBlockedUsersGetResponse),
@@ -30,7 +32,7 @@ export interface GetManagedAppBlockedUsersGetResponse extends BaseCollectionPagi
     /**
      * The value property
      */
-    value?: string[];
+    value?: string[] | null;
 }
 /**
  * Provides operations to call the getManagedAppBlockedUsers method.
@@ -41,12 +43,14 @@ export interface GetManagedAppBlockedUsersRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetManagedAppBlockedUsersGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GetManagedAppBlockedUsersRequestBuilderGetQueryParameters> | undefined) : Promise<GetManagedAppBlockedUsersGetResponse | undefined>;
     /**
      * Invoke function getManagedAppBlockedUsers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetManagedAppBlockedUsersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -79,9 +83,12 @@ export interface GetManagedAppBlockedUsersRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetManagedAppBlockedUsersGetResponse(writer: SerializationWriter, getManagedAppBlockedUsersGetResponse: Partial<GetManagedAppBlockedUsersGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getManagedAppBlockedUsersGetResponse)
-    writer.writeCollectionOfPrimitiveValues<string>("value", getManagedAppBlockedUsersGetResponse.value);
+// @ts-ignore
+export function serializeGetManagedAppBlockedUsersGetResponse(writer: SerializationWriter, getManagedAppBlockedUsersGetResponse: Partial<GetManagedAppBlockedUsersGetResponse> | undefined | null = {}) : void {
+    if (getManagedAppBlockedUsersGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getManagedAppBlockedUsersGetResponse)
+        writer.writeCollectionOfPrimitiveValues<string>("value", getManagedAppBlockedUsersGetResponse.value);
+    }
 }
 /**
  * Uri template for the request builder.

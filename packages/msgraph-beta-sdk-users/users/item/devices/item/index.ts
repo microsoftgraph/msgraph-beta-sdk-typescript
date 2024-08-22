@@ -28,36 +28,44 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemRequestBuilder> {
     /**
      * Provides operations to manage the commands property of the microsoft.graph.device entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get commands(): CommandsRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.device entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to manage the memberOf property of the microsoft.graph.device entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get memberOf(): MemberOfRequestBuilder;
     /**
      * Provides operations to manage the registeredOwners property of the microsoft.graph.device entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get registeredOwners(): RegisteredOwnersRequestBuilder;
     /**
      * Provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get registeredUsers(): RegisteredUsersRequestBuilder;
     /**
      * Provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get transitiveMemberOf(): TransitiveMemberOfRequestBuilder;
     /**
      * Provides operations to manage the usageRights property of the microsoft.graph.device entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get usageRights(): UsageRightsRequestBuilder;
     /**
      * Delete navigation property devices for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -65,6 +73,7 @@ export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Device>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DeviceItemRequestBuilderGetQueryParameters> | undefined) : Promise<Device | undefined>;
     /**
@@ -73,18 +82,21 @@ export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Device>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Device | undefined>;
     /**
      * Delete navigation property devices for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get devices from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -92,6 +104,7 @@ export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

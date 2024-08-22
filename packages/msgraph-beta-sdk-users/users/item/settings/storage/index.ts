@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface StorageRequestBuilder extends BaseRequestBuilder<StorageRequestBuilder> {
     /**
      * Provides operations to manage the quota property of the microsoft.graph.userStorage entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get quota(): QuotaRequestBuilder;
     /**
      * Delete navigation property storage for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface StorageRequestBuilder extends BaseRequestBuilder<StorageRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserStorage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<StorageRequestBuilderGetQueryParameters> | undefined) : Promise<UserStorage | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface StorageRequestBuilder extends BaseRequestBuilder<StorageRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserStorage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserStorage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserStorage | undefined>;
     /**
      * Delete navigation property storage for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get storage from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<StorageRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface StorageRequestBuilder extends BaseRequestBuilder<StorageRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserStorage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

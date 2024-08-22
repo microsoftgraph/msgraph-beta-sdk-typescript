@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RevokeSignInSessionsPostResponse}
  */
+// @ts-ignore
 export function createRevokeSignInSessionsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRevokeSignInSessionsPostResponse;
 }
@@ -18,6 +19,7 @@ export function createRevokeSignInSessionsPostResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRevokeSignInSessionsPostResponse(revokeSignInSessionsPostResponse: Partial<RevokeSignInSessionsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { revokeSignInSessionsPostResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface RevokeSignInSessionsPostResponse extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the revokeSignInSessions method.
@@ -47,6 +49,7 @@ export interface RevokeSignInSessionsRequestBuilder extends BaseRequestBuilder<R
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RevokeSignInSessionsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RevokeSignInSessionsPostResponse | undefined>;
@@ -54,6 +57,7 @@ export interface RevokeSignInSessionsRequestBuilder extends BaseRequestBuilder<R
      * Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device. If the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,9 +65,12 @@ export interface RevokeSignInSessionsRequestBuilder extends BaseRequestBuilder<R
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRevokeSignInSessionsPostResponse(writer: SerializationWriter, revokeSignInSessionsPostResponse: Partial<RevokeSignInSessionsPostResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", revokeSignInSessionsPostResponse.value);
-    writer.writeAdditionalData(revokeSignInSessionsPostResponse.additionalData);
+// @ts-ignore
+export function serializeRevokeSignInSessionsPostResponse(writer: SerializationWriter, revokeSignInSessionsPostResponse: Partial<RevokeSignInSessionsPostResponse> | undefined | null = {}) : void {
+    if (revokeSignInSessionsPostResponse) {
+        writer.writeBooleanValue("value", revokeSignInSessionsPostResponse.value);
+        writer.writeAdditionalData(revokeSignInSessionsPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

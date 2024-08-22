@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdatePasswordSingleSignOnCredentialsPostRequestBody}
  */
+// @ts-ignore
 export function createUpdatePasswordSingleSignOnCredentialsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdatePasswordSingleSignOnCredentialsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdatePasswordSingleSignOnCredentialsPostRequestBodyFromDi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdatePasswordSingleSignOnCredentialsPostRequestBody(updatePasswordSingleSignOnCredentialsPostRequestBody: Partial<UpdatePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updatePasswordSingleSignOnCredentialsPostRequestBody.backingStoreEnabled = true; },
@@ -31,10 +33,13 @@ export function deserializeIntoUpdatePasswordSingleSignOnCredentialsPostRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, updatePasswordSingleSignOnCredentialsPostRequestBody: Partial<UpdatePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<Credential>("credentials", updatePasswordSingleSignOnCredentialsPostRequestBody.credentials, serializeCredential);
-    writer.writeStringValue("id", updatePasswordSingleSignOnCredentialsPostRequestBody.id);
-    writer.writeAdditionalData(updatePasswordSingleSignOnCredentialsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdatePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, updatePasswordSingleSignOnCredentialsPostRequestBody: Partial<UpdatePasswordSingleSignOnCredentialsPostRequestBody> | undefined | null = {}) : void {
+    if (updatePasswordSingleSignOnCredentialsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<Credential>("credentials", updatePasswordSingleSignOnCredentialsPostRequestBody.credentials, serializeCredential);
+        writer.writeStringValue("id", updatePasswordSingleSignOnCredentialsPostRequestBody.id);
+        writer.writeAdditionalData(updatePasswordSingleSignOnCredentialsPostRequestBody.additionalData);
+    }
 }
 export interface UpdatePasswordSingleSignOnCredentialsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -44,15 +49,15 @@ export interface UpdatePasswordSingleSignOnCredentialsPostRequestBody extends Ad
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The credentials property
      */
-    credentials?: Credential[];
+    credentials?: Credential[] | null;
     /**
      * The id property
      */
-    id?: string;
+    id?: string | null;
 }
 /**
  * Provides operations to call the updatePasswordSingleSignOnCredentials method.

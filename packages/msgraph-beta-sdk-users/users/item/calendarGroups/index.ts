@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CalendarGroupsRequestBuilder extends BaseRequestBuilder<CalendarGroupsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
      * @param calendarGroupId The unique identifier of calendarGroup
      * @returns {CalendarGroupItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byCalendarGroupId(calendarGroupId: string) : CalendarGroupItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface CalendarGroupsRequestBuilder extends BaseRequestBuilder<Calenda
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CalendarGroupCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CalendarGroupsRequestBuilderGetQueryParameters> | undefined) : Promise<CalendarGroupCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface CalendarGroupsRequestBuilder extends BaseRequestBuilder<Calenda
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CalendarGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: CalendarGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CalendarGroup | undefined>;
     /**
      * The user's calendar groups. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CalendarGroupsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface CalendarGroupsRequestBuilder extends BaseRequestBuilder<Calenda
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CalendarGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

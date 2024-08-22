@@ -28,36 +28,44 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EducationSynchronizationProfileItemRequestBuilder extends BaseRequestBuilder<EducationSynchronizationProfileItemRequestBuilder> {
     /**
      * Provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get errors(): ErrorsRequestBuilder;
     /**
      * Provides operations to call the pause method.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get pause(): PauseRequestBuilder;
     /**
      * Provides operations to manage the profileStatus property of the microsoft.graph.educationSynchronizationProfile entity.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get profileStatus(): ProfileStatusRequestBuilder;
     /**
      * Provides operations to call the reset method.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get reset(): ResetRequestBuilder;
     /**
      * Provides operations to call the resume method.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get resume(): ResumeRequestBuilder;
     /**
      * Provides operations to call the start method.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get start(): StartRequestBuilder;
     /**
      * Provides operations to call the uploadUrl method.
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
     get uploadUrl(): UploadUrlRequestBuilder;
     /**
      * Delete a school data synchronization profile in the tenant based on the identifier.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -66,6 +74,7 @@ export interface EducationSynchronizationProfileItemRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationProfile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationProfile | undefined>;
@@ -75,18 +84,21 @@ export interface EducationSynchronizationProfileItemRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationProfile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      patch(body: EducationSynchronizationProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationProfile | undefined>;
     /**
      * Delete a school data synchronization profile in the tenant based on the identifier.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve a school data synchronization profile in the tenant based on the identifier.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -94,6 +106,7 @@ export interface EducationSynchronizationProfileItemRequestBuilder extends BaseR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toPatchRequestInformation(body: EducationSynchronizationProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

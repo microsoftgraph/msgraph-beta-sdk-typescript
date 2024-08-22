@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetVirtualAppointmentJoinWebUrlGetResponse}
  */
+// @ts-ignore
 export function createGetVirtualAppointmentJoinWebUrlGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetVirtualAppointmentJoinWebUrlGetResponse;
 }
@@ -18,6 +19,7 @@ export function createGetVirtualAppointmentJoinWebUrlGetResponseFromDiscriminato
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetVirtualAppointmentJoinWebUrlGetResponse(getVirtualAppointmentJoinWebUrlGetResponse: Partial<GetVirtualAppointmentJoinWebUrlGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getVirtualAppointmentJoinWebUrlGetResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface GetVirtualAppointmentJoinWebUrlGetResponse extends AdditionalDa
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the getVirtualAppointmentJoinWebUrl method.
@@ -47,6 +49,7 @@ export interface GetVirtualAppointmentJoinWebUrlRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetVirtualAppointmentJoinWebUrlGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetVirtualAppointmentJoinWebUrlGetResponse | undefined>;
@@ -54,6 +57,7 @@ export interface GetVirtualAppointmentJoinWebUrlRequestBuilder extends BaseReque
      * Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,9 +65,12 @@ export interface GetVirtualAppointmentJoinWebUrlRequestBuilder extends BaseReque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetVirtualAppointmentJoinWebUrlGetResponse(writer: SerializationWriter, getVirtualAppointmentJoinWebUrlGetResponse: Partial<GetVirtualAppointmentJoinWebUrlGetResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", getVirtualAppointmentJoinWebUrlGetResponse.value);
-    writer.writeAdditionalData(getVirtualAppointmentJoinWebUrlGetResponse.additionalData);
+// @ts-ignore
+export function serializeGetVirtualAppointmentJoinWebUrlGetResponse(writer: SerializationWriter, getVirtualAppointmentJoinWebUrlGetResponse: Partial<GetVirtualAppointmentJoinWebUrlGetResponse> | undefined | null = {}) : void {
+    if (getVirtualAppointmentJoinWebUrlGetResponse) {
+        writer.writeStringValue("value", getVirtualAppointmentJoinWebUrlGetResponse.value);
+        writer.writeAdditionalData(getVirtualAppointmentJoinWebUrlGetResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

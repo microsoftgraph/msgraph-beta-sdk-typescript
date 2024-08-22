@@ -16,11 +16,11 @@ export interface AssignPostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The enrollmentConfigurationAssignments property
      */
-    enrollmentConfigurationAssignments?: EnrollmentConfigurationAssignment[];
+    enrollmentConfigurationAssignments?: EnrollmentConfigurationAssignment[] | null;
 }
 /**
  * Provides operations to call the assign method.
@@ -31,6 +31,7 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AssignPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -38,6 +39,7 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AssignPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -46,6 +48,7 @@ export interface AssignRequestBuilder extends BaseRequestBuilder<AssignRequestBu
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AssignPostRequestBody}
  */
+// @ts-ignore
 export function createAssignPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAssignPostRequestBody;
 }
@@ -53,6 +56,7 @@ export function createAssignPostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoAssignPostRequestBody(assignPostRequestBody: Partial<AssignPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { assignPostRequestBody.backingStoreEnabled = true; },
@@ -63,9 +67,12 @@ export function deserializeIntoAssignPostRequestBody(assignPostRequestBody: Part
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeAssignPostRequestBody(writer: SerializationWriter, assignPostRequestBody: Partial<AssignPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<EnrollmentConfigurationAssignment>("enrollmentConfigurationAssignments", assignPostRequestBody.enrollmentConfigurationAssignments, serializeEnrollmentConfigurationAssignment);
-    writer.writeAdditionalData(assignPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeAssignPostRequestBody(writer: SerializationWriter, assignPostRequestBody: Partial<AssignPostRequestBody> | undefined | null = {}) : void {
+    if (assignPostRequestBody) {
+        writer.writeCollectionOfObjectValues<EnrollmentConfigurationAssignment>("enrollmentConfigurationAssignments", assignPostRequestBody.enrollmentConfigurationAssignments, serializeEnrollmentConfigurationAssignment);
+        writer.writeAdditionalData(assignPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CreatePasswordSingleSignOnCredentialsPostRequestBody}
  */
+// @ts-ignore
 export function createCreatePasswordSingleSignOnCredentialsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCreatePasswordSingleSignOnCredentialsPostRequestBody;
 }
@@ -24,15 +25,15 @@ export interface CreatePasswordSingleSignOnCredentialsPostRequestBody extends Ad
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The credentials property
      */
-    credentials?: Credential[];
+    credentials?: Credential[] | null;
     /**
      * The id property
      */
-    id?: string;
+    id?: string | null;
 }
 /**
  * Provides operations to call the createPasswordSingleSignOnCredentials method.
@@ -59,6 +60,7 @@ export interface CreatePasswordSingleSignOnCredentialsRequestBuilder extends Bas
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCreatePasswordSingleSignOnCredentialsPostRequestBody(createPasswordSingleSignOnCredentialsPostRequestBody: Partial<CreatePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { createPasswordSingleSignOnCredentialsPostRequestBody.backingStoreEnabled = true; },
@@ -70,10 +72,13 @@ export function deserializeIntoCreatePasswordSingleSignOnCredentialsPostRequestB
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCreatePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, createPasswordSingleSignOnCredentialsPostRequestBody: Partial<CreatePasswordSingleSignOnCredentialsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<Credential>("credentials", createPasswordSingleSignOnCredentialsPostRequestBody.credentials, serializeCredential);
-    writer.writeStringValue("id", createPasswordSingleSignOnCredentialsPostRequestBody.id);
-    writer.writeAdditionalData(createPasswordSingleSignOnCredentialsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCreatePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, createPasswordSingleSignOnCredentialsPostRequestBody: Partial<CreatePasswordSingleSignOnCredentialsPostRequestBody> | undefined | null = {}) : void {
+    if (createPasswordSingleSignOnCredentialsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<Credential>("credentials", createPasswordSingleSignOnCredentialsPostRequestBody.credentials, serializeCredential);
+        writer.writeStringValue("id", createPasswordSingleSignOnCredentialsPostRequestBody.id);
+        writer.writeAdditionalData(createPasswordSingleSignOnCredentialsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

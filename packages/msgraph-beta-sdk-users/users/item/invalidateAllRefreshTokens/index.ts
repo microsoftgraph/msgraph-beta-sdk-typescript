@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InvalidateAllRefreshTokensPostResponse}
  */
+// @ts-ignore
 export function createInvalidateAllRefreshTokensPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInvalidateAllRefreshTokensPostResponse;
 }
@@ -18,6 +19,7 @@ export function createInvalidateAllRefreshTokensPostResponseFromDiscriminatorVal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoInvalidateAllRefreshTokensPostResponse(invalidateAllRefreshTokensPostResponse: Partial<InvalidateAllRefreshTokensPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { invalidateAllRefreshTokensPostResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface InvalidateAllRefreshTokensPostResponse extends AdditionalDataHo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the invalidateAllRefreshTokens method.
@@ -47,6 +49,7 @@ export interface InvalidateAllRefreshTokensRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InvalidateAllRefreshTokensPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InvalidateAllRefreshTokensPostResponse | undefined>;
@@ -54,6 +57,7 @@ export interface InvalidateAllRefreshTokensRequestBuilder extends BaseRequestBui
      * Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization's data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -61,9 +65,12 @@ export interface InvalidateAllRefreshTokensRequestBuilder extends BaseRequestBui
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeInvalidateAllRefreshTokensPostResponse(writer: SerializationWriter, invalidateAllRefreshTokensPostResponse: Partial<InvalidateAllRefreshTokensPostResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", invalidateAllRefreshTokensPostResponse.value);
-    writer.writeAdditionalData(invalidateAllRefreshTokensPostResponse.additionalData);
+// @ts-ignore
+export function serializeInvalidateAllRefreshTokensPostResponse(writer: SerializationWriter, invalidateAllRefreshTokensPostResponse: Partial<InvalidateAllRefreshTokensPostResponse> | undefined | null = {}) : void {
+    if (invalidateAllRefreshTokensPostResponse) {
+        writer.writeBooleanValue("value", invalidateAllRefreshTokensPostResponse.value);
+        writer.writeAdditionalData(invalidateAllRefreshTokensPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

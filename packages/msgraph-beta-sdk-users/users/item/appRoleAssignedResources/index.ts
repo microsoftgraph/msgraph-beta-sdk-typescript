@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AppRoleAssignedResourcesRequestBuilder extends BaseRequestBuilder<AppRoleAssignedResourcesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
      * @param servicePrincipalId The unique identifier of servicePrincipal
      * @returns {ServicePrincipalItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byServicePrincipalId(servicePrincipalId: string) : ServicePrincipalItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface AppRoleAssignedResourcesRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipalCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AppRoleAssignedResourcesRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipalCollectionResponse | undefined>;
     /**
      * Get appRoleAssignedResources from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppRoleAssignedResourcesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

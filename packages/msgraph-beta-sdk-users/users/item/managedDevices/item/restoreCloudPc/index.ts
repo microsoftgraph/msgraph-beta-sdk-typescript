@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RestoreCloudPcPostRequestBody}
  */
+// @ts-ignore
 export function createRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRestoreCloudPcPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRestoreCloudPcPostRequestBody(restoreCloudPcPostRequestBody: Partial<RestoreCloudPcPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { restoreCloudPcPostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface RestoreCloudPcPostRequestBody extends AdditionalDataHolder, Bac
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The cloudPcSnapshotId property
      */
-    cloudPcSnapshotId?: string;
+    cloudPcSnapshotId?: string | null;
 }
 /**
  * Provides operations to call the restoreCloudPc method.
@@ -47,7 +49,7 @@ export interface RestoreCloudPcRequestBuilder extends BaseRequestBuilder<Restore
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-beta|Find more info here}
      */
      post(body: RestoreCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -56,7 +58,7 @@ export interface RestoreCloudPcRequestBuilder extends BaseRequestBuilder<Restore
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: RestoreCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -64,9 +66,12 @@ export interface RestoreCloudPcRequestBuilder extends BaseRequestBuilder<Restore
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRestoreCloudPcPostRequestBody(writer: SerializationWriter, restoreCloudPcPostRequestBody: Partial<RestoreCloudPcPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("cloudPcSnapshotId", restoreCloudPcPostRequestBody.cloudPcSnapshotId);
-    writer.writeAdditionalData(restoreCloudPcPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRestoreCloudPcPostRequestBody(writer: SerializationWriter, restoreCloudPcPostRequestBody: Partial<RestoreCloudPcPostRequestBody> | undefined | null = {}) : void {
+    if (restoreCloudPcPostRequestBody) {
+        writer.writeStringValue("cloudPcSnapshotId", restoreCloudPcPostRequestBody.cloudPcSnapshotId);
+        writer.writeAdditionalData(restoreCloudPcPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

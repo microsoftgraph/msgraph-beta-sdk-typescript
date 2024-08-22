@@ -18,6 +18,8 @@ import { AccessPackageAssignmentsRequestBuilderNavigationMetadata, AccessPackage
 // @ts-ignore
 import { AccessPackageCatalogsRequestBuilderNavigationMetadata, AccessPackageCatalogsRequestBuilderRequestsMetadata, type AccessPackageCatalogsRequestBuilder } from './accessPackageCatalogs/index.js';
 // @ts-ignore
+import { AccessPackageCatalogsWithUniqueNameRequestBuilderRequestsMetadata, type AccessPackageCatalogsWithUniqueNameRequestBuilder } from './accessPackageCatalogsWithUniqueName/index.js';
+// @ts-ignore
 import { AccessPackageResourceEnvironmentsRequestBuilderNavigationMetadata, AccessPackageResourceEnvironmentsRequestBuilderRequestsMetadata, type AccessPackageResourceEnvironmentsRequestBuilder } from './accessPackageResourceEnvironments/index.js';
 // @ts-ignore
 import { AccessPackageResourceRequestsRequestBuilderNavigationMetadata, AccessPackageResourceRequestsRequestBuilderRequestsMetadata, type AccessPackageResourceRequestsRequestBuilder } from './accessPackageResourceRequests/index.js';
@@ -27,6 +29,8 @@ import { AccessPackageResourceRoleScopesRequestBuilderNavigationMetadata, Access
 import { AccessPackageResourcesRequestBuilderNavigationMetadata, AccessPackageResourcesRequestBuilderRequestsMetadata, type AccessPackageResourcesRequestBuilder } from './accessPackageResources/index.js';
 // @ts-ignore
 import { AccessPackagesRequestBuilderNavigationMetadata, AccessPackagesRequestBuilderRequestsMetadata, type AccessPackagesRequestBuilder } from './accessPackages/index.js';
+// @ts-ignore
+import { AccessPackagesWithUniqueNameRequestBuilderNavigationMetadata, AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata, type AccessPackagesWithUniqueNameRequestBuilder } from './accessPackagesWithUniqueName/index.js';
 // @ts-ignore
 import { AssignmentRequestsRequestBuilderNavigationMetadata, AssignmentRequestsRequestBuilderRequestsMetadata, type AssignmentRequestsRequestBuilder } from './assignmentRequests/index.js';
 // @ts-ignore
@@ -105,6 +109,19 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      */
     get subjects(): SubjectsRequestBuilder;
     /**
+     * Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
+     * @param uniqueName Alternate key of accessPackageCatalog
+     * @returns {AccessPackageCatalogsWithUniqueNameRequestBuilder}
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     */
+     accessPackageCatalogsWithUniqueName(uniqueName: string | undefined) : AccessPackageCatalogsWithUniqueNameRequestBuilder;
+    /**
+     * Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
+     * @param uniqueName Alternate key of accessPackage
+     * @returns {AccessPackagesWithUniqueNameRequestBuilder}
+     */
+     accessPackagesWithUniqueName(uniqueName: string | undefined) : AccessPackagesWithUniqueNameRequestBuilder;
+    /**
      * Delete navigation property entitlementManagement for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -179,6 +196,13 @@ const EntitlementManagementRequestBuilderGetQueryParametersMapper: Record<string
  * Metadata for all the navigation properties in the request builder.
  */
 export const EntitlementManagementRequestBuilderNavigationMetadata: Record<Exclude<keyof EntitlementManagementRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    accessPackageCatalogsWithUniqueName: {
+        requestsMetadata: AccessPackageCatalogsWithUniqueNameRequestBuilderRequestsMetadata,
+    },
+    accessPackagesWithUniqueName: {
+        requestsMetadata: AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata,
+        navigationMetadata: AccessPackagesWithUniqueNameRequestBuilderNavigationMetadata,
+    },
     subjectsWithObjectId: {
         requestsMetadata: SubjectsWithObjectIdRequestBuilderRequestsMetadata,
     },

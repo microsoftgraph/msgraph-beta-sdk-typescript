@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetSupportedCloudPcRemoteActionsGetResponse}
  */
+// @ts-ignore
 export function createGetSupportedCloudPcRemoteActionsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSupportedCloudPcRemoteActionsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetSupportedCloudPcRemoteActionsGetResponseFromDiscriminat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetSupportedCloudPcRemoteActionsGetResponse(getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getSupportedCloudPcRemoteActionsGetResponse),
@@ -30,7 +32,7 @@ export interface GetSupportedCloudPcRemoteActionsGetResponse extends BaseCollect
     /**
      * The value property
      */
-    value?: CloudPcRemoteActionCapability[];
+    value?: CloudPcRemoteActionCapability[] | null;
 }
 /**
  * Provides operations to call the getSupportedCloudPcRemoteActions method.
@@ -80,9 +82,12 @@ export interface GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameter
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetSupportedCloudPcRemoteActionsGetResponse(writer: SerializationWriter, getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getSupportedCloudPcRemoteActionsGetResponse)
-    writer.writeCollectionOfObjectValues<CloudPcRemoteActionCapability>("value", getSupportedCloudPcRemoteActionsGetResponse.value, serializeCloudPcRemoteActionCapability);
+// @ts-ignore
+export function serializeGetSupportedCloudPcRemoteActionsGetResponse(writer: SerializationWriter, getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined | null = {}) : void {
+    if (getSupportedCloudPcRemoteActionsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getSupportedCloudPcRemoteActionsGetResponse)
+        writer.writeCollectionOfObjectValues<CloudPcRemoteActionCapability>("value", getSupportedCloudPcRemoteActionsGetResponse.value, serializeCloudPcRemoteActionCapability);
+    }
 }
 /**
  * Uri template for the request builder.

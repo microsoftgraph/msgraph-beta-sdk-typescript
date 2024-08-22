@@ -17,6 +17,7 @@ export interface CreationOptionsWithChallengeTimeoutInMinutesRequestBuilder exte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WebauthnCredentialCreationOptions>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/fido2authenticationmethod-creationoptions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CreationOptionsWithChallengeTimeoutInMinutesRequestBuilderGetQueryParameters> | undefined) : Promise<WebauthnCredentialCreationOptions | undefined>;
@@ -24,6 +25,7 @@ export interface CreationOptionsWithChallengeTimeoutInMinutesRequestBuilder exte
      * Retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. Self-service operations aren't supported.  
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CreationOptionsWithChallengeTimeoutInMinutesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

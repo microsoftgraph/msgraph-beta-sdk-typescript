@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetQuietTimePolicyUserSummaryReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetQuietTimePolicyUserSummaryReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetQuietTimePolicyUserSummaryReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetQuietTimePolicyUserSummaryReportPostRequestBodyFromDisc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetQuietTimePolicyUserSummaryReportPostRequestBody(getQuietTimePolicyUserSummaryReportPostRequestBody: Partial<GetQuietTimePolicyUserSummaryReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getQuietTimePolicyUserSummaryReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetQuietTimePolicyUserSummaryReportPostRequestBody extends Addi
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getQuietTimePolicyUserSummaryReport method.
@@ -102,17 +104,20 @@ export interface GetQuietTimePolicyUserSummaryReportRequestBuilder extends BaseR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetQuietTimePolicyUserSummaryReportPostRequestBody(writer: SerializationWriter, getQuietTimePolicyUserSummaryReportPostRequestBody: Partial<GetQuietTimePolicyUserSummaryReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getQuietTimePolicyUserSummaryReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getQuietTimePolicyUserSummaryReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getQuietTimePolicyUserSummaryReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getQuietTimePolicyUserSummaryReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getQuietTimePolicyUserSummaryReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getQuietTimePolicyUserSummaryReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getQuietTimePolicyUserSummaryReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getQuietTimePolicyUserSummaryReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getQuietTimePolicyUserSummaryReportPostRequestBody.top);
-    writer.writeAdditionalData(getQuietTimePolicyUserSummaryReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetQuietTimePolicyUserSummaryReportPostRequestBody(writer: SerializationWriter, getQuietTimePolicyUserSummaryReportPostRequestBody: Partial<GetQuietTimePolicyUserSummaryReportPostRequestBody> | undefined | null = {}) : void {
+    if (getQuietTimePolicyUserSummaryReportPostRequestBody) {
+        writer.writeStringValue("filter", getQuietTimePolicyUserSummaryReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getQuietTimePolicyUserSummaryReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getQuietTimePolicyUserSummaryReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getQuietTimePolicyUserSummaryReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getQuietTimePolicyUserSummaryReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getQuietTimePolicyUserSummaryReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getQuietTimePolicyUserSummaryReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getQuietTimePolicyUserSummaryReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getQuietTimePolicyUserSummaryReportPostRequestBody.top);
+        writer.writeAdditionalData(getQuietTimePolicyUserSummaryReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

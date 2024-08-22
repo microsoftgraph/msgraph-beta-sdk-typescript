@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PublicationsRequestBuilder extends BaseRequestBuilder<PublicationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the publications property of the microsoft.graph.profile entity.
      * @param itemPublicationId The unique identifier of itemPublication
      * @returns {ItemPublicationItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byItemPublicationId(itemPublicationId: string) : ItemPublicationItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface PublicationsRequestBuilder extends BaseRequestBuilder<Publicati
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPublicationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PublicationsRequestBuilderGetQueryParameters> | undefined) : Promise<ItemPublicationCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface PublicationsRequestBuilder extends BaseRequestBuilder<Publicati
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPublication>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ItemPublication, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemPublication | undefined>;
     /**
      * Represents details of any publications a user has added to their profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PublicationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface PublicationsRequestBuilder extends BaseRequestBuilder<Publicati
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ItemPublication, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

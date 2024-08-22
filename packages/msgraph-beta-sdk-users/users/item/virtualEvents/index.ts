@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualEventsRequestBuilder> {
     /**
      * Provides operations to manage the webinars property of the microsoft.graph.userVirtualEventsRoot entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get webinars(): WebinarsRequestBuilder;
     /**
      * Delete navigation property virtualEvents for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualE
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserVirtualEventsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<VirtualEventsRequestBuilderGetQueryParameters> | undefined) : Promise<UserVirtualEventsRoot | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualE
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserVirtualEventsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserVirtualEventsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserVirtualEventsRoot | undefined>;
     /**
      * Delete navigation property virtualEvents for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get virtualEvents from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VirtualEventsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualE
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserVirtualEventsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

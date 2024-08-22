@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetEncryptionReportForDevicesPostRequestBody}
  */
+// @ts-ignore
 export function createGetEncryptionReportForDevicesPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetEncryptionReportForDevicesPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetEncryptionReportForDevicesPostRequestBodyFromDiscrimina
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetEncryptionReportForDevicesPostRequestBody(getEncryptionReportForDevicesPostRequestBody: Partial<GetEncryptionReportForDevicesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getEncryptionReportForDevicesPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetEncryptionReportForDevicesPostRequestBody extends Additional
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getEncryptionReportForDevices method.
@@ -102,17 +104,20 @@ export interface GetEncryptionReportForDevicesRequestBuilder extends BaseRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetEncryptionReportForDevicesPostRequestBody(writer: SerializationWriter, getEncryptionReportForDevicesPostRequestBody: Partial<GetEncryptionReportForDevicesPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getEncryptionReportForDevicesPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getEncryptionReportForDevicesPostRequestBody.groupBy);
-    writer.writeStringValue("name", getEncryptionReportForDevicesPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getEncryptionReportForDevicesPostRequestBody.orderBy);
-    writer.writeStringValue("search", getEncryptionReportForDevicesPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getEncryptionReportForDevicesPostRequestBody.select);
-    writer.writeStringValue("sessionId", getEncryptionReportForDevicesPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getEncryptionReportForDevicesPostRequestBody.skip);
-    writer.writeNumberValue("top", getEncryptionReportForDevicesPostRequestBody.top);
-    writer.writeAdditionalData(getEncryptionReportForDevicesPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetEncryptionReportForDevicesPostRequestBody(writer: SerializationWriter, getEncryptionReportForDevicesPostRequestBody: Partial<GetEncryptionReportForDevicesPostRequestBody> | undefined | null = {}) : void {
+    if (getEncryptionReportForDevicesPostRequestBody) {
+        writer.writeStringValue("filter", getEncryptionReportForDevicesPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getEncryptionReportForDevicesPostRequestBody.groupBy);
+        writer.writeStringValue("name", getEncryptionReportForDevicesPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getEncryptionReportForDevicesPostRequestBody.orderBy);
+        writer.writeStringValue("search", getEncryptionReportForDevicesPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getEncryptionReportForDevicesPostRequestBody.select);
+        writer.writeStringValue("sessionId", getEncryptionReportForDevicesPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getEncryptionReportForDevicesPostRequestBody.skip);
+        writer.writeNumberValue("top", getEncryptionReportForDevicesPostRequestBody.top);
+        writer.writeAdditionalData(getEncryptionReportForDevicesPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

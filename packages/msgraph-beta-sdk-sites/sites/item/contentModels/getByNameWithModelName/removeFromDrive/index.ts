@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoveFromDrivePostRequestBody}
  */
+// @ts-ignore
 export function createRemoveFromDrivePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoveFromDrivePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRemoveFromDrivePostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoveFromDrivePostRequestBody(removeFromDrivePostRequestBody: Partial<RemoveFromDrivePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { removeFromDrivePostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface RemoveFromDrivePostRequestBody extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The driveId property
      */
-    driveId?: string;
+    driveId?: string | null;
 }
 /**
  * Provides operations to call the removeFromDrive method.
@@ -62,9 +64,12 @@ export interface RemoveFromDriveRequestBuilder extends BaseRequestBuilder<Remove
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoveFromDrivePostRequestBody(writer: SerializationWriter, removeFromDrivePostRequestBody: Partial<RemoveFromDrivePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("driveId", removeFromDrivePostRequestBody.driveId);
-    writer.writeAdditionalData(removeFromDrivePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRemoveFromDrivePostRequestBody(writer: SerializationWriter, removeFromDrivePostRequestBody: Partial<RemoveFromDrivePostRequestBody> | undefined | null = {}) : void {
+    if (removeFromDrivePostRequestBody) {
+        writer.writeStringValue("driveId", removeFromDrivePostRequestBody.driveId);
+        writer.writeAdditionalData(removeFromDrivePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

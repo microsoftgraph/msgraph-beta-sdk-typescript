@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExecuteActionPostRequestBody}
  */
+// @ts-ignore
 export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExecuteActionPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoExecuteActionPostRequestBody(executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "actionName": n => { executeActionPostRequestBody.actionName = n.getEnumValue<ManagedDeviceRemoteAction>(ManagedDeviceRemoteActionObject); },
@@ -40,7 +42,7 @@ export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, Back
     /**
      * The actionName property
      */
-    actionName?: ManagedDeviceRemoteAction;
+    actionName?: ManagedDeviceRemoteAction | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -48,47 +50,47 @@ export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The carrierUrl property
      */
-    carrierUrl?: string;
+    carrierUrl?: string | null;
     /**
      * The deprovisionReason property
      */
-    deprovisionReason?: string;
+    deprovisionReason?: string | null;
     /**
      * The deviceIds property
      */
-    deviceIds?: string[];
+    deviceIds?: string[] | null;
     /**
      * The deviceName property
      */
-    deviceName?: string;
+    deviceName?: string | null;
     /**
      * The keepEnrollmentData property
      */
-    keepEnrollmentData?: boolean;
+    keepEnrollmentData?: boolean | null;
     /**
      * The keepUserData property
      */
-    keepUserData?: boolean;
+    keepUserData?: boolean | null;
     /**
      * The notificationBody property
      */
-    notificationBody?: string;
+    notificationBody?: string | null;
     /**
      * The notificationTitle property
      */
-    notificationTitle?: string;
+    notificationTitle?: string | null;
     /**
      * The organizationalUnitPath property
      */
-    organizationalUnitPath?: string;
+    organizationalUnitPath?: string | null;
     /**
      * The persistEsimDataPlan property
      */
-    persistEsimDataPlan?: boolean;
+    persistEsimDataPlan?: boolean | null;
 }
 /**
  * Provides operations to call the executeAction method.
@@ -100,6 +102,7 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BulkManagedDeviceActionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ExecuteActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BulkManagedDeviceActionResult | undefined>;
     /**
@@ -107,6 +110,7 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ExecuteActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -114,19 +118,22 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined = {}) : void {
-    writer.writeEnumValue<ManagedDeviceRemoteAction>("actionName", executeActionPostRequestBody.actionName);
-    writer.writeStringValue("carrierUrl", executeActionPostRequestBody.carrierUrl);
-    writer.writeStringValue("deprovisionReason", executeActionPostRequestBody.deprovisionReason);
-    writer.writeCollectionOfPrimitiveValues<string>("deviceIds", executeActionPostRequestBody.deviceIds);
-    writer.writeStringValue("deviceName", executeActionPostRequestBody.deviceName);
-    writer.writeBooleanValue("keepEnrollmentData", executeActionPostRequestBody.keepEnrollmentData);
-    writer.writeBooleanValue("keepUserData", executeActionPostRequestBody.keepUserData);
-    writer.writeStringValue("notificationBody", executeActionPostRequestBody.notificationBody);
-    writer.writeStringValue("notificationTitle", executeActionPostRequestBody.notificationTitle);
-    writer.writeStringValue("organizationalUnitPath", executeActionPostRequestBody.organizationalUnitPath);
-    writer.writeBooleanValue("persistEsimDataPlan", executeActionPostRequestBody.persistEsimDataPlan);
-    writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined | null = {}) : void {
+    if (executeActionPostRequestBody) {
+        writer.writeEnumValue<ManagedDeviceRemoteAction>("actionName", executeActionPostRequestBody.actionName);
+        writer.writeStringValue("carrierUrl", executeActionPostRequestBody.carrierUrl);
+        writer.writeStringValue("deprovisionReason", executeActionPostRequestBody.deprovisionReason);
+        writer.writeCollectionOfPrimitiveValues<string>("deviceIds", executeActionPostRequestBody.deviceIds);
+        writer.writeStringValue("deviceName", executeActionPostRequestBody.deviceName);
+        writer.writeBooleanValue("keepEnrollmentData", executeActionPostRequestBody.keepEnrollmentData);
+        writer.writeBooleanValue("keepUserData", executeActionPostRequestBody.keepUserData);
+        writer.writeStringValue("notificationBody", executeActionPostRequestBody.notificationBody);
+        writer.writeStringValue("notificationTitle", executeActionPostRequestBody.notificationTitle);
+        writer.writeStringValue("organizationalUnitPath", executeActionPostRequestBody.organizationalUnitPath);
+        writer.writeBooleanValue("persistEsimDataPlan", executeActionPostRequestBody.persistEsimDataPlan);
+        writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

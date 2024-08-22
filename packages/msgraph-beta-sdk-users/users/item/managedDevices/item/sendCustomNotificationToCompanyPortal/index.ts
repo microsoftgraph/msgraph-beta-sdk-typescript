@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SendCustomNotificationToCompanyPortalPostRequestBody}
  */
+// @ts-ignore
 export function createSendCustomNotificationToCompanyPortalPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSendCustomNotificationToCompanyPortalPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createSendCustomNotificationToCompanyPortalPostRequestBodyFromDi
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSendCustomNotificationToCompanyPortalPostRequestBody(sendCustomNotificationToCompanyPortalPostRequestBody: Partial<SendCustomNotificationToCompanyPortalPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { sendCustomNotificationToCompanyPortalPostRequestBody.backingStoreEnabled = true; },
@@ -33,15 +35,15 @@ export interface SendCustomNotificationToCompanyPortalPostRequestBody extends Ad
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The notificationBody property
      */
-    notificationBody?: string;
+    notificationBody?: string | null;
     /**
      * The notificationTitle property
      */
-    notificationTitle?: string;
+    notificationTitle?: string | null;
 }
 /**
  * Provides operations to call the sendCustomNotificationToCompanyPortal method.
@@ -52,6 +54,7 @@ export interface SendCustomNotificationToCompanyPortalRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: SendCustomNotificationToCompanyPortalPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -59,6 +62,7 @@ export interface SendCustomNotificationToCompanyPortalRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SendCustomNotificationToCompanyPortalPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -66,10 +70,13 @@ export interface SendCustomNotificationToCompanyPortalRequestBuilder extends Bas
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSendCustomNotificationToCompanyPortalPostRequestBody(writer: SerializationWriter, sendCustomNotificationToCompanyPortalPostRequestBody: Partial<SendCustomNotificationToCompanyPortalPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("notificationBody", sendCustomNotificationToCompanyPortalPostRequestBody.notificationBody);
-    writer.writeStringValue("notificationTitle", sendCustomNotificationToCompanyPortalPostRequestBody.notificationTitle);
-    writer.writeAdditionalData(sendCustomNotificationToCompanyPortalPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSendCustomNotificationToCompanyPortalPostRequestBody(writer: SerializationWriter, sendCustomNotificationToCompanyPortalPostRequestBody: Partial<SendCustomNotificationToCompanyPortalPostRequestBody> | undefined | null = {}) : void {
+    if (sendCustomNotificationToCompanyPortalPostRequestBody) {
+        writer.writeStringValue("notificationBody", sendCustomNotificationToCompanyPortalPostRequestBody.notificationBody);
+        writer.writeStringValue("notificationTitle", sendCustomNotificationToCompanyPortalPostRequestBody.notificationTitle);
+        writer.writeAdditionalData(sendCustomNotificationToCompanyPortalPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

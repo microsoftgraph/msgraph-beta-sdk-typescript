@@ -13,6 +13,7 @@ import { type Guid } from 'guid-typescript';
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MoveDevicesToOUPostRequestBody}
  */
+// @ts-ignore
 export function createMoveDevicesToOUPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMoveDevicesToOUPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createMoveDevicesToOUPostRequestBodyFromDiscriminatorValue(parse
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMoveDevicesToOUPostRequestBody(moveDevicesToOUPostRequestBody: Partial<MoveDevicesToOUPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { moveDevicesToOUPostRequestBody.backingStoreEnabled = true; },
@@ -35,15 +37,15 @@ export interface MoveDevicesToOUPostRequestBody extends AdditionalDataHolder, Ba
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceIds property
      */
-    deviceIds?: Guid[];
+    deviceIds?: Guid[] | null;
     /**
      * The organizationalUnitPath property
      */
-    organizationalUnitPath?: string;
+    organizationalUnitPath?: string | null;
 }
 /**
  * Provides operations to call the moveDevicesToOU method.
@@ -54,6 +56,7 @@ export interface MoveDevicesToOURequestBuilder extends BaseRequestBuilder<MoveDe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: MoveDevicesToOUPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -61,6 +64,7 @@ export interface MoveDevicesToOURequestBuilder extends BaseRequestBuilder<MoveDe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: MoveDevicesToOUPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -68,10 +72,13 @@ export interface MoveDevicesToOURequestBuilder extends BaseRequestBuilder<MoveDe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMoveDevicesToOUPostRequestBody(writer: SerializationWriter, moveDevicesToOUPostRequestBody: Partial<MoveDevicesToOUPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<Guid>("deviceIds", moveDevicesToOUPostRequestBody.deviceIds);
-    writer.writeStringValue("organizationalUnitPath", moveDevicesToOUPostRequestBody.organizationalUnitPath);
-    writer.writeAdditionalData(moveDevicesToOUPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeMoveDevicesToOUPostRequestBody(writer: SerializationWriter, moveDevicesToOUPostRequestBody: Partial<MoveDevicesToOUPostRequestBody> | undefined | null = {}) : void {
+    if (moveDevicesToOUPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<Guid>("deviceIds", moveDevicesToOUPostRequestBody.deviceIds);
+        writer.writeStringValue("organizationalUnitPath", moveDevicesToOUPostRequestBody.organizationalUnitPath);
+        writer.writeAdditionalData(moveDevicesToOUPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

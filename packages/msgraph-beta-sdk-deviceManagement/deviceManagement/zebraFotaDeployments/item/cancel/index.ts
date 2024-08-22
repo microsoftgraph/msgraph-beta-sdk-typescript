@@ -14,11 +14,11 @@ export interface CancelPostResponse extends AdditionalDataHolder, BackedModel, P
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the cancel method.
@@ -43,6 +43,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CancelPostResponse}
  */
+// @ts-ignore
 export function createCancelPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCancelPostResponse;
 }
@@ -50,6 +51,7 @@ export function createCancelPostResponseFromDiscriminatorValue(parseNode: ParseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCancelPostResponse(cancelPostResponse: Partial<CancelPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cancelPostResponse.backingStoreEnabled = true; },
@@ -60,9 +62,12 @@ export function deserializeIntoCancelPostResponse(cancelPostResponse: Partial<Ca
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCancelPostResponse(writer: SerializationWriter, cancelPostResponse: Partial<CancelPostResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", cancelPostResponse.value);
-    writer.writeAdditionalData(cancelPostResponse.additionalData);
+// @ts-ignore
+export function serializeCancelPostResponse(writer: SerializationWriter, cancelPostResponse: Partial<CancelPostResponse> | undefined | null = {}) : void {
+    if (cancelPostResponse) {
+        writer.writeBooleanValue("value", cancelPostResponse.value);
+        writer.writeAdditionalData(cancelPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

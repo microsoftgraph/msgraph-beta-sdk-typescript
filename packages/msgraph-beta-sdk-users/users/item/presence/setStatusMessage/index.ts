@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetStatusMessagePostRequestBody}
  */
+// @ts-ignore
 export function createSetStatusMessagePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetStatusMessagePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSetStatusMessagePostRequestBodyFromDiscriminatorValue(pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetStatusMessagePostRequestBody(setStatusMessagePostRequestBody: Partial<SetStatusMessagePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setStatusMessagePostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoSetStatusMessagePostRequestBody(setStatusMessageP
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSetStatusMessagePostRequestBody(writer: SerializationWriter, setStatusMessagePostRequestBody: Partial<SetStatusMessagePostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<PresenceStatusMessage>("statusMessage", setStatusMessagePostRequestBody.statusMessage, serializePresenceStatusMessage);
-    writer.writeAdditionalData(setStatusMessagePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSetStatusMessagePostRequestBody(writer: SerializationWriter, setStatusMessagePostRequestBody: Partial<SetStatusMessagePostRequestBody> | undefined | null = {}) : void {
+    if (setStatusMessagePostRequestBody) {
+        writer.writeObjectValue<PresenceStatusMessage>("statusMessage", setStatusMessagePostRequestBody.statusMessage, serializePresenceStatusMessage);
+        writer.writeAdditionalData(setStatusMessagePostRequestBody.additionalData);
+    }
 }
 export interface SetStatusMessagePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface SetStatusMessagePostRequestBody extends AdditionalDataHolder, B
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The statusMessage property
      */
-    statusMessage?: PresenceStatusMessage;
+    statusMessage?: PresenceStatusMessage | null;
 }
 /**
  * Provides operations to call the setStatusMessage method.
@@ -57,6 +62,7 @@ export interface SetStatusMessageRequestBuilder extends BaseRequestBuilder<SetSt
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta|Find more info here}
      */
      post(body: SetStatusMessagePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -65,6 +71,7 @@ export interface SetStatusMessageRequestBuilder extends BaseRequestBuilder<SetSt
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SetStatusMessagePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

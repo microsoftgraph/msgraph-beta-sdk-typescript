@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DownloadAppDiagnosticsPostRequestBody}
  */
+// @ts-ignore
 export function createDownloadAppDiagnosticsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDownloadAppDiagnosticsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createDownloadAppDiagnosticsPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDownloadAppDiagnosticsPostRequestBody(downloadAppDiagnosticsPostRequestBody: Partial<DownloadAppDiagnosticsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { downloadAppDiagnosticsPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface DownloadAppDiagnosticsPostRequestBody extends AdditionalDataHol
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The request property
      */
-    request?: PowerliftDownloadRequest;
+    request?: PowerliftDownloadRequest | null;
 }
 /**
  * Provides operations to call the downloadAppDiagnostics method.
@@ -64,9 +66,12 @@ export interface DownloadAppDiagnosticsRequestBuilder extends BaseRequestBuilder
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDownloadAppDiagnosticsPostRequestBody(writer: SerializationWriter, downloadAppDiagnosticsPostRequestBody: Partial<DownloadAppDiagnosticsPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<PowerliftDownloadRequest>("request", downloadAppDiagnosticsPostRequestBody.request, serializePowerliftDownloadRequest);
-    writer.writeAdditionalData(downloadAppDiagnosticsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeDownloadAppDiagnosticsPostRequestBody(writer: SerializationWriter, downloadAppDiagnosticsPostRequestBody: Partial<DownloadAppDiagnosticsPostRequestBody> | undefined | null = {}) : void {
+    if (downloadAppDiagnosticsPostRequestBody) {
+        writer.writeObjectValue<PowerliftDownloadRequest>("request", downloadAppDiagnosticsPostRequestBody.request, serializePowerliftDownloadRequest);
+        writer.writeAdditionalData(downloadAppDiagnosticsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

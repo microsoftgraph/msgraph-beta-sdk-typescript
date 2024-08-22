@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PreviewPostRequestBody}
  */
+// @ts-ignore
 export function createPreviewPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPreviewPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createPreviewPostRequestBodyFromDiscriminatorValue(parseNode: Pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoPreviewPostRequestBody(previewPostRequestBody: Partial<PreviewPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "allowEdit": n => { previewPostRequestBody.allowEdit = n.getBooleanValue(); },
@@ -38,27 +40,27 @@ export interface PreviewPostRequestBody extends AdditionalDataHolder, BackedMode
     /**
      * The allowEdit property
      */
-    allowEdit?: boolean;
+    allowEdit?: boolean | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The chromeless property
      */
-    chromeless?: boolean;
+    chromeless?: boolean | null;
     /**
      * The page property
      */
-    page?: string;
+    page?: string | null;
     /**
      * The viewer property
      */
-    viewer?: string;
+    viewer?: string | null;
     /**
      * The zoom property
      */
-    zoom?: number;
+    zoom?: number | null;
 }
 /**
  * Provides operations to call the preview method.
@@ -84,13 +86,16 @@ export interface PreviewRequestBuilder extends BaseRequestBuilder<PreviewRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializePreviewPostRequestBody(writer: SerializationWriter, previewPostRequestBody: Partial<PreviewPostRequestBody> | undefined = {}) : void {
-    writer.writeBooleanValue("allowEdit", previewPostRequestBody.allowEdit);
-    writer.writeBooleanValue("chromeless", previewPostRequestBody.chromeless);
-    writer.writeStringValue("page", previewPostRequestBody.page);
-    writer.writeStringValue("viewer", previewPostRequestBody.viewer);
-    writer.writeNumberValue("zoom", previewPostRequestBody.zoom);
-    writer.writeAdditionalData(previewPostRequestBody.additionalData);
+// @ts-ignore
+export function serializePreviewPostRequestBody(writer: SerializationWriter, previewPostRequestBody: Partial<PreviewPostRequestBody> | undefined | null = {}) : void {
+    if (previewPostRequestBody) {
+        writer.writeBooleanValue("allowEdit", previewPostRequestBody.allowEdit);
+        writer.writeBooleanValue("chromeless", previewPostRequestBody.chromeless);
+        writer.writeStringValue("page", previewPostRequestBody.page);
+        writer.writeStringValue("viewer", previewPostRequestBody.viewer);
+        writer.writeNumberValue("zoom", previewPostRequestBody.zoom);
+        writer.writeAdditionalData(previewPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

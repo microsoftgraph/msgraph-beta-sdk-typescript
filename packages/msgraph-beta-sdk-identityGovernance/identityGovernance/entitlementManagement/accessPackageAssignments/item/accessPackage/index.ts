@@ -14,6 +14,8 @@ import { AccessPackageResourceRoleScopesRequestBuilderNavigationMetadata, Access
 // @ts-ignore
 import { AccessPackagesIncompatibleWithRequestBuilderNavigationMetadata, AccessPackagesIncompatibleWithRequestBuilderRequestsMetadata, type AccessPackagesIncompatibleWithRequestBuilder } from './accessPackagesIncompatibleWith/index.js';
 // @ts-ignore
+import { AccessPackagesIncompatibleWithWithUniqueNameRequestBuilderRequestsMetadata, type AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder } from './accessPackagesIncompatibleWithWithUniqueName/index.js';
+// @ts-ignore
 import { GetApplicablePolicyRequirementsRequestBuilderRequestsMetadata, type GetApplicablePolicyRequirementsRequestBuilder } from './getApplicablePolicyRequirements/index.js';
 // @ts-ignore
 import { IncompatibleAccessPackagesRequestBuilderNavigationMetadata, IncompatibleAccessPackagesRequestBuilderRequestsMetadata, type IncompatibleAccessPackagesRequestBuilder } from './incompatibleAccessPackages/index.js';
@@ -60,6 +62,12 @@ export interface AccessPackageRequestBuilder extends BaseRequestBuilder<AccessPa
      * Provides operations to call the moveToCatalog method.
      */
     get moveToCatalog(): MoveToCatalogRequestBuilder;
+    /**
+     * Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+     * @param uniqueName Alternate key of accessPackage
+     * @returns {AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder}
+     */
+     accessPackagesIncompatibleWithWithUniqueName(uniqueName: string | undefined) : AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder;
     /**
      * Delete navigation property accessPackage for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -129,6 +137,9 @@ const AccessPackageRequestBuilderGetQueryParametersMapper: Record<string, string
  * Metadata for all the navigation properties in the request builder.
  */
 export const AccessPackageRequestBuilderNavigationMetadata: Record<Exclude<keyof AccessPackageRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    accessPackagesIncompatibleWithWithUniqueName: {
+        requestsMetadata: AccessPackagesIncompatibleWithWithUniqueNameRequestBuilderRequestsMetadata,
+    },
     accessPackageAssignmentPolicies: {
         requestsMetadata: AccessPackageAssignmentPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackageAssignmentPoliciesRequestBuilderNavigationMetadata,

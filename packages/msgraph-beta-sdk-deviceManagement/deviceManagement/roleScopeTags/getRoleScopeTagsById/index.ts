@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetRoleScopeTagsByIdPostRequestBody}
  */
+// @ts-ignore
 export function createGetRoleScopeTagsByIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetRoleScopeTagsByIdPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createGetRoleScopeTagsByIdPostRequestBodyFromDiscriminatorValue(
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetRoleScopeTagsByIdPostResponse}
  */
+// @ts-ignore
 export function createGetRoleScopeTagsByIdPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetRoleScopeTagsByIdPostResponse;
 }
@@ -28,6 +30,7 @@ export function createGetRoleScopeTagsByIdPostResponseFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetRoleScopeTagsByIdPostRequestBody(getRoleScopeTagsByIdPostRequestBody: Partial<GetRoleScopeTagsByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getRoleScopeTagsByIdPostRequestBody.backingStoreEnabled = true; },
@@ -38,6 +41,7 @@ export function deserializeIntoGetRoleScopeTagsByIdPostRequestBody(getRoleScopeT
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetRoleScopeTagsByIdPostResponse(getRoleScopeTagsByIdPostResponse: Partial<GetRoleScopeTagsByIdPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getRoleScopeTagsByIdPostResponse),
@@ -52,17 +56,17 @@ export interface GetRoleScopeTagsByIdPostRequestBody extends AdditionalDataHolde
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The roleScopeTagIds property
      */
-    roleScopeTagIds?: string[];
+    roleScopeTagIds?: string[] | null;
 }
 export interface GetRoleScopeTagsByIdPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: RoleScopeTag[];
+    value?: RoleScopeTag[] | null;
 }
 /**
  * Provides operations to call the getRoleScopeTagsById method.
@@ -88,17 +92,23 @@ export interface GetRoleScopeTagsByIdRequestBuilder extends BaseRequestBuilder<G
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetRoleScopeTagsByIdPostRequestBody(writer: SerializationWriter, getRoleScopeTagsByIdPostRequestBody: Partial<GetRoleScopeTagsByIdPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("roleScopeTagIds", getRoleScopeTagsByIdPostRequestBody.roleScopeTagIds);
-    writer.writeAdditionalData(getRoleScopeTagsByIdPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetRoleScopeTagsByIdPostRequestBody(writer: SerializationWriter, getRoleScopeTagsByIdPostRequestBody: Partial<GetRoleScopeTagsByIdPostRequestBody> | undefined | null = {}) : void {
+    if (getRoleScopeTagsByIdPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("roleScopeTagIds", getRoleScopeTagsByIdPostRequestBody.roleScopeTagIds);
+        writer.writeAdditionalData(getRoleScopeTagsByIdPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetRoleScopeTagsByIdPostResponse(writer: SerializationWriter, getRoleScopeTagsByIdPostResponse: Partial<GetRoleScopeTagsByIdPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByIdPostResponse)
-    writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByIdPostResponse.value, serializeRoleScopeTag);
+// @ts-ignore
+export function serializeGetRoleScopeTagsByIdPostResponse(writer: SerializationWriter, getRoleScopeTagsByIdPostResponse: Partial<GetRoleScopeTagsByIdPostResponse> | undefined | null = {}) : void {
+    if (getRoleScopeTagsByIdPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByIdPostResponse)
+        writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByIdPostResponse.value, serializeRoleScopeTag);
+    }
 }
 /**
  * Uri template for the request builder.

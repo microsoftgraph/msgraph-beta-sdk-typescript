@@ -22,16 +22,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface NotebooksRequestBuilder extends BaseRequestBuilder<NotebooksRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the getNotebookFromWebUrl method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getNotebookFromWebUrl(): GetNotebookFromWebUrlRequestBuilder;
     /**
      * Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
      * @param notebookId The unique identifier of notebook
      * @returns {NotebookItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byNotebookId(notebookId: string) : NotebookItemRequestBuilder;
     /**
@@ -39,12 +42,14 @@ export interface NotebooksRequestBuilder extends BaseRequestBuilder<NotebooksReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<NotebookCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<NotebooksRequestBuilderGetQueryParameters> | undefined) : Promise<NotebookCollectionResponse | undefined>;
     /**
      * Provides operations to call the getRecentNotebooks method.
      * @param includePersonalNotebooks Usage: includePersonalNotebooks={includePersonalNotebooks}
      * @returns {GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      getRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks: boolean | undefined) : GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder;
     /**
@@ -53,12 +58,14 @@ export interface NotebooksRequestBuilder extends BaseRequestBuilder<NotebooksReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Notebook>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: Notebook, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Notebook | undefined>;
     /**
      * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NotebooksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -66,6 +73,7 @@ export interface NotebooksRequestBuilder extends BaseRequestBuilder<NotebooksReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: Notebook, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

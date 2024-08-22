@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MobileAppIntentAndStatesRequestBuilder extends BaseRequestBuilder<MobileAppIntentAndStatesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.
      * @param mobileAppIntentAndStateId The unique identifier of mobileAppIntentAndState
      * @returns {MobileAppIntentAndStateItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byMobileAppIntentAndStateId(mobileAppIntentAndStateId: string) : MobileAppIntentAndStateItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface MobileAppIntentAndStatesRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppIntentAndStateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MobileAppIntentAndStatesRequestBuilderGetQueryParameters> | undefined) : Promise<MobileAppIntentAndStateCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface MobileAppIntentAndStatesRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppIntentAndState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: MobileAppIntentAndState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MobileAppIntentAndState | undefined>;
     /**
      * The list of troubleshooting events for this user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MobileAppIntentAndStatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface MobileAppIntentAndStatesRequestBuilder extends BaseRequestBuild
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: MobileAppIntentAndState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

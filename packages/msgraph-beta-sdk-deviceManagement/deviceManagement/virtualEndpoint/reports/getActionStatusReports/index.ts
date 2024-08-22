@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetActionStatusReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetActionStatusReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetActionStatusReportsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetActionStatusReportsPostRequestBodyFromDiscriminatorValu
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetActionStatusReportsPostRequestBody(getActionStatusReportsPostRequestBody: Partial<GetActionStatusReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getActionStatusReportsPostRequestBody.backingStoreEnabled = true; },
@@ -38,35 +40,35 @@ export interface GetActionStatusReportsPostRequestBody extends AdditionalDataHol
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getActionStatusReports method.
@@ -93,15 +95,18 @@ export interface GetActionStatusReportsRequestBuilder extends BaseRequestBuilder
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetActionStatusReportsPostRequestBody(writer: SerializationWriter, getActionStatusReportsPostRequestBody: Partial<GetActionStatusReportsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getActionStatusReportsPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getActionStatusReportsPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getActionStatusReportsPostRequestBody.orderBy);
-    writer.writeStringValue("search", getActionStatusReportsPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getActionStatusReportsPostRequestBody.select);
-    writer.writeNumberValue("skip", getActionStatusReportsPostRequestBody.skip);
-    writer.writeNumberValue("top", getActionStatusReportsPostRequestBody.top);
-    writer.writeAdditionalData(getActionStatusReportsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetActionStatusReportsPostRequestBody(writer: SerializationWriter, getActionStatusReportsPostRequestBody: Partial<GetActionStatusReportsPostRequestBody> | undefined | null = {}) : void {
+    if (getActionStatusReportsPostRequestBody) {
+        writer.writeStringValue("filter", getActionStatusReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getActionStatusReportsPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getActionStatusReportsPostRequestBody.orderBy);
+        writer.writeStringValue("search", getActionStatusReportsPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getActionStatusReportsPostRequestBody.select);
+        writer.writeNumberValue("skip", getActionStatusReportsPostRequestBody.skip);
+        writer.writeNumberValue("top", getActionStatusReportsPostRequestBody.top);
+        writer.writeAdditionalData(getActionStatusReportsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

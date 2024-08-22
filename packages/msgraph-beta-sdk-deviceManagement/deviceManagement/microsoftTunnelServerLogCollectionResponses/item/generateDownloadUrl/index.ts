@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GenerateDownloadUrlPostResponse}
  */
+// @ts-ignore
 export function createGenerateDownloadUrlPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGenerateDownloadUrlPostResponse;
 }
@@ -18,6 +19,7 @@ export function createGenerateDownloadUrlPostResponseFromDiscriminatorValue(pars
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGenerateDownloadUrlPostResponse(generateDownloadUrlPostResponse: Partial<GenerateDownloadUrlPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { generateDownloadUrlPostResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface GenerateDownloadUrlPostResponse extends AdditionalDataHolder, B
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the generateDownloadUrl method.
@@ -60,9 +62,12 @@ export interface GenerateDownloadUrlRequestBuilder extends BaseRequestBuilder<Ge
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGenerateDownloadUrlPostResponse(writer: SerializationWriter, generateDownloadUrlPostResponse: Partial<GenerateDownloadUrlPostResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", generateDownloadUrlPostResponse.value);
-    writer.writeAdditionalData(generateDownloadUrlPostResponse.additionalData);
+// @ts-ignore
+export function serializeGenerateDownloadUrlPostResponse(writer: SerializationWriter, generateDownloadUrlPostResponse: Partial<GenerateDownloadUrlPostResponse> | undefined | null = {}) : void {
+    if (generateDownloadUrlPostResponse) {
+        writer.writeStringValue("value", generateDownloadUrlPostResponse.value);
+        writer.writeAdditionalData(generateDownloadUrlPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

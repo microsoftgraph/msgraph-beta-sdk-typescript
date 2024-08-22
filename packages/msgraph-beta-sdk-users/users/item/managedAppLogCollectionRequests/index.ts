@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ManagedAppLogCollectionRequestsRequestBuilder extends BaseRequestBuilder<ManagedAppLogCollectionRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the managedAppLogCollectionRequests property of the microsoft.graph.user entity.
      * @param managedAppLogCollectionRequestId The unique identifier of managedAppLogCollectionRequest
      * @returns {ManagedAppLogCollectionRequestItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byManagedAppLogCollectionRequestId(managedAppLogCollectionRequestId: string) : ManagedAppLogCollectionRequestItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ManagedAppLogCollectionRequestsRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedAppLogCollectionRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ManagedAppLogCollectionRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedAppLogCollectionRequestCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface ManagedAppLogCollectionRequestsRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedAppLogCollectionRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ManagedAppLogCollectionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedAppLogCollectionRequest | undefined>;
     /**
      * Zero or more log collection requests triggered for the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedAppLogCollectionRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ManagedAppLogCollectionRequestsRequestBuilder extends BaseReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ManagedAppLogCollectionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

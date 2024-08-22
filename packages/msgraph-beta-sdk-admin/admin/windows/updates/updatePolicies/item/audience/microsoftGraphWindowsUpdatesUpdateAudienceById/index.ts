@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateAudienceByIdPostRequestBody}
  */
+// @ts-ignore
 export function createUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAudienceByIdPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue(pa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateAudienceByIdPostRequestBody(updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addExclusions": n => { updateAudienceByIdPostRequestBody.addExclusions = n.getCollectionOfPrimitiveValues<string>(); },
@@ -52,19 +54,22 @@ export interface MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder ex
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateAudienceByIdPostRequestBody(writer: SerializationWriter, updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("addExclusions", updateAudienceByIdPostRequestBody.addExclusions);
-    writer.writeCollectionOfPrimitiveValues<string>("addMembers", updateAudienceByIdPostRequestBody.addMembers);
-    writer.writeStringValue("memberEntityType", updateAudienceByIdPostRequestBody.memberEntityType);
-    writer.writeCollectionOfPrimitiveValues<string>("removeExclusions", updateAudienceByIdPostRequestBody.removeExclusions);
-    writer.writeCollectionOfPrimitiveValues<string>("removeMembers", updateAudienceByIdPostRequestBody.removeMembers);
-    writer.writeAdditionalData(updateAudienceByIdPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateAudienceByIdPostRequestBody(writer: SerializationWriter, updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined | null = {}) : void {
+    if (updateAudienceByIdPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("addExclusions", updateAudienceByIdPostRequestBody.addExclusions);
+        writer.writeCollectionOfPrimitiveValues<string>("addMembers", updateAudienceByIdPostRequestBody.addMembers);
+        writer.writeStringValue("memberEntityType", updateAudienceByIdPostRequestBody.memberEntityType);
+        writer.writeCollectionOfPrimitiveValues<string>("removeExclusions", updateAudienceByIdPostRequestBody.removeExclusions);
+        writer.writeCollectionOfPrimitiveValues<string>("removeMembers", updateAudienceByIdPostRequestBody.removeMembers);
+        writer.writeAdditionalData(updateAudienceByIdPostRequestBody.additionalData);
+    }
 }
 export interface UpdateAudienceByIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The addExclusions property
      */
-    addExclusions?: string[];
+    addExclusions?: string[] | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -72,23 +77,23 @@ export interface UpdateAudienceByIdPostRequestBody extends AdditionalDataHolder,
     /**
      * The addMembers property
      */
-    addMembers?: string[];
+    addMembers?: string[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The memberEntityType property
      */
-    memberEntityType?: string;
+    memberEntityType?: string | null;
     /**
      * The removeExclusions property
      */
-    removeExclusions?: string[];
+    removeExclusions?: string[] | null;
     /**
      * The removeMembers property
      */
-    removeMembers?: string[];
+    removeMembers?: string[] | null;
 }
 /**
  * Uri template for the request builder.

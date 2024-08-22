@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MobileAppTroubleshootingEventsRequestBuilder extends BaseRequestBuilder<MobileAppTroubleshootingEventsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.
      * @param mobileAppTroubleshootingEventId The unique identifier of mobileAppTroubleshootingEvent
      * @returns {MobileAppTroubleshootingEventItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byMobileAppTroubleshootingEventId(mobileAppTroubleshootingEventId: string) : MobileAppTroubleshootingEventItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface MobileAppTroubleshootingEventsRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppTroubleshootingEventCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MobileAppTroubleshootingEventsRequestBuilderGetQueryParameters> | undefined) : Promise<MobileAppTroubleshootingEventCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface MobileAppTroubleshootingEventsRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppTroubleshootingEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: MobileAppTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MobileAppTroubleshootingEvent | undefined>;
     /**
      * The list of mobile app troubleshooting events for this user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MobileAppTroubleshootingEventsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface MobileAppTroubleshootingEventsRequestBuilder extends BaseReques
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: MobileAppTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

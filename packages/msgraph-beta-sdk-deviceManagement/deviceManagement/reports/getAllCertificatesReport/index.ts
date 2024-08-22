@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAllCertificatesReportPostRequestBody}
  */
+// @ts-ignore
 export function createGetAllCertificatesReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAllCertificatesReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetAllCertificatesReportPostRequestBodyFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAllCertificatesReportPostRequestBody(getAllCertificatesReportPostRequestBody: Partial<GetAllCertificatesReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getAllCertificatesReportPostRequestBody.backingStoreEnabled = true; },
@@ -40,43 +42,43 @@ export interface GetAllCertificatesReportPostRequestBody extends AdditionalDataH
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The name property
      */
-    name?: string;
+    name?: string | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The sessionId property
      */
-    sessionId?: string;
+    sessionId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getAllCertificatesReport method.
@@ -102,17 +104,20 @@ export interface GetAllCertificatesReportRequestBuilder extends BaseRequestBuild
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetAllCertificatesReportPostRequestBody(writer: SerializationWriter, getAllCertificatesReportPostRequestBody: Partial<GetAllCertificatesReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getAllCertificatesReportPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getAllCertificatesReportPostRequestBody.groupBy);
-    writer.writeStringValue("name", getAllCertificatesReportPostRequestBody.name);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getAllCertificatesReportPostRequestBody.orderBy);
-    writer.writeStringValue("search", getAllCertificatesReportPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getAllCertificatesReportPostRequestBody.select);
-    writer.writeStringValue("sessionId", getAllCertificatesReportPostRequestBody.sessionId);
-    writer.writeNumberValue("skip", getAllCertificatesReportPostRequestBody.skip);
-    writer.writeNumberValue("top", getAllCertificatesReportPostRequestBody.top);
-    writer.writeAdditionalData(getAllCertificatesReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetAllCertificatesReportPostRequestBody(writer: SerializationWriter, getAllCertificatesReportPostRequestBody: Partial<GetAllCertificatesReportPostRequestBody> | undefined | null = {}) : void {
+    if (getAllCertificatesReportPostRequestBody) {
+        writer.writeStringValue("filter", getAllCertificatesReportPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getAllCertificatesReportPostRequestBody.groupBy);
+        writer.writeStringValue("name", getAllCertificatesReportPostRequestBody.name);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getAllCertificatesReportPostRequestBody.orderBy);
+        writer.writeStringValue("search", getAllCertificatesReportPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getAllCertificatesReportPostRequestBody.select);
+        writer.writeStringValue("sessionId", getAllCertificatesReportPostRequestBody.sessionId);
+        writer.writeNumberValue("skip", getAllCertificatesReportPostRequestBody.skip);
+        writer.writeNumberValue("top", getAllCertificatesReportPostRequestBody.top);
+        writer.writeAdditionalData(getAllCertificatesReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

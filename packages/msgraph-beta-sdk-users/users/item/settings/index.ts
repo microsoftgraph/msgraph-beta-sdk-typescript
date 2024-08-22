@@ -26,32 +26,39 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsRequestBuilder> {
     /**
      * Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get contactMergeSuggestions(): ContactMergeSuggestionsRequestBuilder;
     /**
      * Provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get itemInsights(): ItemInsightsRequestBuilder;
     /**
      * Provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get regionalAndLanguageSettings(): RegionalAndLanguageSettingsRequestBuilder;
     /**
      * Provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get shiftPreferences(): ShiftPreferencesRequestBuilder;
     /**
      * Provides operations to manage the storage property of the microsoft.graph.userSettings entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get storage(): StorageRequestBuilder;
     /**
      * Provides operations to manage the windows property of the microsoft.graph.userSettings entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get windows(): WindowsRequestBuilder;
     /**
      * Delete navigation property settings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -59,6 +66,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : Promise<UserSettings | undefined>;
     /**
@@ -67,18 +75,21 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserSettings | undefined>;
     /**
      * Delete navigation property settings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get settings from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -86,6 +97,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

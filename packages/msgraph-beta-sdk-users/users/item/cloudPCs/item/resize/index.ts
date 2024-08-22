@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ResizePostRequestBody}
  */
+// @ts-ignore
 export function createResizePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoResizePostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createResizePostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoResizePostRequestBody(resizePostRequestBody: Partial<ResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { resizePostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface ResizePostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The targetServicePlanId property
      */
-    targetServicePlanId?: string;
+    targetServicePlanId?: string | null;
 }
 /**
  * Provides operations to call the resize method.
@@ -47,6 +49,7 @@ export interface ResizeRequestBuilder extends BaseRequestBuilder<ResizeRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-resize?view=graph-rest-beta|Find more info here}
      */
      post(body: ResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -55,6 +58,7 @@ export interface ResizeRequestBuilder extends BaseRequestBuilder<ResizeRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -62,9 +66,12 @@ export interface ResizeRequestBuilder extends BaseRequestBuilder<ResizeRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeResizePostRequestBody(writer: SerializationWriter, resizePostRequestBody: Partial<ResizePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("targetServicePlanId", resizePostRequestBody.targetServicePlanId);
-    writer.writeAdditionalData(resizePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeResizePostRequestBody(writer: SerializationWriter, resizePostRequestBody: Partial<ResizePostRequestBody> | undefined | null = {}) : void {
+    if (resizePostRequestBody) {
+        writer.writeStringValue("targetServicePlanId", resizePostRequestBody.targetServicePlanId);
+        writer.writeAdditionalData(resizePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

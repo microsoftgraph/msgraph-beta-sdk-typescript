@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetCloudPcRemoteActionResultsGetResponse}
  */
+// @ts-ignore
 export function createGetCloudPcRemoteActionResultsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetCloudPcRemoteActionResultsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetCloudPcRemoteActionResultsGetResponseFromDiscriminatorV
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetCloudPcRemoteActionResultsGetResponse(getCloudPcRemoteActionResultsGetResponse: Partial<GetCloudPcRemoteActionResultsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getCloudPcRemoteActionResultsGetResponse),
@@ -30,7 +32,7 @@ export interface GetCloudPcRemoteActionResultsGetResponse extends BaseCollection
     /**
      * The value property
      */
-    value?: CloudPcRemoteActionResult[];
+    value?: CloudPcRemoteActionResult[] | null;
 }
 /**
  * Provides operations to call the getCloudPcRemoteActionResults method.
@@ -41,7 +43,7 @@ export interface GetCloudPcRemoteActionResultsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetCloudPcRemoteActionResultsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters> | undefined) : Promise<GetCloudPcRemoteActionResultsGetResponse | undefined>;
@@ -49,7 +51,7 @@ export interface GetCloudPcRemoteActionResultsRequestBuilder extends BaseRequest
      * Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -82,9 +84,12 @@ export interface GetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetCloudPcRemoteActionResultsGetResponse(writer: SerializationWriter, getCloudPcRemoteActionResultsGetResponse: Partial<GetCloudPcRemoteActionResultsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getCloudPcRemoteActionResultsGetResponse)
-    writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", getCloudPcRemoteActionResultsGetResponse.value, serializeCloudPcRemoteActionResult);
+// @ts-ignore
+export function serializeGetCloudPcRemoteActionResultsGetResponse(writer: SerializationWriter, getCloudPcRemoteActionResultsGetResponse: Partial<GetCloudPcRemoteActionResultsGetResponse> | undefined | null = {}) : void {
+    if (getCloudPcRemoteActionResultsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getCloudPcRemoteActionResultsGetResponse)
+        writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", getCloudPcRemoteActionResultsGetResponse.value, serializeCloudPcRemoteActionResult);
+    }
 }
 /**
  * Uri template for the request builder.

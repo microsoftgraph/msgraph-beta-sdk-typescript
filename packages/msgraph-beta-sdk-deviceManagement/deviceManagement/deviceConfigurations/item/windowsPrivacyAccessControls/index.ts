@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {WindowsPrivacyAccessControlsPostRequestBody}
  */
+// @ts-ignore
 export function createWindowsPrivacyAccessControlsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWindowsPrivacyAccessControlsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createWindowsPrivacyAccessControlsPostRequestBodyFromDiscriminat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoWindowsPrivacyAccessControlsPostRequestBody(windowsPrivacyAccessControlsPostRequestBody: Partial<WindowsPrivacyAccessControlsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { windowsPrivacyAccessControlsPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoWindowsPrivacyAccessControlsPostRequestBody(windo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeWindowsPrivacyAccessControlsPostRequestBody(writer: SerializationWriter, windowsPrivacyAccessControlsPostRequestBody: Partial<WindowsPrivacyAccessControlsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<WindowsPrivacyDataAccessControlItem>("windowsPrivacyAccessControls", windowsPrivacyAccessControlsPostRequestBody.windowsPrivacyAccessControls, serializeWindowsPrivacyDataAccessControlItem);
-    writer.writeAdditionalData(windowsPrivacyAccessControlsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeWindowsPrivacyAccessControlsPostRequestBody(writer: SerializationWriter, windowsPrivacyAccessControlsPostRequestBody: Partial<WindowsPrivacyAccessControlsPostRequestBody> | undefined | null = {}) : void {
+    if (windowsPrivacyAccessControlsPostRequestBody) {
+        writer.writeCollectionOfObjectValues<WindowsPrivacyDataAccessControlItem>("windowsPrivacyAccessControls", windowsPrivacyAccessControlsPostRequestBody.windowsPrivacyAccessControls, serializeWindowsPrivacyDataAccessControlItem);
+        writer.writeAdditionalData(windowsPrivacyAccessControlsPostRequestBody.additionalData);
+    }
 }
 export interface WindowsPrivacyAccessControlsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface WindowsPrivacyAccessControlsPostRequestBody extends AdditionalD
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The windowsPrivacyAccessControls property
      */
-    windowsPrivacyAccessControls?: WindowsPrivacyDataAccessControlItem[];
+    windowsPrivacyAccessControls?: WindowsPrivacyDataAccessControlItem[] | null;
 }
 /**
  * Provides operations to call the windowsPrivacyAccessControls method.

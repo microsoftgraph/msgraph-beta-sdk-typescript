@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RetrieveAssignedApplicationsReportPostRequestBody}
  */
+// @ts-ignore
 export function createRetrieveAssignedApplicationsReportPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRetrieveAssignedApplicationsReportPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRetrieveAssignedApplicationsReportPostRequestBodyFromDiscr
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRetrieveAssignedApplicationsReportPostRequestBody(retrieveAssignedApplicationsReportPostRequestBody: Partial<RetrieveAssignedApplicationsReportPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retrieveAssignedApplicationsReportPostRequestBody.backingStoreEnabled = true; },
@@ -38,35 +40,35 @@ export interface RetrieveAssignedApplicationsReportPostRequestBody extends Addit
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupby property
      */
-    groupby?: string;
+    groupby?: string | null;
     /**
      * The orderby property
      */
-    orderby?: string;
+    orderby?: string | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string;
+    select?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the retrieveAssignedApplicationsReport method.
@@ -92,15 +94,18 @@ export interface RetrieveAssignedApplicationsReportRequestBuilder extends BaseRe
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRetrieveAssignedApplicationsReportPostRequestBody(writer: SerializationWriter, retrieveAssignedApplicationsReportPostRequestBody: Partial<RetrieveAssignedApplicationsReportPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", retrieveAssignedApplicationsReportPostRequestBody.filter);
-    writer.writeStringValue("groupby", retrieveAssignedApplicationsReportPostRequestBody.groupby);
-    writer.writeStringValue("orderby", retrieveAssignedApplicationsReportPostRequestBody.orderby);
-    writer.writeStringValue("search", retrieveAssignedApplicationsReportPostRequestBody.search);
-    writer.writeStringValue("select", retrieveAssignedApplicationsReportPostRequestBody.select);
-    writer.writeNumberValue("skip", retrieveAssignedApplicationsReportPostRequestBody.skip);
-    writer.writeNumberValue("top", retrieveAssignedApplicationsReportPostRequestBody.top);
-    writer.writeAdditionalData(retrieveAssignedApplicationsReportPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRetrieveAssignedApplicationsReportPostRequestBody(writer: SerializationWriter, retrieveAssignedApplicationsReportPostRequestBody: Partial<RetrieveAssignedApplicationsReportPostRequestBody> | undefined | null = {}) : void {
+    if (retrieveAssignedApplicationsReportPostRequestBody) {
+        writer.writeStringValue("filter", retrieveAssignedApplicationsReportPostRequestBody.filter);
+        writer.writeStringValue("groupby", retrieveAssignedApplicationsReportPostRequestBody.groupby);
+        writer.writeStringValue("orderby", retrieveAssignedApplicationsReportPostRequestBody.orderby);
+        writer.writeStringValue("search", retrieveAssignedApplicationsReportPostRequestBody.search);
+        writer.writeStringValue("select", retrieveAssignedApplicationsReportPostRequestBody.select);
+        writer.writeNumberValue("skip", retrieveAssignedApplicationsReportPostRequestBody.skip);
+        writer.writeNumberValue("top", retrieveAssignedApplicationsReportPostRequestBody.top);
+        writer.writeAdditionalData(retrieveAssignedApplicationsReportPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

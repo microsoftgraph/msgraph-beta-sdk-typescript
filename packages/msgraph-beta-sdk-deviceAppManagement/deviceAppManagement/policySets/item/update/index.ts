@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdatePostRequestBody}
  */
+// @ts-ignore
 export function createUpdatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdatePostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdatePostRequestBody(updatePostRequestBody: Partial<UpdatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addedPolicySetItems": n => { updatePostRequestBody.addedPolicySetItems = n.getCollectionOfObjectValues<PolicySetItem>(createPolicySetItemFromDiscriminatorValue); },
@@ -33,18 +35,21 @@ export function deserializeIntoUpdatePostRequestBody(updatePostRequestBody: Part
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdatePostRequestBody(writer: SerializationWriter, updatePostRequestBody: Partial<UpdatePostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<PolicySetItem>("addedPolicySetItems", updatePostRequestBody.addedPolicySetItems, serializePolicySetItem);
-    writer.writeCollectionOfObjectValues<PolicySetAssignment>("assignments", updatePostRequestBody.assignments, serializePolicySetAssignment);
-    writer.writeCollectionOfPrimitiveValues<string>("deletedPolicySetItems", updatePostRequestBody.deletedPolicySetItems);
-    writer.writeCollectionOfObjectValues<PolicySetItem>("updatedPolicySetItems", updatePostRequestBody.updatedPolicySetItems, serializePolicySetItem);
-    writer.writeAdditionalData(updatePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdatePostRequestBody(writer: SerializationWriter, updatePostRequestBody: Partial<UpdatePostRequestBody> | undefined | null = {}) : void {
+    if (updatePostRequestBody) {
+        writer.writeCollectionOfObjectValues<PolicySetItem>("addedPolicySetItems", updatePostRequestBody.addedPolicySetItems, serializePolicySetItem);
+        writer.writeCollectionOfObjectValues<PolicySetAssignment>("assignments", updatePostRequestBody.assignments, serializePolicySetAssignment);
+        writer.writeCollectionOfPrimitiveValues<string>("deletedPolicySetItems", updatePostRequestBody.deletedPolicySetItems);
+        writer.writeCollectionOfObjectValues<PolicySetItem>("updatedPolicySetItems", updatePostRequestBody.updatedPolicySetItems, serializePolicySetItem);
+        writer.writeAdditionalData(updatePostRequestBody.additionalData);
+    }
 }
 export interface UpdatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The addedPolicySetItems property
      */
-    addedPolicySetItems?: PolicySetItem[];
+    addedPolicySetItems?: PolicySetItem[] | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -52,19 +57,19 @@ export interface UpdatePostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * The assignments property
      */
-    assignments?: PolicySetAssignment[];
+    assignments?: PolicySetAssignment[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deletedPolicySetItems property
      */
-    deletedPolicySetItems?: string[];
+    deletedPolicySetItems?: string[] | null;
     /**
      * The updatedPolicySetItems property
      */
-    updatedPolicySetItems?: PolicySetItem[];
+    updatedPolicySetItems?: PolicySetItem[] | null;
 }
 /**
  * Provides operations to call the update method.

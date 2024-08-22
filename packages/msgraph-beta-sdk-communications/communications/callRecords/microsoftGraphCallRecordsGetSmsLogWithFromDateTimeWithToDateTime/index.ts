@@ -15,6 +15,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetSmsLogWithFromDateTimeWithToDateTimeGetResponse}
  */
+// @ts-ignore
 export function createGetSmsLogWithFromDateTimeWithToDateTimeGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetSmsLogWithFromDateTimeWithToDateTimeGetResponse;
 }
@@ -22,6 +23,7 @@ export function createGetSmsLogWithFromDateTimeWithToDateTimeGetResponseFromDisc
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(getSmsLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getSmsLogWithFromDateTimeWithToDateTimeGetResponse),
@@ -32,7 +34,7 @@ export interface GetSmsLogWithFromDateTimeWithToDateTimeGetResponse extends Base
     /**
      * The value property
      */
-    value?: SmsLogRow[];
+    value?: SmsLogRow[] | null;
 }
 /**
  * Provides operations to call the getSmsLog method.
@@ -81,9 +83,12 @@ export interface MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTim
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getSmsLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getSmsLogWithFromDateTimeWithToDateTimeGetResponse)
-    writer.writeCollectionOfObjectValues<SmsLogRow>("value", getSmsLogWithFromDateTimeWithToDateTimeGetResponse.value, serializeSmsLogRow);
+// @ts-ignore
+export function serializeGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getSmsLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse> | undefined | null = {}) : void {
+    if (getSmsLogWithFromDateTimeWithToDateTimeGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getSmsLogWithFromDateTimeWithToDateTimeGetResponse)
+        writer.writeCollectionOfObjectValues<SmsLogRow>("value", getSmsLogWithFromDateTimeWithToDateTimeGetResponse.value, serializeSmsLogRow);
+    }
 }
 /**
  * Uri template for the request builder.

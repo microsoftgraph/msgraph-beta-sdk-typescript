@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetOffice365GroupsActivityDetailWithPeriodGetResponse}
  */
+// @ts-ignore
 export function createGetOffice365GroupsActivityDetailWithPeriodGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOffice365GroupsActivityDetailWithPeriodGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetOffice365GroupsActivityDetailWithPeriodGetResponseFromD
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetOffice365GroupsActivityDetailWithPeriodGetResponse(getOffice365GroupsActivityDetailWithPeriodGetResponse: Partial<GetOffice365GroupsActivityDetailWithPeriodGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getOffice365GroupsActivityDetailWithPeriodGetResponse),
@@ -30,7 +32,7 @@ export interface GetOffice365GroupsActivityDetailWithPeriodGetResponse extends B
     /**
      * The value property
      */
-    value?: Office365GroupsActivityDetail[];
+    value?: Office365GroupsActivityDetail[] | null;
 }
 /**
  * Provides operations to call the getOffice365GroupsActivityDetail method.
@@ -91,9 +93,12 @@ export interface GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQuer
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetOffice365GroupsActivityDetailWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithPeriodGetResponse: Partial<GetOffice365GroupsActivityDetailWithPeriodGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithPeriodGetResponse)
-    writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithPeriodGetResponse.value, serializeOffice365GroupsActivityDetail);
+// @ts-ignore
+export function serializeGetOffice365GroupsActivityDetailWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithPeriodGetResponse: Partial<GetOffice365GroupsActivityDetailWithPeriodGetResponse> | undefined | null = {}) : void {
+    if (getOffice365GroupsActivityDetailWithPeriodGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithPeriodGetResponse)
+        writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithPeriodGetResponse.value, serializeOffice365GroupsActivityDetail);
+    }
 }
 /**
  * Uri template for the request builder.

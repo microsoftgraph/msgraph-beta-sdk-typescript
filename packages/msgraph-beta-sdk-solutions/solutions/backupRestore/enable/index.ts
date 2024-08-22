@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EnablePostRequestBody}
  */
+// @ts-ignore
 export function createEnablePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnablePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createEnablePostRequestBodyFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoEnablePostRequestBody(enablePostRequestBody: Partial<EnablePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "appOwnerTenantId": n => { enablePostRequestBody.appOwnerTenantId = n.getStringValue(); },
@@ -34,11 +36,11 @@ export interface EnablePostRequestBody extends AdditionalDataHolder, BackedModel
     /**
      * The appOwnerTenantId property
      */
-    appOwnerTenantId?: string;
+    appOwnerTenantId?: string | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
 }
 /**
  * Provides operations to call the enable method.
@@ -65,9 +67,12 @@ export interface EnableRequestBuilder extends BaseRequestBuilder<EnableRequestBu
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeEnablePostRequestBody(writer: SerializationWriter, enablePostRequestBody: Partial<EnablePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("appOwnerTenantId", enablePostRequestBody.appOwnerTenantId);
-    writer.writeAdditionalData(enablePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeEnablePostRequestBody(writer: SerializationWriter, enablePostRequestBody: Partial<EnablePostRequestBody> | undefined | null = {}) : void {
+    if (enablePostRequestBody) {
+        writer.writeStringValue("appOwnerTenantId", enablePostRequestBody.appOwnerTenantId);
+        writer.writeAdditionalData(enablePostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

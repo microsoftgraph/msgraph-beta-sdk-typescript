@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetFileVaultKeyGetResponse}
  */
+// @ts-ignore
 export function createGetFileVaultKeyGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetFileVaultKeyGetResponse;
 }
@@ -18,6 +19,7 @@ export function createGetFileVaultKeyGetResponseFromDiscriminatorValue(parseNode
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetFileVaultKeyGetResponse(getFileVaultKeyGetResponse: Partial<GetFileVaultKeyGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getFileVaultKeyGetResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface GetFileVaultKeyGetResponse extends AdditionalDataHolder, Backed
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the getFileVaultKey method.
@@ -60,9 +62,12 @@ export interface GetFileVaultKeyRequestBuilder extends BaseRequestBuilder<GetFil
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetFileVaultKeyGetResponse(writer: SerializationWriter, getFileVaultKeyGetResponse: Partial<GetFileVaultKeyGetResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", getFileVaultKeyGetResponse.value);
-    writer.writeAdditionalData(getFileVaultKeyGetResponse.additionalData);
+// @ts-ignore
+export function serializeGetFileVaultKeyGetResponse(writer: SerializationWriter, getFileVaultKeyGetResponse: Partial<GetFileVaultKeyGetResponse> | undefined | null = {}) : void {
+    if (getFileVaultKeyGetResponse) {
+        writer.writeStringValue("value", getFileVaultKeyGetResponse.value);
+        writer.writeAdditionalData(getFileVaultKeyGetResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

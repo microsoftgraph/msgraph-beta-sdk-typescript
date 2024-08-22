@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UploadCertificatePostRequestBody}
  */
+// @ts-ignore
 export function createUploadCertificatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUploadCertificatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUploadCertificatePostRequestBodyFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUploadCertificatePostRequestBody(uploadCertificatePostRequestBody: Partial<UploadCertificatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { uploadCertificatePostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoUploadCertificatePostRequestBody(uploadCertificat
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUploadCertificatePostRequestBody(writer: SerializationWriter, uploadCertificatePostRequestBody: Partial<UploadCertificatePostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("key", uploadCertificatePostRequestBody.key);
-    writer.writeAdditionalData(uploadCertificatePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUploadCertificatePostRequestBody(writer: SerializationWriter, uploadCertificatePostRequestBody: Partial<UploadCertificatePostRequestBody> | undefined | null = {}) : void {
+    if (uploadCertificatePostRequestBody) {
+        writer.writeStringValue("key", uploadCertificatePostRequestBody.key);
+        writer.writeAdditionalData(uploadCertificatePostRequestBody.additionalData);
+    }
 }
 export interface UploadCertificatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface UploadCertificatePostRequestBody extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The key property
      */
-    key?: string;
+    key?: string | null;
 }
 /**
  * Provides operations to call the uploadCertificate method.

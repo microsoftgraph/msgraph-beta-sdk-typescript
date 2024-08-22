@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SetScheduledRetireStatePostRequestBody}
  */
+// @ts-ignore
 export function createSetScheduledRetireStatePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSetScheduledRetireStatePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSetScheduledRetireStatePostRequestBodyFromDiscriminatorVal
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSetScheduledRetireStatePostRequestBody(setScheduledRetireStatePostRequestBody: Partial<SetScheduledRetireStatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setScheduledRetireStatePostRequestBody.backingStoreEnabled = true; },
@@ -32,11 +34,14 @@ export function deserializeIntoSetScheduledRetireStatePostRequestBody(setSchedul
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSetScheduledRetireStatePostRequestBody(writer: SerializationWriter, setScheduledRetireStatePostRequestBody: Partial<SetScheduledRetireStatePostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", setScheduledRetireStatePostRequestBody.managedDeviceIds);
-    writer.writeBooleanValue("scopedToAllDevices", setScheduledRetireStatePostRequestBody.scopedToAllDevices);
-    writer.writeEnumValue<ScheduledRetireState>("state", setScheduledRetireStatePostRequestBody.state);
-    writer.writeAdditionalData(setScheduledRetireStatePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSetScheduledRetireStatePostRequestBody(writer: SerializationWriter, setScheduledRetireStatePostRequestBody: Partial<SetScheduledRetireStatePostRequestBody> | undefined | null = {}) : void {
+    if (setScheduledRetireStatePostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", setScheduledRetireStatePostRequestBody.managedDeviceIds);
+        writer.writeBooleanValue("scopedToAllDevices", setScheduledRetireStatePostRequestBody.scopedToAllDevices);
+        writer.writeEnumValue<ScheduledRetireState>("state", setScheduledRetireStatePostRequestBody.state);
+        writer.writeAdditionalData(setScheduledRetireStatePostRequestBody.additionalData);
+    }
 }
 export interface SetScheduledRetireStatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -46,19 +51,19 @@ export interface SetScheduledRetireStatePostRequestBody extends AdditionalDataHo
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The managedDeviceIds property
      */
-    managedDeviceIds?: string[];
+    managedDeviceIds?: string[] | null;
     /**
      * The scopedToAllDevices property
      */
-    scopedToAllDevices?: boolean;
+    scopedToAllDevices?: boolean | null;
     /**
      * Cancel or confirm scheduled retire 
      */
-    state?: ScheduledRetireState;
+    state?: ScheduledRetireState | null;
 }
 /**
  * Provides operations to call the setScheduledRetireState method.

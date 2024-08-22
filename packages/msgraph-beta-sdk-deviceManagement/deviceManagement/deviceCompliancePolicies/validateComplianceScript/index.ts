@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ValidateComplianceScriptPostRequestBody}
  */
+// @ts-ignore
 export function createValidateComplianceScriptPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoValidateComplianceScriptPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createValidateComplianceScriptPostRequestBodyFromDiscriminatorVa
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoValidateComplianceScriptPostRequestBody(validateComplianceScriptPostRequestBody: Partial<ValidateComplianceScriptPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validateComplianceScriptPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoValidateComplianceScriptPostRequestBody(validateC
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeValidateComplianceScriptPostRequestBody(writer: SerializationWriter, validateComplianceScriptPostRequestBody: Partial<ValidateComplianceScriptPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<DeviceCompliancePolicyScript>("deviceCompliancePolicyScript", validateComplianceScriptPostRequestBody.deviceCompliancePolicyScript, serializeDeviceCompliancePolicyScript);
-    writer.writeAdditionalData(validateComplianceScriptPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeValidateComplianceScriptPostRequestBody(writer: SerializationWriter, validateComplianceScriptPostRequestBody: Partial<ValidateComplianceScriptPostRequestBody> | undefined | null = {}) : void {
+    if (validateComplianceScriptPostRequestBody) {
+        writer.writeObjectValue<DeviceCompliancePolicyScript>("deviceCompliancePolicyScript", validateComplianceScriptPostRequestBody.deviceCompliancePolicyScript, serializeDeviceCompliancePolicyScript);
+        writer.writeAdditionalData(validateComplianceScriptPostRequestBody.additionalData);
+    }
 }
 export interface ValidateComplianceScriptPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface ValidateComplianceScriptPostRequestBody extends AdditionalDataH
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The deviceCompliancePolicyScript property
      */
-    deviceCompliancePolicyScript?: DeviceCompliancePolicyScript;
+    deviceCompliancePolicyScript?: DeviceCompliancePolicyScript | null;
 }
 /**
  * Provides operations to call the validateComplianceScript method.

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ThreatAssessmentRequestsRequestBuilder extends BaseRequestBuilder<ThreatAssessmentRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
      * @param threatAssessmentRequestId The unique identifier of threatAssessmentRequest
      * @returns {ThreatAssessmentRequestItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byThreatAssessmentRequestId(threatAssessmentRequestId: string) : ThreatAssessmentRequestItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ThreatAssessmentRequestsRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatAssessmentRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ThreatAssessmentRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<ThreatAssessmentRequestCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface ThreatAssessmentRequestsRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatAssessmentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ThreatAssessmentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ThreatAssessmentRequest | undefined>;
     /**
      * Get threatAssessmentRequests from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ThreatAssessmentRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ThreatAssessmentRequestsRequestBuilder extends BaseRequestBuild
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ThreatAssessmentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PositionsRequestBuilder extends BaseRequestBuilder<PositionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the positions property of the microsoft.graph.profile entity.
      * @param workPositionId The unique identifier of workPosition
      * @returns {WorkPositionItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byWorkPositionId(workPositionId: string) : WorkPositionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface PositionsRequestBuilder extends BaseRequestBuilder<PositionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkPositionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PositionsRequestBuilderGetQueryParameters> | undefined) : Promise<WorkPositionCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface PositionsRequestBuilder extends BaseRequestBuilder<PositionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkPosition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: WorkPosition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WorkPosition | undefined>;
     /**
      * Represents detailed information about work positions associated with a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PositionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface PositionsRequestBuilder extends BaseRequestBuilder<PositionsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: WorkPosition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

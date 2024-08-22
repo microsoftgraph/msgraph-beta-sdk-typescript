@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetRawRemoteConnectionReportsPostRequestBody}
  */
+// @ts-ignore
 export function createGetRawRemoteConnectionReportsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetRawRemoteConnectionReportsPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createGetRawRemoteConnectionReportsPostRequestBodyFromDiscrimina
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetRawRemoteConnectionReportsPostRequestBody(getRawRemoteConnectionReportsPostRequestBody: Partial<GetRawRemoteConnectionReportsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getRawRemoteConnectionReportsPostRequestBody.backingStoreEnabled = true; },
@@ -38,35 +40,35 @@ export interface GetRawRemoteConnectionReportsPostRequestBody extends Additional
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The filter property
      */
-    filter?: string;
+    filter?: string | null;
     /**
      * The groupBy property
      */
-    groupBy?: string[];
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
-    orderBy?: string[];
+    orderBy?: string[] | null;
     /**
      * The search property
      */
-    search?: string;
+    search?: string | null;
     /**
      * The select property
      */
-    select?: string[];
+    select?: string[] | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
 }
 /**
  * Provides operations to call the getRawRemoteConnectionReports method.
@@ -93,15 +95,18 @@ export interface GetRawRemoteConnectionReportsRequestBuilder extends BaseRequest
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetRawRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getRawRemoteConnectionReportsPostRequestBody: Partial<GetRawRemoteConnectionReportsPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("filter", getRawRemoteConnectionReportsPostRequestBody.filter);
-    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRawRemoteConnectionReportsPostRequestBody.groupBy);
-    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRawRemoteConnectionReportsPostRequestBody.orderBy);
-    writer.writeStringValue("search", getRawRemoteConnectionReportsPostRequestBody.search);
-    writer.writeCollectionOfPrimitiveValues<string>("select", getRawRemoteConnectionReportsPostRequestBody.select);
-    writer.writeNumberValue("skip", getRawRemoteConnectionReportsPostRequestBody.skip);
-    writer.writeNumberValue("top", getRawRemoteConnectionReportsPostRequestBody.top);
-    writer.writeAdditionalData(getRawRemoteConnectionReportsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetRawRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getRawRemoteConnectionReportsPostRequestBody: Partial<GetRawRemoteConnectionReportsPostRequestBody> | undefined | null = {}) : void {
+    if (getRawRemoteConnectionReportsPostRequestBody) {
+        writer.writeStringValue("filter", getRawRemoteConnectionReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRawRemoteConnectionReportsPostRequestBody.groupBy);
+        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRawRemoteConnectionReportsPostRequestBody.orderBy);
+        writer.writeStringValue("search", getRawRemoteConnectionReportsPostRequestBody.search);
+        writer.writeCollectionOfPrimitiveValues<string>("select", getRawRemoteConnectionReportsPostRequestBody.select);
+        writer.writeNumberValue("skip", getRawRemoteConnectionReportsPostRequestBody.skip);
+        writer.writeNumberValue("top", getRawRemoteConnectionReportsPostRequestBody.top);
+        writer.writeAdditionalData(getRawRemoteConnectionReportsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

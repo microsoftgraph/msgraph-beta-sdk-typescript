@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DecryptBufferPostRequestBody}
  */
+// @ts-ignore
 export function createDecryptBufferPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDecryptBufferPostRequestBody;
 }
@@ -24,15 +25,15 @@ export interface DecryptBufferPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The encryptedBuffer property
      */
-    encryptedBuffer?: string;
+    encryptedBuffer?: string | null;
     /**
      * The publishingLicense property
      */
-    publishingLicense?: string;
+    publishingLicense?: string | null;
 }
 /**
  * Provides operations to call the decryptBuffer method.
@@ -44,7 +45,7 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BufferDecryptionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: DecryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BufferDecryptionResult | undefined>;
     /**
@@ -52,7 +53,7 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: DecryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -60,6 +61,7 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { decryptBufferPostRequestBody.backingStoreEnabled = true; },
@@ -71,10 +73,13 @@ export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDecryptBufferPostRequestBody(writer: SerializationWriter, decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
-    writer.writeStringValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
-    writer.writeAdditionalData(decryptBufferPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeDecryptBufferPostRequestBody(writer: SerializationWriter, decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined | null = {}) : void {
+    if (decryptBufferPostRequestBody) {
+        writer.writeStringValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
+        writer.writeStringValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
+        writer.writeAdditionalData(decryptBufferPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

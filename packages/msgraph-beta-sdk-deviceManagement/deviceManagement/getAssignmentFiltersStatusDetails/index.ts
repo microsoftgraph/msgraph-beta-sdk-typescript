@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetAssignmentFiltersStatusDetailsPostRequestBody}
  */
+// @ts-ignore
 export function createGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscri
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody(getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignmentFilterIds": n => { getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds = n.getCollectionOfPrimitiveValues<string>(); },
@@ -39,31 +41,31 @@ export interface GetAssignmentFiltersStatusDetailsPostRequestBody extends Additi
     /**
      * The assignmentFilterIds property
      */
-    assignmentFilterIds?: string[];
+    assignmentFilterIds?: string[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The managedDeviceId property
      */
-    managedDeviceId?: string;
+    managedDeviceId?: string | null;
     /**
      * The payloadId property
      */
-    payloadId?: string;
+    payloadId?: string | null;
     /**
      * The skip property
      */
-    skip?: number;
+    skip?: number | null;
     /**
      * The top property
      */
-    top?: number;
+    top?: number | null;
     /**
      * The userId property
      */
-    userId?: string;
+    userId?: string | null;
 }
 /**
  * Provides operations to call the getAssignmentFiltersStatusDetails method.
@@ -89,14 +91,17 @@ export interface GetAssignmentFiltersStatusDetailsRequestBuilder extends BaseReq
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetAssignmentFiltersStatusDetailsPostRequestBody(writer: SerializationWriter, getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("assignmentFilterIds", getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds);
-    writer.writeStringValue("managedDeviceId", getAssignmentFiltersStatusDetailsPostRequestBody.managedDeviceId);
-    writer.writeStringValue("payloadId", getAssignmentFiltersStatusDetailsPostRequestBody.payloadId);
-    writer.writeNumberValue("skip", getAssignmentFiltersStatusDetailsPostRequestBody.skip);
-    writer.writeNumberValue("top", getAssignmentFiltersStatusDetailsPostRequestBody.top);
-    writer.writeStringValue("userId", getAssignmentFiltersStatusDetailsPostRequestBody.userId);
-    writer.writeAdditionalData(getAssignmentFiltersStatusDetailsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeGetAssignmentFiltersStatusDetailsPostRequestBody(writer: SerializationWriter, getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined | null = {}) : void {
+    if (getAssignmentFiltersStatusDetailsPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("assignmentFilterIds", getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds);
+        writer.writeStringValue("managedDeviceId", getAssignmentFiltersStatusDetailsPostRequestBody.managedDeviceId);
+        writer.writeStringValue("payloadId", getAssignmentFiltersStatusDetailsPostRequestBody.payloadId);
+        writer.writeNumberValue("skip", getAssignmentFiltersStatusDetailsPostRequestBody.skip);
+        writer.writeNumberValue("top", getAssignmentFiltersStatusDetailsPostRequestBody.top);
+        writer.writeStringValue("userId", getAssignmentFiltersStatusDetailsPostRequestBody.userId);
+        writer.writeAdditionalData(getAssignmentFiltersStatusDetailsPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

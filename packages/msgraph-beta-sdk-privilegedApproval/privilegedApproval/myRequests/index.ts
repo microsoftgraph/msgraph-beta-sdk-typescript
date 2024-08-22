@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MyRequestsGetResponse}
  */
+// @ts-ignore
 export function createMyRequestsGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMyRequestsGetResponse;
 }
@@ -20,6 +21,7 @@ export function createMyRequestsGetResponseFromDiscriminatorValue(parseNode: Par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoMyRequestsGetResponse(myRequestsGetResponse: Partial<MyRequestsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(myRequestsGetResponse),
@@ -30,7 +32,7 @@ export interface MyRequestsGetResponse extends BaseCollectionPaginationCountResp
     /**
      * The value property
      */
-    value?: PrivilegedApproval[];
+    value?: PrivilegedApproval[] | null;
 }
 /**
  * Provides operations to call the myRequests method.
@@ -91,9 +93,12 @@ export interface MyRequestsRequestBuilderGetQueryParameters {
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeMyRequestsGetResponse(writer: SerializationWriter, myRequestsGetResponse: Partial<MyRequestsGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, myRequestsGetResponse)
-    writer.writeCollectionOfObjectValues<PrivilegedApproval>("value", myRequestsGetResponse.value, serializePrivilegedApproval);
+// @ts-ignore
+export function serializeMyRequestsGetResponse(writer: SerializationWriter, myRequestsGetResponse: Partial<MyRequestsGetResponse> | undefined | null = {}) : void {
+    if (myRequestsGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, myRequestsGetResponse)
+        writer.writeCollectionOfObjectValues<PrivilegedApproval>("value", myRequestsGetResponse.value, serializePrivilegedApproval);
+    }
 }
 /**
  * Uri template for the request builder.

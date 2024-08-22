@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EducationalActivitiesRequestBuilder extends BaseRequestBuilder<EducationalActivitiesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.
      * @param educationalActivityId The unique identifier of educationalActivity
      * @returns {EducationalActivityItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byEducationalActivityId(educationalActivityId: string) : EducationalActivityItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface EducationalActivitiesRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationalActivityCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<EducationalActivitiesRequestBuilderGetQueryParameters> | undefined) : Promise<EducationalActivityCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface EducationalActivitiesRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationalActivity>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: EducationalActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationalActivity | undefined>;
     /**
      * Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EducationalActivitiesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface EducationalActivitiesRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: EducationalActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

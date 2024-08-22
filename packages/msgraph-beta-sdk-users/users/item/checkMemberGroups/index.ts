@@ -16,17 +16,17 @@ export interface CheckMemberGroupsPostRequestBody extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The groupIds property
      */
-    groupIds?: string[];
+    groupIds?: string[] | null;
 }
 export interface CheckMemberGroupsPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: string[];
+    value?: string[] | null;
 }
 /**
  * Provides operations to call the checkMemberGroups method.
@@ -38,6 +38,7 @@ export interface CheckMemberGroupsRequestBuilder extends BaseRequestBuilder<Chec
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CheckMemberGroupsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta|Find more info here}
      */
      post(body: CheckMemberGroupsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CheckMemberGroupsPostResponse | undefined>;
@@ -46,6 +47,7 @@ export interface CheckMemberGroupsRequestBuilder extends BaseRequestBuilder<Chec
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CheckMemberGroupsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -54,6 +56,7 @@ export interface CheckMemberGroupsRequestBuilder extends BaseRequestBuilder<Chec
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CheckMemberGroupsPostRequestBody}
  */
+// @ts-ignore
 export function createCheckMemberGroupsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCheckMemberGroupsPostRequestBody;
 }
@@ -62,6 +65,7 @@ export function createCheckMemberGroupsPostRequestBodyFromDiscriminatorValue(par
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CheckMemberGroupsPostResponse}
  */
+// @ts-ignore
 export function createCheckMemberGroupsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCheckMemberGroupsPostResponse;
 }
@@ -69,6 +73,7 @@ export function createCheckMemberGroupsPostResponseFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCheckMemberGroupsPostRequestBody(checkMemberGroupsPostRequestBody: Partial<CheckMemberGroupsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { checkMemberGroupsPostRequestBody.backingStoreEnabled = true; },
@@ -79,6 +84,7 @@ export function deserializeIntoCheckMemberGroupsPostRequestBody(checkMemberGroup
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoCheckMemberGroupsPostResponse(checkMemberGroupsPostResponse: Partial<CheckMemberGroupsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(checkMemberGroupsPostResponse),
@@ -89,17 +95,23 @@ export function deserializeIntoCheckMemberGroupsPostResponse(checkMemberGroupsPo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCheckMemberGroupsPostRequestBody(writer: SerializationWriter, checkMemberGroupsPostRequestBody: Partial<CheckMemberGroupsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("groupIds", checkMemberGroupsPostRequestBody.groupIds);
-    writer.writeAdditionalData(checkMemberGroupsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeCheckMemberGroupsPostRequestBody(writer: SerializationWriter, checkMemberGroupsPostRequestBody: Partial<CheckMemberGroupsPostRequestBody> | undefined | null = {}) : void {
+    if (checkMemberGroupsPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("groupIds", checkMemberGroupsPostRequestBody.groupIds);
+        writer.writeAdditionalData(checkMemberGroupsPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeCheckMemberGroupsPostResponse(writer: SerializationWriter, checkMemberGroupsPostResponse: Partial<CheckMemberGroupsPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, checkMemberGroupsPostResponse)
-    writer.writeCollectionOfPrimitiveValues<string>("value", checkMemberGroupsPostResponse.value);
+// @ts-ignore
+export function serializeCheckMemberGroupsPostResponse(writer: SerializationWriter, checkMemberGroupsPostResponse: Partial<CheckMemberGroupsPostResponse> | undefined | null = {}) : void {
+    if (checkMemberGroupsPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, checkMemberGroupsPostResponse)
+        writer.writeCollectionOfPrimitiveValues<string>("value", checkMemberGroupsPostResponse.value);
+    }
 }
 /**
  * Uri template for the request builder.

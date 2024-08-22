@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SnoozeReminderPostRequestBody}
  */
+// @ts-ignore
 export function createSnoozeReminderPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSnoozeReminderPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSnoozeReminderPostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSnoozeReminderPostRequestBody(snoozeReminderPostRequestBody: Partial<SnoozeReminderPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { snoozeReminderPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoSnoozeReminderPostRequestBody(snoozeReminderPostR
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSnoozeReminderPostRequestBody(writer: SerializationWriter, snoozeReminderPostRequestBody: Partial<SnoozeReminderPostRequestBody> | undefined = {}) : void {
-    writer.writeObjectValue<DateTimeTimeZone>("NewReminderTime", snoozeReminderPostRequestBody.newReminderTime, serializeDateTimeTimeZone);
-    writer.writeAdditionalData(snoozeReminderPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSnoozeReminderPostRequestBody(writer: SerializationWriter, snoozeReminderPostRequestBody: Partial<SnoozeReminderPostRequestBody> | undefined | null = {}) : void {
+    if (snoozeReminderPostRequestBody) {
+        writer.writeObjectValue<DateTimeTimeZone>("NewReminderTime", snoozeReminderPostRequestBody.newReminderTime, serializeDateTimeTimeZone);
+        writer.writeAdditionalData(snoozeReminderPostRequestBody.additionalData);
+    }
 }
 export interface SnoozeReminderPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface SnoozeReminderPostRequestBody extends AdditionalDataHolder, Bac
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The NewReminderTime property
      */
-    newReminderTime?: DateTimeTimeZone;
+    newReminderTime?: DateTimeTimeZone | null;
 }
 /**
  * Provides operations to call the snoozeReminder method.
@@ -57,6 +62,7 @@ export interface SnoozeReminderRequestBuilder extends BaseRequestBuilder<SnoozeR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta|Find more info here}
      */
      post(body: SnoozeReminderPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -65,6 +71,7 @@ export interface SnoozeReminderRequestBuilder extends BaseRequestBuilder<SnoozeR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SnoozeReminderPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

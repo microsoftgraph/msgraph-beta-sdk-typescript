@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeleteTiIndicatorsPostRequestBody}
  */
+// @ts-ignore
 export function createDeleteTiIndicatorsPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeleteTiIndicatorsPostRequestBody;
 }
@@ -21,6 +22,7 @@ export function createDeleteTiIndicatorsPostRequestBodyFromDiscriminatorValue(pa
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DeleteTiIndicatorsPostResponse}
  */
+// @ts-ignore
 export function createDeleteTiIndicatorsPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDeleteTiIndicatorsPostResponse;
 }
@@ -32,17 +34,17 @@ export interface DeleteTiIndicatorsPostRequestBody extends AdditionalDataHolder,
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string[];
+    value?: string[] | null;
 }
 export interface DeleteTiIndicatorsPostResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
      * The value property
      */
-    value?: ResultInfo[];
+    value?: ResultInfo[] | null;
 }
 /**
  * Provides operations to call the deleteTiIndicators method.
@@ -71,6 +73,7 @@ export interface DeleteTiIndicatorsRequestBuilder extends BaseRequestBuilder<Del
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeleteTiIndicatorsPostRequestBody(deleteTiIndicatorsPostRequestBody: Partial<DeleteTiIndicatorsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deleteTiIndicatorsPostRequestBody.backingStoreEnabled = true; },
@@ -81,6 +84,7 @@ export function deserializeIntoDeleteTiIndicatorsPostRequestBody(deleteTiIndicat
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoDeleteTiIndicatorsPostResponse(deleteTiIndicatorsPostResponse: Partial<DeleteTiIndicatorsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(deleteTiIndicatorsPostResponse),
@@ -91,17 +95,23 @@ export function deserializeIntoDeleteTiIndicatorsPostResponse(deleteTiIndicators
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeleteTiIndicatorsPostRequestBody(writer: SerializationWriter, deleteTiIndicatorsPostRequestBody: Partial<DeleteTiIndicatorsPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("value", deleteTiIndicatorsPostRequestBody.value);
-    writer.writeAdditionalData(deleteTiIndicatorsPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeDeleteTiIndicatorsPostRequestBody(writer: SerializationWriter, deleteTiIndicatorsPostRequestBody: Partial<DeleteTiIndicatorsPostRequestBody> | undefined | null = {}) : void {
+    if (deleteTiIndicatorsPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("value", deleteTiIndicatorsPostRequestBody.value);
+        writer.writeAdditionalData(deleteTiIndicatorsPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeDeleteTiIndicatorsPostResponse(writer: SerializationWriter, deleteTiIndicatorsPostResponse: Partial<DeleteTiIndicatorsPostResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, deleteTiIndicatorsPostResponse)
-    writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsPostResponse.value, serializeResultInfo);
+// @ts-ignore
+export function serializeDeleteTiIndicatorsPostResponse(writer: SerializationWriter, deleteTiIndicatorsPostResponse: Partial<DeleteTiIndicatorsPostResponse> | undefined | null = {}) : void {
+    if (deleteTiIndicatorsPostResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, deleteTiIndicatorsPostResponse)
+        writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsPostResponse.value, serializeResultInfo);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ResetPasswordPostRequestBody}
  */
+// @ts-ignore
 export function createResetPasswordPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoResetPasswordPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createResetPasswordPostRequestBodyFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoResetPasswordPostRequestBody(resetPasswordPostRequestBody: Partial<ResetPasswordPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { resetPasswordPostRequestBody.backingStoreEnabled = true; },
@@ -34,11 +36,11 @@ export interface ResetPasswordPostRequestBody extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The newPassword property
      */
-    newPassword?: string;
+    newPassword?: string | null;
 }
 /**
  * Provides operations to call the resetPassword method.
@@ -50,6 +52,7 @@ export interface ResetPasswordRequestBuilder extends BaseRequestBuilder<ResetPas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordResetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-beta|Find more info here}
      */
      post(body: ResetPasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordResetResponse | undefined>;
@@ -58,6 +61,7 @@ export interface ResetPasswordRequestBuilder extends BaseRequestBuilder<ResetPas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ResetPasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -65,9 +69,12 @@ export interface ResetPasswordRequestBuilder extends BaseRequestBuilder<ResetPas
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeResetPasswordPostRequestBody(writer: SerializationWriter, resetPasswordPostRequestBody: Partial<ResetPasswordPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("newPassword", resetPasswordPostRequestBody.newPassword);
-    writer.writeAdditionalData(resetPasswordPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeResetPasswordPostRequestBody(writer: SerializationWriter, resetPasswordPostRequestBody: Partial<ResetPasswordPostRequestBody> | undefined | null = {}) : void {
+    if (resetPasswordPostRequestBody) {
+        writer.writeStringValue("newPassword", resetPasswordPostRequestBody.newPassword);
+        writer.writeAdditionalData(resetPasswordPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SignDigestPostRequestBody}
  */
+// @ts-ignore
 export function createSignDigestPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSignDigestPostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createSignDigestPostRequestBodyFromDiscriminatorValue(parseNode:
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { signDigestPostRequestBody.backingStoreEnabled = true; },
@@ -30,9 +32,12 @@ export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBo
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeSignDigestPostRequestBody(writer: SerializationWriter, signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("digest", signDigestPostRequestBody.digest);
-    writer.writeAdditionalData(signDigestPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeSignDigestPostRequestBody(writer: SerializationWriter, signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined | null = {}) : void {
+    if (signDigestPostRequestBody) {
+        writer.writeStringValue("digest", signDigestPostRequestBody.digest);
+        writer.writeAdditionalData(signDigestPostRequestBody.additionalData);
+    }
 }
 export interface SignDigestPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -42,11 +47,11 @@ export interface SignDigestPostRequestBody extends AdditionalDataHolder, BackedM
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The digest property
      */
-    digest?: string;
+    digest?: string | null;
 }
 /**
  * Provides operations to call the signDigest method.
@@ -58,7 +63,7 @@ export interface SignDigestRequestBuilder extends BaseRequestBuilder<SignDigestR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SigningResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: SignDigestPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SigningResult | undefined>;
     /**
@@ -66,7 +71,7 @@ export interface SignDigestRequestBuilder extends BaseRequestBuilder<SignDigestR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SignDigestPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

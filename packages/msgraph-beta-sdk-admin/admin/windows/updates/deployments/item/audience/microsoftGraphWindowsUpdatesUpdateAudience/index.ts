@@ -13,6 +13,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdateAudiencePostRequestBody}
  */
+// @ts-ignore
 export function createUpdateAudiencePostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateAudiencePostRequestBody;
 }
@@ -20,6 +21,7 @@ export function createUpdateAudiencePostRequestBodyFromDiscriminatorValue(parseN
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoUpdateAudiencePostRequestBody(updateAudiencePostRequestBody: Partial<UpdateAudiencePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "addExclusions": n => { updateAudiencePostRequestBody.addExclusions = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
@@ -53,18 +55,21 @@ export interface MicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder extend
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeUpdateAudiencePostRequestBody(writer: SerializationWriter, updateAudiencePostRequestBody: Partial<UpdateAudiencePostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfObjectValues<UpdatableAsset>("addExclusions", updateAudiencePostRequestBody.addExclusions, serializeUpdatableAsset);
-    writer.writeCollectionOfObjectValues<UpdatableAsset>("addMembers", updateAudiencePostRequestBody.addMembers, serializeUpdatableAsset);
-    writer.writeCollectionOfObjectValues<UpdatableAsset>("removeExclusions", updateAudiencePostRequestBody.removeExclusions, serializeUpdatableAsset);
-    writer.writeCollectionOfObjectValues<UpdatableAsset>("removeMembers", updateAudiencePostRequestBody.removeMembers, serializeUpdatableAsset);
-    writer.writeAdditionalData(updateAudiencePostRequestBody.additionalData);
+// @ts-ignore
+export function serializeUpdateAudiencePostRequestBody(writer: SerializationWriter, updateAudiencePostRequestBody: Partial<UpdateAudiencePostRequestBody> | undefined | null = {}) : void {
+    if (updateAudiencePostRequestBody) {
+        writer.writeCollectionOfObjectValues<UpdatableAsset>("addExclusions", updateAudiencePostRequestBody.addExclusions, serializeUpdatableAsset);
+        writer.writeCollectionOfObjectValues<UpdatableAsset>("addMembers", updateAudiencePostRequestBody.addMembers, serializeUpdatableAsset);
+        writer.writeCollectionOfObjectValues<UpdatableAsset>("removeExclusions", updateAudiencePostRequestBody.removeExclusions, serializeUpdatableAsset);
+        writer.writeCollectionOfObjectValues<UpdatableAsset>("removeMembers", updateAudiencePostRequestBody.removeMembers, serializeUpdatableAsset);
+        writer.writeAdditionalData(updateAudiencePostRequestBody.additionalData);
+    }
 }
 export interface UpdateAudiencePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The addExclusions property
      */
-    addExclusions?: UpdatableAsset[];
+    addExclusions?: UpdatableAsset[] | null;
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -72,19 +77,19 @@ export interface UpdateAudiencePostRequestBody extends AdditionalDataHolder, Bac
     /**
      * The addMembers property
      */
-    addMembers?: UpdatableAsset[];
+    addMembers?: UpdatableAsset[] | null;
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The removeExclusions property
      */
-    removeExclusions?: UpdatableAsset[];
+    removeExclusions?: UpdatableAsset[] | null;
     /**
      * The removeMembers property
      */
-    removeMembers?: UpdatableAsset[];
+    removeMembers?: UpdatableAsset[] | null;
 }
 /**
  * Uri template for the request builder.

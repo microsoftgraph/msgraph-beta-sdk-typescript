@@ -13,6 +13,7 @@ import { type BaseRequestBuilder, type DateOnly, type Parsable, type ParsableFac
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GetOffice365ActiveUserDetailWithDateGetResponse}
  */
+// @ts-ignore
 export function createGetOffice365ActiveUserDetailWithDateGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoGetOffice365ActiveUserDetailWithDateGetResponse;
 }
@@ -20,6 +21,7 @@ export function createGetOffice365ActiveUserDetailWithDateGetResponseFromDiscrim
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoGetOffice365ActiveUserDetailWithDateGetResponse(getOffice365ActiveUserDetailWithDateGetResponse: Partial<GetOffice365ActiveUserDetailWithDateGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getOffice365ActiveUserDetailWithDateGetResponse),
@@ -30,7 +32,7 @@ export interface GetOffice365ActiveUserDetailWithDateGetResponse extends BaseCol
     /**
      * The value property
      */
-    value?: Office365ActiveUserDetail[];
+    value?: Office365ActiveUserDetail[] | null;
 }
 /**
  * Provides operations to call the getOffice365ActiveUserDetail method.
@@ -91,9 +93,12 @@ export interface GetOffice365ActiveUserDetailWithDateRequestBuilderGetQueryParam
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeGetOffice365ActiveUserDetailWithDateGetResponse(writer: SerializationWriter, getOffice365ActiveUserDetailWithDateGetResponse: Partial<GetOffice365ActiveUserDetailWithDateGetResponse> | undefined = {}) : void {
-    serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserDetailWithDateGetResponse)
-    writer.writeCollectionOfObjectValues<Office365ActiveUserDetail>("value", getOffice365ActiveUserDetailWithDateGetResponse.value, serializeOffice365ActiveUserDetail);
+// @ts-ignore
+export function serializeGetOffice365ActiveUserDetailWithDateGetResponse(writer: SerializationWriter, getOffice365ActiveUserDetailWithDateGetResponse: Partial<GetOffice365ActiveUserDetailWithDateGetResponse> | undefined | null = {}) : void {
+    if (getOffice365ActiveUserDetailWithDateGetResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserDetailWithDateGetResponse)
+        writer.writeCollectionOfObjectValues<Office365ActiveUserDetail>("value", getOffice365ActiveUserDetailWithDateGetResponse.value, serializeOffice365ActiveUserDetail);
+    }
 }
 /**
  * Uri template for the request builder.

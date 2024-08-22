@@ -11,6 +11,7 @@ import { type Parsable, type ParseNode, type SerializationWriter } from '@micros
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TeamsAdminRoot}
  */
+// @ts-ignore
 export function createTeamsAdminRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTeamsAdminRoot;
 }
@@ -18,6 +19,7 @@ export function createTeamsAdminRootFromDiscriminatorValue(parseNode: ParseNode 
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoTeamsAdminRoot(teamsAdminRoot: Partial<TeamsAdminRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(teamsAdminRoot),
@@ -27,8 +29,11 @@ export function deserializeIntoTeamsAdminRoot(teamsAdminRoot: Partial<TeamsAdmin
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeTeamsAdminRoot(writer: SerializationWriter, teamsAdminRoot: Partial<TeamsAdminRoot> | undefined = {}) : void {
-    serializeEntity(writer, teamsAdminRoot)
+// @ts-ignore
+export function serializeTeamsAdminRoot(writer: SerializationWriter, teamsAdminRoot: Partial<TeamsAdminRoot> | undefined | null = {}) : void {
+    if (teamsAdminRoot) {
+        serializeEntity(writer, teamsAdminRoot)
+    }
 }
 export interface TeamsAdminRoot extends Entity, Parsable {
 }

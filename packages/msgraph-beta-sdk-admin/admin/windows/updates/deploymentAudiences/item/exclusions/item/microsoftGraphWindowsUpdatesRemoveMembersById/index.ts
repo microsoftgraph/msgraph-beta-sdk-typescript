@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RemoveMembersByIdPostRequestBody}
  */
+// @ts-ignore
 export function createRemoveMembersByIdPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRemoveMembersByIdPostRequestBody;
 }
@@ -18,6 +19,7 @@ export function createRemoveMembersByIdPostRequestBodyFromDiscriminatorValue(par
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRemoveMembersByIdPostRequestBody(removeMembersByIdPostRequestBody: Partial<RemoveMembersByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { removeMembersByIdPostRequestBody.backingStoreEnabled = true; },
@@ -53,24 +55,27 @@ export interface RemoveMembersByIdPostRequestBody extends AdditionalDataHolder, 
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The ids property
      */
-    ids?: string[];
+    ids?: string[] | null;
     /**
      * The memberEntityType property
      */
-    memberEntityType?: string;
+    memberEntityType?: string | null;
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRemoveMembersByIdPostRequestBody(writer: SerializationWriter, removeMembersByIdPostRequestBody: Partial<RemoveMembersByIdPostRequestBody> | undefined = {}) : void {
-    writer.writeCollectionOfPrimitiveValues<string>("ids", removeMembersByIdPostRequestBody.ids);
-    writer.writeStringValue("memberEntityType", removeMembersByIdPostRequestBody.memberEntityType);
-    writer.writeAdditionalData(removeMembersByIdPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRemoveMembersByIdPostRequestBody(writer: SerializationWriter, removeMembersByIdPostRequestBody: Partial<RemoveMembersByIdPostRequestBody> | undefined | null = {}) : void {
+    if (removeMembersByIdPostRequestBody) {
+        writer.writeCollectionOfPrimitiveValues<string>("ids", removeMembersByIdPostRequestBody.ids);
+        writer.writeStringValue("memberEntityType", removeMembersByIdPostRequestBody.memberEntityType);
+        writer.writeAdditionalData(removeMembersByIdPostRequestBody.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

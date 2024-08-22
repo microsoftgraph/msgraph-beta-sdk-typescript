@@ -32,42 +32,51 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ManagedDevicesRequestBuilder extends BaseRequestBuilder<ManagedDevicesRequestBuilder> {
     /**
      * Provides operations to call the bulkReprovisionCloudPc method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get bulkReprovisionCloudPc(): BulkReprovisionCloudPcRequestBuilder;
     /**
      * Provides operations to call the bulkRestoreCloudPc method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get bulkRestoreCloudPc(): BulkRestoreCloudPcRequestBuilder;
     /**
      * Provides operations to call the bulkSetCloudPcReviewStatus method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get bulkSetCloudPcReviewStatus(): BulkSetCloudPcReviewStatusRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the downloadAppDiagnostics method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get downloadAppDiagnostics(): DownloadAppDiagnosticsRequestBuilder;
     /**
      * Provides operations to call the executeAction method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get executeAction(): ExecuteActionRequestBuilder;
     /**
      * Provides operations to call the moveDevicesToOU method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get moveDevicesToOU(): MoveDevicesToOURequestBuilder;
     /**
      * Provides operations to call the appDiagnostics method.
      * @param upn Usage: upn='{upn}'
      * @returns {AppDiagnosticsWithUpnRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      appDiagnosticsWithUpn(upn: string | undefined) : AppDiagnosticsWithUpnRequestBuilder;
     /**
      * Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
      * @param managedDeviceId The unique identifier of managedDevice
      * @returns {ManagedDeviceItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byManagedDeviceId(managedDeviceId: string) : ManagedDeviceItemRequestBuilder;
     /**
@@ -75,6 +84,7 @@ export interface ManagedDevicesRequestBuilder extends BaseRequestBuilder<Managed
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedDeviceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ManagedDevicesRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedDeviceCollectionResponse | undefined>;
     /**
@@ -83,12 +93,14 @@ export interface ManagedDevicesRequestBuilder extends BaseRequestBuilder<Managed
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ManagedDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedDevice | undefined>;
     /**
      * The managed devices associated with the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedDevicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -96,6 +108,7 @@ export interface ManagedDevicesRequestBuilder extends BaseRequestBuilder<Managed
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ManagedDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

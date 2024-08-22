@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the steps property of the microsoft.graph.approval entity.
      * @param approvalStepId The unique identifier of approvalStep
      * @returns {ApprovalStepItemRequestBuilder}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byApprovalStepId(approvalStepId: string) : ApprovalStepItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalStepCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<StepsRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalStepCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalStep>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ApprovalStep, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalStep | undefined>;
     /**
      * Used to represent the decision associated with a single step in the approval process configured in approvalStage.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<StepsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ApprovalStep, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

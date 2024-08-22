@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IsManagedAppUserBlockedGetResponse}
  */
+// @ts-ignore
 export function createIsManagedAppUserBlockedGetResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoIsManagedAppUserBlockedGetResponse;
 }
@@ -18,6 +19,7 @@ export function createIsManagedAppUserBlockedGetResponseFromDiscriminatorValue(p
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoIsManagedAppUserBlockedGetResponse(isManagedAppUserBlockedGetResponse: Partial<IsManagedAppUserBlockedGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { isManagedAppUserBlockedGetResponse.backingStoreEnabled = true; },
@@ -32,11 +34,11 @@ export interface IsManagedAppUserBlockedGetResponse extends AdditionalDataHolder
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: boolean;
+    value?: boolean | null;
 }
 /**
  * Provides operations to call the isManagedAppUserBlocked method.
@@ -47,12 +49,14 @@ export interface IsManagedAppUserBlockedRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IsManagedAppUserBlockedGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IsManagedAppUserBlockedGetResponse | undefined>;
     /**
      * Gets the blocked state of a managed app user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -60,9 +64,12 @@ export interface IsManagedAppUserBlockedRequestBuilder extends BaseRequestBuilde
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeIsManagedAppUserBlockedGetResponse(writer: SerializationWriter, isManagedAppUserBlockedGetResponse: Partial<IsManagedAppUserBlockedGetResponse> | undefined = {}) : void {
-    writer.writeBooleanValue("value", isManagedAppUserBlockedGetResponse.value);
-    writer.writeAdditionalData(isManagedAppUserBlockedGetResponse.additionalData);
+// @ts-ignore
+export function serializeIsManagedAppUserBlockedGetResponse(writer: SerializationWriter, isManagedAppUserBlockedGetResponse: Partial<IsManagedAppUserBlockedGetResponse> | undefined | null = {}) : void {
+    if (isManagedAppUserBlockedGetResponse) {
+        writer.writeBooleanValue("value", isManagedAppUserBlockedGetResponse.value);
+        writer.writeAdditionalData(isManagedAppUserBlockedGetResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.

@@ -11,6 +11,7 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RequestSignupUrlPostRequestBody}
  */
+// @ts-ignore
 export function createRequestSignupUrlPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRequestSignupUrlPostRequestBody;
 }
@@ -19,6 +20,7 @@ export function createRequestSignupUrlPostRequestBodyFromDiscriminatorValue(pars
  * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RequestSignupUrlPostResponse}
  */
+// @ts-ignore
 export function createRequestSignupUrlPostResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRequestSignupUrlPostResponse;
 }
@@ -26,6 +28,7 @@ export function createRequestSignupUrlPostResponseFromDiscriminatorValue(parseNo
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRequestSignupUrlPostRequestBody(requestSignupUrlPostRequestBody: Partial<RequestSignupUrlPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { requestSignupUrlPostRequestBody.backingStoreEnabled = true; },
@@ -36,6 +39,7 @@ export function deserializeIntoRequestSignupUrlPostRequestBody(requestSignupUrlP
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
+// @ts-ignore
 export function deserializeIntoRequestSignupUrlPostResponse(requestSignupUrlPostResponse: Partial<RequestSignupUrlPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { requestSignupUrlPostResponse.backingStoreEnabled = true; },
@@ -50,11 +54,11 @@ export interface RequestSignupUrlPostRequestBody extends AdditionalDataHolder, B
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The hostName property
      */
-    hostName?: string;
+    hostName?: string | null;
 }
 export interface RequestSignupUrlPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -64,11 +68,11 @@ export interface RequestSignupUrlPostResponse extends AdditionalDataHolder, Back
     /**
      * Stores model information.
      */
-    backingStoreEnabled?: boolean;
+    backingStoreEnabled?: boolean | null;
     /**
      * The value property
      */
-    value?: string;
+    value?: string | null;
 }
 /**
  * Provides operations to call the requestSignupUrl method.
@@ -94,17 +98,23 @@ export interface RequestSignupUrlRequestBuilder extends BaseRequestBuilder<Reque
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRequestSignupUrlPostRequestBody(writer: SerializationWriter, requestSignupUrlPostRequestBody: Partial<RequestSignupUrlPostRequestBody> | undefined = {}) : void {
-    writer.writeStringValue("hostName", requestSignupUrlPostRequestBody.hostName);
-    writer.writeAdditionalData(requestSignupUrlPostRequestBody.additionalData);
+// @ts-ignore
+export function serializeRequestSignupUrlPostRequestBody(writer: SerializationWriter, requestSignupUrlPostRequestBody: Partial<RequestSignupUrlPostRequestBody> | undefined | null = {}) : void {
+    if (requestSignupUrlPostRequestBody) {
+        writer.writeStringValue("hostName", requestSignupUrlPostRequestBody.hostName);
+        writer.writeAdditionalData(requestSignupUrlPostRequestBody.additionalData);
+    }
 }
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
  */
-export function serializeRequestSignupUrlPostResponse(writer: SerializationWriter, requestSignupUrlPostResponse: Partial<RequestSignupUrlPostResponse> | undefined = {}) : void {
-    writer.writeStringValue("value", requestSignupUrlPostResponse.value);
-    writer.writeAdditionalData(requestSignupUrlPostResponse.additionalData);
+// @ts-ignore
+export function serializeRequestSignupUrlPostResponse(writer: SerializationWriter, requestSignupUrlPostResponse: Partial<RequestSignupUrlPostResponse> | undefined | null = {}) : void {
+    if (requestSignupUrlPostResponse) {
+        writer.writeStringValue("value", requestSignupUrlPostResponse.value);
+        writer.writeAdditionalData(requestSignupUrlPostResponse.additionalData);
+    }
 }
 /**
  * Uri template for the request builder.
