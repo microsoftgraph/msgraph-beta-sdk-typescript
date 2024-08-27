@@ -1223,21 +1223,27 @@ const DeviceManagementRequestBuilderGetQueryParametersMapper: Record<string, str
 export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<keyof DeviceManagementRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     getEffectivePermissionsWithScope: {
         requestsMetadata: GetEffectivePermissionsWithScopeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["scope"],
     },
     getRoleScopeTagsByIdsWithIds: {
         requestsMetadata: GetRoleScopeTagsByIdsWithIdsRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["ids"],
     },
     getRoleScopeTagsByResourceWithResource: {
         requestsMetadata: GetRoleScopeTagsByResourceWithResourceRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["resource"],
     },
     getSuggestedEnrollmentLimitWithEnrollmentType: {
         requestsMetadata: GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["enrollmentType"],
     },
     scopedForResourceWithResource: {
         requestsMetadata: ScopedForResourceWithResourceRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["resource"],
     },
     verifyWindowsEnrollmentAutoDiscoveryWithDomainName: {
         requestsMetadata: VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["domainName"],
     },
     advancedThreatProtectionOnboardingStateSummary: {
         requestsMetadata: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequestsMetadata,

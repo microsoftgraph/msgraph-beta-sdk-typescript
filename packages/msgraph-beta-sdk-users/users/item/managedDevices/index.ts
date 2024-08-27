@@ -172,6 +172,7 @@ const ManagedDevicesRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const ManagedDevicesRequestBuilderNavigationMetadata: Record<Exclude<keyof ManagedDevicesRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     appDiagnosticsWithUpn: {
         requestsMetadata: AppDiagnosticsWithUpnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["upn"],
     },
     byManagedDeviceId: {
         requestsMetadata: ManagedDeviceItemRequestBuilderRequestsMetadata,

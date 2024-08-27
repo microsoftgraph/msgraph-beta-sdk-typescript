@@ -115,6 +115,7 @@ const DeviceManagementTemplateItemRequestBuilderGetQueryParametersMapper: Record
 export const DeviceManagementTemplateItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DeviceManagementTemplateItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     compareWithTemplateId: {
         requestsMetadata: CompareWithTemplateIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["templateId"],
     },
     categories: {
         requestsMetadata: CategoriesRequestBuilderRequestsMetadata,

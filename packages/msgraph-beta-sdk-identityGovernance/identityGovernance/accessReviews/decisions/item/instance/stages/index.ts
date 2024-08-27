@@ -128,6 +128,7 @@ export const StagesRequestBuilderNavigationMetadata: Record<Exclude<keyof Stages
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

@@ -135,6 +135,7 @@ export const ApprovalsRequestBuilderNavigationMetadata: Record<Exclude<keyof App
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

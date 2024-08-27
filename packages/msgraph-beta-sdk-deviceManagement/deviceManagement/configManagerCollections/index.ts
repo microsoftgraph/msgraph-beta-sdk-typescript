@@ -127,6 +127,7 @@ export const ConfigManagerCollectionsRequestBuilderNavigationMetadata: Record<Ex
     },
     getPolicySummaryWithPolicyId: {
         requestsMetadata: GetPolicySummaryWithPolicyIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["policyId"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

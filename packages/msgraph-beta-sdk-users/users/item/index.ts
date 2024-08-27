@@ -911,22 +911,28 @@ const UserItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof UserItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     appRoleAssignedResourcesWithAppId: {
         requestsMetadata: AppRoleAssignedResourcesWithAppIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["appId"],
     },
     devicesWithDeviceId: {
         requestsMetadata: DevicesWithDeviceIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["deviceId"],
     },
     exportDeviceAndAppManagementDataWithSkipWithTop: {
         requestsMetadata: ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["skip", "top"],
     },
     findRoomsWithRoomList: {
         requestsMetadata: FindRoomsWithRoomListRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["RoomList"],
     },
     onlineMeetingsWithJoinWebUrl: {
         requestsMetadata: OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata,
         navigationMetadata: OnlineMeetingsWithJoinWebUrlRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["joinWebUrl"],
     },
     reminderViewWithStartDateTimeWithEndDateTime: {
         requestsMetadata: ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["EndDateTime", "StartDateTime"],
     },
     activities: {
         requestsMetadata: ActivitiesRequestBuilderRequestsMetadata,

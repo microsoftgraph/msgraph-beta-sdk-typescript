@@ -146,6 +146,7 @@ export const OperationApprovalRequestsRequestBuilderNavigationMetadata: Record<E
     },
     retrieveMyRequestByIdWithId: {
         requestsMetadata: RetrieveMyRequestByIdWithIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["id"],
     },
     cancelMyRequest: {
         requestsMetadata: CancelMyRequestRequestBuilderRequestsMetadata,

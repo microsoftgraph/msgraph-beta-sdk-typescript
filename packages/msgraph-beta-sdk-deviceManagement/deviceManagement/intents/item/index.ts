@@ -169,6 +169,7 @@ const DeviceManagementIntentItemRequestBuilderGetQueryParametersMapper: Record<s
 export const DeviceManagementIntentItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DeviceManagementIntentItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     compareWithTemplateId: {
         requestsMetadata: CompareWithTemplateIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["templateId"],
     },
     assign: {
         requestsMetadata: AssignRequestBuilderRequestsMetadata,

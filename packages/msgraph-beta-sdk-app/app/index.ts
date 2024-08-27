@@ -92,6 +92,7 @@ export const AppRequestBuilderNavigationMetadata: Record<Exclude<keyof AppReques
     onlineMeetingsWithJoinWebUrl: {
         requestsMetadata: OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata,
         navigationMetadata: OnlineMeetingsWithJoinWebUrlRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["joinWebUrl"],
     },
     calls: {
         requestsMetadata: CallsRequestBuilderRequestsMetadata,

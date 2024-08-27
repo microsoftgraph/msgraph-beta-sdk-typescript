@@ -136,9 +136,11 @@ export const ProductsRequestBuilderNavigationMetadata: Record<Exclude<keyof Prod
     },
     microsoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID: {
         requestsMetadata: MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["catalogID"],
     },
     microsoftGraphWindowsUpdatesFindByKbNumberWithKbNumber: {
         requestsMetadata: MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["kbNumber"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

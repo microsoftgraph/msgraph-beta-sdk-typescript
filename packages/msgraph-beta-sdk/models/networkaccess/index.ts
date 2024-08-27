@@ -5632,6 +5632,8 @@ export const FilteringPolicyActionObject = {
     Block: "block",
     Allow: "allow",
     UnknownFutureValue: "unknownFutureValue",
+    Bypass: "bypass",
+    Alert: "alert",
 } as const;
 export const ForwardingCategoryObject = {
     DefaultEscaped: "default",

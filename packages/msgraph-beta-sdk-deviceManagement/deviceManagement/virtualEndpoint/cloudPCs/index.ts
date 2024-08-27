@@ -142,6 +142,7 @@ export const CloudPCsRequestBuilderNavigationMetadata: Record<Exclude<keyof Clou
     },
     getProvisionedCloudPCsWithGroupIdWithServicePlanId: {
         requestsMetadata: GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["groupId", "servicePlanId"],
     },
     bulkResize: {
         requestsMetadata: BulkResizeRequestBuilderRequestsMetadata,

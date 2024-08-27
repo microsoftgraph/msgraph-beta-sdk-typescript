@@ -135,6 +135,7 @@ export const DecisionsRequestBuilderNavigationMetadata: Record<Exclude<keyof Dec
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

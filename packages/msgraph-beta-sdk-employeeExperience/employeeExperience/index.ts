@@ -104,6 +104,7 @@ const EmployeeExperienceRequestBuilderGetQueryParametersMapper: Record<string, s
 export const EmployeeExperienceRequestBuilderNavigationMetadata: Record<Exclude<keyof EmployeeExperienceRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     learningCourseActivitiesWithExternalcourseActivityId: {
         requestsMetadata: LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["externalcourseActivityId"],
     },
     communities: {
         requestsMetadata: CommunitiesRequestBuilderRequestsMetadata,
