@@ -127,6 +127,7 @@ export const UserExperienceAnalyticsResourcePerformanceRequestBuilderNavigationM
     },
     summarizeDeviceResourcePerformanceWithSummarizeBy: {
         requestsMetadata: SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["summarizeBy"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

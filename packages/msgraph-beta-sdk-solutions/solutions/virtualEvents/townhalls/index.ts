@@ -138,9 +138,11 @@ export const TownhallsRequestBuilderNavigationMetadata: Record<Exclude<keyof Tow
     },
     getByUserIdAndRoleWithUserIdWithRole: {
         requestsMetadata: GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["role", "userId"],
     },
     getByUserRoleWithRole: {
         requestsMetadata: GetByUserRoleWithRoleRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["role"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

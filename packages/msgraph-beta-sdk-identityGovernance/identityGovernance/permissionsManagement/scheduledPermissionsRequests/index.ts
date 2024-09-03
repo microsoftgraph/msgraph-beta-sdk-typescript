@@ -110,6 +110,7 @@ const ScheduledPermissionsRequestsRequestBuilderGetQueryParametersMapper: Record
 export const ScheduledPermissionsRequestsRequestBuilderNavigationMetadata: Record<Exclude<keyof ScheduledPermissionsRequestsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
 };
 /**

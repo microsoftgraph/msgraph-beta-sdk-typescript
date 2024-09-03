@@ -47,11 +47,12 @@ export interface CategoriesRequestBuilder extends BaseRequestBuilder<CategoriesR
      */
      get(requestConfiguration?: RequestConfiguration<CategoriesRequestBuilderGetQueryParameters> | undefined) : Promise<EducationCategoryCollectionResponse | undefined>;
     /**
-     * Create new navigation property to categories for education
+     * Add one or more existing educationCategory objects to this educationAssignment. Only teachers and students can perform this operation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationCategory>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-beta|Find more info here}
      */
      post(body: EducationCategory, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationCategory | undefined>;
     /**
@@ -61,7 +62,7 @@ export interface CategoriesRequestBuilder extends BaseRequestBuilder<CategoriesR
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CategoriesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to categories for education
+     * Add one or more existing educationCategory objects to this educationAssignment. Only teachers and students can perform this operation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

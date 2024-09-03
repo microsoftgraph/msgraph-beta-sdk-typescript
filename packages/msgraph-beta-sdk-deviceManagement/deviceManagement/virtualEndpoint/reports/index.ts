@@ -177,9 +177,11 @@ const ReportsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof ReportsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     getRealTimeRemoteConnectionLatencyWithCloudPcId: {
         requestsMetadata: GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["cloudPcId"],
     },
     getRealTimeRemoteConnectionStatusWithCloudPcId: {
         requestsMetadata: GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["cloudPcId"],
     },
     exportJobs: {
         requestsMetadata: ExportJobsRequestBuilderRequestsMetadata,

@@ -8,6 +8,8 @@ import { createPartnerSecurityFromDiscriminatorValue, serializePartnerSecurity, 
 // @ts-ignore
 import { SecurityAlertsRequestBuilderNavigationMetadata, SecurityAlertsRequestBuilderRequestsMetadata, type SecurityAlertsRequestBuilder } from './securityAlerts/index.js';
 // @ts-ignore
+import { SecurityScoreRequestBuilderNavigationMetadata, SecurityScoreRequestBuilderRequestsMetadata, type SecurityScoreRequestBuilder } from './securityScore/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +20,10 @@ export interface PartnerRequestBuilder extends BaseRequestBuilder<PartnerRequest
      * Provides operations to manage the securityAlerts property of the microsoft.graph.partner.security.partnerSecurity entity.
      */
     get securityAlerts(): SecurityAlertsRequestBuilder;
+    /**
+     * Provides operations to manage the securityScore property of the microsoft.graph.partner.security.partnerSecurity entity.
+     */
+    get securityScore(): SecurityScoreRequestBuilder;
     /**
      * Delete navigation property partner for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -90,6 +96,10 @@ export const PartnerRequestBuilderNavigationMetadata: Record<Exclude<keyof Partn
     securityAlerts: {
         requestsMetadata: SecurityAlertsRequestBuilderRequestsMetadata,
         navigationMetadata: SecurityAlertsRequestBuilderNavigationMetadata,
+    },
+    securityScore: {
+        requestsMetadata: SecurityScoreRequestBuilderRequestsMetadata,
+        navigationMetadata: SecurityScoreRequestBuilderNavigationMetadata,
     },
 };
 /**

@@ -20,7 +20,7 @@ export interface ClassifyFilePostRequestBody extends AdditionalDataHolder, Backe
     /**
      * The file property
      */
-    file?: string | null;
+    file?: String | null;
     /**
      * The sensitiveTypeIds property
      */
@@ -74,7 +74,7 @@ export function deserializeIntoClassifyFilePostRequestBody(classifyFilePostReque
 // @ts-ignore
 export function serializeClassifyFilePostRequestBody(writer: SerializationWriter, classifyFilePostRequestBody: Partial<ClassifyFilePostRequestBody> | undefined | null = {}) : void {
     if (classifyFilePostRequestBody) {
-        writer.writeStringValue("file", classifyFilePostRequestBody.file);
+        writer.writeObjectValue("file", classifyFilePostRequestBody.file);
         writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyFilePostRequestBody.sensitiveTypeIds);
         writer.writeAdditionalData(classifyFilePostRequestBody.additionalData);
     }

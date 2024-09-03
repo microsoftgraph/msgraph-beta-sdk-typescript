@@ -135,6 +135,7 @@ export const AppConsentRequestsForApprovalRequestBuilderNavigationMetadata: Reco
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

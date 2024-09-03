@@ -129,6 +129,7 @@ export const ContentModelsRequestBuilderNavigationMetadata: Record<Exclude<keyof
     getByNameWithModelName: {
         requestsMetadata: GetByNameWithModelNameRequestBuilderRequestsMetadata,
         navigationMetadata: GetByNameWithModelNameRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["modelName"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

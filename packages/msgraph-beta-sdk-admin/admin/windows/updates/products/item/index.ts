@@ -109,6 +109,7 @@ const ProductItemRequestBuilderGetQueryParametersMapper: Record<string, string> 
 export const ProductItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ProductItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     microsoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive: {
         requestsMetadata: MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["daysInPast"],
     },
     editions: {
         requestsMetadata: EditionsRequestBuilderRequestsMetadata,

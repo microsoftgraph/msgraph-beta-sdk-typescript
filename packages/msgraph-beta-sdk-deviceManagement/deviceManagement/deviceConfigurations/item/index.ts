@@ -151,6 +151,7 @@ const DeviceConfigurationItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const DeviceConfigurationItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DeviceConfigurationItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     getOmaSettingPlainTextValueWithSecretReferenceValueId: {
         requestsMetadata: GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["secretReferenceValueId"],
     },
     assign: {
         requestsMetadata: AssignRequestBuilderRequestsMetadata,

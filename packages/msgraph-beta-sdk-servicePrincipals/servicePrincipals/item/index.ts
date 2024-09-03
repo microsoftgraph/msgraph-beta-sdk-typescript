@@ -280,6 +280,7 @@ const ServicePrincipalItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const ServicePrincipalItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ServicePrincipalItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     federatedIdentityCredentialsWithName: {
         requestsMetadata: FederatedIdentityCredentialsWithNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["name"],
     },
     addTokenSigningCertificate: {
         requestsMetadata: AddTokenSigningCertificateRequestBuilderRequestsMetadata,

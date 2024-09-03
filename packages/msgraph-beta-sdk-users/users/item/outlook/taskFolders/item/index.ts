@@ -6,6 +6,8 @@ import { createOutlookTaskFolderFromDiscriminatorValue, serializeOutlookTaskFold
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { TasksRequestBuilderNavigationMetadata, TasksRequestBuilderRequestsMetadata, type TasksRequestBuilder } from './tasks/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,11 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
  */
 export interface OutlookTaskFolderItemRequestBuilder extends BaseRequestBuilder<OutlookTaskFolderItemRequestBuilder> {
+    /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -94,6 +101,9 @@ const OutlookTaskFolderItemRequestBuilderGetQueryParametersMapper: Record<string
  * Metadata for all the navigation properties in the request builder.
  */
 export const OutlookTaskFolderItemRequestBuilderNavigationMetadata: Record<Exclude<keyof OutlookTaskFolderItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
+    },
     tasks: {
         requestsMetadata: TasksRequestBuilderRequestsMetadata,
         navigationMetadata: TasksRequestBuilderNavigationMetadata,

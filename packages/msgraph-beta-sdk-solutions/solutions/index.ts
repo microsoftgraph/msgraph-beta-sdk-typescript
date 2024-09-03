@@ -115,6 +115,7 @@ const SolutionsRequestBuilderGetQueryParametersMapper: Record<string, string> = 
 export const SolutionsRequestBuilderNavigationMetadata: Record<Exclude<keyof SolutionsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     businessScenariosWithUniqueName: {
         requestsMetadata: BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["uniqueName"],
     },
     approval: {
         requestsMetadata: ApprovalRequestBuilderRequestsMetadata,

@@ -189,9 +189,11 @@ const DirectoryRequestBuilderGetQueryParametersMapper: Record<string, string> = 
 export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof DirectoryRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     subscriptionsWithCommerceSubscriptionId: {
         requestsMetadata: SubscriptionsWithCommerceSubscriptionIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["commerceSubscriptionId"],
     },
     subscriptionsWithOcpSubscriptionId: {
         requestsMetadata: SubscriptionsWithOcpSubscriptionIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["ocpSubscriptionId"],
     },
     administrativeUnits: {
         requestsMetadata: AdministrativeUnitsRequestBuilderRequestsMetadata,

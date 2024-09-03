@@ -84,9 +84,11 @@ const GraphRoomListRequestBuilderGetQueryParametersMapper: Record<string, string
 export const GraphRoomListRequestBuilderNavigationMetadata: Record<Exclude<keyof GraphRoomListRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     roomsWithPlaceId: {
         requestsMetadata: RoomsWithPlaceIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["placeId"],
     },
     workspacesWithPlaceId: {
         requestsMetadata: WorkspacesWithPlaceIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["placeId"],
     },
     rooms: {
         requestsMetadata: RoomsRequestBuilderRequestsMetadata,

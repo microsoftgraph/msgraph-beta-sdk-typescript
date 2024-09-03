@@ -157,6 +157,7 @@ const DriveItemRequestBuilderGetQueryParametersMapper: Record<string, string> = 
 export const DriveItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DriveItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     searchWithQ: {
         requestsMetadata: SearchWithQRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["q"],
     },
     activities: {
         requestsMetadata: ActivitiesRequestBuilderRequestsMetadata,

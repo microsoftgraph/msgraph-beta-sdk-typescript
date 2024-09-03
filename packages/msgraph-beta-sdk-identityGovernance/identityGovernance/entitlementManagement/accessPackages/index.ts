@@ -136,6 +136,7 @@ export const AccessPackagesRequestBuilderNavigationMetadata: Record<Exclude<keyo
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

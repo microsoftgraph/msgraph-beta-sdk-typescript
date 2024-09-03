@@ -128,18 +128,23 @@ const ServiceActivityRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const ServiceActivityRequestBuilderNavigationMetadata: Record<Exclude<keyof ServiceActivityRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     getMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes: {
         requestsMetadata: GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["exclusiveIntervalEndDateTime", "inclusiveIntervalStartDateTime"],
     },
     getMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes: {
         requestsMetadata: GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["exclusiveIntervalEndDateTime", "inclusiveIntervalStartDateTime"],
     },
     getMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes: {
         requestsMetadata: GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["exclusiveIntervalEndDateTime", "inclusiveIntervalStartDateTime"],
     },
     getMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes: {
         requestsMetadata: GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["exclusiveIntervalEndDateTime", "inclusiveIntervalStartDateTime"],
     },
     getMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes: {
         requestsMetadata: GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["exclusiveIntervalEndDateTime", "inclusiveIntervalStartDateTime"],
     },
 };
 /**

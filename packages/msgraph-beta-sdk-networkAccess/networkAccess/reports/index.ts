@@ -195,39 +195,51 @@ const ReportsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof ReportsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     microsoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["discoveryPivotDateTime", "endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy: {
         requestsMetadata: MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["aggregatedBy", "endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["activityPivotDateTime", "endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId: {
         requestsMetadata: MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentId: {
         requestsMetadata: MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["aggregatedBy", "endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentId: {
         requestsMetadata: MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
 };
 /**

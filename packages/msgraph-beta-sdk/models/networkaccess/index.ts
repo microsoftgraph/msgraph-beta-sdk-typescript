@@ -340,7 +340,7 @@ export function createAssociatedBranchFromDiscriminatorValue(parseNode: ParseNod
 // @ts-ignore
 export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -612,7 +612,7 @@ export function createFilteringProfileFromDiscriminatorValue(parseNode: ParseNod
 // @ts-ignore
 export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -688,7 +688,7 @@ export function createForwardingProfileFromDiscriminatorValue(parseNode: ParseNo
 // @ts-ignore
 export function createForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -838,7 +838,7 @@ export function createPeerConnectivityConfigurationFromDiscriminatorValue(parseN
 // @ts-ignore
 export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -869,7 +869,7 @@ export function createPolicyLinkCollectionResponseFromDiscriminatorValue(parseNo
 // @ts-ignore
 export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -909,7 +909,7 @@ export function createPolicyRuleDeltaFromDiscriminatorValue(parseNode: ParseNode
 // @ts-ignore
 export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -959,7 +959,7 @@ export function createPrivateAccessForwardingRuleFromDiscriminatorValue(parseNod
 // @ts-ignore
 export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -1035,7 +1035,7 @@ export function createRelatedRemoteNetworkFromDiscriminatorValue(parseNode: Pars
 // @ts-ignore
 export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -1172,7 +1172,7 @@ export function createReportsFromDiscriminatorValue(parseNode: ParseNode | undef
 // @ts-ignore
 export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -1238,7 +1238,7 @@ export function createTransactionSummaryFromDiscriminatorValue(parseNode: ParseN
 // @ts-ignore
 export function createTunnelConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode.getChildNode("@odata.type");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
     if (mappingValueNode) {
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
@@ -5632,6 +5632,8 @@ export const FilteringPolicyActionObject = {
     Block: "block",
     Allow: "allow",
     UnknownFutureValue: "unknownFutureValue",
+    Bypass: "bypass",
+    Alert: "alert",
 } as const;
 export const ForwardingCategoryObject = {
     DefaultEscaped: "default",

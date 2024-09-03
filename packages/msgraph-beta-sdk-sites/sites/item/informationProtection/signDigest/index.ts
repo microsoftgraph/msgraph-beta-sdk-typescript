@@ -35,7 +35,7 @@ export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBo
 // @ts-ignore
 export function serializeSignDigestPostRequestBody(writer: SerializationWriter, signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined | null = {}) : void {
     if (signDigestPostRequestBody) {
-        writer.writeStringValue("digest", signDigestPostRequestBody.digest);
+        writer.writeObjectValue("digest", signDigestPostRequestBody.digest);
         writer.writeAdditionalData(signDigestPostRequestBody.additionalData);
     }
 }
@@ -51,7 +51,7 @@ export interface SignDigestPostRequestBody extends AdditionalDataHolder, BackedM
     /**
      * The digest property
      */
-    digest?: string | null;
+    digest?: String | null;
 }
 /**
  * Provides operations to call the signDigest method.

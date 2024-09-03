@@ -36,7 +36,7 @@ export function deserializeIntoUploadNewVersionPostRequestBody(uploadNewVersionP
 // @ts-ignore
 export function serializeUploadNewVersionPostRequestBody(writer: SerializationWriter, uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined | null = {}) : void {
     if (uploadNewVersionPostRequestBody) {
-        writer.writeStringValue("content", uploadNewVersionPostRequestBody.content);
+        writer.writeObjectValue("content", uploadNewVersionPostRequestBody.content);
         writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", uploadNewVersionPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
         writer.writeAdditionalData(uploadNewVersionPostRequestBody.additionalData);
     }
@@ -53,7 +53,7 @@ export interface UploadNewVersionPostRequestBody extends AdditionalDataHolder, B
     /**
      * The content property
      */
-    content?: string | null;
+    content?: String | null;
     /**
      * The groupPolicyUploadedLanguageFiles property
      */

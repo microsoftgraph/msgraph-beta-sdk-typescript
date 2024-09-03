@@ -131,6 +131,7 @@ export const AuthenticationStrengthPoliciesRequestBuilderNavigationMetadata: Rec
     },
     findByMethodModeWithAuthenticationMethodModes: {
         requestsMetadata: FindByMethodModeWithAuthenticationMethodModesRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["authenticationMethodModes"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

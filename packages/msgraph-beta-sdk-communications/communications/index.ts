@@ -110,6 +110,7 @@ export const CommunicationsRequestBuilderNavigationMetadata: Record<Exclude<keyo
     onlineMeetingsWithJoinWebUrl: {
         requestsMetadata: OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata,
         navigationMetadata: OnlineMeetingsWithJoinWebUrlRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["joinWebUrl"],
     },
     callRecords: {
         requestsMetadata: CallRecordsRequestBuilderRequestsMetadata,

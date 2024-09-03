@@ -134,13 +134,16 @@ export const VirtualEventWebinarItemRequestBuilderNavigationMetadata: Record<Exc
     registrationsWithEmail: {
         requestsMetadata: RegistrationsWithEmailRequestBuilderRequestsMetadata,
         navigationMetadata: RegistrationsWithEmailRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["email"],
     },
     registrationsWithUserId: {
         requestsMetadata: RegistrationsWithUserIdRequestBuilderRequestsMetadata,
         navigationMetadata: RegistrationsWithUserIdRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["userId"],
     },
     sessionsWithJoinWebUrl: {
         requestsMetadata: SessionsWithJoinWebUrlRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["joinWebUrl"],
     },
     presenters: {
         requestsMetadata: PresentersRequestBuilderRequestsMetadata,

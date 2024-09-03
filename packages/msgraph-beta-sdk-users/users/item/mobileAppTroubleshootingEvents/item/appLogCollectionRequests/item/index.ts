@@ -27,7 +27,7 @@ export interface AppLogCollectionRequestItemRequestBuilder extends BaseRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Indicates collection of App Log Upload Request.
+     * The collection property of AppLogUploadRequest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppLogCollectionRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -51,7 +51,7 @@ export interface AppLogCollectionRequestItemRequestBuilder extends BaseRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Indicates collection of App Log Upload Request.
+     * The collection property of AppLogUploadRequest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -67,7 +67,7 @@ export interface AppLogCollectionRequestItemRequestBuilder extends BaseRequestBu
      toPatchRequestInformation(body: AppLogCollectionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Indicates collection of App Log Upload Request.
+ * The collection property of AppLogUploadRequest.
  */
 export interface AppLogCollectionRequestItemRequestBuilderGetQueryParameters {
     /**

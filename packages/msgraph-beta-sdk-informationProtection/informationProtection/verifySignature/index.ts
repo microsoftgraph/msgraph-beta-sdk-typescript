@@ -37,8 +37,8 @@ export function deserializeIntoVerifySignaturePostRequestBody(verifySignaturePos
 // @ts-ignore
 export function serializeVerifySignaturePostRequestBody(writer: SerializationWriter, verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined | null = {}) : void {
     if (verifySignaturePostRequestBody) {
-        writer.writeStringValue("digest", verifySignaturePostRequestBody.digest);
-        writer.writeStringValue("signature", verifySignaturePostRequestBody.signature);
+        writer.writeObjectValue("digest", verifySignaturePostRequestBody.digest);
+        writer.writeObjectValue("signature", verifySignaturePostRequestBody.signature);
         writer.writeStringValue("signingKeyId", verifySignaturePostRequestBody.signingKeyId);
         writer.writeAdditionalData(verifySignaturePostRequestBody.additionalData);
     }
@@ -55,11 +55,11 @@ export interface VerifySignaturePostRequestBody extends AdditionalDataHolder, Ba
     /**
      * The digest property
      */
-    digest?: string | null;
+    digest?: String | null;
     /**
      * The signature property
      */
-    signature?: string | null;
+    signature?: String | null;
     /**
      * The signingKeyId property
      */

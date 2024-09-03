@@ -127,6 +127,7 @@ export const UserExperienceAnalyticsRemoteConnectionRequestBuilderNavigationMeta
     },
     summarizeDeviceRemoteConnectionWithSummarizeBy: {
         requestsMetadata: SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["summarizeBy"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

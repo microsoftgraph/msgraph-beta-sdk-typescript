@@ -143,6 +143,7 @@ const AccessPackageCatalogItemRequestBuilderGetQueryParametersMapper: Record<str
 export const AccessPackageCatalogItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AccessPackageCatalogItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     accessPackagesWithUniqueName: {
         requestsMetadata: AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["uniqueName"],
     },
     accessPackageCustomWorkflowExtensions: {
         requestsMetadata: AccessPackageCustomWorkflowExtensionsRequestBuilderRequestsMetadata,

@@ -128,6 +128,7 @@ export const ScheduledPermissionsApprovalsRequestBuilderNavigationMetadata: Reco
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

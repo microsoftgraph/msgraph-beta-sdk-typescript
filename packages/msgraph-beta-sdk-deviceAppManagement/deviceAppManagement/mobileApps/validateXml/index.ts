@@ -53,7 +53,7 @@ export function deserializeIntoValidateXmlPostResponse(validateXmlPostResponse: 
 // @ts-ignore
 export function serializeValidateXmlPostRequestBody(writer: SerializationWriter, validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined | null = {}) : void {
     if (validateXmlPostRequestBody) {
-        writer.writeStringValue("officeConfigurationXml", validateXmlPostRequestBody.officeConfigurationXml);
+        writer.writeObjectValue("officeConfigurationXml", validateXmlPostRequestBody.officeConfigurationXml);
         writer.writeAdditionalData(validateXmlPostRequestBody.additionalData);
     }
 }
@@ -80,7 +80,7 @@ export interface ValidateXmlPostRequestBody extends AdditionalDataHolder, Backed
     /**
      * The officeConfigurationXml property
      */
-    officeConfigurationXml?: string | null;
+    officeConfigurationXml?: String | null;
 }
 export interface ValidateXmlPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
