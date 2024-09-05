@@ -14,6 +14,8 @@ import { MessagesRequestBuilderNavigationMetadata, MessagesRequestBuilderRequest
 // @ts-ignore
 import { MoveRequestBuilderRequestsMetadata, type MoveRequestBuilder } from './move/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { type UserConfigurationsRequestBuilder, UserConfigurationsRequestBuilderNavigationMetadata, UserConfigurationsRequestBuilderRequestsMetadata } from './userConfigurations/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -42,6 +44,11 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get move(): MoveRequestBuilder;
+    /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -139,6 +146,9 @@ export const MailFolderItemRequestBuilderNavigationMetadata: Record<Exclude<keyo
     },
     move: {
         requestsMetadata: MoveRequestBuilderRequestsMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
     userConfigurations: {
         requestsMetadata: UserConfigurationsRequestBuilderRequestsMetadata,

@@ -38,6 +38,44 @@ export interface ActivityLog extends AdditionalDataHolder, BackedModel, Parsable
 }
 export interface AdditionalDataDictionary extends Dictionary, Parsable {
 }
+export interface AdminsMfaEnforcedSecurityRequirement extends Parsable, SecurityRequirement {
+    /**
+     * The number of admins who are required to use MFA, but haven't completed registration.
+     */
+    adminsRequiredNotUsingMfaCount?: number | null;
+    /**
+     * The legacyPerUserMfaStatus property
+     */
+    legacyPerUserMfaStatus?: PolicyStatus | null;
+    /**
+     * The mfaConditionalAccessPolicyStatus property
+     */
+    mfaConditionalAccessPolicyStatus?: PolicyStatus | null;
+    /**
+     * The number of admins who are using MFA.
+     */
+    mfaEnabledAdminsCount?: number | null;
+    /**
+     * The number of users who are using MFA.
+     */
+    mfaEnabledUsersCount?: number | null;
+    /**
+     * The securityDefaultsStatus property
+     */
+    securityDefaultsStatus?: PolicyStatus | null;
+    /**
+     * The total number of admins in the partner's tenant.
+     */
+    totalAdminsCount?: number | null;
+    /**
+     * The total number of users in the partner's tenant.
+     */
+    totalUsersCount?: number | null;
+    /**
+     * The number of users who are required to use MFA, but haven't completed registration.
+     */
+    usersRequiredNotUsingMfaCount?: number | null;
+}
 export interface AffectedResource extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -60,6 +98,7 @@ export interface AffectedResource extends AdditionalDataHolder, BackedModel, Par
      */
     resourceType?: string | null;
 }
+export type ComplianceStatus = (typeof ComplianceStatusObject)[keyof typeof ComplianceStatusObject];
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -81,11 +120,65 @@ export function createAdditionalDataDictionaryFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AdminsMfaEnforcedSecurityRequirement}
+ */
+// @ts-ignore
+export function createAdminsMfaEnforcedSecurityRequirementFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAdminsMfaEnforcedSecurityRequirement;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AffectedResource}
  */
 // @ts-ignore
 export function createAffectedResourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAffectedResource;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomerInsightCollectionResponse}
+ */
+// @ts-ignore
+export function createCustomerInsightCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomerInsightCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomerInsight}
+ */
+// @ts-ignore
+export function createCustomerInsightFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomerInsight;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomerMfaInsight}
+ */
+// @ts-ignore
+export function createCustomerMfaInsightFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomerMfaInsight;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomersMfaEnforcedSecurityRequirement}
+ */
+// @ts-ignore
+export function createCustomersMfaEnforcedSecurityRequirementFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomersMfaEnforcedSecurityRequirement;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomersSpendingBudgetSecurityRequirement}
+ */
+// @ts-ignore
+export function createCustomersSpendingBudgetSecurityRequirementFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomersSpendingBudgetSecurityRequirement;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -113,6 +206,163 @@ export function createPartnerSecurityAlertFromDiscriminatorValue(parseNode: Pars
 // @ts-ignore
 export function createPartnerSecurityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPartnerSecurity;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PartnerSecurityScore}
+ */
+// @ts-ignore
+export function createPartnerSecurityScoreFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPartnerSecurityScore;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ResponseTimeSecurityRequirement}
+ */
+// @ts-ignore
+export function createResponseTimeSecurityRequirementFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoResponseTimeSecurityRequirement;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityRequirementCollectionResponse}
+ */
+// @ts-ignore
+export function createSecurityRequirementCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityRequirementCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityRequirement}
+ */
+// @ts-ignore
+export function createSecurityRequirementFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement":
+                    return deserializeIntoAdminsMfaEnforcedSecurityRequirement;
+                case "#microsoft.graph.partner.security.customersMfaEnforcedSecurityRequirement":
+                    return deserializeIntoCustomersMfaEnforcedSecurityRequirement;
+                case "#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement":
+                    return deserializeIntoCustomersSpendingBudgetSecurityRequirement;
+                case "#microsoft.graph.partner.security.responseTimeSecurityRequirement":
+                    return deserializeIntoResponseTimeSecurityRequirement;
+            }
+        }
+    }
+    return deserializeIntoSecurityRequirement;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityScoreHistoryCollectionResponse}
+ */
+// @ts-ignore
+export function createSecurityScoreHistoryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityScoreHistoryCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityScoreHistory}
+ */
+// @ts-ignore
+export function createSecurityScoreHistoryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityScoreHistory;
+}
+export interface CustomerInsight extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Details of the customer's Entra tenant MFA policy configuration and usage.
+     */
+    mfa?: CustomerMfaInsight | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The unique identifier for the customer.
+     */
+    tenantId?: string | null;
+}
+export interface CustomerInsightCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: CustomerInsight[] | null;
+}
+export interface CustomerMfaInsight extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The number of admins that are compliant with the MFA requirements
+     */
+    compliantAdminsCount?: number | null;
+    /**
+     * The number of users that are compliant with the MFA requirements
+     */
+    compliantNonAdminsCount?: number | null;
+    /**
+     * The legacyPerUserMfaStatus property
+     */
+    legacyPerUserMfaStatus?: PolicyStatus | null;
+    /**
+     * The mfaConditionalAccessPolicyStatus property
+     */
+    mfaConditionalAccessPolicyStatus?: PolicyStatus | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The securityDefaultsStatus property
+     */
+    securityDefaultsStatus?: PolicyStatus | null;
+    /**
+     * The total number of users in the tenant
+     */
+    totalUsersCount?: number | null;
+}
+export interface CustomersMfaEnforcedSecurityRequirement extends Parsable, SecurityRequirement {
+    /**
+     * The number of customer tenants that are compliant.
+     */
+    compliantTenantCount?: number | null;
+    /**
+     * The total number of customer tenants associated with this partner
+     */
+    totalTenantCount?: number | null;
+}
+export interface CustomersSpendingBudgetSecurityRequirement extends Parsable, SecurityRequirement {
+    /**
+     * The number of customers with a spending budget set.
+     */
+    customersWithSpendBudgetCount?: number | null;
+    /**
+     * The total number of customers associated with the partner.
+     */
+    totalCustomersCount?: number | null;
 }
 /**
  * The deserialization information for the current model
@@ -144,6 +394,25 @@ export function deserializeIntoAdditionalDataDictionary(additionalDataDictionary
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoAdminsMfaEnforcedSecurityRequirement(adminsMfaEnforcedSecurityRequirement: Partial<AdminsMfaEnforcedSecurityRequirement> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSecurityRequirement(adminsMfaEnforcedSecurityRequirement),
+        "adminsRequiredNotUsingMfaCount": n => { adminsMfaEnforcedSecurityRequirement.adminsRequiredNotUsingMfaCount = n.getNumberValue(); },
+        "legacyPerUserMfaStatus": n => { adminsMfaEnforcedSecurityRequirement.legacyPerUserMfaStatus = n.getEnumValue<PolicyStatus>(PolicyStatusObject); },
+        "mfaConditionalAccessPolicyStatus": n => { adminsMfaEnforcedSecurityRequirement.mfaConditionalAccessPolicyStatus = n.getEnumValue<PolicyStatus>(PolicyStatusObject); },
+        "mfaEnabledAdminsCount": n => { adminsMfaEnforcedSecurityRequirement.mfaEnabledAdminsCount = n.getNumberValue(); },
+        "mfaEnabledUsersCount": n => { adminsMfaEnforcedSecurityRequirement.mfaEnabledUsersCount = n.getNumberValue(); },
+        "securityDefaultsStatus": n => { adminsMfaEnforcedSecurityRequirement.securityDefaultsStatus = n.getEnumValue<PolicyStatus>(PolicyStatusObject); },
+        "totalAdminsCount": n => { adminsMfaEnforcedSecurityRequirement.totalAdminsCount = n.getNumberValue(); },
+        "totalUsersCount": n => { adminsMfaEnforcedSecurityRequirement.totalUsersCount = n.getNumberValue(); },
+        "usersRequiredNotUsingMfaCount": n => { adminsMfaEnforcedSecurityRequirement.usersRequiredNotUsingMfaCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoAffectedResource(affectedResource: Partial<AffectedResource> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { affectedResource.backingStoreEnabled = true; },
@@ -157,10 +426,76 @@ export function deserializeIntoAffectedResource(affectedResource: Partial<Affect
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoCustomerInsight(customerInsight: Partial<CustomerInsight> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { customerInsight.backingStoreEnabled = true; },
+        "mfa": n => { customerInsight.mfa = n.getObjectValue<CustomerMfaInsight>(createCustomerMfaInsightFromDiscriminatorValue); },
+        "@odata.type": n => { customerInsight.odataType = n.getStringValue(); },
+        "tenantId": n => { customerInsight.tenantId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomerInsightCollectionResponse(customerInsightCollectionResponse: Partial<CustomerInsightCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(customerInsightCollectionResponse),
+        "value": n => { customerInsightCollectionResponse.value = n.getCollectionOfObjectValues<CustomerInsight>(createCustomerInsightFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomerMfaInsight(customerMfaInsight: Partial<CustomerMfaInsight> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { customerMfaInsight.backingStoreEnabled = true; },
+        "compliantAdminsCount": n => { customerMfaInsight.compliantAdminsCount = n.getNumberValue(); },
+        "compliantNonAdminsCount": n => { customerMfaInsight.compliantNonAdminsCount = n.getNumberValue(); },
+        "legacyPerUserMfaStatus": n => { customerMfaInsight.legacyPerUserMfaStatus = n.getEnumValue<PolicyStatus>(PolicyStatusObject); },
+        "mfaConditionalAccessPolicyStatus": n => { customerMfaInsight.mfaConditionalAccessPolicyStatus = n.getEnumValue<PolicyStatus>(PolicyStatusObject); },
+        "@odata.type": n => { customerMfaInsight.odataType = n.getStringValue(); },
+        "securityDefaultsStatus": n => { customerMfaInsight.securityDefaultsStatus = n.getEnumValue<PolicyStatus>(PolicyStatusObject); },
+        "totalUsersCount": n => { customerMfaInsight.totalUsersCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomersMfaEnforcedSecurityRequirement(customersMfaEnforcedSecurityRequirement: Partial<CustomersMfaEnforcedSecurityRequirement> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSecurityRequirement(customersMfaEnforcedSecurityRequirement),
+        "compliantTenantCount": n => { customersMfaEnforcedSecurityRequirement.compliantTenantCount = n.getNumberValue(); },
+        "totalTenantCount": n => { customersMfaEnforcedSecurityRequirement.totalTenantCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomersSpendingBudgetSecurityRequirement(customersSpendingBudgetSecurityRequirement: Partial<CustomersSpendingBudgetSecurityRequirement> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSecurityRequirement(customersSpendingBudgetSecurityRequirement),
+        "customersWithSpendBudgetCount": n => { customersSpendingBudgetSecurityRequirement.customersWithSpendBudgetCount = n.getNumberValue(); },
+        "totalCustomersCount": n => { customersSpendingBudgetSecurityRequirement.totalCustomersCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoPartnerSecurity(partnerSecurity: Partial<PartnerSecurity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(partnerSecurity),
         "securityAlerts": n => { partnerSecurity.securityAlerts = n.getCollectionOfObjectValues<PartnerSecurityAlert>(createPartnerSecurityAlertFromDiscriminatorValue); },
+        "securityScore": n => { partnerSecurity.securityScore = n.getObjectValue<PartnerSecurityScore>(createPartnerSecurityScoreFromDiscriminatorValue); },
     }
 }
 /**
@@ -204,11 +539,97 @@ export function deserializeIntoPartnerSecurityAlertCollectionResponse(partnerSec
         "value": n => { partnerSecurityAlertCollectionResponse.value = n.getCollectionOfObjectValues<PartnerSecurityAlert>(createPartnerSecurityAlertFromDiscriminatorValue); },
     }
 }
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPartnerSecurityScore(partnerSecurityScore: Partial<PartnerSecurityScore> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(partnerSecurityScore),
+        "currentScore": n => { partnerSecurityScore.currentScore = n.getNumberValue(); },
+        "customerInsights": n => { partnerSecurityScore.customerInsights = n.getCollectionOfObjectValues<CustomerInsight>(createCustomerInsightFromDiscriminatorValue); },
+        "history": n => { partnerSecurityScore.history = n.getCollectionOfObjectValues<SecurityScoreHistory>(createSecurityScoreHistoryFromDiscriminatorValue); },
+        "lastRefreshDateTime": n => { partnerSecurityScore.lastRefreshDateTime = n.getDateValue(); },
+        "maxScore": n => { partnerSecurityScore.maxScore = n.getNumberValue(); },
+        "requirements": n => { partnerSecurityScore.requirements = n.getCollectionOfObjectValues<SecurityRequirement>(createSecurityRequirementFromDiscriminatorValue); },
+        "updatedDateTime": n => { partnerSecurityScore.updatedDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoResponseTimeSecurityRequirement(responseTimeSecurityRequirement: Partial<ResponseTimeSecurityRequirement> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSecurityRequirement(responseTimeSecurityRequirement),
+        "averageResponseTimeInHours": n => { responseTimeSecurityRequirement.averageResponseTimeInHours = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityRequirement(securityRequirement: Partial<SecurityRequirement> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(securityRequirement),
+        "actionUrl": n => { securityRequirement.actionUrl = n.getStringValue(); },
+        "complianceStatus": n => { securityRequirement.complianceStatus = n.getEnumValue<ComplianceStatus>(ComplianceStatusObject); },
+        "helpUrl": n => { securityRequirement.helpUrl = n.getStringValue(); },
+        "maxScore": n => { securityRequirement.maxScore = n.getNumberValue(); },
+        "requirementType": n => { securityRequirement.requirementType = n.getEnumValue<SecurityRequirementType>(SecurityRequirementTypeObject); },
+        "score": n => { securityRequirement.score = n.getNumberValue(); },
+        "state": n => { securityRequirement.state = n.getEnumValue<SecurityRequirementState>(SecurityRequirementStateObject); },
+        "updatedDateTime": n => { securityRequirement.updatedDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityRequirementCollectionResponse(securityRequirementCollectionResponse: Partial<SecurityRequirementCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(securityRequirementCollectionResponse),
+        "value": n => { securityRequirementCollectionResponse.value = n.getCollectionOfObjectValues<SecurityRequirement>(createSecurityRequirementFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityScoreHistory(securityScoreHistory: Partial<SecurityScoreHistory> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(securityScoreHistory),
+        "compliantRequirementsCount": n => { securityScoreHistory.compliantRequirementsCount = n.getNumberValue(); },
+        "createdDateTime": n => { securityScoreHistory.createdDateTime = n.getDateValue(); },
+        "score": n => { securityScoreHistory.score = n.getNumberValue(); },
+        "totalRequirementsCount": n => { securityScoreHistory.totalRequirementsCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityScoreHistoryCollectionResponse(securityScoreHistoryCollectionResponse: Partial<SecurityScoreHistoryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(securityScoreHistoryCollectionResponse),
+        "value": n => { securityScoreHistoryCollectionResponse.value = n.getCollectionOfObjectValues<SecurityScoreHistory>(createSecurityScoreHistoryFromDiscriminatorValue); },
+    }
+}
 export interface PartnerSecurity extends Entity, Parsable {
     /**
-     * The security alerts or a vulnerability of a CSP partner's customer that the partner must be made aware of for further action.
+     * The security alerts or a vulnerability of a Cloud Solution Provider (CSP) partner's customer that the partner must be made aware of for further action.
      */
     securityAlerts?: PartnerSecurityAlert[] | null;
+    /**
+     * The security score calculated for the CSP partner and their customers.
+     */
+    securityScore?: PartnerSecurityScore | null;
 }
 export interface PartnerSecurityAlert extends Entity, Parsable {
     /**
@@ -298,10 +719,113 @@ export interface PartnerSecurityAlertCollectionResponse extends BaseCollectionPa
      */
     value?: PartnerSecurityAlert[] | null;
 }
+export interface PartnerSecurityScore extends Entity, Parsable {
+    /**
+     * The current security score for the partner.
+     */
+    currentScore?: number | null;
+    /**
+     * Contains customer-specific information for certain requirements.
+     */
+    customerInsights?: CustomerInsight[] | null;
+    /**
+     * Contains a list of recent score changes.
+     */
+    history?: SecurityScoreHistory[] | null;
+    /**
+     * The last time the data was checked.
+     */
+    lastRefreshDateTime?: Date | null;
+    /**
+     * The maximum score possible.
+     */
+    maxScore?: number | null;
+    /**
+     * Contains the list of security requirements that make up the score.
+     */
+    requirements?: SecurityRequirement[] | null;
+    /**
+     * The last time the security score or related properties changed.
+     */
+    updatedDateTime?: Date | null;
+}
+export type PolicyStatus = (typeof PolicyStatusObject)[keyof typeof PolicyStatusObject];
+export interface ResponseTimeSecurityRequirement extends Parsable, SecurityRequirement {
+    /**
+     * The average response time for alerts from the past 30 days.
+     */
+    averageResponseTimeInHours?: number | null;
+}
 export type SecurityAlertConfidence = (typeof SecurityAlertConfidenceObject)[keyof typeof SecurityAlertConfidenceObject];
 export type SecurityAlertResolvedReason = (typeof SecurityAlertResolvedReasonObject)[keyof typeof SecurityAlertResolvedReasonObject];
 export type SecurityAlertSeverity = (typeof SecurityAlertSeverityObject)[keyof typeof SecurityAlertSeverityObject];
 export type SecurityAlertStatus = (typeof SecurityAlertStatusObject)[keyof typeof SecurityAlertStatusObject];
+export interface SecurityRequirement extends Entity, Parsable {
+    /**
+     * The link to the site where the admin can take action on the requirement.
+     */
+    actionUrl?: string | null;
+    /**
+     * The complianceStatus property
+     */
+    complianceStatus?: ComplianceStatus | null;
+    /**
+     * The link to documentation for the requirement.
+     */
+    helpUrl?: string | null;
+    /**
+     * The maximum score possible for the requirement.
+     */
+    maxScore?: number | null;
+    /**
+     * The requirementType property
+     */
+    requirementType?: SecurityRequirementType | null;
+    /**
+     * The score received for this requirement.
+     */
+    score?: number | null;
+    /**
+     * The state property
+     */
+    state?: SecurityRequirementState | null;
+    /**
+     * The date the requirement properties were last updated.
+     */
+    updatedDateTime?: Date | null;
+}
+export interface SecurityRequirementCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: SecurityRequirement[] | null;
+}
+export type SecurityRequirementState = (typeof SecurityRequirementStateObject)[keyof typeof SecurityRequirementStateObject];
+export type SecurityRequirementType = (typeof SecurityRequirementTypeObject)[keyof typeof SecurityRequirementTypeObject];
+export interface SecurityScoreHistory extends Entity, Parsable {
+    /**
+     * The number of compliant security requirements at the time.
+     */
+    compliantRequirementsCount?: number | null;
+    /**
+     * The date the history entry was created.
+     */
+    createdDateTime?: Date | null;
+    /**
+     * The score recorded at the time.
+     */
+    score?: number | null;
+    /**
+     * The total number of requirements at the time.
+     */
+    totalRequirementsCount?: number | null;
+}
+export interface SecurityScoreHistoryCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: SecurityScoreHistory[] | null;
+}
 /**
  * Serializes information the current object
  * @param writer Serialization writer to use to serialize this model
@@ -332,6 +856,25 @@ export function serializeAdditionalDataDictionary(writer: SerializationWriter, a
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeAdminsMfaEnforcedSecurityRequirement(writer: SerializationWriter, adminsMfaEnforcedSecurityRequirement: Partial<AdminsMfaEnforcedSecurityRequirement> | undefined | null = {}) : void {
+    if (adminsMfaEnforcedSecurityRequirement) {
+        serializeSecurityRequirement(writer, adminsMfaEnforcedSecurityRequirement)
+        writer.writeNumberValue("adminsRequiredNotUsingMfaCount", adminsMfaEnforcedSecurityRequirement.adminsRequiredNotUsingMfaCount);
+        writer.writeEnumValue<PolicyStatus>("legacyPerUserMfaStatus", adminsMfaEnforcedSecurityRequirement.legacyPerUserMfaStatus);
+        writer.writeEnumValue<PolicyStatus>("mfaConditionalAccessPolicyStatus", adminsMfaEnforcedSecurityRequirement.mfaConditionalAccessPolicyStatus);
+        writer.writeNumberValue("mfaEnabledAdminsCount", adminsMfaEnforcedSecurityRequirement.mfaEnabledAdminsCount);
+        writer.writeNumberValue("mfaEnabledUsersCount", adminsMfaEnforcedSecurityRequirement.mfaEnabledUsersCount);
+        writer.writeEnumValue<PolicyStatus>("securityDefaultsStatus", adminsMfaEnforcedSecurityRequirement.securityDefaultsStatus);
+        writer.writeNumberValue("totalAdminsCount", adminsMfaEnforcedSecurityRequirement.totalAdminsCount);
+        writer.writeNumberValue("totalUsersCount", adminsMfaEnforcedSecurityRequirement.totalUsersCount);
+        writer.writeNumberValue("usersRequiredNotUsingMfaCount", adminsMfaEnforcedSecurityRequirement.usersRequiredNotUsingMfaCount);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeAffectedResource(writer: SerializationWriter, affectedResource: Partial<AffectedResource> | undefined | null = {}) : void {
     if (affectedResource) {
         writer.writeStringValue("@odata.type", affectedResource.odataType);
@@ -345,10 +888,76 @@ export function serializeAffectedResource(writer: SerializationWriter, affectedR
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeCustomerInsight(writer: SerializationWriter, customerInsight: Partial<CustomerInsight> | undefined | null = {}) : void {
+    if (customerInsight) {
+        writer.writeObjectValue<CustomerMfaInsight>("mfa", customerInsight.mfa, serializeCustomerMfaInsight);
+        writer.writeStringValue("@odata.type", customerInsight.odataType);
+        writer.writeStringValue("tenantId", customerInsight.tenantId);
+        writer.writeAdditionalData(customerInsight.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomerInsightCollectionResponse(writer: SerializationWriter, customerInsightCollectionResponse: Partial<CustomerInsightCollectionResponse> | undefined | null = {}) : void {
+    if (customerInsightCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, customerInsightCollectionResponse)
+        writer.writeCollectionOfObjectValues<CustomerInsight>("value", customerInsightCollectionResponse.value, serializeCustomerInsight);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomerMfaInsight(writer: SerializationWriter, customerMfaInsight: Partial<CustomerMfaInsight> | undefined | null = {}) : void {
+    if (customerMfaInsight) {
+        writer.writeNumberValue("compliantAdminsCount", customerMfaInsight.compliantAdminsCount);
+        writer.writeNumberValue("compliantNonAdminsCount", customerMfaInsight.compliantNonAdminsCount);
+        writer.writeEnumValue<PolicyStatus>("legacyPerUserMfaStatus", customerMfaInsight.legacyPerUserMfaStatus);
+        writer.writeEnumValue<PolicyStatus>("mfaConditionalAccessPolicyStatus", customerMfaInsight.mfaConditionalAccessPolicyStatus);
+        writer.writeStringValue("@odata.type", customerMfaInsight.odataType);
+        writer.writeEnumValue<PolicyStatus>("securityDefaultsStatus", customerMfaInsight.securityDefaultsStatus);
+        writer.writeNumberValue("totalUsersCount", customerMfaInsight.totalUsersCount);
+        writer.writeAdditionalData(customerMfaInsight.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomersMfaEnforcedSecurityRequirement(writer: SerializationWriter, customersMfaEnforcedSecurityRequirement: Partial<CustomersMfaEnforcedSecurityRequirement> | undefined | null = {}) : void {
+    if (customersMfaEnforcedSecurityRequirement) {
+        serializeSecurityRequirement(writer, customersMfaEnforcedSecurityRequirement)
+        writer.writeNumberValue("compliantTenantCount", customersMfaEnforcedSecurityRequirement.compliantTenantCount);
+        writer.writeNumberValue("totalTenantCount", customersMfaEnforcedSecurityRequirement.totalTenantCount);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomersSpendingBudgetSecurityRequirement(writer: SerializationWriter, customersSpendingBudgetSecurityRequirement: Partial<CustomersSpendingBudgetSecurityRequirement> | undefined | null = {}) : void {
+    if (customersSpendingBudgetSecurityRequirement) {
+        serializeSecurityRequirement(writer, customersSpendingBudgetSecurityRequirement)
+        writer.writeNumberValue("customersWithSpendBudgetCount", customersSpendingBudgetSecurityRequirement.customersWithSpendBudgetCount);
+        writer.writeNumberValue("totalCustomersCount", customersSpendingBudgetSecurityRequirement.totalCustomersCount);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializePartnerSecurity(writer: SerializationWriter, partnerSecurity: Partial<PartnerSecurity> | undefined | null = {}) : void {
     if (partnerSecurity) {
         serializeEntity(writer, partnerSecurity)
         writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("securityAlerts", partnerSecurity.securityAlerts, serializePartnerSecurityAlert);
+        writer.writeObjectValue<PartnerSecurityScore>("securityScore", partnerSecurity.securityScore, serializePartnerSecurityScore);
     }
 }
 /**
@@ -392,6 +1001,98 @@ export function serializePartnerSecurityAlertCollectionResponse(writer: Serializ
         writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("value", partnerSecurityAlertCollectionResponse.value, serializePartnerSecurityAlert);
     }
 }
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePartnerSecurityScore(writer: SerializationWriter, partnerSecurityScore: Partial<PartnerSecurityScore> | undefined | null = {}) : void {
+    if (partnerSecurityScore) {
+        serializeEntity(writer, partnerSecurityScore)
+        writer.writeNumberValue("currentScore", partnerSecurityScore.currentScore);
+        writer.writeCollectionOfObjectValues<CustomerInsight>("customerInsights", partnerSecurityScore.customerInsights, serializeCustomerInsight);
+        writer.writeCollectionOfObjectValues<SecurityScoreHistory>("history", partnerSecurityScore.history, serializeSecurityScoreHistory);
+        writer.writeDateValue("lastRefreshDateTime", partnerSecurityScore.lastRefreshDateTime);
+        writer.writeNumberValue("maxScore", partnerSecurityScore.maxScore);
+        writer.writeCollectionOfObjectValues<SecurityRequirement>("requirements", partnerSecurityScore.requirements, serializeSecurityRequirement);
+        writer.writeDateValue("updatedDateTime", partnerSecurityScore.updatedDateTime);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeResponseTimeSecurityRequirement(writer: SerializationWriter, responseTimeSecurityRequirement: Partial<ResponseTimeSecurityRequirement> | undefined | null = {}) : void {
+    if (responseTimeSecurityRequirement) {
+        serializeSecurityRequirement(writer, responseTimeSecurityRequirement)
+        writer.writeNumberValue("averageResponseTimeInHours", responseTimeSecurityRequirement.averageResponseTimeInHours);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityRequirement(writer: SerializationWriter, securityRequirement: Partial<SecurityRequirement> | undefined | null = {}) : void {
+    if (securityRequirement) {
+        serializeEntity(writer, securityRequirement)
+        writer.writeStringValue("actionUrl", securityRequirement.actionUrl);
+        writer.writeEnumValue<ComplianceStatus>("complianceStatus", securityRequirement.complianceStatus);
+        writer.writeStringValue("helpUrl", securityRequirement.helpUrl);
+        writer.writeNumberValue("maxScore", securityRequirement.maxScore);
+        writer.writeEnumValue<SecurityRequirementType>("requirementType", securityRequirement.requirementType);
+        writer.writeNumberValue("score", securityRequirement.score);
+        writer.writeEnumValue<SecurityRequirementState>("state", securityRequirement.state);
+        writer.writeDateValue("updatedDateTime", securityRequirement.updatedDateTime);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityRequirementCollectionResponse(writer: SerializationWriter, securityRequirementCollectionResponse: Partial<SecurityRequirementCollectionResponse> | undefined | null = {}) : void {
+    if (securityRequirementCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, securityRequirementCollectionResponse)
+        writer.writeCollectionOfObjectValues<SecurityRequirement>("value", securityRequirementCollectionResponse.value, serializeSecurityRequirement);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityScoreHistory(writer: SerializationWriter, securityScoreHistory: Partial<SecurityScoreHistory> | undefined | null = {}) : void {
+    if (securityScoreHistory) {
+        serializeEntity(writer, securityScoreHistory)
+        writer.writeNumberValue("compliantRequirementsCount", securityScoreHistory.compliantRequirementsCount);
+        writer.writeDateValue("createdDateTime", securityScoreHistory.createdDateTime);
+        writer.writeNumberValue("score", securityScoreHistory.score);
+        writer.writeNumberValue("totalRequirementsCount", securityScoreHistory.totalRequirementsCount);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityScoreHistoryCollectionResponse(writer: SerializationWriter, securityScoreHistoryCollectionResponse: Partial<SecurityScoreHistoryCollectionResponse> | undefined | null = {}) : void {
+    if (securityScoreHistoryCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, securityScoreHistoryCollectionResponse)
+        writer.writeCollectionOfObjectValues<SecurityScoreHistory>("value", securityScoreHistoryCollectionResponse.value, serializeSecurityScoreHistory);
+    }
+}
+export const ComplianceStatusObject = {
+    Compliant: "compliant",
+    Noncomplaint: "noncomplaint",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const PolicyStatusObject = {
+    Enabled: "enabled",
+    Disabled: "disabled",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const SecurityAlertConfidenceObject = {
     Low: "low",
     Medium: "medium",
@@ -415,6 +1116,19 @@ export const SecurityAlertStatusObject = {
     Active: "active",
     Resolved: "resolved",
     Investigating: "investigating",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const SecurityRequirementStateObject = {
+    Active: "active",
+    Preview: "preview",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const SecurityRequirementTypeObject = {
+    MfaEnforcedForAdmins: "mfaEnforcedForAdmins",
+    MfaEnforcedForAdminsOfCustomers: "mfaEnforcedForAdminsOfCustomers",
+    SecurityAlertsPromptlyResolved: "securityAlertsPromptlyResolved",
+    SecurityContactProvided: "securityContactProvided",
+    SpendingBudgetSetForCustomerAzureSubscriptions: "spendingBudgetSetForCustomerAzureSubscriptions",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 /* tslint:enable */

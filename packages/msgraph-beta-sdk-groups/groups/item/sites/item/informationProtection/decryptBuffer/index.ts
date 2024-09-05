@@ -29,11 +29,11 @@ export interface DecryptBufferPostRequestBody extends AdditionalDataHolder, Back
     /**
      * The encryptedBuffer property
      */
-    encryptedBuffer?: string | null;
+    encryptedBuffer?: String | null;
     /**
      * The publishingLicense property
      */
-    publishingLicense?: string | null;
+    publishingLicense?: String | null;
 }
 /**
  * Provides operations to call the decryptBuffer method.
@@ -76,8 +76,8 @@ export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostReq
 // @ts-ignore
 export function serializeDecryptBufferPostRequestBody(writer: SerializationWriter, decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined | null = {}) : void {
     if (decryptBufferPostRequestBody) {
-        writer.writeStringValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
-        writer.writeStringValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
+        writer.writeObjectValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
+        writer.writeObjectValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
         writer.writeAdditionalData(decryptBufferPostRequestBody.additionalData);
     }
 }

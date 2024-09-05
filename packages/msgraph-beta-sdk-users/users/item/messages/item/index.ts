@@ -28,6 +28,8 @@ import { MentionsRequestBuilderNavigationMetadata, MentionsRequestBuilderRequest
 // @ts-ignore
 import { MoveRequestBuilderRequestsMetadata, type MoveRequestBuilder } from './move/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { ReplyRequestBuilderRequestsMetadata, type ReplyRequestBuilder } from './reply/index.js';
 // @ts-ignore
 import { ReplyAllRequestBuilderRequestsMetadata, type ReplyAllRequestBuilder } from './replyAll/index.js';
@@ -104,6 +106,11 @@ export interface MessageItemRequestBuilder extends BaseRequestBuilder<MessageIte
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get move(): MoveRequestBuilder;
+    /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to call the reply method.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -241,6 +248,9 @@ export const MessageItemRequestBuilderNavigationMetadata: Record<Exclude<keyof M
     },
     move: {
         requestsMetadata: MoveRequestBuilderRequestsMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
     reply: {
         requestsMetadata: ReplyRequestBuilderRequestsMetadata,

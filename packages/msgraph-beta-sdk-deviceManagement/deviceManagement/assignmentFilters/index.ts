@@ -146,6 +146,7 @@ export const AssignmentFiltersRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     getPlatformSupportedPropertiesWithPlatform: {
         requestsMetadata: GetPlatformSupportedPropertiesWithPlatformRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["platform"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

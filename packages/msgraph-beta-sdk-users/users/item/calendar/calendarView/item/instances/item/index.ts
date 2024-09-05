@@ -24,6 +24,8 @@ import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderReq
 // @ts-ignore
 import { ForwardRequestBuilderRequestsMetadata, type ForwardRequestBuilder } from './forward/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { SnoozeReminderRequestBuilderRequestsMetadata, type SnoozeReminderRequestBuilder } from './snoozeReminder/index.js';
 // @ts-ignore
 import { TentativelyAcceptRequestBuilderRequestsMetadata, type TentativelyAcceptRequestBuilder } from './tentativelyAccept/index.js';
@@ -80,6 +82,11 @@ export interface EventItemRequestBuilder extends BaseRequestBuilder<EventItemReq
      */
     get forward(): ForwardRequestBuilder;
     /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
+    /**
      * Provides operations to call the snoozeReminder method.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
@@ -90,7 +97,7 @@ export interface EventItemRequestBuilder extends BaseRequestBuilder<EventItemReq
      */
     get tentativelyAccept(): TentativelyAcceptRequestBuilder;
     /**
-     * The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+     * The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Event>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -98,7 +105,7 @@ export interface EventItemRequestBuilder extends BaseRequestBuilder<EventItemReq
      */
      get(requestConfiguration?: RequestConfiguration<EventItemRequestBuilderGetQueryParameters> | undefined) : Promise<Event | undefined>;
     /**
-     * The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+     * The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -106,7 +113,7 @@ export interface EventItemRequestBuilder extends BaseRequestBuilder<EventItemReq
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+ * The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
  */
 export interface EventItemRequestBuilderGetQueryParameters {
     /**
@@ -170,6 +177,9 @@ export const EventItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Eve
     },
     forward: {
         requestsMetadata: ForwardRequestBuilderRequestsMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
     snoozeReminder: {
         requestsMetadata: SnoozeReminderRequestBuilderRequestsMetadata,

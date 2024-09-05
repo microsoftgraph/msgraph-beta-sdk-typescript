@@ -134,6 +134,7 @@ export const VppTokensRequestBuilderNavigationMetadata: Record<Exclude<keyof Vpp
     },
     getLicensesForAppWithBundleId: {
         requestsMetadata: GetLicensesForAppWithBundleIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["bundleId"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

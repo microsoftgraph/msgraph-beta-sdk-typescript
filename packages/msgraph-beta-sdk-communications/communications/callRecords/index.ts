@@ -166,18 +166,23 @@ export const CallRecordsRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     },
     microsoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime: {
         requestsMetadata: MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["fromDateTime", "toDateTime"],
     },
     microsoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime: {
         requestsMetadata: MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["fromDateTime", "toDateTime"],
     },
     microsoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime: {
         requestsMetadata: MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["fromDateTime", "toDateTime"],
     },
     microsoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime: {
         requestsMetadata: MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["fromDateTime", "toDateTime"],
     },
     microsoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime: {
         requestsMetadata: MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["fromDateTime", "toDateTime"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

@@ -198,13 +198,16 @@ const EntitlementManagementRequestBuilderGetQueryParametersMapper: Record<string
 export const EntitlementManagementRequestBuilderNavigationMetadata: Record<Exclude<keyof EntitlementManagementRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     accessPackageCatalogsWithUniqueName: {
         requestsMetadata: AccessPackageCatalogsWithUniqueNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["uniqueName"],
     },
     accessPackagesWithUniqueName: {
         requestsMetadata: AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackagesWithUniqueNameRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["uniqueName"],
     },
     subjectsWithObjectId: {
         requestsMetadata: SubjectsWithObjectIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["objectId"],
     },
     accessPackageAssignmentApprovals: {
         requestsMetadata: AccessPackageAssignmentApprovalsRequestBuilderRequestsMetadata,

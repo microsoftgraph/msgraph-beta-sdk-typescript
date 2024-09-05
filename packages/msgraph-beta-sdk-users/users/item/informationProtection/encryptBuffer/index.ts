@@ -43,7 +43,7 @@ export interface EncryptBufferPostRequestBody extends AdditionalDataHolder, Back
     /**
      * The buffer property
      */
-    buffer?: string | null;
+    buffer?: String | null;
     /**
      * The labelId property
      */
@@ -78,7 +78,7 @@ export interface EncryptBufferRequestBuilder extends BaseRequestBuilder<EncryptB
 // @ts-ignore
 export function serializeEncryptBufferPostRequestBody(writer: SerializationWriter, encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined | null = {}) : void {
     if (encryptBufferPostRequestBody) {
-        writer.writeStringValue("buffer", encryptBufferPostRequestBody.buffer);
+        writer.writeObjectValue("buffer", encryptBufferPostRequestBody.buffer);
         writer.writeGuidValue("labelId", encryptBufferPostRequestBody.labelId);
         writer.writeAdditionalData(encryptBufferPostRequestBody.additionalData);
     }

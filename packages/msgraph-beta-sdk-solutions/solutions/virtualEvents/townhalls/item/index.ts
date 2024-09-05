@@ -105,6 +105,7 @@ const VirtualEventTownhallItemRequestBuilderGetQueryParametersMapper: Record<str
 export const VirtualEventTownhallItemRequestBuilderNavigationMetadata: Record<Exclude<keyof VirtualEventTownhallItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     sessionsWithJoinWebUrl: {
         requestsMetadata: SessionsWithJoinWebUrlRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["joinWebUrl"],
     },
     presenters: {
         requestsMetadata: PresentersRequestBuilderRequestsMetadata,

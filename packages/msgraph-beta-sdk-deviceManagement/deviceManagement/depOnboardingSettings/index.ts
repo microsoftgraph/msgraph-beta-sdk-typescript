@@ -128,6 +128,7 @@ export const DepOnboardingSettingsRequestBuilderNavigationMetadata: Record<Exclu
     },
     getExpiringVppTokenCountWithExpiringBeforeDateTime: {
         requestsMetadata: GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["expiringBeforeDateTime"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

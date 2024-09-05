@@ -10,6 +10,8 @@ import { AttachmentsRequestBuilderNavigationMetadata, AttachmentsRequestBuilderR
 // @ts-ignore
 import { CompleteRequestBuilderRequestsMetadata, type CompleteRequestBuilder } from './complete/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -26,6 +28,11 @@ export interface OutlookTaskItemRequestBuilder extends BaseRequestBuilder<Outloo
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get complete(): CompleteRequestBuilder;
+    /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Delete navigation property tasks for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -107,6 +114,9 @@ export const OutlookTaskItemRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     complete: {
         requestsMetadata: CompleteRequestBuilderRequestsMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
 };
 /**

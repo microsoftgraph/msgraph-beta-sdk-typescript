@@ -16,6 +16,8 @@ import { EventsRequestBuilderNavigationMetadata, EventsRequestBuilderRequestsMet
 // @ts-ignore
 import { GetScheduleRequestBuilderRequestsMetadata, type GetScheduleRequestBuilder } from './getSchedule/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -38,6 +40,10 @@ export interface CalendarRequestBuilder extends BaseRequestBuilder<CalendarReque
      * Provides operations to call the getSchedule method.
      */
     get getSchedule(): GetScheduleRequestBuilder;
+    /**
+     * Provides operations to call the permanentDelete method.
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to call the allowedCalendarSharingRoles method.
      * @param User Usage: User='{User}'
@@ -88,6 +94,7 @@ const CalendarRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const CalendarRequestBuilderNavigationMetadata: Record<Exclude<keyof CalendarRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     allowedCalendarSharingRolesWithUser: {
         requestsMetadata: AllowedCalendarSharingRolesWithUserRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["User"],
     },
     calendarPermissions: {
         requestsMetadata: CalendarPermissionsRequestBuilderRequestsMetadata,
@@ -103,6 +110,9 @@ export const CalendarRequestBuilderNavigationMetadata: Record<Exclude<keyof Cale
     },
     getSchedule: {
         requestsMetadata: GetScheduleRequestBuilderRequestsMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
 };
 /**

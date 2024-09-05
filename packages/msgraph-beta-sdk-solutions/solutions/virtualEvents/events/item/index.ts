@@ -115,6 +115,7 @@ const VirtualEventItemRequestBuilderGetQueryParametersMapper: Record<string, str
 export const VirtualEventItemRequestBuilderNavigationMetadata: Record<Exclude<keyof VirtualEventItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     sessionsWithJoinWebUrl: {
         requestsMetadata: SessionsWithJoinWebUrlRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["joinWebUrl"],
     },
     cancel: {
         requestsMetadata: CancelRequestBuilderRequestsMetadata,

@@ -91,6 +91,7 @@ const ResourceOperationItemRequestBuilderGetQueryParametersMapper: Record<string
 export const ResourceOperationItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ResourceOperationItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     getScopesForUserWithUserid: {
         requestsMetadata: GetScopesForUserWithUseridRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["userid"],
     },
 };
 /**

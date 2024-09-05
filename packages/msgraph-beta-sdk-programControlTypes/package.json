@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-programcontroltypes",
-  "version": "1.0.0-preview.24",
+  "version": "1.0.0-preview.25",
   "description": "ProgramControlTypes fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",

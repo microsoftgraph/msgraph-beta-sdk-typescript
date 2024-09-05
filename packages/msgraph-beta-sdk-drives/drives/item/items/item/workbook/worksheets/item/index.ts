@@ -157,14 +157,17 @@ export const WorkbookWorksheetItemRequestBuilderNavigationMetadata: Record<Exclu
     cellWithRowWithColumn: {
         requestsMetadata: CellWithRowWithColumnRequestBuilderRequestsMetadata,
         navigationMetadata: CellWithRowWithColumnRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["column", "row"],
     },
     rangeWithAddress: {
         requestsMetadata: RangeWithAddressRequestBuilderRequestsMetadata,
         navigationMetadata: RangeWithAddressRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["address"],
     },
     usedRangeWithValuesOnly: {
         requestsMetadata: UsedRangeWithValuesOnlyRequestBuilderRequestsMetadata,
         navigationMetadata: UsedRangeWithValuesOnlyRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["valuesOnly"],
     },
     charts: {
         requestsMetadata: ChartsRequestBuilderRequestsMetadata,

@@ -24,6 +24,8 @@ import { ForwardRequestBuilderRequestsMetadata, type ForwardRequestBuilder } fro
 // @ts-ignore
 import { InstancesRequestBuilderNavigationMetadata, InstancesRequestBuilderRequestsMetadata, type InstancesRequestBuilder } from './instances/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { SnoozeReminderRequestBuilderRequestsMetadata, type SnoozeReminderRequestBuilder } from './snoozeReminder/index.js';
 // @ts-ignore
 import { TentativelyAcceptRequestBuilderRequestsMetadata, type TentativelyAcceptRequestBuilder } from './tentativelyAccept/index.js';
@@ -79,6 +81,11 @@ export interface EventItemRequestBuilder extends BaseRequestBuilder<EventItemReq
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get instances(): InstancesRequestBuilder;
+    /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to call the snoozeReminder method.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -162,6 +169,9 @@ export const EventItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Eve
     instances: {
         requestsMetadata: InstancesRequestBuilderRequestsMetadata,
         navigationMetadata: InstancesRequestBuilderNavigationMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
     snoozeReminder: {
         requestsMetadata: SnoozeReminderRequestBuilderRequestsMetadata,

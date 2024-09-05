@@ -20,7 +20,7 @@ export interface AttachmentItemRequestBuilder extends BaseRequestBuilder<Attachm
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+     * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Attachment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface AttachmentItemRequestBuilder extends BaseRequestBuilder<Attachm
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+     * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -43,7 +43,7 @@ export interface AttachmentItemRequestBuilder extends BaseRequestBuilder<Attachm
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttachmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+ * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.
  */
 export interface AttachmentItemRequestBuilderGetQueryParameters {
     /**

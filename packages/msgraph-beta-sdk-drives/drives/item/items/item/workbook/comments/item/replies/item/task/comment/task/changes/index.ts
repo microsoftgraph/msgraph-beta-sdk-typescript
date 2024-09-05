@@ -127,6 +127,7 @@ export const ChangesRequestBuilderNavigationMetadata: Record<Exclude<keyof Chang
     },
     itemAtWithIndex: {
         requestsMetadata: ItemAtWithIndexRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["index"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

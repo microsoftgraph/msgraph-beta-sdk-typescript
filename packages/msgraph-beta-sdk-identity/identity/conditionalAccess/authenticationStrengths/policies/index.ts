@@ -135,6 +135,7 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
     },
     findByMethodModeWithAuthenticationMethodModes: {
         requestsMetadata: FindByMethodModeWithAuthenticationMethodModesRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["authenticationMethodModes"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

@@ -117,9 +117,11 @@ const VirtualEventSessionItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const VirtualEventSessionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof VirtualEventSessionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     registrationsWithEmail: {
         requestsMetadata: RegistrationsWithEmailRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["email"],
     },
     registrationsWithUserId: {
         requestsMetadata: RegistrationsWithUserIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["userId"],
     },
     attendanceReports: {
         requestsMetadata: AttendanceReportsRequestBuilderRequestsMetadata,

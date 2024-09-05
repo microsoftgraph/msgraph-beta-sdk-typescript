@@ -111,9 +111,11 @@ const ConnectorGroupItemRequestBuilderGetQueryParametersMapper: Record<string, s
 export const ConnectorGroupItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ConnectorGroupItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     applicationsWithAppId: {
         requestsMetadata: ApplicationsWithAppIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["appId"],
     },
     applicationsWithUniqueName: {
         requestsMetadata: ApplicationsWithUniqueNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["uniqueName"],
     },
     applications: {
         requestsMetadata: ApplicationsRequestBuilderRequestsMetadata,

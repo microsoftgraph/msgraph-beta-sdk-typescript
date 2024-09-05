@@ -142,6 +142,7 @@ const AccessPackageItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const AccessPackageItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AccessPackageItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     accessPackagesIncompatibleWithWithUniqueName: {
         requestsMetadata: AccessPackagesIncompatibleWithWithUniqueNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["uniqueName"],
     },
     accessPackageAssignmentPolicies: {
         requestsMetadata: AccessPackageAssignmentPoliciesRequestBuilderRequestsMetadata,

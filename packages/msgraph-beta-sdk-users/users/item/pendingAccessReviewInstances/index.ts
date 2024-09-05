@@ -135,6 +135,7 @@ export const PendingAccessReviewInstancesRequestBuilderNavigationMetadata: Recor
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

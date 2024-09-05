@@ -10,6 +10,8 @@ import { ChildFoldersRequestBuilderNavigationMetadata, ChildFoldersRequestBuilde
 // @ts-ignore
 import { ContactsRequestBuilderNavigationMetadata, ContactsRequestBuilderRequestsMetadata, type ContactsRequestBuilder } from './contacts/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -26,6 +28,11 @@ export interface ContactFolderItemRequestBuilder extends BaseRequestBuilder<Cont
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get contacts(): ContactsRequestBuilder;
+    /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Delete navigation property contactFolders for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -108,6 +115,9 @@ export const ContactFolderItemRequestBuilderNavigationMetadata: Record<Exclude<k
     contacts: {
         requestsMetadata: ContactsRequestBuilderRequestsMetadata,
         navigationMetadata: ContactsRequestBuilderNavigationMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
 };
 /**

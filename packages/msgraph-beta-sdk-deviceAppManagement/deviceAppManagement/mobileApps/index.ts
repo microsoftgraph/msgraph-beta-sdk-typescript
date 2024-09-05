@@ -266,6 +266,7 @@ export const MobileAppsRequestBuilderNavigationMetadata: Record<Exclude<keyof Mo
     },
     convertFromMobileAppCatalogPackageWithMobileAppCatalogPackageId: {
         requestsMetadata: ConvertFromMobileAppCatalogPackageWithMobileAppCatalogPackageIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["mobileAppCatalogPackageId"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

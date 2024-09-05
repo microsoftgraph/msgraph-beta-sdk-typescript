@@ -123,6 +123,7 @@ const DeviceHealthScriptStatesRequestBuilderGetQueryParametersMapper: Record<str
 export const DeviceHealthScriptStatesRequestBuilderNavigationMetadata: Record<Exclude<keyof DeviceHealthScriptStatesRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     withIdWithPolicyIdWithDeviceId: {
         requestsMetadata: WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["deviceId", "id", "policyId"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

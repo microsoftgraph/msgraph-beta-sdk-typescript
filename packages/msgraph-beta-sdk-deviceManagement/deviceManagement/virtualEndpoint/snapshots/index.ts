@@ -134,6 +134,7 @@ export const SnapshotsRequestBuilderNavigationMetadata: Record<Exclude<keyof Sna
     },
     getStorageAccountsWithSubscriptionId: {
         requestsMetadata: GetStorageAccountsWithSubscriptionIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["subscriptionId"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

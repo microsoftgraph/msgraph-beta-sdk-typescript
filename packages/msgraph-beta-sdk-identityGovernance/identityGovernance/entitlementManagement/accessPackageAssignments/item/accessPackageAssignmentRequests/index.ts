@@ -135,6 +135,7 @@ export const AccessPackageAssignmentRequestsRequestBuilderNavigationMetadata: Re
     },
     filterByCurrentUserWithOn: {
         requestsMetadata: FilterByCurrentUserWithOnRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["on"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
 // @ts-ignore
+import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
 import { PhotoRequestBuilderNavigationMetadata, PhotoRequestBuilderRequestsMetadata, type PhotoRequestBuilder } from './photo/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -21,6 +23,11 @@ export interface ContactItemRequestBuilder extends BaseRequestBuilder<ContactIte
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get extensions(): ExtensionsRequestBuilder;
+    /**
+     * Provides operations to call the permanentDelete method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to manage the photo property of the microsoft.graph.contact entity.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -104,6 +111,9 @@ export const ContactItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     extensions: {
         requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,
         navigationMetadata: ExtensionsRequestBuilderNavigationMetadata,
+    },
+    permanentDelete: {
+        requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
     photo: {
         requestsMetadata: PhotoRequestBuilderRequestsMetadata,

@@ -129,6 +129,7 @@ export const TasksRequestBuilderNavigationMetadata: Record<Exclude<keyof TasksRe
     itemAtWithIndex: {
         requestsMetadata: ItemAtWithIndexRequestBuilderRequestsMetadata,
         navigationMetadata: ItemAtWithIndexRequestBuilderNavigationMetadata,
+        pathParametersMappings: ["index"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
