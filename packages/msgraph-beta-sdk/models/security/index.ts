@@ -8,6 +8,8 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Du
 // @ts-ignore
 import { type Guid } from 'guid-typescript';
 
+export interface AadRiskDetectionAuditRecord extends AuditData, Parsable {
+}
 export type ActionAfterRetentionPeriod = (typeof ActionAfterRetentionPeriodObject)[keyof typeof ActionAfterRetentionPeriodObject];
 export type ActionSource = (typeof ActionSourceObject)[keyof typeof ActionSourceObject];
 export interface AddContentFooterAction extends InformationProtectionAction, Parsable {
@@ -97,6 +99,26 @@ export interface AddWatermarkAction extends InformationProtectionAction, Parsabl
      * The name of the UI element where the watermark should be placed.
      */
     uiElementName?: string | null;
+}
+export interface AedAuditRecord extends AuditData, Parsable {
+}
+export interface AiAppInteractionAuditRecord extends AuditData, Parsable {
+}
+export interface AipFileDeleted extends AuditData, Parsable {
+}
+export interface AipHeartBeat extends AuditData, Parsable {
+}
+export interface AipProtectionActionLogRequest extends AuditData, Parsable {
+}
+export interface AipScannerDiscoverEvent extends AuditData, Parsable {
+}
+export interface AipSensitivityLabelActionLogRequest extends AuditData, Parsable {
+}
+export interface AirAdminActionInvestigationData extends AuditData, Parsable {
+}
+export interface AirInvestigationData extends AuditData, Parsable {
+}
+export interface AirManualInvestigationData extends AuditData, Parsable {
 }
 export interface Alert extends Entity, Parsable {
     /**
@@ -820,6 +842,8 @@ export interface ArticleIndicatorCollectionResponse extends BaseCollectionPagina
 export interface Artifact extends Entity, Parsable {
 }
 export type AssignmentMethod = (typeof AssignmentMethodObject)[keyof typeof AssignmentMethodObject];
+export interface AttackSimAdminAuditRecord extends AuditData, Parsable {
+}
 export interface AttackSimulationInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -989,6 +1013,8 @@ export interface AuditLogRecordCollectionResponse extends BaseCollectionPaginati
 }
 export type AuditLogRecordType = (typeof AuditLogRecordTypeObject)[keyof typeof AuditLogRecordTypeObject];
 export type AuditLogUserType = (typeof AuditLogUserTypeObject)[keyof typeof AuditLogUserTypeObject];
+export interface AuditSearchAuditRecord extends AuditData, Parsable {
+}
 export interface AuthorityTemplate extends FilePlanDescriptorTemplate, Parsable {
 }
 export interface AuthorityTemplateCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
@@ -1026,6 +1052,14 @@ export interface AutonomousSystem extends AdditionalDataHolder, BackedModel, Par
      * A displayable value for these autonomous system details.
      */
     value?: string | null;
+}
+export interface AzureActiveDirectoryAccountLogonAuditRecord extends AuditData, Parsable {
+}
+export interface AzureActiveDirectoryAuditRecord extends AuditData, Parsable {
+}
+export interface AzureActiveDirectoryBaseAuditRecord extends AuditData, Parsable {
+}
+export interface AzureActiveDirectoryStsLogonAuditRecord extends AuditData, Parsable {
 }
 export interface AzureResourceEvidence extends AlertEvidence, Parsable {
     /**
@@ -1088,7 +1122,11 @@ export interface BlockFileResponseAction extends Parsable, ResponseAction {
      */
     identifier?: FileEntityIdentifier[] | null;
 }
+export interface CampaignAuditRecord extends AuditData, Parsable {
+}
 export type CaseAction = (typeof CaseActionObject)[keyof typeof CaseActionObject];
+export interface CaseAuditRecord extends AuditData, Parsable {
+}
 export interface CaseEscaped extends Entity, Parsable {
     /**
      * The createdDateTime property
@@ -1114,6 +1152,8 @@ export interface CaseEscaped extends Entity, Parsable {
      * The status property
      */
     status?: CaseStatus | null;
+}
+export interface CaseInvestigation extends AuditData, Parsable {
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
@@ -1170,6 +1210,26 @@ export interface CategoryTemplateCollectionResponse extends BaseCollectionPagina
      * The value property
      */
     value?: CategoryTemplate[] | null;
+}
+export interface CdpColdCrawlStatusRecord extends AuditData, Parsable {
+}
+export interface CdpContentExplorerAggregateRecord extends AuditData, Parsable {
+}
+export interface CdpDlpSensitiveAuditRecord extends AuditData, Parsable {
+}
+export interface CdpDlpSensitiveEndpointAuditRecord extends AuditData, Parsable {
+}
+export interface CdpLogRecord extends AuditData, Parsable {
+}
+export interface CdpOcrBillingRecord extends AuditData, Parsable {
+}
+export interface CdpResourceScopeChangeEventRecord extends AuditData, Parsable {
+}
+export interface CernerSMSLinkRecord extends AuditData, Parsable {
+}
+export interface CernerSMSSettingsUpdateRecord extends AuditData, Parsable {
+}
+export interface CernerSMSUnlinkRecord extends AuditData, Parsable {
 }
 export type ChildSelectability = (typeof ChildSelectabilityObject)[keyof typeof ChildSelectabilityObject];
 export interface CitationTemplate extends FilePlanDescriptorTemplate, Parsable {
@@ -1296,6 +1356,48 @@ export interface CollectInvestigationPackageResponseAction extends Parsable, Res
      */
     identifier?: DeviceIdEntityIdentifier[] | null;
 }
+export interface ComplianceConnectorAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDLMExchangeAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDLMSharePointAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpApplicationsAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpApplicationsClassificationAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpBaseAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpClassificationBaseAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpClassificationBaseCdpRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpEndpointAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpEndpointDiscoveryAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpExchangeAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpExchangeClassificationAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpExchangeClassificationCdpRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpExchangeDiscoveryAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpSharePointAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpSharePointClassificationAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceDlpSharePointClassificationExtendedAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceManagerActionRecord extends AuditData, Parsable {
+}
+export interface ComplianceSupervisionBaseAuditRecord extends AuditData, Parsable {
+}
+export interface ComplianceSupervisionExchangeAuditRecord extends AuditData, Parsable {
+}
+export interface ConsumptionResourceAuditRecord extends AuditData, Parsable {
+}
 export interface ContainerEvidence extends AlertEvidence, Parsable {
     /**
      * The list of arguments.
@@ -1406,6 +1508,25 @@ export interface ContentLabel extends AdditionalDataHolder, BackedModel, Parsabl
     sensitivityLabelId?: string | null;
 }
 export type ContentState = (typeof ContentStateObject)[keyof typeof ContentStateObject];
+export interface CopilotInteractionAuditRecord extends AuditData, Parsable {
+}
+export interface CoreReportingSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface CortanaBriefingAuditRecord extends AuditData, Parsable {
+}
+export interface CpsCommonPolicyAuditRecord extends AuditData, Parsable {
+}
+export interface CpsPolicyConfigAuditRecord extends AuditData, Parsable {
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AadRiskDetectionAuditRecord}
+ */
+// @ts-ignore
+export function createAadRiskDetectionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAadRiskDetectionAuditRecord;
+}
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -1432,6 +1553,96 @@ export function createAddContentHeaderActionFromDiscriminatorValue(parseNode: Pa
 // @ts-ignore
 export function createAddWatermarkActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAddWatermarkAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AedAuditRecord}
+ */
+// @ts-ignore
+export function createAedAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAedAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AiAppInteractionAuditRecord}
+ */
+// @ts-ignore
+export function createAiAppInteractionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAiAppInteractionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AipFileDeleted}
+ */
+// @ts-ignore
+export function createAipFileDeletedFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAipFileDeleted;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AipHeartBeat}
+ */
+// @ts-ignore
+export function createAipHeartBeatFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAipHeartBeat;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AipProtectionActionLogRequest}
+ */
+// @ts-ignore
+export function createAipProtectionActionLogRequestFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAipProtectionActionLogRequest;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AipScannerDiscoverEvent}
+ */
+// @ts-ignore
+export function createAipScannerDiscoverEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAipScannerDiscoverEvent;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AipSensitivityLabelActionLogRequest}
+ */
+// @ts-ignore
+export function createAipSensitivityLabelActionLogRequestFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAipSensitivityLabelActionLogRequest;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AirAdminActionInvestigationData}
+ */
+// @ts-ignore
+export function createAirAdminActionInvestigationDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAirAdminActionInvestigationData;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AirInvestigationData}
+ */
+// @ts-ignore
+export function createAirInvestigationDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAirInvestigationData;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AirManualInvestigationData}
+ */
+// @ts-ignore
+export function createAirManualInvestigationDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAirManualInvestigationData;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1762,6 +1973,15 @@ export function createArtifactFromDiscriminatorValue(parseNode: ParseNode | unde
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AttackSimAdminAuditRecord}
+ */
+// @ts-ignore
+export function createAttackSimAdminAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAttackSimAdminAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AttackSimulationInfo}
  */
 // @ts-ignore
@@ -1790,8 +2010,550 @@ export function createAuditDataFromDiscriminatorValue(parseNode: ParseNode | und
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.security.aadRiskDetectionAuditRecord":
+                    return deserializeIntoAadRiskDetectionAuditRecord;
+                case "#microsoft.graph.security.aedAuditRecord":
+                    return deserializeIntoAedAuditRecord;
+                case "#microsoft.graph.security.aiAppInteractionAuditRecord":
+                    return deserializeIntoAiAppInteractionAuditRecord;
+                case "#microsoft.graph.security.aipFileDeleted":
+                    return deserializeIntoAipFileDeleted;
+                case "#microsoft.graph.security.aipHeartBeat":
+                    return deserializeIntoAipHeartBeat;
+                case "#microsoft.graph.security.aipProtectionActionLogRequest":
+                    return deserializeIntoAipProtectionActionLogRequest;
+                case "#microsoft.graph.security.aipScannerDiscoverEvent":
+                    return deserializeIntoAipScannerDiscoverEvent;
+                case "#microsoft.graph.security.aipSensitivityLabelActionLogRequest":
+                    return deserializeIntoAipSensitivityLabelActionLogRequest;
+                case "#microsoft.graph.security.airAdminActionInvestigationData":
+                    return deserializeIntoAirAdminActionInvestigationData;
+                case "#microsoft.graph.security.airInvestigationData":
+                    return deserializeIntoAirInvestigationData;
+                case "#microsoft.graph.security.airManualInvestigationData":
+                    return deserializeIntoAirManualInvestigationData;
+                case "#microsoft.graph.security.attackSimAdminAuditRecord":
+                    return deserializeIntoAttackSimAdminAuditRecord;
+                case "#microsoft.graph.security.auditSearchAuditRecord":
+                    return deserializeIntoAuditSearchAuditRecord;
+                case "#microsoft.graph.security.azureActiveDirectoryAccountLogonAuditRecord":
+                    return deserializeIntoAzureActiveDirectoryAccountLogonAuditRecord;
+                case "#microsoft.graph.security.azureActiveDirectoryAuditRecord":
+                    return deserializeIntoAzureActiveDirectoryAuditRecord;
+                case "#microsoft.graph.security.azureActiveDirectoryBaseAuditRecord":
+                    return deserializeIntoAzureActiveDirectoryBaseAuditRecord;
+                case "#microsoft.graph.security.azureActiveDirectoryStsLogonAuditRecord":
+                    return deserializeIntoAzureActiveDirectoryStsLogonAuditRecord;
+                case "#microsoft.graph.security.campaignAuditRecord":
+                    return deserializeIntoCampaignAuditRecord;
+                case "#microsoft.graph.security.caseAuditRecord":
+                    return deserializeIntoCaseAuditRecord;
+                case "#microsoft.graph.security.caseInvestigation":
+                    return deserializeIntoCaseInvestigation;
+                case "#microsoft.graph.security.cdpColdCrawlStatusRecord":
+                    return deserializeIntoCdpColdCrawlStatusRecord;
+                case "#microsoft.graph.security.cdpContentExplorerAggregateRecord":
+                    return deserializeIntoCdpContentExplorerAggregateRecord;
+                case "#microsoft.graph.security.cdpDlpSensitiveAuditRecord":
+                    return deserializeIntoCdpDlpSensitiveAuditRecord;
+                case "#microsoft.graph.security.cdpDlpSensitiveEndpointAuditRecord":
+                    return deserializeIntoCdpDlpSensitiveEndpointAuditRecord;
+                case "#microsoft.graph.security.cdpLogRecord":
+                    return deserializeIntoCdpLogRecord;
+                case "#microsoft.graph.security.cdpOcrBillingRecord":
+                    return deserializeIntoCdpOcrBillingRecord;
+                case "#microsoft.graph.security.cdpResourceScopeChangeEventRecord":
+                    return deserializeIntoCdpResourceScopeChangeEventRecord;
+                case "#microsoft.graph.security.cernerSMSLinkRecord":
+                    return deserializeIntoCernerSMSLinkRecord;
+                case "#microsoft.graph.security.cernerSMSSettingsUpdateRecord":
+                    return deserializeIntoCernerSMSSettingsUpdateRecord;
+                case "#microsoft.graph.security.cernerSMSUnlinkRecord":
+                    return deserializeIntoCernerSMSUnlinkRecord;
+                case "#microsoft.graph.security.complianceConnectorAuditRecord":
+                    return deserializeIntoComplianceConnectorAuditRecord;
+                case "#microsoft.graph.security.complianceDLMExchangeAuditRecord":
+                    return deserializeIntoComplianceDLMExchangeAuditRecord;
+                case "#microsoft.graph.security.complianceDLMSharePointAuditRecord":
+                    return deserializeIntoComplianceDLMSharePointAuditRecord;
+                case "#microsoft.graph.security.complianceDlpApplicationsAuditRecord":
+                    return deserializeIntoComplianceDlpApplicationsAuditRecord;
+                case "#microsoft.graph.security.complianceDlpApplicationsClassificationAuditRecord":
+                    return deserializeIntoComplianceDlpApplicationsClassificationAuditRecord;
+                case "#microsoft.graph.security.complianceDlpBaseAuditRecord":
+                    return deserializeIntoComplianceDlpBaseAuditRecord;
+                case "#microsoft.graph.security.complianceDlpClassificationBaseAuditRecord":
+                    return deserializeIntoComplianceDlpClassificationBaseAuditRecord;
+                case "#microsoft.graph.security.complianceDlpClassificationBaseCdpRecord":
+                    return deserializeIntoComplianceDlpClassificationBaseCdpRecord;
+                case "#microsoft.graph.security.complianceDlpEndpointAuditRecord":
+                    return deserializeIntoComplianceDlpEndpointAuditRecord;
+                case "#microsoft.graph.security.complianceDlpEndpointDiscoveryAuditRecord":
+                    return deserializeIntoComplianceDlpEndpointDiscoveryAuditRecord;
+                case "#microsoft.graph.security.complianceDlpExchangeAuditRecord":
+                    return deserializeIntoComplianceDlpExchangeAuditRecord;
+                case "#microsoft.graph.security.complianceDlpExchangeClassificationAuditRecord":
+                    return deserializeIntoComplianceDlpExchangeClassificationAuditRecord;
+                case "#microsoft.graph.security.complianceDlpExchangeClassificationCdpRecord":
+                    return deserializeIntoComplianceDlpExchangeClassificationCdpRecord;
+                case "#microsoft.graph.security.complianceDlpExchangeDiscoveryAuditRecord":
+                    return deserializeIntoComplianceDlpExchangeDiscoveryAuditRecord;
+                case "#microsoft.graph.security.complianceDlpSharePointAuditRecord":
+                    return deserializeIntoComplianceDlpSharePointAuditRecord;
+                case "#microsoft.graph.security.complianceDlpSharePointClassificationAuditRecord":
+                    return deserializeIntoComplianceDlpSharePointClassificationAuditRecord;
+                case "#microsoft.graph.security.complianceDlpSharePointClassificationExtendedAuditRecord":
+                    return deserializeIntoComplianceDlpSharePointClassificationExtendedAuditRecord;
+                case "#microsoft.graph.security.complianceManagerActionRecord":
+                    return deserializeIntoComplianceManagerActionRecord;
+                case "#microsoft.graph.security.complianceSupervisionBaseAuditRecord":
+                    return deserializeIntoComplianceSupervisionBaseAuditRecord;
+                case "#microsoft.graph.security.complianceSupervisionExchangeAuditRecord":
+                    return deserializeIntoComplianceSupervisionExchangeAuditRecord;
+                case "#microsoft.graph.security.consumptionResourceAuditRecord":
+                    return deserializeIntoConsumptionResourceAuditRecord;
+                case "#microsoft.graph.security.copilotInteractionAuditRecord":
+                    return deserializeIntoCopilotInteractionAuditRecord;
+                case "#microsoft.graph.security.coreReportingSettingsAuditRecord":
+                    return deserializeIntoCoreReportingSettingsAuditRecord;
+                case "#microsoft.graph.security.cortanaBriefingAuditRecord":
+                    return deserializeIntoCortanaBriefingAuditRecord;
+                case "#microsoft.graph.security.cpsCommonPolicyAuditRecord":
+                    return deserializeIntoCpsCommonPolicyAuditRecord;
+                case "#microsoft.graph.security.cpsPolicyConfigAuditRecord":
+                    return deserializeIntoCpsPolicyConfigAuditRecord;
+                case "#microsoft.graph.security.crmBaseAuditRecord":
+                    return deserializeIntoCrmBaseAuditRecord;
+                case "#microsoft.graph.security.crmEntityOperationAuditRecord":
+                    return deserializeIntoCrmEntityOperationAuditRecord;
+                case "#microsoft.graph.security.customerKeyServiceEncryptionAuditRecord":
+                    return deserializeIntoCustomerKeyServiceEncryptionAuditRecord;
+                case "#microsoft.graph.security.dataCenterSecurityBaseAuditRecord":
+                    return deserializeIntoDataCenterSecurityBaseAuditRecord;
+                case "#microsoft.graph.security.dataCenterSecurityCmdletAuditRecord":
+                    return deserializeIntoDataCenterSecurityCmdletAuditRecord;
+                case "#microsoft.graph.security.dataGovernanceAuditRecord":
+                    return deserializeIntoDataGovernanceAuditRecord;
+                case "#microsoft.graph.security.dataInsightsRestApiAuditRecord":
+                    return deserializeIntoDataInsightsRestApiAuditRecord;
+                case "#microsoft.graph.security.dataLakeExportOperationAuditRecord":
+                    return deserializeIntoDataLakeExportOperationAuditRecord;
+                case "#microsoft.graph.security.dataShareOperationAuditRecord":
+                    return deserializeIntoDataShareOperationAuditRecord;
                 case "#microsoft.graph.security.defaultAuditData":
                     return deserializeIntoDefaultAuditData;
+                case "#microsoft.graph.security.defenderSecurityAlertBaseRecord":
+                    return deserializeIntoDefenderSecurityAlertBaseRecord;
+                case "#microsoft.graph.security.deleteCertificateRecord":
+                    return deserializeIntoDeleteCertificateRecord;
+                case "#microsoft.graph.security.disableConsentRecord":
+                    return deserializeIntoDisableConsentRecord;
+                case "#microsoft.graph.security.discoveryAuditRecord":
+                    return deserializeIntoDiscoveryAuditRecord;
+                case "#microsoft.graph.security.dlpEndpointAuditRecord":
+                    return deserializeIntoDlpEndpointAuditRecord;
+                case "#microsoft.graph.security.dlpSensitiveInformationTypeCmdletRecord":
+                    return deserializeIntoDlpSensitiveInformationTypeCmdletRecord;
+                case "#microsoft.graph.security.dlpSensitiveInformationTypeRulePackageCmdletRecord":
+                    return deserializeIntoDlpSensitiveInformationTypeRulePackageCmdletRecord;
+                case "#microsoft.graph.security.downloadCertificateRecord":
+                    return deserializeIntoDownloadCertificateRecord;
+                case "#microsoft.graph.security.dynamics365BusinessCentralAuditRecord":
+                    return deserializeIntoDynamics365BusinessCentralAuditRecord;
+                case "#microsoft.graph.security.enableConsentRecord":
+                    return deserializeIntoEnableConsentRecord;
+                case "#microsoft.graph.security.epicSMSLinkRecord":
+                    return deserializeIntoEpicSMSLinkRecord;
+                case "#microsoft.graph.security.epicSMSSettingsUpdateRecord":
+                    return deserializeIntoEpicSMSSettingsUpdateRecord;
+                case "#microsoft.graph.security.epicSMSUnlinkRecord":
+                    return deserializeIntoEpicSMSUnlinkRecord;
+                case "#microsoft.graph.security.exchangeAdminAuditRecord":
+                    return deserializeIntoExchangeAdminAuditRecord;
+                case "#microsoft.graph.security.exchangeAggregatedMailboxAuditRecord":
+                    return deserializeIntoExchangeAggregatedMailboxAuditRecord;
+                case "#microsoft.graph.security.exchangeAggregatedOperationRecord":
+                    return deserializeIntoExchangeAggregatedOperationRecord;
+                case "#microsoft.graph.security.exchangeMailboxAuditBaseRecord":
+                    return deserializeIntoExchangeMailboxAuditBaseRecord;
+                case "#microsoft.graph.security.exchangeMailboxAuditGroupRecord":
+                    return deserializeIntoExchangeMailboxAuditGroupRecord;
+                case "#microsoft.graph.security.exchangeMailboxAuditRecord":
+                    return deserializeIntoExchangeMailboxAuditRecord;
+                case "#microsoft.graph.security.fhirBaseUrlAddRecord":
+                    return deserializeIntoFhirBaseUrlAddRecord;
+                case "#microsoft.graph.security.fhirBaseUrlApproveRecord":
+                    return deserializeIntoFhirBaseUrlApproveRecord;
+                case "#microsoft.graph.security.fhirBaseUrlDeleteRecord":
+                    return deserializeIntoFhirBaseUrlDeleteRecord;
+                case "#microsoft.graph.security.fhirBaseUrlUpdateRecord":
+                    return deserializeIntoFhirBaseUrlUpdateRecord;
+                case "#microsoft.graph.security.healthcareSignalRecord":
+                    return deserializeIntoHealthcareSignalRecord;
+                case "#microsoft.graph.security.hostedRpaAuditRecord":
+                    return deserializeIntoHostedRpaAuditRecord;
+                case "#microsoft.graph.security.hrSignalAuditRecord":
+                    return deserializeIntoHrSignalAuditRecord;
+                case "#microsoft.graph.security.hygieneEventRecord":
+                    return deserializeIntoHygieneEventRecord;
+                case "#microsoft.graph.security.informationBarrierPolicyApplicationAuditRecord":
+                    return deserializeIntoInformationBarrierPolicyApplicationAuditRecord;
+                case "#microsoft.graph.security.informationWorkerProtectionAuditRecord":
+                    return deserializeIntoInformationWorkerProtectionAuditRecord;
+                case "#microsoft.graph.security.insiderRiskScopedUserInsightsRecord":
+                    return deserializeIntoInsiderRiskScopedUserInsightsRecord;
+                case "#microsoft.graph.security.insiderRiskScopedUsersRecord":
+                    return deserializeIntoInsiderRiskScopedUsersRecord;
+                case "#microsoft.graph.security.irmSecurityAlertRecord":
+                    return deserializeIntoIrmSecurityAlertRecord;
+                case "#microsoft.graph.security.irmUserDefinedDetectionRecord":
+                    return deserializeIntoIrmUserDefinedDetectionRecord;
+                case "#microsoft.graph.security.kaizalaAuditRecord":
+                    return deserializeIntoKaizalaAuditRecord;
+                case "#microsoft.graph.security.labelAnalyticsAggregateAuditRecord":
+                    return deserializeIntoLabelAnalyticsAggregateAuditRecord;
+                case "#microsoft.graph.security.labelContentExplorerAuditRecord":
+                    return deserializeIntoLabelContentExplorerAuditRecord;
+                case "#microsoft.graph.security.largeContentMetadataAuditRecord":
+                    return deserializeIntoLargeContentMetadataAuditRecord;
+                case "#microsoft.graph.security.m365ComplianceConnectorAuditRecord":
+                    return deserializeIntoM365ComplianceConnectorAuditRecord;
+                case "#microsoft.graph.security.m365DAADAuditRecord":
+                    return deserializeIntoM365DAADAuditRecord;
+                case "#microsoft.graph.security.mailSubmissionData":
+                    return deserializeIntoMailSubmissionData;
+                case "#microsoft.graph.security.managedServicesAuditRecord":
+                    return deserializeIntoManagedServicesAuditRecord;
+                case "#microsoft.graph.security.managedTenantsAuditRecord":
+                    return deserializeIntoManagedTenantsAuditRecord;
+                case "#microsoft.graph.security.mapgAlertsAuditRecord":
+                    return deserializeIntoMapgAlertsAuditRecord;
+                case "#microsoft.graph.security.mapgOnboardAuditRecord":
+                    return deserializeIntoMapgOnboardAuditRecord;
+                case "#microsoft.graph.security.mapgPolicyAuditRecord":
+                    return deserializeIntoMapgPolicyAuditRecord;
+                case "#microsoft.graph.security.mcasAlertsAuditRecord":
+                    return deserializeIntoMcasAlertsAuditRecord;
+                case "#microsoft.graph.security.mdaDataSecuritySignalRecord":
+                    return deserializeIntoMdaDataSecuritySignalRecord;
+                case "#microsoft.graph.security.mdatpAuditRecord":
+                    return deserializeIntoMdatpAuditRecord;
+                case "#microsoft.graph.security.mdcEventsRecord":
+                    return deserializeIntoMdcEventsRecord;
+                case "#microsoft.graph.security.mdiAuditRecord":
+                    return deserializeIntoMdiAuditRecord;
+                case "#microsoft.graph.security.meshWorldsAuditRecord":
+                    return deserializeIntoMeshWorldsAuditRecord;
+                case "#microsoft.graph.security.microsoft365BackupBackupItemAuditRecord":
+                    return deserializeIntoMicrosoft365BackupBackupItemAuditRecord;
+                case "#microsoft.graph.security.microsoft365BackupBackupPolicyAuditRecord":
+                    return deserializeIntoMicrosoft365BackupBackupPolicyAuditRecord;
+                case "#microsoft.graph.security.microsoft365BackupRestoreItemAuditRecord":
+                    return deserializeIntoMicrosoft365BackupRestoreItemAuditRecord;
+                case "#microsoft.graph.security.microsoft365BackupRestoreTaskAuditRecord":
+                    return deserializeIntoMicrosoft365BackupRestoreTaskAuditRecord;
+                case "#microsoft.graph.security.microsoftDefenderExpertsBaseAuditRecord":
+                    return deserializeIntoMicrosoftDefenderExpertsBaseAuditRecord;
+                case "#microsoft.graph.security.microsoftDefenderExpertsXDRAuditRecord":
+                    return deserializeIntoMicrosoftDefenderExpertsXDRAuditRecord;
+                case "#microsoft.graph.security.microsoftFlowAuditRecord":
+                    return deserializeIntoMicrosoftFlowAuditRecord;
+                case "#microsoft.graph.security.microsoftFormsAuditRecord":
+                    return deserializeIntoMicrosoftFormsAuditRecord;
+                case "#microsoft.graph.security.microsoftGraphDataConnectConsent":
+                    return deserializeIntoMicrosoftGraphDataConnectConsent;
+                case "#microsoft.graph.security.microsoftGraphDataConnectOperation":
+                    return deserializeIntoMicrosoftGraphDataConnectOperation;
+                case "#microsoft.graph.security.microsoftPurviewDataMapOperationRecord":
+                    return deserializeIntoMicrosoftPurviewDataMapOperationRecord;
+                case "#microsoft.graph.security.microsoftPurviewMetadataPolicyOperationRecord":
+                    return deserializeIntoMicrosoftPurviewMetadataPolicyOperationRecord;
+                case "#microsoft.graph.security.microsoftPurviewPolicyOperationRecord":
+                    return deserializeIntoMicrosoftPurviewPolicyOperationRecord;
+                case "#microsoft.graph.security.microsoftPurviewPrivacyAuditEvent":
+                    return deserializeIntoMicrosoftPurviewPrivacyAuditEvent;
+                case "#microsoft.graph.security.microsoftStreamAuditRecord":
+                    return deserializeIntoMicrosoftStreamAuditRecord;
+                case "#microsoft.graph.security.microsoftTeamsAdminAuditRecord":
+                    return deserializeIntoMicrosoftTeamsAdminAuditRecord;
+                case "#microsoft.graph.security.microsoftTeamsAnalyticsAuditRecord":
+                    return deserializeIntoMicrosoftTeamsAnalyticsAuditRecord;
+                case "#microsoft.graph.security.microsoftTeamsAuditRecord":
+                    return deserializeIntoMicrosoftTeamsAuditRecord;
+                case "#microsoft.graph.security.microsoftTeamsDeviceAuditRecord":
+                    return deserializeIntoMicrosoftTeamsDeviceAuditRecord;
+                case "#microsoft.graph.security.microsoftTeamsRetentionLabelActionAuditRecord":
+                    return deserializeIntoMicrosoftTeamsRetentionLabelActionAuditRecord;
+                case "#microsoft.graph.security.microsoftTeamsSensitivityLabelActionAuditRecord":
+                    return deserializeIntoMicrosoftTeamsSensitivityLabelActionAuditRecord;
+                case "#microsoft.graph.security.microsoftTeamsShiftsAuditRecord":
+                    return deserializeIntoMicrosoftTeamsShiftsAuditRecord;
+                case "#microsoft.graph.security.mipAutoLabelExchangeItemAuditRecord":
+                    return deserializeIntoMipAutoLabelExchangeItemAuditRecord;
+                case "#microsoft.graph.security.mipAutoLabelItemAuditRecord":
+                    return deserializeIntoMipAutoLabelItemAuditRecord;
+                case "#microsoft.graph.security.mipAutoLabelPolicyAuditRecord":
+                    return deserializeIntoMipAutoLabelPolicyAuditRecord;
+                case "#microsoft.graph.security.mipAutoLabelProgressFeedbackAuditRecord":
+                    return deserializeIntoMipAutoLabelProgressFeedbackAuditRecord;
+                case "#microsoft.graph.security.mipAutoLabelSharePointItemAuditRecord":
+                    return deserializeIntoMipAutoLabelSharePointItemAuditRecord;
+                case "#microsoft.graph.security.mipAutoLabelSharePointPolicyLocationAuditRecord":
+                    return deserializeIntoMipAutoLabelSharePointPolicyLocationAuditRecord;
+                case "#microsoft.graph.security.mipAutoLabelSimulationSharePointCompletionRecord":
+                    return deserializeIntoMipAutoLabelSimulationSharePointCompletionRecord;
+                case "#microsoft.graph.security.mipAutoLabelSimulationSharePointProgressRecord":
+                    return deserializeIntoMipAutoLabelSimulationSharePointProgressRecord;
+                case "#microsoft.graph.security.mipAutoLabelSimulationStatisticsRecord":
+                    return deserializeIntoMipAutoLabelSimulationStatisticsRecord;
+                case "#microsoft.graph.security.mipAutoLabelSimulationStatusRecord":
+                    return deserializeIntoMipAutoLabelSimulationStatusRecord;
+                case "#microsoft.graph.security.mipExactDataMatchAuditRecord":
+                    return deserializeIntoMipExactDataMatchAuditRecord;
+                case "#microsoft.graph.security.mipLabelAnalyticsAuditRecord":
+                    return deserializeIntoMipLabelAnalyticsAuditRecord;
+                case "#microsoft.graph.security.mipLabelAuditRecord":
+                    return deserializeIntoMipLabelAuditRecord;
+                case "#microsoft.graph.security.mS365DCustomDetectionAuditRecord":
+                    return deserializeIntoMS365DCustomDetectionAuditRecord;
+                case "#microsoft.graph.security.mS365DIncidentAuditRecord":
+                    return deserializeIntoMS365DIncidentAuditRecord;
+                case "#microsoft.graph.security.mS365DSuppressionRuleAuditRecord":
+                    return deserializeIntoMS365DSuppressionRuleAuditRecord;
+                case "#microsoft.graph.security.msdeGeneralSettingsAuditRecord":
+                    return deserializeIntoMsdeGeneralSettingsAuditRecord;
+                case "#microsoft.graph.security.msdeIndicatorsSettingsAuditRecord":
+                    return deserializeIntoMsdeIndicatorsSettingsAuditRecord;
+                case "#microsoft.graph.security.msdeResponseActionsAuditRecord":
+                    return deserializeIntoMsdeResponseActionsAuditRecord;
+                case "#microsoft.graph.security.msdeRolesSettingsAuditRecord":
+                    return deserializeIntoMsdeRolesSettingsAuditRecord;
+                case "#microsoft.graph.security.msticNationStateNotificationRecord":
+                    return deserializeIntoMsticNationStateNotificationRecord;
+                case "#microsoft.graph.security.multiStageDispositionAuditRecord":
+                    return deserializeIntoMultiStageDispositionAuditRecord;
+                case "#microsoft.graph.security.myAnalyticsSettingsAuditRecord":
+                    return deserializeIntoMyAnalyticsSettingsAuditRecord;
+                case "#microsoft.graph.security.officeNativeAuditRecord":
+                    return deserializeIntoOfficeNativeAuditRecord;
+                case "#microsoft.graph.security.omePortalAuditRecord":
+                    return deserializeIntoOmePortalAuditRecord;
+                case "#microsoft.graph.security.oneDriveAuditRecord":
+                    return deserializeIntoOneDriveAuditRecord;
+                case "#microsoft.graph.security.onPremisesFileShareScannerDlpAuditRecord":
+                    return deserializeIntoOnPremisesFileShareScannerDlpAuditRecord;
+                case "#microsoft.graph.security.onPremisesScannerDlpAuditRecord":
+                    return deserializeIntoOnPremisesScannerDlpAuditRecord;
+                case "#microsoft.graph.security.onPremisesSharePointScannerDlpAuditRecord":
+                    return deserializeIntoOnPremisesSharePointScannerDlpAuditRecord;
+                case "#microsoft.graph.security.owaGetAccessTokenForResourceAuditRecord":
+                    return deserializeIntoOwaGetAccessTokenForResourceAuditRecord;
+                case "#microsoft.graph.security.peopleAdminSettingsAuditRecord":
+                    return deserializeIntoPeopleAdminSettingsAuditRecord;
+                case "#microsoft.graph.security.physicalBadgingSignalAuditRecord":
+                    return deserializeIntoPhysicalBadgingSignalAuditRecord;
+                case "#microsoft.graph.security.plannerCopyPlanAuditRecord":
+                    return deserializeIntoPlannerCopyPlanAuditRecord;
+                case "#microsoft.graph.security.plannerPlanAuditRecord":
+                    return deserializeIntoPlannerPlanAuditRecord;
+                case "#microsoft.graph.security.plannerPlanListAuditRecord":
+                    return deserializeIntoPlannerPlanListAuditRecord;
+                case "#microsoft.graph.security.plannerRosterAuditRecord":
+                    return deserializeIntoPlannerRosterAuditRecord;
+                case "#microsoft.graph.security.plannerRosterSensitivityLabelAuditRecord":
+                    return deserializeIntoPlannerRosterSensitivityLabelAuditRecord;
+                case "#microsoft.graph.security.plannerTaskAuditRecord":
+                    return deserializeIntoPlannerTaskAuditRecord;
+                case "#microsoft.graph.security.plannerTaskListAuditRecord":
+                    return deserializeIntoPlannerTaskListAuditRecord;
+                case "#microsoft.graph.security.plannerTenantSettingsAuditRecord":
+                    return deserializeIntoPlannerTenantSettingsAuditRecord;
+                case "#microsoft.graph.security.powerAppsAuditAppRecord":
+                    return deserializeIntoPowerAppsAuditAppRecord;
+                case "#microsoft.graph.security.powerAppsAuditPlanRecord":
+                    return deserializeIntoPowerAppsAuditPlanRecord;
+                case "#microsoft.graph.security.powerAppsAuditResourceRecord":
+                    return deserializeIntoPowerAppsAuditResourceRecord;
+                case "#microsoft.graph.security.powerBiAuditRecord":
+                    return deserializeIntoPowerBiAuditRecord;
+                case "#microsoft.graph.security.powerBiDlpAuditRecord":
+                    return deserializeIntoPowerBiDlpAuditRecord;
+                case "#microsoft.graph.security.powerPagesSiteAuditRecord":
+                    return deserializeIntoPowerPagesSiteAuditRecord;
+                case "#microsoft.graph.security.powerPlatformAdminDlpAuditRecord":
+                    return deserializeIntoPowerPlatformAdminDlpAuditRecord;
+                case "#microsoft.graph.security.powerPlatformAdminEnvironmentAuditRecord":
+                    return deserializeIntoPowerPlatformAdminEnvironmentAuditRecord;
+                case "#microsoft.graph.security.powerPlatformAdministratorActivityRecord":
+                    return deserializeIntoPowerPlatformAdministratorActivityRecord;
+                case "#microsoft.graph.security.powerPlatformLockboxResourceAccessRequestAuditRecord":
+                    return deserializeIntoPowerPlatformLockboxResourceAccessRequestAuditRecord;
+                case "#microsoft.graph.security.powerPlatformLockboxResourceCommandAuditRecord":
+                    return deserializeIntoPowerPlatformLockboxResourceCommandAuditRecord;
+                case "#microsoft.graph.security.powerPlatformServiceActivityAuditRecord":
+                    return deserializeIntoPowerPlatformServiceActivityAuditRecord;
+                case "#microsoft.graph.security.privacyDataMatchAuditRecord":
+                    return deserializeIntoPrivacyDataMatchAuditRecord;
+                case "#microsoft.graph.security.privacyDataMinimizationRecord":
+                    return deserializeIntoPrivacyDataMinimizationRecord;
+                case "#microsoft.graph.security.privacyDigestEmailRecord":
+                    return deserializeIntoPrivacyDigestEmailRecord;
+                case "#microsoft.graph.security.privacyOpenAccessAuditRecord":
+                    return deserializeIntoPrivacyOpenAccessAuditRecord;
+                case "#microsoft.graph.security.privacyPortalAuditRecord":
+                    return deserializeIntoPrivacyPortalAuditRecord;
+                case "#microsoft.graph.security.privacyRemediationActionRecord":
+                    return deserializeIntoPrivacyRemediationActionRecord;
+                case "#microsoft.graph.security.privacyRemediationRecord":
+                    return deserializeIntoPrivacyRemediationRecord;
+                case "#microsoft.graph.security.privacyTenantAuditHistoryRecord":
+                    return deserializeIntoPrivacyTenantAuditHistoryRecord;
+                case "#microsoft.graph.security.projectAuditRecord":
+                    return deserializeIntoProjectAuditRecord;
+                case "#microsoft.graph.security.projectForTheWebAssignedToMeSettingsAuditRecord":
+                    return deserializeIntoProjectForTheWebAssignedToMeSettingsAuditRecord;
+                case "#microsoft.graph.security.projectForTheWebProjectAuditRecord":
+                    return deserializeIntoProjectForTheWebProjectAuditRecord;
+                case "#microsoft.graph.security.projectForTheWebProjectSettingsAuditRecord":
+                    return deserializeIntoProjectForTheWebProjectSettingsAuditRecord;
+                case "#microsoft.graph.security.projectForTheWebRoadmapAuditRecord":
+                    return deserializeIntoProjectForTheWebRoadmapAuditRecord;
+                case "#microsoft.graph.security.projectForTheWebRoadmapItemAuditRecord":
+                    return deserializeIntoProjectForTheWebRoadmapItemAuditRecord;
+                case "#microsoft.graph.security.projectForTheWebRoadmapSettingsAuditRecord":
+                    return deserializeIntoProjectForTheWebRoadmapSettingsAuditRecord;
+                case "#microsoft.graph.security.projectForTheWebTaskAuditRecord":
+                    return deserializeIntoProjectForTheWebTaskAuditRecord;
+                case "#microsoft.graph.security.publicFolderAuditRecord":
+                    return deserializeIntoPublicFolderAuditRecord;
+                case "#microsoft.graph.security.purviewInsiderRiskAlertsRecord":
+                    return deserializeIntoPurviewInsiderRiskAlertsRecord;
+                case "#microsoft.graph.security.purviewInsiderRiskCasesRecord":
+                    return deserializeIntoPurviewInsiderRiskCasesRecord;
+                case "#microsoft.graph.security.quarantineAuditRecord":
+                    return deserializeIntoQuarantineAuditRecord;
+                case "#microsoft.graph.security.recordsManagementAuditRecord":
+                    return deserializeIntoRecordsManagementAuditRecord;
+                case "#microsoft.graph.security.retentionPolicyAuditRecord":
+                    return deserializeIntoRetentionPolicyAuditRecord;
+                case "#microsoft.graph.security.scoreEvidence":
+                    return deserializeIntoScoreEvidence;
+                case "#microsoft.graph.security.scorePlatformGenericAuditRecord":
+                    return deserializeIntoScorePlatformGenericAuditRecord;
+                case "#microsoft.graph.security.scriptRunAuditRecord":
+                    return deserializeIntoScriptRunAuditRecord;
+                case "#microsoft.graph.security.searchAuditRecord":
+                    return deserializeIntoSearchAuditRecord;
+                case "#microsoft.graph.security.securityComplianceAlertRecord":
+                    return deserializeIntoSecurityComplianceAlertRecord;
+                case "#microsoft.graph.security.securityComplianceCenterEOPCmdletAuditRecord":
+                    return deserializeIntoSecurityComplianceCenterEOPCmdletAuditRecord;
+                case "#microsoft.graph.security.securityComplianceInsightsAuditRecord":
+                    return deserializeIntoSecurityComplianceInsightsAuditRecord;
+                case "#microsoft.graph.security.securityComplianceRBACAuditRecord":
+                    return deserializeIntoSecurityComplianceRBACAuditRecord;
+                case "#microsoft.graph.security.securityComplianceUserChangeAuditRecord":
+                    return deserializeIntoSecurityComplianceUserChangeAuditRecord;
+                case "#microsoft.graph.security.sharePointAppPermissionOperationAuditRecord":
+                    return deserializeIntoSharePointAppPermissionOperationAuditRecord;
+                case "#microsoft.graph.security.sharePointAuditRecord":
+                    return deserializeIntoSharePointAuditRecord;
+                case "#microsoft.graph.security.sharePointCommentOperationAuditRecord":
+                    return deserializeIntoSharePointCommentOperationAuditRecord;
+                case "#microsoft.graph.security.sharePointContentTypeOperationAuditRecord":
+                    return deserializeIntoSharePointContentTypeOperationAuditRecord;
+                case "#microsoft.graph.security.sharePointESignatureAuditRecord":
+                    return deserializeIntoSharePointESignatureAuditRecord;
+                case "#microsoft.graph.security.sharePointFieldOperationAuditRecord":
+                    return deserializeIntoSharePointFieldOperationAuditRecord;
+                case "#microsoft.graph.security.sharePointFileOperationAuditRecord":
+                    return deserializeIntoSharePointFileOperationAuditRecord;
+                case "#microsoft.graph.security.sharePointListOperationAuditRecord":
+                    return deserializeIntoSharePointListOperationAuditRecord;
+                case "#microsoft.graph.security.sharePointSharingOperationAuditRecord":
+                    return deserializeIntoSharePointSharingOperationAuditRecord;
+                case "#microsoft.graph.security.skypeForBusinessBaseAuditRecord":
+                    return deserializeIntoSkypeForBusinessBaseAuditRecord;
+                case "#microsoft.graph.security.skypeForBusinessCmdletsAuditRecord":
+                    return deserializeIntoSkypeForBusinessCmdletsAuditRecord;
+                case "#microsoft.graph.security.skypeForBusinessPSTNUsageAuditRecord":
+                    return deserializeIntoSkypeForBusinessPSTNUsageAuditRecord;
+                case "#microsoft.graph.security.skypeForBusinessUsersBlockedAuditRecord":
+                    return deserializeIntoSkypeForBusinessUsersBlockedAuditRecord;
+                case "#microsoft.graph.security.smsCreatePhoneNumberRecord":
+                    return deserializeIntoSmsCreatePhoneNumberRecord;
+                case "#microsoft.graph.security.smsDeletePhoneNumberRecord":
+                    return deserializeIntoSmsDeletePhoneNumberRecord;
+                case "#microsoft.graph.security.supervisoryReviewDayXInsightsAuditRecord":
+                    return deserializeIntoSupervisoryReviewDayXInsightsAuditRecord;
+                case "#microsoft.graph.security.syntheticProbeAuditRecord":
+                    return deserializeIntoSyntheticProbeAuditRecord;
+                case "#microsoft.graph.security.teamsEasyApprovalsAuditRecord":
+                    return deserializeIntoTeamsEasyApprovalsAuditRecord;
+                case "#microsoft.graph.security.teamsHealthcareAuditRecord":
+                    return deserializeIntoTeamsHealthcareAuditRecord;
+                case "#microsoft.graph.security.teamsUpdatesAuditRecord":
+                    return deserializeIntoTeamsUpdatesAuditRecord;
+                case "#microsoft.graph.security.tenantAllowBlockListAuditRecord":
+                    return deserializeIntoTenantAllowBlockListAuditRecord;
+                case "#microsoft.graph.security.threatFinderAuditRecord":
+                    return deserializeIntoThreatFinderAuditRecord;
+                case "#microsoft.graph.security.threatIntelligenceAtpContentData":
+                    return deserializeIntoThreatIntelligenceAtpContentData;
+                case "#microsoft.graph.security.threatIntelligenceMailData":
+                    return deserializeIntoThreatIntelligenceMailData;
+                case "#microsoft.graph.security.threatIntelligenceUrlClickData":
+                    return deserializeIntoThreatIntelligenceUrlClickData;
+                case "#microsoft.graph.security.todoAuditRecord":
+                    return deserializeIntoTodoAuditRecord;
+                case "#microsoft.graph.security.uamOperationAuditRecord":
+                    return deserializeIntoUamOperationAuditRecord;
+                case "#microsoft.graph.security.unifiedGroupAuditRecord":
+                    return deserializeIntoUnifiedGroupAuditRecord;
+                case "#microsoft.graph.security.unifiedSimulationMatchedItemAuditRecord":
+                    return deserializeIntoUnifiedSimulationMatchedItemAuditRecord;
+                case "#microsoft.graph.security.unifiedSimulationSummaryAuditRecord":
+                    return deserializeIntoUnifiedSimulationSummaryAuditRecord;
+                case "#microsoft.graph.security.uploadCertificateRecord":
+                    return deserializeIntoUploadCertificateRecord;
+                case "#microsoft.graph.security.urbacAssignmentAuditRecord":
+                    return deserializeIntoUrbacAssignmentAuditRecord;
+                case "#microsoft.graph.security.urbacEnableStateAuditRecord":
+                    return deserializeIntoUrbacEnableStateAuditRecord;
+                case "#microsoft.graph.security.urbacRoleAuditRecord":
+                    return deserializeIntoUrbacRoleAuditRecord;
+                case "#microsoft.graph.security.userTrainingAuditRecord":
+                    return deserializeIntoUserTrainingAuditRecord;
+                case "#microsoft.graph.security.vfamBasePolicyAuditRecord":
+                    return deserializeIntoVfamBasePolicyAuditRecord;
+                case "#microsoft.graph.security.vfamCreatePolicyAuditRecord":
+                    return deserializeIntoVfamCreatePolicyAuditRecord;
+                case "#microsoft.graph.security.vfamDeletePolicyAuditRecord":
+                    return deserializeIntoVfamDeletePolicyAuditRecord;
+                case "#microsoft.graph.security.vfamUpdatePolicyAuditRecord":
+                    return deserializeIntoVfamUpdatePolicyAuditRecord;
+                case "#microsoft.graph.security.vivaGoalsAuditRecord":
+                    return deserializeIntoVivaGoalsAuditRecord;
+                case "#microsoft.graph.security.vivaLearningAdminAuditRecord":
+                    return deserializeIntoVivaLearningAdminAuditRecord;
+                case "#microsoft.graph.security.vivaLearningAuditRecord":
+                    return deserializeIntoVivaLearningAuditRecord;
+                case "#microsoft.graph.security.vivaPulseAdminAuditRecord":
+                    return deserializeIntoVivaPulseAdminAuditRecord;
+                case "#microsoft.graph.security.vivaPulseOrganizerAuditRecord":
+                    return deserializeIntoVivaPulseOrganizerAuditRecord;
+                case "#microsoft.graph.security.vivaPulseReportAuditRecord":
+                    return deserializeIntoVivaPulseReportAuditRecord;
+                case "#microsoft.graph.security.vivaPulseResponseAuditRecord":
+                    return deserializeIntoVivaPulseResponseAuditRecord;
+                case "#microsoft.graph.security.wdatpAlertsAuditRecord":
+                    return deserializeIntoWdatpAlertsAuditRecord;
+                case "#microsoft.graph.security.windows365CustomerLockboxAuditRecord":
+                    return deserializeIntoWindows365CustomerLockboxAuditRecord;
+                case "#microsoft.graph.security.workplaceAnalyticsAuditRecord":
+                    return deserializeIntoWorkplaceAnalyticsAuditRecord;
+                case "#microsoft.graph.security.yammerAuditRecord":
+                    return deserializeIntoYammerAuditRecord;
             }
         }
     }
@@ -1836,6 +2598,15 @@ export function createAuditLogRecordFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AuditSearchAuditRecord}
+ */
+// @ts-ignore
+export function createAuditSearchAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAuditSearchAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AuthorityTemplateCollectionResponse}
  */
 // @ts-ignore
@@ -1859,6 +2630,42 @@ export function createAuthorityTemplateFromDiscriminatorValue(parseNode: ParseNo
 // @ts-ignore
 export function createAutonomousSystemFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAutonomousSystem;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AzureActiveDirectoryAccountLogonAuditRecord}
+ */
+// @ts-ignore
+export function createAzureActiveDirectoryAccountLogonAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAzureActiveDirectoryAccountLogonAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AzureActiveDirectoryAuditRecord}
+ */
+// @ts-ignore
+export function createAzureActiveDirectoryAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAzureActiveDirectoryAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AzureActiveDirectoryBaseAuditRecord}
+ */
+// @ts-ignore
+export function createAzureActiveDirectoryBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAzureActiveDirectoryBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AzureActiveDirectoryStsLogonAuditRecord}
+ */
+// @ts-ignore
+export function createAzureActiveDirectoryStsLogonAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAzureActiveDirectoryStsLogonAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1899,6 +2706,24 @@ export function createBlockFileResponseActionFromDiscriminatorValue(parseNode: P
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CampaignAuditRecord}
+ */
+// @ts-ignore
+export function createCampaignAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCampaignAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CaseAuditRecord}
+ */
+// @ts-ignore
+export function createCaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CaseEscaped}
  */
 // @ts-ignore
@@ -1915,6 +2740,15 @@ export function createCaseEscapedFromDiscriminatorValue(parseNode: ParseNode | u
         }
     }
     return deserializeIntoCaseEscaped;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CaseInvestigation}
+ */
+// @ts-ignore
+export function createCaseInvestigationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCaseInvestigation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1985,6 +2819,96 @@ export function createCategoryTemplateCollectionResponseFromDiscriminatorValue(p
 // @ts-ignore
 export function createCategoryTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCategoryTemplate;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CdpColdCrawlStatusRecord}
+ */
+// @ts-ignore
+export function createCdpColdCrawlStatusRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCdpColdCrawlStatusRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CdpContentExplorerAggregateRecord}
+ */
+// @ts-ignore
+export function createCdpContentExplorerAggregateRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCdpContentExplorerAggregateRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CdpDlpSensitiveAuditRecord}
+ */
+// @ts-ignore
+export function createCdpDlpSensitiveAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCdpDlpSensitiveAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CdpDlpSensitiveEndpointAuditRecord}
+ */
+// @ts-ignore
+export function createCdpDlpSensitiveEndpointAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCdpDlpSensitiveEndpointAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CdpLogRecord}
+ */
+// @ts-ignore
+export function createCdpLogRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCdpLogRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CdpOcrBillingRecord}
+ */
+// @ts-ignore
+export function createCdpOcrBillingRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCdpOcrBillingRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CdpResourceScopeChangeEventRecord}
+ */
+// @ts-ignore
+export function createCdpResourceScopeChangeEventRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCdpResourceScopeChangeEventRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CernerSMSLinkRecord}
+ */
+// @ts-ignore
+export function createCernerSMSLinkRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCernerSMSLinkRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CernerSMSSettingsUpdateRecord}
+ */
+// @ts-ignore
+export function createCernerSMSSettingsUpdateRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCernerSMSSettingsUpdateRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CernerSMSUnlinkRecord}
+ */
+// @ts-ignore
+export function createCernerSMSUnlinkRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCernerSMSUnlinkRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2061,6 +2985,195 @@ export function createCollectInvestigationPackageResponseActionFromDiscriminator
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceConnectorAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceConnectorAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceConnectorAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDLMExchangeAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDLMExchangeAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDLMExchangeAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDLMSharePointAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDLMSharePointAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDLMSharePointAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpApplicationsAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpApplicationsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpApplicationsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpApplicationsClassificationAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpApplicationsClassificationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpApplicationsClassificationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpBaseAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpClassificationBaseAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpClassificationBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpClassificationBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpClassificationBaseCdpRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpClassificationBaseCdpRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpClassificationBaseCdpRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpEndpointAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpEndpointAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpEndpointAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpEndpointDiscoveryAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpEndpointDiscoveryAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpEndpointDiscoveryAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpExchangeAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpExchangeAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpExchangeAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpExchangeClassificationAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpExchangeClassificationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpExchangeClassificationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpExchangeClassificationCdpRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpExchangeClassificationCdpRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpExchangeClassificationCdpRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpExchangeDiscoveryAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpExchangeDiscoveryAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpExchangeDiscoveryAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpSharePointAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpSharePointAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpSharePointAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpSharePointClassificationAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpSharePointClassificationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpSharePointClassificationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceDlpSharePointClassificationExtendedAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceDlpSharePointClassificationExtendedAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceDlpSharePointClassificationExtendedAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceManagerActionRecord}
+ */
+// @ts-ignore
+export function createComplianceManagerActionRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceManagerActionRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceSupervisionBaseAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceSupervisionBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceSupervisionBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceSupervisionExchangeAuditRecord}
+ */
+// @ts-ignore
+export function createComplianceSupervisionExchangeAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceSupervisionExchangeAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ConsumptionResourceAuditRecord}
+ */
+// @ts-ignore
+export function createConsumptionResourceAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoConsumptionResourceAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ContainerEvidence}
  */
 // @ts-ignore
@@ -2106,6 +3219,69 @@ export function createContentLabelFromDiscriminatorValue(parseNode: ParseNode | 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CopilotInteractionAuditRecord}
+ */
+// @ts-ignore
+export function createCopilotInteractionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCopilotInteractionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CoreReportingSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createCoreReportingSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCoreReportingSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CortanaBriefingAuditRecord}
+ */
+// @ts-ignore
+export function createCortanaBriefingAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCortanaBriefingAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CpsCommonPolicyAuditRecord}
+ */
+// @ts-ignore
+export function createCpsCommonPolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCpsCommonPolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CpsPolicyConfigAuditRecord}
+ */
+// @ts-ignore
+export function createCpsPolicyConfigAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCpsPolicyConfigAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CrmBaseAuditRecord}
+ */
+// @ts-ignore
+export function createCrmBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCrmBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CrmEntityOperationAuditRecord}
+ */
+// @ts-ignore
+export function createCrmEntityOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCrmEntityOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustomAction}
  */
 // @ts-ignore
@@ -2115,11 +3291,65 @@ export function createCustomActionFromDiscriminatorValue(parseNode: ParseNode | 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomerKeyServiceEncryptionAuditRecord}
+ */
+// @ts-ignore
+export function createCustomerKeyServiceEncryptionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomerKeyServiceEncryptionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CvssSummary}
  */
 // @ts-ignore
 export function createCvssSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCvssSummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataCenterSecurityBaseAuditRecord}
+ */
+// @ts-ignore
+export function createDataCenterSecurityBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataCenterSecurityBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataCenterSecurityCmdletAuditRecord}
+ */
+// @ts-ignore
+export function createDataCenterSecurityCmdletAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataCenterSecurityCmdletAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataGovernanceAuditRecord}
+ */
+// @ts-ignore
+export function createDataGovernanceAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataGovernanceAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataInsightsRestApiAuditRecord}
+ */
+// @ts-ignore
+export function createDataInsightsRestApiAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataInsightsRestApiAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataLakeExportOperationAuditRecord}
+ */
+// @ts-ignore
+export function createDataLakeExportOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataLakeExportOperationAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2140,6 +3370,15 @@ export function createDataSetFromDiscriminatorValue(parseNode: ParseNode | undef
         }
     }
     return deserializeIntoDataSet;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataShareOperationAuditRecord}
+ */
+// @ts-ignore
+export function createDataShareOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataShareOperationAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2204,6 +3443,24 @@ export function createDataSourceFromDiscriminatorValue(parseNode: ParseNode | un
 // @ts-ignore
 export function createDefaultAuditDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDefaultAuditData;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DefenderSecurityAlertBaseRecord}
+ */
+// @ts-ignore
+export function createDefenderSecurityAlertBaseRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDefenderSecurityAlertBaseRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DeleteCertificateRecord}
+ */
+// @ts-ignore
+export function createDeleteCertificateRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDeleteCertificateRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2307,11 +3564,29 @@ export function createDictionaryFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DisableConsentRecord}
+ */
+// @ts-ignore
+export function createDisableConsentRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDisableConsentRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DisableUserResponseAction}
  */
 // @ts-ignore
 export function createDisableUserResponseActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDisableUserResponseAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DiscoveryAuditRecord}
+ */
+// @ts-ignore
+export function createDiscoveryAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDiscoveryAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2334,6 +3609,33 @@ export function createDispositionReviewStageFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DlpEndpointAuditRecord}
+ */
+// @ts-ignore
+export function createDlpEndpointAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDlpEndpointAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DlpSensitiveInformationTypeCmdletRecord}
+ */
+// @ts-ignore
+export function createDlpSensitiveInformationTypeCmdletRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDlpSensitiveInformationTypeCmdletRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DlpSensitiveInformationTypeRulePackageCmdletRecord}
+ */
+// @ts-ignore
+export function createDlpSensitiveInformationTypeRulePackageCmdletRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDlpSensitiveInformationTypeRulePackageCmdletRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DnsEvidence}
  */
 // @ts-ignore
@@ -2348,6 +3650,24 @@ export function createDnsEvidenceFromDiscriminatorValue(parseNode: ParseNode | u
 // @ts-ignore
 export function createDowngradeJustificationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDowngradeJustification;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DownloadCertificateRecord}
+ */
+// @ts-ignore
+export function createDownloadCertificateRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDownloadCertificateRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Dynamics365BusinessCentralAuditRecord}
+ */
+// @ts-ignore
+export function createDynamics365BusinessCentralAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDynamics365BusinessCentralAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2671,6 +3991,42 @@ export function createEmailUrlThreatSubmissionFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EnableConsentRecord}
+ */
+// @ts-ignore
+export function createEnableConsentRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEnableConsentRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EpicSMSLinkRecord}
+ */
+// @ts-ignore
+export function createEpicSMSLinkRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEpicSMSLinkRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EpicSMSSettingsUpdateRecord}
+ */
+// @ts-ignore
+export function createEpicSMSSettingsUpdateRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEpicSMSSettingsUpdateRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EpicSMSUnlinkRecord}
+ */
+// @ts-ignore
+export function createEpicSMSUnlinkRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEpicSMSUnlinkRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EventPropagationResult}
  */
 // @ts-ignore
@@ -2689,11 +4045,101 @@ export function createEventQueryFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExchangeAdminAuditRecord}
+ */
+// @ts-ignore
+export function createExchangeAdminAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExchangeAdminAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExchangeAggregatedMailboxAuditRecord}
+ */
+// @ts-ignore
+export function createExchangeAggregatedMailboxAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExchangeAggregatedMailboxAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExchangeAggregatedOperationRecord}
+ */
+// @ts-ignore
+export function createExchangeAggregatedOperationRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExchangeAggregatedOperationRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExchangeMailboxAuditBaseRecord}
+ */
+// @ts-ignore
+export function createExchangeMailboxAuditBaseRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExchangeMailboxAuditBaseRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExchangeMailboxAuditGroupRecord}
+ */
+// @ts-ignore
+export function createExchangeMailboxAuditGroupRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExchangeMailboxAuditGroupRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExchangeMailboxAuditRecord}
+ */
+// @ts-ignore
+export function createExchangeMailboxAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExchangeMailboxAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ExportFileMetadata}
  */
 // @ts-ignore
 export function createExportFileMetadataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoExportFileMetadata;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {FhirBaseUrlAddRecord}
+ */
+// @ts-ignore
+export function createFhirBaseUrlAddRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFhirBaseUrlAddRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {FhirBaseUrlApproveRecord}
+ */
+// @ts-ignore
+export function createFhirBaseUrlApproveRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFhirBaseUrlApproveRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {FhirBaseUrlDeleteRecord}
+ */
+// @ts-ignore
+export function createFhirBaseUrlDeleteRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFhirBaseUrlDeleteRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {FhirBaseUrlUpdateRecord}
+ */
+// @ts-ignore
+export function createFhirBaseUrlUpdateRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFhirBaseUrlUpdateRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3016,6 +4462,15 @@ export function createHardDeleteResponseActionFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {HealthcareSignalRecord}
+ */
+// @ts-ignore
+export function createHealthcareSignalRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoHealthcareSignalRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {HealthIssueCollectionResponse}
  */
 // @ts-ignore
@@ -3075,6 +4530,15 @@ export function createHostCookieCollectionResponseFromDiscriminatorValue(parseNo
 // @ts-ignore
 export function createHostCookieFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHostCookie;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {HostedRpaAuditRecord}
+ */
+// @ts-ignore
+export function createHostedRpaAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoHostedRpaAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3236,6 +4700,15 @@ export function createHostTrackerFromDiscriminatorValue(parseNode: ParseNode | u
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {HrSignalAuditRecord}
+ */
+// @ts-ignore
+export function createHrSignalAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoHrSignalAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {HuntingQueryResults}
  */
 // @ts-ignore
@@ -3250,6 +4723,15 @@ export function createHuntingQueryResultsFromDiscriminatorValue(parseNode: Parse
 // @ts-ignore
 export function createHuntingRowResultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoHuntingRowResult;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {HygieneEventRecord}
+ */
+// @ts-ignore
+export function createHygieneEventRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoHygieneEventRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3363,6 +4845,15 @@ export function createIndicatorFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {InformationBarrierPolicyApplicationAuditRecord}
+ */
+// @ts-ignore
+export function createInformationBarrierPolicyApplicationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoInformationBarrierPolicyApplicationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InformationProtectionAction}
  */
 // @ts-ignore
@@ -3429,11 +4920,38 @@ export function createInformationProtectionPolicySettingFromDiscriminatorValue(p
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {InformationWorkerProtectionAuditRecord}
+ */
+// @ts-ignore
+export function createInformationWorkerProtectionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoInformationWorkerProtectionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {InitiateInvestigationResponseAction}
  */
 // @ts-ignore
 export function createInitiateInvestigationResponseActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoInitiateInvestigationResponseAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {InsiderRiskScopedUserInsightsRecord}
+ */
+// @ts-ignore
+export function createInsiderRiskScopedUserInsightsRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoInsiderRiskScopedUserInsightsRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {InsiderRiskScopedUsersRecord}
+ */
+// @ts-ignore
+export function createInsiderRiskScopedUsersRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoInsiderRiskScopedUsersRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3510,6 +5028,24 @@ export function createIpEvidenceFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {IrmSecurityAlertRecord}
+ */
+// @ts-ignore
+export function createIrmSecurityAlertRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoIrmSecurityAlertRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {IrmUserDefinedDetectionRecord}
+ */
+// @ts-ignore
+export function createIrmUserDefinedDetectionRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoIrmUserDefinedDetectionRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IsolateDeviceResponseAction}
  */
 // @ts-ignore
@@ -3524,6 +5060,15 @@ export function createIsolateDeviceResponseActionFromDiscriminatorValue(parseNod
 // @ts-ignore
 export function createJustifyActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoJustifyAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {KaizalaAuditRecord}
+ */
+// @ts-ignore
+export function createKaizalaAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoKaizalaAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3609,6 +5154,24 @@ export function createKubernetesServicePortFromDiscriminatorValue(parseNode: Par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LabelAnalyticsAggregateAuditRecord}
+ */
+// @ts-ignore
+export function createLabelAnalyticsAggregateAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLabelAnalyticsAggregateAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LabelContentExplorerAuditRecord}
+ */
+// @ts-ignore
+export function createLabelContentExplorerAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLabelContentExplorerAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LabelingOptions}
  */
 // @ts-ignore
@@ -3627,11 +5190,38 @@ export function createLabelsRootFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LargeContentMetadataAuditRecord}
+ */
+// @ts-ignore
+export function createLargeContentMetadataAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLargeContentMetadataAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {LoggedOnUser}
  */
 // @ts-ignore
 export function createLoggedOnUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLoggedOnUser;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {M365ComplianceConnectorAuditRecord}
+ */
+// @ts-ignore
+export function createM365ComplianceConnectorAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoM365ComplianceConnectorAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {M365DAADAuditRecord}
+ */
+// @ts-ignore
+export function createM365DAADAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoM365DAADAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3663,11 +5253,65 @@ export function createMailClusterEvidenceFromDiscriminatorValue(parseNode: Parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MailSubmissionData}
+ */
+// @ts-ignore
+export function createMailSubmissionDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMailSubmissionData;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MalwareEvidence}
  */
 // @ts-ignore
 export function createMalwareEvidenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMalwareEvidence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ManagedServicesAuditRecord}
+ */
+// @ts-ignore
+export function createManagedServicesAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoManagedServicesAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ManagedTenantsAuditRecord}
+ */
+// @ts-ignore
+export function createManagedTenantsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoManagedTenantsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MapgAlertsAuditRecord}
+ */
+// @ts-ignore
+export function createMapgAlertsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMapgAlertsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MapgOnboardAuditRecord}
+ */
+// @ts-ignore
+export function createMapgOnboardAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMapgOnboardAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MapgPolicyAuditRecord}
+ */
+// @ts-ignore
+export function createMapgPolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMapgPolicyAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3681,11 +5325,380 @@ export function createMarkUserAsCompromisedResponseActionFromDiscriminatorValue(
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {McasAlertsAuditRecord}
+ */
+// @ts-ignore
+export function createMcasAlertsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMcasAlertsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MdaDataSecuritySignalRecord}
+ */
+// @ts-ignore
+export function createMdaDataSecuritySignalRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMdaDataSecuritySignalRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MdatpAuditRecord}
+ */
+// @ts-ignore
+export function createMdatpAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMdatpAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MdcEventsRecord}
+ */
+// @ts-ignore
+export function createMdcEventsRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMdcEventsRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MdiAuditRecord}
+ */
+// @ts-ignore
+export function createMdiAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMdiAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MeshWorldsAuditRecord}
+ */
+// @ts-ignore
+export function createMeshWorldsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMeshWorldsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MetadataAction}
  */
 // @ts-ignore
 export function createMetadataActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMetadataAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Microsoft365BackupBackupItemAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoft365BackupBackupItemAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoft365BackupBackupItemAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Microsoft365BackupBackupPolicyAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoft365BackupBackupPolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoft365BackupBackupPolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Microsoft365BackupRestoreItemAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoft365BackupRestoreItemAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoft365BackupRestoreItemAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Microsoft365BackupRestoreTaskAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoft365BackupRestoreTaskAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoft365BackupRestoreTaskAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftDefenderExpertsBaseAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftDefenderExpertsBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftDefenderExpertsBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftDefenderExpertsXDRAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftDefenderExpertsXDRAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftDefenderExpertsXDRAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftFlowAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftFlowAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftFlowAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftFormsAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftFormsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftFormsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftGraphDataConnectConsent}
+ */
+// @ts-ignore
+export function createMicrosoftGraphDataConnectConsentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftGraphDataConnectConsent;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftGraphDataConnectOperation}
+ */
+// @ts-ignore
+export function createMicrosoftGraphDataConnectOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftGraphDataConnectOperation;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftPurviewDataMapOperationRecord}
+ */
+// @ts-ignore
+export function createMicrosoftPurviewDataMapOperationRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftPurviewDataMapOperationRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftPurviewMetadataPolicyOperationRecord}
+ */
+// @ts-ignore
+export function createMicrosoftPurviewMetadataPolicyOperationRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftPurviewMetadataPolicyOperationRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftPurviewPolicyOperationRecord}
+ */
+// @ts-ignore
+export function createMicrosoftPurviewPolicyOperationRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftPurviewPolicyOperationRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftPurviewPrivacyAuditEvent}
+ */
+// @ts-ignore
+export function createMicrosoftPurviewPrivacyAuditEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftPurviewPrivacyAuditEvent;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftStreamAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftStreamAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftStreamAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftTeamsAdminAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftTeamsAdminAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftTeamsAdminAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftTeamsAnalyticsAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftTeamsAnalyticsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftTeamsAnalyticsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftTeamsAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftTeamsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftTeamsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftTeamsDeviceAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftTeamsDeviceAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftTeamsDeviceAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftTeamsRetentionLabelActionAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftTeamsRetentionLabelActionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftTeamsRetentionLabelActionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftTeamsSensitivityLabelActionAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftTeamsSensitivityLabelActionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftTeamsSensitivityLabelActionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MicrosoftTeamsShiftsAuditRecord}
+ */
+// @ts-ignore
+export function createMicrosoftTeamsShiftsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMicrosoftTeamsShiftsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelExchangeItemAuditRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelExchangeItemAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelExchangeItemAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelItemAuditRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelItemAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelItemAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelPolicyAuditRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelPolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelPolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelProgressFeedbackAuditRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelProgressFeedbackAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelProgressFeedbackAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelSharePointItemAuditRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelSharePointItemAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelSharePointItemAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelSharePointPolicyLocationAuditRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelSharePointPolicyLocationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelSharePointPolicyLocationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelSimulationSharePointCompletionRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelSimulationSharePointCompletionRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelSimulationSharePointCompletionRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelSimulationSharePointProgressRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelSimulationSharePointProgressRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelSimulationSharePointProgressRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelSimulationStatisticsRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelSimulationStatisticsRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelSimulationStatisticsRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipAutoLabelSimulationStatusRecord}
+ */
+// @ts-ignore
+export function createMipAutoLabelSimulationStatusRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipAutoLabelSimulationStatusRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipExactDataMatchAuditRecord}
+ */
+// @ts-ignore
+export function createMipExactDataMatchAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipExactDataMatchAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipLabelAnalyticsAuditRecord}
+ */
+// @ts-ignore
+export function createMipLabelAnalyticsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipLabelAnalyticsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MipLabelAuditRecord}
+ */
+// @ts-ignore
+export function createMipLabelAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMipLabelAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3713,6 +5726,96 @@ export function createMoveToInboxResponseActionFromDiscriminatorValue(parseNode:
 // @ts-ignore
 export function createMoveToJunkResponseActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMoveToJunkResponseAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MS365DCustomDetectionAuditRecord}
+ */
+// @ts-ignore
+export function createMS365DCustomDetectionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMS365DCustomDetectionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MS365DIncidentAuditRecord}
+ */
+// @ts-ignore
+export function createMS365DIncidentAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMS365DIncidentAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MS365DSuppressionRuleAuditRecord}
+ */
+// @ts-ignore
+export function createMS365DSuppressionRuleAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMS365DSuppressionRuleAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MsdeGeneralSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createMsdeGeneralSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMsdeGeneralSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MsdeIndicatorsSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createMsdeIndicatorsSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMsdeIndicatorsSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MsdeResponseActionsAuditRecord}
+ */
+// @ts-ignore
+export function createMsdeResponseActionsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMsdeResponseActionsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MsdeRolesSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createMsdeRolesSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMsdeRolesSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MsticNationStateNotificationRecord}
+ */
+// @ts-ignore
+export function createMsticNationStateNotificationRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMsticNationStateNotificationRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MultiStageDispositionAuditRecord}
+ */
+// @ts-ignore
+export function createMultiStageDispositionAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMultiStageDispositionAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MyAnalyticsSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createMyAnalyticsSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMyAnalyticsSettingsAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3762,11 +5865,74 @@ export function createOcrSettingsFromDiscriminatorValue(parseNode: ParseNode | u
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OfficeNativeAuditRecord}
+ */
+// @ts-ignore
+export function createOfficeNativeAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOfficeNativeAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OmePortalAuditRecord}
+ */
+// @ts-ignore
+export function createOmePortalAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOmePortalAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OneDriveAuditRecord}
+ */
+// @ts-ignore
+export function createOneDriveAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOneDriveAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OnPremisesFileShareScannerDlpAuditRecord}
+ */
+// @ts-ignore
+export function createOnPremisesFileShareScannerDlpAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOnPremisesFileShareScannerDlpAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OnPremisesScannerDlpAuditRecord}
+ */
+// @ts-ignore
+export function createOnPremisesScannerDlpAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOnPremisesScannerDlpAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OnPremisesSharePointScannerDlpAuditRecord}
+ */
+// @ts-ignore
+export function createOnPremisesSharePointScannerDlpAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOnPremisesSharePointScannerDlpAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {OrganizationalScope}
  */
 // @ts-ignore
 export function createOrganizationalScopeFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoOrganizationalScope;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OwaGetAccessTokenForResourceAuditRecord}
+ */
+// @ts-ignore
+export function createOwaGetAccessTokenForResourceAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOwaGetAccessTokenForResourceAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3785,6 +5951,96 @@ export function createPassiveDnsRecordCollectionResponseFromDiscriminatorValue(p
 // @ts-ignore
 export function createPassiveDnsRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPassiveDnsRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PeopleAdminSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createPeopleAdminSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPeopleAdminSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PhysicalBadgingSignalAuditRecord}
+ */
+// @ts-ignore
+export function createPhysicalBadgingSignalAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPhysicalBadgingSignalAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerCopyPlanAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerCopyPlanAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerCopyPlanAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerPlanAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerPlanAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerPlanAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerPlanListAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerPlanListAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerPlanListAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerRosterAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerRosterAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerRosterAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerRosterSensitivityLabelAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerRosterSensitivityLabelAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerRosterSensitivityLabelAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerTaskAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerTaskAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerTaskAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerTaskListAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerTaskListAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerTaskListAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PlannerTenantSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createPlannerTenantSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPlannerTenantSettingsAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3809,11 +6065,263 @@ export function createPolicyBaseFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerAppsAuditAppRecord}
+ */
+// @ts-ignore
+export function createPowerAppsAuditAppRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerAppsAuditAppRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerAppsAuditPlanRecord}
+ */
+// @ts-ignore
+export function createPowerAppsAuditPlanRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerAppsAuditPlanRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerAppsAuditResourceRecord}
+ */
+// @ts-ignore
+export function createPowerAppsAuditResourceRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerAppsAuditResourceRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerBiAuditRecord}
+ */
+// @ts-ignore
+export function createPowerBiAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerBiAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerBiDlpAuditRecord}
+ */
+// @ts-ignore
+export function createPowerBiDlpAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerBiDlpAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerPagesSiteAuditRecord}
+ */
+// @ts-ignore
+export function createPowerPagesSiteAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerPagesSiteAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerPlatformAdminDlpAuditRecord}
+ */
+// @ts-ignore
+export function createPowerPlatformAdminDlpAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerPlatformAdminDlpAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerPlatformAdminEnvironmentAuditRecord}
+ */
+// @ts-ignore
+export function createPowerPlatformAdminEnvironmentAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerPlatformAdminEnvironmentAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerPlatformAdministratorActivityRecord}
+ */
+// @ts-ignore
+export function createPowerPlatformAdministratorActivityRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerPlatformAdministratorActivityRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerPlatformLockboxResourceAccessRequestAuditRecord}
+ */
+// @ts-ignore
+export function createPowerPlatformLockboxResourceAccessRequestAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerPlatformLockboxResourceAccessRequestAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerPlatformLockboxResourceCommandAuditRecord}
+ */
+// @ts-ignore
+export function createPowerPlatformLockboxResourceCommandAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerPlatformLockboxResourceCommandAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PowerPlatformServiceActivityAuditRecord}
+ */
+// @ts-ignore
+export function createPowerPlatformServiceActivityAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPowerPlatformServiceActivityAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyDataMatchAuditRecord}
+ */
+// @ts-ignore
+export function createPrivacyDataMatchAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyDataMatchAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyDataMinimizationRecord}
+ */
+// @ts-ignore
+export function createPrivacyDataMinimizationRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyDataMinimizationRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyDigestEmailRecord}
+ */
+// @ts-ignore
+export function createPrivacyDigestEmailRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyDigestEmailRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyOpenAccessAuditRecord}
+ */
+// @ts-ignore
+export function createPrivacyOpenAccessAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyOpenAccessAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyPortalAuditRecord}
+ */
+// @ts-ignore
+export function createPrivacyPortalAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyPortalAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyRemediationActionRecord}
+ */
+// @ts-ignore
+export function createPrivacyRemediationActionRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyRemediationActionRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyRemediationRecord}
+ */
+// @ts-ignore
+export function createPrivacyRemediationRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyRemediationRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PrivacyTenantAuditHistoryRecord}
+ */
+// @ts-ignore
+export function createPrivacyTenantAuditHistoryRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPrivacyTenantAuditHistoryRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ProcessEvidence}
  */
 // @ts-ignore
 export function createProcessEvidenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoProcessEvidence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectAuditRecord}
+ */
+// @ts-ignore
+export function createProjectAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectForTheWebAssignedToMeSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createProjectForTheWebAssignedToMeSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectForTheWebAssignedToMeSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectForTheWebProjectAuditRecord}
+ */
+// @ts-ignore
+export function createProjectForTheWebProjectAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectForTheWebProjectAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectForTheWebProjectSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createProjectForTheWebProjectSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectForTheWebProjectSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectForTheWebRoadmapAuditRecord}
+ */
+// @ts-ignore
+export function createProjectForTheWebRoadmapAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectForTheWebRoadmapAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectForTheWebRoadmapItemAuditRecord}
+ */
+// @ts-ignore
+export function createProjectForTheWebRoadmapItemAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectForTheWebRoadmapItemAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectForTheWebRoadmapSettingsAuditRecord}
+ */
+// @ts-ignore
+export function createProjectForTheWebRoadmapSettingsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectForTheWebRoadmapSettingsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ProjectForTheWebTaskAuditRecord}
+ */
+// @ts-ignore
+export function createProjectForTheWebTaskAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProjectForTheWebTaskAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3865,6 +6373,42 @@ export function createProtectionRuleFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PublicFolderAuditRecord}
+ */
+// @ts-ignore
+export function createPublicFolderAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPublicFolderAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PurviewInsiderRiskAlertsRecord}
+ */
+// @ts-ignore
+export function createPurviewInsiderRiskAlertsRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPurviewInsiderRiskAlertsRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PurviewInsiderRiskCasesRecord}
+ */
+// @ts-ignore
+export function createPurviewInsiderRiskCasesRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPurviewInsiderRiskCasesRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {QuarantineAuditRecord}
+ */
+// @ts-ignore
+export function createQuarantineAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoQuarantineAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {QueryCondition}
  */
 // @ts-ignore
@@ -3888,6 +6432,15 @@ export function createRecommendedHuntingQueryFromDiscriminatorValue(parseNode: P
 // @ts-ignore
 export function createRecommendLabelActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRecommendLabelAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RecordsManagementAuditRecord}
+ */
+// @ts-ignore
+export function createRecordsManagementAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRecordsManagementAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4117,6 +6670,15 @@ export function createRetentionLabelFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RetentionPolicyAuditRecord}
+ */
+// @ts-ignore
+export function createRetentionPolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRetentionPolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RuleSchedule}
  */
 // @ts-ignore
@@ -4162,6 +6724,42 @@ export function createSasTokenEvidenceFromDiscriminatorValue(parseNode: ParseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ScoreEvidence}
+ */
+// @ts-ignore
+export function createScoreEvidenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoScoreEvidence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ScorePlatformGenericAuditRecord}
+ */
+// @ts-ignore
+export function createScorePlatformGenericAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoScorePlatformGenericAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ScriptRunAuditRecord}
+ */
+// @ts-ignore
+export function createScriptRunAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoScriptRunAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SearchAuditRecord}
+ */
+// @ts-ignore
+export function createSearchAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSearchAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Search}
  */
 // @ts-ignore
@@ -4180,6 +6778,51 @@ export function createSearchFromDiscriminatorValue(parseNode: ParseNode | undefi
         }
     }
     return deserializeIntoSearch;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityComplianceAlertRecord}
+ */
+// @ts-ignore
+export function createSecurityComplianceAlertRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityComplianceAlertRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityComplianceCenterEOPCmdletAuditRecord}
+ */
+// @ts-ignore
+export function createSecurityComplianceCenterEOPCmdletAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityComplianceCenterEOPCmdletAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityComplianceInsightsAuditRecord}
+ */
+// @ts-ignore
+export function createSecurityComplianceInsightsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityComplianceInsightsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityComplianceRBACAuditRecord}
+ */
+// @ts-ignore
+export function createSecurityComplianceRBACAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityComplianceRBACAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SecurityComplianceUserChangeAuditRecord}
+ */
+// @ts-ignore
+export function createSecurityComplianceUserChangeAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSecurityComplianceUserChangeAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4265,6 +6908,87 @@ export function createServicePrincipalEvidenceFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointAppPermissionOperationAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointAppPermissionOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointAppPermissionOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointCommentOperationAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointCommentOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointCommentOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointContentTypeOperationAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointContentTypeOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointContentTypeOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointESignatureAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointESignatureAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointESignatureAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointFieldOperationAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointFieldOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointFieldOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointFileOperationAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointFileOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointFileOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointListOperationAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointListOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointListOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SharePointSharingOperationAuditRecord}
+ */
+// @ts-ignore
+export function createSharePointSharingOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSharePointSharingOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SinglePropertySchema}
  */
 // @ts-ignore
@@ -4288,6 +7012,60 @@ export function createSiteSourceCollectionResponseFromDiscriminatorValue(parseNo
 // @ts-ignore
 export function createSiteSourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSiteSource;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SkypeForBusinessBaseAuditRecord}
+ */
+// @ts-ignore
+export function createSkypeForBusinessBaseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSkypeForBusinessBaseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SkypeForBusinessCmdletsAuditRecord}
+ */
+// @ts-ignore
+export function createSkypeForBusinessCmdletsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSkypeForBusinessCmdletsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SkypeForBusinessPSTNUsageAuditRecord}
+ */
+// @ts-ignore
+export function createSkypeForBusinessPSTNUsageAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSkypeForBusinessPSTNUsageAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SkypeForBusinessUsersBlockedAuditRecord}
+ */
+// @ts-ignore
+export function createSkypeForBusinessUsersBlockedAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSkypeForBusinessUsersBlockedAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SmsCreatePhoneNumberRecord}
+ */
+// @ts-ignore
+export function createSmsCreatePhoneNumberRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSmsCreatePhoneNumberRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SmsDeletePhoneNumberRecord}
+ */
+// @ts-ignore
+export function createSmsDeletePhoneNumberRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSmsDeletePhoneNumberRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4436,6 +7214,24 @@ export function createSubmissionUserIdentityFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SupervisoryReviewDayXInsightsAuditRecord}
+ */
+// @ts-ignore
+export function createSupervisoryReviewDayXInsightsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSupervisoryReviewDayXInsightsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SyntheticProbeAuditRecord}
+ */
+// @ts-ignore
+export function createSyntheticProbeAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSyntheticProbeAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Tag}
  */
 // @ts-ignore
@@ -4452,6 +7248,42 @@ export function createTagFromDiscriminatorValue(parseNode: ParseNode | undefined
         }
     }
     return deserializeIntoTag;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TeamsEasyApprovalsAuditRecord}
+ */
+// @ts-ignore
+export function createTeamsEasyApprovalsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTeamsEasyApprovalsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TeamsHealthcareAuditRecord}
+ */
+// @ts-ignore
+export function createTeamsHealthcareAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTeamsHealthcareAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TeamsUpdatesAuditRecord}
+ */
+// @ts-ignore
+export function createTeamsUpdatesAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTeamsUpdatesAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TenantAllowBlockListAuditRecord}
+ */
+// @ts-ignore
+export function createTenantAllowBlockListAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTenantAllowBlockListAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4474,11 +7306,47 @@ export function createTenantAllowOrBlockListActionFromDiscriminatorValue(parseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatFinderAuditRecord}
+ */
+// @ts-ignore
+export function createThreatFinderAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatFinderAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceAtpContentData}
+ */
+// @ts-ignore
+export function createThreatIntelligenceAtpContentDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligenceAtpContentData;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ThreatIntelligence}
  */
 // @ts-ignore
 export function createThreatIntelligenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoThreatIntelligence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceMailData}
+ */
+// @ts-ignore
+export function createThreatIntelligenceMailDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligenceMailData;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceUrlClickData}
+ */
+// @ts-ignore
+export function createThreatIntelligenceUrlClickDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligenceUrlClickData;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4524,6 +7392,15 @@ export function createThreatSubmissionRootFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TodoAuditRecord}
+ */
+// @ts-ignore
+export function createTodoAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTodoAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TopicModelingSettings}
  */
 // @ts-ignore
@@ -4551,11 +7428,29 @@ export function createTriggerTypesRootFromDiscriminatorValue(parseNode: ParseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UamOperationAuditRecord}
+ */
+// @ts-ignore
+export function createUamOperationAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUamOperationAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UnclassifiedArtifact}
  */
 // @ts-ignore
 export function createUnclassifiedArtifactFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnclassifiedArtifact;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UnifiedGroupAuditRecord}
+ */
+// @ts-ignore
+export function createUnifiedGroupAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUnifiedGroupAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4574,6 +7469,60 @@ export function createUnifiedGroupSourceCollectionResponseFromDiscriminatorValue
 // @ts-ignore
 export function createUnifiedGroupSourceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUnifiedGroupSource;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UnifiedSimulationMatchedItemAuditRecord}
+ */
+// @ts-ignore
+export function createUnifiedSimulationMatchedItemAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUnifiedSimulationMatchedItemAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UnifiedSimulationSummaryAuditRecord}
+ */
+// @ts-ignore
+export function createUnifiedSimulationSummaryAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUnifiedSimulationSummaryAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UploadCertificateRecord}
+ */
+// @ts-ignore
+export function createUploadCertificateRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUploadCertificateRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UrbacAssignmentAuditRecord}
+ */
+// @ts-ignore
+export function createUrbacAssignmentAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUrbacAssignmentAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UrbacEnableStateAuditRecord}
+ */
+// @ts-ignore
+export function createUrbacEnableStateAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUrbacEnableStateAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UrbacRoleAuditRecord}
+ */
+// @ts-ignore
+export function createUrbacRoleAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUrbacRoleAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4641,6 +7590,114 @@ export function createUserSourceFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UserTrainingAuditRecord}
+ */
+// @ts-ignore
+export function createUserTrainingAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUserTrainingAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VfamBasePolicyAuditRecord}
+ */
+// @ts-ignore
+export function createVfamBasePolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVfamBasePolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VfamCreatePolicyAuditRecord}
+ */
+// @ts-ignore
+export function createVfamCreatePolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVfamCreatePolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VfamDeletePolicyAuditRecord}
+ */
+// @ts-ignore
+export function createVfamDeletePolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVfamDeletePolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VfamUpdatePolicyAuditRecord}
+ */
+// @ts-ignore
+export function createVfamUpdatePolicyAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVfamUpdatePolicyAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VivaGoalsAuditRecord}
+ */
+// @ts-ignore
+export function createVivaGoalsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVivaGoalsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VivaLearningAdminAuditRecord}
+ */
+// @ts-ignore
+export function createVivaLearningAdminAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVivaLearningAdminAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VivaLearningAuditRecord}
+ */
+// @ts-ignore
+export function createVivaLearningAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVivaLearningAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VivaPulseAdminAuditRecord}
+ */
+// @ts-ignore
+export function createVivaPulseAdminAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVivaPulseAdminAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VivaPulseOrganizerAuditRecord}
+ */
+// @ts-ignore
+export function createVivaPulseOrganizerAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVivaPulseOrganizerAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VivaPulseReportAuditRecord}
+ */
+// @ts-ignore
+export function createVivaPulseReportAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVivaPulseReportAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {VivaPulseResponseAuditRecord}
+ */
+// @ts-ignore
+export function createVivaPulseResponseAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoVivaPulseResponseAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {VmMetadata}
  */
 // @ts-ignore
@@ -4682,6 +7739,15 @@ export function createVulnerabilityComponentFromDiscriminatorValue(parseNode: Pa
 // @ts-ignore
 export function createVulnerabilityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoVulnerability;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {WdatpAlertsAuditRecord}
+ */
+// @ts-ignore
+export function createWdatpAlertsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoWdatpAlertsAuditRecord;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4759,6 +7825,37 @@ export function createWhoisRecordCollectionResponseFromDiscriminatorValue(parseN
 export function createWhoisRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWhoisRecord;
 }
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Windows365CustomerLockboxAuditRecord}
+ */
+// @ts-ignore
+export function createWindows365CustomerLockboxAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoWindows365CustomerLockboxAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {WorkplaceAnalyticsAuditRecord}
+ */
+// @ts-ignore
+export function createWorkplaceAnalyticsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoWorkplaceAnalyticsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {YammerAuditRecord}
+ */
+// @ts-ignore
+export function createYammerAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoYammerAuditRecord;
+}
+export interface CrmBaseAuditRecord extends AuditData, Parsable {
+}
+export interface CrmEntityOperationAuditRecord extends AuditData, Parsable {
+}
 export interface CustomAction extends InformationProtectionAction, Parsable {
     /**
      * Name of the custom action.
@@ -4768,6 +7865,8 @@ export interface CustomAction extends InformationProtectionAction, Parsable {
      * Properties, in key-value pair format, of the action.
      */
     properties?: KeyValuePair[] | null;
+}
+export interface CustomerKeyServiceEncryptionAuditRecord extends AuditData, Parsable {
 }
 export interface CvssSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4795,6 +7894,16 @@ export interface CvssSummary extends AdditionalDataHolder, BackedModel, Parsable
      */
     vectorString?: string | null;
 }
+export interface DataCenterSecurityBaseAuditRecord extends AuditData, Parsable {
+}
+export interface DataCenterSecurityCmdletAuditRecord extends AuditData, Parsable {
+}
+export interface DataGovernanceAuditRecord extends AuditData, Parsable {
+}
+export interface DataInsightsRestApiAuditRecord extends AuditData, Parsable {
+}
+export interface DataLakeExportOperationAuditRecord extends AuditData, Parsable {
+}
 export interface DataSet extends Entity, Parsable {
     /**
      * The createdBy property
@@ -4808,6 +7917,8 @@ export interface DataSet extends Entity, Parsable {
      * The displayName property
      */
     displayName?: string | null;
+}
+export interface DataShareOperationAuditRecord extends AuditData, Parsable {
 }
 export interface DataSource extends Entity, Parsable {
     /**
@@ -4866,6 +7977,10 @@ export interface DefaultAuditData extends AuditData, Parsable {
 }
 export type DefaultRecordBehavior = (typeof DefaultRecordBehaviorObject)[keyof typeof DefaultRecordBehaviorObject];
 export type DefenderAvStatus = (typeof DefenderAvStatusObject)[keyof typeof DefenderAvStatusObject];
+export interface DefenderSecurityAlertBaseRecord extends AuditData, Parsable {
+}
+export interface DeleteCertificateRecord extends AuditData, Parsable {
+}
 export type DeliveryAction = (typeof DeliveryActionObject)[keyof typeof DeliveryActionObject];
 export type DeliveryLocation = (typeof DeliveryLocationObject)[keyof typeof DeliveryLocationObject];
 export interface DepartmentTemplate extends FilePlanDescriptorTemplate, Parsable {
@@ -4895,6 +8010,16 @@ export interface DeploymentAccessKeyType extends AdditionalDataHolder, BackedMod
     odataType?: string | null;
 }
 export type DeploymentStatus = (typeof DeploymentStatusObject)[keyof typeof DeploymentStatusObject];
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAadRiskDetectionAuditRecord(aadRiskDetectionAuditRecord: Partial<AadRiskDetectionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aadRiskDetectionAuditRecord),
+    }
+}
 /**
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
@@ -4943,6 +8068,106 @@ export function deserializeIntoAddWatermarkAction(addWatermarkAction: Partial<Ad
         "layout": n => { addWatermarkAction.layout = n.getEnumValue<WatermarkLayout>(WatermarkLayoutObject); },
         "text": n => { addWatermarkAction.text = n.getStringValue(); },
         "uiElementName": n => { addWatermarkAction.uiElementName = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAedAuditRecord(aedAuditRecord: Partial<AedAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aedAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAiAppInteractionAuditRecord(aiAppInteractionAuditRecord: Partial<AiAppInteractionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aiAppInteractionAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAipFileDeleted(aipFileDeleted: Partial<AipFileDeleted> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aipFileDeleted),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAipHeartBeat(aipHeartBeat: Partial<AipHeartBeat> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aipHeartBeat),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAipProtectionActionLogRequest(aipProtectionActionLogRequest: Partial<AipProtectionActionLogRequest> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aipProtectionActionLogRequest),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAipScannerDiscoverEvent(aipScannerDiscoverEvent: Partial<AipScannerDiscoverEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aipScannerDiscoverEvent),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAipSensitivityLabelActionLogRequest(aipSensitivityLabelActionLogRequest: Partial<AipSensitivityLabelActionLogRequest> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(aipSensitivityLabelActionLogRequest),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAirAdminActionInvestigationData(airAdminActionInvestigationData: Partial<AirAdminActionInvestigationData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(airAdminActionInvestigationData),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAirInvestigationData(airInvestigationData: Partial<AirInvestigationData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(airInvestigationData),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAirManualInvestigationData(airManualInvestigationData: Partial<AirManualInvestigationData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(airManualInvestigationData),
     }
 }
 /**
@@ -5320,6 +8545,16 @@ export function deserializeIntoArtifact(artifact: Partial<Artifact> | undefined 
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoAttackSimAdminAuditRecord(attackSimAdminAuditRecord: Partial<AttackSimAdminAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(attackSimAdminAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoAttackSimulationInfo(attackSimulationInfo: Partial<AttackSimulationInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "attackSimDateTime": n => { attackSimulationInfo.attackSimDateTime = n.getDateValue(); },
@@ -5424,6 +8659,16 @@ export function deserializeIntoAuditLogRecordCollectionResponse(auditLogRecordCo
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoAuditSearchAuditRecord(auditSearchAuditRecord: Partial<AuditSearchAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(auditSearchAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoAuthorityTemplate(authorityTemplate: Partial<AuthorityTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoFilePlanDescriptorTemplate(authorityTemplate),
@@ -5453,6 +8698,46 @@ export function deserializeIntoAutonomousSystem(autonomousSystem: Partial<Autono
         "@odata.type": n => { autonomousSystem.odataType = n.getStringValue(); },
         "organization": n => { autonomousSystem.organization = n.getStringValue(); },
         "value": n => { autonomousSystem.value = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAzureActiveDirectoryAccountLogonAuditRecord(azureActiveDirectoryAccountLogonAuditRecord: Partial<AzureActiveDirectoryAccountLogonAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(azureActiveDirectoryAccountLogonAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAzureActiveDirectoryAuditRecord(azureActiveDirectoryAuditRecord: Partial<AzureActiveDirectoryAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(azureActiveDirectoryAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAzureActiveDirectoryBaseAuditRecord(azureActiveDirectoryBaseAuditRecord: Partial<AzureActiveDirectoryBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(azureActiveDirectoryBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAzureActiveDirectoryStsLogonAuditRecord(azureActiveDirectoryStsLogonAuditRecord: Partial<AzureActiveDirectoryStsLogonAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(azureActiveDirectoryStsLogonAuditRecord),
     }
 }
 /**
@@ -5513,6 +8798,26 @@ export function deserializeIntoBlockFileResponseAction(blockFileResponseAction: 
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoCampaignAuditRecord(campaignAuditRecord: Partial<CampaignAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(campaignAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCaseAuditRecord(caseAuditRecord: Partial<CaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(caseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoCaseEscaped(caseEscaped: Partial<CaseEscaped> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(caseEscaped),
@@ -5522,6 +8827,16 @@ export function deserializeIntoCaseEscaped(caseEscaped: Partial<CaseEscaped> | u
         "lastModifiedBy": n => { caseEscaped.lastModifiedBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
         "lastModifiedDateTime": n => { caseEscaped.lastModifiedDateTime = n.getDateValue(); },
         "status": n => { caseEscaped.status = n.getEnumValue<CaseStatus>(CaseStatusObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCaseInvestigation(caseInvestigation: Partial<CaseInvestigation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(caseInvestigation),
     }
 }
 /**
@@ -5583,6 +8898,106 @@ export function deserializeIntoCategoryTemplateCollectionResponse(categoryTempla
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(categoryTemplateCollectionResponse),
         "value": n => { categoryTemplateCollectionResponse.value = n.getCollectionOfObjectValues<CategoryTemplate>(createCategoryTemplateFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCdpColdCrawlStatusRecord(cdpColdCrawlStatusRecord: Partial<CdpColdCrawlStatusRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cdpColdCrawlStatusRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCdpContentExplorerAggregateRecord(cdpContentExplorerAggregateRecord: Partial<CdpContentExplorerAggregateRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cdpContentExplorerAggregateRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCdpDlpSensitiveAuditRecord(cdpDlpSensitiveAuditRecord: Partial<CdpDlpSensitiveAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cdpDlpSensitiveAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCdpDlpSensitiveEndpointAuditRecord(cdpDlpSensitiveEndpointAuditRecord: Partial<CdpDlpSensitiveEndpointAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cdpDlpSensitiveEndpointAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCdpLogRecord(cdpLogRecord: Partial<CdpLogRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cdpLogRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCdpOcrBillingRecord(cdpOcrBillingRecord: Partial<CdpOcrBillingRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cdpOcrBillingRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCdpResourceScopeChangeEventRecord(cdpResourceScopeChangeEventRecord: Partial<CdpResourceScopeChangeEventRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cdpResourceScopeChangeEventRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCernerSMSLinkRecord(cernerSMSLinkRecord: Partial<CernerSMSLinkRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cernerSMSLinkRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCernerSMSSettingsUpdateRecord(cernerSMSSettingsUpdateRecord: Partial<CernerSMSSettingsUpdateRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cernerSMSSettingsUpdateRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCernerSMSUnlinkRecord(cernerSMSUnlinkRecord: Partial<CernerSMSUnlinkRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cernerSMSUnlinkRecord),
     }
 }
 /**
@@ -5695,6 +9110,216 @@ export function deserializeIntoCollectInvestigationPackageResponseAction(collect
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoComplianceConnectorAuditRecord(complianceConnectorAuditRecord: Partial<ComplianceConnectorAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceConnectorAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDLMExchangeAuditRecord(complianceDLMExchangeAuditRecord: Partial<ComplianceDLMExchangeAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDLMExchangeAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDLMSharePointAuditRecord(complianceDLMSharePointAuditRecord: Partial<ComplianceDLMSharePointAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDLMSharePointAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpApplicationsAuditRecord(complianceDlpApplicationsAuditRecord: Partial<ComplianceDlpApplicationsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpApplicationsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpApplicationsClassificationAuditRecord(complianceDlpApplicationsClassificationAuditRecord: Partial<ComplianceDlpApplicationsClassificationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpApplicationsClassificationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpBaseAuditRecord(complianceDlpBaseAuditRecord: Partial<ComplianceDlpBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpClassificationBaseAuditRecord(complianceDlpClassificationBaseAuditRecord: Partial<ComplianceDlpClassificationBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpClassificationBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpClassificationBaseCdpRecord(complianceDlpClassificationBaseCdpRecord: Partial<ComplianceDlpClassificationBaseCdpRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpClassificationBaseCdpRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpEndpointAuditRecord(complianceDlpEndpointAuditRecord: Partial<ComplianceDlpEndpointAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpEndpointAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpEndpointDiscoveryAuditRecord(complianceDlpEndpointDiscoveryAuditRecord: Partial<ComplianceDlpEndpointDiscoveryAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpEndpointDiscoveryAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpExchangeAuditRecord(complianceDlpExchangeAuditRecord: Partial<ComplianceDlpExchangeAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpExchangeAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpExchangeClassificationAuditRecord(complianceDlpExchangeClassificationAuditRecord: Partial<ComplianceDlpExchangeClassificationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpExchangeClassificationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpExchangeClassificationCdpRecord(complianceDlpExchangeClassificationCdpRecord: Partial<ComplianceDlpExchangeClassificationCdpRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpExchangeClassificationCdpRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpExchangeDiscoveryAuditRecord(complianceDlpExchangeDiscoveryAuditRecord: Partial<ComplianceDlpExchangeDiscoveryAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpExchangeDiscoveryAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpSharePointAuditRecord(complianceDlpSharePointAuditRecord: Partial<ComplianceDlpSharePointAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpSharePointAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpSharePointClassificationAuditRecord(complianceDlpSharePointClassificationAuditRecord: Partial<ComplianceDlpSharePointClassificationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpSharePointClassificationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceDlpSharePointClassificationExtendedAuditRecord(complianceDlpSharePointClassificationExtendedAuditRecord: Partial<ComplianceDlpSharePointClassificationExtendedAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceDlpSharePointClassificationExtendedAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceManagerActionRecord(complianceManagerActionRecord: Partial<ComplianceManagerActionRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceManagerActionRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceSupervisionBaseAuditRecord(complianceSupervisionBaseAuditRecord: Partial<ComplianceSupervisionBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceSupervisionBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceSupervisionExchangeAuditRecord(complianceSupervisionExchangeAuditRecord: Partial<ComplianceSupervisionExchangeAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(complianceSupervisionExchangeAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoConsumptionResourceAuditRecord(consumptionResourceAuditRecord: Partial<ConsumptionResourceAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(consumptionResourceAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoContainerEvidence(containerEvidence: Partial<ContainerEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAlertEvidence(containerEvidence),
@@ -5765,11 +9390,91 @@ export function deserializeIntoContentLabel(contentLabel: Partial<ContentLabel> 
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoCopilotInteractionAuditRecord(copilotInteractionAuditRecord: Partial<CopilotInteractionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(copilotInteractionAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCoreReportingSettingsAuditRecord(coreReportingSettingsAuditRecord: Partial<CoreReportingSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(coreReportingSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCortanaBriefingAuditRecord(cortanaBriefingAuditRecord: Partial<CortanaBriefingAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cortanaBriefingAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCpsCommonPolicyAuditRecord(cpsCommonPolicyAuditRecord: Partial<CpsCommonPolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cpsCommonPolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCpsPolicyConfigAuditRecord(cpsPolicyConfigAuditRecord: Partial<CpsPolicyConfigAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(cpsPolicyConfigAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCrmBaseAuditRecord(crmBaseAuditRecord: Partial<CrmBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(crmBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCrmEntityOperationAuditRecord(crmEntityOperationAuditRecord: Partial<CrmEntityOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(crmEntityOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoCustomAction(customAction: Partial<CustomAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoInformationProtectionAction(customAction),
         "name": n => { customAction.name = n.getStringValue(); },
         "properties": n => { customAction.properties = n.getCollectionOfObjectValues<KeyValuePair>(createKeyValuePairFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomerKeyServiceEncryptionAuditRecord(customerKeyServiceEncryptionAuditRecord: Partial<CustomerKeyServiceEncryptionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(customerKeyServiceEncryptionAuditRecord),
     }
 }
 /**
@@ -5791,12 +9496,72 @@ export function deserializeIntoCvssSummary(cvssSummary: Partial<CvssSummary> | u
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoDataCenterSecurityBaseAuditRecord(dataCenterSecurityBaseAuditRecord: Partial<DataCenterSecurityBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dataCenterSecurityBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDataCenterSecurityCmdletAuditRecord(dataCenterSecurityCmdletAuditRecord: Partial<DataCenterSecurityCmdletAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dataCenterSecurityCmdletAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDataGovernanceAuditRecord(dataGovernanceAuditRecord: Partial<DataGovernanceAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dataGovernanceAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDataInsightsRestApiAuditRecord(dataInsightsRestApiAuditRecord: Partial<DataInsightsRestApiAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dataInsightsRestApiAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDataLakeExportOperationAuditRecord(dataLakeExportOperationAuditRecord: Partial<DataLakeExportOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dataLakeExportOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoDataSet(dataSet: Partial<DataSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(dataSet),
         "createdBy": n => { dataSet.createdBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
         "createdDateTime": n => { dataSet.createdDateTime = n.getDateValue(); },
         "displayName": n => { dataSet.displayName = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDataShareOperationAuditRecord(dataShareOperationAuditRecord: Partial<DataShareOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dataShareOperationAuditRecord),
     }
 }
 /**
@@ -5848,6 +9613,26 @@ export function deserializeIntoDataSourceContainer(dataSourceContainer: Partial<
 export function deserializeIntoDefaultAuditData(defaultAuditData: Partial<DefaultAuditData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(defaultAuditData),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDefenderSecurityAlertBaseRecord(defenderSecurityAlertBaseRecord: Partial<DefenderSecurityAlertBaseRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(defenderSecurityAlertBaseRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDeleteCertificateRecord(deleteCertificateRecord: Partial<DeleteCertificateRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(deleteCertificateRecord),
     }
 }
 /**
@@ -6010,10 +9795,30 @@ export function deserializeIntoDictionary(dictionary: Partial<Dictionary> | unde
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoDisableConsentRecord(disableConsentRecord: Partial<DisableConsentRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(disableConsentRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoDisableUserResponseAction(disableUserResponseAction: Partial<DisableUserResponseAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoResponseAction(disableUserResponseAction),
         "identifier": n => { disableUserResponseAction.identifier = n.getCollectionOfEnumValues<DisableUserEntityIdentifier>(DisableUserEntityIdentifierObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDiscoveryAuditRecord(discoveryAuditRecord: Partial<DiscoveryAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(discoveryAuditRecord),
     }
 }
 /**
@@ -6045,6 +9850,36 @@ export function deserializeIntoDispositionReviewStageCollectionResponse(disposit
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoDlpEndpointAuditRecord(dlpEndpointAuditRecord: Partial<DlpEndpointAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dlpEndpointAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDlpSensitiveInformationTypeCmdletRecord(dlpSensitiveInformationTypeCmdletRecord: Partial<DlpSensitiveInformationTypeCmdletRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dlpSensitiveInformationTypeCmdletRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDlpSensitiveInformationTypeRulePackageCmdletRecord(dlpSensitiveInformationTypeRulePackageCmdletRecord: Partial<DlpSensitiveInformationTypeRulePackageCmdletRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dlpSensitiveInformationTypeRulePackageCmdletRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoDnsEvidence(dnsEvidence: Partial<DnsEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAlertEvidence(dnsEvidence),
@@ -6065,6 +9900,26 @@ export function deserializeIntoDowngradeJustification(downgradeJustification: Pa
         "isDowngradeJustified": n => { downgradeJustification.isDowngradeJustified = n.getBooleanValue(); },
         "justificationMessage": n => { downgradeJustification.justificationMessage = n.getStringValue(); },
         "@odata.type": n => { downgradeJustification.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDownloadCertificateRecord(downloadCertificateRecord: Partial<DownloadCertificateRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(downloadCertificateRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDynamics365BusinessCentralAuditRecord(dynamics365BusinessCentralAuditRecord: Partial<Dynamics365BusinessCentralAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(dynamics365BusinessCentralAuditRecord),
     }
 }
 /**
@@ -6519,6 +10374,46 @@ export function deserializeIntoEmailUrlThreatSubmission(emailUrlThreatSubmission
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoEnableConsentRecord(enableConsentRecord: Partial<EnableConsentRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(enableConsentRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEpicSMSLinkRecord(epicSMSLinkRecord: Partial<EpicSMSLinkRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(epicSMSLinkRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEpicSMSSettingsUpdateRecord(epicSMSSettingsUpdateRecord: Partial<EpicSMSSettingsUpdateRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(epicSMSSettingsUpdateRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEpicSMSUnlinkRecord(epicSMSUnlinkRecord: Partial<EpicSMSUnlinkRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(epicSMSUnlinkRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoEventPropagationResult(eventPropagationResult: Partial<EventPropagationResult> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { eventPropagationResult.backingStoreEnabled = true; },
@@ -6547,6 +10442,66 @@ export function deserializeIntoEventQuery(eventQuery: Partial<EventQuery> | unde
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoExchangeAdminAuditRecord(exchangeAdminAuditRecord: Partial<ExchangeAdminAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(exchangeAdminAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoExchangeAggregatedMailboxAuditRecord(exchangeAggregatedMailboxAuditRecord: Partial<ExchangeAggregatedMailboxAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(exchangeAggregatedMailboxAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoExchangeAggregatedOperationRecord(exchangeAggregatedOperationRecord: Partial<ExchangeAggregatedOperationRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(exchangeAggregatedOperationRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoExchangeMailboxAuditBaseRecord(exchangeMailboxAuditBaseRecord: Partial<ExchangeMailboxAuditBaseRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(exchangeMailboxAuditBaseRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoExchangeMailboxAuditGroupRecord(exchangeMailboxAuditGroupRecord: Partial<ExchangeMailboxAuditGroupRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(exchangeMailboxAuditGroupRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoExchangeMailboxAuditRecord(exchangeMailboxAuditRecord: Partial<ExchangeMailboxAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(exchangeMailboxAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoExportFileMetadata(exportFileMetadata: Partial<ExportFileMetadata> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { exportFileMetadata.backingStoreEnabled = true; },
@@ -6554,6 +10509,46 @@ export function deserializeIntoExportFileMetadata(exportFileMetadata: Partial<Ex
         "fileName": n => { exportFileMetadata.fileName = n.getStringValue(); },
         "@odata.type": n => { exportFileMetadata.odataType = n.getStringValue(); },
         "size": n => { exportFileMetadata.size = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoFhirBaseUrlAddRecord(fhirBaseUrlAddRecord: Partial<FhirBaseUrlAddRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(fhirBaseUrlAddRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoFhirBaseUrlApproveRecord(fhirBaseUrlApproveRecord: Partial<FhirBaseUrlApproveRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(fhirBaseUrlApproveRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoFhirBaseUrlDeleteRecord(fhirBaseUrlDeleteRecord: Partial<FhirBaseUrlDeleteRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(fhirBaseUrlDeleteRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoFhirBaseUrlUpdateRecord(fhirBaseUrlUpdateRecord: Partial<FhirBaseUrlUpdateRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(fhirBaseUrlUpdateRecord),
     }
 }
 /**
@@ -6927,6 +10922,16 @@ export function deserializeIntoHardDeleteResponseAction(hardDeleteResponseAction
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoHealthcareSignalRecord(healthcareSignalRecord: Partial<HealthcareSignalRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(healthcareSignalRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoHealthIssue(healthIssue: Partial<HealthIssue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(healthIssue),
@@ -7043,6 +11048,16 @@ export function deserializeIntoHostCookieCollectionResponse(hostCookieCollection
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(hostCookieCollectionResponse),
         "value": n => { hostCookieCollectionResponse.value = n.getCollectionOfObjectValues<HostCookie>(createHostCookieFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoHostedRpaAuditRecord(hostedRpaAuditRecord: Partial<HostedRpaAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(hostedRpaAuditRecord),
     }
 }
 /**
@@ -7260,6 +11275,16 @@ export function deserializeIntoHostTrackerCollectionResponse(hostTrackerCollecti
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoHrSignalAuditRecord(hrSignalAuditRecord: Partial<HrSignalAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(hrSignalAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoHuntingQueryResults(huntingQueryResults: Partial<HuntingQueryResults> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { huntingQueryResults.backingStoreEnabled = true; },
@@ -7277,6 +11302,16 @@ export function deserializeIntoHuntingRowResult(huntingRowResult: Partial<Huntin
     return {
         "backingStoreEnabled": n => { huntingRowResult.backingStoreEnabled = true; },
         "@odata.type": n => { huntingRowResult.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoHygieneEventRecord(hygieneEventRecord: Partial<HygieneEventRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(hygieneEventRecord),
     }
 }
 /**
@@ -7407,6 +11442,16 @@ export function deserializeIntoIndicator(indicator: Partial<Indicator> | undefin
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoInformationBarrierPolicyApplicationAuditRecord(informationBarrierPolicyApplicationAuditRecord: Partial<InformationBarrierPolicyApplicationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(informationBarrierPolicyApplicationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoInformationProtection(informationProtection: Partial<InformationProtection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(informationProtection),
@@ -7444,10 +11489,40 @@ export function deserializeIntoInformationProtectionPolicySetting(informationPro
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoInformationWorkerProtectionAuditRecord(informationWorkerProtectionAuditRecord: Partial<InformationWorkerProtectionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(informationWorkerProtectionAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoInitiateInvestigationResponseAction(initiateInvestigationResponseAction: Partial<InitiateInvestigationResponseAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoResponseAction(initiateInvestigationResponseAction),
         "identifier": n => { initiateInvestigationResponseAction.identifier = n.getCollectionOfEnumValues<DeviceIdEntityIdentifier>(DeviceIdEntityIdentifierObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoInsiderRiskScopedUserInsightsRecord(insiderRiskScopedUserInsightsRecord: Partial<InsiderRiskScopedUserInsightsRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(insiderRiskScopedUserInsightsRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoInsiderRiskScopedUsersRecord(insiderRiskScopedUsersRecord: Partial<InsiderRiskScopedUsersRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(insiderRiskScopedUsersRecord),
     }
 }
 /**
@@ -7586,6 +11661,26 @@ export function deserializeIntoIpEvidence(ipEvidence: Partial<IpEvidence> | unde
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoIrmSecurityAlertRecord(irmSecurityAlertRecord: Partial<IrmSecurityAlertRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(irmSecurityAlertRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoIrmUserDefinedDetectionRecord(irmUserDefinedDetectionRecord: Partial<IrmUserDefinedDetectionRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(irmUserDefinedDetectionRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoIsolateDeviceResponseAction(isolateDeviceResponseAction: Partial<IsolateDeviceResponseAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoResponseAction(isolateDeviceResponseAction),
@@ -7601,6 +11696,16 @@ export function deserializeIntoIsolateDeviceResponseAction(isolateDeviceResponse
 export function deserializeIntoJustifyAction(justifyAction: Partial<JustifyAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoInformationProtectionAction(justifyAction),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoKaizalaAuditRecord(kaizalaAuditRecord: Partial<KaizalaAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(kaizalaAuditRecord),
     }
 }
 /**
@@ -7742,6 +11847,26 @@ export function deserializeIntoKubernetesServicePort(kubernetesServicePort: Part
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoLabelAnalyticsAggregateAuditRecord(labelAnalyticsAggregateAuditRecord: Partial<LabelAnalyticsAggregateAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(labelAnalyticsAggregateAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLabelContentExplorerAuditRecord(labelContentExplorerAuditRecord: Partial<LabelContentExplorerAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(labelContentExplorerAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoLabelingOptions(labelingOptions: Partial<LabelingOptions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "assignmentMethod": n => { labelingOptions.assignmentMethod = n.getEnumValue<AssignmentMethod>(AssignmentMethodObject); },
@@ -7773,12 +11898,42 @@ export function deserializeIntoLabelsRoot(labelsRoot: Partial<LabelsRoot> | unde
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoLargeContentMetadataAuditRecord(largeContentMetadataAuditRecord: Partial<LargeContentMetadataAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(largeContentMetadataAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoLoggedOnUser(loggedOnUser: Partial<LoggedOnUser> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "accountName": n => { loggedOnUser.accountName = n.getStringValue(); },
         "backingStoreEnabled": n => { loggedOnUser.backingStoreEnabled = true; },
         "domainName": n => { loggedOnUser.domainName = n.getStringValue(); },
         "@odata.type": n => { loggedOnUser.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoM365ComplianceConnectorAuditRecord(m365ComplianceConnectorAuditRecord: Partial<M365ComplianceConnectorAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(m365ComplianceConnectorAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoM365DAADAuditRecord(m365DAADAuditRecord: Partial<M365DAADAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(m365DAADAuditRecord),
     }
 }
 /**
@@ -7831,6 +11986,16 @@ export function deserializeIntoMailClusterEvidence(mailClusterEvidence: Partial<
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoMailSubmissionData(mailSubmissionData: Partial<MailSubmissionData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mailSubmissionData),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoMalwareEvidence(malwareEvidence: Partial<MalwareEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAlertEvidence(malwareEvidence),
@@ -7838,6 +12003,56 @@ export function deserializeIntoMalwareEvidence(malwareEvidence: Partial<MalwareE
         "files": n => { malwareEvidence.files = n.getCollectionOfObjectValues<FileEvidence>(createFileEvidenceFromDiscriminatorValue); },
         "name": n => { malwareEvidence.name = n.getStringValue(); },
         "processes": n => { malwareEvidence.processes = n.getCollectionOfObjectValues<ProcessEvidence>(createProcessEvidenceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoManagedServicesAuditRecord(managedServicesAuditRecord: Partial<ManagedServicesAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(managedServicesAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoManagedTenantsAuditRecord(managedTenantsAuditRecord: Partial<ManagedTenantsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(managedTenantsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMapgAlertsAuditRecord(mapgAlertsAuditRecord: Partial<MapgAlertsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mapgAlertsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMapgOnboardAuditRecord(mapgOnboardAuditRecord: Partial<MapgOnboardAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mapgOnboardAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMapgPolicyAuditRecord(mapgPolicyAuditRecord: Partial<MapgPolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mapgPolicyAuditRecord),
     }
 }
 /**
@@ -7856,11 +12071,421 @@ export function deserializeIntoMarkUserAsCompromisedResponseAction(markUserAsCom
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoMcasAlertsAuditRecord(mcasAlertsAuditRecord: Partial<McasAlertsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mcasAlertsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMdaDataSecuritySignalRecord(mdaDataSecuritySignalRecord: Partial<MdaDataSecuritySignalRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mdaDataSecuritySignalRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMdatpAuditRecord(mdatpAuditRecord: Partial<MdatpAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mdatpAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMdcEventsRecord(mdcEventsRecord: Partial<MdcEventsRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mdcEventsRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMdiAuditRecord(mdiAuditRecord: Partial<MdiAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mdiAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMeshWorldsAuditRecord(meshWorldsAuditRecord: Partial<MeshWorldsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(meshWorldsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoMetadataAction(metadataAction: Partial<MetadataAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoInformationProtectionAction(metadataAction),
         "metadataToAdd": n => { metadataAction.metadataToAdd = n.getCollectionOfObjectValues<KeyValuePair>(createKeyValuePairFromDiscriminatorValue); },
         "metadataToRemove": n => { metadataAction.metadataToRemove = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoft365BackupBackupItemAuditRecord(microsoft365BackupBackupItemAuditRecord: Partial<Microsoft365BackupBackupItemAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoft365BackupBackupItemAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoft365BackupBackupPolicyAuditRecord(microsoft365BackupBackupPolicyAuditRecord: Partial<Microsoft365BackupBackupPolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoft365BackupBackupPolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoft365BackupRestoreItemAuditRecord(microsoft365BackupRestoreItemAuditRecord: Partial<Microsoft365BackupRestoreItemAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoft365BackupRestoreItemAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoft365BackupRestoreTaskAuditRecord(microsoft365BackupRestoreTaskAuditRecord: Partial<Microsoft365BackupRestoreTaskAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoft365BackupRestoreTaskAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftDefenderExpertsBaseAuditRecord(microsoftDefenderExpertsBaseAuditRecord: Partial<MicrosoftDefenderExpertsBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftDefenderExpertsBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftDefenderExpertsXDRAuditRecord(microsoftDefenderExpertsXDRAuditRecord: Partial<MicrosoftDefenderExpertsXDRAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftDefenderExpertsXDRAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftFlowAuditRecord(microsoftFlowAuditRecord: Partial<MicrosoftFlowAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftFlowAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftFormsAuditRecord(microsoftFormsAuditRecord: Partial<MicrosoftFormsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftFormsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftGraphDataConnectConsent(microsoftGraphDataConnectConsent: Partial<MicrosoftGraphDataConnectConsent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftGraphDataConnectConsent),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftGraphDataConnectOperation(microsoftGraphDataConnectOperation: Partial<MicrosoftGraphDataConnectOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftGraphDataConnectOperation),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftPurviewDataMapOperationRecord(microsoftPurviewDataMapOperationRecord: Partial<MicrosoftPurviewDataMapOperationRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftPurviewDataMapOperationRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftPurviewMetadataPolicyOperationRecord(microsoftPurviewMetadataPolicyOperationRecord: Partial<MicrosoftPurviewMetadataPolicyOperationRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftPurviewMetadataPolicyOperationRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftPurviewPolicyOperationRecord(microsoftPurviewPolicyOperationRecord: Partial<MicrosoftPurviewPolicyOperationRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftPurviewPolicyOperationRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftPurviewPrivacyAuditEvent(microsoftPurviewPrivacyAuditEvent: Partial<MicrosoftPurviewPrivacyAuditEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftPurviewPrivacyAuditEvent),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftStreamAuditRecord(microsoftStreamAuditRecord: Partial<MicrosoftStreamAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftStreamAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftTeamsAdminAuditRecord(microsoftTeamsAdminAuditRecord: Partial<MicrosoftTeamsAdminAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftTeamsAdminAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftTeamsAnalyticsAuditRecord(microsoftTeamsAnalyticsAuditRecord: Partial<MicrosoftTeamsAnalyticsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftTeamsAnalyticsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftTeamsAuditRecord(microsoftTeamsAuditRecord: Partial<MicrosoftTeamsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftTeamsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftTeamsDeviceAuditRecord(microsoftTeamsDeviceAuditRecord: Partial<MicrosoftTeamsDeviceAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftTeamsDeviceAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftTeamsRetentionLabelActionAuditRecord(microsoftTeamsRetentionLabelActionAuditRecord: Partial<MicrosoftTeamsRetentionLabelActionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftTeamsRetentionLabelActionAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftTeamsSensitivityLabelActionAuditRecord(microsoftTeamsSensitivityLabelActionAuditRecord: Partial<MicrosoftTeamsSensitivityLabelActionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftTeamsSensitivityLabelActionAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMicrosoftTeamsShiftsAuditRecord(microsoftTeamsShiftsAuditRecord: Partial<MicrosoftTeamsShiftsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(microsoftTeamsShiftsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelExchangeItemAuditRecord(mipAutoLabelExchangeItemAuditRecord: Partial<MipAutoLabelExchangeItemAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelExchangeItemAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelItemAuditRecord(mipAutoLabelItemAuditRecord: Partial<MipAutoLabelItemAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelItemAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelPolicyAuditRecord(mipAutoLabelPolicyAuditRecord: Partial<MipAutoLabelPolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelPolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelProgressFeedbackAuditRecord(mipAutoLabelProgressFeedbackAuditRecord: Partial<MipAutoLabelProgressFeedbackAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelProgressFeedbackAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelSharePointItemAuditRecord(mipAutoLabelSharePointItemAuditRecord: Partial<MipAutoLabelSharePointItemAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelSharePointItemAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelSharePointPolicyLocationAuditRecord(mipAutoLabelSharePointPolicyLocationAuditRecord: Partial<MipAutoLabelSharePointPolicyLocationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelSharePointPolicyLocationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelSimulationSharePointCompletionRecord(mipAutoLabelSimulationSharePointCompletionRecord: Partial<MipAutoLabelSimulationSharePointCompletionRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelSimulationSharePointCompletionRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelSimulationSharePointProgressRecord(mipAutoLabelSimulationSharePointProgressRecord: Partial<MipAutoLabelSimulationSharePointProgressRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelSimulationSharePointProgressRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelSimulationStatisticsRecord(mipAutoLabelSimulationStatisticsRecord: Partial<MipAutoLabelSimulationStatisticsRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelSimulationStatisticsRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipAutoLabelSimulationStatusRecord(mipAutoLabelSimulationStatusRecord: Partial<MipAutoLabelSimulationStatusRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipAutoLabelSimulationStatusRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipExactDataMatchAuditRecord(mipExactDataMatchAuditRecord: Partial<MipExactDataMatchAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipExactDataMatchAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipLabelAnalyticsAuditRecord(mipLabelAnalyticsAuditRecord: Partial<MipLabelAnalyticsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipLabelAnalyticsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMipLabelAuditRecord(mipLabelAuditRecord: Partial<MipLabelAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mipLabelAuditRecord),
     }
 }
 /**
@@ -7894,6 +12519,106 @@ export function deserializeIntoMoveToJunkResponseAction(moveToJunkResponseAction
     return {
         ...deserializeIntoResponseAction(moveToJunkResponseAction),
         "identifier": n => { moveToJunkResponseAction.identifier = n.getCollectionOfEnumValues<EmailEntityIdentifier>(EmailEntityIdentifierObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMS365DCustomDetectionAuditRecord(mS365DCustomDetectionAuditRecord: Partial<MS365DCustomDetectionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mS365DCustomDetectionAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMS365DIncidentAuditRecord(mS365DIncidentAuditRecord: Partial<MS365DIncidentAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mS365DIncidentAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMS365DSuppressionRuleAuditRecord(mS365DSuppressionRuleAuditRecord: Partial<MS365DSuppressionRuleAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(mS365DSuppressionRuleAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMsdeGeneralSettingsAuditRecord(msdeGeneralSettingsAuditRecord: Partial<MsdeGeneralSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(msdeGeneralSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMsdeIndicatorsSettingsAuditRecord(msdeIndicatorsSettingsAuditRecord: Partial<MsdeIndicatorsSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(msdeIndicatorsSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMsdeResponseActionsAuditRecord(msdeResponseActionsAuditRecord: Partial<MsdeResponseActionsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(msdeResponseActionsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMsdeRolesSettingsAuditRecord(msdeRolesSettingsAuditRecord: Partial<MsdeRolesSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(msdeRolesSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMsticNationStateNotificationRecord(msticNationStateNotificationRecord: Partial<MsticNationStateNotificationRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(msticNationStateNotificationRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMultiStageDispositionAuditRecord(multiStageDispositionAuditRecord: Partial<MultiStageDispositionAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(multiStageDispositionAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMyAnalyticsSettingsAuditRecord(myAnalyticsSettingsAuditRecord: Partial<MyAnalyticsSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(myAnalyticsSettingsAuditRecord),
     }
 }
 /**
@@ -7969,12 +12694,82 @@ export function deserializeIntoOcrSettings(ocrSettings: Partial<OcrSettings> | u
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoOfficeNativeAuditRecord(officeNativeAuditRecord: Partial<OfficeNativeAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(officeNativeAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoOmePortalAuditRecord(omePortalAuditRecord: Partial<OmePortalAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(omePortalAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoOneDriveAuditRecord(oneDriveAuditRecord: Partial<OneDriveAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(oneDriveAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoOnPremisesFileShareScannerDlpAuditRecord(onPremisesFileShareScannerDlpAuditRecord: Partial<OnPremisesFileShareScannerDlpAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(onPremisesFileShareScannerDlpAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoOnPremisesScannerDlpAuditRecord(onPremisesScannerDlpAuditRecord: Partial<OnPremisesScannerDlpAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(onPremisesScannerDlpAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoOnPremisesSharePointScannerDlpAuditRecord(onPremisesSharePointScannerDlpAuditRecord: Partial<OnPremisesSharePointScannerDlpAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(onPremisesSharePointScannerDlpAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoOrganizationalScope(organizationalScope: Partial<OrganizationalScope> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { organizationalScope.backingStoreEnabled = true; },
         "@odata.type": n => { organizationalScope.odataType = n.getStringValue(); },
         "scopeNames": n => { organizationalScope.scopeNames = n.getCollectionOfPrimitiveValues<string>(); },
         "scopeType": n => { organizationalScope.scopeType = n.getEnumValue<ScopeType>(ScopeTypeObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoOwaGetAccessTokenForResourceAuditRecord(owaGetAccessTokenForResourceAuditRecord: Partial<OwaGetAccessTokenForResourceAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(owaGetAccessTokenForResourceAuditRecord),
     }
 }
 /**
@@ -8009,6 +12804,106 @@ export function deserializeIntoPassiveDnsRecordCollectionResponse(passiveDnsReco
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoPeopleAdminSettingsAuditRecord(peopleAdminSettingsAuditRecord: Partial<PeopleAdminSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(peopleAdminSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPhysicalBadgingSignalAuditRecord(physicalBadgingSignalAuditRecord: Partial<PhysicalBadgingSignalAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(physicalBadgingSignalAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerCopyPlanAuditRecord(plannerCopyPlanAuditRecord: Partial<PlannerCopyPlanAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerCopyPlanAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerPlanAuditRecord(plannerPlanAuditRecord: Partial<PlannerPlanAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerPlanAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerPlanListAuditRecord(plannerPlanListAuditRecord: Partial<PlannerPlanListAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerPlanListAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerRosterAuditRecord(plannerRosterAuditRecord: Partial<PlannerRosterAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerRosterAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerRosterSensitivityLabelAuditRecord(plannerRosterSensitivityLabelAuditRecord: Partial<PlannerRosterSensitivityLabelAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerRosterSensitivityLabelAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerTaskAuditRecord(plannerTaskAuditRecord: Partial<PlannerTaskAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerTaskAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerTaskListAuditRecord(plannerTaskListAuditRecord: Partial<PlannerTaskListAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerTaskListAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPlannerTenantSettingsAuditRecord(plannerTenantSettingsAuditRecord: Partial<PlannerTenantSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(plannerTenantSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoPolicyBase(policyBase: Partial<PolicyBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policyBase),
@@ -8019,6 +12914,206 @@ export function deserializeIntoPolicyBase(policyBase: Partial<PolicyBase> | unde
         "lastModifiedBy": n => { policyBase.lastModifiedBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
         "lastModifiedDateTime": n => { policyBase.lastModifiedDateTime = n.getDateValue(); },
         "status": n => { policyBase.status = n.getEnumValue<PolicyStatus>(PolicyStatusObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerAppsAuditAppRecord(powerAppsAuditAppRecord: Partial<PowerAppsAuditAppRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerAppsAuditAppRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerAppsAuditPlanRecord(powerAppsAuditPlanRecord: Partial<PowerAppsAuditPlanRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerAppsAuditPlanRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerAppsAuditResourceRecord(powerAppsAuditResourceRecord: Partial<PowerAppsAuditResourceRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerAppsAuditResourceRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerBiAuditRecord(powerBiAuditRecord: Partial<PowerBiAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerBiAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerBiDlpAuditRecord(powerBiDlpAuditRecord: Partial<PowerBiDlpAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerBiDlpAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerPagesSiteAuditRecord(powerPagesSiteAuditRecord: Partial<PowerPagesSiteAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerPagesSiteAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerPlatformAdminDlpAuditRecord(powerPlatformAdminDlpAuditRecord: Partial<PowerPlatformAdminDlpAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerPlatformAdminDlpAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerPlatformAdminEnvironmentAuditRecord(powerPlatformAdminEnvironmentAuditRecord: Partial<PowerPlatformAdminEnvironmentAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerPlatformAdminEnvironmentAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerPlatformAdministratorActivityRecord(powerPlatformAdministratorActivityRecord: Partial<PowerPlatformAdministratorActivityRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerPlatformAdministratorActivityRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerPlatformLockboxResourceAccessRequestAuditRecord(powerPlatformLockboxResourceAccessRequestAuditRecord: Partial<PowerPlatformLockboxResourceAccessRequestAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerPlatformLockboxResourceAccessRequestAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerPlatformLockboxResourceCommandAuditRecord(powerPlatformLockboxResourceCommandAuditRecord: Partial<PowerPlatformLockboxResourceCommandAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerPlatformLockboxResourceCommandAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPowerPlatformServiceActivityAuditRecord(powerPlatformServiceActivityAuditRecord: Partial<PowerPlatformServiceActivityAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(powerPlatformServiceActivityAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyDataMatchAuditRecord(privacyDataMatchAuditRecord: Partial<PrivacyDataMatchAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyDataMatchAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyDataMinimizationRecord(privacyDataMinimizationRecord: Partial<PrivacyDataMinimizationRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyDataMinimizationRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyDigestEmailRecord(privacyDigestEmailRecord: Partial<PrivacyDigestEmailRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyDigestEmailRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyOpenAccessAuditRecord(privacyOpenAccessAuditRecord: Partial<PrivacyOpenAccessAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyOpenAccessAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyPortalAuditRecord(privacyPortalAuditRecord: Partial<PrivacyPortalAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyPortalAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyRemediationActionRecord(privacyRemediationActionRecord: Partial<PrivacyRemediationActionRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyRemediationActionRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyRemediationRecord(privacyRemediationRecord: Partial<PrivacyRemediationRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyRemediationRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPrivacyTenantAuditHistoryRecord(privacyTenantAuditHistoryRecord: Partial<PrivacyTenantAuditHistoryRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(privacyTenantAuditHistoryRecord),
     }
 }
 /**
@@ -8039,6 +13134,86 @@ export function deserializeIntoProcessEvidence(processEvidence: Partial<ProcessE
         "processCreationDateTime": n => { processEvidence.processCreationDateTime = n.getDateValue(); },
         "processId": n => { processEvidence.processId = n.getNumberValue(); },
         "userAccount": n => { processEvidence.userAccount = n.getObjectValue<UserAccount>(createUserAccountFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectAuditRecord(projectAuditRecord: Partial<ProjectAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectForTheWebAssignedToMeSettingsAuditRecord(projectForTheWebAssignedToMeSettingsAuditRecord: Partial<ProjectForTheWebAssignedToMeSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectForTheWebAssignedToMeSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectForTheWebProjectAuditRecord(projectForTheWebProjectAuditRecord: Partial<ProjectForTheWebProjectAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectForTheWebProjectAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectForTheWebProjectSettingsAuditRecord(projectForTheWebProjectSettingsAuditRecord: Partial<ProjectForTheWebProjectSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectForTheWebProjectSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectForTheWebRoadmapAuditRecord(projectForTheWebRoadmapAuditRecord: Partial<ProjectForTheWebRoadmapAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectForTheWebRoadmapAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectForTheWebRoadmapItemAuditRecord(projectForTheWebRoadmapItemAuditRecord: Partial<ProjectForTheWebRoadmapItemAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectForTheWebRoadmapItemAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectForTheWebRoadmapSettingsAuditRecord(projectForTheWebRoadmapSettingsAuditRecord: Partial<ProjectForTheWebRoadmapSettingsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectForTheWebRoadmapSettingsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProjectForTheWebTaskAuditRecord(projectForTheWebTaskAuditRecord: Partial<ProjectForTheWebTaskAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(projectForTheWebTaskAuditRecord),
     }
 }
 /**
@@ -8093,6 +13268,46 @@ export function deserializeIntoProtectionRule(protectionRule: Partial<Protection
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoPublicFolderAuditRecord(publicFolderAuditRecord: Partial<PublicFolderAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(publicFolderAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPurviewInsiderRiskAlertsRecord(purviewInsiderRiskAlertsRecord: Partial<PurviewInsiderRiskAlertsRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(purviewInsiderRiskAlertsRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPurviewInsiderRiskCasesRecord(purviewInsiderRiskCasesRecord: Partial<PurviewInsiderRiskCasesRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(purviewInsiderRiskCasesRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoQuarantineAuditRecord(quarantineAuditRecord: Partial<QuarantineAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(quarantineAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoQueryCondition(queryCondition: Partial<QueryCondition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { queryCondition.backingStoreEnabled = true; },
@@ -8125,6 +13340,16 @@ export function deserializeIntoRecommendLabelAction(recommendLabelAction: Partia
         "actionSource": n => { recommendLabelAction.actionSource = n.getEnumValue<ActionSource>(ActionSourceObject); },
         "responsibleSensitiveTypeIds": n => { recommendLabelAction.responsibleSensitiveTypeIds = n.getCollectionOfPrimitiveValues<string>(); },
         "sensitivityLabelId": n => { recommendLabelAction.sensitivityLabelId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoRecordsManagementAuditRecord(recordsManagementAuditRecord: Partial<RecordsManagementAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(recordsManagementAuditRecord),
     }
 }
 /**
@@ -8383,6 +13608,16 @@ export function deserializeIntoRetentionLabelCollectionResponse(retentionLabelCo
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoRetentionPolicyAuditRecord(retentionPolicyAuditRecord: Partial<RetentionPolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(retentionPolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoRuleSchedule(ruleSchedule: Partial<RuleSchedule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { ruleSchedule.backingStoreEnabled = true; },
@@ -8453,6 +13688,36 @@ export function deserializeIntoSasTokenEvidence(sasTokenEvidence: Partial<SasTok
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoScoreEvidence(scoreEvidence: Partial<ScoreEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(scoreEvidence),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoScorePlatformGenericAuditRecord(scorePlatformGenericAuditRecord: Partial<ScorePlatformGenericAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(scorePlatformGenericAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoScriptRunAuditRecord(scriptRunAuditRecord: Partial<ScriptRunAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(scriptRunAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoSearch(search: Partial<Search> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(search),
@@ -8470,10 +13735,70 @@ export function deserializeIntoSearch(search: Partial<Search> | undefined = {}) 
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoSearchAuditRecord(searchAuditRecord: Partial<SearchAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(searchAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoSecurity(security: Partial<Security> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(security),
         "informationProtection": n => { security.informationProtection = n.getObjectValue<InformationProtection>(createInformationProtectionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityComplianceAlertRecord(securityComplianceAlertRecord: Partial<SecurityComplianceAlertRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(securityComplianceAlertRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityComplianceCenterEOPCmdletAuditRecord(securityComplianceCenterEOPCmdletAuditRecord: Partial<SecurityComplianceCenterEOPCmdletAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(securityComplianceCenterEOPCmdletAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityComplianceInsightsAuditRecord(securityComplianceInsightsAuditRecord: Partial<SecurityComplianceInsightsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(securityComplianceInsightsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityComplianceRBACAuditRecord(securityComplianceRBACAuditRecord: Partial<SecurityComplianceRBACAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(securityComplianceRBACAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSecurityComplianceUserChangeAuditRecord(securityComplianceUserChangeAuditRecord: Partial<SecurityComplianceUserChangeAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(securityComplianceUserChangeAuditRecord),
     }
 }
 /**
@@ -8599,6 +13924,96 @@ export function deserializeIntoServicePrincipalEvidence(servicePrincipalEvidence
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoSharePointAppPermissionOperationAuditRecord(sharePointAppPermissionOperationAuditRecord: Partial<SharePointAppPermissionOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointAppPermissionOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointAuditRecord(sharePointAuditRecord: Partial<SharePointAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointCommentOperationAuditRecord(sharePointCommentOperationAuditRecord: Partial<SharePointCommentOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointCommentOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointContentTypeOperationAuditRecord(sharePointContentTypeOperationAuditRecord: Partial<SharePointContentTypeOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointContentTypeOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointESignatureAuditRecord(sharePointESignatureAuditRecord: Partial<SharePointESignatureAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointESignatureAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointFieldOperationAuditRecord(sharePointFieldOperationAuditRecord: Partial<SharePointFieldOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointFieldOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointFileOperationAuditRecord(sharePointFileOperationAuditRecord: Partial<SharePointFileOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointFileOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointListOperationAuditRecord(sharePointListOperationAuditRecord: Partial<SharePointListOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointListOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSharePointSharingOperationAuditRecord(sharePointSharingOperationAuditRecord: Partial<SharePointSharingOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(sharePointSharingOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoSinglePropertySchema(singlePropertySchema: Partial<SinglePropertySchema> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { singlePropertySchema.backingStoreEnabled = true; },
@@ -8627,6 +14042,66 @@ export function deserializeIntoSiteSourceCollectionResponse(siteSourceCollection
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(siteSourceCollectionResponse),
         "value": n => { siteSourceCollectionResponse.value = n.getCollectionOfObjectValues<SiteSource>(createSiteSourceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSkypeForBusinessBaseAuditRecord(skypeForBusinessBaseAuditRecord: Partial<SkypeForBusinessBaseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(skypeForBusinessBaseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSkypeForBusinessCmdletsAuditRecord(skypeForBusinessCmdletsAuditRecord: Partial<SkypeForBusinessCmdletsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(skypeForBusinessCmdletsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSkypeForBusinessPSTNUsageAuditRecord(skypeForBusinessPSTNUsageAuditRecord: Partial<SkypeForBusinessPSTNUsageAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(skypeForBusinessPSTNUsageAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSkypeForBusinessUsersBlockedAuditRecord(skypeForBusinessUsersBlockedAuditRecord: Partial<SkypeForBusinessUsersBlockedAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(skypeForBusinessUsersBlockedAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSmsCreatePhoneNumberRecord(smsCreatePhoneNumberRecord: Partial<SmsCreatePhoneNumberRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(smsCreatePhoneNumberRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSmsDeletePhoneNumberRecord(smsDeletePhoneNumberRecord: Partial<SmsDeletePhoneNumberRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(smsDeletePhoneNumberRecord),
     }
 }
 /**
@@ -8847,6 +14322,26 @@ export function deserializeIntoSubmissionUserIdentity(submissionUserIdentity: Pa
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoSupervisoryReviewDayXInsightsAuditRecord(supervisoryReviewDayXInsightsAuditRecord: Partial<SupervisoryReviewDayXInsightsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(supervisoryReviewDayXInsightsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSyntheticProbeAuditRecord(syntheticProbeAuditRecord: Partial<SyntheticProbeAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(syntheticProbeAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoTag(tag: Partial<Tag> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tag),
@@ -8854,6 +14349,46 @@ export function deserializeIntoTag(tag: Partial<Tag> | undefined = {}) : Record<
         "description": n => { tag.description = n.getStringValue(); },
         "displayName": n => { tag.displayName = n.getStringValue(); },
         "lastModifiedDateTime": n => { tag.lastModifiedDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTeamsEasyApprovalsAuditRecord(teamsEasyApprovalsAuditRecord: Partial<TeamsEasyApprovalsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(teamsEasyApprovalsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTeamsHealthcareAuditRecord(teamsHealthcareAuditRecord: Partial<TeamsHealthcareAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(teamsHealthcareAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTeamsUpdatesAuditRecord(teamsUpdatesAuditRecord: Partial<TeamsUpdatesAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(teamsUpdatesAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTenantAllowBlockListAuditRecord(tenantAllowBlockListAuditRecord: Partial<TenantAllowBlockListAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(tenantAllowBlockListAuditRecord),
     }
 }
 /**
@@ -8892,6 +14427,16 @@ export function deserializeIntoTenantAllowOrBlockListAction(tenantAllowOrBlockLi
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoThreatFinderAuditRecord(threatFinderAuditRecord: Partial<ThreatFinderAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(threatFinderAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoThreatIntelligence(threatIntelligence: Partial<ThreatIntelligence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(threatIntelligence),
@@ -8912,6 +14457,36 @@ export function deserializeIntoThreatIntelligence(threatIntelligence: Partial<Th
         "vulnerabilities": n => { threatIntelligence.vulnerabilities = n.getCollectionOfObjectValues<Vulnerability>(createVulnerabilityFromDiscriminatorValue); },
         "whoisHistoryRecords": n => { threatIntelligence.whoisHistoryRecords = n.getCollectionOfObjectValues<WhoisHistoryRecord>(createWhoisHistoryRecordFromDiscriminatorValue); },
         "whoisRecords": n => { threatIntelligence.whoisRecords = n.getCollectionOfObjectValues<WhoisRecord>(createWhoisRecordFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceAtpContentData(threatIntelligenceAtpContentData: Partial<ThreatIntelligenceAtpContentData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(threatIntelligenceAtpContentData),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceMailData(threatIntelligenceMailData: Partial<ThreatIntelligenceMailData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(threatIntelligenceMailData),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceUrlClickData(threatIntelligenceUrlClickData: Partial<ThreatIntelligenceUrlClickData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(threatIntelligenceUrlClickData),
     }
 }
 /**
@@ -8946,6 +14521,16 @@ export function deserializeIntoThreatSubmissionRoot(threatSubmissionRoot: Partia
         "emailThreatSubmissionPolicies": n => { threatSubmissionRoot.emailThreatSubmissionPolicies = n.getCollectionOfObjectValues<EmailThreatSubmissionPolicy>(createEmailThreatSubmissionPolicyFromDiscriminatorValue); },
         "fileThreats": n => { threatSubmissionRoot.fileThreats = n.getCollectionOfObjectValues<FileThreatSubmission>(createFileThreatSubmissionFromDiscriminatorValue); },
         "urlThreats": n => { threatSubmissionRoot.urlThreats = n.getCollectionOfObjectValues<UrlThreatSubmission>(createUrlThreatSubmissionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTodoAuditRecord(todoAuditRecord: Partial<TodoAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(todoAuditRecord),
     }
 }
 /**
@@ -8990,11 +14575,31 @@ export function deserializeIntoTriggerTypesRoot(triggerTypesRoot: Partial<Trigge
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoUamOperationAuditRecord(uamOperationAuditRecord: Partial<UamOperationAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(uamOperationAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoUnclassifiedArtifact(unclassifiedArtifact: Partial<UnclassifiedArtifact> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoArtifact(unclassifiedArtifact),
         "kind": n => { unclassifiedArtifact.kind = n.getStringValue(); },
         "value": n => { unclassifiedArtifact.value = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUnifiedGroupAuditRecord(unifiedGroupAuditRecord: Partial<UnifiedGroupAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(unifiedGroupAuditRecord),
     }
 }
 /**
@@ -9018,6 +14623,66 @@ export function deserializeIntoUnifiedGroupSourceCollectionResponse(unifiedGroup
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(unifiedGroupSourceCollectionResponse),
         "value": n => { unifiedGroupSourceCollectionResponse.value = n.getCollectionOfObjectValues<UnifiedGroupSource>(createUnifiedGroupSourceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUnifiedSimulationMatchedItemAuditRecord(unifiedSimulationMatchedItemAuditRecord: Partial<UnifiedSimulationMatchedItemAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(unifiedSimulationMatchedItemAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUnifiedSimulationSummaryAuditRecord(unifiedSimulationSummaryAuditRecord: Partial<UnifiedSimulationSummaryAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(unifiedSimulationSummaryAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUploadCertificateRecord(uploadCertificateRecord: Partial<UploadCertificateRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(uploadCertificateRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUrbacAssignmentAuditRecord(urbacAssignmentAuditRecord: Partial<UrbacAssignmentAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(urbacAssignmentAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUrbacEnableStateAuditRecord(urbacEnableStateAuditRecord: Partial<UrbacEnableStateAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(urbacEnableStateAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUrbacRoleAuditRecord(urbacRoleAuditRecord: Partial<UrbacRoleAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(urbacRoleAuditRecord),
     }
 }
 /**
@@ -9111,6 +14776,126 @@ export function deserializeIntoUserSourceCollectionResponse(userSourceCollection
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoUserTrainingAuditRecord(userTrainingAuditRecord: Partial<UserTrainingAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(userTrainingAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVfamBasePolicyAuditRecord(vfamBasePolicyAuditRecord: Partial<VfamBasePolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vfamBasePolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVfamCreatePolicyAuditRecord(vfamCreatePolicyAuditRecord: Partial<VfamCreatePolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vfamCreatePolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVfamDeletePolicyAuditRecord(vfamDeletePolicyAuditRecord: Partial<VfamDeletePolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vfamDeletePolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVfamUpdatePolicyAuditRecord(vfamUpdatePolicyAuditRecord: Partial<VfamUpdatePolicyAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vfamUpdatePolicyAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVivaGoalsAuditRecord(vivaGoalsAuditRecord: Partial<VivaGoalsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vivaGoalsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVivaLearningAdminAuditRecord(vivaLearningAdminAuditRecord: Partial<VivaLearningAdminAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vivaLearningAdminAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVivaLearningAuditRecord(vivaLearningAuditRecord: Partial<VivaLearningAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vivaLearningAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVivaPulseAdminAuditRecord(vivaPulseAdminAuditRecord: Partial<VivaPulseAdminAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vivaPulseAdminAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVivaPulseOrganizerAuditRecord(vivaPulseOrganizerAuditRecord: Partial<VivaPulseOrganizerAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vivaPulseOrganizerAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVivaPulseReportAuditRecord(vivaPulseReportAuditRecord: Partial<VivaPulseReportAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vivaPulseReportAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoVivaPulseResponseAuditRecord(vivaPulseResponseAuditRecord: Partial<VivaPulseResponseAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(vivaPulseResponseAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoVmMetadata(vmMetadata: Partial<VmMetadata> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { vmMetadata.backingStoreEnabled = true; },
@@ -9179,6 +14964,16 @@ export function deserializeIntoVulnerabilityComponentCollectionResponse(vulnerab
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(vulnerabilityComponentCollectionResponse),
         "value": n => { vulnerabilityComponentCollectionResponse.value = n.getCollectionOfObjectValues<VulnerabilityComponent>(createVulnerabilityComponentFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoWdatpAlertsAuditRecord(wdatpAlertsAuditRecord: Partial<WdatpAlertsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(wdatpAlertsAuditRecord),
     }
 }
 /**
@@ -9281,6 +15076,36 @@ export function deserializeIntoWhoisRecordCollectionResponse(whoisRecordCollecti
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(whoisRecordCollectionResponse),
         "value": n => { whoisRecordCollectionResponse.value = n.getCollectionOfObjectValues<WhoisRecord>(createWhoisRecordFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoWindows365CustomerLockboxAuditRecord(windows365CustomerLockboxAuditRecord: Partial<Windows365CustomerLockboxAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(windows365CustomerLockboxAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoWorkplaceAnalyticsAuditRecord(workplaceAnalyticsAuditRecord: Partial<WorkplaceAnalyticsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(workplaceAnalyticsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoYammerAuditRecord(yammerAuditRecord: Partial<YammerAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAuditData(yammerAuditRecord),
     }
 }
 export interface DetectionAction extends AdditionalDataHolder, BackedModel, Parsable {
@@ -9513,12 +15338,16 @@ export interface Dictionary extends AdditionalDataHolder, BackedModel, Parsable 
      */
     odataType?: string | null;
 }
+export interface DisableConsentRecord extends AuditData, Parsable {
+}
 export type DisableUserEntityIdentifier = (typeof DisableUserEntityIdentifierObject)[keyof typeof DisableUserEntityIdentifierObject];
 export interface DisableUserResponseAction extends Parsable, ResponseAction {
     /**
      * The identifier property
      */
     identifier?: DisableUserEntityIdentifier[] | null;
+}
+export interface DiscoveryAuditRecord extends AuditData, Parsable {
 }
 export interface DispositionReviewStage extends Entity, Parsable {
     /**
@@ -9539,6 +15368,12 @@ export interface DispositionReviewStageCollectionResponse extends BaseCollection
      * The value property
      */
     value?: DispositionReviewStage[] | null;
+}
+export interface DlpEndpointAuditRecord extends AuditData, Parsable {
+}
+export interface DlpSensitiveInformationTypeCmdletRecord extends AuditData, Parsable {
+}
+export interface DlpSensitiveInformationTypeRulePackageCmdletRecord extends AuditData, Parsable {
 }
 export interface DnsEvidence extends AlertEvidence, Parsable {
     /**
@@ -9579,6 +15414,10 @@ export interface DowngradeJustification extends AdditionalDataHolder, BackedMode
      * The OdataType property
      */
     odataType?: string | null;
+}
+export interface DownloadCertificateRecord extends AuditData, Parsable {
+}
+export interface Dynamics365BusinessCentralAuditRecord extends AuditData, Parsable {
 }
 export interface EdiscoveryAddToReviewSetOperation extends CaseOperation, Parsable {
     /**
@@ -10085,6 +15924,14 @@ export interface EmailUrlThreatSubmission extends EmailThreatSubmission, Parsabl
      */
     messageUrl?: string | null;
 }
+export interface EnableConsentRecord extends AuditData, Parsable {
+}
+export interface EpicSMSLinkRecord extends AuditData, Parsable {
+}
+export interface EpicSMSSettingsUpdateRecord extends AuditData, Parsable {
+}
+export interface EpicSMSUnlinkRecord extends AuditData, Parsable {
+}
 export interface EventPropagationResult extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -10142,6 +15989,18 @@ export type EventStatusType = (typeof EventStatusTypeObject)[keyof typeof EventS
 export type EvidenceRemediationStatus = (typeof EvidenceRemediationStatusObject)[keyof typeof EvidenceRemediationStatusObject];
 export type EvidenceRole = (typeof EvidenceRoleObject)[keyof typeof EvidenceRoleObject];
 export type EvidenceVerdict = (typeof EvidenceVerdictObject)[keyof typeof EvidenceVerdictObject];
+export interface ExchangeAdminAuditRecord extends AuditData, Parsable {
+}
+export interface ExchangeAggregatedMailboxAuditRecord extends AuditData, Parsable {
+}
+export interface ExchangeAggregatedOperationRecord extends AuditData, Parsable {
+}
+export interface ExchangeMailboxAuditBaseRecord extends AuditData, Parsable {
+}
+export interface ExchangeMailboxAuditGroupRecord extends AuditData, Parsable {
+}
+export interface ExchangeMailboxAuditRecord extends AuditData, Parsable {
+}
 export type ExportCriteria = (typeof ExportCriteriaObject)[keyof typeof ExportCriteriaObject];
 export interface ExportFileMetadata extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -10173,6 +16032,14 @@ export type ExportFileStructure = (typeof ExportFileStructureObject)[keyof typeo
 export type ExportFormat = (typeof ExportFormatObject)[keyof typeof ExportFormatObject];
 export type ExportLocation = (typeof ExportLocationObject)[keyof typeof ExportLocationObject];
 export type ExportOptions = (typeof ExportOptionsObject)[keyof typeof ExportOptionsObject];
+export interface FhirBaseUrlAddRecord extends AuditData, Parsable {
+}
+export interface FhirBaseUrlApproveRecord extends AuditData, Parsable {
+}
+export interface FhirBaseUrlDeleteRecord extends AuditData, Parsable {
+}
+export interface FhirBaseUrlUpdateRecord extends AuditData, Parsable {
+}
 export interface File extends Entity, Parsable {
     /**
      * The content property
@@ -10618,6 +16485,8 @@ export interface HardDeleteResponseAction extends Parsable, ResponseAction {
      */
     identifier?: EmailEntityIdentifier[] | null;
 }
+export interface HealthcareSignalRecord extends AuditData, Parsable {
+}
 export interface HealthIssue extends Entity, Parsable {
     /**
      * Contains additional information about the issue, such as a list of items to fix.
@@ -10808,6 +16677,8 @@ export interface HostCookieCollectionResponse extends BaseCollectionPaginationCo
      * The value property
      */
     value?: HostCookie[] | null;
+}
+export interface HostedRpaAuditRecord extends AuditData, Parsable {
 }
 export interface HostLogonSessionEvidence extends AlertEvidence, Parsable {
     /**
@@ -11115,6 +16986,8 @@ export interface HostTrackerCollectionResponse extends BaseCollectionPaginationC
      */
     value?: HostTracker[] | null;
 }
+export interface HrSignalAuditRecord extends AuditData, Parsable {
+}
 export interface HuntingQueryResults extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -11153,6 +17026,8 @@ export interface HuntingRowResult extends AdditionalDataHolder, BackedModel, Par
 }
 export type HuntingRuleErrorCode = (typeof HuntingRuleErrorCodeObject)[keyof typeof HuntingRuleErrorCodeObject];
 export type HuntingRuleRunStatus = (typeof HuntingRuleRunStatusObject)[keyof typeof HuntingRuleRunStatusObject];
+export interface HygieneEventRecord extends AuditData, Parsable {
+}
 export interface Hyperlink extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -11321,6 +17196,8 @@ export interface Indicator extends Entity, Parsable {
     source?: IndicatorSource | null;
 }
 export type IndicatorSource = (typeof IndicatorSourceObject)[keyof typeof IndicatorSourceObject];
+export interface InformationBarrierPolicyApplicationAuditRecord extends AuditData, Parsable {
+}
 export interface InformationProtection extends Entity, Parsable {
     /**
      * Read the Microsoft Purview Information Protection policy settings for the user or organization.
@@ -11363,11 +17240,17 @@ export interface InformationProtectionPolicySetting extends Entity, Parsable {
      */
     moreInfoUrl?: string | null;
 }
+export interface InformationWorkerProtectionAuditRecord extends AuditData, Parsable {
+}
 export interface InitiateInvestigationResponseAction extends Parsable, ResponseAction {
     /**
      * The identifier property
      */
     identifier?: DeviceIdEntityIdentifier[] | null;
+}
+export interface InsiderRiskScopedUserInsightsRecord extends AuditData, Parsable {
+}
+export interface InsiderRiskScopedUsersRecord extends AuditData, Parsable {
 }
 export interface IntelligenceProfile extends Entity, Parsable {
     /**
@@ -11599,6 +17482,10 @@ export interface IpEvidence extends AlertEvidence, Parsable {
      */
     stream?: Stream | null;
 }
+export interface IrmSecurityAlertRecord extends AuditData, Parsable {
+}
+export interface IrmUserDefinedDetectionRecord extends AuditData, Parsable {
+}
 export interface IsolateDeviceResponseAction extends Parsable, ResponseAction {
     /**
      * The identifier property
@@ -11611,6 +17498,8 @@ export interface IsolateDeviceResponseAction extends Parsable, ResponseAction {
 }
 export type IsolationType = (typeof IsolationTypeObject)[keyof typeof IsolationTypeObject];
 export interface JustifyAction extends InformationProtectionAction, Parsable {
+}
+export interface KaizalaAuditRecord extends AuditData, Parsable {
 }
 export interface KeyValuePair extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -11824,6 +17713,10 @@ export interface KubernetesServicePort extends AdditionalDataHolder, BackedModel
     targetPort?: string | null;
 }
 export type KubernetesServiceType = (typeof KubernetesServiceTypeObject)[keyof typeof KubernetesServiceTypeObject];
+export interface LabelAnalyticsAggregateAuditRecord extends AuditData, Parsable {
+}
+export interface LabelContentExplorerAuditRecord extends AuditData, Parsable {
+}
 export interface LabelingOptions extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -11880,6 +17773,8 @@ export interface LabelsRoot extends Entity, Parsable {
      */
     retentionLabels?: RetentionLabel[] | null;
 }
+export interface LargeContentMetadataAuditRecord extends AuditData, Parsable {
+}
 export interface LoggedOnUser extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * User account name of the logged-on user.
@@ -11903,6 +17798,10 @@ export interface LoggedOnUser extends AdditionalDataHolder, BackedModel, Parsabl
     odataType?: string | null;
 }
 export type LongRunningOperationStatus = (typeof LongRunningOperationStatusObject)[keyof typeof LongRunningOperationStatusObject];
+export interface M365ComplianceConnectorAuditRecord extends AuditData, Parsable {
+}
+export interface M365DAADAuditRecord extends AuditData, Parsable {
+}
 export type MailboxAssetIdentifier = (typeof MailboxAssetIdentifierObject)[keyof typeof MailboxAssetIdentifierObject];
 export interface MailboxConfigurationEvidence extends AlertEvidence, Parsable {
     /**
@@ -11971,6 +17870,8 @@ export interface MailClusterEvidence extends AlertEvidence, Parsable {
      */
     urn?: string | null;
 }
+export interface MailSubmissionData extends AuditData, Parsable {
+}
 export interface MalwareEvidence extends AlertEvidence, Parsable {
     /**
      * The category property
@@ -11989,12 +17890,34 @@ export interface MalwareEvidence extends AlertEvidence, Parsable {
      */
     processes?: ProcessEvidence[] | null;
 }
+export interface ManagedServicesAuditRecord extends AuditData, Parsable {
+}
+export interface ManagedTenantsAuditRecord extends AuditData, Parsable {
+}
+export interface MapgAlertsAuditRecord extends AuditData, Parsable {
+}
+export interface MapgOnboardAuditRecord extends AuditData, Parsable {
+}
+export interface MapgPolicyAuditRecord extends AuditData, Parsable {
+}
 export type MarkUserAsCompromisedEntityIdentifier = (typeof MarkUserAsCompromisedEntityIdentifierObject)[keyof typeof MarkUserAsCompromisedEntityIdentifierObject];
 export interface MarkUserAsCompromisedResponseAction extends Parsable, ResponseAction {
     /**
      * The identifier property
      */
     identifier?: MarkUserAsCompromisedEntityIdentifier[] | null;
+}
+export interface McasAlertsAuditRecord extends AuditData, Parsable {
+}
+export interface MdaDataSecuritySignalRecord extends AuditData, Parsable {
+}
+export interface MdatpAuditRecord extends AuditData, Parsable {
+}
+export interface MdcEventsRecord extends AuditData, Parsable {
+}
+export interface MdiAuditRecord extends AuditData, Parsable {
+}
+export interface MeshWorldsAuditRecord extends AuditData, Parsable {
 }
 export interface MetadataAction extends InformationProtectionAction, Parsable {
     /**
@@ -12005,6 +17928,76 @@ export interface MetadataAction extends InformationProtectionAction, Parsable {
      * A collection of strings that indicate which keys to remove from the file metadata.
      */
     metadataToRemove?: string[] | null;
+}
+export interface Microsoft365BackupBackupItemAuditRecord extends AuditData, Parsable {
+}
+export interface Microsoft365BackupBackupPolicyAuditRecord extends AuditData, Parsable {
+}
+export interface Microsoft365BackupRestoreItemAuditRecord extends AuditData, Parsable {
+}
+export interface Microsoft365BackupRestoreTaskAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftDefenderExpertsBaseAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftDefenderExpertsXDRAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftFlowAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftFormsAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftGraphDataConnectConsent extends AuditData, Parsable {
+}
+export interface MicrosoftGraphDataConnectOperation extends AuditData, Parsable {
+}
+export interface MicrosoftPurviewDataMapOperationRecord extends AuditData, Parsable {
+}
+export interface MicrosoftPurviewMetadataPolicyOperationRecord extends AuditData, Parsable {
+}
+export interface MicrosoftPurviewPolicyOperationRecord extends AuditData, Parsable {
+}
+export interface MicrosoftPurviewPrivacyAuditEvent extends AuditData, Parsable {
+}
+export interface MicrosoftStreamAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftTeamsAdminAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftTeamsAnalyticsAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftTeamsAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftTeamsDeviceAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftTeamsRetentionLabelActionAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftTeamsSensitivityLabelActionAuditRecord extends AuditData, Parsable {
+}
+export interface MicrosoftTeamsShiftsAuditRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelExchangeItemAuditRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelItemAuditRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelPolicyAuditRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelProgressFeedbackAuditRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelSharePointItemAuditRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelSharePointPolicyLocationAuditRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelSimulationSharePointCompletionRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelSimulationSharePointProgressRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelSimulationStatisticsRecord extends AuditData, Parsable {
+}
+export interface MipAutoLabelSimulationStatusRecord extends AuditData, Parsable {
+}
+export interface MipExactDataMatchAuditRecord extends AuditData, Parsable {
+}
+export interface MipLabelAnalyticsAuditRecord extends AuditData, Parsable {
+}
+export interface MipLabelAuditRecord extends AuditData, Parsable {
 }
 export interface MoveToDeletedItemsResponseAction extends Parsable, ResponseAction {
     /**
@@ -12023,6 +18016,26 @@ export interface MoveToJunkResponseAction extends Parsable, ResponseAction {
      * The identifier property
      */
     identifier?: EmailEntityIdentifier[] | null;
+}
+export interface MS365DCustomDetectionAuditRecord extends AuditData, Parsable {
+}
+export interface MS365DIncidentAuditRecord extends AuditData, Parsable {
+}
+export interface MS365DSuppressionRuleAuditRecord extends AuditData, Parsable {
+}
+export interface MsdeGeneralSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface MsdeIndicatorsSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface MsdeResponseActionsAuditRecord extends AuditData, Parsable {
+}
+export interface MsdeRolesSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface MsticNationStateNotificationRecord extends AuditData, Parsable {
+}
+export interface MultiStageDispositionAuditRecord extends AuditData, Parsable {
+}
+export interface MyAnalyticsSettingsAuditRecord extends AuditData, Parsable {
 }
 export interface NetworkAdapter extends Entity, Parsable {
     /**
@@ -12114,7 +18127,19 @@ export interface OcrSettings extends AdditionalDataHolder, BackedModel, Parsable
      */
     timeout?: Duration | null;
 }
+export interface OfficeNativeAuditRecord extends AuditData, Parsable {
+}
+export interface OmePortalAuditRecord extends AuditData, Parsable {
+}
 export type OnboardingStatus = (typeof OnboardingStatusObject)[keyof typeof OnboardingStatusObject];
+export interface OneDriveAuditRecord extends AuditData, Parsable {
+}
+export interface OnPremisesFileShareScannerDlpAuditRecord extends AuditData, Parsable {
+}
+export interface OnPremisesScannerDlpAuditRecord extends AuditData, Parsable {
+}
+export interface OnPremisesSharePointScannerDlpAuditRecord extends AuditData, Parsable {
+}
 export interface OrganizationalScope extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -12136,6 +18161,8 @@ export interface OrganizationalScope extends AdditionalDataHolder, BackedModel, 
      * The scopeType property
      */
     scopeType?: ScopeType | null;
+}
+export interface OwaGetAccessTokenForResourceAuditRecord extends AuditData, Parsable {
 }
 export interface PassiveDnsRecord extends Artifact, Parsable {
     /**
@@ -12169,6 +18196,26 @@ export interface PassiveDnsRecordCollectionResponse extends BaseCollectionPagina
      */
     value?: PassiveDnsRecord[] | null;
 }
+export interface PeopleAdminSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface PhysicalBadgingSignalAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerCopyPlanAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerPlanAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerPlanListAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerRosterAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerRosterSensitivityLabelAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerTaskAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerTaskListAuditRecord extends AuditData, Parsable {
+}
+export interface PlannerTenantSettingsAuditRecord extends AuditData, Parsable {
+}
 export interface PolicyBase extends Entity, Parsable {
     /**
      * The createdBy property
@@ -12200,6 +18247,46 @@ export interface PolicyBase extends Entity, Parsable {
     status?: PolicyStatus | null;
 }
 export type PolicyStatus = (typeof PolicyStatusObject)[keyof typeof PolicyStatusObject];
+export interface PowerAppsAuditAppRecord extends AuditData, Parsable {
+}
+export interface PowerAppsAuditPlanRecord extends AuditData, Parsable {
+}
+export interface PowerAppsAuditResourceRecord extends AuditData, Parsable {
+}
+export interface PowerBiAuditRecord extends AuditData, Parsable {
+}
+export interface PowerBiDlpAuditRecord extends AuditData, Parsable {
+}
+export interface PowerPagesSiteAuditRecord extends AuditData, Parsable {
+}
+export interface PowerPlatformAdminDlpAuditRecord extends AuditData, Parsable {
+}
+export interface PowerPlatformAdminEnvironmentAuditRecord extends AuditData, Parsable {
+}
+export interface PowerPlatformAdministratorActivityRecord extends AuditData, Parsable {
+}
+export interface PowerPlatformLockboxResourceAccessRequestAuditRecord extends AuditData, Parsable {
+}
+export interface PowerPlatformLockboxResourceCommandAuditRecord extends AuditData, Parsable {
+}
+export interface PowerPlatformServiceActivityAuditRecord extends AuditData, Parsable {
+}
+export interface PrivacyDataMatchAuditRecord extends AuditData, Parsable {
+}
+export interface PrivacyDataMinimizationRecord extends AuditData, Parsable {
+}
+export interface PrivacyDigestEmailRecord extends AuditData, Parsable {
+}
+export interface PrivacyOpenAccessAuditRecord extends AuditData, Parsable {
+}
+export interface PrivacyPortalAuditRecord extends AuditData, Parsable {
+}
+export interface PrivacyRemediationActionRecord extends AuditData, Parsable {
+}
+export interface PrivacyRemediationRecord extends AuditData, Parsable {
+}
+export interface PrivacyTenantAuditHistoryRecord extends AuditData, Parsable {
+}
 export interface ProcessEvidence extends AlertEvidence, Parsable {
     /**
      * The status of the detection. The possible values are: detected, blocked, prevented, unknownFutureValue.
@@ -12242,6 +18329,22 @@ export interface ProcessEvidence extends AlertEvidence, Parsable {
      */
     userAccount?: UserAccount | null;
 }
+export interface ProjectAuditRecord extends AuditData, Parsable {
+}
+export interface ProjectForTheWebAssignedToMeSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface ProjectForTheWebProjectAuditRecord extends AuditData, Parsable {
+}
+export interface ProjectForTheWebProjectSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface ProjectForTheWebRoadmapAuditRecord extends AuditData, Parsable {
+}
+export interface ProjectForTheWebRoadmapItemAuditRecord extends AuditData, Parsable {
+}
+export interface ProjectForTheWebRoadmapSettingsAuditRecord extends AuditData, Parsable {
+}
+export interface ProjectForTheWebTaskAuditRecord extends AuditData, Parsable {
+}
 export interface ProtectAdhocAction extends InformationProtectionAction, Parsable {
 }
 export interface ProtectByTemplateAction extends InformationProtectionAction, Parsable {
@@ -12279,8 +18382,16 @@ export interface ProtectionRule extends Entity, Parsable {
     lastModifiedDateTime?: Date | null;
 }
 export type ProtocolType = (typeof ProtocolTypeObject)[keyof typeof ProtocolTypeObject];
+export interface PublicFolderAuditRecord extends AuditData, Parsable {
+}
 export type PurgeAreas = (typeof PurgeAreasObject)[keyof typeof PurgeAreasObject];
 export type PurgeType = (typeof PurgeTypeObject)[keyof typeof PurgeTypeObject];
+export interface PurviewInsiderRiskAlertsRecord extends AuditData, Parsable {
+}
+export interface PurviewInsiderRiskCasesRecord extends AuditData, Parsable {
+}
+export interface QuarantineAuditRecord extends AuditData, Parsable {
+}
 export interface QueryCondition extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -12339,6 +18450,8 @@ export interface RecommendLabelAction extends InformationProtectionAction, Parsa
      * The sensitivityLabelId property
      */
     sensitivityLabelId?: string | null;
+}
+export interface RecordsManagementAuditRecord extends AuditData, Parsable {
 }
 export interface RedundancyDetectionSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -12656,6 +18769,8 @@ export interface RetentionLabelCollectionResponse extends BaseCollectionPaginati
      */
     value?: RetentionLabel[] | null;
 }
+export interface RetentionPolicyAuditRecord extends AuditData, Parsable {
+}
 export type RetentionTrigger = (typeof RetentionTriggerObject)[keyof typeof RetentionTriggerObject];
 export interface RuleSchedule extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -12764,6 +18879,12 @@ export interface SasTokenEvidence extends AlertEvidence, Parsable {
     storageResource?: AzureResourceEvidence | null;
 }
 export type ScopeType = (typeof ScopeTypeObject)[keyof typeof ScopeTypeObject];
+export interface ScoreEvidence extends AuditData, Parsable {
+}
+export interface ScorePlatformGenericAuditRecord extends AuditData, Parsable {
+}
+export interface ScriptRunAuditRecord extends AuditData, Parsable {
+}
 export interface Search extends Entity, Parsable {
     /**
      * The contentQuery property
@@ -12794,11 +18915,23 @@ export interface Search extends Entity, Parsable {
      */
     lastModifiedDateTime?: Date | null;
 }
+export interface SearchAuditRecord extends AuditData, Parsable {
+}
 export interface Security extends Entity, Parsable {
     /**
      * The informationProtection property
      */
     informationProtection?: InformationProtection | null;
+}
+export interface SecurityComplianceAlertRecord extends AuditData, Parsable {
+}
+export interface SecurityComplianceCenterEOPCmdletAuditRecord extends AuditData, Parsable {
+}
+export interface SecurityComplianceInsightsAuditRecord extends AuditData, Parsable {
+}
+export interface SecurityComplianceRBACAuditRecord extends AuditData, Parsable {
+}
+export interface SecurityComplianceUserChangeAuditRecord extends AuditData, Parsable {
 }
 export interface SecurityGroupEvidence extends AlertEvidence, Parsable {
     /**
@@ -12965,6 +19098,16 @@ export type SensorType = (typeof SensorTypeObject)[keyof typeof SensorTypeObject
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeAadRiskDetectionAuditRecord(writer: SerializationWriter, aadRiskDetectionAuditRecord: Partial<AadRiskDetectionAuditRecord> | undefined | null = {}) : void {
+    if (aadRiskDetectionAuditRecord) {
+        serializeAuditData(writer, aadRiskDetectionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeAddContentFooterAction(writer: SerializationWriter, addContentFooterAction: Partial<AddContentFooterAction> | undefined | null = {}) : void {
     if (addContentFooterAction) {
         serializeInformationProtectionAction(writer, addContentFooterAction)
@@ -13008,6 +19151,106 @@ export function serializeAddWatermarkAction(writer: SerializationWriter, addWate
         writer.writeEnumValue<WatermarkLayout>("layout", addWatermarkAction.layout);
         writer.writeStringValue("text", addWatermarkAction.text);
         writer.writeStringValue("uiElementName", addWatermarkAction.uiElementName);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAedAuditRecord(writer: SerializationWriter, aedAuditRecord: Partial<AedAuditRecord> | undefined | null = {}) : void {
+    if (aedAuditRecord) {
+        serializeAuditData(writer, aedAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAiAppInteractionAuditRecord(writer: SerializationWriter, aiAppInteractionAuditRecord: Partial<AiAppInteractionAuditRecord> | undefined | null = {}) : void {
+    if (aiAppInteractionAuditRecord) {
+        serializeAuditData(writer, aiAppInteractionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAipFileDeleted(writer: SerializationWriter, aipFileDeleted: Partial<AipFileDeleted> | undefined | null = {}) : void {
+    if (aipFileDeleted) {
+        serializeAuditData(writer, aipFileDeleted)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAipHeartBeat(writer: SerializationWriter, aipHeartBeat: Partial<AipHeartBeat> | undefined | null = {}) : void {
+    if (aipHeartBeat) {
+        serializeAuditData(writer, aipHeartBeat)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAipProtectionActionLogRequest(writer: SerializationWriter, aipProtectionActionLogRequest: Partial<AipProtectionActionLogRequest> | undefined | null = {}) : void {
+    if (aipProtectionActionLogRequest) {
+        serializeAuditData(writer, aipProtectionActionLogRequest)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAipScannerDiscoverEvent(writer: SerializationWriter, aipScannerDiscoverEvent: Partial<AipScannerDiscoverEvent> | undefined | null = {}) : void {
+    if (aipScannerDiscoverEvent) {
+        serializeAuditData(writer, aipScannerDiscoverEvent)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAipSensitivityLabelActionLogRequest(writer: SerializationWriter, aipSensitivityLabelActionLogRequest: Partial<AipSensitivityLabelActionLogRequest> | undefined | null = {}) : void {
+    if (aipSensitivityLabelActionLogRequest) {
+        serializeAuditData(writer, aipSensitivityLabelActionLogRequest)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAirAdminActionInvestigationData(writer: SerializationWriter, airAdminActionInvestigationData: Partial<AirAdminActionInvestigationData> | undefined | null = {}) : void {
+    if (airAdminActionInvestigationData) {
+        serializeAuditData(writer, airAdminActionInvestigationData)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAirInvestigationData(writer: SerializationWriter, airInvestigationData: Partial<AirInvestigationData> | undefined | null = {}) : void {
+    if (airInvestigationData) {
+        serializeAuditData(writer, airInvestigationData)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAirManualInvestigationData(writer: SerializationWriter, airManualInvestigationData: Partial<AirManualInvestigationData> | undefined | null = {}) : void {
+    if (airManualInvestigationData) {
+        serializeAuditData(writer, airManualInvestigationData)
     }
 }
 /**
@@ -13387,6 +19630,16 @@ export function serializeArtifact(writer: SerializationWriter, artifact: Partial
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeAttackSimAdminAuditRecord(writer: SerializationWriter, attackSimAdminAuditRecord: Partial<AttackSimAdminAuditRecord> | undefined | null = {}) : void {
+    if (attackSimAdminAuditRecord) {
+        serializeAuditData(writer, attackSimAdminAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeAttackSimulationInfo(writer: SerializationWriter, attackSimulationInfo: Partial<AttackSimulationInfo> | undefined | null = {}) : void {
     if (attackSimulationInfo) {
         writer.writeDateValue("attackSimDateTime", attackSimulationInfo.attackSimDateTime);
@@ -13492,6 +19745,16 @@ export function serializeAuditLogRecordCollectionResponse(writer: SerializationW
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeAuditSearchAuditRecord(writer: SerializationWriter, auditSearchAuditRecord: Partial<AuditSearchAuditRecord> | undefined | null = {}) : void {
+    if (auditSearchAuditRecord) {
+        serializeAuditData(writer, auditSearchAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeAuthorityTemplate(writer: SerializationWriter, authorityTemplate: Partial<AuthorityTemplate> | undefined | null = {}) : void {
     if (authorityTemplate) {
         serializeFilePlanDescriptorTemplate(writer, authorityTemplate)
@@ -13521,6 +19784,46 @@ export function serializeAutonomousSystem(writer: SerializationWriter, autonomou
         writer.writeStringValue("organization", autonomousSystem.organization);
         writer.writeStringValue("value", autonomousSystem.value);
         writer.writeAdditionalData(autonomousSystem.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAzureActiveDirectoryAccountLogonAuditRecord(writer: SerializationWriter, azureActiveDirectoryAccountLogonAuditRecord: Partial<AzureActiveDirectoryAccountLogonAuditRecord> | undefined | null = {}) : void {
+    if (azureActiveDirectoryAccountLogonAuditRecord) {
+        serializeAuditData(writer, azureActiveDirectoryAccountLogonAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAzureActiveDirectoryAuditRecord(writer: SerializationWriter, azureActiveDirectoryAuditRecord: Partial<AzureActiveDirectoryAuditRecord> | undefined | null = {}) : void {
+    if (azureActiveDirectoryAuditRecord) {
+        serializeAuditData(writer, azureActiveDirectoryAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAzureActiveDirectoryBaseAuditRecord(writer: SerializationWriter, azureActiveDirectoryBaseAuditRecord: Partial<AzureActiveDirectoryBaseAuditRecord> | undefined | null = {}) : void {
+    if (azureActiveDirectoryBaseAuditRecord) {
+        serializeAuditData(writer, azureActiveDirectoryBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAzureActiveDirectoryStsLogonAuditRecord(writer: SerializationWriter, azureActiveDirectoryStsLogonAuditRecord: Partial<AzureActiveDirectoryStsLogonAuditRecord> | undefined | null = {}) : void {
+    if (azureActiveDirectoryStsLogonAuditRecord) {
+        serializeAuditData(writer, azureActiveDirectoryStsLogonAuditRecord)
     }
 }
 /**
@@ -13581,6 +19884,26 @@ export function serializeBlockFileResponseAction(writer: SerializationWriter, bl
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeCampaignAuditRecord(writer: SerializationWriter, campaignAuditRecord: Partial<CampaignAuditRecord> | undefined | null = {}) : void {
+    if (campaignAuditRecord) {
+        serializeAuditData(writer, campaignAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseAuditRecord(writer: SerializationWriter, caseAuditRecord: Partial<CaseAuditRecord> | undefined | null = {}) : void {
+    if (caseAuditRecord) {
+        serializeAuditData(writer, caseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: Partial<CaseEscaped> | undefined | null = {}) : void {
     if (caseEscaped) {
         serializeEntity(writer, caseEscaped)
@@ -13590,6 +19913,16 @@ export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: P
         writer.writeObjectValue<IdentitySet>("lastModifiedBy", caseEscaped.lastModifiedBy, serializeIdentitySet);
         writer.writeDateValue("lastModifiedDateTime", caseEscaped.lastModifiedDateTime);
         writer.writeEnumValue<CaseStatus>("status", caseEscaped.status);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseInvestigation(writer: SerializationWriter, caseInvestigation: Partial<CaseInvestigation> | undefined | null = {}) : void {
+    if (caseInvestigation) {
+        serializeAuditData(writer, caseInvestigation)
     }
 }
 /**
@@ -13651,6 +19984,106 @@ export function serializeCategoryTemplateCollectionResponse(writer: Serializatio
     if (categoryTemplateCollectionResponse) {
         serializeBaseCollectionPaginationCountResponse(writer, categoryTemplateCollectionResponse)
         writer.writeCollectionOfObjectValues<CategoryTemplate>("value", categoryTemplateCollectionResponse.value, serializeCategoryTemplate);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCdpColdCrawlStatusRecord(writer: SerializationWriter, cdpColdCrawlStatusRecord: Partial<CdpColdCrawlStatusRecord> | undefined | null = {}) : void {
+    if (cdpColdCrawlStatusRecord) {
+        serializeAuditData(writer, cdpColdCrawlStatusRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCdpContentExplorerAggregateRecord(writer: SerializationWriter, cdpContentExplorerAggregateRecord: Partial<CdpContentExplorerAggregateRecord> | undefined | null = {}) : void {
+    if (cdpContentExplorerAggregateRecord) {
+        serializeAuditData(writer, cdpContentExplorerAggregateRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCdpDlpSensitiveAuditRecord(writer: SerializationWriter, cdpDlpSensitiveAuditRecord: Partial<CdpDlpSensitiveAuditRecord> | undefined | null = {}) : void {
+    if (cdpDlpSensitiveAuditRecord) {
+        serializeAuditData(writer, cdpDlpSensitiveAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCdpDlpSensitiveEndpointAuditRecord(writer: SerializationWriter, cdpDlpSensitiveEndpointAuditRecord: Partial<CdpDlpSensitiveEndpointAuditRecord> | undefined | null = {}) : void {
+    if (cdpDlpSensitiveEndpointAuditRecord) {
+        serializeAuditData(writer, cdpDlpSensitiveEndpointAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCdpLogRecord(writer: SerializationWriter, cdpLogRecord: Partial<CdpLogRecord> | undefined | null = {}) : void {
+    if (cdpLogRecord) {
+        serializeAuditData(writer, cdpLogRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCdpOcrBillingRecord(writer: SerializationWriter, cdpOcrBillingRecord: Partial<CdpOcrBillingRecord> | undefined | null = {}) : void {
+    if (cdpOcrBillingRecord) {
+        serializeAuditData(writer, cdpOcrBillingRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCdpResourceScopeChangeEventRecord(writer: SerializationWriter, cdpResourceScopeChangeEventRecord: Partial<CdpResourceScopeChangeEventRecord> | undefined | null = {}) : void {
+    if (cdpResourceScopeChangeEventRecord) {
+        serializeAuditData(writer, cdpResourceScopeChangeEventRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCernerSMSLinkRecord(writer: SerializationWriter, cernerSMSLinkRecord: Partial<CernerSMSLinkRecord> | undefined | null = {}) : void {
+    if (cernerSMSLinkRecord) {
+        serializeAuditData(writer, cernerSMSLinkRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCernerSMSSettingsUpdateRecord(writer: SerializationWriter, cernerSMSSettingsUpdateRecord: Partial<CernerSMSSettingsUpdateRecord> | undefined | null = {}) : void {
+    if (cernerSMSSettingsUpdateRecord) {
+        serializeAuditData(writer, cernerSMSSettingsUpdateRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCernerSMSUnlinkRecord(writer: SerializationWriter, cernerSMSUnlinkRecord: Partial<CernerSMSUnlinkRecord> | undefined | null = {}) : void {
+    if (cernerSMSUnlinkRecord) {
+        serializeAuditData(writer, cernerSMSUnlinkRecord)
     }
 }
 /**
@@ -13763,6 +20196,216 @@ export function serializeCollectInvestigationPackageResponseAction(writer: Seria
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeComplianceConnectorAuditRecord(writer: SerializationWriter, complianceConnectorAuditRecord: Partial<ComplianceConnectorAuditRecord> | undefined | null = {}) : void {
+    if (complianceConnectorAuditRecord) {
+        serializeAuditData(writer, complianceConnectorAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDLMExchangeAuditRecord(writer: SerializationWriter, complianceDLMExchangeAuditRecord: Partial<ComplianceDLMExchangeAuditRecord> | undefined | null = {}) : void {
+    if (complianceDLMExchangeAuditRecord) {
+        serializeAuditData(writer, complianceDLMExchangeAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDLMSharePointAuditRecord(writer: SerializationWriter, complianceDLMSharePointAuditRecord: Partial<ComplianceDLMSharePointAuditRecord> | undefined | null = {}) : void {
+    if (complianceDLMSharePointAuditRecord) {
+        serializeAuditData(writer, complianceDLMSharePointAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpApplicationsAuditRecord(writer: SerializationWriter, complianceDlpApplicationsAuditRecord: Partial<ComplianceDlpApplicationsAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpApplicationsAuditRecord) {
+        serializeAuditData(writer, complianceDlpApplicationsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpApplicationsClassificationAuditRecord(writer: SerializationWriter, complianceDlpApplicationsClassificationAuditRecord: Partial<ComplianceDlpApplicationsClassificationAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpApplicationsClassificationAuditRecord) {
+        serializeAuditData(writer, complianceDlpApplicationsClassificationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpBaseAuditRecord(writer: SerializationWriter, complianceDlpBaseAuditRecord: Partial<ComplianceDlpBaseAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpBaseAuditRecord) {
+        serializeAuditData(writer, complianceDlpBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpClassificationBaseAuditRecord(writer: SerializationWriter, complianceDlpClassificationBaseAuditRecord: Partial<ComplianceDlpClassificationBaseAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpClassificationBaseAuditRecord) {
+        serializeAuditData(writer, complianceDlpClassificationBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpClassificationBaseCdpRecord(writer: SerializationWriter, complianceDlpClassificationBaseCdpRecord: Partial<ComplianceDlpClassificationBaseCdpRecord> | undefined | null = {}) : void {
+    if (complianceDlpClassificationBaseCdpRecord) {
+        serializeAuditData(writer, complianceDlpClassificationBaseCdpRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpEndpointAuditRecord(writer: SerializationWriter, complianceDlpEndpointAuditRecord: Partial<ComplianceDlpEndpointAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpEndpointAuditRecord) {
+        serializeAuditData(writer, complianceDlpEndpointAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpEndpointDiscoveryAuditRecord(writer: SerializationWriter, complianceDlpEndpointDiscoveryAuditRecord: Partial<ComplianceDlpEndpointDiscoveryAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpEndpointDiscoveryAuditRecord) {
+        serializeAuditData(writer, complianceDlpEndpointDiscoveryAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpExchangeAuditRecord(writer: SerializationWriter, complianceDlpExchangeAuditRecord: Partial<ComplianceDlpExchangeAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpExchangeAuditRecord) {
+        serializeAuditData(writer, complianceDlpExchangeAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpExchangeClassificationAuditRecord(writer: SerializationWriter, complianceDlpExchangeClassificationAuditRecord: Partial<ComplianceDlpExchangeClassificationAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpExchangeClassificationAuditRecord) {
+        serializeAuditData(writer, complianceDlpExchangeClassificationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpExchangeClassificationCdpRecord(writer: SerializationWriter, complianceDlpExchangeClassificationCdpRecord: Partial<ComplianceDlpExchangeClassificationCdpRecord> | undefined | null = {}) : void {
+    if (complianceDlpExchangeClassificationCdpRecord) {
+        serializeAuditData(writer, complianceDlpExchangeClassificationCdpRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpExchangeDiscoveryAuditRecord(writer: SerializationWriter, complianceDlpExchangeDiscoveryAuditRecord: Partial<ComplianceDlpExchangeDiscoveryAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpExchangeDiscoveryAuditRecord) {
+        serializeAuditData(writer, complianceDlpExchangeDiscoveryAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpSharePointAuditRecord(writer: SerializationWriter, complianceDlpSharePointAuditRecord: Partial<ComplianceDlpSharePointAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpSharePointAuditRecord) {
+        serializeAuditData(writer, complianceDlpSharePointAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpSharePointClassificationAuditRecord(writer: SerializationWriter, complianceDlpSharePointClassificationAuditRecord: Partial<ComplianceDlpSharePointClassificationAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpSharePointClassificationAuditRecord) {
+        serializeAuditData(writer, complianceDlpSharePointClassificationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceDlpSharePointClassificationExtendedAuditRecord(writer: SerializationWriter, complianceDlpSharePointClassificationExtendedAuditRecord: Partial<ComplianceDlpSharePointClassificationExtendedAuditRecord> | undefined | null = {}) : void {
+    if (complianceDlpSharePointClassificationExtendedAuditRecord) {
+        serializeAuditData(writer, complianceDlpSharePointClassificationExtendedAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceManagerActionRecord(writer: SerializationWriter, complianceManagerActionRecord: Partial<ComplianceManagerActionRecord> | undefined | null = {}) : void {
+    if (complianceManagerActionRecord) {
+        serializeAuditData(writer, complianceManagerActionRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceSupervisionBaseAuditRecord(writer: SerializationWriter, complianceSupervisionBaseAuditRecord: Partial<ComplianceSupervisionBaseAuditRecord> | undefined | null = {}) : void {
+    if (complianceSupervisionBaseAuditRecord) {
+        serializeAuditData(writer, complianceSupervisionBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceSupervisionExchangeAuditRecord(writer: SerializationWriter, complianceSupervisionExchangeAuditRecord: Partial<ComplianceSupervisionExchangeAuditRecord> | undefined | null = {}) : void {
+    if (complianceSupervisionExchangeAuditRecord) {
+        serializeAuditData(writer, complianceSupervisionExchangeAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeConsumptionResourceAuditRecord(writer: SerializationWriter, consumptionResourceAuditRecord: Partial<ConsumptionResourceAuditRecord> | undefined | null = {}) : void {
+    if (consumptionResourceAuditRecord) {
+        serializeAuditData(writer, consumptionResourceAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeContainerEvidence(writer: SerializationWriter, containerEvidence: Partial<ContainerEvidence> | undefined | null = {}) : void {
     if (containerEvidence) {
         serializeAlertEvidence(writer, containerEvidence)
@@ -13833,11 +20476,91 @@ export function serializeContentLabel(writer: SerializationWriter, contentLabel:
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeCopilotInteractionAuditRecord(writer: SerializationWriter, copilotInteractionAuditRecord: Partial<CopilotInteractionAuditRecord> | undefined | null = {}) : void {
+    if (copilotInteractionAuditRecord) {
+        serializeAuditData(writer, copilotInteractionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCoreReportingSettingsAuditRecord(writer: SerializationWriter, coreReportingSettingsAuditRecord: Partial<CoreReportingSettingsAuditRecord> | undefined | null = {}) : void {
+    if (coreReportingSettingsAuditRecord) {
+        serializeAuditData(writer, coreReportingSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCortanaBriefingAuditRecord(writer: SerializationWriter, cortanaBriefingAuditRecord: Partial<CortanaBriefingAuditRecord> | undefined | null = {}) : void {
+    if (cortanaBriefingAuditRecord) {
+        serializeAuditData(writer, cortanaBriefingAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCpsCommonPolicyAuditRecord(writer: SerializationWriter, cpsCommonPolicyAuditRecord: Partial<CpsCommonPolicyAuditRecord> | undefined | null = {}) : void {
+    if (cpsCommonPolicyAuditRecord) {
+        serializeAuditData(writer, cpsCommonPolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCpsPolicyConfigAuditRecord(writer: SerializationWriter, cpsPolicyConfigAuditRecord: Partial<CpsPolicyConfigAuditRecord> | undefined | null = {}) : void {
+    if (cpsPolicyConfigAuditRecord) {
+        serializeAuditData(writer, cpsPolicyConfigAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCrmBaseAuditRecord(writer: SerializationWriter, crmBaseAuditRecord: Partial<CrmBaseAuditRecord> | undefined | null = {}) : void {
+    if (crmBaseAuditRecord) {
+        serializeAuditData(writer, crmBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCrmEntityOperationAuditRecord(writer: SerializationWriter, crmEntityOperationAuditRecord: Partial<CrmEntityOperationAuditRecord> | undefined | null = {}) : void {
+    if (crmEntityOperationAuditRecord) {
+        serializeAuditData(writer, crmEntityOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeCustomAction(writer: SerializationWriter, customAction: Partial<CustomAction> | undefined | null = {}) : void {
     if (customAction) {
         serializeInformationProtectionAction(writer, customAction)
         writer.writeStringValue("name", customAction.name);
         writer.writeCollectionOfObjectValues<KeyValuePair>("properties", customAction.properties, serializeKeyValuePair);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomerKeyServiceEncryptionAuditRecord(writer: SerializationWriter, customerKeyServiceEncryptionAuditRecord: Partial<CustomerKeyServiceEncryptionAuditRecord> | undefined | null = {}) : void {
+    if (customerKeyServiceEncryptionAuditRecord) {
+        serializeAuditData(writer, customerKeyServiceEncryptionAuditRecord)
     }
 }
 /**
@@ -13859,12 +20582,72 @@ export function serializeCvssSummary(writer: SerializationWriter, cvssSummary: P
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeDataCenterSecurityBaseAuditRecord(writer: SerializationWriter, dataCenterSecurityBaseAuditRecord: Partial<DataCenterSecurityBaseAuditRecord> | undefined | null = {}) : void {
+    if (dataCenterSecurityBaseAuditRecord) {
+        serializeAuditData(writer, dataCenterSecurityBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataCenterSecurityCmdletAuditRecord(writer: SerializationWriter, dataCenterSecurityCmdletAuditRecord: Partial<DataCenterSecurityCmdletAuditRecord> | undefined | null = {}) : void {
+    if (dataCenterSecurityCmdletAuditRecord) {
+        serializeAuditData(writer, dataCenterSecurityCmdletAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataGovernanceAuditRecord(writer: SerializationWriter, dataGovernanceAuditRecord: Partial<DataGovernanceAuditRecord> | undefined | null = {}) : void {
+    if (dataGovernanceAuditRecord) {
+        serializeAuditData(writer, dataGovernanceAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataInsightsRestApiAuditRecord(writer: SerializationWriter, dataInsightsRestApiAuditRecord: Partial<DataInsightsRestApiAuditRecord> | undefined | null = {}) : void {
+    if (dataInsightsRestApiAuditRecord) {
+        serializeAuditData(writer, dataInsightsRestApiAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataLakeExportOperationAuditRecord(writer: SerializationWriter, dataLakeExportOperationAuditRecord: Partial<DataLakeExportOperationAuditRecord> | undefined | null = {}) : void {
+    if (dataLakeExportOperationAuditRecord) {
+        serializeAuditData(writer, dataLakeExportOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeDataSet(writer: SerializationWriter, dataSet: Partial<DataSet> | undefined | null = {}) : void {
     if (dataSet) {
         serializeEntity(writer, dataSet)
         writer.writeObjectValue<IdentitySet>("createdBy", dataSet.createdBy, serializeIdentitySet);
         writer.writeDateValue("createdDateTime", dataSet.createdDateTime);
         writer.writeStringValue("displayName", dataSet.displayName);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataShareOperationAuditRecord(writer: SerializationWriter, dataShareOperationAuditRecord: Partial<DataShareOperationAuditRecord> | undefined | null = {}) : void {
+    if (dataShareOperationAuditRecord) {
+        serializeAuditData(writer, dataShareOperationAuditRecord)
     }
 }
 /**
@@ -13916,6 +20699,26 @@ export function serializeDataSourceContainer(writer: SerializationWriter, dataSo
 export function serializeDefaultAuditData(writer: SerializationWriter, defaultAuditData: Partial<DefaultAuditData> | undefined | null = {}) : void {
     if (defaultAuditData) {
         serializeAuditData(writer, defaultAuditData)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDefenderSecurityAlertBaseRecord(writer: SerializationWriter, defenderSecurityAlertBaseRecord: Partial<DefenderSecurityAlertBaseRecord> | undefined | null = {}) : void {
+    if (defenderSecurityAlertBaseRecord) {
+        serializeAuditData(writer, defenderSecurityAlertBaseRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDeleteCertificateRecord(writer: SerializationWriter, deleteCertificateRecord: Partial<DeleteCertificateRecord> | undefined | null = {}) : void {
+    if (deleteCertificateRecord) {
+        serializeAuditData(writer, deleteCertificateRecord)
     }
 }
 /**
@@ -14078,10 +20881,30 @@ export function serializeDictionary(writer: SerializationWriter, dictionary: Par
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeDisableConsentRecord(writer: SerializationWriter, disableConsentRecord: Partial<DisableConsentRecord> | undefined | null = {}) : void {
+    if (disableConsentRecord) {
+        serializeAuditData(writer, disableConsentRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeDisableUserResponseAction(writer: SerializationWriter, disableUserResponseAction: Partial<DisableUserResponseAction> | undefined | null = {}) : void {
     if (disableUserResponseAction) {
         serializeResponseAction(writer, disableUserResponseAction)
         writer.writeEnumValue<DisableUserEntityIdentifier[]>("identifier", disableUserResponseAction.identifier);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDiscoveryAuditRecord(writer: SerializationWriter, discoveryAuditRecord: Partial<DiscoveryAuditRecord> | undefined | null = {}) : void {
+    if (discoveryAuditRecord) {
+        serializeAuditData(writer, discoveryAuditRecord)
     }
 }
 /**
@@ -14113,6 +20936,36 @@ export function serializeDispositionReviewStageCollectionResponse(writer: Serial
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeDlpEndpointAuditRecord(writer: SerializationWriter, dlpEndpointAuditRecord: Partial<DlpEndpointAuditRecord> | undefined | null = {}) : void {
+    if (dlpEndpointAuditRecord) {
+        serializeAuditData(writer, dlpEndpointAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDlpSensitiveInformationTypeCmdletRecord(writer: SerializationWriter, dlpSensitiveInformationTypeCmdletRecord: Partial<DlpSensitiveInformationTypeCmdletRecord> | undefined | null = {}) : void {
+    if (dlpSensitiveInformationTypeCmdletRecord) {
+        serializeAuditData(writer, dlpSensitiveInformationTypeCmdletRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDlpSensitiveInformationTypeRulePackageCmdletRecord(writer: SerializationWriter, dlpSensitiveInformationTypeRulePackageCmdletRecord: Partial<DlpSensitiveInformationTypeRulePackageCmdletRecord> | undefined | null = {}) : void {
+    if (dlpSensitiveInformationTypeRulePackageCmdletRecord) {
+        serializeAuditData(writer, dlpSensitiveInformationTypeRulePackageCmdletRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeDnsEvidence(writer: SerializationWriter, dnsEvidence: Partial<DnsEvidence> | undefined | null = {}) : void {
     if (dnsEvidence) {
         serializeAlertEvidence(writer, dnsEvidence)
@@ -14133,6 +20986,26 @@ export function serializeDowngradeJustification(writer: SerializationWriter, dow
         writer.writeStringValue("justificationMessage", downgradeJustification.justificationMessage);
         writer.writeStringValue("@odata.type", downgradeJustification.odataType);
         writer.writeAdditionalData(downgradeJustification.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDownloadCertificateRecord(writer: SerializationWriter, downloadCertificateRecord: Partial<DownloadCertificateRecord> | undefined | null = {}) : void {
+    if (downloadCertificateRecord) {
+        serializeAuditData(writer, downloadCertificateRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDynamics365BusinessCentralAuditRecord(writer: SerializationWriter, dynamics365BusinessCentralAuditRecord: Partial<Dynamics365BusinessCentralAuditRecord> | undefined | null = {}) : void {
+    if (dynamics365BusinessCentralAuditRecord) {
+        serializeAuditData(writer, dynamics365BusinessCentralAuditRecord)
     }
 }
 /**
@@ -14587,6 +21460,46 @@ export function serializeEmailUrlThreatSubmission(writer: SerializationWriter, e
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeEnableConsentRecord(writer: SerializationWriter, enableConsentRecord: Partial<EnableConsentRecord> | undefined | null = {}) : void {
+    if (enableConsentRecord) {
+        serializeAuditData(writer, enableConsentRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEpicSMSLinkRecord(writer: SerializationWriter, epicSMSLinkRecord: Partial<EpicSMSLinkRecord> | undefined | null = {}) : void {
+    if (epicSMSLinkRecord) {
+        serializeAuditData(writer, epicSMSLinkRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEpicSMSSettingsUpdateRecord(writer: SerializationWriter, epicSMSSettingsUpdateRecord: Partial<EpicSMSSettingsUpdateRecord> | undefined | null = {}) : void {
+    if (epicSMSSettingsUpdateRecord) {
+        serializeAuditData(writer, epicSMSSettingsUpdateRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEpicSMSUnlinkRecord(writer: SerializationWriter, epicSMSUnlinkRecord: Partial<EpicSMSUnlinkRecord> | undefined | null = {}) : void {
+    if (epicSMSUnlinkRecord) {
+        serializeAuditData(writer, epicSMSUnlinkRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeEventPropagationResult(writer: SerializationWriter, eventPropagationResult: Partial<EventPropagationResult> | undefined | null = {}) : void {
     if (eventPropagationResult) {
         writer.writeStringValue("location", eventPropagationResult.location);
@@ -14615,6 +21528,66 @@ export function serializeEventQuery(writer: SerializationWriter, eventQuery: Par
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeExchangeAdminAuditRecord(writer: SerializationWriter, exchangeAdminAuditRecord: Partial<ExchangeAdminAuditRecord> | undefined | null = {}) : void {
+    if (exchangeAdminAuditRecord) {
+        serializeAuditData(writer, exchangeAdminAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExchangeAggregatedMailboxAuditRecord(writer: SerializationWriter, exchangeAggregatedMailboxAuditRecord: Partial<ExchangeAggregatedMailboxAuditRecord> | undefined | null = {}) : void {
+    if (exchangeAggregatedMailboxAuditRecord) {
+        serializeAuditData(writer, exchangeAggregatedMailboxAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExchangeAggregatedOperationRecord(writer: SerializationWriter, exchangeAggregatedOperationRecord: Partial<ExchangeAggregatedOperationRecord> | undefined | null = {}) : void {
+    if (exchangeAggregatedOperationRecord) {
+        serializeAuditData(writer, exchangeAggregatedOperationRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExchangeMailboxAuditBaseRecord(writer: SerializationWriter, exchangeMailboxAuditBaseRecord: Partial<ExchangeMailboxAuditBaseRecord> | undefined | null = {}) : void {
+    if (exchangeMailboxAuditBaseRecord) {
+        serializeAuditData(writer, exchangeMailboxAuditBaseRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExchangeMailboxAuditGroupRecord(writer: SerializationWriter, exchangeMailboxAuditGroupRecord: Partial<ExchangeMailboxAuditGroupRecord> | undefined | null = {}) : void {
+    if (exchangeMailboxAuditGroupRecord) {
+        serializeAuditData(writer, exchangeMailboxAuditGroupRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExchangeMailboxAuditRecord(writer: SerializationWriter, exchangeMailboxAuditRecord: Partial<ExchangeMailboxAuditRecord> | undefined | null = {}) : void {
+    if (exchangeMailboxAuditRecord) {
+        serializeAuditData(writer, exchangeMailboxAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeExportFileMetadata(writer: SerializationWriter, exportFileMetadata: Partial<ExportFileMetadata> | undefined | null = {}) : void {
     if (exportFileMetadata) {
         writer.writeStringValue("downloadUrl", exportFileMetadata.downloadUrl);
@@ -14622,6 +21595,46 @@ export function serializeExportFileMetadata(writer: SerializationWriter, exportF
         writer.writeStringValue("@odata.type", exportFileMetadata.odataType);
         writer.writeNumberValue("size", exportFileMetadata.size);
         writer.writeAdditionalData(exportFileMetadata.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeFhirBaseUrlAddRecord(writer: SerializationWriter, fhirBaseUrlAddRecord: Partial<FhirBaseUrlAddRecord> | undefined | null = {}) : void {
+    if (fhirBaseUrlAddRecord) {
+        serializeAuditData(writer, fhirBaseUrlAddRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeFhirBaseUrlApproveRecord(writer: SerializationWriter, fhirBaseUrlApproveRecord: Partial<FhirBaseUrlApproveRecord> | undefined | null = {}) : void {
+    if (fhirBaseUrlApproveRecord) {
+        serializeAuditData(writer, fhirBaseUrlApproveRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeFhirBaseUrlDeleteRecord(writer: SerializationWriter, fhirBaseUrlDeleteRecord: Partial<FhirBaseUrlDeleteRecord> | undefined | null = {}) : void {
+    if (fhirBaseUrlDeleteRecord) {
+        serializeAuditData(writer, fhirBaseUrlDeleteRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeFhirBaseUrlUpdateRecord(writer: SerializationWriter, fhirBaseUrlUpdateRecord: Partial<FhirBaseUrlUpdateRecord> | undefined | null = {}) : void {
+    if (fhirBaseUrlUpdateRecord) {
+        serializeAuditData(writer, fhirBaseUrlUpdateRecord)
     }
 }
 /**
@@ -14995,6 +22008,16 @@ export function serializeHardDeleteResponseAction(writer: SerializationWriter, h
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeHealthcareSignalRecord(writer: SerializationWriter, healthcareSignalRecord: Partial<HealthcareSignalRecord> | undefined | null = {}) : void {
+    if (healthcareSignalRecord) {
+        serializeAuditData(writer, healthcareSignalRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeHealthIssue(writer: SerializationWriter, healthIssue: Partial<HealthIssue> | undefined | null = {}) : void {
     if (healthIssue) {
         serializeEntity(writer, healthIssue)
@@ -15111,6 +22134,16 @@ export function serializeHostCookieCollectionResponse(writer: SerializationWrite
     if (hostCookieCollectionResponse) {
         serializeBaseCollectionPaginationCountResponse(writer, hostCookieCollectionResponse)
         writer.writeCollectionOfObjectValues<HostCookie>("value", hostCookieCollectionResponse.value, serializeHostCookie);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeHostedRpaAuditRecord(writer: SerializationWriter, hostedRpaAuditRecord: Partial<HostedRpaAuditRecord> | undefined | null = {}) : void {
+    if (hostedRpaAuditRecord) {
+        serializeAuditData(writer, hostedRpaAuditRecord)
     }
 }
 /**
@@ -15328,6 +22361,16 @@ export function serializeHostTrackerCollectionResponse(writer: SerializationWrit
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeHrSignalAuditRecord(writer: SerializationWriter, hrSignalAuditRecord: Partial<HrSignalAuditRecord> | undefined | null = {}) : void {
+    if (hrSignalAuditRecord) {
+        serializeAuditData(writer, hrSignalAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeHuntingQueryResults(writer: SerializationWriter, huntingQueryResults: Partial<HuntingQueryResults> | undefined | null = {}) : void {
     if (huntingQueryResults) {
         writer.writeStringValue("@odata.type", huntingQueryResults.odataType);
@@ -15345,6 +22388,16 @@ export function serializeHuntingRowResult(writer: SerializationWriter, huntingRo
     if (huntingRowResult) {
         writer.writeStringValue("@odata.type", huntingRowResult.odataType);
         writer.writeAdditionalData(huntingRowResult.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeHygieneEventRecord(writer: SerializationWriter, hygieneEventRecord: Partial<HygieneEventRecord> | undefined | null = {}) : void {
+    if (hygieneEventRecord) {
+        serializeAuditData(writer, hygieneEventRecord)
     }
 }
 /**
@@ -15475,6 +22528,16 @@ export function serializeIndicator(writer: SerializationWriter, indicator: Parti
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeInformationBarrierPolicyApplicationAuditRecord(writer: SerializationWriter, informationBarrierPolicyApplicationAuditRecord: Partial<InformationBarrierPolicyApplicationAuditRecord> | undefined | null = {}) : void {
+    if (informationBarrierPolicyApplicationAuditRecord) {
+        serializeAuditData(writer, informationBarrierPolicyApplicationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeInformationProtection(writer: SerializationWriter, informationProtection: Partial<InformationProtection> | undefined | null = {}) : void {
     if (informationProtection) {
         serializeEntity(writer, informationProtection)
@@ -15512,10 +22575,40 @@ export function serializeInformationProtectionPolicySetting(writer: Serializatio
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeInformationWorkerProtectionAuditRecord(writer: SerializationWriter, informationWorkerProtectionAuditRecord: Partial<InformationWorkerProtectionAuditRecord> | undefined | null = {}) : void {
+    if (informationWorkerProtectionAuditRecord) {
+        serializeAuditData(writer, informationWorkerProtectionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeInitiateInvestigationResponseAction(writer: SerializationWriter, initiateInvestigationResponseAction: Partial<InitiateInvestigationResponseAction> | undefined | null = {}) : void {
     if (initiateInvestigationResponseAction) {
         serializeResponseAction(writer, initiateInvestigationResponseAction)
         writer.writeEnumValue<DeviceIdEntityIdentifier[]>("identifier", initiateInvestigationResponseAction.identifier);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeInsiderRiskScopedUserInsightsRecord(writer: SerializationWriter, insiderRiskScopedUserInsightsRecord: Partial<InsiderRiskScopedUserInsightsRecord> | undefined | null = {}) : void {
+    if (insiderRiskScopedUserInsightsRecord) {
+        serializeAuditData(writer, insiderRiskScopedUserInsightsRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeInsiderRiskScopedUsersRecord(writer: SerializationWriter, insiderRiskScopedUsersRecord: Partial<InsiderRiskScopedUsersRecord> | undefined | null = {}) : void {
+    if (insiderRiskScopedUsersRecord) {
+        serializeAuditData(writer, insiderRiskScopedUsersRecord)
     }
 }
 /**
@@ -15654,6 +22747,26 @@ export function serializeIpEvidence(writer: SerializationWriter, ipEvidence: Par
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeIrmSecurityAlertRecord(writer: SerializationWriter, irmSecurityAlertRecord: Partial<IrmSecurityAlertRecord> | undefined | null = {}) : void {
+    if (irmSecurityAlertRecord) {
+        serializeAuditData(writer, irmSecurityAlertRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeIrmUserDefinedDetectionRecord(writer: SerializationWriter, irmUserDefinedDetectionRecord: Partial<IrmUserDefinedDetectionRecord> | undefined | null = {}) : void {
+    if (irmUserDefinedDetectionRecord) {
+        serializeAuditData(writer, irmUserDefinedDetectionRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeIsolateDeviceResponseAction(writer: SerializationWriter, isolateDeviceResponseAction: Partial<IsolateDeviceResponseAction> | undefined | null = {}) : void {
     if (isolateDeviceResponseAction) {
         serializeResponseAction(writer, isolateDeviceResponseAction)
@@ -15669,6 +22782,16 @@ export function serializeIsolateDeviceResponseAction(writer: SerializationWriter
 export function serializeJustifyAction(writer: SerializationWriter, justifyAction: Partial<JustifyAction> | undefined | null = {}) : void {
     if (justifyAction) {
         serializeInformationProtectionAction(writer, justifyAction)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeKaizalaAuditRecord(writer: SerializationWriter, kaizalaAuditRecord: Partial<KaizalaAuditRecord> | undefined | null = {}) : void {
+    if (kaizalaAuditRecord) {
+        serializeAuditData(writer, kaizalaAuditRecord)
     }
 }
 /**
@@ -15810,6 +22933,26 @@ export function serializeKubernetesServicePort(writer: SerializationWriter, kube
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeLabelAnalyticsAggregateAuditRecord(writer: SerializationWriter, labelAnalyticsAggregateAuditRecord: Partial<LabelAnalyticsAggregateAuditRecord> | undefined | null = {}) : void {
+    if (labelAnalyticsAggregateAuditRecord) {
+        serializeAuditData(writer, labelAnalyticsAggregateAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLabelContentExplorerAuditRecord(writer: SerializationWriter, labelContentExplorerAuditRecord: Partial<LabelContentExplorerAuditRecord> | undefined | null = {}) : void {
+    if (labelContentExplorerAuditRecord) {
+        serializeAuditData(writer, labelContentExplorerAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeLabelingOptions(writer: SerializationWriter, labelingOptions: Partial<LabelingOptions> | undefined | null = {}) : void {
     if (labelingOptions) {
         writer.writeEnumValue<AssignmentMethod>("assignmentMethod", labelingOptions.assignmentMethod);
@@ -15841,12 +22984,42 @@ export function serializeLabelsRoot(writer: SerializationWriter, labelsRoot: Par
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeLargeContentMetadataAuditRecord(writer: SerializationWriter, largeContentMetadataAuditRecord: Partial<LargeContentMetadataAuditRecord> | undefined | null = {}) : void {
+    if (largeContentMetadataAuditRecord) {
+        serializeAuditData(writer, largeContentMetadataAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeLoggedOnUser(writer: SerializationWriter, loggedOnUser: Partial<LoggedOnUser> | undefined | null = {}) : void {
     if (loggedOnUser) {
         writer.writeStringValue("accountName", loggedOnUser.accountName);
         writer.writeStringValue("domainName", loggedOnUser.domainName);
         writer.writeStringValue("@odata.type", loggedOnUser.odataType);
         writer.writeAdditionalData(loggedOnUser.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeM365ComplianceConnectorAuditRecord(writer: SerializationWriter, m365ComplianceConnectorAuditRecord: Partial<M365ComplianceConnectorAuditRecord> | undefined | null = {}) : void {
+    if (m365ComplianceConnectorAuditRecord) {
+        serializeAuditData(writer, m365ComplianceConnectorAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeM365DAADAuditRecord(writer: SerializationWriter, m365DAADAuditRecord: Partial<M365DAADAuditRecord> | undefined | null = {}) : void {
+    if (m365DAADAuditRecord) {
+        serializeAuditData(writer, m365DAADAuditRecord)
     }
 }
 /**
@@ -15899,6 +23072,16 @@ export function serializeMailClusterEvidence(writer: SerializationWriter, mailCl
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeMailSubmissionData(writer: SerializationWriter, mailSubmissionData: Partial<MailSubmissionData> | undefined | null = {}) : void {
+    if (mailSubmissionData) {
+        serializeAuditData(writer, mailSubmissionData)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeMalwareEvidence(writer: SerializationWriter, malwareEvidence: Partial<MalwareEvidence> | undefined | null = {}) : void {
     if (malwareEvidence) {
         serializeAlertEvidence(writer, malwareEvidence)
@@ -15906,6 +23089,56 @@ export function serializeMalwareEvidence(writer: SerializationWriter, malwareEvi
         writer.writeCollectionOfObjectValues<FileEvidence>("files", malwareEvidence.files, serializeFileEvidence);
         writer.writeStringValue("name", malwareEvidence.name);
         writer.writeCollectionOfObjectValues<ProcessEvidence>("processes", malwareEvidence.processes, serializeProcessEvidence);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeManagedServicesAuditRecord(writer: SerializationWriter, managedServicesAuditRecord: Partial<ManagedServicesAuditRecord> | undefined | null = {}) : void {
+    if (managedServicesAuditRecord) {
+        serializeAuditData(writer, managedServicesAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeManagedTenantsAuditRecord(writer: SerializationWriter, managedTenantsAuditRecord: Partial<ManagedTenantsAuditRecord> | undefined | null = {}) : void {
+    if (managedTenantsAuditRecord) {
+        serializeAuditData(writer, managedTenantsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMapgAlertsAuditRecord(writer: SerializationWriter, mapgAlertsAuditRecord: Partial<MapgAlertsAuditRecord> | undefined | null = {}) : void {
+    if (mapgAlertsAuditRecord) {
+        serializeAuditData(writer, mapgAlertsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMapgOnboardAuditRecord(writer: SerializationWriter, mapgOnboardAuditRecord: Partial<MapgOnboardAuditRecord> | undefined | null = {}) : void {
+    if (mapgOnboardAuditRecord) {
+        serializeAuditData(writer, mapgOnboardAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMapgPolicyAuditRecord(writer: SerializationWriter, mapgPolicyAuditRecord: Partial<MapgPolicyAuditRecord> | undefined | null = {}) : void {
+    if (mapgPolicyAuditRecord) {
+        serializeAuditData(writer, mapgPolicyAuditRecord)
     }
 }
 /**
@@ -15924,11 +23157,421 @@ export function serializeMarkUserAsCompromisedResponseAction(writer: Serializati
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeMcasAlertsAuditRecord(writer: SerializationWriter, mcasAlertsAuditRecord: Partial<McasAlertsAuditRecord> | undefined | null = {}) : void {
+    if (mcasAlertsAuditRecord) {
+        serializeAuditData(writer, mcasAlertsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMdaDataSecuritySignalRecord(writer: SerializationWriter, mdaDataSecuritySignalRecord: Partial<MdaDataSecuritySignalRecord> | undefined | null = {}) : void {
+    if (mdaDataSecuritySignalRecord) {
+        serializeAuditData(writer, mdaDataSecuritySignalRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMdatpAuditRecord(writer: SerializationWriter, mdatpAuditRecord: Partial<MdatpAuditRecord> | undefined | null = {}) : void {
+    if (mdatpAuditRecord) {
+        serializeAuditData(writer, mdatpAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMdcEventsRecord(writer: SerializationWriter, mdcEventsRecord: Partial<MdcEventsRecord> | undefined | null = {}) : void {
+    if (mdcEventsRecord) {
+        serializeAuditData(writer, mdcEventsRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMdiAuditRecord(writer: SerializationWriter, mdiAuditRecord: Partial<MdiAuditRecord> | undefined | null = {}) : void {
+    if (mdiAuditRecord) {
+        serializeAuditData(writer, mdiAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMeshWorldsAuditRecord(writer: SerializationWriter, meshWorldsAuditRecord: Partial<MeshWorldsAuditRecord> | undefined | null = {}) : void {
+    if (meshWorldsAuditRecord) {
+        serializeAuditData(writer, meshWorldsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeMetadataAction(writer: SerializationWriter, metadataAction: Partial<MetadataAction> | undefined | null = {}) : void {
     if (metadataAction) {
         serializeInformationProtectionAction(writer, metadataAction)
         writer.writeCollectionOfObjectValues<KeyValuePair>("metadataToAdd", metadataAction.metadataToAdd, serializeKeyValuePair);
         writer.writeCollectionOfPrimitiveValues<string>("metadataToRemove", metadataAction.metadataToRemove);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoft365BackupBackupItemAuditRecord(writer: SerializationWriter, microsoft365BackupBackupItemAuditRecord: Partial<Microsoft365BackupBackupItemAuditRecord> | undefined | null = {}) : void {
+    if (microsoft365BackupBackupItemAuditRecord) {
+        serializeAuditData(writer, microsoft365BackupBackupItemAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoft365BackupBackupPolicyAuditRecord(writer: SerializationWriter, microsoft365BackupBackupPolicyAuditRecord: Partial<Microsoft365BackupBackupPolicyAuditRecord> | undefined | null = {}) : void {
+    if (microsoft365BackupBackupPolicyAuditRecord) {
+        serializeAuditData(writer, microsoft365BackupBackupPolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoft365BackupRestoreItemAuditRecord(writer: SerializationWriter, microsoft365BackupRestoreItemAuditRecord: Partial<Microsoft365BackupRestoreItemAuditRecord> | undefined | null = {}) : void {
+    if (microsoft365BackupRestoreItemAuditRecord) {
+        serializeAuditData(writer, microsoft365BackupRestoreItemAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoft365BackupRestoreTaskAuditRecord(writer: SerializationWriter, microsoft365BackupRestoreTaskAuditRecord: Partial<Microsoft365BackupRestoreTaskAuditRecord> | undefined | null = {}) : void {
+    if (microsoft365BackupRestoreTaskAuditRecord) {
+        serializeAuditData(writer, microsoft365BackupRestoreTaskAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftDefenderExpertsBaseAuditRecord(writer: SerializationWriter, microsoftDefenderExpertsBaseAuditRecord: Partial<MicrosoftDefenderExpertsBaseAuditRecord> | undefined | null = {}) : void {
+    if (microsoftDefenderExpertsBaseAuditRecord) {
+        serializeAuditData(writer, microsoftDefenderExpertsBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftDefenderExpertsXDRAuditRecord(writer: SerializationWriter, microsoftDefenderExpertsXDRAuditRecord: Partial<MicrosoftDefenderExpertsXDRAuditRecord> | undefined | null = {}) : void {
+    if (microsoftDefenderExpertsXDRAuditRecord) {
+        serializeAuditData(writer, microsoftDefenderExpertsXDRAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftFlowAuditRecord(writer: SerializationWriter, microsoftFlowAuditRecord: Partial<MicrosoftFlowAuditRecord> | undefined | null = {}) : void {
+    if (microsoftFlowAuditRecord) {
+        serializeAuditData(writer, microsoftFlowAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftFormsAuditRecord(writer: SerializationWriter, microsoftFormsAuditRecord: Partial<MicrosoftFormsAuditRecord> | undefined | null = {}) : void {
+    if (microsoftFormsAuditRecord) {
+        serializeAuditData(writer, microsoftFormsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftGraphDataConnectConsent(writer: SerializationWriter, microsoftGraphDataConnectConsent: Partial<MicrosoftGraphDataConnectConsent> | undefined | null = {}) : void {
+    if (microsoftGraphDataConnectConsent) {
+        serializeAuditData(writer, microsoftGraphDataConnectConsent)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftGraphDataConnectOperation(writer: SerializationWriter, microsoftGraphDataConnectOperation: Partial<MicrosoftGraphDataConnectOperation> | undefined | null = {}) : void {
+    if (microsoftGraphDataConnectOperation) {
+        serializeAuditData(writer, microsoftGraphDataConnectOperation)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftPurviewDataMapOperationRecord(writer: SerializationWriter, microsoftPurviewDataMapOperationRecord: Partial<MicrosoftPurviewDataMapOperationRecord> | undefined | null = {}) : void {
+    if (microsoftPurviewDataMapOperationRecord) {
+        serializeAuditData(writer, microsoftPurviewDataMapOperationRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftPurviewMetadataPolicyOperationRecord(writer: SerializationWriter, microsoftPurviewMetadataPolicyOperationRecord: Partial<MicrosoftPurviewMetadataPolicyOperationRecord> | undefined | null = {}) : void {
+    if (microsoftPurviewMetadataPolicyOperationRecord) {
+        serializeAuditData(writer, microsoftPurviewMetadataPolicyOperationRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftPurviewPolicyOperationRecord(writer: SerializationWriter, microsoftPurviewPolicyOperationRecord: Partial<MicrosoftPurviewPolicyOperationRecord> | undefined | null = {}) : void {
+    if (microsoftPurviewPolicyOperationRecord) {
+        serializeAuditData(writer, microsoftPurviewPolicyOperationRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftPurviewPrivacyAuditEvent(writer: SerializationWriter, microsoftPurviewPrivacyAuditEvent: Partial<MicrosoftPurviewPrivacyAuditEvent> | undefined | null = {}) : void {
+    if (microsoftPurviewPrivacyAuditEvent) {
+        serializeAuditData(writer, microsoftPurviewPrivacyAuditEvent)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftStreamAuditRecord(writer: SerializationWriter, microsoftStreamAuditRecord: Partial<MicrosoftStreamAuditRecord> | undefined | null = {}) : void {
+    if (microsoftStreamAuditRecord) {
+        serializeAuditData(writer, microsoftStreamAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftTeamsAdminAuditRecord(writer: SerializationWriter, microsoftTeamsAdminAuditRecord: Partial<MicrosoftTeamsAdminAuditRecord> | undefined | null = {}) : void {
+    if (microsoftTeamsAdminAuditRecord) {
+        serializeAuditData(writer, microsoftTeamsAdminAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftTeamsAnalyticsAuditRecord(writer: SerializationWriter, microsoftTeamsAnalyticsAuditRecord: Partial<MicrosoftTeamsAnalyticsAuditRecord> | undefined | null = {}) : void {
+    if (microsoftTeamsAnalyticsAuditRecord) {
+        serializeAuditData(writer, microsoftTeamsAnalyticsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftTeamsAuditRecord(writer: SerializationWriter, microsoftTeamsAuditRecord: Partial<MicrosoftTeamsAuditRecord> | undefined | null = {}) : void {
+    if (microsoftTeamsAuditRecord) {
+        serializeAuditData(writer, microsoftTeamsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftTeamsDeviceAuditRecord(writer: SerializationWriter, microsoftTeamsDeviceAuditRecord: Partial<MicrosoftTeamsDeviceAuditRecord> | undefined | null = {}) : void {
+    if (microsoftTeamsDeviceAuditRecord) {
+        serializeAuditData(writer, microsoftTeamsDeviceAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftTeamsRetentionLabelActionAuditRecord(writer: SerializationWriter, microsoftTeamsRetentionLabelActionAuditRecord: Partial<MicrosoftTeamsRetentionLabelActionAuditRecord> | undefined | null = {}) : void {
+    if (microsoftTeamsRetentionLabelActionAuditRecord) {
+        serializeAuditData(writer, microsoftTeamsRetentionLabelActionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftTeamsSensitivityLabelActionAuditRecord(writer: SerializationWriter, microsoftTeamsSensitivityLabelActionAuditRecord: Partial<MicrosoftTeamsSensitivityLabelActionAuditRecord> | undefined | null = {}) : void {
+    if (microsoftTeamsSensitivityLabelActionAuditRecord) {
+        serializeAuditData(writer, microsoftTeamsSensitivityLabelActionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMicrosoftTeamsShiftsAuditRecord(writer: SerializationWriter, microsoftTeamsShiftsAuditRecord: Partial<MicrosoftTeamsShiftsAuditRecord> | undefined | null = {}) : void {
+    if (microsoftTeamsShiftsAuditRecord) {
+        serializeAuditData(writer, microsoftTeamsShiftsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelExchangeItemAuditRecord(writer: SerializationWriter, mipAutoLabelExchangeItemAuditRecord: Partial<MipAutoLabelExchangeItemAuditRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelExchangeItemAuditRecord) {
+        serializeAuditData(writer, mipAutoLabelExchangeItemAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelItemAuditRecord(writer: SerializationWriter, mipAutoLabelItemAuditRecord: Partial<MipAutoLabelItemAuditRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelItemAuditRecord) {
+        serializeAuditData(writer, mipAutoLabelItemAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelPolicyAuditRecord(writer: SerializationWriter, mipAutoLabelPolicyAuditRecord: Partial<MipAutoLabelPolicyAuditRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelPolicyAuditRecord) {
+        serializeAuditData(writer, mipAutoLabelPolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelProgressFeedbackAuditRecord(writer: SerializationWriter, mipAutoLabelProgressFeedbackAuditRecord: Partial<MipAutoLabelProgressFeedbackAuditRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelProgressFeedbackAuditRecord) {
+        serializeAuditData(writer, mipAutoLabelProgressFeedbackAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelSharePointItemAuditRecord(writer: SerializationWriter, mipAutoLabelSharePointItemAuditRecord: Partial<MipAutoLabelSharePointItemAuditRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelSharePointItemAuditRecord) {
+        serializeAuditData(writer, mipAutoLabelSharePointItemAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelSharePointPolicyLocationAuditRecord(writer: SerializationWriter, mipAutoLabelSharePointPolicyLocationAuditRecord: Partial<MipAutoLabelSharePointPolicyLocationAuditRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelSharePointPolicyLocationAuditRecord) {
+        serializeAuditData(writer, mipAutoLabelSharePointPolicyLocationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelSimulationSharePointCompletionRecord(writer: SerializationWriter, mipAutoLabelSimulationSharePointCompletionRecord: Partial<MipAutoLabelSimulationSharePointCompletionRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelSimulationSharePointCompletionRecord) {
+        serializeAuditData(writer, mipAutoLabelSimulationSharePointCompletionRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelSimulationSharePointProgressRecord(writer: SerializationWriter, mipAutoLabelSimulationSharePointProgressRecord: Partial<MipAutoLabelSimulationSharePointProgressRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelSimulationSharePointProgressRecord) {
+        serializeAuditData(writer, mipAutoLabelSimulationSharePointProgressRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelSimulationStatisticsRecord(writer: SerializationWriter, mipAutoLabelSimulationStatisticsRecord: Partial<MipAutoLabelSimulationStatisticsRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelSimulationStatisticsRecord) {
+        serializeAuditData(writer, mipAutoLabelSimulationStatisticsRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipAutoLabelSimulationStatusRecord(writer: SerializationWriter, mipAutoLabelSimulationStatusRecord: Partial<MipAutoLabelSimulationStatusRecord> | undefined | null = {}) : void {
+    if (mipAutoLabelSimulationStatusRecord) {
+        serializeAuditData(writer, mipAutoLabelSimulationStatusRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipExactDataMatchAuditRecord(writer: SerializationWriter, mipExactDataMatchAuditRecord: Partial<MipExactDataMatchAuditRecord> | undefined | null = {}) : void {
+    if (mipExactDataMatchAuditRecord) {
+        serializeAuditData(writer, mipExactDataMatchAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipLabelAnalyticsAuditRecord(writer: SerializationWriter, mipLabelAnalyticsAuditRecord: Partial<MipLabelAnalyticsAuditRecord> | undefined | null = {}) : void {
+    if (mipLabelAnalyticsAuditRecord) {
+        serializeAuditData(writer, mipLabelAnalyticsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMipLabelAuditRecord(writer: SerializationWriter, mipLabelAuditRecord: Partial<MipLabelAuditRecord> | undefined | null = {}) : void {
+    if (mipLabelAuditRecord) {
+        serializeAuditData(writer, mipLabelAuditRecord)
     }
 }
 /**
@@ -15962,6 +23605,106 @@ export function serializeMoveToJunkResponseAction(writer: SerializationWriter, m
     if (moveToJunkResponseAction) {
         serializeResponseAction(writer, moveToJunkResponseAction)
         writer.writeEnumValue<EmailEntityIdentifier[]>("identifier", moveToJunkResponseAction.identifier);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMS365DCustomDetectionAuditRecord(writer: SerializationWriter, mS365DCustomDetectionAuditRecord: Partial<MS365DCustomDetectionAuditRecord> | undefined | null = {}) : void {
+    if (mS365DCustomDetectionAuditRecord) {
+        serializeAuditData(writer, mS365DCustomDetectionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMS365DIncidentAuditRecord(writer: SerializationWriter, mS365DIncidentAuditRecord: Partial<MS365DIncidentAuditRecord> | undefined | null = {}) : void {
+    if (mS365DIncidentAuditRecord) {
+        serializeAuditData(writer, mS365DIncidentAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMS365DSuppressionRuleAuditRecord(writer: SerializationWriter, mS365DSuppressionRuleAuditRecord: Partial<MS365DSuppressionRuleAuditRecord> | undefined | null = {}) : void {
+    if (mS365DSuppressionRuleAuditRecord) {
+        serializeAuditData(writer, mS365DSuppressionRuleAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMsdeGeneralSettingsAuditRecord(writer: SerializationWriter, msdeGeneralSettingsAuditRecord: Partial<MsdeGeneralSettingsAuditRecord> | undefined | null = {}) : void {
+    if (msdeGeneralSettingsAuditRecord) {
+        serializeAuditData(writer, msdeGeneralSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMsdeIndicatorsSettingsAuditRecord(writer: SerializationWriter, msdeIndicatorsSettingsAuditRecord: Partial<MsdeIndicatorsSettingsAuditRecord> | undefined | null = {}) : void {
+    if (msdeIndicatorsSettingsAuditRecord) {
+        serializeAuditData(writer, msdeIndicatorsSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMsdeResponseActionsAuditRecord(writer: SerializationWriter, msdeResponseActionsAuditRecord: Partial<MsdeResponseActionsAuditRecord> | undefined | null = {}) : void {
+    if (msdeResponseActionsAuditRecord) {
+        serializeAuditData(writer, msdeResponseActionsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMsdeRolesSettingsAuditRecord(writer: SerializationWriter, msdeRolesSettingsAuditRecord: Partial<MsdeRolesSettingsAuditRecord> | undefined | null = {}) : void {
+    if (msdeRolesSettingsAuditRecord) {
+        serializeAuditData(writer, msdeRolesSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMsticNationStateNotificationRecord(writer: SerializationWriter, msticNationStateNotificationRecord: Partial<MsticNationStateNotificationRecord> | undefined | null = {}) : void {
+    if (msticNationStateNotificationRecord) {
+        serializeAuditData(writer, msticNationStateNotificationRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMultiStageDispositionAuditRecord(writer: SerializationWriter, multiStageDispositionAuditRecord: Partial<MultiStageDispositionAuditRecord> | undefined | null = {}) : void {
+    if (multiStageDispositionAuditRecord) {
+        serializeAuditData(writer, multiStageDispositionAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMyAnalyticsSettingsAuditRecord(writer: SerializationWriter, myAnalyticsSettingsAuditRecord: Partial<MyAnalyticsSettingsAuditRecord> | undefined | null = {}) : void {
+    if (myAnalyticsSettingsAuditRecord) {
+        serializeAuditData(writer, myAnalyticsSettingsAuditRecord)
     }
 }
 /**
@@ -16037,12 +23780,82 @@ export function serializeOcrSettings(writer: SerializationWriter, ocrSettings: P
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeOfficeNativeAuditRecord(writer: SerializationWriter, officeNativeAuditRecord: Partial<OfficeNativeAuditRecord> | undefined | null = {}) : void {
+    if (officeNativeAuditRecord) {
+        serializeAuditData(writer, officeNativeAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOmePortalAuditRecord(writer: SerializationWriter, omePortalAuditRecord: Partial<OmePortalAuditRecord> | undefined | null = {}) : void {
+    if (omePortalAuditRecord) {
+        serializeAuditData(writer, omePortalAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOneDriveAuditRecord(writer: SerializationWriter, oneDriveAuditRecord: Partial<OneDriveAuditRecord> | undefined | null = {}) : void {
+    if (oneDriveAuditRecord) {
+        serializeAuditData(writer, oneDriveAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOnPremisesFileShareScannerDlpAuditRecord(writer: SerializationWriter, onPremisesFileShareScannerDlpAuditRecord: Partial<OnPremisesFileShareScannerDlpAuditRecord> | undefined | null = {}) : void {
+    if (onPremisesFileShareScannerDlpAuditRecord) {
+        serializeAuditData(writer, onPremisesFileShareScannerDlpAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOnPremisesScannerDlpAuditRecord(writer: SerializationWriter, onPremisesScannerDlpAuditRecord: Partial<OnPremisesScannerDlpAuditRecord> | undefined | null = {}) : void {
+    if (onPremisesScannerDlpAuditRecord) {
+        serializeAuditData(writer, onPremisesScannerDlpAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOnPremisesSharePointScannerDlpAuditRecord(writer: SerializationWriter, onPremisesSharePointScannerDlpAuditRecord: Partial<OnPremisesSharePointScannerDlpAuditRecord> | undefined | null = {}) : void {
+    if (onPremisesSharePointScannerDlpAuditRecord) {
+        serializeAuditData(writer, onPremisesSharePointScannerDlpAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeOrganizationalScope(writer: SerializationWriter, organizationalScope: Partial<OrganizationalScope> | undefined | null = {}) : void {
     if (organizationalScope) {
         writer.writeStringValue("@odata.type", organizationalScope.odataType);
         writer.writeCollectionOfPrimitiveValues<string>("scopeNames", organizationalScope.scopeNames);
         writer.writeEnumValue<ScopeType>("scopeType", organizationalScope.scopeType);
         writer.writeAdditionalData(organizationalScope.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOwaGetAccessTokenForResourceAuditRecord(writer: SerializationWriter, owaGetAccessTokenForResourceAuditRecord: Partial<OwaGetAccessTokenForResourceAuditRecord> | undefined | null = {}) : void {
+    if (owaGetAccessTokenForResourceAuditRecord) {
+        serializeAuditData(writer, owaGetAccessTokenForResourceAuditRecord)
     }
 }
 /**
@@ -16077,6 +23890,106 @@ export function serializePassiveDnsRecordCollectionResponse(writer: Serializatio
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializePeopleAdminSettingsAuditRecord(writer: SerializationWriter, peopleAdminSettingsAuditRecord: Partial<PeopleAdminSettingsAuditRecord> | undefined | null = {}) : void {
+    if (peopleAdminSettingsAuditRecord) {
+        serializeAuditData(writer, peopleAdminSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePhysicalBadgingSignalAuditRecord(writer: SerializationWriter, physicalBadgingSignalAuditRecord: Partial<PhysicalBadgingSignalAuditRecord> | undefined | null = {}) : void {
+    if (physicalBadgingSignalAuditRecord) {
+        serializeAuditData(writer, physicalBadgingSignalAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerCopyPlanAuditRecord(writer: SerializationWriter, plannerCopyPlanAuditRecord: Partial<PlannerCopyPlanAuditRecord> | undefined | null = {}) : void {
+    if (plannerCopyPlanAuditRecord) {
+        serializeAuditData(writer, plannerCopyPlanAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerPlanAuditRecord(writer: SerializationWriter, plannerPlanAuditRecord: Partial<PlannerPlanAuditRecord> | undefined | null = {}) : void {
+    if (plannerPlanAuditRecord) {
+        serializeAuditData(writer, plannerPlanAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerPlanListAuditRecord(writer: SerializationWriter, plannerPlanListAuditRecord: Partial<PlannerPlanListAuditRecord> | undefined | null = {}) : void {
+    if (plannerPlanListAuditRecord) {
+        serializeAuditData(writer, plannerPlanListAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerRosterAuditRecord(writer: SerializationWriter, plannerRosterAuditRecord: Partial<PlannerRosterAuditRecord> | undefined | null = {}) : void {
+    if (plannerRosterAuditRecord) {
+        serializeAuditData(writer, plannerRosterAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerRosterSensitivityLabelAuditRecord(writer: SerializationWriter, plannerRosterSensitivityLabelAuditRecord: Partial<PlannerRosterSensitivityLabelAuditRecord> | undefined | null = {}) : void {
+    if (plannerRosterSensitivityLabelAuditRecord) {
+        serializeAuditData(writer, plannerRosterSensitivityLabelAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerTaskAuditRecord(writer: SerializationWriter, plannerTaskAuditRecord: Partial<PlannerTaskAuditRecord> | undefined | null = {}) : void {
+    if (plannerTaskAuditRecord) {
+        serializeAuditData(writer, plannerTaskAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerTaskListAuditRecord(writer: SerializationWriter, plannerTaskListAuditRecord: Partial<PlannerTaskListAuditRecord> | undefined | null = {}) : void {
+    if (plannerTaskListAuditRecord) {
+        serializeAuditData(writer, plannerTaskListAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePlannerTenantSettingsAuditRecord(writer: SerializationWriter, plannerTenantSettingsAuditRecord: Partial<PlannerTenantSettingsAuditRecord> | undefined | null = {}) : void {
+    if (plannerTenantSettingsAuditRecord) {
+        serializeAuditData(writer, plannerTenantSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializePolicyBase(writer: SerializationWriter, policyBase: Partial<PolicyBase> | undefined | null = {}) : void {
     if (policyBase) {
         serializeEntity(writer, policyBase)
@@ -16087,6 +24000,206 @@ export function serializePolicyBase(writer: SerializationWriter, policyBase: Par
         writer.writeObjectValue<IdentitySet>("lastModifiedBy", policyBase.lastModifiedBy, serializeIdentitySet);
         writer.writeDateValue("lastModifiedDateTime", policyBase.lastModifiedDateTime);
         writer.writeEnumValue<PolicyStatus>("status", policyBase.status);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerAppsAuditAppRecord(writer: SerializationWriter, powerAppsAuditAppRecord: Partial<PowerAppsAuditAppRecord> | undefined | null = {}) : void {
+    if (powerAppsAuditAppRecord) {
+        serializeAuditData(writer, powerAppsAuditAppRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerAppsAuditPlanRecord(writer: SerializationWriter, powerAppsAuditPlanRecord: Partial<PowerAppsAuditPlanRecord> | undefined | null = {}) : void {
+    if (powerAppsAuditPlanRecord) {
+        serializeAuditData(writer, powerAppsAuditPlanRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerAppsAuditResourceRecord(writer: SerializationWriter, powerAppsAuditResourceRecord: Partial<PowerAppsAuditResourceRecord> | undefined | null = {}) : void {
+    if (powerAppsAuditResourceRecord) {
+        serializeAuditData(writer, powerAppsAuditResourceRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerBiAuditRecord(writer: SerializationWriter, powerBiAuditRecord: Partial<PowerBiAuditRecord> | undefined | null = {}) : void {
+    if (powerBiAuditRecord) {
+        serializeAuditData(writer, powerBiAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerBiDlpAuditRecord(writer: SerializationWriter, powerBiDlpAuditRecord: Partial<PowerBiDlpAuditRecord> | undefined | null = {}) : void {
+    if (powerBiDlpAuditRecord) {
+        serializeAuditData(writer, powerBiDlpAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerPagesSiteAuditRecord(writer: SerializationWriter, powerPagesSiteAuditRecord: Partial<PowerPagesSiteAuditRecord> | undefined | null = {}) : void {
+    if (powerPagesSiteAuditRecord) {
+        serializeAuditData(writer, powerPagesSiteAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerPlatformAdminDlpAuditRecord(writer: SerializationWriter, powerPlatformAdminDlpAuditRecord: Partial<PowerPlatformAdminDlpAuditRecord> | undefined | null = {}) : void {
+    if (powerPlatformAdminDlpAuditRecord) {
+        serializeAuditData(writer, powerPlatformAdminDlpAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerPlatformAdminEnvironmentAuditRecord(writer: SerializationWriter, powerPlatformAdminEnvironmentAuditRecord: Partial<PowerPlatformAdminEnvironmentAuditRecord> | undefined | null = {}) : void {
+    if (powerPlatformAdminEnvironmentAuditRecord) {
+        serializeAuditData(writer, powerPlatformAdminEnvironmentAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerPlatformAdministratorActivityRecord(writer: SerializationWriter, powerPlatformAdministratorActivityRecord: Partial<PowerPlatformAdministratorActivityRecord> | undefined | null = {}) : void {
+    if (powerPlatformAdministratorActivityRecord) {
+        serializeAuditData(writer, powerPlatformAdministratorActivityRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerPlatformLockboxResourceAccessRequestAuditRecord(writer: SerializationWriter, powerPlatformLockboxResourceAccessRequestAuditRecord: Partial<PowerPlatformLockboxResourceAccessRequestAuditRecord> | undefined | null = {}) : void {
+    if (powerPlatformLockboxResourceAccessRequestAuditRecord) {
+        serializeAuditData(writer, powerPlatformLockboxResourceAccessRequestAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerPlatformLockboxResourceCommandAuditRecord(writer: SerializationWriter, powerPlatformLockboxResourceCommandAuditRecord: Partial<PowerPlatformLockboxResourceCommandAuditRecord> | undefined | null = {}) : void {
+    if (powerPlatformLockboxResourceCommandAuditRecord) {
+        serializeAuditData(writer, powerPlatformLockboxResourceCommandAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePowerPlatformServiceActivityAuditRecord(writer: SerializationWriter, powerPlatformServiceActivityAuditRecord: Partial<PowerPlatformServiceActivityAuditRecord> | undefined | null = {}) : void {
+    if (powerPlatformServiceActivityAuditRecord) {
+        serializeAuditData(writer, powerPlatformServiceActivityAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyDataMatchAuditRecord(writer: SerializationWriter, privacyDataMatchAuditRecord: Partial<PrivacyDataMatchAuditRecord> | undefined | null = {}) : void {
+    if (privacyDataMatchAuditRecord) {
+        serializeAuditData(writer, privacyDataMatchAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyDataMinimizationRecord(writer: SerializationWriter, privacyDataMinimizationRecord: Partial<PrivacyDataMinimizationRecord> | undefined | null = {}) : void {
+    if (privacyDataMinimizationRecord) {
+        serializeAuditData(writer, privacyDataMinimizationRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyDigestEmailRecord(writer: SerializationWriter, privacyDigestEmailRecord: Partial<PrivacyDigestEmailRecord> | undefined | null = {}) : void {
+    if (privacyDigestEmailRecord) {
+        serializeAuditData(writer, privacyDigestEmailRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyOpenAccessAuditRecord(writer: SerializationWriter, privacyOpenAccessAuditRecord: Partial<PrivacyOpenAccessAuditRecord> | undefined | null = {}) : void {
+    if (privacyOpenAccessAuditRecord) {
+        serializeAuditData(writer, privacyOpenAccessAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyPortalAuditRecord(writer: SerializationWriter, privacyPortalAuditRecord: Partial<PrivacyPortalAuditRecord> | undefined | null = {}) : void {
+    if (privacyPortalAuditRecord) {
+        serializeAuditData(writer, privacyPortalAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyRemediationActionRecord(writer: SerializationWriter, privacyRemediationActionRecord: Partial<PrivacyRemediationActionRecord> | undefined | null = {}) : void {
+    if (privacyRemediationActionRecord) {
+        serializeAuditData(writer, privacyRemediationActionRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyRemediationRecord(writer: SerializationWriter, privacyRemediationRecord: Partial<PrivacyRemediationRecord> | undefined | null = {}) : void {
+    if (privacyRemediationRecord) {
+        serializeAuditData(writer, privacyRemediationRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePrivacyTenantAuditHistoryRecord(writer: SerializationWriter, privacyTenantAuditHistoryRecord: Partial<PrivacyTenantAuditHistoryRecord> | undefined | null = {}) : void {
+    if (privacyTenantAuditHistoryRecord) {
+        serializeAuditData(writer, privacyTenantAuditHistoryRecord)
     }
 }
 /**
@@ -16107,6 +24220,86 @@ export function serializeProcessEvidence(writer: SerializationWriter, processEvi
         writer.writeDateValue("processCreationDateTime", processEvidence.processCreationDateTime);
         writer.writeNumberValue("processId", processEvidence.processId);
         writer.writeObjectValue<UserAccount>("userAccount", processEvidence.userAccount, serializeUserAccount);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectAuditRecord(writer: SerializationWriter, projectAuditRecord: Partial<ProjectAuditRecord> | undefined | null = {}) : void {
+    if (projectAuditRecord) {
+        serializeAuditData(writer, projectAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectForTheWebAssignedToMeSettingsAuditRecord(writer: SerializationWriter, projectForTheWebAssignedToMeSettingsAuditRecord: Partial<ProjectForTheWebAssignedToMeSettingsAuditRecord> | undefined | null = {}) : void {
+    if (projectForTheWebAssignedToMeSettingsAuditRecord) {
+        serializeAuditData(writer, projectForTheWebAssignedToMeSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectForTheWebProjectAuditRecord(writer: SerializationWriter, projectForTheWebProjectAuditRecord: Partial<ProjectForTheWebProjectAuditRecord> | undefined | null = {}) : void {
+    if (projectForTheWebProjectAuditRecord) {
+        serializeAuditData(writer, projectForTheWebProjectAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectForTheWebProjectSettingsAuditRecord(writer: SerializationWriter, projectForTheWebProjectSettingsAuditRecord: Partial<ProjectForTheWebProjectSettingsAuditRecord> | undefined | null = {}) : void {
+    if (projectForTheWebProjectSettingsAuditRecord) {
+        serializeAuditData(writer, projectForTheWebProjectSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectForTheWebRoadmapAuditRecord(writer: SerializationWriter, projectForTheWebRoadmapAuditRecord: Partial<ProjectForTheWebRoadmapAuditRecord> | undefined | null = {}) : void {
+    if (projectForTheWebRoadmapAuditRecord) {
+        serializeAuditData(writer, projectForTheWebRoadmapAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectForTheWebRoadmapItemAuditRecord(writer: SerializationWriter, projectForTheWebRoadmapItemAuditRecord: Partial<ProjectForTheWebRoadmapItemAuditRecord> | undefined | null = {}) : void {
+    if (projectForTheWebRoadmapItemAuditRecord) {
+        serializeAuditData(writer, projectForTheWebRoadmapItemAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectForTheWebRoadmapSettingsAuditRecord(writer: SerializationWriter, projectForTheWebRoadmapSettingsAuditRecord: Partial<ProjectForTheWebRoadmapSettingsAuditRecord> | undefined | null = {}) : void {
+    if (projectForTheWebRoadmapSettingsAuditRecord) {
+        serializeAuditData(writer, projectForTheWebRoadmapSettingsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProjectForTheWebTaskAuditRecord(writer: SerializationWriter, projectForTheWebTaskAuditRecord: Partial<ProjectForTheWebTaskAuditRecord> | undefined | null = {}) : void {
+    if (projectForTheWebTaskAuditRecord) {
+        serializeAuditData(writer, projectForTheWebTaskAuditRecord)
     }
 }
 /**
@@ -16161,6 +24354,46 @@ export function serializeProtectionRule(writer: SerializationWriter, protectionR
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializePublicFolderAuditRecord(writer: SerializationWriter, publicFolderAuditRecord: Partial<PublicFolderAuditRecord> | undefined | null = {}) : void {
+    if (publicFolderAuditRecord) {
+        serializeAuditData(writer, publicFolderAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePurviewInsiderRiskAlertsRecord(writer: SerializationWriter, purviewInsiderRiskAlertsRecord: Partial<PurviewInsiderRiskAlertsRecord> | undefined | null = {}) : void {
+    if (purviewInsiderRiskAlertsRecord) {
+        serializeAuditData(writer, purviewInsiderRiskAlertsRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePurviewInsiderRiskCasesRecord(writer: SerializationWriter, purviewInsiderRiskCasesRecord: Partial<PurviewInsiderRiskCasesRecord> | undefined | null = {}) : void {
+    if (purviewInsiderRiskCasesRecord) {
+        serializeAuditData(writer, purviewInsiderRiskCasesRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeQuarantineAuditRecord(writer: SerializationWriter, quarantineAuditRecord: Partial<QuarantineAuditRecord> | undefined | null = {}) : void {
+    if (quarantineAuditRecord) {
+        serializeAuditData(writer, quarantineAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeQueryCondition(writer: SerializationWriter, queryCondition: Partial<QueryCondition> | undefined | null = {}) : void {
     if (queryCondition) {
         writer.writeDateValue("lastModifiedDateTime", queryCondition.lastModifiedDateTime);
@@ -16193,6 +24426,16 @@ export function serializeRecommendLabelAction(writer: SerializationWriter, recom
         writer.writeEnumValue<ActionSource>("actionSource", recommendLabelAction.actionSource);
         writer.writeCollectionOfPrimitiveValues<string>("responsibleSensitiveTypeIds", recommendLabelAction.responsibleSensitiveTypeIds);
         writer.writeStringValue("sensitivityLabelId", recommendLabelAction.sensitivityLabelId);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeRecordsManagementAuditRecord(writer: SerializationWriter, recordsManagementAuditRecord: Partial<RecordsManagementAuditRecord> | undefined | null = {}) : void {
+    if (recordsManagementAuditRecord) {
+        serializeAuditData(writer, recordsManagementAuditRecord)
     }
 }
 /**
@@ -16451,6 +24694,16 @@ export function serializeRetentionLabelCollectionResponse(writer: SerializationW
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeRetentionPolicyAuditRecord(writer: SerializationWriter, retentionPolicyAuditRecord: Partial<RetentionPolicyAuditRecord> | undefined | null = {}) : void {
+    if (retentionPolicyAuditRecord) {
+        serializeAuditData(writer, retentionPolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeRuleSchedule(writer: SerializationWriter, ruleSchedule: Partial<RuleSchedule> | undefined | null = {}) : void {
     if (ruleSchedule) {
         writer.writeDateValue("nextRunDateTime", ruleSchedule.nextRunDateTime);
@@ -16521,6 +24774,36 @@ export function serializeSasTokenEvidence(writer: SerializationWriter, sasTokenE
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeScoreEvidence(writer: SerializationWriter, scoreEvidence: Partial<ScoreEvidence> | undefined | null = {}) : void {
+    if (scoreEvidence) {
+        serializeAuditData(writer, scoreEvidence)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeScorePlatformGenericAuditRecord(writer: SerializationWriter, scorePlatformGenericAuditRecord: Partial<ScorePlatformGenericAuditRecord> | undefined | null = {}) : void {
+    if (scorePlatformGenericAuditRecord) {
+        serializeAuditData(writer, scorePlatformGenericAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeScriptRunAuditRecord(writer: SerializationWriter, scriptRunAuditRecord: Partial<ScriptRunAuditRecord> | undefined | null = {}) : void {
+    if (scriptRunAuditRecord) {
+        serializeAuditData(writer, scriptRunAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeSearch(writer: SerializationWriter, search: Partial<Search> | undefined | null = {}) : void {
     if (search) {
         serializeEntity(writer, search)
@@ -16538,10 +24821,70 @@ export function serializeSearch(writer: SerializationWriter, search: Partial<Sea
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeSearchAuditRecord(writer: SerializationWriter, searchAuditRecord: Partial<SearchAuditRecord> | undefined | null = {}) : void {
+    if (searchAuditRecord) {
+        serializeAuditData(writer, searchAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeSecurity(writer: SerializationWriter, security: Partial<Security> | undefined | null = {}) : void {
     if (security) {
         serializeEntity(writer, security)
         writer.writeObjectValue<InformationProtection>("informationProtection", security.informationProtection, serializeInformationProtection);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityComplianceAlertRecord(writer: SerializationWriter, securityComplianceAlertRecord: Partial<SecurityComplianceAlertRecord> | undefined | null = {}) : void {
+    if (securityComplianceAlertRecord) {
+        serializeAuditData(writer, securityComplianceAlertRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityComplianceCenterEOPCmdletAuditRecord(writer: SerializationWriter, securityComplianceCenterEOPCmdletAuditRecord: Partial<SecurityComplianceCenterEOPCmdletAuditRecord> | undefined | null = {}) : void {
+    if (securityComplianceCenterEOPCmdletAuditRecord) {
+        serializeAuditData(writer, securityComplianceCenterEOPCmdletAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityComplianceInsightsAuditRecord(writer: SerializationWriter, securityComplianceInsightsAuditRecord: Partial<SecurityComplianceInsightsAuditRecord> | undefined | null = {}) : void {
+    if (securityComplianceInsightsAuditRecord) {
+        serializeAuditData(writer, securityComplianceInsightsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityComplianceRBACAuditRecord(writer: SerializationWriter, securityComplianceRBACAuditRecord: Partial<SecurityComplianceRBACAuditRecord> | undefined | null = {}) : void {
+    if (securityComplianceRBACAuditRecord) {
+        serializeAuditData(writer, securityComplianceRBACAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityComplianceUserChangeAuditRecord(writer: SerializationWriter, securityComplianceUserChangeAuditRecord: Partial<SecurityComplianceUserChangeAuditRecord> | undefined | null = {}) : void {
+    if (securityComplianceUserChangeAuditRecord) {
+        serializeAuditData(writer, securityComplianceUserChangeAuditRecord)
     }
 }
 /**
@@ -16667,6 +25010,96 @@ export function serializeServicePrincipalEvidence(writer: SerializationWriter, s
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeSharePointAppPermissionOperationAuditRecord(writer: SerializationWriter, sharePointAppPermissionOperationAuditRecord: Partial<SharePointAppPermissionOperationAuditRecord> | undefined | null = {}) : void {
+    if (sharePointAppPermissionOperationAuditRecord) {
+        serializeAuditData(writer, sharePointAppPermissionOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointAuditRecord(writer: SerializationWriter, sharePointAuditRecord: Partial<SharePointAuditRecord> | undefined | null = {}) : void {
+    if (sharePointAuditRecord) {
+        serializeAuditData(writer, sharePointAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointCommentOperationAuditRecord(writer: SerializationWriter, sharePointCommentOperationAuditRecord: Partial<SharePointCommentOperationAuditRecord> | undefined | null = {}) : void {
+    if (sharePointCommentOperationAuditRecord) {
+        serializeAuditData(writer, sharePointCommentOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointContentTypeOperationAuditRecord(writer: SerializationWriter, sharePointContentTypeOperationAuditRecord: Partial<SharePointContentTypeOperationAuditRecord> | undefined | null = {}) : void {
+    if (sharePointContentTypeOperationAuditRecord) {
+        serializeAuditData(writer, sharePointContentTypeOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointESignatureAuditRecord(writer: SerializationWriter, sharePointESignatureAuditRecord: Partial<SharePointESignatureAuditRecord> | undefined | null = {}) : void {
+    if (sharePointESignatureAuditRecord) {
+        serializeAuditData(writer, sharePointESignatureAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointFieldOperationAuditRecord(writer: SerializationWriter, sharePointFieldOperationAuditRecord: Partial<SharePointFieldOperationAuditRecord> | undefined | null = {}) : void {
+    if (sharePointFieldOperationAuditRecord) {
+        serializeAuditData(writer, sharePointFieldOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointFileOperationAuditRecord(writer: SerializationWriter, sharePointFileOperationAuditRecord: Partial<SharePointFileOperationAuditRecord> | undefined | null = {}) : void {
+    if (sharePointFileOperationAuditRecord) {
+        serializeAuditData(writer, sharePointFileOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointListOperationAuditRecord(writer: SerializationWriter, sharePointListOperationAuditRecord: Partial<SharePointListOperationAuditRecord> | undefined | null = {}) : void {
+    if (sharePointListOperationAuditRecord) {
+        serializeAuditData(writer, sharePointListOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSharePointSharingOperationAuditRecord(writer: SerializationWriter, sharePointSharingOperationAuditRecord: Partial<SharePointSharingOperationAuditRecord> | undefined | null = {}) : void {
+    if (sharePointSharingOperationAuditRecord) {
+        serializeAuditData(writer, sharePointSharingOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeSinglePropertySchema(writer: SerializationWriter, singlePropertySchema: Partial<SinglePropertySchema> | undefined | null = {}) : void {
     if (singlePropertySchema) {
         writer.writeStringValue("name", singlePropertySchema.name);
@@ -16695,6 +25128,66 @@ export function serializeSiteSourceCollectionResponse(writer: SerializationWrite
     if (siteSourceCollectionResponse) {
         serializeBaseCollectionPaginationCountResponse(writer, siteSourceCollectionResponse)
         writer.writeCollectionOfObjectValues<SiteSource>("value", siteSourceCollectionResponse.value, serializeSiteSource);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSkypeForBusinessBaseAuditRecord(writer: SerializationWriter, skypeForBusinessBaseAuditRecord: Partial<SkypeForBusinessBaseAuditRecord> | undefined | null = {}) : void {
+    if (skypeForBusinessBaseAuditRecord) {
+        serializeAuditData(writer, skypeForBusinessBaseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSkypeForBusinessCmdletsAuditRecord(writer: SerializationWriter, skypeForBusinessCmdletsAuditRecord: Partial<SkypeForBusinessCmdletsAuditRecord> | undefined | null = {}) : void {
+    if (skypeForBusinessCmdletsAuditRecord) {
+        serializeAuditData(writer, skypeForBusinessCmdletsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSkypeForBusinessPSTNUsageAuditRecord(writer: SerializationWriter, skypeForBusinessPSTNUsageAuditRecord: Partial<SkypeForBusinessPSTNUsageAuditRecord> | undefined | null = {}) : void {
+    if (skypeForBusinessPSTNUsageAuditRecord) {
+        serializeAuditData(writer, skypeForBusinessPSTNUsageAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSkypeForBusinessUsersBlockedAuditRecord(writer: SerializationWriter, skypeForBusinessUsersBlockedAuditRecord: Partial<SkypeForBusinessUsersBlockedAuditRecord> | undefined | null = {}) : void {
+    if (skypeForBusinessUsersBlockedAuditRecord) {
+        serializeAuditData(writer, skypeForBusinessUsersBlockedAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSmsCreatePhoneNumberRecord(writer: SerializationWriter, smsCreatePhoneNumberRecord: Partial<SmsCreatePhoneNumberRecord> | undefined | null = {}) : void {
+    if (smsCreatePhoneNumberRecord) {
+        serializeAuditData(writer, smsCreatePhoneNumberRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSmsDeletePhoneNumberRecord(writer: SerializationWriter, smsDeletePhoneNumberRecord: Partial<SmsDeletePhoneNumberRecord> | undefined | null = {}) : void {
+    if (smsDeletePhoneNumberRecord) {
+        serializeAuditData(writer, smsDeletePhoneNumberRecord)
     }
 }
 /**
@@ -16915,6 +25408,26 @@ export function serializeSubmissionUserIdentity(writer: SerializationWriter, sub
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeSupervisoryReviewDayXInsightsAuditRecord(writer: SerializationWriter, supervisoryReviewDayXInsightsAuditRecord: Partial<SupervisoryReviewDayXInsightsAuditRecord> | undefined | null = {}) : void {
+    if (supervisoryReviewDayXInsightsAuditRecord) {
+        serializeAuditData(writer, supervisoryReviewDayXInsightsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSyntheticProbeAuditRecord(writer: SerializationWriter, syntheticProbeAuditRecord: Partial<SyntheticProbeAuditRecord> | undefined | null = {}) : void {
+    if (syntheticProbeAuditRecord) {
+        serializeAuditData(writer, syntheticProbeAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeTag(writer: SerializationWriter, tag: Partial<Tag> | undefined | null = {}) : void {
     if (tag) {
         serializeEntity(writer, tag)
@@ -16922,6 +25435,46 @@ export function serializeTag(writer: SerializationWriter, tag: Partial<Tag> | un
         writer.writeStringValue("description", tag.description);
         writer.writeStringValue("displayName", tag.displayName);
         writer.writeDateValue("lastModifiedDateTime", tag.lastModifiedDateTime);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTeamsEasyApprovalsAuditRecord(writer: SerializationWriter, teamsEasyApprovalsAuditRecord: Partial<TeamsEasyApprovalsAuditRecord> | undefined | null = {}) : void {
+    if (teamsEasyApprovalsAuditRecord) {
+        serializeAuditData(writer, teamsEasyApprovalsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTeamsHealthcareAuditRecord(writer: SerializationWriter, teamsHealthcareAuditRecord: Partial<TeamsHealthcareAuditRecord> | undefined | null = {}) : void {
+    if (teamsHealthcareAuditRecord) {
+        serializeAuditData(writer, teamsHealthcareAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTeamsUpdatesAuditRecord(writer: SerializationWriter, teamsUpdatesAuditRecord: Partial<TeamsUpdatesAuditRecord> | undefined | null = {}) : void {
+    if (teamsUpdatesAuditRecord) {
+        serializeAuditData(writer, teamsUpdatesAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTenantAllowBlockListAuditRecord(writer: SerializationWriter, tenantAllowBlockListAuditRecord: Partial<TenantAllowBlockListAuditRecord> | undefined | null = {}) : void {
+    if (tenantAllowBlockListAuditRecord) {
+        serializeAuditData(writer, tenantAllowBlockListAuditRecord)
     }
 }
 /**
@@ -16960,6 +25513,16 @@ export function serializeTenantAllowOrBlockListAction(writer: SerializationWrite
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeThreatFinderAuditRecord(writer: SerializationWriter, threatFinderAuditRecord: Partial<ThreatFinderAuditRecord> | undefined | null = {}) : void {
+    if (threatFinderAuditRecord) {
+        serializeAuditData(writer, threatFinderAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeThreatIntelligence(writer: SerializationWriter, threatIntelligence: Partial<ThreatIntelligence> | undefined | null = {}) : void {
     if (threatIntelligence) {
         serializeEntity(writer, threatIntelligence)
@@ -16980,6 +25543,36 @@ export function serializeThreatIntelligence(writer: SerializationWriter, threatI
         writer.writeCollectionOfObjectValues<Vulnerability>("vulnerabilities", threatIntelligence.vulnerabilities, serializeVulnerability);
         writer.writeCollectionOfObjectValues<WhoisHistoryRecord>("whoisHistoryRecords", threatIntelligence.whoisHistoryRecords, serializeWhoisHistoryRecord);
         writer.writeCollectionOfObjectValues<WhoisRecord>("whoisRecords", threatIntelligence.whoisRecords, serializeWhoisRecord);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeThreatIntelligenceAtpContentData(writer: SerializationWriter, threatIntelligenceAtpContentData: Partial<ThreatIntelligenceAtpContentData> | undefined | null = {}) : void {
+    if (threatIntelligenceAtpContentData) {
+        serializeAuditData(writer, threatIntelligenceAtpContentData)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeThreatIntelligenceMailData(writer: SerializationWriter, threatIntelligenceMailData: Partial<ThreatIntelligenceMailData> | undefined | null = {}) : void {
+    if (threatIntelligenceMailData) {
+        serializeAuditData(writer, threatIntelligenceMailData)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeThreatIntelligenceUrlClickData(writer: SerializationWriter, threatIntelligenceUrlClickData: Partial<ThreatIntelligenceUrlClickData> | undefined | null = {}) : void {
+    if (threatIntelligenceUrlClickData) {
+        serializeAuditData(writer, threatIntelligenceUrlClickData)
     }
 }
 /**
@@ -17014,6 +25607,16 @@ export function serializeThreatSubmissionRoot(writer: SerializationWriter, threa
         writer.writeCollectionOfObjectValues<EmailThreatSubmissionPolicy>("emailThreatSubmissionPolicies", threatSubmissionRoot.emailThreatSubmissionPolicies, serializeEmailThreatSubmissionPolicy);
         writer.writeCollectionOfObjectValues<FileThreatSubmission>("fileThreats", threatSubmissionRoot.fileThreats, serializeFileThreatSubmission);
         writer.writeCollectionOfObjectValues<UrlThreatSubmission>("urlThreats", threatSubmissionRoot.urlThreats, serializeUrlThreatSubmission);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTodoAuditRecord(writer: SerializationWriter, todoAuditRecord: Partial<TodoAuditRecord> | undefined | null = {}) : void {
+    if (todoAuditRecord) {
+        serializeAuditData(writer, todoAuditRecord)
     }
 }
 /**
@@ -17058,11 +25661,31 @@ export function serializeTriggerTypesRoot(writer: SerializationWriter, triggerTy
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeUamOperationAuditRecord(writer: SerializationWriter, uamOperationAuditRecord: Partial<UamOperationAuditRecord> | undefined | null = {}) : void {
+    if (uamOperationAuditRecord) {
+        serializeAuditData(writer, uamOperationAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeUnclassifiedArtifact(writer: SerializationWriter, unclassifiedArtifact: Partial<UnclassifiedArtifact> | undefined | null = {}) : void {
     if (unclassifiedArtifact) {
         serializeArtifact(writer, unclassifiedArtifact)
         writer.writeStringValue("kind", unclassifiedArtifact.kind);
         writer.writeStringValue("value", unclassifiedArtifact.value);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUnifiedGroupAuditRecord(writer: SerializationWriter, unifiedGroupAuditRecord: Partial<UnifiedGroupAuditRecord> | undefined | null = {}) : void {
+    if (unifiedGroupAuditRecord) {
+        serializeAuditData(writer, unifiedGroupAuditRecord)
     }
 }
 /**
@@ -17086,6 +25709,66 @@ export function serializeUnifiedGroupSourceCollectionResponse(writer: Serializat
     if (unifiedGroupSourceCollectionResponse) {
         serializeBaseCollectionPaginationCountResponse(writer, unifiedGroupSourceCollectionResponse)
         writer.writeCollectionOfObjectValues<UnifiedGroupSource>("value", unifiedGroupSourceCollectionResponse.value, serializeUnifiedGroupSource);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUnifiedSimulationMatchedItemAuditRecord(writer: SerializationWriter, unifiedSimulationMatchedItemAuditRecord: Partial<UnifiedSimulationMatchedItemAuditRecord> | undefined | null = {}) : void {
+    if (unifiedSimulationMatchedItemAuditRecord) {
+        serializeAuditData(writer, unifiedSimulationMatchedItemAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUnifiedSimulationSummaryAuditRecord(writer: SerializationWriter, unifiedSimulationSummaryAuditRecord: Partial<UnifiedSimulationSummaryAuditRecord> | undefined | null = {}) : void {
+    if (unifiedSimulationSummaryAuditRecord) {
+        serializeAuditData(writer, unifiedSimulationSummaryAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUploadCertificateRecord(writer: SerializationWriter, uploadCertificateRecord: Partial<UploadCertificateRecord> | undefined | null = {}) : void {
+    if (uploadCertificateRecord) {
+        serializeAuditData(writer, uploadCertificateRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUrbacAssignmentAuditRecord(writer: SerializationWriter, urbacAssignmentAuditRecord: Partial<UrbacAssignmentAuditRecord> | undefined | null = {}) : void {
+    if (urbacAssignmentAuditRecord) {
+        serializeAuditData(writer, urbacAssignmentAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUrbacEnableStateAuditRecord(writer: SerializationWriter, urbacEnableStateAuditRecord: Partial<UrbacEnableStateAuditRecord> | undefined | null = {}) : void {
+    if (urbacEnableStateAuditRecord) {
+        serializeAuditData(writer, urbacEnableStateAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUrbacRoleAuditRecord(writer: SerializationWriter, urbacRoleAuditRecord: Partial<UrbacRoleAuditRecord> | undefined | null = {}) : void {
+    if (urbacRoleAuditRecord) {
+        serializeAuditData(writer, urbacRoleAuditRecord)
     }
 }
 /**
@@ -17179,6 +25862,126 @@ export function serializeUserSourceCollectionResponse(writer: SerializationWrite
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeUserTrainingAuditRecord(writer: SerializationWriter, userTrainingAuditRecord: Partial<UserTrainingAuditRecord> | undefined | null = {}) : void {
+    if (userTrainingAuditRecord) {
+        serializeAuditData(writer, userTrainingAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVfamBasePolicyAuditRecord(writer: SerializationWriter, vfamBasePolicyAuditRecord: Partial<VfamBasePolicyAuditRecord> | undefined | null = {}) : void {
+    if (vfamBasePolicyAuditRecord) {
+        serializeAuditData(writer, vfamBasePolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVfamCreatePolicyAuditRecord(writer: SerializationWriter, vfamCreatePolicyAuditRecord: Partial<VfamCreatePolicyAuditRecord> | undefined | null = {}) : void {
+    if (vfamCreatePolicyAuditRecord) {
+        serializeAuditData(writer, vfamCreatePolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVfamDeletePolicyAuditRecord(writer: SerializationWriter, vfamDeletePolicyAuditRecord: Partial<VfamDeletePolicyAuditRecord> | undefined | null = {}) : void {
+    if (vfamDeletePolicyAuditRecord) {
+        serializeAuditData(writer, vfamDeletePolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVfamUpdatePolicyAuditRecord(writer: SerializationWriter, vfamUpdatePolicyAuditRecord: Partial<VfamUpdatePolicyAuditRecord> | undefined | null = {}) : void {
+    if (vfamUpdatePolicyAuditRecord) {
+        serializeAuditData(writer, vfamUpdatePolicyAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVivaGoalsAuditRecord(writer: SerializationWriter, vivaGoalsAuditRecord: Partial<VivaGoalsAuditRecord> | undefined | null = {}) : void {
+    if (vivaGoalsAuditRecord) {
+        serializeAuditData(writer, vivaGoalsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVivaLearningAdminAuditRecord(writer: SerializationWriter, vivaLearningAdminAuditRecord: Partial<VivaLearningAdminAuditRecord> | undefined | null = {}) : void {
+    if (vivaLearningAdminAuditRecord) {
+        serializeAuditData(writer, vivaLearningAdminAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVivaLearningAuditRecord(writer: SerializationWriter, vivaLearningAuditRecord: Partial<VivaLearningAuditRecord> | undefined | null = {}) : void {
+    if (vivaLearningAuditRecord) {
+        serializeAuditData(writer, vivaLearningAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVivaPulseAdminAuditRecord(writer: SerializationWriter, vivaPulseAdminAuditRecord: Partial<VivaPulseAdminAuditRecord> | undefined | null = {}) : void {
+    if (vivaPulseAdminAuditRecord) {
+        serializeAuditData(writer, vivaPulseAdminAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVivaPulseOrganizerAuditRecord(writer: SerializationWriter, vivaPulseOrganizerAuditRecord: Partial<VivaPulseOrganizerAuditRecord> | undefined | null = {}) : void {
+    if (vivaPulseOrganizerAuditRecord) {
+        serializeAuditData(writer, vivaPulseOrganizerAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVivaPulseReportAuditRecord(writer: SerializationWriter, vivaPulseReportAuditRecord: Partial<VivaPulseReportAuditRecord> | undefined | null = {}) : void {
+    if (vivaPulseReportAuditRecord) {
+        serializeAuditData(writer, vivaPulseReportAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeVivaPulseResponseAuditRecord(writer: SerializationWriter, vivaPulseResponseAuditRecord: Partial<VivaPulseResponseAuditRecord> | undefined | null = {}) : void {
+    if (vivaPulseResponseAuditRecord) {
+        serializeAuditData(writer, vivaPulseResponseAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeVmMetadata(writer: SerializationWriter, vmMetadata: Partial<VmMetadata> | undefined | null = {}) : void {
     if (vmMetadata) {
         writer.writeEnumValue<VmCloudProvider>("cloudProvider", vmMetadata.cloudProvider);
@@ -17247,6 +26050,16 @@ export function serializeVulnerabilityComponentCollectionResponse(writer: Serial
     if (vulnerabilityComponentCollectionResponse) {
         serializeBaseCollectionPaginationCountResponse(writer, vulnerabilityComponentCollectionResponse)
         writer.writeCollectionOfObjectValues<VulnerabilityComponent>("value", vulnerabilityComponentCollectionResponse.value, serializeVulnerabilityComponent);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeWdatpAlertsAuditRecord(writer: SerializationWriter, wdatpAlertsAuditRecord: Partial<WdatpAlertsAuditRecord> | undefined | null = {}) : void {
+    if (wdatpAlertsAuditRecord) {
+        serializeAuditData(writer, wdatpAlertsAuditRecord)
     }
 }
 /**
@@ -17351,6 +26164,36 @@ export function serializeWhoisRecordCollectionResponse(writer: SerializationWrit
         writer.writeCollectionOfObjectValues<WhoisRecord>("value", whoisRecordCollectionResponse.value, serializeWhoisRecord);
     }
 }
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeWindows365CustomerLockboxAuditRecord(writer: SerializationWriter, windows365CustomerLockboxAuditRecord: Partial<Windows365CustomerLockboxAuditRecord> | undefined | null = {}) : void {
+    if (windows365CustomerLockboxAuditRecord) {
+        serializeAuditData(writer, windows365CustomerLockboxAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeWorkplaceAnalyticsAuditRecord(writer: SerializationWriter, workplaceAnalyticsAuditRecord: Partial<WorkplaceAnalyticsAuditRecord> | undefined | null = {}) : void {
+    if (workplaceAnalyticsAuditRecord) {
+        serializeAuditData(writer, workplaceAnalyticsAuditRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeYammerAuditRecord(writer: SerializationWriter, yammerAuditRecord: Partial<YammerAuditRecord> | undefined | null = {}) : void {
+    if (yammerAuditRecord) {
+        serializeAuditData(writer, yammerAuditRecord)
+    }
+}
 export interface ServicePrincipalEvidence extends AlertEvidence, Parsable {
     /**
      * The appId property
@@ -17379,6 +26222,24 @@ export interface ServicePrincipalEvidence extends AlertEvidence, Parsable {
 }
 export type ServicePrincipalType = (typeof ServicePrincipalTypeObject)[keyof typeof ServicePrincipalTypeObject];
 export type ServiceSource = (typeof ServiceSourceObject)[keyof typeof ServiceSourceObject];
+export interface SharePointAppPermissionOperationAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointCommentOperationAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointContentTypeOperationAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointESignatureAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointFieldOperationAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointFileOperationAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointListOperationAuditRecord extends AuditData, Parsable {
+}
+export interface SharePointSharingOperationAuditRecord extends AuditData, Parsable {
+}
 export interface SinglePropertySchema extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -17412,6 +26273,18 @@ export interface SiteSourceCollectionResponse extends BaseCollectionPaginationCo
      * The value property
      */
     value?: SiteSource[] | null;
+}
+export interface SkypeForBusinessBaseAuditRecord extends AuditData, Parsable {
+}
+export interface SkypeForBusinessCmdletsAuditRecord extends AuditData, Parsable {
+}
+export interface SkypeForBusinessPSTNUsageAuditRecord extends AuditData, Parsable {
+}
+export interface SkypeForBusinessUsersBlockedAuditRecord extends AuditData, Parsable {
+}
+export interface SmsCreatePhoneNumberRecord extends AuditData, Parsable {
+}
+export interface SmsDeletePhoneNumberRecord extends AuditData, Parsable {
 }
 export interface SoftDeleteResponseAction extends Parsable, ResponseAction {
     /**
@@ -17713,6 +26586,10 @@ export interface SubmissionUserIdentity extends Identity, Parsable {
      */
     email?: string | null;
 }
+export interface SupervisoryReviewDayXInsightsAuditRecord extends AuditData, Parsable {
+}
+export interface SyntheticProbeAuditRecord extends AuditData, Parsable {
+}
 export interface Tag extends Entity, Parsable {
     /**
      * The createdBy property
@@ -17731,7 +26608,15 @@ export interface Tag extends Entity, Parsable {
      */
     lastModifiedDateTime?: Date | null;
 }
+export interface TeamsEasyApprovalsAuditRecord extends AuditData, Parsable {
+}
+export interface TeamsHealthcareAuditRecord extends AuditData, Parsable {
+}
+export interface TeamsUpdatesAuditRecord extends AuditData, Parsable {
+}
 export type TenantAllowBlockListAction = (typeof TenantAllowBlockListActionObject)[keyof typeof TenantAllowBlockListActionObject];
+export interface TenantAllowBlockListAuditRecord extends AuditData, Parsable {
+}
 export interface TenantAllowBlockListEntryResult extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -17796,6 +26681,8 @@ export interface TenantAllowOrBlockListAction extends AdditionalDataHolder, Back
      * Contains the result of the submission that lead to the tenant allow-block-list entry creation.
      */
     results?: TenantAllowBlockListEntryResult[] | null;
+}
+export interface ThreatFinderAuditRecord extends AuditData, Parsable {
 }
 export interface ThreatIntelligence extends Entity, Parsable {
     /**
@@ -17867,6 +26754,12 @@ export interface ThreatIntelligence extends Entity, Parsable {
      */
     whoisRecords?: WhoisRecord[] | null;
 }
+export interface ThreatIntelligenceAtpContentData extends AuditData, Parsable {
+}
+export interface ThreatIntelligenceMailData extends AuditData, Parsable {
+}
+export interface ThreatIntelligenceUrlClickData extends AuditData, Parsable {
+}
 export interface ThreatSubmission extends Entity, Parsable {
     /**
      * Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
@@ -17928,6 +26821,8 @@ export interface ThreatSubmissionRoot extends Entity, Parsable {
     urlThreats?: UrlThreatSubmission[] | null;
 }
 export type ThreatType = (typeof ThreatTypeObject)[keyof typeof ThreatTypeObject];
+export interface TodoAuditRecord extends AuditData, Parsable {
+}
 export interface TopicModelingSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -17970,6 +26865,8 @@ export interface TriggerTypesRoot extends Entity, Parsable {
      */
     retentionEventTypes?: RetentionEventType[] | null;
 }
+export interface UamOperationAuditRecord extends AuditData, Parsable {
+}
 export interface UnclassifiedArtifact extends Artifact, Parsable {
     /**
      * The kind for this unclassifiedArtifact resource, describing what this value means.
@@ -17979,6 +26876,8 @@ export interface UnclassifiedArtifact extends Artifact, Parsable {
      * The value for this unclassifiedArtifact.
      */
     value?: string | null;
+}
+export interface UnifiedGroupAuditRecord extends AuditData, Parsable {
 }
 export interface UnifiedGroupSource extends DataSource, Parsable {
     /**
@@ -17995,6 +26894,18 @@ export interface UnifiedGroupSourceCollectionResponse extends BaseCollectionPagi
      * The value property
      */
     value?: UnifiedGroupSource[] | null;
+}
+export interface UnifiedSimulationMatchedItemAuditRecord extends AuditData, Parsable {
+}
+export interface UnifiedSimulationSummaryAuditRecord extends AuditData, Parsable {
+}
+export interface UploadCertificateRecord extends AuditData, Parsable {
+}
+export interface UrbacAssignmentAuditRecord extends AuditData, Parsable {
+}
+export interface UrbacEnableStateAuditRecord extends AuditData, Parsable {
+}
+export interface UrbacRoleAuditRecord extends AuditData, Parsable {
 }
 export interface UrlEvidence extends AlertEvidence, Parsable {
     /**
@@ -18083,6 +26994,30 @@ export interface UserSourceCollectionResponse extends BaseCollectionPaginationCo
      * The value property
      */
     value?: UserSource[] | null;
+}
+export interface UserTrainingAuditRecord extends AuditData, Parsable {
+}
+export interface VfamBasePolicyAuditRecord extends AuditData, Parsable {
+}
+export interface VfamCreatePolicyAuditRecord extends AuditData, Parsable {
+}
+export interface VfamDeletePolicyAuditRecord extends AuditData, Parsable {
+}
+export interface VfamUpdatePolicyAuditRecord extends AuditData, Parsable {
+}
+export interface VivaGoalsAuditRecord extends AuditData, Parsable {
+}
+export interface VivaLearningAdminAuditRecord extends AuditData, Parsable {
+}
+export interface VivaLearningAuditRecord extends AuditData, Parsable {
+}
+export interface VivaPulseAdminAuditRecord extends AuditData, Parsable {
+}
+export interface VivaPulseOrganizerAuditRecord extends AuditData, Parsable {
+}
+export interface VivaPulseReportAuditRecord extends AuditData, Parsable {
+}
+export interface VivaPulseResponseAuditRecord extends AuditData, Parsable {
 }
 export type VmCloudProvider = (typeof VmCloudProviderObject)[keyof typeof VmCloudProviderObject];
 export interface VmMetadata extends AdditionalDataHolder, BackedModel, Parsable {
@@ -18205,6 +27140,8 @@ export interface VulnerabilityComponentCollectionResponse extends BaseCollection
 }
 export type VulnerabilitySeverity = (typeof VulnerabilitySeverityObject)[keyof typeof VulnerabilitySeverityObject];
 export type WatermarkLayout = (typeof WatermarkLayoutObject)[keyof typeof WatermarkLayoutObject];
+export interface WdatpAlertsAuditRecord extends AuditData, Parsable {
+}
 export interface WhoisBaseRecord extends Entity, Parsable {
     /**
      * The contact information for the abuse contact.
@@ -18362,6 +27299,12 @@ export interface WhoisRecordCollectionResponse extends BaseCollectionPaginationC
      * The value property
      */
     value?: WhoisRecord[] | null;
+}
+export interface Windows365CustomerLockboxAuditRecord extends AuditData, Parsable {
+}
+export interface WorkplaceAnalyticsAuditRecord extends AuditData, Parsable {
+}
+export interface YammerAuditRecord extends AuditData, Parsable {
 }
 export const ActionAfterRetentionPeriodObject = {
     None: "none",
@@ -18703,6 +27646,41 @@ export const AuditLogRecordTypeObject = {
     VfamDeletePolicy: "VfamDeletePolicy",
     M365DAAD: "M365DAAD",
     CdpColdCrawlStatus: "CdpColdCrawlStatus",
+    PowerPlatformAdministratorActivity: "PowerPlatformAdministratorActivity",
+    Windows365CustomerLockbox: "Windows365CustomerLockbox",
+    CdpResourceScopeChangeEvent: "CdpResourceScopeChangeEvent",
+    ComplianceCCExchangeExecutionResult: "ComplianceCCExchangeExecutionResult",
+    CdpOcrCostEstimatorRecord: "CdpOcrCostEstimatorRecord",
+    CopilotInteraction: "CopilotInteraction",
+    CdpOcrBillingRecord: "CdpOcrBillingRecord",
+    ComplianceDLPApplications: "ComplianceDLPApplications",
+    UAMOperation: "UAMOperation",
+    VivaLearning: "VivaLearning",
+    VivaLearningAdmin: "VivaLearningAdmin",
+    PurviewPolicyOperation: "PurviewPolicyOperation",
+    PurviewMetadataPolicyOperation: "PurviewMetadataPolicyOperation",
+    PeopleAdminSettings: "PeopleAdminSettings",
+    CdpComplianceDLPExchangeClassification: "CdpComplianceDLPExchangeClassification",
+    CdpComplianceDLPSharePointClassification: "CdpComplianceDLPSharePointClassification",
+    FilteringBulkSenderInsightData: "FilteringBulkSenderInsightData",
+    FilteringBulkThresholdInsightData: "FilteringBulkThresholdInsightData",
+    PrivacyOpenAccess: "PrivacyOpenAccess",
+    OWAAuth: "OWAAuth",
+    ComplianceDLPApplicationsClassification: "ComplianceDLPApplicationsClassification",
+    SharePointESignature: "SharePointESignature",
+    Dynamics365BusinessCentral: "Dynamics365BusinessCentral",
+    MeshWorlds: "MeshWorlds",
+    VivaPulseResponse: "VivaPulseResponse",
+    VivaPulseOrganizer: "VivaPulseOrganizer",
+    VivaPulseAdmin: "VivaPulseAdmin",
+    VivaPulseReport: "VivaPulseReport",
+    AIAppInteraction: "AIAppInteraction",
+    ComplianceDLMExchange: "ComplianceDLMExchange",
+    ComplianceDLMSharePoint: "ComplianceDLMSharePoint",
+    ProjectForTheWebAssignedToMeSettings: "ProjectForTheWebAssignedToMeSettings",
+    CPSOperation: "CPSOperation",
+    ComplianceDLPExchangeDiscovery: "ComplianceDLPExchangeDiscovery",
+    PurviewMCRecommendation: "PurviewMCRecommendation",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const AuditLogUserTypeObject = {

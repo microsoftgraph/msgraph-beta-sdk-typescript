@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata, type NetworkAccessTrafficTransactionItemRequestBuilder } from './item/index.js';
+import { NetworkAccessTrafficTransactionItemRequestBuilderNavigationMetadata, NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata, type NetworkAccessTrafficTransactionItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -116,6 +116,7 @@ const TrafficRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const TrafficRequestBuilderNavigationMetadata: Record<Exclude<keyof TrafficRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byNetworkAccessTrafficTransactionId: {
         requestsMetadata: NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata,
+        navigationMetadata: NetworkAccessTrafficTransactionItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["networkAccessTraffic%2DtransactionId"],
     },
     count: {
