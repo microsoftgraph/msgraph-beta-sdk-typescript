@@ -34,6 +34,8 @@ import { GetSharedUseLicenseUsageReportRequestBuilderRequestsMetadata, type GetS
 // @ts-ignore
 import { GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMetadata, type GetTotalAggregatedRemoteConnectionReportsRequestBuilder } from './getTotalAggregatedRemoteConnectionReports/index.js';
 // @ts-ignore
+import { RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata, type RetrieveConnectionQualityReportsRequestBuilder } from './retrieveConnectionQualityReports/index.js';
+// @ts-ignore
 import { RetrieveCrossRegionDisasterRecoveryReportRequestBuilderRequestsMetadata, type RetrieveCrossRegionDisasterRecoveryReportRequestBuilder } from './retrieveCrossRegionDisasterRecoveryReport/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -90,6 +92,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the getTotalAggregatedRemoteConnectionReports method.
      */
     get getTotalAggregatedRemoteConnectionReports(): GetTotalAggregatedRemoteConnectionReportsRequestBuilder;
+    /**
+     * Provides operations to call the retrieveConnectionQualityReports method.
+     */
+    get retrieveConnectionQualityReports(): RetrieveConnectionQualityReportsRequestBuilder;
     /**
      * Provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
      */
@@ -219,6 +225,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     getTotalAggregatedRemoteConnectionReports: {
         requestsMetadata: GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMetadata,
+    },
+    retrieveConnectionQualityReports: {
+        requestsMetadata: RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata,
     },
     retrieveCrossRegionDisasterRecoveryReport: {
         requestsMetadata: RetrieveCrossRegionDisasterRecoveryReportRequestBuilderRequestsMetadata,
