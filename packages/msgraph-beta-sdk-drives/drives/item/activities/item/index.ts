@@ -6,9 +6,9 @@ import { createItemActivityOLDFromDiscriminatorValue, serializeItemActivityOLD, 
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { DriveItemRequestBuilderNavigationMetadata, DriveItemRequestBuilderRequestsMetadata, type DriveItemRequestBuilder } from './driveItem/index.js';
+import { DriveItemRequestBuilderNavigationMetadata, DriveItemRequestBuilderRequestsMetadata } from './driveItem/index.js';
 // @ts-ignore
-import { ListItemRequestBuilderRequestsMetadata, type ListItemRequestBuilder } from './listItem/index.js';
+import { ListItemRequestBuilderRequestsMetadata } from './listItem/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -19,11 +19,11 @@ export interface ItemActivityOLDItemRequestBuilder extends BaseRequestBuilder<It
     /**
      * Provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.
      */
-    get driveItem(): DriveItemRequestBuilder;
+    get driveItem(): DriveItem_EscapedRequestBuilder;
     /**
      * Provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.
      */
-    get listItem(): ListItemRequestBuilder;
+    get listItem(): ListItem_EscapedRequestBuilder;
     /**
      * Delete navigation property activities for drives
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -94,11 +94,8 @@ const ItemActivityOLDItemRequestBuilderGetQueryParametersMapper: Record<string, 
  */
 export const ItemActivityOLDItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ItemActivityOLDItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     driveItem: {
-        requestsMetadata: DriveItemRequestBuilderRequestsMetadata,
-        navigationMetadata: DriveItemRequestBuilderNavigationMetadata,
     },
     listItem: {
-        requestsMetadata: ListItemRequestBuilderRequestsMetadata,
     },
 };
 /**

@@ -116,6 +116,8 @@ import { EmbeddedSIMActivationCodePoolsRequestBuilderNavigationMetadata, Embedde
 // @ts-ignore
 import { EnableAndroidDeviceAdministratorEnrollmentRequestBuilderRequestsMetadata, type EnableAndroidDeviceAdministratorEnrollmentRequestBuilder } from './enableAndroidDeviceAdministratorEnrollment/index.js';
 // @ts-ignore
+import { EnableEndpointPrivilegeManagementRequestBuilderRequestsMetadata, type EnableEndpointPrivilegeManagementRequestBuilder } from './enableEndpointPrivilegeManagement/index.js';
+// @ts-ignore
 import { EnableLegacyPcManagementRequestBuilderRequestsMetadata, type EnableLegacyPcManagementRequestBuilder } from './enableLegacyPcManagement/index.js';
 // @ts-ignore
 import { EnableUnlicensedAdminstratorsRequestBuilderRequestsMetadata, type EnableUnlicensedAdminstratorsRequestBuilder } from './enableUnlicensedAdminstrators/index.js';
@@ -612,6 +614,10 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      * Provides operations to call the enableAndroidDeviceAdministratorEnrollment method.
      */
     get enableAndroidDeviceAdministratorEnrollment(): EnableAndroidDeviceAdministratorEnrollmentRequestBuilder;
+    /**
+     * Provides operations to call the enableEndpointPrivilegeManagement method.
+     */
+    get enableEndpointPrivilegeManagement(): EnableEndpointPrivilegeManagementRequestBuilder;
     /**
      * Provides operations to call the enableLegacyPcManagement method.
      */
@@ -1459,6 +1465,9 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     },
     enableAndroidDeviceAdministratorEnrollment: {
         requestsMetadata: EnableAndroidDeviceAdministratorEnrollmentRequestBuilderRequestsMetadata,
+    },
+    enableEndpointPrivilegeManagement: {
+        requestsMetadata: EnableEndpointPrivilegeManagementRequestBuilderRequestsMetadata,
     },
     enableLegacyPcManagement: {
         requestsMetadata: EnableLegacyPcManagementRequestBuilderRequestsMetadata,

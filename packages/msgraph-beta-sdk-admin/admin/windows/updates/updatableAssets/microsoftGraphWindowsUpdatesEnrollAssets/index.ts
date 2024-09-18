@@ -52,14 +52,14 @@ export interface EnrollAssetsPostRequestBody extends AdditionalDataHolder, Backe
  */
 export interface MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder extends BaseRequestBuilder<MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder> {
     /**
-     * Enroll updatableAsset resources in update management by the deployment service. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.
+     * Enroll updatableAsset resources in update management by Windows Autopatch. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: EnrollAssetsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Enroll updatableAsset resources in update management by the deployment service. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.
+     * Enroll updatableAsset resources in update management by Windows Autopatch. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

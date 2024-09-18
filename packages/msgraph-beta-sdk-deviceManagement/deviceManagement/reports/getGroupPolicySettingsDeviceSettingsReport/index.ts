@@ -31,6 +31,7 @@ export function deserializeIntoGetGroupPolicySettingsDeviceSettingsReportPostReq
         "select": n => { getGroupPolicySettingsDeviceSettingsReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
         "sessionId": n => { getGroupPolicySettingsDeviceSettingsReportPostRequestBody.sessionId = n.getStringValue(); },
         "skip": n => { getGroupPolicySettingsDeviceSettingsReportPostRequestBody.skip = n.getNumberValue(); },
+        "skiptoken": n => { getGroupPolicySettingsDeviceSettingsReportPostRequestBody.skiptoken = n.getStringValue(); },
         "top": n => { getGroupPolicySettingsDeviceSettingsReportPostRequestBody.top = n.getNumberValue(); },
     }
 }
@@ -76,6 +77,10 @@ export interface GetGroupPolicySettingsDeviceSettingsReportPostRequestBody exten
      */
     skip?: number | null;
     /**
+     * The skiptoken property
+     */
+    skiptoken?: string | null;
+    /**
      * The top property
      */
     top?: number | null;
@@ -115,6 +120,7 @@ export function serializeGetGroupPolicySettingsDeviceSettingsReportPostRequestBo
         writer.writeCollectionOfPrimitiveValues<string>("select", getGroupPolicySettingsDeviceSettingsReportPostRequestBody.select);
         writer.writeStringValue("sessionId", getGroupPolicySettingsDeviceSettingsReportPostRequestBody.sessionId);
         writer.writeNumberValue("skip", getGroupPolicySettingsDeviceSettingsReportPostRequestBody.skip);
+        writer.writeStringValue("skiptoken", getGroupPolicySettingsDeviceSettingsReportPostRequestBody.skiptoken);
         writer.writeNumberValue("top", getGroupPolicySettingsDeviceSettingsReportPostRequestBody.top);
         writer.writeAdditionalData(getGroupPolicySettingsDeviceSettingsReportPostRequestBody.additionalData);
     }
