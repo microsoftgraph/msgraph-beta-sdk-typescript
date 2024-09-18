@@ -38,6 +38,8 @@ import { RetrieveCloudPCRemoteActionResultsRequestBuilderRequestsMetadata, type 
 // @ts-ignore
 import { RetrieveReviewStatusRequestBuilderRequestsMetadata, type RetrieveReviewStatusRequestBuilder } from './retrieveReviewStatus/index.js';
 // @ts-ignore
+import { RetrieveSnapshotsRequestBuilderRequestsMetadata, type RetrieveSnapshotsRequestBuilder } from './retrieveSnapshots/index.js';
+// @ts-ignore
 import { RetryPartnerAgentInstallationRequestBuilderRequestsMetadata, type RetryPartnerAgentInstallationRequestBuilder } from './retryPartnerAgentInstallation/index.js';
 // @ts-ignore
 import { SetReviewStatusRequestBuilderRequestsMetadata, type SetReviewStatusRequestBuilder } from './setReviewStatus/index.js';
@@ -134,6 +136,11 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get retrieveReviewStatus(): RetrieveReviewStatusRequestBuilder;
+    /**
+     * Provides operations to call the retrieveSnapshots method.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get retrieveSnapshots(): RetrieveSnapshotsRequestBuilder;
     /**
      * Provides operations to call the retryPartnerAgentInstallation method.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -281,6 +288,9 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     },
     retrieveReviewStatus: {
         requestsMetadata: RetrieveReviewStatusRequestBuilderRequestsMetadata,
+    },
+    retrieveSnapshots: {
+        requestsMetadata: RetrieveSnapshotsRequestBuilderRequestsMetadata,
     },
     retryPartnerAgentInstallation: {
         requestsMetadata: RetryPartnerAgentInstallationRequestBuilderRequestsMetadata,

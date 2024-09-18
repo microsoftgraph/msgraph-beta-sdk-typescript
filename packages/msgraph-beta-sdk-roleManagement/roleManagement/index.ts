@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CloudPCRequestBuilderNavigationMetadata, CloudPCRequestBuilderRequestsMetadata, type CloudPCRequestBuilder } from './cloudPC/index.js';
 // @ts-ignore
+import { DefenderRequestBuilderNavigationMetadata, DefenderRequestBuilderRequestsMetadata, type DefenderRequestBuilder } from './defender/index.js';
+// @ts-ignore
 import { DeviceManagementRequestBuilderNavigationMetadata, DeviceManagementRequestBuilderRequestsMetadata, type DeviceManagementRequestBuilder } from './deviceManagement/index.js';
 // @ts-ignore
 import { DirectoryRequestBuilderNavigationMetadata, DirectoryRequestBuilderRequestsMetadata, type DirectoryRequestBuilder } from './directory/index.js';
@@ -28,6 +30,10 @@ export interface RoleManagementRequestBuilder extends BaseRequestBuilder<RoleMan
      * Provides operations to manage the cloudPC property of the microsoft.graph.roleManagement entity.
      */
     get cloudPC(): CloudPCRequestBuilder;
+    /**
+     * Provides operations to manage the defender property of the microsoft.graph.roleManagement entity.
+     */
+    get defender(): DefenderRequestBuilder;
     /**
      * Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.
      */
@@ -108,6 +114,10 @@ export const RoleManagementRequestBuilderNavigationMetadata: Record<Exclude<keyo
     cloudPC: {
         requestsMetadata: CloudPCRequestBuilderRequestsMetadata,
         navigationMetadata: CloudPCRequestBuilderNavigationMetadata,
+    },
+    defender: {
+        requestsMetadata: DefenderRequestBuilderRequestsMetadata,
+        navigationMetadata: DefenderRequestBuilderNavigationMetadata,
     },
     deviceManagement: {
         requestsMetadata: DeviceManagementRequestBuilderRequestsMetadata,

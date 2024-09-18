@@ -6,12 +6,24 @@ import { createNetworkAccessTrafficFromDiscriminatorValue, serializeNetworkAcces
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { DeviceRequestBuilderRequestsMetadata, type DeviceRequestBuilder } from './device/index.js';
+// @ts-ignore
+import { type UserRequestBuilder, UserRequestBuilderNavigationMetadata, UserRequestBuilderRequestsMetadata } from './user/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
  */
 export interface NetworkAccessTrafficTransactionItemRequestBuilder extends BaseRequestBuilder<NetworkAccessTrafficTransactionItemRequestBuilder> {
+    /**
+     * Provides operations to manage the device property of the microsoft.graph.networkaccess.networkAccessTraffic entity.
+     */
+    get device(): DeviceRequestBuilder;
+    /**
+     * Provides operations to manage the user property of the microsoft.graph.networkaccess.networkAccessTraffic entity.
+     */
+    get user(): UserRequestBuilder;
     /**
      * Delete navigation property traffic for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -76,6 +88,18 @@ export const NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate = "{+b
 const NetworkAccessTrafficTransactionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const NetworkAccessTrafficTransactionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof NetworkAccessTrafficTransactionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    device: {
+        requestsMetadata: DeviceRequestBuilderRequestsMetadata,
+    },
+    user: {
+        requestsMetadata: UserRequestBuilderRequestsMetadata,
+        navigationMetadata: UserRequestBuilderNavigationMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

@@ -90,6 +90,12 @@ import { GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderRequests
 // @ts-ignore
 import { GetMailboxUsageStorageWithPeriodRequestBuilderRequestsMetadata, type GetMailboxUsageStorageWithPeriodRequestBuilder } from './getMailboxUsageStorageWithPeriod/index.js';
 // @ts-ignore
+import { GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder } from './getMicrosoft365CopilotUsageUserDetailWithPeriod/index.js';
+// @ts-ignore
+import { GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder } from './getMicrosoft365CopilotUserCountSummaryWithPeriod/index.js';
+// @ts-ignore
+import { GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder } from './getMicrosoft365CopilotUserCountTrendWithPeriod/index.js';
+// @ts-ignore
 import { GetOffice365ActivationCountsRequestBuilderRequestsMetadata, type GetOffice365ActivationCountsRequestBuilder } from './getOffice365ActivationCounts/index.js';
 // @ts-ignore
 import { GetOffice365ActivationsUserCountsRequestBuilderRequestsMetadata, type GetOffice365ActivationsUserCountsRequestBuilder } from './getOffice365ActivationsUserCounts/index.js';
@@ -601,6 +607,24 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @returns {GetMailboxUsageStorageWithPeriodRequestBuilder}
      */
      getMailboxUsageStorageWithPeriod(period: string | undefined) : GetMailboxUsageStorageWithPeriodRequestBuilder;
+    /**
+     * Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
+     * @param period Usage: period='{period}'
+     * @returns {GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder}
+     */
+     getMicrosoft365CopilotUsageUserDetailWithPeriod(period: string | undefined) : GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder;
+    /**
+     * Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
+     * @param period Usage: period='{period}'
+     * @returns {GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder}
+     */
+     getMicrosoft365CopilotUserCountSummaryWithPeriod(period: string | undefined) : GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder;
+    /**
+     * Provides operations to call the getMicrosoft365CopilotUserCountTrend method.
+     * @param period Usage: period='{period}'
+     * @returns {GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder}
+     */
+     getMicrosoft365CopilotUserCountTrendWithPeriod(period: string | undefined) : GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder;
     /**
      * Provides operations to call the getOffice365ActiveUserCounts method.
      * @param period Usage: period='{period}'
@@ -1286,6 +1310,18 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     getMailboxUsageStorageWithPeriod: {
         requestsMetadata: GetMailboxUsageStorageWithPeriodRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
+    },
+    getMicrosoft365CopilotUsageUserDetailWithPeriod: {
+        requestsMetadata: GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
+    },
+    getMicrosoft365CopilotUserCountSummaryWithPeriod: {
+        requestsMetadata: GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
+    },
+    getMicrosoft365CopilotUserCountTrendWithPeriod: {
+        requestsMetadata: GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilderRequestsMetadata,
         pathParametersMappings: ["period"],
     },
     getOffice365ActiveUserCountsWithPeriod: {

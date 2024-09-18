@@ -57,14 +57,14 @@ export interface EnrollAssetsByIdPostRequestBody extends AdditionalDataHolder, B
  */
 export interface MicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder extends BaseRequestBuilder<MicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder> {
     /**
-     * Enroll updatableAsset resources of the same type in update management by the deployment service. You can also use the method enrollAssets to enroll assets.
+     * Enroll updatableAsset resources of the same type in update management by Windows Autopatch. You can also use the method enrollAssets to enroll assets.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: EnrollAssetsByIdPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Enroll updatableAsset resources of the same type in update management by the deployment service. You can also use the method enrollAssets to enroll assets.
+     * Enroll updatableAsset resources of the same type in update management by Windows Autopatch. You can also use the method enrollAssets to enroll assets.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

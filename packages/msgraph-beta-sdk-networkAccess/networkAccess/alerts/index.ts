@@ -10,6 +10,10 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { AlertItemRequestBuilderNavigationMetadata, AlertItemRequestBuilderRequestsMetadata, type AlertItemRequestBuilder } from './item/index.js';
 // @ts-ignore
+import { MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime/index.js';
+// @ts-ignore
+import { MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -33,6 +37,22 @@ export interface AlertsRequestBuilder extends BaseRequestBuilder<AlertsRequestBu
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AlertsRequestBuilderGetQueryParameters> | undefined) : Promise<AlertCollectionResponse | undefined>;
+    /**
+     * Provides operations to call the getAlertFrequencies method.
+     * @param endDateTime Usage: endDateTime={endDateTime}
+     * @param startDateTime Usage: startDateTime={startDateTime}
+     * @returns {MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder}
+     * @deprecated  as of 2022-06/PrivatePreview:NetworkAccess
+     */
+     microsoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder;
+    /**
+     * Provides operations to call the getAlertSeveritySummaries method.
+     * @param endDateTime Usage: endDateTime={endDateTime}
+     * @param startDateTime Usage: startDateTime={startDateTime}
+     * @returns {MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder}
+     * @deprecated  as of 2022-06/PrivatePreview:NetworkAccess
+     */
+     microsoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Create new navigation property to alerts for networkAccess
      * @param body The request body
@@ -117,6 +137,14 @@ export const AlertsRequestBuilderNavigationMetadata: Record<Exclude<keyof Alerts
         requestsMetadata: AlertItemRequestBuilderRequestsMetadata,
         navigationMetadata: AlertItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["alert%2Did"],
+    },
+    microsoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime: {
+        requestsMetadata: MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
+    },
+    microsoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime: {
+        requestsMetadata: MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

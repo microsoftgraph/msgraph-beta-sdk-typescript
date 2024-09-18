@@ -6,6 +6,8 @@ import { createOnlineMeetingFromDiscriminatorValue, serializeOnlineMeeting, type
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AiInsightsRequestBuilderNavigationMetadata, AiInsightsRequestBuilderRequestsMetadata, type AiInsightsRequestBuilder } from './aiInsights/index.js';
+// @ts-ignore
 import { AlternativeRecordingRequestBuilderRequestsMetadata, type AlternativeRecordingRequestBuilder } from './alternativeRecording/index.js';
 // @ts-ignore
 import { AttendanceReportsRequestBuilderNavigationMetadata, AttendanceReportsRequestBuilderRequestsMetadata, type AttendanceReportsRequestBuilder } from './attendanceReports/index.js';
@@ -36,6 +38,11 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
  */
 export interface OnlineMeetingItemRequestBuilder extends BaseRequestBuilder<OnlineMeetingItemRequestBuilder> {
+    /**
+     * Provides operations to manage the aiInsights property of the microsoft.graph.onlineMeeting entity.
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get aiInsights(): AiInsightsRequestBuilder;
     /**
      * Provides operations to manage the media for the user entity.
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -171,6 +178,10 @@ const OnlineMeetingItemRequestBuilderGetQueryParametersMapper: Record<string, st
  * Metadata for all the navigation properties in the request builder.
  */
 export const OnlineMeetingItemRequestBuilderNavigationMetadata: Record<Exclude<keyof OnlineMeetingItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    aiInsights: {
+        requestsMetadata: AiInsightsRequestBuilderRequestsMetadata,
+        navigationMetadata: AiInsightsRequestBuilderNavigationMetadata,
+    },
     alternativeRecording: {
         requestsMetadata: AlternativeRecordingRequestBuilderRequestsMetadata,
     },
