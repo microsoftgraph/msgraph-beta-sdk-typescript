@@ -36,6 +36,8 @@ import { MobileAppCategoriesRequestBuilderNavigationMetadata, MobileAppCategorie
 // @ts-ignore
 import { MobileAppConfigurationsRequestBuilderNavigationMetadata, MobileAppConfigurationsRequestBuilderRequestsMetadata, type MobileAppConfigurationsRequestBuilder } from './mobileAppConfigurations/index.js';
 // @ts-ignore
+import { MobileAppRelationshipsRequestBuilderNavigationMetadata, MobileAppRelationshipsRequestBuilderRequestsMetadata, type MobileAppRelationshipsRequestBuilder } from './mobileAppRelationships/index.js';
+// @ts-ignore
 import { MobileAppsRequestBuilderNavigationMetadata, MobileAppsRequestBuilderRequestsMetadata, type MobileAppsRequestBuilder } from './mobileApps/index.js';
 // @ts-ignore
 import { PolicySetsRequestBuilderNavigationMetadata, PolicySetsRequestBuilderRequestsMetadata, type PolicySetsRequestBuilder } from './policySets/index.js';
@@ -126,6 +128,10 @@ export interface DeviceAppManagementRequestBuilder extends BaseRequestBuilder<De
      * Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
      */
     get mobileAppConfigurations(): MobileAppConfigurationsRequestBuilder;
+    /**
+     * Provides operations to manage the mobileAppRelationships property of the microsoft.graph.deviceAppManagement entity.
+     */
+    get mobileAppRelationships(): MobileAppRelationshipsRequestBuilder;
     /**
      * Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
      */
@@ -290,6 +296,10 @@ export const DeviceAppManagementRequestBuilderNavigationMetadata: Record<Exclude
     mobileAppConfigurations: {
         requestsMetadata: MobileAppConfigurationsRequestBuilderRequestsMetadata,
         navigationMetadata: MobileAppConfigurationsRequestBuilderNavigationMetadata,
+    },
+    mobileAppRelationships: {
+        requestsMetadata: MobileAppRelationshipsRequestBuilderRequestsMetadata,
+        navigationMetadata: MobileAppRelationshipsRequestBuilderNavigationMetadata,
     },
     mobileApps: {
         requestsMetadata: MobileAppsRequestBuilderRequestsMetadata,

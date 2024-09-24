@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilder> {
     /**
-     * Invoke function getDeploymentPackageUri
+     * Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensorDeploymentPackage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensorDeploymentPackage | undefined>;
     /**
-     * Invoke function getDeploymentPackageUri
+     * Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

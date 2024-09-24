@@ -19,40 +19,43 @@ export interface SensorItemRequestBuilder extends BaseRequestBuilder<SensorItemR
      */
     get healthIssues(): HealthIssuesRequestBuilder;
     /**
-     * Delete navigation property sensors for security
+     * Delete a sensor object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-identitycontainer-delete-sensors?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get sensors from security
+     * Read the properties and relationships of a sensor object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Sensor>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-sensor-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SensorItemRequestBuilderGetQueryParameters> | undefined) : Promise<Sensor | undefined>;
     /**
-     * Update the navigation property sensors in security
+     * Update the properties of a sensor object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Sensor>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: Sensor, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Sensor | undefined>;
     /**
-     * Delete navigation property sensors for security
+     * Delete a sensor object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get sensors from security
+     * Read the properties and relationships of a sensor object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SensorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property sensors in security
+     * Update the properties of a sensor object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +63,7 @@ export interface SensorItemRequestBuilder extends BaseRequestBuilder<SensorItemR
      toPatchRequestInformation(body: Sensor, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sensors from security
+ * Read the properties and relationships of a sensor object.
  */
 export interface SensorItemRequestBuilderGetQueryParameters {
     /**

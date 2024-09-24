@@ -27,21 +27,21 @@ export interface HealthIssuesRequestBuilder extends BaseRequestBuilder<HealthIss
      */
      byHealthIssueId(healthIssueId: string) : HealthIssueItemRequestBuilder;
     /**
-     * Get healthIssues from security
+     * Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HealthIssueCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<HealthIssuesRequestBuilderGetQueryParameters> | undefined) : Promise<HealthIssueCollectionResponse | undefined>;
     /**
-     * Get healthIssues from security
+     * Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HealthIssuesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get healthIssues from security
+ * Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
  */
 export interface HealthIssuesRequestBuilderGetQueryParameters {
     /**
