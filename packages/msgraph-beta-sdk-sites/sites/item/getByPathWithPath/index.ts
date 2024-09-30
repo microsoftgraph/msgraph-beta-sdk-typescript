@@ -42,6 +42,8 @@ import { OperationsRequestBuilderRequestsMetadata, type OperationsRequestBuilder
 // @ts-ignore
 import { PagesRequestBuilderRequestsMetadata, type PagesRequestBuilder } from './pages/index.js';
 // @ts-ignore
+import { PageTemplatesRequestBuilderRequestsMetadata, type PageTemplatesRequestBuilder } from './pageTemplates/index.js';
+// @ts-ignore
 import { PermissionsRequestBuilderRequestsMetadata, type PermissionsRequestBuilder } from './permissions/index.js';
 // @ts-ignore
 import { RecycleBinRequestBuilderRequestsMetadata, type RecycleBinRequestBuilder } from './recycleBin/index.js';
@@ -120,6 +122,10 @@ export interface GetByPathWithPathRequestBuilder extends BaseRequestBuilder<GetB
      * Provides operations to manage the pages property of the microsoft.graph.site entity.
      */
     get pages(): PagesRequestBuilder;
+    /**
+     * Provides operations to manage the pageTemplates property of the microsoft.graph.site entity.
+     */
+    get pageTemplates(): PageTemplatesRequestBuilder;
     /**
      * Provides operations to manage the permissions property of the microsoft.graph.site entity.
      */
@@ -227,6 +233,9 @@ export const GetByPathWithPathRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     pages: {
         requestsMetadata: PagesRequestBuilderRequestsMetadata,
+    },
+    pageTemplates: {
+        requestsMetadata: PageTemplatesRequestBuilderRequestsMetadata,
     },
     permissions: {
         requestsMetadata: PermissionsRequestBuilderRequestsMetadata,

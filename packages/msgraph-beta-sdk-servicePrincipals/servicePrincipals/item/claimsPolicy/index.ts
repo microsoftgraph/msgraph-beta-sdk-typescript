@@ -13,12 +13,6 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPolicyRequestBuilder> {
     /**
-     * Delete navigation property claimsPolicy for servicePrincipals
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     */
-     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
-    /**
      * Get the properties and relationships of a customClaimsPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomClaimsPolicy>}
@@ -27,29 +21,23 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      */
      get(requestConfiguration?: RequestConfiguration<ClaimsPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<CustomClaimsPolicy | undefined>;
     /**
-     * Update a customClaimsPolicy object.
+     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomClaimsPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomClaimsPolicy | undefined>;
     /**
-     * Update a customClaimsPolicy object.
+     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomClaimsPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta|Find more info here}
      */
      put(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomClaimsPolicy | undefined>;
-    /**
-     * Delete navigation property claimsPolicy for servicePrincipals
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {RequestInformation}
-     */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties and relationships of a customClaimsPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -57,14 +45,14 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ClaimsPolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update a customClaimsPolicy object.
+     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Update a customClaimsPolicy object.
+     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -99,14 +87,6 @@ const ClaimsPolicyRequestBuilderGetQueryParametersMapper: Record<string, string>
  * Metadata for all the requests in the request builder.
  */
 export const ClaimsPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
-    delete: {
-        uriTemplate: ClaimsPolicyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "sendNoResponseContent",
-    },
     get: {
         uriTemplate: ClaimsPolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",

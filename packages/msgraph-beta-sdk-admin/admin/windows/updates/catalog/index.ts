@@ -25,7 +25,7 @@ export interface CatalogRequestBuilder extends BaseRequestBuilder<CatalogRequest
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Catalog of content that can be approved for deployment by the deployment service. Read-only.
+     * Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Catalog>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface CatalogRequestBuilder extends BaseRequestBuilder<CatalogRequest
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Catalog of content that can be approved for deployment by the deployment service. Read-only.
+     * Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface CatalogRequestBuilder extends BaseRequestBuilder<CatalogRequest
      toPatchRequestInformation(body: Catalog, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Catalog of content that can be approved for deployment by the deployment service. Read-only.
+ * Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
  */
 export interface CatalogRequestBuilderGetQueryParameters {
     /**

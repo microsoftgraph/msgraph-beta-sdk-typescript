@@ -68,7 +68,7 @@ export interface ApplicableContentDeviceMatchCollectionResponse extends BaseColl
 }
 export interface AzureADDevice extends Parsable, UpdatableAsset {
     /**
-     * Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
+     * Specifies areas in which the device is enrolled. Read-only. Returned by default.
      */
     enrollments?: UpdatableAssetEnrollment[] | null;
     /**
@@ -128,7 +128,7 @@ export interface CatalogContent extends DeployableContent, Parsable {
 }
 export interface CatalogEntry extends Entity, Parsable {
     /**
-     * The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     * The date on which the content is no longer available to deploy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
      */
     deployableUntilDateTime?: Date | null;
     /**

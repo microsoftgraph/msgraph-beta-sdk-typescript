@@ -44,6 +44,8 @@ import { OperationsRequestBuilderNavigationMetadata, OperationsRequestBuilderReq
 // @ts-ignore
 import { PagesRequestBuilderNavigationMetadata, PagesRequestBuilderRequestsMetadata, type PagesRequestBuilder } from './pages/index.js';
 // @ts-ignore
+import { PageTemplatesRequestBuilderNavigationMetadata, PageTemplatesRequestBuilderRequestsMetadata, type PageTemplatesRequestBuilder } from './pageTemplates/index.js';
+// @ts-ignore
 import { PermissionsRequestBuilderNavigationMetadata, PermissionsRequestBuilderRequestsMetadata, type PermissionsRequestBuilder } from './permissions/index.js';
 // @ts-ignore
 import { RecycleBinRequestBuilderNavigationMetadata, RecycleBinRequestBuilderRequestsMetadata, type RecycleBinRequestBuilder } from './recycleBin/index.js';
@@ -122,6 +124,10 @@ export interface SiteItemRequestBuilder extends BaseRequestBuilder<SiteItemReque
      * Provides operations to manage the pages property of the microsoft.graph.site entity.
      */
     get pages(): PagesRequestBuilder;
+    /**
+     * Provides operations to manage the pageTemplates property of the microsoft.graph.site entity.
+     */
+    get pageTemplates(): PageTemplatesRequestBuilder;
     /**
      * Provides operations to manage the permissions property of the microsoft.graph.site entity.
      */
@@ -291,6 +297,10 @@ export const SiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Site
     pages: {
         requestsMetadata: PagesRequestBuilderRequestsMetadata,
         navigationMetadata: PagesRequestBuilderNavigationMetadata,
+    },
+    pageTemplates: {
+        requestsMetadata: PageTemplatesRequestBuilderRequestsMetadata,
+        navigationMetadata: PageTemplatesRequestBuilderNavigationMetadata,
     },
     permissions: {
         requestsMetadata: PermissionsRequestBuilderRequestsMetadata,

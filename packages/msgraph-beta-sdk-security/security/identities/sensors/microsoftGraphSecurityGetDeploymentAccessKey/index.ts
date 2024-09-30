@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilder> {
     /**
-     * Invoke function getDeploymentAccessKey
+     * Get the deployment access key associated with a Microsoft Defender for Identity, needed to install sensors associated with the workspace.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeploymentAccessKeyType>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-sensor-getdeploymentaccesskey?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeploymentAccessKeyType | undefined>;
     /**
-     * Invoke function getDeploymentAccessKey
+     * Get the deployment access key associated with a Microsoft Defender for Identity, needed to install sensors associated with the workspace.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
