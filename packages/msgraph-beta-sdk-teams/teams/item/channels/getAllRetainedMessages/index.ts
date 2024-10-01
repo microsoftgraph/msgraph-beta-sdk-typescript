@@ -39,7 +39,7 @@ export interface GetAllRetainedMessagesGetResponse extends BaseCollectionPaginat
  */
 export interface GetAllRetainedMessagesRequestBuilder extends BaseRequestBuilder<GetAllRetainedMessagesRequestBuilder> {
     /**
-     * Get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+     * Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetAllRetainedMessagesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -47,14 +47,14 @@ export interface GetAllRetainedMessagesRequestBuilder extends BaseRequestBuilder
      */
      get(requestConfiguration?: RequestConfiguration<GetAllRetainedMessagesRequestBuilderGetQueryParameters> | undefined) : Promise<GetAllRetainedMessagesGetResponse | undefined>;
     /**
-     * Get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+     * Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetAllRetainedMessagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+ * Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
  */
 export interface GetAllRetainedMessagesRequestBuilderGetQueryParameters {
     /**

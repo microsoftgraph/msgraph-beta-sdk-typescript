@@ -35,14 +35,14 @@ export function deserializeIntoUnenrollAssetsByIdPostRequestBody(unenrollAssetsB
  */
 export interface MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder extends BaseRequestBuilder<MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder> {
     /**
-     * Unenroll updatableAsset resources of the same type from update management by the deployment service. You can also use the method unenrollAssets to unenroll assets.
+     * Unenroll updatableAsset resources of the same type from update management by Windows Autopatch. You can also use the method unenrollAssets to unenroll assets.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: UnenrollAssetsByIdPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Unenroll updatableAsset resources of the same type from update management by the deployment service. You can also use the method unenrollAssets to unenroll assets.
+     * Unenroll updatableAsset resources of the same type from update management by Windows Autopatch. You can also use the method unenrollAssets to unenroll assets.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

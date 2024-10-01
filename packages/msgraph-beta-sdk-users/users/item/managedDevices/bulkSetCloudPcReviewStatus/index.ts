@@ -31,7 +31,7 @@ export interface BulkSetCloudPcReviewStatusPostRequestBody extends AdditionalDat
  */
 export interface BulkSetCloudPcReviewStatusRequestBuilder extends BaseRequestBuilder<BulkSetCloudPcReviewStatusRequestBuilder> {
     /**
-     * Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+     * Invoke action bulkSetCloudPcReviewStatus
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcBulkRemoteActionResult>}
@@ -41,7 +41,7 @@ export interface BulkSetCloudPcReviewStatusRequestBuilder extends BaseRequestBui
      */
      post(body: BulkSetCloudPcReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcBulkRemoteActionResult | undefined>;
     /**
-     * Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+     * Invoke action bulkSetCloudPcReviewStatus
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

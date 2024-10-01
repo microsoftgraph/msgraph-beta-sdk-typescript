@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface HealthIssueItemRequestBuilder extends BaseRequestBuilder<HealthIssueItemRequestBuilder> {
     /**
-     * Get healthIssues from security
+     * Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HealthIssue>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<HealthIssueItemRequestBuilderGetQueryParameters> | undefined) : Promise<HealthIssue | undefined>;
     /**
-     * Get healthIssues from security
+     * Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HealthIssueItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get healthIssues from security
+ * Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
  */
 export interface HealthIssueItemRequestBuilderGetQueryParameters {
     /**
