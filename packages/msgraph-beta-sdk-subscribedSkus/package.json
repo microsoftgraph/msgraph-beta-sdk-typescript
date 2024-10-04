@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-subscribedskus",
-  "version": "1.0.0-preview.25",
+  "version": "1.0.0-preview.26",
   "description": "SubscribedSkus fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
