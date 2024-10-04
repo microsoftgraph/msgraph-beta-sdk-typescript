@@ -1866,6 +1866,9 @@ export interface FileDataConnector extends IndustryDataConnector, Parsable {
 }
 export interface FileFormatReferenceValue extends Parsable, ReferenceValue {
 }
+/**
+ * The status of a long-running operation.
+ */
 export interface FileValidateOperation extends Parsable, ValidateOperation {
     /**
      * Set of files validated by the validate operation.
@@ -3326,6 +3329,9 @@ export interface UserProvisioningFlow extends Parsable, ProvisioningFlow {
      */
     managementOptions?: UserManagementOptions | null;
 }
+/**
+ * The status of a long-running operation.
+ */
 export interface ValidateOperation extends LongRunningOperation, Parsable {
     /**
      * Set of errors discovered through validation.

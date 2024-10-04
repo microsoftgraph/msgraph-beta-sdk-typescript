@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-bookingbusinesses",
-  "version": "1.0.0-preview.25",
+  "version": "1.0.0-preview.26",
   "description": "BookingBusinesses fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",

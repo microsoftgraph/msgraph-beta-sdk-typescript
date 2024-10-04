@@ -45,10 +45,11 @@ export interface SensorsRequestBuilder extends BaseRequestBuilder<SensorsRequest
      */
      bySensorId(sensorId: string) : SensorItemRequestBuilder;
     /**
-     * Get sensors from security
+     * Get a list of sensor objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensors?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SensorsRequestBuilderGetQueryParameters> | undefined) : Promise<SensorCollectionResponse | undefined>;
     /**
@@ -60,7 +61,7 @@ export interface SensorsRequestBuilder extends BaseRequestBuilder<SensorsRequest
      */
      post(body: Sensor, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Sensor | undefined>;
     /**
-     * Get sensors from security
+     * Get a list of sensor objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -74,7 +75,7 @@ export interface SensorsRequestBuilder extends BaseRequestBuilder<SensorsRequest
      toPostRequestInformation(body: Sensor, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sensors from security
+ * Get a list of sensor objects and their properties.
  */
 export interface SensorsRequestBuilderGetQueryParameters {
     /**

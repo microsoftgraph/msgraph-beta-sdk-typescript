@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AccountRequestBuilderRequestsMetadata, type AccountRequestBuilder } from './account/index.js';
 // @ts-ignore
-import { ItemRequestBuilderNavigationMetadata, ItemRequestBuilderRequestsMetadata, type ItemRequestBuilder } from './item/index.js';
+import { Item_EscapedRequestBuilderNavigationMetadata, Item_EscapedRequestBuilderRequestsMetadata, type Item_EscapedRequestBuilder } from './item_Escaped/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -23,7 +23,7 @@ export interface SalesCreditMemoLineItemRequestBuilder extends BaseRequestBuilde
     /**
      * Provides operations to manage the item property of the microsoft.graph.salesCreditMemoLine entity.
      */
-    get item(): ItemRequestBuilder;
+    get item(): Item_EscapedRequestBuilder;
     /**
      * Get salesCreditMemoLines from financials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -85,8 +85,8 @@ export const SalesCreditMemoLineItemRequestBuilderNavigationMetadata: Record<Exc
         requestsMetadata: AccountRequestBuilderRequestsMetadata,
     },
     item: {
-        requestsMetadata: ItemRequestBuilderRequestsMetadata,
-        navigationMetadata: ItemRequestBuilderNavigationMetadata,
+        requestsMetadata: Item_EscapedRequestBuilderRequestsMetadata,
+        navigationMetadata: Item_EscapedRequestBuilderNavigationMetadata,
     },
 };
 /**
