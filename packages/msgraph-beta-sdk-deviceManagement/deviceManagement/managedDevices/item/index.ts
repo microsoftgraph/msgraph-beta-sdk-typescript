@@ -24,7 +24,7 @@ import { DeprovisionRequestBuilderRequestsMetadata, type DeprovisionRequestBuild
 // @ts-ignore
 import { DetectedAppsRequestBuilderNavigationMetadata, DetectedAppsRequestBuilderRequestsMetadata, type DetectedAppsRequestBuilder } from './detectedApps/index.js';
 // @ts-ignore
-import { DeviceCategoryRequestBuilderRequestsMetadata, type DeviceCategoryRequestBuilder } from './deviceCategory/index.js';
+import { DeviceCategoryRequestBuilderNavigationMetadata, DeviceCategoryRequestBuilderRequestsMetadata, type DeviceCategoryRequestBuilder } from './deviceCategory/index.js';
 // @ts-ignore
 import { DeviceCompliancePolicyStatesRequestBuilderNavigationMetadata, DeviceCompliancePolicyStatesRequestBuilderRequestsMetadata, type DeviceCompliancePolicyStatesRequestBuilder } from './deviceCompliancePolicyStates/index.js';
 // @ts-ignore
@@ -466,6 +466,7 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     deviceCategory: {
         requestsMetadata: DeviceCategoryRequestBuilderRequestsMetadata,
+        navigationMetadata: DeviceCategoryRequestBuilderNavigationMetadata,
     },
     deviceCompliancePolicyStates: {
         requestsMetadata: DeviceCompliancePolicyStatesRequestBuilderRequestsMetadata,

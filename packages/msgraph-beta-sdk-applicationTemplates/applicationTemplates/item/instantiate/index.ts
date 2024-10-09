@@ -26,6 +26,7 @@ export function deserializeIntoInstantiatePostRequestBody(instantiatePostRequest
     return {
         "backingStoreEnabled": n => { instantiatePostRequestBody.backingStoreEnabled = true; },
         "displayName": n => { instantiatePostRequestBody.displayName = n.getStringValue(); },
+        "serviceManagementReference": n => { instantiatePostRequestBody.serviceManagementReference = n.getStringValue(); },
     }
 }
 export interface InstantiatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -41,6 +42,10 @@ export interface InstantiatePostRequestBody extends AdditionalDataHolder, Backed
      * The displayName property
      */
     displayName?: string | null;
+    /**
+     * The serviceManagementReference property
+     */
+    serviceManagementReference?: string | null;
 }
 /**
  * Provides operations to call the instantiate method.
@@ -71,6 +76,7 @@ export interface InstantiateRequestBuilder extends BaseRequestBuilder<Instantiat
 export function serializeInstantiatePostRequestBody(writer: SerializationWriter, instantiatePostRequestBody: Partial<InstantiatePostRequestBody> | undefined | null = {}) : void {
     if (instantiatePostRequestBody) {
         writer.writeStringValue("displayName", instantiatePostRequestBody.displayName);
+        writer.writeStringValue("serviceManagementReference", instantiatePostRequestBody.serviceManagementReference);
         writer.writeAdditionalData(instantiatePostRequestBody.additionalData);
     }
 }

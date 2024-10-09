@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-identitygovernance",
-  "version": "1.0.0-preview.26",
+  "version": "1.0.0-preview.27",
   "description": "IdentityGovernance fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
