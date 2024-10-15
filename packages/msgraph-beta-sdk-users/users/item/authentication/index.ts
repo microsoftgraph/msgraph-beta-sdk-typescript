@@ -24,6 +24,8 @@ import { PhoneMethodsRequestBuilderNavigationMetadata, PhoneMethodsRequestBuilde
 // @ts-ignore
 import { PlatformCredentialMethodsRequestBuilderNavigationMetadata, PlatformCredentialMethodsRequestBuilderRequestsMetadata, type PlatformCredentialMethodsRequestBuilder } from './platformCredentialMethods/index.js';
 // @ts-ignore
+import { RequirementsRequestBuilderRequestsMetadata, type RequirementsRequestBuilder } from './requirements/index.js';
+// @ts-ignore
 import { SignInPreferencesRequestBuilderRequestsMetadata, type SignInPreferencesRequestBuilder } from './signInPreferences/index.js';
 // @ts-ignore
 import { SoftwareOathMethodsRequestBuilderNavigationMetadata, SoftwareOathMethodsRequestBuilderRequestsMetadata, type SoftwareOathMethodsRequestBuilder } from './softwareOathMethods/index.js';
@@ -83,6 +85,11 @@ export interface AuthenticationRequestBuilder extends BaseRequestBuilder<Authent
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get platformCredentialMethods(): PlatformCredentialMethodsRequestBuilder;
+    /**
+     * The requirements property
+     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     */
+    get requirements(): RequirementsRequestBuilder;
     /**
      * The signInPreferences property
      * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
@@ -213,6 +220,9 @@ export const AuthenticationRequestBuilderNavigationMetadata: Record<Exclude<keyo
     platformCredentialMethods: {
         requestsMetadata: PlatformCredentialMethodsRequestBuilderRequestsMetadata,
         navigationMetadata: PlatformCredentialMethodsRequestBuilderNavigationMetadata,
+    },
+    requirements: {
+        requestsMetadata: RequirementsRequestBuilderRequestsMetadata,
     },
     signInPreferences: {
         requestsMetadata: SignInPreferencesRequestBuilderRequestsMetadata,

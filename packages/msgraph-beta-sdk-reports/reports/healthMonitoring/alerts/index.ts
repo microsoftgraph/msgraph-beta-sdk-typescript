@@ -27,10 +27,11 @@ export interface AlertsRequestBuilder extends BaseRequestBuilder<AlertsRequestBu
      */
      byAlertId(alertId: string) : AlertItemRequestBuilder;
     /**
-     * Get alerts from reports
+     * Get the list of the Microsoft Entra health monitoring alert objects and their properties from the past 30 days.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AlertCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AlertsRequestBuilderGetQueryParameters> | undefined) : Promise<AlertCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface AlertsRequestBuilder extends BaseRequestBuilder<AlertsRequestBu
      */
      post(body: Alert, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Alert | undefined>;
     /**
-     * Get alerts from reports
+     * Get the list of the Microsoft Entra health monitoring alert objects and their properties from the past 30 days.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface AlertsRequestBuilder extends BaseRequestBuilder<AlertsRequestBu
      toPostRequestInformation(body: Alert, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get alerts from reports
+ * Get the list of the Microsoft Entra health monitoring alert objects and their properties from the past 30 days.
  */
 export interface AlertsRequestBuilderGetQueryParameters {
     /**

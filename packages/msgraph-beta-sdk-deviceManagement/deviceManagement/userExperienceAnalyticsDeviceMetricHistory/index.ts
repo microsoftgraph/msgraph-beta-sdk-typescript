@@ -27,7 +27,7 @@ export interface UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder extend
      */
      byUserExperienceAnalyticsMetricHistoryId(userExperienceAnalyticsMetricHistoryId: string) : UserExperienceAnalyticsMetricHistoryItemRequestBuilder;
     /**
-     * User experience analytics device metric history
+     * User experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserExperienceAnalyticsMetricHistoryCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder extend
      */
      post(body: UserExperienceAnalyticsMetricHistory, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserExperienceAnalyticsMetricHistory | undefined>;
     /**
-     * User experience analytics device metric history
+     * User experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder extend
      toPostRequestInformation(body: UserExperienceAnalyticsMetricHistory, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * User experience analytics device metric history
+ * User experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
  */
 export interface UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetQueryParameters {
     /**

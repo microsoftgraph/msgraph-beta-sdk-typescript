@@ -19,7 +19,7 @@ export interface UserExperienceAnalyticsRemoteConnectionItemRequestBuilder exten
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * User experience analytics remote connection
+     * User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserExperienceAnalyticsRemoteConnection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface UserExperienceAnalyticsRemoteConnectionItemRequestBuilder exten
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * User experience analytics remote connection
+     * User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface UserExperienceAnalyticsRemoteConnectionItemRequestBuilder exten
      toPatchRequestInformation(body: UserExperienceAnalyticsRemoteConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * User experience analytics remote connection
+ * User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
  */
 export interface UserExperienceAnalyticsRemoteConnectionItemRequestBuilderGetQueryParameters {
     /**

@@ -16,15 +16,15 @@ export interface Alert extends Entity, Parsable {
      */
     category?: Category | null;
     /**
-     * The createdDateTime property
+     * The time when Microsoft Entra Health monitoring generated the alert. Supports $orderby.
      */
     createdDateTime?: Date | null;
     /**
-     * The documentation property
+     * A key-value pair that contains the name of and link to the documentation to aid in investigation of the alert.
      */
     documentation?: Documentation | null;
     /**
-     * The enrichment property
+     * Investigative information on the alert. This information typically includes counts of impacted objects, which include directory objects such as users, groups, and devices, and a pointer to supporting data.
      */
     enrichment?: Enrichment | null;
     /**
@@ -32,7 +32,7 @@ export interface Alert extends Entity, Parsable {
      */
     scenario?: Scenario | null;
     /**
-     * The signals property
+     * The collection of signals that were used in the generation of the alert. These signals are sourced from serviceActivity APIs and are added to the alert as key-value pairs.
      */
     signals?: Signals | null;
     /**
@@ -48,7 +48,7 @@ export interface AlertCollectionResponse extends BaseCollectionPaginationCountRe
 }
 export interface AlertConfiguration extends Entity, Parsable {
     /**
-     * The emailNotificationConfigurations property
+     * Defines the recipients of email notifications for an alert type. Currently, only one email notification configuration is supported for an alert configuration, meaning only one group can receive notifications for an alert type.
      */
     emailNotificationConfigurations?: EmailNotificationConfiguration[] | null;
 }
@@ -556,11 +556,11 @@ export interface EmailNotificationConfiguration extends AdditionalDataHolder, Ba
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The groupId property
+     * The identifier of the group to send an email to. All group types with configured email addresses are supported.
      */
     groupId?: string | null;
     /**
-     * The isEnabled property
+     * Indicates whether email notifications are enabled on the alert type.
      */
     isEnabled?: boolean | null;
     /**
@@ -578,7 +578,7 @@ export interface Enrichment extends AdditionalDataHolder, BackedModel, Parsable 
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The impacts property
+     * A collection of resource impact summaries that gives a high level view of the kind of resources that were impacted and to what degree.
      */
     impacts?: ResourceImpactSummary[] | null;
     /**
@@ -590,7 +590,7 @@ export interface Enrichment extends AdditionalDataHolder, BackedModel, Parsable 
      */
     state?: EnrichmentState | null;
     /**
-     * The supportingData property
+     * A collection of supportingData locations that can be queried for debugging the alert.
      */
     supportingData?: SupportingData | null;
 }
@@ -601,11 +601,11 @@ export interface HealthMonitoringDictionary extends Dictionary, Parsable {
 }
 export interface HealthMonitoringRoot extends Entity, Parsable {
     /**
-     * The alertConfigurations property
+     * The configuration of an alert type, which defines behavior that occurs when an alert is created.
      */
     alertConfigurations?: AlertConfiguration[] | null;
     /**
-     * The alerts property
+     * The collection of health monitoring system detected alerts for anomalous usage patterns found in a Microsoft Entra tenant.
      */
     alerts?: Alert[] | null;
 }
@@ -619,11 +619,11 @@ export interface ResourceImpactSummary extends AdditionalDataHolder, BackedModel
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The impactedCount property
+     * The number of resources impacted. The number could be an exhaustive count or a sampling count.
      */
     impactedCount?: string | null;
     /**
-     * The impactedCountLimitExceeded property
+     * Indicates whether impactedCount is exhaustive or a sampling. When this value is true, the limit was exceeded and impactedCount represents a sampling; otherwise, impactedCount represents the true number of impacts.
      */
     impactedCountLimitExceeded?: boolean | null;
     /**
@@ -631,7 +631,7 @@ export interface ResourceImpactSummary extends AdditionalDataHolder, BackedModel
      */
     odataType?: string | null;
     /**
-     * The resourceType property
+     * The type of resource that was impacted. Examples include user, group, application, servicePrincipal, device.
      */
     resourceType?: string | null;
 }
