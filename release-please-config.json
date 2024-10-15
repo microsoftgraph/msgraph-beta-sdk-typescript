@@ -6,6 +6,7 @@
     "versioning": "prerelease",
     "packages": {
         ".": {
+            "package-name": "msgraph-beta-sdk",
             "changelog-path": "CHANGELOG.md",
             "release-type": "node",
             "bump-minor-pre-major": false,
