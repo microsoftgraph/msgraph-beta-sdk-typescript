@@ -16,7 +16,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GraphUserRequestBuilder extends BaseRequestBuilder<GraphUserRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
@@ -24,7 +23,6 @@ export interface GraphUserRequestBuilder extends BaseRequestBuilder<GraphUserReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GraphUserRequestBuilderGetQueryParameters> | undefined) : Promise<UserCollectionResponse | undefined>;
@@ -32,7 +30,6 @@ export interface GraphUserRequestBuilder extends BaseRequestBuilder<GraphUserReq
      * Get a list of the group's members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphUserRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

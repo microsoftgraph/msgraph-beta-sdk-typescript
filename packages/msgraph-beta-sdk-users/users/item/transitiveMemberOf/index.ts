@@ -24,29 +24,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TransitiveMemberOfRequestBuilder extends BaseRequestBuilder<TransitiveMemberOfRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Casts the previous resource to administrativeUnit.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphAdministrativeUnit(): GraphAdministrativeUnitRequestBuilder;
     /**
      * Casts the previous resource to directoryRole.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphDirectoryRole(): GraphDirectoryRoleRequestBuilder;
     /**
      * Casts the previous resource to group.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphGroup(): GraphGroupRequestBuilder;
     /**
      * Provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.
      * @param directoryObjectId The unique identifier of directoryObject
      * @returns {DirectoryObjectItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
@@ -54,7 +49,6 @@ export interface TransitiveMemberOfRequestBuilder extends BaseRequestBuilder<Tra
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
@@ -62,7 +56,6 @@ export interface TransitiveMemberOfRequestBuilder extends BaseRequestBuilder<Tra
      * Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

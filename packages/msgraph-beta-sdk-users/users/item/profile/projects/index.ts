@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProjectsRequestBuilder extends BaseRequestBuilder<ProjectsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the projects property of the microsoft.graph.profile entity.
      * @param projectParticipationId The unique identifier of projectParticipation
      * @returns {ProjectParticipationItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byProjectParticipationId(projectParticipationId: string) : ProjectParticipationItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ProjectsRequestBuilder extends BaseRequestBuilder<ProjectsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProjectParticipationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ProjectsRequestBuilderGetQueryParameters> | undefined) : Promise<ProjectParticipationCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface ProjectsRequestBuilder extends BaseRequestBuilder<ProjectsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProjectParticipation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ProjectParticipation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProjectParticipation | undefined>;
     /**
      * Represents detailed information about projects associated with a user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProjectsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ProjectsRequestBuilder extends BaseRequestBuilder<ProjectsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ProjectParticipation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

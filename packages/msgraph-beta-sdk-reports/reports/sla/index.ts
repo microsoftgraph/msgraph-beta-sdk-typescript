@@ -25,7 +25,7 @@ export interface SlaRequestBuilder extends BaseRequestBuilder<SlaRequestBuilder>
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Reports that relate to tenant-level Microsoft Entra SLA attainment.
+     * Reports that relate to tenant-level Microsoft Entra Health SLA attainment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceLevelAgreementRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface SlaRequestBuilder extends BaseRequestBuilder<SlaRequestBuilder>
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Reports that relate to tenant-level Microsoft Entra SLA attainment.
+     * Reports that relate to tenant-level Microsoft Entra Health SLA attainment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface SlaRequestBuilder extends BaseRequestBuilder<SlaRequestBuilder>
      toPatchRequestInformation(body: ServiceLevelAgreementRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Reports that relate to tenant-level Microsoft Entra SLA attainment.
+ * Reports that relate to tenant-level Microsoft Entra Health SLA attainment.
  */
 export interface SlaRequestBuilderGetQueryParameters {
     /**

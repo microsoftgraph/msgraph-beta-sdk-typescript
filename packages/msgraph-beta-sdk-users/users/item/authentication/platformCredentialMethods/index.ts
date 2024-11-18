@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PlatformCredentialMethodsRequestBuilder extends BaseRequestBuilder<PlatformCredentialMethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.
      * @param platformCredentialAuthenticationMethodId The unique identifier of platformCredentialAuthenticationMethod
      * @returns {PlatformCredentialAuthenticationMethodItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPlatformCredentialAuthenticationMethodId(platformCredentialAuthenticationMethodId: string) : PlatformCredentialAuthenticationMethodItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface PlatformCredentialMethodsRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlatformCredentialAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<PlatformCredentialAuthenticationMethodCollectionResponse | undefined>;
     /**
      * Get platformCredentialMethods from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

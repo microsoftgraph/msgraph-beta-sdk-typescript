@@ -28,44 +28,36 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFolderItemRequestBuilder> {
     /**
      * Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get childFolders(): ChildFoldersRequestBuilder;
     /**
      * Provides operations to call the copy method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get copy(): CopyRequestBuilder;
     /**
      * Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get messageRules(): MessageRulesRequestBuilder;
     /**
      * Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get messages(): MessagesRequestBuilder;
     /**
      * Provides operations to call the move method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get move(): MoveRequestBuilder;
     /**
      * Provides operations to call the permanentDelete method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get userConfigurations(): UserConfigurationsRequestBuilder;
     /**
      * Delete navigation property mailFolders for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -73,7 +65,6 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MailFolderItemRequestBuilderGetQueryParameters> | undefined) : Promise<MailFolder | undefined>;
     /**
@@ -82,21 +73,18 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: MailFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MailFolder | undefined>;
     /**
      * Delete navigation property mailFolders for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The user's mail folders. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailFolderItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -104,7 +92,6 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: MailFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

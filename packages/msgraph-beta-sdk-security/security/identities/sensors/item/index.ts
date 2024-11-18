@@ -22,7 +22,7 @@ export interface SensorItemRequestBuilder extends BaseRequestBuilder<SensorItemR
      * Delete a sensor object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/security-identitycontainer-delete-sensors?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/security-sensor-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**

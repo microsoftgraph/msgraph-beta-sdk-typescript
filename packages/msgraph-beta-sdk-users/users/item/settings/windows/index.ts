@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WindowsRequestBuilder extends BaseRequestBuilder<WindowsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the windows property of the microsoft.graph.userSettings entity.
      * @param windowsSettingId The unique identifier of windowsSetting
      * @returns {WindowsSettingItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byWindowsSettingId(windowsSettingId: string) : WindowsSettingItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface WindowsRequestBuilder extends BaseRequestBuilder<WindowsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsSettingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WindowsRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsSettingCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface WindowsRequestBuilder extends BaseRequestBuilder<WindowsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsSetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: WindowsSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsSetting | undefined>;
     /**
      * The Windows settings of the user stored in the cloud.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface WindowsRequestBuilder extends BaseRequestBuilder<WindowsRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: WindowsSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -17,7 +17,6 @@ export interface MailboxSettingsRequestBuilder extends BaseRequestBuilder<Mailbo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MailboxSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxSettings | undefined>;
     /**
@@ -26,14 +25,12 @@ export interface MailboxSettingsRequestBuilder extends BaseRequestBuilder<Mailbo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: MailboxSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MailboxSettings | undefined>;
     /**
      * Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -41,7 +38,6 @@ export interface MailboxSettingsRequestBuilder extends BaseRequestBuilder<Mailbo
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: MailboxSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

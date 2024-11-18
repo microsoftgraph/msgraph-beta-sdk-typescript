@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MobileAppTroubleshootingEventItemRequestBuilder extends BaseRequestBuilder<MobileAppTroubleshootingEventItemRequestBuilder> {
     /**
      * Provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get appLogCollectionRequests(): AppLogCollectionRequestsRequestBuilder;
     /**
      * Delete navigation property mobileAppTroubleshootingEvents for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface MobileAppTroubleshootingEventItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppTroubleshootingEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MobileAppTroubleshootingEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<MobileAppTroubleshootingEvent | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface MobileAppTroubleshootingEventItemRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppTroubleshootingEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: MobileAppTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MobileAppTroubleshootingEvent | undefined>;
     /**
      * Delete navigation property mobileAppTroubleshootingEvents for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of mobile app troubleshooting events for this user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MobileAppTroubleshootingEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface MobileAppTroubleshootingEventItemRequestBuilder extends BaseReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: MobileAppTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

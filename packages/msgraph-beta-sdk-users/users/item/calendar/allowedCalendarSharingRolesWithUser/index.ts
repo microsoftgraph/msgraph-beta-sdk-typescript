@@ -23,14 +23,12 @@ export interface AllowedCalendarSharingRolesWithUserRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AllowedCalendarSharingRolesWithUserGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AllowedCalendarSharingRolesWithUserRequestBuilderGetQueryParameters> | undefined) : Promise<AllowedCalendarSharingRolesWithUserGetResponse | undefined>;
     /**
      * Invoke function allowedCalendarSharingRoles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AllowedCalendarSharingRolesWithUserRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

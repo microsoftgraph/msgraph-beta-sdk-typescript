@@ -34,59 +34,48 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InstanceRequestBuilder extends BaseRequestBuilder<InstanceRequestBuilder> {
     /**
      * Provides operations to call the acceptRecommendations method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get acceptRecommendations(): AcceptRecommendationsRequestBuilder;
     /**
      * Provides operations to call the applyDecisions method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get applyDecisions(): ApplyDecisionsRequestBuilder;
     /**
      * Provides operations to call the batchRecordDecisions method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get batchRecordDecisions(): BatchRecordDecisionsRequestBuilder;
     /**
      * Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get contactedReviewers(): ContactedReviewersRequestBuilder;
     /**
      * Provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get decisions(): DecisionsRequestBuilder;
     /**
      * Provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get definition(): DefinitionRequestBuilder;
     /**
      * Provides operations to call the resetDecisions method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resetDecisions(): ResetDecisionsRequestBuilder;
     /**
      * Provides operations to call the sendReminder method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendReminder(): SendReminderRequestBuilder;
     /**
      * Provides operations to call the stop method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get stop(): StopRequestBuilder;
     /**
      * Provides operations to call the stopApplyDecisions method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get stopApplyDecisions(): StopApplyDecisionsRequestBuilder;
     /**
      * Delete navigation property instance for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -94,7 +83,6 @@ export interface InstanceRequestBuilder extends BaseRequestBuilder<InstanceReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewInstance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<InstanceRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewInstance | undefined>;
     /**
@@ -103,21 +91,18 @@ export interface InstanceRequestBuilder extends BaseRequestBuilder<InstanceReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewInstance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: AccessReviewInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewInstance | undefined>;
     /**
      * Delete navigation property instance for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * There's exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InstanceRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -125,7 +110,6 @@ export interface InstanceRequestBuilder extends BaseRequestBuilder<InstanceReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: AccessReviewInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

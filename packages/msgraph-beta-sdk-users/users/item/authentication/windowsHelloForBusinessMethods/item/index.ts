@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder extends BaseRequestBuilder<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder> {
     /**
      * Provides operations to manage the device property of the microsoft.graph.windowsHelloForBusinessAuthenticationMethod entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get device(): DeviceRequestBuilder;
     /**
      * Deletes a windowsHelloForBusinessAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -32,7 +30,6 @@ export interface WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder e
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsHelloForBusinessAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsHelloForBusinessAuthenticationMethod | undefined>;
@@ -40,14 +37,12 @@ export interface WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder e
      * Deletes a windowsHelloForBusinessAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

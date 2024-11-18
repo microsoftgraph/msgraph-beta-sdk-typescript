@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.chat entity.
      * @param teamsAsyncOperationId The unique identifier of teamsAsyncOperation
      * @returns {TeamsAsyncOperationItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byTeamsAsyncOperationId(teamsAsyncOperationId: string) : TeamsAsyncOperationItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAsyncOperationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OperationsRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsAsyncOperationCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAsyncOperation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: TeamsAsyncOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsAsyncOperation | undefined>;
     /**
      * A collection of all the Teams async operations that ran or are running on the chat. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OperationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: TeamsAsyncOperation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

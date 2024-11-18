@@ -16,7 +16,6 @@ export interface DeviceManagementTroubleshootingEventItemRequestBuilder extends 
      * Delete navigation property deviceManagementTroubleshootingEvents for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface DeviceManagementTroubleshootingEventItemRequestBuilder extends 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceManagementTroubleshootingEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceManagementTroubleshootingEvent | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface DeviceManagementTroubleshootingEventItemRequestBuilder extends 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceManagementTroubleshootingEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: DeviceManagementTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagementTroubleshootingEvent | undefined>;
     /**
      * Delete navigation property deviceManagementTroubleshootingEvents for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of troubleshooting events for this user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface DeviceManagementTroubleshootingEventItemRequestBuilder extends 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: DeviceManagementTroubleshootingEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

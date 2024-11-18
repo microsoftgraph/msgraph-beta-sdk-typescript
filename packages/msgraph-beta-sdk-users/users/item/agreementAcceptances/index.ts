@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AgreementAcceptancesRequestBuilder extends BaseRequestBuilder<AgreementAcceptancesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
      * @param agreementAcceptanceId The unique identifier of agreementAcceptance
      * @returns {AgreementAcceptanceItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAgreementAcceptanceId(agreementAcceptanceId: string) : AgreementAcceptanceItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface AgreementAcceptancesRequestBuilder extends BaseRequestBuilder<A
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AgreementAcceptanceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AgreementAcceptancesRequestBuilderGetQueryParameters> | undefined) : Promise<AgreementAcceptanceCollectionResponse | undefined>;
     /**
      * The user's terms of use acceptance statuses. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AgreementAcceptancesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

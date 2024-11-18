@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the services property of the microsoft.graph.unifiedStorageQuota entity.
      * @param serviceStorageQuotaBreakdownId The unique identifier of serviceStorageQuotaBreakdown
      * @returns {ServiceStorageQuotaBreakdownItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byServiceStorageQuotaBreakdownId(serviceStorageQuotaBreakdownId: string) : ServiceStorageQuotaBreakdownItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceStorageQuotaBreakdownCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ServicesRequestBuilderGetQueryParameters> | undefined) : Promise<ServiceStorageQuotaBreakdownCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceStorageQuotaBreakdown>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ServiceStorageQuotaBreakdown, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServiceStorageQuotaBreakdown | undefined>;
     /**
      * The breakdown of services contributing to the user's quota usage.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ServiceStorageQuotaBreakdown, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -43,7 +43,6 @@ export interface GetSupportedCloudPcRemoteActionsRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetSupportedCloudPcRemoteActionsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters> | undefined) : Promise<GetSupportedCloudPcRemoteActionsGetResponse | undefined>;
@@ -51,7 +50,6 @@ export interface GetSupportedCloudPcRemoteActionsRequestBuilder extends BaseRequ
      * Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

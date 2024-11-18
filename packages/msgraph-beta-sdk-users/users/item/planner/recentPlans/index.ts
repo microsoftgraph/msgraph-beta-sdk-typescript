@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RecentPlansRequestBuilder extends BaseRequestBuilder<RecentPlansRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
      * @param plannerPlanId The unique identifier of plannerPlan
      * @returns {PlannerPlanItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPlannerPlanId(plannerPlanId: string) : PlannerPlanItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface RecentPlansRequestBuilder extends BaseRequestBuilder<RecentPlan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<RecentPlansRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanCollectionResponse | undefined>;
     /**
      * Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RecentPlansRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

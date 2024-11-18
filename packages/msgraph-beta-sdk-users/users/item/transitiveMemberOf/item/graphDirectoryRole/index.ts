@@ -17,14 +17,12 @@ export interface GraphDirectoryRoleRequestBuilder extends BaseRequestBuilder<Gra
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryRole>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GraphDirectoryRoleRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryRole | undefined>;
     /**
      * Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphDirectoryRoleRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

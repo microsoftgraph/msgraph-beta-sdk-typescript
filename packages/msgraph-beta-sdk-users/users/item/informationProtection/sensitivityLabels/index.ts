@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<SensitivityLabelsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the evaluate method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get evaluate(): EvaluateRequestBuilder;
     /**
      * Provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
      * @param sensitivityLabelId The unique identifier of sensitivityLabel
      * @returns {SensitivityLabelItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      bySensitivityLabelId(sensitivityLabelId: string) : SensitivityLabelItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabelCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabelCollectionResponse | undefined>;
     /**
@@ -49,14 +45,12 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
      * Get sensitivityLabels from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

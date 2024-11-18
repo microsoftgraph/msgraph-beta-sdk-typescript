@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AssociatedTeamsRequestBuilder extends BaseRequestBuilder<AssociatedTeamsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
      * @param associatedTeamInfoId The unique identifier of associatedTeamInfo
      * @returns {AssociatedTeamInfoItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAssociatedTeamInfoId(associatedTeamInfoId: string) : AssociatedTeamInfoItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AssociatedTeamsRequestBuilder extends BaseRequestBuilder<Associ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AssociatedTeamInfoCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AssociatedTeamsRequestBuilderGetQueryParameters> | undefined) : Promise<AssociatedTeamInfoCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AssociatedTeamsRequestBuilder extends BaseRequestBuilder<Associ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AssociatedTeamInfo>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AssociatedTeamInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AssociatedTeamInfo | undefined>;
     /**
      * The list of associatedTeamInfo objects that a user is associated with.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssociatedTeamsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AssociatedTeamsRequestBuilder extends BaseRequestBuilder<Associ
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AssociatedTeamInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

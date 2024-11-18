@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RecordingsRequestBuilder extends BaseRequestBuilder<RecordingsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
      * @param callRecordingId The unique identifier of callRecording
      * @returns {CallRecordingItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byCallRecordingId(callRecordingId: string) : CallRecordingItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface RecordingsRequestBuilder extends BaseRequestBuilder<RecordingsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CallRecordingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<RecordingsRequestBuilderGetQueryParameters> | undefined) : Promise<CallRecordingCollectionResponse | undefined>;
     /**
@@ -49,14 +45,12 @@ export interface RecordingsRequestBuilder extends BaseRequestBuilder<RecordingsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CallRecording>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: CallRecording, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CallRecording | undefined>;
     /**
      * Get a callRecording object associated with a scheduled onlineMeeting. This API doesn't support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RecordingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface RecordingsRequestBuilder extends BaseRequestBuilder<RecordingsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CallRecording, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

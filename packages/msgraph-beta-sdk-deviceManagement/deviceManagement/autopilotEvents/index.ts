@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { DeviceManagementAutopilotEventItemRequestBuilderNavigationMetadata, DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata, type DeviceManagementAutopilotEventItemRequestBuilder } from './item/index.js';
+import { DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata, type DeviceManagementAutopilotEventItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -115,7 +115,6 @@ const AutopilotEventsRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const AutopilotEventsRequestBuilderNavigationMetadata: Record<Exclude<keyof AutopilotEventsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byDeviceManagementAutopilotEventId: {
         requestsMetadata: DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata,
-        navigationMetadata: DeviceManagementAutopilotEventItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["deviceManagementAutopilotEvent%2Did"],
     },
     count: {

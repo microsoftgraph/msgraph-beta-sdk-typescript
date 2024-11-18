@@ -43,7 +43,6 @@ export interface RetrieveCloudPCRemoteActionResultsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RetrieveCloudPCRemoteActionResultsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-retrievecloudpcremoteactionresults?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RetrieveCloudPCRemoteActionResultsRequestBuilderGetQueryParameters> | undefined) : Promise<RetrieveCloudPCRemoteActionResultsGetResponse | undefined>;
@@ -51,7 +50,6 @@ export interface RetrieveCloudPCRemoteActionResultsRequestBuilder extends BaseRe
      * Retrieve remote action results and check the status of a specific remote action performed on the associated Cloud PC device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RetrieveCloudPCRemoteActionResultsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

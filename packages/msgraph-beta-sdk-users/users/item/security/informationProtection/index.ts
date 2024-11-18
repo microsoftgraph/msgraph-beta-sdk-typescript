@@ -18,19 +18,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<InformationProtectionRequestBuilder> {
     /**
      * Provides operations to manage the labelPolicySettings property of the microsoft.graph.security.informationProtection entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get labelPolicySettings(): LabelPolicySettingsRequestBuilder;
     /**
      * Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sensitivityLabels(): SensitivityLabelsRequestBuilder;
     /**
      * Delete navigation property informationProtection for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -38,7 +35,6 @@ export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InformationProtection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<InformationProtectionRequestBuilderGetQueryParameters> | undefined) : Promise<InformationProtection | undefined>;
     /**
@@ -47,21 +43,18 @@ export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InformationProtection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: InformationProtection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InformationProtection | undefined>;
     /**
      * Delete navigation property informationProtection for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get informationProtection from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InformationProtectionRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,7 +62,6 @@ export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: InformationProtection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

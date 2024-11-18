@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SectionGroupsRequestBuilder extends BaseRequestBuilder<SectionGroupsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
      * @param sectionGroupId1 The unique identifier of sectionGroup
      * @returns {SectionGroupItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      bySectionGroupId1(sectionGroupId1: string) : SectionGroupItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface SectionGroupsRequestBuilder extends BaseRequestBuilder<SectionG
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SectionGroupCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SectionGroupsRequestBuilderGetQueryParameters> | undefined) : Promise<SectionGroupCollectionResponse | undefined>;
     /**
      * The section groups in the section. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SectionGroupsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DeviceLogCollectionResponseItemRequestBuilder extends BaseRequestBuilder<DeviceLogCollectionResponseItemRequestBuilder> {
     /**
      * Provides operations to call the createDownloadUrl method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createDownloadUrl(): CreateDownloadUrlRequestBuilder;
     /**
      * Delete navigation property logCollectionRequests for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface DeviceLogCollectionResponseItemRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceLogCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DeviceLogCollectionResponseItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceLogCollectionResponse | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface DeviceLogCollectionResponseItemRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceLogCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: DeviceLogCollectionResponse, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceLogCollectionResponse | undefined>;
     /**
      * Delete navigation property logCollectionRequests for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * List of log collection requests
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceLogCollectionResponseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface DeviceLogCollectionResponseItemRequestBuilder extends BaseReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: DeviceLogCollectionResponse, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

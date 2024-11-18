@@ -16,7 +16,6 @@ export interface ItemEmailItemRequestBuilder extends BaseRequestBuilder<ItemEmai
      * Delete navigation property emails for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface ItemEmailItemRequestBuilder extends BaseRequestBuilder<ItemEmai
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemEmail>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemEmailItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemEmail | undefined>;
@@ -34,7 +32,6 @@ export interface ItemEmailItemRequestBuilder extends BaseRequestBuilder<ItemEmai
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemEmail>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ItemEmail, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemEmail | undefined>;
@@ -42,14 +39,12 @@ export interface ItemEmailItemRequestBuilder extends BaseRequestBuilder<ItemEmai
      * Delete navigation property emails for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of an itemEmail object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemEmailItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ItemEmailItemRequestBuilder extends BaseRequestBuilder<ItemEmai
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ItemEmail, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

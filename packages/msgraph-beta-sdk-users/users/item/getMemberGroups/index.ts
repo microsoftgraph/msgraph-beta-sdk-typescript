@@ -78,7 +78,6 @@ export interface GetMemberGroupsRequestBuilder extends BaseRequestBuilder<GetMem
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetMemberGroupsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta|Find more info here}
      */
      post(body: GetMemberGroupsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GetMemberGroupsPostResponse | undefined>;
@@ -87,7 +86,6 @@ export interface GetMemberGroupsRequestBuilder extends BaseRequestBuilder<GetMem
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: GetMemberGroupsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -39,21 +39,22 @@ export interface GetByUserIdAndRoleWithUserIdWithRoleGetResponse extends BaseCol
  */
 export interface GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder extends BaseRequestBuilder<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder> {
     /**
-     * Invoke function getByUserIdAndRole
+     * Get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetByUserIdAndRoleWithUserIdWithRoleGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters> | undefined) : Promise<GetByUserIdAndRoleWithUserIdWithRoleGetResponse | undefined>;
     /**
-     * Invoke function getByUserIdAndRole
+     * Get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Invoke function getByUserIdAndRole
+ * Get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
  */
 export interface GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters {
     /**

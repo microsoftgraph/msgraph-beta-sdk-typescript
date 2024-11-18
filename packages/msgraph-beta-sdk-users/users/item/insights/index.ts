@@ -20,24 +20,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsRequestBuilder> {
     /**
      * Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get shared(): SharedRequestBuilder;
     /**
      * Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get trending(): TrendingRequestBuilder;
     /**
      * Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get used(): UsedRequestBuilder;
     /**
      * Delete navigation property insights for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -45,7 +41,6 @@ export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemInsights>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<InsightsRequestBuilderGetQueryParameters> | undefined) : Promise<ItemInsights | undefined>;
     /**
@@ -54,21 +49,18 @@ export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemInsights>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ItemInsights, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemInsights | undefined>;
     /**
      * Delete navigation property insights for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -76,7 +68,6 @@ export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ItemInsights, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

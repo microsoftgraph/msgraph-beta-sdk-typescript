@@ -16,7 +16,6 @@ export interface WithIdWithPolicyIdWithDeviceIdRequestBuilder extends BaseReques
      * Delete navigation property deviceHealthScriptStates for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface WithIdWithPolicyIdWithDeviceIdRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceHealthScriptPolicyState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceHealthScriptPolicyState | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface WithIdWithPolicyIdWithDeviceIdRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceHealthScriptPolicyState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: DeviceHealthScriptPolicyState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceHealthScriptPolicyState | undefined>;
     /**
      * Delete navigation property deviceHealthScriptStates for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface WithIdWithPolicyIdWithDeviceIdRequestBuilder extends BaseReques
      * @param body Contains properties for policy run state of the device health script.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: DeviceHealthScriptPolicyState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

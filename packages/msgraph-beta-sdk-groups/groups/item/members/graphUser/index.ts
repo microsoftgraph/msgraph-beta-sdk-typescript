@@ -16,7 +16,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GraphUserRequestBuilder extends BaseRequestBuilder<GraphUserRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
@@ -24,7 +23,6 @@ export interface GraphUserRequestBuilder extends BaseRequestBuilder<GraphUserReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GraphUserRequestBuilderGetQueryParameters> | undefined) : Promise<UserCollectionResponse | undefined>;
@@ -32,7 +30,6 @@ export interface GraphUserRequestBuilder extends BaseRequestBuilder<GraphUserReq
      * Get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn't transitive.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphUserRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

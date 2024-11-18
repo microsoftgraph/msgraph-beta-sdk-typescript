@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
      * @param governanceInsightId The unique identifier of governanceInsight
      * @returns {GovernanceInsightItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byGovernanceInsightId(governanceInsightId: string) : GovernanceInsightItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceInsightCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<InsightsRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceInsightCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: GovernanceInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GovernanceInsight | undefined>;
     /**
      * Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface InsightsRequestBuilder extends BaseRequestBuilder<InsightsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: GovernanceInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

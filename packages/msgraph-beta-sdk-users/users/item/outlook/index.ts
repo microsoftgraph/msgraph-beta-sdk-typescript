@@ -28,32 +28,26 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OutlookRequestBuilder extends BaseRequestBuilder<OutlookRequestBuilder> {
     /**
      * Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get masterCategories(): MasterCategoriesRequestBuilder;
     /**
      * Provides operations to call the supportedLanguages method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get supportedLanguages(): SupportedLanguagesRequestBuilder;
     /**
      * Provides operations to call the supportedTimeZones method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get supportedTimeZones(): SupportedTimeZonesRequestBuilder;
     /**
      * Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get taskFolders(): TaskFoldersRequestBuilder;
     /**
      * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get taskGroups(): TaskGroupsRequestBuilder;
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get tasks(): TasksRequestBuilder;
     /**
@@ -61,21 +55,18 @@ export interface OutlookRequestBuilder extends BaseRequestBuilder<OutlookRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OutlookUser>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OutlookRequestBuilderGetQueryParameters> | undefined) : Promise<OutlookUser | undefined>;
     /**
      * Provides operations to call the supportedTimeZones method.
      * @param TimeZoneStandard Usage: TimeZoneStandard='{TimeZoneStandard}'
      * @returns {SupportedTimeZonesWithTimeZoneStandardRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      supportedTimeZonesWithTimeZoneStandard(timeZoneStandard: string | undefined) : SupportedTimeZonesWithTimeZoneStandardRequestBuilder;
     /**
      * Selective Outlook services available to the user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OutlookRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

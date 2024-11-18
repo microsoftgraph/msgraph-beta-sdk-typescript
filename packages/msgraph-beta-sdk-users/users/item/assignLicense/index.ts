@@ -6,9 +6,7 @@ import { createAssignedLicenseFromDiscriminatorValue, createUserFromDiscriminato
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type AdditionalDataHolder, type BackedModel, type BackingStore, type BaseRequestBuilder, type Parsable, type ParsableFactory, type ParseNode, type RequestConfiguration, type RequestInformation, type RequestsMetadata, type SerializationWriter } from '@microsoft/kiota-abstractions';
-// @ts-ignore
-import { type Guid } from 'guid-typescript';
+import { type AdditionalDataHolder, type BackedModel, type BackingStore, type BaseRequestBuilder, type Guid, type Parsable, type ParsableFactory, type ParseNode, type RequestConfiguration, type RequestInformation, type RequestsMetadata, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
 export interface AssignLicensePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -38,7 +36,6 @@ export interface AssignLicenseRequestBuilder extends BaseRequestBuilder<AssignLi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-beta|Find more info here}
      */
      post(body: AssignLicensePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<User | undefined>;
@@ -47,7 +44,6 @@ export interface AssignLicenseRequestBuilder extends BaseRequestBuilder<AssignLi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AssignLicensePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -52,104 +52,84 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     /**
      * Provides operations to manage the account property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get account(): AccountRequestBuilder;
     /**
      * Provides operations to manage the addresses property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get addresses(): AddressesRequestBuilder;
     /**
      * Provides operations to manage the anniversaries property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get anniversaries(): AnniversariesRequestBuilder;
     /**
      * Provides operations to manage the awards property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get awards(): AwardsRequestBuilder;
     /**
      * Provides operations to manage the certifications property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get certifications(): CertificationsRequestBuilder;
     /**
      * Provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get educationalActivities(): EducationalActivitiesRequestBuilder;
     /**
      * Provides operations to manage the emails property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get emails(): EmailsRequestBuilder;
     /**
      * Provides operations to manage the interests property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get interests(): InterestsRequestBuilder;
     /**
      * Provides operations to manage the languages property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get languages(): LanguagesRequestBuilder;
     /**
      * Provides operations to manage the names property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get names(): NamesRequestBuilder;
     /**
      * Provides operations to manage the notes property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get notes(): NotesRequestBuilder;
     /**
      * Provides operations to manage the patents property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get patents(): PatentsRequestBuilder;
     /**
      * Provides operations to manage the phones property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get phones(): PhonesRequestBuilder;
     /**
      * Provides operations to manage the positions property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get positions(): PositionsRequestBuilder;
     /**
      * Provides operations to manage the projects property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get projects(): ProjectsRequestBuilder;
     /**
      * Provides operations to manage the publications property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get publications(): PublicationsRequestBuilder;
     /**
      * Provides operations to manage the skills property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get skills(): SkillsRequestBuilder;
     /**
      * Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get webAccounts(): WebAccountsRequestBuilder;
     /**
      * Provides operations to manage the websites property of the microsoft.graph.profile entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get websites(): WebsitesRequestBuilder;
     /**
      * Delete navigation property profile for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -157,7 +137,6 @@ export interface ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Profile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ProfileRequestBuilderGetQueryParameters> | undefined) : Promise<Profile | undefined>;
     /**
@@ -166,21 +145,18 @@ export interface ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Profile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Profile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Profile | undefined>;
     /**
      * Delete navigation property profile for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents properties that are descriptive of a user in a tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProfileRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -188,7 +164,6 @@ export interface ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Profile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

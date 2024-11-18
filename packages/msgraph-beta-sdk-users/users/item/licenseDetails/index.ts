@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<LicenseDetailsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the getTeamsLicensingDetails method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getTeamsLicensingDetails(): GetTeamsLicensingDetailsRequestBuilder;
     /**
      * Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
      * @param licenseDetailsId The unique identifier of licenseDetails
      * @returns {LicenseDetailsItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byLicenseDetailsId(licenseDetailsId: string) : LicenseDetailsItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<License
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LicenseDetailsCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<LicenseDetailsRequestBuilderGetQueryParameters> | undefined) : Promise<LicenseDetailsCollectionResponse | undefined>;
     /**
@@ -49,14 +45,12 @@ export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<License
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LicenseDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: LicenseDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LicenseDetails | undefined>;
     /**
      * Get licenseDetails from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LicenseDetailsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<License
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: LicenseDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

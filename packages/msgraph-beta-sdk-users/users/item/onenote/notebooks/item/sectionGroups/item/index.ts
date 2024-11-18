@@ -22,29 +22,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SectionGroupItemRequestBuilder extends BaseRequestBuilder<SectionGroupItemRequestBuilder> {
     /**
      * Provides operations to manage the parentNotebook property of the microsoft.graph.sectionGroup entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get parentNotebook(): ParentNotebookRequestBuilder;
     /**
      * Provides operations to manage the parentSectionGroup property of the microsoft.graph.sectionGroup entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get parentSectionGroup(): ParentSectionGroupRequestBuilder;
     /**
      * Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sectionGroups(): SectionGroupsRequestBuilder;
     /**
      * Provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sections(): SectionsRequestBuilder;
     /**
      * Delete navigation property sectionGroups for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -52,7 +47,6 @@ export interface SectionGroupItemRequestBuilder extends BaseRequestBuilder<Secti
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SectionGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SectionGroupItemRequestBuilderGetQueryParameters> | undefined) : Promise<SectionGroup | undefined>;
     /**
@@ -61,21 +55,18 @@ export interface SectionGroupItemRequestBuilder extends BaseRequestBuilder<Secti
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SectionGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: SectionGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SectionGroup | undefined>;
     /**
      * Delete navigation property sectionGroups for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The section groups in the notebook. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SectionGroupItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -83,7 +74,6 @@ export interface SectionGroupItemRequestBuilder extends BaseRequestBuilder<Secti
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: SectionGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

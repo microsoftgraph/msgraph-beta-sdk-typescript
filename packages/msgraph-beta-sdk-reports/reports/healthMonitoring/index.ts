@@ -31,7 +31,7 @@ export interface HealthMonitoringRequestBuilder extends BaseRequestBuilder<Healt
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get healthMonitoring from reports
+     * Reports for Microsoft Entra Health Monitoring.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HealthMonitoringRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface HealthMonitoringRequestBuilder extends BaseRequestBuilder<Healt
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get healthMonitoring from reports
+     * Reports for Microsoft Entra Health Monitoring.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface HealthMonitoringRequestBuilder extends BaseRequestBuilder<Healt
      toPatchRequestInformation(body: HealthMonitoringRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get healthMonitoring from reports
+ * Reports for Microsoft Entra Health Monitoring.
  */
 export interface HealthMonitoringRequestBuilderGetQueryParameters {
     /**
